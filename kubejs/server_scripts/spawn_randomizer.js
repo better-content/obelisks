@@ -1,1115 +1,658 @@
 // kubejs/server_scripts/respawn_hubs.js
 // Forge 1.20.1 + KubeJS 6 (Rhino-safe ES5)
 //
-// Manual one-off builder, strict surface and open-sky rules, randomized per-hub search.
-// - Nothing happens until /kubejs custom_command rrhubs_enable or rrhubs_rebuild
-// - enable/rebuild locks center to CURRENT world spawn X/Z
-// - Valid hub requires:
-//   - feet + head are exactly air/cave_air/void_air
-//   - ground is solid and not fluid
-//   - no nearby water/lava at feet level in 3x3
-//   - OPEN SKY: every block above head to TOP_Y is air/cave_air/void_air
-// - MAX_DISTANCE halved to 400
-// - Parallel validation (no throttling), but still async (forceload + schedule)
-// - Randomization:
-//   - Each slot has its own RNG stream and step size
-//   - On failure it "walks" around the ring so it does not keep hitting the same coords
-//   - Scheduling order is shuffled continuously so no slot is always first
+// v19_manual_only_particles_pulse_3s_thick_soul_with_spooky_sound
+// - Manual hubs only (NO scanning/builder)
+// - Brigadier commands (/rrhubs ...)
+// - Respawn routing to least-used hub (only if enabled + no personal bed/anchor)
+// - Crying obsidian placed at (x, y-1, z) when adding hub and when teleporting
+// - FX: 3x3x3 cube centered at (x+0.5, y+1.0, z+0.5) for ~3s via scheduled pulses
+// - THICK sculk_soul + sculk_charge/sculk_charge_pop + soul_fire_flame
+// - Adds the SAME spooky sound stack from spawnfx.js, but targeted to the triggering player
 //
-// Custom commands:
-//   /kubejs custom_command rrhubs_enable
-//   /kubejs custom_command rrhubs_rebuild
-//   /kubejs custom_command rrhubs_status
-//   /kubejs custom_command rrhubs_cancel
-//   /kubejs custom_command rrhubs_disable
-//   /kubejs custom_command rrhubs_reset
-//
-// UPGRADES IMPLEMENTED:
-// - Respawn pad is 1x1 crying obsidian exactly under the spawn block.
-// - Spawn FX are executed AFTER the teleport, at the hub destination.
-// - FX are anchored with `execute positioned x y z`, so @a[distance=..] is reliable.
-// - Particles tuned to look calm (no "blown strongly"): smaller spread + speed 0.
-//
-// NOTE:
-// - Delete/disable any old spawnfx.js that also triggers on respawn, or you'll get double/offset FX.
+// Commands (perm level 2):
+//   /rrhubs enable
+//   /rrhubs disable
+//   /rrhubs status
+//   /rrhubs list
+//   /rrhubs tp <index>
+//   /rrhubs add_here
+//   /rrhubs remove_here
+//   /rrhubs remove_index <i>
+//   /rrhubs clear
 
-var DIM = 'minecraft:overworld'
-var SCRIPT_VERSION = 'v9_randomized_strict_open_sky_fast_1x1pad_fx_post_tp'
+var DIM_DEFAULT = 'minecraft:overworld'
+var SCRIPT_VERSION = 'v19_manual_only_particles_pulse_3s_thick_soul_with_spooky_sound'
 
-// Annulus
-var MIN_DISTANCE = 0
-var MAX_DISTANCE = 300 // halved
-
-// Hubs
-var HUB_COUNT = 16
-var CANDIDATE_POOL = 8000
-
-// Fast validation
-var MAX_INFLIGHT = 64
-var FORCELOAD_WAIT_TICKS = 1
-
-// Surface finding
-var NEARBY_SEARCH_RADIUS = 12
-var Y_SCAN_UP = 3
-var Y_SCAN_DOWN = 8
-
-// Retries per hub slot before rerolling its ring-walk params
-var MAX_VALIDATE_RETRIES_PER_HUB = 80
-
-// Logging
-var LOG_EACH_FAIL = false
-var LOG_FAIL_EVERY = 50
-var SAVE_COUNTS_EVERY_TICKS = 200
-
-// Safety
-var ADJ_FLUID_RADIUS = 1
-var BAD_FLUIDS = { 'minecraft:water': true, 'minecraft:lava': true }
-
-var SKY_AIR = {
-    'minecraft:air': true,
-    'minecraft:cave_air': true,
-    'minecraft:void_air': true
-}
-
-var SAFE_GROUND = {
-    'minecraft:grass_block': true,
-    'minecraft:dirt': true,
-    'minecraft:coarse_dirt': true,
-    'minecraft:podzol': true,
-    'minecraft:rooted_dirt': true,
-    'minecraft:mycelium': true,
-    'minecraft:dirt_path': true,
-    'minecraft:farmland': true,
-    'minecraft:moss_block': true,
-    'minecraft:mud': true,
-    'minecraft:packed_mud': true,
-    'minecraft:stone': true,
-    'minecraft:deepslate': true,
-    'minecraft:andesite': true,
-    'minecraft:diorite': true,
-    'minecraft:granite': true,
-    'minecraft:tuff': true,
-    'minecraft:calcite': true,
-    'minecraft:sand': true,
-    'minecraft:red_sand': true,
-    'minecraft:gravel': true,
-    'minecraft:clay': true,
-    'minecraft:snow_block': true,
-    'minecraft:ice': true,
-    'minecraft:packed_ice': true,
-    'minecraft:blue_ice': true,
-    'minecraft:terracotta': true
-}
-
-var TOP_Y = 319
-var BOTTOM_Y = -64
-
-var HeightmapTypes = null
-try { HeightmapTypes = Java.loadClass('net.minecraft.world.level.levelgen.Heightmap$Types') } catch (e) { HeightmapTypes = null }
-
-// ---------- persistent keys ----------
+// -------------------- persistent keys --------------------
 var K_ENABLED = 'rrhubs_enabled'
-var K_BUILD_REQUESTED = 'rrhubs_build_requested'
 var K_NOTIFY_NAME = 'rrhubs_notify_name'
-
-var K_CENTER_LOCKED = 'rrhubs_center_locked'
-var K_CENTER_X = 'rrhubs_center_x'
-var K_CENTER_Z = 'rrhubs_center_z'
-
-var K_HUBS_FINAL = 'rrhubs_hubs_final'
 var K_HUBS_JSON = 'rrhubs_hubs_json'
 var K_COUNTS_JSON = 'rrhubs_counts_json'
+var K_HUBS_FINAL = 'rrhubs_hubs_final'
 var K_CFG = 'rrhubs_cfg'
 
-// ---------- runtime ----------
-var rrServer = null
-var rrCenter = null
-var rrHubs = []
-var rrCounts = []
-var rrCountsDirty = false
+// -------------------- FX tuning --------------------
+var FX_DURATION_TICKS = 60         // 3 seconds
+var FX_PULSE_EVERY_TICKS = 2       // 1=thicker, 2=good, 3=cheaper
+var FX_SPREAD = 1.0                // 3x3x3 cube spread
+var FX_COUNTS_EVERY_TICKS = 200
 
-var rrBuild = {
-    active: false,
-    gen: 0,
-    plan: [],
-    slots: [],
-    inflightCount: 0,
-    order: null,
-    orderPos: 0
-}
+// Per-pulse counts (accumulate over duration)
+var FX_COUNT_SOUL_PER_PULSE = 70
+var FX_COUNT_CHARGE_PER_PULSE = 30
+var FX_COUNT_POP_PER_PULSE = 20
+var FX_COUNT_BLUE_PER_PULSE = 18
 
-// ---------- utils ----------
+// Optional debug burst
+var FX_FLAME_DEBUG = false
+var FX_COUNT_FLAME_PER_PULSE = 20
+
+// -------------------- sound (from spawnfx.js) --------------------
+var SOUND_VOL = 6.0
+var SOUND_MINVOL = 1.0
+var SOUND_PITCH_BELL = 0.75
+var SOUND_PITCH_PORTAL = 0.9
+var SOUND_PITCH_WARDEN = 0.8
+var SOUND_PITCH_EVOKER = 0.9
+
+// -------------------- runtime state --------------------
+var rrHubs = []    // [{dim,x,y,z}]  where y is player-feet blockY
+var rrCounts = []  // [int per hub]
+
+// -------------------- helpers --------------------
 function pd(server) { return server.persistentData }
-function has(map, key) { return map != null && map[key] === true }
-function randInt(min, maxInclusive) { return min + Math.floor(Math.random() * (maxInclusive - min + 1)) }
 
-function configKey() {
-    return String(SCRIPT_VERSION) + ':' +
-    String(MIN_DISTANCE) + ':' + String(MAX_DISTANCE) + ':' +
-    String(HUB_COUNT) + ':' + String(CANDIDATE_POOL) + ':' +
-    String(MAX_INFLIGHT) + ':' + String(FORCELOAD_WAIT_TICKS) + ':' +
-    String(NEARBY_SEARCH_RADIUS) + ':' + String(Y_SCAN_UP) + ':' + String(Y_SCAN_DOWN) + ':' +
-    String(MAX_VALIDATE_RETRIES_PER_HUB)
+function safeInt(n, fallback) {
+    n = Number(n)
+    if (!isFinite(n)) return fallback
+        n = Math.floor(n)
+        return (n | 0)
 }
 
-function isEnabled(server) { try { return pd(server).getBoolean(K_ENABLED) } catch (e) { return false } }
-function isBuildRequested(server) { try { return pd(server).getBoolean(K_BUILD_REQUESTED) } catch (e) { return false } }
-function isFinal(server) { try { return pd(server).getBoolean(K_HUBS_FINAL) } catch (e) { return false } }
-
-function setEnabled(server, v) { try { pd(server).putBoolean(K_ENABLED, !!v) } catch (e) {} }
-function setBuildRequested(server, v) { try { pd(server).putBoolean(K_BUILD_REQUESTED, !!v) } catch (e) {} }
-function setFinal(server, v) { try { pd(server).putBoolean(K_HUBS_FINAL, !!v) } catch (e) {} }
-
-function getNotifyName(server) { try { return String(pd(server).getString(K_NOTIFY_NAME) || '') } catch (e) { return '' } }
-function setNotifyName(server, name) { try { pd(server).putString(K_NOTIFY_NAME, String(name || '')) } catch (e) {} }
-
-function escSelector(name) { return String(name || '').replace(/\\/g, '\\\\').replace(/"/g, '\\"') }
-function escText(s) { return String(s || '').replace(/\\/g, '\\\\').replace(/"/g, '\\"') }
-
-function tellPlayer(server, username, msg) {
-    if (!username) return
-        var n = escSelector(username)
-        var t = escText('[RRHubs] ' + msg)
-        server.runCommandSilent('tellraw @a[name="' + n + '"] {"text":"' + t + '"}')
+function rrLog(server, s) {
+    try { server.console.log('[rrhubs] ' + s) } catch (e) {}
 }
 
-function rrLog(msg) { console.info('[RRHubs] ' + msg) }
-
-function rrBroadcast(server, msg) {
-    rrLog(msg)
-    var n = getNotifyName(server)
-    if (n) tellPlayer(server, n, msg)
+function rrBroadcast(server, s) {
+    try { server.tell('[rrhubs] ' + s) } catch (e) { rrLog(server, s) }
 }
 
-function noteInvoker(eventOrNull) {
-    try { if (eventOrNull && eventOrNull.player) setNotifyName(eventOrNull.server, String(eventOrNull.player.username)) } catch (e) {}
+function isEnabled(server) { return pd(server).getBoolean(K_ENABLED) }
+function setEnabled(server, b) { pd(server).putBoolean(K_ENABLED, !!b) }
+
+function setNotifyName(server, name) { pd(server).putString(K_NOTIFY_NAME, String(name || '')) }
+function getNotifyName(server) { return String(pd(server).getString(K_NOTIFY_NAME) || '') }
+
+function setFinal(server, b) { pd(server).putBoolean(K_HUBS_FINAL, !!b) }
+function isFinal(server) { return pd(server).getBoolean(K_HUBS_FINAL) }
+
+function cleanDimId(s) {
+    s = String(s || DIM_DEFAULT)
+    if (s.indexOf('ResourceLocation[') === 0) {
+        s = s.substring('ResourceLocation['.length)
+        if (s.charAt(s.length - 1) === ']') s = s.substring(0, s.length - 1)
+    }
+    return s
 }
 
-function shuffledIndices(n) {
-    var a = []
-    for (var i = 0; i < n; i++) a.push(i)
-        for (var j = n - 1; j > 0; j--) {
-            var k = randInt(0, j)
-            var tmp = a[j]; a[j] = a[k]; a[k] = tmp
-        }
-        return a
+function normalizeHub(h) {
+    if (!h) return null
+        var x = Number(h.x), y = Number(h.y), z = Number(h.z)
+        if (!isFinite(x) || !isFinite(y) || !isFinite(z)) return null
+            var dim = String(h.dim || DIM_DEFAULT)
+            return { dim: dim, x: x, y: y, z: z }
 }
 
-// ---------- deterministic per-slot RNG (LCG) ----------
-function lcgNext(s) { return (Math.imul(1664525, s) + 1013904223) | 0 }
-function lcgFloat01(s) { s = lcgNext(s); return { s: s, f: (s >>> 0) / 4294967296.0 } }
-function lcgInt(s, min, maxInclusive) {
-    var t = lcgFloat01(s)
-    return { s: t.s, v: min + Math.floor(t.f * (maxInclusive - min + 1)) }
+function saveHubs(server) {
+    try { pd(server).putString(K_HUBS_JSON, JSON.stringify(rrHubs)) } catch (e) {}
 }
 
-// ---------- spawn center ----------
-function readWorldSpawnXZ(level) {
-    var pos = null
-    if (level && typeof level.getSharedSpawnPos === 'function') pos = level.getSharedSpawnPos()
-        else if (level && typeof level.getSpawnPos === 'function') pos = level.getSpawnPos()
-            else if (level && level.sharedSpawnPos) pos = level.sharedSpawnPos
-                else if (level && level.spawnPos) pos = level.spawnPos
-                    if (!pos) return { x: 0, z: 0 }
-                    var x = (typeof pos.getX === 'function') ? pos.getX() : pos.x
-                    var z = (typeof pos.getZ === 'function') ? pos.getZ() : pos.z
-                    return { x: Math.floor(Number(x)), z: Math.floor(Number(z)) }
+function saveCounts(server) {
+    try { pd(server).putString(K_COUNTS_JSON, JSON.stringify(rrCounts)) } catch (e) {}
 }
-
-function lockCenterToCurrentWorldSpawn(server) {
-    var s = readWorldSpawnXZ(server.overworld())
-    try {
-        pd(server).putBoolean(K_CENTER_LOCKED, true)
-        pd(server).putInt(K_CENTER_X, s.x)
-        pd(server).putInt(K_CENTER_Z, s.z)
-    } catch (e) {}
-    rrCenter = { x: s.x, z: s.z }
-    return rrCenter
-}
-
-function getLockedCenter(server) {
-    try {
-        if (pd(server).getBoolean(K_CENTER_LOCKED)) {
-            return { x: pd(server).getInt(K_CENTER_X), z: pd(server).getInt(K_CENTER_Z) }
-        }
-    } catch (e) {}
-    return readWorldSpawnXZ(server.overworld())
-}
-
-// ---------- persistence ----------
-var REBUILD_IF_CONFIG_CHANGED = true
 
 function loadState(server) {
-    rrCenter = getLockedCenter(server)
-
-    if (REBUILD_IF_CONFIG_CHANGED) {
-        try {
-            var key = pd(server).getString(K_CFG)
-            if (key && String(key) !== String(configKey())) {
-                rrBroadcast(server, 'Config changed (old=' + key + ' new=' + configKey() + '). Hubs invalid until rebuild/reset.')
-                setFinal(server, false)
-                setBuildRequested(server, false)
-                pd(server).putString(K_HUBS_JSON, '[]')
-                pd(server).putString(K_COUNTS_JSON, '[]')
-            }
-        } catch (e0) {}
-    }
+    try { pd(server).putString(K_CFG, SCRIPT_VERSION) } catch (e0) {}
 
     rrHubs = []
     rrCounts = []
 
     try {
         var hs = pd(server).getString(K_HUBS_JSON)
-        if (hs) {
+        if (hs && String(hs).length > 2) {
             var arr = JSON.parse(String(hs))
-            if (arr && arr.length) rrHubs = arr
+            if (arr && arr.length) {
+                for (var i = 0; i < arr.length; i++) {
+                    var nh = normalizeHub(arr[i])
+                    if (nh) rrHubs.push(nh)
+                }
+            }
         }
-    } catch (e1) {}
+    } catch (e) {}
 
     try {
         var cs = pd(server).getString(K_COUNTS_JSON)
-        if (cs) {
+        if (cs && String(cs).length > 2) {
             var carr = JSON.parse(String(cs))
             if (carr && carr.length) rrCounts = carr
         }
     } catch (e2) {}
 
     while (rrCounts.length < rrHubs.length) rrCounts.push(0)
-        rrCountsDirty = false
-}
 
-function savePartial(server) {
-    try {
-        pd(server).putString(K_HUBS_JSON, JSON.stringify(rrHubs || []))
-        pd(server).putString(K_COUNTS_JSON, JSON.stringify(rrCounts || []))
-        pd(server).putString(K_CFG, String(configKey()))
-        setFinal(server, false)
-    } catch (e) {}
-}
-
-function saveFinal(server) {
-    try {
-        pd(server).putString(K_HUBS_JSON, JSON.stringify(rrHubs || []))
-        pd(server).putString(K_COUNTS_JSON, JSON.stringify(rrCounts || []))
-        pd(server).putString(K_CFG, String(configKey()))
-        setFinal(server, true)
-        setBuildRequested(server, false)
-    } catch (e) {}
-}
-
-function saveCounts(server) {
-    if (!rrCountsDirty) return
-        rrCountsDirty = false
-        try { pd(server).putString(K_COUNTS_JSON, JSON.stringify(rrCounts || [])) } catch (e) {}
-}
-
-// ---------- geometry ----------
-function dist2(a, b) { var dx = a.dx - b.dx; var dz = a.dz - b.dz; return dx * dx + dz * dz }
-
-function minDist2ToSet(p, set) {
-    var best = 2147483647
-    for (var i = 0; i < set.length; i++) {
-        var d = dist2(p, set[i])
-        if (d < best) best = d
-    }
-    return best
-}
-
-function randomAnnulusPointFromSeed(seed) {
-    var min2 = MIN_DISTANCE * MIN_DISTANCE
-    var max2 = MAX_DISTANCE * MAX_DISTANCE
-
-    for (var tries = 0; tries < 40; tries++) {
-        var t1 = lcgFloat01(seed); seed = t1.s
-        var t2 = lcgFloat01(seed); seed = t2.s
-
-        var r2 = min2 + t1.f * (max2 - min2)
-        var r = Math.sqrt(r2)
-        var a = t2.f * Math.PI * 2
-
-        var dx = Math.floor(Math.round(r * Math.cos(a)))
-        var dz = Math.floor(Math.round(r * Math.sin(a)))
-
-        var d2 = dx * dx + dz * dz
-        if (d2 >= min2 && d2 <= max2) return { seed: seed, p: { dx: dx, dz: dz } }
-    }
-
-    while (true) {
-        var rx = lcgInt(seed, -MAX_DISTANCE, MAX_DISTANCE); seed = rx.s
-        var rz = lcgInt(seed, -MAX_DISTANCE, MAX_DISTANCE); seed = rz.s
-        var dx2 = rx.v
-        var dz2 = rz.v
-        var d22 = dx2 * dx2 + dz2 * dz2
-        if (d22 >= min2 && d22 <= max2) return { seed: seed, p: { dx: dx2, dz: dz2 } }
-    }
-}
-
-function buildCandidates(n) {
-    var out = []
-    for (var i = 0; i < n; i++) out.push(randomAnnulusPointFromSeed((Math.random() * 2147483647) | 0).p)
-        return out
-}
-
-function farthestPointPlan(candidates, k) {
-    var chosen = []
-    if (candidates.length === 0) return chosen
-
-        chosen.push(candidates[randInt(0, candidates.length - 1)])
-        var used = {}
-        used[String(chosen[0].dx) + ',' + String(chosen[0].dz)] = true
-
-        while (chosen.length < k) {
-            var best = null
-            var bestD = -1
-
-            for (var i = 0; i < candidates.length; i++) {
-                var p = candidates[i]
-                var key = String(p.dx) + ',' + String(p.dz)
-                if (used[key]) continue
-
-                    var d = minDist2ToSet(p, chosen)
-                    if (d > bestD) { bestD = d; best = p }
-            }
-
-            if (!best) break
-                chosen.push(best)
-                used[String(best.dx) + ',' + String(best.dz)] = true
+        for (var j = 0; j < rrCounts.length; j++) {
+            var c = Number(rrCounts[j])
+            rrCounts[j] = (isFinite(c) && c >= 0) ? Math.floor(c) : 0
         }
+        if (rrCounts.length > rrHubs.length) rrCounts = rrCounts.slice(0, rrHubs.length)
 
-        return chosen
+            setFinal(server, rrHubs.length > 0)
 }
 
-function relToAbs(center, p) { return { x: Math.floor(center.x + p.dx), z: Math.floor(center.z + p.dz) } }
-function chunkCoord(blockCoord) { return Math.floor(blockCoord / 16) }
-
-// ---------- strict safety ----------
-function blockIdAt(level, x, y, z) {
-    try { return String(level.getBlock(x, y, z).id) } catch (e) { return 'minecraft:air' }
-}
-function isBadFluidId(id) { return has(BAD_FLUIDS, id) }
-function isStrictAir(id) { return has(SKY_AIR, id) }
-
-function isSafeGround(level, x, y, z) {
-    var id = blockIdAt(level, x, y, z)
-    if (!id) return false
-        if (isBadFluidId(id)) return false
-            if (has(SAFE_GROUND, id)) return true
-                try { return !!level.getBlock(x, y, z).hasCollision() } catch (e) { return false }
-}
-
-function isOpenSkyAbove(level, x, headY, z) {
-    var y = headY + 1
-    if (y < BOTTOM_Y) y = BOTTOM_Y
-        if (y > TOP_Y) return true
-            for (; y <= TOP_Y; y++) {
-                var id = blockIdAt(level, x, y, z)
-                if (!isStrictAir(id)) return false
-            }
-            return true
-}
-
-function hasNearbyFluids(level, x, y, z) {
-    for (var dx = -ADJ_FLUID_RADIUS; dx <= ADJ_FLUID_RADIUS; dx++) {
-        for (var dz = -ADJ_FLUID_RADIUS; dz <= ADJ_FLUID_RADIUS; dz++) {
-            var id = blockIdAt(level, x + dx, y, z + dz)
-            if (isBadFluidId(id)) return true
-        }
-    }
+function playerHasPersonalSpawn(player) {
+    try {
+        if (player.getRespawnPosition && player.getRespawnPosition()) return true
+            if (player.respawnPosition) return true
+    } catch (e) {}
     return false
 }
 
-function isValidSpawn(level, x, y, z) {
-    var feet = blockIdAt(level, x, y, z)
-    var head = blockIdAt(level, x, y + 1, z)
-    if (!isStrictAir(feet) || !isStrictAir(head)) return false
-        if (!isSafeGround(level, x, y - 1, z)) return false
-            if (hasNearbyFluids(level, x, y, z)) return false
-                if (!isOpenSkyAbove(level, x, y + 1, z)) return false
-                    return true
-}
-
-function surfaceSeedY(level, x, z) {
-    if (!(HeightmapTypes && level && typeof level.getHeight === 'function')) return null
-        try { return Math.floor(Number(level.getHeight(HeightmapTypes.MOTION_BLOCKING_NO_LEAVES, x, z))) } catch (e) { return null }
-}
-
-function findSpawnAt(level, x, z) {
-    var y0 = surfaceSeedY(level, x, z)
-    if (y0 == null) return null
-
-        var above = blockIdAt(level, x, y0 + 1, z)
-        if (isBadFluidId(above)) return null
-
-            var start = Math.min(TOP_Y, y0 + Y_SCAN_UP)
-            var end = Math.max(BOTTOM_Y, y0 - Y_SCAN_DOWN)
-
-            for (var y = start; y >= end; y--) {
-                if (isValidSpawn(level, x, y, z)) return { x: x, y: y, z: z }
-            }
-            return null
-}
-
-function findSpawnNear(level, x, z, radius) {
-    var s = findSpawnAt(level, x, z)
-    if (s) return s
-
-        for (var r = 1; r <= radius; r++) {
-            var dx, dz
-            dz = -r
-            for (dx = -r; dx <= r; dx++) { s = findSpawnAt(level, x + dx, z + dz); if (s) return s }
-            dz = r
-            for (dx = -r; dx <= r; dx++) { s = findSpawnAt(level, x + dx, z + dz); if (s) return s }
-            dx = -r
-            for (dz = -r + 1; dz <= r - 1; dz++) { s = findSpawnAt(level, x + dx, z + dz); if (s) return s }
-            dx = r
-            for (dz = -r + 1; dz <= r - 1; dz++) { s = findSpawnAt(level, x + dx, z + dz); if (s) return s }
+function chooseLeastUsedHubIndex() {
+    if (!rrHubs || rrHubs.length === 0) return -1
+        if (!rrCounts || rrCounts.length < rrHubs.length) {
+            rrCounts = []
+            while (rrCounts.length < rrHubs.length) rrCounts.push(0)
         }
-
-        return null
-}
-
-// ---------- 1x1 pad placement (exactly where you spawn) ----------
-function placeCryingPad1x1(server, hub) {
-    // hub.x/z are centered (.5), but the spawn block is integer coord under that.
-    var x = Math.floor(Number(hub.x))
-    var y = Math.floor(Number(hub.y))
-    var z = Math.floor(Number(hub.z))
-    var y0 = y - 1
-
-    // clear exactly the 1x1 feet+head column (just in case)
-    server.runCommandSilent(
-        'execute in ' + hub.dim + ' run fill ' +
-        x + ' ' + y + ' ' + z + ' ' +
-        x + ' ' + (y + 1) + ' ' + z + ' minecraft:air replace'
-    )
-
-    // place 1x1 crying obsidian directly under spawn
-    server.runCommandSilent(
-        'execute in ' + hub.dim + ' run setblock ' +
-        x + ' ' + y0 + ' ' + z + ' minecraft:crying_obsidian replace'
-    )
-}
-
-// ---------- FX (post-TP, positioned at hub for reliable distance selectors) ----------
-var FX_LIGHT_SECONDS = 30
-var FX_LIGHT_RADIUS = 13
-var FX_LIGHT_MAX = 11
-var FX_LIGHT_MIN = 5
-var FX_LIGHT_SPARSITY = 2
-var FX_TRY_Y = [1, 0, 2, 3]
-
-var FX_SOUND_RADIUS = 128
-var FX_SOUND_VOL = 6.0
-var FX_SOUND_MINVOL = 1.0
-
-var FX_SECONDS = 6
-var FX_TICK_INTERVAL = 2
-var FX_HEIGHT = 52
-var FX_RADIUS = 128
-
-function fxLightLevelAt(dist, radius) {
-    var t = 1 - (dist / radius)
-    var lv = Math.floor(FX_LIGHT_MIN + (FX_LIGHT_MAX - FX_LIGHT_MIN) * t)
-    if (lv < FX_LIGHT_MIN) lv = FX_LIGHT_MIN
-        if (lv > FX_LIGHT_MAX) lv = FX_LIGHT_MAX
-            return lv
-}
-
-function fxTryPlaceLight(server, dim, x, y, z, lv) {
-    server.runCommandSilent('execute in ' + dim + ' if block ' + x + ' ' + y + ' ' + z + ' minecraft:air run setblock ' + x + ' ' + y + ' ' + z + ' minecraft:light[level=' + lv + ']')
-    server.runCommandSilent('execute in ' + dim + ' if block ' + x + ' ' + y + ' ' + z + ' minecraft:cave_air run setblock ' + x + ' ' + y + ' ' + z + ' minecraft:light[level=' + lv + ']')
-    server.runCommandSilent('execute in ' + dim + ' if block ' + x + ' ' + y + ' ' + z + ' minecraft:void_air run setblock ' + x + ' ' + y + ' ' + z + ' minecraft:light[level=' + lv + ']')
-}
-
-function fxClearIfLight(server, dim, x, y, z) {
-    server.runCommandSilent('execute in ' + dim + ' if block ' + x + ' ' + y + ' ' + z + ' minecraft:light run setblock ' + x + ' ' + y + ' ' + z + ' minecraft:air')
-}
-
-function fxPlaceDiffuseLights(server, dim, cx, cy, cz) {
-    var placed = []
-    var R = FX_LIGHT_RADIUS
-
-    for (var x = cx - R; x <= cx + R; x++) {
-        for (var z = cz - R; z <= cz + R; z++) {
-            if ((x + z) % FX_LIGHT_SPARSITY !== 0) continue
-
-                var dx = x - cx
-                var dz = z - cz
-                var dist = Math.sqrt(dx * dx + dz * dz)
-                if (dist > R) continue
-
-                    var lv = fxLightLevelAt(dist, R)
-
-                    for (var i = 0; i < FX_TRY_Y.length; i++) {
-                        var yy = cy + FX_TRY_Y[i]
-                        fxTryPlaceLight(server, dim, x, yy, z, lv)
-                        placed.push([x, yy, z])
-                    }
+        var best = 0
+        var bestCount = rrCounts[0]
+        for (var i = 1; i < rrHubs.length; i++) {
+            if (rrCounts[i] < bestCount) { best = i; bestCount = rrCounts[i] }
         }
-    }
-
-    server.scheduleInTicks(FX_LIGHT_SECONDS * 20, function () {
-        for (var i = 0; i < placed.length; i++) {
-            var p = placed[i]
-            fxClearIfLight(server, dim, p[0], p[1], p[2])
-        }
-    })
+        return best
 }
 
-function fxPlaySpookySound(server, dim, x, y, z) {
-    // Anchor the distance selector at the hub location
-    var pre = 'execute in ' + dim + ' positioned ' + x + ' ' + y + ' ' + z + ' run '
-    var tgt = '@a[distance=..' + FX_SOUND_RADIUS + ']'
-
-    server.runCommandSilent(pre + 'playsound minecraft:block.bell.use master ' + tgt + ' ~ ~ ~ ' + (FX_SOUND_VOL * 0.75) + ' 0.75 ' + FX_SOUND_MINVOL)
-    server.runCommandSilent(pre + 'playsound minecraft:block.end_portal.spawn master ' + tgt + ' ~ ~ ~ ' + (FX_SOUND_VOL * 0.85) + ' 0.9 ' + FX_SOUND_MINVOL)
-    server.runCommandSilent(pre + 'playsound minecraft:entity.warden.ambient master ' + tgt + ' ~ ~ ~ ' + (FX_SOUND_VOL * 0.45) + ' 0.8 ' + FX_SOUND_MINVOL)
-    server.runCommandSilent(pre + 'playsound minecraft:entity.evoker.prepare_summon master ' + tgt + ' ~ ~ ~ ' + (FX_SOUND_VOL * 0.55) + ' 0.9 ' + FX_SOUND_MINVOL)
-}
-
-function fxSpookyParticles(server, dim, x, y, z) {
-    // Anchor the distance selector at the hub location
-    var pre = 'execute in ' + dim + ' positioned ' + x + ' ' + y + ' ' + z + ' run '
-    var tgt = '@a[distance=..' + FX_RADIUS + ']'
-
-    var totalTicks = FX_SECONDS * 20
-    var t = 0
-
-    for (var dx = -1; dx <= 1; dx++) {
-        for (var dz = -1; dz <= 1; dz++) {
-            server.runCommandSilent(
-                'execute in ' + dim +
-                ' positioned ' + (x + dx) + ' ' + (y + 1) + ' ' + (z + dz) +
-                ' run particle minecraft:sculk_charge_pop ~ ~ ~ 0 0 0 0 1 force ' + tgt
-            )
-        }
-    }
-
-
-    function tick() {
-        // calmer, not "blown": small spread + speed 0
-        server.runCommandSilent(pre + 'particle minecraft:end_rod ~ ~0.2 ~ 0.03 ' + (FX_HEIGHT / 2) + ' 0.03 0 6 force ' + tgt)
-        server.runCommandSilent(pre + 'particle minecraft:sculk_soul ~ ~1 ~ 0.12 0.25 0.12 0 10 force ' + tgt)
-        server.runCommandSilent(pre + 'particle minecraft:reverse_portal ~ ~1 ~ 0.18 0.30 0.18 0 10 force ' + tgt)
-
-        t += FX_TICK_INTERVAL
-        if (t <= totalTicks) server.scheduleInTicks(FX_TICK_INTERVAL, tick)
-    }
-
-    tick()
-}
-
-function rrRunFxAtHub(server, hub) {
+// -------------------- block placement --------------------
+function placeCryingObsidianBelow(level, x, y, z) {
+    x = safeInt(x, 0); y = safeInt(y, 64); z = safeInt(z, 0)
     try {
-        var dim = String(hub.dim || DIM)
-        var bx = Math.floor(Number(hub.x))
-        var by = Math.floor(Number(hub.y))
-        var bz = Math.floor(Number(hub.z))
-        var x = bx + 0.5
-        var y = by
-        var z = bz + 0.5
-
-        fxPlaySpookySound(server, dim, x, y, z)
-        fxPlaceDiffuseLights(server, dim, bx, by, bz)
-        fxSpookyParticles(server, dim, x, y, z)
-    } catch (e) {}
-}
-
-// ---------- randomized per-slot search (ring walk) ----------
-function initSlotSearchParams(slotIdx, baseRel, seedBase) {
-    var s = (seedBase ^ (slotIdx * 0x9E3779B9)) | 0
-    var a = lcgFloat01(s); s = a.s
-    var r = lcgFloat01(s); s = r.s
-    var j = lcgFloat01(s); s = j.s
-
-    var angle = a.f * Math.PI * 2
-    var radius = MIN_DISTANCE + r.f * (MAX_DISTANCE - MIN_DISTANCE)
-    var angleStep = (0.35 + j.f * 1.25) * (slotIdx % 2 === 0 ? 1 : -1)
-
-    return {
-        seed: s,
-        angle: angle,
-        radius: radius,
-        angleStep: angleStep,
-        radJitter: 0.10 + (slotIdx % 7) * 0.02
-    }
-}
-
-function nextRelForSlot(slot) {
-    var t = lcgFloat01(slot.search.seed); slot.search.seed = t.s
-    var jitter = (t.f - 0.5) * 2.0 * slot.search.radJitter
-
-    slot.search.angle = slot.search.angle + slot.search.angleStep
-    var rad = slot.search.radius * (1.0 + jitter)
-
-    if (rad < MIN_DISTANCE) rad = MIN_DISTANCE + (MIN_DISTANCE - rad)
-        if (rad > MAX_DISTANCE) rad = MAX_DISTANCE - (rad - MAX_DISTANCE)
-            if (rad < MIN_DISTANCE) rad = MIN_DISTANCE
-                if (rad > MAX_DISTANCE) rad = MAX_DISTANCE
-
-                    var dx = Math.floor(Math.round(rad * Math.cos(slot.search.angle)))
-                    var dz = Math.floor(Math.round(rad * Math.sin(slot.search.angle)))
-
-                    var d2 = dx * dx + dz * dz
-                    var min2 = MIN_DISTANCE * MIN_DISTANCE
-                    var max2 = MAX_DISTANCE * MAX_DISTANCE
-                    if (d2 < min2 || d2 > max2) {
-                        var rp = randomAnnulusPointFromSeed(slot.search.seed)
-                        slot.search.seed = rp.seed
-                        return rp.p
-                    }
-
-                    return { dx: dx, dz: dz }
-}
-
-function rerollSlot(slot) {
-    var s = slot.search.seed | 0
-    var rp = randomAnnulusPointFromSeed(s)
-    s = rp.seed
-    slot.rel = rp.p
-    slot.search.seed = s
-
-    var t = lcgFloat01(s); s = t.s
-    slot.search.angleStep = (0.45 + t.f * 1.55) * (t.f > 0.5 ? 1 : -1)
-    slot.search.radJitter = 0.10 + (t.f * 0.35)
-    slot.search.seed = s
-}
-
-// ---------- build pipeline ----------
-function initBuild(server) {
-    rrCenter = getLockedCenter(server)
-    rrBuild.gen = rrBuild.gen + 1
-    rrBuild.active = true
-    rrBuild.inflightCount = 0
-
-    var candidates = buildCandidates(CANDIDATE_POOL)
-    rrBuild.plan = farthestPointPlan(candidates, HUB_COUNT)
-
-    rrBuild.slots = []
-    var seedBase = ((Math.random() * 2147483647) | 0) ^ (rrCenter.x | 0) ^ (rrCenter.z | 0) ^ (rrBuild.gen | 0)
-
-    for (var i = 0; i < HUB_COUNT; i++) {
-        var rel = rrBuild.plan[i] || randomAnnulusPointFromSeed(seedBase ^ i).p
-        rrBuild.slots.push({
-            rel: rel,
-            done: false,
-            inflight: false,
-            attempts: 0,
-            fails: 0,
-            search: initSlotSearchParams(i, rel, seedBase),
-                           stuckTrips: 0
-        })
-    }
-
-    rrBuild.order = shuffledIndices(HUB_COUNT)
-    rrBuild.orderPos = 0
-
-    rrHubs = []
-    rrCounts = []
-    for (var j = 0; j < HUB_COUNT; j++) rrCounts.push(0)
-        rrCountsDirty = true
-        savePartial(server)
-
-        rrBroadcast(server,
-                    'Build init. center=(' + rrCenter.x + ',' + rrCenter.z + ')' +
-                    ' annulus=[' + MIN_DISTANCE + ',' + MAX_DISTANCE + ']' +
-                    ' hubs=' + HUB_COUNT +
-                    ' inflightMax=' + MAX_INFLIGHT +
-                    ' candidates=' + CANDIDATE_POOL +
-                    ' cfg=' + configKey()
+        level.getBlock(x, y - 1, z).set('minecraft:crying_obsidian')
+        return true
+    } catch (e1) {}
+    var dim = DIM_DEFAULT
+    try { dim = cleanDimId(level.dimension.location().toString()) } catch (e2) { dim = DIM_DEFAULT }
+    try {
+        level.server.runCommandSilent(
+            'execute in ' + dim + ' run setblock ' + x + ' ' + (y - 1) + ' ' + z + ' minecraft:crying_obsidian'
         )
+        return true
+    } catch (e3) {}
+    return false
 }
 
-function countDone() {
-    var d = 0
-    for (var i = 0; i < rrBuild.slots.length; i++) if (rrBuild.slots[i].done) d++
-        return d
+// -------------------- sound FX (ported from spawnfx.js) --------------------
+// Changed: target only the triggering player (NOT @a radius)
+function playSpookySoundForPlayer(level, playerName, x, y, z) {
+    // bell
+    level.runCommandSilent(
+        'playsound minecraft:block.bell.use master ' + playerName + ' ' +
+        x + ' ' + y + ' ' + z + ' ' + (SOUND_VOL * 0.75) + ' ' + SOUND_PITCH_BELL + ' ' + SOUND_MINVOL
+    )
+    // portal spawn
+    level.runCommandSilent(
+        'playsound minecraft:block.end_portal.spawn master ' + playerName + ' ' +
+        x + ' ' + y + ' ' + z + ' ' + (SOUND_VOL * 0.85) + ' ' + SOUND_PITCH_PORTAL + ' ' + SOUND_MINVOL
+    )
+    // warden ambient
+    level.runCommandSilent(
+        'playsound minecraft:entity.warden.ambient master ' + playerName + ' ' +
+        x + ' ' + y + ' ' + z + ' ' + (SOUND_VOL * 0.45) + ' ' + SOUND_PITCH_WARDEN + ' ' + SOUND_MINVOL
+    )
+    // evoker summon
+    level.runCommandSilent(
+        'playsound minecraft:entity.evoker.prepare_summon master ' + playerName + ' ' +
+        x + ' ' + y + ' ' + z + ' ' + (SOUND_VOL * 0.55) + ' ' + SOUND_PITCH_EVOKER + ' ' + SOUND_MINVOL
+    )
 }
 
-function scheduleValidate(server, slotIdx) {
-    var slot = rrBuild.slots[slotIdx]
-    if (!slot || slot.done || slot.inflight) return
-        if (rrBuild.inflightCount >= MAX_INFLIGHT) return
+// -------------------- hub FX (scheduled pulses for ~3s) --------------------
+function emitHubParticlesOnce(server, playerName, dim, x, y, z) {
+    var cx = x + 0.5
+    var cy = y + 1.0
+    var cz = z + 0.5
+    var spread = FX_SPREAD
 
-            var gen = rrBuild.gen
-            slot.inflight = true
-            slot.attempts = slot.attempts + 1
-            rrBuild.inflightCount = rrBuild.inflightCount + 1
+    if (FX_FLAME_DEBUG) {
+        server.runCommandSilent(
+            'execute in ' + dim +
+            ' run particle minecraft:flame ' +
+            cx + ' ' + cy + ' ' + cz +
+            ' ' + spread + ' ' + spread + ' ' + spread +
+            ' 0 ' + FX_COUNT_FLAME_PER_PULSE + ' force ' + playerName
+        )
+    }
 
-            var abs = relToAbs(rrCenter, slot.rel)
-            var x = abs.x
-            var z = abs.z
-            var cx = chunkCoord(x)
-            var cz = chunkCoord(z)
+    server.runCommandSilent(
+        'execute in ' + dim +
+        ' run particle minecraft:sculk_soul ' +
+        cx + ' ' + cy + ' ' + cz +
+        ' ' + spread + ' ' + spread + ' ' + spread +
+        ' 0 ' + FX_COUNT_SOUL_PER_PULSE + ' force ' + playerName
+    )
 
-            rrBroadcast(server, 'Hub ' + (slotIdx + 1) + '/' + HUB_COUNT +
-            ' try ' + slot.attempts +
-            ' base=(' + x + ',' + z + ')' +
-            ' chunk=(' + cx + ',' + cz + ')' +
-            ' inflight=' + rrBuild.inflightCount + '/' + MAX_INFLIGHT
+    server.runCommandSilent(
+        'execute in ' + dim +
+        ' run particle minecraft:sculk_charge ' +
+        cx + ' ' + cy + ' ' + cz +
+        ' ' + spread + ' ' + spread + ' ' + spread +
+        ' 0 ' + FX_COUNT_CHARGE_PER_PULSE + ' force ' + playerName
+    )
+
+    server.runCommandSilent(
+        'execute in ' + dim +
+        ' run particle minecraft:sculk_charge_pop ' +
+        cx + ' ' + cy + ' ' + cz +
+        ' ' + spread + ' ' + spread + ' ' + spread +
+        ' 0 ' + FX_COUNT_POP_PER_PULSE + ' force ' + playerName
+    )
+
+    server.runCommandSilent(
+        'execute in ' + dim +
+        ' run particle minecraft:soul_fire_flame ' +
+        cx + ' ' + cy + ' ' + cz +
+        ' ' + spread + ' ' + spread + ' ' + spread +
+        ' 0 ' + FX_COUNT_BLUE_PER_PULSE + ' force ' + playerName
+    )
+}
+
+function spawnHubParticlesForPlayer(server, player, dim, x, y, z) {
+    x = safeInt(x, 0); y = safeInt(y, 64); z = safeInt(z, 0)
+    dim = cleanDimId(dim)
+
+    var who = player.name.string
+    var pulses = Math.max(1, Math.floor(FX_DURATION_TICKS / Math.max(1, FX_PULSE_EVERY_TICKS)))
+
+    for (var i = 0; i < pulses; i++) {
+        (function (k) {
+            server.scheduleInTicks(k * FX_PULSE_EVERY_TICKS, function () {
+                emitHubParticlesOnce(server, who, dim, x, y, z)
+            })
+        })(i)
+    }
+}
+
+function playHubSoundForPlayer(server, player, dim, x, y, z) {
+    dim = cleanDimId(dim)
+    var level = server.getLevel(dim)
+    if (!level) return
+
+        // Same position semantics as FX: centered above pad
+        var sx = x + 0.5
+        var sy = y + 1.0
+        var sz = z + 0.5
+
+        playSpookySoundForPlayer(level, player.name.string, sx, sy, sz)
+}
+
+// -------------------- teleport + pad + FX --------------------
+function teleportPlayerToHubAndFx(server, player, hub) {
+    if (!hub) return
+        if (!isFinite(hub.x) || !isFinite(hub.y) || !isFinite(hub.z)) return
+
+            var dim = cleanDimId(String(hub.dim || DIM_DEFAULT))
+            var xi = safeInt(hub.x, 0)
+            var yi = safeInt(hub.y, 64)
+            var zi = safeInt(hub.z, 0)
+
+            server.runCommandSilent(
+                'execute in ' + dim + ' run tp ' + player.name.string + ' ' + (xi + 0.5) + ' ' + yi + ' ' + (zi + 0.5)
             )
 
-            server.runCommandSilent('execute in ' + DIM + ' run forceload add ' + cx + ' ' + cz)
+            server.scheduleInTicks(1, function () {
+                var level = server.getLevel(dim)
+                if (!level) return
 
-            server.scheduleInTicks(FORCELOAD_WAIT_TICKS, function () {
-                function cleanup() {
-                    try { server.runCommandSilent('execute in ' + DIM + ' run forceload remove ' + cx + ' ' + cz) } catch (e0) {}
-                }
-
-                if (rrBuild.gen !== gen) {
-                    cleanup()
-                    slot.inflight = false
-                    rrBuild.inflightCount = Math.max(0, rrBuild.inflightCount - 1)
-                    return
-                }
-
-                var level = server.overworld()
-                var spot = null
-                var reason = 'no_valid_surface_open_sky'
-
-                try {
-                    var found = findSpawnNear(level, x, z, NEARBY_SEARCH_RADIUS)
-                    if (found) {
-                        spot = { dim: DIM, x: found.x + 0.5, y: found.y, z: found.z + 0.5 }
-                        reason = 'ok'
-                        try { placeCryingPad1x1(server, spot) } catch (ePad) {}
-                    }
-                } catch (e1) {
-                    spot = null
-                    reason = 'exception'
-                }
-
-                cleanup()
-
-                slot.inflight = false
-                rrBuild.inflightCount = Math.max(0, rrBuild.inflightCount - 1)
-
-                if (rrBuild.gen !== gen) return
-
-                    if (spot) {
-                        slot.done = true
-                        rrHubs[slotIdx] = spot
-                        rrCounts[slotIdx] = 0
-                        rrCountsDirty = true
-                        savePartial(server)
-
-                        var gx = Math.floor(spot.x)
-                        var gz = Math.floor(spot.z)
-                        var ground = blockIdAt(level, gx, spot.y - 1, gz)
-
-                        rrBroadcast(server, 'Hub ' + (slotIdx + 1) + ' OK pos=(' + gx + ',' + spot.y + ',' + gz + ')' +
-                        ' ground=' + ground +
-                        ' done=' + countDone() + '/' + HUB_COUNT
-                        )
-                        return
-                    }
-
-                    slot.fails = slot.fails + 1
-
-                    if (LOG_EACH_FAIL || (slot.fails % LOG_FAIL_EVERY === 0) || (slot.attempts >= MAX_VALIDATE_RETRIES_PER_HUB)) {
-                        rrBroadcast(server, 'Hub ' + (slotIdx + 1) + ' FAIL reason=' + reason +
-                        ' fails=' + slot.fails +
-                        ' tries=' + slot.attempts + '/' + MAX_VALIDATE_RETRIES_PER_HUB
-                        )
-                    }
-
-                    slot.rel = nextRelForSlot(slot)
-
-                    if (slot.attempts >= MAX_VALIDATE_RETRIES_PER_HUB) {
-                        slot.stuckTrips = slot.stuckTrips + 1
-                        rrBroadcast(server, 'Hub ' + (slotIdx + 1) + ' STUCK x' + slot.attempts + '. Rerolling search (trip ' + slot.stuckTrips + ').')
-                        slot.attempts = 0
-                        slot.fails = 0
-                        rerollSlot(slot)
-                    }
+                    placeCryingObsidianBelow(level, xi, yi, zi)
+                    playHubSoundForPlayer(server, player, dim, xi, yi, zi)
+                    spawnHubParticlesForPlayer(server, player, dim, xi, yi, zi)
             })
 }
 
-function stepBuild(server) {
-    if (!rrBuild.active) return
-        if (!isEnabled(server)) return
-            if (!isBuildRequested(server)) return
-                if (isFinal(server)) { rrBuild.active = false; return }
-
-                var done = countDone()
-                if (done >= HUB_COUNT) {
-                    var finalHubs = []
-                    var finalCounts = []
-                    for (var i = 0; i < HUB_COUNT; i++) {
-                        if (rrHubs[i]) { finalHubs.push(rrHubs[i]); finalCounts.push(0) }
-                    }
-                    rrHubs = finalHubs
-                    rrCounts = finalCounts
-                    rrCountsDirty = true
-
-                    rrBroadcast(server, 'Build complete. hubs=' + rrHubs.length + '/' + HUB_COUNT + ' Saving final.')
-                    saveFinal(server)
-                    rrBuild.active = false
-                    return
-                }
-
-                if (!rrBuild.order || rrBuild.order.length !== HUB_COUNT) {
-                    rrBuild.order = shuffledIndices(HUB_COUNT)
-                    rrBuild.orderPos = 0
-                }
-
-                var guard = 0
-                while (rrBuild.inflightCount < MAX_INFLIGHT && guard < HUB_COUNT) {
-                    var idx = rrBuild.order[rrBuild.orderPos]
-                    rrBuild.orderPos = rrBuild.orderPos + 1
-                    if (rrBuild.orderPos >= rrBuild.order.length) {
-                        rrBuild.order = shuffledIndices(HUB_COUNT)
-                        rrBuild.orderPos = 0
-                    }
-
-                    var s2 = rrBuild.slots[idx]
-                    if (s2 && !s2.done && !s2.inflight) scheduleValidate(server, idx)
-                        guard = guard + 1
-                }
+// -------------------- tellraw list --------------------
+function tellrawPlayer(server, name, json) {
+    try { server.runCommandSilent('tellraw ' + name + ' ' + JSON.stringify(json)) } catch (e) {}
 }
 
-// ---------- respawn redirect ----------
-function chooseLeastUsedHubIndex() {
-    if (!rrHubs || rrHubs.length === 0) return -1
-        while (rrCounts.length < rrHubs.length) rrCounts.push(0)
+function sendHubListTo(server, name) {
+    if (!name) return
+        if (!rrHubs || rrHubs.length === 0) {
+            tellrawPlayer(server, name, { text: 'Respawn hubs: (none)', color: 'gold' })
+            return
+        }
 
-            var bestC = 2147483647
-            var best = []
+        tellrawPlayer(server, name, { text: 'Respawn hubs (' + rrHubs.length + '):', color: 'gold' })
+        for (var i = 0; i < rrHubs.length; i++) {
+            var h = rrHubs[i]
+            var dim = cleanDimId(String(h.dim || DIM_DEFAULT))
+            var x = safeInt(h.x, 0) + 0.5
+            var y = safeInt(h.y, 64)
+            var z = safeInt(h.z, 0) + 0.5
+            var run = 'rrhubs tp ' + i
 
-            for (var i = 0; i < rrHubs.length; i++) {
-                var c = Math.floor(Number(rrCounts[i]))
-                if (c < bestC) { bestC = c; best = [i] }
-                else if (c === bestC) best.push(i)
+            tellrawPlayer(server, name, {
+                text: '',
+                extra: [
+                    { text: '[' + i + '] ', color: 'gray' },
+                    {
+                        text: dim + ' ' + x + ' ' + y + ' ' + z,
+                        color: 'aqua',
+                        underlined: true,
+                        clickEvent: { action: 'run_command', value: '/' + run },
+                        hoverEvent: { action: 'show_text', value: { text: 'Click to teleport\n/' + run, color: 'yellow' } }
+                    }
+                ]
+            })
+        }
+}
+
+// -------------------- manual hub management --------------------
+function addHubAtPlayer(server, player) {
+    var level = player.level
+    var dim = DIM_DEFAULT
+    try { dim = cleanDimId(level.dimension.location().toString()) } catch (e) { dim = DIM_DEFAULT }
+
+    var x = safeInt(player.blockX, safeInt(player.x, 0))
+    var y = safeInt(player.blockY, safeInt(player.y, 64))
+    var z = safeInt(player.blockZ, safeInt(player.z, 0))
+
+    var hub = normalizeHub({ dim: dim, x: x, y: y, z: z })
+    if (!hub) return
+
+        for (var i = 0; i < rrHubs.length; i++) {
+            var h = rrHubs[i]
+            if (h.x === hub.x && h.y === hub.y && h.z === hub.z && h.dim === hub.dim) {
+                rrBroadcast(server, 'Hub already exists here.')
+                return
             }
+        }
 
-            var idx = (best.length === 1) ? best[0] : best[randInt(0, best.length - 1)]
-            rrCounts[idx] = Math.floor(Number(rrCounts[idx])) + 1
-            rrCountsDirty = true
-            return idx
+        rrHubs.push(hub)
+        rrCounts.push(0)
+
+        placeCryingObsidianBelow(level, x, y, z)
+        playHubSoundForPlayer(server, player, dim, x, y, z)
+        spawnHubParticlesForPlayer(server, player, dim, x, y, z)
+
+        saveHubs(server)
+        saveCounts(server)
+        setFinal(server, rrHubs.length > 0)
+
+        rrBroadcast(server, 'Hub added at ' + dim + ' ' + x + ' ' + y + ' ' + z)
 }
 
-function teleportPlayerToHubAndFx(server, player, hub) {
-    var name = escSelector(player.username)
-    var x = Number(hub.x)
-    var y = Number(hub.y) + 0.1
-    var z = Number(hub.z)
+function removeHubAtPlayer(server, player) {
+    var dim = DIM_DEFAULT
+    try { dim = cleanDimId(player.level.dimension.location().toString()) } catch (e) { dim = DIM_DEFAULT }
 
-    // TP as the player (sets their actual position)
-    server.runCommandSilent(
-        'execute as @a[name="' + name + '"] in ' + hub.dim + ' run tp @s ' + x + ' ' + y + ' ' + z
-    )
+    var x = safeInt(player.blockX, safeInt(player.x, 0))
+    var y = safeInt(player.blockY, safeInt(player.y, 64))
+    var z = safeInt(player.blockZ, safeInt(player.z, 0))
 
-    // Let chunk + client settle, then "lock" them again and zero motion, then run FX.
-    server.scheduleInTicks(6, function () {
-        // second TP to same spot (kills most correction jitter)
-        server.runCommandSilent(
-            'execute as @a[name="' + name + '"] in ' + hub.dim + ' run tp @s ' + x + ' ' + y + ' ' + z
-        )
+    var removed = false
+    for (var i = 0; i < rrHubs.length; i++) {
+        var h = rrHubs[i]
+        if (h.x === x && h.y === y && h.z === z && h.dim === dim) {
+            rrHubs.splice(i, 1)
+            rrCounts.splice(i, 1)
+            removed = true
+            break
+        }
+    }
 
-        // hard stop residual motion (prevents immediate drift away from the FX origin)
-        // (Motion is valid for players; if a server blocks it, this just fails silently.)
-        server.runCommandSilent(
-            'execute as @a[name="' + name + '"] in ' + hub.dim + ' run data merge entity @s {Motion:[0.0d,0.0d,0.0d],FallDistance:0.0f}'
-        )
+    if (!removed) {
+        rrBroadcast(server, 'No hub found at this location.')
+        return
+    }
 
-        // FX at the destination
-        rrRunFxAtHub(server, hub)
-    })
+    saveHubs(server)
+    saveCounts(server)
+    setFinal(server, rrHubs.length > 0)
+
+    rrBroadcast(server, 'Hub removed at ' + dim + ' ' + x + ' ' + y + ' ' + z)
 }
 
+function removeHubByIndex(server, idx) {
+    idx = safeInt(idx, -1)
+    if (idx < 0 || idx >= rrHubs.length) {
+        rrBroadcast(server, 'Index out of range.')
+        return
+    }
+    rrHubs.splice(idx, 1)
+    rrCounts.splice(idx, 1)
 
-function playerHasPersonalSpawn(player) {
-    var nbt = (player.fullNBT != null) ? player.fullNBT : player.nbt
-    if (!nbt) return false
-        return nbt.SpawnX != null || nbt.SpawnY != null || nbt.SpawnZ != null || nbt.SpawnDimension != null
+    saveHubs(server)
+    saveCounts(server)
+    setFinal(server, rrHubs.length > 0)
+
+    rrBroadcast(server, 'Removed hub index ' + idx)
 }
 
-// ---------- actions ----------
-function actionEnable(server) {
-    setEnabled(server, true)
-    setBuildRequested(server, true)
-    setFinal(server, false)
-
-    var c = lockCenterToCurrentWorldSpawn(server)
-
-    rrBuild.gen = rrBuild.gen + 1
-    rrBuild.active = false
-    rrBuild.slots = []
-    rrBuild.inflightCount = 0
-    rrBuild.order = null
-    rrBuild.orderPos = 0
-
+function clearAll(server) {
     rrHubs = []
     rrCounts = []
-    rrCountsDirty = false
-
-    try {
-        pd(server).putString(K_HUBS_JSON, '[]')
-        pd(server).putString(K_COUNTS_JSON, '[]')
-        pd(server).putString(K_CFG, String(configKey()))
-    } catch (e) {}
-
-    rrBroadcast(server, 'Enabled. Locked center=(' + c.x + ',' + c.z + '). Starting build.')
-    initBuild(server)
+    pd(server).putString(K_HUBS_JSON, '[]')
+    pd(server).putString(K_COUNTS_JSON, '[]')
+    setFinal(server, false)
+    rrBroadcast(server, 'Cleared all hubs.')
 }
 
-function actionRebuild(server) { actionEnable(server) }
-
-function actionCancel(server) {
-    setBuildRequested(server, false)
-    rrBuild.gen = rrBuild.gen + 1
-    rrBuild.active = false
-    rrBuild.slots = []
-    rrBuild.inflightCount = 0
-    rrBuild.order = null
-    rrBuild.orderPos = 0
-    rrBroadcast(server, 'Cancelled build.')
+// -------------------- actions --------------------
+function actionEnable(server) {
+    loadState(server)
+    setEnabled(server, true)
+    rrBroadcast(server, 'Enabled. Hubs=' + rrHubs.length)
 }
 
 function actionDisable(server) {
     setEnabled(server, false)
-    setBuildRequested(server, false)
-    rrBuild.gen = rrBuild.gen + 1
-    rrBuild.active = false
-    rrBuild.slots = []
-    rrBuild.inflightCount = 0
-    rrBuild.order = null
-    rrBuild.orderPos = 0
-    rrBroadcast(server, 'Disabled. Respawn redirects off. Hubs kept on disk.')
-}
-
-function actionReset(server) {
-    setEnabled(server, false)
-    setBuildRequested(server, false)
-    setFinal(server, false)
-
-    rrBuild.gen = rrBuild.gen + 1
-    rrBuild.active = false
-    rrBuild.slots = []
-    rrBuild.inflightCount = 0
-    rrBuild.order = null
-    rrBuild.orderPos = 0
-
-    rrCenter = null
-    rrHubs = []
-    rrCounts = []
-    rrCountsDirty = false
-
-    try {
-        var d = pd(server)
-        d.putBoolean(K_CENTER_LOCKED, false)
-        d.putInt(K_CENTER_X, 0)
-        d.putInt(K_CENTER_Z, 0)
-        d.putString(K_HUBS_JSON, '[]')
-        d.putString(K_COUNTS_JSON, '[]')
-        d.putString(K_CFG, '')
-    } catch (e) {}
-
-    rrBroadcast(server, 'Reset complete. Everything cleared and disabled.')
+    rrBroadcast(server, 'Disabled.')
 }
 
 function actionStatus(server) {
     loadState(server)
-
-    var enabled = isEnabled(server)
-    var requested = isBuildRequested(server)
-    var fin = isFinal(server)
-    var cn = getLockedCenter(server)
-
-    var locked = false
-    try { locked = pd(server).getBoolean(K_CENTER_LOCKED) } catch (e) {}
-
-    var inflight = rrBuild.inflightCount || 0
-    var done = (rrBuild.slots && rrBuild.slots.length) ? countDone() : 0
-
     rrBroadcast(server,
-                'Status: enabled=' + enabled +
-                ' build_requested=' + requested +
-                ' final=' + fin +
-                ' center_locked=' + locked +
-                ' center=(' + cn.x + ',' + cn.z + ')' +
-                ' hubs_saved=' + ((rrHubs && rrHubs.length) || 0) +
-                ' build_done=' + done + '/' + HUB_COUNT +
-                ' inflight=' + inflight + '/' + MAX_INFLIGHT +
-                ' cfg=' + configKey()
+                'Status: enabled=' + isEnabled(server) +
+                ' hubs=' + (rrHubs ? rrHubs.length : 0) +
+                ' final=' + isFinal(server)
     )
+    var name = getNotifyName(server)
+    if (name) sendHubListTo(server, name)
 }
 
-// ---------- events ----------
-ServerEvents.loaded(function (event) {
-    rrServer = event.server
-    rrLog('Script loaded: ' + SCRIPT_VERSION)
-})
-
+// -------------------- events --------------------
 PlayerEvents.respawned(function (event) {
     var player = event.player
     var server = event.server
 
     if (!isEnabled(server)) return
-
-        // If they have a bed/respawn anchor set, let vanilla handle it (you said: beds still for sleeping)
         if (playerHasPersonalSpawn(player)) return
 
-            if (!isFinal(server)) return
+            if (!rrHubs || rrHubs.length === 0) loadState(server)
+                if (!rrHubs || rrHubs.length === 0) return
+                    if (!isFinal(server)) return
 
-                if (!rrHubs || rrHubs.length === 0) loadState(server)
-                    if (!rrHubs || rrHubs.length === 0) return
-
-                        // Redirect after respawn
                         server.scheduleInTicks(1, function () {
                             if (!isEnabled(server)) return
-                                if (!isFinal(server)) return
-                                    if (!rrHubs || rrHubs.length === 0) return
+                                if (!rrHubs || rrHubs.length === 0) return
 
-                                        var idx = chooseLeastUsedHubIndex()
-                                        if (idx < 0) return
-                                            teleportPlayerToHubAndFx(server, player, rrHubs[idx])
+                                    var idx = chooseLeastUsedHubIndex()
+                                    if (idx < 0) return
+
+                                        rrCounts[idx] = (rrCounts[idx] || 0) + 1
+                                        saveCounts(server)
+
+                                        teleportPlayerToHubAndFx(server, player, rrHubs[idx])
                         })
 })
 
 ServerEvents.tick(function (event) {
     var server = event.server
+    try {
+        var now = safeInt(server.tickCount, 0)
+        var every = safeInt(FX_COUNTS_EVERY_TICKS, 200)
+        if (every < 20) every = 20
+            if (now % every === 0) saveCounts(server)
+    } catch (e) {
+        rrLog(server, 'tick crash: ' + e)
+        throw e
+    }
+})
 
-    if (isEnabled(server) && isBuildRequested(server) && !isFinal(server)) {
-        if (!rrBuild.active) {
-            rrBroadcast(server, 'Build requested. Starting builder now.')
-            initBuild(server)
-        }
-        stepBuild(server)
+// -------------------- Brigadier commands --------------------
+ServerEvents.commandRegistry(function (event) {
+    var Commands = Java.loadClass('net.minecraft.commands.Commands')
+    var IntegerArgumentType = Java.loadClass('com.mojang.brigadier.arguments.IntegerArgumentType')
+
+    function srcPlayer(ctx) {
+        try { return ctx.getSource().getPlayerOrException() } catch (e) { return null }
     }
 
-    var SAVE_EVERY = (typeof SAVE_COUNTS_EVERY_TICKS === 'number') ? SAVE_COUNTS_EVERY_TICKS : 200
-    if (server.tickCount % SAVE_EVERY === 0) saveCounts(server)
-})
+    function srcServer(ctx) {
+        try { return ctx.getSource().getServer() } catch (e) { return null }
+    }
 
-// ---------- custom commands ----------
-ServerEvents.customCommand('rrhubs_enable', function (event) {
-    noteInvoker(event)
-    rrBroadcast(event.server, 'Command: enable')
-    actionEnable(event.server)
-})
-ServerEvents.customCommand('rrhubs_rebuild', function (event) {
-    noteInvoker(event)
-    rrBroadcast(event.server, 'Command: rebuild')
-    actionRebuild(event.server)
-})
-ServerEvents.customCommand('rrhubs_status', function (event) {
-    noteInvoker(event)
-    rrBroadcast(event.server, 'Command: status')
-    actionStatus(event.server)
-})
-ServerEvents.customCommand('rrhubs_cancel', function (event) {
-    noteInvoker(event)
-    rrBroadcast(event.server, 'Command: cancel')
-    actionCancel(event.server)
-})
-ServerEvents.customCommand('rrhubs_disable', function (event) {
-    noteInvoker(event)
-    rrBroadcast(event.server, 'Command: disable')
-    actionDisable(event.server)
-})
-ServerEvents.customCommand('rrhubs_reset', function (event) {
-    noteInvoker(event)
-    rrBroadcast(event.server, 'Command: reset')
-    actionReset(event.server)
+    function srcName(ctx) {
+        var p = srcPlayer(ctx)
+        if (!p) return ''
+            try { return String(p.getName().getString()) } catch (e) { return '' }
+    }
+
+    event.register(
+        Commands.literal('rrhubs')
+        .requires(function (src) { return src.hasPermission(2) })
+
+        .then(
+            Commands.literal('enable')
+            .executes(function (ctx) {
+                var s = srcServer(ctx); if (!s) return 0
+                var name = srcName(ctx); if (name) setNotifyName(s, name)
+                actionEnable(s)
+                return 1
+            })
+        )
+
+        .then(
+            Commands.literal('disable')
+            .executes(function (ctx) {
+                var s = srcServer(ctx); if (!s) return 0
+                actionDisable(s)
+                return 1
+            })
+        )
+
+        .then(
+            Commands.literal('status')
+            .executes(function (ctx) {
+                var s = srcServer(ctx); if (!s) return 0
+                var name = srcName(ctx); if (name) setNotifyName(s, name)
+                actionStatus(s)
+                return 1
+            })
+        )
+
+        .then(
+            Commands.literal('list')
+            .executes(function (ctx) {
+                var s = srcServer(ctx); if (!s) return 0
+                var name = srcName(ctx); if (!name) return 0
+                loadState(s)
+                sendHubListTo(s, name)
+                return 1
+            })
+        )
+
+        .then(
+            Commands.literal('tp')
+            .then(
+                Commands.argument('index', IntegerArgumentType.integer(0, 255))
+                .executes(function (ctx) {
+                    var s = srcServer(ctx)
+                    var p = srcPlayer(ctx)
+                    if (!s || !p) return 0
+
+                        loadState(s)
+                        if (!rrHubs || rrHubs.length === 0) return 0
+
+                            var idx = IntegerArgumentType.getInteger(ctx, 'index')
+                            if (idx < 0 || idx >= rrHubs.length) return 0
+
+                                teleportPlayerToHubAndFx(s, p, rrHubs[idx])
+                                return 1
+                })
+            )
+        )
+
+        .then(
+            Commands.literal('add_here')
+            .executes(function (ctx) {
+                var s = srcServer(ctx)
+                var p = srcPlayer(ctx)
+                if (!s || !p) return 0
+
+                    loadState(s)
+                    addHubAtPlayer(s, p)
+
+                    var name = srcName(ctx)
+                    if (name) sendHubListTo(s, name)
+                        return 1
+            })
+        )
+
+        .then(
+            Commands.literal('remove_here')
+            .executes(function (ctx) {
+                var s = srcServer(ctx)
+                var p = srcPlayer(ctx)
+                if (!s || !p) return 0
+
+                    loadState(s)
+                    removeHubAtPlayer(s, p)
+
+                    var name = srcName(ctx)
+                    if (name) sendHubListTo(s, name)
+                        return 1
+            })
+        )
+
+        .then(
+            Commands.literal('remove_index')
+            .then(
+                Commands.argument('index', IntegerArgumentType.integer(0, 255))
+                .executes(function (ctx) {
+                    var s = srcServer(ctx)
+                    if (!s) return 0
+
+                        loadState(s)
+                        var idx = IntegerArgumentType.getInteger(ctx, 'index')
+                        removeHubByIndex(s, idx)
+
+                        var name = srcName(ctx)
+                        if (name) sendHubListTo(s, name)
+                            return 1
+                })
+            )
+        )
+
+        .then(
+            Commands.literal('clear')
+            .executes(function (ctx) {
+                var s = srcServer(ctx); if (!s) return 0
+                clearAll(s)
+
+                var name = srcName(ctx)
+                if (name) sendHubListTo(s, name)
+                    return 1
+            })
+        )
+    )
 })

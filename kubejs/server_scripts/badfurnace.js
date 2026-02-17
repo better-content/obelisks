@@ -1,12 +1,4 @@
 // kubejs/server_scripts/badfurnace.js
-// Forge 1.20.1 + KubeJS 6 (Rhino-safe ES5)
-//
-// Replace ONLY ore/raw/raw_block -> ingot cooking recipes into -> nuggets.
-// - If input is ore OR raw item: output 4 nuggets
-// - If input is raw storage block: output 36 nuggets
-// - Keeps originals if nugget missing or ingredient can't be converted
-// - Uses KubeJS builder so counted outputs are valid
-
 ;(function () {
     var DEBUG = true
     var NUGGETS_ORE_RAW = 4
@@ -70,8 +62,6 @@
                 return null
     }
 
-    // ---------- matching: ore/raw/raw_block ----------
-
     function tagPath(tagId) {
         var t = '' + tagId
         var parts = t.split(':')
@@ -79,7 +69,6 @@
     }
 
     function tagMatchesOreOrRaw(tagId, base) {
-        // .../ores/<base> or .../raw_materials/<base>
         try {
             var seg = tagPath(tagId).split('/')
             if (seg.length < 2) return false
@@ -87,15 +76,10 @@
                 var name = seg[seg.length - 1]
                 if (name !== base) return false
                     return (kind === 'ores' || kind === 'raw_materials')
-        } catch (e) {
-            return false
-        }
+        } catch (e) { return false }
     }
 
     function tagMatchesRawBlock(tagId, base) {
-        // Common tag shapes:
-        // - storage_blocks/raw_iron  (i.e., raw_<base>)
-        // - storage_blocks/iron_raw  (some mods)
         try {
             var seg = tagPath(tagId).split('/')
             if (seg.length < 2) return false
@@ -103,15 +87,10 @@
                 var name = seg[seg.length - 1]
                 if (kind !== 'storage_blocks') return false
                     return (name === ('raw_' + base) || name === (base + '_raw'))
-        } catch (e) {
-            return false
-        }
+        } catch (e) { return false }
     }
 
     function itemMatchesOreOrRaw(itemId, base) {
-        // Items:
-        // - <base>_ore, deepslate_<base>_ore
-        // - raw_<base>, <base>_raw
         try {
             var p = splitId(itemId).path
             if (p === (base + '_ore')) return true
@@ -123,8 +102,6 @@
     }
 
     function itemMatchesRawBlock(itemId, base) {
-        // Items:
-        // - raw_<base>_block, <base>_raw_block
         try {
             var p = splitId(itemId).path
             if (p === ('raw_' + base + '_block')) return true
@@ -138,7 +115,6 @@
         if (!ingEl) return null
 
             if (ingEl.isJsonArray && ingEl.isJsonArray()) {
-                // Prefer raw_block if any option is raw_block
                 var arr = ingEl.getAsJsonArray()
                 var i, k, sawOreRaw = false
                 for (i = 0; i < arr.size(); i++) {
@@ -174,29 +150,40 @@
             return null
     }
 
+    // FIXED: build OR ingredients properly instead of Ingredient.of(''+jsonArray)
     function ingredientToKjs(ingEl) {
-        // Convert common cooking ingredient JSON into a KubeJS Ingredient
-        // Supports: {item:"x"}, {tag:"forge:ores/x"}, or [ ... ] (OR list)
         if (!ingEl) return null
 
             if (ingEl.isJsonArray && ingEl.isJsonArray()) {
-                try { return Ingredient.of('' + ingEl) } catch (e0) { return null }
+                try {
+                    var arr = ingEl.getAsJsonArray()
+                    var parts = []
+                    var i
+                    for (i = 0; i < arr.size(); i++) {
+                        var sub = arr.get(i)
+                        if (sub && sub.isJsonObject && sub.isJsonObject()) {
+                            var obj = sub.getAsJsonObject()
+                            if (obj.has('item')) parts.push('' + obj.get('item').getAsString())
+                                else if (obj.has('tag')) parts.push('#' + obj.get('tag').getAsString())
+                        }
+                    }
+                    if (parts.length === 0) return null
+                        return Ingredient.of(parts)
+                } catch (e0) { return null }
             }
 
             if (ingEl.isJsonObject && ingEl.isJsonObject()) {
-                var obj = ingEl.getAsJsonObject()
-                if (obj.has('item')) {
-                    try { return Ingredient.of('' + obj.get('item').getAsString()) } catch (e1) { return null }
+                var obj2 = ingEl.getAsJsonObject()
+                if (obj2.has('item')) {
+                    try { return Ingredient.of('' + obj2.get('item').getAsString()) } catch (e1) { return null }
                 }
-                if (obj.has('tag')) {
-                    try { return Ingredient.of('#' + obj.get('tag').getAsString()) } catch (e2) { return null }
+                if (obj2.has('tag')) {
+                    try { return Ingredient.of('#' + obj2.get('tag').getAsString()) } catch (e2) { return null }
                 }
             }
 
-            try { return Ingredient.of('' + ingEl) } catch (e3) { return null }
+            return null
     }
-
-    // ---------- main ----------
 
     ServerEvents.recipes(function (event) {
         var changed = 0
@@ -234,16 +221,13 @@
                             var outCount = (kind === 'raw_block') ? NUGGETS_RAW_BLOCK : NUGGETS_ORE_RAW
                             var out = Item.of(nuggetId, outCount)
 
-                            // Define replacement first; remove original after
-                            if (typeId === 'minecraft:smelting') {
-                                event.smelting(out, ing).id(rid)
-                            } else {
-                                event.blasting(out, ing).id(rid)
-                            }
+                            // safer ordering
                             event.remove({ id: rid })
+                            if (typeId === 'minecraft:smelting') event.smelting(out, ing).id(rid)
+                                else event.blasting(out, ing).id(rid)
 
-                            changed++
-                            if (DEBUG) log(typeId + ' ' + rid + ' : ' + resultId + ' (' + kind + ') -> ' + outCount + 'x ' + nuggetId)
+                                    changed++
+                                    if (DEBUG) log(typeId + ' ' + rid + ' : ' + resultId + ' (' + kind + ') -> ' + outCount + 'x ' + nuggetId)
                 } catch (e) {
                     errored++
                     warn('ERROR at ' + rid + ': ' + e)

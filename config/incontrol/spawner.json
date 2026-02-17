@@ -1,26 +1,124 @@
 [
   {
-    "persecond": 1.0,
-    "attempts": 25,
-    "amount": { "minimum": 1, "maximum": 2 },
-    "mobsfrombiome": "monster",
+    "mob": [
+
+  "born_in_chaos_v1:baby_skeleton",
+  "born_in_chaos_v1:baby_spider",
+  "born_in_chaos_v1:decaying_zombie",
+  "born_in_chaos_v1:decrepit_skeleton",
+
+  "born_in_chaos_v1:lifestealer",
+  "born_in_chaos_v1:scarlet_persecutor",
+  "born_in_chaos_v1:zombie_fisherman",
+  "born_in_chaos_v1:zombie_lumberjack",
+
+  "deeperdarker:sludge",
+  "deeperdarker:shattered",
+  "deeperdarker:sculk_centipede",
+  "deeperdarker:sculk_leech",
+  "deeperdarker:sculk_snapper",
+
+  "majruszsdifficulty:tank",
+  "majruszsdifficulty:cursed_armor",
+  "majruszsdifficulty:illusioner",
+  "majruszsdifficulty:cerberus",
+
+  "alexsmobs:crimson_mosquito",
+  "alexsmobs:murmur",
+  "alexsmobs:skreecher",
+  "alexsmobs:underminer",
+
+  "fallout_wastelands_:radroach",
+  "fallout_wastelands_:radscorpion",
+  "fallout_wastelands_:gecko",
+  "fallout_wastelands_:floater",
+  "fallout_wastelands_:lobotomite_walker",
+
+  "undergarden:rotwalker",
+  "undergarden:rotling",
+  "undergarden:rotbeast",
+  "undergarden:dweller",
+  "undergarden:forgotten",
+  "undergarden:brute",
+  "undergarden:nargoyle",
+  "undergarden:muncher",
+  "undergarden:smog_mog"
+]
+,
+    "persecond": 20,
+    "attempts": 100,
+    "amount": { "minimum": 2, "maximum": 4 },
+
     "conditions": {
       "dimension": "minecraft:overworld",
-
-      "mindist": 12.0,
-      "maxdist": 64.0,
-
-      "minheight": 30,
-      "maxheight": 63,
-
-      "inwater": true,
+      "mindist": 25,
+      "maxdist": 100,
+      "minheight": 60,
+      "maxheight": 320,
+      "maxthis": 15,
 
       "and": {
-        "biometags": ["minecraft:is_ocean", "forge:is_ocean"],
+        "biome":[
+      "alexscaves:abyssal_chasm",
+      "alexscaves:forlorn_hollows",
+      "alexscaves:toxic_caves",
+      "biomesoplenty:bog",
+      "biomesoplenty:crag",
+      "biomesoplenty:dead_forest",
+      "biomesoplenty:end_corruption",
+      "biomesoplenty:erupting_inferno",
+      "biomesoplenty:muskeg",
+      "biomesoplenty:ominous_woods",
+      "biomesoplenty:spider_nest",
+      "biomesoplenty:visceral_heap",
+      "biomesoplenty:volcanic_plains",
+      "biomesoplenty:volcano",
+      "biomesoplenty:wasteland",
+      "biomesoplenty:wasteland_steppe",
+      "biomesoplenty:withered_abyss",
+      "biomeswevegone:basalt_barrera",
+      "biomeswevegone:black_forest",
+      "biomeswevegone:crimson_tundra",
+      "biomeswevegone:dead_sea",
+      "biomeswevegone:eroded_borealis",
+      "biomeswevegone:howling_peaks",
+      "biomeswevegone:mojave_desert",
+      "biomeswevegone:rugged_badlands",
+      "biomeswevegone:shattered_glacier",
+      "biomeswevegone:sierra_badlands",
+      "biomeswevegone:windswept_desert",
+      "minecraft:badlands",
+      "minecraft:basalt_deltas",
+      "minecraft:deep_dark",
+      "minecraft:eroded_badlands",
+      "minecraft:nether_wastes",
+      "minecraft:soul_sand_valley",
+      "minecraft:the_void",
+      "minecraft:wooded_badlands",
+      "regions_unexplored:ashen_woodland",
+      "regions_unexplored:blackstone_basin",
+      "regions_unexplored:infernal_holt",
+      "regions_unexplored:mycotoxic_undergrowth",
+      "regions_unexplored:redstone_abyss",
+      "regions_unexplored:scorching_caves",
+      "terralith:ashen_savanna",
+      "terralith:caldera",
+      "terralith:desert_spires",
+      "terralith:fractured_savanna",
+      "terralith:glacial_chasm",
+      "terralith:haze_mountain",
+      "terralith:snowy_badlands",
+      "terralith:volcanic_crater",
+      "terralith:volcanic_peaks",
+      "terralith:warped_mesa",
+      "terralith:white_mesa",
+      "terralith:windswept_spires"
+    ],
         "seesky": true
       },
+
       "not": {
-        "biometags": ["minecraft:is_river", "forge:is_river"]
+        "structuretags": "minecraft:village"
       }
     }
   }

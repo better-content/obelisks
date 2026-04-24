@@ -1,7 +1,7 @@
 type = fancymenu_layout
 
 layout-meta {
-  identifier = %fancymenu:universal_layout%
+  identifier = connect_screen
   render_custom_elements_behind_vanilla = true
   last_edited_time = 1771320000000
   is_enabled = true
@@ -9,12 +9,12 @@ layout-meta {
   randomgroup = 1
   randomonlyfirsttime = false
   layout_index = 0
-  [loading_requirement_container_meta:btm_universal_meta] = [groups:][instances:]
+  [loading_requirement_container_meta:connect_screen_meta] = [groups:][instances:]
 }
 
 menu_background {
   color = #05080C
-  instance_identifier = btm_universal_background
+  instance_identifier = connect_screen_background
   background_type = color_fancymenu
 }
 
@@ -46,7 +46,7 @@ element {
   image_tint = #FFFFFF
   restart_animated_on_menu_load = false
   element_type = image
-  instance_identifier = btm_universal_bg_element
+  instance_identifier = connect_screen_bg
   appearance_delay = no_delay
   appearance_delay_seconds = 1.0
   fade_in_v2 = no_fading
@@ -66,8 +66,8 @@ element {
   stretch_x = true
   stretch_y = true
   stay_on_screen = true
-  element_loading_requirement_container_identifier = btm_universal_bg_requirements
-  [loading_requirement_container_meta:btm_universal_bg_requirements] = [groups:][instances:]
+  element_loading_requirement_container_identifier = connect_screen_bg_req
+  [loading_requirement_container_meta:connect_screen_bg_req] = [groups:][instances:]
   enable_parallax = false
   parallax_intensity_v2 = 0.5
   invert_parallax = false
@@ -84,6 +84,7 @@ element {
   advanced_horizontal_tilt_mode = false
 }
 
+
 element {
   source = [source:local]/config/fancymenu/assets/btm_logo.png
   repeat_texture = false
@@ -93,28 +94,28 @@ element {
   image_tint = #FFFFFF
   restart_animated_on_menu_load = false
   element_type = image
-  instance_identifier = btm_universal_logo_element
+  instance_identifier = connect_screen_logo
   appearance_delay = no_delay
   appearance_delay_seconds = 1.0
   fade_in_v2 = no_fading
   fade_in_speed = 1.0
   fade_out = no_fading
   fade_out_speed = 1.0
-  base_opacity = 0.42
+  base_opacity = 0.35
   auto_sizing = false
   auto_sizing_base_screen_width = 3441
   auto_sizing_base_screen_height = 1413
   sticky_anchor = false
   anchor_point = top-left
-  x = 24
-  y = 18
-  width = 520
-  height = 132
+  x = 20
+  y = 14
+  width = 460
+  height = 116
   stretch_x = false
   stretch_y = false
   stay_on_screen = true
-  element_loading_requirement_container_identifier = btm_universal_logo_requirements
-  [loading_requirement_container_meta:btm_universal_logo_requirements] = [groups:][instances:]
+  element_loading_requirement_container_identifier = connect_screen_logo_req
+  [loading_requirement_container_meta:connect_screen_logo_req] = [groups:][instances:]
   enable_parallax = false
   parallax_intensity_v2 = 0.5
   invert_parallax = false

@@ -86,412 +86,581 @@
     "minheight": 0,
     "result": "deny"
   },
-
-
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "deeperdarker:gloomy_grass", "distbelow": 1 },
+    "blocktest": {
+      "block": "deeperdarker:gloomy_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "deeperdarker:glowing_grass", "distbelow": 1 },
+    "blocktest": {
+      "block": "deeperdarker:glowing_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "dtru:rooty_alpha_grass_block", "distbelow": 1 },
+    "blocktest": {
+      "block": "dynamictrees:rooty_grass_block",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "dtru:rooty_argillite_grass_block", "distbelow": 1 },
+    "blocktest": {
+      "block": "fallout_wastelands_:wastelandgrassblock",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "dtru:rooty_chalk_grass_block", "distbelow": 1 },
+    "blocktest": {
+      "block": "iceandfire:chared_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "dtru:rooty_deepslate_grass_block", "distbelow": 1 },
+    "blocktest": {
+      "block": "iceandfire:crackled_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "dtru:rooty_peat_grass_block", "distbelow": 1 },
+    "blocktest": {
+      "block": "iceandfire:frozen_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "dtru:rooty_silt_grass_block", "distbelow": 1 },
+    "blocktest": {
+      "block": "immersive_weathering:dune_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "dtru:rooty_stone_grass_block", "distbelow": 1 },
+    "blocktest": {
+      "block": "tconstruct:blood_earth_slime_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "dynamictrees:rooty_grass_block", "distbelow": 1 },
+    "blocktest": {
+      "block": "tconstruct:blood_ender_slime_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "fallout_wastelands_:wastelandgrassblock", "distbelow": 1 },
+    "blocktest": {
+      "block": "tconstruct:blood_ichor_slime_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "graveyard:tg_grass_block", "distbelow": 1 },
+    "blocktest": {
+      "block": "tconstruct:blood_sky_slime_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "iceandfire:chared_grass", "distbelow": 1 },
+    "blocktest": {
+      "block": "tconstruct:blood_vanilla_slime_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "iceandfire:crackled_grass", "distbelow": 1 },
+    "blocktest": {
+      "block": "tconstruct:earth_earth_slime_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "iceandfire:frozen_grass", "distbelow": 1 },
+    "blocktest": {
+      "block": "tconstruct:earth_ender_slime_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "immersive_weathering:dune_grass", "distbelow": 1 },
+    "blocktest": {
+      "block": "tconstruct:earth_ichor_slime_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "regions_unexplored:alpha_grass_block", "distbelow": 1 },
+    "blocktest": {
+      "block": "tconstruct:earth_sky_slime_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "regions_unexplored:chalk_grass_block", "distbelow": 1 },
+    "blocktest": {
+      "block": "tconstruct:earth_vanilla_slime_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "regions_unexplored:frozen_grass", "distbelow": 1 },
+    "blocktest": {
+      "block": "tconstruct:ender_earth_slime_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "tconstruct:blood_earth_slime_grass", "distbelow": 1 },
+    "blocktest": {
+      "block": "tconstruct:ender_ender_slime_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "tconstruct:blood_ender_slime_grass", "distbelow": 1 },
+    "blocktest": {
+      "block": "tconstruct:ender_ichor_slime_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "tconstruct:blood_ichor_slime_grass", "distbelow": 1 },
+    "blocktest": {
+      "block": "tconstruct:ender_sky_slime_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "tconstruct:blood_sky_slime_grass", "distbelow": 1 },
+    "blocktest": {
+      "block": "tconstruct:ender_vanilla_slime_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "tconstruct:blood_vanilla_slime_grass", "distbelow": 1 },
+    "blocktest": {
+      "block": "tconstruct:ichor_earth_slime_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "tconstruct:earth_earth_slime_grass", "distbelow": 1 },
+    "blocktest": {
+      "block": "tconstruct:ichor_ender_slime_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "tconstruct:earth_ender_slime_grass", "distbelow": 1 },
+    "blocktest": {
+      "block": "tconstruct:ichor_ichor_slime_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "tconstruct:earth_ichor_slime_grass", "distbelow": 1 },
+    "blocktest": {
+      "block": "tconstruct:ichor_sky_slime_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "tconstruct:earth_sky_slime_grass", "distbelow": 1 },
+    "blocktest": {
+      "block": "tconstruct:ichor_vanilla_slime_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "tconstruct:earth_vanilla_slime_grass", "distbelow": 1 },
+    "blocktest": {
+      "block": "tconstruct:sky_earth_slime_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "tconstruct:ender_earth_slime_grass", "distbelow": 1 },
+    "blocktest": {
+      "block": "tconstruct:sky_ender_slime_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "tconstruct:ender_ender_slime_grass", "distbelow": 1 },
+    "blocktest": {
+      "block": "tconstruct:sky_ichor_slime_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "tconstruct:ender_ichor_slime_grass", "distbelow": 1 },
+    "blocktest": {
+      "block": "tconstruct:sky_sky_slime_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "tconstruct:ender_sky_slime_grass", "distbelow": 1 },
+    "blocktest": {
+      "block": "tconstruct:sky_vanilla_slime_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "tconstruct:ender_vanilla_slime_grass", "distbelow": 1 },
+    "blocktest": {
+      "block": "unearthed:beige_limestone_grassy_regolith",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "tconstruct:ichor_earth_slime_grass", "distbelow": 1 },
+    "blocktest": {
+      "block": "unearthed:conglomerate_grassy_regolith",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "tconstruct:ichor_ender_slime_grass", "distbelow": 1 },
+    "blocktest": {
+      "block": "unearthed:dolomite_grassy_regolith",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "tconstruct:ichor_ichor_slime_grass", "distbelow": 1 },
+    "blocktest": {
+      "block": "unearthed:gabbro_grassy_regolith",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "tconstruct:ichor_sky_slime_grass", "distbelow": 1 },
+    "blocktest": {
+      "block": "unearthed:granodiorite_grassy_regolith",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "tconstruct:ichor_vanilla_slime_grass", "distbelow": 1 },
+    "blocktest": {
+      "block": "unearthed:grey_limestone_grassy_regolith",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "tconstruct:sky_earth_slime_grass", "distbelow": 1 },
+    "blocktest": {
+      "block": "unearthed:kimberlite_grassy_regolith",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "tconstruct:sky_ender_slime_grass", "distbelow": 1 },
+    "blocktest": {
+      "block": "unearthed:limestone_grassy_regolith",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "tconstruct:sky_ichor_slime_grass", "distbelow": 1 },
+    "blocktest": {
+      "block": "unearthed:mudstone_grassy_regolith",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "tconstruct:sky_sky_slime_grass", "distbelow": 1 },
+    "blocktest": {
+      "block": "unearthed:phyllite_grassy_regolith",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "tconstruct:sky_vanilla_slime_grass", "distbelow": 1 },
+    "blocktest": {
+      "block": "unearthed:quartzite_grassy_regolith",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "unearthed:beige_limestone_grassy_regolith", "distbelow": 1 },
+    "blocktest": {
+      "block": "unearthed:rhyolite_grassy_regolith",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "unearthed:conglomerate_grassy_regolith", "distbelow": 1 },
+    "blocktest": {
+      "block": "unearthed:sandstone_grassy_regolith",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "unearthed:dolomite_grassy_regolith", "distbelow": 1 },
+    "blocktest": {
+      "block": "unearthed:siltstone_grassy_regolith",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "unearthed:gabbro_grassy_regolith", "distbelow": 1 },
+    "blocktest": {
+      "block": "unearthed:slate_grassy_regolith",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "unearthed:granodiorite_grassy_regolith", "distbelow": 1 },
+    "blocktest": {
+      "block": "unearthed:stone_grassy_regolith",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "unearthed:grey_limestone_grassy_regolith", "distbelow": 1 },
+    "blocktest": {
+      "block": "unearthed:white_granite_grassy_regolith",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "unearthed:kimberlite_grassy_regolith", "distbelow": 1 },
+    "blocktest": {
+      "block": "natures_spirit:beach_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "unearthed:limestone_grassy_regolith", "distbelow": 1 },
+    "blocktest": {
+      "block": "natures_spirit:frigid_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "unearthed:mudstone_grassy_regolith", "distbelow": 1 },
+    "blocktest": {
+      "block": "natures_spirit:melic_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "unearthed:phyllite_grassy_regolith", "distbelow": 1 },
+    "blocktest": {
+      "block": "natures_spirit:oat_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "unearthed:quartzite_grassy_regolith", "distbelow": 1 },
+    "blocktest": {
+      "block": "natures_spirit:scorched_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "unearthed:rhyolite_grassy_regolith", "distbelow": 1 },
+    "blocktest": {
+      "block": "natures_spirit:sedge_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "unearthed:sandstone_grassy_regolith", "distbelow": 1 },
+    "blocktest": {
+      "block": "natures_spirit:tall_beach_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "unearthed:siltstone_grassy_regolith", "distbelow": 1 },
+    "blocktest": {
+      "block": "natures_spirit:tall_frigid_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "unearthed:slate_grassy_regolith", "distbelow": 1 },
+    "blocktest": {
+      "block": "natures_spirit:tall_melic_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "unearthed:stone_grassy_regolith", "distbelow": 1 },
+    "blocktest": {
+      "block": "natures_spirit:tall_oat_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "unearthed:white_granite_grassy_regolith", "distbelow": 1 },
+    "blocktest": {
+      "block": "natures_spirit:tall_scorched_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
-    "blocktest": { "block": "unusualend:flowering_purpur_grass", "distbelow": 1 },
+    "blocktest": {
+      "block": "natures_spirit:tall_sedge_grass",
+      "distbelow": 1
+    },
     "result": "deny"
   },
-  {
-    "dimension": "minecraft:overworld",
-    "hostile": true,
-    "blocktest": { "block": "unusualend:purpur_grass", "distbelow": 1 },
-    "result": "deny"
-  },
-  {
-    "dimension": "minecraft:overworld",
-    "hostile": true,
-    "blocktest": { "block": "valhelsia_structures:grass_block", "distbelow": 1 },
-    "result": "deny"
-  },
-
   {
     "mob": "minecraft:creeper",
     "result": "deny"
   },
-
   {
     "dimension": "minecraft:overworld",
     "hostile": true,
     "seesky": true,
     "biome": [
-  "nyctophobia:ancient_dead_coral_reef",
-  "nyctophobia:deep_dark_forest",
-  "nyctophobia:eroded_haunted_forest",
-  "nyctophobia:haunted_forest",
-  "nyctophobia:haunted_lakes"
-],
+      "nyctophobia:ancient_dead_coral_reef",
+      "nyctophobia:deep_dark_forest",
+      "nyctophobia:eroded_haunted_forest",
+      "nyctophobia:haunted_forest",
+      "nyctophobia:haunted_lakes"
+    ],
     "result": "allow"
   },
-
   {
     "dimension": "minecraft:overworld",
     "hostile": true,

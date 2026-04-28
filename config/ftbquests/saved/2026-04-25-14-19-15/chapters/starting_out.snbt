@@ -1,0 +1,446 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "starting_out"
+	group: ""
+	id: "3F80960BB9E8869E"
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			id: "07B71763CEA9CAAA"
+			rewards: [{
+				count: 4
+				id: "50B6099119B4DAB1"
+				item: "minecraft:emerald"
+				type: "item"
+			}]
+			tasks: [{
+				id: "3E9A639E72613ABC"
+				item: "sophisticatedbackpacks:backpack"
+				type: "item"
+			}]
+			x: -29.0d
+			y: -12.5d
+		}
+		{
+			id: "4A1B51253FED4221"
+			rewards: [{
+				count: 16
+				id: "6432D92F37689E22"
+				item: "minecraft:emerald"
+				type: "item"
+			}]
+			tasks: [{
+				count: 16L
+				id: "278642DE25882A00"
+				item: "minecraft:emerald"
+				type: "item"
+			}]
+			x: -29.0d
+			y: -13.5d
+		}
+		{
+			id: "1CCEAACE40BE904D"
+			rewards: [{
+				count: 4
+				id: "1853F72993EA1A7F"
+				item: "minecraft:emerald"
+				type: "item"
+			}]
+			tasks: [{
+				id: "108BA7D673067300"
+				item: "minecraft:torch"
+				type: "item"
+			}]
+			x: -29.0d
+			y: -9.5d
+		}
+		{
+			id: "49D4CF61F7C77E0E"
+			rewards: [{
+				count: 4
+				id: "1880E300CCA73857"
+				item: "minecraft:emerald"
+				type: "item"
+			}]
+			tasks: [{
+				id: "1F2192CB8AFEE438"
+				item: {
+					Count: 1
+					id: "thirst:terracotta_water_bowl"
+					tag: {
+						Purity: 0
+					}
+				}
+				match_nbt: false
+				type: "item"
+			}]
+			x: -29.0d
+			y: -11.5d
+		}
+		{
+			id: "2908D44A9B8A3023"
+			rewards: [{
+				count: 4
+				id: "497747B3E62B85B4"
+				item: "minecraft:emerald"
+				type: "item"
+			}]
+			tasks: [{
+				id: "2AF7F516A4EF8404"
+				item: "cold_sweat:sewing_table"
+				type: "item"
+			}]
+			x: -29.0d
+			y: -10.5d
+		}
+		{
+			id: "12E40AB1C8A6A820"
+			rewards: [{
+				count: 4
+				id: "3ABABB5ADFF6616F"
+				item: "minecraft:emerald"
+				type: "item"
+			}]
+			tasks: [{
+				id: "07F5C09C7151D49E"
+				item: "farmersdelight:cooking_pot"
+				type: "item"
+			}]
+			x: -29.0d
+			y: -8.5d
+		}
+		{
+			id: "0A70CF7FF2516ECE"
+			rewards: [{
+				count: 4
+				id: "4B7CA534A74A3604"
+				item: "minecraft:emerald"
+				type: "item"
+			}]
+			tasks: [{
+				id: "176997B93BC9F238"
+				item: "tconstruct:tinker_station"
+				type: "item"
+			}]
+			x: -25.0d
+			y: -13.0d
+		}
+		{
+			id: "4E84F2E7CE674049"
+			rewards: [{
+				count: 4
+				id: "0034E02FA6554285"
+				item: "minecraft:emerald"
+				type: "item"
+			}]
+			tasks: [{
+				id: "7F18D307621CCB4C"
+				item: "tconstruct:part_builder"
+				type: "item"
+			}]
+			x: -24.0d
+			y: -13.0d
+		}
+		{
+			id: "084A1FB98968657E"
+			rewards: [{
+				count: 4
+				id: "3E746031551BED60"
+				item: "minecraft:emerald"
+				type: "item"
+			}]
+			tasks: [{
+				id: "1E40E2F8C0B51AA9"
+				item: "tconstruct:crafting_station"
+				type: "item"
+			}]
+			x: -23.0d
+			y: -13.0d
+		}
+		{
+			id: "0F96E51EF8DA8CAC"
+			rewards: [{
+				count: 4
+				id: "797C2120F8969718"
+				item: "minecraft:emerald"
+				type: "item"
+			}]
+			tasks: [{
+				dimension: "minecraft:nether"
+				id: "7074F8CFC2325AA4"
+				ignore_dimension: false
+				position: [I;
+					0
+					0
+					0
+				]
+				size: [I;
+					1
+					1
+					1
+				]
+				title: "Visit The Nether"
+				type: "location"
+			}]
+			title: "The Nether"
+			x: -22.5d
+			y: -10.5d
+		}
+		{
+			id: "692931EAF600FFDE"
+			rewards: [{
+				count: 4
+				id: "5FF16281F8CF8EA5"
+				item: "minecraft:emerald"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6026048F171DC414"
+				item: "tconstruct:grout"
+				type: "item"
+			}]
+			x: -21.5d
+			y: -10.5d
+		}
+		{
+			id: "3783DF460BEFFD33"
+			rewards: [{
+				count: 4
+				id: "0508B48B8186DFB5"
+				item: "minecraft:emerald"
+				type: "item"
+			}]
+			tasks: [
+				{
+					id: "0ABCAEDE71AF94D4"
+					item: "tconstruct:seared_melter"
+					type: "item"
+				}
+				{
+					id: "28227B65C97EFA5A"
+					item: "tconstruct:seared_heater"
+					type: "item"
+				}
+				{
+					id: "5A617E3D436C806D"
+					item: "tconstruct:seared_faucet"
+					type: "item"
+				}
+				{
+					id: "6FC40E9A8DC3F42C"
+					item: "tconstruct:seared_basin"
+					type: "item"
+				}
+				{
+					id: "448AF6B1C5EFC803"
+					item: "tconstruct:seared_table"
+					type: "item"
+				}
+			]
+			x: -20.5d
+			y: -10.5d
+		}
+		{
+			id: "1CBB31EE3AE10538"
+			rewards: [{
+				count: 4
+				id: "6D6D2002D752F2B3"
+				item: "minecraft:emerald"
+				type: "item"
+			}]
+			tasks: [{
+				id: "56C1AA3FFEFA4150"
+				item: "create:andesite_alloy"
+				type: "item"
+			}]
+			x: -18.5d
+			y: -10.5d
+		}
+		{
+			id: "4F33D2AACBA62098"
+			rewards: [{
+				count: 4
+				id: "686A23277F872BED"
+				item: "minecraft:emerald"
+				type: "item"
+			}]
+			tasks: [
+				{
+					id: "1C998E303AF42835"
+					item: "tconstruct:smeltery_controller"
+					type: "item"
+				}
+				{
+					id: "12C942A6D2C5BF27"
+					item: "tconstruct:seared_fuel_tank"
+					type: "item"
+				}
+			]
+			x: -19.5d
+			y: -10.5d
+		}
+		{
+			id: "5789E0556528C5C3"
+			rewards: [{
+				count: 4
+				id: "6F213567537549C4"
+				item: "minecraft:emerald"
+				type: "item"
+			}]
+			tasks: [{
+				id: "727F34EFA4B6D4AC"
+				item: "create:hand_crank"
+				type: "item"
+			}]
+			x: -17.5d
+			y: -10.5d
+		}
+		{
+			id: "3E5B3354A92C3910"
+			rewards: [{
+				count: 4
+				id: "73B04059B546D131"
+				item: "minecraft:emerald"
+				type: "item"
+			}]
+			tasks: [{
+				id: "7042B19DF32D4C91"
+				item: "create:millstone"
+				type: "item"
+			}]
+			x: -16.5d
+			y: -11.5d
+		}
+		{
+			id: "1BD1E9D45BA48DC6"
+			rewards: [{
+				count: 4
+				id: "608FE0D43F6A699F"
+				item: "minecraft:emerald"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6FFB04AE94B96596"
+				item: "create:mechanical_press"
+				type: "item"
+			}]
+			x: -16.5d
+			y: -10.5d
+		}
+		{
+			id: "3FDE529109CD768B"
+			rewards: [{
+				count: 4
+				id: "625D7802FA7BBC4A"
+				item: "minecraft:emerald"
+				type: "item"
+			}]
+			tasks: [{
+				id: "11E2C15E610E63C8"
+				item: "create:mechanical_mixer"
+				type: "item"
+			}]
+			x: -16.5d
+			y: -9.5d
+		}
+		{
+			id: "23173DB85E47B672"
+			rewards: [{
+				count: 4
+				id: "571C4A0D4DF459D8"
+				item: "minecraft:emerald"
+				type: "item"
+			}]
+			tasks: [{
+				id: "04FE5D2AD036B021"
+				item: "create:basin"
+				type: "item"
+			}]
+			x: -16.5d
+			y: -8.5d
+		}
+		{
+			id: "49D52C32BCA89EB4"
+			rewards: [{
+				count: 4
+				id: "5788472EC1749111"
+				item: "minecraft:emerald"
+				type: "item"
+			}]
+			tasks: [{
+				id: "24ABE06134D2F136"
+				item: "create:depot"
+				type: "item"
+			}]
+			x: -16.5d
+			y: -12.5d
+		}
+		{
+			id: "772DC6DA36443CFC"
+			rewards: [{
+				count: 4
+				id: "1288A040035A8F24"
+				item: "minecraft:emerald"
+				type: "item"
+			}]
+			tasks: [{
+				id: "14EEAC2D532034BB"
+				item: "create:andesite_casing"
+				type: "item"
+			}]
+			x: -15.5d
+			y: -10.5d
+		}
+		{
+			id: "408F74E14C87965A"
+			rewards: [{
+				count: 4
+				id: "32C4124B6DB0F9C7"
+				item: "minecraft:emerald"
+				type: "item"
+			}]
+			tasks: [{
+				id: "4801D7E346D9B79F"
+				item: "create:water_wheel"
+				type: "item"
+			}]
+			x: -14.5d
+			y: -11.0d
+		}
+		{
+			id: "31FE8C42BA2C352F"
+			rewards: [{
+				count: 4
+				id: "6106F1DE77E0B2E9"
+				item: "minecraft:emerald"
+				type: "item"
+			}]
+			tasks: [{
+				id: "23BFE723DD82BC77"
+				item: "create:windmill_bearing"
+				type: "item"
+			}]
+			x: -14.5d
+			y: -10.0d
+		}
+		{
+			id: "423F4E6368DAF656"
+			rewards: [{
+				count: 4
+				id: "5A87B0FC487C947A"
+				item: "minecraft:emerald"
+				type: "item"
+			}]
+			tasks: [{
+				id: "2B3160BFCC54B205"
+				item: "thirst:sand_filter"
+				type: "item"
+			}]
+			x: -13.5d
+			y: -10.5d
+		}
+	]
+	title: "Starting Out"
+}

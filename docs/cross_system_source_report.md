@@ -1,6 +1,6 @@
 # Cross-System Source Report
 
-Generated: 2026-04-29T07:59:34.782Z
+Generated: 2026-04-29T08:17:09.176Z
 
 This report lists item sources outside normal recipes and items produced by multiple material-conversion systems.
 
@@ -26,197 +26,208 @@ This report lists item sources outside normal recipes and items produced by mult
 
 ## Quest Coin Rewards
 
-| Chapter                | Coin                    | Count |
-| ---------------------- | ----------------------- | ----- |
-| adventuring.snbt       | dotcoinmod:copper_coin  | 4     |
-| adventuring.snbt       | dotcoinmod:copper_coin  | 4     |
-| ae2.snbt               | dotcoinmod:copper_coin  | 4     |
-| ae2.snbt               | dotcoinmod:iron_coin    | 4     |
-| ae2.snbt               | dotcoinmod:tin_coin     | 4     |
-| ae2.snbt               | dotcoinmod:bronze_coin  | 4     |
-| ae2.snbt               | dotcoinmod:brass_coin   | 4     |
-| ae2.snbt               | dotcoinmod:silver_coin  | 4     |
-| ae2.snbt               | dotcoinmod:gold_coin    | 4     |
-| ae2.snbt               | dotcoinmod:diamond_coin | 4     |
-| ae2.snbt               | dotcoinmod:copper_coin  | 4     |
-| ae2.snbt               | dotcoinmod:iron_coin    | 4     |
-| ae2.snbt               | dotcoinmod:tin_coin     | 4     |
-| ae2.snbt               | dotcoinmod:bronze_coin  | 4     |
-| ae2.snbt               | dotcoinmod:brass_coin   | 4     |
-| ae2.snbt               | dotcoinmod:silver_coin  | 4     |
-| ae2.snbt               | dotcoinmod:gold_coin    | 4     |
-| ae2.snbt               | dotcoinmod:diamond_coin | 4     |
-| ae2.snbt               | dotcoinmod:copper_coin  | 4     |
-| ae2.snbt               | dotcoinmod:iron_coin    | 4     |
-| ae2.snbt               | dotcoinmod:tin_coin     | 4     |
-| ae2.snbt               | dotcoinmod:bronze_coin  | 4     |
-| ae2.snbt               | dotcoinmod:brass_coin   | 4     |
-| ae2.snbt               | dotcoinmod:silver_coin  | 4     |
-| ae2.snbt               | dotcoinmod:gold_coin    | 4     |
-| ae2.snbt               | dotcoinmod:diamond_coin | 4     |
-| create_i.snbt          | dotcoinmod:copper_coin  | 4     |
-| create_i.snbt          | dotcoinmod:iron_coin    | 4     |
-| create_i.snbt          | dotcoinmod:tin_coin     | 4     |
-| create_i.snbt          | dotcoinmod:copper_coin  | 4     |
-| create_i.snbt          | dotcoinmod:iron_coin    | 4     |
-| create_i.snbt          | dotcoinmod:tin_coin     | 4     |
-| create_i.snbt          | dotcoinmod:copper_coin  | 4     |
-| create_i.snbt          | dotcoinmod:iron_coin    | 4     |
-| create_i.snbt          | dotcoinmod:tin_coin     | 4     |
-| create_i.snbt          | dotcoinmod:copper_coin  | 4     |
-| create_i.snbt          | dotcoinmod:iron_coin    | 4     |
-| create_i.snbt          | dotcoinmod:tin_coin     | 4     |
-| create_i.snbt          | dotcoinmod:copper_coin  | 4     |
-| create_i.snbt          | dotcoinmod:iron_coin    | 4     |
-| create_i.snbt          | dotcoinmod:tin_coin     | 4     |
-| create_i.snbt          | dotcoinmod:copper_coin  | 4     |
-| create_i.snbt          | dotcoinmod:iron_coin    | 4     |
-| create_i.snbt          | dotcoinmod:tin_coin     | 4     |
-| create_i.snbt          | dotcoinmod:copper_coin  | 4     |
-| create_i.snbt          | dotcoinmod:iron_coin    | 4     |
-| create_i.snbt          | dotcoinmod:tin_coin     | 4     |
-| create_i.snbt          | dotcoinmod:copper_coin  | 4     |
-| create_i.snbt          | dotcoinmod:iron_coin    | 4     |
-| create_i.snbt          | dotcoinmod:tin_coin     | 4     |
-| create_ii.snbt         | dotcoinmod:copper_coin  | 4     |
-| create_ii.snbt         | dotcoinmod:iron_coin    | 4     |
-| create_ii.snbt         | dotcoinmod:tin_coin     | 4     |
-| create_ii.snbt         | dotcoinmod:bronze_coin  | 4     |
-| create_ii.snbt         | dotcoinmod:copper_coin  | 4     |
-| create_ii.snbt         | dotcoinmod:iron_coin    | 4     |
-| create_ii.snbt         | dotcoinmod:tin_coin     | 4     |
-| create_ii.snbt         | dotcoinmod:bronze_coin  | 4     |
-| create_ii.snbt         | dotcoinmod:copper_coin  | 4     |
-| create_ii.snbt         | dotcoinmod:iron_coin    | 4     |
-| create_ii.snbt         | dotcoinmod:tin_coin     | 4     |
-| create_ii.snbt         | dotcoinmod:bronze_coin  | 4     |
-| create_ii.snbt         | dotcoinmod:copper_coin  | 4     |
-| create_ii.snbt         | dotcoinmod:iron_coin    | 4     |
-| create_ii.snbt         | dotcoinmod:tin_coin     | 4     |
-| create_ii.snbt         | dotcoinmod:bronze_coin  | 4     |
-| death.snbt             | dotcoinmod:copper_coin  | 4     |
-| death.snbt             | dotcoinmod:iron_coin    | 4     |
-| death.snbt             | dotcoinmod:copper_coin  | 4     |
-| death.snbt             | dotcoinmod:iron_coin    | 4     |
-| death.snbt             | dotcoinmod:copper_coin  | 4     |
-| death.snbt             | dotcoinmod:iron_coin    | 4     |
-| death.snbt             | dotcoinmod:copper_coin  | 4     |
-| death.snbt             | dotcoinmod:iron_coin    | 4     |
-| electricity.snbt       | dotcoinmod:copper_coin  | 4     |
-| electricity.snbt       | dotcoinmod:iron_coin    | 4     |
-| electricity.snbt       | dotcoinmod:tin_coin     | 4     |
-| electricity.snbt       | dotcoinmod:bronze_coin  | 4     |
-| electricity.snbt       | dotcoinmod:brass_coin   | 4     |
-| electricity.snbt       | dotcoinmod:copper_coin  | 4     |
-| electricity.snbt       | dotcoinmod:iron_coin    | 4     |
-| electricity.snbt       | dotcoinmod:tin_coin     | 4     |
-| electricity.snbt       | dotcoinmod:bronze_coin  | 4     |
-| electricity.snbt       | dotcoinmod:brass_coin   | 4     |
-| electricity.snbt       | dotcoinmod:copper_coin  | 4     |
-| electricity.snbt       | dotcoinmod:iron_coin    | 4     |
-| electricity.snbt       | dotcoinmod:tin_coin     | 4     |
-| electricity.snbt       | dotcoinmod:bronze_coin  | 4     |
-| electricity.snbt       | dotcoinmod:brass_coin   | 4     |
-| magic_i.snbt           | dotcoinmod:copper_coin  | 4     |
-| magic_i.snbt           | dotcoinmod:iron_coin    | 4     |
-| magic_i.snbt           | dotcoinmod:tin_coin     | 4     |
-| magic_i.snbt           | dotcoinmod:copper_coin  | 4     |
-| magic_i.snbt           | dotcoinmod:iron_coin    | 4     |
-| magic_i.snbt           | dotcoinmod:tin_coin     | 4     |
-| magic_i.snbt           | dotcoinmod:copper_coin  | 4     |
-| magic_i.snbt           | dotcoinmod:iron_coin    | 4     |
-| magic_i.snbt           | dotcoinmod:tin_coin     | 4     |
-| magic_i.snbt           | dotcoinmod:copper_coin  | 4     |
-| magic_i.snbt           | dotcoinmod:iron_coin    | 4     |
-| magic_i.snbt           | dotcoinmod:tin_coin     | 4     |
-| oc2r.snbt              | dotcoinmod:copper_coin  | 4     |
-| oc2r.snbt              | dotcoinmod:iron_coin    | 4     |
-| oc2r.snbt              | dotcoinmod:tin_coin     | 4     |
-| oc2r.snbt              | dotcoinmod:bronze_coin  | 4     |
-| oc2r.snbt              | dotcoinmod:brass_coin   | 4     |
-| oc2r.snbt              | dotcoinmod:silver_coin  | 4     |
-| oc2r.snbt              | dotcoinmod:copper_coin  | 4     |
-| oc2r.snbt              | dotcoinmod:iron_coin    | 4     |
-| oc2r.snbt              | dotcoinmod:tin_coin     | 4     |
-| oc2r.snbt              | dotcoinmod:bronze_coin  | 4     |
-| oc2r.snbt              | dotcoinmod:brass_coin   | 4     |
-| oc2r.snbt              | dotcoinmod:silver_coin  | 4     |
-| oc2r.snbt              | dotcoinmod:copper_coin  | 4     |
-| oc2r.snbt              | dotcoinmod:iron_coin    | 4     |
-| oc2r.snbt              | dotcoinmod:tin_coin     | 4     |
-| oc2r.snbt              | dotcoinmod:bronze_coin  | 4     |
-| oc2r.snbt              | dotcoinmod:brass_coin   | 4     |
-| oc2r.snbt              | dotcoinmod:silver_coin  | 4     |
-| space.snbt             | dotcoinmod:copper_coin  | 4     |
-| space.snbt             | dotcoinmod:iron_coin    | 4     |
-| space.snbt             | dotcoinmod:tin_coin     | 4     |
-| space.snbt             | dotcoinmod:bronze_coin  | 4     |
-| space.snbt             | dotcoinmod:brass_coin   | 4     |
-| space.snbt             | dotcoinmod:silver_coin  | 4     |
-| space.snbt             | dotcoinmod:gold_coin    | 4     |
-| space.snbt             | dotcoinmod:copper_coin  | 4     |
-| space.snbt             | dotcoinmod:iron_coin    | 4     |
-| space.snbt             | dotcoinmod:tin_coin     | 4     |
-| space.snbt             | dotcoinmod:bronze_coin  | 4     |
-| space.snbt             | dotcoinmod:brass_coin   | 4     |
-| space.snbt             | dotcoinmod:silver_coin  | 4     |
-| space.snbt             | dotcoinmod:gold_coin    | 4     |
-| space.snbt             | dotcoinmod:copper_coin  | 4     |
-| space.snbt             | dotcoinmod:iron_coin    | 4     |
-| space.snbt             | dotcoinmod:tin_coin     | 4     |
-| space.snbt             | dotcoinmod:bronze_coin  | 4     |
-| space.snbt             | dotcoinmod:brass_coin   | 4     |
-| space.snbt             | dotcoinmod:silver_coin  | 4     |
-| space.snbt             | dotcoinmod:gold_coin    | 4     |
-| starting_out.snbt      | dotcoinmod:copper_coin  | 16    |
-| starting_out.snbt      | dotcoinmod:copper_coin  | 16    |
-| starting_out.snbt      | dotcoinmod:copper_coin  | 16    |
-| starting_out.snbt      | dotcoinmod:copper_coin  | 16    |
-| starting_out.snbt      | dotcoinmod:copper_coin  | 16    |
-| starting_out.snbt      | dotcoinmod:copper_coin  | 16    |
-| starting_out.snbt      | dotcoinmod:copper_coin  | 16    |
-| starting_out.snbt      | dotcoinmod:copper_coin  | 16    |
-| starting_out.snbt      | dotcoinmod:copper_coin  | 16    |
-| starting_out.snbt      | dotcoinmod:copper_coin  | 16    |
-| starting_out.snbt      | dotcoinmod:copper_coin  | 16    |
-| starting_out.snbt      | dotcoinmod:copper_coin  | 16    |
-| starting_out.snbt      | dotcoinmod:copper_coin  | 16    |
-| synthesis_i.snbt       | dotcoinmod:copper_coin  | 4     |
-| synthesis_i.snbt       | dotcoinmod:iron_coin    | 4     |
-| synthesis_i.snbt       | dotcoinmod:tin_coin     | 4     |
-| synthesis_i.snbt       | dotcoinmod:bronze_coin  | 4     |
-| synthesis_i.snbt       | dotcoinmod:brass_coin   | 4     |
-| synthesis_i.snbt       | dotcoinmod:silver_coin  | 4     |
-| synthesis_i.snbt       | dotcoinmod:gold_coin    | 4     |
-| synthesis_i.snbt       | dotcoinmod:copper_coin  | 4     |
-| synthesis_i.snbt       | dotcoinmod:iron_coin    | 4     |
-| synthesis_i.snbt       | dotcoinmod:tin_coin     | 4     |
-| synthesis_i.snbt       | dotcoinmod:bronze_coin  | 4     |
-| synthesis_i.snbt       | dotcoinmod:brass_coin   | 4     |
-| synthesis_i.snbt       | dotcoinmod:silver_coin  | 4     |
-| synthesis_i.snbt       | dotcoinmod:gold_coin    | 4     |
-| synthesis_i.snbt       | dotcoinmod:copper_coin  | 4     |
-| synthesis_i.snbt       | dotcoinmod:iron_coin    | 4     |
-| synthesis_i.snbt       | dotcoinmod:tin_coin     | 4     |
-| synthesis_i.snbt       | dotcoinmod:bronze_coin  | 4     |
-| synthesis_i.snbt       | dotcoinmod:brass_coin   | 4     |
-| synthesis_i.snbt       | dotcoinmod:silver_coin  | 4     |
-| synthesis_i.snbt       | dotcoinmod:gold_coin    | 4     |
-| synthesis_i.snbt       | dotcoinmod:copper_coin  | 4     |
-| synthesis_i.snbt       | dotcoinmod:iron_coin    | 4     |
-| synthesis_i.snbt       | dotcoinmod:tin_coin     | 4     |
-| synthesis_i.snbt       | dotcoinmod:bronze_coin  | 4     |
-| synthesis_i.snbt       | dotcoinmod:brass_coin   | 4     |
-| synthesis_i.snbt       | dotcoinmod:silver_coin  | 4     |
-| synthesis_i.snbt       | dotcoinmod:gold_coin    | 4     |
-| tinkers_construct.snbt | dotcoinmod:copper_coin  | 4     |
-| tinkers_construct.snbt | dotcoinmod:iron_coin    | 4     |
-| tinkers_construct.snbt | dotcoinmod:copper_coin  | 4     |
-| tinkers_construct.snbt | dotcoinmod:iron_coin    | 4     |
-| tinkers_construct.snbt | dotcoinmod:copper_coin  | 4     |
-| tinkers_construct.snbt | dotcoinmod:iron_coin    | 4     |
-| tinkers_construct.snbt | dotcoinmod:copper_coin  | 4     |
-| tinkers_construct.snbt | dotcoinmod:iron_coin    | 4     |
+| Chapter          | Coin                    | Count |
+| ---------------- | ----------------------- | ----- |
+| adventuring.snbt | dotcoinmod:copper_coin  | 4     |
+| adventuring.snbt | dotcoinmod:copper_coin  | 4     |
+| adventuring.snbt | dotcoinmod:copper_coin  | 4     |
+| adventuring.snbt | dotcoinmod:copper_coin  | 4     |
+| adventuring.snbt | dotcoinmod:copper_coin  | 4     |
+| adventuring.snbt | dotcoinmod:copper_coin  | 4     |
+| adventuring.snbt | dotcoinmod:copper_coin  | 4     |
+| adventuring.snbt | dotcoinmod:copper_coin  | 4     |
+| ae2.snbt         | dotcoinmod:copper_coin  | 4     |
+| ae2.snbt         | dotcoinmod:iron_coin    | 4     |
+| ae2.snbt         | dotcoinmod:tin_coin     | 4     |
+| ae2.snbt         | dotcoinmod:bronze_coin  | 4     |
+| ae2.snbt         | dotcoinmod:brass_coin   | 4     |
+| ae2.snbt         | dotcoinmod:silver_coin  | 4     |
+| ae2.snbt         | dotcoinmod:gold_coin    | 4     |
+| ae2.snbt         | dotcoinmod:diamond_coin | 4     |
+| ae2.snbt         | dotcoinmod:copper_coin  | 4     |
+| ae2.snbt         | dotcoinmod:iron_coin    | 4     |
+| ae2.snbt         | dotcoinmod:tin_coin     | 4     |
+| ae2.snbt         | dotcoinmod:bronze_coin  | 4     |
+| ae2.snbt         | dotcoinmod:brass_coin   | 4     |
+| ae2.snbt         | dotcoinmod:silver_coin  | 4     |
+| ae2.snbt         | dotcoinmod:gold_coin    | 4     |
+| ae2.snbt         | dotcoinmod:diamond_coin | 4     |
+| ae2.snbt         | dotcoinmod:copper_coin  | 4     |
+| ae2.snbt         | dotcoinmod:iron_coin    | 4     |
+| ae2.snbt         | dotcoinmod:tin_coin     | 4     |
+| ae2.snbt         | dotcoinmod:bronze_coin  | 4     |
+| ae2.snbt         | dotcoinmod:brass_coin   | 4     |
+| ae2.snbt         | dotcoinmod:silver_coin  | 4     |
+| ae2.snbt         | dotcoinmod:gold_coin    | 4     |
+| ae2.snbt         | dotcoinmod:diamond_coin | 4     |
+| ae2.snbt         | dotcoinmod:copper_coin  | 4     |
+| ae2.snbt         | dotcoinmod:iron_coin    | 4     |
+| ae2.snbt         | dotcoinmod:tin_coin     | 4     |
+| ae2.snbt         | dotcoinmod:bronze_coin  | 4     |
+| ae2.snbt         | dotcoinmod:brass_coin   | 4     |
+| ae2.snbt         | dotcoinmod:silver_coin  | 4     |
+| ae2.snbt         | dotcoinmod:gold_coin    | 4     |
+| ae2.snbt         | dotcoinmod:diamond_coin | 4     |
+| ae2.snbt         | dotcoinmod:copper_coin  | 4     |
+| ae2.snbt         | dotcoinmod:iron_coin    | 4     |
+| ae2.snbt         | dotcoinmod:tin_coin     | 4     |
+| ae2.snbt         | dotcoinmod:bronze_coin  | 4     |
+| ae2.snbt         | dotcoinmod:brass_coin   | 4     |
+| ae2.snbt         | dotcoinmod:silver_coin  | 4     |
+| ae2.snbt         | dotcoinmod:gold_coin    | 4     |
+| ae2.snbt         | dotcoinmod:diamond_coin | 4     |
+| ae2.snbt         | dotcoinmod:copper_coin  | 4     |
+| ae2.snbt         | dotcoinmod:iron_coin    | 4     |
+| ae2.snbt         | dotcoinmod:tin_coin     | 4     |
+| ae2.snbt         | dotcoinmod:bronze_coin  | 4     |
+| ae2.snbt         | dotcoinmod:brass_coin   | 4     |
+| ae2.snbt         | dotcoinmod:silver_coin  | 4     |
+| ae2.snbt         | dotcoinmod:gold_coin    | 4     |
+| ae2.snbt         | dotcoinmod:diamond_coin | 4     |
+| ae2.snbt         | dotcoinmod:copper_coin  | 4     |
+| ae2.snbt         | dotcoinmod:iron_coin    | 4     |
+| ae2.snbt         | dotcoinmod:tin_coin     | 4     |
+| ae2.snbt         | dotcoinmod:bronze_coin  | 4     |
+| ae2.snbt         | dotcoinmod:brass_coin   | 4     |
+| ae2.snbt         | dotcoinmod:silver_coin  | 4     |
+| ae2.snbt         | dotcoinmod:gold_coin    | 4     |
+| ae2.snbt         | dotcoinmod:diamond_coin | 4     |
+| create_i.snbt    | dotcoinmod:copper_coin  | 4     |
+| create_i.snbt    | dotcoinmod:iron_coin    | 4     |
+| create_i.snbt    | dotcoinmod:tin_coin     | 4     |
+| create_i.snbt    | dotcoinmod:copper_coin  | 4     |
+| create_i.snbt    | dotcoinmod:iron_coin    | 4     |
+| create_i.snbt    | dotcoinmod:tin_coin     | 4     |
+| create_i.snbt    | dotcoinmod:copper_coin  | 4     |
+| create_i.snbt    | dotcoinmod:iron_coin    | 4     |
+| create_i.snbt    | dotcoinmod:tin_coin     | 4     |
+| create_i.snbt    | dotcoinmod:copper_coin  | 4     |
+| create_i.snbt    | dotcoinmod:iron_coin    | 4     |
+| create_i.snbt    | dotcoinmod:tin_coin     | 4     |
+| create_i.snbt    | dotcoinmod:copper_coin  | 4     |
+| create_i.snbt    | dotcoinmod:iron_coin    | 4     |
+| create_i.snbt    | dotcoinmod:tin_coin     | 4     |
+| create_i.snbt    | dotcoinmod:copper_coin  | 4     |
+| create_i.snbt    | dotcoinmod:iron_coin    | 4     |
+| create_i.snbt    | dotcoinmod:tin_coin     | 4     |
+| create_i.snbt    | dotcoinmod:copper_coin  | 4     |
+| create_i.snbt    | dotcoinmod:iron_coin    | 4     |
+| create_i.snbt    | dotcoinmod:tin_coin     | 4     |
+| create_i.snbt    | dotcoinmod:copper_coin  | 4     |
+| create_i.snbt    | dotcoinmod:iron_coin    | 4     |
+| create_i.snbt    | dotcoinmod:tin_coin     | 4     |
+| create_i.snbt    | dotcoinmod:copper_coin  | 4     |
+| create_i.snbt    | dotcoinmod:iron_coin    | 4     |
+| create_i.snbt    | dotcoinmod:tin_coin     | 4     |
+| create_ii.snbt   | dotcoinmod:copper_coin  | 4     |
+| create_ii.snbt   | dotcoinmod:iron_coin    | 4     |
+| create_ii.snbt   | dotcoinmod:tin_coin     | 4     |
+| create_ii.snbt   | dotcoinmod:bronze_coin  | 4     |
+| create_ii.snbt   | dotcoinmod:copper_coin  | 4     |
+| create_ii.snbt   | dotcoinmod:iron_coin    | 4     |
+| create_ii.snbt   | dotcoinmod:tin_coin     | 4     |
+| create_ii.snbt   | dotcoinmod:bronze_coin  | 4     |
+| create_ii.snbt   | dotcoinmod:copper_coin  | 4     |
+| create_ii.snbt   | dotcoinmod:iron_coin    | 4     |
+| create_ii.snbt   | dotcoinmod:tin_coin     | 4     |
+| create_ii.snbt   | dotcoinmod:bronze_coin  | 4     |
+| create_ii.snbt   | dotcoinmod:copper_coin  | 4     |
+| create_ii.snbt   | dotcoinmod:iron_coin    | 4     |
+| create_ii.snbt   | dotcoinmod:tin_coin     | 4     |
+| create_ii.snbt   | dotcoinmod:bronze_coin  | 4     |
+| create_ii.snbt   | dotcoinmod:copper_coin  | 4     |
+| create_ii.snbt   | dotcoinmod:iron_coin    | 4     |
+| create_ii.snbt   | dotcoinmod:tin_coin     | 4     |
+| create_ii.snbt   | dotcoinmod:bronze_coin  | 4     |
+| create_ii.snbt   | dotcoinmod:copper_coin  | 4     |
+| create_ii.snbt   | dotcoinmod:iron_coin    | 4     |
+| create_ii.snbt   | dotcoinmod:tin_coin     | 4     |
+| create_ii.snbt   | dotcoinmod:bronze_coin  | 4     |
+| create_ii.snbt   | dotcoinmod:copper_coin  | 4     |
+| create_ii.snbt   | dotcoinmod:iron_coin    | 4     |
+| create_ii.snbt   | dotcoinmod:tin_coin     | 4     |
+| create_ii.snbt   | dotcoinmod:bronze_coin  | 4     |
+| create_ii.snbt   | dotcoinmod:copper_coin  | 4     |
+| create_ii.snbt   | dotcoinmod:iron_coin    | 4     |
+| create_ii.snbt   | dotcoinmod:tin_coin     | 4     |
+| create_ii.snbt   | dotcoinmod:bronze_coin  | 4     |
+| create_ii.snbt   | dotcoinmod:copper_coin  | 4     |
+| create_ii.snbt   | dotcoinmod:iron_coin    | 4     |
+| create_ii.snbt   | dotcoinmod:tin_coin     | 4     |
+| create_ii.snbt   | dotcoinmod:bronze_coin  | 4     |
+| death.snbt       | dotcoinmod:copper_coin  | 4     |
+| death.snbt       | dotcoinmod:iron_coin    | 4     |
+| death.snbt       | dotcoinmod:copper_coin  | 4     |
+| death.snbt       | dotcoinmod:iron_coin    | 4     |
+| death.snbt       | dotcoinmod:copper_coin  | 4     |
+| death.snbt       | dotcoinmod:iron_coin    | 4     |
+| death.snbt       | dotcoinmod:copper_coin  | 4     |
+| death.snbt       | dotcoinmod:iron_coin    | 4     |
+| death.snbt       | dotcoinmod:copper_coin  | 4     |
+| death.snbt       | dotcoinmod:iron_coin    | 4     |
+| death.snbt       | dotcoinmod:copper_coin  | 4     |
+| death.snbt       | dotcoinmod:iron_coin    | 4     |
+| electricity.snbt | dotcoinmod:copper_coin  | 4     |
+| electricity.snbt | dotcoinmod:iron_coin    | 4     |
+| electricity.snbt | dotcoinmod:tin_coin     | 4     |
+| electricity.snbt | dotcoinmod:bronze_coin  | 4     |
+| electricity.snbt | dotcoinmod:brass_coin   | 4     |
+| electricity.snbt | dotcoinmod:copper_coin  | 4     |
+| electricity.snbt | dotcoinmod:iron_coin    | 4     |
+| electricity.snbt | dotcoinmod:tin_coin     | 4     |
+| electricity.snbt | dotcoinmod:bronze_coin  | 4     |
+| electricity.snbt | dotcoinmod:brass_coin   | 4     |
+| electricity.snbt | dotcoinmod:copper_coin  | 4     |
+| electricity.snbt | dotcoinmod:iron_coin    | 4     |
+| electricity.snbt | dotcoinmod:tin_coin     | 4     |
+| electricity.snbt | dotcoinmod:bronze_coin  | 4     |
+| electricity.snbt | dotcoinmod:brass_coin   | 4     |
+| electricity.snbt | dotcoinmod:copper_coin  | 4     |
+| electricity.snbt | dotcoinmod:iron_coin    | 4     |
+| electricity.snbt | dotcoinmod:tin_coin     | 4     |
+| electricity.snbt | dotcoinmod:bronze_coin  | 4     |
+| electricity.snbt | dotcoinmod:brass_coin   | 4     |
+| electricity.snbt | dotcoinmod:copper_coin  | 4     |
+| electricity.snbt | dotcoinmod:iron_coin    | 4     |
+| electricity.snbt | dotcoinmod:tin_coin     | 4     |
+| electricity.snbt | dotcoinmod:bronze_coin  | 4     |
+| electricity.snbt | dotcoinmod:brass_coin   | 4     |
+| electricity.snbt | dotcoinmod:copper_coin  | 4     |
+| electricity.snbt | dotcoinmod:iron_coin    | 4     |
+| electricity.snbt | dotcoinmod:tin_coin     | 4     |
+| electricity.snbt | dotcoinmod:bronze_coin  | 4     |
+| electricity.snbt | dotcoinmod:brass_coin   | 4     |
+| electricity.snbt | dotcoinmod:copper_coin  | 4     |
+| electricity.snbt | dotcoinmod:iron_coin    | 4     |
+| electricity.snbt | dotcoinmod:tin_coin     | 4     |
+| electricity.snbt | dotcoinmod:bronze_coin  | 4     |
+| electricity.snbt | dotcoinmod:brass_coin   | 4     |
+| magic_i.snbt     | dotcoinmod:copper_coin  | 4     |
+| magic_i.snbt     | dotcoinmod:iron_coin    | 4     |
+| magic_i.snbt     | dotcoinmod:tin_coin     | 4     |
+| magic_i.snbt     | dotcoinmod:copper_coin  | 4     |
+| magic_i.snbt     | dotcoinmod:iron_coin    | 4     |
+| magic_i.snbt     | dotcoinmod:tin_coin     | 4     |
+| magic_i.snbt     | dotcoinmod:copper_coin  | 4     |
+| magic_i.snbt     | dotcoinmod:iron_coin    | 4     |
+| magic_i.snbt     | dotcoinmod:tin_coin     | 4     |
+| magic_i.snbt     | dotcoinmod:copper_coin  | 4     |
+| magic_i.snbt     | dotcoinmod:iron_coin    | 4     |
+| magic_i.snbt     | dotcoinmod:tin_coin     | 4     |
+| magic_i.snbt     | dotcoinmod:copper_coin  | 4     |
+| magic_i.snbt     | dotcoinmod:iron_coin    | 4     |
+| magic_i.snbt     | dotcoinmod:tin_coin     | 4     |
+| magic_i.snbt     | dotcoinmod:copper_coin  | 4     |
+| magic_i.snbt     | dotcoinmod:iron_coin    | 4     |
+| magic_i.snbt     | dotcoinmod:tin_coin     | 4     |
+| magic_i.snbt     | dotcoinmod:copper_coin  | 4     |
+| magic_i.snbt     | dotcoinmod:iron_coin    | 4     |
+| magic_i.snbt     | dotcoinmod:tin_coin     | 4     |
+| magic_i.snbt     | dotcoinmod:copper_coin  | 4     |
+| magic_i.snbt     | dotcoinmod:iron_coin    | 4     |
+| magic_i.snbt     | dotcoinmod:tin_coin     | 4     |
+| magic_i.snbt     | dotcoinmod:copper_coin  | 4     |
+| magic_i.snbt     | dotcoinmod:iron_coin    | 4     |
 
 ## Villager Trade High-Tier Results
 
@@ -256,6 +267,7 @@ This report lists item sources outside normal recipes and items produced by mult
 | minecraft:redstone                  | recipe, loot, villager_trade | 97           |
 | minecraft:paper                     | recipe, loot                 | 93           |
 | minecraft:leather                   | recipe, loot, villager_trade | 87           |
+| dotcoinmod:iron_coin                | loot, quest_reward           | 87           |
 | minecraft:snowball                  | recipe, loot                 | 84           |
 | minecraft:ladder                    | recipe, loot                 | 77           |
 | twilightforest:moss_patch           | recipe, loot                 | 74           |
@@ -288,6 +300,7 @@ This report lists item sources outside normal recipes and items produced by mult
 | minecraft:name_tag                  | recipe, loot, villager_trade | 50           |
 | minecraft:saddle                    | recipe, loot                 | 50           |
 | minecraft:iron_boots                | recipe, loot                 | 50           |
+| dotcoinmod:bronze_coin              | loot, quest_reward           | 50           |
 | the_bumblezone:honey_crystal_shield | recipe, loot                 | 48           |
 | minecraft:flint                     | recipe, loot                 | 47           |
 | minecraft:carrot                    | recipe, loot                 | 47           |
@@ -296,7 +309,6 @@ This report lists item sources outside normal recipes and items produced by mult
 | minecraft:barrel                    | recipe, loot                 | 46           |
 | minecraft:grass                     | recipe, loot                 | 46           |
 | minecraft:leather_helmet            | recipe, loot                 | 46           |
-| dotcoinmod:iron_coin                | loot, quest_reward           | 46           |
 | minecraft:obsidian                  | recipe, loot, villager_trade | 45           |
 | minecraft:cobblestone               | recipe, loot                 | 44           |
 | minecraft:spider_eye                | recipe, loot                 | 44           |
@@ -357,6 +369,7 @@ This report lists item sources outside normal recipes and items produced by mult
 | minecraft:nether_wart               | recipe, loot                 | 28           |
 | minecraft:soul_sand                 | recipe, loot                 | 28           |
 | minecraft:candle                    | recipe, loot                 | 28           |
+| dotcoinmod:silver_coin              | loot, quest_reward           | 28           |
 | minecraft:mangrove_planks           | recipe, loot                 | 27           |
 | minecraft:acacia_planks             | recipe, loot                 | 27           |
 | minecraft:birch_planks              | recipe, loot                 | 27           |
@@ -365,7 +378,6 @@ This report lists item sources outside normal recipes and items produced by mult
 | minecraft:porkchop                  | recipe, loot                 | 27           |
 | minecraft:crossbow                  | recipe, loot, villager_trade | 27           |
 | minecraft:pumpkin_seeds             | recipe, loot                 | 27           |
-| dotcoinmod:bronze_coin              | loot, quest_reward           | 27           |
 | minecraft:sweet_berries             | recipe, loot                 | 26           |
 | minecraft:iron_block                | recipe, loot                 | 26           |
 | minecraft:lime_dye                  | recipe, loot                 | 26           |
@@ -394,7 +406,6 @@ This report lists item sources outside normal recipes and items produced by mult
 | buildersaddition:pillow_lime        | recipe, loot                 | 25           |
 | buildersaddition:pillow_white       | recipe, loot                 | 25           |
 | minecraft:melon_seeds               | recipe, loot                 | 24           |
-| minecraft:magenta_dye               | recipe, loot                 | 24           |
 
 ## Emerald Loot Sources
 

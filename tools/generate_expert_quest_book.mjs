@@ -218,8 +218,54 @@ const chapters = [
       q('AE_SPATIAL', 'Spatial Field Work', 8, 0, [item('ae2:spatial_io_port')], ['AE_DRIVE', 'AE_CRAFTING'])
     ]
   },
+
   {
-    filename: 'post_ae2', prefix: 'PA', id: 'BTM_POST_AE2', order: 14, title: 'Platinum Tier - Post-AE2 Branches', tier: 'platinum', description: ['Post-AE2 fans into a few strong branches: quantum manufacturing, extended local intelligence, bounded storage, source-AE hybrid, and quantum body rewards.'], quests: [
+    filename: 'create_iii', prefix: 'C3', id: 'BTM_CREATE_III', order: 14, title: 'Silver Tier - Create III Logistics', tier: 'silver', description: ['Create III is physical logistics: trains, conductors, route displays, Little Logistics vessels, and authored intersite movement.'], quests: [
+      q('C3_TRACK_COUPLER', 'Track Coupler', 0, 0, [item('railways:track_coupler')], ['C2_BRASS'], ['Couplers make trains into planned logistics instead of minecart clutter.']),
+      q('C3_CONDUCTOR', 'Conductor Tools', 2, -1, [item('railways:conductor_whistle'), item('railways:black_conductor_cap')], ['C3_TRACK_COUPLER'], ['The conductor layer is for authored train work and route maintenance.']),
+      q('C3_BUFFER', 'Rail Yard Hardware', 2, 1, [item('railways:big_buffer')], ['C3_TRACK_COUPLER'], ['Buffers and yards make train stations physical places.']),
+      q('C3_NAVIGATOR', 'Railway Navigation', 4, -1, [item('createrailwaysnavigator:navigator'), item('createrailwaysnavigator:advanced_display')], ['C3_CONDUCTOR', 'OC_NETWORK'], ['Navigation displays are local infrastructure for distance, not teleportation.']),
+      q('C3_STEAM_LOCO', 'Little Steam Locomotive', 4, 1, [item('littlelogistics:steam_locomotive')], ['C3_BUFFER'], ['Small trains are early intersite logistics and outpost supply.']),
+      q('C3_LAND_ROUTE', 'Land Route Card', 6, 1, [item('littlelogistics:locomotive_route')], ['C3_STEAM_LOCO', 'OC_ROUTE_LOGIC'], ['Route cards turn transport into authored logistics.']),
+      q('C3_TUG', 'Tug and Barge', 6, -1, [item('littlelogistics:tug'), item('littlelogistics:barge')], ['C3_BUFFER'], ['Water logistics should matter where terrain makes rails awkward.']),
+      q('C3_WATER_ROUTE', 'Water Route Card', 8, -1, [item('littlelogistics:tug_route')], ['C3_TUG', 'OC_ROUTE_LOGIC'], ['Water route planning is still physical logistics.']),
+      q('C3_CHARGER', 'Vehicle Charging', 8, 1, [item('littlelogistics:vessel_charger')], ['PG_BATTERY', 'C3_STEAM_LOCO'], ['Chargers connect the logistics layer back to the power grid.'])
+    ]
+  },
+  {
+    filename: 'magic_ii', prefix: 'M2', id: 'BTM_MAGIC_II', order: 15, title: 'Diamond Tier - Magic II Power Branches', tier: 'diamond', description: ['Magic II surfaces the stronger side-magic branches after Blood Magic permissions are already proven.'], quests: [
+      q('M2_OCCULT_STORAGE', 'Occult Storage Permission', 0, -2, [item('occultism:storage_controller')], ['M1_DEMONIC'], ['Occult storage is useful, but it must not become an early infinite-storage substitute.']),
+      q('M2_OCCULT_MINER', 'Bounded Spirit Mining', 2, -2, [item('occultism:miner_foliot_unspecialized')], ['M2_OCCULT_STORAGE'], ['Spirit miners are late enough to be convenience, not the first mining plan.']),
+      q('M2_BOTANIA_TERRA', 'Terrestrial Plate', 0, 0, [item('botania:terra_plate')], ['M1_BOTANIA'], ['Botania engineering starts after the Demonic Slate tier.']),
+      q('M2_ALFHEIM', 'Alfheim Portal', 2, 0, [item('botania:alfheim_portal')], ['M2_BOTANIA_TERRA'], ['Dimensional magic has to be a constructed commitment.']),
+      q('M2_FORGE', 'Forbidden Forge', 0, 2, [item('forbidden_arcanus:hephaestus_forge')], ['M1_DEMONIC'], ['Forbidden and Arcanus belongs at Demonic tier, not early utility tier.']),
+      q('M2_THEURGY', 'Theurgy Accumulator', 2, 2, [item('theurgy:sal_ammoniac_accumulator')], ['M2_FORGE'], ['Theurgy is matter transmutation, so it belongs near late magic and synthesis rather than early ore solving.']),
+      q('M2_HEXCAST', 'Hex Focus and Staff', 4, -1, [item('hexcasting:focus'), item('hexcasting:staff/oak')], ['M1_ETHEREAL'], ['Programmable magic waits for Ethereal Slate permission.']),
+      q('M2_MNA', 'Mana and Artifice Runeforge', 4, 1, [item('mna:runeforge'), item('mna:manaweaver_wand')], ['M1_ETHEREAL'], ['Mana and Artifice is late magical infrastructure, not a side-door around Blood Magic.']),
+      q('M2_ARS_POWER', 'Ars Addon Power', 6, 0, [item('ars_elemental:advanced_prism'), item('ars_creo:starbuncle_wheel'), item('ars_caelum:ritual_conjure_island_starter')], ['M1_ETHEREAL'], ['Late Ars branches are allowed to be powerful after the Blood tier says yes.'])
+    ]
+  },
+  {
+    filename: 'synthesis_ii', prefix: 'S2', id: 'BTM_SYNTHESIS_II', order: 16, title: 'Platinum Tier - Synthesis II', tier: 'platinum', description: ['Synthesis II extends Acid Vat and Chemlib into late plates and slurry logistics. The Acid Vat mod source remains read-only; this chapter only references exposed pack items.'], quests: [
+      q('S2_PUMP', 'Mechanical Slurry Pump', 0, 0, [item('acid_vat:mechanical_slurry_pump')], ['S1_SYNTHESIS_EXIT'], ['Slurry movement is physical infrastructure, not a magic pipe.']),
+      q('S2_INTERFACE', 'Portable Slurry Interface', 2, -1, [item('acid_vat:portable_slurry_interface')], ['S2_PUMP'], ['Portable interfaces make chemistry fieldwork practical.']),
+      q('S2_VALVE', 'Slurry Valve Control', 2, 1, [item('acid_vat:slurry_valve')], ['S2_PUMP'], ['Valves make chemical routing authored and inspectable.']),
+      q('S2_URANIUM', 'Uranium Plate', 4, -2, [item('chemlib:uranium_plate')], ['S2_INTERFACE'], ['Lava-depth and deep synthesis materials become engineered plates.']),
+      q('S2_THORIUM', 'Thorium Plate', 4, 0, [item('chemlib:thorium_plate')], ['S2_INTERFACE'], ['Thorium is a late matter-routing material, not furnace ore.']),
+      q('S2_IRIDIUM', 'Iridium Plate', 4, 2, [item('chemlib:iridium_plate')], ['S2_VALVE'], ['Iridium should represent serious chemistry and extreme-resource commitment.']),
+      q('S2_RUTHENIUM', 'Ruthenium Plate', 6, 0, [item('chemlib:ruthenium_plate')], ['S2_URANIUM', 'S2_THORIUM', 'S2_IRIDIUM'], ['Ruthenium is a capstone signal for advanced chemical interpretation.'])
+    ]
+  },
+  {
+    filename: 'books', prefix: 'BK', id: 'BTM_BOOKS', order: 17, title: 'Reference Books', tier: 'copper', description: ['Books are references, not gates. This chapter gives players obvious places to find documentation without making guidebooks the progression key.'], quests: [
+      q('BK_QUEST_BOOK', 'Quest Book', 0, 0, [item('ftbquests:book')], ['SO_BACKPACK'], ['Use the quest book as the authored graph. It is allowed to explain; it should not be the mechanical gate.']),
+      q('BK_TCON', 'Tinkers Encyclopedia', 2, -1, [item('tconstruct:encyclopedia')], ['SO_TINKER'], ['Tinkers documentation belongs near the repair and metallurgy spine.']),
+      q('BK_PATCHOULI', 'Patchouli Guides', 2, 1, [item('patchouli:guide_book')], ['SO_BACKPACK'], ['Patchouli guide books vary by mod/NBT, so this is a loose reference checkpoint rather than a hard mod gate.']),
+      q('BK_MNA', 'Codex Arcana', 4, 1, [item('mna:guide_book')], ['M2_MNA'], ['Mana and Artifice documentation is late because the mod itself is late.'])
+    ]
+  },
+  {
+    filename: 'post_ae2', prefix: 'PA', id: 'BTM_POST_AE2', order: 18, title: 'Platinum Tier - Post-AE2 Branches', tier: 'platinum', description: ['Post-AE2 fans into a few strong branches: quantum manufacturing, extended local intelligence, bounded storage, source-AE hybrid, and quantum body rewards.'], quests: [
       q('PA_QUANTUM_STRUCTURE', 'Quantum Structure', 0, 0, [item('advanced_ae:quantum_structure')], ['AE_SPATIAL']),
       q('PA_REACTION', 'Reaction Chamber', 2, -1, [item('advanced_ae:reaction_chamber')], ['PA_QUANTUM_STRUCTURE']),
       q('PA_QUANTUM_CORE', 'Quantum Core', 2, 1, [item('advanced_ae:quantum_core')], ['PA_QUANTUM_STRUCTURE']),

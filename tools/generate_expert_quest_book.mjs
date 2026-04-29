@@ -31,6 +31,36 @@ const tierCoins = {
   platinum: ['copper', 'iron', 'tin', 'bronze', 'brass', 'silver', 'gold', 'diamond', 'platinum']
 }
 
+const tierGroups = {
+  starting: { id: 'BTM_GROUP_STARTING', title: 'Starting Out', order: 0 },
+  copper: { id: 'BTM_GROUP_COPPER', title: 'Copper Tier', order: 1 },
+  iron: { id: 'BTM_GROUP_IRON', title: 'Iron Tier', order: 2 },
+  tin: { id: 'BTM_GROUP_TIN', title: 'Tin Tier', order: 3 },
+  bronze: { id: 'BTM_GROUP_BRONZE', title: 'Bronze Tier', order: 4 },
+  brass: { id: 'BTM_GROUP_BRASS', title: 'Brass Tier', order: 5 },
+  silver: { id: 'BTM_GROUP_SILVER', title: 'Silver Tier', order: 6 },
+  gold: { id: 'BTM_GROUP_GOLD', title: 'Gold Tier', order: 7 },
+  diamond: { id: 'BTM_GROUP_DIAMOND', title: 'Diamond Tier', order: 8 },
+  platinum: { id: 'BTM_GROUP_PLATINUM', title: 'Platinum Tier', order: 9 },
+  emerald: { id: 'BTM_GROUP_EMERALD', title: 'Emerald Tier', order: 10 },
+  ruby: { id: 'BTM_GROUP_RUBY', title: 'Ruby Tier', order: 11 },
+  sapphire: { id: 'BTM_GROUP_SAPPHIRE', title: 'Sapphire Tier', order: 12 },
+  topaz: { id: 'BTM_GROUP_TOPAZ', title: 'Topaz Tier', order: 13 }
+}
+function groupForTier(tier) { return (tierGroups[tier] || tierGroups.copper).id }
+function chapterGroupsSnbt() {
+  const used = new Set(chapters.map(ch => ch.tier || 'copper'))
+  const groups = Object.entries(tierGroups)
+    .filter(([tier]) => used.has(tier))
+    .map(([, g]) => `		{id:"${g.id}" order_index:${g.order} title:"${esc(g.title)}"}`)
+  return `{
+	chapter_groups: [
+${groups.join(',\n')}
+	]
+}
+`
+}
+
 function q(id, title, x, y, tasks, deps = [], description = []) { return { id, title, x, y, tasks, deps, description } }
 function item(item, count = 1) { return { item, count } }
 function esc(s) { return String(s).replace(/\\/g, '\\\\').replace(/"/g, '\\"') }
@@ -81,7 +111,7 @@ function chapterSnbt(ch) {
   return `{
 \tdefault_hide_dependency_lines: false
 \tfilename: "${ch.filename}"
-\tgroup: "BTM_ROOT"
+\tgroup: "${groupForTier(ch.tier)}"
 \tid: "${ch.id}"
 \torder_index: ${ch.order}
 \ttitle: "${esc(ch.title)}"
@@ -396,4 +426,5 @@ if (missingDeps.length) throw new Error(`Missing dependency refs:\n${missingDeps
 if (missingItems.length) throw new Error(`Missing item ids:\n${missingItems.join('\n')}`)
 
 for (const ch of chapters) fs.writeFileSync(path.join(chapterDir, `${ch.filename}.snbt`), chapterSnbt(ch))
+fs.writeFileSync(path.join(root, 'config/ftbquests/quests/chapter_groups.snbt'), chapterGroupsSnbt())
 console.log(`generated ${chapters.length} quest chapters, ${allQuestIds.size} quests`)

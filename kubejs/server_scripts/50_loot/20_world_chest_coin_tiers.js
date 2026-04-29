@@ -84,6 +84,22 @@ var BTM_WORLD_CHEST_COIN_TABLES = [
     }
 ]
 
+function btmKnownCoinLootTables() {
+    var seen = {}
+    var tables = []
+    for (var i = 0; i < BTM_WORLD_CHEST_COIN_TABLES.length; i++) {
+        var row = BTM_WORLD_CHEST_COIN_TABLES[i]
+        for (var j = 0; j < row.tables.length; j++) {
+            var table = row.tables[j]
+            if (!seen[table]) {
+                seen[table] = true
+                tables.push(table)
+            }
+        }
+    }
+    return tables
+}
+
 function btmAddCoinToLootTable(event, table, coin, count, chance) {
     if (!Item.exists(coin)) {
         console.warn('[world-chest-coin-tiers] Missing coin item: ' + coin)
@@ -96,6 +112,12 @@ function btmAddCoinToLootTable(event, table, coin, count, chance) {
 }
 
 LootJS.modifiers(function (event) {
+    var baselineTables = btmKnownCoinLootTables()
+    for (var b = 0; b < baselineTables.length; b++) {
+        btmAddCoinToLootTable(event, baselineTables[b], 'dotcoinmod:copper_coin', 4, 1.0)
+        btmAddCoinToLootTable(event, baselineTables[b], 'dotcoinmod:iron_coin', 2, 0.85)
+    }
+
     for (var i = 0; i < BTM_WORLD_CHEST_COIN_TABLES.length; i++) {
         var row = BTM_WORLD_CHEST_COIN_TABLES[i]
         for (var j = 0; j < row.tables.length; j++) {

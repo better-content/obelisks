@@ -22,15 +22,10 @@ var BTM_EMERALD_LOOT_COIN_REPLACEMENTS = [
             'natures_spirit:chests/village/village_adobe_house',
             'natures_spirit:chests/village/village_coconut',
             'wares:agreement/village/desert_payment_sell',
-            'wares:agreement/village/desert_requested_buy',
             'wares:agreement/village/plains_payment_sell',
-            'wares:agreement/village/plains_requested_buy',
             'wares:agreement/village/savanna_payment_sell',
-            'wares:agreement/village/savanna_requested_buy',
             'wares:agreement/village/snowy_payment_sell',
-            'wares:agreement/village/snowy_requested_buy',
             'wares:agreement/village/taiga_payment_sell',
-            'wares:agreement/village/taiga_requested_buy',
             'wares:agreement/wandering_trader/rare_price',
             'wares:agreement/wandering_trader/regular_price',
             'wares:package/village/desert',
@@ -260,7 +255,44 @@ var BTM_EMERALD_LOOT_COIN_REPLACEMENTS = [
     }
 ]
 
+function btmIsWorldLootTable(table) {
+    return table.indexOf(':chests/') >= 0 ||
+        table.indexOf(':chest/') >= 0 ||
+        table.indexOf(':structures/') >= 0 ||
+        table.indexOf(':archaeology/') >= 0 ||
+        table.indexOf(':package/') >= 0 ||
+        table.indexOf('waterlogged_satchel') >= 0
+}
+
+function btmEmeraldReplacementTables() {
+    var seen = {}
+    var tables = []
+    for (var i = 0; i < BTM_EMERALD_LOOT_COIN_REPLACEMENTS.length; i++) {
+        var row = BTM_EMERALD_LOOT_COIN_REPLACEMENTS[i]
+        for (var j = 0; j < row.tables.length; j++) {
+            var table = row.tables[j]
+            if (!seen[table] && btmIsWorldLootTable(table)) {
+                seen[table] = true
+                tables.push(table)
+            }
+        }
+    }
+    return tables
+}
+
+function btmAddBaselineCoinLoot(event, table) {
+    if (Item.exists('dotcoinmod:copper_coin')) {
+        event.addLootTableModifier(table).addLoot(Item.of('dotcoinmod:copper_coin', 4)).randomChance(1.0)
+    }
+    if (Item.exists('dotcoinmod:iron_coin')) {
+        event.addLootTableModifier(table).addLoot(Item.of('dotcoinmod:iron_coin', 2)).randomChance(0.85)
+    }
+}
+
 LootJS.modifiers(function (event) {
+    var baselineTables = btmEmeraldReplacementTables()
+    for (var b = 0; b < baselineTables.length; b++) btmAddBaselineCoinLoot(event, baselineTables[b])
+
     for (var i = 0; i < BTM_EMERALD_LOOT_COIN_REPLACEMENTS.length; i++) {
         var row = BTM_EMERALD_LOOT_COIN_REPLACEMENTS[i]
         if (!Item.exists(row.coin)) {

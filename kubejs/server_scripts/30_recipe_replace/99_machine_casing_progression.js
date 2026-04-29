@@ -55,29 +55,55 @@ ServerEvents.recipes(function (event) {
     event.remove({ id: 'kubejs:alloy/sky_steel_ingot' })
 
     event.custom({
-        type: 'create:mechanical_crafting',
-        acceptMirrored: false,
-        pattern: [
-            'BPB',
-            'PCP',
-            'BDB'
+        type: 'create:sequenced_assembly',
+        ingredient: { item: 'kubejs:andesite_machine_casing' },
+        transitionalItem: { item: 'create:incomplete_precision_mechanism' },
+        sequence: [
+            {
+                type: 'create:deploying',
+                ingredients: [
+                    { item: 'create:incomplete_precision_mechanism' },
+                    { item: 'create:brass_sheet' }
+                ],
+                results: [{ item: 'create:incomplete_precision_mechanism' }]
+            },
+            {
+                type: 'create:deploying',
+                ingredients: [
+                    { item: 'create:incomplete_precision_mechanism' },
+                    { item: 'create:precision_mechanism' }
+                ],
+                results: [{ item: 'create:incomplete_precision_mechanism' }]
+            },
+            {
+                type: 'create:deploying',
+                ingredients: [
+                    { item: 'create:incomplete_precision_mechanism' },
+                    { item: 'create:brass_casing' }
+                ],
+                results: [{ item: 'create:incomplete_precision_mechanism' }]
+            },
+            {
+                type: 'create:pressing',
+                ingredients: [{ item: 'create:incomplete_precision_mechanism' }],
+                results: [{ item: 'create:incomplete_precision_mechanism' }]
+            }
         ],
-        key: {
-            B: { item: 'create:brass_sheet' },
-            P: { item: 'create:precision_mechanism' },
-            D: { item: 'create:brass_casing' },
-            C: { item: 'kubejs:andesite_machine_casing' }
-        },
-        result: { item: 'kubejs:brass_machine_casing' }
-    }).id('kubejs:create/mechanical_crafting/machine_casing/brass')
+        results: [
+            { item: 'kubejs:brass_machine_casing' },
+            { item: 'create:precision_mechanism', chance: 0.08 }
+        ],
+        loops: 2
+    }).id('kubejs:create/sequenced_assembly/machine_casing/brass')
 
     event.custom({
         type: 'create:mechanical_crafting',
         acceptMirrored: false,
         pattern: [
-            'ZCZ',
-            'IBI',
-            'ZKZ'
+            'ZCCZ',
+            'IBBI',
+            'IKKI',
+            'ZCCZ'
         ],
         key: {
             Z: { item: 'powergrid:zinc_sheet' },
@@ -93,9 +119,10 @@ ServerEvents.recipes(function (event) {
         type: 'create:mechanical_crafting',
         acceptMirrored: false,
         pattern: [
-            'TWT',
-            'CBC',
-            'TNT'
+            'TWWT',
+            'CBBC',
+            'CNNC',
+            'TWWT'
         ],
         key: {
             T: { item: 'oc2r:transistor' },
@@ -147,15 +174,18 @@ ServerEvents.recipes(function (event) {
         type: 'create:mechanical_crafting',
         acceptMirrored: false,
         pattern: [
-            'SFS',
-            'CBC',
-            'SPS'
+            'SFPFS',
+            'FCBCF',
+            'PBABP',
+            'FCBCF',
+            'SFPFS'
         ],
         key: {
             S: { item: 'kubejs:sky_steel_sheet' },
             F: { item: 'ae2:fluix_crystal' },
             C: { item: 'ae2:engineering_processor' },
             P: { item: 'ae2:sky_stone_block' },
+            A: { item: 'ae2:controller' },
             B: { item: 'kubejs:space_machine_casing' }
         },
         result: { item: 'kubejs:ae2_machine_casing' }

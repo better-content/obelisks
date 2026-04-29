@@ -59,9 +59,106 @@ function btmAddTrades(event, profession, rows) {
     }
 }
 
+function btmSellTrade(event, profession, level, inputItem, inputCount, copperCount, uses, xp) {
+    var coin = BTM_COIN.copper
+    if (!btmItemExists(coin) || !btmItemExists(inputItem)) return
+
+    var trade = event.addTrade(profession, level, [Item.of(inputItem, inputCount)], Item.of(coin, copperCount))
+    if (trade && trade.maxUses) trade.maxUses(uses || 12)
+    if (trade && trade.villagerExperience) trade.villagerExperience(xp || level * 2)
+    if (trade && trade.priceMultiplier) trade.priceMultiplier(0.0)
+}
+
+function btmAddSellTrades(event, profession, rows) {
+    for (var i = 0; i < rows.length; i++) {
+        var r = rows[i]
+        btmSellTrade(event, profession, r[0], r[1], r[2], r[3], r[4], r[5])
+    }
+}
+
 if (typeof MoreJSEvents !== 'undefined') {
     MoreJSEvents.villagerTrades(function (event) {
         event.removeVanillaTrades()
+
+        // Copper payout trades replace vanilla sell-for-emerald loops.
+        // These create a low-tier market floor without enabling coin conversion.
+        btmAddSellTrades(event, 'minecraft:farmer', [
+            [1, 'minecraft:wheat', 20, 2, 16, 2],
+            [1, 'minecraft:carrot', 24, 2, 16, 2],
+            [1, 'minecraft:potato', 24, 2, 16, 2],
+            [1, 'minecraft:beetroot', 20, 2, 16, 2],
+            [1, 'minecraft:pumpkin', 6, 2, 12, 2],
+            [2, 'minecraft:melon_slice', 24, 2, 12, 4],
+            [2, 'farmersdelight:cabbage', 18, 2, 12, 4],
+            [2, 'farmersdelight:tomato', 18, 2, 12, 4],
+            [2, 'farmersdelight:rice', 24, 2, 12, 4]
+        ])
+        btmAddSellTrades(event, 'minecraft:fisherman', [
+            [1, 'minecraft:cod', 16, 2, 16, 2],
+            [1, 'minecraft:salmon', 16, 2, 16, 2],
+            [1, 'minecraft:string', 20, 2, 12, 2],
+            [2, 'minecraft:pufferfish', 8, 2, 10, 4],
+            [2, 'minecraft:tropical_fish', 8, 2, 10, 4]
+        ])
+        btmAddSellTrades(event, 'minecraft:fletcher', [
+            [1, 'minecraft:stick', 48, 2, 16, 2],
+            [1, 'minecraft:flint', 16, 2, 12, 2],
+            [1, 'minecraft:feather', 16, 2, 12, 2],
+            [2, 'minecraft:string', 20, 2, 10, 4]
+        ])
+        btmAddSellTrades(event, 'minecraft:shepherd', [
+            [1, 'minecraft:white_wool', 12, 2, 16, 2],
+            [1, 'minecraft:black_wool', 12, 2, 16, 2],
+            [1, 'minecraft:brown_wool', 12, 2, 16, 2],
+            [2, 'minecraft:white_dye', 16, 2, 12, 4]
+        ])
+        btmAddSellTrades(event, 'minecraft:leatherworker', [
+            [1, 'minecraft:leather', 10, 2, 12, 2],
+            [1, 'minecraft:rabbit_hide', 12, 2, 12, 2],
+            [2, 'minecraft:scute', 4, 2, 8, 4]
+        ])
+        btmAddSellTrades(event, 'minecraft:mason', [
+            [1, 'minecraft:clay_ball', 32, 2, 16, 2],
+            [1, 'minecraft:stone', 32, 2, 12, 2],
+            [1, 'minecraft:granite', 32, 2, 12, 2],
+            [1, 'minecraft:andesite', 32, 2, 12, 2],
+            [1, 'minecraft:diorite', 32, 2, 12, 2]
+        ])
+        btmAddSellTrades(event, 'minecraft:butcher', [
+            [1, 'minecraft:chicken', 14, 2, 12, 2],
+            [1, 'minecraft:porkchop', 10, 2, 12, 2],
+            [1, 'minecraft:beef', 10, 2, 12, 2],
+            [1, 'minecraft:mutton', 10, 2, 12, 2]
+        ])
+        btmAddSellTrades(event, 'minecraft:cleric', [
+            [1, 'minecraft:rotten_flesh', 24, 2, 16, 2],
+            [1, 'minecraft:bone', 24, 2, 12, 2],
+            [2, 'minecraft:glass_bottle', 12, 2, 10, 4]
+        ])
+        btmAddSellTrades(event, 'minecraft:librarian', [
+            [1, 'minecraft:paper', 32, 2, 16, 2],
+            [1, 'minecraft:book', 8, 2, 10, 2],
+            [2, 'minecraft:ink_sac', 12, 2, 10, 4]
+        ])
+        btmAddSellTrades(event, 'minecraft:cartographer', [
+            [1, 'minecraft:paper', 32, 2, 16, 2],
+            [2, 'minecraft:compass', 2, 2, 8, 4],
+            [2, 'minecraft:glass_pane', 24, 2, 10, 4]
+        ])
+        btmAddSellTrades(event, 'minecraft:toolsmith', [
+            [1, 'minecraft:flint', 16, 2, 12, 2],
+            [1, 'minecraft:coal', 16, 2, 12, 2],
+            [2, 'minecraft:copper_ingot', 8, 2, 8, 4]
+        ])
+        btmAddSellTrades(event, 'minecraft:weaponsmith', [
+            [1, 'minecraft:coal', 16, 2, 12, 2],
+            [1, 'minecraft:flint', 16, 2, 12, 2],
+            [2, 'minecraft:gunpowder', 8, 2, 8, 4]
+        ])
+        btmAddSellTrades(event, 'minecraft:armorer', [
+            [1, 'minecraft:coal', 16, 2, 12, 2],
+            [2, 'minecraft:copper_ingot', 8, 2, 8, 4]
+        ])
 
         // Farmer: food recovery, cooking infrastructure, feast/restock support.
         btmAddTrades(event, 'minecraft:farmer', [

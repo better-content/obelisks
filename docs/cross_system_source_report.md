@@ -1,6 +1,6 @@
 # Cross-System Source Report
 
-Generated: 2026-04-29T08:17:09.176Z
+Generated: 2026-04-29T08:29:18.673Z
 
 This report lists item sources outside normal recipes and items produced by multiple material-conversion systems.
 
@@ -202,30 +202,30 @@ This report lists item sources outside normal recipes and items produced by mult
 | electricity.snbt | dotcoinmod:tin_coin     | 4     |
 | electricity.snbt | dotcoinmod:bronze_coin  | 4     |
 | electricity.snbt | dotcoinmod:brass_coin   | 4     |
-| magic_i.snbt     | dotcoinmod:copper_coin  | 4     |
-| magic_i.snbt     | dotcoinmod:iron_coin    | 4     |
-| magic_i.snbt     | dotcoinmod:tin_coin     | 4     |
-| magic_i.snbt     | dotcoinmod:copper_coin  | 4     |
-| magic_i.snbt     | dotcoinmod:iron_coin    | 4     |
-| magic_i.snbt     | dotcoinmod:tin_coin     | 4     |
-| magic_i.snbt     | dotcoinmod:copper_coin  | 4     |
-| magic_i.snbt     | dotcoinmod:iron_coin    | 4     |
-| magic_i.snbt     | dotcoinmod:tin_coin     | 4     |
-| magic_i.snbt     | dotcoinmod:copper_coin  | 4     |
-| magic_i.snbt     | dotcoinmod:iron_coin    | 4     |
-| magic_i.snbt     | dotcoinmod:tin_coin     | 4     |
-| magic_i.snbt     | dotcoinmod:copper_coin  | 4     |
-| magic_i.snbt     | dotcoinmod:iron_coin    | 4     |
-| magic_i.snbt     | dotcoinmod:tin_coin     | 4     |
-| magic_i.snbt     | dotcoinmod:copper_coin  | 4     |
-| magic_i.snbt     | dotcoinmod:iron_coin    | 4     |
-| magic_i.snbt     | dotcoinmod:tin_coin     | 4     |
-| magic_i.snbt     | dotcoinmod:copper_coin  | 4     |
-| magic_i.snbt     | dotcoinmod:iron_coin    | 4     |
-| magic_i.snbt     | dotcoinmod:tin_coin     | 4     |
-| magic_i.snbt     | dotcoinmod:copper_coin  | 4     |
-| magic_i.snbt     | dotcoinmod:iron_coin    | 4     |
-| magic_i.snbt     | dotcoinmod:tin_coin     | 4     |
+| food_body.snbt   | dotcoinmod:copper_coin  | 4     |
+| food_body.snbt   | dotcoinmod:iron_coin    | 4     |
+| food_body.snbt   | dotcoinmod:copper_coin  | 4     |
+| food_body.snbt   | dotcoinmod:iron_coin    | 4     |
+| food_body.snbt   | dotcoinmod:copper_coin  | 4     |
+| food_body.snbt   | dotcoinmod:iron_coin    | 4     |
+| food_body.snbt   | dotcoinmod:copper_coin  | 4     |
+| food_body.snbt   | dotcoinmod:iron_coin    | 4     |
+| food_body.snbt   | dotcoinmod:copper_coin  | 4     |
+| food_body.snbt   | dotcoinmod:iron_coin    | 4     |
+| food_body.snbt   | dotcoinmod:copper_coin  | 4     |
+| food_body.snbt   | dotcoinmod:iron_coin    | 4     |
+| food_body.snbt   | dotcoinmod:copper_coin  | 4     |
+| food_body.snbt   | dotcoinmod:iron_coin    | 4     |
+| food_body.snbt   | dotcoinmod:copper_coin  | 4     |
+| food_body.snbt   | dotcoinmod:iron_coin    | 4     |
+| food_body.snbt   | dotcoinmod:copper_coin  | 4     |
+| food_body.snbt   | dotcoinmod:iron_coin    | 4     |
+| food_body.snbt   | dotcoinmod:copper_coin  | 4     |
+| food_body.snbt   | dotcoinmod:iron_coin    | 4     |
+| food_body.snbt   | dotcoinmod:copper_coin  | 4     |
+| food_body.snbt   | dotcoinmod:iron_coin    | 4     |
+| food_body.snbt   | dotcoinmod:copper_coin  | 4     |
+| food_body.snbt   | dotcoinmod:iron_coin    | 4     |
 | magic_i.snbt     | dotcoinmod:copper_coin  | 4     |
 | magic_i.snbt     | dotcoinmod:iron_coin    | 4     |
 
@@ -256,6 +256,7 @@ This report lists item sources outside normal recipes and items produced by mult
 | minecraft:iron_ingot                | recipe, loot                 | 153          |
 | minecraft:bone                      | recipe, loot                 | 150          |
 | minecraft:string                    | recipe, loot                 | 146          |
+| dotcoinmod:iron_coin                | loot, quest_reward           | 127          |
 | minecraft:gold_ingot                | recipe, loot                 | 121          |
 | minecraft:gold_nugget               | recipe, loot                 | 120          |
 | minecraft:iron_nugget               | recipe, loot                 | 103          |
@@ -267,7 +268,6 @@ This report lists item sources outside normal recipes and items produced by mult
 | minecraft:redstone                  | recipe, loot, villager_trade | 97           |
 | minecraft:paper                     | recipe, loot                 | 93           |
 | minecraft:leather                   | recipe, loot, villager_trade | 87           |
-| dotcoinmod:iron_coin                | loot, quest_reward           | 87           |
 | minecraft:snowball                  | recipe, loot                 | 84           |
 | minecraft:ladder                    | recipe, loot                 | 77           |
 | twilightforest:moss_patch           | recipe, loot                 | 74           |
@@ -275,6 +275,7 @@ This report lists item sources outside normal recipes and items produced by mult
 | minecraft:experience_bottle         | recipe, loot, villager_trade | 72           |
 | minecraft:bone_meal                 | recipe, loot                 | 67           |
 | minecraft:raw_gold                  | recipe, loot                 | 66           |
+| dotcoinmod:bronze_coin              | loot, quest_reward           | 66           |
 | minecraft:golden_apple              | recipe, loot, villager_trade | 65           |
 | minecraft:arrow                     | recipe, loot, villager_trade | 63           |
 | minecraft:wheat                     | recipe, loot                 | 62           |
@@ -300,7 +301,6 @@ This report lists item sources outside normal recipes and items produced by mult
 | minecraft:name_tag                  | recipe, loot, villager_trade | 50           |
 | minecraft:saddle                    | recipe, loot                 | 50           |
 | minecraft:iron_boots                | recipe, loot                 | 50           |
-| dotcoinmod:bronze_coin              | loot, quest_reward           | 50           |
 | the_bumblezone:honey_crystal_shield | recipe, loot                 | 48           |
 | minecraft:flint                     | recipe, loot                 | 47           |
 | minecraft:carrot                    | recipe, loot                 | 47           |
@@ -312,6 +312,7 @@ This report lists item sources outside normal recipes and items produced by mult
 | minecraft:obsidian                  | recipe, loot, villager_trade | 45           |
 | minecraft:cobblestone               | recipe, loot                 | 44           |
 | minecraft:spider_eye                | recipe, loot                 | 44           |
+| dotcoinmod:silver_coin              | loot, quest_reward           | 44           |
 | minecraft:enchanted_golden_apple    | recipe, loot, villager_trade | 43           |
 | minecraft:iron_helmet               | recipe, loot                 | 43           |
 | minecraft:honeycomb                 | recipe, loot                 | 43           |
@@ -325,6 +326,7 @@ This report lists item sources outside normal recipes and items produced by mult
 | minecraft:iron_chestplate           | recipe, loot, villager_trade | 38           |
 | minecraft:scaffolding               | recipe, loot                 | 38           |
 | minecraft:diamond_leggings          | recipe, loot, villager_trade | 38           |
+| dotcoinmod:gold_coin                | loot, quest_reward           | 38           |
 | minecraft:chain                     | recipe, loot                 | 37           |
 | minecraft:diamond_boots             | recipe, loot, villager_trade | 37           |
 | minecraft:red_dye                   | recipe, loot                 | 36           |
@@ -342,8 +344,8 @@ This report lists item sources outside normal recipes and items produced by mult
 | minecraft:bucket                    | recipe, loot                 | 34           |
 | blue_skies:aquite                   | recipe, loot                 | 33           |
 | minecraft:glow_berries              | recipe, loot                 | 33           |
+| beautify:hanging_pot                | recipe, loot, villager_trade | 33           |
 | minecraft:clay_ball                 | recipe, loot                 | 32           |
-| beautify:hanging_pot                | recipe, loot                 | 32           |
 | minecraft:red_mushroom              | recipe, loot                 | 32           |
 | minecraft:pink_dye                  | recipe, loot                 | 31           |
 | minecraft:white_wool                | recipe, loot, villager_trade | 31           |
@@ -369,7 +371,6 @@ This report lists item sources outside normal recipes and items produced by mult
 | minecraft:nether_wart               | recipe, loot                 | 28           |
 | minecraft:soul_sand                 | recipe, loot                 | 28           |
 | minecraft:candle                    | recipe, loot                 | 28           |
-| dotcoinmod:silver_coin              | loot, quest_reward           | 28           |
 | minecraft:mangrove_planks           | recipe, loot                 | 27           |
 | minecraft:acacia_planks             | recipe, loot                 | 27           |
 | minecraft:birch_planks              | recipe, loot                 | 27           |
@@ -405,7 +406,6 @@ This report lists item sources outside normal recipes and items produced by mult
 | buildersaddition:pillow_red         | recipe, loot                 | 25           |
 | buildersaddition:pillow_lime        | recipe, loot                 | 25           |
 | buildersaddition:pillow_white       | recipe, loot                 | 25           |
-| minecraft:melon_seeds               | recipe, loot                 | 24           |
 
 ## Emerald Loot Sources
 

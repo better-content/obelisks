@@ -1,6 +1,6 @@
 # Full Item Graph Audit
 
-Generated: 2026-04-29T08:17:09.174Z
+Generated: 2026-04-29T08:29:18.672Z
 
 Instance: `/home/gerald/.local/share/PrismLauncher/instances/Bound to Matter-Playtest 3 - v1/minecraft`
 
@@ -9,8 +9,8 @@ Instance: `/home/gerald/.local/share/PrismLauncher/instances/Bound to Matter-Pla
 - Recipes scanned: 50077
 - Recipe outputs extracted: 45030
 - Loot tables scanned: 22436
-- Quest chapter files scanned: 12
-- Villager trade rows parsed: 125
+- Quest chapter files scanned: 15
+- Villager trade rows parsed: 140
 
 ## Top Recipe Namespaces
 

@@ -1,6 +1,6 @@
 # No-Bypass Report
 
-Generated: 2026-04-29T08:17:09.177Z
+Generated: 2026-04-29T08:29:18.673Z
 
 This is an audit report, not a proof. The current KubeJS recipe dump is pre-addition for KubeJS-added recipes, so this report is best used to identify likely misses and non-recipe bypass surfaces.
 
@@ -12,7 +12,7 @@ This is an audit report, not a proof. The current KubeJS recipe dump is pre-addi
 | Loot tables containing emerald                   | 237   |
 | Loot high-risk table/item pairs                  | 144   |
 | Villager script emerald mentions                 | 0     |
-| Items with multiple source systems               | 17150 |
+| Items with multiple source systems               | 17152 |
 
 ## MUST DO
 

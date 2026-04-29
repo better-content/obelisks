@@ -114,3 +114,21 @@ The goal is not to make loot empty. The goal is to stop loot from bypassing prog
 - Open Apotheosis rogue spawner valuable chests; confirm rewards are coins and mundane supplies.
 - Kill a treasure goblin; confirm it drops coins/supplies instead of random affix gear and gems.
 - Check End City and Twilight loot in a disposable world; confirm Apotheosis affix/gem rates are low and not present in ordinary overworld loot.
+
+## Loot As Crafting Economy
+
+Loot tables are an essential crafting system in this pack. They convert exploration, combat, dimensions, risk, and route knowledge into materials and currency. Future loot passes should audit loot tables with the same rigor as recipes, villager trades, Wares contracts, and quest rewards.
+
+### MUST DO
+
+#### Proposal: Add a full loot-table graph audit
+
+- Evidence: Wares contracts, package rewards, Apotheosis chests, entity loot, and dimension rewards can all mint progression resources outside normal recipe screens.
+- Why it fits the design: bounded matter requires every material source to be authored, including loot.
+- Risk: random loot can bypass deposits, machine casings, Blood Magic tiers, or coin scarcity.
+- Implementation surface: `kubejs/data/**/loot_tables`, instance `dump/data_raw/loot_tables`, entity loot, chest loot, Wares agreement/package tables.
+- Confidence level: High.
+
+## World Chest Coin Injection
+
+A first world-loot coin pass now injects low and mid-low Dot Coin tiers into confirmed vanilla/world chest tables through LootJS instead of replacing whole loot tables. This makes scouting and structure discovery part of the crafting economy while keeping gold-and-higher coin tiers reserved for harder dimension, obelisk, and boss systems. See `docs/world_loot_coin_pass_report.md`.

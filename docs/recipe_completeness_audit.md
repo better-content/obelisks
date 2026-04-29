@@ -22,7 +22,7 @@ The implemented recipe work is best described as:
 - Blood Magic entry gates
 - high-value bypass suppression
 - first material-economy rewrite pass
-- first loot/trade/high-value reward passes
+- first loot/trade/Wares/high-value reward passes
 
 It is not yet:
 
@@ -31,6 +31,7 @@ It is not yet:
 - a complete magic placement pass for every operational power spike
 - a complete post-AE2 branch design
 - a proven final effective recipe graph dump
+- a complete authored loot/trade/contract graph
 
 ## Evidence
 
@@ -94,7 +95,7 @@ The current KubeJS dump script runs inside `ServerEvents.recipes`. It can inspec
 - `kubejs:*_machine_casing` recipe mentions were absent even though the repo scripts define them.
 - Known KubeJS additions are visible in scripts and logs, but not in the pre-addition `forEachRecipe` scan.
 
-A chunked full export has now been added for dev, but it still needs a clean reload and then validation that it actually contains `kubejs:` recipe IDs. Until that is confirmed, any recipe graph report must be treated as a strong pre-addition audit, not a final effective recipe proof.
+A chunked full export has now been reloaded successfully and produced 51 chunks for 50,077 scanned recipes. It still does not contain `kubejs:` recipe IDs, which confirms this exporter is a pre-addition recipe-event audit rather than final recipe-manager state. Until a command-driven or final-manager dump exists, recipe graph reports must be treated as strong pre-addition audits, not proof of final effective recipes.
 
 ## Confirmed Strong Points
 
@@ -143,6 +144,14 @@ These support the intended design direction, but they are not sufficient for ful
 - Why it fits the design: the pack thesis depends on each tier adding manufacturing complexity, not a few representative gates.
 - Risk: Ungated machines can bypass entire tiers.
 - Implementation surface: new data catalogue plus generated KubeJS reports/recipes.
+- Confidence: High.
+
+#### Proposal: Treat loot, villager trades, Wares contracts, and quest rewards as recipes
+
+- Evidence: Wares delivery agreements are driven by loot tables, villager trades are generated through MoreJS, quest rewards mint Dot Coins, and dimension/combat loot supplies progression currency.
+- Why it fits the design: these systems convert effort and location into materials exactly like machines do. They are essential crafting surfaces for bounded matter and bounded distance.
+- Risk: if audited as passive rewards, they can bypass casing tiers, ore deposits, magic gates, or coin scarcity.
+- Implementation surface: `kubejs/data/**/loot_tables`, `kubejs/server_scripts/35_villager_trades`, FTB Quest rewards, obelisk/dimension mob loot, Wares agreement tables.
 - Confidence: High.
 
 #### Proposal: Complete Acid Vat / Create replacement for Alchemistry player-facing progression

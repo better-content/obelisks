@@ -163,6 +163,12 @@ AE2 is local site intelligence. Do not allow AE2 to become infinite storage, glo
 
 Copper Coins: every Starting Out quest rewards `16 Copper Coins`; holding `16 Copper Coins` unlocks Villager Trading. Coin acquisition comes from player-killing mobs in obelisk/dimension content. Trading supports convenience, recovery, deco exclusives, and ARPG progression without trivializing production.
 
+Villager trading, Wares delivery contracts, loot tables, dimension/combat drops, and quest rewards are essential crafting systems. They convert location, danger, travel, labor, and authored scarcity into materials. Audit and balance them with the same seriousness as machine recipes.
+
+Wares contracts must use Dot Coins and authored goods, not emerald currency. Remove default emerald Wares agreement currency. Use Wares to make villages, warehouses, packagers, packaging, and physical routes part of the crafting economy.
+
+Loot is not passive flavor in this pack. Loot tables must not bypass ore deposits, casing tiers, Blood Magic gates, AE2 locality, or coin scarcity. Good loot should provide bounded coins, route supplies, recovery, regional goods, contract goods, and explicit adventure progression rewards.
+
 ## Staged Workflow
 
 Pass 0 is discovery and planning only. It produces:

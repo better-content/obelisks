@@ -6642,7 +6642,7 @@ hash = "29ba72d4a2da9805acc8db928f2611713c60cc021e8dc2836525e84e6677dd19"
 
 [[files]]
 file = "docs/design_handoff.md"
-hash = "a236eaa3bfb808543ec69d487e0a6e4876e7d45af758eed96b0db81609d001b0"
+hash = "b17f39dda4828f96a15eb8fcac1d0d5a54cee461a84cf20777459c022d5dec81"
 
 [[files]]
 file = "docs/discovered_connections.md"
@@ -6678,7 +6678,7 @@ hash = "cdfcb9f2a2431acb9f49bba93cd283d6b97a013f25bae2500b0d23182e6bea0f"
 
 [[files]]
 file = "docs/loot_table_pass_report.md"
-hash = "24059c771f07c6ad0ec5b79e77edae3096dafe04995ea67e25d4ef87e439013d"
+hash = "95804a43df3eec5f2ae628db38adcec43a44ceb074fd38cc042269731d421ee0"
 
 [[files]]
 file = "docs/machine_casing_asset_notes.md"
@@ -6713,6 +6713,14 @@ file = "docs/progression_chokepoints.md"
 hash = "f55dc3dee334c40ada88ba57204f1c10c964d1d3618b209841a31b7939acf47b"
 
 [[files]]
+file = "docs/quest_book_completeness_audit.md"
+hash = "dd8309984f3936fc801c5588768607d2d6fd8f328c8b8314e222e7f7e8b8b808"
+
+[[files]]
+file = "docs/recipe_completeness_audit.md"
+hash = "6c0196702ff75b4ee8ac4cc981355bca53f46d8d4962b3c62aa90a8ed9470990"
+
+[[files]]
 file = "docs/recipe_type_capabilities.md"
 hash = "7bcf0512c855c593f2e31cc018d37648e3245423c881d1363ea65e9cb25a6727"
 
@@ -6723,6 +6731,14 @@ hash = "7c62aa1a88aa778ebedd64f875fe67b4241990c9c619dd6ba9342e68e8906412"
 [[files]]
 file = "docs/validation_report.md"
 hash = "456a216a33044635eed83bacfd9ab1c0ddb845a5186cc8d896986ead3052e35a"
+
+[[files]]
+file = "docs/wares_contract_pass_report.md"
+hash = "ba3a82937de94d537f2483170fe668e3c0fc26a1575b09abb269151a989da24c"
+
+[[files]]
+file = "docs/world_loot_coin_pass_report.md"
+hash = "a4dfb8281a2a113867c8d636da987bd25c960c2559858adcfd863282a62fc7e3"
 
 [[files]]
 file = "globalresources/obelisks/globaldata/obelisks/excavated_variants/modifier/disable_malum_brilliant_stone.json"
@@ -7749,6 +7765,74 @@ file = "kubejs/data/sophisticatedbackpacks/loot_tables/inject/chests/woodland_ma
 hash = "12a921b3031c22003cb6ae6391ec7f347af8ee091bc2a669da41f72b0c48b4d9"
 
 [[files]]
+file = "kubejs/data/wares/loot_tables/agreement/village/desert_payment_sell.json"
+hash = "de96feb1046db6a38627f61d349077f9b1cd6cf99e2c2472d0838fe6d248f6ce"
+
+[[files]]
+file = "kubejs/data/wares/loot_tables/agreement/village/desert_requested_buy.json"
+hash = "4f4257fe0a5de0c3bc635b8304025032b21c023823ef6938a0d35b968220e9f9"
+
+[[files]]
+file = "kubejs/data/wares/loot_tables/agreement/village/plains_payment_sell.json"
+hash = "418295fe8f1dabd7d5d74575bde3a8394c03c09e0ef8060b0c1139e303c76012"
+
+[[files]]
+file = "kubejs/data/wares/loot_tables/agreement/village/plains_requested_buy.json"
+hash = "7180094765e0b401e9d38350051e8893ba73f25fd3869e550da796b7ccdb1eb6"
+
+[[files]]
+file = "kubejs/data/wares/loot_tables/agreement/village/savanna_payment_sell.json"
+hash = "4844f5e00586ee69f82deb3384e7fb13845358acc2d338dc4711319c23ce6122"
+
+[[files]]
+file = "kubejs/data/wares/loot_tables/agreement/village/savanna_requested_buy.json"
+hash = "03ba0118aafac8d84407e7e8470b518f43f485bd861e1b4490cd31b8502e46f6"
+
+[[files]]
+file = "kubejs/data/wares/loot_tables/agreement/village/snowy_payment_sell.json"
+hash = "743274c4fb1c09b714fbb09e019d3eb2624a1f548599b3779d56b1f442987a66"
+
+[[files]]
+file = "kubejs/data/wares/loot_tables/agreement/village/snowy_requested_buy.json"
+hash = "80ea0f6117895e8663eb74da1a1af2050cfea66026edf572aac09c366e23bd37"
+
+[[files]]
+file = "kubejs/data/wares/loot_tables/agreement/village/taiga_payment_sell.json"
+hash = "0455028eab93255c4135404c4c92d6ba8ac6a907ba3ba95bb9d3c8587de503b6"
+
+[[files]]
+file = "kubejs/data/wares/loot_tables/agreement/village/taiga_requested_buy.json"
+hash = "b56c97cf50775fb9174036ca0e8150ecc8078d3dfede261b7525a70be486f8ee"
+
+[[files]]
+file = "kubejs/data/wares/loot_tables/agreement/wandering_trader/rare_price.json"
+hash = "8efbebc1a817724c12f1663e6a85628fc540b80c4a8062724ac2749d25bab387"
+
+[[files]]
+file = "kubejs/data/wares/loot_tables/agreement/wandering_trader/regular_price.json"
+hash = "c881870f50b7ed7dc965f5f4535c506f3147eb3384aff89ddaf426e000bbf1e3"
+
+[[files]]
+file = "kubejs/data/wares/loot_tables/package/village/desert.json"
+hash = "9470d9b7b2ed80e4802ff438a570d35caef000d74c95d418fa646d971539045b"
+
+[[files]]
+file = "kubejs/data/wares/loot_tables/package/village/plains.json"
+hash = "eedcb476053ed04a17a70deea631d1f3afe8b9542153f6103034cc369400ed6a"
+
+[[files]]
+file = "kubejs/data/wares/loot_tables/package/village/savanna.json"
+hash = "e98dd247f02a2533235a75b681cd695d18e1e1d293c39976378a43d171cba1e6"
+
+[[files]]
+file = "kubejs/data/wares/loot_tables/package/village/snowy.json"
+hash = "ba5f9d131936c755e2a2eaad2e1c17d89520f159206ec69ae0200eb2fc6fde7d"
+
+[[files]]
+file = "kubejs/data/wares/loot_tables/package/village/taiga.json"
+hash = "8d1877007a62d30f37648754a8ecddad7843108b3c1eebf8d24b8be64a61557d"
+
+[[files]]
 file = "kubejs/dump_copper_ingot_recipes.js"
 hash = "8948dcf343e53226e2a802ed4095940e45f6620104a1fe44a041b4e1de7e8f61"
 
@@ -7899,6 +7983,10 @@ hash = "2e6c80fb04fac10ec6da396eb3b77e59dba142b5b94803c5af457dd123ca13d5"
 [[files]]
 file = "kubejs/server_scripts/50_loot/10_overworld_block_drops.js"
 hash = "45fbdf632e9926578409beb1a162db0be1fb53fb40fd0f26f826e1b35d0fb2b6"
+
+[[files]]
+file = "kubejs/server_scripts/50_loot/20_world_chest_coin_tiers.js"
+hash = "97429f20c010d6127cd58aceaba69f3c9ec7c9fadfa050c43572f5409afb804a"
 
 [[files]]
 file = "kubejs/server_scripts/60_worldgen/10_r_ores_melted.js"

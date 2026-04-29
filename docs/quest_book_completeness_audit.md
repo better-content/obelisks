@@ -172,6 +172,7 @@ Missing reward work:
 - no explicit Villager Trading unlock on holding 16 copper coins
 - no quest dependencies tying chapters to coin tiers
 - no authored adventure coin sources reflected in quests
+- no Wares contract tutorial despite Wares being an essential crafting/economy surface
 - no reward warnings to avoid bypassing recipe gates
 
 ## Major Gaps
@@ -208,6 +209,14 @@ Missing reward work:
 - Why it fits the design: villages and trade are a main progression authority.
 - Risk: coin economy exists mechanically but is not taught or gated.
 - Implementation surface: quest item task for `dotcoinmod:copper_coin` x16, chapter visibility/dependency for Villager Trading.
+- Confidence: High.
+
+#### Proposal: Add Wares contract-crafting quest chain
+
+- Evidence: Wares agreements are generated from loot tables and now use Dot Coin tiers, but the quest book does not teach delivery tables, packagers, packaging, sealed agreements, or village warehouse routes.
+- Why it fits the design: Wares is a crafting system based on trade contracts and local logistics. It reinforces villages, distance, routes, and non-machine material conversion.
+- Risk: players miss one of the core economic crafting lanes, or treat contracts as random loot.
+- Implementation surface: Villager Trading, Adventuring, and Logistics quest chapters; item tasks for `wares:delivery_table`, `wares:cardboard_box`, `wares:sealed_delivery_agreement`, and contract-completion text/check tasks.
 - Confidence: High.
 
 #### Proposal: Add chapter dependency links matching casing tiers
@@ -294,4 +303,5 @@ Missing reward work:
 2. Add dependency graph and onboarding gate.
 3. Rebuild Starting Out to match the design graph with three terminal exits.
 4. Add Villager Trading chapter/unlock.
-5. Expand Tech, Magic, Adventure, Synthesis, AE2, and Post-AE2 chapters from skeletons into authored progression.
+5. Add Wares contract-crafting tutorial and connect it to villages/routes/coins.
+6. Expand Tech, Magic, Adventure, Synthesis, AE2, and Post-AE2 chapters from skeletons into authored progression.

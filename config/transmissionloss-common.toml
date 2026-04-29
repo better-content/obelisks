@@ -1,0 +1,29 @@
+[general]
+	# Master switch for applying transmission loss.
+	enabled = true
+	# Minimum ticks before recomputing a dirty network.
+	recalcCooldownTicks = 20
+	# Whether encased shafts contribute loss separately from plain shafts.
+	includeEncasedShafts = true
+	# Reserved compatibility toggle for decorative transmission parts.
+	countDecorative = false
+
+[speedScaling]
+	# Scaling mode: NONE, LINEAR, QUADRATIC.
+	speedMode = "LINEAR"
+	# Reference RPM used for scaling normalization.
+	baseRpm = 32.0
+	# Scaling factor applied by LINEAR/QUADRATIC modes.
+	k = 0.75
+	# Hard cap for speed multiplier.
+	maxMult = 4.0
+
+[suLoss]
+	shaft = 0.08
+	encasedShaft = 0.1
+	cogwheel = 0.16
+	largeCogwheel = 0.24
+	gearbox = 0.32
+	beltSegment = 0.06
+	beltPulley = 0.16
+	chainDrive = 0.2

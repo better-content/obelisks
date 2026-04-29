@@ -225,6 +225,8 @@ if (typeof MoreJSEvents !== 'undefined') {
             [2, 'tin', 3, 'handcrafted:hammer', 1, 6, 6],
             [3, 'bronze', 4, 'minecraft:painting', 3, 8, 10],
             [3, 'bronze', 4, 'handcrafted:oak_table', 1, 6, 10],
+            [3, 'bronze', 4, 'procedural_bouquets:bouquet_grid', 1, 4, 10],
+            [3, 'bronze', 2, 'procedural_bouquets:potted_bouquet', 1, 8, 10],
             [3, 'nickel', 4, 'beautify:oak_blinds', 4, 6, 10],
             [3, 'nickel', 4, 'another_furniture:service_bell', 1, 4, 10],
             [4, 'silver', 5, 'beautify:lamp_candelabra', 2, 4, 14],

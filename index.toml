@@ -5726,7 +5726,7 @@ hash = "3ea5f53ffda95cb49068220f961602621d9d9d5d9b882a7f9af6efd5941252f3"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/adventuring.snbt"
-hash = "b66738c8e23f382e04dd772c24a678d432096c10e961b770f74311d8348ce985"
+hash = "cedc1015bfc00729aed3bceb0dea567e108dbda8a811f66c6de3029550a18eca"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/ae2.snbt"
@@ -5754,7 +5754,7 @@ hash = "e94e5e6ffce00dd72ff3565511a077967921342f05e1371c7f11ee73620b6167"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/electricity.snbt"
-hash = "36b4e9918ee11dcab933444e3fba1112c009082a5e29f03cea06093422b4de85"
+hash = "ded3bf12c52415e33540dd5f5641002d594ceb22b0a496520e4d04f3899b6763"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/food_body.snbt"
@@ -5766,7 +5766,7 @@ hash = "2fbd8612159fdb15c948c30417ae44f3dd6dee1a872fc8fd0682a3932dec2e4c"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/magic_i.snbt"
-hash = "f9f96a5f0a52be47491e3997a84f1aa1b335d4da8510b40d12f4a101bd4ef044"
+hash = "1436c33ed31ef4d3d5819cb2f917307da2f9ceac82ad31e8c50f8ca928954129"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/magic_ii.snbt"
@@ -5774,7 +5774,7 @@ hash = "ce499ada1511c83da9a025b94e07c88a0ed595a430e89bd73cd684ecbdaff1fe"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/oc2r.snbt"
-hash = "f0cc64b4c9e5541b39def111275852081fc0380869c5e3b3d112aa28b8b32963"
+hash = "536c52db1004f923e72385def6f7486f2a95a82cc145f26614d805d69fcb3498"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/post_ae2.snbt"
@@ -5802,7 +5802,7 @@ hash = "243e137a1027f538a186eab0e5182a8ac24a3a14640f35bfbb978a9192f3d590"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/village_economy.snbt"
-hash = "cbff854ddcff6cb509608d405606042afb8e932b365cbd1a5294b47af31fa54b"
+hash = "7029e6747f91298abb82d5cffd65725835a238654871e4e170b3e7275cb645c5"
 
 [[files]]
 file = "config/ftbquests/quests/data.snbt"
@@ -6487,6 +6487,10 @@ hash = "3715e91d248212d918d230ae1718a9698986e1e1ce9179fbd1a9f9d3f2f7bf6d"
 [[files]]
 file = "config/towns_and_towers/structure_rarity_new.json5"
 hash = "1f6cddbcb2d89fbcc774d7bdae9987ccb031ba8fe024307357076ca617b17eeb"
+
+[[files]]
+file = "config/transmissionloss-common.toml"
+hash = "00daf23ac24e5efd448fc7ee8f4817db71a5bf72b7d18f9e432a0b14f6035ca5"
 
 [[files]]
 file = "config/ysns/disabled_entities.json5"
@@ -7845,6 +7849,10 @@ file = "kubejs/data/artifacts/loot_tables/inject/entities/mooshroom.json"
 hash = "77c5f0c86742c20944afb1e6e07c6c9aa066a97f1457e0745577ecbfdcbe0643"
 
 [[files]]
+file = "kubejs/data/heatsync/tags/blocks/pipe_radiators.json"
+hash = "018762efbfad250f491f5cff25c4595ffa1b3108cd889ff7d9e5fcd7a7d4db3f"
+
+[[files]]
 file = "kubejs/data/sophisticatedbackpacks/loot_tables/inject/chests/abandoned_mineshaft.json"
 hash = "7adc1de210634653989451c2a0398434feef7e678ba11176c1bda0ebba243153"
 
@@ -8029,6 +8037,10 @@ file = "kubejs/server_scripts/30_recipe_replace/140_nuclear_synthesis_power_gate
 hash = "1ca9dd16b64f47fc22c311b839fc25b3407ffdf781393101e945a5e8d5d433be"
 
 [[files]]
+file = "kubejs/server_scripts/30_recipe_replace/150_integrated_deferred_mod_gates.js"
+hash = "f8382c66372b5c7e24a0a254a35da682461333a1dd470af9a3477de663a9956c"
+
+[[files]]
 file = "kubejs/server_scripts/30_recipe_replace/20_expensive_grout.js"
 hash = "e6c8d7264f4564aa029554693e293cc3184550dddf826e07111bf37f9ff459fb"
 
@@ -8082,7 +8094,7 @@ hash = "122fefa7282e34fd912d860ddc6e711786a5bb40e5b6b3af5defcf10c20f0b82"
 
 [[files]]
 file = "kubejs/server_scripts/35_villager_trades/10_coin_villager_trades.js"
-hash = "c47d64fa5a3d1a367bf5a741158915ebde3a65a20723a28e1fa519ced96a1f30"
+hash = "11f527b6a6cc6cf2ea7f83d43c11e72ab5dd017b43ce264ef84a9f4f1b7252b8"
 
 [[files]]
 file = "kubejs/server_scripts/40_recipe_add/10_campfire_recipe.js"
@@ -8195,7 +8207,7 @@ metafile = true
 
 [[files]]
 file = "mods/acid_vat-0.1.0.jar"
-hash = "cb859fa6a249ddc46ce452f0b51da077dee3971c931b7b7d3bad8b00e743ed02"
+hash = "a1c6c3179b3129d83d89e4b5e1c9005c0700bdce306641a20bcbc3f0c549435a"
 
 [[files]]
 file = "mods/advancedae.pw.toml"
@@ -8474,7 +8486,7 @@ metafile = true
 
 [[files]]
 file = "mods/classselector-1.0.0.jar"
-hash = "3ffccc45314461d453fe1ef1556a30bc477c9b850c04ff8853bcb40725c31d07"
+hash = "4b95ea580fbb55e1df3d39046e736fc300908f9b592eb1c0660dbc925a6c8d18"
 
 [[files]]
 file = "mods/cloth-config.pw.toml"
@@ -8500,6 +8512,10 @@ metafile = true
 file = "mods/collectors-reap.pw.toml"
 hash = "1b6367422f173fe11ba550fcf1e31e44f71bbe125727038542769384ea0c1b34"
 metafile = true
+
+[[files]]
+file = "mods/computerbridge-0.1.0.jar"
+hash = "6efbb5008dbb21a27824edd4e5dcf7f3bf4b9533643710572871d1b21a14178a"
 
 [[files]]
 file = "mods/concurrent-chunk-management-engine-for-forge-the.pw.toml"
@@ -8656,6 +8672,10 @@ hash = "63f2413981be629df9c32e5549e06cf097078bf8ce0bd8c3bfe16de7ca0a18c2"
 metafile = true
 
 [[files]]
+file = "mods/create-transmission-loss-0.1.0.jar"
+hash = "51abb24a191ec28f32a6e340d86bb57e7b2e2bc0ab4966a56760f30dcbfdcfa3"
+
+[[files]]
 file = "mods/create-vampirism.pw.toml"
 hash = "a83e16c1d168313942e3f3ae78cb0ea8edc2d2b1de85acff41e6e751ae12f2c6"
 metafile = true
@@ -8679,6 +8699,10 @@ metafile = true
 file = "mods/curios.pw.toml"
 hash = "1315cd56b0b4a5b3d53374cebf4f1f3cd0546b05058740847bd226c1d1ccab39"
 metafile = true
+
+[[files]]
+file = "mods/cursedbiomes-0.1.0.jar"
+hash = "af999dbb42906e71542d710003c997afaf799421fe7082709066135c3af316ce"
 
 [[files]]
 file = "mods/deeperdarker.pw.toml"
@@ -8714,6 +8738,10 @@ metafile = true
 file = "mods/dragonlib.pw.toml"
 hash = "b752ffc66ce63f9629049111bf66f0373104631439d03d649cfddcbbeb94d5d9"
 metafile = true
+
+[[files]]
+file = "mods/dtmalum-1.0.0.jar"
+hash = "719bc488b508870864c45fec52675914c6ed55550566140402549b45b8d5630a"
 
 [[files]]
 file = "mods/dynamic-asset-generator.pw.toml"
@@ -8887,7 +8915,7 @@ metafile = true
 
 [[files]]
 file = "mods/fission_reactor-0.1.0.jar"
-hash = "50096901c72fd351f9b08245a2ed06744fef3a9e8d2764d1661b17a6c3499fd3"
+hash = "e2d53c545bd8c4cd8b7daf140097e0697cea7b07c17e9e4e621fdf2ead661dcb"
 
 [[files]]
 file = "mods/flib.pw.toml"
@@ -8951,7 +8979,7 @@ metafile = true
 
 [[files]]
 file = "mods/gases_and_plasmas-0.1.0.jar"
-hash = "ed9ace06f139e3c377e3590f3105e200887653eb0b73ad864f8378661c7a40b0"
+hash = "0ca2bc80a149660434b1a2d022a890f7f92ce28eda5f51c058a574a6b1d4da21"
 
 [[files]]
 file = "mods/geckolib.pw.toml"
@@ -8997,6 +9025,10 @@ metafile = true
 file = "mods/hang-glider.pw.toml"
 hash = "2d1f7089fae7d676321595a1228f15e9a160a1aeb5519d5508c0f4015781cb43"
 metafile = true
+
+[[files]]
+file = "mods/heatsync-0.1.0.jar"
+hash = "ddf73a605ee8d904f086408ca5a2dcb1cff6cfbaaead56259a7f09758ff25d9b"
 
 [[files]]
 file = "mods/hexalia.pw.toml"
@@ -9136,6 +9168,10 @@ metafile = true
 file = "mods/lighty.pw.toml"
 hash = "fbbc480f1deb4e8474a917e9c2ef7806c00ae90e51d04d03780a3bc50281fbca"
 metafile = true
+
+[[files]]
+file = "mods/liquid_coolant-0.1.0.jar"
+hash = "7f08b843fec131ee5a82a832566ee993d45f218c2f5df51926a602ca7cada2ab"
 
 [[files]]
 file = "mods/lithostitched.pw.toml"
@@ -9363,7 +9399,7 @@ metafile = true
 
 [[files]]
 file = "mods/obelisks-1.0.0.jar"
-hash = "124d24325c7c04478be701217029477715cdc5e582132da7a09ea4b8a6349eac"
+hash = "95c5b642214caadffe20463f6ea571a5c580c0ce8da4306051ca21689447c25b"
 
 [[files]]
 file = "mods/oc2r.pw.toml"
@@ -9451,6 +9487,10 @@ hash = "fc6fbe4edaef15637092d30600743dec1bc9bf6055f71a5ff026df108fa2b532"
 metafile = true
 
 [[files]]
+file = "mods/procedural_bouquets-0.1.0.jar"
+hash = "1889c0ccca613ebfc28ac01eaa563ee35de5f26b5928a2cbd02a00a20e0b80ac"
+
+[[files]]
 file = "mods/protect-mobs-from-daylight.pw.toml"
 hash = "10d952f329fd24bd805395d5cfb90739a8b46baa1bd9bb24ff0c1d62a28fc02e"
 metafile = true
@@ -9492,7 +9532,7 @@ metafile = true
 
 [[files]]
 file = "mods/realisticores-0.1.0.jar"
-hash = "25ebf1a733e6963b41f22efe9b9a018d36b7a8f1a4c0cc5e08c901e0d7ab6e2a"
+hash = "af184d8dea26007ddafee53001372291155749009311288f7bda123ed50ba0fb"
 
 [[files]]
 file = "mods/registry-dumper-3000.pw.toml"
@@ -9541,7 +9581,7 @@ metafile = true
 
 [[files]]
 file = "mods/rpgstats-1.0.0.jar"
-hash = "281e69a39ea1af291be8e6944359f6ea5a92445d5a021ef2c4c31ce72b2b253f"
+hash = "7891cbb3514a2f48c2a343045d76dc345166dd95efb19f5c62e8881bc6e6ae41"
 
 [[files]]
 file = "mods/rustic-delight.pw.toml"
@@ -9557,6 +9597,10 @@ metafile = true
 file = "mods/searchables.pw.toml"
 hash = "2cb8dd9a3944a6430b49916a4fe1b6cf0bd7efd907054f8e679a02717149404f"
 metafile = true
+
+[[files]]
+file = "mods/settlementroads-0.1.0.jar"
+hash = "659b6788f1c76d893ad4cf1c3a8da17da8e227fcd7202b14c11a11e1b2e4fedd"
 
 [[files]]
 file = "mods/shoulder-surfing-reloaded.pw.toml"
@@ -9884,6 +9928,10 @@ hash = "d370bd37f30ffff728dcc1e4ace6e38dc63d7e20e3a3baad764269491627fee2"
 metafile = true
 
 [[files]]
+file = "mods/villagewalls-1.0.0.jar"
+hash = "2d3f10ccf990219a6741e928dd85a1e87fd8520ad413ebe5b9593aa232f92906"
+
+[[files]]
 file = "mods/wares.pw.toml"
 hash = "4ded4d3aef90c90d3004fbb73ba363322bb74da6458cba65604e9ae0fe52a67a"
 metafile = true
@@ -9976,7 +10024,7 @@ hash = "48aab172366174312dbfb87853b8e158696855d12398fca998549d049020016c"
 
 [[files]]
 file = "tools/generate_expert_quest_book.mjs"
-hash = "ff232f1f162a90a9dc7c0bcc957b3b36b20aa6094d5afad7f3560ceed75315a5"
+hash = "040a403952baf07f94cdc5231222dbae2dd18866d8033b489e8720dc8de60de4"
 
 [[files]]
 file = "tools/validate_quest_dependencies.mjs"

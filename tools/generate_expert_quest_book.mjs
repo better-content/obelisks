@@ -15,7 +15,10 @@ for (const id of [
   'gases_and_plasmas:gas_fan',
   'gases_and_plasmas:electrolyzer',
   'gases_and_plasmas:electromagnet',
-  'gases_and_plasmas:ionizer'
+  'gases_and_plasmas:ionizer',
+  'liquid_coolant:coolant_exchanger',
+  'procedural_bouquets:bouquet_grid',
+  'procedural_bouquets:potted_bouquet'
 ]) knownItems.add(id)
 
 const coinOrder = ['copper', 'iron', 'tin', 'bronze', 'brass', 'silver', 'gold', 'diamond', 'platinum', 'emerald', 'ruby', 'sapphire', 'topaz']
@@ -233,9 +236,12 @@ const chapters = [
       q('PG_BATTERY', 'Step 6: Stored Electricity', 8, 0, [item('powergrid:battery')], ['PG_CIRCUIT', 'PG_RELAY', 'PG_GENERATOR_ROTOR'], ['Storage makes electrical work forgiving enough to use, but still bounded by the site grid.']),
       q('PG_HEAT_PIPE', 'Heat Transport', 10, -1, [item('create_new_age:heat_pipe')], ['PG_BATTERY', 'PG_SOLAR_HEAT']),
       q('PG_HEAT_PUMP', 'Heat Pump', 10, 1, [item('create_new_age:heat_pump')], ['PG_HEAT_PIPE']),
-      q('PG_STIRLING', 'Heat to SU: Stirling Engine', 12, 0, [item('create_new_age:stirling_engine')], ['PG_HEAT_PUMP'], ['Stirling engines make the heat loop explicit: heat sources become rotational work.']),
-      q('PG_FISSION_ACCEPTOR', 'Fission Fuel Acceptor', 14, -1, [item('fission_reactor:fission_fuel_acceptor')], ['PG_STIRLING', 'S1_SYNTHESIS_EXIT'], ['Fission is a nucleus-transformation and heat branch. It belongs after electrical control and chemical material routing.']),
-      q('PG_FISSION_ROD', 'Fission Reactor Rod', 14, 1, [item('fission_reactor:fission_reactor_rod')], ['PG_FISSION_ACCEPTOR'], ['The rod is the active heat/nucleus-transformer surface. It should feel like dangerous infrastructure, not a furnace upgrade.'])
+      q('PG_HEATSYNC', 'Heat Affects the Body', 12, 2, [item('create_new_age:heat_pipe'), item('cold_sweat:sewing_table')], ['PG_HEAT_PUMP'], ['HeatSync makes heat pipes part of body survival. A hot or cold workshop is now an engineering condition, not just a machine stat.']),
+      q('PG_TRANSMISSION_LOSS', 'No Free SU Transport', 12, -2, [item('create:shaft'), item('create:gearbox'), item('create:belt_connector')], ['PG_WATER_GRAPH', 'PG_WIND_GRAPH'], ['Transmission Loss makes shafts, cogs, gearboxes, and belts part of the operating cost of distance. Keep power generation local or pay for long runs.']),
+      q('PG_STIRLING', 'Heat to SU: Stirling Engine', 14, 0, [item('create_new_age:stirling_engine')], ['PG_HEAT_PUMP'], ['Stirling engines make the heat loop explicit: heat sources become rotational work.']),
+      q('PG_COOLANT', 'Liquid Coolant Exchanger', 16, 0, [item('liquid_coolant:coolant_exchanger')], ['PG_STIRLING', 'PG_BATTERY'], ['Coolant loops are the bridge from ordinary heat transport into serious fission and fusion thermal engineering.']),
+      q('PG_FISSION_ACCEPTOR', 'Fission Fuel Acceptor', 18, -1, [item('fission_reactor:fission_fuel_acceptor')], ['PG_COOLANT', 'S1_SYNTHESIS_EXIT'], ['Fission is a nucleus-transformation and heat branch. It belongs after electrical control and chemical material routing.']),
+      q('PG_FISSION_ROD', 'Fission Reactor Rod', 18, 1, [item('fission_reactor:fission_reactor_rod')], ['PG_FISSION_ACCEPTOR'], ['The rod is the active heat/nucleus-transformer surface. It should feel like dangerous infrastructure, not a furnace upgrade.'])
     ]
   },
   {
@@ -244,6 +250,7 @@ const chapters = [
       q('OC_CASE', 'OC2R Machine Casing', 0, 1, [item('kubejs:oc2r_machine_casing')], ['PG_BATTERY']),
       q('OC_COMPUTER', 'Local Computer', 2, 0, [item('oc2r:computer')], ['OC_TRANSISTOR', 'OC_CASE']),
       q('OC_NETWORK', 'Wired Site Communication', 4, 0, [item('oc2r:network_hub'), item('oc2r:network_connector')], ['OC_COMPUTER']),
+      q('OC_CREATE_BRIDGE', 'Create Device Bridge', 6, -2, [item('create:speedometer'), item('create:stressometer'), item('oc2r:network_connector')], ['OC_NETWORK'], ['ComputerBridge exposes Create machines to OC2R. It is intersite communication and observability, not item teleportation.']),
       q('OC_ROBOT', 'Authored Field Work', 6, -1, [item('oc2r:robot')], ['OC_NETWORK']),
       q('OC_ROUTE_LOGIC', 'Route Logic', 6, 1, [item('oc2r:redstone_interface'), item('oc2r:network_interface_card')], ['OC_NETWORK'])
     ]
@@ -354,6 +361,7 @@ const chapters = [
       q('M1_BLANK', 'Blank Slate Permission', 0, 0, [item('bloodmagic:blankslate')], ['DE_WEAK_ORB']),
       q('M1_HEXEREI', 'Hexerei Gate', 2, -1, [item('hexerei:mixing_cauldron')], ['M1_BLANK']),
       q('M1_MALUM', 'Malum Gate', 2, 1, [item('malum:spirit_altar')], ['M1_BLANK']),
+      q('M1_RUNEWOOD', 'Living Runewood', 4, 2, [item('malum:runewood_sapling'), item('malum:azure_runewood_sapling')], ['M1_MALUM'], ['Dynamic Trees for Malum makes Runewood part of the living world instead of static decoration.']),
       q('M1_REINFORCED', 'Reinforced Slate Permission', 4, 0, [item('bloodmagic:reinforcedslate')], ['M1_HEXEREI', 'M1_MALUM']),
       q('M1_ARS', 'Ars Entry', 6, -1, [item('ars_nouveau:imbuement_chamber')], ['M1_REINFORCED']),
       q('M1_APPARATUS', 'Enchanting Apparatus', 6, 1, [item('ars_nouveau:enchanting_apparatus')], ['M1_ARS']),
@@ -377,7 +385,8 @@ const chapters = [
       q('AD_CONTRACT', 'Contract As Crafting', 6, 0, [item('wares:delivery_agreement')], ['AD_WARES_TABLE']),
       q('AD_PACKAGE', 'Physical Package', 8, -1, [item('wares:package')], ['AD_CONTRACT']),
       q('AD_COMPLETED', 'Completed Delivery', 8, 1, [item('wares:completed_delivery_agreement')], ['AD_PACKAGE']),
-      q('AD_IRON_FLOAT', 'Iron Tier Float', 10, 0, [item('dotcoinmod:iron_coin', 4)], ['AD_COMPLETED'])
+      q('AD_CURSED_REGIONS', 'Cursed Regions', 10, -1, [item('minecraft:compass'), item('minecraft:shield')], ['AD_COMPLETED'], ['Cursed Biomes adds dangerous regional laws. Treat cursed territory as an extraction/adventure route, not background ambience.']),
+      q('AD_IRON_FLOAT', 'Iron Tier Float', 12, 0, [item('dotcoinmod:iron_coin', 4)], ['AD_CURSED_REGIONS'])
     ]
   },
   {
@@ -391,7 +400,10 @@ const chapters = [
       q('VE_FURNITURE_TOOL', 'Furniture Toolkit', 6, -2, [item('another_furniture:furniture_hammer'), item('handcrafted:hammer')], ['VE_COMPLETED'], ['Decorative blocks can have graph depth, but only shallow depth: village economy plus early workshop tools.']),
       q('VE_SETTLEMENT_ROOM', 'Furnished Room', 8, -2, [item('another_furniture:oak_chair'), item('another_furniture:oak_table'), item('handcrafted:oak_table')], ['VE_FURNITURE_TOOL'], ['A settlement should look inhabited. These are sideload rewards, not required machine gates.']),
       q('VE_GARDEN_MARKET', 'Garden Market', 6, 0, [item('beautify:botanist_workbench'), item('beautify:oak_trellis'), item('beautify:hanging_pot')], ['VE_COMPLETED'], ['Garden and decor trades make villages useful without trivializing ore, magic, or machines.']),
-      q('VE_BUILDERS_STOCK', 'Builder Stock', 8, 0, [item('buildersaddition:shelf_oak'), item('buildersaddition:bench_oak'), item('twigs:bamboo_thatch')], ['VE_GARDEN_MARKET'], ['Bulk building support is allowed here because it improves bases and routes instead of skipping progression.']),
+      q('VE_BOUQUETS', 'Procedural Bouquets', 8, -1, [item('procedural_bouquets:bouquet_grid'), item('procedural_bouquets:potted_bouquet')], ['VE_GARDEN_MARKET'], ['Decorative systems can have shallow graph depth. Bouquets belong in the village/decor economy, not the machine spine.']),
+      q('VE_VILLAGE_WALLS', 'Fortified Village', 8, 1, [item('minecraft:stone_bricks'), item('minecraft:spruce_log')], ['VE_COMPLETED'], ['Village Walls turns settlement defense into local infrastructure. The wall itself is commanded/world work, but the materials should still be physical.']),
+      q('VE_SETTLEMENT_ROADS', 'Settlement Roads', 10, 1, [item('minecraft:dirt_path'), item('minecraft:gravel'), item('minecraft:stone_bricks')], ['VE_VILLAGE_WALLS'], ['Settlement Roads makes routes visible in the world. Roads and bridges support distance; they do not erase it.']),
+      q('VE_BUILDERS_STOCK', 'Builder Stock', 10, 0, [item('buildersaddition:shelf_oak'), item('buildersaddition:bench_oak'), item('twigs:bamboo_thatch')], ['VE_GARDEN_MARKET'], ['Bulk building support is allowed here because it improves bases and routes instead of skipping progression.']),
       q('VE_LIGHTING_STOCK', 'Settlement Lighting', 10, 0, [item('beautify:lamp_light_bulb'), item('excessive_building:copper_bulb')], ['VE_BUILDERS_STOCK'], ['Lighting trades reward villages and coins while staying below Create andesite depth.']),
       q('VE_SERVICE_BELL', 'Market Signal', 10, -2, [item('another_furniture:service_bell')], ['VE_SETTLEMENT_ROOM'], ['A village route should have signals, meeting points, and trade counters.']),
       q('VE_IRON_COIN_TIER', 'Iron Coin Trade Float', 12, -1, [item('dotcoinmod:iron_coin', 8)], ['VE_COMPLETED'], ['Higher coin tiers come from harder chapters, loot, and combat loops. They should not be convertible downward or upward in bulk.']),

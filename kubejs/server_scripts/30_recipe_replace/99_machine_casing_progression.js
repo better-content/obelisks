@@ -138,6 +138,12 @@ ServerEvents.recipes(function (event) {
     }).id('kubejs:create/mixing/sky_steel_ingot')
 
     event.custom({
+        type: 'create:pressing',
+        ingredients: [{ item: 'kubejs:sky_steel_ingot' }],
+        results: [{ item: 'kubejs:sky_steel_sheet' }]
+    }).id('kubejs:create/pressing/sky_steel_sheet')
+
+    event.custom({
         type: 'create:mechanical_crafting',
         acceptMirrored: false,
         pattern: [

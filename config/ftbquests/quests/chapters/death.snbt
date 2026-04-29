@@ -1,0 +1,9 @@
+{
+	filename:"death" group:"BTM_ROOT" id:"BTM_DEATH" order_index:2 title:"Iron Tier - Death and Blood"
+	quests:[
+		{id:"DE_HEART" title:"Still-Beating Heart" x:0.0d y:0.0d rewards:[{id:"DE_R1" type:"item" item:"dotcoinmod:copper_coin" count:4},{id:"DE_R2" type:"item" item:"dotcoinmod:iron_coin" count:4}] tasks:[{id:"DE_T1" type:"item" item:"rpgstats:still_beating_heart"}]}
+		{id:"DE_ALTAR" title:"First Blood Altar" x:2.0d y:0.0d rewards:[{id:"DE_R3" type:"item" item:"dotcoinmod:copper_coin" count:4},{id:"DE_R4" type:"item" item:"dotcoinmod:iron_coin" count:4}] tasks:[{id:"DE_T2" type:"item" item:"bloodmagic:altar"}]}
+		{id:"DE_WEAK_HEART" title:"Blood-Touched Heart" x:4.0d y:0.0d rewards:[{id:"DE_R5" type:"item" item:"dotcoinmod:copper_coin" count:4},{id:"DE_R6" type:"item" item:"dotcoinmod:iron_coin" count:4}] tasks:[{id:"DE_T3" type:"item" item:"kubejs:weak_blood_heart"}]}
+		{id:"DE_WEAK_ORB" title:"Weak Blood Orb" x:6.0d y:0.0d rewards:[{id:"DE_R7" type:"item" item:"dotcoinmod:copper_coin" count:4},{id:"DE_R8" type:"item" item:"dotcoinmod:iron_coin" count:4}] tasks:[{id:"DE_T4" type:"item" item:"bloodmagic:weakbloodorb"}]}
+	]
+}

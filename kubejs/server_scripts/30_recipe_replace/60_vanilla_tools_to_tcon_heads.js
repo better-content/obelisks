@@ -22,12 +22,12 @@ ServerEvents.recipes(function (event) {
         hoe: 'tinkers_thinking:narrow_blade'
     }
 
-    var diamondSteelMap = {
-        pickaxe: Item.of('tconstruct:pick_head', '{Material:"tconstruct:steel"}'),
-        axe: Item.of('tconstruct:small_axe_head', '{Material:"tconstruct:steel"}'),
-        shovel: Item.of('tconstruct:adze_head', '{Material:"tconstruct:steel"}'),
-        sword: Item.of('tconstruct:small_blade', '{Material:"tconstruct:steel"}'),
-        hoe: Item.of('tinkers_thinking:narrow_blade', '{Material:"tconstruct:steel"}')
+    var diamondAlloyMap = {
+        pickaxe: Item.of('tconstruct:pick_head', '{Material:"tconstruct:manyullyn"}'),
+        axe: Item.of('tconstruct:small_axe_head', '{Material:"tconstruct:manyullyn"}'),
+        shovel: Item.of('tconstruct:adze_head', '{Material:"tconstruct:manyullyn"}'),
+        sword: Item.of('tconstruct:small_blade', '{Material:"tconstruct:manyullyn"}'),
+        hoe: Item.of('tinkers_thinking:narrow_blade', '{Material:"tconstruct:manyullyn"}')
     }
 
     for (var ti = 0; ti < VANILLA_TOOL_TIERS.length; ti++) {
@@ -39,9 +39,9 @@ ServerEvents.recipes(function (event) {
             event.remove({ output: vanillaTool })
             event.remove({ type: 'minecraft:smithing_transform', output: vanillaTool })
 
-            // Diamond tools gate into steel-part requirements.
+            // Diamond tools gate into a real alloyed TCon material, not steel.
             if (tier === 'diamond') {
-                event.replaceInput({}, vanillaTool, diamondSteelMap[kind])
+                event.replaceInput({}, vanillaTool, diamondAlloyMap[kind])
                 continue
             }
 

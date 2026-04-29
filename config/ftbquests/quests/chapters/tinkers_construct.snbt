@@ -1,0 +1,9 @@
+{
+	filename:"tinkers_construct" group:"BTM_ROOT" id:"BTM_TINKERS" order_index:1 title:"Iron Tier - Tinkers Construct"
+	quests:[
+		{id:"TC_SEARED_CASE" title:"Seared Machine Casing" x:0.0d y:0.0d rewards:[{id:"TC_R1" type:"item" item:"dotcoinmod:copper_coin" count:4},{id:"TC_R2" type:"item" item:"dotcoinmod:iron_coin" count:4}] tasks:[{id:"TC_T1" type:"item" item:"kubejs:seared_machine_casing"}]}
+		{id:"TC_SMELTERY" title:"Smeltery Authority" x:2.0d y:0.0d rewards:[{id:"TC_R3" type:"item" item:"dotcoinmod:copper_coin" count:4},{id:"TC_R4" type:"item" item:"dotcoinmod:iron_coin" count:4}] tasks:[{id:"TC_T2" type:"item" item:"tconstruct:smeltery_controller"},{id:"TC_T3" type:"item" item:"tconstruct:seared_fuel_tank"}]}
+		{id:"TC_SCORCHED" title:"Scorched Machine Casing" x:4.0d y:0.0d rewards:[{id:"TC_R5" type:"item" item:"dotcoinmod:copper_coin" count:4},{id:"TC_R6" type:"item" item:"dotcoinmod:iron_coin" count:4}] tasks:[{id:"TC_T4" type:"item" item:"kubejs:scorched_machine_casing"}]}
+		{id:"TC_FOUNDRY" title:"Foundry Reads Geology" x:6.0d y:0.0d rewards:[{id:"TC_R7" type:"item" item:"dotcoinmod:copper_coin" count:4},{id:"TC_R8" type:"item" item:"dotcoinmod:iron_coin" count:4}] tasks:[{id:"TC_T5" type:"item" item:"tconstruct:foundry_controller"}]}
+	]
+}

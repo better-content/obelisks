@@ -4,7 +4,6 @@ ServerEvents.recipes(event => {
 
     const IRON   = 'minecraft:iron_ingot';
     const COPPER = 'minecraft:copper_ingot';
-    const STEEL  = 'tconstruct:steel_ingot';
     const BRASS  = 'create:brass_ingot';
 
     function toJsArray(x) {
@@ -47,8 +46,9 @@ ServerEvents.recipes(event => {
     const cfg = JsonIO.read('kubejs/config/ingot_rewrites.json');
     console.log('[kubejs] cfg loaded keys = ' + Object.keys(cfg || {}));
 
-    apply(toJsArray(cfg && cfg.steelFromIron),   IRON,   STEEL, 'iron->steel');
-    apply(toJsArray(cfg && cfg.steelFromCopper), COPPER, STEEL, 'copper->steel');
+    // Legacy steel rewrites are intentionally disabled. The expert progression now
+    // gates machine families through tiered casings instead of becoming a steel pack.
+    console.log('[kubejs] iron/copper->steel rewrites disabled by casing progression pass');
     apply(toJsArray(cfg && cfg.brassFromIron),   IRON,   BRASS, 'iron->brass');
     apply(toJsArray(cfg && cfg.brassFromCopper), COPPER, BRASS, 'copper->brass');
 });

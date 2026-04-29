@@ -1,0 +1,8 @@
+{
+	filename:"electricity" group:"BTM_ROOT" id:"BTM_ELECTRICITY" order_index:5 title:"Brass Tier - Power Grid"
+	quests:[
+		{id:"PG_CONDUCTIVE" title:"Conductive Casing" x:0.0d y:0.0d rewards:[{id:"PG_R1" type:"item" item:"dotcoinmod:copper_coin" count:4},{id:"PG_R2" type:"item" item:"dotcoinmod:iron_coin" count:4},{id:"PG_R3" type:"item" item:"dotcoinmod:tin_coin" count:4},{id:"PG_R4" type:"item" item:"dotcoinmod:bronze_coin" count:4},{id:"PG_R5" type:"item" item:"dotcoinmod:brass_coin" count:4}] tasks:[{id:"PG_T1" type:"item" item:"powergrid:conductive_casing"}]}
+		{id:"PG_CASE" title:"Power Grid Machine Casing" x:2.0d y:0.0d rewards:[{id:"PG_R6" type:"item" item:"dotcoinmod:copper_coin" count:4},{id:"PG_R7" type:"item" item:"dotcoinmod:iron_coin" count:4},{id:"PG_R8" type:"item" item:"dotcoinmod:tin_coin" count:4},{id:"PG_R9" type:"item" item:"dotcoinmod:bronze_coin" count:4},{id:"PG_R10" type:"item" item:"dotcoinmod:brass_coin" count:4}] tasks:[{id:"PG_T2" type:"item" item:"kubejs:power_grid_machine_casing"}]}
+		{id:"PG_BATTERY" title:"Stored Electricity" x:4.0d y:0.0d rewards:[{id:"PG_R11" type:"item" item:"dotcoinmod:copper_coin" count:4},{id:"PG_R12" type:"item" item:"dotcoinmod:iron_coin" count:4},{id:"PG_R13" type:"item" item:"dotcoinmod:tin_coin" count:4},{id:"PG_R14" type:"item" item:"dotcoinmod:bronze_coin" count:4},{id:"PG_R15" type:"item" item:"dotcoinmod:brass_coin" count:4}] tasks:[{id:"PG_T3" type:"item" item:"powergrid:battery"}]}
+	]
+}

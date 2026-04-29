@@ -1,0 +1,9 @@
+{
+	filename:"create_ii" group:"BTM_ROOT" id:"BTM_CREATE_II" order_index:4 title:"Bronze Tier - Create II"
+	quests:[
+		{id:"C2_ANDESITE_CASE" title:"Andesite Machine Casing" x:0.0d y:0.0d rewards:[{id:"C2_R1" type:"item" item:"dotcoinmod:copper_coin" count:4},{id:"C2_R2" type:"item" item:"dotcoinmod:iron_coin" count:4},{id:"C2_R3" type:"item" item:"dotcoinmod:tin_coin" count:4},{id:"C2_R4" type:"item" item:"dotcoinmod:bronze_coin" count:4}] tasks:[{id:"C2_T1" type:"item" item:"kubejs:andesite_machine_casing"}]}
+		{id:"C2_PRESS" title:"Mechanical Press" x:2.0d y:0.0d rewards:[{id:"C2_R5" type:"item" item:"dotcoinmod:copper_coin" count:4},{id:"C2_R6" type:"item" item:"dotcoinmod:iron_coin" count:4},{id:"C2_R7" type:"item" item:"dotcoinmod:tin_coin" count:4},{id:"C2_R8" type:"item" item:"dotcoinmod:bronze_coin" count:4}] tasks:[{id:"C2_T2" type:"item" item:"create:mechanical_press"}]}
+		{id:"C2_MIXER" title:"Mechanical Mixer" x:4.0d y:0.0d rewards:[{id:"C2_R9" type:"item" item:"dotcoinmod:copper_coin" count:4},{id:"C2_R10" type:"item" item:"dotcoinmod:iron_coin" count:4},{id:"C2_R11" type:"item" item:"dotcoinmod:tin_coin" count:4},{id:"C2_R12" type:"item" item:"dotcoinmod:bronze_coin" count:4}] tasks:[{id:"C2_T3" type:"item" item:"create:mechanical_mixer"}]}
+		{id:"C2_BRASS" title:"Brass Machine Casing" x:6.0d y:0.0d rewards:[{id:"C2_R13" type:"item" item:"dotcoinmod:copper_coin" count:4},{id:"C2_R14" type:"item" item:"dotcoinmod:iron_coin" count:4},{id:"C2_R15" type:"item" item:"dotcoinmod:tin_coin" count:4},{id:"C2_R16" type:"item" item:"dotcoinmod:bronze_coin" count:4}] tasks:[{id:"C2_T4" type:"item" item:"kubejs:brass_machine_casing"}]}
+	]
+}

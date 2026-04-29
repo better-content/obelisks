@@ -1,0 +1,7 @@
+{
+	filename:"adventuring" group:"BTM_ROOT" id:"BTM_ADVENTURING" order_index:10 title:"Copper Tier - Adventuring"
+	quests:[
+		{id:"AD_ROUTE" title:"Route Supplies" x:0.0d y:0.0d rewards:[{id:"AD_R1" type:"item" item:"dotcoinmod:copper_coin" count:4}] tasks:[{id:"AD_T1" type:"item" item:"minecraft:compass"},{id:"AD_T2" type:"item" item:"minecraft:map"}]}
+		{id:"AD_COIN" title:"First Market Float" x:2.0d y:0.0d rewards:[{id:"AD_R2" type:"item" item:"dotcoinmod:copper_coin" count:4}] tasks:[{id:"AD_T3" type:"item" item:"dotcoinmod:copper_coin" count:16L}]}
+	]
+}

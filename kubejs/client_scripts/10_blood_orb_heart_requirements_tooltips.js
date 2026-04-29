@@ -1,46 +1,14 @@
-// Shows heart-to-orb altar requirements in item tooltips (visible in EMI/JEI hovers too).
-
-var HEART_HP_THRESHOLD = 20
+// Explains the pack's Still-Beating Heart -> typed heart -> Blood Orb progression in JEI/EMI tooltips.
 
 ItemEvents.tooltip(function (event) {
-    event.add('bloodmagic:weakbloodorb', [
-        ' ',
-        '§8Still Beating Heart conversion:',
-        '§7- Any captured heart'
-    ])
-
-    event.add('bloodmagic:apprenticebloodorb', [
-        ' ',
-        '§8Still Beating Heart conversion:',
-        '§7- Levelled heart'
-    ])
-
-    event.add('bloodmagic:magicianbloodorb', [
-        ' ',
-        '§8Still Beating Heart conversion:',
-        '§7- Levelled heart',
-        '§7- High HP stat (Hemostasis §f>= ' + HEART_HP_THRESHOLD + '§7)'
-    ])
-
-    event.add('bloodmagic:masterbloodorb', [
-        ' ',
-        '§8Still Beating Heart conversion:',
-        '§7- Levelled heart',
-        '§7- High HP stat (Hemostasis §f>= ' + HEART_HP_THRESHOLD + '§7)',
-        '§7- Killed by §fWither'
-    ])
-
-    event.add('bloodmagic:archmagebloodorb', [
-        ' ',
-        '§8Still Beating Heart conversion:',
-        '§7- Levelled heart',
-        '§7- High HP stat (Hemostasis §f>= ' + HEART_HP_THRESHOLD + '§7)',
-        '§7- Killed by §fEnder Dragon'
-    ])
-
     event.add('rpgstats:still_beating_heart', [
-        ' ',
-        '§8Blood Orb altar tiers use this snapshot.',
-        '§7Higher tiers require level, Hemostasis, and death cause.'
+        Text.gray('Use with the correct catalyst in the offhand to channel a typed heart.'),
+        Text.darkRed('Blood Orbs are made from typed hearts, not bulk heart farming.')
     ])
+
+    event.add('kubejs:weak_blood_heart', Text.darkRed('Blood Altar I -> Weak Blood Orb. Catalyst: Sacrificial Dagger.'))
+    event.add('kubejs:apprentice_blood_heart', Text.darkRed('Blood Altar II -> Apprentice Blood Orb. Catalyst: Weak Blood Orb.'))
+    event.add('kubejs:magician_blood_heart', Text.darkRed('Blood Altar III -> Magician Blood Orb. Requires a levelled, hemostatic death.'))
+    event.add('kubejs:master_blood_heart', Text.darkRed('Blood Altar IV -> Master Blood Orb. Requires a wither death.'))
+    event.add('kubejs:archmage_blood_heart', Text.darkRed('Blood Altar V -> Archmage Blood Orb. Requires an End ordeal.'))
 })

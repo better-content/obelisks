@@ -40,3 +40,12 @@
 - `git diff --check` passed after adding high-value gates.
 - `packwiz refresh` was run after adding high-value gates and audit docs.
 - Runtime EMI verification is still required for output-based replacement breadth and multi-input hard-gate costs.
+
+## Loot Table Pass
+
+- Generated loot table overrides were JSON-validated with `python3 -m json.tool`.
+- Artifacts injection and entity equipment tables preserve their original loot table type while clearing pools.
+- Sophisticated Backpacks injection tables preserve their original loot table type while clearing pools.
+- Apotheosis and Apotheotic Additions high-value tables were replaced with bounded coin/supply loot.
+- Generated overrides were searched for `apotheosis:gem`, `random_gem`, `random_affix`, `create:andesite_alloy`, and `minecraft:netherite_scrap`; none remain in the replacement tables.
+- Full Minecraft loot reload still needs an in-client `/reload` check.

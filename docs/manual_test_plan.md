@@ -22,3 +22,9 @@
 20. Verify Building Gadgets are gated by Power Grid, OC2R, or Space casing depending on power level.
 21. Verify Apotheosis reforging/salvaging/gem-cutting and high shelves require Blood Magic slates.
 22. Verify AE2 addon wireless/requester/extended pattern/high-storage items require OC2R, AE2, or Space casing.
+
+23. Open village, bonus, mineshaft, ruined portal, shipwreck, and simple dungeon chests; verify Artifacts and Sophisticated Backpacks injection loot does not appear.
+24. Open Apotheosis rogue spawner valuable chests; verify they contain bounded coins/supplies instead of random gems, affix items, or diamond gear.
+25. Kill an Apotheosis treasure goblin; verify it drops bounded coins/supplies instead of random affix gear and gems.
+26. Open Apotheotic Additions themed spawner chests; verify `apotheosis:gem_dust` and `apotheosis:gem_fused_slate` do not appear.
+27. Check End City and Twilight Forest structure loot; verify any Apotheosis affix/gem loot appears only at the reduced configured rates.

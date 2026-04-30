@@ -23,3 +23,18 @@
 	special_illagers = ["minecraft:vindicator", "minecraft:evoker", "minecraft:witch", "takesapillage:archer", "takesapillage:skirmisher", "takesapillage:legioner", "savage_and_ravage:griefer", "savage_and_ravage:executioner", "savage_and_ravage:iceologer", "savage_and_ravage:trickster"]
 	target_player_immediately = true
 	persistent_patrol_mobs = true
+
+[campaigns]
+	enabled = true
+	region_size_chunks = 8
+	stale_region_ticks = 120000
+	base_scan_interval_ticks = 200
+	campaign_tick_interval = 100
+	campaign_speed_ticks_per_chunk = 80
+	max_campaigns_per_base = 4
+	max_satellites_per_major_base = 4
+	replace_natural_outpost_spawns = true
+	structure_base_ids = ["minecraft:pillager_outpost"]
+	death_flags_per_kill = 5
+	max_death_flags_per_chunk = 12
+	officer_escape_health = 0.22

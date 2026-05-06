@@ -1,0 +1,25 @@
+[
+  {
+    "name": "reduced_baseline_top4",
+    "description": "TiCEX, Steam Rails, Botania, and Chipped disabled together",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_ars_tome",
+    "description": "Reduced baseline plus Ars Nouveau, Dynamic Trees Ars Nouveau, and Tome of Blood disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^ars_nouveau-.*\\.jar$",
+      "^DynamicTreesArsNouveau-.*\\.jar$",
+      "^tomeofblood-.*\\.jar$"
+    ]
+  }
+]

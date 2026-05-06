@@ -1,0 +1,70 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>creatingspace:rocket_ingredients_recipes/andesite_injector</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>creatingspace:rocket_ingredients_recipes/andesite_injector</h1>
+<p><b>Type:</b> create:sequenced_assembly | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../tags/forge__plates_obsidian.html">#forge:plates/obsidian</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/creatingspace__andesite_injector.html">creatingspace:andesite_injector</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: null
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;ingredient&quot;: {
+    &quot;tag&quot;: &quot;forge:plates/obsidian&quot;
+  },
+  &quot;loops&quot;: 1,
+  &quot;results&quot;: [
+    {
+      &quot;count&quot;: 1,
+      &quot;item&quot;: &quot;creatingspace:andesite_injector&quot;
+    }
+  ],
+  &quot;sequence&quot;: [
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;creatingspace:incomplete_andesite_injector&quot;
+        },
+        {
+          &quot;item&quot;: &quot;create:andesite_alloy&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;creatingspace:incomplete_andesite_injector&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:deploying&quot;
+    },
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;creatingspace:incomplete_andesite_injector&quot;
+        },
+        {
+          &quot;item&quot;: &quot;minecraft:iron_nugget&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;creatingspace:incomplete_andesite_injector&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:deploying&quot;
+    }
+  ],
+  &quot;transitionalItem&quot;: {
+    &quot;item&quot;: &quot;creatingspace:incomplete_andesite_injector&quot;
+  },
+  &quot;type&quot;: &quot;create:sequenced_assembly&quot;
+}</pre></main></body></html>

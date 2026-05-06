@@ -1,0 +1,48 @@
+{
+	id: "5882DABE35F89FAB",
+	group: "default",
+	title: "Post-AE2 Reminders",
+	icon: "ae2:controller",
+	order_index: 900,
+	quests: [
+		{
+			id: "2D928C991548E075",
+			title: "Ruined AE2 Ship In Orbit",
+			icon: "ae2:controller",
+			shape: "rsquare",
+			size: 1.0d,
+			x: 0.0d,
+			y: 0.0d,
+			dependencies: ["69691D287C7BB20E"],
+			description: ["Reminder only. Future work may add a ruined orbital ship structure tied to AE2 lore."],
+			tasks: [],
+			rewards: []
+		},
+		{
+			id: "014B3617C13E3BBF",
+			title: "Avatar And Cloning Vats",
+			icon: "minecraft:player_head",
+			shape: "rsquare",
+			size: 1.0d,
+			x: 2.0d,
+			y: 0.0d,
+			dependencies: ["69691D287C7BB20E"],
+			description: ["Reminder only. Future work may pair remote avatar piloting with inferior cloning vats."],
+			tasks: [],
+			rewards: []
+		},
+		{
+			id: "B2894A298C5C7D30",
+			title: "Spawn Moving Ritual",
+			icon: "bloodmagic:weakbloodorb",
+			shape: "rsquare",
+			size: 1.0d,
+			x: 4.0d,
+			y: 0.0d,
+			dependencies: ["69691D287C7BB20E"],
+			description: ["Reminder only. Future work should build on class-selector spawn locking and require a", "late-game maintained ritual cost."],
+			tasks: [],
+			rewards: []
+		}
+	]
+}

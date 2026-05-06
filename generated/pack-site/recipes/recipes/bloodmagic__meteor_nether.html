@@ -1,0 +1,81 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>bloodmagic:meteor/nether</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>bloodmagic:meteor/nether</h1>
+<p><b>Type:</b> bloodmagic:meteor | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<p><em>None.</em></p>
+<h2>Outputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: null
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;explosion&quot;: 12,
+  &quot;input&quot;: {
+    &quot;tag&quot;: &quot;forge:dusts/glowstone&quot;
+  },
+  &quot;layers&quot;: [
+    {
+      &quot;additionalWeight&quot;: 0,
+      &quot;fill&quot;: {
+        &quot;block&quot;: &quot;minecraft:netherrack&quot;
+      },
+      &quot;minWeight&quot;: 500,
+      &quot;radius&quot;: 8,
+      &quot;weightMap&quot;: [
+        {
+          &quot;block&quot;: &quot;minecraft:glowstone&quot;,
+          &quot;weight&quot;: 100
+        },
+        {
+          &quot;block&quot;: &quot;minecraft:nether_quartz_ore&quot;,
+          &quot;weight&quot;: 150
+        },
+        {
+          &quot;block&quot;: &quot;minecraft:nether_gold_ore&quot;,
+          &quot;weight&quot;: 60
+        }
+      ]
+    },
+    {
+      &quot;additionalWeight&quot;: 0,
+      &quot;fill&quot;: {
+        &quot;block&quot;: &quot;minecraft:blackstone&quot;
+      },
+      &quot;minWeight&quot;: 1000,
+      &quot;radius&quot;: 5,
+      &quot;shell&quot;: {
+        &quot;block&quot;: &quot;minecraft:glowstone&quot;
+      },
+      &quot;weightMap&quot;: [
+        {
+          &quot;block&quot;: &quot;minecraft:ancient_debris&quot;,
+          &quot;weight&quot;: 60
+        },
+        {
+          &quot;block&quot;: &quot;minecraft:chiseled_polished_blackstone&quot;,
+          &quot;weight&quot;: 300
+        },
+        {
+          &quot;block&quot;: &quot;minecraft:gilded_blackstone&quot;,
+          &quot;weight&quot;: 200
+        },
+        {
+          &quot;block&quot;: &quot;minecraft:polished_blackstone&quot;,
+          &quot;weight&quot;: 400
+        }
+      ]
+    }
+  ],
+  &quot;syphon&quot;: 1000000,
+  &quot;type&quot;: &quot;bloodmagic:meteor&quot;
+}</pre></main></body></html>

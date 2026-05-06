@@ -1,0 +1,19 @@
+{
+  "matrix_dir": "/home/gerald/obelisks/docs/c2me_feature_matrix/20260505-214919",
+  "results": [
+    {
+      "variant": "threaded_worldgen_no_features",
+      "overrides": {
+        "threaded_worldgen_enabled": true,
+        "threaded_worldgen_allow_features": false,
+        "threaded_worldgen_reduce_lock_radius": false,
+        "threaded_worldgen_async_scheduling": false
+      },
+      "disabled_mods": [],
+      "status": "PASS",
+      "reason": "client_joined_server",
+      "probe_returncode": 0,
+      "probe_run_dir": "/home/gerald/obelisks/docs/client_join_probe/20260505-215001"
+    }
+  ]
+}

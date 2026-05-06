@@ -1,0 +1,52 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>tconstruct:tools/modifiers/worktable/extract/defense_dagger</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>tconstruct:tools/modifiers/worktable/extract/defense_dagger</h1>
+<p><b>Type:</b> tconstruct:extract_modifier | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<p><em>None.</em></p>
+<h2>Outputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: null
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;inputs&quot;: [
+    {
+      &quot;item&quot;: &quot;tconstruct:earth_slime_crystal&quot;
+    },
+    {
+      &quot;item&quot;: &quot;minecraft:wet_sponge&quot;
+    }
+  ],
+  &quot;leftovers&quot;: [
+    &quot;minecraft:sponge&quot;
+  ],
+  &quot;modifier_predicate&quot;: {
+    &quot;predicates&quot;: [
+      {
+        &quot;tag&quot;: &quot;tconstruct:extract_blacklist/tools&quot;,
+        &quot;type&quot;: &quot;tconstruct:tag&quot;
+      },
+      {
+        &quot;slot&quot;: &quot;defense&quot;,
+        &quot;type&quot;: &quot;tconstruct:slot_type&quot;
+      }
+    ],
+    &quot;type&quot;: &quot;mantle:and&quot;
+  },
+  &quot;name&quot;: &quot;defense&quot;,
+  &quot;tools&quot;: {
+    &quot;amount_needed&quot;: 2,
+    &quot;item&quot;: &quot;tconstruct:dagger&quot;
+  },
+  &quot;type&quot;: &quot;tconstruct:extract_modifier&quot;
+}</pre></main></body></html>

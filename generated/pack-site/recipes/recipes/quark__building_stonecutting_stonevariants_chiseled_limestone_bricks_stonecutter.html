@@ -1,0 +1,47 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>quark:building/stonecutting/stonevariants/chiseled_limestone_bricks_stonecutter</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>quark:building/stonecutting/stonevariants/chiseled_limestone_bricks_stonecutter</h1>
+<p><b>Type:</b> minecraft:stonecutting | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../items/quark__limestone.html">quark:limestone</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/quark__chiseled_limestone_bricks.html">quark:chiseled_limestone_bricks</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: null
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;conditions&quot;: [
+    {
+      &quot;type&quot;: &quot;forge:and&quot;,
+      &quot;values&quot;: [
+        {
+          &quot;flag&quot;: &quot;stone_bricks&quot;,
+          &quot;type&quot;: &quot;quark:flag&quot;
+        },
+        {
+          &quot;flag&quot;: &quot;stone_chiseled&quot;,
+          &quot;type&quot;: &quot;quark:flag&quot;
+        },
+        {
+          &quot;flag&quot;: &quot;limestone&quot;,
+          &quot;type&quot;: &quot;quark:flag&quot;
+        }
+      ]
+    }
+  ],
+  &quot;count&quot;: 1,
+  &quot;ingredient&quot;: {
+    &quot;item&quot;: &quot;quark:limestone&quot;
+  },
+  &quot;result&quot;: &quot;quark:chiseled_limestone_bricks&quot;,
+  &quot;type&quot;: &quot;minecraft:stonecutting&quot;
+}</pre></main></body></html>

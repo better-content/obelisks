@@ -1,0 +1,51 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>quark:automation/crafting/crafter</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>quark:automation/crafting/crafter</h1>
+<p><b>Type:</b> minecraft:crafting_shaped | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../tags/forge__ingots_iron.html">#forge:ingots/iron</a></li><li><a href="../items/minecraft__crafting_table.html">minecraft:crafting_table</a></li><li><a href="../items/minecraft__dropper.html">minecraft:dropper</a></li><li><a href="../tags/forge__dusts_redstone.html">#forge:dusts/redstone</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/quark__crafter.html">quark:crafter</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: null
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;conditions&quot;: [
+    {
+      &quot;flag&quot;: &quot;crafter&quot;,
+      &quot;type&quot;: &quot;quark:flag&quot;
+    }
+  ],
+  &quot;key&quot;: {
+    &quot;C&quot;: {
+      &quot;item&quot;: &quot;minecraft:crafting_table&quot;
+    },
+    &quot;D&quot;: {
+      &quot;item&quot;: &quot;minecraft:dropper&quot;
+    },
+    &quot;I&quot;: {
+      &quot;tag&quot;: &quot;forge:ingots/iron&quot;
+    },
+    &quot;R&quot;: {
+      &quot;tag&quot;: &quot;forge:dusts/redstone&quot;
+    }
+  },
+  &quot;pattern&quot;: [
+    &quot;III&quot;,
+    &quot;ICI&quot;,
+    &quot;RDR&quot;
+  ],
+  &quot;result&quot;: {
+    &quot;item&quot;: &quot;quark:crafter&quot;
+  },
+  &quot;type&quot;: &quot;minecraft:crafting_shaped&quot;
+}</pre></main></body></html>

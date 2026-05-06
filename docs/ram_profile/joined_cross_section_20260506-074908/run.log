@@ -1,0 +1,78 @@
+phase 1: baseline; disabling 0 jar files
+summary_json=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_summary.json
+summary_csv=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_summary.csv
+ranked_report=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_ranked.md
+phase_complete baseline: PASS client_joined_server rss=14507.5
+phase 2: baseline_repeat_2; disabling 0 jar files
+summary_json=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_summary.json
+summary_csv=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_summary.csv
+ranked_report=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_ranked.md
+phase_complete baseline_repeat_2: PASS client_joined_server rss=14051.3
+phase 3: no_chipped; disabling 2 jar files
+summary_json=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_summary.json
+summary_csv=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_summary.csv
+ranked_report=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_ranked.md
+phase_complete no_chipped: PASS client_joined_server rss=13238.8
+phase 4: no_ticex; disabling 2 jar files
+summary_json=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_summary.json
+summary_csv=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_summary.csv
+ranked_report=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_ranked.md
+phase_complete no_ticex: PASS client_joined_server rss=12465.9
+phase 5: no_chipped_no_ticex; disabling 4 jar files
+summary_json=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_summary.json
+summary_csv=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_summary.csv
+ranked_report=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_ranked.md
+phase_complete no_chipped_no_ticex: FAIL server_crash_report_created rss=None
+phase 6: no_emi_jei_recipe_index; disabling 14 jar files
+summary_json=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_summary.json
+summary_csv=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_summary.csv
+ranked_report=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_ranked.md
+phase_complete no_emi_jei_recipe_index: FAIL server_fail rss=None
+phase 7: no_distant_horizons; disabling 2 jar files
+summary_json=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_summary.json
+summary_csv=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_summary.csv
+ranked_report=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_ranked.md
+phase_complete no_distant_horizons: PASS client_joined_server rss=12837.7
+phase 8: no_steam_rails; disabling 2 jar files
+summary_json=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_summary.json
+summary_csv=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_summary.csv
+ranked_report=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_ranked.md
+phase_complete no_steam_rails: PASS client_joined_server rss=12807.2
+phase 9: no_tcon_addon_layer; disabling 8 jar files
+summary_json=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_summary.json
+summary_csv=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_summary.csv
+ranked_report=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_ranked.md
+phase_complete no_tcon_addon_layer: FAIL server_fail rss=None
+phase 10: no_ae2_addons; disabling 18 jar files
+summary_json=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_summary.json
+summary_csv=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_summary.csv
+ranked_report=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_ranked.md
+phase_complete no_ae2_addons: PASS client_joined_server rss=14214.5
+phase 11: no_create_addons; disabling 40 jar files
+summary_json=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_summary.json
+summary_csv=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_summary.csv
+ranked_report=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_ranked.md
+phase_complete no_create_addons: FAIL server_fail rss=None
+phase 12: no_biome_worldgen_dims; disabling 44 jar files
+summary_json=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_summary.json
+summary_csv=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_summary.csv
+ranked_report=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_ranked.md
+phase_complete no_biome_worldgen_dims: FAIL server_fail rss=None
+phase 13: no_food_farming; disabling 34 jar files
+summary_json=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_summary.json
+summary_csv=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_summary.csv
+ranked_report=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_ranked.md
+phase_complete no_food_farming: FAIL server_fail rss=None
+phase 14: no_magic_adventure_mobs; disabling 38 jar files
+summary_json=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_summary.json
+summary_csv=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_summary.csv
+ranked_report=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_ranked.md
+phase_complete no_magic_adventure_mobs: FAIL server_fail rss=None
+phase 15: no_custom_mods; disabling 36 jar files
+summary_json=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_summary.json
+summary_csv=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_summary.csv
+ranked_report=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_ranked.md
+phase_complete no_custom_mods: PASS client_joined_server rss=12998.8
+summary_json=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_summary.json
+summary_csv=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_summary.csv
+ranked_report=/home/gerald/obelisks/docs/ram_profile/joined_cross_section_20260506-074908/joined_cross_section_ranked.md

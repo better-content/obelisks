@@ -1,0 +1,44 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>quark:tweaks/smelting/raw_gold_bricks_smelt</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>quark:tweaks/smelting/raw_gold_bricks_smelt</h1>
+<p><b>Type:</b> minecraft:smelting | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../items/quark__raw_gold_bricks.html">quark:raw_gold_bricks</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/minecraft__gold_block.html">minecraft:gold_block</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: null
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;conditions&quot;: [
+    {
+      &quot;type&quot;: &quot;forge:and&quot;,
+      &quot;values&quot;: [
+        {
+          &quot;flag&quot;: &quot;smelt_ore_blocks&quot;,
+          &quot;type&quot;: &quot;quark:flag&quot;
+        },
+        {
+          &quot;flag&quot;: &quot;raw_metal_bricks&quot;,
+          &quot;type&quot;: &quot;quark:flag&quot;
+        }
+      ]
+    }
+  ],
+  &quot;cookingtime&quot;: 1800,
+  &quot;experience&quot;: 9,
+  &quot;ingredient&quot;: {
+    &quot;item&quot;: &quot;quark:raw_gold_bricks&quot;
+  },
+  &quot;result&quot;: &quot;minecraft:gold_block&quot;,
+  &quot;type&quot;: &quot;minecraft:smelting&quot;
+}</pre></main></body></html>

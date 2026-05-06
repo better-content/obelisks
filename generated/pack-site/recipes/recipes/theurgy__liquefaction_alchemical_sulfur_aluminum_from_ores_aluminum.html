@@ -1,0 +1,47 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>theurgy:liquefaction/alchemical_sulfur_aluminum_from_ores_aluminum</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>theurgy:liquefaction/alchemical_sulfur_aluminum_from_ores_aluminum</h1>
+<p><b>Type:</b> theurgy:liquefaction | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../tags/forge__ores_aluminum.html">#forge:ores/aluminum</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/theurgy__alchemical_sulfur_aluminum.html">theurgy:alchemical_sulfur_aluminum</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: null
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;conditions&quot;: [
+    {
+      &quot;type&quot;: &quot;forge:not&quot;,
+      &quot;value&quot;: {
+        &quot;tag&quot;: &quot;forge:ores/aluminum&quot;,
+        &quot;type&quot;: &quot;forge:tag_empty&quot;
+      }
+    }
+  ],
+  &quot;ingredient&quot;: {
+    &quot;tag&quot;: &quot;forge:ores/aluminum&quot;
+  },
+  &quot;liquefaction_time&quot;: 100,
+  &quot;result&quot;: {
+    &quot;count&quot;: 5,
+    &quot;item&quot;: &quot;theurgy:alchemical_sulfur_aluminum&quot;,
+    &quot;nbt&quot;: {
+      &quot;theurgy:sulfur.source.id&quot;: &quot;#forge:ores/aluminum&quot;
+    }
+  },
+  &quot;solvent&quot;: {
+    &quot;fluid&quot;: &quot;theurgy:sal_ammoniac&quot;
+  },
+  &quot;solvent_amount&quot;: 10,
+  &quot;type&quot;: &quot;theurgy:liquefaction&quot;
+}</pre></main></body></html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>powergrid:sequenced_assembly/punch_card</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>powergrid:sequenced_assembly/punch_card</h1>
+<p><b>Type:</b> create:sequenced_assembly | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../items/create__cardboard.html">create:cardboard</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/powergrid__punch_card.html">powergrid:punch_card</a></li><li><a href="../items/minecraft__paper.html">minecraft:paper</a></li><li><a href="../items/create__cardboard.html">create:cardboard</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: null
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;ingredient&quot;: {
+    &quot;item&quot;: &quot;create:cardboard&quot;
+  },
+  &quot;loops&quot;: 2,
+  &quot;results&quot;: [
+    {
+      &quot;chance&quot;: 100,
+      &quot;item&quot;: &quot;powergrid:punch_card&quot;
+    },
+    {
+      &quot;chance&quot;: 5,
+      &quot;item&quot;: &quot;minecraft:paper&quot;
+    },
+    {
+      &quot;chance&quot;: 5,
+      &quot;item&quot;: &quot;create:cardboard&quot;
+    }
+  ],
+  &quot;sequence&quot;: [
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;powergrid:incomplete_punch_card&quot;
+        },
+        {
+          &quot;item&quot;: &quot;minecraft:paper&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;powergrid:incomplete_punch_card&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:deploying&quot;
+    },
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;powergrid:incomplete_punch_card&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;powergrid:incomplete_punch_card&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:pressing&quot;
+    }
+  ],
+  &quot;transitionalItem&quot;: {
+    &quot;item&quot;: &quot;powergrid:incomplete_punch_card&quot;
+  },
+  &quot;type&quot;: &quot;create:sequenced_assembly&quot;
+}</pre></main></body></html>

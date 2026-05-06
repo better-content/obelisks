@@ -1,0 +1,64 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>oc2r:robot</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>oc2r:robot</h1>
+<p><b>Type:</b> minecraft:crafting_shaped | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../tags/forge__ingots_iron.html">#forge:ingots/iron</a></li><li><a href="../tags/forge__chests_wooden.html">#forge:chests/wooden</a></li><li><a href="../items/minecraft__piston.html">minecraft:piston</a></li><li><a href="../items/oc2r__transistor.html">oc2r:transistor</a></li><li><a href="../items/oc2r__circuit_board.html">oc2r:circuit_board</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/oc2r__robot.html">oc2r:robot</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: null
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;key&quot;: {
+    &quot;B&quot;: {
+      &quot;item&quot;: &quot;oc2r:circuit_board&quot;
+    },
+    &quot;C&quot;: {
+      &quot;tag&quot;: &quot;forge:chests/wooden&quot;
+    },
+    &quot;I&quot;: {
+      &quot;tag&quot;: &quot;forge:ingots/iron&quot;
+    },
+    &quot;P&quot;: {
+      &quot;item&quot;: &quot;minecraft:piston&quot;
+    },
+    &quot;T&quot;: {
+      &quot;item&quot;: &quot;oc2r:transistor&quot;
+    }
+  },
+  &quot;pattern&quot;: [
+    &quot;ICI&quot;,
+    &quot;PTP&quot;,
+    &quot;IBI&quot;
+  ],
+  &quot;result&quot;: {
+    &quot;item&quot;: &quot;oc2r:robot&quot;,
+    &quot;nbt&quot;: {
+      &quot;oc2r&quot;: {
+        &quot;items&quot;: {
+          &quot;translation{key=&#x27;gui.oc2r.device_type.flash_memory&#x27;, args=[]}&quot;: {
+            &quot;Items&quot;: [
+              {
+                &quot;Count&quot;: 1,
+                &quot;Slot&quot;: 0,
+                &quot;id&quot;: &quot;oc2r:flash_memory_custom&quot;
+              }
+            ],
+            &quot;Size&quot;: 1
+          }
+        }
+      }
+    }
+  },
+  &quot;type&quot;: &quot;minecraft:crafting_shaped&quot;
+}</pre></main></body></html>

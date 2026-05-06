@@ -1,0 +1,50 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>powergrid:mechanical_crafting/electric_motor</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>powergrid:mechanical_crafting/electric_motor</h1>
+<p><b>Type:</b> create:mechanical_crafting | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../tags/forge__copper_coils.html">#forge:copper_coils</a></li><li><a href="../items/powergrid__conductive_casing.html">powergrid:conductive_casing</a></li><li><a href="../tags/forge__plates_iron.html">#forge:plates/iron</a></li><li><a href="../items/powergrid__magnet.html">powergrid:magnet</a></li><li><a href="../items/create__shaft.html">create:shaft</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/powergrid__electric_motor.html">powergrid:electric_motor</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: null
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;acceptMirrored&quot;: true,
+  &quot;key&quot;: {
+    &quot;C&quot;: {
+      &quot;tag&quot;: &quot;forge:copper_coils&quot;
+    },
+    &quot;E&quot;: {
+      &quot;item&quot;: &quot;powergrid:conductive_casing&quot;
+    },
+    &quot;I&quot;: {
+      &quot;tag&quot;: &quot;forge:plates/iron&quot;
+    },
+    &quot;M&quot;: {
+      &quot;item&quot;: &quot;powergrid:magnet&quot;
+    },
+    &quot;S&quot;: {
+      &quot;item&quot;: &quot;create:shaft&quot;
+    }
+  },
+  &quot;pattern&quot;: [
+    &quot; ICI &quot;,
+    &quot;CMSMC&quot;,
+    &quot; ICI &quot;,
+    &quot;  E  &quot;
+  ],
+  &quot;result&quot;: {
+    &quot;item&quot;: &quot;powergrid:electric_motor&quot;
+  },
+  &quot;type&quot;: &quot;create:mechanical_crafting&quot;
+}</pre></main></body></html>

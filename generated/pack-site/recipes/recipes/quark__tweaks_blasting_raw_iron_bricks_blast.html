@@ -1,0 +1,44 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>quark:tweaks/blasting/raw_iron_bricks_blast</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>quark:tweaks/blasting/raw_iron_bricks_blast</h1>
+<p><b>Type:</b> minecraft:blasting | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../items/quark__raw_iron_bricks.html">quark:raw_iron_bricks</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/minecraft__iron_block.html">minecraft:iron_block</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: null
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;conditions&quot;: [
+    {
+      &quot;type&quot;: &quot;forge:and&quot;,
+      &quot;values&quot;: [
+        {
+          &quot;flag&quot;: &quot;smelt_ore_blocks&quot;,
+          &quot;type&quot;: &quot;quark:flag&quot;
+        },
+        {
+          &quot;flag&quot;: &quot;raw_metal_bricks&quot;,
+          &quot;type&quot;: &quot;quark:flag&quot;
+        }
+      ]
+    }
+  ],
+  &quot;cookingtime&quot;: 900,
+  &quot;experience&quot;: 6.3,
+  &quot;ingredient&quot;: {
+    &quot;item&quot;: &quot;quark:raw_iron_bricks&quot;
+  },
+  &quot;result&quot;: &quot;minecraft:iron_block&quot;,
+  &quot;type&quot;: &quot;minecraft:blasting&quot;
+}</pre></main></body></html>

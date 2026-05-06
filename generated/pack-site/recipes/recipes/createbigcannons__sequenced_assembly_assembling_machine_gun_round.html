@@ -1,0 +1,69 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>createbigcannons:sequenced_assembly/assembling_machine_gun_round</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>createbigcannons:sequenced_assembly/assembling_machine_gun_round</h1>
+<p><b>Type:</b> create:sequenced_assembly | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../items/createbigcannons__empty_machine_gun_round.html">createbigcannons:empty_machine_gun_round</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/createbigcannons__machine_gun_round.html">createbigcannons:machine_gun_round</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: null
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;ingredient&quot;: {
+    &quot;item&quot;: &quot;createbigcannons:empty_machine_gun_round&quot;
+  },
+  &quot;loops&quot;: 1,
+  &quot;results&quot;: [
+    {
+      &quot;item&quot;: &quot;createbigcannons:machine_gun_round&quot;
+    }
+  ],
+  &quot;sequence&quot;: [
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;createbigcannons:partially_assembled_machine_gun_round&quot;
+        },
+        {
+          &quot;tag&quot;: &quot;createbigcannons:gunpowder_pinch&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;createbigcannons:partially_assembled_machine_gun_round&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:deploying&quot;
+    },
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;createbigcannons:partially_assembled_machine_gun_round&quot;
+        },
+        {
+          &quot;tag&quot;: &quot;forge:nuggets/copper&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;createbigcannons:partially_assembled_machine_gun_round&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:deploying&quot;
+    }
+  ],
+  &quot;transitionalItem&quot;: {
+    &quot;item&quot;: &quot;createbigcannons:partially_assembled_machine_gun_round&quot;
+  },
+  &quot;type&quot;: &quot;create:sequenced_assembly&quot;
+}</pre></main></body></html>

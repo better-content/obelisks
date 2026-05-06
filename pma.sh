@@ -1,1 +1,0 @@
-packwiz mr add $@

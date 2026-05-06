@@ -1,0 +1,55 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>quark:building/crafting/stonevariants/chiseled_shale_bricks</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>quark:building/crafting/stonevariants/chiseled_shale_bricks</h1>
+<p><b>Type:</b> minecraft:crafting_shaped | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../items/quark__shale_bricks_slab.html">quark:shale_bricks_slab</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/quark__chiseled_shale_bricks.html">quark:chiseled_shale_bricks</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: null
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;conditions&quot;: [
+    {
+      &quot;type&quot;: &quot;forge:and&quot;,
+      &quot;values&quot;: [
+        {
+          &quot;flag&quot;: &quot;stone_bricks&quot;,
+          &quot;type&quot;: &quot;quark:flag&quot;
+        },
+        {
+          &quot;flag&quot;: &quot;stone_chiseled&quot;,
+          &quot;type&quot;: &quot;quark:flag&quot;
+        },
+        {
+          &quot;flag&quot;: &quot;shale&quot;,
+          &quot;type&quot;: &quot;quark:flag&quot;
+        }
+      ]
+    }
+  ],
+  &quot;key&quot;: {
+    &quot;#&quot;: {
+      &quot;item&quot;: &quot;quark:shale_bricks_slab&quot;
+    }
+  },
+  &quot;pattern&quot;: [
+    &quot;#&quot;,
+    &quot;#&quot;
+  ],
+  &quot;result&quot;: {
+    &quot;count&quot;: 1,
+    &quot;item&quot;: &quot;quark:chiseled_shale_bricks&quot;
+  },
+  &quot;type&quot;: &quot;minecraft:crafting_shaped&quot;
+}</pre></main></body></html>

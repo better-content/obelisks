@@ -1,0 +1,1575 @@
+2026-05-05 22:29:54,903 main WARN Advanced terminal features are not available in this environment
+[22:29:54] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeserver, --fml.forgeVersion, 47.4.13, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, nogui]
+[22:29:54] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 21.0.11 by Eclipse Adoptium; OS Linux arch amd64 version 6.12.74+deb13+1-amd64
+[22:29:55] [main/INFO] [ne.mi.fm.lo.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgeserver
+[22:29:55] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/home/gerald/obelisks/server-instance/libraries/org/spongepowered/mixin/0.8.5/mixin-0.8.5.jar%2365!/ Service=ModLauncher Env=SERVER
+[22:29:55] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /home/gerald/obelisks/server-instance/libraries/net/minecraftforge/fmlcore/1.20.1-47.4.13/fmlcore-1.20.1-47.4.13.jar is missing mods.toml file
+[22:29:55] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /home/gerald/obelisks/server-instance/libraries/net/minecraftforge/javafmllanguage/1.20.1-47.4.13/javafmllanguage-1.20.1-47.4.13.jar is missing mods.toml file
+[22:29:55] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /home/gerald/obelisks/server-instance/libraries/net/minecraftforge/lowcodelanguage/1.20.1-47.4.13/lowcodelanguage-1.20.1-47.4.13.jar is missing mods.toml file
+[22:29:55] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /home/gerald/obelisks/server-instance/libraries/net/minecraftforge/mclanguage/1.20.1-47.4.13/mclanguage-1.20.1-47.4.13.jar is missing mods.toml file
+[22:29:56] [main/WARN] [ne.mi.ja.se.JarSelector/]: Attempted to select a dependency jar for JarJar which was passed in as source: geckolib. Using Mod File: /home/gerald/obelisks/server-instance/mods/geckolib-forge-1.20.1-4.8.3.jar
+[22:29:56] [main/WARN] [ne.mi.ja.se.JarSelector/]: Attempted to select a dependency jar for JarJar which was passed in as source: curios. Using Mod File: /home/gerald/obelisks/server-instance/mods/curios-forge-5.14.1+1.20.1.jar
+[22:29:56] [main/INFO] [ne.mi.fm.lo.mo.JarInJarDependencyLocator/]: Found 53 dependencies adding them to mods collection
+[22:29:58] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[22:29:58] [main/INFO] [cp.mo.mo.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeserver' with arguments [nogui]
+[22:29:58] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.fixes.worldgen.threading_issues.mixin
+[22:29:58] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.rewrites.chunk_serializer.mixin
+[22:29:58] [main/INFO] [C2ME Config System/]: Disabling config ioSystem.gcFreeChunkSerializer: Incompatible with architectury@9.2.14 (*) (defined in c2me)
+[22:29:58] [main/INFO] [C2ME Modules Manager/]: Disabling com.ishland.c2me.rewrites.chunk_serializer.mixin
+[22:29:58] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.fixes.general.threading_issues.mixin
+[22:29:58] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.opts.math.mixin
+[22:29:58] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.base.mixin
+[22:29:58] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.fixes.worldgen.vanilla_bugs.mixin
+[22:29:58] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.fixes.chunkio.threading_issues.mixin
+[22:29:58] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.client.uncapvd.mixin
+[22:29:58] [main/WARN] [mixin/]: Reference map 'CerbonsAPI-Forge-1.20.1-forge-refmap.json' for cerbons_api.mixins.json could not be read. If this is a development environment you can ignore this message
+[22:29:58] [main/WARN] [mixin/]: Reference map 'nitrogen_internals.refmap.json' for nitrogen_internals.mixins.json could not be read. If this is a development environment you can ignore this message
+[22:29:58] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.rewrites.chunkio.mixin
+[22:29:58] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.opts.allocs.mixin
+[22:29:58] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.threading.lighting.mixin
+[22:29:58] [main/WARN] [mixin/]: Reference map 'multiloader.refmap.json' for tinycoal.mixins.json could not be read. If this is a development environment you can ignore this message
+[22:29:58] [main/WARN] [mixin/]: Reference map 'multiloader.refmap.json' for tinycoal.forge.mixins.json could not be read. If this is a development environment you can ignore this message
+[22:29:58] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.threading.chunkio.mixin
+[22:29:58] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.opts.chunk_access.mixin
+[22:29:58] [main/WARN] [mixin/]: Reference map 'puzzlesaccessapi.common.refmap.json' for puzzlesaccessapi.common.mixins.json could not be read. If this is a development environment you can ignore this message
+[22:29:58] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.opts.worldgen.vanilla.mixin
+[22:29:58] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.opts.scheduling.mixin
+[22:29:58] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.server.utils.mixin
+[22:29:58] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.notickvd.mixin
+[22:29:58] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.opts.worldgen.general.mixin
+[22:29:58] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.opts.chunkio.mixin
+[22:29:58] [main/WARN] [mixin/]: Reference map 'modonomicon.refmap.json' for modonomicon.mixins.json could not be read. If this is a development environment you can ignore this message
+[22:29:58] [main/WARN] [mixin/]: Reference map 'modonomicon.refmap.json' for modonomicon.forge.mixins.json could not be read. If this is a development environment you can ignore this message
+[22:29:58] [main/WARN] [mixin/]: Reference map 'coroutil.refmap.json' for coroutil.mixins.json could not be read. If this is a development environment you can ignore this message
+[22:29:58] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.threading.worldgen.mixin
+[22:29:58] [main/INFO] [Puzzles Lib/]: Loading 171 mods:
+	- acid_vat 0.1.0
+	- additionalweaponry 1.1.3
+	- addonapi 2.0.0
+	- adlods 8.1.9.0
+	- adpother 8.1.43.0
+	- advanced_ae 1.3.5-1.20.1
+		\-- ae2addonlib 1.0.4-1.20.1
+	- ae2 15.4.10
+	- ae2additions 5.1.1
+	- ae2netanalyser 1.20-1.0.6-forge
+	- ae2things 1.2.1
+	- aether 1.20.1-1.5.2-neoforge
+		|-- cumulus_menus 1.20.1-1.0.1-neoforge
+		\-- nitrogen_internals 1.20.1-1.0.12-neoforge
+	- alchemistry 2.3.4
+	- alchemylib 1.0.30
+	- alekiships 1.0.14
+	- alltheleaks 1.1.1+1.20.1-forge
+		\-- mixinsquared 0.3.6-beta.1
+	- almostunified 1.20.1-0.11.0
+	- ambientsounds 6.3.4
+	- amendments 1.20-2.2.5
+	- apotheosis 7.4.8
+	- apotheotic_additions 2.2.2
+	- appleskin 2.5.1+mc1.20.1
+	- architectury 9.2.14
+	- ars_nouveau 4.12.7
+	- artifacts 9.5.19
+		\-- expandability 9.0.4
+	- athena 3.1.2
+	- attributeslib 1.3.7
+	- bettercombat 1.9.0+1.20.1
+	- blockswap 5.0.0.0
+	- bloodmagic 3.3.7-49
+	- blueprint 7.1.3
+	- botania 1.20.1-451-FORGE
+	- brewinandchewin 1.20.1-3.2.1
+	- c2me 0.2.0+alpha.13
+		|-- c2me_base 0.2.0+alpha.13
+		|-- c2me_client_uncapvd 0.2.0+alpha.13
+		|-- c2me_fixes_chunkio_threading_issues 0.2.0+alpha.13
+		|-- c2me_fixes_general_threading_issues 0.2.0+alpha.13
+		|-- c2me_fixes_worldgen_threading_issues 0.2.0+alpha.13
+		|-- c2me_fixes_worldgen_vanilla_bugs 0.2.0+alpha.13
+		|-- c2me_notickvd 0.2.0+alpha.13
+		|-- c2me_opts_allocs 0.2.0+alpha.13
+		|-- c2me_opts_chunk_access 0.2.0+alpha.13
+		|-- c2me_opts_chunkio 0.2.0+alpha.13
+		|-- c2me_opts_math 0.2.0+alpha.13
+		|-- c2me_opts_scheduling 0.2.0+alpha.13
+		|-- c2me_opts_worldgen_general 0.2.0+alpha.13
+		|-- c2me_opts_worldgen_vanilla 0.2.0+alpha.13
+		|-- c2me_rewrites_chunk_serializer 0.2.0+alpha.13
+		|-- c2me_rewrites_chunkio 0.2.0+alpha.13
+		|-- c2me_server_utils 0.2.0+alpha.13
+		|-- c2me_threading_chunkio 0.2.0+alpha.13
+		|-- c2me_threading_lighting 0.2.0+alpha.13
+		\-- c2me_threading_worldgen 0.2.0+alpha.13
+	- cerbons_api 1.1.0
+	- chemlib 2.0.19
+	- citadel 2.6.3
+	- cloth_config 11.1.136
+	- cobblegenhaters 1.0.1
+	- cold_sweat 2.4
+	- collective 8.20
+	- controlling 12.0.2
+	- coroutil 1.20.1-1.3.7
+	- create 6.0.8
+		|-- flywheel 1.0.5
+		\-- ponder 1.0.91
+	- create_new_age 1.1.7f+mc1.20.1
+		\-- esl 1.1.3
+	- creativecore 2.12.35
+	- cristellib 1.1.6
+	- ctov 3.4.14
+	- curios 5.14.1+1.20.1
+	- delightful 3.7.8
+	- ding 1.5.0
+	- distanthorizons 2.4.5-b
+	- dtarsnouveau 1.20.1-1.2.0
+	- dtquark 1.20.1-2.5.3
+	- dynamic_asset_generator 4.2.2
+	- dynamictrees 1.20.1-1.4.10
+	- dynamictreesplus 1.20.1-1.2.2
+	- emi 1.1.22+1.20.1+forge
+	- etstlib 3.0.0-beta.20
+	- expatternprovider 1.20-1.4.14-forge
+	- explosionoverhaul 0.2.3.0-forge
+	- fallout_wastelands_ 1.0.0
+	- farmersdelight 1.20.1-1.3.1
+	- fastbench 8.0.4
+	- fastfurnace 8.0.2
+	- forge 47.4.13
+	- forgeendertech 11.1.10.0
+	- framedblocks 9.4.3
+	- ftblibrary 2001.2.12
+	- ftbteams 2001.3.2
+	- geckolib 4.8.3
+	- geophilic 3.4.6
+	- glitchcore 0.0.1.1
+	- globalgamerules 8.1.0.12
+	- glodium 1.20-1.5-forge
+	- guideme 20.1.14
+	- hangglider 8.0.1
+	- hyle 2.0.0-1.20.1-forge
+	- ichunutil 1.0.3
+	- insanelib 1.23.4.4
+	- jei 15.20.0.130
+	- jsonthings 0.9.13
+	- k_turrets 3.0.44-1.20.1
+	- kotlinforforge 4.12.0
+	- kubejs 2001.6.5-build.16
+	- kubejsbloodmagic 1.0.2-1.20.1
+	- lithostitched 1.4.11
+	- lodestone 1.20.1-1.6.4.1
+	- logbegone 1.0.8
+	- malum 1.20.1-1.6.7
+	- mantle 1.11.104
+	- markdown_manual 1.2.5+c3f0b88
+	- minecraft 1.20.1
+	- modonomicon 1.79.3
+	- moonlight 1.20-2.16.30
+	- mousetweaks 2.25.1
+	- mynethersdelight 1.20.1-1.7.5
+	- mysterious_mountain_lib 1.6.34-1.20.1
+	- naturescompass 1.20.1-1.12.0-forge
+	- nerb 0.4.1
+	- oc2r 2.2.12
+		\-- sedna 1.0.68
+	- octolib 0.5.0.1
+	- patchouli 1.20.1-85-FORGE
+	- placebo 8.6.3
+	- playeranimator 1.0.2-rc1+1.20
+	- playerrevive 2.0.31
+	- pneumaticcraft 6.0.22+mc1.20.1
+	- polymorph 0.49.10+1.20.1
+		\-- spectrelib 0.13.17+1.20.1
+	- puzzleslib 8.1.33
+		\-- puzzlesaccessapi 20.1.1
+	- quark 4.0-462
+	- railways 1.7.2+forge-mc1.20.1
+	- realisticphysics 1.0.1
+	- resourcefulconfig 2.1.3
+	- resourcefullib 2.1.29
+	- rhino 2001.2.3-build.10
+	- ritchiesprojectilelib 2.1.1
+	- satako 7.0.33-1.20.1
+	- searchables 1.0.3
+	- sereneseasons 9.1.0.2
+	- simpledaylengthextender 1.2.1-Forge-1.20.1
+	- sleepingoverhaul 2.1.0-Forge-1.20.1
+	- smartbrainlib 1.15
+	- sophisticatedcore 1.3.21.1676
+	- sophisticatedstorage 1.4.39.1666
+	- structure_gel 2.16.2
+	- t_and_t 0.0NONE
+	- tconstruct 3.11.2.166
+	- terrablender 3.0.1.10
+	- thirst 1.20.1-1.4.0
+	- tinkers_advanced 3.0.0-beta.5
+	- tinkers_battle_spades 1.2.1
+	- tinkers_better_combat 1.8.6
+	- tinycoal 1.1.5
+	- tradingpost 8.0.2
+	- travelerstitles 1.20-Forge-4.0.2
+	- undergarden 0.8.14
+	- unearthed 2.3.0-1.20.1-forge
+	- veggiesdelight 1.9.2
+	- wands 3.0.4
+	- yungsapi 1.20-Forge-4.0.6
+	- zeta 1.0-31
+[22:29:58] [main/WARN] [mixin/]: Reference map 'cristellib-forge-refmap.json' for cristellib.mixins.json could not be read. If this is a development environment you can ignore this message
+[22:29:58] [main/WARN] [mixin/]: Error loading class: twilightforest/world/components/TFCavesCarver (java.lang.ClassNotFoundException: twilightforest.world.components.TFCavesCarver)
+[22:29:58] [main/WARN] [mixin/]: @Mixin target twilightforest.world.components.TFCavesCarver was not found c2me.mixins.json:MixinTFCavesCarver
+[22:29:58] [main/INFO] [ne.mi.co.Co.placebo/COREMODLOG]: Patching IForgeItemStack#getEnchantmentLevel
+[22:29:58] [main/INFO] [ne.mi.co.Co.placebo/COREMODLOG]: Patching IForgeItemStack#getEnchantmentLevel
+[22:29:58] [main/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 2 calls to Enchantment#getMaxLevel() in net/minecraft/world/inventory/AnvilMenu
+[22:29:58] [main/INFO] [ne.mi.co.Co.placebo/COREMODLOG]: Patching IForgeItemStack#getEnchantmentLevel
+[22:29:58] [main/INFO] [ne.mi.co.Co.placebo/COREMODLOG]: Patching IForgeItemStack#getEnchantmentLevel
+[22:29:58] [main/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 2 calls to Enchantment#getMaxLevel() in net/minecraft/world/item/CreativeModeTabs
+[22:29:58] [main/WARN] [mixin/]: Error loading class: rbasamoyai/createbigcannons/cannon_control/contraption/MountedBigCannonContraption (java.lang.ClassNotFoundException: rbasamoyai.createbigcannons.cannon_control.contraption.MountedBigCannonContraption)
+[22:29:58] [main/WARN] [mixin/]: Error loading class: rbasamoyai/createbigcannons/cannon_control/contraption/MountedAutocannonContraption (java.lang.ClassNotFoundException: rbasamoyai.createbigcannons.cannon_control.contraption.MountedAutocannonContraption)
+[22:29:58] [main/WARN] [mixin/]: Error loading class: com/drmangotea/tfmg/content/machinery/misc/exhaust/ExhaustBlockEntity (java.lang.ClassNotFoundException: com.drmangotea.tfmg.content.machinery.misc.exhaust.ExhaustBlockEntity)
+[22:29:58] [main/WARN] [mixin/]: Error loading class: com/drmangotea/tfmg/content/machinery/misc/flarestack/FlarestackBlockEntity (java.lang.ClassNotFoundException: com.drmangotea.tfmg.content.machinery.misc.flarestack.FlarestackBlockEntity)
+[22:29:58] [main/WARN] [mixin/]: Error loading class: com/drmangotea/tfmg/content/machinery/misc/smokestack/SmokestackBlockEntity (java.lang.ClassNotFoundException: com.drmangotea.tfmg.content.machinery.misc.smokestack.SmokestackBlockEntity)
+[22:29:58] [main/WARN] [mixin/]: Error loading class: mctmods/immersivetechnology/common/multiblocks/metal/logic/BoilerLiquidLogic (java.lang.ClassNotFoundException: mctmods.immersivetechnology.common.multiblocks.metal.logic.BoilerLiquidLogic)
+[22:29:58] [main/WARN] [mixin/]: Error loading class: mctmods/immersivetechnology/common/multiblocks/metal/logic/BoilerSolidLogic (java.lang.ClassNotFoundException: mctmods.immersivetechnology.common.multiblocks.metal.logic.BoilerSolidLogic)
+[22:29:58] [main/WARN] [mixin/]: Error loading class: mctmods/immersivetechnology/common/multiblocks/metal/logic/GasTurbineLogic (java.lang.ClassNotFoundException: mctmods.immersivetechnology.common.multiblocks.metal.logic.GasTurbineLogic)
+[22:29:58] [main/WARN] [mixin/]: Error loading class: com/mcwwindows/kikoz/objects/WindowBarred (java.lang.ClassNotFoundException: com.mcwwindows.kikoz.objects.WindowBarred)
+[22:29:59] [main/WARN] [mixin/]: Error loading class: net/minecraft/client/OptionInstance (java.lang.ClassNotFoundException: net.minecraft.client.OptionInstance)
+[22:29:59] [main/WARN] [mixin/]: @Mixin target net.minecraft.client.OptionInstance was not found c2me_client_uncapvd.mixins.json:ISimpleOption
+[22:29:59] [main/ERROR] [ne.mi.fm.lo.RuntimeDistCleaner/DISTXFORM]: Attempted to load class net/minecraft/client/Options for invalid dist DEDICATED_SERVER
+[22:29:59] [main/WARN] [mixin/]: Error loading class: net/minecraft/client/Options (java.lang.RuntimeException: Attempted to load class net/minecraft/client/Options for invalid dist DEDICATED_SERVER)
+[22:29:59] [main/WARN] [mixin/]: @Mixin target net.minecraft.client.Options was not found c2me_client_uncapvd.mixins.json:MixinGameOptions
+[22:29:59] [main/WARN] [mixin/]: Error loading class: me/jellysquid/mods/sodium/client/gui/SodiumGameOptionPages (java.lang.ClassNotFoundException: me.jellysquid.mods.sodium.client.gui.SodiumGameOptionPages)
+[22:29:59] [main/WARN] [mixin/]: Error loading class: net/caffeinemc/sodium/config/user/UserConfigCategories (java.lang.ClassNotFoundException: net.caffeinemc.sodium.config.user.UserConfigCategories)
+[22:29:59] [main/WARN] [mixin/]: Error loading class: umpaz/farmersrespite/common/block/entity/KettleBlockEntity (java.lang.ClassNotFoundException: umpaz.farmersrespite.common.block.entity.KettleBlockEntity)
+[22:29:59] [main/WARN] [mixin/]: @Mixin target umpaz.farmersrespite.common.block.entity.KettleBlockEntity was not found thirst.mixin.json:farmersrespite.MixinKettleBlockEntity
+[22:29:59] [main/WARN] [mixin/]: Error loading class: snownee/jade/api/view/FluidView (java.lang.ClassNotFoundException: snownee.jade.api.view.FluidView)
+[22:29:59] [main/WARN] [mixin/]: @Mixin target snownee.jade.api.view.FluidView was not found thirst.mixin.json:jade.MixinFluidView
+[22:29:59] [main/WARN] [mixin/]: Error loading class: toughasnails/item/EmptyCanteenItem (java.lang.ClassNotFoundException: toughasnails.item.EmptyCanteenItem)
+[22:29:59] [main/WARN] [mixin/]: @Mixin target toughasnails.item.EmptyCanteenItem was not found thirst.mixin.json:toughasnails.MixinEmptyCanteenItem
+[22:29:59] [main/WARN] [mixin/]: Error loading class: toughasnails/config/ThirstConfig (java.lang.ClassNotFoundException: toughasnails.config.ThirstConfig)
+[22:29:59] [main/WARN] [mixin/]: @Mixin target toughasnails.config.ThirstConfig was not found thirst.mixin.json:toughasnails.MixinServerConfig
+[22:29:59] [main/WARN] [mixin/]: Error loading class: toughasnails/thirst/ThirstHandler (java.lang.ClassNotFoundException: toughasnails.thirst.ThirstHandler)
+[22:29:59] [main/WARN] [mixin/]: @Mixin target toughasnails.thirst.ThirstHandler was not found thirst.mixin.json:toughasnails.MixinThirstHandler
+[22:29:59] [main/WARN] [mixin/]: Error loading class: toughasnails/thirst/ThirstHelperImpl (java.lang.ClassNotFoundException: toughasnails.thirst.ThirstHelperImpl)
+[22:29:59] [main/WARN] [mixin/]: @Mixin target toughasnails.thirst.ThirstHelperImpl was not found thirst.mixin.json:toughasnails.MixinThirstHelperImpl
+[22:29:59] [main/WARN] [mixin/]: Error loading class: net/mehvahdjukaar/supplementaries/common/entities/SlimeBallEntity (java.lang.ClassNotFoundException: net.mehvahdjukaar.supplementaries.common.entities.SlimeBallEntity)
+[22:29:59] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.leaks.common.mods.zeta.Issue69 will be loaded as it matches versions: 1.0-31 in [1.0-19,)
+[22:29:59] [main/INFO] [AllTheLeaks/]: Mixins added to allowed list: [main.RecipeCrawlHandlerMixin]
+[22:29:59] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.leaks.common.mods.sereneseasons.UntrackedIssue001 will be loaded as it matches versions: 9.1.0.2 in [9.1.0.0,)
+[22:29:59] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.leaks.common.mods.pneumaticcraft.UntrackedIssue001 will be loaded as it matches versions: 6.0.22+mc1.20.1 in [6.0.15,)
+[22:29:59] [main/INFO] [AllTheLeaks/]: Mixins added to allowed list: [main.DroneEntityMixin, main.ProgrammableControllerBlockEntityMixin, main.AerialInterfaceBlockEntityMixin]
+[22:29:59] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.leaks.common.mods.moonlight.UntrackedIssue001 will be loaded as it matches versions: 1.20-2.16.30 in [1.20-2.13.32,)
+[22:29:59] [main/INFO] [AllTheLeaks/]: Mixins added to allowed list: [main.FakeLevelManagerMixin]
+[22:29:59] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.leaks.common.mods.minecraft.UntrackedIssue002 will be loaded as it matches versions: 1.20.1 in 1.20.1
+[22:29:59] [main/INFO] [AllTheLeaks/]: Mixins added to allowed list: [main.EntityTickListMixin]
+[22:29:59] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.leaks.common.mods.minecraft.UntrackedIssue001 will be loaded as it matches versions: 1.20.1 in 1.20.1
+[22:29:59] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.leaks.common.mods.forge.UntrackedIssue002 will be loaded as it matches versions: 47.4.13 in [47.2,)
+[22:29:59] [main/INFO] [AllTheLeaks/]: Mixins added to allowed list: [accessor.FakePlayerNetHandlerAccessor, accessor.ConnectionAccessor]
+[22:29:59] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.leaks.common.mods.forge.UntrackedIssue001 will be loaded as it matches versions: 47.4.13 in [47.2,)
+[22:29:59] [main/INFO] [AllTheLeaks/]: Mixins added to allowed list: [main.ServerPlayerMixin, main.PlayerListMixin, accessor.PlayerAdvancementsAccessor]
+[22:29:59] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.leaks.common.mods.forge.Issue39 will be loaded as it matches versions: 47.4.13 in [47.2,)
+[22:29:59] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.leaks.common.mods.forge.Issue10684 will be loaded as it matches versions: 47.4.13 in *
+[22:29:59] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.leaks.common.mods.curios.UntrackedIssue001 will be loaded as it matches versions: 5.14.1+1.20.1 in [5.9.1,)
+[22:29:59] [main/INFO] [AllTheLeaks/]: Mixins added to allowed list: [main.CuriosEventHandlerMixin]
+[22:29:59] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.leaks.common.mods.create.UntrackedIssue001 will be loaded as it matches versions: 6.0.8 in [0.5.1.c,)
+[22:29:59] [main/INFO] [AllTheLeaks/]: Mixins added to allowed list: [accessor.ExtendoGripItemAccessor]
+[22:29:59] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.leaks.common.mods.citadel.UntrackedIssue001 will be loaded as it matches versions: 2.6.3 in [2.5.4,)
+[22:29:59] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.leaks.common.mods.ars_nouveau.UntrackedIssue003 will be loaded as it matches versions: 4.12.7 in *
+[22:29:59] [main/INFO] [AllTheLeaks/]: Mixins added to allowed list: [accessor.ConnectionAccessor]
+[22:29:59] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.leaks.common.mods.architectury.UntrackedIssue001 will be loaded as it matches versions: 9.2.14 in [9.0.8,)
+[22:29:59] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.leaks.common.mods.aether.UntrackedIssue001 will be loaded as it matches versions: 1.20.1-1.5.2-neoforge in [1.20.1-1.4.2,)
+[22:29:59] [main/INFO] [AllTheLeaks/]: Mixins added to allowed list: [main.DroppedItemCapabilityMixin]
+[22:29:59] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.fix.common.mods.zeta.FixCopyStack will be loaded as it matches versions: 1.0-31 in *
+[22:29:59] [main/INFO] [AllTheLeaks/]: Mixins added to allowed list: [main.StackFixRecipeCrawlHandlerMixin]
+[22:29:59] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.fix.common.mods.kubejs.FixItemStackModification will be loaded as it matches versions: 2001.6.5-build.16 in *
+[22:29:59] [main/INFO] [AllTheLeaks/]: Mixins added to allowed list: [main.IngredientKJSMixin]
+[22:29:59] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.fix.common.mods.jei.FixItemStackCopy will be loaded as it matches versions: 15.20.0.130 in *
+[22:29:59] [main/INFO] [AllTheLeaks/]: Mixins added to allowed list: [main.SmithingCategoryExtensionMixin, main.NormalizedTypedItemStackMixin, main.IngredientSetMixin]
+[22:29:59] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.fix.common.mods.bloodmagic.FixItemStackCopy will be loaded as it matches versions: 3.3.7-49 in *
+[22:29:59] [main/INFO] [AllTheLeaks/]: Mixins added to allowed list: [main.ARCRecipeCategoryMixin]
+[22:29:59] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.fix.common.mods.alchemylib.FixItemStackCopy will be loaded as it matches versions: 1.0.30 in *
+[22:29:59] [main/INFO] [AllTheLeaks/]: Mixins added to allowed list: [main.IngredientStackMixin]
+[22:29:59] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.feature.common.mods.minecraft.MemoryMonitor will be loaded as it matches versions: 1.20.1 in 1.20.1
+[22:29:59] [main/INFO] [AllTheLeaks/]: Mixins added to allowed list: [main.PlayerMixin, main.ChunkAccessMixin, main.LevelMixin, main.MinecraftServerMixin]
+[22:29:59] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.feature.common.mods.minecraft.ClearLeakedLevelChunks will be loaded as it matches versions: 1.20.1 in 1.20.1
+[22:29:59] [main/INFO] [AllTheLeaks/]: Mixins added to allowed list: [accessor.LevelAccessor, main.RebindableTickingBlockEntityWrapperMixin, accessor.LevelChunkAccessor]
+[22:29:59] [main/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Patching FishingHook#catchingFish
+[22:29:59] [main/WARN] [mixin/]: Error loading class: vazkii/quark/addons/oddities/inventory/BackpackMenu (java.lang.ClassNotFoundException: vazkii.quark.addons.oddities.inventory.BackpackMenu)
+[22:29:59] [main/WARN] [mixin/]: Error loading class: net/minecraft/client/gui/screens/inventory/CraftingScreen (java.lang.ClassNotFoundException: net.minecraft.client.gui.screens.inventory.CraftingScreen)
+[22:29:59] [main/WARN] [mixin/]: @Mixin target net.minecraft.client.gui.screens.inventory.CraftingScreen was not found fastbench.mixins.json:MixinCraftingScreen
+[22:29:59] [main/WARN] [mixin/]: Error loading class: blusunrize/immersiveengineering/api/wires/GlobalWireNetwork (java.lang.ClassNotFoundException: blusunrize.immersiveengineering.api.wires.GlobalWireNetwork)
+[22:29:59] [main/WARN] [mixin/]: @Mixin target blusunrize.immersiveengineering.api.wires.GlobalWireNetwork was not found mixins.epp.json:MixinGlobalWireNetwork
+[22:29:59] [main/ERROR] [ne.mi.fm.lo.RuntimeDistCleaner/DISTXFORM]: Attempted to load class net/minecraft/client/resources/model/ModelBakery for invalid dist DEDICATED_SERVER
+[22:29:59] [main/WARN] [mixin/]: Error loading class: net/minecraft/client/resources/model/ModelBakery (java.lang.RuntimeException: Attempted to load class net/minecraft/client/resources/model/ModelBakery for invalid dist DEDICATED_SERVER)
+[22:29:59] [main/WARN] [mixin/]: @Mixin target net.minecraft.client.resources.model.ModelBakery was not found mixins.aae.json:client.ModelBakeryMixin
+[22:29:59] [main/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 1 calls to Enchantment#getMaxLevel() in net/minecraft/world/entity/npc/VillagerTrades$EnchantBookForEmeralds
+[22:29:59] [main/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 1 calls to Enchantment#isTreasureOnly() in net/minecraft/world/entity/npc/VillagerTrades$EnchantBookForEmeralds
+[22:29:59] [main/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 1 calls to Enchantment#isTradeable() in net/minecraft/world/entity/npc/VillagerTrades$EnchantBookForEmeralds
+[22:29:59] [main/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 1 calls to Enchantment#getMaxLevel() in net/minecraft/world/level/storage/loot/functions/EnchantRandomlyFunction
+[22:29:59] [main/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 1 calls to Enchantment#isDiscoverable() in net/minecraft/world/level/storage/loot/functions/EnchantRandomlyFunction
+[22:29:59] [main/WARN] [mixin/]: Error loading class: noobanidus/mods/lootr/config/ConfigManager (java.lang.ClassNotFoundException: noobanidus.mods.lootr.config.ConfigManager)
+[22:29:59] [main/WARN] [mixin/]: @Mixin target noobanidus.mods.lootr.config.ConfigManager was not found quark_integrations.mixins.json:lootr.ConfigManagerMixin
+[22:29:59] [main/WARN] [mixin/]: Error loading class: com/mrbysco/spoiled/config/SpoiledConfigCache (java.lang.ClassNotFoundException: com.mrbysco.spoiled.config.SpoiledConfigCache)
+[22:29:59] [main/WARN] [mixin/]: @Mixin target com.mrbysco.spoiled.config.SpoiledConfigCache was not found cold_sweat.mixin.json:compat.MixinSpoiledIcebox$ContainerModifier
+[22:29:59] [main/INFO] [MixinExtras|Service/]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.3).
+[22:30:00] [main/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 2 calls to Enchantment#getMaxLevel() in net/minecraft/world/item/CreativeModeTabs
+[22:30:00] [main/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 1 calls to Enchantment#getMaxLevel() in org/violetmoon/quark/content/experimental/module/GameNerfsModule
+[22:30:00] [main/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 5 calls to Enchantment#getMaxLevel() in org/violetmoon/quark/content/tools/module/AncientTomesModule
+[22:30:00] [main/INFO] [ne.mi.co.Co.placebo/COREMODLOG]: Patching IForgeItemStack#getEnchantmentLevel
+[22:30:00] [main/INFO] [ne.mi.co.Co.placebo/COREMODLOG]: Patching IForgeItemStack#getEnchantmentLevel
+[22:30:00] [main/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 2 calls to Enchantment#getMaxLevel() in net/minecraft/world/inventory/AnvilMenu
+[22:30:01] [main/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Patching FishingHook#catchingFish
+[22:30:01] [main/INFO] [minecraft/ChunkStatus]: minecraft:empty task radius: -1 -> -1
+[22:30:01] [main/INFO] [minecraft/ChunkStatus]: minecraft:structure_starts task radius: 0 -> 0
+[22:30:01] [main/INFO] [minecraft/ChunkStatus]: minecraft:structure_references task radius: 8 -> 0
+[22:30:01] [main/INFO] [minecraft/ChunkStatus]: minecraft:biomes task radius: 8 -> 0
+[22:30:01] [main/INFO] [minecraft/ChunkStatus]: minecraft:noise task radius: 8 -> 0
+[22:30:01] [main/INFO] [minecraft/ChunkStatus]: minecraft:surface task radius: 8 -> 0
+[22:30:01] [main/INFO] [minecraft/ChunkStatus]: minecraft:carvers task radius: 8 -> 0
+[22:30:01] [main/INFO] [minecraft/ChunkStatus]: minecraft:features task radius: 8 -> 1
+[22:30:01] [main/INFO] [minecraft/ChunkStatus]: minecraft:initialize_light task radius: 0 -> 0
+[22:30:01] [main/INFO] [minecraft/ChunkStatus]: minecraft:light task radius: 1 -> 1
+[22:30:01] [main/INFO] [minecraft/ChunkStatus]: minecraft:spawn task radius: 0 -> 0
+[22:30:01] [main/INFO] [minecraft/ChunkStatus]: minecraft:full task radius: 0 -> 0
+[22:30:01] [main/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 1 calls to Enchantment#getMaxLevel() in net/minecraft/world/level/storage/loot/functions/EnchantRandomlyFunction
+[22:30:01] [main/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 1 calls to Enchantment#isDiscoverable() in net/minecraft/world/level/storage/loot/functions/EnchantRandomlyFunction
+[22:30:02] [modloading-worker-0/INFO] [satako/]: Satako loaded
+[22:30:02] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.insanelib.module.base.FixesFeature
+[22:30:02] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.insanelib.module.base.TagsFeature
+[22:30:02] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.insanelib.module.base.TimeStopNoPlayerOnline
+[22:30:02] [modloading-worker-0/INFO] [or.an.cn.CreateNewAge/]: Hello 1.20.1 Create!
+[22:30:02] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.insanelib.module.base.betterfallingblocks.BetterFallingBlocks
+[22:30:02] [modloading-worker-0/INFO] [Railways/]: Steam 'n' Rails v1.7.2 initializing! Commit hash: 7c1a21e3a4edbd6b5f1301f82a8bfbeb5fdb1444 on Create version: 6.0.8 on platform: Forge
+[22:30:02] [modloading-worker-0/INFO] [Collective/]: Loading Collective version 8.20.
+[22:30:02] [modloading-worker-0/INFO] [Puzzles Lib/]: Constructing common components for hangglider:main
+[22:30:02] [modloading-worker-0/INFO] [co.ae.cu.Cumulus/]: Disabling Cumulus as it is on server.
+[22:30:02] [modloading-worker-0/ERROR] [ne.mi.fm.lo.RuntimeDistCleaner/DISTXFORM]: Attempted to load class org/antarcticgardens/cna/CreateNewAgeClientForge for invalid dist DEDICATED_SERVER
+[22:30:02] [modloading-worker-0/INFO] [or.an.cn.CreateNewAge/]: Running in dedicated server
+[22:30:02] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id architectury:sync_ids
+[22:30:02] [modloading-worker-0/INFO] [Puzzles Lib/]: Constructing common components for tradingpost:main
+[22:30:02] [modloading-worker-0/INFO] [Unearthed/]: UE: Blocks registered!
+[22:30:02] [modloading-worker-0/INFO] [Unearthed/]: UE: Items registered!
+[22:30:02] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftblibrary:edit_nbt_response
+[22:30:02] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbteams:open_gui
+[22:30:02] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbteams:update_settings
+[22:30:02] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbteams:send_message
+[22:30:02] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbteams:create_party
+[22:30:02] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbteams:player_gui_operation
+[22:30:03] [modloading-worker-0/INFO] [ne.mi.co.ForgeMod/FORGEMOD]: Forge mod loading, version 47.4.13, for MC 1.20.1 with MCP 20230612.114412
+[22:30:03] [modloading-worker-0/INFO] [ne.mi.co.MinecraftForge/FORGE]: MinecraftForge v47.4.13 Initialized
+[22:30:03] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id sleepingoverhaul:is_really_sleeping
+[22:30:03] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id artifacts:networking_channel/42a7ad70b1cc371599a0eff744096b8a
+[22:30:03] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id artifacts:networking_channel/74a5e841822a3a87854ae896a33430d6
+[22:30:03] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id artifacts:networking_channel/eb3d1e2748533430848cadf0f37c7e9c
+[22:30:03] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id artifacts:networking_channel/91c8520f19f93b3e8b6a727568e194ab
+[22:30:03] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id artifacts:networking_channel/8c2784d778293fd482ed84b8aa5fedb9
+[22:30:03] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id artifacts:networking_channel/ea038224ea783d40b2863f52239e2604
+[22:30:03] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id artifacts:networking_channel/97ad64b7ecaf33209991c4f031501a58
+[Mouse Tweaks] Disabled because not running on the client.
+Config updated!
+Config loaded!
+[22:30:03] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id wands:global_settings_packet
+[22:30:03] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id wands:key_packet
+[22:30:03] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id wands:palette_packet
+[22:30:03] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id wands:wand_packet
+[22:30:03] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id wands:sync_rock_packet
+[22:30:03] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id wands:pos_packet
+[22:30:03] [modloading-worker-0/ERROR] [me.ic.mo.di.co.Ding/]: You are loading Ding on a server. Ding is a client only mod!
+[22:30:03] [modloading-worker-0/INFO] [co.si.cr.Create/]: Create 6.0.8 initializing! Commit hash: 1a1a9a2819b4f89f78caec41b55ed8cb222fa24b
+[22:30:03] [modloading-worker-0/WARN] [mixinsquared-annotation-adjuster/]: Modified mixin "dev.uncandango.alltheleaks.mixin.core.main.AerialInterfaceBlockEntityMixin". Check debug logs for more information.
+[22:30:03] [modloading-worker-0/INFO] [KubeJS/]: Loaded common.properties
+[22:30:03] [modloading-worker-0/INFO] [KubeJS/]: Loaded dev.properties
+[22:30:03] [modloading-worker-0/INFO] [KubeJS/]: Looking for KubeJS plugins...
+[22:30:03] [modloading-worker-0/INFO] [KubeJS/]: Found plugin source kubejs
+[22:30:03] [modloading-worker-0/WARN] [KubeJS/]: Plugin dev.latvian.mods.kubejs.forge.BuiltinKubeJSForgeClientPlugin does not load on server side, skipping
+[22:30:03] [modloading-worker-0/WARN] [KubeJS/]: Plugin dev.latvian.mods.kubejs.integration.forge.gamestages.GameStagesIntegration does not have required mod gamestages loaded, skipping
+[22:30:03] [modloading-worker-0/INFO] [KubeJS/]: Found plugin source acid_vat
+[22:30:03] [modloading-worker-0/INFO] [th.ko.te.KotlinForForge/]: Kotlin For Forge Enabled!
+Loading schematic: bloodmagic:t_corridor
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@56995e8e
+Loading schematic: bloodmagic:four_way_corridor_loot
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@6c198ae8
+Loading schematic: bloodmagic:four_way_corridor
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@169c7b71
+Loading schematic: bloodmagic:standard/ore_hold_1
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@5a298111
+Loading schematic: bloodmagic:straight_corridor
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@5f376a74
+Loading schematic: bloodmagic:overlapped_corridor
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@13d14ac1
+Loading schematic: bloodmagic:spiral_staircase
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@5eb09d37
+Loading schematic: bloodmagic:standard/water_way
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@3683138b
+Loading schematic: bloodmagic:standard/mine_entrance
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@5d919810
+Loading schematic: bloodmagic:mines/mine_key
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@45cbe444
+Loading schematic: bloodmagic:mines/pit
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@500223c1
+Loading schematic: bloodmagic:mines/corner_zombie_trap
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@4de92ce6
+Loading schematic: bloodmagic:mines/split_road
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@2ebef205
+Loading schematic: bloodmagic:mines/station
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@621b91f4
+Loading schematic: bloodmagic:mines/downward_tunnel
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@7ed74061
+Loading schematic: bloodmagic:mines/junction_station
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@6cbe212e
+Loading schematic: bloodmagic:mines/downward_shaft
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@c478e48
+Loading schematic: bloodmagic:mines/nature_crossroad
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@3741d1c9
+Loading schematic: bloodmagic:mines/wolf_den
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@62927001
+Loading schematic: bloodmagic:mines/ore_cavern
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@741ffb84
+Loading schematic: bloodmagic:mines/straight_corridor
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@1e96b7be
+Loading schematic: bloodmagic:mines/bent_corridor
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@1baa2c67
+Loading schematic: bloodmagic:mines/fourway_corridor
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@62cbd670
+Loading schematic: bloodmagic:mini_dungeon/library
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@3067a11f
+Loading schematic: bloodmagic:mini_dungeon/armoury
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@53746fac
+Loading schematic: bloodmagic:mini_dungeon/farm
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@671587fe
+Loading schematic: bloodmagic:mini_dungeon/portal_nether
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@51d69c95
+Loading schematic: bloodmagic:mini_dungeon/crypt
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@45565069
+Loading schematic: bloodmagic:standard/challenge_tower
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@402f0360
+Loading schematic: bloodmagic:standard/big_library
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@43bdfeeb
+Loading schematic: bloodmagic:standard/small_crane
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@1054164c
+Loading schematic: bloodmagic:standard/small_library
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@470dd6d2
+Loading schematic: bloodmagic:standard/small_smithy
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@5e3b9222
+Loading schematic: bloodmagic:standard/tall_spiral
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@1277965d
+Loading schematic: bloodmagic:standard/small_arena
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@c5a412c
+Loading schematic: bloodmagic:standard/antechamber
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@2daca07c
+Loading schematic: bloodmagic:standard/destroyed_end_portal
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@26f5d12f
+Loading schematic: bloodmagic:standard/four_way_corridor_loot
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@463b543a
+Loading schematic: bloodmagic:t3_entrance
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@24e8a600
+Loading schematic: bloodmagic:standard_entrance
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@1f08c41c
+Loading schematic: bloodmagic:default_deadend
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@7a926dbe
+Loading schematic: bloodmagic:mines/deadend
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@7f5fac48
+# schematics: 42
+[22:30:03] [modloading-worker-0/INFO] [KubeJS/]: Found plugin source kubejsbloodmagic
+[22:30:03] [modloading-worker-0/INFO] [KubeJS/]: Found plugin source cold_sweat
+[22:30:03] [modloading-worker-0/INFO] [KubeJS/]: Done in 102.4 ms
+[22:30:03] [modloading-worker-0/INFO] [co.th.ae.LoggerKt/]: Integration for AE2 Things has been loaded
+[22:30:03] [modloading-worker-0/INFO] [co.th.ae.LoggerKt/]: Integration for FTB Teams has been loaded
+[22:30:03] [modloading-worker-0/INFO] [coroutil/]: forge loader environment detected
+[22:30:03] [modloading-worker-0/INFO] [Puzzles Lib/]: Constructing common components for puzzleslib:main
+[22:30:03] [modloading-worker-0/INFO] [Rhino Script Remapper/]: Loading Rhino Minecraft remapper...
+[22:30:03] [modloading-worker-0/INFO] [quark/]: Initializing TerraBlender underground biome compat
+[22:30:03] [modloading-worker-0/INFO] [de.la.mo.rh.mo.ut.RhinoProperties/]: Rhino properties loaded.
+[22:30:03] [modloading-worker-0/INFO] [Rhino Script Remapper/]: Loading mappings for 1.20.1
+[22:30:03] [modloading-worker-0/INFO] [zeta/]: Doing super early config setup for zeta
+[22:30:04] [modloading-worker-0/INFO] [be.fl.ex.ExpandAbility/]: ExpandAbility here, who dis?
+[22:30:04] [modloading-worker-0/INFO] [Rhino Script Remapper/]: Done in 0.080 s
+[22:30:04] [modloading-worker-0/WARN] [mixinsquared-annotation-adjuster/]: Modified mixin "dev.uncandango.alltheleaks.mixin.core.main.RecipeCrawlHandlerMixin". Check debug logs for more information.
+[22:30:04] [modloading-worker-0/WARN] [mixinsquared-annotation-adjuster/]: Modified mixin "dev.uncandango.alltheleaks.mixin.core.main.RecipeCrawlHandlerMixin". Check debug logs for more information.
+[22:30:04] [modloading-worker-0/WARN] [mixinsquared-annotation-adjuster/]: Modified mixin "dev.uncandango.alltheleaks.mixin.core.main.RecipeCrawlHandlerMixin". Check debug logs for more information.
+[22:30:04] [modloading-worker-0/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 1 calls to Enchantment#getMaxLevel() in org/violetmoon/quark/content/experimental/module/GameNerfsModule
+[22:30:04] [modloading-worker-0/WARN] [mixin/]: @Inject(@At("INVOKE")) Shift.BY=3 on etstlib.mixins.json:TconMixin.CastingBlockEntityMixin::handler$bda000$increaseProcessSpeed exceeds the maximum allowed value: 0. Increase the value of maxShiftBy to suppress this warning.
+[22:30:04] [modloading-worker-0/INFO] [Railways/]: Registered bogey styles from railways
+[22:30:04] [modloading-worker-0/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 5 calls to Enchantment#getMaxLevel() in org/violetmoon/quark/content/tools/module/AncientTomesModule
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Discovered 164 modules to load.
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Abacus...
+[22:30:04] [modloading-worker-0/INFO] [pneumaticcraft/]: Thirdparty integration activated for [jei,botania,curios,patchouli,create]
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Adjustable Chat...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Ambient Discs...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Ancient Tomes...
+[22:30:04] [modloading-worker-0/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 3 calls to Enchantment#getMaxLevel() in org/violetmoon/quark/content/tools/item/AncientTomeItem
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Ancient Wood...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Armed Armor Stands...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Auto Walk Keybind...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Automatic Recipe Unlock...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Automatic Tool Restock...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Azalea Wood...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Back Button Keybind...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Backpack...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Beacon Redirection...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Better Elytra Rocket...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Big Stone Clusters...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Blossom Trees...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Bottled Cloud...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Buckets Show Inhabitants...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Camera...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Campfires Boost Elytra...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Celebratory Lamps...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Chains Connect Blocks...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Chest Searching...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Chorus Vegetation...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Chute...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Climate Control Remover...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Color Runes...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Compasses Work Everywhere...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Compressed Blocks...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Coral On Cactus...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Corundum...
+[22:30:04] [modloading-worker-0/INFO] [KubeJS/]: Added bindings for script type STARTUP from mod 'almostunified': [AlmostUnified]
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Crabs...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Crafter...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Crate...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Diamond Repair...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Dispensers Place Blocks...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Double Door Opening...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Dragon Scales...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Duskbound Blocks...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Dyeable Item Frames...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Easy Transfering...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Elytra Indicator...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Emotes...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Enchantment Predicates...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Enchantments Begone...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Ender Watcher...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Endermosh Music Disc...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Enhanced Ladders...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Expanded Item Interactions...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Fairy Rings...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Fallen Logs...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Feeding Trough...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Forgotten...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Foxhound...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Framed Glass...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Game Nerfs...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Glass Item Frame...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Glass Shard...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Glimmering Weald...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Gold Bars...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Gold Tools Have Fortune...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Grab Chickens...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Grate...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Gravisand...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Greener Grass...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Hedges...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Hoe Harvesting...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Hollow Logs...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Horses Swim...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Hotbar Changer...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Improved Sponges...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Improved Tooltips...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Industrial Palette...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Inventory Sorting...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Iron Rod...
+[22:30:04] [Thread-2/WARN] [Collective/]: [Update] Collective has an update available: 8.20 -> 8.22
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Item Sharing...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Japanese Palette...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Leaf Carpet...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Lock Rotation...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Long Range Pick Block...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Magma Keeps Concrete Powder...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Magnets...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Map Washing...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Matrix Enchanting...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Metal Buttons...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Microcrafting Helper...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Midori...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Monster Box...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module More Banner Layers...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module More Brick Types...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module More Mud Blocks...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module More Note Block Sounds...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module More Potted Plants...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module More Villagers...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Narrator Readout...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Nether Brick Fence Gate...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Nether Obsidian Spikes...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module New Stone Types...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module No Durability On Cosmetics...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module No More Lava Pockets...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Obsidian Plate...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Overlay Shader...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Parrot Eggs...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Pat The Dogs...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Pathfinder Maps...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Permafrost...
+[22:30:04] [modloading-worker-0/INFO] [KubeJS Startup/]: Loaded script startup_scripts:00_globals/20_progression_catalogues.js in 0.085 s
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Petals On Water...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Pickarang...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Pig Litters...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Pipes...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Pistons Move Tile Entities...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Poison Potato Usage...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Quick Armor Swapping...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Rainbow Lamps...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Raw Metal Bricks...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Reacharound Placing...
+[22:30:04] [modloading-worker-0/INFO] [KubeJS Startup/]: 10_items_blocks/10_thats_crate_registry.js#28: Loaded Java class 'java.math.BigInteger'
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Redstone Randomizer...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Renewable Spore Blossoms...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Replace Scaffolding...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Rope...
+[22:30:04] [modloading-worker-0/INFO] [KubeJS Startup/]: Loaded script startup_scripts:10_items_blocks/10_thats_crate_registry.js in 0.056 s
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Safer Creatures...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Seed Pouch...
+[22:30:04] [modloading-worker-0/INFO] [KubeJS Startup/]: Loaded script startup_scripts:10_items_blocks/20_triple_flint_durability.js in 0.001 s
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Shear Vines...
+[22:30:04] [modloading-worker-0/INFO] [KubeJS Startup/]: Loaded script startup_scripts:10_items_blocks/30_progression_items.js in 0.003 s
+[22:30:04] [modloading-worker-0/INFO] [KubeJS Startup/]: Loaded script startup_scripts:20_blocks/10_ae2_skystone_hardness.js in 0.001 s
+[22:30:04] [modloading-worker-0/INFO] [KubeJS Startup/]: 20_globals/10_immobile_spawn.js#4: [no_moving_spawn] registering PlayerSetSpawnEvent cancel
+[22:30:04] [modloading-worker-0/INFO] [KubeJS Startup/]: Loaded script startup_scripts:20_globals/10_immobile_spawn.js in 0.009 s
+[22:30:04] [modloading-worker-0/INFO] [KubeJS Startup/]: Loaded script startup_scripts:20_globals/30_blood_heart_types.js in 0.001 s
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Shiba...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Shingles...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Shulker Packing...
+[22:30:04] [modloading-worker-0/INFO] [KubeJS Startup/]: Loaded script startup_scripts:30_hide_vanilla_tools_from_creative.js in 0.001 s
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Simple Harvest...
+[22:30:04] [modloading-worker-0/INFO] [Railways/]: Registering data fixers
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Skull Pikes...
+[22:30:04] [modloading-worker-0/INFO] [KubeJS Startup/]: 40_potion_brewing_registry.js#4: Loaded Java class 'net.minecraft.world.item.alchemy.Potions'
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Slabs To Blocks...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Slime In A Bucket...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Slimes To Magma Cubes...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Snow Golem Player Heads...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Soul Candles...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Soul Sandstone...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Spawner Replacer...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Spiral Spires...
+[22:30:04] [modloading-worker-0/ERROR] [KubeJS Startup/]: 40_potion_brewing_registry.js#6: ReferenceError: "MoreJSEvents" is not defined.
+[22:30:04] [modloading-worker-0/INFO] [mojang/DataFixerBuilder]: 0 Datafixer optimizations took 0 milliseconds
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Stonelings...
+[22:30:04] [modloading-worker-0/INFO] [KubeJS Startup/]: Loaded 8/9 KubeJS startup scripts in 0.45 s with 1 errors and 0 warnings
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Stools...
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:track_signal in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Sturdy Stone...
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:track_signal_source in create:display_source
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:copycat in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:conductor_vent in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:flywheel in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:locometal_flywheel in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Thatch...
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:sliding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:folding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:flywheel in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:brown_locometal_flywheel in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:brown_sliding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:brown_folding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:flywheel in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:maroon_locometal_flywheel in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:maroon_sliding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:maroon_folding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:flywheel in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:red_locometal_flywheel in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:red_sliding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:red_folding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:flywheel in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:vermilion_locometal_flywheel in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:vermilion_sliding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:vermilion_folding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:flywheel in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:orange_locometal_flywheel in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:orange_sliding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:orange_folding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:flywheel in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:granite_locometal_flywheel in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:granite_sliding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:granite_folding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:flywheel in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:dripstone_locometal_flywheel in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:dripstone_sliding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:dripstone_folding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:flywheel in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:ochrum_locometal_flywheel in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:ochrum_sliding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:ochrum_folding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:flywheel in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:yellow_locometal_flywheel in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:yellow_sliding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:yellow_folding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:flywheel in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:chartreuse_locometal_flywheel in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:chartreuse_sliding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:chartreuse_folding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:flywheel in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:olive_green_locometal_flywheel in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:olive_green_sliding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:olive_green_folding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:flywheel in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:lime_locometal_flywheel in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:lime_sliding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:lime_folding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:flywheel in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:green_locometal_flywheel in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:green_sliding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:green_folding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:flywheel in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:pine_green_locometal_flywheel in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:pine_green_sliding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:pine_green_folding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:flywheel in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:cyan_locometal_flywheel in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:cyan_sliding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:cyan_folding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:flywheel in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:sea_green_locometal_flywheel in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:sea_green_sliding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:sea_green_folding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:flywheel in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:turquoise_locometal_flywheel in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:turquoise_sliding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:turquoise_folding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:flywheel in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:light_blue_locometal_flywheel in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:light_blue_sliding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:light_blue_folding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:flywheel in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:blue_locometal_flywheel in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Tiny Potato...
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:blue_sliding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:blue_folding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:flywheel in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:royal_blue_locometal_flywheel in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:royal_blue_sliding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:royal_blue_folding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:flywheel in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:purple_locometal_flywheel in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:purple_sliding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:purple_folding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:flywheel in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:magenta_locometal_flywheel in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:magenta_sliding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:magenta_folding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:flywheel in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:pink_locometal_flywheel in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:pink_sliding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:pink_folding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:flywheel in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:white_locometal_flywheel in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:white_sliding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:white_folding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:flywheel in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:diorite_locometal_flywheel in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:diorite_sliding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:diorite_folding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:flywheel in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:limestone_locometal_flywheel in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:limestone_sliding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:limestone_folding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:flywheel in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:light_gray_locometal_flywheel in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:light_gray_sliding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:light_gray_folding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:flywheel in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Torch Arrow...
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:tuff_locometal_flywheel in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:tuff_sliding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:tuff_folding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:flywheel in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:gray_locometal_flywheel in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:gray_sliding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:gray_folding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:flywheel in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:scorchia_locometal_flywheel in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:scorchia_sliding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:scorchia_folding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:flywheel in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:black_locometal_flywheel in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:black_sliding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for create:sliding_door in minecraft:block_entity_type
+[22:30:04] [modloading-worker-0/INFO] [Railways/MultiRegistryCallback/]: Registering callback for railways:black_folding_locometal_door in minecraft:block
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Toretoise...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Totem Of Holding...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Trowel...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Usage Ticker...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Uses For Curses...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Utility Recipes...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Variant Animal Textures...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Variant Bookshelves...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Variant Chests...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Variant Furnaces...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Variant Ladders...
+[22:30:04] [modloading-worker-0/INFO] [Railways/]: Registering tracks for Hex Casting
+[22:30:04] [modloading-worker-0/INFO] [Railways/]: Registering tracks for Oh The Biomes You'll Go
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Variant Selector...
+[22:30:04] [modloading-worker-0/INFO] [Railways/]: Registering tracks for Blue Skies
+[22:30:04] [modloading-worker-0/INFO] [Railways/]: Registering tracks for Twilight Forest
+[22:30:04] [modloading-worker-0/INFO] [Railways/]: Registering tracks for Biomes O' Plenty
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Vertical Planks...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Vertical Slabs...
+[22:30:04] [modloading-worker-0/INFO] [Railways/]: Registering tracks for Nature's Spirit
+[22:30:04] [modloading-worker-0/INFO] [Railways/]: Registering tracks for Dreams and Desires
+[22:30:04] [modloading-worker-0/INFO] [Railways/]: Registering tracks for Quark
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Vexes Die With Their Masters...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Villager Rerolling Rework...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Villagers Follow Emeralds...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Wooden Posts...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Wool Shuts Up Minecarts...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Wraith...
+[22:30:04] [modloading-worker-0/INFO] [Railways/]: Registering tracks for TerraFirmaCraft
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Zombie Villagers On Normal...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module More Stone Variants...
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Constructed 164 modules.
+[22:30:04] [modloading-worker-0/INFO] [KubeJS Startup/]: 10_items_blocks/10_thats_crate_registry.js#128: [crates] registry bases=16
+[22:30:04] [modloading-worker-0/INFO] [quark-zeta/]: Doing super early config setup for quark
+[22:30:04] [modloading-worker-0/ERROR] [ne.mi.co.Co.adpother/COREMODLOG]: FAILED: target node not found!
+[22:30:04] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id kubejs:send_data_from_client
+[22:30:04] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id kubejs:first_click
+[22:30:04] [main/INFO] [minecraft/ReloadableResourceManager]: Reloading ResourceManager: mod_resources
+[22:30:04] [main/INFO] [Cold Sweat/]: Gathering Cold Sweat registries
+[22:30:04] [main/INFO] [Cold Sweat/]: The event bus was started early to gather Cold Sweat registries; it will now be stopped again until the correct loading phase.
+[22:30:04] [main/WARN] [mixin/]: @Inject(@At("INVOKE")) Shift.BY=2 on cold_sweat.mixin.json:MixinRegistration::handler$clo000$loadRegistryContents exceeds the maximum allowed value: 0. Increase the value of maxShiftBy to suppress this warning.
+[22:30:05] [main/INFO] [de.gi.js.th.pa.SoundEventParser/]: Started registering SoundEvent things, errors about unexpected registry domains are harmless...
+[22:30:05] [main/INFO] [de.gi.js.th.pa.SoundEventParser/]: Done processing thingpack SoundEvents.
+[22:30:05] [main/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 1 calls to Enchantment#getMaxLevel() in org/violetmoon/quark/content/tools/loot/EnchantTome
+[22:30:06] [main/INFO] [de.gi.js.th.pa.FluidParser/]: Started registering Fluid things, errors about unexpected registry domains are harmless...
+[22:30:06] [main/INFO] [de.gi.js.th.pa.FluidParser/]: Done processing thingpack Fluids.
+[22:30:07] [main/INFO] [de.gi.js.th.pa.BlockParser/]: Started registering Block things, errors about unexpected registry domains are harmless...
+[22:30:07] [main/INFO] [de.gi.js.th.pa.BlockParser/]: Done processing thingpack Blocks.
+[22:30:08] [main/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 1 calls to Enchantment#getMaxLevel() in net/minecraft/world/entity/npc/VillagerTrades$EnchantBookForEmeralds
+[22:30:08] [main/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 1 calls to Enchantment#isTreasureOnly() in net/minecraft/world/entity/npc/VillagerTrades$EnchantBookForEmeralds
+[22:30:08] [main/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 1 calls to Enchantment#isTradeable() in net/minecraft/world/entity/npc/VillagerTrades$EnchantBookForEmeralds
+[22:30:08] [main/ERROR] [ne.mi.co.Co.adpother/COREMODLOG]: FAILED: target node not found!
+[22:30:09] [main/INFO] [de.gi.js.th.pa.ItemParser/]: Started registering Item things, errors about unexpected registry domains are harmless...
+[22:30:09] [main/INFO] [de.gi.js.th.pa.ItemParser/]: Done processing thingpack Items.
+[22:30:09] [main/INFO] [Moonlight/]: Initialized block sets in 11ms
+[22:30:09] [main/INFO] [de.gi.js.th.pa.EnchantmentParser/]: Started registering Enchantment things, errors about unexpected registry domains are harmless...
+[22:30:09] [main/INFO] [de.gi.js.th.pa.EnchantmentParser/]: Done processing thingpack Enchantments.
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:flywheel and railways:locometal_flywheel
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:flywheel and railways:brown_locometal_flywheel
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:flywheel and railways:maroon_locometal_flywheel
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:flywheel and railways:red_locometal_flywheel
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:flywheel and railways:vermilion_locometal_flywheel
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:flywheel and railways:orange_locometal_flywheel
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:flywheel and railways:granite_locometal_flywheel
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:flywheel and railways:dripstone_locometal_flywheel
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:flywheel and railways:ochrum_locometal_flywheel
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:flywheel and railways:yellow_locometal_flywheel
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:flywheel and railways:chartreuse_locometal_flywheel
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:flywheel and railways:olive_green_locometal_flywheel
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:flywheel and railways:lime_locometal_flywheel
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:flywheel and railways:green_locometal_flywheel
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:flywheel and railways:pine_green_locometal_flywheel
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:flywheel and railways:cyan_locometal_flywheel
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:flywheel and railways:sea_green_locometal_flywheel
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:flywheel and railways:turquoise_locometal_flywheel
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:flywheel and railways:light_blue_locometal_flywheel
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:flywheel and railways:blue_locometal_flywheel
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:flywheel and railways:royal_blue_locometal_flywheel
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:flywheel and railways:purple_locometal_flywheel
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:flywheel and railways:magenta_locometal_flywheel
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:flywheel and railways:pink_locometal_flywheel
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:flywheel and railways:white_locometal_flywheel
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:flywheel and railways:diorite_locometal_flywheel
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:flywheel and railways:limestone_locometal_flywheel
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:flywheel and railways:light_gray_locometal_flywheel
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:flywheel and railways:tuff_locometal_flywheel
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:flywheel and railways:gray_locometal_flywheel
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:flywheel and railways:scorchia_locometal_flywheel
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:flywheel and railways:black_locometal_flywheel
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:sliding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:folding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:brown_sliding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:brown_folding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:maroon_sliding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:maroon_folding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:red_sliding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:red_folding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:vermilion_sliding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:vermilion_folding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:orange_sliding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:orange_folding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:granite_sliding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:granite_folding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:dripstone_sliding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:dripstone_folding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:ochrum_sliding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:ochrum_folding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:yellow_sliding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:yellow_folding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:chartreuse_sliding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:chartreuse_folding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:olive_green_sliding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:olive_green_folding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:lime_sliding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:lime_folding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:green_sliding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:green_folding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:pine_green_sliding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:pine_green_folding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:cyan_sliding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:cyan_folding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:sea_green_sliding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:sea_green_folding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:turquoise_sliding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:turquoise_folding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:light_blue_sliding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:light_blue_folding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:blue_sliding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:blue_folding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:royal_blue_sliding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:royal_blue_folding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:purple_sliding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:purple_folding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:magenta_sliding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:magenta_folding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:pink_sliding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:pink_folding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:white_sliding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:white_folding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:diorite_sliding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:diorite_folding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:limestone_sliding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:limestone_folding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:light_gray_sliding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:light_gray_folding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:tuff_sliding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:tuff_folding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:gray_sliding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:gray_folding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:scorchia_sliding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:scorchia_folding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:black_sliding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:sliding_door and railways:black_folding_locometal_door
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:copycat and railways:conductor_vent
+[22:30:09] [main/WARN] [mixinsquared-annotation-adjuster/]: Modified mixin "dev.uncandango.alltheleaks.mixin.core.main.IngredientStackMixin". Check debug logs for more information.
+[22:30:09] [main/INFO] [co.c2.ti.TinkersAdvanced/]: TiAc on RegisterEvent
+[22:30:09] [main/INFO] [de.gi.js.th.pa.CreativeModeTabParser/]: Started registering Item things, errors about unexpected registry domains are harmless...
+[22:30:09] [main/INFO] [de.gi.js.th.pa.CreativeModeTabParser/]: Done processing thingpack CreativeModeTabs.
+Attempting to load Anointment: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23268!/data/bloodmagic/anointment/melee_damage.json, path: /data/bloodmagic/anointment/melee_damage.json
+Attempting to load Anointment: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23268!/data/bloodmagic/anointment/holy_water.json, path: /data/bloodmagic/anointment/holy_water.json
+Attempting to load Anointment: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23268!/data/bloodmagic/anointment/hidden_knowledge.json, path: /data/bloodmagic/anointment/hidden_knowledge.json
+Attempting to load Anointment: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23268!/data/bloodmagic/anointment/quick_draw.json, path: /data/bloodmagic/anointment/quick_draw.json
+Attempting to load Anointment: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23268!/data/bloodmagic/anointment/bow_power.json, path: /data/bloodmagic/anointment/bow_power.json
+Attempting to load Anointment: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23268!/data/bloodmagic/anointment/bow_velocity.json, path: /data/bloodmagic/anointment/bow_velocity.json
+Attempting to load Anointment: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23268!/data/bloodmagic/anointment/repairing.json, path: /data/bloodmagic/anointment/repairing.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23268!/data/bloodmagic/living_armor/arrow_protect.json, path: /data/bloodmagic/living_armor/arrow_protect.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23268!/data/bloodmagic/living_armor/fall_protect.json, path: /data/bloodmagic/living_armor/fall_protect.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23268!/data/bloodmagic/living_armor/physical_protect.json, path: /data/bloodmagic/living_armor/physical_protect.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23268!/data/bloodmagic/living_armor/jump.json, path: /data/bloodmagic/living_armor/jump.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23268!/data/bloodmagic/living_armor/health.json, path: /data/bloodmagic/living_armor/health.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23268!/data/bloodmagic/living_armor/experienced.json, path: /data/bloodmagic/living_armor/experienced.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23268!/data/bloodmagic/living_armor/sprint_attack.json, path: /data/bloodmagic/living_armor/sprint_attack.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23268!/data/bloodmagic/living_armor/self_sacrifice.json, path: /data/bloodmagic/living_armor/self_sacrifice.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23268!/data/bloodmagic/living_armor/speed.json, path: /data/bloodmagic/living_armor/speed.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23268!/data/bloodmagic/living_armor/poison_resist.json, path: /data/bloodmagic/living_armor/poison_resist.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23268!/data/bloodmagic/living_armor/fire_resist.json, path: /data/bloodmagic/living_armor/fire_resist.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23268!/data/bloodmagic/living_armor/digging.json, path: /data/bloodmagic/living_armor/digging.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23268!/data/bloodmagic/living_armor/knockback_resist.json, path: /data/bloodmagic/living_armor/knockback_resist.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23268!/data/bloodmagic/living_armor/diamond_protect.json, path: /data/bloodmagic/living_armor/diamond_protect.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23268!/data/bloodmagic/living_armor/elytra.json, path: /data/bloodmagic/living_armor/elytra.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23268!/data/bloodmagic/living_armor/curios_socket.json, path: /data/bloodmagic/living_armor/curios_socket.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23268!/data/bloodmagic/living_armor/melee_damage.json, path: /data/bloodmagic/living_armor/melee_damage.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23268!/data/bloodmagic/living_armor/repair.json, path: /data/bloodmagic/living_armor/repair.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23268!/data/bloodmagic/living_armor/gilded.json, path: /data/bloodmagic/living_armor/gilded.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23268!/data/bloodmagic/living_armor/downgrade/quenched.json, path: /data/bloodmagic/living_armor/downgrade/quenched.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23268!/data/bloodmagic/living_armor/downgrade/storm_trooper.json, path: /data/bloodmagic/living_armor/downgrade/storm_trooper.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23268!/data/bloodmagic/living_armor/downgrade/battle_hungry.json, path: /data/bloodmagic/living_armor/downgrade/battle_hungry.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23268!/data/bloodmagic/living_armor/downgrade/melee_decrease.json, path: /data/bloodmagic/living_armor/downgrade/melee_decrease.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23268!/data/bloodmagic/living_armor/downgrade/dig_slowdown.json, path: /data/bloodmagic/living_armor/downgrade/dig_slowdown.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23268!/data/bloodmagic/living_armor/downgrade/slow_heal.json, path: /data/bloodmagic/living_armor/downgrade/slow_heal.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23268!/data/bloodmagic/living_armor/downgrade/crippled_arm.json, path: /data/bloodmagic/living_armor/downgrade/crippled_arm.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23268!/data/bloodmagic/living_armor/downgrade/swim_decrease.json, path: /data/bloodmagic/living_armor/downgrade/swim_decrease.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23268!/data/bloodmagic/living_armor/downgrade/speed_decrease.json, path: /data/bloodmagic/living_armor/downgrade/speed_decrease.json
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running callback for create:track_signal and railways:track_signal_source
+[22:30:09] [main/INFO] [Railways/MultiRegistryCallback/]: Running finalizers
+[22:30:09] [main/INFO] [ModdingLegacy/StructureGel/]: [structure_gel] Registering data for structure_gel:loot_table_alias
+[22:30:09] [main/INFO] [ModdingLegacy/StructureGel/]: [structure_gel] Registering data for structure_gel:data_handler_type
+[22:30:09] [main/INFO] [ModdingLegacy/StructureGel/]: [structure_gel] Registering data for structure_gel:dynamic_spawner
+[22:30:09] [main/INFO] [ModdingLegacy/StructureGel/]: [structure_gel] Registering data for structure_gel:jigsaw_type
+[22:30:09] [main/INFO] [de.gi.js.th.pa.FluidTypeParser/]: Started registering FluidType things, errors about unexpected registry domains are harmless...
+[22:30:09] [main/INFO] [de.gi.js.th.pa.FluidTypeParser/]: Done processing thingpack FluidTypes.
+PER_BLOCK
+PER_BLOCK
+PER_BLOCK
+[22:30:10] [modloading-worker-0/ERROR] [patchouli/]: Failed to load book dtarsnouveau:guide defined by mod dtarsnouveau, skipping
+java.lang.IllegalArgumentException: Book dtarsnouveau:guide has use_resource_pack set to false. This behaviour was removed in 1.20. The book author should enable this flag and move all book contents clientside to /assets/, leaving the book.json in /data/. See https://vazkiimods.github.io/Patchouli/docs/upgrading/upgrade-guide-120 for details.
+	at vazkii.patchouli.common.book.Book.<init>(Book.java:145) ~[Patchouli-1.20.1-85-FORGE.jar%23340!/:1.20.1-85-FORGE] {re:classloading}
+	at vazkii.patchouli.common.book.BookRegistry.loadBook(BookRegistry.java:90) ~[Patchouli-1.20.1-85-FORGE.jar%23340!/:1.20.1-85-FORGE] {re:classloading}
+	at vazkii.patchouli.common.book.BookRegistry.lambda$init$3(BookRegistry.java:75) ~[Patchouli-1.20.1-85-FORGE.jar%23340!/:1.20.1-85-FORGE] {re:classloading}
+	at java.util.HashMap.forEach(HashMap.java:1429) ~[?:?] {re:mixin}
+	at vazkii.patchouli.common.book.BookRegistry.init(BookRegistry.java:70) ~[Patchouli-1.20.1-85-FORGE.jar%23340!/:1.20.1-85-FORGE] {re:classloading}
+	at vazkii.patchouli.forge.common.ForgeModInitializer.onInitialize(ForgeModInitializer.java:76) ~[Patchouli-1.20.1-85-FORGE.jar%23340!/:1.20.1-85-FORGE] {re:classloading}
+	at vazkii.patchouli.forge.common.__ForgeModInitializer_onInitialize_FMLCommonSetupEvent.invoke(.dynamic) ~[Patchouli-1.20.1-85-FORGE.jar%23340!/:1.20.1-85-FORGE] {re:classloading,pl:eventbus:B}
+	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:73) ~[eventbus-6.0.5.jar%2352!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:315) ~[eventbus-6.0.5.jar%2352!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:296) ~[eventbus-6.0.5.jar%2352!/:?] {}
+	at net.minecraftforge.fml.javafmlmod.FMLModContainer.acceptEvent(FMLModContainer.java:121) ~[javafmllanguage-1.20.1-47.4.13.jar%23381!/:?] {}
+	at net.minecraftforge.fml.ModContainer.lambda$buildTransitionHandler$5(ModContainer.java:127) ~[fmlcore-1.20.1-47.4.13.jar%23380!/:?] {}
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796) ~[?:?] {}
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) ~[?:?] {re:computing_frames}
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) ~[?:?] {re:computing_frames}
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) ~[?:?] {}
+[22:30:10] [modloading-worker-0/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Configuration file /home/gerald/obelisks/server-instance/config/amendments-client.toml is not correct. Correcting
+[22:30:10] [modloading-worker-0/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key projectiles.slimeball_3d was corrected from true to its default, null. 
+[22:30:10] [modloading-worker-0/INFO] [pneumaticcraft/]: PneumaticCraft: Repressurized is loading!
+[22:30:10] [modloading-worker-0/INFO] [xb.re.RealisticPhysics/]: Loading Realistic Physics configuration.
+[22:30:10] [modloading-worker-0/INFO] [xb.re.RealisticPhysics/]: Initialising Realistic Physics configuration directories.
+[22:30:10] [modloading-worker-0/INFO] [xb.re.RealisticPhysics/]: Reading Realistic Physics world definition configurations.
+[22:30:10] [modloading-worker-0/INFO] [xb.re.RealisticPhysics/]: Searching for Realistic Physics mod plugins.
+[22:30:10] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [aether] Starting version check at https://github.com/The-Aether-Team/The-Aether/raw/1.20.1-develop/update.json
+[22:30:10] [modloading-worker-0/INFO] [li.ci.oc.co.in.InternetManagerImpl/]: Internet card is disabled; Internet manager will not start
+[22:30:10] [modloading-worker-0/INFO] [li.ci.oc.co.vx.TunnelManager/]: Initializing outernet tunnel manager
+[22:30:10] [modloading-worker-0/INFO] [cn.mc.mm.Main/]: Presented by Zaia
+[22:30:10] [modloading-worker-0/INFO] [ne.ni.wa.WandsMod/]: Has opac!! false
+[22:30:10] [modloading-worker-0/INFO] [ne.ni.wa.WandsMod/]: Has ftbchunks!! false
+[22:30:10] [modloading-worker-0/INFO] [ne.ni.wa.WandsMod/]: Has flan!! false
+[22:30:10] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [aether] Found status: UP_TO_DATE Current: 1.20.1-1.5.2-neoforge Target: null
+[22:30:10] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [forgeendertech] Starting version check at https://forge.curseupdate.com/244844/forgeendertech
+[22:30:10] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [forgeendertech] Found status: UP_TO_DATE Current: 11.1.10.0 Target: null
+[22:30:10] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [controlling] Starting version check at https://updates.blamejared.com/get?n=controlling&gv=1.20.1
+[22:30:10] [main/INFO] [Moonlight/]: Initialized color sets in 25ms
+[22:30:10] [main/WARN] [AllTheLeaks/]: Failed to get VarHandle for class class com.github.alexthe666.citadel.server.world.CitadelServerData with field dataMap and type interface java.util.Map
+[22:30:10] [main/ERROR] [AllTheLeaks/]: Failed to instantiate constructor.
+java.lang.ExceptionInInitializerError: null
+	at java.lang.Class.forName0(Native Method) ~[?:?] {re:mixin}
+	at java.lang.Class.forName(Class.java:423) ~[?:?] {re:mixin}
+	at java.lang.Class.forName(Class.java:414) ~[?:?] {re:mixin}
+	at dev.uncandango.alltheleaks.leaks.IssueManager.lambda$initiateIssues$3(IssueManager.java:166) ~[alltheleaks-1.1.1+1.20.1-forge.jar%23253!/:1.1.1+1.20.1-forge] {re:classloading}
+	at java.util.ArrayList.forEach(ArrayList.java:1596) ~[?:?] {re:mixin}
+	at dev.uncandango.alltheleaks.leaks.IssueManager.initiateIssues(IssueManager.java:164) ~[alltheleaks-1.1.1+1.20.1-forge.jar%23253!/:1.1.1+1.20.1-forge] {re:classloading}
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?] {}
+	at net.minecraftforge.fml.DeferredWorkQueue.lambda$makeRunnable$2(DeferredWorkQueue.java:81) ~[fmlcore-1.20.1-47.4.13.jar%23380!/:?] {}
+	at net.minecraftforge.fml.DeferredWorkQueue.makeRunnable(DeferredWorkQueue.java:76) ~[fmlcore-1.20.1-47.4.13.jar%23380!/:?] {}
+	at net.minecraftforge.fml.DeferredWorkQueue.lambda$runTasks$0(DeferredWorkQueue.java:60) ~[fmlcore-1.20.1-47.4.13.jar%23380!/:?] {}
+	at java.util.concurrent.ConcurrentLinkedDeque.forEach(ConcurrentLinkedDeque.java:1650) ~[?:?] {}
+	at net.minecraftforge.fml.DeferredWorkQueue.runTasks(DeferredWorkQueue.java:60) ~[fmlcore-1.20.1-47.4.13.jar%23380!/:?] {}
+	at net.minecraftforge.fml.core.ParallelTransition.lambda$finalActivityGenerator$2(ParallelTransition.java:35) ~[forge-1.20.1-47.4.13-universal.jar%23384!/:?] {re:classloading}
+	at java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:646) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482) ~[?:?] {}
+	at net.minecraftforge.fml.ModWorkManager$SyncExecutor.driveOne(ModWorkManager.java:43) ~[fmlcore-1.20.1-47.4.13.jar%23380!/:?] {}
+	at net.minecraftforge.fml.ModWorkManager$DrivenExecutor.drive(ModWorkManager.java:28) ~[fmlcore-1.20.1-47.4.13.jar%23380!/:?] {}
+	at net.minecraftforge.fml.ModLoader.waitForTransition(ModLoader.java:224) ~[fmlcore-1.20.1-47.4.13.jar%23380!/:?] {}
+	at net.minecraftforge.fml.ModLoader.lambda$dispatchAndHandleError$20(ModLoader.java:210) ~[fmlcore-1.20.1-47.4.13.jar%23380!/:?] {}
+	at java.util.Optional.ifPresent(Optional.java:178) ~[?:?] {re:mixin}
+	at net.minecraftforge.fml.ModLoader.dispatchAndHandleError(ModLoader.java:210) ~[fmlcore-1.20.1-47.4.13.jar%23380!/:?] {}
+	at net.minecraftforge.fml.ModLoader.lambda$loadMods$15(ModLoader.java:190) ~[fmlcore-1.20.1-47.4.13.jar%23380!/:?] {}
+	at java.lang.Iterable.forEach(Iterable.java:75) ~[?:?] {re:mixin}
+	at net.minecraftforge.fml.ModLoader.loadMods(ModLoader.java:190) ~[fmlcore-1.20.1-47.4.13.jar%23380!/:?] {}
+	at net.minecraftforge.server.loading.ServerModLoader.load(ServerModLoader.java:31) ~[forge-1.20.1-47.4.13-universal.jar%23384!/:?] {re:classloading}
+	at net.minecraft.server.Main.main(Main.java:125) ~[server-1.20.1-20230612.114412-srg.jar%23379!/:?] {re:mixin,re:classloading,pl:mixin:A}
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}
+	at java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:111) ~[fmlloader-1.20.1-47.4.13.jar%2369!/:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.serverService(CommonLaunchHandler.java:103) ~[fmlloader-1.20.1-47.4.13.jar%2369!/:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonServerLaunchHandler.lambda$makeService$0(CommonServerLaunchHandler.java:27) ~[fmlloader-1.20.1-47.4.13.jar%2369!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:108) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:78) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) ~[bootstraplauncher-1.1.2.jar:?] {}
+Caused by: java.lang.RuntimeException: VarHandler is null
+	at dev.uncandango.alltheleaks.utils.ReflectionHelper.getFieldFromClass(ReflectionHelper.java:132) ~[alltheleaks-1.1.1+1.20.1-forge.jar%23253!/:1.1.1+1.20.1-forge] {re:classloading}
+	at dev.uncandango.alltheleaks.leaks.common.mods.citadel.UntrackedIssue001.<clinit>(UntrackedIssue001.java:17) ~[alltheleaks-1.1.1+1.20.1-forge.jar%23253!/:1.1.1+1.20.1-forge] {re:classloading}
+	... 39 more
+[22:30:10] [main/INFO] [zeta/]: Common setup: Performing initial refresh of zeta's config on thread 'main'
+[22:30:10] [main/INFO] [zeta/]: 'zeta' is enabling Zeta's piston structure resolver.
+[22:30:10] [main/INFO] [zeta/]: Waiting for server start before accepting filewatcher changes to zeta's config
+[22:30:10] [main/INFO] [terrablender/]: Registered region minecraft:overworld to index 0 for type OVERWORLD
+[22:30:10] [main/INFO] [terrablender/]: Registered region minecraft:nether to index 0 for type NETHER
+[22:30:10] [main/INFO] [terrablender/]: Registered region quark:biome_provider to index 1 for type OVERWORLD
+[22:30:10] [main/INFO] [quark-zeta/]: Common setup: Performing initial refresh of quark's config on thread 'main'
+[22:30:10] [main/INFO] [quark-zeta/]: Waiting for server start before accepting filewatcher changes to quark's config
+[22:30:10] [main/INFO] [te.lo.lo.LodestoneLib/]: Registering world event types...
+[22:30:10] [main/INFO] [terrablender/]: Registered region ars_nouveau:overworld to index 2 for type OVERWORLD
+[22:30:10] [modloading-worker-0/INFO] [Di.fo.co.se.di.co.AbstractModInitializer/]: Initializing Distant Horizons server, firing DhApiBeforeDhInitEvent event...
+[22:30:10] [modloading-worker-0/INFO] [Di.se.di.co.Initializer/]: Running library validation...
+[22:30:10] [modloading-worker-0/INFO] [Di.se.di.co.Initializer/]: Garbage collectors: [G1 Young Generation, G1 Concurrent GC, G1 Old Generation]
+[22:30:10] [modloading-worker-0/WARN] [Di.se.di.co.Initializer/]: Distant Horizons: G1 Garbage collector detected. 
+This garbage collector can cause FPS stuttering. 
+It's recommended to use a concurrent garbage collector 
+like ZGC (Java 21+) or Shenandoah (Java 8 through 17) for a smoother experience. 
+
+[22:30:10] [modloading-worker-0/INFO] [Di.fo.co.se.di.co.AbstractModInitializer/]: Distant Horizons, Version: 2.4.5-b
+[22:30:10] [modloading-worker-0/INFO] [Di.fo.co.se.di.co.AbstractModInitializer/]: Skipping mod compatibility accessor for: [optifine]
+[22:30:10] [modloading-worker-0/INFO] [Di.fo.co.se.di.co.AbstractModInitializer/]: Skipping mod compatibility accessor for: [oculus]
+[22:30:10] [modloading-worker-0/INFO] [Di.fo.co.se.di.co.AbstractModInitializer/]: Distant Horizons server Initialized, adding event subscribers...
+[22:30:10] [modloading-worker-0/INFO] [pneumaticcraft/]: Sending IMC messages.
+[22:30:10] [modloading-worker-0/INFO] [KubeJS Startup/]: 10_items_blocks/10_thats_crate_registry.js#119: [crates] postInit bases=16
+[22:30:10] [modloading-worker-0/ERROR] [KubeJS/]: Startup script errors:
+1) 40_potion_brewing_registry.js#6: ReferenceError: "MoreJSEvents" is not defined.
+[22:30:10] [modloading-worker-0/ERROR] [ne.mi.fm.ja.FMLModContainer/]: Exception caught during firing event: There were KubeJS startup script syntax errors! See logs/kubejs/startup.log for more info
+	Index: 1
+	Listeners:
+		0: LOW
+		1: net.minecraftforge.eventbus.EventBus$$Lambda/0x00007f0184df46b8@f44702d
+java.lang.RuntimeException: There were KubeJS startup script syntax errors! See logs/kubejs/startup.log for more info
+	at TRANSFORMER/kubejs@2001.6.5-build.16/dev.latvian.mods.kubejs.KubeJS.loadComplete(KubeJS.java:226)
+	at TRANSFORMER/kubejs@2001.6.5-build.16/dev.latvian.mods.kubejs.forge.KubeJSForge.loadComplete(KubeJSForge.java:135)
+	at MC-BOOTSTRAP/net.minecraftforge.eventbus/net.minecraftforge.eventbus.EventBus.doCastFilter(EventBus.java:260)
+	at MC-BOOTSTRAP/net.minecraftforge.eventbus/net.minecraftforge.eventbus.EventBus.lambda$addListener$11(EventBus.java:252)
+	at MC-BOOTSTRAP/net.minecraftforge.eventbus/net.minecraftforge.eventbus.EventBus.post(EventBus.java:315)
+	at MC-BOOTSTRAP/net.minecraftforge.eventbus/net.minecraftforge.eventbus.EventBus.post(EventBus.java:296)
+	at LAYER PLUGIN/javafmllanguage@1.20.1-47.4.13/net.minecraftforge.fml.javafmlmod.FMLModContainer.acceptEvent(FMLModContainer.java:121)
+	at LAYER PLUGIN/fmlcore@1.20.1-47.4.13/net.minecraftforge.fml.ModContainer.lambda$buildTransitionHandler$5(ModContainer.java:127)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+
+[22:30:10] [modloading-worker-0/ERROR] [ne.mi.fm.ja.FMLModContainer/LOADING]: Caught exception during event FMLLoadCompleteEvent dispatch for modid kubejs
+java.lang.RuntimeException: There were KubeJS startup script syntax errors! See logs/kubejs/startup.log for more info
+	at dev.latvian.mods.kubejs.KubeJS.loadComplete(KubeJS.java:226) ~[kubejs-forge-2001.6.5-build.16.jar%23323!/:2001.6.5-build.16] {re:classloading}
+	at dev.latvian.mods.kubejs.forge.KubeJSForge.loadComplete(KubeJSForge.java:135) ~[kubejs-forge-2001.6.5-build.16.jar%23323!/:2001.6.5-build.16] {re:classloading}
+	at net.minecraftforge.eventbus.EventBus.doCastFilter(EventBus.java:260) ~[eventbus-6.0.5.jar%2352!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.lambda$addListener$11(EventBus.java:252) ~[eventbus-6.0.5.jar%2352!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:315) ~[eventbus-6.0.5.jar%2352!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:296) ~[eventbus-6.0.5.jar%2352!/:?] {}
+	at net.minecraftforge.fml.javafmlmod.FMLModContainer.acceptEvent(FMLModContainer.java:121) ~[javafmllanguage-1.20.1-47.4.13.jar%23381!/:?] {}
+	at net.minecraftforge.fml.ModContainer.lambda$buildTransitionHandler$5(ModContainer.java:127) ~[fmlcore-1.20.1-47.4.13.jar%23380!/:?] {}
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796) ~[?:?] {}
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) ~[?:?] {re:computing_frames}
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) ~[?:?] {re:computing_frames}
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) ~[?:?] {}
+[22:30:10] [main/FATAL] [ne.mi.fm.ModLoader/LOADING]: Failed to complete lifecycle event COMPLETE, 1 errors found
+Negative index in crash report handler (16/18)
+[22:30:11] [main/FATAL] [ne.mi.co.ForgeMod/]: Preparing crash report with UUID 1b7ec2e8-e00a-4186-aa28-cbcd282e4d3a
+[22:30:11] [main/FATAL] [ne.mi.se.lo.ServerModLoader/]: Crash report saved to ./crash-reports/crash-2026-05-05_22.30.11-fml.txt
+[22:30:11] [main/FATAL] [ne.mi.co.ForgeMod/]: Preparing crash report with UUID 1fac6591-8dbc-478b-be40-c9d541c3dae6
+---- Minecraft Crash Report ----
+// My bad.
+
+Time: 2026-05-05 22:30:11
+Description: Mod loading error has occurred
+
+java.lang.Exception: Mod Loading has failed
+	at net.minecraftforge.logging.CrashReportExtender.dumpModLoadingCrashReport(CrashReportExtender.java:60) ~[forge-1.20.1-47.4.13-universal.jar%23384!/:?] {re:classloading}
+	at net.minecraftforge.server.loading.ServerModLoader.load(ServerModLoader.java:37) ~[forge-1.20.1-47.4.13-universal.jar%23384!/:?] {re:classloading}
+	at net.minecraft.server.Main.main(Main.java:125) ~[server-1.20.1-20230612.114412-srg.jar%23379!/:?] {re:mixin,re:classloading,pl:mixin:A}
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}
+	at java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:111) ~[fmlloader-1.20.1-47.4.13.jar%2369!/:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.serverService(CommonLaunchHandler.java:103) ~[fmlloader-1.20.1-47.4.13.jar%2369!/:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonServerLaunchHandler.lambda$makeService$0(CommonServerLaunchHandler.java:27) ~[fmlloader-1.20.1-47.4.13.jar%2369!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:108) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:78) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) ~[bootstraplauncher-1.1.2.jar:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: main
+Suspected Mod: 
+	KubeJS (kubejs), Version: 2001.6.5-build.16
+		Issue tracker URL: https://kubejs.com/support?source=kubejs&mc=2001&loader=forge
+		at TRANSFORMER/kubejs@2001.6.5-build.16/dev.latvian.mods.kubejs.KubeJS.loadComplete(KubeJS.java:226)
+Stacktrace:
+	at dev.latvian.mods.kubejs.KubeJS.loadComplete(KubeJS.java:226) ~[kubejs-forge-2001.6.5-build.16.jar%23323!/:2001.6.5-build.16] {re:classloading}
+-- MOD kubejs --
+Details:
+	Mod File: /home/gerald/obelisks/server-instance/mods/kubejs-forge-2001.6.5-build.16.jar
+	Failure message: KubeJS (kubejs) encountered an error during the complete event phase
+		java.lang.RuntimeException: There were KubeJS startup script syntax errors! See logs/kubejs/startup.log for more info
+	Mod Version: 2001.6.5-build.16
+	Mod Issue URL: https://kubejs.com/support?source=kubejs&mc=2001&loader=forge
+	Exception message: java.lang.RuntimeException: There were KubeJS startup script syntax errors! See logs/kubejs/startup.log for more info
+Stacktrace:
+	at dev.latvian.mods.kubejs.KubeJS.loadComplete(KubeJS.java:226) ~[kubejs-forge-2001.6.5-build.16.jar%23323!/:2001.6.5-build.16] {re:classloading}
+	at dev.latvian.mods.kubejs.forge.KubeJSForge.loadComplete(KubeJSForge.java:135) ~[kubejs-forge-2001.6.5-build.16.jar%23323!/:2001.6.5-build.16] {re:classloading}
+	at net.minecraftforge.eventbus.EventBus.doCastFilter(EventBus.java:260) ~[eventbus-6.0.5.jar%2352!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.lambda$addListener$11(EventBus.java:252) ~[eventbus-6.0.5.jar%2352!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:315) ~[eventbus-6.0.5.jar%2352!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:296) ~[eventbus-6.0.5.jar%2352!/:?] {}
+	at net.minecraftforge.fml.javafmlmod.FMLModContainer.acceptEvent(FMLModContainer.java:121) ~[javafmllanguage-1.20.1-47.4.13.jar%23381!/:?] {}
+	at net.minecraftforge.fml.ModContainer.lambda$buildTransitionHandler$5(ModContainer.java:127) ~[fmlcore-1.20.1-47.4.13.jar%23380!/:?] {}
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796) ~[?:?] {}
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) ~[?:?] {re:computing_frames}
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) ~[?:?] {re:computing_frames}
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) ~[?:?] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.20.1
+	Minecraft Version ID: 1.20.1
+	Operating System: Linux (amd64) version 6.12.74+deb13+1-amd64
+	Java Version: 21.0.11, Eclipse Adoptium
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Eclipse Adoptium
+	Memory: 1941962752 bytes (1852 MiB) / 5343543296 bytes (5096 MiB) up to 16223567872 bytes (15472 MiB)
+	CPUs: 12
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD Ryzen 5 9600X 6-Core Processor
+	Identifier: AuthenticAMD Family 26 Model 68 Stepping 0
+	Microarchitecture: unknown
+	Frequency (GHz): -0.00
+	Number of physical packages: 1
+	Number of physical CPUs: 6
+	Number of logical CPUs: 12
+	Graphics card #0 name: GA104 [GeForce RTX 3070]
+	Graphics card #0 vendor: NVIDIA Corporation (0x10de)
+	Graphics card #0 VRAM (MB): 288.00
+	Graphics card #0 deviceId: 0x2484
+	Graphics card #0 versionInfo: unknown
+	Graphics card #1 name: Granite Ridge [Radeon Graphics]
+	Graphics card #1 vendor: Advanced Micro Devices, Inc. [AMD/ATI] (0x1002)
+	Graphics card #1 VRAM (MB): 258.00
+	Graphics card #1 deviceId: 0x13c0
+	Graphics card #1 versionInfo: unknown
+	Virtual memory max (MB): 70982.27
+	Virtual memory used (MB): 17850.70
+	Swap memory total (MB): 40047.00
+	Swap memory used (MB): 42.75
+	JVM Flags: 0 total; 
+	ModLauncher: 10.0.9+10.0.9+main.dcd20f30
+	ModLauncher launch target: forgeserver
+	ModLauncher naming: srg
+	ModLauncher services: 
+		mixin-0.8.5.jar mixin PLUGINSERVICE 
+		eventbus-6.0.5.jar eventbus PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.13.jar slf4jfixer PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.13.jar object_holder_definalize PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.13.jar runtime_enum_extender PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.13.jar capability_token_subclass PLUGINSERVICE 
+		accesstransformers-8.0.4.jar accesstransformer PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.13.jar runtimedistcleaner PLUGINSERVICE 
+		modlauncher-10.0.9.jar mixin TRANSFORMATIONSERVICE 
+		modlauncher-10.0.9.jar fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		minecraft@1.0
+		lowcodefml@null
+		kotlinforforge@4.12.0
+		javafml@null
+	Mod List: 
+		c2meF-fixes-worldgen-threading-issues-mc1.20.1-0.2|Concurrent Chunk Management En|c2me_fixes_worldgen_threading_|0.2.0+alpha.13      |DONE      |Manifest: NOSIGNATURE
+		GlobalGameRules-1.20.1-8.1.0.12.jar               |Global GameRules              |globalgamerules               |8.1.0.12            |DONE      |Manifest: 15:a4:a3:0e:d2:f8:64:0c:a4:97:30:5f:48:ba:5f:69:f9:23:42:14:a8:5a:60:3a:b1:b1:29:1a:0a:37:3c:79
+		alchemylib-1.20.1-1.0.30.jar                      |AlchemyLib                    |alchemylib                    |1.0.30              |DONE      |Manifest: NOSIGNATURE
+		sedna.jar                                         |Sedna for Minecraft           |sedna                         |1.0.68              |DONE      |Manifest: NOSIGNATURE
+		Explosion-Overhaul-0.2.3.0-forge-.jar             |Explosion Overhaul: A new leve|explosionoverhaul             |0.2.3.0-forge       |DONE      |Manifest: NOSIGNATURE
+		geckolib-forge-1.20.1-4.8.3.jar                   |GeckoLib 4                    |geckolib                      |4.8.3               |DONE      |Manifest: NOSIGNATURE
+		player-animation-lib-forge-1.0.2-rc1+1.20.jar     |Player Animator               |playeranimator                |1.0.2-rc1+1.20      |DONE      |Manifest: NOSIGNATURE
+		c2meF-rewrites-chunk-serializer-mc1.20.1-0.2.0+alp|Concurrent Chunk Management En|c2me_rewrites_chunk_serializer|0.2.0+alpha.13      |DONE      |Manifest: NOSIGNATURE
+		aether-1.20.1-1.5.2-neoforge.jar                  |The Aether                    |aether                        |1.20.1-1.5.2-neoforg|DONE      |Manifest: NOSIGNATURE
+		Satako-7.0.33-1.20.1.jar                          |Satako                        |satako                        |7.0.33-1.20.1       |DONE      |Manifest: NOSIGNATURE
+		sophisticatedcore-1.20.1-1.3.21.1676.jar          |Sophisticated Core            |sophisticatedcore             |1.3.21.1676         |DONE      |Manifest: NOSIGNATURE
+		insanelib-1.23.4.4.jar                            |InsaneLib                     |insanelib                     |1.23.4.4            |DONE      |Manifest: NOSIGNATURE
+		ForgeEndertech-1.20.1-11.1.10.0-build.2048.jar    |ForgeEndertech                |forgeendertech                |11.1.10.0           |DONE      |Manifest: NOSIGNATURE
+		c2meF-fixes-general-threading-issues-mc1.20.1-0.2.|Concurrent Chunk Management En|c2me_fixes_general_threading_i|0.2.0+alpha.13      |DONE      |Manifest: NOSIGNATURE
+		ritchiesprojectilelib-2.1.1-mc.1.20.1-forge.jar   |Ritchie's Projectile Library  |ritchiesprojectilelib         |2.1.1               |DONE      |Manifest: NOSIGNATURE
+		Controlling-forge-1.20.1-12.0.2.jar               |Controlling                   |controlling                   |12.0.2              |DONE      |Manifest: NOSIGNATURE
+		Placebo-1.20.1-8.6.3.jar                          |Placebo                       |placebo                       |8.6.3               |DONE      |Manifest: NOSIGNATURE
+		citadel-2.6.3-1.20.1.jar                          |Citadel                       |citadel                       |2.6.3               |DONE      |Manifest: NOSIGNATURE
+		YungsApi-1.20-Forge-4.0.6.jar                     |YUNG's API                    |yungsapi                      |1.20-Forge-4.0.6    |DONE      |Manifest: NOSIGNATURE
+		c2meF-opts-math-mc1.20.1-0.2.0+alpha.13.jar       |Concurrent Chunk Management En|c2me_opts_math                |0.2.0+alpha.13      |DONE      |Manifest: NOSIGNATURE
+		c2meF-0.2.0+alpha.13-all.jar                      |Concurrent Chunk Management En|c2me                          |0.2.0+alpha.13      |DONE      |Manifest: NOSIGNATURE
+		Apotheosis-1.20.1-7.4.8.jar                       |Apotheosis                    |apotheosis                    |7.4.8               |DONE      |Manifest: NOSIGNATURE
+		Steam_Rails-1.7.2+forge-mc1.20.1.jar              |Create: Steam 'n' Rails       |railways                      |1.7.2+forge-mc1.20.1|DONE      |Manifest: NOSIGNATURE
+		create-new-age-1.1.7f+forge-mc1.20.1.jar          |Create: New Age               |create_new_age                |1.1.7f+mc1.20.1     |DONE      |Manifest: NOSIGNATURE
+		K-Turrets-3.0.44-1.20.1.jar                       |K-Turrets                     |k_turrets                     |3.0.44-1.20.1       |DONE      |Manifest: NOSIGNATURE
+		AdPother-1.20.1-8.1.43.0-build.2132.jar           |Pollution of the Realms       |adpother                      |8.1.43.0            |DONE      |Manifest: NOSIGNATURE
+		c2meF-base-mc1.20.1-0.2.0+alpha.13.jar            |Concurrent Chunk Management En|c2me_base                     |0.2.0+alpha.13      |DONE      |Manifest: NOSIGNATURE
+		cloth-config-11.1.136-forge.jar                   |Cloth Config v10 API          |cloth_config                  |11.1.136            |DONE      |Manifest: NOSIGNATURE
+		[forge]ctov-3.4.14.jar                            |ChoiceTheorem's Overhauled Vil|ctov                          |3.4.14              |DONE      |Manifest: NOSIGNATURE
+		c2meF-fixes-worldgen-vanilla-bugs-mc1.20.1-0.2.0+a|Concurrent Chunk Management En|c2me_fixes_worldgen_vanilla_bu|0.2.0+alpha.13      |DONE      |Manifest: NOSIGNATURE
+		Geophilic v3.4.6.mod.jar                          |Geophilic                     |geophilic                     |3.4.6               |DONE      |Manifest: NOSIGNATURE
+		athena-forge-1.20.1-3.1.2.jar                     |Athena                        |athena                        |3.1.2               |DONE      |Manifest: NOSIGNATURE
+		structure_gel-1.20.1-2.16.2.jar                   |Structure Gel API             |structure_gel                 |2.16.2              |DONE      |Manifest: NOSIGNATURE
+		Glodium-1.20-1.5-forge.jar                        |Glodium                       |glodium                       |1.20-1.5-forge      |DONE      |Manifest: NOSIGNATURE
+		FarmersDelight-1.20.1-1.3.1.jar                   |Farmer's Delight              |farmersdelight                |1.20.1-1.3.1        |DONE      |Manifest: NOSIGNATURE
+		Cobble-Gen-Haters-1.20-1.0.1.jar                  |Cobble Gen Hater              |cobblegenhaters               |1.0.1               |DONE      |Manifest: NOSIGNATURE
+		AmbientSounds_FORGE_v6.3.4_mc1.20.1.jar           |AmbientSounds                 |ambientsounds                 |6.3.4               |DONE      |Manifest: NOSIGNATURE
+		c2meF-fixes-chunkio-threading-issues-mc1.20.1-0.2.|Concurrent Chunk Management En|c2me_fixes_chunkio_threading_i|0.2.0+alpha.13      |DONE      |Manifest: NOSIGNATURE
+		alekiNiftyShips-FORGE-1.20.1-1.0.14.jar           |aleki's Nifty Ships           |alekiships                    |1.0.14              |DONE      |Manifest: NOSIGNATURE
+		c2meF-client-uncapvd-mc1.20.1-0.2.0+alpha.13.jar  |Concurrent Chunk Management En|c2me_client_uncapvd           |0.2.0+alpha.13      |DONE      |Manifest: NOSIGNATURE
+		Botania-1.20.1-451-FORGE.jar                      |Botania                       |botania                       |1.20.1-451-FORGE    |DONE      |Manifest: NOSIGNATURE
+		resourcefulconfig-forge-1.20.1-2.1.3.jar          |Resourcefulconfig             |resourcefulconfig             |2.1.3               |DONE      |Manifest: NOSIGNATURE
+		HangGlider-v8.0.1-1.20.1-Forge.jar                |Hang Glider                   |hangglider                    |8.0.1               |DONE      |Manifest: 9a:09:85:98:65:c4:8c:11:c5:49:f6:d6:33:23:39:df:8d:b4:ff:92:84:b8:bd:a5:83:9f:ac:7f:2a:d1:4b:6a
+		TinkersBattleSpades-1.20.1-1.2.1.jar              |Tinkers' Battle Spades        |tinkers_battle_spades         |1.2.1               |DONE      |Manifest: NOSIGNATURE
+		curios-forge-5.14.1+1.20.1.jar                    |Curios API                    |curios                        |5.14.1+1.20.1       |DONE      |Manifest: NOSIGNATURE
+		Patchouli-1.20.1-85-FORGE.jar                     |Patchouli                     |patchouli                     |1.20.1-85-FORGE     |DONE      |Manifest: NOSIGNATURE
+		MyNethersDelight-1.20.1-0.1.8.jar                 |My Nether's Delight           |mynethersdelight              |1.20.1-1.7.5        |DONE      |Manifest: NOSIGNATURE
+		collective-1.20.1-8.20.jar                        |Collective                    |collective                    |8.20                |DONE      |Manifest: NOSIGNATURE
+		CerbonsAPI-Forge-1.20.1-1.1.0.jar                 |Cerbons API                   |cerbons_api                   |1.1.0               |DONE      |Manifest: NOSIGNATURE
+		Searchables-forge-1.20.1-1.0.3.jar                |Searchables                   |searchables                   |1.0.3               |DONE      |Manifest: NOSIGNATURE
+		ApothicAttributes-1.20.1-1.3.7.jar                |Apothic Attributes            |attributeslib                 |1.3.7               |DONE      |Manifest: NOSIGNATURE
+		ThirstWasTaken-1.20.1-1.4.0.jar                   |Thirst was Taken              |thirst                        |1.20.1-1.4.0        |DONE      |Manifest: NOSIGNATURE
+		resourcefullib-forge-1.20.1-2.1.29.jar            |Resourceful Lib               |resourcefullib                |2.1.29              |DONE      |Manifest: NOSIGNATURE
+		oc2r-1.20.1-forge-2.2.12-all.jar                  |OpenComputers II: Reimagined  |oc2r                          |2.2.12              |DONE      |Manifest: NOSIGNATURE
+		etstlib-3.0.0-beta.20.jar                         |EtSTLib                       |etstlib                       |3.0.0-beta.20       |DONE      |Manifest: NOSIGNATURE
+		cumulus_menus-1.20.1-1.0.1-neoforge.jar           |Cumulus                       |cumulus_menus                 |1.20.1-1.0.1-neoforg|DONE      |Manifest: NOSIGNATURE
+		architectury-9.2.14-forge.jar                     |Architectury                  |architectury                  |9.2.14              |DONE      |Manifest: NOSIGNATURE
+		Not Enough Recipe Book-FORGE-0.4.1+1.20.1.jar     |Not Enough Recipe Book        |nerb                          |0.4.1               |DONE      |Manifest: NOSIGNATURE
+		The_Undergarden-1.20.1-0.8.14.jar                 |The Undergarden               |undergarden                   |0.8.14              |DONE      |Manifest: NOSIGNATURE
+		nitrogen_internals-1.20.1-1.0.12-neoforge.jar     |Nitrogen                      |nitrogen_internals            |1.20.1-1.0.12-neofor|DONE      |Manifest: NOSIGNATURE
+		c2meF-rewrites-chunkio-mc1.20.1-0.2.0+alpha.13.jar|Concurrent Chunk Management En|c2me_rewrites_chunkio         |0.2.0+alpha.13      |DONE      |Manifest: NOSIGNATURE
+		Towns-and-Towers-1.12-Fabric+Forge.jar            |Towns and Towers              |t_and_t                       |0.0NONE             |DONE      |Manifest: NOSIGNATURE
+		DynamicTrees-1.20.1-1.4.10.jar                    |Dynamic Trees                 |dynamictrees                  |1.20.1-1.4.10       |DONE      |Manifest: NOSIGNATURE
+		DynamicTreesPlus-1.20.1-1.2.2.jar                 |Dynamic Trees Plus            |dynamictreesplus              |1.20.1-1.2.2        |DONE      |Manifest: NOSIGNATURE
+		PlayerRevive_FORGE_v2.0.31_mc1.20.1.jar           |PlayerRevive                  |playerrevive                  |2.0.31              |DONE      |Manifest: NOSIGNATURE
+		c2meF-opts-allocs-mc1.20.1-0.2.0+alpha.13.jar     |Concurrent Chunk Management En|c2me_opts_allocs              |0.2.0+alpha.13      |DONE      |Manifest: NOSIGNATURE
+		Hyle-2.0.0-1.20.1-forge-all.jar                   |Hyle                          |hyle                          |2.0.0-1.20.1-forge  |DONE      |Manifest: NOSIGNATURE
+		UnEarthed-2.3.0-1.20.1-forge-all.jar              |Unearthed                     |unearthed                     |2.3.0-1.20.1-forge  |DONE      |Manifest: NOSIGNATURE
+		TradingPost-v8.0.2-1.20.1-Forge.jar               |Trading Post                  |tradingpost                   |8.0.2               |DONE      |Manifest: 9a:09:85:98:65:c4:8c:11:c5:49:f6:d6:33:23:39:df:8d:b4:ff:92:84:b8:bd:a5:83:9f:ac:7f:2a:d1:4b:6a
+		esl-forge-1.20.1-1.1.3+forge-mc1.20.1.jar         |ESL                           |esl                           |1.1.3               |DONE      |Manifest: NOSIGNATURE
+		SmartBrainLib-forge-1.20.1-1.15.jar               |SmartBrainLib                 |smartbrainlib                 |1.15                |DONE      |Manifest: NOSIGNATURE
+		rhino-forge-2001.2.3-build.10.jar                 |Rhino                         |rhino                         |2001.2.3-build.10   |DONE      |Manifest: NOSIGNATURE
+		c2meF-threading-lighting-mc1.20.1-0.2.0+alpha.13.j|Concurrent Chunk Management En|c2me_threading_lighting       |0.2.0+alpha.13      |DONE      |Manifest: NOSIGNATURE
+		ftb-library-forge-2001.2.12.jar                   |FTB Library                   |ftblibrary                    |2001.2.12           |DONE      |Manifest: NOSIGNATURE
+		ftb-teams-forge-2001.3.2.jar                      |FTB Teams                     |ftbteams                      |2001.3.2            |DONE      |Manifest: NOSIGNATURE
+		amendments-1.20-2.2.5.jar                         |Amendments                    |amendments                    |1.20-2.2.5          |DONE      |Manifest: NOSIGNATURE
+		TinkerBetterCombat 0.14.jar                       |Tinkers' Better Combat        |tinkers_better_combat         |1.8.6               |DONE      |Manifest: NOSIGNATURE
+		sophisticatedstorage-1.20.1-1.4.39.1666.jar       |Sophisticated Storage         |sophisticatedstorage          |1.4.39.1666         |DONE      |Manifest: NOSIGNATURE
+		OctoLib-FORGE-0.5.0.1+1.20.1.jar                  |OctoLib                       |octolib                       |0.5.0.1             |DONE      |Manifest: NOSIGNATURE
+		lithostitched-forge-1.20.1-1.4.11.jar             |Lithostitched                 |lithostitched                 |1.4.11              |DONE      |Manifest: NOSIGNATURE
+		VeggiesDelight-1.20.1-1.9.2.jar                   |Veggies Delight               |veggiesdelight                |1.9.2               |DONE      |Manifest: NOSIGNATURE
+		TinyCoal-forge-1.20.1-1.1.5.jar                   |Tiny Coal                     |tinycoal                      |1.1.5               |DONE      |Manifest: NOSIGNATURE
+		c2meF-threading-chunkio-mc1.20.1-0.2.0+alpha.13.ja|Concurrent Chunk Management En|c2me_threading_chunkio        |0.2.0+alpha.13      |DONE      |Manifest: NOSIGNATURE
+		ApotheoticAdditionsV2.2.2.jar                     |Apotheotic Additions          |apotheotic_additions          |2.2.2               |DONE      |Manifest: NOSIGNATURE
+		NaturesCompass-1.20.1-1.12.0-forge.jar            |Nature's Compass              |naturescompass                |1.20.1-1.12.0-forge |DONE      |Manifest: NOSIGNATURE
+		artifacts-forge-9.5.19.jar                        |Artifacts                     |artifacts                     |9.5.19              |DONE      |Manifest: NOSIGNATURE
+		GlitchCore-forge-1.20.1-0.0.1.1.jar               |GlitchCore                    |glitchcore                    |0.0.1.1             |DONE      |Manifest: NOSIGNATURE
+		SereneSeasons-forge-1.20.1-9.1.0.2.jar            |Serene Seasons                |sereneseasons                 |9.1.0.2             |DONE      |Manifest: NOSIGNATURE
+		pneumaticcraft-repressurized-6.0.22+mc1.20.1.jar  |PneumaticCraft: Repressurized |pneumaticcraft                |6.0.22+mc1.20.1     |DONE      |Manifest: NOSIGNATURE
+		guideme-20.1.14.jar                               |GuideME                       |guideme                       |20.1.14             |DONE      |Manifest: NOSIGNATURE
+		SimpleDayLengthExtender-1.2.1-Forge-1.20.1.jar    |Simple Day Length Extender    |simpledaylengthextender       |1.2.1-Forge-1.20.1  |DONE      |Manifest: NOSIGNATURE
+		realisticphysics-1.20.1-1.0.1.jar                 |Realistic Physics             |realisticphysics              |1.0.1               |DONE      |Manifest: NOSIGNATURE
+		Block Swap-forge-1.20.1-5.0.0.0.jar               |Block Swap                    |blockswap                     |5.0.0.0             |DONE      |Manifest: NOSIGNATURE
+		iChunUtil-1.20.1-Forge-1.0.3.jar                  |iChunUtil                     |ichunutil                     |1.0.3               |DONE      |Manifest: ae:67:c5:55:fb:7e:f3:4e:5c:71:f4:50:9e:df:a2:b0:32:86:cf:09:f2:fe:9b:db:94:3b:09:88:a2:3d:91:1f
+		blueprint-1.20.1-7.1.3.jar                        |Blueprint                     |blueprint                     |7.1.3               |DONE      |Manifest: NOSIGNATURE
+		ars_nouveau-1.20.1-4.12.7-all.jar                 |Ars Nouveau                   |ars_nouveau                   |4.12.7              |DONE      |Manifest: NOSIGNATURE
+		DynamicTreesArsNouveau-1.20.1-1.2.0.jar           |Dynamic Trees for Ars Nouveau |dtarsnouveau                  |1.20.1-1.2.0        |DONE      |Manifest: NOSIGNATURE
+		c2meF-opts-chunk-access-mc1.20.1-0.2.0+alpha.13.ja|Concurrent Chunk Management En|c2me_opts_chunk_access        |0.2.0+alpha.13      |DONE      |Manifest: NOSIGNATURE
+		puzzlesaccessapi-forge-20.1.1.jar                 |Puzzles Access Api            |puzzlesaccessapi              |20.1.1              |DONE      |Manifest: NOSIGNATURE
+		forge-1.20.1-47.4.13-universal.jar                |Forge                         |forge                         |47.4.13             |DONE      |Manifest: NOSIGNATURE
+		TravelersTitles-1.20-Forge-4.0.2.jar              |Traveler's Titles             |travelerstitles               |1.20-Forge-4.0.2    |DONE      |Manifest: NOSIGNATURE
+		SleepingOverhaul-2.1.0-Forge-1.20.1.jar           |Sleeping Overhaul 2           |sleepingoverhaul              |2.1.0-Forge-1.20.1  |DONE      |Manifest: NOSIGNATURE
+		bloodmagic-1.20.1-3.3.7-49.jar                    |Blood Magic                   |bloodmagic                    |3.3.7-49            |DONE      |Manifest: NOSIGNATURE
+		c2meF-opts-worldgen-vanilla-mc1.20.1-0.2.0+alpha.1|Concurrent Chunk Management En|c2me_opts_worldgen_vanilla    |0.2.0+alpha.13      |DONE      |Manifest: NOSIGNATURE
+		c2meF-opts-scheduling-mc1.20.1-0.2.0+alpha.13.jar |Concurrent Chunk Management En|c2me_opts_scheduling          |0.2.0+alpha.13      |DONE      |Manifest: NOSIGNATURE
+		Log-Begone-Forge-1.20.1-1.0.8.jar                 |Log Begone                    |logbegone                     |1.0.8               |DONE      |Manifest: NOSIGNATURE
+		JsonThings-1.20.1-0.9.13.jar                      |Json Things                   |jsonthings                    |0.9.13              |DONE      |Manifest: NOSIGNATURE
+		alchemistry-1.20.1-2.3.4.jar                      |Alchemistry                   |alchemistry                   |2.3.4               |DONE      |Manifest: NOSIGNATURE
+		server-1.20.1-20230612.114412-srg.jar             |Minecraft                     |minecraft                     |1.20.1              |DONE      |Manifest: NOSIGNATURE
+		Fallout Wasteland 1.20.1 Beta 3.8.1.jar           |Fallout_Wastelands_2          |fallout_wastelands_           |1.0.0               |DONE      |Manifest: NOSIGNATURE
+		DistantHorizons-2.4.5-b-1.20.1-fabric-forge.jar   |Distant Horizons              |distanthorizons               |2.4.5-b             |DONE      |Manifest: NOSIGNATURE
+		TConstruct-1.20.1-3.11.2.166.jar                  |Tinkers' Construct            |tconstruct                    |3.11.2.166          |DONE      |Manifest: NOSIGNATURE
+		tinkers_advanced_core-3.0.0-beta.5.jar            |Tinkers' Advanced             |tinkers_advanced              |3.0.0-beta.5        |DONE      |Manifest: NOSIGNATURE
+		Additional-Weaponry-1.20.1-1.1.3.jar              |Additional Weaponry           |additionalweaponry            |1.1.3               |DONE      |Manifest: NOSIGNATURE
+		dynamicassetgenerator-forge-1.20.1-4.2.2.jar      |Dynamic Asset Generator       |dynamic_asset_generator       |4.2.2               |DONE      |Manifest: NOSIGNATURE
+		TerraBlender-forge-1.20.1-3.0.1.10.jar            |TerraBlender                  |terrablender                  |3.0.1.10            |DONE      |Manifest: NOSIGNATURE
+		moonlight-1.20-2.16.30-forge.jar                  |Moonlight Library             |moonlight                     |1.20-2.16.30        |DONE      |Manifest: NOSIGNATURE
+		MouseTweaks-forge-mc1.20.1-2.25.1.jar             |Mouse Tweaks                  |mousetweaks                   |2.25.1              |DONE      |Manifest: NOSIGNATURE
+		bettercombat-forge-1.9.0+1.20.1.jar               |Better Combat                 |bettercombat                  |1.9.0+1.20.1        |DONE      |Manifest: NOSIGNATURE
+		mysterious_mountain_lib-1.6.34-1.20.1.jar         |Mysterious Mountain Lib       |mysterious_mountain_lib       |1.6.34-1.20.1       |DONE      |Manifest: NOSIGNATURE
+		mixinsquared-forge-0.3.6-beta.1.jar               |MixinSquared                  |mixinsquared                  |0.3.6-beta.1        |DONE      |Manifest: NOSIGNATURE
+		BuildingWands-forge-MC1.20.1-3.0.4.jar            |Building Wands                |wands                         |3.0.4               |DONE      |Manifest: NOSIGNATURE
+		CreativeCore_FORGE_v2.12.35_mc1.20.1.jar          |CreativeCore                  |creativecore                  |2.12.35             |DONE      |Manifest: NOSIGNATURE
+		alltheleaks-1.1.1+1.20.1-forge.jar                |All The Leaks                 |alltheleaks                   |1.1.1+1.20.1-forge  |DONE      |Manifest: NOSIGNATURE
+		AdLods-1.20.1-8.1.9.0-build.2084.jar              |Large Ore Deposits            |adlods                        |8.1.9.0             |DONE      |Manifest: NOSIGNATURE
+		spectrelib-forge-0.13.17+1.20.1.jar               |SpectreLib                    |spectrelib                    |0.13.17+1.20.1      |DONE      |Manifest: NOSIGNATURE
+		c2meF-server-utils-mc1.20.1-0.2.0+alpha.13.jar    |Concurrent Chunk Management En|c2me_server_utils             |0.2.0+alpha.13      |DONE      |Manifest: NOSIGNATURE
+		Ding-1.20.1-Forge-1.5.0.jar                       |Ding                          |ding                          |1.5.0               |DONE      |Manifest: ae:67:c5:55:fb:7e:f3:4e:5c:71:f4:50:9e:df:a2:b0:32:86:cf:09:f2:fe:9b:db:94:3b:09:88:a2:3d:91:1f
+		kffmod-4.12.0.jar                                 |Kotlin For Forge              |kotlinforforge                |4.12.0              |DONE      |Manifest: NOSIGNATURE
+		BrewinAndChewin-1.20.1-3.2.1.jar                  |Brewin' And Chewin'           |brewinandchewin               |1.20.1-3.2.1        |DONE      |Manifest: NOSIGNATURE
+		flywheel-forge-1.20.1-1.0.5.jar                   |Flywheel                      |flywheel                      |1.0.5               |DONE      |Manifest: NOSIGNATURE
+		Ponder-Forge-1.20.1-1.0.91.jar                    |Ponder                        |ponder                        |1.0.91              |DONE      |Manifest: NOSIGNATURE
+		create-1.20.1-6.0.8.jar                           |Create                        |create                        |6.0.8               |DONE      |Manifest: NOSIGNATURE
+		FramedBlocks-9.4.3.jar                            |FramedBlocks                  |framedblocks                  |9.4.3               |DONE      |Manifest: NOSIGNATURE
+		Mantle-1.20.1-1.11.104.jar                        |Mantle                        |mantle                        |1.11.104            |DONE      |Manifest: NOSIGNATURE
+		chemlib-1.20.1-2.0.19.jar                         |ChemLib                       |chemlib                       |2.0.19              |DONE      |Manifest: NOSIGNATURE
+		malum-1.20.1-1.6.7.jar                            |Malum                         |malum                         |1.20.1-1.6.7        |DONE      |Manifest: NOSIGNATURE
+		FastWorkbench-1.20.1-8.0.4.jar                    |Fast Workbench                |fastbench                     |8.0.4               |DONE      |Manifest: NOSIGNATURE
+		polymorph-forge-0.49.10+1.20.1.jar                |Polymorph                     |polymorph                     |0.49.10+1.20.1      |DONE      |Manifest: NOSIGNATURE
+		markdown_manual-MC1.20.1-forge-1.2.5+c3f0b88.jar  |Markdown Manual               |markdown_manual               |1.2.5+c3f0b88       |DONE      |Manifest: NOSIGNATURE
+		c2meF-notickvd-mc1.20.1-0.2.0+alpha.13.jar        |Concurrent Chunk Management En|c2me_notickvd                 |0.2.0+alpha.13      |DONE      |Manifest: NOSIGNATURE
+		almostunified-forge-1.20.1-0.11.0.jar             |AlmostUnified                 |almostunified                 |1.20.1-0.11.0       |DONE      |Manifest: NOSIGNATURE
+		emi-1.1.22+1.20.1+forge.jar                       |EMI                           |emi                           |1.1.22+1.20.1+forge |DONE      |Manifest: NOSIGNATURE
+		jei-1.20.1-forge-15.20.0.130.jar                  |Just Enough Items             |jei                           |15.20.0.130         |DONE      |Manifest: NOSIGNATURE
+		kubejs-forge-2001.6.5-build.16.jar                |KubeJS                        |kubejs                        |2001.6.5-build.16   |ERROR     |Manifest: NOSIGNATURE
+		appliedenergistics2-forge-15.4.10.jar             |Applied Energistics 2         |ae2                           |15.4.10             |DONE      |Manifest: NOSIGNATURE
+		AE2NetworkAnalyzer-1.20-1.0.6-forge.jar           |AE2NetworkAnalyzer            |ae2netanalyser                |1.20-1.0.6-forge    |DONE      |Manifest: NOSIGNATURE
+		acid_vat-0.1.0.jar                                |Acid Vat                      |acid_vat                      |0.1.0               |DONE      |Manifest: NOSIGNATURE
+		ExtendedAE-1.20-1.4.14-forge.jar                  |ExtendedAE                    |expatternprovider             |1.20-1.4.14-forge   |DONE      |Manifest: NOSIGNATURE
+		AdvancedAE-1.3.5-1.20.1.jar                       |Advanced AE                   |advanced_ae                   |1.3.5-1.20.1        |DONE      |Manifest: NOSIGNATURE
+		AE2-Things-1.2.1.jar                              |AE2 Things                    |ae2things                     |1.2.1               |DONE      |Manifest: NOSIGNATURE
+		AEAdditions-1.20.1-5.1.1.jar                      |AE Additions                  |ae2additions                  |5.1.1               |DONE      |Manifest: NOSIGNATURE
+		KubeJS Blood Magic-1.0.2-1.20.1.jar               |KubeJS Blood Magic            |kubejsbloodmagic              |1.0.2-1.20.1        |DONE      |Manifest: NOSIGNATURE
+		Zeta-1.0-31.jar                                   |Zeta                          |zeta                          |1.0-31              |DONE      |Manifest: NOSIGNATURE
+		Quark-4.0-462.jar                                 |Quark                         |quark                         |4.0-462             |DONE      |Manifest: NOSIGNATURE
+		DynamicTreesQuark-1.20.1-2.5.3.jar                |Dynamic Trees for Quark       |dtquark                       |1.20.1-2.5.3        |DONE      |Manifest: NOSIGNATURE
+		c2meF-opts-worldgen-general-mc1.20.1-0.2.0+alpha.1|Concurrent Chunk Management En|c2me_opts_worldgen_general    |0.2.0+alpha.13      |DONE      |Manifest: NOSIGNATURE
+		c2meF-opts-chunkio-mc1.20.1-0.2.0+alpha.13.jar    |Concurrent Chunk Management En|c2me_opts_chunkio             |0.2.0+alpha.13      |DONE      |Manifest: NOSIGNATURE
+		modonomicon-1.20.1-forge-1.79.3.jar               |Modonomicon                   |modonomicon                   |1.79.3              |DONE      |Manifest: NOSIGNATURE
+		ae2addonlib-1.0.4-1.20.1.jar                      |AE2AddonLib                   |ae2addonlib                   |1.0.4-1.20.1        |DONE      |Manifest: NOSIGNATURE
+		coroutil-forge-1.20.1-1.3.7.jar                   |CoroUtil                      |coroutil                      |1.20.1-1.3.7        |DONE      |Manifest: NOSIGNATURE
+		FastFurnace-1.20.1-8.0.2.jar                      |FastFurnace                   |fastfurnace                   |8.0.2               |DONE      |Manifest: NOSIGNATURE
+		c2meF-threading-worldgen-mc1.20.1-0.2.0+alpha.13.j|Concurrent Chunk Management En|c2me_threading_worldgen       |0.2.0+alpha.13      |DONE      |Manifest: NOSIGNATURE
+		appleskin-forge-mc1.20.1-2.5.1.jar                |AppleSkin                     |appleskin                     |2.5.1+mc1.20.1      |DONE      |Manifest: NOSIGNATURE
+		addonapi-mc1.20.1-2.0.0.jar                       |AddonAPI                      |addonapi                      |2.0.0               |DONE      |Manifest: NOSIGNATURE
+		PuzzlesLib-v8.1.33-1.20.1-Forge.jar               |Puzzles Lib                   |puzzleslib                    |8.1.33              |DONE      |Manifest: 9a:09:85:98:65:c4:8c:11:c5:49:f6:d6:33:23:39:df:8d:b4:ff:92:84:b8:bd:a5:83:9f:ac:7f:2a:d1:4b:6a
+		ColdSweat-2.4.jar                                 |Cold Sweat                    |cold_sweat                    |2.4                 |DONE      |Manifest: NOSIGNATURE
+		lodestone-1.20.1-1.6.4.1.jar                      |Lodestone                     |lodestone                     |1.20.1-1.6.4.1      |DONE      |Manifest: NOSIGNATURE
+		Delightful-1.20.1-3.7.8.jar                       |Delightful                    |delightful                    |3.7.8               |DONE      |Manifest: NOSIGNATURE
+		expandability-forge-9.0.4.jar                     |ExpandAbility                 |expandability                 |9.0.4               |DONE      |Manifest: NOSIGNATURE
+		cristellib-1.1.6-forge.jar                        |Cristel Lib                   |cristellib                    |1.1.6               |DONE      |Manifest: NOSIGNATURE
+	Crash Report UUID: 1fac6591-8dbc-478b-be40-c9d541c3dae6
+	FML: 47.4
+	Forge: net.minecraftforge:47.4.13[22:30:11] [main/ERROR] [minecraft/Main]: Failed to start the minecraft server
+net.minecraftforge.fml.LoadingFailedException: Loading errors encountered: [
+	KubeJS (kubejs) encountered an error during the complete event phase
+§7java.lang.RuntimeException: There were KubeJS startup script syntax errors! See logs/kubejs/startup.log for more info
+]
+	at net.minecraftforge.fml.ModLoader.waitForTransition(ModLoader.java:246) ~[fmlcore-1.20.1-47.4.13.jar%23380!/:?] {}
+	at net.minecraftforge.fml.ModLoader.lambda$dispatchAndHandleError$20(ModLoader.java:210) ~[fmlcore-1.20.1-47.4.13.jar%23380!/:?] {}
+	at java.util.Optional.ifPresent(Optional.java:178) ~[?:?] {re:mixin}
+	at net.minecraftforge.fml.ModLoader.dispatchAndHandleError(ModLoader.java:210) ~[fmlcore-1.20.1-47.4.13.jar%23380!/:?] {}
+	at net.minecraftforge.fml.ModLoader.lambda$finishMods$17(ModLoader.java:197) ~[fmlcore-1.20.1-47.4.13.jar%23380!/:?] {}
+	at java.lang.Iterable.forEach(Iterable.java:75) ~[?:?] {re:mixin}
+	at net.minecraftforge.fml.ModLoader.finishMods(ModLoader.java:197) ~[fmlcore-1.20.1-47.4.13.jar%23380!/:?] {}
+	at net.minecraftforge.server.loading.ServerModLoader.load(ServerModLoader.java:32) ~[forge-1.20.1-47.4.13-universal.jar%23384!/:?] {re:classloading}
+	at net.minecraft.server.Main.main(Main.java:125) ~[server-1.20.1-20230612.114412-srg.jar%23379!/:?] {re:mixin,re:classloading,pl:mixin:A}
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}
+	at java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:111) ~[fmlloader-1.20.1-47.4.13.jar%2369!/:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.serverService(CommonLaunchHandler.java:103) ~[fmlloader-1.20.1-47.4.13.jar%2369!/:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonServerLaunchHandler.lambda$makeService$0(CommonServerLaunchHandler.java:27) ~[fmlloader-1.20.1-47.4.13.jar%2369!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:108) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:78) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) ~[bootstraplauncher-1.1.2.jar:?] {}
+[22:30:11] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [controlling] Found status: BETA Current: 12.0.2 Target: 12.0.2
+[22:30:11] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [adpother] Starting version check at https://forge.curseupdate.com/269973/adpother
+[22:30:11] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [adpother] Found status: UP_TO_DATE Current: 8.1.43.0 Target: null
+[22:30:11] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [ctov] Starting version check at https://api.modrinth.com/updates/fgmhI8kH/forge_updates.json
+[22:30:11] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [ctov] Found status: UP_TO_DATE Current: 3.4.14 Target: null
+[22:30:11] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [structure_gel] Starting version check at http://changelogs.moddinglegacy.com/structure-gel.json
+[22:30:12] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [structure_gel] Found status: BETA Current: 2.16.2 Target: null
+[22:30:12] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [hangglider] Starting version check at https://raw.githubusercontent.com/Fuzss/modresources/main/update/hangglider.json
+[22:30:12] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [hangglider] Found status: UP_TO_DATE Current: 8.0.1 Target: null
+[22:30:12] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [searchables] Starting version check at https://updates.blamejared.com/get?n=searchables&gv=1.20.1
+[22:30:12] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [searchables] Found status: BETA Current: 1.0.3 Target: 1.0.3
+[22:30:12] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [cumulus_menus] Starting version check at https://github.com/The-Aether-Team/Cumulus/raw/1.20.1-develop/update.json
+[22:30:12] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [cumulus_menus] Found status: UP_TO_DATE Current: 1.20.1-1.0.1-neoforge Target: null
+[22:30:12] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [dynamictrees] Starting version check at https://github.com/DynamicTreesTeam/DynamicTreesVersionInfo/blob/master/DynamicTrees.json?raw=true
+[22:30:13] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [dynamictrees] Found status: BETA Current: 1.20.1-1.4.10 Target: null
+[22:30:13] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [dynamictreesplus] Starting version check at https://github.com/DynamicTreesTeam/DynamicTreesVersionInfo/blob/master/DynamicTreesPlus.json?raw=true
+[22:30:13] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [dynamictreesplus] Found status: BETA Current: 1.20.1-1.2.2 Target: null
+[22:30:13] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [tradingpost] Starting version check at https://raw.githubusercontent.com/Fuzss/modresources/main/update/tradingpost.json
+[22:30:13] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [tradingpost] Found status: UP_TO_DATE Current: 8.0.2 Target: null
+[22:30:13] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [pneumaticcraft] Starting version check at https://raw.githubusercontent.com/TeamPneumatic/pnc-repressurized/1.20.1/release_info.json
+[22:30:13] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [pneumaticcraft] Found status: AHEAD Current: 6.0.22+mc1.20.1 Target: null
+[22:30:13] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [dtarsnouveau] Starting version check at https://github.com/DynamicTreesTeam/DynamicTreesVersionInfo/blob/master/Add-ons/ArsNouveau.json?raw=true
+[22:30:13] [Forge Version Check/WARN] [ne.mi.fm.VersionChecker/]: Failed to process update information
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 7 column 1 path $
+	at com.google.gson.Gson.fromJson(Gson.java:1226) ~[gson-2.10.jar%2372!/:?] {re:mixin}
+	at com.google.gson.Gson.fromJson(Gson.java:1124) ~[gson-2.10.jar%2372!/:?] {re:mixin}
+	at com.google.gson.Gson.fromJson(Gson.java:1034) ~[gson-2.10.jar%2372!/:?] {re:mixin}
+	at com.google.gson.Gson.fromJson(Gson.java:969) ~[gson-2.10.jar%2372!/:?] {re:mixin}
+	at net.minecraftforge.fml.VersionChecker$1.process(VersionChecker.java:186) ~[fmlcore-1.20.1-47.4.13.jar%23380!/:?] {}
+	at java.lang.Iterable.forEach(Iterable.java:75) ~[?:?] {re:mixin}
+	at net.minecraftforge.fml.VersionChecker$1.run(VersionChecker.java:117) ~[fmlcore-1.20.1-47.4.13.jar%23380!/:?] {}
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 7 column 1 path $
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:393) ~[gson-2.10.jar%2372!/:?] {}
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:182) ~[gson-2.10.jar%2372!/:?] {}
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:144) ~[gson-2.10.jar%2372!/:?] {}
+	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar%2372!/:?] {re:mixin}
+	... 6 more
+[22:30:13] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [puzzlesaccessapi] Starting version check at https://raw.githubusercontent.com/Fuzss/modresources/main/update/puzzlesaccessapi.json
+[22:30:14] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [puzzlesaccessapi] Found status: BETA Current: 20.1.1 Target: null
+[22:30:14] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
+[22:30:14] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [forge] Found status: OUTDATED Current: 47.4.13 Target: 47.4.20
+[22:30:14] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [moonlight] Starting version check at https://api.modrinth.com/updates/moonlight/forge_updates.json
+[22:30:14] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [moonlight] Found status: OUTDATED Current: 1.20-2.16.30 Target: 1.20-2.16.30-forge
+[22:30:14] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [adlods] Starting version check at https://forge.curseupdate.com/318833/adlods
+[22:30:14] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [adlods] Found status: UP_TO_DATE Current: 8.1.9.0 Target: null
+[22:30:14] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [dtquark] Starting version check at https://github.com/DynamicTreesTeam/DynamicTreesVersionInfo/blob/master/Add-ons/Quark.json?raw=true
+[22:30:15] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [dtquark] Found status: BETA Current: 1.20.1-2.5.3 Target: null
+[22:30:15] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [puzzleslib] Starting version check at https://raw.githubusercontent.com/Fuzss/modresources/main/update/puzzleslib.json
+[22:30:15] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [puzzleslib] Found status: UP_TO_DATE Current: 8.1.33 Target: null
+[22:30:15] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [delightful] Starting version check at https://raw.githubusercontent.com/brnbrd/Delightful/1.20.1/update/update.json
+[22:30:15] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [delightful] Found status: UP_TO_DATE Current: 3.7.8 Target: null

@@ -1,0 +1,83 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>create_new_age:sequenced_assembly/enchanted_golden_apple</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>create_new_age:sequenced_assembly/enchanted_golden_apple</h1>
+<p><b>Type:</b> create:sequenced_assembly | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../items/minecraft__apple.html">minecraft:apple</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/minecraft__enchanted_golden_apple.html">minecraft:enchanted_golden_apple</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: null
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;ingredient&quot;: {
+    &quot;item&quot;: &quot;minecraft:apple&quot;
+  },
+  &quot;loops&quot;: 4,
+  &quot;results&quot;: [
+    {
+      &quot;item&quot;: &quot;minecraft:enchanted_golden_apple&quot;
+    }
+  ],
+  &quot;sequence&quot;: [
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;create_new_age:incomplete_enchanted_golden_apple&quot;
+        },
+        {
+          &quot;tag&quot;: &quot;forge:storage_blocks/gold&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;create_new_age:incomplete_enchanted_golden_apple&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:deploying&quot;
+    },
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;create_new_age:incomplete_enchanted_golden_apple&quot;
+        },
+        {
+          &quot;tag&quot;: &quot;forge:storage_blocks/gold&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;create_new_age:incomplete_enchanted_golden_apple&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:deploying&quot;
+    },
+    {
+      &quot;energy_needed&quot;: 2000000,
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;create_new_age:incomplete_enchanted_golden_apple&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;create_new_age:incomplete_enchanted_golden_apple&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create_new_age:energising&quot;
+    }
+  ],
+  &quot;transitionalItem&quot;: {
+    &quot;item&quot;: &quot;create_new_age:incomplete_enchanted_golden_apple&quot;
+  },
+  &quot;type&quot;: &quot;create:sequenced_assembly&quot;
+}</pre></main></body></html>

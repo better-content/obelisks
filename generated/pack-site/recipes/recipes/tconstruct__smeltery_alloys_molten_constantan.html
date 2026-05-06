@@ -1,0 +1,57 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>tconstruct:smeltery/alloys/molten_constantan</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>tconstruct:smeltery/alloys/molten_constantan</h1>
+<p><b>Type:</b> tconstruct:alloy | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<p><em>None.</em></p>
+<h2>Outputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: null
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;conditions&quot;: [
+    {
+      &quot;tag&quot;: &quot;forge:ingots/nickel&quot;,
+      &quot;type&quot;: &quot;mantle:tag_filled&quot;
+    },
+    {
+      &quot;type&quot;: &quot;forge:or&quot;,
+      &quot;values&quot;: [
+        {
+          &quot;prop&quot;: &quot;allow_ingotless_alloys&quot;,
+          &quot;type&quot;: &quot;tconstruct:config&quot;
+        },
+        {
+          &quot;tag&quot;: &quot;forge:ingots/constantan&quot;,
+          &quot;type&quot;: &quot;mantle:tag_filled&quot;
+        }
+      ]
+    }
+  ],
+  &quot;inputs&quot;: [
+    {
+      &quot;amount&quot;: 90,
+      &quot;tag&quot;: &quot;forge:molten_copper&quot;
+    },
+    {
+      &quot;amount&quot;: 90,
+      &quot;tag&quot;: &quot;forge:molten_nickel&quot;
+    }
+  ],
+  &quot;result&quot;: {
+    &quot;amount&quot;: 180,
+    &quot;tag&quot;: &quot;forge:molten_constantan&quot;
+  },
+  &quot;temperature&quot;: 920,
+  &quot;type&quot;: &quot;tconstruct:alloy&quot;
+}</pre></main></body></html>

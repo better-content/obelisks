@@ -1,0 +1,48 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>occultism:crushing/zinc_dust_from_raw</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>occultism:crushing/zinc_dust_from_raw</h1>
+<p><b>Type:</b> occultism:crushing | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../tags/forge__raw_materials_zinc.html">#forge:raw_materials/zinc</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/chemlib__zinc_dust.html">chemlib:zinc_dust</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: null
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;conditions&quot;: [
+    {
+      &quot;type&quot;: &quot;forge:not&quot;,
+      &quot;value&quot;: {
+        &quot;tag&quot;: &quot;forge:dusts/zinc&quot;,
+        &quot;type&quot;: &quot;forge:tag_empty&quot;
+      }
+    },
+    {
+      &quot;type&quot;: &quot;forge:not&quot;,
+      &quot;value&quot;: {
+        &quot;tag&quot;: &quot;forge:raw_materials/zinc&quot;,
+        &quot;type&quot;: &quot;forge:tag_empty&quot;
+      }
+    }
+  ],
+  &quot;crushing_time&quot;: 200,
+  &quot;ignore_crushing_multiplier&quot;: false,
+  &quot;ingredient&quot;: {
+    &quot;tag&quot;: &quot;forge:raw_materials/zinc&quot;
+  },
+  &quot;result&quot;: {
+    &quot;count&quot;: 2,
+    &quot;item&quot;: &quot;chemlib:zinc_dust&quot;
+  },
+  &quot;type&quot;: &quot;occultism:crushing&quot;
+}</pre></main></body></html>

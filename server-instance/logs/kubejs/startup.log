@@ -1,47 +1,45 @@
-[17:58:32] [INIT] KubeJS 2001.6.5-build.16; MC 2001 forge
-[17:58:32] [INIT] Loaded plugins:
-[17:58:32] [INIT] - dev.latvian.mods.kubejs.forge.BuiltinKubeJSForgePlugin
-[17:58:32] [INIT] - com.jesz.createdieselgenerators.compat.kubejs.CDGKubeJSPlugin
-[17:58:32] [INIT] - dev.ftb.mods.ftbxmodcompat.ftbquests.kubejs.KubeJSIntegration
-[17:58:32] [INIT] - dev.ftb.mods.ftbxmodcompat.ftbteams.kubejs.FTBTeamsKubeJSPlugin
-[17:58:32] [INIT] - com.gerald.acidvat.compat.kubejs.AcidVatKubeJSPlugin
-[17:58:32] [INIT] - dev.latvian.mods.kubejs.create.KubeJSCreatePlugin
-[17:58:32] [INIT] - com.momosoftworks.coldsweat.compat.kubejs.KubePlugin
-[17:58:32] [INIT] - com.almostreliable.morejs.Plugin
-[17:58:32] [INIT] - com.example.rpgstats.kubejs.RpgStatsKubePlugin
-[17:58:32] [INIT] - io.github.mortuusars.wares.integration.kubejs.WaresKubeJSPlugin
-[17:58:32] [INIT] - com.almostreliable.lootjs.kube.LootJSPlugin
-[17:58:32] [INIT] - net.cathienova.kubejsbloodmagic.KubeJSBloodMagicPlugin
-[17:58:32] [INFO] Loaded script startup_scripts:20_globals/30_blood_heart_types.js in 0.023 s
-[17:58:32] [INFO] 20_globals/10_immobile_spawn.js#4: [no_moving_spawn] registering PlayerSetSpawnEvent cancel
-[17:58:32] [INFO] Loaded script startup_scripts:20_globals/10_immobile_spawn.js in 0.001 s
-[17:58:32] [INFO] Loaded script startup_scripts:20_blocks/10_ae2_skystone_hardness.js in 0.001 s
-[17:58:32] [INFO] Loaded script startup_scripts:10_items_blocks/20_triple_flint_durability.js in 0.0 s
-[17:58:32] [INFO] 10_items_blocks/10_thats_crate_registry.js#28: Loaded Java class 'java.math.BigInteger'
-[17:58:32] [INFO] Loaded script startup_scripts:10_items_blocks/10_thats_crate_registry.js in 0.004 s
-[17:58:32] [INFO] Loaded script startup_scripts:10_items_blocks/30_progression_items.js in 0.001 s
-[17:58:32] [INFO] Loaded script startup_scripts:30_hide_vanilla_tools_from_creative.js in 0.0 s
-[17:58:32] [INFO] 40_potion_brewing_registry.js#4: Loaded Java class 'net.minecraft.world.item.alchemy.Potions'
-[17:58:32] [INFO] Loaded script startup_scripts:40_potion_brewing_registry.js in 0.002 s
-[17:58:32] [INFO] Loaded script startup_scripts:00_globals/20_progression_catalogues.js in 0.001 s
-[17:58:32] [INFO] Loaded 9/9 KubeJS startup scripts in 0.277 s with 0 errors and 0 warnings
-[17:58:32] [INFO] 10_items_blocks/10_thats_crate_registry.js#128: [crates] registry bases=16
-[17:58:38] [INFO] 40_potion_brewing_registry.js#24: Removed potion brewing recipe: minecraft:water + {"item":"minecraft:nether_wart"} -> minecraft:awkward
-[17:58:38] [INFO] 40_potion_brewing_registry.js#26: Removed potion brewing recipe: minecraft:awkward + {"item":"minecraft:sugar"} -> minecraft:swiftness
-[17:58:38] [INFO] 40_potion_brewing_registry.js#26: Removed potion brewing recipe: minecraft:awkward + {"item":"minecraft:golden_carrot"} -> minecraft:night_vision
-[17:58:38] [INFO] 40_potion_brewing_registry.js#26: Removed potion brewing recipe: minecraft:awkward + {"item":"minecraft:pufferfish"} -> minecraft:water_breathing
-[17:58:38] [INFO] 40_potion_brewing_registry.js#26: Removed potion brewing recipe: minecraft:awkward + {"item":"minecraft:magma_cream"} -> minecraft:fire_resistance
-[17:58:38] [INFO] 40_potion_brewing_registry.js#26: Removed potion brewing recipe: minecraft:awkward + {"item":"minecraft:ghast_tear"} -> minecraft:regeneration
-[17:58:38] [INFO] 40_potion_brewing_registry.js#26: Removed potion brewing recipe: minecraft:awkward + {"item":"minecraft:blaze_powder"} -> minecraft:strength
-[17:58:38] [INFO] 40_potion_brewing_registry.js#26: Removed potion brewing recipe: minecraft:awkward + {"item":"minecraft:spider_eye"} -> minecraft:poison
-[17:58:38] [INFO] 40_potion_brewing_registry.js#26: Removed potion brewing recipe: minecraft:awkward + {"item":"minecraft:rabbit_foot"} -> minecraft:leaping
-[17:58:38] [INFO] 40_potion_brewing_registry.js#26: Removed potion brewing recipe: minecraft:awkward + {"item":"minecraft:glistering_melon_slice"} -> minecraft:healing
-[17:58:38] [INFO] 40_potion_brewing_registry.js#26: Removed potion brewing recipe: minecraft:awkward + {"item":"minecraft:phantom_membrane"} -> minecraft:slow_falling
-[17:58:38] [INFO] 40_potion_brewing_registry.js#26: Removed potion brewing recipe: minecraft:awkward + {"item":"minecraft:turtle_helmet"} -> minecraft:turtle_master
-[17:58:38] [INFO] 40_potion_brewing_registry.js#41: Removed potion brewing recipe: minecraft:water + {"item":"minecraft:fermented_spider_eye"} -> minecraft:weakness
-[17:58:38] [INFO] 40_potion_brewing_registry.js#41: Removed potion brewing recipe: minecraft:night_vision + {"item":"minecraft:fermented_spider_eye"} -> minecraft:invisibility
-[17:58:38] [INFO] 40_potion_brewing_registry.js#41: Removed potion brewing recipe: minecraft:swiftness + {"item":"minecraft:fermented_spider_eye"} -> minecraft:slowness
-[17:58:38] [INFO] 40_potion_brewing_registry.js#41: Removed potion brewing recipe: minecraft:leaping + {"item":"minecraft:fermented_spider_eye"} -> minecraft:slowness
-[17:58:38] [INFO] 40_potion_brewing_registry.js#41: Removed potion brewing recipe: minecraft:healing + {"item":"minecraft:fermented_spider_eye"} -> minecraft:harming
-[17:58:38] [INFO] 40_potion_brewing_registry.js#41: Removed potion brewing recipe: minecraft:poison + {"item":"minecraft:fermented_spider_eye"} -> minecraft:harming
-[17:58:39] [INFO] 10_items_blocks/10_thats_crate_registry.js#119: [crates] postInit bases=16
+[15:10:08] [INIT] KubeJS 2001.6.5-build.16; MC 2001 forge
+[15:10:08] [INIT] Loaded plugins:
+[15:10:08] [INIT] - dev.latvian.mods.kubejs.forge.BuiltinKubeJSForgePlugin
+[15:10:08] [INIT] - com.almostreliable.morejs.Plugin
+[15:10:08] [INIT] - com.example.rpgstats.kubejs.RpgStatsKubePlugin
+[15:10:08] [INIT] - com.jesz.createdieselgenerators.compat.kubejs.CDGKubeJSPlugin
+[15:10:08] [INIT] - io.github.mortuusars.wares.integration.kubejs.WaresKubeJSPlugin
+[15:10:08] [INIT] - com.almostreliable.lootjs.kube.LootJSPlugin
+[15:10:08] [INIT] - com.gerald.acidvat.compat.kubejs.AcidVatKubeJSPlugin
+[15:10:08] [INIT] - net.cathienova.kubejsbloodmagic.KubeJSBloodMagicPlugin
+[15:10:08] [INIT] - dev.latvian.mods.kubejs.create.KubeJSCreatePlugin
+[15:10:08] [INIT] - com.momosoftworks.coldsweat.compat.kubejs.KubePlugin
+[15:10:09] [INFO] Loaded script startup_scripts:00_globals/20_progression_catalogues.js in 0.062 s
+[15:10:09] [INFO] 10_items_blocks/10_thats_crate_registry.js#28: Loaded Java class 'java.math.BigInteger'
+[15:10:09] [INFO] Loaded script startup_scripts:10_items_blocks/10_thats_crate_registry.js in 0.01 s
+[15:10:09] [INFO] Loaded script startup_scripts:10_items_blocks/20_triple_flint_durability.js in 0.001 s
+[15:10:09] [INFO] Loaded script startup_scripts:10_items_blocks/30_progression_items.js in 0.001 s
+[15:10:09] [INFO] Loaded script startup_scripts:20_blocks/10_ae2_skystone_hardness.js in 0.0 s
+[15:10:09] [INFO] 20_globals/10_immobile_spawn.js#4: [no_moving_spawn] registering PlayerSetSpawnEvent cancel
+[15:10:09] [INFO] Loaded script startup_scripts:20_globals/10_immobile_spawn.js in 0.001 s
+[15:10:09] [INFO] Loaded script startup_scripts:20_globals/30_blood_heart_types.js in 0.001 s
+[15:10:09] [INFO] Loaded script startup_scripts:30_hide_vanilla_tools_from_creative.js in 0.001 s
+[15:10:09] [INFO] 40_potion_brewing_registry.js#4: Loaded Java class 'net.minecraft.world.item.alchemy.Potions'
+[15:10:09] [INFO] Loaded script startup_scripts:40_potion_brewing_registry.js in 0.002 s
+[15:10:09] [INFO] Loaded 9/9 KubeJS startup scripts in 0.479 s with 0 errors and 0 warnings
+[15:10:09] [INFO] 10_items_blocks/10_thats_crate_registry.js#128: [crates] registry bases=16
+[15:10:15] [INFO] 40_potion_brewing_registry.js#24: Removed potion brewing recipe: minecraft:water + {"item":"minecraft:nether_wart"} -> minecraft:awkward
+[15:10:15] [INFO] 40_potion_brewing_registry.js#26: Removed potion brewing recipe: minecraft:awkward + {"item":"minecraft:sugar"} -> minecraft:swiftness
+[15:10:15] [INFO] 40_potion_brewing_registry.js#26: Removed potion brewing recipe: minecraft:awkward + {"item":"minecraft:golden_carrot"} -> minecraft:night_vision
+[15:10:15] [INFO] 40_potion_brewing_registry.js#26: Removed potion brewing recipe: minecraft:awkward + {"item":"minecraft:pufferfish"} -> minecraft:water_breathing
+[15:10:15] [INFO] 40_potion_brewing_registry.js#26: Removed potion brewing recipe: minecraft:awkward + {"item":"minecraft:magma_cream"} -> minecraft:fire_resistance
+[15:10:15] [INFO] 40_potion_brewing_registry.js#26: Removed potion brewing recipe: minecraft:awkward + {"item":"minecraft:ghast_tear"} -> minecraft:regeneration
+[15:10:15] [INFO] 40_potion_brewing_registry.js#26: Removed potion brewing recipe: minecraft:awkward + {"item":"minecraft:blaze_powder"} -> minecraft:strength
+[15:10:15] [INFO] 40_potion_brewing_registry.js#26: Removed potion brewing recipe: minecraft:awkward + {"item":"minecraft:spider_eye"} -> minecraft:poison
+[15:10:15] [INFO] 40_potion_brewing_registry.js#26: Removed potion brewing recipe: minecraft:awkward + {"item":"minecraft:rabbit_foot"} -> minecraft:leaping
+[15:10:15] [INFO] 40_potion_brewing_registry.js#26: Removed potion brewing recipe: minecraft:awkward + {"item":"minecraft:glistering_melon_slice"} -> minecraft:healing
+[15:10:15] [INFO] 40_potion_brewing_registry.js#26: Removed potion brewing recipe: minecraft:awkward + {"item":"minecraft:phantom_membrane"} -> minecraft:slow_falling
+[15:10:15] [INFO] 40_potion_brewing_registry.js#26: Removed potion brewing recipe: minecraft:awkward + {"item":"minecraft:turtle_helmet"} -> minecraft:turtle_master
+[15:10:15] [INFO] 40_potion_brewing_registry.js#41: Removed potion brewing recipe: minecraft:water + {"item":"minecraft:fermented_spider_eye"} -> minecraft:weakness
+[15:10:15] [INFO] 40_potion_brewing_registry.js#41: Removed potion brewing recipe: minecraft:night_vision + {"item":"minecraft:fermented_spider_eye"} -> minecraft:invisibility
+[15:10:15] [INFO] 40_potion_brewing_registry.js#41: Removed potion brewing recipe: minecraft:swiftness + {"item":"minecraft:fermented_spider_eye"} -> minecraft:slowness
+[15:10:15] [INFO] 40_potion_brewing_registry.js#41: Removed potion brewing recipe: minecraft:leaping + {"item":"minecraft:fermented_spider_eye"} -> minecraft:slowness
+[15:10:15] [INFO] 40_potion_brewing_registry.js#41: Removed potion brewing recipe: minecraft:healing + {"item":"minecraft:fermented_spider_eye"} -> minecraft:harming
+[15:10:15] [INFO] 40_potion_brewing_registry.js#41: Removed potion brewing recipe: minecraft:poison + {"item":"minecraft:fermented_spider_eye"} -> minecraft:harming
+[15:10:15] [INFO] 10_items_blocks/10_thats_crate_registry.js#119: [crates] postInit bases=16

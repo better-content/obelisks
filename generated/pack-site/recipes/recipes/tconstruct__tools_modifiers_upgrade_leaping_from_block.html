@@ -1,0 +1,48 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>tconstruct:tools/modifiers/upgrade/leaping_from_block</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>tconstruct:tools/modifiers/upgrade/leaping_from_block</h1>
+<p><b>Type:</b> tconstruct:multilevel_incremental_modifier | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<p><em>None.</em></p>
+<h2>Outputs</h2>
+<ul><li><a href="../items/tconstruct__leaping.html">tconstruct:leaping</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: null
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;allow_crystal&quot;: false,
+  &quot;amount_per_item&quot;: 4,
+  &quot;input&quot;: {
+    &quot;item&quot;: &quot;tconstruct:sky_slime_crystal_block&quot;
+  },
+  &quot;leftover&quot;: &quot;tconstruct:sky_slime_crystal&quot;,
+  &quot;levels&quot;: [
+    {
+      &quot;level&quot;: 1,
+      &quot;slots&quot;: {
+        &quot;upgrades&quot;: 1
+      }
+    },
+    {
+      &quot;level&quot;: 2,
+      &quot;slots&quot;: {
+        &quot;abilities&quot;: 1
+      }
+    }
+  ],
+  &quot;needed_per_level&quot;: 36,
+  &quot;result&quot;: &quot;tconstruct:leaping&quot;,
+  &quot;tools&quot;: {
+    &quot;tag&quot;: &quot;tconstruct:modifiable/armor/leggings&quot;
+  },
+  &quot;type&quot;: &quot;tconstruct:multilevel_incremental_modifier&quot;
+}</pre></main></body></html>

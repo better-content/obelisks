@@ -1,0 +1,117 @@
+179694:
+
+Total Usage - 3426 loaders, 142527 classes:
+  Non-Class: 21898 chunks,   447.54 MB capacity,  447.42 MB (>99%) committed,   444.85 MB (>99%) used,     2.55 MB ( <1%) free,    21.16 KB ( <1%) waste , deallocated: 2278 blocks with 557.70 KB
+      Class: 9129 chunks,    113.19 MB capacity,  113.19 MB (100%) committed,   111.23 MB ( 98%) used,     1.96 MB (  2%) free,     1.16 KB ( <1%) waste , deallocated: 5129 blocks with 1.31 MB
+       Both: 31027 chunks,   560.74 MB capacity,  560.61 MB (>99%) committed,   556.08 MB (>99%) used,     4.51 MB ( <1%) free,    22.32 KB ( <1%) waste , deallocated: 7407 blocks with 1.85 MB
+
+
+Virtual space:
+  Non-class space:      448.00 MB reserved,     447.44 MB (>99%) committed,  7 nodes.
+      Class space:        1.00 GB reserved,     113.25 MB ( 11%) committed,  1 nodes.
+             Both:        1.44 GB reserved,     560.69 MB ( 38%) committed. 
+
+
+Chunk freelists:
+   Non-Class:
+
+ 16m: (none)
+  8m: (none)
+  4m: (none)
+  2m: (none)
+  1m: (none)
+512k: (none)
+256k:    2, capacity=512.00 KB, committed=0 bytes (  0%)
+128k:    2, capacity=256.00 KB, committed=0 bytes (  0%)
+ 64k:    2, capacity=128.00 KB, committed=0 bytes (  0%)
+ 32k: (none)
+ 16k: (none)
+  8k: (none)
+  4k: (none)
+  2k:    8, capacity=16.00 KB, committed=16.00 KB (100%)
+  1k:   20, capacity=20.00 KB, committed=20.00 KB (100%)
+Total word size: 932.00 KB, committed: 36.00 KB (  4%)
+
+       Class:
+
+ 16m: (none)
+  8m:    1, capacity=8.00 MB, committed=0 bytes (  0%)
+  4m:    1, capacity=4.00 MB, committed=0 bytes (  0%)
+  2m:    1, capacity=2.00 MB, committed=0 bytes (  0%)
+  1m: (none)
+512k:    1, capacity=512.00 KB, committed=0 bytes (  0%)
+256k:    1, capacity=256.00 KB, committed=0 bytes (  0%)
+128k: (none)
+ 64k: (none)
+ 32k:    1, capacity=32.00 KB, committed=0 bytes (  0%)
+ 16k: (none)
+  8k:    1, capacity=8.00 KB, committed=0 bytes (  0%)
+  4k:    1, capacity=4.00 KB, committed=0 bytes (  0%)
+  2k:    3, capacity=6.00 KB, committed=4.00 KB ( 67%)
+  1k:    9, capacity=9.00 KB, committed=9.00 KB (100%)
+Total word size: 14.81 MB, committed: 13.00 KB ( <1%)
+
+        Both:
+
+ 16m: (none)
+  8m:    1, capacity=8.00 MB, committed=0 bytes (  0%)
+  4m:    1, capacity=4.00 MB, committed=0 bytes (  0%)
+  2m:    1, capacity=2.00 MB, committed=0 bytes (  0%)
+  1m: (none)
+512k:    1, capacity=512.00 KB, committed=0 bytes (  0%)
+256k:    3, capacity=768.00 KB, committed=0 bytes (  0%)
+128k:    2, capacity=256.00 KB, committed=0 bytes (  0%)
+ 64k:    2, capacity=128.00 KB, committed=0 bytes (  0%)
+ 32k:    1, capacity=32.00 KB, committed=0 bytes (  0%)
+ 16k: (none)
+  8k:    1, capacity=8.00 KB, committed=0 bytes (  0%)
+  4k:    1, capacity=4.00 KB, committed=0 bytes (  0%)
+  2k:   11, capacity=22.00 KB, committed=20.00 KB ( 91%)
+  1k:   29, capacity=29.00 KB, committed=29.00 KB (100%)
+Total word size: 15.72 MB, committed: 49.00 KB ( <1%)
+
+
+
+Waste (unused committed space):(percentages refer to total committed size 560.69 MB):
+        Waste in chunks in use:     22.32 KB ( <1%)
+        Free in chunks in use:      4.51 MB ( <1%)
+                In free chunks:     49.00 KB ( <1%)
+Deallocated from chunks in use:      1.85 MB ( <1%) (7407 blocks)
+                       -total-:      6.43 MB (  1%)
+
+chunk header pool: 31065 items, 2.14 MB.
+
+Internal statistics:
+
+num_allocs_failed_limit: 655.
+num_arena_births: 6880.
+num_arena_deaths: 28.
+num_vsnodes_births: 8.
+num_vsnodes_deaths: 0.
+num_space_committed: 8962.
+num_space_uncommitted: 0.
+num_chunks_returned_to_freelist: 691.
+num_chunks_taken_from_freelist: 31064.
+num_chunk_merges: 651.
+num_chunk_splits: 22298.
+num_chunks_enlarged: 16308.
+num_inconsistent_stats: 0.
+
+
+Settings:
+MaxMetaspaceSize: unlimited
+CompressedClassSpaceSize: 1.00 GB
+Initial GC threshold: 21.00 MB
+Current GC threshold: 934.50 MB
+CDS: off
+MetaspaceReclaimPolicy: balanced
+ - commit_granule_bytes: 65536.
+ - commit_granule_words: 8192.
+ - virtual_space_node_default_size: 8388608.
+ - enlarge_chunks_in_place: 1.
+ - new_chunks_are_fully_committed: 0.
+ - uncommit_free_chunks: 1.
+ - use_allocation_guard: 0.
+ - handle_deallocations: 1.
+
+

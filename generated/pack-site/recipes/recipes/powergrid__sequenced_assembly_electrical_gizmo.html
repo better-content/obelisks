@@ -1,0 +1,122 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>powergrid:sequenced_assembly/electrical_gizmo</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>powergrid:sequenced_assembly/electrical_gizmo</h1>
+<p><b>Type:</b> create:sequenced_assembly | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../tags/forge__plates_zinc.html">#forge:plates/zinc</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/powergrid__electrical_gizmo.html">powergrid:electrical_gizmo</a></li><li><a href="../items/chemlib__zinc_plate.html">chemlib:zinc_plate</a></li><li><a href="../items/create__polished_rose_quartz.html">create:polished_rose_quartz</a></li><li><a href="../items/minecraft__gold_nugget.html">minecraft:gold_nugget</a></li><li><a href="../items/create__copper_nugget.html">create:copper_nugget</a></li><li><a href="../items/minecraft__repeater.html">minecraft:repeater</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: null
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;ingredient&quot;: {
+    &quot;tag&quot;: &quot;forge:plates/zinc&quot;
+  },
+  &quot;loops&quot;: 1,
+  &quot;results&quot;: [
+    {
+      &quot;chance&quot;: 100,
+      &quot;item&quot;: &quot;powergrid:electrical_gizmo&quot;
+    },
+    {
+      &quot;chance&quot;: 7,
+      &quot;item&quot;: &quot;chemlib:zinc_plate&quot;
+    },
+    {
+      &quot;chance&quot;: 5,
+      &quot;item&quot;: &quot;create:polished_rose_quartz&quot;
+    },
+    {
+      &quot;chance&quot;: 3,
+      &quot;item&quot;: &quot;minecraft:gold_nugget&quot;
+    },
+    {
+      &quot;chance&quot;: 2,
+      &quot;item&quot;: &quot;create:copper_nugget&quot;
+    },
+    {
+      &quot;chance&quot;: 3,
+      &quot;item&quot;: &quot;minecraft:repeater&quot;
+    }
+  ],
+  &quot;sequence&quot;: [
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;powergrid:incomplete_electrical_gizmo&quot;
+        },
+        {
+          &quot;tag&quot;: &quot;forge:copper_coils&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;powergrid:incomplete_electrical_gizmo&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:deploying&quot;
+    },
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;powergrid:incomplete_electrical_gizmo&quot;
+        },
+        {
+          &quot;item&quot;: &quot;create:electron_tube&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;powergrid:incomplete_electrical_gizmo&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:deploying&quot;
+    },
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;powergrid:incomplete_electrical_gizmo&quot;
+        },
+        {
+          &quot;item&quot;: &quot;powergrid:integrated_circuit&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;powergrid:incomplete_electrical_gizmo&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:deploying&quot;
+    },
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;powergrid:incomplete_electrical_gizmo&quot;
+        },
+        {
+          &quot;item&quot;: &quot;minecraft:gold_nugget&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;powergrid:incomplete_electrical_gizmo&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:deploying&quot;
+    }
+  ],
+  &quot;transitionalItem&quot;: {
+    &quot;item&quot;: &quot;powergrid:incomplete_electrical_gizmo&quot;
+  },
+  &quot;type&quot;: &quot;create:sequenced_assembly&quot;
+}</pre></main></body></html>

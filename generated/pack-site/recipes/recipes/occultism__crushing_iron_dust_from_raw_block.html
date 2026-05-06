@@ -1,0 +1,48 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>occultism:crushing/iron_dust_from_raw_block</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>occultism:crushing/iron_dust_from_raw_block</h1>
+<p><b>Type:</b> occultism:crushing | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../tags/forge__storage_blocks_raw_iron.html">#forge:storage_blocks/raw_iron</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/chemlib__iron_dust.html">chemlib:iron_dust</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: null
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;conditions&quot;: [
+    {
+      &quot;type&quot;: &quot;forge:not&quot;,
+      &quot;value&quot;: {
+        &quot;tag&quot;: &quot;forge:dusts/iron&quot;,
+        &quot;type&quot;: &quot;forge:tag_empty&quot;
+      }
+    },
+    {
+      &quot;type&quot;: &quot;forge:not&quot;,
+      &quot;value&quot;: {
+        &quot;tag&quot;: &quot;forge:storage_blocks/raw_iron&quot;,
+        &quot;type&quot;: &quot;forge:tag_empty&quot;
+      }
+    }
+  ],
+  &quot;crushing_time&quot;: 200,
+  &quot;ignore_crushing_multiplier&quot;: false,
+  &quot;ingredient&quot;: {
+    &quot;tag&quot;: &quot;forge:storage_blocks/raw_iron&quot;
+  },
+  &quot;result&quot;: {
+    &quot;count&quot;: 18,
+    &quot;item&quot;: &quot;chemlib:iron_dust&quot;
+  },
+  &quot;type&quot;: &quot;occultism:crushing&quot;
+}</pre></main></body></html>

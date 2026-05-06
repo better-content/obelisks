@@ -149,8 +149,22 @@ ServerEvents.recipes(function (event) {
         'littlelogistics:transmitter_component'
     ], ['minecraft:redstone', '#forge:dusts/redstone', 'minecraft:iron_ingot', '#forge:ingots/iron', 'minecraft:copper_ingot', '#forge:ingots/copper'], BTM_GATE.power)
 
+    // AOE villager trading is too strong for the early village economy.
+    // PROVISIONAL - requires playtesting.
+    event.remove({ output: 'tradingpost:trading_post' })
+    event.shaped('tradingpost:trading_post', [
+        'GEG',
+        'PAP',
+        'WWW'
+    ], {
+        G: 'dotcoinmod:gold_coin',
+        E: 'ae2:engineering_processor',
+        P: 'pneumaticcraft:printed_circuit_board',
+        A: BTM_GATE.ae2,
+        W: '#minecraft:planks'
+    }).id('kubejs:late_game/tradingpost/trading_post')
+
     // Economy tools use coins instead of emeralds where there is a clear recipe hook.
-    btmReplaceInputs(event, 'tradingpost:trading_post', ['minecraft:emerald'], 'dotcoinmod:copper_coin')
     btmReplaceInputs(event, 'wares:delivery_table', ['minecraft:ink_sac'], 'dotcoinmod:iron_coin')
 
     // Create Enchantment Industry and Apotheosis are combat/adventure power spikes; parent them to Blood Magic tiers.

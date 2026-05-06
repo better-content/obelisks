@@ -1,0 +1,113 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>create_connected:sequenced_assembly/control_chip</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>create_connected:sequenced_assembly/control_chip</h1>
+<p><b>Type:</b> create:sequenced_assembly | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../tags/forge__plates_gold.html">#forge:plates/gold</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/create_connected__control_chip.html">create_connected:control_chip</a></li><li><a href="../items/minecraft__redstone.html">minecraft:redstone</a></li><li><a href="../items/create__electron_tube.html">create:electron_tube</a></li><li><a href="../items/chemlib__gold_plate.html">chemlib:gold_plate</a></li><li><a href="../items/minecraft__gold_nugget.html">minecraft:gold_nugget</a></li><li><a href="../items/chemlib__iron_plate.html">chemlib:iron_plate</a></li><li><a href="../items/create__crushed_raw_gold.html">create:crushed_raw_gold</a></li><li><a href="../items/minecraft__quartz.html">minecraft:quartz</a></li><li><a href="../items/minecraft__compass.html">minecraft:compass</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: null
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;ingredient&quot;: {
+    &quot;tag&quot;: &quot;forge:plates/gold&quot;
+  },
+  &quot;loops&quot;: 3,
+  &quot;results&quot;: [
+    {
+      &quot;chance&quot;: 120,
+      &quot;item&quot;: &quot;create_connected:control_chip&quot;
+    },
+    {
+      &quot;chance&quot;: 8,
+      &quot;item&quot;: &quot;minecraft:redstone&quot;
+    },
+    {
+      &quot;chance&quot;: 8,
+      &quot;item&quot;: &quot;create:electron_tube&quot;
+    },
+    {
+      &quot;chance&quot;: 5,
+      &quot;item&quot;: &quot;chemlib:gold_plate&quot;
+    },
+    {
+      &quot;chance&quot;: 3,
+      &quot;item&quot;: &quot;minecraft:gold_nugget&quot;
+    },
+    {
+      &quot;chance&quot;: 2,
+      &quot;item&quot;: &quot;chemlib:iron_plate&quot;
+    },
+    {
+      &quot;chance&quot;: 2,
+      &quot;item&quot;: &quot;create:crushed_raw_gold&quot;
+    },
+    {
+      &quot;item&quot;: &quot;minecraft:quartz&quot;
+    },
+    {
+      &quot;item&quot;: &quot;minecraft:compass&quot;
+    }
+  ],
+  &quot;sequence&quot;: [
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;create_connected:incomplete_control_chip&quot;
+        },
+        {
+          &quot;item&quot;: &quot;create:electron_tube&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;create_connected:incomplete_control_chip&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:deploying&quot;
+    },
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;create_connected:incomplete_control_chip&quot;
+        },
+        {
+          &quot;item&quot;: &quot;minecraft:redstone&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;create_connected:incomplete_control_chip&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:deploying&quot;
+    },
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;create_connected:incomplete_control_chip&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;create_connected:incomplete_control_chip&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:pressing&quot;
+    }
+  ],
+  &quot;transitionalItem&quot;: {
+    &quot;item&quot;: &quot;create_connected:incomplete_control_chip&quot;
+  },
+  &quot;type&quot;: &quot;create:sequenced_assembly&quot;
+}</pre></main></body></html>

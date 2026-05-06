@@ -1,5 +1,5 @@
-// kubejs/server_scripts/unearthed_tags.js
+// kubejs/server_scripts/hyle_tags.js
 
 ServerEvents.tags('block', event => {
-    event.add('unearthed:replaceable', 'minecraft:deepslate')
+    event.add('hyle:replaceable', 'minecraft:deepslate')
 })

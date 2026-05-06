@@ -1,0 +1,4122 @@
+{
+  "server_mod_jar_count": 288,
+  "server_only_jar_count": 0,
+  "live_only_jar_count": 13,
+  "keep_jar_count": 162,
+  "disable_jar_count": 126,
+  "target_fraction": 0.5,
+  "forced_keep_mod_ids": [
+    "acid_vat",
+    "additionalweaponry",
+    "adpother",
+    "advanced_ae",
+    "ae2",
+    "ae2additions",
+    "ae2things",
+    "aether",
+    "alchemistry",
+    "alekiships",
+    "apotheosis",
+    "apotheotic_additions",
+    "ars_nouveau",
+    "artifacts",
+    "bloodmagic",
+    "blue_skies",
+    "blueprint",
+    "botania",
+    "brewinandchewin",
+    "btmfixes",
+    "buildinggadgets2",
+    "c2me",
+    "chemlib",
+    "classselector",
+    "cold_sweat",
+    "collectorsreap",
+    "computerbridge",
+    "corn_delight",
+    "create",
+    "create_central_kitchen",
+    "create_connected",
+    "create_enchantment_industry",
+    "create_more_additions",
+    "create_new_age",
+    "create_power_loader",
+    "create_sa",
+    "create_things_and_misc",
+    "createadditionallogistics",
+    "createadvlogistics",
+    "createappliedkinetics",
+    "createdieselgenerators",
+    "createmoredrillheads",
+    "creatingspace",
+    "cursedbiomes",
+    "deeperdarker",
+    "delightful",
+    "dotcoinmod",
+    "dtmalum",
+    "dynamictrees",
+    "ends_delight",
+    "enhancedai",
+    "expatternprovider",
+    "fallout_wastelands_",
+    "farmersdelight",
+    "farmersrespite",
+    "fission_reactor",
+    "framedblocks",
+    "ftblibrary",
+    "ftbquests",
+    "ftbteams",
+    "gases_and_plasmas",
+    "golemoverhaul",
+    "heatsync",
+    "hyle",
+    "iceandfire",
+    "immersive_weathering",
+    "jsonthings",
+    "kubejs",
+    "kubejs_create",
+    "kubejsbloodmagic",
+    "liquid_coolant",
+    "littlelogistics",
+    "lootjs",
+    "lostcities",
+    "malum",
+    "mantle",
+    "merequester",
+    "morejs",
+    "mynethersdelight",
+    "natures_spirit",
+    "naturescompass",
+    "notreepunching",
+    "obelisks",
+    "oc2r",
+    "occultism",
+    "oceansdelight",
+    "patchouli",
+    "pillagercampaigns",
+    "pneumaticcraft",
+    "powergrid",
+    "procedural_bouquets",
+    "protection_pixel",
+    "railways",
+    "realisticores",
+    "rehooked",
+    "relics",
+    "reliquary",
+    "rhino",
+    "rpgstats",
+    "rusticdelight",
+    "savage_and_ravage",
+    "sereneseasons",
+    "settlementroads",
+    "sophisticatedbackpacks",
+    "sophisticatedstorage",
+    "sophisticatedstorageinmotion",
+    "staaaaaaaaaaaack",
+    "starcatcher",
+    "supplementaries",
+    "takesapillage",
+    "tconstruct",
+    "terrablender",
+    "the_finley_dimension_remastered",
+    "theoneprobe",
+    "theurgy",
+    "thirst",
+    "ticex",
+    "tinkers_advanced",
+    "tinkers_battle_spades",
+    "tinkersweaponry",
+    "tntutils",
+    "tomeofblood",
+    "tradingpost",
+    "transmissionloss",
+    "twilightforest",
+    "ubesdelight",
+    "undergarden",
+    "undergardendelight",
+    "unearthed",
+    "veggiesdelight",
+    "villagewalls",
+    "wands",
+    "wares",
+    "weather2"
+  ],
+  "script_referenced_mod_ids_present": [
+    "acid_vat",
+    "additionalweaponry",
+    "adpother",
+    "advanced_ae",
+    "ae2",
+    "ae2additions",
+    "ae2things",
+    "aether",
+    "alchemistry",
+    "alekiships",
+    "apotheosis",
+    "apotheotic_additions",
+    "ars_nouveau",
+    "artifacts",
+    "bloodmagic",
+    "blue_skies",
+    "blueprint",
+    "botania",
+    "brewinandchewin",
+    "buildinggadgets2",
+    "chemlib",
+    "cold_sweat",
+    "collectorsreap",
+    "corn_delight",
+    "create",
+    "create_central_kitchen",
+    "create_connected",
+    "create_enchantment_industry",
+    "create_more_additions",
+    "create_new_age",
+    "create_power_loader",
+    "create_sa",
+    "create_things_and_misc",
+    "createadditionallogistics",
+    "createadvlogistics",
+    "createappliedkinetics",
+    "createdieselgenerators",
+    "createmoredrillheads",
+    "creatingspace",
+    "deeperdarker",
+    "delightful",
+    "dotcoinmod",
+    "dynamictrees",
+    "ends_delight",
+    "enhancedai",
+    "expatternprovider",
+    "fallout_wastelands_",
+    "farmersdelight",
+    "farmersrespite",
+    "fission_reactor",
+    "framedblocks",
+    "ftbquests",
+    "gases_and_plasmas",
+    "golemoverhaul",
+    "hyle",
+    "iceandfire",
+    "immersive_weathering",
+    "kubejs",
+    "liquid_coolant",
+    "littlelogistics",
+    "lootjs",
+    "lostcities",
+    "malum",
+    "mantle",
+    "merequester",
+    "morejs",
+    "mynethersdelight",
+    "natures_spirit",
+    "naturescompass",
+    "notreepunching",
+    "oc2r",
+    "occultism",
+    "oceansdelight",
+    "patchouli",
+    "pneumaticcraft",
+    "powergrid",
+    "procedural_bouquets",
+    "protection_pixel",
+    "railways",
+    "realisticores",
+    "rehooked",
+    "relics",
+    "reliquary",
+    "rpgstats",
+    "rusticdelight",
+    "savage_and_ravage",
+    "sereneseasons",
+    "sophisticatedbackpacks",
+    "sophisticatedstorage",
+    "sophisticatedstorageinmotion",
+    "staaaaaaaaaaaack",
+    "starcatcher",
+    "supplementaries",
+    "takesapillage",
+    "tconstruct",
+    "terrablender",
+    "the_finley_dimension_remastered",
+    "theoneprobe",
+    "theurgy",
+    "thirst",
+    "ticex",
+    "tinkers_advanced",
+    "tinkers_battle_spades",
+    "tinkersweaponry",
+    "tntutils",
+    "tomeofblood",
+    "tradingpost",
+    "twilightforest",
+    "ubesdelight",
+    "undergarden",
+    "undergardendelight",
+    "unearthed",
+    "veggiesdelight",
+    "wands",
+    "wares",
+    "weather2"
+  ],
+  "script_reference_evidence": {
+    "minecraft": [
+      "config/DistantHorizons.toml",
+      "config/Weather2/Misc.toml",
+      "config/Weather2/Tornado.toml",
+      "config/adlods/Deposits/aluminum.cfg",
+      "config/adlods/Deposits/amethyst.cfg",
+      "config/adlods/Deposits/ancient_debris.cfg",
+      "config/adlods/Deposits/coal.cfg",
+      "config/adlods/Deposits/cobalt.cfg",
+      "config/adlods/Deposits/copper.cfg",
+      "config/adlods/Deposits/diamond.cfg",
+      "config/adlods/Deposits/emerald.cfg",
+      "config/adlods/Deposits/gas_pocket.cfg",
+      "config/adlods/Deposits/gold.cfg",
+      "config/adlods/Deposits/iridium.cfg",
+      "config/adlods/Deposits/iron.cfg",
+      "config/adlods/Deposits/lapis.cfg",
+      "config/adlods/Deposits/lead.cfg",
+      "config/adlods/Deposits/magnetite.cfg",
+      "config/adlods/Deposits/nether_gold.cfg",
+      "config/adlods/Deposits/nether_quartz.cfg"
+    ],
+    "kubejs": [
+      "config/ftbquests/quests/chapters/ae2.snbt",
+      "config/ftbquests/quests/chapters/brewing.snbt",
+      "config/ftbquests/quests/chapters/create_brass_automation.snbt",
+      "config/ftbquests/quests/chapters/create_components.snbt",
+      "config/ftbquests/quests/chapters/death.snbt",
+      "config/ftbquests/quests/chapters/fission_fusion.snbt",
+      "config/ftbquests/quests/chapters/food_i.snbt",
+      "config/ftbquests/quests/chapters/grid_power.snbt",
+      "config/ftbquests/quests/chapters/major_gates.snbt",
+      "config/ftbquests/quests/chapters/oc2r.snbt",
+      "config/ftbquests/quests/chapters/potion_engineering.snbt",
+      "config/ftbquests/quests/chapters/space.snbt",
+      "config/ftbquests/quests/chapters/tinkers_i.snbt",
+      "config/ftbquests/quests/chapters/tinkers_ii.snbt",
+      "kubejs/client_scripts/10_blood_orb_heart_requirements_tooltips.js",
+      "kubejs/server_scripts/10_tags/40_dirt_grass_compat.js",
+      "kubejs/server_scripts/10_tags/60_realistic_ores_deposit_tags.js",
+      "kubejs/server_scripts/30_recipe_replace/100_high_value_mod_progression_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/110_extreme_y_band_reward_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/115_material_economy_recipe_pass.js"
+    ],
+    "morejs": [
+      "kubejs/server_scripts/35_villager_trades/10_coin_villager_trades.js",
+      "kubejs/startup_scripts/40_potion_brewing_registry.js"
+    ],
+    "forge": [
+      "config/adchimneys/Emitters/bakery$brick_stove.cfg",
+      "config/adchimneys/Emitters/bakery$cobblestone_stove.cfg",
+      "config/adchimneys/Emitters/bakery$deepslate_stove.cfg",
+      "config/adchimneys/Emitters/bakery$end_stove.cfg",
+      "config/adchimneys/Emitters/bakery$granite_stove.cfg",
+      "config/adchimneys/Emitters/bakery$mud_stove.cfg",
+      "config/adchimneys/Emitters/bakery$quartz_stove.cfg",
+      "config/adchimneys/Emitters/bakery$red_nether_bricks_stove.cfg",
+      "config/adchimneys/Emitters/bakery$sandstone_stove.cfg",
+      "config/adchimneys/Emitters/bakery$stone_bricks_stove.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$amethyst_forge.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$amethyst_furnace.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$copper_forge.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$copper_furnace.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$diamond_forge.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$diamond_furnace.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$extreme_forge.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$extreme_furnace.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$gold_forge.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$gold_furnace.cfg"
+    ],
+    "notreepunching": [
+      "config/apotheosis/names.cfg",
+      "config/notreepunching.toml",
+      "kubejs/server_scripts/50_loot/30_global_loot_progression_scrub.js",
+      "kubejs/startup_scripts/10_items_blocks/20_triple_flint_durability.js"
+    ],
+    "rpgstats": [
+      "config/ftbquests/quests/chapters/death.snbt",
+      "config/ftbquests/quests/chapters/starting_out.snbt",
+      "kubejs/client_scripts/10_blood_orb_heart_requirements_tooltips.js",
+      "kubejs/startup_scripts/20_globals/30_blood_heart_types.js"
+    ],
+    "bloodmagic": [
+      "config/ftbquests/quests/chapters/death.snbt",
+      "config/ftbquests/quests/chapters/magic_i.snbt",
+      "config/ftbquests/quests/chapters/major_gates.snbt",
+      "kubejs/server_scripts/20_recipe_remove/30_remove_items.js",
+      "kubejs/server_scripts/30_recipe_replace/100_high_value_mod_progression_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/110_extreme_y_band_reward_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/115_material_economy_recipe_pass.js",
+      "kubejs/server_scripts/30_recipe_replace/120_graph_audit_recipe_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/125_magic_power_spike_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/160_ticex_post_ae2_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/165_protection_pixel_post_ae2_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/166_tome_of_blood_post_ae2_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/169_backpack_post_ae2_utility_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/70_kettle_rune_swap.js",
+      "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js",
+      "kubejs/server_scripts/35_villager_trades/10_coin_villager_trades.js",
+      "kubejs/server_scripts/40_recipe_add/40_blood_orbs_from_still_beating_hearts.js",
+      "kubejs/server_scripts/50_loot/30_global_loot_progression_scrub.js",
+      "kubejs/server_scripts/50_loot/40_emerald_loot_coin_replacement.js",
+      "kubejs/server_scripts/90_dev_debug/10_recipe_audit_dumps.js"
+    ],
+    "ae2": [
+      "config/adpother/Biomes/ae2$spatial_storage.cfg",
+      "config/apotheosis/names.cfg",
+      "config/ftbquests/quests/chapters/ae2.snbt",
+      "config/ftbquests/quests/chapters/create_applied_kinetics.snbt",
+      "config/spawnbalanceutility/BiomeMobWeight.csv",
+      "config/spawnbalanceutility/StructMobWeight.rpt",
+      "kubejs/server_scripts/10_tags/10_ae2_skystone_tier.js",
+      "kubejs/server_scripts/30_recipe_replace/100_high_value_mod_progression_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/110_extreme_y_band_reward_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/115_material_economy_recipe_pass.js",
+      "kubejs/server_scripts/30_recipe_replace/120_graph_audit_recipe_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/121_create_stack_integration_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/125_magic_power_spike_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/130_manufactured_plate_recipe_pass.js",
+      "kubejs/server_scripts/30_recipe_replace/135_recipe_graph_closure.js",
+      "kubejs/server_scripts/30_recipe_replace/140_nuclear_synthesis_power_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/160_ticex_post_ae2_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/99_machine_casing_progression.js",
+      "kubejs/server_scripts/35_villager_trades/10_coin_villager_trades.js",
+      "kubejs/server_scripts/50_loot/30_global_loot_progression_scrub.js"
+    ],
+    "dotcoinmod": [
+      "config/ftbquests/quests/chapters/adventuring.snbt",
+      "config/ftbquests/quests/chapters/ae2.snbt",
+      "config/ftbquests/quests/chapters/aether.snbt",
+      "config/ftbquests/quests/chapters/apotheosis.snbt",
+      "config/ftbquests/quests/chapters/ars_nouveau.snbt",
+      "config/ftbquests/quests/chapters/artifacts.snbt",
+      "config/ftbquests/quests/chapters/blue_skies.snbt",
+      "config/ftbquests/quests/chapters/books.snbt",
+      "config/ftbquests/quests/chapters/botania.snbt",
+      "config/ftbquests/quests/chapters/brewing.snbt",
+      "config/ftbquests/quests/chapters/building_block_systems.snbt",
+      "config/ftbquests/quests/chapters/building_tools.snbt",
+      "config/ftbquests/quests/chapters/create_applied_kinetics.snbt",
+      "config/ftbquests/quests/chapters/create_brass_automation.snbt",
+      "config/ftbquests/quests/chapters/create_components.snbt",
+      "config/ftbquests/quests/chapters/create_fluids_and_packages.snbt",
+      "config/ftbquests/quests/chapters/create_foundations.snbt",
+      "config/ftbquests/quests/chapters/create_rail_logistics.snbt",
+      "config/ftbquests/quests/chapters/death.snbt",
+      "config/ftbquests/quests/chapters/deeper_darker.snbt"
+    ],
+    "lootjs": [
+      "kubejs/server_scripts/50_loot/10_overworld_block_drops.js",
+      "kubejs/server_scripts/50_loot/20_world_chest_coin_tiers.js",
+      "kubejs/server_scripts/50_loot/30_global_loot_progression_scrub.js",
+      "kubejs/server_scripts/50_loot/40_emerald_loot_coin_replacement.js",
+      "kubejs/server_scripts/README.md"
+    ],
+    "theabyss": [
+      "kubejs/server_scripts/10_tags/10_ae2_skystone_tier.js"
+    ],
+    "hyle": [
+      "kubejs/server_scripts/10_tags/20_replaceable_deepslate.js"
+    ],
+    "unearthed": [
+      "config/incontrol/spawn.json",
+      "kubejs/server_scripts/10_tags/30_stone_cobble_compat.js",
+      "kubejs/server_scripts/10_tags/40_dirt_grass_compat.js"
+    ],
+    "natures_spirit": [
+      "config/ftbquests/quests/chapters/building_block_systems.snbt",
+      "config/incontrol/spawn.json",
+      "kubejs/server_scripts/10_tags/30_stone_cobble_compat.js",
+      "kubejs/server_scripts/10_tags/40_dirt_grass_compat.js",
+      "kubejs/server_scripts/10_tags/50_sand_compat.js",
+      "kubejs/server_scripts/50_loot/40_emerald_loot_coin_replacement.js"
+    ],
+    "c": [
+      "config/adorablehamsterpets/worldgen.toml",
+      "kubejs/server_scripts/10_tags/30_stone_cobble_compat.js",
+      "kubejs/server_scripts/10_tags/40_dirt_grass_compat.js",
+      "kubejs/server_scripts/10_tags/50_sand_compat.js",
+      "kubejs/server_scripts/30_recipe_replace/50_badfurnace.js",
+      "kubejs/server_scripts/30_recipe_replace/60_vanilla_tools_to_tcon_heads.js"
+    ],
+    "tconstruct": [
+      "config/adchimneys/Emitters/tconstruct$foundry_controller.cfg",
+      "config/adchimneys/Emitters/tconstruct$seared_melter.cfg",
+      "config/adchimneys/Emitters/tconstruct$smeltery_controller.cfg",
+      "config/adpother/Emitters/tconstruct$foundry_controller.cfg",
+      "config/adpother/Emitters/tconstruct$seared_melter.cfg",
+      "config/adpother/Emitters/tconstruct$smeltery_controller.cfg",
+      "config/almostunified/unify.json",
+      "config/class_enhancement.toml",
+      "config/coldsweat/world.toml",
+      "config/ftbquests/quests/chapters/books.snbt",
+      "config/ftbquests/quests/chapters/major_gates.snbt",
+      "config/ftbquests/quests/chapters/starting_out.snbt",
+      "config/ftbquests/quests/chapters/tinkers_arsenal.snbt",
+      "config/ftbquests/quests/chapters/tinkers_i.snbt",
+      "config/ftbquests/quests/chapters/tinkers_ii.snbt",
+      "config/ftbquests/saved/2026-04-25-14-19-15/chapters/starting_out.snbt",
+      "config/incontrol/spawn.json",
+      "config/incontrol/structure.json",
+      "config/tconstruct-common.toml",
+      "config/zombieawareness/MobLists.toml"
+    ],
+    "realisticores": [
+      "config/ftbquests/quests/chapters/create_foundations.snbt",
+      "kubejs/server_scripts/10_tags/60_realistic_ores_deposit_tags.js",
+      "kubejs/server_scripts/40_recipe_add/50_create_deposit_preprocessing.js",
+      "kubejs/server_scripts/40_recipe_add/60_acid_vat_deposit_slurries.js"
+    ],
+    "create": [
+      "config/adchimneys/Emitters/create$blaze_burner.cfg",
+      "config/adchimneys/Emitters/create$lit_blaze_burner.cfg",
+      "config/adpother/Emitters/create$blaze_burner.cfg",
+      "config/adpother/Emitters/create$boiler.cfg",
+      "config/adpother/Emitters/create$crushing_wheel_controller.cfg",
+      "config/adpother/Emitters/create$millstone.cfg",
+      "config/adpother/Respirators/create$copper_diving_helmet.cfg",
+      "config/adpother/Respirators/create$netherite_diving_helmet.cfg",
+      "config/apotheosis/enchantments.cfg",
+      "config/apotheosis/names.cfg",
+      "config/class_enhancement.toml",
+      "config/classselector/kits.json",
+      "config/coldsweat/world.toml",
+      "config/ftbquests/quests/chapters/create_applied_kinetics.snbt",
+      "config/ftbquests/quests/chapters/create_brass_automation.snbt",
+      "config/ftbquests/quests/chapters/create_components.snbt",
+      "config/ftbquests/quests/chapters/create_fluids_and_packages.snbt",
+      "config/ftbquests/quests/chapters/create_foundations.snbt",
+      "config/ftbquests/quests/chapters/create_rail_logistics.snbt",
+      "config/ftbquests/quests/chapters/grid_power.snbt"
+    ],
+    "fallout_wastelands_": [
+      "config/adpother/Biomes/fallout_wastelands_$wasteland_badlands.cfg",
+      "config/adpother/Biomes/fallout_wastelands_$wasteland_city.cfg",
+      "config/adpother/Biomes/fallout_wastelands_$wasteland_dryland.cfg",
+      "config/adpother/Biomes/fallout_wastelands_$wasteland_plains.cfg",
+      "config/adpother/Biomes/fallout_wastelands_$wasteland_sea.cfg",
+      "config/almostunified/unify.json",
+      "config/apotheosis/names.cfg",
+      "config/ftbquests/quests/chapters/fallout_wastelands.snbt",
+      "config/incontrol/spawn.json",
+      "config/incontrol/structure.json",
+      "config/spawnbalanceutility/BiomeMobWeight.csv",
+      "config/spawnbalanceutility/StructMobWeight.rpt",
+      "config/zombieawareness/MobLists.toml",
+      "kubejs/data/fallout_wastelands_/tags/blocks/vaultdoorblock.json",
+      "kubejs/server_scripts/20_recipe_remove/30_remove_items.js",
+      "kubejs/server_scripts/30_recipe_replace/170_space_dimension_access_gates.js"
+    ],
+    "occultism": [
+      "config/ftbquests/quests/chapters/magic_i.snbt",
+      "config/ftbquests/quests/chapters/magic_ii.snbt",
+      "config/ftbquests/quests/chapters/occultism.snbt",
+      "kubejs/client_scripts/40_hide_quarantined_systems.js",
+      "kubejs/server_scripts/20_recipe_remove/30_remove_items.js",
+      "kubejs/server_scripts/30_recipe_replace/100_high_value_mod_progression_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/115_material_economy_recipe_pass.js",
+      "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js"
+    ],
+    "ars_nouveau": [
+      "config/ftbquests/quests/chapters/ars_nouveau.snbt",
+      "config/ftbquests/quests/chapters/magic_i.snbt",
+      "kubejs/server_scripts/20_recipe_remove/30_remove_items.js",
+      "kubejs/server_scripts/30_recipe_replace/115_material_economy_recipe_pass.js",
+      "kubejs/server_scripts/30_recipe_replace/125_magic_power_spike_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/166_tome_of_blood_post_ae2_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/169_backpack_post_ae2_utility_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js",
+      "kubejs/server_scripts/50_loot/30_global_loot_progression_scrub.js",
+      "kubejs/server_scripts/90_dev_debug/10_recipe_audit_dumps.js"
+    ],
+    "alchemistry": [
+      "kubejs/client_scripts/40_hide_quarantined_systems.js",
+      "kubejs/server_scripts/20_recipe_remove/30_remove_items.js",
+      "kubejs/server_scripts/30_recipe_replace/135_recipe_graph_closure.js"
+    ],
+    "sophisticatedbackpacks": [
+      "config/class_enhancement.toml",
+      "config/classselector/kits.json",
+      "config/ftbquests/quests/chapters/post_ae2.snbt",
+      "config/ftbquests/quests/chapters/starting_out.snbt",
+      "config/ftbquests/saved/2026-04-25-14-19-15/chapters/starting_out.snbt",
+      "kubejs/client_scripts/40_hide_quarantined_systems.js",
+      "kubejs/data/sophisticatedbackpacks/loot_tables/inject/chests/abandoned_mineshaft.json",
+      "kubejs/data/sophisticatedbackpacks/loot_tables/inject/chests/bastion_treasure.json",
+      "kubejs/data/sophisticatedbackpacks/loot_tables/inject/chests/desert_pyramid.json",
+      "kubejs/data/sophisticatedbackpacks/loot_tables/inject/chests/end_city_treasure.json",
+      "kubejs/data/sophisticatedbackpacks/loot_tables/inject/chests/nether_bridge.json",
+      "kubejs/data/sophisticatedbackpacks/loot_tables/inject/chests/shipwreck_treasure.json",
+      "kubejs/data/sophisticatedbackpacks/loot_tables/inject/chests/simple_dungeon.json",
+      "kubejs/data/sophisticatedbackpacks/loot_tables/inject/chests/spawn_bonus_chest.json",
+      "kubejs/data/sophisticatedbackpacks/loot_tables/inject/chests/woodland_mansion.json",
+      "kubejs/server_scripts/20_recipe_remove/30_remove_items.js",
+      "kubejs/server_scripts/30_recipe_replace/100_high_value_mod_progression_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/110_extreme_y_band_reward_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/115_material_economy_recipe_pass.js",
+      "kubejs/server_scripts/30_recipe_replace/130_manufactured_plate_recipe_pass.js"
+    ],
+    "sophisticatedstorage": [
+      "config/class_enhancement.toml",
+      "kubejs/client_scripts/40_hide_quarantined_systems.js",
+      "kubejs/server_scripts/20_recipe_remove/30_remove_items.js",
+      "kubejs/server_scripts/30_recipe_replace/100_high_value_mod_progression_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/110_extreme_y_band_reward_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/115_material_economy_recipe_pass.js",
+      "kubejs/server_scripts/30_recipe_replace/130_manufactured_plate_recipe_pass.js",
+      "kubejs/server_scripts/30_recipe_replace/135_recipe_graph_closure.js",
+      "kubejs/server_scripts/30_recipe_replace/169_backpack_post_ae2_utility_gates.js",
+      "kubejs/server_scripts/50_loot/30_global_loot_progression_scrub.js"
+    ],
+    "create_new_age": [
+      "config/adlods/Deposits/magnetite.cfg",
+      "config/adlods/Deposits/thorium.cfg",
+      "config/ftbquests/quests/chapters/su_heat.snbt",
+      "kubejs/client_scripts/30_hide_create_new_age_electric.js",
+      "kubejs/data/heatsync/tags/blocks/pipe_radiators.json",
+      "kubejs/server_scripts/20_recipe_remove/40_remove_create_new_age_electric_crafting.js",
+      "kubejs/server_scripts/30_recipe_replace/120_graph_audit_recipe_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/121_create_stack_integration_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/135_recipe_graph_closure.js",
+      "kubejs/server_scripts/30_recipe_replace/140_nuclear_synthesis_power_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/150_integrated_deferred_mod_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/165_protection_pixel_post_ae2_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/168_hooks_drones_utility_gates.js",
+      "kubejs/server_scripts/50_loot/30_global_loot_progression_scrub.js"
+    ],
+    "tinkers_thinking": [
+      "config/almostunified/unify.json",
+      "config/class_enhancement.toml",
+      "kubejs/server_scripts/30_recipe_replace/60_vanilla_tools_to_tcon_heads.js"
+    ],
+    "farmersrespite": [
+      "config/class_enhancement.toml",
+      "config/ftbquests/quests/chapters/food_catalogue.snbt",
+      "config/ftbquests/quests/chapters/food_ii.snbt",
+      "config/thirst/item_settings.toml",
+      "kubejs/data/farmersrespite/loot_tables/blocks/kettle.json",
+      "kubejs/server_scripts/30_recipe_replace/70_kettle_rune_swap.js",
+      "kubejs/server_scripts/40_recipe_add/70_food_potion_reagents.js"
+    ],
+    "hexerei": [
+      "config/ftbquests/quests/chapters/magic_i.snbt",
+      "kubejs/server_scripts/30_recipe_replace/125_magic_power_spike_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js",
+      "kubejs/server_scripts/50_loot/30_global_loot_progression_scrub.js",
+      "kubejs/server_scripts/50_loot/40_emerald_loot_coin_replacement.js"
+    ],
+    "malum": [
+      "config/ftbquests/quests/chapters/magic_i.snbt",
+      "config/ftbquests/quests/chapters/malum.snbt",
+      "kubejs/server_scripts/30_recipe_replace/125_magic_power_spike_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js",
+      "kubejs/server_scripts/50_loot/30_global_loot_progression_scrub.js"
+    ],
+    "rootsclassic": [
+      "kubejs/server_scripts/30_recipe_replace/125_magic_power_spike_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js"
+    ],
+    "reliquary": [
+      "config/ftbquests/quests/chapters/reliquary.snbt",
+      "kubejs/server_scripts/30_recipe_replace/125_magic_power_spike_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js"
+    ],
+    "ars_additions": [
+      "config/incontrol/structure.json",
+      "kubejs/server_scripts/30_recipe_replace/125_magic_power_spike_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js"
+    ],
+    "ars_instrumentum": [
+      "kubejs/server_scripts/30_recipe_replace/125_magic_power_spike_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js"
+    ],
+    "ars_elemental": [
+      "config/ftbquests/quests/chapters/magic_ii.snbt",
+      "kubejs/server_scripts/30_recipe_replace/125_magic_power_spike_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js"
+    ],
+    "naturesaura": [
+      "config/ftbquests/quests/chapters/magic_i.snbt",
+      "kubejs/server_scripts/30_recipe_replace/120_graph_audit_recipe_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/125_magic_power_spike_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js",
+      "kubejs/server_scripts/50_loot/30_global_loot_progression_scrub.js"
+    ],
+    "irons_spellbooks": [
+      "kubejs/server_scripts/30_recipe_replace/125_magic_power_spike_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js",
+      "kubejs/server_scripts/50_loot/30_global_loot_progression_scrub.js",
+      "kubejs/server_scripts/50_loot/40_emerald_loot_coin_replacement.js"
+    ],
+    "mahoutsukai": [
+      "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js"
+    ],
+    "eidolon": [
+      "kubejs/server_scripts/30_recipe_replace/125_magic_power_spike_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js",
+      "kubejs/server_scripts/50_loot/40_emerald_loot_coin_replacement.js"
+    ],
+    "goety": [
+      "config/ftbquests/quests/chapters/magic_i.snbt",
+      "kubejs/server_scripts/30_recipe_replace/125_magic_power_spike_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js",
+      "kubejs/server_scripts/50_loot/30_global_loot_progression_scrub.js",
+      "kubejs/server_scripts/50_loot/40_emerald_loot_coin_replacement.js"
+    ],
+    "botania": [
+      "config/adlods/Deposits/aluminum.cfg",
+      "config/adlods/Deposits/amethyst.cfg",
+      "config/adlods/Deposits/coal.cfg",
+      "config/adlods/Deposits/cobalt.cfg",
+      "config/adlods/Deposits/copper.cfg",
+      "config/adlods/Deposits/diamond.cfg",
+      "config/adlods/Deposits/emerald.cfg",
+      "config/adlods/Deposits/gold.cfg",
+      "config/adlods/Deposits/iridium.cfg",
+      "config/adlods/Deposits/iron.cfg",
+      "config/adlods/Deposits/lapis.cfg",
+      "config/adlods/Deposits/lead.cfg",
+      "config/adlods/Deposits/nickel.cfg",
+      "config/adlods/Deposits/osmium.cfg",
+      "config/adlods/Deposits/palladium.cfg",
+      "config/adlods/Deposits/platinum.cfg",
+      "config/adlods/Deposits/redstone.cfg",
+      "config/adlods/Deposits/rhodium.cfg",
+      "config/adlods/Deposits/ruby.cfg",
+      "config/adlods/Deposits/ruthenium.cfg"
+    ],
+    "forbidden_arcanus": [
+      "config/ftbquests/quests/chapters/magic_ii.snbt",
+      "kubejs/server_scripts/30_recipe_replace/115_material_economy_recipe_pass.js",
+      "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js",
+      "kubejs/server_scripts/50_loot/30_global_loot_progression_scrub.js"
+    ],
+    "theurgy": [
+      "config/ftbquests/quests/chapters/magic_ii.snbt",
+      "config/ftbquests/quests/chapters/theurgy.snbt",
+      "kubejs/server_scripts/30_recipe_replace/125_magic_power_spike_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js",
+      "kubejs/server_scripts/50_loot/30_global_loot_progression_scrub.js"
+    ],
+    "ars_creo": [
+      "config/ftbquests/quests/chapters/magic_ii.snbt",
+      "kubejs/server_scripts/30_recipe_replace/125_magic_power_spike_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js"
+    ],
+    "ars_technica": [
+      "kubejs/server_scripts/30_recipe_replace/115_material_economy_recipe_pass.js",
+      "kubejs/server_scripts/30_recipe_replace/125_magic_power_spike_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js"
+    ],
+    "ars_caelum": [
+      "config/ftbquests/quests/chapters/magic_ii.snbt",
+      "kubejs/server_scripts/30_recipe_replace/125_magic_power_spike_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js"
+    ],
+    "psi": [
+      "config/ftbquests/quests/chapters/magic_i.snbt",
+      "kubejs/server_scripts/30_recipe_replace/125_magic_power_spike_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js",
+      "kubejs/server_scripts/50_loot/30_global_loot_progression_scrub.js"
+    ],
+    "hexcasting": [
+      "config/ftbquests/quests/chapters/magic_ii.snbt",
+      "kubejs/server_scripts/30_recipe_replace/125_magic_power_spike_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js",
+      "kubejs/server_scripts/50_loot/30_global_loot_progression_scrub.js"
+    ],
+    "mna": [
+      "config/ftbquests/quests/chapters/books.snbt",
+      "config/ftbquests/quests/chapters/magic_ii.snbt",
+      "config/incontrol/structure.json",
+      "kubejs/server_scripts/30_recipe_replace/125_magic_power_spike_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js"
+    ],
+    "hexalia": [
+      "config/ftbquests/quests/chapters/magic_i.snbt",
+      "kubejs/server_scripts/30_recipe_replace/125_magic_power_spike_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js"
+    ],
+    "arseng": [
+      "config/ftbquests/quests/chapters/post_ae2.snbt",
+      "kubejs/server_scripts/30_recipe_replace/125_magic_power_spike_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js",
+      "kubejs/server_scripts/50_loot/30_global_loot_progression_scrub.js"
+    ],
+    "the_finley_dimension_remastered": [
+      "kubejs/server_scripts/30_recipe_replace/95_acid_and_nether_grout_unification.js"
+    ],
+    "chemlib": [
+      "config/ftbquests/quests/chapters/create_components.snbt",
+      "config/ftbquests/quests/chapters/synthesis_i.snbt",
+      "config/ftbquests/quests/chapters/synthesis_ii.snbt",
+      "kubejs/data/createaddition/recipes/mixing/electrum.json",
+      "kubejs/server_scripts/30_recipe_replace/110_extreme_y_band_reward_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/115_material_economy_recipe_pass.js",
+      "kubejs/server_scripts/30_recipe_replace/140_nuclear_synthesis_power_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/165_protection_pixel_post_ae2_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/95_acid_and_nether_grout_unification.js",
+      "kubejs/server_scripts/40_recipe_add/45_deposit_furnace_fallbacks.js",
+      "kubejs/server_scripts/40_recipe_add/50_create_deposit_preprocessing.js",
+      "kubejs/server_scripts/40_recipe_add/60_acid_vat_deposit_slurries.js",
+      "kubejs/server_scripts/40_recipe_add/65_chemlib_plate_manufacturing_routes.js"
+    ],
+    "powergrid": [
+      "config/ftbquests/quests/chapters/fission_fusion.snbt",
+      "config/ftbquests/quests/chapters/grid_power.snbt",
+      "config/ftbquests/quests/chapters/su_heat.snbt",
+      "kubejs/server_scripts/30_recipe_replace/115_material_economy_recipe_pass.js",
+      "kubejs/server_scripts/30_recipe_replace/120_graph_audit_recipe_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/121_create_stack_integration_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/130_manufactured_plate_recipe_pass.js",
+      "kubejs/server_scripts/30_recipe_replace/135_recipe_graph_closure.js",
+      "kubejs/server_scripts/30_recipe_replace/140_nuclear_synthesis_power_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/150_integrated_deferred_mod_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/95_acid_and_nether_grout_unification.js",
+      "kubejs/server_scripts/30_recipe_replace/99_machine_casing_progression.js",
+      "kubejs/server_scripts/50_loot/30_global_loot_progression_scrub.js"
+    ],
+    "undergarden": [
+      "config/adpother/Biomes/undergarden$ancient_sea.cfg",
+      "config/adpother/Biomes/undergarden$barren_abyss.cfg",
+      "config/adpother/Biomes/undergarden$blood_mushroom_bog.cfg",
+      "config/adpother/Biomes/undergarden$dead_sea.cfg",
+      "config/adpother/Biomes/undergarden$dense_forest.cfg",
+      "config/adpother/Biomes/undergarden$forgotten_field.cfg",
+      "config/adpother/Biomes/undergarden$frostfields.cfg",
+      "config/adpother/Biomes/undergarden$frosty_smogstem_forest.cfg",
+      "config/adpother/Biomes/undergarden$gronglegrowth.cfg",
+      "config/adpother/Biomes/undergarden$icy_sea.cfg",
+      "config/adpother/Biomes/undergarden$indigo_mushroom_bog.cfg",
+      "config/adpother/Biomes/undergarden$ink_mushroom_bog.cfg",
+      "config/adpother/Biomes/undergarden$smog_spires.cfg",
+      "config/adpother/Biomes/undergarden$smogstem_forest.cfg",
+      "config/adpother/Biomes/undergarden$veil_mushroom_bog.cfg",
+      "config/adpother/Biomes/undergarden$wigglewood_forest.cfg",
+      "config/apotheosis/enchantments.cfg",
+      "config/apotheosis/names.cfg",
+      "config/biomesize.json",
+      "config/ftbquests/quests/chapters/undergarden.snbt"
+    ],
+    "blue_skies": [
+      "config/adpother/Biomes/blue_skies$brightlands.cfg",
+      "config/adpother/Biomes/blue_skies$brisk_meadow.cfg",
+      "config/adpother/Biomes/blue_skies$brumble_forest.cfg",
+      "config/adpother/Biomes/blue_skies$calming_skies.cfg",
+      "config/adpother/Biomes/blue_skies$crescent_orchard.cfg",
+      "config/adpother/Biomes/blue_skies$crescent_orchard_lake.cfg",
+      "config/adpother/Biomes/blue_skies$crystal_dunes.cfg",
+      "config/adpother/Biomes/blue_skies$crystal_dunes_spikes.cfg",
+      "config/adpother/Biomes/blue_skies$crystal_roughs.cfg",
+      "config/adpother/Biomes/blue_skies$deep_peeking_ocean.cfg",
+      "config/adpother/Biomes/blue_skies$frostbitten_forest.cfg",
+      "config/adpother/Biomes/blue_skies$frostbitten_forest_clearing.cfg",
+      "config/adpother/Biomes/blue_skies$midday_shore.cfg",
+      "config/adpother/Biomes/blue_skies$moonlit_reservoir.cfg",
+      "config/adpother/Biomes/blue_skies$peeking_ocean.cfg",
+      "config/adpother/Biomes/blue_skies$polar_highland.cfg",
+      "config/adpother/Biomes/blue_skies$rising_creek.cfg",
+      "config/adpother/Biomes/blue_skies$searing_grassland.cfg",
+      "config/adpother/Biomes/blue_skies$shaded_woodlands.cfg",
+      "config/adpother/Biomes/blue_skies$slushlands.cfg"
+    ],
+    "oc2r": [
+      "config/ftbquests/quests/chapters/create_rail_logistics.snbt",
+      "config/ftbquests/quests/chapters/grid_power.snbt",
+      "config/ftbquests/quests/chapters/oc2r.snbt",
+      "kubejs/server_scripts/30_recipe_replace/115_material_economy_recipe_pass.js",
+      "kubejs/server_scripts/30_recipe_replace/120_graph_audit_recipe_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/121_create_stack_integration_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/130_manufactured_plate_recipe_pass.js",
+      "kubejs/server_scripts/30_recipe_replace/135_recipe_graph_closure.js",
+      "kubejs/server_scripts/30_recipe_replace/99_machine_casing_progression.js",
+      "kubejs/server_scripts/35_villager_trades/10_coin_villager_trades.js",
+      "kubejs/server_scripts/50_loot/30_global_loot_progression_scrub.js"
+    ],
+    "creatingspace": [
+      "config/ftbquests/quests/chapters/lost_cities.snbt",
+      "config/ftbquests/quests/chapters/space.snbt",
+      "kubejs/data/btm/advancements/creating_space_access.json",
+      "kubejs/data/creatingspace/creatingspace/rocket_accessible_dimension/earth_orbit.json",
+      "kubejs/data/lostcities/creatingspace/rocket_accessible_dimension/lostcity.json",
+      "kubejs/server_scripts/30_recipe_replace/115_material_economy_recipe_pass.js",
+      "kubejs/server_scripts/30_recipe_replace/130_manufactured_plate_recipe_pass.js",
+      "kubejs/server_scripts/30_recipe_replace/140_nuclear_synthesis_power_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/170_space_dimension_access_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/99_machine_casing_progression.js",
+      "kubejs/server_scripts/50_loot/30_global_loot_progression_scrub.js"
+    ],
+    "acid_vat": [
+      "config/ftbquests/quests/chapters/major_gates.snbt",
+      "config/ftbquests/quests/chapters/synthesis_i.snbt",
+      "config/ftbquests/quests/chapters/synthesis_ii.snbt",
+      "kubejs/server_scripts/30_recipe_replace/120_graph_audit_recipe_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/135_recipe_graph_closure.js",
+      "kubejs/server_scripts/30_recipe_replace/99_machine_casing_progression.js",
+      "kubejs/server_scripts/40_recipe_add/60_acid_vat_deposit_slurries.js",
+      "kubejs/server_scripts/90_dev_debug/10_recipe_audit_dumps.js"
+    ],
+    "tinkersinnovation": [
+      "kubejs/server_scripts/30_recipe_replace/98_starting_progression_bypasses.js"
+    ],
+    "expatternprovider": [
+      "config/ftbquests/quests/chapters/post_ae2.snbt",
+      "kubejs/data/curios/tags/items/curio.json",
+      "kubejs/server_scripts/30_recipe_replace/100_high_value_mod_progression_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/120_graph_audit_recipe_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/130_manufactured_plate_recipe_pass.js",
+      "kubejs/server_scripts/30_recipe_replace/135_recipe_graph_closure.js"
+    ],
+    "wands": [
+      "config/apotheosis/names.cfg",
+      "config/ftbquests/quests/chapters/building_tools.snbt",
+      "kubejs/server_scripts/30_recipe_replace/100_high_value_mod_progression_gates.js",
+      "kubejs/server_scripts/50_loot/30_global_loot_progression_scrub.js"
+    ],
+    "buildinggadgets2": [
+      "config/ftbquests/quests/chapters/building_tools.snbt",
+      "kubejs/server_scripts/30_recipe_replace/100_high_value_mod_progression_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/110_extreme_y_band_reward_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/115_material_economy_recipe_pass.js",
+      "kubejs/server_scripts/30_recipe_replace/130_manufactured_plate_recipe_pass.js"
+    ],
+    "create_power_loader": [
+      "kubejs/server_scripts/30_recipe_replace/100_high_value_mod_progression_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/120_graph_audit_recipe_gates.js"
+    ],
+    "createadvlogistics": [
+      "config/ftbquests/quests/chapters/create_fluids_and_packages.snbt",
+      "kubejs/server_scripts/30_recipe_replace/100_high_value_mod_progression_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/121_create_stack_integration_gates.js"
+    ],
+    "createadditionallogistics": [
+      "config/ftbquests/quests/chapters/create_fluids_and_packages.snbt",
+      "kubejs/server_scripts/30_recipe_replace/100_high_value_mod_progression_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/121_create_stack_integration_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/165_protection_pixel_post_ae2_gates.js"
+    ],
+    "littlelogistics": [
+      "config/adpother/Emitters/littlelogistics$steam_locomotive.cfg",
+      "config/adpother/Emitters/littlelogistics$tug.cfg",
+      "config/ftbquests/quests/chapters/little_logistics.snbt",
+      "kubejs/server_scripts/30_recipe_replace/100_high_value_mod_progression_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/130_manufactured_plate_recipe_pass.js",
+      "kubejs/server_scripts/30_recipe_replace/135_recipe_graph_closure.js",
+      "kubejs/server_scripts/50_loot/30_global_loot_progression_scrub.js"
+    ],
+    "tradingpost": [
+      "config/ftbquests/quests/chapters/adventuring.snbt",
+      "config/ftbquests/quests/chapters/village_economy.snbt",
+      "kubejs/server_scripts/30_recipe_replace/100_high_value_mod_progression_gates.js"
+    ],
+    "pneumaticcraft": [
+      "config/adchimneys/Emitters/pneumaticcraft$advanced_air_compressor.cfg",
+      "config/adchimneys/Emitters/pneumaticcraft$advanced_liquid_compressor.cfg",
+      "config/adchimneys/Emitters/pneumaticcraft$air_compressor.cfg",
+      "config/adchimneys/Emitters/pneumaticcraft$liquid_compressor.cfg",
+      "config/adpother/Emitters/pneumaticcraft$advanced_air_compressor.cfg",
+      "config/adpother/Emitters/pneumaticcraft$advanced_liquid_compressor.cfg",
+      "config/adpother/Emitters/pneumaticcraft$air_compressor.cfg",
+      "config/adpother/Emitters/pneumaticcraft$liquid_compressor.cfg",
+      "kubejs/server_scripts/30_recipe_replace/100_high_value_mod_progression_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/122_pneumaticcraft_create_pressing_gates.js"
+    ],
+    "wares": [
+      "config/ftbquests/quests/chapters/adventuring.snbt",
+      "config/ftbquests/quests/chapters/major_gates.snbt",
+      "config/ftbquests/quests/chapters/pillager_campaigns.snbt",
+      "config/ftbquests/quests/chapters/village_economy.snbt",
+      "kubejs/data/wares/loot_tables/agreement/village/desert_payment_sell.json",
+      "kubejs/data/wares/loot_tables/agreement/village/desert_requested_buy.json",
+      "kubejs/data/wares/loot_tables/agreement/village/plains_payment_sell.json",
+      "kubejs/data/wares/loot_tables/agreement/village/plains_requested_buy.json",
+      "kubejs/data/wares/loot_tables/agreement/village/savanna_payment_sell.json",
+      "kubejs/data/wares/loot_tables/agreement/village/savanna_requested_buy.json",
+      "kubejs/data/wares/loot_tables/agreement/village/snowy_payment_sell.json",
+      "kubejs/data/wares/loot_tables/agreement/village/snowy_requested_buy.json",
+      "kubejs/data/wares/loot_tables/agreement/village/taiga_payment_sell.json",
+      "kubejs/data/wares/loot_tables/agreement/village/taiga_requested_buy.json",
+      "kubejs/data/wares/loot_tables/agreement/wandering_trader/rare_price.json",
+      "kubejs/data/wares/loot_tables/agreement/wandering_trader/regular_price.json",
+      "kubejs/data/wares/loot_tables/package/village/desert.json",
+      "kubejs/data/wares/loot_tables/package/village/plains.json",
+      "kubejs/data/wares/loot_tables/package/village/savanna.json",
+      "kubejs/data/wares/loot_tables/package/village/snowy.json"
+    ],
+    "create_enchantment_industry": [
+      "kubejs/server_scripts/30_recipe_replace/100_high_value_mod_progression_gates.js"
+    ],
+    "apotheosis": [
+      "config/apotheosis/enchantments.cfg",
+      "config/ftbquests/quests/chapters/apotheosis.snbt",
+      "config/spawnbalanceutility/StructMobWeight.rpt",
+      "kubejs/data/apotheosis/loot_tables/chests/chest_valuable.json",
+      "kubejs/data/apotheosis/loot_tables/chests/spawner_brutal.json",
+      "kubejs/data/apotheosis/loot_tables/chests/spawner_brutal_rotate.json",
+      "kubejs/data/apotheosis/loot_tables/chests/spawner_swarm.json",
+      "kubejs/data/apotheosis/loot_tables/chests/tome_tower.json",
+      "kubejs/data/apotheosis/loot_tables/entity/treasure_goblin.json",
+      "kubejs/server_scripts/30_recipe_replace/100_high_value_mod_progression_gates.js"
+    ],
+    "ae2additions": [
+      "config/ftbquests/quests/chapters/post_ae2.snbt",
+      "kubejs/server_scripts/30_recipe_replace/100_high_value_mod_progression_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/115_material_economy_recipe_pass.js",
+      "kubejs/server_scripts/30_recipe_replace/130_manufactured_plate_recipe_pass.js"
+    ],
+    "merequester": [
+      "kubejs/server_scripts/30_recipe_replace/100_high_value_mod_progression_gates.js"
+    ],
+    "advanced_ae": [
+      "config/ftbquests/quests/chapters/major_gates.snbt",
+      "config/ftbquests/quests/chapters/post_ae2.snbt",
+      "kubejs/server_scripts/30_recipe_replace/100_high_value_mod_progression_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/110_extreme_y_band_reward_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/115_material_economy_recipe_pass.js",
+      "kubejs/server_scripts/30_recipe_replace/160_ticex_post_ae2_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/165_protection_pixel_post_ae2_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/166_tome_of_blood_post_ae2_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/168_hooks_drones_utility_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/169_backpack_post_ae2_utility_gates.js"
+    ],
+    "createappliedkinetics": [
+      "config/ftbquests/quests/chapters/create_applied_kinetics.snbt",
+      "kubejs/server_scripts/30_recipe_replace/100_high_value_mod_progression_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/121_create_stack_integration_gates.js"
+    ],
+    "occultengineering": [
+      "kubejs/server_scripts/30_recipe_replace/100_high_value_mod_progression_gates.js"
+    ],
+    "art_update": [
+      "kubejs/server_scripts/30_recipe_replace/110_extreme_y_band_reward_gates.js",
+      "kubejs/server_scripts/50_loot/30_global_loot_progression_scrub.js"
+    ],
+    "iceandfire": [
+      "config/ftbquests/quests/chapters/ice_and_fire.snbt",
+      "config/incontrol/spawn.json",
+      "config/spawnbalanceutility/BiomeMobWeight.csv",
+      "config/spawnbalanceutility/StructMobWeight.rpt",
+      "config/zombieawareness/MobLists.toml",
+      "kubejs/server_scripts/30_recipe_replace/110_extreme_y_band_reward_gates.js",
+      "kubejs/server_scripts/50_loot/30_global_loot_progression_scrub.js",
+      "kubejs/server_scripts/50_loot/40_emerald_loot_coin_replacement.js"
+    ],
+    "artifacts": [
+      "config/ftbquests/quests/chapters/artifacts.snbt",
+      "kubejs/data/artifacts/loot_tables/artifact.json",
+      "kubejs/data/artifacts/loot_tables/entity_equipment/drowned.json",
+      "kubejs/data/artifacts/loot_tables/entity_equipment/ghast.json",
+      "kubejs/data/artifacts/loot_tables/entity_equipment/husk.json",
+      "kubejs/data/artifacts/loot_tables/entity_equipment/piglin.json",
+      "kubejs/data/artifacts/loot_tables/entity_equipment/piglin_brute.json",
+      "kubejs/data/artifacts/loot_tables/entity_equipment/skeleton.json",
+      "kubejs/data/artifacts/loot_tables/entity_equipment/stray.json",
+      "kubejs/data/artifacts/loot_tables/entity_equipment/wither_skeleton.json",
+      "kubejs/data/artifacts/loot_tables/entity_equipment/zombie.json",
+      "kubejs/data/artifacts/loot_tables/entity_equipment/zombified_piglin.json",
+      "kubejs/data/artifacts/loot_tables/inject/archaeology/desert_pyramid.json",
+      "kubejs/data/artifacts/loot_tables/inject/archaeology/desert_well.json",
+      "kubejs/data/artifacts/loot_tables/inject/archaeology/ocean_ruin_cold.json",
+      "kubejs/data/artifacts/loot_tables/inject/archaeology/ocean_ruin_warm.json",
+      "kubejs/data/artifacts/loot_tables/inject/archaeology/trail_ruins_rare.json",
+      "kubejs/data/artifacts/loot_tables/inject/chests/abandoned_mineshaft.json",
+      "kubejs/data/artifacts/loot_tables/inject/chests/ancient_city.json",
+      "kubejs/data/artifacts/loot_tables/inject/chests/ancient_city_ice_box.json"
+    ],
+    "aether": [
+      "config/adpother/Biomes/aether$skyroot_forest.cfg",
+      "config/adpother/Biomes/aether$skyroot_grove.cfg",
+      "config/adpother/Biomes/aether$skyroot_meadow.cfg",
+      "config/adpother/Biomes/aether$skyroot_woodland.cfg",
+      "config/adpother/Torches/aether$ambrosium_torch.cfg",
+      "config/adpother/Torches/aether$ambrosium_wall_torch.cfg",
+      "config/aether-client.toml",
+      "config/apotheosis/names.cfg",
+      "config/coldsweat/world.toml",
+      "config/ftbquests/quests/chapters/aether.snbt",
+      "config/spawnbalanceutility/BiomeMobWeight.csv",
+      "config/spawnbalanceutility/StructMobWeight.rpt",
+      "kubejs/server_scripts/30_recipe_replace/115_material_economy_recipe_pass.js",
+      "kubejs/server_scripts/50_loot/30_global_loot_progression_scrub.js"
+    ],
+    "vampirism": [
+      "kubejs/server_scripts/30_recipe_replace/120_graph_audit_recipe_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/125_magic_power_spike_gates.js",
+      "kubejs/server_scripts/50_loot/40_emerald_loot_coin_replacement.js"
+    ],
+    "create_connected": [
+      "config/ftbquests/quests/chapters/create_fluids_and_packages.snbt",
+      "kubejs/server_scripts/30_recipe_replace/120_graph_audit_recipe_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/121_create_stack_integration_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/130_manufactured_plate_recipe_pass.js",
+      "kubejs/server_scripts/30_recipe_replace/135_recipe_graph_closure.js",
+      "kubejs/server_scripts/50_loot/30_global_loot_progression_scrub.js"
+    ],
+    "createdieselgenerators": [
+      "config/adchimneys/Emitters/createdieselgenerators$burner.cfg",
+      "config/adchimneys/Emitters/createdieselgenerators$diesel_engine.cfg",
+      "config/adchimneys/Emitters/createdieselgenerators$large_diesel_engine.cfg",
+      "config/adpother/Emitters/createdieselgenerators$burner.cfg",
+      "config/adpother/Emitters/createdieselgenerators$diesel_engine.cfg",
+      "config/adpother/Emitters/createdieselgenerators$huge_diesel_engine.cfg",
+      "config/adpother/Emitters/createdieselgenerators$large_diesel_engine.cfg",
+      "config/ftbquests/quests/chapters/su_heat.snbt",
+      "kubejs/server_scripts/30_recipe_replace/120_graph_audit_recipe_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/121_create_stack_integration_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/130_manufactured_plate_recipe_pass.js",
+      "kubejs/server_scripts/30_recipe_replace/135_recipe_graph_closure.js"
+    ],
+    "railways": [
+      "config/apotheosis/names.cfg",
+      "config/ftbquests/quests/chapters/create_rail_logistics.snbt",
+      "kubejs/server_scripts/30_recipe_replace/121_create_stack_integration_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/130_manufactured_plate_recipe_pass.js",
+      "kubejs/server_scripts/30_recipe_replace/135_recipe_graph_closure.js",
+      "kubejs/server_scripts/35_villager_trades/10_coin_villager_trades.js"
+    ],
+    "fission_reactor": [
+      "config/ftbquests/quests/chapters/fission_fusion.snbt",
+      "kubejs/server_scripts/30_recipe_replace/140_nuclear_synthesis_power_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/160_ticex_post_ae2_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/165_protection_pixel_post_ae2_gates.js",
+      "kubejs/server_scripts/30_recipe_replace/166_tome_of_blood_post_ae2_gates.js"
+    ],
+    "gases_and_plasmas": [
+      "config/ftbquests/quests/chapters/fission_fusion.snbt",
+      "kubejs/server_scripts/30_recipe_replace/140_nuclear_synthesis_power_gates.js"
+    ],
+    "liquid_coolant": [
+      "config/ftbquests/quests/chapters/fission_fusion.snbt",
+      "kubejs/server_scripts/30_recipe_replace/150_integrated_deferred_mod_gates.js"
+    ],
+    "procedural_bouquets": [
+      "config/ftbquests/quests/chapters/village_economy.snbt",
+      "kubejs/server_scripts/30_recipe_replace/150_integrated_deferred_mod_gates.js",
+      "kubejs/server_scripts/35_villager_trades/10_coin_villager_trades.js"
+    ],
+    "ticex": [
+      "config/ftbquests/quests/chapters/ticex.snbt",
+      "kubejs/data/ticex/tinkering/materials/stats/reconstruction.json",
+      "kubejs/data/ticex/tinkering/station_layouts/blitz_gun.json",
+      "kubejs/data/ticex/tinkering/station_layouts/meka_tool.json",
+      "kubejs/data/ticex/tinkering/station_layouts/reforged_slashblade.json",
+      "kubejs/data/ticex/tinkering/station_layouts/revival_spellbook_irons.json",
+      "kubejs/data/ticex/tinkering/tool_definitions/meka_edge.json",
+      "kubejs/data/ticex/tinkering/tool_definitions/mekaplate_boots.json",
+      "kubejs/data/ticex/tinkering/tool_definitions/mekaplate_chestplate.json",
+      "kubejs/data/ticex/tinkering/tool_definitions/mekaplate_helmet.json",
+      "kubejs/data/ticex/tinkering/tool_definitions/mekaplate_leggings.json",
+      "kubejs/data/ticex/tinkering/tool_definitions/revival_spellbook.json",
+      "kubejs/data/ticex/tinkering/tool_definitions/singular_gem_boots.json",
+      "kubejs/data/ticex/tinkering/tool_definitions/singular_gem_chestplate.json",
+      "kubejs/data/ticex/tinkering/tool_definitions/singular_gem_helmet.json",
+      "kubejs/data/ticex/tinkering/tool_definitions/singular_gem_leggings.json",
+      "kubejs/server_scripts/30_recipe_replace/160_ticex_post_ae2_gates.js",
+      "kubejs/server_scripts/50_loot/30_global_loot_progression_scrub.js"
+    ],
+    "protection_pixel": [
+      "config/ftbquests/quests/chapters/major_gates.snbt",
+      "config/ftbquests/quests/chapters/post_ae2.snbt",
+      "config/ftbquests/quests/chapters/protection_pixel.snbt",
+      "kubejs/data/minecraft/tags/items/chest_armor.json",
+      "kubejs/data/minecraft/tags/items/foot_armor.json",
+      "kubejs/data/minecraft/tags/items/head_armor.json",
+      "kubejs/data/minecraft/tags/items/leg_armor.json",
+      "kubejs/server_scripts/30_recipe_replace/165_protection_pixel_post_ae2_gates.js",
+      "kubejs/server_scripts/50_loot/30_global_loot_progression_scrub.js"
+    ],
+    "tomeofblood": [
+      "config/ftbquests/quests/chapters/major_gates.snbt",
+      "config/ftbquests/quests/chapters/post_ae2.snbt",
+      "config/ftbquests/quests/chapters/tome_of_blood.snbt",
+      "kubejs/server_scripts/30_recipe_replace/166_tome_of_blood_post_ae2_gates.js"
+    ],
+    "rehooked": [
+      "config/class_enhancement.toml",
+      "config/ftbquests/quests/chapters/starting_out.snbt",
+      "kubejs/server_scripts/30_recipe_replace/168_hooks_drones_utility_gates.js",
+      "kubejs/server_scripts/35_villager_trades/10_coin_villager_trades.js"
+    ],
+    "create_sa": [
+      "config/ftbquests/quests/chapters/building_tools.snbt",
+      "config/zombieawareness/MobLists.toml",
+      "kubejs/server_scripts/30_recipe_replace/168_hooks_drones_utility_gates.js"
+    ],
+    "farmersdelight": [
+      "config/adchimneys/Emitters/farmersdelight$stove.cfg",
+      "config/adchimneys/Emitters/hardcore_torches$stove.cfg",
+      "config/adchimneys/Emitters/meadow$stove_tiles_wood.cfg",
+      "config/adchimneys/Emitters/nethersdelight$blackstone_stove.cfg",
+      "config/adchimneys/Emitters/twilightdelight$maze_stove.cfg",
+      "config/adorablehamsterpets/main.toml",
+      "config/adpother/Emitters/farmersdelight$stove.cfg",
+      "config/adpother/Emitters/hardcore_torches$stove.cfg",
+      "config/adpother/Emitters/meadow$stove_tiles_wood.cfg",
+      "config/adpother/Emitters/nethersdelight$blackstone_stove.cfg",
+      "config/adpother/Emitters/twilightdelight$maze_stove.cfg",
+      "config/adpother/Impacts/environment.cfg",
+      "config/apotheosis/enchantments.cfg",
+      "config/apotheosis/names.cfg",
+      "config/class_enhancement.toml",
+      "config/coldsweat/world.toml",
+      "config/ftbquests/quests/chapters/death.snbt",
+      "config/ftbquests/quests/chapters/food_catalogue.snbt",
+      "config/ftbquests/quests/chapters/food_i.snbt",
+      "config/ftbquests/quests/chapters/food_ii.snbt"
+    ],
+    "sophisticatedstorageinmotion": [
+      "kubejs/server_scripts/30_recipe_replace/135_recipe_graph_closure.js"
+    ],
+    "weather2": [
+      "kubejs/server_scripts/30_recipe_replace/135_recipe_graph_closure.js"
+    ],
+    "framedblocks": [
+      "config/ftbquests/quests/chapters/building_block_systems.snbt",
+      "kubejs/server_scripts/30_recipe_replace/135_recipe_graph_closure.js"
+    ],
+    "ae2things": [
+      "kubejs/server_scripts/30_recipe_replace/135_recipe_graph_closure.js"
+    ],
+    "mantle": [
+      "kubejs/data/ticex/tinkering/tool_definitions/meka_edge.json",
+      "kubejs/server_scripts/40_recipe_add/65_chemlib_plate_manufacturing_routes.js"
+    ],
+    "brewinandchewin": [
+      "config/class_enhancement.toml",
+      "config/classselector/kits.json",
+      "config/ftbquests/quests/chapters/food_catalogue.snbt",
+      "config/ftbquests/quests/chapters/food_ii.snbt",
+      "config/thirst/item_settings.toml",
+      "kubejs/server_scripts/40_recipe_add/70_food_potion_reagents.js"
+    ],
+    "delightful": [
+      "config/apotheosis/names.cfg",
+      "config/class_enhancement.toml",
+      "config/ftbquests/quests/chapters/food_catalogue.snbt",
+      "kubejs/server_scripts/40_recipe_add/70_food_potion_reagents.js",
+      "kubejs/server_scripts/50_loot/30_global_loot_progression_scrub.js"
+    ],
+    "ubesdelight": [
+      "config/apotheosis/names.cfg",
+      "config/ftbquests/quests/chapters/food_catalogue.snbt",
+      "kubejs/server_scripts/40_recipe_add/70_food_potion_reagents.js",
+      "kubejs/server_scripts/50_loot/30_global_loot_progression_scrub.js"
+    ],
+    "mynethersdelight": [
+      "config/apotheosis/enchantments.cfg",
+      "config/ftbquests/quests/chapters/food_catalogue.snbt",
+      "kubejs/server_scripts/35_villager_trades/10_coin_villager_trades.js",
+      "kubejs/server_scripts/40_recipe_add/70_food_potion_reagents.js"
+    ],
+    "dynamictrees": [
+      "config/class_enhancement.toml",
+      "config/classselector/kits.json",
+      "config/ftbquests/quests/chapters/starting_out.snbt",
+      "config/incontrol/spawn.json",
+      "kubejs/server_scripts/50_loot/10_overworld_block_drops.js"
+    ],
+    "dtterralith": [
+      "kubejs/server_scripts/50_loot/10_overworld_block_drops.js"
+    ],
+    "create_central_kitchen": [
+      "kubejs/server_scripts/50_loot/30_global_loot_progression_scrub.js"
+    ],
+    "create_things_and_misc": [
+      "kubejs/server_scripts/50_loot/30_global_loot_progression_scrub.js"
+    ],
+    "createmoredrillheads": [
+      "kubejs/server_scripts/50_loot/30_global_loot_progression_scrub.js"
+    ],
+    "golemoverhaul": [
+      "config/spawnbalanceutility/BiomeMobWeight.csv",
+      "config/zombieawareness/MobLists.toml",
+      "kubejs/server_scripts/50_loot/30_global_loot_progression_scrub.js",
+      "kubejs/server_scripts/50_loot/40_emerald_loot_coin_replacement.js"
+    ],
+    "theoneprobe": [
+      "config/apotheosis/names.cfg",
+      "kubejs/server_scripts/50_loot/30_global_loot_progression_scrub.js"
+    ],
+    "tinkers_advanced": [
+      "config/ftbquests/quests/chapters/tinkers_arsenal.snbt",
+      "kubejs/server_scripts/50_loot/30_global_loot_progression_scrub.js"
+    ],
+    "born_in_chaos_v1": [
+      "config/apotheosis/names.cfg",
+      "config/class_enhancement.toml",
+      "config/incontrol/spawn.json",
+      "config/spawnbalanceutility/BiomeMobWeight.csv",
+      "config/spawnbalanceutility/StructMobWeight.rpt",
+      "config/zombieawareness/MobLists.toml",
+      "kubejs/server_scripts/50_loot/40_emerald_loot_coin_replacement.js"
+    ],
+    "savage_and_ravage": [
+      "config/incontrol/spawn.json",
+      "config/pillagercampaigns-common.toml",
+      "kubejs/server_scripts/50_loot/40_emerald_loot_coin_replacement.js"
+    ],
+    "takesapillage": [
+      "config/incontrol/spawn.json",
+      "config/pillagercampaigns-common.toml",
+      "kubejs/server_scripts/50_loot/40_emerald_loot_coin_replacement.js"
+    ],
+    "starcatcher": [
+      "config/class_enhancement.toml",
+      "config/classselector/kits.json",
+      "config/ftbquests/quests/chapters/starcatcher.snbt",
+      "kubejs/server_scripts/35_villager_trades/10_coin_villager_trades.js",
+      "kubejs/server_scripts/50_loot/40_emerald_loot_coin_replacement.js"
+    ],
+    "block_factorys_bosses": [
+      "config/spawnbalanceutility/StructMobWeight.rpt",
+      "config/zombieawareness/MobLists.toml",
+      "kubejs/server_scripts/50_loot/40_emerald_loot_coin_replacement.js"
+    ],
+    "deeperdarker": [
+      "config/adpother/Biomes/deeperdarker$blooming_caverns.cfg",
+      "config/adpother/Biomes/deeperdarker$deeplands.cfg",
+      "config/adpother/Biomes/deeperdarker$echoing_forest.cfg",
+      "config/adpother/Biomes/deeperdarker$overcast_columns.cfg",
+      "config/apotheosis/enchantments.cfg",
+      "config/apotheosis/names.cfg",
+      "config/biomesize.json",
+      "config/ftbquests/quests/chapters/deeper_darker.snbt",
+      "config/incontrol/spawn.json",
+      "config/incontrol/spawner.json",
+      "config/spawnbalanceutility/BiomeMobWeight.csv",
+      "config/spawnbalanceutility/StructMobWeight.rpt",
+      "config/zombieawareness/MobLists.toml",
+      "kubejs/server_scripts/50_loot/40_emerald_loot_coin_replacement.js"
+    ],
+    "incendium": [
+      "config/adpother/Biomes/incendium$ash_barrens.cfg",
+      "config/adpother/Biomes/incendium$infernal_dunes.cfg",
+      "config/adpother/Biomes/incendium$inverted_forest.cfg",
+      "config/adpother/Biomes/incendium$quartz_flats.cfg",
+      "config/adpother/Biomes/incendium$toxic_heap.cfg",
+      "config/adpother/Biomes/incendium$volcanic_deltas.cfg",
+      "config/adpother/Biomes/incendium$weeping_valley.cfg",
+      "config/adpother/Biomes/incendium$withered_forest.cfg",
+      "config/alexsmobs/crimson_mosquito_spawns.json",
+      "config/alexsmobs/soul_vulture_spawns.json",
+      "config/alexsmobs/straddler_spawns.json",
+      "config/alexsmobs/stradpole_spawns.json",
+      "config/alexsmobs/warped_toad_spawns.json",
+      "kubejs/server_scripts/50_loot/40_emerald_loot_coin_replacement.js"
+    ],
+    "alexsmobs": [
+      "config/alexsmobs.toml",
+      "config/alexsmobs/skreecher.json",
+      "config/incontrol/spawner.json",
+      "config/spawnbalanceutility/BiomeMobWeight.csv",
+      "config/spawnbalanceutility/StructMobWeight.rpt",
+      "config/zombieawareness/MobLists.toml",
+      "kubejs/server_scripts/50_loot/40_emerald_loot_coin_replacement.js"
+    ],
+    "twilightforest": [
+      "config/apotheosis/adventure.cfg",
+      "config/ftbquests/quests/chapters/twilight_forest.snbt",
+      "config/twilightforest-common.toml",
+      "kubejs/server_scripts/50_loot/40_emerald_loot_coin_replacement.js"
+    ],
+    "lostcities": [
+      "kubejs/data/creatingspace/creatingspace/rocket_accessible_dimension/earth_orbit.json",
+      "kubejs/server_scripts/50_loot/40_emerald_loot_coin_replacement.js"
+    ],
+    "the_bumblezone": [
+      "kubejs/server_scripts/50_loot/40_emerald_loot_coin_replacement.js"
+    ],
+    "cold_sweat": [
+      "config/adpother/Emitters/cold_sweat$boiler.cfg",
+      "config/adpother/Emitters/cold_sweat$hearth.cfg",
+      "config/apotheosis/names.cfg",
+      "config/class_enhancement.toml",
+      "config/coldsweat/item.toml",
+      "config/coldsweat/world.toml",
+      "config/fiahi-common.toml",
+      "config/ftbquests/quests/chapters/starting_out.snbt",
+      "config/ftbquests/saved/2026-04-25-14-19-15/chapters/starting_out.snbt",
+      "config/spawnbalanceutility/BiomeMobWeight.csv",
+      "kubejs/server_scripts/35_villager_trades/10_coin_villager_trades.js"
+    ],
+    "naturescompass": [
+      "kubejs/server_scripts/35_villager_trades/10_coin_villager_trades.js"
+    ],
+    "create_more_additions": [
+      "kubejs/data/createaddition/recipes/mixing/electrum.json"
+    ],
+    "apotheotic_additions": [
+      "kubejs/data/apotheotic_additions/loot_tables/chests/aa_spawner.json",
+      "kubejs/data/apotheotic_additions/loot_tables/chests/ars_spawner.json",
+      "kubejs/data/apotheotic_additions/loot_tables/chests/born_in_chaos_spawner.json",
+      "kubejs/data/apotheotic_additions/loot_tables/chests/caves_spawner.json",
+      "kubejs/data/apotheotic_additions/loot_tables/chests/create_spawner.json",
+      "kubejs/data/apotheotic_additions/loot_tables/chests/eidolon_spawner.json",
+      "kubejs/data/apotheotic_additions/loot_tables/chests/ender_spawner.json",
+      "kubejs/data/apotheotic_additions/loot_tables/chests/ie_spawner.json",
+      "kubejs/data/apotheotic_additions/loot_tables/chests/witherstorm_spawner.json"
+    ],
+    "cumulus_menus": [
+      "config/aether-client.toml"
+    ],
+    "terralith": [
+      "config/adorablehamsterpets/worldgen.toml",
+      "config/alexsmobs/alligator_snapping_turtle_spawns.json",
+      "config/alexsmobs/anaconda_spawns.json",
+      "config/alexsmobs/anteater_spawns.json",
+      "config/alexsmobs/bald_eagle_spawns.json",
+      "config/alexsmobs/banana_slug_spawns.json",
+      "config/alexsmobs/bison_spawns.json",
+      "config/alexsmobs/blue_jay_spawns.json",
+      "config/alexsmobs/bunfungus_spawns.json",
+      "config/alexsmobs/cachalot_whale_beached_spawns.json",
+      "config/alexsmobs/caiman_spawns.json",
+      "config/alexsmobs/capuchin_monkey_spawns.json",
+      "config/alexsmobs/catfish_spawns.json",
+      "config/alexsmobs/cave_centipede_spawns.json",
+      "config/alexsmobs/cockroach_spawns.json",
+      "config/alexsmobs/crocodile_spawns.json",
+      "config/alexsmobs/crow_spawns.json",
+      "config/alexsmobs/elephant_spawns.json",
+      "config/alexsmobs/emu_spawns.json",
+      "config/alexsmobs/froststalker_spawns.json"
+    ],
+    "survivalisland": [
+      "config/biomesize.json"
+    ],
+    "modid": [
+      "config/class_enhancement.toml",
+      "config/geolosys-common.toml",
+      "config/ysns/disabled_entities.json5"
+    ],
+    "tic_broken": [
+      "config/class_enhancement.toml"
+    ],
+    "level": [
+      "config/class_enhancement.toml",
+      "config/mobcontrol.toml"
+    ],
+    "abilities": [
+      "config/class_enhancement.toml"
+    ],
+    "upgrades": [
+      "config/class_enhancement.toml"
+    ],
+    "tinkers_things": [
+      "config/class_enhancement.toml"
+    ],
+    "realistictorches": [
+      "config/adpother/Torches/realistictorches$torch_lit.cfg",
+      "config/adpother/Torches/realistictorches$torch_smoldering.cfg",
+      "config/adpother/Torches/realistictorches$wall_torch_lit.cfg",
+      "config/adpother/Torches/realistictorches$wall_torch_smoldering.cfg",
+      "config/class_enhancement.toml"
+    ],
+    "geolosys": [
+      "config/class_enhancement.toml"
+    ],
+    "sereneseasons": [
+      "config/class_enhancement.toml",
+      "config/classselector/kits.json"
+    ],
+    "veggiesdelight": [
+      "config/class_enhancement.toml",
+      "config/classselector/kits.json",
+      "config/ftbquests/quests/chapters/food_catalogue.snbt"
+    ],
+    "additionalweaponry": [
+      "config/class_enhancement.toml",
+      "config/ftbquests/quests/chapters/tinkers_arsenal.snbt"
+    ],
+    "betterarcheology": [
+      "config/class_enhancement.toml",
+      "config/classselector/kits.json"
+    ],
+    "defense": [
+      "config/class_enhancement.toml"
+    ],
+    "rustic_delight": [
+      "config/class_enhancement.toml"
+    ],
+    "meds_and_herbs": [
+      "config/class_enhancement.toml"
+    ],
+    "emeraldcraft": [
+      "config/fiahi-common.toml"
+    ],
+    "got": [
+      "config/logbegone.toml"
+    ],
+    "https": [
+      "config/apotheosis/adventure.cfg",
+      "config/apotheosis/apotheosis.cfg",
+      "config/apotheosis/ench.cfg",
+      "config/apotheosis/enchantments.cfg",
+      "config/apotheosis/garden.cfg",
+      "config/apotheosis/names.cfg",
+      "config/apotheosis/potion.cfg",
+      "config/apotheosis/spawner.cfg",
+      "config/apotheosis/village.cfg",
+      "config/blockswap/block_swap.json5",
+      "config/blockswap/missing_block_ids.json5",
+      "config/enhancedai/common.toml",
+      "config/explosionoverhaul/README.md",
+      "config/mobcontrol.toml",
+      "config/spark/config.json",
+      "config/sparsestructures.json5",
+      "config/towns_and_towers/structure_enable_or_disable_new.json5",
+      "config/towns_and_towers/structure_rarity_new.json5"
+    ],
+    "mod": [
+      "config/mobcontrol.toml",
+      "config/spawnbalanceutility/MassAdditionMobs.rpt",
+      "config/spawnbalanceutility/PsuedoMobs.rpt",
+      "defaultconfigs/farsightedmobs-server.toml"
+    ],
+    "tag": [
+      "config/mobcontrol.toml"
+    ],
+    "mobcontrol": [
+      "config/mobcontrol.toml"
+    ],
+    "block": [
+      "config/mobcontrol.toml"
+    ],
+    "fluid": [
+      "config/mobcontrol.toml"
+    ],
+    "custom": [
+      "config/mobcontrol.toml"
+    ],
+    "title": [
+      "config/mobcontrol.toml"
+    ],
+    "purple": [
+      "config/mobcontrol.toml"
+    ],
+    "4boss": [
+      "config/mobcontrol.toml"
+    ],
+    "type": [
+      "config/fancymenu/customization/create_world_screen_layout.txt",
+      "config/fancymenu/customization/drippy_loading_overlay_layout.txt",
+      "config/fancymenu/customization/select_world_screen_layout.txt",
+      "config/fancymenu/customization/sound_options_screen_layout.txt",
+      "config/fancymenu/customization/title_screen_layout.txt",
+      "config/mobcontrol.toml"
+    ],
+    "profession": [
+      "config/mobcontrol.toml"
+    ],
+    "mending": [
+      "config/mobcontrol.toml"
+    ],
+    "lvl": [
+      "config/mobcontrol.toml"
+    ],
+    "id": [
+      "config/mobcontrol.toml"
+    ],
+    "sweeping_edge": [
+      "config/mobcontrol.toml"
+    ],
+    "aqua_affinity": [
+      "config/mobcontrol.toml"
+    ],
+    "http": [
+      "config/mobcontrol.toml",
+      "config/twilightforest-common.toml"
+    ],
+    "11": [
+      "config/oculus.properties"
+    ],
+    "06": [
+      "config/simpledaylengthextender-common.toml"
+    ],
+    "19": [
+      "config/simpledaylengthextender-common.toml"
+    ],
+    "namespace": [
+      "config/adorablehamsterpets/worldgen.toml",
+      "config/explosionoverhaul/README.md",
+      "config/sparsestructures.json5"
+    ],
+    "storagedrawers": [
+      "config/theoneprobe-common.toml"
+    ],
+    "storagedrawersextra": [
+      "config/theoneprobe-common.toml"
+    ],
+    "tntutils": [
+      "config/tntutils-common.toml"
+    ],
+    "mod_id": [
+      "config/adorablehamsterpets/worldgen.toml",
+      "config/tntutils-common.toml"
+    ],
+    "staaaaaaaaaaaack": [
+      "config/staaaaaaaaaaaack-common.toml"
+    ],
+    "domain": [
+      "config/apotheosis/adventure.cfg",
+      "config/twilightforest-common.toml"
+    ],
+    "btm": [
+      "config/twilightforest-common.toml"
+    ],
+    "angelring": [
+      "config/shouldersurfing-client.toml"
+    ],
+    "192.168.1.40": [
+      "config/DistantHorizons.toml"
+    ],
+    "towns_and_towers": [
+      "config/incontrol/structure.json",
+      "config/pillagercampaigns-common.toml",
+      "config/spawnbalanceutility/StructMobWeight.rpt"
+    ],
+    "dummmmmmy": [
+      "config/ticex-common.toml"
+    ],
+    "tropicraft": [
+      "config/Weather2/Misc.toml"
+    ],
+    "adorablehamsterpets": [
+      "config/adorablehamsterpets/main.toml",
+      "config/spawnbalanceutility/BiomeMobWeight.csv"
+    ],
+    "culturaldelights": [
+      "config/adorablehamsterpets/main.toml"
+    ],
+    "biomesoplenty": [
+      "config/adorablehamsterpets/worldgen.toml",
+      "config/alexsmobs/alligator_snapping_turtle_spawns.json",
+      "config/alexsmobs/bald_eagle_spawns.json",
+      "config/alexsmobs/banana_slug_spawns.json",
+      "config/alexsmobs/bison_spawns.json",
+      "config/alexsmobs/blue_jay_spawns.json",
+      "config/alexsmobs/cachalot_whale_beached_spawns.json",
+      "config/alexsmobs/crimson_mosquito_spawns.json",
+      "config/alexsmobs/crocodile_spawns.json",
+      "config/alexsmobs/crow_spawns.json",
+      "config/alexsmobs/dropbear_spawns.json",
+      "config/alexsmobs/emu_spawns.json",
+      "config/alexsmobs/grizzly_bear_spawns.json",
+      "config/alexsmobs/kangaroo_spawns.json",
+      "config/alexsmobs/komodo_dragon_spawns.json",
+      "config/alexsmobs/moose_spawns.json",
+      "config/alexsmobs/platypus_spawns.json",
+      "config/alexsmobs/raccoon_spawns.json",
+      "config/alexsmobs/seagull_spawns.json",
+      "config/alexsmobs/seal_spawns.json"
+    ],
+    "byg": [
+      "config/adchimneys/Emitters/byg$boric_campfire.cfg",
+      "config/adchimneys/Emitters/byg$boric_campfire_signal.cfg",
+      "config/adchimneys/Emitters/byg$cryptic_campfire.cfg",
+      "config/adchimneys/Emitters/byg$cryptic_campfire_signal.cfg",
+      "config/adorablehamsterpets/worldgen.toml",
+      "config/adpother/Emitters/byg$boric_campfire.cfg",
+      "config/adpother/Emitters/byg$boric_campfire_signal.cfg",
+      "config/adpother/Emitters/byg$cryptic_campfire.cfg",
+      "config/adpother/Emitters/byg$cryptic_campfire_signal.cfg",
+      "config/alexsmobs/crimson_mosquito_spawns.json",
+      "config/alexsmobs/soul_vulture_spawns.json",
+      "config/alexsmobs/warped_toad_spawns.json",
+      "config/iceandfire/amphithere_biomes.json",
+      "config/iceandfire/cockatrice_biomes.json",
+      "config/iceandfire/cyclops_cave_biomes.json",
+      "config/iceandfire/deathworm_biomes.json",
+      "config/iceandfire/desert_myrmex_biomes.json",
+      "config/iceandfire/fire_dragon_biomes.json",
+      "config/iceandfire/fire_dragon_cave_biomes.json",
+      "config/iceandfire/fire_dragon_skeleton_biomes.json"
+    ],
+    "autumnity": [
+      "config/alexsmobs/banana_slug_spawns.json"
+    ],
+    "alexscaves": [
+      "config/adpother/Biomes/alexscaves$abyssal_chasm.cfg",
+      "config/adpother/Biomes/alexscaves$candy_cavity.cfg",
+      "config/adpother/Biomes/alexscaves$forlorn_hollows.cfg",
+      "config/adpother/Biomes/alexscaves$magnetic_caves.cfg",
+      "config/adpother/Biomes/alexscaves$primordial_caves.cfg",
+      "config/adpother/Biomes/alexscaves$toxic_caves.cfg",
+      "config/alexsmobs/cachalot_whale_spawns.json",
+      "config/alexsmobs/comb_jelly_spawns.json",
+      "config/spawnbalanceutility/BiomeMobWeight.csv",
+      "config/spawnbalanceutility/StructMobWeight.rpt"
+    ],
+    "combatroll": [
+      "config/apotheosis/enchantments.cfg"
+    ],
+    "unusualend": [
+      "config/adpother/Biomes/unusualend$gloopstone_lands.cfg",
+      "config/adpother/Biomes/unusualend$warped_reef.cfg",
+      "config/apotheosis/enchantments.cfg",
+      "config/apotheosis/names.cfg",
+      "config/spawnbalanceutility/BiomeMobWeight.csv",
+      "config/spawnbalanceutility/StructMobWeight.rpt",
+      "config/zombieawareness/MobLists.toml"
+    ],
+    "cofh_core": [
+      "config/apotheosis/enchantments.cfg"
+    ],
+    "spartanweaponry": [
+      "config/apotheosis/enchantments.cfg",
+      "config/apotheosis/names.cfg"
+    ],
+    "l2complements": [
+      "config/apotheosis/enchantments.cfg",
+      "config/apotheosis/names.cfg"
+    ],
+    "netherdepthsupgrade": [
+      "config/apotheosis/enchantments.cfg",
+      "config/apotheosis/names.cfg",
+      "config/spawnbalanceutility/BiomeMobWeight.csv",
+      "config/spawnbalanceutility/StructMobWeight.rpt"
+    ],
+    "cataclysm": [
+      "config/apotheosis/names.cfg",
+      "config/incontrol/structure.json",
+      "config/spawnbalanceutility/BiomeMobWeight.csv",
+      "config/spawnbalanceutility/StructMobWeight.rpt",
+      "config/zombieawareness/MobLists.toml"
+    ],
+    "mekanismtools": [
+      "config/apotheosis/names.cfg"
+    ],
+    "refurbished_furniture": [
+      "config/adchimneys/Emitters/refurbished_furniture$dark_electricity_generator.cfg",
+      "config/adchimneys/Emitters/refurbished_furniture$light_electricity_generator.cfg",
+      "config/adpother/Emitters/refurbished_furniture$dark_electricity_generator.cfg",
+      "config/adpother/Emitters/refurbished_furniture$light_electricity_generator.cfg",
+      "config/apotheosis/names.cfg"
+    ],
+    "thalassophobia": [
+      "config/apotheosis/names.cfg",
+      "config/spawnbalanceutility/BiomeMobWeight.csv",
+      "config/zombieawareness/MobLists.toml"
+    ],
+    "undergardendelight": [
+      "config/apotheosis/names.cfg",
+      "config/ftbquests/quests/chapters/food_catalogue.snbt"
+    ],
+    "evenbetternether": [
+      "config/apotheosis/names.cfg",
+      "config/spawnbalanceutility/BiomeMobWeight.csv",
+      "config/spawnbalanceutility/StructMobWeight.rpt"
+    ],
+    "magistuarmory": [
+      "config/apotheosis/names.cfg"
+    ],
+    "ends_delight": [
+      "config/apotheosis/names.cfg",
+      "config/ftbquests/quests/chapters/food_catalogue.snbt"
+    ],
+    "curseofpandora": [
+      "config/apotheosis/names.cfg"
+    ],
+    "mekanism": [
+      "config/adchimneys/Emitters/mekanism$fuelwood_heater.cfg",
+      "config/adpother/Emitters/mekanism$advanced_crushing_factory.cfg",
+      "config/adpother/Emitters/mekanism$basic_crushing_factory.cfg",
+      "config/adpother/Emitters/mekanism$crusher.cfg",
+      "config/adpother/Emitters/mekanism$elite_crushing_factory.cfg",
+      "config/adpother/Emitters/mekanism$fuelwood_heater.cfg",
+      "config/adpother/Emitters/mekanism$ultimate_crushing_factory.cfg",
+      "config/adpother/Respirators/mekanism$hazmat_mask.cfg",
+      "config/adpother/Respirators/mekanism$mekasuit_helmet.cfg",
+      "config/adpother/Respirators/mekanism$scuba_mask.cfg",
+      "config/apotheosis/names.cfg",
+      "config/explosionoverhaul/GlassBlacklist.json"
+    ],
+    "securitycraft": [
+      "config/adchimneys/Emitters/securitycraft$keypad_blast_furnace.cfg",
+      "config/adchimneys/Emitters/securitycraft$keypad_furnace.cfg",
+      "config/adchimneys/Emitters/securitycraft$keypad_smoker.cfg",
+      "config/adpother/Emitters/securitycraft$keypad_blast_furnace.cfg",
+      "config/adpother/Emitters/securitycraft$keypad_furnace.cfg",
+      "config/adpother/Emitters/securitycraft$keypad_smoker.cfg",
+      "config/apotheosis/names.cfg",
+      "config/explosionoverhaul/GlassBlacklist.json"
+    ],
+    "biomeswevegone": [
+      "config/biomespawnpoint/spawnbiomes.txt"
+    ],
+    "regions_unexplored": [
+      "config/adpother/Biomes/regions_unexplored$alpha_grove.cfg",
+      "config/adpother/Biomes/regions_unexplored$ancient_delta.cfg",
+      "config/adpother/Biomes/regions_unexplored$arid_mountains.cfg",
+      "config/adpother/Biomes/regions_unexplored$ashen_woodland.cfg",
+      "config/adpother/Biomes/regions_unexplored$autumnal_maple_forest.cfg",
+      "config/adpother/Biomes/regions_unexplored$bamboo_forest.cfg",
+      "config/adpother/Biomes/regions_unexplored$baobab_savanna.cfg",
+      "config/adpother/Biomes/regions_unexplored$barley_fields.cfg",
+      "config/adpother/Biomes/regions_unexplored$bayou.cfg",
+      "config/adpother/Biomes/regions_unexplored$bioshroom_caves.cfg",
+      "config/adpother/Biomes/regions_unexplored$blackstone_basin.cfg",
+      "config/adpother/Biomes/regions_unexplored$blackwood_taiga.cfg",
+      "config/adpother/Biomes/regions_unexplored$boreal_taiga.cfg",
+      "config/adpother/Biomes/regions_unexplored$chalk_cliffs.cfg",
+      "config/adpother/Biomes/regions_unexplored$clover_plains.cfg",
+      "config/adpother/Biomes/regions_unexplored$cold_boreal_taiga.cfg",
+      "config/adpother/Biomes/regions_unexplored$cold_deciduous_forest.cfg",
+      "config/adpother/Biomes/regions_unexplored$cold_river.cfg",
+      "config/adpother/Biomes/regions_unexplored$deciduous_forest.cfg",
+      "config/adpother/Biomes/regions_unexplored$dry_bushland.cfg"
+    ],
+    "riverredux": [
+      "config/biomespawnpoint/spawnbiomes.txt"
+    ],
+    "enhancedai": [
+      "config/enhancedai/common.toml"
+    ],
+    "nyctophobia": [
+      "config/incontrol/spawn.json",
+      "config/incontrol/spawner.json"
+    ],
+    "dungeons_arise": [
+      "config/incontrol/structure.json"
+    ],
+    "repurposed_structures": [
+      "config/incontrol/structure.json",
+      "config/spawnbalanceutility/StructMobWeight.rpt"
+    ],
+    "alekiships": [
+      "config/classselector/kits.json",
+      "config/incontrol/structure.json",
+      "config/spawnbalanceutility/StructMobWeight.rpt"
+    ],
+    "graveyard": [
+      "config/incontrol/structure.json"
+    ],
+    "more_critters": [
+      "config/spawnbalanceutility/BiomeMobWeight.csv",
+      "config/spawnbalanceutility/StructMobWeight.rpt",
+      "config/zombieawareness/MobLists.toml"
+    ],
+    "mekanismadditions": [
+      "config/spawnbalanceutility/BiomeMobWeight.csv",
+      "config/spawnbalanceutility/StructMobWeight.rpt",
+      "config/ysns/disabled_entities.json5"
+    ],
+    "collectorsreap": [
+      "config/spawnbalanceutility/BiomeMobWeight.csv",
+      "config/thirst/container.toml",
+      "config/thirst/item_settings.toml"
+    ],
+    "naturalist": [
+      "config/spawnbalanceutility/BiomeMobWeight.csv"
+    ],
+    "companions": [
+      "config/spawnbalanceutility/BiomeMobWeight.csv",
+      "config/spawnbalanceutility/StructMobWeight.rpt",
+      "config/zombieawareness/MobLists.toml"
+    ],
+    "nullscape": [
+      "config/adpother/Biomes/nullscape$crystal_peaks.cfg",
+      "config/adpother/Biomes/nullscape$shadowlands.cfg",
+      "config/adpother/Biomes/nullscape$void_barrens.cfg",
+      "config/spawnbalanceutility/BiomeMobWeight.csv",
+      "config/spawnbalanceutility/StructMobWeight.rpt"
+    ],
+    "terrablender": [
+      "config/adpother/Biomes/terrablender$deferred_placeholder.cfg",
+      "config/spawnbalanceutility/BiomeMobWeight.csv"
+    ],
+    "blueprint": [
+      "config/adpother/Biomes/blueprint$original_source_marker.cfg",
+      "config/spawnbalanceutility/BiomeMobWeight.csv"
+    ],
+    "lionfishapi": [
+      "config/adpother/Biomes/lionfishapi$original_source_marker.cfg",
+      "config/spawnbalanceutility/BiomeMobWeight.csv"
+    ],
+    "modname": [
+      "config/spawnbalanceutility/MassAdditionMobs.rpt"
+    ],
+    "header": [
+      "config/spawnbalanceutility/StructMobWeight.rpt"
+    ],
+    "structory": [
+      "config/spawnbalanceutility/StructMobWeight.rpt"
+    ],
+    "philipsruins": [
+      "config/spawnbalanceutility/StructMobWeight.rpt"
+    ],
+    "valhelsia_structures": [
+      "config/spawnbalanceutility/StructMobWeight.rpt"
+    ],
+    "fdbosses": [
+      "config/spawnbalanceutility/StructMobWeight.rpt",
+      "config/zombieawareness/MobLists.toml"
+    ],
+    "bosses_of_mass_destruction": [
+      "config/spawnbalanceutility/StructMobWeight.rpt",
+      "config/zombieawareness/MobLists.toml"
+    ],
+    "betteroceanmonuments": [
+      "config/spawnbalanceutility/StructMobWeight.rpt"
+    ],
+    "betterdungeons": [
+      "config/spawnbalanceutility/StructMobWeight.rpt"
+    ],
+    "examplemod": [
+      "config/thirst/container.toml",
+      "config/thirst/item_settings.toml"
+    ],
+    "thirst": [
+      "config/classselector/kits.json",
+      "config/ftbquests/quests/chapters/create_foundations.snbt",
+      "config/ftbquests/quests/chapters/death.snbt",
+      "config/ftbquests/quests/chapters/food_i.snbt",
+      "config/ftbquests/quests/chapters/starting_out.snbt",
+      "config/ftbquests/saved/2026-04-25-14-19-15/chapters/starting_out.snbt",
+      "config/thirst/item_settings.toml"
+    ],
+    "toughasnails": [
+      "config/thirst/item_settings.toml"
+    ],
+    "example_mod": [
+      "config/ysns/disabled_entities.json5"
+    ],
+    "majruszsdifficulty": [
+      "config/zombieawareness/MobLists.toml"
+    ],
+    "illageandspillage": [
+      "config/zombieawareness/MobLists.toml"
+    ],
+    "aquamirae": [
+      "config/zombieawareness/MobLists.toml"
+    ],
+    "upgrade_aquatic": [
+      "config/zombieawareness/MobLists.toml"
+    ],
+    "unusual_furniture": [
+      "config/zombieawareness/MobLists.toml"
+    ],
+    "myths_of_the_sea": [
+      "config/zombieawareness/MobLists.toml"
+    ],
+    "tcintegrations": [
+      "config/almostunified/unify.json"
+    ],
+    "metallictinkering": [
+      "config/almostunified/unify.json"
+    ],
+    "davebuildingmod": [
+      "config/almostunified/unify.json"
+    ],
+    "cucumber": [
+      "config/almostunified/duplicates.json",
+      "config/almostunified/unify.json"
+    ],
+    "create_tank_defenses": [
+      "config/explosionoverhaul/GlassBlacklist.json"
+    ],
+    "mofus_better_end_": [
+      "config/explosionoverhaul/DestroyingBlacklist.json",
+      "config/explosionoverhaul/GlassBlacklist.json"
+    ],
+    "crusty_chunks": [
+      "config/explosionoverhaul/GlassBlacklist.json"
+    ],
+    "createnuclear": [
+      "config/explosionoverhaul/GlassBlacklist.json"
+    ],
+    "mekanismgenerators": [
+      "config/adchimneys/Emitters/mekanismgenerators$bio_generator.cfg",
+      "config/adchimneys/Emitters/mekanismgenerators$gas_burning_generator.cfg",
+      "config/adchimneys/Emitters/mekanismgenerators$heat_generator.cfg",
+      "config/adpother/Emitters/mekanismgenerators$bio_generator.cfg",
+      "config/adpother/Emitters/mekanismgenerators$gas_burning_generator.cfg",
+      "config/adpother/Emitters/mekanismgenerators$heat_generator.cfg",
+      "config/explosionoverhaul/GlassBlacklist.json"
+    ],
+    "ancient_elements": [
+      "config/explosionoverhaul/DestroyingBlacklist.json"
+    ],
+    "order_index": [
+      "config/ftbquests/quests/chapter_groups.snbt"
+    ],
+    "hide_dependency_lines": [
+      "config/ftbquests/quests/chapters/adventuring.snbt",
+      "config/ftbquests/quests/chapters/ae2.snbt",
+      "config/ftbquests/quests/chapters/aether.snbt",
+      "config/ftbquests/quests/chapters/apotheosis.snbt",
+      "config/ftbquests/quests/chapters/ars_nouveau.snbt",
+      "config/ftbquests/quests/chapters/artifacts.snbt",
+      "config/ftbquests/quests/chapters/blue_skies.snbt",
+      "config/ftbquests/quests/chapters/books.snbt",
+      "config/ftbquests/quests/chapters/botania.snbt",
+      "config/ftbquests/quests/chapters/brewing.snbt",
+      "config/ftbquests/quests/chapters/building_block_systems.snbt",
+      "config/ftbquests/quests/chapters/building_tools.snbt",
+      "config/ftbquests/quests/chapters/create_applied_kinetics.snbt",
+      "config/ftbquests/quests/chapters/create_brass_automation.snbt",
+      "config/ftbquests/quests/chapters/create_components.snbt",
+      "config/ftbquests/quests/chapters/create_fluids_and_packages.snbt",
+      "config/ftbquests/quests/chapters/create_foundations.snbt",
+      "config/ftbquests/quests/chapters/create_rail_logistics.snbt",
+      "config/ftbquests/quests/chapters/death.snbt",
+      "config/ftbquests/quests/chapters/deeper_darker.snbt"
+    ],
+    "hide_dependent_lines": [
+      "config/ftbquests/quests/chapters/adventuring.snbt",
+      "config/ftbquests/quests/chapters/ae2.snbt",
+      "config/ftbquests/quests/chapters/aether.snbt",
+      "config/ftbquests/quests/chapters/apotheosis.snbt",
+      "config/ftbquests/quests/chapters/ars_nouveau.snbt",
+      "config/ftbquests/quests/chapters/artifacts.snbt",
+      "config/ftbquests/quests/chapters/blue_skies.snbt",
+      "config/ftbquests/quests/chapters/books.snbt",
+      "config/ftbquests/quests/chapters/botania.snbt",
+      "config/ftbquests/quests/chapters/brewing.snbt",
+      "config/ftbquests/quests/chapters/building_block_systems.snbt",
+      "config/ftbquests/quests/chapters/building_tools.snbt",
+      "config/ftbquests/quests/chapters/create_applied_kinetics.snbt",
+      "config/ftbquests/quests/chapters/create_brass_automation.snbt",
+      "config/ftbquests/quests/chapters/create_components.snbt",
+      "config/ftbquests/quests/chapters/create_fluids_and_packages.snbt",
+      "config/ftbquests/quests/chapters/create_foundations.snbt",
+      "config/ftbquests/quests/chapters/create_rail_logistics.snbt",
+      "config/ftbquests/quests/chapters/death.snbt",
+      "config/ftbquests/quests/chapters/deeper_darker.snbt"
+    ],
+    "disable_jei": [
+      "config/ftbquests/quests/chapters/adventuring.snbt",
+      "config/ftbquests/quests/chapters/ae2.snbt",
+      "config/ftbquests/quests/chapters/aether.snbt",
+      "config/ftbquests/quests/chapters/apotheosis.snbt",
+      "config/ftbquests/quests/chapters/ars_nouveau.snbt",
+      "config/ftbquests/quests/chapters/artifacts.snbt",
+      "config/ftbquests/quests/chapters/blue_skies.snbt",
+      "config/ftbquests/quests/chapters/books.snbt",
+      "config/ftbquests/quests/chapters/botania.snbt",
+      "config/ftbquests/quests/chapters/brewing.snbt",
+      "config/ftbquests/quests/chapters/building_block_systems.snbt",
+      "config/ftbquests/quests/chapters/building_tools.snbt",
+      "config/ftbquests/quests/chapters/create_applied_kinetics.snbt",
+      "config/ftbquests/quests/chapters/create_brass_automation.snbt",
+      "config/ftbquests/quests/chapters/create_components.snbt",
+      "config/ftbquests/quests/chapters/create_fluids_and_packages.snbt",
+      "config/ftbquests/quests/chapters/create_foundations.snbt",
+      "config/ftbquests/quests/chapters/create_rail_logistics.snbt",
+      "config/ftbquests/quests/chapters/death.snbt",
+      "config/ftbquests/quests/chapters/deeper_darker.snbt"
+    ],
+    "size": [
+      "config/ftbquests/quests/chapters/adventuring.snbt",
+      "config/ftbquests/quests/chapters/ae2.snbt",
+      "config/ftbquests/quests/chapters/aether.snbt",
+      "config/ftbquests/quests/chapters/apotheosis.snbt",
+      "config/ftbquests/quests/chapters/ars_nouveau.snbt",
+      "config/ftbquests/quests/chapters/artifacts.snbt",
+      "config/ftbquests/quests/chapters/blue_skies.snbt",
+      "config/ftbquests/quests/chapters/books.snbt",
+      "config/ftbquests/quests/chapters/botania.snbt",
+      "config/ftbquests/quests/chapters/brewing.snbt",
+      "config/ftbquests/quests/chapters/building_block_systems.snbt",
+      "config/ftbquests/quests/chapters/building_tools.snbt",
+      "config/ftbquests/quests/chapters/create_applied_kinetics.snbt",
+      "config/ftbquests/quests/chapters/create_brass_automation.snbt",
+      "config/ftbquests/quests/chapters/create_components.snbt",
+      "config/ftbquests/quests/chapters/create_fluids_and_packages.snbt",
+      "config/ftbquests/quests/chapters/create_foundations.snbt",
+      "config/ftbquests/quests/chapters/create_rail_logistics.snbt",
+      "config/ftbquests/quests/chapters/death.snbt",
+      "config/ftbquests/quests/chapters/deeper_darker.snbt"
+    ],
+    "icon_scale": [
+      "config/ftbquests/quests/chapters/adventuring.snbt",
+      "config/ftbquests/quests/chapters/ae2.snbt",
+      "config/ftbquests/quests/chapters/aether.snbt",
+      "config/ftbquests/quests/chapters/apotheosis.snbt",
+      "config/ftbquests/quests/chapters/ars_nouveau.snbt",
+      "config/ftbquests/quests/chapters/artifacts.snbt",
+      "config/ftbquests/quests/chapters/blue_skies.snbt",
+      "config/ftbquests/quests/chapters/books.snbt",
+      "config/ftbquests/quests/chapters/botania.snbt",
+      "config/ftbquests/quests/chapters/brewing.snbt",
+      "config/ftbquests/quests/chapters/building_block_systems.snbt",
+      "config/ftbquests/quests/chapters/building_tools.snbt",
+      "config/ftbquests/quests/chapters/create_applied_kinetics.snbt",
+      "config/ftbquests/quests/chapters/create_brass_automation.snbt",
+      "config/ftbquests/quests/chapters/create_components.snbt",
+      "config/ftbquests/quests/chapters/create_fluids_and_packages.snbt",
+      "config/ftbquests/quests/chapters/create_foundations.snbt",
+      "config/ftbquests/quests/chapters/create_rail_logistics.snbt",
+      "config/ftbquests/quests/chapters/death.snbt",
+      "config/ftbquests/quests/chapters/deeper_darker.snbt"
+    ],
+    "x": [
+      "config/ftbquests/quests/chapters/adventuring.snbt",
+      "config/ftbquests/quests/chapters/ae2.snbt",
+      "config/ftbquests/quests/chapters/aether.snbt",
+      "config/ftbquests/quests/chapters/apotheosis.snbt",
+      "config/ftbquests/quests/chapters/ars_nouveau.snbt",
+      "config/ftbquests/quests/chapters/artifacts.snbt",
+      "config/ftbquests/quests/chapters/blue_skies.snbt",
+      "config/ftbquests/quests/chapters/books.snbt",
+      "config/ftbquests/quests/chapters/botania.snbt",
+      "config/ftbquests/quests/chapters/brewing.snbt",
+      "config/ftbquests/quests/chapters/building_block_systems.snbt",
+      "config/ftbquests/quests/chapters/building_tools.snbt",
+      "config/ftbquests/quests/chapters/create_applied_kinetics.snbt",
+      "config/ftbquests/quests/chapters/create_brass_automation.snbt",
+      "config/ftbquests/quests/chapters/create_components.snbt",
+      "config/ftbquests/quests/chapters/create_fluids_and_packages.snbt",
+      "config/ftbquests/quests/chapters/create_foundations.snbt",
+      "config/ftbquests/quests/chapters/create_rail_logistics.snbt",
+      "config/ftbquests/quests/chapters/death.snbt",
+      "config/ftbquests/quests/chapters/deeper_darker.snbt"
+    ],
+    "y": [
+      "config/ftbquests/quests/chapters/adventuring.snbt",
+      "config/ftbquests/quests/chapters/ae2.snbt",
+      "config/ftbquests/quests/chapters/aether.snbt",
+      "config/ftbquests/quests/chapters/apotheosis.snbt",
+      "config/ftbquests/quests/chapters/ars_nouveau.snbt",
+      "config/ftbquests/quests/chapters/artifacts.snbt",
+      "config/ftbquests/quests/chapters/blue_skies.snbt",
+      "config/ftbquests/quests/chapters/books.snbt",
+      "config/ftbquests/quests/chapters/botania.snbt",
+      "config/ftbquests/quests/chapters/brewing.snbt",
+      "config/ftbquests/quests/chapters/building_block_systems.snbt",
+      "config/ftbquests/quests/chapters/building_tools.snbt",
+      "config/ftbquests/quests/chapters/create_applied_kinetics.snbt",
+      "config/ftbquests/quests/chapters/create_brass_automation.snbt",
+      "config/ftbquests/quests/chapters/create_components.snbt",
+      "config/ftbquests/quests/chapters/create_fluids_and_packages.snbt",
+      "config/ftbquests/quests/chapters/create_foundations.snbt",
+      "config/ftbquests/quests/chapters/create_rail_logistics.snbt",
+      "config/ftbquests/quests/chapters/death.snbt",
+      "config/ftbquests/quests/chapters/deeper_darker.snbt"
+    ],
+    "count": [
+      "config/ftbquests/quests/chapters/adventuring.snbt",
+      "config/ftbquests/quests/chapters/ae2.snbt",
+      "config/ftbquests/quests/chapters/aether.snbt",
+      "config/ftbquests/quests/chapters/apotheosis.snbt",
+      "config/ftbquests/quests/chapters/ars_nouveau.snbt",
+      "config/ftbquests/quests/chapters/artifacts.snbt",
+      "config/ftbquests/quests/chapters/blue_skies.snbt",
+      "config/ftbquests/quests/chapters/books.snbt",
+      "config/ftbquests/quests/chapters/botania.snbt",
+      "config/ftbquests/quests/chapters/brewing.snbt",
+      "config/ftbquests/quests/chapters/building_block_systems.snbt",
+      "config/ftbquests/quests/chapters/building_tools.snbt",
+      "config/ftbquests/quests/chapters/create_applied_kinetics.snbt",
+      "config/ftbquests/quests/chapters/create_brass_automation.snbt",
+      "config/ftbquests/quests/chapters/create_components.snbt",
+      "config/ftbquests/quests/chapters/create_fluids_and_packages.snbt",
+      "config/ftbquests/quests/chapters/create_foundations.snbt",
+      "config/ftbquests/quests/chapters/create_rail_logistics.snbt",
+      "config/ftbquests/quests/chapters/death.snbt",
+      "config/ftbquests/quests/chapters/deeper_darker.snbt"
+    ],
+    "match_nbt": [
+      "config/ftbquests/quests/chapters/starting_out.snbt",
+      "config/ftbquests/quests/chapters/tinkers_arsenal.snbt"
+    ],
+    "min_width": [
+      "config/ftbquests/quests/chapters/adventuring.snbt",
+      "config/ftbquests/quests/chapters/ae2.snbt",
+      "config/ftbquests/quests/chapters/create_brass_automation.snbt",
+      "config/ftbquests/quests/chapters/create_components.snbt",
+      "config/ftbquests/quests/chapters/create_foundations.snbt",
+      "config/ftbquests/quests/chapters/food_catalogue.snbt",
+      "config/ftbquests/quests/chapters/grid_power.snbt",
+      "config/ftbquests/quests/chapters/magic_i.snbt",
+      "config/ftbquests/quests/chapters/magic_ii.snbt",
+      "config/ftbquests/quests/chapters/major_gates.snbt",
+      "config/ftbquests/quests/chapters/oc2r.snbt",
+      "config/ftbquests/quests/chapters/pillager_campaigns.snbt",
+      "config/ftbquests/quests/chapters/space.snbt",
+      "config/ftbquests/quests/chapters/starting_out.snbt",
+      "config/ftbquests/quests/chapters/su_heat.snbt",
+      "config/ftbquests/quests/chapters/synthesis_i.snbt",
+      "config/ftbquests/quests/chapters/tinkers_arsenal.snbt",
+      "config/ftbquests/quests/chapters/tinkers_i.snbt",
+      "config/ftbquests/quests/chapters/tinkers_ii.snbt",
+      "config/ftbquests/quests/chapters/village_economy.snbt"
+    ],
+    "ftbquests": [
+      "config/ftbquests/quests/chapters/books.snbt"
+    ],
+    "patchouli": [
+      "config/ftbquests/quests/chapters/books.snbt"
+    ],
+    "relics": [
+      "config/ftbquests/quests/chapters/relics.snbt"
+    ],
+    "supplementaries": [
+      "config/ftbquests/quests/chapters/building_block_systems.snbt"
+    ],
+    "immersive_weathering": [
+      "config/ftbquests/quests/chapters/building_block_systems.snbt"
+    ],
+    "tinkersweaponry": [
+      "config/ftbquests/quests/chapters/tinkers_arsenal.snbt"
+    ],
+    "tinkers_battle_spades": [
+      "config/ftbquests/quests/chapters/tinkers_arsenal.snbt"
+    ],
+    "corn_delight": [
+      "config/ftbquests/quests/chapters/food_catalogue.snbt"
+    ],
+    "rusticdelight": [
+      "config/ftbquests/quests/chapters/food_catalogue.snbt"
+    ],
+    "oceansdelight": [
+      "config/ftbquests/quests/chapters/food_catalogue.snbt"
+    ],
+    "loading_requirement_container_meta": [
+      "config/fancymenu/customization/connect_screen_layout.txt",
+      "config/fancymenu/customization/create_world_screen_layout.txt",
+      "config/fancymenu/customization/drippy_loading_overlay_layout.txt",
+      "config/fancymenu/customization/generic_dirt_message_screen_layout.txt",
+      "config/fancymenu/customization/level_loading_screen_layout.txt",
+      "config/fancymenu/customization/online_options_screen_layout.txt",
+      "config/fancymenu/customization/options_screen_layout.txt",
+      "config/fancymenu/customization/pause_screen_layout.txt",
+      "config/fancymenu/customization/progress_screen_layout.txt",
+      "config/fancymenu/customization/receiving_level_screen_layout.txt",
+      "config/fancymenu/customization/select_world_screen_layout.txt",
+      "config/fancymenu/customization/sound_options_screen_layout.txt",
+      "config/fancymenu/customization/title_screen_layout.txt",
+      "config/fancymenu/customization/universal_layout.txt"
+    ],
+    "source": [
+      "config/fancymenu/customization/connect_screen_layout.txt",
+      "config/fancymenu/customization/create_world_screen_layout.txt",
+      "config/fancymenu/customization/drippy_loading_overlay_layout.txt",
+      "config/fancymenu/customization/generic_dirt_message_screen_layout.txt",
+      "config/fancymenu/customization/level_loading_screen_layout.txt",
+      "config/fancymenu/customization/online_options_screen_layout.txt",
+      "config/fancymenu/customization/options_screen_layout.txt",
+      "config/fancymenu/customization/pause_screen_layout.txt",
+      "config/fancymenu/customization/progress_screen_layout.txt",
+      "config/fancymenu/customization/receiving_level_screen_layout.txt",
+      "config/fancymenu/customization/select_world_screen_layout.txt",
+      "config/fancymenu/customization/sound_options_screen_layout.txt",
+      "config/fancymenu/customization/title_screen_layout.txt",
+      "config/fancymenu/customization/universal_layout.txt"
+    ],
+    "executable_block": [
+      "config/fancymenu/customization/create_world_screen_layout.txt",
+      "config/fancymenu/customization/drippy_loading_overlay_layout.txt",
+      "config/fancymenu/customization/select_world_screen_layout.txt",
+      "config/fancymenu/customization/sound_options_screen_layout.txt",
+      "config/fancymenu/customization/title_screen_layout.txt"
+    ],
+    "fancymenu": [
+      "config/fancymenu/customization/universal_layout.txt"
+    ],
+    "shieldsplus": [
+      "config/enhancedai/Mobs/Shielding/shield_block_chance.json"
+    ],
+    "iguanatweaksreborn": [
+      "config/enhancedai/Mobs/Shielding/shield_block_chance.json"
+    ],
+    "burnt": [
+      "config/adpother/Breakables/burnt$burnt_blocks.cfg",
+      "config/adpother/Emitters/burnt$burning_bamboo.cfg",
+      "config/adpother/Emitters/burnt$burning_doors.cfg",
+      "config/adpother/Emitters/burnt$burning_fence_gates.cfg",
+      "config/adpother/Emitters/burnt$burning_fences.cfg",
+      "config/adpother/Emitters/burnt$burning_grass.cfg",
+      "config/adpother/Emitters/burnt$burning_leaves.cfg",
+      "config/adpother/Emitters/burnt$burning_logs.cfg",
+      "config/adpother/Emitters/burnt$burning_planks.cfg",
+      "config/adpother/Emitters/burnt$burning_slabs.cfg",
+      "config/adpother/Emitters/burnt$burning_stairs.cfg",
+      "config/adpother/Emitters/burnt$burning_stripped_logs.cfg",
+      "config/adpother/Emitters/burnt$burning_stripped_wood.cfg",
+      "config/adpother/Emitters/burnt$burning_wood.cfg",
+      "config/adpother/Emitters/burnt$smoldering_carpet.cfg",
+      "config/adpother/Emitters/burnt$smoldering_hay.cfg",
+      "config/adpother/Emitters/burnt$smoldering_wool.cfg",
+      "config/adpother/Emitters/burnt$stairs_fire.cfg",
+      "config/adpother/Emitters/burnt$tall_grass_fire.cfg",
+      "config/adpother/Emitters/burnt$wood_fire.cfg"
+    ],
+    "ad_astra": [
+      "config/adpother/Emitters/ad_astra$coal_generator.cfg",
+      "config/adpother/Emitters/ad_astra$tier_1_rocket.cfg",
+      "config/adpother/Emitters/ad_astra$tier_1_rover.cfg",
+      "config/adpother/Emitters/ad_astra$tier_2_rocket.cfg",
+      "config/adpother/Emitters/ad_astra$tier_3_rocket.cfg",
+      "config/adpother/Emitters/ad_astra$tier_4_rocket.cfg",
+      "config/adpother/Impacts/fluids.cfg"
+    ],
+    "ic2": [
+      "config/adchimneys/Emitters/bakery$brick_stove.cfg",
+      "config/adchimneys/Emitters/bakery$cobblestone_stove.cfg",
+      "config/adchimneys/Emitters/bakery$deepslate_stove.cfg",
+      "config/adchimneys/Emitters/bakery$end_stove.cfg",
+      "config/adchimneys/Emitters/bakery$granite_stove.cfg",
+      "config/adchimneys/Emitters/bakery$mud_stove.cfg",
+      "config/adchimneys/Emitters/bakery$quartz_stove.cfg",
+      "config/adchimneys/Emitters/bakery$red_nether_bricks_stove.cfg",
+      "config/adchimneys/Emitters/bakery$sandstone_stove.cfg",
+      "config/adchimneys/Emitters/bakery$stone_bricks_stove.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$amethyst_forge.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$amethyst_furnace.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$copper_forge.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$copper_furnace.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$diamond_forge.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$diamond_furnace.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$extreme_forge.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$extreme_furnace.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$gold_forge.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$gold_furnace.cfg"
+    ],
+    "ad_extendra": [
+      "config/adpother/Emitters/ad_extendra$tier_10_rocket.cfg",
+      "config/adpother/Emitters/ad_extendra$tier_11_rocket.cfg",
+      "config/adpother/Emitters/ad_extendra$tier_5_rocket.cfg",
+      "config/adpother/Emitters/ad_extendra$tier_6_rocket.cfg",
+      "config/adpother/Emitters/ad_extendra$tier_7_rocket.cfg",
+      "config/adpother/Emitters/ad_extendra$tier_8_rocket.cfg",
+      "config/adpother/Emitters/ad_extendra$tier_9_rocket.cfg"
+    ],
+    "bakery": [
+      "config/adchimneys/Emitters/bakery$brick_stove.cfg",
+      "config/adchimneys/Emitters/bakery$cobblestone_stove.cfg",
+      "config/adchimneys/Emitters/bakery$deepslate_stove.cfg",
+      "config/adchimneys/Emitters/bakery$end_stove.cfg",
+      "config/adchimneys/Emitters/bakery$granite_stove.cfg",
+      "config/adchimneys/Emitters/bakery$mud_stove.cfg",
+      "config/adchimneys/Emitters/bakery$quartz_stove.cfg",
+      "config/adchimneys/Emitters/bakery$red_nether_bricks_stove.cfg",
+      "config/adchimneys/Emitters/bakery$sandstone_stove.cfg",
+      "config/adchimneys/Emitters/bakery$stone_bricks_stove.cfg",
+      "config/adpother/Emitters/bakery$brick_stove.cfg",
+      "config/adpother/Emitters/bakery$cobblestone_stove.cfg",
+      "config/adpother/Emitters/bakery$deepslate_stove.cfg",
+      "config/adpother/Emitters/bakery$end_stove.cfg",
+      "config/adpother/Emitters/bakery$granite_stove.cfg",
+      "config/adpother/Emitters/bakery$mud_stove.cfg",
+      "config/adpother/Emitters/bakery$quartz_stove.cfg",
+      "config/adpother/Emitters/bakery$red_nether_bricks_stove.cfg",
+      "config/adpother/Emitters/bakery$sandstone_stove.cfg",
+      "config/adpother/Emitters/bakery$stone_bricks_stove.cfg"
+    ],
+    "betterfurnacesreforged": [
+      "config/adchimneys/Emitters/betterfurnacesreforged$amethyst_forge.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$amethyst_furnace.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$copper_forge.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$copper_furnace.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$diamond_forge.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$diamond_furnace.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$extreme_forge.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$extreme_furnace.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$gold_forge.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$gold_furnace.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$iron_forge.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$iron_furnace.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$netherhot_forge.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$netherhot_furnace.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$platinum_forge.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$platinum_furnace.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$steel_forge.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$steel_furnace.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$ultimate_forge.cfg",
+      "config/adchimneys/Emitters/betterfurnacesreforged$ultimate_furnace.cfg"
+    ],
+    "betterminecarts": [
+      "config/adpother/Emitters/betterminecarts$diesel_locomotive.cfg",
+      "config/adpother/Emitters/betterminecarts$steam_locomotive.cfg"
+    ],
+    "beyond_earth": [
+      "config/adpother/Emitters/beyond_earth$coal_generator.cfg",
+      "config/adpother/Emitters/beyond_earth$rocket_t1.cfg",
+      "config/adpother/Emitters/beyond_earth$rocket_t2.cfg",
+      "config/adpother/Emitters/beyond_earth$rocket_t3.cfg",
+      "config/adpother/Emitters/beyond_earth$rocket_t4.cfg",
+      "config/adpother/Emitters/beyond_earth$rover.cfg",
+      "config/adpother/Emitters/beyond_earth$tiny_rocket.cfg",
+      "config/adpother/Impacts/fluids.cfg"
+    ],
+    "brickfurnace": [
+      "config/adchimneys/Emitters/brickfurnace$brick_blast_furnace.cfg",
+      "config/adchimneys/Emitters/brickfurnace$brick_furnace.cfg",
+      "config/adchimneys/Emitters/brickfurnace$brick_smoker.cfg",
+      "config/adpother/Emitters/brickfurnace$brick_blast_furnace.cfg",
+      "config/adpother/Emitters/brickfurnace$brick_furnace.cfg",
+      "config/adpother/Emitters/brickfurnace$brick_smoker.cfg"
+    ],
+    "burningfurnace": [
+      "config/adpother/Emitters/burningfurnace$generator.cfg",
+      "config/adpother/Fuels/burningfurnace$burned_food_powder.cfg"
+    ],
+    "car": [
+      "config/adchimneys/Emitters/car$blast_furnace.cfg",
+      "config/adpother/Emitters/car$blastfurnace.cfg",
+      "config/adpother/Emitters/car$car.cfg",
+      "config/adpother/Emitters/car$generator.cfg"
+    ],
+    "caupona": [
+      "config/adpother/Emitters/caupona$brick_kitchen_stove.cfg",
+      "config/adpother/Emitters/caupona$mud_kitchen_stove.cfg",
+      "config/adpother/Emitters/caupona$opus_incertum_kitchen_stove.cfg",
+      "config/adpother/Emitters/caupona$opus_latericium_kitchen_stove.cfg",
+      "config/adpother/Emitters/caupona$stone_brick_kitchen_stove.cfg"
+    ],
+    "cfm": [
+      "config/adpother/Emitters/cfm$bath.cfg",
+      "config/adpother/Emitters/cfm$couch.cfg",
+      "config/adpother/Emitters/cfm$sofacopter.cfg"
+    ],
+    "charcoal_pit": [
+      "config/adchimneys/Emitters/charcoal_pit$blast_furnace.cfg",
+      "config/adchimneys/Emitters/charcoal_pit$bloomeryy.cfg",
+      "config/adchimneys/Emitters/charcoal_pit$distillery.cfg",
+      "config/adchimneys/Emitters/charcoal_pit$steam_press.cfg",
+      "config/adpother/Emitters/charcoal_pit$active_pile.cfg",
+      "config/adpother/Emitters/charcoal_pit$blast_furnace.cfg",
+      "config/adpother/Emitters/charcoal_pit$bloomeryy.cfg",
+      "config/adpother/Emitters/charcoal_pit$distillery.cfg",
+      "config/adpother/Emitters/charcoal_pit$pottery_kiln.cfg",
+      "config/adpother/Emitters/charcoal_pit$steam_press.cfg"
+    ],
+    "clayworks": [
+      "config/adchimneys/Emitters/clayworks$kiln.cfg",
+      "config/adpother/Emitters/clayworks$kiln.cfg"
+    ],
+    "cookingforblockheads": [
+      "config/adchimneys/Emitters/cookingforblockheads$black_oven.cfg",
+      "config/adchimneys/Emitters/cookingforblockheads$blue_oven.cfg",
+      "config/adchimneys/Emitters/cookingforblockheads$brown_oven.cfg",
+      "config/adchimneys/Emitters/cookingforblockheads$cyan_oven.cfg",
+      "config/adchimneys/Emitters/cookingforblockheads$gray_oven.cfg",
+      "config/adchimneys/Emitters/cookingforblockheads$green_oven.cfg",
+      "config/adchimneys/Emitters/cookingforblockheads$light_blue_oven.cfg",
+      "config/adchimneys/Emitters/cookingforblockheads$light_gray_oven.cfg",
+      "config/adchimneys/Emitters/cookingforblockheads$lime_oven.cfg",
+      "config/adchimneys/Emitters/cookingforblockheads$magenta_oven.cfg",
+      "config/adchimneys/Emitters/cookingforblockheads$orange_oven.cfg",
+      "config/adchimneys/Emitters/cookingforblockheads$oven.cfg",
+      "config/adchimneys/Emitters/cookingforblockheads$pink_oven.cfg",
+      "config/adchimneys/Emitters/cookingforblockheads$purple_oven.cfg",
+      "config/adchimneys/Emitters/cookingforblockheads$red_oven.cfg",
+      "config/adchimneys/Emitters/cookingforblockheads$white_oven.cfg",
+      "config/adchimneys/Emitters/cookingforblockheads$yellow_oven.cfg",
+      "config/adpother/Emitters/cookingforblockheads$black_oven.cfg",
+      "config/adpother/Emitters/cookingforblockheads$blue_oven.cfg",
+      "config/adpother/Emitters/cookingforblockheads$brown_oven.cfg"
+    ],
+    "corpse": [
+      "config/adpother/Emitters/corpse$corpse.cfg"
+    ],
+    "createaddition": [
+      "config/adchimneys/Emitters/createaddition$liquid_blaze_burner.cfg",
+      "config/adpother/Emitters/createaddition$crude_burner.cfg",
+      "config/adpother/Emitters/createaddition$furnace_burner.cfg",
+      "config/adpother/Emitters/createaddition$liquid_blaze_burner.cfg"
+    ],
+    "createlowheated": [
+      "config/adchimneys/Emitters/createlowheated$basic_burner_empowered.cfg",
+      "config/adchimneys/Emitters/createlowheated$basic_burner_lit.cfg",
+      "config/adpother/Emitters/createlowheated$basic_burner.cfg"
+    ],
+    "tfmg": [
+      "config/adchimneys/Emitters/createtfmg$blast_furnace.cfg",
+      "config/adpother/Emitters/createtfmg$blast_furnace.cfg",
+      "config/adpother/Emitters/createtfmg$brick_smokestack.cfg",
+      "config/adpother/Emitters/createtfmg$coke_oven.cfg",
+      "config/adpother/Emitters/createtfmg$concreate_smokestack.cfg",
+      "config/adpother/Emitters/createtfmg$flarestack.cfg",
+      "config/adpother/Emitters/createtfmg$large_engine.cfg",
+      "config/adpother/Emitters/createtfmg$metal_smokestack.cfg",
+      "config/adpother/Emitters/createtfmg$radial_engine.cfg",
+      "config/adpother/Emitters/createtfmg$regular_engine.cfg",
+      "config/adpother/Emitters/createtfmg$simple_large_engine.cfg",
+      "config/adpother/Emitters/createtfmg$turbine_engine.cfg"
+    ],
+    "crossroads": [
+      "config/adchimneys/Emitters/crossroads$firebox.cfg",
+      "config/adpother/Emitters/crossroads$firebox.cfg",
+      "config/adpother/Emitters/crossroads$millstone.cfg",
+      "config/adpother/Emitters/crossroads$stamp_mill.cfg"
+    ],
+    "divinerpg": [
+      "config/adchimneys/Emitters/divinerpg$coalstone_furnace.cfg",
+      "config/adchimneys/Emitters/divinerpg$demon_furnace.cfg",
+      "config/adchimneys/Emitters/divinerpg$greenlight_furnace.cfg",
+      "config/adchimneys/Emitters/divinerpg$molten_furnace.cfg",
+      "config/adchimneys/Emitters/divinerpg$moonlight_furnace.cfg",
+      "config/adchimneys/Emitters/divinerpg$oceanfire_furnace.cfg",
+      "config/adchimneys/Emitters/divinerpg$whitefire_furnace.cfg",
+      "config/adpother/Emitters/divinerpg$coalstone_furnace.cfg",
+      "config/adpother/Emitters/divinerpg$demon_furnace.cfg",
+      "config/adpother/Emitters/divinerpg$greenlight_furnace.cfg",
+      "config/adpother/Emitters/divinerpg$molten_furnace.cfg",
+      "config/adpother/Emitters/divinerpg$moonlight_furnace.cfg",
+      "config/adpother/Emitters/divinerpg$oceanfire_furnace.cfg",
+      "config/adpother/Emitters/divinerpg$whitefire_furnace.cfg"
+    ],
+    "draconicevolution": [
+      "config/adchimneys/Emitters/draconicevolution$generator.cfg",
+      "config/adpother/Emitters/draconicevolution$generator.cfg"
+    ],
+    "electrodynamics": [
+      "config/adchimneys/Emitters/electrodynamics$coalgenerator.cfg",
+      "config/adpother/Emitters/electrodynamics$coalgenerator.cfg",
+      "config/adpother/Emitters/electrodynamics$combustionchamber.cfg",
+      "config/adpother/Emitters/electrodynamics$mineralcrusher.cfg",
+      "config/adpother/Emitters/electrodynamics$mineralcrusherdouble.cfg",
+      "config/adpother/Emitters/electrodynamics$mineralcrushertriple.cfg",
+      "config/adpother/Emitters/electrodynamics$mineralgrinder.cfg",
+      "config/adpother/Emitters/electrodynamics$mineralgrinderdouble.cfg",
+      "config/adpother/Emitters/electrodynamics$mineralgrindertriple.cfg",
+      "config/adpother/Emitters/electrodynamics$wiremill.cfg",
+      "config/adpother/Emitters/electrodynamics$wiremilldouble.cfg",
+      "config/adpother/Emitters/electrodynamics$wiremilltriple.cfg",
+      "config/adpother/Respirators/electrodynamics$combatarmorhelmet.cfg",
+      "config/adpother/Respirators/electrodynamics$compositearmorhelmet.cfg"
+    ],
+    "enderio": [
+      "config/adchimneys/Emitters/enderio$primitive_alloy_smelter.cfg",
+      "config/adchimneys/Emitters/enderio$stirling_generator.cfg",
+      "config/adpother/Emitters/enderio$primitive_alloy_smelter.cfg",
+      "config/adpother/Emitters/enderio$sag_mill.cfg",
+      "config/adpother/Emitters/enderio$stirling_generator.cfg"
+    ],
+    "extractinator": [
+      "config/adpother/Emitters/extractinator$extractinator.cfg"
+    ],
+    "twilightdelight": [
+      "config/adchimneys/Emitters/farmersdelight$stove.cfg",
+      "config/adchimneys/Emitters/hardcore_torches$stove.cfg",
+      "config/adchimneys/Emitters/meadow$stove_tiles_wood.cfg",
+      "config/adchimneys/Emitters/nethersdelight$blackstone_stove.cfg",
+      "config/adchimneys/Emitters/twilightdelight$maze_stove.cfg",
+      "config/adpother/Emitters/farmersdelight$stove.cfg",
+      "config/adpother/Emitters/hardcore_torches$stove.cfg",
+      "config/adpother/Emitters/meadow$stove_tiles_wood.cfg",
+      "config/adpother/Emitters/nethersdelight$blackstone_stove.cfg",
+      "config/adpother/Emitters/twilightdelight$maze_stove.cfg"
+    ],
+    "meadow": [
+      "config/adchimneys/Emitters/farmersdelight$stove.cfg",
+      "config/adchimneys/Emitters/hardcore_torches$stove.cfg",
+      "config/adchimneys/Emitters/meadow$cooking_cauldron.cfg",
+      "config/adchimneys/Emitters/meadow$fondue.cfg",
+      "config/adchimneys/Emitters/meadow$stove_tiles_lid.cfg",
+      "config/adchimneys/Emitters/meadow$stove_tiles_wood.cfg",
+      "config/adchimneys/Emitters/nethersdelight$blackstone_stove.cfg",
+      "config/adchimneys/Emitters/twilightdelight$maze_stove.cfg",
+      "config/adpother/Emitters/farmersdelight$stove.cfg",
+      "config/adpother/Emitters/hardcore_torches$stove.cfg",
+      "config/adpother/Emitters/meadow$cooking_cauldron.cfg",
+      "config/adpother/Emitters/meadow$fondue.cfg",
+      "config/adpother/Emitters/meadow$stove_tiles_lid.cfg",
+      "config/adpother/Emitters/meadow$stove_tiles_wood.cfg",
+      "config/adpother/Emitters/nethersdelight$blackstone_stove.cfg",
+      "config/adpother/Emitters/twilightdelight$maze_stove.cfg"
+    ],
+    "futurepack": [
+      "config/adpother/Emitters/futurepack$industrial_furnace.cfg",
+      "config/adpother/Emitters/futurepack$part_press.cfg"
+    ],
+    "generatorgalore": [
+      "config/adchimneys/Emitters/generatorgalore$copper_generator.cfg",
+      "config/adchimneys/Emitters/generatorgalore$copper_generator_8x.cfg",
+      "config/adchimneys/Emitters/generatorgalore$culinary_generator.cfg",
+      "config/adchimneys/Emitters/generatorgalore$culinary_generator_64x.cfg",
+      "config/adchimneys/Emitters/generatorgalore$culinary_generator_8x.cfg",
+      "config/adchimneys/Emitters/generatorgalore$diamond_generator.cfg",
+      "config/adchimneys/Emitters/generatorgalore$diamond_generator_8x.cfg",
+      "config/adchimneys/Emitters/generatorgalore$emerald_generator.cfg",
+      "config/adchimneys/Emitters/generatorgalore$emerald_generator_8x.cfg",
+      "config/adchimneys/Emitters/generatorgalore$enchantment_generator.cfg",
+      "config/adchimneys/Emitters/generatorgalore$enchantment_generator_64x.cfg",
+      "config/adchimneys/Emitters/generatorgalore$enchantment_generator_8x.cfg",
+      "config/adchimneys/Emitters/generatorgalore$ender_generator.cfg",
+      "config/adchimneys/Emitters/generatorgalore$ender_generator_64x.cfg",
+      "config/adchimneys/Emitters/generatorgalore$ender_generator_8x.cfg",
+      "config/adchimneys/Emitters/generatorgalore$gold_generator.cfg",
+      "config/adchimneys/Emitters/generatorgalore$gold_generator_8x.cfg",
+      "config/adchimneys/Emitters/generatorgalore$halitosis_generator.cfg",
+      "config/adchimneys/Emitters/generatorgalore$halitosis_generator_64x.cfg",
+      "config/adchimneys/Emitters/generatorgalore$halitosis_generator_8x.cfg"
+    ],
+    "gtceu": [
+      "config/adchimneys/Emitters/gtceu$bronze_large_boiler.cfg",
+      "config/adchimneys/Emitters/gtceu$coke_oven.cfg",
+      "config/adchimneys/Emitters/gtceu$hp_steam_liquid_boiler.cfg",
+      "config/adchimneys/Emitters/gtceu$hp_steam_solid_boiler.cfg",
+      "config/adchimneys/Emitters/gtceu$lp_steam_liquid_boiler.cfg",
+      "config/adchimneys/Emitters/gtceu$lp_steam_solid_boiler.cfg",
+      "config/adchimneys/Emitters/gtceu$primitive_blast_furnace.cfg",
+      "config/adchimneys/Emitters/gtceu$steel_large_boiler.cfg",
+      "config/adchimneys/Emitters/gtceu$titanium_large_boiler.cfg",
+      "config/adchimneys/Emitters/gtceu$tungstensteel_large_boiler.cfg",
+      "config/adpother/Emitters/gtceu$bronze_large_boiler.cfg",
+      "config/adpother/Emitters/gtceu$coke_oven.cfg",
+      "config/adpother/Emitters/gtceu$ev_large_miner.cfg",
+      "config/adpother/Emitters/gtceu$ev_macerator.cfg",
+      "config/adpother/Emitters/gtceu$ev_rock_crusher.cfg",
+      "config/adpother/Emitters/gtceu$extreme_combustion_engine.cfg",
+      "config/adpother/Emitters/gtceu$gas_large_turbine.cfg",
+      "config/adpother/Emitters/gtceu$hp_steam_liquid_boiler.cfg",
+      "config/adpother/Emitters/gtceu$hp_steam_macerator.cfg",
+      "config/adpother/Emitters/gtceu$hp_steam_rock_crusher.cfg"
+    ],
+    "hardcore_torches": [
+      "config/adchimneys/Emitters/hardcore_torches$hardcore_campfire.cfg",
+      "config/adchimneys/Emitters/hardcore_torches$hardcore_campfire_signal.cfg",
+      "config/adchimneys/Emitters/hardcore_torches$stove.cfg",
+      "config/adpother/Emitters/hardcore_torches$hardcore_campfire.cfg",
+      "config/adpother/Emitters/hardcore_torches$stove.cfg",
+      "config/adpother/Torches/hardcore_torches$lit_lantern.cfg",
+      "config/adpother/Torches/hardcore_torches$lit_soul_lantern.cfg",
+      "config/adpother/Torches/hardcore_torches$lit_torch.cfg",
+      "config/adpother/Torches/hardcore_torches$lit_wall_torch.cfg",
+      "config/adpother/Torches/hardcore_torches$smoldering_torch.cfg",
+      "config/adpother/Torches/hardcore_torches$smoldering_wall_torch.cfg"
+    ],
+    "hbm": [
+      "config/adpother/Emitters/hbm$burner_press.cfg",
+      "config/adpother/Emitters/hbm$shredder.cfg",
+      "config/adpother/Respirators/hbm$m65_mask.cfg"
+    ],
+    "immersive_aircraft": [
+      "config/adpother/Emitters/immersive_aircraft$airship.cfg",
+      "config/adpother/Emitters/immersive_aircraft$biplane.cfg",
+      "config/adpother/Emitters/immersive_aircraft$cargo_airship.cfg",
+      "config/adpother/Emitters/immersive_aircraft$gyrodyne.cfg",
+      "config/adpother/Emitters/immersive_aircraft$quadrocopter.cfg",
+      "config/adpother/Emitters/immersive_aircraft$warship.cfg"
+    ],
+    "immersiveengineering": [
+      "config/adchimneys/Emitters/immersiveengineering$advanced_blast_furnace.cfg",
+      "config/adchimneys/Emitters/immersiveengineering$alloy_smelter.cfg",
+      "config/adchimneys/Emitters/immersiveengineering$blast_furnace.cfg",
+      "config/adchimneys/Emitters/immersiveengineering$coke_oven.cfg",
+      "config/adchimneys/Emitters/immersiveengineering$diesel_generator.cfg",
+      "config/adpother/Emitters/immersiveengineering$advanced_blast_furnace.cfg",
+      "config/adpother/Emitters/immersiveengineering$alloy_smelter.cfg",
+      "config/adpother/Emitters/immersiveengineering$blast_furnace.cfg",
+      "config/adpother/Emitters/immersiveengineering$bucket_wheel.cfg",
+      "config/adpother/Emitters/immersiveengineering$coke_oven.cfg",
+      "config/adpother/Emitters/immersiveengineering$crusher.cfg",
+      "config/adpother/Emitters/immersiveengineering$diesel_generator.cfg"
+    ],
+    "immersivepetroleum": [
+      "config/adpother/Emitters/immersivepetroleum$portable_generator.cfg",
+      "config/adpother/Emitters/immersivepetroleum$speedboat.cfg"
+    ],
+    "immersiverailroading": [
+      "config/adpother/Emitters/immersiverailroading$diesel_locomotive.cfg",
+      "config/adpother/Emitters/immersiverailroading$steam_locomotive.cfg"
+    ],
+    "immersivetechnology": [
+      "config/adchimneys/Emitters/immersivetechnology$boiler_liquid.cfg",
+      "config/adchimneys/Emitters/immersivetechnology$boiler_solid.cfg",
+      "config/adpother/Emitters/immersivetechnology$boiler_liquid.cfg",
+      "config/adpother/Emitters/immersivetechnology$boiler_solid.cfg"
+    ],
+    "industrialforegoing": [
+      "config/adchimneys/Emitters/industrialforegoing$biofuel_generator.cfg",
+      "config/adchimneys/Emitters/industrialforegoing$pitiful_generator.cfg",
+      "config/adpother/Emitters/industrialforegoing$biofuel_generator.cfg",
+      "config/adpother/Emitters/industrialforegoing$pitiful_generator.cfg"
+    ],
+    "ironfurnaces": [
+      "config/adchimneys/Emitters/ironfurnaces$copper_furnace.cfg",
+      "config/adchimneys/Emitters/ironfurnaces$crystal_furnace.cfg",
+      "config/adchimneys/Emitters/ironfurnaces$diamond_furnace.cfg",
+      "config/adchimneys/Emitters/ironfurnaces$emerald_furnace.cfg",
+      "config/adchimneys/Emitters/ironfurnaces$gold_furnace.cfg",
+      "config/adchimneys/Emitters/ironfurnaces$iron_furnace.cfg",
+      "config/adchimneys/Emitters/ironfurnaces$million_furnace.cfg",
+      "config/adchimneys/Emitters/ironfurnaces$netherite_furnace.cfg",
+      "config/adchimneys/Emitters/ironfurnaces$obsidian_furnace.cfg",
+      "config/adchimneys/Emitters/ironfurnaces$silver_furnace.cfg",
+      "config/adpother/Emitters/ironfurnaces$copper_furnace.cfg",
+      "config/adpother/Emitters/ironfurnaces$crystal_furnace.cfg",
+      "config/adpother/Emitters/ironfurnaces$diamond_furnace.cfg",
+      "config/adpother/Emitters/ironfurnaces$emerald_furnace.cfg",
+      "config/adpother/Emitters/ironfurnaces$gold_furnace.cfg",
+      "config/adpother/Emitters/ironfurnaces$iron_furnace.cfg",
+      "config/adpother/Emitters/ironfurnaces$million_furnace.cfg",
+      "config/adpother/Emitters/ironfurnaces$netherite_furnace.cfg",
+      "config/adpother/Emitters/ironfurnaces$obsidian_furnace.cfg",
+      "config/adpother/Emitters/ironfurnaces$silver_furnace.cfg"
+    ],
+    "jumbofurnace": [
+      "config/adchimneys/Emitters/jumbofurnace$jumbo_furnace.cfg",
+      "config/adpother/Emitters/jumbofurnace$jumbo_furnace.cfg"
+    ],
+    "legendarysurvivaloverhaul": [
+      "config/adchimneys/Emitters/legendarysurvivaloverhaul$heater.cfg",
+      "config/adpother/Emitters/legendarysurvivaloverhaul$heater.cfg"
+    ],
+    "mysticalagriculture": [
+      "config/adchimneys/Emitters/mysticalagriculture$basic_reprocessor.cfg",
+      "config/adchimneys/Emitters/mysticalagriculture$imperium_furnace.cfg",
+      "config/adchimneys/Emitters/mysticalagriculture$imperium_reprocessor.cfg",
+      "config/adchimneys/Emitters/mysticalagriculture$inferium_furnace.cfg",
+      "config/adchimneys/Emitters/mysticalagriculture$inferium_reprocessor.cfg",
+      "config/adchimneys/Emitters/mysticalagriculture$prudentium_furnace.cfg",
+      "config/adchimneys/Emitters/mysticalagriculture$prudentium_reprocessor.cfg",
+      "config/adchimneys/Emitters/mysticalagriculture$supremium_furnace.cfg",
+      "config/adchimneys/Emitters/mysticalagriculture$supremium_reprocessor.cfg",
+      "config/adchimneys/Emitters/mysticalagriculture$tertium_furnace.cfg",
+      "config/adchimneys/Emitters/mysticalagriculture$tertium_reprocessor.cfg",
+      "config/adpother/Emitters/mysticalagriculture$basic_reprocessor.cfg",
+      "config/adpother/Emitters/mysticalagriculture$imperium_furnace.cfg",
+      "config/adpother/Emitters/mysticalagriculture$imperium_reprocessor.cfg",
+      "config/adpother/Emitters/mysticalagriculture$inferium_furnace.cfg",
+      "config/adpother/Emitters/mysticalagriculture$inferium_reprocessor.cfg",
+      "config/adpother/Emitters/mysticalagriculture$prudentium_furnace.cfg",
+      "config/adpother/Emitters/mysticalagriculture$prudentium_reprocessor.cfg",
+      "config/adpother/Emitters/mysticalagriculture$supremium_furnace.cfg",
+      "config/adpother/Emitters/mysticalagriculture$supremium_reprocessor.cfg"
+    ],
+    "nethersdelight": [
+      "config/adchimneys/Emitters/nethersdelight$blackstone_blast_furnace.cfg",
+      "config/adchimneys/Emitters/nethersdelight$blackstone_furnace.cfg",
+      "config/adchimneys/Emitters/nethersdelight$blackstone_stove.cfg",
+      "config/adchimneys/Emitters/nethersdelight$nether_brick_smoker.cfg",
+      "config/adpother/Emitters/nethersdelight$blackstone_blast_furnace.cfg",
+      "config/adpother/Emitters/nethersdelight$blackstone_furnace.cfg",
+      "config/adpother/Emitters/nethersdelight$blackstone_stove.cfg",
+      "config/adpother/Emitters/nethersdelight$nether_brick_smoker.cfg"
+    ],
+    "plane": [
+      "config/adpother/Emitters/plane$bush_plane.cfg",
+      "config/adpother/Emitters/plane$cargo_plane.cfg",
+      "config/adpother/Emitters/plane$plane.cfg"
+    ],
+    "productivemetalworks": [
+      "config/adchimneys/Emitters/productivemetalworks$foundry_controllers.cfg",
+      "config/adpother/Emitters/productivemetalworks$foundry_controllers.cfg"
+    ],
+    "projecte": [
+      "config/adchimneys/Emitters/projecte$dm_furnace.cfg",
+      "config/adchimneys/Emitters/projecte$rm_furnace.cfg",
+      "config/adpother/Emitters/projecte$dm_furnace.cfg",
+      "config/adpother/Emitters/projecte$rm_furnace.cfg"
+    ],
+    "quarryplus": [
+      "config/adpother/Emitters/quarryplus$solid_fuel_quarry.cfg"
+    ],
+    "railcraft": [
+      "config/adchimneys/Emitters/railcraft$blast_furnace.cfg",
+      "config/adchimneys/Emitters/railcraft$coke_oven.cfg",
+      "config/adchimneys/Emitters/railcraft$fluid_fueled_firebox.cfg",
+      "config/adchimneys/Emitters/railcraft$solid_fueled_firebox.cfg",
+      "config/adpother/Emitters/railcraft$blast_furnace.cfg",
+      "config/adpother/Emitters/railcraft$coke_oven.cfg",
+      "config/adpother/Emitters/railcraft$crusher.cfg",
+      "config/adpother/Emitters/railcraft$fluid_fueled_firebox.cfg",
+      "config/adpother/Emitters/railcraft$solid_fueled_firebox.cfg",
+      "config/adpother/Emitters/railcraft$steam_locomotive.cfg",
+      "config/adpother/Emitters/railcraft$tunnel_bore.cfg"
+    ],
+    "rftoolspower": [
+      "config/adchimneys/Emitters/rftoolspower$blazing_generator.cfg",
+      "config/adchimneys/Emitters/rftoolspower$coal_generator.cfg",
+      "config/adpother/Emitters/rftoolspower$blazing_generator.cfg",
+      "config/adpother/Emitters/rftoolspower$coal_generator.cfg",
+      "config/adpother/Fuels/rftoolspower$blazing_rod.cfg"
+    ],
+    "silents_mechanisms": [
+      "config/adchimneys/Emitters/silents_mechanisms$coal_generator.cfg",
+      "config/adchimneys/Emitters/silents_mechanisms$diesel_generator.cfg",
+      "config/adchimneys/Emitters/silents_mechanisms$lava_generator.cfg",
+      "config/adpother/Emitters/silents_mechanisms$basic_crusher.cfg",
+      "config/adpother/Emitters/silents_mechanisms$coal_generator.cfg",
+      "config/adpother/Emitters/silents_mechanisms$crusher.cfg",
+      "config/adpother/Emitters/silents_mechanisms$diesel_generator.cfg",
+      "config/adpother/Emitters/silents_mechanisms$lava_generator.cfg"
+    ],
+    "simpleplanes": [
+      "config/adpother/Emitters/simpleplanes$helicopter.cfg",
+      "config/adpother/Emitters/simpleplanes$large_plane.cfg",
+      "config/adpother/Emitters/simpleplanes$plane.cfg"
+    ],
+    "smallships": [
+      "config/adpother/Emitters/smallships$cannon_ball.cfg"
+    ],
+    "steampowered": [
+      "config/adchimneys/Emitters/steampowered$bronze_burner.cfg",
+      "config/adchimneys/Emitters/steampowered$cast_iron_burner.cfg",
+      "config/adchimneys/Emitters/steampowered$steel_burner.cfg",
+      "config/adpother/Emitters/steampowered$bronze_burner.cfg",
+      "config/adpother/Emitters/steampowered$cast_iron_burner.cfg",
+      "config/adpother/Emitters/steampowered$steel_burner.cfg"
+    ],
+    "tfc": [
+      "config/adpother/Emitters/tfc$blast_furnace.cfg",
+      "config/adpother/Emitters/tfc$bloomery.cfg",
+      "config/adpother/Emitters/tfc$burning_log_pile.cfg",
+      "config/adpother/Emitters/tfc$charcoal_forge.cfg",
+      "config/adpother/Emitters/tfc$firepit.cfg",
+      "config/adpother/Emitters/tfc$grill.cfg",
+      "config/adpother/Emitters/tfc$pit_kiln.cfg",
+      "config/adpother/Emitters/tfc$pot.cfg",
+      "config/adpother/Fuels/tfc$peat.cfg",
+      "config/adpother/Torches/tfc$torch.cfg",
+      "config/adpother/Torches/tfc$wall_torch.cfg"
+    ],
+    "thermal": [
+      "config/adchimneys/Emitters/thermal$dynamo_compression.cfg",
+      "config/adchimneys/Emitters/thermal$dynamo_magmatic.cfg",
+      "config/adchimneys/Emitters/thermal$dynamo_stirling.cfg",
+      "config/adchimneys/Emitters/thermal$machine_furnace.cfg",
+      "config/adchimneys/Emitters/thermal$machine_smelter.cfg",
+      "config/adpother/Emitters/thermal$dynamo_compression.cfg",
+      "config/adpother/Emitters/thermal$dynamo_magmatic.cfg",
+      "config/adpother/Emitters/thermal$dynamo_stirling.cfg",
+      "config/adpother/Emitters/thermal$machine_furnace.cfg",
+      "config/adpother/Emitters/thermal$machine_pulverizer.cfg",
+      "config/adpother/Emitters/thermal$machine_sawmill.cfg",
+      "config/adpother/Emitters/thermal$machine_smelter.cfg"
+    ],
+    "trajanstanks": [
+      "config/adpother/Emitters/trajanstanks$cruisermk1.cfg",
+      "config/adpother/Emitters/trajanstanks$m4sherman.cfg",
+      "config/adpother/Emitters/trajanstanks$panzer_two.cfg",
+      "config/adpother/Emitters/trajanstanks$t34.cfg",
+      "config/adpother/Emitters/trajanstanks$tiger_tank.cfg"
+    ],
+    "vehicle": [
+      "config/adpother/Emitters/vehicle$aluminum_boat.cfg",
+      "config/adpother/Emitters/vehicle$atv.cfg",
+      "config/adpother/Emitters/vehicle$bumper_car.cfg",
+      "config/adpother/Emitters/vehicle$dirt_bike.cfg",
+      "config/adpother/Emitters/vehicle$dune_buggy.cfg",
+      "config/adpother/Emitters/vehicle$go_kart.cfg",
+      "config/adpother/Emitters/vehicle$golf_cart.cfg",
+      "config/adpother/Emitters/vehicle$jet_ski.cfg",
+      "config/adpother/Emitters/vehicle$lawn_mower.cfg",
+      "config/adpother/Emitters/vehicle$mini_bike.cfg",
+      "config/adpother/Emitters/vehicle$mini_bus.cfg",
+      "config/adpother/Emitters/vehicle$moped.cfg",
+      "config/adpother/Emitters/vehicle$off_roader.cfg",
+      "config/adpother/Emitters/vehicle$shopping_cart.cfg",
+      "config/adpother/Emitters/vehicle$smart_car.cfg",
+      "config/adpother/Emitters/vehicle$speed_boat.cfg",
+      "config/adpother/Emitters/vehicle$sports_plane.cfg",
+      "config/adpother/Emitters/vehicle$tractor.cfg",
+      "config/adpother/Fuels/fluid$fuelium.cfg"
+    ],
+    "ytech": [
+      "config/adpother/Emitters/ytech$fire_pit.cfg",
+      "config/adpother/Emitters/ytech$millstone.cfg",
+      "config/adpother/Emitters/ytech$primitive_alloy_smelter.cfg",
+      "config/adpother/Emitters/ytech$primitive_smelter.cfg"
+    ],
+    "unlit": [
+      "config/adpother/Fuels/unlit$coal_dust.cfg",
+      "config/adpother/Torches/unlit$jack_o_lantern.cfg",
+      "config/adpother/Torches/unlit$lantern.cfg",
+      "config/adpother/Torches/unlit$standing_torch_lit.cfg",
+      "config/adpother/Torches/unlit$wall_torch_lit.cfg"
+    ],
+    "agricraft": [
+      "config/adpother/Impacts/environment.cfg"
+    ],
+    "adpother": [
+      "config/adlods/Deposits/gas_pocket.cfg",
+      "config/adpother/Respirators/adpother$diamond_respirator.cfg",
+      "config/adpother/Respirators/adpother$gold_respirator.cfg",
+      "config/adpother/Respirators/adpother$iron_respirator.cfg"
+    ],
+    "magnumtorch": [
+      "config/adpother/Torches/magnumtorch$amethyst_magnum_torch.cfg",
+      "config/adpother/Torches/magnumtorch$diamond_magnum_torch.cfg",
+      "config/adpother/Torches/magnumtorch$emerald_magnum_torch.cfg"
+    ],
+    "mcwlights": [
+      "config/adpother/Torches/mcwlights$acacia_tiki_torch.cfg",
+      "config/adpother/Torches/mcwlights$bamboo_tiki_torch.cfg",
+      "config/adpother/Torches/mcwlights$birch_tiki_torch.cfg",
+      "config/adpother/Torches/mcwlights$crimson_tiki_torch.cfg",
+      "config/adpother/Torches/mcwlights$dark_oak_tiki_torch.cfg",
+      "config/adpother/Torches/mcwlights$framed_torch.cfg",
+      "config/adpother/Torches/mcwlights$iron_framed_torch.cfg",
+      "config/adpother/Torches/mcwlights$jungle_tiki_torch.cfg",
+      "config/adpother/Torches/mcwlights$mangrove_tiki_torch.cfg",
+      "config/adpother/Torches/mcwlights$oak_tiki_torch.cfg",
+      "config/adpother/Torches/mcwlights$reinforced_torch.cfg",
+      "config/adpother/Torches/mcwlights$rustic_torch.cfg",
+      "config/adpother/Torches/mcwlights$soul_acacia_tiki_torch.cfg",
+      "config/adpother/Torches/mcwlights$soul_bamboo_tiki_torch.cfg",
+      "config/adpother/Torches/mcwlights$soul_birch_tiki_torch.cfg",
+      "config/adpother/Torches/mcwlights$soul_crimson_tiki_torch.cfg",
+      "config/adpother/Torches/mcwlights$soul_dark_oak_tiki_torch.cfg",
+      "config/adpother/Torches/mcwlights$soul_jungle_tiki_torch.cfg",
+      "config/adpother/Torches/mcwlights$soul_mangrove_tiki_torch.cfg",
+      "config/adpother/Torches/mcwlights$soul_oak_tiki_torch.cfg"
+    ],
+    "deposit": [
+      "config/adlods/Deposits/aluminum.cfg",
+      "config/adlods/Deposits/amethyst.cfg",
+      "config/adlods/Deposits/ancient_debris.cfg",
+      "config/adlods/Deposits/coal.cfg",
+      "config/adlods/Deposits/cobalt.cfg",
+      "config/adlods/Deposits/copper.cfg",
+      "config/adlods/Deposits/diamond.cfg",
+      "config/adlods/Deposits/emerald.cfg",
+      "config/adlods/Deposits/gas_pocket.cfg",
+      "config/adlods/Deposits/gold.cfg",
+      "config/adlods/Deposits/iridium.cfg",
+      "config/adlods/Deposits/iron.cfg",
+      "config/adlods/Deposits/lapis.cfg",
+      "config/adlods/Deposits/lead.cfg",
+      "config/adlods/Deposits/nether_gold.cfg",
+      "config/adlods/Deposits/nether_quartz.cfg",
+      "config/adlods/Deposits/nickel.cfg",
+      "config/adlods/Deposits/osmium.cfg",
+      "config/adlods/Deposits/palladium.cfg",
+      "config/adlods/Deposits/platinum.cfg"
+    ],
+    "geode": [
+      "config/adlods/Deposits/aluminum.cfg",
+      "config/adlods/Deposits/amethyst.cfg",
+      "config/adlods/Deposits/ancient_debris.cfg",
+      "config/adlods/Deposits/coal.cfg",
+      "config/adlods/Deposits/cobalt.cfg",
+      "config/adlods/Deposits/copper.cfg",
+      "config/adlods/Deposits/diamond.cfg",
+      "config/adlods/Deposits/emerald.cfg",
+      "config/adlods/Deposits/gas_pocket.cfg",
+      "config/adlods/Deposits/gold.cfg",
+      "config/adlods/Deposits/iridium.cfg",
+      "config/adlods/Deposits/iron.cfg",
+      "config/adlods/Deposits/lapis.cfg",
+      "config/adlods/Deposits/lead.cfg",
+      "config/adlods/Deposits/nether_gold.cfg",
+      "config/adlods/Deposits/nether_quartz.cfg",
+      "config/adlods/Deposits/nickel.cfg",
+      "config/adlods/Deposits/osmium.cfg",
+      "config/adlods/Deposits/palladium.cfg",
+      "config/adlods/Deposits/platinum.cfg"
+    ],
+    "silentgems": [
+      "config/adlods/Deposits/aluminum.cfg",
+      "config/adlods/Deposits/amethyst.cfg",
+      "config/adlods/Deposits/coal.cfg",
+      "config/adlods/Deposits/cobalt.cfg",
+      "config/adlods/Deposits/copper.cfg",
+      "config/adlods/Deposits/diamond.cfg",
+      "config/adlods/Deposits/emerald.cfg",
+      "config/adlods/Deposits/gold.cfg",
+      "config/adlods/Deposits/iridium.cfg",
+      "config/adlods/Deposits/iron.cfg",
+      "config/adlods/Deposits/lapis.cfg",
+      "config/adlods/Deposits/lead.cfg",
+      "config/adlods/Deposits/nickel.cfg",
+      "config/adlods/Deposits/osmium.cfg",
+      "config/adlods/Deposits/palladium.cfg",
+      "config/adlods/Deposits/platinum.cfg",
+      "config/adlods/Deposits/redstone.cfg",
+      "config/adlods/Deposits/rhodium.cfg",
+      "config/adlods/Deposits/ruby.cfg",
+      "config/adlods/Deposits/ruthenium.cfg"
+    ],
+    "ceramics": [
+      "config/adchimneys/Emitters/ceramics$kiln.cfg"
+    ],
+    "environmental": [
+      "config/adchimneys/Emitters/environmental$kiln.cfg"
+    ],
+    "furnacemk2": [
+      "config/adchimneys/Emitters/furnacemk2$furnacemk2.cfg"
+    ],
+    "simplekiln": [
+      "config/adchimneys/Emitters/simplekiln$kiln.cfg"
+    ],
+    "tintedcampfires": [
+      "config/adchimneys/Emitters/tintedcampfires$black_campfire.cfg",
+      "config/adchimneys/Emitters/tintedcampfires$black_campfire_signal.cfg",
+      "config/adchimneys/Emitters/tintedcampfires$blue_campfire.cfg",
+      "config/adchimneys/Emitters/tintedcampfires$blue_campfire_signal.cfg",
+      "config/adchimneys/Emitters/tintedcampfires$brown_campfire.cfg",
+      "config/adchimneys/Emitters/tintedcampfires$brown_campfire_signal.cfg",
+      "config/adchimneys/Emitters/tintedcampfires$cyan_campfire.cfg",
+      "config/adchimneys/Emitters/tintedcampfires$cyan_campfire_signal.cfg",
+      "config/adchimneys/Emitters/tintedcampfires$gray_campfire.cfg",
+      "config/adchimneys/Emitters/tintedcampfires$gray_campfire_signal.cfg",
+      "config/adchimneys/Emitters/tintedcampfires$green_campfire.cfg",
+      "config/adchimneys/Emitters/tintedcampfires$green_campfire_signal.cfg",
+      "config/adchimneys/Emitters/tintedcampfires$light_blue_campfire.cfg",
+      "config/adchimneys/Emitters/tintedcampfires$light_blue_campfire_signal.cfg",
+      "config/adchimneys/Emitters/tintedcampfires$light_gray_campfire.cfg",
+      "config/adchimneys/Emitters/tintedcampfires$light_gray_campfire_signal.cfg",
+      "config/adchimneys/Emitters/tintedcampfires$lime_campfire.cfg",
+      "config/adchimneys/Emitters/tintedcampfires$lime_campfire_signal.cfg",
+      "config/adchimneys/Emitters/tintedcampfires$magenta_campfire.cfg",
+      "config/adchimneys/Emitters/tintedcampfires$magenta_campfire_signal.cfg"
+    ]
+  },
+  "keep_jars": [
+    "AE2-Things-1.2.1.jar",
+    "AEAdditions-1.20.1-5.1.1.jar",
+    "AdPother-1.20.1-8.1.43.0-build.2132.jar",
+    "Additional-Weaponry-1.20.1-1.1.3.jar",
+    "AdvancedAE-1.3.5-1.20.1.jar",
+    "Apotheosis-1.20.1-7.4.8.jar",
+    "ApotheoticAdditionsV2.2.2.jar",
+    "ApothicAttributes-1.20.1-1.3.7.jar",
+    "Botania-1.20.1-451-FORGE.jar",
+    "BrewinAndChewin-1.20.1-3.2.1.jar",
+    "BuildingWands-forge-MC1.20.1-3.0.4.jar",
+    "ColdSweat-2.4.jar",
+    "Delightful-1.20.1-3.7.8.jar",
+    "DynamicTrees-1.20.1-1.4.10.jar",
+    "ExtendedAE-1.20-1.4.14-forge.jar",
+    "Fallout Wasteland 1.20.1 Beta 3.8.1.jar",
+    "FarmersDelight-1.20.1-1.3.1.jar",
+    "ForgeEndertech-1.20.1-11.1.10.0-build.2048.jar",
+    "FramedBlocks-9.4.3.jar",
+    "GlitchCore-forge-1.20.1-0.0.1.1.jar",
+    "Glodium-1.20-1.5-forge.jar",
+    "Hyle-2.0.0-1.20.1-forge-all.jar",
+    "JsonThings-1.20.1-0.9.13.jar",
+    "KubeJS Blood Magic-1.0.2-1.20.1.jar",
+    "Mantle-1.20.1-1.11.104.jar",
+    "MyNethersDelight-1.20.1-0.1.8.jar",
+    "NaturesCompass-1.20.1-1.12.0-forge.jar",
+    "OctoLib-FORGE-0.5.0.1+1.20.1.jar",
+    "Patchouli-1.20.1-85-FORGE.jar",
+    "Placebo-1.20.1-8.6.3.jar",
+    "PuzzlesLib-v8.1.33-1.20.1-Forge.jar",
+    "SereneSeasons-forge-1.20.1-9.1.0.2.jar",
+    "SmartBrainLib-forge-1.20.1-1.15.jar",
+    "Steam_Rails-1.7.2+forge-mc1.20.1.jar",
+    "TConstruct-1.20.1-3.11.2.166.jar",
+    "TerraBlender-forge-1.20.1-3.0.1.10.jar",
+    "The_Undergarden-1.20.1-0.8.14.jar",
+    "ThirstWasTaken-1.20.1-1.4.0.jar",
+    "TinkersBattleSpades-1.20.1-1.2.1.jar",
+    "TradingPost-v8.0.2-1.20.1-Forge.jar",
+    "UnEarthed-2.3.0-1.20.1-forge-all.jar",
+    "VeggiesDelight-1.20.1-1.9.2.jar",
+    "acid_vat-0.1.0.jar",
+    "addonapi-mc1.20.1-2.0.0.jar",
+    "aether-1.20.1-1.5.2-neoforge.jar",
+    "alchemistry-1.20.1-2.3.4.jar",
+    "alchemylib-1.20.1-1.0.30.jar",
+    "alekiNiftyShips-FORGE-1.20.1-1.0.14.jar",
+    "appliedenergistics2-forge-15.4.10.jar",
+    "architectury-9.2.14-forge.jar",
+    "ars_nouveau-1.20.1-4.12.7-all.jar",
+    "artifacts-forge-9.5.19.jar",
+    "bloodmagic-1.20.1-3.3.7-49.jar",
+    "blue_skies-1.20.1-1.3.31.jar",
+    "blueprint-1.20.1-7.1.3.jar",
+    "btmfixes-0.1.0.jar",
+    "buildinggadgets2-1.0.8.jar",
+    "c2meF-0.2.0+alpha.13-all.jar",
+    "chemlib-1.20.1-2.0.19.jar",
+    "citadel-2.6.3-1.20.1.jar",
+    "classselector-1.0.0.jar",
+    "cloth-config-11.1.136-forge.jar",
+    "collectorsreap-1.20.1-1.5.5.jar",
+    "computerbridge-0.1.0.jar",
+    "corn_delight-1.1.9-1.20.1.jar",
+    "coroutil-forge-1.20.1-1.3.7.jar",
+    "create-1.20.1-6.0.8.jar",
+    "create-new-age-1.1.7f+forge-mc1.20.1.jar",
+    "create-stuff-additions1.20.1_v2.1.2.jar",
+    "create-transmission-loss-0.1.0.jar",
+    "create_central_kitchen-1.20.1-for-create-6.0.6-1.4.3b.jar",
+    "create_connected-1.1.13-mc1.20.1-all.jar",
+    "create_enchantment_industry-1.3.3-for-create-6.0.6.jar",
+    "create_more_additions-2.0.0-forge-1.20.1.jar",
+    "create_power_loader-2.0.3-mc1.20.1.jar",
+    "create_things_and_misc-4.1.0-forge-1.20.1.jar",
+    "createadditionallogistics-1.20.1-1.4.5.jar",
+    "createadvlogistics-0.2.0.jar",
+    "createappliedkinetics-1.5.1-1.20.1.jar",
+    "createdieselgenerators-1.20.1-1.3.12.jar",
+    "createmoredrillheads-2.1.0-1.20.1.jar",
+    "creatingspace-1.20.1-1.7.13.jar",
+    "curios-forge-5.14.1+1.20.1.jar",
+    "cursedbiomes-0.1.0.jar",
+    "deeperdarker-forge-1.20.1-1.3.3.jar",
+    "dotcoinmod-forge-20.18.1.jar",
+    "dtmalum-1.0.0.jar",
+    "ends_delight-2.5.1+forge.1.20.1.jar",
+    "enhancedai-3.3.6.3.jar",
+    "etstlib-3.0.0-beta.20.jar",
+    "farmersrespite-1.20.1-2.1.2.jar",
+    "fission_reactor-0.1.0.jar",
+    "ftb-library-forge-2001.2.12.jar",
+    "ftb-quests-forge-2001.4.21.jar",
+    "ftb-teams-forge-2001.3.2.jar",
+    "gases_and_plasmas-0.1.0.jar",
+    "geckolib-forge-1.20.1-4.8.3.jar",
+    "golemoverhaul-forge-1.20.1-1.1.0.jar",
+    "guideme-20.1.14.jar",
+    "heatsync-0.1.0.jar",
+    "iceandfire-2.1.13-1.20.1-beta-5.jar",
+    "immersive_weathering-1.20.1-2.0.5-forge.jar",
+    "insanelib-1.23.4.4.jar",
+    "kubejs-create-forge-2001.3.0-build.8.jar",
+    "kubejs-forge-2001.6.5-build.16.jar",
+    "liquid_coolant-0.1.0.jar",
+    "littlelogistics-mc1.20.1-v1.20.1.2.jar",
+    "lodestone-1.20.1-1.6.4.1.jar",
+    "lootjs-forge-1.20.1-2.13.1.jar",
+    "lostcities-1.20-7.4.11.jar",
+    "malum-1.20.1-1.6.7.jar",
+    "markdown_manual-MC1.20.1-forge-1.2.5+c3f0b88.jar",
+    "merequester-forge-1.20.1-1.1.5.jar",
+    "modonomicon-1.20.1-forge-1.79.3.jar",
+    "moonlight-1.20-2.16.30-forge.jar",
+    "morejs-forge-1.20.1-0.10.1.jar",
+    "mysterious_mountain_lib-1.6.34-1.20.1.jar",
+    "natures_spirit-2.2.5-1.20.1.jar",
+    "notreepunching-forge-1.20-7.1.0.jar",
+    "obelisks-1.0.0.jar",
+    "oc2r-1.20.1-forge-2.2.12-all.jar",
+    "occultism-1.20.1-1.157.0.jar",
+    "oceansdelight-1.0.2-1.20.jar",
+    "pillagercampaigns-0.2.0.jar",
+    "pneumaticcraft-repressurized-6.0.22+mc1.20.1.jar",
+    "powergrid-mc1.20.1-0.5.4.jar",
+    "procedural_bouquets-0.1.0.jar",
+    "protection_pixel-2.2.1-forge-1.20.1.jar",
+    "realisticores-0.1.0.jar",
+    "rehooked-1.8.3-1.20.1.jar",
+    "relics-1.20.1-0.8.0.13.jar",
+    "reliquary-1.20.1-2.0.56.1418.jar",
+    "resourcefulconfig-forge-1.20.1-2.1.3.jar",
+    "resourcefullib-forge-1.20.1-2.1.29.jar",
+    "rhino-forge-2001.2.3-build.10.jar",
+    "rpgstats-1.0.0.jar",
+    "rusticdelight-forge-1.20.1-1.6.0.jar",
+    "savage_and_ravage-1.20.1-6.0.1.jar",
+    "settlementroads-0.1.0.jar",
+    "sophisticatedbackpacks-1.20.1-3.24.35.1675.jar",
+    "sophisticatedcore-1.20.1-1.3.21.1676.jar",
+    "sophisticatedstorage-1.20.1-1.4.39.1666.jar",
+    "sophisticatedstorageinmotion-1.20.1-0.10.28.198.jar",
+    "staaaaaaaaaaaack-forge-1.20.1-1.5-71.jar",
+    "starcatcher-2.2.1-FORGE-1.20.1.jar",
+    "structure_gel-1.20.1-2.16.2.jar",
+    "supplementaries-1.20-3.1.42-forge.jar",
+    "takesapillage-1.0.3-1.20.1.jar",
+    "the_finley_dimension_remastered-1.6.3-forge-1.20.1.jar",
+    "theoneprobe-1.20.1-10.0.3.jar",
+    "theurgy-1.20.1-1.28.0.jar",
+    "ticex-mc1.20.1-0.5.1-all.jar",
+    "tinkers_advanced_core-3.0.0-beta.5.jar",
+    "tinkersweaponry-1.20.1-0.0.5.jar",
+    "tntutils-forge-1.20.1-2.0.4.jar",
+    "tomeofblood-1.20.1-0.4.5.jar",
+    "twilightforest-1.20.1-4.3.2508-universal.jar",
+    "ubesdelight-forge-1.20.1-0.4.11.jar",
+    "undergardendelight-1.1.2-forge-1.20.1.jar",
+    "villagewalls-1.0.0.jar",
+    "wares-1.20.1-1.2.10.jar",
+    "weather2-1.20.1-2.8.3.jar"
+  ],
+  "disable_jars": [
+    "AE2NetworkAnalyzer-1.20-1.0.6-forge.jar",
+    "AdLods-1.20.1-8.1.9.0-build.2084.jar",
+    "AmbientSounds_FORGE_v6.3.4_mc1.20.1.jar",
+    "BetterGrassify-1.4.4+forge.1.20.1.jar",
+    "Block Swap-forge-1.20.1-5.0.0.0.jar",
+    "CerbonsAPI-Forge-1.20.1-1.1.0.jar",
+    "Cobble-Gen-Haters-1.20-1.0.1.jar",
+    "Controlling-forge-1.20.1-12.0.2.jar",
+    "CreativeCore_FORGE_v2.12.35_mc1.20.1.jar",
+    "Ding-1.20.1-Forge-1.5.0.jar",
+    "DistantHorizons-2.4.5-b-1.20.1-fabric-forge.jar",
+    "DynamicTreesArsNouveau-1.20.1-1.2.0.jar",
+    "DynamicTreesPlus-1.20.1-1.2.2.jar",
+    "DynamicTreesQuark-1.20.1-2.5.3.jar",
+    "Explosion-Overhaul-0.2.3.0-forge-.jar",
+    "FastFurnace-1.20.1-8.0.2.jar",
+    "FastWorkbench-1.20.1-8.0.4.jar",
+    "Geophilic v3.4.6.mod.jar",
+    "GlobalGameRules-1.20.1-8.1.0.12.jar",
+    "HangGlider-v8.0.1-1.20.1-Forge.jar",
+    "K-Turrets-3.0.44-1.20.1.jar",
+    "Log-Begone-Forge-1.20.1-1.0.8.jar",
+    "MouseTweaks-forge-mc1.20.1-2.25.1.jar",
+    "Not Enough Recipe Book-FORGE-0.4.1+1.20.1.jar",
+    "PlayerRevive_FORGE_v2.0.31_mc1.20.1.jar",
+    "PresenceFootsteps-1.20.1-1.9.1-beta.1.jar",
+    "Quark-4.0-462.jar",
+    "Satako-7.0.33-1.20.1.jar",
+    "Searchables-forge-1.20.1-1.0.3.jar",
+    "ShoulderSurfing-Forge-1.20.1-4.22.7.jar",
+    "SimpleDayLengthExtender-1.2.1-Forge-1.20.1.jar",
+    "SleepingOverhaul-2.1.0-Forge-1.20.1.jar",
+    "TinkerBetterCombat 0.14.jar",
+    "TinyCoal-forge-1.20.1-1.1.5.jar",
+    "Towns-and-Towers-1.12-Fabric+Forge.jar",
+    "TravelersTitles-1.20-Forge-4.0.2.jar",
+    "YungsApi-1.20-Forge-4.0.6.jar",
+    "Zeta-1.0-31.jar",
+    "[forge]ctov-3.4.14.jar",
+    "alltheleaks-1.1.1+1.20.1-forge.jar",
+    "almostunified-forge-1.20.1-0.11.0.jar",
+    "amendments-1.20-2.2.5.jar",
+    "appleskin-forge-mc1.20.1-2.5.1.jar",
+    "athena-forge-1.20.1-3.1.2.jar",
+    "bettercombat-forge-1.9.0+1.20.1.jar",
+    "caelus-forge-3.2.0+1.20.1.jar",
+    "chefsdelight-1.0.4-forge-1.20.1.jar",
+    "chipped-forge-1.20.1-3.0.7.jar",
+    "collective-1.20.1-8.20.jar",
+    "compressedcreativity-1.20.1-0.2.0-all.jar",
+    "configurabledeath-1.20.1-1.0.3.jar",
+    "controllable-forge-1.20.1-0.21.9.jar",
+    "cravings-1.2.1-forge-1.20.1.jar",
+    "create_bb-1.0.7-1.20.1-Forge.jar",
+    "create_cold_sweat-1.1.2.jar",
+    "createaddoncompatibility-0.2.4.jar",
+    "createbigcannons-5.11.3-mc.1.20.1-forge.jar",
+    "createfix-0.5.jar",
+    "createliquidfuel-2.1.1-1.20.1.jar",
+    "cristellib-1.1.6-forge.jar",
+    "darkness-forge-1.20.1-2.0.103-fork.jar",
+    "diet-forge-2.1.1+1.20.1.jar",
+    "dragonlib-forge-1.20.1-beta-3.0.24.jar",
+    "dtnatures_spirit-1.20.1-forge-1.3-all.jar",
+    "dynamicassetgenerator-forge-1.20.1-4.2.2.jar",
+    "dynamicvillagertrades-1.3.1-forge-1.20.jar",
+    "embeddium-0.3.31+mc1.20.1.jar",
+    "emi-1.1.22+1.20.1+forge.jar",
+    "emitrades-forge-1.2.1+mc1.20.1.jar",
+    "entityculling-forge-1.10.1-mc1.20.1.jar",
+    "everythingcopper-1.20.1-2.3.4.jar",
+    "excavatedvariants-neoforge-1.20.1-3.0.9.jar",
+    "fabric-api-0.92.6+1.11.14+1.20.1.jar",
+    "farsighted-mobs-forge-1.1-1.20.1.jar",
+    "ferritecore-6.0.1-forge.jar",
+    "fiahi-3.1.6.jar",
+    "findme-3.2.3-forge.jar",
+    "finite_water-1.20.1-1.0.0.jar",
+    "flib-1.20.1-0.0.15.jar",
+    "framework-forge-1.20.1-0.8.0.jar",
+    "ftb-xmod-compat-forge-2.1.3.jar",
+    "fzzy_config-0.7.6+1.20.1+forge.jar",
+    "guardvillagers-1.20.1-1.6.17.jar",
+    "holdmyitems-1.20.1v2.1.jar",
+    "iChunUtil-1.20.1-Forge-1.0.3.jar",
+    "incontrol-1.20-9.4.6.jar",
+    "inline-forge-1.20.1-1.2.2.jar",
+    "inventorysorter-1.20.1-23.1.9.jar",
+    "jei-1.20.1-forge-15.20.0.130.jar",
+    "keepcuriosinventory-1.20.1-1.0.0.jar",
+    "konkrete_forge_1.8.0_MC_1.20-1.20.1.jar",
+    "lighty-forge-2.1.2+1.20.1.jar",
+    "lithostitched-forge-1.20.1-1.4.11.jar",
+    "looot-1.20.1-1.2.0.4.jar",
+    "lootr-forge-1.20-0.7.35.94.jar",
+    "mae2-2.0.0.jar",
+    "melody_forge_1.0.3_MC_1.20.1-1.20.4.jar",
+    "modernfix-forge-5.27.12+mc1.20.1.jar",
+    "morered-1.20.1-4.0.0.4.jar",
+    "nomobfarm-forge-1.6.6.jar",
+    "nomorepopups-forge-1.20.1-2.2.0.jar",
+    "norecipebookreborn-1.0.5.jar",
+    "oculus-mc1.20.1-1.8.0.jar",
+    "particular-1.20.1-Forge-1.2.7.jar",
+    "pillagerpressure-0.2.0.jar",
+    "player-animation-lib-forge-1.0.2-rc1+1.20.jar",
+    "plonk-1.20.1-10.0.5-forge.jar",
+    "polyeng-forge-0.1.1-1.20.1.jar",
+    "polymorph-forge-0.49.10+1.20.1.jar",
+    "raider_detector-1.0.0.jar",
+    "rbp-1.20.1-1.0.0.jar",
+    "realisticphysics-1.20.1-1.0.1.jar",
+    "registry_dumper_3000-forge-1.1.0.jar",
+    "ritchiesprojectilelib-2.1.1-mc.1.20.1-forge.jar",
+    "rsgauges-1.2.22.jar",
+    "sodiumoptionsapi-forge-1.0.10-1.20.1.jar",
+    "solcarrot-1.20.1-1.15.1.jar",
+    "sound-physics-remastered-forge-1.20.1-1.5.1.jar",
+    "spark-1.10.53-forge.jar",
+    "tconjei-1.20.1-1.5.4.jar",
+    "tectonic-3.0.17-forge-1.20.1.jar",
+    "tinkers_advanced_tools-3.0.0-beta.4.jar",
+    "tponder-1.1.jar",
+    "valhelsia_core-forge-1.20.1-1.1.2.jar",
+    "villagespawnpoint-1.20.1-4.6.jar",
+    "xlpackets-1.18.2-2.1.jar"
+  ],
+  "jar_to_mods": {
+    "AE2-Things-1.2.1.jar": [
+      "ae2things"
+    ],
+    "AE2NetworkAnalyzer-1.20-1.0.6-forge.jar": [
+      "ae2netanalyser"
+    ],
+    "AEAdditions-1.20.1-5.1.1.jar": [
+      "ae2additions"
+    ],
+    "AdLods-1.20.1-8.1.9.0-build.2084.jar": [
+      "adlods"
+    ],
+    "AdPother-1.20.1-8.1.43.0-build.2132.jar": [
+      "adpother"
+    ],
+    "Additional-Weaponry-1.20.1-1.1.3.jar": [
+      "additionalweaponry"
+    ],
+    "AdvancedAE-1.3.5-1.20.1.jar": [
+      "advanced_ae"
+    ],
+    "AmbientSounds_FORGE_v6.3.4_mc1.20.1.jar": [
+      "ambientsounds"
+    ],
+    "Apotheosis-1.20.1-7.4.8.jar": [
+      "apotheosis"
+    ],
+    "ApotheoticAdditionsV2.2.2.jar": [
+      "apotheotic_additions"
+    ],
+    "ApothicAttributes-1.20.1-1.3.7.jar": [
+      "attributeslib"
+    ],
+    "Block Swap-forge-1.20.1-5.0.0.0.jar": [
+      "blockswap"
+    ],
+    "Botania-1.20.1-451-FORGE.jar": [
+      "botania"
+    ],
+    "BrewinAndChewin-1.20.1-3.2.1.jar": [
+      "brewinandchewin"
+    ],
+    "BuildingWands-forge-MC1.20.1-3.0.4.jar": [
+      "wands"
+    ],
+    "CerbonsAPI-Forge-1.20.1-1.1.0.jar": [
+      "cerbons_api"
+    ],
+    "Cobble-Gen-Haters-1.20-1.0.1.jar": [
+      "cobblegenhaters"
+    ],
+    "ColdSweat-2.4.jar": [
+      "cold_sweat"
+    ],
+    "Controlling-forge-1.20.1-12.0.2.jar": [
+      "controlling"
+    ],
+    "CreativeCore_FORGE_v2.12.35_mc1.20.1.jar": [
+      "creativecore"
+    ],
+    "Delightful-1.20.1-3.7.8.jar": [
+      "delightful"
+    ],
+    "Ding-1.20.1-Forge-1.5.0.jar": [
+      "ding"
+    ],
+    "DistantHorizons-2.4.5-b-1.20.1-fabric-forge.jar": [
+      "distanthorizons"
+    ],
+    "DynamicTrees-1.20.1-1.4.10.jar": [
+      "dynamictrees"
+    ],
+    "DynamicTreesArsNouveau-1.20.1-1.2.0.jar": [
+      "dtarsnouveau"
+    ],
+    "DynamicTreesPlus-1.20.1-1.2.2.jar": [
+      "dynamictreesplus"
+    ],
+    "DynamicTreesQuark-1.20.1-2.5.3.jar": [
+      "dtquark"
+    ],
+    "Explosion-Overhaul-0.2.3.0-forge-.jar": [
+      "explosionoverhaul"
+    ],
+    "ExtendedAE-1.20-1.4.14-forge.jar": [
+      "expatternprovider"
+    ],
+    "Fallout Wasteland 1.20.1 Beta 3.8.1.jar": [
+      "fallout_wastelands_"
+    ],
+    "FarmersDelight-1.20.1-1.3.1.jar": [
+      "farmersdelight"
+    ],
+    "FastFurnace-1.20.1-8.0.2.jar": [
+      "fastfurnace"
+    ],
+    "FastWorkbench-1.20.1-8.0.4.jar": [
+      "fastbench"
+    ],
+    "ForgeEndertech-1.20.1-11.1.10.0-build.2048.jar": [
+      "forgeendertech"
+    ],
+    "FramedBlocks-9.4.3.jar": [
+      "framedblocks"
+    ],
+    "Geophilic v3.4.6.mod.jar": [
+      "geophilic"
+    ],
+    "GlitchCore-forge-1.20.1-0.0.1.1.jar": [
+      "glitchcore"
+    ],
+    "GlobalGameRules-1.20.1-8.1.0.12.jar": [
+      "globalgamerules"
+    ],
+    "Glodium-1.20-1.5-forge.jar": [
+      "glodium"
+    ],
+    "HangGlider-v8.0.1-1.20.1-Forge.jar": [
+      "hangglider"
+    ],
+    "Hyle-2.0.0-1.20.1-forge-all.jar": [
+      "hyle"
+    ],
+    "JsonThings-1.20.1-0.9.13.jar": [
+      "jsonthings"
+    ],
+    "K-Turrets-3.0.44-1.20.1.jar": [
+      "k_turrets"
+    ],
+    "KubeJS Blood Magic-1.0.2-1.20.1.jar": [
+      "kubejsbloodmagic"
+    ],
+    "Log-Begone-Forge-1.20.1-1.0.8.jar": [
+      "logbegone"
+    ],
+    "Mantle-1.20.1-1.11.104.jar": [
+      "mantle"
+    ],
+    "MouseTweaks-forge-mc1.20.1-2.25.1.jar": [
+      "mousetweaks"
+    ],
+    "MyNethersDelight-1.20.1-0.1.8.jar": [
+      "mynethersdelight"
+    ],
+    "NaturesCompass-1.20.1-1.12.0-forge.jar": [
+      "naturescompass"
+    ],
+    "Not Enough Recipe Book-FORGE-0.4.1+1.20.1.jar": [
+      "nerb"
+    ],
+    "OctoLib-FORGE-0.5.0.1+1.20.1.jar": [
+      "octolib"
+    ],
+    "Patchouli-1.20.1-85-FORGE.jar": [
+      "patchouli"
+    ],
+    "Placebo-1.20.1-8.6.3.jar": [
+      "placebo"
+    ],
+    "PlayerRevive_FORGE_v2.0.31_mc1.20.1.jar": [
+      "playerrevive"
+    ],
+    "PuzzlesLib-v8.1.33-1.20.1-Forge.jar": [
+      "puzzleslib"
+    ],
+    "Quark-4.0-462.jar": [
+      "quark"
+    ],
+    "Satako-7.0.33-1.20.1.jar": [
+      "satako"
+    ],
+    "Searchables-forge-1.20.1-1.0.3.jar": [
+      "searchables"
+    ],
+    "SereneSeasons-forge-1.20.1-9.1.0.2.jar": [
+      "sereneseasons"
+    ],
+    "SimpleDayLengthExtender-1.2.1-Forge-1.20.1.jar": [
+      "simpledaylengthextender"
+    ],
+    "SleepingOverhaul-2.1.0-Forge-1.20.1.jar": [
+      "sleepingoverhaul"
+    ],
+    "SmartBrainLib-forge-1.20.1-1.15.jar": [
+      "smartbrainlib"
+    ],
+    "Steam_Rails-1.7.2+forge-mc1.20.1.jar": [
+      "railways"
+    ],
+    "TConstruct-1.20.1-3.11.2.166.jar": [
+      "tconstruct"
+    ],
+    "TerraBlender-forge-1.20.1-3.0.1.10.jar": [
+      "terrablender"
+    ],
+    "The_Undergarden-1.20.1-0.8.14.jar": [
+      "undergarden"
+    ],
+    "ThirstWasTaken-1.20.1-1.4.0.jar": [
+      "thirst"
+    ],
+    "TinkerBetterCombat 0.14.jar": [
+      "tinkers_better_combat"
+    ],
+    "TinkersBattleSpades-1.20.1-1.2.1.jar": [
+      "tinkers_battle_spades"
+    ],
+    "TinyCoal-forge-1.20.1-1.1.5.jar": [
+      "tinycoal"
+    ],
+    "Towns-and-Towers-1.12-Fabric+Forge.jar": [
+      "t_and_t"
+    ],
+    "TradingPost-v8.0.2-1.20.1-Forge.jar": [
+      "tradingpost"
+    ],
+    "TravelersTitles-1.20-Forge-4.0.2.jar": [
+      "travelerstitles"
+    ],
+    "UnEarthed-2.3.0-1.20.1-forge-all.jar": [
+      "unearthed"
+    ],
+    "VeggiesDelight-1.20.1-1.9.2.jar": [
+      "veggiesdelight"
+    ],
+    "YungsApi-1.20-Forge-4.0.6.jar": [
+      "yungsapi"
+    ],
+    "Zeta-1.0-31.jar": [
+      "zeta"
+    ],
+    "[forge]ctov-3.4.14.jar": [
+      "ctov"
+    ],
+    "acid_vat-0.1.0.jar": [
+      "acid_vat"
+    ],
+    "addonapi-mc1.20.1-2.0.0.jar": [
+      "addonapi"
+    ],
+    "aether-1.20.1-1.5.2-neoforge.jar": [
+      "aether"
+    ],
+    "alchemistry-1.20.1-2.3.4.jar": [
+      "alchemistry"
+    ],
+    "alchemylib-1.20.1-1.0.30.jar": [
+      "alchemylib"
+    ],
+    "alekiNiftyShips-FORGE-1.20.1-1.0.14.jar": [
+      "alekiships"
+    ],
+    "alltheleaks-1.1.1+1.20.1-forge.jar": [
+      "alltheleaks"
+    ],
+    "almostunified-forge-1.20.1-0.11.0.jar": [
+      "almostunified"
+    ],
+    "amendments-1.20-2.2.5.jar": [
+      "amendments"
+    ],
+    "appleskin-forge-mc1.20.1-2.5.1.jar": [
+      "appleskin"
+    ],
+    "appliedenergistics2-forge-15.4.10.jar": [
+      "ae2"
+    ],
+    "architectury-9.2.14-forge.jar": [
+      "architectury"
+    ],
+    "ars_nouveau-1.20.1-4.12.7-all.jar": [
+      "ars_nouveau"
+    ],
+    "artifacts-forge-9.5.19.jar": [
+      "artifacts"
+    ],
+    "athena-forge-1.20.1-3.1.2.jar": [
+      "athena"
+    ],
+    "bettercombat-forge-1.9.0+1.20.1.jar": [
+      "bettercombat"
+    ],
+    "bloodmagic-1.20.1-3.3.7-49.jar": [
+      "bloodmagic"
+    ],
+    "blue_skies-1.20.1-1.3.31.jar": [
+      "blue_skies"
+    ],
+    "blueprint-1.20.1-7.1.3.jar": [
+      "blueprint"
+    ],
+    "btmfixes-0.1.0.jar": [
+      "btmfixes"
+    ],
+    "buildinggadgets2-1.0.8.jar": [
+      "buildinggadgets2"
+    ],
+    "c2meF-0.2.0+alpha.13-all.jar": [
+      "c2me"
+    ],
+    "caelus-forge-3.2.0+1.20.1.jar": [
+      "caelus"
+    ],
+    "chefsdelight-1.0.4-forge-1.20.1.jar": [
+      "chefsdelight"
+    ],
+    "chemlib-1.20.1-2.0.19.jar": [
+      "chemlib"
+    ],
+    "chipped-forge-1.20.1-3.0.7.jar": [
+      "chipped"
+    ],
+    "citadel-2.6.3-1.20.1.jar": [
+      "citadel"
+    ],
+    "classselector-1.0.0.jar": [
+      "classselector"
+    ],
+    "cloth-config-11.1.136-forge.jar": [
+      "cloth_config"
+    ],
+    "collective-1.20.1-8.20.jar": [
+      "collective"
+    ],
+    "collectorsreap-1.20.1-1.5.5.jar": [
+      "collectorsreap"
+    ],
+    "compressedcreativity-1.20.1-0.2.0-all.jar": [
+      "compressedcreativity"
+    ],
+    "computerbridge-0.1.0.jar": [
+      "computerbridge"
+    ],
+    "configurabledeath-1.20.1-1.0.3.jar": [
+      "configurabledeath"
+    ],
+    "corn_delight-1.1.9-1.20.1.jar": [
+      "corn_delight"
+    ],
+    "coroutil-forge-1.20.1-1.3.7.jar": [
+      "coroutil"
+    ],
+    "cravings-1.2.1-forge-1.20.1.jar": [
+      "cravings"
+    ],
+    "create-1.20.1-6.0.8.jar": [
+      "create"
+    ],
+    "create-new-age-1.1.7f+forge-mc1.20.1.jar": [
+      "create_new_age"
+    ],
+    "create-stuff-additions1.20.1_v2.1.2.jar": [
+      "create_sa"
+    ],
+    "create-transmission-loss-0.1.0.jar": [
+      "transmissionloss"
+    ],
+    "create_bb-1.0.7-1.20.1-Forge.jar": [
+      "create_bb"
+    ],
+    "create_central_kitchen-1.20.1-for-create-6.0.6-1.4.3b.jar": [
+      "create_central_kitchen"
+    ],
+    "create_cold_sweat-1.1.2.jar": [
+      "create_cold_sweat"
+    ],
+    "create_connected-1.1.13-mc1.20.1-all.jar": [
+      "create_connected"
+    ],
+    "create_enchantment_industry-1.3.3-for-create-6.0.6.jar": [
+      "create_enchantment_industry"
+    ],
+    "create_more_additions-2.0.0-forge-1.20.1.jar": [
+      "create_more_additions"
+    ],
+    "create_power_loader-2.0.3-mc1.20.1.jar": [
+      "create_power_loader"
+    ],
+    "create_things_and_misc-4.1.0-forge-1.20.1.jar": [
+      "create_things_and_misc"
+    ],
+    "createadditionallogistics-1.20.1-1.4.5.jar": [
+      "createadditionallogistics"
+    ],
+    "createaddoncompatibility-0.2.4.jar": [
+      "createaddoncompatibility"
+    ],
+    "createadvlogistics-0.2.0.jar": [
+      "createadvlogistics"
+    ],
+    "createappliedkinetics-1.5.1-1.20.1.jar": [
+      "createappliedkinetics"
+    ],
+    "createbigcannons-5.11.3-mc.1.20.1-forge.jar": [
+      "createbigcannons"
+    ],
+    "createdieselgenerators-1.20.1-1.3.12.jar": [
+      "createdieselgenerators"
+    ],
+    "createfix-0.5.jar": [
+      "createfix"
+    ],
+    "createliquidfuel-2.1.1-1.20.1.jar": [
+      "createliquidfuel"
+    ],
+    "createmoredrillheads-2.1.0-1.20.1.jar": [
+      "createmoredrillheads"
+    ],
+    "creatingspace-1.20.1-1.7.13.jar": [
+      "creatingspace"
+    ],
+    "cristellib-1.1.6-forge.jar": [
+      "cristellib"
+    ],
+    "curios-forge-5.14.1+1.20.1.jar": [
+      "curios"
+    ],
+    "cursedbiomes-0.1.0.jar": [
+      "cursedbiomes"
+    ],
+    "deeperdarker-forge-1.20.1-1.3.3.jar": [
+      "deeperdarker"
+    ],
+    "diet-forge-2.1.1+1.20.1.jar": [
+      "diet"
+    ],
+    "dotcoinmod-forge-20.18.1.jar": [
+      "dotcoinmod"
+    ],
+    "dragonlib-forge-1.20.1-beta-3.0.24.jar": [
+      "dragonlib"
+    ],
+    "dtmalum-1.0.0.jar": [
+      "dtmalum"
+    ],
+    "dtnatures_spirit-1.20.1-forge-1.3-all.jar": [
+      "dtnatures_spirit"
+    ],
+    "dynamicassetgenerator-forge-1.20.1-4.2.2.jar": [
+      "dynamic_asset_generator"
+    ],
+    "dynamicvillagertrades-1.3.1-forge-1.20.jar": [
+      "dynamicvillagertrades"
+    ],
+    "emi-1.1.22+1.20.1+forge.jar": [
+      "emi"
+    ],
+    "emitrades-forge-1.2.1+mc1.20.1.jar": [
+      "emitrades"
+    ],
+    "ends_delight-2.5.1+forge.1.20.1.jar": [
+      "ends_delight"
+    ],
+    "enhancedai-3.3.6.3.jar": [
+      "enhancedai"
+    ],
+    "etstlib-3.0.0-beta.20.jar": [
+      "etstlib"
+    ],
+    "everythingcopper-1.20.1-2.3.4.jar": [
+      "everythingcopper"
+    ],
+    "excavatedvariants-neoforge-1.20.1-3.0.9.jar": [
+      "excavated_variants"
+    ],
+    "fabric-api-0.92.6+1.11.14+1.20.1.jar": [
+      "fabric_api"
+    ],
+    "farmersrespite-1.20.1-2.1.2.jar": [
+      "farmersrespite"
+    ],
+    "farsighted-mobs-forge-1.1-1.20.1.jar": [
+      "farsightedmobs"
+    ],
+    "ferritecore-6.0.1-forge.jar": [
+      "ferritecore"
+    ],
+    "fiahi-3.1.6.jar": [
+      "fiahi"
+    ],
+    "findme-3.2.3-forge.jar": [
+      "findme"
+    ],
+    "finite_water-1.20.1-1.0.0.jar": [
+      "finite_water"
+    ],
+    "fission_reactor-0.1.0.jar": [
+      "fission_reactor"
+    ],
+    "flib-1.20.1-0.0.15.jar": [
+      "flib"
+    ],
+    "framework-forge-1.20.1-0.8.0.jar": [
+      "framework"
+    ],
+    "ftb-library-forge-2001.2.12.jar": [
+      "ftblibrary"
+    ],
+    "ftb-quests-forge-2001.4.21.jar": [
+      "ftbquests"
+    ],
+    "ftb-teams-forge-2001.3.2.jar": [
+      "ftbteams"
+    ],
+    "ftb-xmod-compat-forge-2.1.3.jar": [
+      "ftbxmodcompat"
+    ],
+    "fzzy_config-0.7.6+1.20.1+forge.jar": [
+      "fzzy_config"
+    ],
+    "gases_and_plasmas-0.1.0.jar": [
+      "gases_and_plasmas"
+    ],
+    "geckolib-forge-1.20.1-4.8.3.jar": [
+      "geckolib"
+    ],
+    "golemoverhaul-forge-1.20.1-1.1.0.jar": [
+      "golemoverhaul"
+    ],
+    "guardvillagers-1.20.1-1.6.17.jar": [
+      "guardvillagers"
+    ],
+    "guideme-20.1.14.jar": [
+      "guideme"
+    ],
+    "heatsync-0.1.0.jar": [
+      "heatsync"
+    ],
+    "iChunUtil-1.20.1-Forge-1.0.3.jar": [
+      "ichunutil"
+    ],
+    "iceandfire-2.1.13-1.20.1-beta-5.jar": [
+      "iceandfire"
+    ],
+    "immersive_weathering-1.20.1-2.0.5-forge.jar": [
+      "immersive_weathering"
+    ],
+    "incontrol-1.20-9.4.6.jar": [
+      "incontrol"
+    ],
+    "inline-forge-1.20.1-1.2.2.jar": [
+      "inline"
+    ],
+    "insanelib-1.23.4.4.jar": [
+      "insanelib"
+    ],
+    "inventorysorter-1.20.1-23.1.9.jar": [
+      "inventorysorter"
+    ],
+    "jei-1.20.1-forge-15.20.0.130.jar": [
+      "jei"
+    ],
+    "keepcuriosinventory-1.20.1-1.0.0.jar": [
+      "keepcuriosinventory"
+    ],
+    "konkrete_forge_1.8.0_MC_1.20-1.20.1.jar": [
+      "konkrete"
+    ],
+    "kubejs-create-forge-2001.3.0-build.8.jar": [
+      "kubejs_create"
+    ],
+    "kubejs-forge-2001.6.5-build.16.jar": [
+      "kubejs"
+    ],
+    "liquid_coolant-0.1.0.jar": [
+      "liquid_coolant"
+    ],
+    "lithostitched-forge-1.20.1-1.4.11.jar": [
+      "lithostitched"
+    ],
+    "littlelogistics-mc1.20.1-v1.20.1.2.jar": [
+      "littlelogistics"
+    ],
+    "lodestone-1.20.1-1.6.4.1.jar": [
+      "lodestone"
+    ],
+    "looot-1.20.1-1.2.0.4.jar": [
+      "looot"
+    ],
+    "lootjs-forge-1.20.1-2.13.1.jar": [
+      "lootjs"
+    ],
+    "lootr-forge-1.20-0.7.35.94.jar": [
+      "lootr"
+    ],
+    "lostcities-1.20-7.4.11.jar": [
+      "lostcities"
+    ],
+    "mae2-2.0.0.jar": [
+      "mae2"
+    ],
+    "malum-1.20.1-1.6.7.jar": [
+      "malum"
+    ],
+    "markdown_manual-MC1.20.1-forge-1.2.5+c3f0b88.jar": [
+      "markdown_manual"
+    ],
+    "melody_forge_1.0.3_MC_1.20.1-1.20.4.jar": [
+      "melody"
+    ],
+    "merequester-forge-1.20.1-1.1.5.jar": [
+      "merequester"
+    ],
+    "modernfix-forge-5.27.12+mc1.20.1.jar": [
+      "modernfix"
+    ],
+    "modonomicon-1.20.1-forge-1.79.3.jar": [
+      "modonomicon"
+    ],
+    "moonlight-1.20-2.16.30-forge.jar": [
+      "moonlight"
+    ],
+    "morejs-forge-1.20.1-0.10.1.jar": [
+      "morejs"
+    ],
+    "morered-1.20.1-4.0.0.4.jar": [
+      "morered"
+    ],
+    "mysterious_mountain_lib-1.6.34-1.20.1.jar": [
+      "mysterious_mountain_lib"
+    ],
+    "natures_spirit-2.2.5-1.20.1.jar": [
+      "natures_spirit"
+    ],
+    "nomobfarm-forge-1.6.6.jar": [
+      "nomobfarm"
+    ],
+    "nomorepopups-forge-1.20.1-2.2.0.jar": [
+      "nomorepopups"
+    ],
+    "norecipebookreborn-1.0.5.jar": [
+      "norecipebookreborn"
+    ],
+    "notreepunching-forge-1.20-7.1.0.jar": [
+      "notreepunching"
+    ],
+    "obelisks-1.0.0.jar": [
+      "obelisks"
+    ],
+    "oc2r-1.20.1-forge-2.2.12-all.jar": [
+      "oc2r"
+    ],
+    "occultism-1.20.1-1.157.0.jar": [
+      "occultism"
+    ],
+    "oceansdelight-1.0.2-1.20.jar": [
+      "oceansdelight"
+    ],
+    "particular-1.20.1-Forge-1.2.7.jar": [
+      "particular"
+    ],
+    "pillagercampaigns-0.2.0.jar": [
+      "pillagercampaigns"
+    ],
+    "pillagerpressure-0.2.0.jar": [
+      "pillagerpressure"
+    ],
+    "player-animation-lib-forge-1.0.2-rc1+1.20.jar": [
+      "playeranimator"
+    ],
+    "plonk-1.20.1-10.0.5-forge.jar": [
+      "plonk"
+    ],
+    "pneumaticcraft-repressurized-6.0.22+mc1.20.1.jar": [
+      "pneumaticcraft"
+    ],
+    "polyeng-forge-0.1.1-1.20.1.jar": [
+      "polyeng"
+    ],
+    "polymorph-forge-0.49.10+1.20.1.jar": [
+      "polymorph"
+    ],
+    "powergrid-mc1.20.1-0.5.4.jar": [
+      "powergrid"
+    ],
+    "procedural_bouquets-0.1.0.jar": [
+      "procedural_bouquets"
+    ],
+    "protection_pixel-2.2.1-forge-1.20.1.jar": [
+      "protection_pixel"
+    ],
+    "raider_detector-1.0.0.jar": [
+      "raider_detector"
+    ],
+    "rbp-1.20.1-1.0.0.jar": [
+      "rbp"
+    ],
+    "realisticores-0.1.0.jar": [
+      "realisticores"
+    ],
+    "realisticphysics-1.20.1-1.0.1.jar": [
+      "realisticphysics"
+    ],
+    "rehooked-1.8.3-1.20.1.jar": [
+      "rehooked"
+    ],
+    "relics-1.20.1-0.8.0.13.jar": [
+      "relics"
+    ],
+    "reliquary-1.20.1-2.0.56.1418.jar": [
+      "reliquary"
+    ],
+    "resourcefulconfig-forge-1.20.1-2.1.3.jar": [
+      "resourcefulconfig"
+    ],
+    "resourcefullib-forge-1.20.1-2.1.29.jar": [
+      "resourcefullib"
+    ],
+    "rhino-forge-2001.2.3-build.10.jar": [
+      "rhino"
+    ],
+    "ritchiesprojectilelib-2.1.1-mc.1.20.1-forge.jar": [
+      "ritchiesprojectilelib"
+    ],
+    "rpgstats-1.0.0.jar": [
+      "rpgstats"
+    ],
+    "rsgauges-1.2.22.jar": [
+      "rsgauges"
+    ],
+    "rusticdelight-forge-1.20.1-1.6.0.jar": [
+      "rusticdelight"
+    ],
+    "savage_and_ravage-1.20.1-6.0.1.jar": [
+      "savage_and_ravage"
+    ],
+    "settlementroads-0.1.0.jar": [
+      "settlementroads"
+    ],
+    "solcarrot-1.20.1-1.15.1.jar": [
+      "solcarrot"
+    ],
+    "sophisticatedbackpacks-1.20.1-3.24.35.1675.jar": [
+      "sophisticatedbackpacks"
+    ],
+    "sophisticatedcore-1.20.1-1.3.21.1676.jar": [
+      "sophisticatedcore"
+    ],
+    "sophisticatedstorage-1.20.1-1.4.39.1666.jar": [
+      "sophisticatedstorage"
+    ],
+    "sophisticatedstorageinmotion-1.20.1-0.10.28.198.jar": [
+      "sophisticatedstorageinmotion"
+    ],
+    "spark-1.10.53-forge.jar": [
+      "spark"
+    ],
+    "staaaaaaaaaaaack-forge-1.20.1-1.5-71.jar": [
+      "staaaaaaaaaaaack"
+    ],
+    "starcatcher-2.2.1-FORGE-1.20.1.jar": [
+      "starcatcher"
+    ],
+    "structure_gel-1.20.1-2.16.2.jar": [
+      "structure_gel"
+    ],
+    "supplementaries-1.20-3.1.42-forge.jar": [
+      "supplementaries"
+    ],
+    "takesapillage-1.0.3-1.20.1.jar": [
+      "takesapillage"
+    ],
+    "tconjei-1.20.1-1.5.4.jar": [
+      "tconjei"
+    ],
+    "tectonic-3.0.17-forge-1.20.1.jar": [
+      "tectonic"
+    ],
+    "the_finley_dimension_remastered-1.6.3-forge-1.20.1.jar": [
+      "the_finley_dimension_remastered"
+    ],
+    "theoneprobe-1.20.1-10.0.3.jar": [
+      "theoneprobe"
+    ],
+    "theurgy-1.20.1-1.28.0.jar": [
+      "theurgy"
+    ],
+    "ticex-mc1.20.1-0.5.1-all.jar": [
+      "ticex"
+    ],
+    "tinkers_advanced_core-3.0.0-beta.5.jar": [
+      "tinkers_advanced"
+    ],
+    "tinkers_advanced_tools-3.0.0-beta.4.jar": [
+      "tinkers_advanced_tools"
+    ],
+    "tinkersweaponry-1.20.1-0.0.5.jar": [
+      "tinkersweaponry"
+    ],
+    "tntutils-forge-1.20.1-2.0.4.jar": [
+      "tntutils"
+    ],
+    "tomeofblood-1.20.1-0.4.5.jar": [
+      "tomeofblood"
+    ],
+    "tponder-1.1.jar": [
+      "tponder"
+    ],
+    "twilightforest-1.20.1-4.3.2508-universal.jar": [
+      "twilightforest"
+    ],
+    "ubesdelight-forge-1.20.1-0.4.11.jar": [
+      "ubesdelight"
+    ],
+    "undergardendelight-1.1.2-forge-1.20.1.jar": [
+      "undergardendelight"
+    ],
+    "valhelsia_core-forge-1.20.1-1.1.2.jar": [
+      "valhelsia_core"
+    ],
+    "villagespawnpoint-1.20.1-4.6.jar": [
+      "villagespawnpoint"
+    ],
+    "villagewalls-1.0.0.jar": [
+      "villagewalls"
+    ],
+    "wares-1.20.1-1.2.10.jar": [
+      "wares"
+    ],
+    "weather2-1.20.1-2.8.3.jar": [
+      "weather2"
+    ],
+    "xlpackets-1.18.2-2.1.jar": [
+      "xlpackets"
+    ],
+    "BetterGrassify-1.4.4+forge.1.20.1.jar": [
+      "bettergrass"
+    ],
+    "PresenceFootsteps-1.20.1-1.9.1-beta.1.jar": [
+      "presencefootsteps"
+    ],
+    "ShoulderSurfing-Forge-1.20.1-4.22.7.jar": [
+      "shouldersurfing"
+    ],
+    "controllable-forge-1.20.1-0.21.9.jar": [
+      "controllable"
+    ],
+    "darkness-forge-1.20.1-2.0.103-fork.jar": [
+      "darkness"
+    ],
+    "embeddium-0.3.31+mc1.20.1.jar": [
+      "embeddium",
+      "rubidium"
+    ],
+    "entityculling-forge-1.10.1-mc1.20.1.jar": [
+      "entityculling"
+    ],
+    "holdmyitems-1.20.1v2.1.jar": [
+      "holdmyitems"
+    ],
+    "lighty-forge-2.1.2+1.20.1.jar": [
+      "lighty"
+    ],
+    "oculus-mc1.20.1-1.8.0.jar": [
+      "oculus"
+    ],
+    "registry_dumper_3000-forge-1.1.0.jar": [
+      "registry_dumper_3000"
+    ],
+    "sodiumoptionsapi-forge-1.0.10-1.20.1.jar": [
+      "sodiumoptionsapi"
+    ],
+    "sound-physics-remastered-forge-1.20.1-1.5.1.jar": [
+      "sound_physics_remastered"
+    ]
+  }
+}

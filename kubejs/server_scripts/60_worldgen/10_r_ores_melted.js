@@ -16,27 +16,31 @@ ServerEvents.recipes(function (event) {
         return 'forge:molten_' + path;
     }
 
-    function melting(id, ingredient, moltenTag, amount, temperature, time) {
+    function fluidOutput(ref, amount) {
+        var output = { amount: amount };
+        if (ref.indexOf('forge:') === 0) {
+            output.tag = ref;
+        } else {
+            output.fluid = ref;
+        }
+        return output;
+    }
+
+    function melting(id, ingredient, moltenRef, amount, temperature, time) {
         event.custom({
             type: 'tconstruct:melting',
             ingredient: ingredient,
-            result: {
-                amount: amount,
-                tag: moltenTag
-            },
+            result: fluidOutput(moltenRef, amount),
             temperature: temperature,
             time: time
         }).id('kubejs:tconstruct/melting/' + id);
     }
 
-    function oreMelting(id, ingredient, moltenTag, amount, temperature, time, byproducts) {
+    function oreMelting(id, ingredient, moltenRef, amount, temperature, time, byproducts) {
         var recipe = {
             type: 'tconstruct:ore_melting',
             ingredient: ingredient,
-            result: {
-                amount: amount,
-                tag: moltenTag
-            },
+            result: fluidOutput(moltenRef, amount),
             rate: 'metal',
             temperature: temperature,
             time: time
@@ -49,12 +53,10 @@ ServerEvents.recipes(function (event) {
         event.custom(recipe).id('kubejs:tconstruct/ore_melting/' + id);
     }
 
-    function byproduct(moltenTag, amount) {
-        return {
-            amount: amount,
-            rate: 'metal',
-            tag: moltenTag
-        };
+    function byproduct(moltenRef, amount) {
+        var output = fluidOutput(moltenRef, amount);
+        output.rate = 'metal';
+        return output;
     }
 
     function depositRecipe(def) {
@@ -148,7 +150,7 @@ ServerEvents.recipes(function (event) {
             id: 'tin',
             tag: 'kubejs:deposit_blocks/tin',
             primary: fluidTag('tin'),
-                     secondary: fluidTag('quartz'),
+                     secondary: 'tconstruct:molten_quartz',
                      tertiary: fluidTag('tungsten'),
                      temperature: 225,
                      melterAmount: 90,
@@ -191,7 +193,7 @@ ServerEvents.recipes(function (event) {
             tag: 'kubejs:deposit_blocks/tin_tungsten_greisen',
             primary: fluidTag('tungsten'),
                      secondary: fluidTag('tin'),
-                     tertiary: fluidTag('quartz'),
+                     tertiary: 'tconstruct:molten_quartz',
                      temperature: 1450,
                      melterAmount: 90,
                      oreAmount: 180,
@@ -231,7 +233,7 @@ ServerEvents.recipes(function (event) {
         {
             id: 'kimberlite_pipe',
             tag: 'kubejs:deposit_blocks/kimberlite_pipe',
-            primary: fluidTag('diamond'),
+            primary: 'tconstruct:molten_diamond',
                      secondary: fluidTag('nickel'),
                      tertiary: null,
                      temperature: 1450,
@@ -245,9 +247,9 @@ ServerEvents.recipes(function (event) {
         {
             id: 'emerald_schist_beryl',
             tag: 'kubejs:deposit_blocks/emerald_schist_beryl',
-            primary: fluidTag('emerald'),
+            primary: 'tconstruct:molten_emerald',
                      secondary: fluidTag('aluminum'),
-                     tertiary: fluidTag('quartz'),
+                     tertiary: 'tconstruct:molten_quartz',
                      temperature: 1450,
                      melterAmount: 45,
                      oreAmount: 90,
@@ -259,7 +261,7 @@ ServerEvents.recipes(function (event) {
         {
             id: 'quartz_vein',
             tag: 'kubejs:deposit_blocks/quartz_vein',
-            primary: fluidTag('quartz'),
+            primary: 'tconstruct:molten_quartz',
                      secondary: fluidTag('gold'),
                      tertiary: fluidTag('copper'),
                      temperature: 1035,
@@ -273,9 +275,9 @@ ServerEvents.recipes(function (event) {
         {
             id: 'corundum_beryl_vein',
             tag: 'kubejs:deposit_blocks/corundum_beryl_vein',
-            primary: 'tinkersinnovation:molten_sapphire',
-            secondary: fluidTag('emerald'),
-                     tertiary: fluidTag('quartz'),
+            primary: 'tconstruct:molten_amethyst',
+            secondary: 'tconstruct:molten_emerald',
+                     tertiary: 'tconstruct:molten_quartz',
                      temperature: 1450,
                      melterAmount: 45,
                      oreAmount: 90,

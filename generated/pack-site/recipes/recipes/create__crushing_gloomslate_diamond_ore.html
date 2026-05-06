@@ -1,0 +1,52 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>create:crushing/gloomslate_diamond_ore</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>create:crushing/gloomslate_diamond_ore</h1>
+<p><b>Type:</b> create:crushing | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../tags/forge__ores_diamond.html">#forge:ores/diamond</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/minecraft__diamond.html">minecraft:diamond</a></li><li><a href="../items/minecraft__diamond.html">minecraft:diamond</a></li><li><a href="../items/create__experience_nugget.html">create:experience_nugget</a></li><li><a href="../items/deeperdarker__cobbled_gloomslate.html">deeperdarker:cobbled_gloomslate</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: 550
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;conditions&quot;: [
+    {
+      &quot;modid&quot;: &quot;create&quot;,
+      &quot;type&quot;: &quot;forge:mod_loaded&quot;
+    }
+  ],
+  &quot;ingredients&quot;: [
+    {
+      &quot;tag&quot;: &quot;forge:ores/diamond&quot;
+    }
+  ],
+  &quot;processingTime&quot;: 550,
+  &quot;results&quot;: [
+    {
+      &quot;count&quot;: 3,
+      &quot;item&quot;: &quot;minecraft:diamond&quot;
+    },
+    {
+      &quot;chance&quot;: 0.25,
+      &quot;item&quot;: &quot;minecraft:diamond&quot;
+    },
+    {
+      &quot;item&quot;: &quot;create:experience_nugget&quot;
+    },
+    {
+      &quot;chance&quot;: 0.125,
+      &quot;item&quot;: &quot;deeperdarker:cobbled_gloomslate&quot;
+    }
+  ],
+  &quot;type&quot;: &quot;create:crushing&quot;
+}</pre></main></body></html>

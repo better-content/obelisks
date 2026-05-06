@@ -1,0 +1,115 @@
+meta:
+  schema: obelisks.quest_graph.v1
+  pack: obelisks
+  minecraft: "1.20.1"
+  quest_system: ftbquests
+
+chapters:
+  start:
+    title: Start
+    order: 10
+    icon: minecraft:grass_block
+
+  automation:
+    title: Automation
+    order: 40
+    icon: create:cogwheel
+
+  post_ae2:
+    title: Post-AE2 Reminders
+    order: 900
+    icon: ae2:controller
+
+nodes:
+  start_here:
+    type: quest
+    title: Start Here
+    chapter: start
+    icon: minecraft:book
+    stage: early
+    x: 0
+    y: 0
+    body: |
+      Placeholder quest used to validate the quest graph pipeline.
+    tasks:
+      - type: item
+        item: minecraft:dirt
+        count: 1
+    rewards: []
+    tags:
+      - fixture
+
+  automation_intro:
+    type: quest
+    title: Automation Intro
+    chapter: automation
+    icon: create:cogwheel
+    stage: early
+    requires:
+      - start_here
+    x: 2
+    y: 0
+    body: |
+      Placeholder quest used to validate dependencies and export.
+    tasks:
+      - type: item
+        item: minecraft:cobblestone
+        count: 1
+    rewards: []
+    tags:
+      - fixture
+
+  ae2_orbit_ship_reminder:
+    type: quest
+    title: Ruined AE2 Ship In Orbit
+    chapter: post_ae2
+    icon: ae2:controller
+    stage: post_ae2
+    requires:
+      - automation_intro
+    x: 0
+    y: 0
+    body: |
+      Reminder only. Future work may add a ruined orbital ship structure tied to AE2 lore.
+    tasks: []
+    rewards: []
+    tags:
+      - reminder
+      - post_ae2
+
+  avatar_cloning_reminder:
+    type: quest
+    title: Avatar And Cloning Vats
+    chapter: post_ae2
+    icon: minecraft:player_head
+    stage: post_ae2
+    requires:
+      - automation_intro
+    x: 2
+    y: 0
+    body: |
+      Reminder only. Future work may pair remote avatar piloting with inferior cloning vats.
+    tasks: []
+    rewards: []
+    tags:
+      - reminder
+      - post_ae2
+
+  spawn_ritual_reminder:
+    type: quest
+    title: Spawn Moving Ritual
+    chapter: post_ae2
+    icon: bloodmagic:weakbloodorb
+    stage: post_ae2
+    requires:
+      - automation_intro
+    x: 4
+    y: 0
+    body: |
+      Reminder only. Future work should build on class-selector spawn locking and require a
+      late-game maintained ritual cost.
+    tasks: []
+    rewards: []
+    tags:
+      - reminder
+      - post_ae2

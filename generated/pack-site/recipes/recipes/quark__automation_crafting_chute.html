@@ -1,0 +1,45 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>quark:automation/crafting/chute</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>quark:automation/crafting/chute</h1>
+<p><b>Type:</b> minecraft:crafting_shaped | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../tags/minecraft__planks.html">#minecraft:planks</a></li><li><a href="../tags/forge__rods_wooden.html">#forge:rods/wooden</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/quark__chute.html">quark:chute</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: null
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;conditions&quot;: [
+    {
+      &quot;flag&quot;: &quot;chute&quot;,
+      &quot;type&quot;: &quot;quark:flag&quot;
+    }
+  ],
+  &quot;key&quot;: {
+    &quot;S&quot;: {
+      &quot;tag&quot;: &quot;forge:rods/wooden&quot;
+    },
+    &quot;W&quot;: {
+      &quot;tag&quot;: &quot;minecraft:planks&quot;
+    }
+  },
+  &quot;pattern&quot;: [
+    &quot;WWW&quot;,
+    &quot;SWS&quot;,
+    &quot; S &quot;
+  ],
+  &quot;result&quot;: {
+    &quot;item&quot;: &quot;quark:chute&quot;
+  },
+  &quot;type&quot;: &quot;minecraft:crafting_shaped&quot;
+}</pre></main></body></html>

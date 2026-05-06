@@ -1,0 +1,68 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>occultism:ritual/familiar_parrot</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>occultism:ritual/familiar_parrot</h1>
+<p><b>Type:</b> occultism:ritual | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../tags/forge__feathers.html">#forge:feathers</a></li><li><a href="../tags/forge__dyes_green.html">#forge:dyes/green</a></li><li><a href="../tags/forge__dyes_yellow.html">#forge:dyes/yellow</a></li><li><a href="../tags/forge__dyes_red.html">#forge:dyes/red</a></li><li><a href="../tags/forge__dyes_blue.html">#forge:dyes/blue</a></li><li><a href="../tags/forge__string.html">#forge:string</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/occultism__spawn_egg_familiar_parrot.html">occultism:spawn_egg/familiar_parrot</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: 30
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;activation_item&quot;: {
+    &quot;item&quot;: &quot;occultism:book_of_binding_bound_foliot&quot;
+  },
+  &quot;duration&quot;: 30,
+  &quot;entity_to_sacrifice&quot;: {
+    &quot;display_name&quot;: &quot;ritual.occultism.sacrifice.chicken&quot;,
+    &quot;tag&quot;: &quot;forge:chicken&quot;
+  },
+  &quot;entity_to_summon&quot;: &quot;minecraft:parrot&quot;,
+  &quot;ingredients&quot;: [
+    {
+      &quot;tag&quot;: &quot;forge:feathers&quot;
+    },
+    {
+      &quot;tag&quot;: &quot;forge:dyes/green&quot;
+    },
+    {
+      &quot;tag&quot;: &quot;forge:dyes/yellow&quot;
+    },
+    {
+      &quot;tag&quot;: &quot;forge:dyes/red&quot;
+    },
+    {
+      &quot;tag&quot;: &quot;forge:dyes/blue&quot;
+    },
+    {
+      &quot;tag&quot;: &quot;forge:string&quot;
+    }
+  ],
+  &quot;pentacle_id&quot;: &quot;occultism:possess_foliot&quot;,
+  &quot;result&quot;: {
+    &quot;item&quot;: &quot;occultism:spawn_egg/familiar_parrot&quot;,
+    &quot;nbt&quot;: {
+      &quot;display&quot;: {
+        &quot;Lore&quot;: [
+          &quot;[{\&quot;translate\&quot;:\&quot;item.occultism.ritual_dummy.familiar_parrot.tooltip\&quot;}]&quot;
+        ],
+        &quot;Name&quot;: &quot;[{\&quot;translate\&quot;:\&quot;item.occultism.ritual_dummy.familiar_parrot\&quot;}]&quot;
+      }
+    }
+  },
+  &quot;ritual_dummy&quot;: {
+    &quot;item&quot;: &quot;occultism:ritual_dummy/familiar_parrot&quot;
+  },
+  &quot;ritual_type&quot;: &quot;occultism:summon_with_chance_of_chicken_tamed&quot;,
+  &quot;type&quot;: &quot;occultism:ritual&quot;
+}</pre></main></body></html>

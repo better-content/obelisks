@@ -1,0 +1,43 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>tconstruct:tools/modifiers/worktable/invisible_ink_removing</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>tconstruct:tools/modifiers/worktable/invisible_ink_removing</h1>
+<p><b>Type:</b> tconstruct:modifier_set_worktable | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<p><em>None.</em></p>
+<h2>Outputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: null
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;add_to_set&quot;: false,
+  &quot;allow_traits&quot;: false,
+  &quot;data_key&quot;: &quot;tconstruct:invisible_modifiers&quot;,
+  &quot;inputs&quot;: [
+    {
+      &quot;amount&quot;: 1000,
+      &quot;display&quot;: {
+        &quot;item&quot;: &quot;minecraft:milk_bucket&quot;
+      },
+      &quot;tag&quot;: &quot;forge:milk&quot;,
+      &quot;type&quot;: &quot;mantle:fluid_container&quot;
+    }
+  ],
+  &quot;modifier_predicate&quot;: {
+    &quot;tag&quot;: &quot;tconstruct:invisible_ink_blacklist&quot;,
+    &quot;type&quot;: &quot;tconstruct:tag&quot;
+  },
+  &quot;tools&quot;: {
+    &quot;tag&quot;: &quot;tconstruct:modifiable&quot;
+  },
+  &quot;type&quot;: &quot;tconstruct:modifier_set_worktable&quot;
+}</pre></main></body></html>

@@ -1,0 +1,79 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>bloodmagic:meteor/mekanism</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>bloodmagic:meteor/mekanism</h1>
+<p><b>Type:</b> bloodmagic:meteor | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<p><em>None.</em></p>
+<h2>Outputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: null
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;explosion&quot;: 24,
+  &quot;input&quot;: {
+    &quot;tag&quot;: &quot;forge:alloys/advanced&quot;
+  },
+  &quot;layers&quot;: [
+    {
+      &quot;additionalWeight&quot;: 0,
+      &quot;fill&quot;: {
+        &quot;index&quot;: -1,
+        &quot;tag&quot;: &quot;forge:storage_blocks/uranium&quot;
+      },
+      &quot;minWeight&quot;: 0,
+      &quot;radius&quot;: 2
+    },
+    {
+      &quot;additionalWeight&quot;: 200,
+      &quot;fill&quot;: {
+        &quot;block&quot;: &quot;minecraft:stone&quot;
+      },
+      &quot;minWeight&quot;: 0,
+      &quot;radius&quot;: 8,
+      &quot;weightMap&quot;: [
+        {
+          &quot;index&quot;: 0,
+          &quot;tag&quot;: &quot;forge:ores/osmium&quot;,
+          &quot;weight&quot;: 100
+        },
+        {
+          &quot;index&quot;: 0,
+          &quot;tag&quot;: &quot;forge:ores/copper&quot;,
+          &quot;weight&quot;: 100
+        },
+        {
+          &quot;index&quot;: 0,
+          &quot;tag&quot;: &quot;forge:ores/tin&quot;,
+          &quot;weight&quot;: 80
+        },
+        {
+          &quot;index&quot;: 0,
+          &quot;tag&quot;: &quot;forge:ores/lead&quot;,
+          &quot;weight&quot;: 60
+        },
+        {
+          &quot;index&quot;: 0,
+          &quot;tag&quot;: &quot;forge:ores/uranium&quot;,
+          &quot;weight&quot;: 80
+        },
+        {
+          &quot;index&quot;: 0,
+          &quot;tag&quot;: &quot;forge:ores/fluorite&quot;,
+          &quot;weight&quot;: 50
+        }
+      ]
+    }
+  ],
+  &quot;syphon&quot;: 500000,
+  &quot;type&quot;: &quot;bloodmagic:meteor&quot;
+}</pre></main></body></html>

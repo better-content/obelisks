@@ -1,0 +1,98 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>railways:sequenced_assembly/track_twilightforest_twilight_oak_narrow</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>railways:sequenced_assembly/track_twilightforest_twilight_oak_narrow</h1>
+<p><b>Type:</b> create:sequenced_assembly | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../items/twilightforest__twilight_oak_slab.html">twilightforest:twilight_oak_slab</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/railways__track_twilightforest_twilight_oak_narrow.html">railways:track_twilightforest_twilight_oak_narrow</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: null
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;conditions&quot;: [
+    {
+      &quot;modid&quot;: &quot;twilightforest&quot;,
+      &quot;type&quot;: &quot;forge:mod_loaded&quot;
+    }
+  ],
+  &quot;fabric:load_conditions&quot;: [
+    {
+      &quot;condition&quot;: &quot;fabric:all_mods_loaded&quot;,
+      &quot;values&quot;: [
+        &quot;twilightforest&quot;
+      ]
+    }
+  ],
+  &quot;ingredient&quot;: {
+    &quot;item&quot;: &quot;twilightforest:twilight_oak_slab&quot;
+  },
+  &quot;loops&quot;: 1,
+  &quot;results&quot;: [
+    {
+      &quot;item&quot;: &quot;railways:track_twilightforest_twilight_oak_narrow&quot;
+    }
+  ],
+  &quot;sequence&quot;: [
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;railways:track_incomplete_twilightforest_twilight_oak_narrow&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;railways:track_incomplete_twilightforest_twilight_oak_narrow&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:cutting&quot;
+    },
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;railways:track_incomplete_twilightforest_twilight_oak_narrow&quot;
+        },
+        [
+          {
+            &quot;tag&quot;: &quot;railways:internal/nuggets/iron_nuggets&quot;
+          },
+          {
+            &quot;tag&quot;: &quot;railways:internal/nuggets/zinc_nuggets&quot;
+          }
+        ]
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;railways:track_incomplete_twilightforest_twilight_oak_narrow&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:deploying&quot;
+    },
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;railways:track_incomplete_twilightforest_twilight_oak_narrow&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;railways:track_incomplete_twilightforest_twilight_oak_narrow&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:pressing&quot;
+    }
+  ],
+  &quot;transitionalItem&quot;: {
+    &quot;item&quot;: &quot;railways:track_incomplete_twilightforest_twilight_oak_narrow&quot;
+  },
+  &quot;type&quot;: &quot;create:sequenced_assembly&quot;
+}</pre></main></body></html>

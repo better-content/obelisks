@@ -1,0 +1,74 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>occultism:ritual/possess_hoglin</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>occultism:ritual/possess_hoglin</h1>
+<p><b>Type:</b> occultism:ritual | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../items/minecraft__netherite_scrap.html">minecraft:netherite_scrap</a></li><li><a href="../tags/forge__leather.html">#forge:leather</a></li><li><a href="../tags/forge__netherrack.html">#forge:netherrack</a></li><li><a href="../tags/forge__netherrack.html">#forge:netherrack</a></li><li><a href="../items/minecraft__porkchop.html">minecraft:porkchop</a></li><li><a href="../items/minecraft__porkchop.html">minecraft:porkchop</a></li><li><a href="../items/minecraft__porkchop.html">minecraft:porkchop</a></li><li><a href="../items/occultism__spirit_attuned_crystal.html">occultism:spirit_attuned_crystal</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/minecraft__netherite_upgrade_smithing_template.html">minecraft:netherite_upgrade_smithing_template</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: 60
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;activation_item&quot;: {
+    &quot;item&quot;: &quot;occultism:book_of_binding_bound_afrit&quot;
+  },
+  &quot;duration&quot;: 60,
+  &quot;entity_to_sacrifice&quot;: {
+    &quot;display_name&quot;: &quot;ritual.occultism.sacrifice.pigs&quot;,
+    &quot;tag&quot;: &quot;forge:pigs&quot;
+  },
+  &quot;entity_to_summon&quot;: &quot;occultism:possessed_hoglin&quot;,
+  &quot;ingredients&quot;: [
+    {
+      &quot;item&quot;: &quot;minecraft:netherite_scrap&quot;
+    },
+    {
+      &quot;tag&quot;: &quot;forge:leather&quot;
+    },
+    {
+      &quot;tag&quot;: &quot;forge:netherrack&quot;
+    },
+    {
+      &quot;tag&quot;: &quot;forge:netherrack&quot;
+    },
+    {
+      &quot;item&quot;: &quot;minecraft:porkchop&quot;
+    },
+    {
+      &quot;item&quot;: &quot;minecraft:porkchop&quot;
+    },
+    {
+      &quot;item&quot;: &quot;minecraft:porkchop&quot;
+    },
+    {
+      &quot;item&quot;: &quot;occultism:spirit_attuned_crystal&quot;
+    }
+  ],
+  &quot;pentacle_id&quot;: &quot;occultism:possess_afrit&quot;,
+  &quot;result&quot;: {
+    &quot;item&quot;: &quot;minecraft:netherite_upgrade_smithing_template&quot;,
+    &quot;nbt&quot;: {
+      &quot;display&quot;: {
+        &quot;Lore&quot;: [
+          &quot;[{\&quot;translate\&quot;:\&quot;item.occultism.ritual_dummy.possess_hoglin.tooltip\&quot;}]&quot;
+        ],
+        &quot;Name&quot;: &quot;[{\&quot;translate\&quot;:\&quot;item.occultism.ritual_dummy.possess_hoglin\&quot;}]&quot;
+      }
+    }
+  },
+  &quot;ritual_dummy&quot;: {
+    &quot;item&quot;: &quot;occultism:ritual_dummy/possess_hoglin&quot;
+  },
+  &quot;ritual_type&quot;: &quot;occultism:summon&quot;,
+  &quot;type&quot;: &quot;occultism:ritual&quot;
+}</pre></main></body></html>

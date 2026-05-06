@@ -1,0 +1,47 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>theurgy:liquefaction/alchemical_sulfur_cobblestone_from_cobblestone_normal</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>theurgy:liquefaction/alchemical_sulfur_cobblestone_from_cobblestone_normal</h1>
+<p><b>Type:</b> theurgy:liquefaction | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../tags/forge__cobblestone_normal.html">#forge:cobblestone/normal</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/theurgy__alchemical_sulfur_cobblestone.html">theurgy:alchemical_sulfur_cobblestone</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: null
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;conditions&quot;: [
+    {
+      &quot;type&quot;: &quot;forge:not&quot;,
+      &quot;value&quot;: {
+        &quot;tag&quot;: &quot;forge:cobblestone/normal&quot;,
+        &quot;type&quot;: &quot;forge:tag_empty&quot;
+      }
+    }
+  ],
+  &quot;ingredient&quot;: {
+    &quot;tag&quot;: &quot;forge:cobblestone/normal&quot;
+  },
+  &quot;liquefaction_time&quot;: 100,
+  &quot;result&quot;: {
+    &quot;count&quot;: 1,
+    &quot;item&quot;: &quot;theurgy:alchemical_sulfur_cobblestone&quot;,
+    &quot;nbt&quot;: {
+      &quot;theurgy:sulfur.source.id&quot;: &quot;#forge:cobblestone/normal&quot;
+    }
+  },
+  &quot;solvent&quot;: {
+    &quot;fluid&quot;: &quot;theurgy:sal_ammoniac&quot;
+  },
+  &quot;solvent_amount&quot;: 10,
+  &quot;type&quot;: &quot;theurgy:liquefaction&quot;
+}</pre></main></body></html>

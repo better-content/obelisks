@@ -1,0 +1,137 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>create_more_additions:totem3</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>create_more_additions:totem3</h1>
+<p><b>Type:</b> create:sequenced_assembly | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../tags/create_more_additions__totem_base.html">#create_more_additions:totem_base</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/minecraft__totem_of_undying.html">minecraft:totem_of_undying</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: null
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;conditions&quot;: [
+    {
+      &quot;modid&quot;: &quot;create_enchantment_industry&quot;,
+      &quot;type&quot;: &quot;forge:mod_loaded&quot;
+    }
+  ],
+  &quot;ingredient&quot;: {
+    &quot;tag&quot;: &quot;create_more_additions:totem_base&quot;
+  },
+  &quot;loops&quot;: 1,
+  &quot;results&quot;: [
+    {
+      &quot;item&quot;: &quot;minecraft:totem_of_undying&quot;
+    }
+  ],
+  &quot;sequence&quot;: [
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;create_more_additions:incomplete_totem&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;create_more_additions:incomplete_totem&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:cutting&quot;
+    },
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;create_more_additions:incomplete_totem&quot;
+        },
+        {
+          &quot;item&quot;: &quot;minecraft:end_crystal&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;create_more_additions:incomplete_totem&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:deploying&quot;
+    },
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;create_more_additions:incomplete_totem&quot;
+        },
+        {
+          &quot;amount&quot;: 500,
+          &quot;fluid&quot;: &quot;minecraft:lava&quot;,
+          &quot;nbt&quot;: {}
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;create_more_additions:incomplete_totem&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:filling&quot;
+    },
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;create_more_additions:incomplete_totem&quot;
+        },
+        {
+          &quot;item&quot;: &quot;minecraft:emerald&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;create_more_additions:incomplete_totem&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:deploying&quot;
+    },
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;create_more_additions:incomplete_totem&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;create_more_additions:incomplete_totem&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:pressing&quot;
+    },
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;create_more_additions:incomplete_totem&quot;
+        },
+        {
+          &quot;amount&quot;: 27,
+          &quot;fluid&quot;: &quot;create_enchantment_industry:experience&quot;,
+          &quot;nbt&quot;: {}
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;create_more_additions:incomplete_totem&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:filling&quot;
+    }
+  ],
+  &quot;transitionalItem&quot;: {
+    &quot;item&quot;: &quot;create_more_additions:incomplete_totem&quot;
+  },
+  &quot;type&quot;: &quot;create:sequenced_assembly&quot;
+}</pre></main></body></html>

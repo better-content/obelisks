@@ -1,0 +1,68 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>occultism:ritual/familiar_headless</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>occultism:ritual/familiar_headless</h1>
+<p><b>Type:</b> occultism:ritual | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../tags/forge__crops_wheat.html">#forge:crops/wheat</a></li><li><a href="../tags/forge__crops_wheat.html">#forge:crops/wheat</a></li><li><a href="../items/minecraft__hay_block.html">minecraft:hay_block</a></li><li><a href="../tags/forge__rods_wooden.html">#forge:rods/wooden</a></li><li><a href="../tags/forge__rods_wooden.html">#forge:rods/wooden</a></li><li><a href="../items/minecraft__carved_pumpkin.html">minecraft:carved_pumpkin</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/occultism__spawn_egg_familiar_headless.html">occultism:spawn_egg/familiar_headless</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: 60
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;activation_item&quot;: {
+    &quot;item&quot;: &quot;occultism:book_of_binding_bound_djinni&quot;
+  },
+  &quot;duration&quot;: 60,
+  &quot;entity_to_sacrifice&quot;: {
+    &quot;display_name&quot;: &quot;ritual.occultism.sacrifice.snow_golem&quot;,
+    &quot;tag&quot;: &quot;forge:golems/snow&quot;
+  },
+  &quot;entity_to_summon&quot;: &quot;occultism:headless_familiar&quot;,
+  &quot;ingredients&quot;: [
+    {
+      &quot;tag&quot;: &quot;forge:crops/wheat&quot;
+    },
+    {
+      &quot;tag&quot;: &quot;forge:crops/wheat&quot;
+    },
+    {
+      &quot;item&quot;: &quot;minecraft:hay_block&quot;
+    },
+    {
+      &quot;tag&quot;: &quot;forge:rods/wooden&quot;
+    },
+    {
+      &quot;tag&quot;: &quot;forge:rods/wooden&quot;
+    },
+    {
+      &quot;item&quot;: &quot;minecraft:carved_pumpkin&quot;
+    }
+  ],
+  &quot;pentacle_id&quot;: &quot;occultism:possess_djinni&quot;,
+  &quot;result&quot;: {
+    &quot;item&quot;: &quot;occultism:spawn_egg/familiar_headless&quot;,
+    &quot;nbt&quot;: {
+      &quot;display&quot;: {
+        &quot;Lore&quot;: [
+          &quot;[{\&quot;translate\&quot;:\&quot;item.occultism.ritual_dummy.familiar_headless.tooltip\&quot;}]&quot;
+        ],
+        &quot;Name&quot;: &quot;[{\&quot;translate\&quot;:\&quot;item.occultism.ritual_dummy.familiar_headless\&quot;}]&quot;
+      }
+    }
+  },
+  &quot;ritual_dummy&quot;: {
+    &quot;item&quot;: &quot;occultism:ritual_dummy/familiar_headless&quot;
+  },
+  &quot;ritual_type&quot;: &quot;occultism:familiar&quot;,
+  &quot;type&quot;: &quot;occultism:ritual&quot;
+}</pre></main></body></html>

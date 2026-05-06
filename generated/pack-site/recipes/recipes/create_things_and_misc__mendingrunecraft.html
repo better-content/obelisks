@@ -1,0 +1,85 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>create_things_and_misc:mendingrunecraft</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>create_things_and_misc:mendingrunecraft</h1>
+<p><b>Type:</b> create:sequenced_assembly | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../items/create_things_and_misc__experience_sheet.html">create_things_and_misc:experience_sheet</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/create_things_and_misc__mending_rune.html">create_things_and_misc:mending_rune</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: null
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;ingredient&quot;: {
+    &quot;item&quot;: &quot;create_things_and_misc:experience_sheet&quot;
+  },
+  &quot;loops&quot;: 10,
+  &quot;results&quot;: [
+    {
+      &quot;item&quot;: &quot;create_things_and_misc:mending_rune&quot;
+    }
+  ],
+  &quot;sequence&quot;: [
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;create_things_and_misc:incomplete_mending_rune&quot;
+        },
+        {
+          &quot;item&quot;: &quot;create_things_and_misc:rose_quartz_sheet&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;create_things_and_misc:incomplete_mending_rune&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:deploying&quot;
+    },
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;create_things_and_misc:incomplete_mending_rune&quot;
+        },
+        {
+          &quot;item&quot;: &quot;create:experience_nugget&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;create_things_and_misc:incomplete_mending_rune&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:deploying&quot;
+    },
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;create_things_and_misc:incomplete_mending_rune&quot;
+        },
+        {
+          &quot;item&quot;: &quot;create:experience_nugget&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;create_things_and_misc:mending_rune&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:deploying&quot;
+    }
+  ],
+  &quot;transitionalItem&quot;: {
+    &quot;item&quot;: &quot;create_things_and_misc:incomplete_mending_rune&quot;
+  },
+  &quot;type&quot;: &quot;create:sequenced_assembly&quot;
+}</pre></main></body></html>

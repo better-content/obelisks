@@ -1,0 +1,131 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>protection_pixel:closedasloot</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>protection_pixel:closedasloot</h1>
+<p><b>Type:</b> create:sequenced_assembly | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../items/protection_pixel__closed_helmet.html">protection_pixel:closed_helmet</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/protection_pixel__closedas_helmet.html">protection_pixel:closedas_helmet</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: null
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;ingredient&quot;: {
+    &quot;item&quot;: &quot;protection_pixel:closed_helmet&quot;
+  },
+  &quot;loops&quot;: 1,
+  &quot;results&quot;: [
+    {
+      &quot;item&quot;: &quot;protection_pixel:closedas_helmet&quot;
+    }
+  ],
+  &quot;sequence&quot;: [
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;protection_pixel:incompleteclosed&quot;
+        },
+        {
+          &quot;amount&quot;: 250,
+          &quot;fluid&quot;: &quot;minecraft:lava&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;protection_pixel:incompleteclosed&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:filling&quot;
+    },
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;protection_pixel:incompleteclosed&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;protection_pixel:incompleteclosed&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:pressing&quot;
+    },
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;protection_pixel:incompleteclosed&quot;
+        },
+        {
+          &quot;item&quot;: &quot;create:sturdy_sheet&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;protection_pixel:incompleteclosed&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:deploying&quot;
+    },
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;protection_pixel:incompleteclosed&quot;
+        },
+        {
+          &quot;item&quot;: &quot;protection_pixel:heatoverlockingmechanism&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;protection_pixel:incompleteclosed&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:deploying&quot;
+    },
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;protection_pixel:incompleteclosed&quot;
+        },
+        {
+          &quot;item&quot;: &quot;create:precision_mechanism&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;protection_pixel:incompleteclosed&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:deploying&quot;
+    },
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;protection_pixel:incompleteclosed&quot;
+        },
+        {
+          &quot;item&quot;: &quot;protection_pixel:smallnetheritesheet&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;protection_pixel:incompleteclosed&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:deploying&quot;
+    }
+  ],
+  &quot;transitionalItem&quot;: {
+    &quot;item&quot;: &quot;protection_pixel:incompleteclosed&quot;
+  },
+  &quot;type&quot;: &quot;create:sequenced_assembly&quot;
+}</pre></main></body></html>

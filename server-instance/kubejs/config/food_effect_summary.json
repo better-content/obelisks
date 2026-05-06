@@ -5,160 +5,36 @@
 		"Custom item effects applied only inside finishUsingItem may not appear here.",
 		"Suspicious stew dynamic NBT effects are not expanded because they are not a fixed item-level food property."
 	],
-	"foodCount": 1035,
-	"foodsWithEffectCount": 517,
-	"foodsWithoutEffectCount": 518,
+	"foodCount": 391,
+	"foodsWithEffectCount": 108,
+	"foodsWithoutEffectCount": 283,
 	"byNamespace": {
-		"minecraft": 39,
-		"everythingcopper": 1,
-		"botania": 2,
-		"mynethersdelight": 61,
-		"dynamictreesplus": 1,
-		"creatingspace": 1,
-		"immersive_weathering": 6,
-		"apotheotic_additions": 5,
-		"fiahi": 2,
-		"the_finley_dimension_remastered": 2,
-		"fallout_wastelands_": 37,
-		"brewinandchewin": 35,
-		"farmersrespite": 30,
-		"oceansdelight": 20,
-		"occultism": 5,
-		"ubesdelight": 42,
-		"cold_sweat": 1,
-		"blue_skies": 25,
-		"ars_nouveau": 7,
 		"aether": 8,
-		"iceandfire": 6,
-		"twilightforest": 9,
-		"undergardendelight": 23,
-		"natures_spirit": 7,
-		"farmersdelight": 74,
-		"rusticdelight": 61,
-		"ends_delight": 47,
-		"starcatcher": 84,
-		"deeperdarker": 1,
-		"undergarden": 19,
-		"veggiesdelight": 66,
+		"ars_nouveau": 7,
+		"blue_skies": 25,
+		"brewinandchewin": 35,
+		"cold_sweat": 1,
 		"create": 5,
-		"create_central_kitchen": 24,
-		"artifacts": 3,
-		"collectorsreap": 160,
-		"tconstruct": 10,
-		"corn_delight": 19,
-		"reliquary": 1,
+		"creatingspace": 1,
+		"deeperdarker": 1,
+		"dynamictreesplus": 1,
+		"everythingcopper": 1,
+		"fallout_wastelands_": 37,
+		"farmersdelight": 77,
+		"fiahi": 2,
+		"iceandfire": 6,
+		"immersive_weathering": 6,
+		"minecraft": 40,
+		"natures_spirit": 7,
+		"pneumaticcraft": 4,
 		"quark": 3,
-		"supplementaries": 3,
-		"malum": 5,
-		"delightful": 75
+		"starcatcher": 84,
+		"tconstruct": 10,
+		"the_finley_dimension_remastered": 2,
+		"twilightforest": 9,
+		"undergarden": 19
 	},
 	"byEffect": {
-		"minecraft:absorption": [
-			{
-				"item": "brewinandchewin:egg_grog",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:melon_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:dragon_leg_with_sauce",
-				"nutrition": 10,
-				"saturationModifier": 0.699999988079071,
-				"durationTicks": 1500,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:dragon_meat_stew",
-				"nutrition": 10,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 1500,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:steamed_dragon_egg",
-				"nutrition": 12,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 1200,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "farmersdelight:apple_cider",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersrespite:long_apple_cider",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 1800,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersrespite:strong_apple_cider",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 600,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "immersive_weathering:enchanted_golden_moss_clump",
-				"nutrition": 6,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 1600,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "minecraft:enchanted_golden_apple",
-				"nutrition": 4,
-				"saturationModifier": 1.2000000476837158,
-				"durationTicks": 2400,
-				"amplifier": 3,
-				"probability": 1
-			},
-			{
-				"item": "minecraft:golden_apple",
-				"nutrition": 4,
-				"saturationModifier": 1.2000000476837158,
-				"durationTicks": 2400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:enchanted_golden_egg",
-				"nutrition": 4,
-				"saturationModifier": 1,
-				"durationTicks": 600,
-				"amplifier": 3,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:golden_egg",
-				"nutrition": 4,
-				"saturationModifier": 1,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			}
-		],
 		"minecraft:regeneration": [
 			{
 				"item": "aether:healing_stone",
@@ -177,262 +53,6 @@
 				"probability": 100
 			},
 			{
-				"item": "collectorsreap:land_and_sea_burger",
-				"nutrition": 12,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:prickly_pear_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:reanimators_garden",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 2400,
-				"amplifier": 3,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:strong_vernal_purge",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:stygian_pomegranate",
-				"nutrition": 10,
-				"saturationModifier": 0.4000000059604645,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "corn_delight:creamy_corn_drink",
-				"nutrition": 2,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:berry_matcha_latte",
-				"nutrition": 8,
-				"saturationModifier": 0.6499999761581421,
-				"durationTicks": 400,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "delightful:field_salad",
-				"nutrition": 10,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:matcha_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 100,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "delightful:matcha_ice_cream",
-				"nutrition": 6,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 500,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "delightful:matcha_latte",
-				"nutrition": 6,
-				"saturationModifier": 0.5,
-				"durationTicks": 400,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "delightful:matcha_milkshake",
-				"nutrition": 2,
-				"saturationModifier": 1.5,
-				"durationTicks": 200,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:assorted_salad",
-				"nutrition": 14,
-				"saturationModifier": 0.5,
-				"durationTicks": 200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:chorus_flower_pie",
-				"nutrition": 4,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 100,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:chorus_flower_tea",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 100,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:dragon_breath_and_chorus_soup",
-				"nutrition": 16,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 400,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:dragon_leg_with_sauce",
-				"nutrition": 10,
-				"saturationModifier": 0.699999988079071,
-				"durationTicks": 300,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:dragon_meat_stew",
-				"nutrition": 10,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 300,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:end_barbecue_stick",
-				"nutrition": 10,
-				"saturationModifier": 0.699999988079071,
-				"durationTicks": 100,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:end_mixed_salad",
-				"nutrition": 10,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 120,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:ender_bamboo_rice",
-				"nutrition": 15,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 300,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:ender_congee",
-				"nutrition": 10,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 300,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:ender_sausage",
-				"nutrition": 9,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 160,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:fried_dragon_egg",
-				"nutrition": 20,
-				"saturationModifier": 0.5,
-				"durationTicks": 4800,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:grilled_shulker",
-				"nutrition": 8,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 100,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:liquid_dragon_egg",
-				"nutrition": 14,
-				"saturationModifier": 0.5,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:roasted_dragon_meat",
-				"nutrition": 15,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 300,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:roasted_dragon_meat_cuts",
-				"nutrition": 6,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 100,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:roasted_dragon_steak",
-				"nutrition": 18,
-				"saturationModifier": 0.5,
-				"durationTicks": 500,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:shulker_omelette",
-				"nutrition": 11,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 100,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:smoked_dragon_leg",
-				"nutrition": 15,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 300,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:steamed_dragon_egg",
-				"nutrition": 12,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 1200,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
 				"item": "farmersdelight:fruit_salad",
 				"nutrition": 6,
 				"saturationModifier": 0.6000000238418579,
@@ -446,38 +66,6 @@
 				"saturationModifier": 0.6000000238418579,
 				"durationTicks": 100,
 				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersrespite:long_rose_hip_tea",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 300,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersrespite:rose_hip_pie_slice",
-				"nutrition": 3,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersrespite:rose_hip_tea",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersrespite:strong_rose_hip_tea",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 200,
-				"amplifier": 1,
 				"probability": 1
 			},
 			{
@@ -497,14 +85,6 @@
 				"probability": 1
 			},
 			{
-				"item": "malum:runic_sap",
-				"nutrition": 6,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
 				"item": "minecraft:enchanted_golden_apple",
 				"nutrition": 4,
 				"saturationModifier": 1.2000000476837158,
@@ -518,54 +98,6 @@
 				"saturationModifier": 1.2000000476837158,
 				"durationTicks": 100,
 				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:enchanted_golden_egg",
-				"nutrition": 4,
-				"saturationModifier": 1,
-				"durationTicks": 100,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:ghast_salad",
-				"nutrition": 8,
-				"saturationModifier": 0.8500000238418579,
-				"durationTicks": 300,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:hotdog_with_mixed_salad",
-				"nutrition": 10,
-				"saturationModifier": 0.5,
-				"durationTicks": 100,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:tear_popsicle",
-				"nutrition": 3,
-				"saturationModifier": 0.20000000298023224,
-				"durationTicks": 100,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "rusticdelight:potato_salad",
-				"nutrition": 8,
-				"saturationModifier": 0.699999988079071,
-				"durationTicks": 100,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "rusticdelight:sweet_salad",
-				"nutrition": 8,
-				"saturationModifier": 0.699999988079071,
-				"durationTicks": 100,
-				"amplifier": 0,
 				"probability": 1
 			},
 			{
@@ -583,3087 +115,121 @@
 				"durationTicks": 20,
 				"amplifier": 3,
 				"probability": 1
-			},
+			}
+		],
+		"ars_nouveau:shielding": [
 			{
-				"item": "veggiesdelight:dandelion_and_eggs",
-				"nutrition": 10,
+				"item": "ars_nouveau:bastion_pod",
+				"nutrition": 4,
 				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 100,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "veggiesdelight:dandelion_juice",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "veggiesdelight:dandelion_leaf",
-				"nutrition": 1,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 100,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "veggiesdelight:fermented_garlic_honey",
-				"nutrition": 7,
-				"saturationModifier": 0.699999988079071,
-				"durationTicks": 100,
+				"durationTicks": 1200,
 				"amplifier": 0,
 				"probability": 1
 			}
 		],
-		"minecraft:fire_resistance": [
+		"ars_nouveau:blasting": [
 			{
-				"item": "collectorsreap:bullet_pepper_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:bullet_pepper_popper",
-				"nutrition": 8,
-				"saturationModifier": 0.75,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:prickly_pear_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 1800,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:spicy_grenadine_jelly",
-				"nutrition": 7,
-				"saturationModifier": 1.2000000476837158,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:sweet_berry_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:wild_berry_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 100,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "delightful:long_prickly_pear_juice",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:prickly_pear_juice",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersrespite:blazing_chili",
-				"nutrition": 10,
-				"saturationModifier": 0.4000000059604645,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "immersive_weathering:ice_sickle",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 80,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "immersive_weathering:icicle",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 80,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "minecraft:enchanted_golden_apple",
+				"item": "ars_nouveau:bombegranate_pod",
 				"nutrition": 4,
-				"saturationModifier": 1.2000000476837158,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:bleeding_tartar",
-				"nutrition": 6,
-				"saturationModifier": 0.75,
-				"durationTicks": 200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:chilidog",
-				"nutrition": 11,
-				"saturationModifier": 0.5,
-				"durationTicks": 300,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:crimson_stroganoff",
-				"nutrition": 11,
-				"saturationModifier": 0.75,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:enchanted_golden_egg",
-				"nutrition": 4,
-				"saturationModifier": 1,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:hot_cream",
-				"nutrition": 1,
-				"saturationModifier": 8,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:hot_cream_cone",
-				"nutrition": 4,
-				"saturationModifier": 1,
-				"durationTicks": 200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:magma_cake_slice",
-				"nutrition": 2,
-				"saturationModifier": 1,
-				"durationTicks": 200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:spicy_cotton",
-				"nutrition": 3,
-				"saturationModifier": 2.25,
-				"durationTicks": 300,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:strider_stew",
-				"nutrition": 8,
 				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 800,
+				"durationTicks": 200,
 				"amplifier": 0,
 				"probability": 1
 			}
 		],
-		"minecraft:resistance": [
+		"ars_nouveau:freezing": [
 			{
-				"item": "brewinandchewin:steel_toe_stout",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "brewinandchewin:strongroot_ale",
-				"nutrition": 0,
-				"saturationModifier": 0,
+				"item": "ars_nouveau:frostaya_pod",
+				"nutrition": 4,
+				"saturationModifier": 0.6000000238418579,
 				"durationTicks": 600,
 				"amplifier": 0,
 				"probability": 1
-			},
+			}
+		],
+		"ars_nouveau:recovery": [
 			{
-				"item": "collectorsreap:beetroot_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
+				"item": "ars_nouveau:mendosteen_pod",
+				"nutrition": 4,
+				"saturationModifier": 0.6000000238418579,
 				"durationTicks": 1200,
 				"amplifier": 0,
 				"probability": 1
-			},
+			}
+		],
+		"ars_nouveau:mana_regen": [
 			{
-				"item": "collectorsreap:peanut_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 400,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:stygian_pomegranate",
-				"nutrition": 10,
-				"saturationModifier": 0.4000000059604645,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:yellow_tea_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 200,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "create_central_kitchen:aloe_cake_slice",
-				"nutrition": 1,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "create_central_kitchen:sweet_berry_cake_slice",
-				"nutrition": 1,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:azalea_tea",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 4800,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "delightful:cantaloupe_bread",
+				"item": "ars_nouveau:source_berry_pie",
 				"nutrition": 9,
-				"saturationModifier": 0.3499999940395355,
-				"durationTicks": 300,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:cantaloupe_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 200,
-				"amplifier": 3,
-				"probability": 1
-			},
-			{
-				"item": "delightful:cantaloupe_popsicle",
-				"nutrition": 3,
-				"saturationModifier": 0.20000000298023224,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:cantaloupe_slice",
-				"nutrition": 4,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:nut_butter_and_jam_sandwich",
-				"nutrition": 11,
-				"saturationModifier": 0.699999988079071,
-				"durationTicks": 1800,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:stuffed_cantaloupe",
-				"nutrition": 14,
-				"saturationModifier": 0.75,
-				"durationTicks": 600,
+				"saturationModifier": 0.8999999761581421,
+				"durationTicks": 1200,
 				"amplifier": 1,
 				"probability": 1
 			},
 			{
-				"item": "delightful:wrapped_cantaloupe",
+				"item": "ars_nouveau:source_berry_roll",
 				"nutrition": 8,
-				"saturationModifier": 0.949999988079071,
-				"durationTicks": 300,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:chorus_flower_tea",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:dragon_breath_and_chorus_soup",
-				"nutrition": 16,
 				"saturationModifier": 0.6000000238418579,
 				"durationTicks": 1200,
 				"amplifier": 0,
 				"probability": 1
 			},
 			{
-				"item": "ends_delight:dragon_breath_soda",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:ender_congee",
-				"nutrition": 10,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 900,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:fried_dragon_egg",
-				"nutrition": 20,
-				"saturationModifier": 0.5,
-				"durationTicks": 4800,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:liquid_dragon_egg",
-				"nutrition": 14,
-				"saturationModifier": 0.5,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:steamed_dragon_egg",
-				"nutrition": 12,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 1200,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "farmersrespite:long_yellow_tea",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 5400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersrespite:strong_yellow_tea",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 1800,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "farmersrespite:tea_curry",
-				"nutrition": 10,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersrespite:yellow_tea",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "malum:cursed_sap",
-				"nutrition": 6,
+				"item": "ars_nouveau:sourceberry_bush",
+				"nutrition": 2,
 				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "minecraft:enchanted_golden_apple",
-				"nutrition": 4,
-				"saturationModifier": 1.2000000476837158,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:enchanted_golden_egg",
-				"nutrition": 4,
-				"saturationModifier": 1,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:golden_egg",
-				"nutrition": 4,
-				"saturationModifier": 1,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "tconstruct:jeweled_apple",
-				"nutrition": 4,
-				"saturationModifier": 1.2000000476837158,
-				"durationTicks": 2400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "undergarden:inky_stew",
-				"nutrition": 4,
-				"saturationModifier": 0.4000000059604645,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "veggiesdelight:broccoli_salad",
-				"nutrition": 6,
-				"saturationModifier": 0.6000000238418579,
 				"durationTicks": 100,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "veggiesdelight:potato_noodles",
-				"nutrition": 12,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 100,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "veggiesdelight:turnip_water",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 400,
 				"amplifier": 0,
 				"probability": 1
 			}
 		],
-		"minecraft:hunger": [
+		"minecraft:slowness": [
 			{
-				"item": "collectorsreap:limbo_brew",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:strong_limbo_brew",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 600,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:tiger_prawn",
-				"nutrition": 2,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 0.75
-			},
-			{
-				"item": "delightful:acorn",
-				"nutrition": 2,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:nut_dough",
-				"nutrition": 2,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 0.30000001192092896
-			},
-			{
-				"item": "farmersdelight:chicken_cuts",
-				"nutrition": 1,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 0.30000001192092896
-			},
-			{
-				"item": "farmersdelight:raw_pasta",
-				"nutrition": 2,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 0.30000001192092896
-			},
-			{
-				"item": "farmersdelight:wheat_dough",
-				"nutrition": 2,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 0.30000001192092896
-			},
-			{
-				"item": "fiahi:leftover_meat",
-				"nutrition": 1,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 0.800000011920929
-			},
-			{
-				"item": "fiahi:leftover_vegetable",
-				"nutrition": 1,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 0.800000011920929
-			},
-			{
-				"item": "malum:rotting_essence",
-				"nutrition": 6,
-				"saturationModifier": 0.20000000298023224,
-				"durationTicks": 600,
-				"amplifier": 1,
-				"probability": 0.949999988079071
-			},
-			{
-				"item": "minecraft:chicken",
-				"nutrition": 2,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 0.30000001192092896
-			},
-			{
-				"item": "minecraft:pufferfish",
-				"nutrition": 1,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 300,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "minecraft:rotten_flesh",
-				"nutrition": 4,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 0.800000011920929
-			},
-			{
-				"item": "mynethersdelight:ghast_dough",
+				"item": "blue_skies:cryo_root",
 				"nutrition": 3,
-				"saturationModifier": 1,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 0.30000001192092896
-			},
-			{
-				"item": "mynethersdelight:ghast_sourdough",
-				"nutrition": 3,
-				"saturationModifier": 1,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 0.30000001192092896
-			},
-			{
-				"item": "mynethersdelight:ghasta",
-				"nutrition": 3,
-				"saturationModifier": 1,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 0.30000001192092896
-			},
-			{
-				"item": "occultism:datura",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 300,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "occultism:datura_seeds",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 300,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "occultism:demons_dream_essence",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 300,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "rusticdelight:batter",
-				"nutrition": 2,
-				"saturationModifier": 0.20000000298023224,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 0.30000001192092896
-			},
-			{
-				"item": "ubesdelight:ensaymada_raw",
-				"nutrition": 2,
 				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 0.30000001192092896
-			},
-			{
-				"item": "ubesdelight:ensaymada_ube_raw",
-				"nutrition": 2,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 0.30000001192092896
-			},
-			{
-				"item": "ubesdelight:hopia_munggo_raw",
-				"nutrition": 2,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 0.30000001192092896
-			},
-			{
-				"item": "ubesdelight:hopia_ube_raw",
-				"nutrition": 2,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 0.30000001192092896
-			},
-			{
-				"item": "ubesdelight:pandesal_raw",
-				"nutrition": 2,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 0.30000001192092896
-			},
-			{
-				"item": "ubesdelight:pandesal_ube_raw",
-				"nutrition": 2,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 0.30000001192092896
-			},
-			{
-				"item": "undergarden:rotten_blisterberry",
-				"nutrition": 3,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "veggiesdelight:sweet_potato_dough",
-				"nutrition": 3,
-				"saturationModifier": 0.20000000298023224,
-				"durationTicks": 300,
-				"amplifier": 0,
-				"probability": 0.30000001192092896
-			}
-		],
-		"minecraft:nausea": [
-			{
-				"item": "collectorsreap:adzuki_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
 				"durationTicks": 40,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:aloe_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 200,
-				"amplifier": 3,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:banana_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 200,
 				"amplifier": 0,
-				"probability": 1
+				"probability": 0.05000000074505806
 			},
 			{
-				"item": "collectorsreap:dragons_passion",
-				"nutrition": 5,
-				"saturationModifier": 1,
-				"durationTicks": 800,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:mint_cannoli",
-				"nutrition": 8,
-				"saturationModifier": 1.25,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:mint_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 800,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:mint_limeade",
-				"nutrition": 6,
-				"saturationModifier": 0.3499999940395355,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:passion_fruit_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 40,
-				"amplifier": 3,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:pomegranate_bean_salad",
-				"nutrition": 8,
-				"saturationModifier": 0.3499999940395355,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:pomegranate_smoothie",
-				"nutrition": 3,
-				"saturationModifier": 0.20000000298023224,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:pumpkin_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:sunny_ice_cream",
-				"nutrition": 12,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:vanilla_cannoli",
-				"nutrition": 8,
-				"saturationModifier": 1.25,
-				"durationTicks": 200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:vanilla_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:yucca_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 200,
-				"amplifier": 3,
-				"probability": 1
-			},
-			{
-				"item": "farmersdelight:nether_salad",
-				"nutrition": 5,
-				"saturationModifier": 0.4000000059604645,
-				"durationTicks": 240,
-				"amplifier": 0,
-				"probability": 0.30000001192092896
-			},
-			{
-				"item": "fiahi:leftover_meat",
-				"nutrition": 1,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 0.800000011920929
-			},
-			{
-				"item": "fiahi:leftover_vegetable",
-				"nutrition": 1,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 0.800000011920929
-			},
-			{
-				"item": "minecraft:pufferfish",
-				"nutrition": 1,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 300,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:blue_tenderloin_steak",
-				"nutrition": 9,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 300,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:hoglin_loin",
-				"nutrition": 4,
-				"saturationModifier": 0.3499999940395355,
-				"durationTicks": 300,
-				"amplifier": 0,
-				"probability": 0.4000000059604645
-			},
-			{
-				"item": "mynethersdelight:hoglin_sausage",
-				"nutrition": 2,
-				"saturationModifier": 0.25,
-				"durationTicks": 300,
-				"amplifier": 0,
-				"probability": 0.4000000059604645
-			},
-			{
-				"item": "mynethersdelight:hotdog_with_nether_salad",
-				"nutrition": 10,
-				"saturationModifier": 0.5,
-				"durationTicks": 240,
-				"amplifier": 0,
-				"probability": 0.30000001192092896
-			},
-			{
-				"item": "occultism:demons_dream_essence",
+				"item": "brewinandchewin:withering_dross",
 				"nutrition": 0,
 				"saturationModifier": 0,
-				"durationTicks": 300,
-				"amplifier": 1,
-				"probability": 0.20000000298023224
-			},
-			{
-				"item": "rusticdelight:cooking_oil",
-				"nutrition": 2,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 0.5
-			},
-			{
-				"item": "undergarden:slop_bowl",
-				"nutrition": 6,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 200,
-				"amplifier": 0,
-				"probability": 1
-			}
-		],
-		"minecraft:poison": [
-			{
-				"item": "minecraft:poisonous_potato",
-				"nutrition": 2,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 100,
-				"amplifier": 0,
-				"probability": 0.6000000238418579
-			},
-			{
-				"item": "minecraft:pufferfish",
-				"nutrition": 1,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 1200,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "minecraft:spider_eye",
-				"nutrition": 2,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 100,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:strider_slice",
-				"nutrition": 4,
-				"saturationModifier": 0.699999988079071,
-				"durationTicks": 200,
-				"amplifier": 0,
-				"probability": 0.15000000596046448
-			},
-			{
-				"item": "supplementaries:soap",
-				"nutrition": 0,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 120,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "tconstruct:venom_bottle",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 250,
-				"amplifier": 0,
-				"probability": 1
-			}
-		],
-		"everythingcopper:copper_poisoning": [
-			{
-				"item": "everythingcopper:copper_nugget",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 1,
-				"amplifier": 1,
-				"probability": 1
-			}
-		],
-		"minecraft:saturation": [
-			{
-				"item": "botania:mana_cookie",
-				"nutrition": 0,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 20,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:pumpkin_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:long_prickly_pear_juice",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:prickly_pear_juice",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			}
-		],
-		"mynethersdelight:b_pungent": [
-			{
-				"item": "mynethersdelight:bullet_pepper",
-				"nutrition": 2,
-				"saturationModifier": 0.5,
-				"durationTicks": 100,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:burnt_roll",
-				"nutrition": 10,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 600,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:deviled_egg",
-				"nutrition": 5,
-				"saturationModifier": 0.699999988079071,
-				"durationTicks": 200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:fried_hoglin_chop",
-				"nutrition": 12,
-				"saturationModifier": 0.8999999761581421,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:hot_wings",
-				"nutrition": 6,
-				"saturationModifier": 0.44999998807907104,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:hot_wings_bucket",
-				"nutrition": 18,
-				"saturationModifier": 0.44999998807907104,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:plate_of_ghasta_with_cream",
-				"nutrition": 8,
-				"saturationModifier": 0.8999999761581421,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:rock_soup",
-				"nutrition": 7,
-				"saturationModifier": 0.75,
-				"durationTicks": 1200,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:sizzling_pudding",
-				"nutrition": 9,
-				"saturationModifier": 0.6499999761581421,
-				"durationTicks": 100,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:spicy_curry",
-				"nutrition": 15,
-				"saturationModifier": 0.6499999761581421,
-				"durationTicks": 6000,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:spicy_hoglin_stew",
-				"nutrition": 12,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 1200,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:spicy_noodle_soup",
-				"nutrition": 16,
-				"saturationModifier": 0.6499999761581421,
-				"durationTicks": 1200,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:spicy_skewer",
-				"nutrition": 7,
-				"saturationModifier": 0.8999999761581421,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:stuffed_pepper",
-				"nutrition": 8,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 100,
-				"amplifier": 2,
-				"probability": 1
-			}
-		],
-		"farmersdelight:nourishment": [
-			{
-				"item": "brewinandchewin:cheesy_pasta",
-				"nutrition": 14,
-				"saturationModifier": 0.75,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "brewinandchewin:horror_lasagna",
-				"nutrition": 16,
-				"saturationModifier": 0.550000011920929,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "brewinandchewin:scarlet_pierogi",
-				"nutrition": 12,
-				"saturationModifier": 1,
-				"durationTicks": 8400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "brewinandchewin:vegetable_omelet",
-				"nutrition": 12,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:carbonara_pasta",
-				"nutrition": 14,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:clam_meatball_stew",
-				"nutrition": 10,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:clam_meatball_stew_cup",
-				"nutrition": 5,
-				"saturationModifier": 0.4000000059604645,
-				"durationTicks": 1800,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:clam_pasta",
-				"nutrition": 11,
-				"saturationModifier": 0.8500000238418579,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:cod_ceviche",
-				"nutrition": 9,
-				"saturationModifier": 0.699999988079071,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:crab_lasagna",
-				"nutrition": 10,
-				"saturationModifier": 0.8500000238418579,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:crab_noodles",
-				"nutrition": 13,
-				"saturationModifier": 0.75,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:crimson_carrot_roast",
-				"nutrition": 6,
-				"saturationModifier": 0.5,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:deluxe_salad",
-				"nutrition": 10,
-				"saturationModifier": 0.75,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:dragon_stew",
-				"nutrition": 8,
-				"saturationModifier": 1.100000023841858,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:dragon_stew_cup",
-				"nutrition": 4,
-				"saturationModifier": 0.550000011920929,
-				"durationTicks": 1800,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:glazed_strider",
-				"nutrition": 10,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:honey_lime_chicken",
-				"nutrition": 14,
-				"saturationModifier": 0.75,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:land_and_sea_burger",
-				"nutrition": 12,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:mediterranean_salmon",
-				"nutrition": 14,
-				"saturationModifier": 0.75,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:pink_noodles",
-				"nutrition": 12,
-				"saturationModifier": 0.8999999761581421,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:platinum_bass_stew",
-				"nutrition": 10,
-				"saturationModifier": 1,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:platinum_bass_stew_cup",
-				"nutrition": 5,
-				"saturationModifier": 0.5,
-				"durationTicks": 1800,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:pomegranate_chicken",
-				"nutrition": 14,
-				"saturationModifier": 0.75,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:pomegranate_mutton",
-				"nutrition": 14,
-				"saturationModifier": 0.75,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:pomegranate_pork",
-				"nutrition": 16,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:portobello_pasta",
-				"nutrition": 13,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:portobello_risotto",
-				"nutrition": 12,
-				"saturationModifier": 0.8500000238418579,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:prawn_ceviche",
-				"nutrition": 9,
-				"saturationModifier": 0.8500000238418579,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:prawn_noodles",
-				"nutrition": 12,
-				"saturationModifier": 0.8999999761581421,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:prawn_stew",
-				"nutrition": 10,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:prawn_stew_cup",
-				"nutrition": 5,
-				"saturationModifier": 0.4000000059604645,
-				"durationTicks": 1800,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:salmon_tartare",
-				"nutrition": 7,
-				"saturationModifier": 0.6499999761581421,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:sea_wrap",
-				"nutrition": 14,
-				"saturationModifier": 1,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:stuffed_pasta_shells",
-				"nutrition": 12,
-				"saturationModifier": 0.8999999761581421,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "corn_delight:cornbread_stuffing",
-				"nutrition": 12,
-				"saturationModifier": 1,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "corn_delight:nachos_bowl",
-				"nutrition": 12,
-				"saturationModifier": 1,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "create_central_kitchen:pumpkin_cake_slice",
-				"nutrition": 1,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:aged_fish_roe",
-				"nutrition": 8,
-				"saturationModifier": 0.699999988079071,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:aged_prawn_roe",
-				"nutrition": 8,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:cheeseburger",
-				"nutrition": 11,
-				"saturationModifier": 0.8500000238418579,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:chunkwich",
-				"nutrition": 11,
-				"saturationModifier": 0.4000000059604645,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:coconut_curry",
-				"nutrition": 15,
-				"saturationModifier": 0.8999999761581421,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:deluxe_cheeseburger",
-				"nutrition": 13,
-				"saturationModifier": 1,
-				"durationTicks": 4800,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:field_salad",
-				"nutrition": 10,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:nut_butter_and_jam_sandwich",
-				"nutrition": 11,
-				"saturationModifier": 0.699999988079071,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:roe_blini",
-				"nutrition": 10,
-				"saturationModifier": 0.699999988079071,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:salmon_and_roe_blini",
-				"nutrition": 11,
-				"saturationModifier": 0.75,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:stuffed_cantaloupe",
-				"nutrition": 14,
-				"saturationModifier": 0.75,
-				"durationTicks": 4800,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:dragon_leg_with_sauce",
-				"nutrition": 10,
-				"saturationModifier": 0.699999988079071,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:dragon_meat_stew",
-				"nutrition": 10,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:ender_bamboo_rice",
-				"nutrition": 15,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:enderman_gristle_stew",
-				"nutrition": 7,
-				"saturationModifier": 0.699999988079071,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:grilled_shulker",
-				"nutrition": 8,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:roasted_dragon_steak",
-				"nutrition": 18,
-				"saturationModifier": 0.5,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:steamed_dragon_egg",
-				"nutrition": 12,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:stir_fried_shulker_meat",
-				"nutrition": 10,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersdelight:bacon_and_eggs",
-				"nutrition": 10,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersdelight:grilled_salmon",
-				"nutrition": 14,
-				"saturationModifier": 0.75,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersdelight:honey_glazed_ham",
-				"nutrition": 14,
-				"saturationModifier": 0.75,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersdelight:mushroom_rice",
-				"nutrition": 12,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersdelight:pasta_with_meatballs",
-				"nutrition": 12,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersdelight:pasta_with_mutton_chop",
-				"nutrition": 12,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersdelight:ratatouille",
-				"nutrition": 10,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersdelight:roast_chicken",
-				"nutrition": 14,
-				"saturationModifier": 0.75,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersdelight:roasted_mutton_chops",
-				"nutrition": 14,
-				"saturationModifier": 0.75,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersdelight:shepherds_pie",
-				"nutrition": 14,
-				"saturationModifier": 0.75,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersdelight:squid_ink_pasta",
-				"nutrition": 14,
-				"saturationModifier": 0.75,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersdelight:steak_and_potatoes",
-				"nutrition": 12,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersdelight:stuffed_pumpkin",
-				"nutrition": 14,
-				"saturationModifier": 0.75,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersdelight:vegetable_noodles",
-				"nutrition": 14,
-				"saturationModifier": 0.75,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersrespite:black_cod",
-				"nutrition": 10,
-				"saturationModifier": 0.8999999761581421,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:bleeding_tartar",
-				"nutrition": 6,
-				"saturationModifier": 0.75,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:blue_tenderloin_steak",
-				"nutrition": 9,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:breakfast_sampler",
-				"nutrition": 15,
-				"saturationModifier": 0.75,
-				"durationTicks": 2400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:fried_hoglin_chop",
-				"nutrition": 12,
-				"saturationModifier": 0.8999999761581421,
-				"durationTicks": 2400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:hot_wings",
-				"nutrition": 6,
-				"saturationModifier": 0.44999998807907104,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:hot_wings_bucket",
-				"nutrition": 18,
-				"saturationModifier": 0.44999998807907104,
-				"durationTicks": 2400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:plate_of_cold_striderloaf",
-				"nutrition": 11,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 800,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:plate_of_ghasta_with_cream",
-				"nutrition": 8,
-				"saturationModifier": 0.8999999761581421,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:plate_of_striderloaf",
-				"nutrition": 5,
-				"saturationModifier": 1.25,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:plate_of_stuffed_hoglin",
-				"nutrition": 8,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 2400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:plate_of_stuffed_hoglin_ham",
-				"nutrition": 12,
-				"saturationModifier": 0.75,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:plate_of_stuffed_hoglin_snout",
-				"nutrition": 14,
-				"saturationModifier": 0.8999999761581421,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:scotch_eggs",
-				"nutrition": 12,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 2400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:spicy_curry",
-				"nutrition": 15,
-				"saturationModifier": 0.6499999761581421,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:strider_with_grilled_fungus",
-				"nutrition": 10,
-				"saturationModifier": 0.8999999761581421,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:twisted_ghasta",
-				"nutrition": 10,
-				"saturationModifier": 0.6499999761581421,
-				"durationTicks": 2400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "rusticdelight:bell_pepper_pasta",
-				"nutrition": 12,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "rusticdelight:coffee_braised_beef",
-				"nutrition": 14,
-				"saturationModifier": 0.75,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "rusticdelight:fried_calamari",
-				"nutrition": 12,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "rusticdelight:fried_chicken",
-				"nutrition": 12,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "rusticdelight:fried_mushrooms",
-				"nutrition": 12,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ubesdelight:bangsilog",
-				"nutrition": 13,
-				"saturationModifier": 0.75,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ubesdelight:chicken_inasal_rice",
-				"nutrition": 13,
-				"saturationModifier": 0.75,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ubesdelight:halo_halo",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ubesdelight:sisig",
-				"nutrition": 13,
-				"saturationModifier": 0.699999988079071,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ubesdelight:tosilog",
-				"nutrition": 13,
-				"saturationModifier": 0.75,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "veggiesdelight:cauliflower_kuku",
-				"nutrition": 12,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "veggiesdelight:dandelion_and_eggs",
-				"nutrition": 10,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "veggiesdelight:fish_and_chips",
-				"nutrition": 10,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "veggiesdelight:garlic_baked_cod",
-				"nutrition": 10,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "veggiesdelight:garlic_rice_with_cauliflower",
-				"nutrition": 14,
-				"saturationModifier": 0.75,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "veggiesdelight:lasagna_slice",
-				"nutrition": 14,
-				"saturationModifier": 0.75,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "veggiesdelight:pasta_with_broccoli",
-				"nutrition": 12,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "veggiesdelight:rice_and_vegetables",
-				"nutrition": 14,
-				"saturationModifier": 0.75,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "veggiesdelight:roasted_vegetables",
-				"nutrition": 12,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "veggiesdelight:shakshouka",
-				"nutrition": 12,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "veggiesdelight:steak_and_broccoli",
-				"nutrition": 12,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "veggiesdelight:stuffed_bellpepper",
-				"nutrition": 8,
-				"saturationModifier": 0.6499999761581421,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "veggiesdelight:stuffed_zucchinis",
-				"nutrition": 14,
-				"saturationModifier": 0.75,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "veggiesdelight:turnip_cake",
-				"nutrition": 14,
-				"saturationModifier": 0.75,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			}
-		],
-		"farmersdelight:comfort": [
-			{
-				"item": "brewinandchewin:creamy_onion_soup",
-				"nutrition": 12,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "brewinandchewin:fiery_fondue",
-				"nutrition": 14,
-				"saturationModifier": 0.75,
-				"durationTicks": 8400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "brewinandchewin:pale_jane",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 2400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "brewinandchewin:rice_wine",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:apple_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 1800,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:clam_chowder",
-				"nutrition": 8,
-				"saturationModifier": 0.8500000238418579,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:land_and_sea_burger",
-				"nutrition": 12,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:lucuma_gazpacho",
-				"nutrition": 8,
-				"saturationModifier": 0.699999988079071,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:lucuma_gazpacho_cup",
-				"nutrition": 4,
-				"saturationModifier": 0.3499999940395355,
 				"durationTicks": 3000,
 				"amplifier": 0,
 				"probability": 1
 			},
 			{
-				"item": "collectorsreap:portobello_rice_soup",
-				"nutrition": 14,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:portobello_rice_soup_cup",
-				"nutrition": 7,
-				"saturationModifier": 0.4000000059604645,
-				"durationTicks": 1800,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "corn_delight:corn_soup",
-				"nutrition": 10,
-				"saturationModifier": 0.8999999761581421,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "corn_delight:creamed_corn",
-				"nutrition": 7,
-				"saturationModifier": 0.5,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "corn_delight:creamy_corn_drink",
-				"nutrition": 2,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "create_central_kitchen:yucca_cake_slice",
-				"nutrition": 1,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:cactus_chili",
-				"nutrition": 10,
-				"saturationModifier": 0.699999988079071,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:cactus_soup",
-				"nutrition": 12,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:cactus_soup_cup",
-				"nutrition": 6,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 1800,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:lavender_tea",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:sinigang",
-				"nutrition": 12,
-				"saturationModifier": 0.699999988079071,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:sinigang_cup",
-				"nutrition": 6,
-				"saturationModifier": 0.3499999940395355,
-				"durationTicks": 1800,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:smore",
-				"nutrition": 8,
-				"saturationModifier": 0.4000000059604645,
-				"durationTicks": 2400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:venison_stew",
-				"nutrition": 12,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:venison_stew_cup",
-				"nutrition": 6,
-				"saturationModifier": 0.4000000059604645,
-				"durationTicks": 1800,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:dragon_breath_and_chorus_soup",
-				"nutrition": 16,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:ender_congee",
-				"nutrition": 10,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:ender_noodle",
-				"nutrition": 8,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:shulker_soup",
-				"nutrition": 8,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersdelight:baked_cod_stew",
-				"nutrition": 14,
-				"saturationModifier": 0.75,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersdelight:beef_stew",
-				"nutrition": 12,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersdelight:bone_broth",
-				"nutrition": 8,
-				"saturationModifier": 0.699999988079071,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersdelight:chicken_soup",
-				"nutrition": 14,
-				"saturationModifier": 0.75,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersdelight:cooked_rice",
-				"nutrition": 6,
-				"saturationModifier": 0.4000000059604645,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersdelight:fish_stew",
-				"nutrition": 12,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersdelight:fried_rice",
-				"nutrition": 14,
-				"saturationModifier": 0.75,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersdelight:noodle_soup",
-				"nutrition": 14,
-				"saturationModifier": 0.75,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersdelight:pumpkin_soup",
-				"nutrition": 14,
-				"saturationModifier": 0.75,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersdelight:vegetable_soup",
-				"nutrition": 12,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersrespite:dandelion_tea",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersrespite:long_dandelion_tea",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 5400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:crimson_stroganoff",
-				"nutrition": 11,
-				"saturationModifier": 0.75,
-				"durationTicks": 2400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:egg_soup",
-				"nutrition": 10,
-				"saturationModifier": 0.699999988079071,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:rock_soup",
-				"nutrition": 7,
-				"saturationModifier": 0.75,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:spicy_hoglin_stew",
-				"nutrition": 12,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 2400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:spicy_noodle_soup",
-				"nutrition": 16,
-				"saturationModifier": 0.6499999761581421,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:strider_stew",
-				"nutrition": 8,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "oceansdelight:bowl_of_guardian_soup",
-				"nutrition": 15,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "oceansdelight:cabbage_wrapped_elder_guardian",
-				"nutrition": 15,
-				"saturationModifier": 1,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "rusticdelight:bell_pepper_soup",
-				"nutrition": 6,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ubesdelight:arroz_caldo",
-				"nutrition": 14,
-				"saturationModifier": 0.75,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ubesdelight:bulalo",
-				"nutrition": 14,
-				"saturationModifier": 0.75,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ubesdelight:kinilaw",
-				"nutrition": 6,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ubesdelight:mechado",
-				"nutrition": 14,
-				"saturationModifier": 0.75,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ubesdelight:sinangag",
-				"nutrition": 7,
-				"saturationModifier": 0.44999998807907104,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "veggiesdelight:broccoli_soup",
-				"nutrition": 10,
-				"saturationModifier": 0.699999988079071,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "veggiesdelight:cacciatore",
-				"nutrition": 14,
-				"saturationModifier": 0.75,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "veggiesdelight:cauliflower_soup",
-				"nutrition": 10,
-				"saturationModifier": 0.699999988079071,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "veggiesdelight:coleslaw",
-				"nutrition": 8,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "veggiesdelight:garlic_chicken_stew",
-				"nutrition": 12,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "veggiesdelight:mashed_potatoes",
-				"nutrition": 10,
-				"saturationModifier": 0.699999988079071,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "veggiesdelight:potato_noodles",
-				"nutrition": 12,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "veggiesdelight:sweet_potato_pancakes",
-				"nutrition": 12,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "veggiesdelight:turnip_beef_stew",
-				"nutrition": 14,
-				"saturationModifier": 0.75,
-				"durationTicks": 6000,
-				"amplifier": 0,
-				"probability": 1
-			}
-		],
-		"mynethersdelight:g_pungent": [
-			{
-				"item": "collectorsreap:bullet_pepper_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 600,
-				"amplifier": 3,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:bullet_pepper_popper",
-				"nutrition": 8,
-				"saturationModifier": 0.75,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:spicy_grenadine_jelly",
-				"nutrition": 7,
-				"saturationModifier": 1.2000000476837158,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:chilidog",
-				"nutrition": 11,
-				"saturationModifier": 0.5,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:hot_cream",
-				"nutrition": 1,
-				"saturationModifier": 8,
-				"durationTicks": 600,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:hot_cream_cone",
-				"nutrition": 4,
-				"saturationModifier": 1,
-				"durationTicks": 200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:magma_cake_slice",
-				"nutrition": 2,
-				"saturationModifier": 1,
-				"durationTicks": 400,
-				"amplifier": 2,
-				"probability": 1
-			}
-		],
-		"minecraft:speed": [
-			{
-				"item": "brewinandchewin:cocoa_fudge",
-				"nutrition": 4,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 800,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:chocolate_arils",
-				"nutrition": 4,
-				"saturationModifier": 0.25,
-				"durationTicks": 200,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:chocolate_cannoli",
-				"nutrition": 8,
-				"saturationModifier": 1.25,
-				"durationTicks": 600,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:chocolate_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 200,
-				"amplifier": 4,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:lime_cake_slice",
-				"nutrition": 2,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:lucuma_cake_slice",
-				"nutrition": 2,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:pink_dragon_fruit_cake_slice",
-				"nutrition": 2,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:pomegranate_cake_slice",
-				"nutrition": 2,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:reanimators_garden",
+				"item": "tconstruct:earth_slime_bottle",
 				"nutrition": 0,
 				"saturationModifier": 0,
 				"durationTicks": 2400,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "create_central_kitchen:aloe_cake_slice",
-				"nutrition": 1,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "create_central_kitchen:chocolate_cake_slice",
-				"nutrition": 3,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "create_central_kitchen:honey_cake_slice",
-				"nutrition": 3,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "create_central_kitchen:mulberry_pie_slice",
-				"nutrition": 3,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "create_central_kitchen:passion_fruit_cake_slice",
-				"nutrition": 1,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "create_central_kitchen:pumpkin_cake_slice",
-				"nutrition": 1,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "create_central_kitchen:pumpkin_pie_slice",
-				"nutrition": 3,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "create_central_kitchen:sweet_berry_cake_slice",
-				"nutrition": 1,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "create_central_kitchen:yucca_cake_slice",
-				"nutrition": 1,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:blueberry_pie_slice",
-				"nutrition": 3,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:coconut_curry",
-				"nutrition": 15,
-				"saturationModifier": 0.8999999761581421,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:cooked_marshmallow_stick",
-				"nutrition": 5,
-				"saturationModifier": 0.3499999940395355,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:marshmallow_stick",
-				"nutrition": 3,
-				"saturationModifier": 0.3499999940395355,
-				"durationTicks": 300,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:mulberry_pie_slice",
-				"nutrition": 3,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:mutton_pie_slice",
-				"nutrition": 3,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:passion_fruit_tart_slice",
-				"nutrition": 3,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 160,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:pumpkin_pie_slice",
-				"nutrition": 3,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:rock_candy",
-				"nutrition": 4,
-				"saturationModifier": 0.5,
-				"durationTicks": 600,
-				"amplifier": 1,
-				"probability": 0.699999988079071
-			},
-			{
-				"item": "delightful:smore",
-				"nutrition": 8,
-				"saturationModifier": 0.4000000059604645,
-				"durationTicks": 600,
 				"amplifier": 1,
 				"probability": 1
 			},
 			{
-				"item": "ends_delight:assorted_salad",
-				"nutrition": 14,
-				"saturationModifier": 0.5,
-				"durationTicks": 500,
-				"amplifier": 0,
+				"item": "tconstruct:ender_slime_bottle",
+				"nutrition": 0,
+				"saturationModifier": 0,
+				"durationTicks": 1200,
+				"amplifier": 1,
 				"probability": 1
 			},
 			{
-				"item": "ends_delight:chorus_fruit_pie_slice",
-				"nutrition": 3,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:end_mixed_salad",
-				"nutrition": 10,
-				"saturationModifier": 0.6000000238418579,
+				"item": "tconstruct:ichor_slime_bottle",
+				"nutrition": 0,
+				"saturationModifier": 0,
 				"durationTicks": 200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersdelight:apple_pie_slice",
-				"nutrition": 3,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersdelight:cake_slice",
-				"nutrition": 2,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersdelight:chocolate_pie_slice",
-				"nutrition": 3,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersdelight:sweet_berry_cheesecake_slice",
-				"nutrition": 3,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "mynethersdelight:magma_cake_slice",
-				"nutrition": 2,
-				"saturationModifier": 1,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "rusticdelight:cherry_blossom_cheesecake_slice",
-				"nutrition": 3,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "rusticdelight:chocolate_coffee",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 900,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "rusticdelight:chocolate_pancake",
-				"nutrition": 3,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 900,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "rusticdelight:coffee",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 1800,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "rusticdelight:dark_coffee",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 900,
 				"amplifier": 1,
 				"probability": 1
 			},
 			{
-				"item": "rusticdelight:fruit_beignet",
-				"nutrition": 7,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "rusticdelight:honey_coffee",
-				"nutrition": 6,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 900,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "rusticdelight:honey_pancake",
-				"nutrition": 4,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 900,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "rusticdelight:milk_coffee",
+				"item": "tconstruct:sky_slime_bottle",
 				"nutrition": 0,
 				"saturationModifier": 0,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "rusticdelight:syrup",
-				"nutrition": 2,
-				"saturationModifier": 0.20000000298023224,
-				"durationTicks": 300,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "rusticdelight:syrup_cheesecake_slice",
-				"nutrition": 3,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "rusticdelight:syrup_coffee",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 1800,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ubesdelight:condensed_milk_bottle",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "veggiesdelight:beetroot_brownie",
-				"nutrition": 6,
-				"saturationModifier": 0.5,
-				"durationTicks": 100,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "veggiesdelight:sweet_potato_cupcake",
-				"nutrition": 6,
-				"saturationModifier": 0.5,
-				"durationTicks": 100,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "veggiesdelight:sweet_potato_pancakes",
-				"nutrition": 12,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 100,
-				"amplifier": 0,
-				"probability": 1
-			}
-		],
-		"minecraft:night_vision": [
-			{
-				"item": "brewinandchewin:glittering_grenadine",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:carrot_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "creatingspace:space_food",
-				"nutrition": 4,
-				"saturationModifier": 1,
-				"durationTicks": 72000,
+				"durationTicks": 2400,
 				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "ubesdelight:ensaymada_ube",
-				"nutrition": 10,
-				"saturationModifier": 0.8999999761581421,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ubesdelight:hopia_ube",
-				"nutrition": 7,
-				"saturationModifier": 0.699999988079071,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ubesdelight:milk_tea_ube",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ubesdelight:pandesal_ube",
-				"nutrition": 9,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ubesdelight:ube_cake_slice",
-				"nutrition": 2,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 600,
-				"amplifier": 0,
 				"probability": 1
 			},
 			{
@@ -3672,88 +238,6 @@
 				"saturationModifier": 0.4000000059604645,
 				"durationTicks": 600,
 				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "veggiesdelight:carrot_juice",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			}
-		],
-		"minecraft:water_breathing": [
-			{
-				"item": "brewinandchewin:salty_folly",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 1800,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:rose_moon",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 1800,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:salmon_and_roe_blini",
-				"nutrition": 11,
-				"saturationModifier": 0.75,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:salmonberries",
-				"nutrition": 2,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 100,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:salmonberry_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 900,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:salmonberry_ice_cream",
-				"nutrition": 6,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:salmonberry_milkshake",
-				"nutrition": 2,
-				"saturationModifier": 1.5,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:salmonberry_pie_slice",
-				"nutrition": 3,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "immersive_weathering:enchanted_golden_moss_clump",
-				"nutrition": 6,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 1600,
-				"amplifier": 2,
 				"probability": 1
 			}
 		],
@@ -3883,54 +367,6 @@
 				"nutrition": 0,
 				"saturationModifier": 0,
 				"durationTicks": 3000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:deific_blood",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 1800,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:heavens_cream",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 2400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:hermits_sour",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 1800,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:reanimators_garden",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 2400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:rose_moon",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 3000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:ender_nectar",
-				"nutrition": 4,
-				"saturationModifier": 0,
-				"durationTicks": 1800,
 				"amplifier": 0,
 				"probability": 1
 			}
@@ -4063,95 +499,401 @@
 				"durationTicks": 3600,
 				"amplifier": 2,
 				"probability": 1
-			},
+			}
+		],
+		"brewinandchewin:raging": [
 			{
-				"item": "collectorsreap:deific_blood",
+				"item": "brewinandchewin:bloody_mary",
 				"nutrition": 0,
 				"saturationModifier": 0,
-				"durationTicks": 2400,
-				"amplifier": 2,
+				"durationTicks": 1200,
+				"amplifier": 0,
 				"probability": 1
 			},
 			{
-				"item": "collectorsreap:heavens_cream",
+				"item": "brewinandchewin:red_rum",
 				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 3600,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:hermits_sour",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 2400,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:reanimators_garden",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 3600,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:rose_moon",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 3600,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "delightful:ender_nectar",
-				"nutrition": 4,
 				"saturationModifier": 0,
 				"durationTicks": 2400,
 				"amplifier": 0,
 				"probability": 1
 			}
 		],
-		"brewinandchewin:sweet_heart": [
+		"farmersdelight:nourishment": [
 			{
-				"item": "brewinandchewin:mead",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 2400,
+				"item": "brewinandchewin:cheesy_pasta",
+				"nutrition": 14,
+				"saturationModifier": 0.75,
+				"durationTicks": 6000,
 				"amplifier": 0,
 				"probability": 1
 			},
 			{
-				"item": "brewinandchewin:saccharine_rum",
-				"nutrition": 0,
-				"saturationModifier": 0,
+				"item": "brewinandchewin:horror_lasagna",
+				"nutrition": 16,
+				"saturationModifier": 0.550000011920929,
+				"durationTicks": 6000,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "brewinandchewin:scarlet_pierogi",
+				"nutrition": 12,
+				"saturationModifier": 1,
+				"durationTicks": 8400,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "brewinandchewin:vegetable_omelet",
+				"nutrition": 12,
+				"saturationModifier": 0.800000011920929,
 				"durationTicks": 3600,
 				"amplifier": 0,
 				"probability": 1
 			},
 			{
-				"item": "collectorsreap:heavens_cream",
+				"item": "farmersdelight:bacon_and_eggs",
+				"nutrition": 10,
+				"saturationModifier": 0.6000000238418579,
+				"durationTicks": 1200,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "farmersdelight:baked_cod_stew",
+				"nutrition": 14,
+				"saturationModifier": 0.75,
+				"durationTicks": 6000,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "farmersdelight:beef_stew",
+				"nutrition": 12,
+				"saturationModifier": 0.800000011920929,
+				"durationTicks": 3600,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "farmersdelight:bone_broth",
+				"nutrition": 8,
+				"saturationModifier": 0.699999988079071,
+				"durationTicks": 1200,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "farmersdelight:chicken_soup",
+				"nutrition": 14,
+				"saturationModifier": 0.75,
+				"durationTicks": 6000,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "farmersdelight:cooked_rice",
+				"nutrition": 6,
+				"saturationModifier": 0.4000000059604645,
+				"durationTicks": 600,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "farmersdelight:fish_stew",
+				"nutrition": 12,
+				"saturationModifier": 0.800000011920929,
+				"durationTicks": 3600,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "farmersdelight:fried_rice",
+				"nutrition": 14,
+				"saturationModifier": 0.75,
+				"durationTicks": 6000,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "farmersdelight:gleaming_salad",
+				"nutrition": 14,
+				"saturationModifier": 0.75,
+				"durationTicks": 6000,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "farmersdelight:grilled_salmon",
+				"nutrition": 14,
+				"saturationModifier": 0.75,
+				"durationTicks": 3600,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "farmersdelight:honey_glazed_ham",
+				"nutrition": 14,
+				"saturationModifier": 0.75,
+				"durationTicks": 6000,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "farmersdelight:mushroom_rice",
+				"nutrition": 12,
+				"saturationModifier": 0.800000011920929,
+				"durationTicks": 3600,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "farmersdelight:noodle_soup",
+				"nutrition": 14,
+				"saturationModifier": 0.75,
+				"durationTicks": 6000,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "farmersdelight:onion_soup",
+				"nutrition": 12,
+				"saturationModifier": 0.800000011920929,
+				"durationTicks": 3600,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "farmersdelight:pasta_with_meatballs",
+				"nutrition": 12,
+				"saturationModifier": 0.800000011920929,
+				"durationTicks": 3600,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "farmersdelight:pasta_with_mutton_chop",
+				"nutrition": 12,
+				"saturationModifier": 0.800000011920929,
+				"durationTicks": 3600,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "farmersdelight:pumpkin_soup",
+				"nutrition": 14,
+				"saturationModifier": 0.75,
+				"durationTicks": 6000,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "farmersdelight:ratatouille",
+				"nutrition": 10,
+				"saturationModifier": 0.6000000238418579,
+				"durationTicks": 1200,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "farmersdelight:roast_chicken",
+				"nutrition": 14,
+				"saturationModifier": 0.75,
+				"durationTicks": 6000,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "farmersdelight:roasted_mutton_chops",
+				"nutrition": 14,
+				"saturationModifier": 0.75,
+				"durationTicks": 6000,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "farmersdelight:shepherds_pie",
+				"nutrition": 14,
+				"saturationModifier": 0.75,
+				"durationTicks": 6000,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "farmersdelight:squid_ink_pasta",
+				"nutrition": 14,
+				"saturationModifier": 0.75,
+				"durationTicks": 6000,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "farmersdelight:steak_and_potatoes",
+				"nutrition": 12,
+				"saturationModifier": 0.800000011920929,
+				"durationTicks": 3600,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "farmersdelight:stuffed_pumpkin",
+				"nutrition": 14,
+				"saturationModifier": 0.75,
+				"durationTicks": 6000,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "farmersdelight:vegetable_noodles",
+				"nutrition": 14,
+				"saturationModifier": 0.75,
+				"durationTicks": 6000,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "farmersdelight:vegetable_soup",
+				"nutrition": 12,
+				"saturationModifier": 0.800000011920929,
+				"durationTicks": 3600,
+				"amplifier": 0,
+				"probability": 1
+			}
+		],
+		"minecraft:speed": [
+			{
+				"item": "brewinandchewin:cocoa_fudge",
+				"nutrition": 4,
+				"saturationModifier": 0.800000011920929,
+				"durationTicks": 800,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "farmersdelight:apple_pie_slice",
+				"nutrition": 3,
+				"saturationModifier": 0.30000001192092896,
+				"durationTicks": 600,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "farmersdelight:cake_slice",
+				"nutrition": 2,
+				"saturationModifier": 0.10000000149011612,
+				"durationTicks": 400,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "farmersdelight:chocolate_pie_slice",
+				"nutrition": 3,
+				"saturationModifier": 0.30000001192092896,
+				"durationTicks": 600,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "farmersdelight:pumpkin_pie_slice",
+				"nutrition": 3,
+				"saturationModifier": 0.30000001192092896,
+				"durationTicks": 600,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "farmersdelight:sweet_berry_cheesecake_slice",
+				"nutrition": 3,
+				"saturationModifier": 0.30000001192092896,
+				"durationTicks": 600,
+				"amplifier": 0,
+				"probability": 1
+			}
+		],
+		"farmersdelight:comfort": [
+			{
+				"item": "brewinandchewin:creamy_onion_soup",
+				"nutrition": 12,
+				"saturationModifier": 0.800000011920929,
+				"durationTicks": 3600,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "brewinandchewin:fiery_fondue",
+				"nutrition": 14,
+				"saturationModifier": 0.75,
+				"durationTicks": 8400,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "brewinandchewin:pale_jane",
 				"nutrition": 0,
 				"saturationModifier": 0,
 				"durationTicks": 2400,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "brewinandchewin:rice_wine",
+				"nutrition": 0,
+				"saturationModifier": 0,
+				"durationTicks": 1200,
+				"amplifier": 0,
+				"probability": 1
+			}
+		],
+		"minecraft:bad_omen": [
+			{
+				"item": "brewinandchewin:dread_nog",
+				"nutrition": 0,
+				"saturationModifier": 0,
+				"durationTicks": 72000,
+				"amplifier": 0,
+				"probability": 1
+			}
+		],
+		"minecraft:absorption": [
+			{
+				"item": "brewinandchewin:egg_grog",
+				"nutrition": 0,
+				"saturationModifier": 0,
+				"durationTicks": 600,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "farmersdelight:apple_cider",
+				"nutrition": 0,
+				"saturationModifier": 0,
+				"durationTicks": 1200,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "immersive_weathering:enchanted_golden_moss_clump",
+				"nutrition": 6,
+				"saturationModifier": 0.800000011920929,
+				"durationTicks": 1600,
 				"amplifier": 2,
 				"probability": 1
 			},
 			{
-				"item": "collectorsreap:hermits_sour",
-				"nutrition": 0,
-				"saturationModifier": 0,
+				"item": "minecraft:enchanted_golden_apple",
+				"nutrition": 4,
+				"saturationModifier": 1.2000000476837158,
 				"durationTicks": 2400,
-				"amplifier": 1,
+				"amplifier": 3,
 				"probability": 1
 			},
 			{
-				"item": "collectorsreap:reanimators_garden",
-				"nutrition": 0,
-				"saturationModifier": 0,
+				"item": "minecraft:golden_apple",
+				"nutrition": 4,
+				"saturationModifier": 1.2000000476837158,
 				"durationTicks": 2400,
-				"amplifier": 4,
+				"amplifier": 0,
 				"probability": 1
 			}
 		],
@@ -4165,22 +907,6 @@
 				"probability": 1
 			},
 			{
-				"item": "collectorsreap:glow_berry_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:hemp_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 1200,
-				"amplifier": 4,
-				"probability": 1
-			},
-			{
 				"item": "deeperdarker:bloom_berries",
 				"nutrition": 2,
 				"saturationModifier": 0.10000000149011612,
@@ -4189,42 +915,10 @@
 				"probability": 0.800000011920929
 			},
 			{
-				"item": "delightful:glow_jam_cookie",
-				"nutrition": 2,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 300,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:glow_jam_jar",
-				"nutrition": 5,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
 				"item": "farmersdelight:glow_berry_custard",
 				"nutrition": 7,
 				"saturationModifier": 0.6000000238418579,
 				"durationTicks": 100,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "occultism:demons_dream_essence",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 300,
-				"amplifier": 1,
-				"probability": 0.20000000298023224
-			},
-			{
-				"item": "supplementaries:lumisene_bottle",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 200,
 				"amplifier": 0,
 				"probability": 1
 			},
@@ -4245,9 +939,97 @@
 				"probability": 1
 			}
 		],
-		"brewinandchewin:raging": [
+		"minecraft:night_vision": [
 			{
-				"item": "brewinandchewin:bloody_mary",
+				"item": "brewinandchewin:glittering_grenadine",
+				"nutrition": 0,
+				"saturationModifier": 0,
+				"durationTicks": 600,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "creatingspace:space_food",
+				"nutrition": 4,
+				"saturationModifier": 1,
+				"durationTicks": 72000,
+				"amplifier": 1,
+				"probability": 1
+			},
+			{
+				"item": "undergarden:indigo_stew",
+				"nutrition": 4,
+				"saturationModifier": 0.4000000059604645,
+				"durationTicks": 600,
+				"amplifier": 0,
+				"probability": 1
+			}
+		],
+		"minecraft:haste": [
+			{
+				"item": "brewinandchewin:kombucha",
+				"nutrition": 0,
+				"saturationModifier": 0,
+				"durationTicks": 1200,
+				"amplifier": 1,
+				"probability": 1
+			},
+			{
+				"item": "create:builders_tea",
+				"nutrition": 1,
+				"saturationModifier": 0.6000000238418579,
+				"durationTicks": 3600,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "tconstruct:jeweled_apple",
+				"nutrition": 4,
+				"saturationModifier": 1.2000000476837158,
+				"durationTicks": 1200,
+				"amplifier": 0,
+				"probability": 1
+			}
+		],
+		"brewinandchewin:sweet_heart": [
+			{
+				"item": "brewinandchewin:mead",
+				"nutrition": 0,
+				"saturationModifier": 0,
+				"durationTicks": 2400,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "brewinandchewin:saccharine_rum",
+				"nutrition": 0,
+				"saturationModifier": 0,
+				"durationTicks": 3600,
+				"amplifier": 0,
+				"probability": 1
+			}
+		],
+		"minecraft:water_breathing": [
+			{
+				"item": "brewinandchewin:salty_folly",
+				"nutrition": 0,
+				"saturationModifier": 0,
+				"durationTicks": 1800,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "immersive_weathering:enchanted_golden_moss_clump",
+				"nutrition": 6,
+				"saturationModifier": 0.800000011920929,
+				"durationTicks": 1600,
+				"amplifier": 2,
+				"probability": 1
+			}
+		],
+		"minecraft:resistance": [
+			{
+				"item": "brewinandchewin:steel_toe_stout",
 				"nutrition": 0,
 				"saturationModifier": 0,
 				"durationTicks": 1200,
@@ -4255,28 +1037,34 @@
 				"probability": 1
 			},
 			{
-				"item": "brewinandchewin:red_rum",
+				"item": "brewinandchewin:strongroot_ale",
 				"nutrition": 0,
 				"saturationModifier": 0,
+				"durationTicks": 600,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "minecraft:enchanted_golden_apple",
+				"nutrition": 4,
+				"saturationModifier": 1.2000000476837158,
+				"durationTicks": 6000,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "tconstruct:jeweled_apple",
+				"nutrition": 4,
+				"saturationModifier": 1.2000000476837158,
 				"durationTicks": 2400,
 				"amplifier": 0,
 				"probability": 1
 			},
 			{
-				"item": "collectorsreap:deific_blood",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 2400,
-				"amplifier": 0,
-				"probability": 1
-			}
-		],
-		"minecraft:bad_omen": [
-			{
-				"item": "brewinandchewin:dread_nog",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 72000,
+				"item": "undergarden:inky_stew",
+				"nutrition": 4,
+				"saturationModifier": 0.4000000059604645,
+				"durationTicks": 600,
 				"amplifier": 0,
 				"probability": 1
 			}
@@ -4291,121 +1079,7 @@
 				"probability": 1
 			},
 			{
-				"item": "delightful:azalea_tea",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 60,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:cantaloupe_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 100,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:ender_nectar",
-				"nutrition": 4,
-				"saturationModifier": 0,
-				"durationTicks": 60,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:liquid_dragon_egg",
-				"nutrition": 14,
-				"saturationModifier": 0.5,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "oceansdelight:tentacles",
-				"nutrition": 3,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
 				"item": "undergarden:inky_stew",
-				"nutrition": 4,
-				"saturationModifier": 0.4000000059604645,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			}
-		],
-		"minecraft:slowness": [
-			{
-				"item": "blue_skies:cryo_root",
-				"nutrition": 3,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 40,
-				"amplifier": 0,
-				"probability": 0.05000000074505806
-			},
-			{
-				"item": "brewinandchewin:withering_dross",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 3000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:stygian_pomegranate",
-				"nutrition": 10,
-				"saturationModifier": 0.4000000059604645,
-				"durationTicks": 180,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:tropical_shaved_ice",
-				"nutrition": 15,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 300,
-				"amplifier": 4,
-				"probability": 1
-			},
-			{
-				"item": "tconstruct:earth_slime_bottle",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 2400,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "tconstruct:ender_slime_bottle",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 1200,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "tconstruct:ichor_slime_bottle",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 200,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "tconstruct:sky_slime_bottle",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 2400,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "undergarden:indigo_stew",
 				"nutrition": 4,
 				"saturationModifier": 0.4000000059604645,
 				"durationTicks": 600,
@@ -4421,54 +1095,6 @@
 				"durationTicks": 3000,
 				"amplifier": 0,
 				"probability": 1
-			},
-			{
-				"item": "collectorsreap:stygian_pomegranate",
-				"nutrition": 10,
-				"saturationModifier": 0.4000000059604645,
-				"durationTicks": 180,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "farmersrespite:long_purulent_tea",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 300,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersrespite:nether_wart_sourdough",
-				"nutrition": 4,
-				"saturationModifier": 0.20000000298023224,
-				"durationTicks": 200,
-				"amplifier": 0,
-				"probability": 0.800000011920929
-			},
-			{
-				"item": "farmersrespite:purulent_tea",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersrespite:strong_purulent_tea",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "occultism:demons_dream_essence",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 300,
-				"amplifier": 1,
-				"probability": 0.20000000298023224
 			}
 		],
 		"minecraft:wither": [
@@ -4479,515 +1105,215 @@
 				"durationTicks": 1200,
 				"amplifier": 0,
 				"probability": 1
-			},
-			{
-				"item": "farmersrespite:coffee_berries",
-				"nutrition": 2,
-				"saturationModifier": 0.4000000059604645,
-				"durationTicks": 100,
-				"amplifier": 0,
-				"probability": 0.800000011920929
 			}
 		],
-		"minecraft:haste": [
+		"everythingcopper:copper_poisoning": [
 			{
-				"item": "brewinandchewin:kombucha",
+				"item": "everythingcopper:copper_nugget",
 				"nutrition": 0,
 				"saturationModifier": 0,
+				"durationTicks": 1,
+				"amplifier": 1,
+				"probability": 1
+			}
+		],
+		"minecraft:hunger": [
+			{
+				"item": "farmersdelight:chicken_cuts",
+				"nutrition": 1,
+				"saturationModifier": 0.30000001192092896,
+				"durationTicks": 600,
+				"amplifier": 0,
+				"probability": 0.30000001192092896
+			},
+			{
+				"item": "farmersdelight:raw_pasta",
+				"nutrition": 2,
+				"saturationModifier": 0.30000001192092896,
+				"durationTicks": 600,
+				"amplifier": 0,
+				"probability": 0.30000001192092896
+			},
+			{
+				"item": "farmersdelight:wheat_dough",
+				"nutrition": 2,
+				"saturationModifier": 0.30000001192092896,
+				"durationTicks": 600,
+				"amplifier": 0,
+				"probability": 0.30000001192092896
+			},
+			{
+				"item": "fiahi:leftover_meat",
+				"nutrition": 1,
+				"saturationModifier": 0.30000001192092896,
+				"durationTicks": 400,
+				"amplifier": 0,
+				"probability": 0.800000011920929
+			},
+			{
+				"item": "fiahi:leftover_vegetable",
+				"nutrition": 1,
+				"saturationModifier": 0.10000000149011612,
+				"durationTicks": 400,
+				"amplifier": 0,
+				"probability": 0.800000011920929
+			},
+			{
+				"item": "minecraft:chicken",
+				"nutrition": 2,
+				"saturationModifier": 0.30000001192092896,
+				"durationTicks": 600,
+				"amplifier": 0,
+				"probability": 0.30000001192092896
+			},
+			{
+				"item": "minecraft:pufferfish",
+				"nutrition": 1,
+				"saturationModifier": 0.10000000149011612,
+				"durationTicks": 300,
+				"amplifier": 2,
+				"probability": 1
+			},
+			{
+				"item": "minecraft:rotten_flesh",
+				"nutrition": 4,
+				"saturationModifier": 0.10000000149011612,
+				"durationTicks": 600,
+				"amplifier": 0,
+				"probability": 0.800000011920929
+			},
+			{
+				"item": "undergarden:rotten_blisterberry",
+				"nutrition": 3,
+				"saturationModifier": 0.10000000149011612,
+				"durationTicks": 600,
+				"amplifier": 0,
+				"probability": 1
+			}
+		],
+		"minecraft:nausea": [
+			{
+				"item": "farmersdelight:nether_salad",
+				"nutrition": 5,
+				"saturationModifier": 0.4000000059604645,
+				"durationTicks": 240,
+				"amplifier": 0,
+				"probability": 0.30000001192092896
+			},
+			{
+				"item": "fiahi:leftover_meat",
+				"nutrition": 1,
+				"saturationModifier": 0.30000001192092896,
+				"durationTicks": 400,
+				"amplifier": 0,
+				"probability": 0.800000011920929
+			},
+			{
+				"item": "fiahi:leftover_vegetable",
+				"nutrition": 1,
+				"saturationModifier": 0.10000000149011612,
+				"durationTicks": 400,
+				"amplifier": 0,
+				"probability": 0.800000011920929
+			},
+			{
+				"item": "minecraft:pufferfish",
+				"nutrition": 1,
+				"saturationModifier": 0.10000000149011612,
+				"durationTicks": 300,
+				"amplifier": 0,
+				"probability": 1
+			},
+			{
+				"item": "undergarden:slop_bowl",
+				"nutrition": 6,
+				"saturationModifier": 0.6000000238418579,
+				"durationTicks": 200,
+				"amplifier": 0,
+				"probability": 1
+			}
+		],
+		"minecraft:fire_resistance": [
+			{
+				"item": "immersive_weathering:ice_sickle",
+				"nutrition": 0,
+				"saturationModifier": 0,
+				"durationTicks": 80,
+				"amplifier": 1,
+				"probability": 1
+			},
+			{
+				"item": "immersive_weathering:icicle",
+				"nutrition": 0,
+				"saturationModifier": 0,
+				"durationTicks": 80,
+				"amplifier": 1,
+				"probability": 1
+			},
+			{
+				"item": "minecraft:enchanted_golden_apple",
+				"nutrition": 4,
+				"saturationModifier": 1.2000000476837158,
+				"durationTicks": 6000,
+				"amplifier": 0,
+				"probability": 1
+			}
+		],
+		"minecraft:poison": [
+			{
+				"item": "minecraft:poisonous_potato",
+				"nutrition": 2,
+				"saturationModifier": 0.30000001192092896,
+				"durationTicks": 100,
+				"amplifier": 0,
+				"probability": 0.6000000238418579
+			},
+			{
+				"item": "minecraft:pufferfish",
+				"nutrition": 1,
+				"saturationModifier": 0.10000000149011612,
 				"durationTicks": 1200,
 				"amplifier": 1,
 				"probability": 1
 			},
 			{
-				"item": "collectorsreap:green_tea_gummy",
+				"item": "minecraft:spider_eye",
 				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 200,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:lime_green_tea",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 3600,
+				"saturationModifier": 0.800000011920929,
+				"durationTicks": 100,
 				"amplifier": 0,
 				"probability": 1
 			},
 			{
-				"item": "collectorsreap:reanimators_garden",
+				"item": "tconstruct:venom_bottle",
+				"nutrition": 0,
+				"saturationModifier": 0,
+				"durationTicks": 250,
+				"amplifier": 0,
+				"probability": 1
+			}
+		],
+		"tconstruct:experienced": [
+			{
+				"item": "tconstruct:earth_slime_bottle",
 				"nutrition": 0,
 				"saturationModifier": 0,
 				"durationTicks": 2400,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "create:builders_tea",
-				"nutrition": 1,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 3600,
 				"amplifier": 0,
 				"probability": 1
-			},
+			}
+		],
+		"tconstruct:enderference": [
 			{
-				"item": "create_central_kitchen:chocolate_cake_slice",
-				"nutrition": 3,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:baklava_slice",
-				"nutrition": 5,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:chorus_muffin",
-				"nutrition": 8,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:chorus_pie_slice",
-				"nutrition": 3,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 300,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "delightful:ender_nectar",
-				"nutrition": 4,
-				"saturationModifier": 0,
-				"durationTicks": 500,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:green_apple_pie_slice",
-				"nutrition": 3,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersrespite:green_tea",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 3600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersrespite:green_tea_cookie",
-				"nutrition": 2,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersrespite:long_green_tea",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 5400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersrespite:strong_green_tea",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 1800,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "rusticdelight:chocolate_coffee",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 900,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "rusticdelight:coffee",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 1800,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "rusticdelight:dark_coffee",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 900,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "rusticdelight:honey_coffee",
-				"nutrition": 6,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 900,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "rusticdelight:milk_coffee",
+				"item": "tconstruct:ender_slime_bottle",
 				"nutrition": 0,
 				"saturationModifier": 0,
 				"durationTicks": 1200,
 				"amplifier": 0,
 				"probability": 1
-			},
-			{
-				"item": "rusticdelight:syrup_coffee",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 1800,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "rusticdelight:vegetable_pancake",
-				"nutrition": 3,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "tconstruct:jeweled_apple",
-				"nutrition": 4,
-				"saturationModifier": 1.2000000476837158,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "veggiesdelight:turnip_salad",
-				"nutrition": 6,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 100,
-				"amplifier": 0,
-				"probability": 1
-			}
-		],
-		"farmersrespite:caffeinated": [
-			{
-				"item": "collectorsreap:black_tea_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 200,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:coffee_cannoli",
-				"nutrition": 8,
-				"saturationModifier": 1.25,
-				"durationTicks": 400,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:coffee_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 400,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:pomegranate_black_tea",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:berry_matcha_latte",
-				"nutrition": 8,
-				"saturationModifier": 0.6499999761581421,
-				"durationTicks": 3600,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "delightful:ender_nectar",
-				"nutrition": 4,
-				"saturationModifier": 0,
-				"durationTicks": 3600,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "delightful:lavender_tea",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:matcha_ice_cream",
-				"nutrition": 6,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:matcha_latte",
-				"nutrition": 6,
-				"saturationModifier": 0.5,
-				"durationTicks": 3600,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "delightful:matcha_milkshake",
-				"nutrition": 2,
-				"saturationModifier": 1.5,
-				"durationTicks": 300,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersrespite:black_cod",
-				"nutrition": 10,
-				"saturationModifier": 0.8999999761581421,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersrespite:black_tea",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersrespite:coffee",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 6000,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "farmersrespite:coffee_berries",
-				"nutrition": 2,
-				"saturationModifier": 0.4000000059604645,
-				"durationTicks": 200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersrespite:coffee_cake_slice",
-				"nutrition": 2,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersrespite:long_black_tea",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 900,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersrespite:long_coffee",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 12000,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "farmersrespite:strong_black_tea",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 300,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "farmersrespite:strong_coffee",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 3000,
-				"amplifier": 2,
-				"probability": 1
-			}
-		],
-		"minecraft:mining_fatigue": [
-			{
-				"item": "oceansdelight:elder_guardian_slice",
-				"nutrition": 1,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 3000,
-				"amplifier": 0,
-				"probability": 0.5
-			}
-		],
-		"occultism:third_eye": [
-			{
-				"item": "occultism:datura",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 300,
-				"amplifier": 1,
-				"probability": 0.699999988079071
-			},
-			{
-				"item": "occultism:datura_seeds",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 300,
-				"amplifier": 1,
-				"probability": 0.699999988079071
-			},
-			{
-				"item": "occultism:demons_dream_essence",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 1200,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "occultism:otherworld_essence",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 1200,
-				"amplifier": 1,
-				"probability": 1
-			}
-		],
-		"minecraft:darkness": [
-			{
-				"item": "occultism:demons_dream_essence",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 300,
-				"amplifier": 1,
-				"probability": 0.20000000298023224
 			}
 		],
 		"minecraft:levitation": [
-			{
-				"item": "delightful:azalea_tea",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 60,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:ender_noodle",
-				"nutrition": 8,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 50,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:grilled_shulker",
-				"nutrition": 8,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 40,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:roasted_shulker_meat",
-				"nutrition": 6,
-				"saturationModifier": 0.5,
-				"durationTicks": 80,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:roasted_shulker_meat_slice",
-				"nutrition": 3,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 40,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:shulker_meat",
-				"nutrition": 4,
-				"saturationModifier": 0.5,
-				"durationTicks": 80,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:shulker_meat_slice",
-				"nutrition": 2,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 40,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:shulker_omelette",
-				"nutrition": 11,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 100,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:shulker_omelette_mixture",
-				"nutrition": 5,
-				"saturationModifier": 0.5,
-				"durationTicks": 100,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:shulker_soup",
-				"nutrition": 8,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 100,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:stir_fried_shulker_meat",
-				"nutrition": 10,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 100,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "occultism:demons_dream_essence",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 300,
-				"amplifier": 1,
-				"probability": 0.20000000298023224
-			},
 			{
 				"item": "tconstruct:ichor_slime_bottle",
 				"nutrition": 0,
@@ -4997,337 +1323,17 @@
 				"probability": 1
 			}
 		],
-		"minecraft:luck": [
+		"tconstruct:ricochet": [
 			{
-				"item": "occultism:demons_dream_essence",
+				"item": "tconstruct:sky_slime_bottle",
 				"nutrition": 0,
 				"saturationModifier": 0,
-				"durationTicks": 6000,
-				"amplifier": 1,
-				"probability": 0.20000000298023224
-			},
-			{
-				"item": "occultism:otherworld_essence",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 6000,
-				"amplifier": 1,
-				"probability": 1
-			}
-		],
-		"minecraft:unluck": [
-			{
-				"item": "occultism:demons_dream_essence",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 6000,
-				"amplifier": 1,
-				"probability": 0.20000000298023224
-			}
-		],
-		"minecraft:dolphins_grace": [
-			{
-				"item": "collectorsreap:rose_moon",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 1800,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ubesdelight:fish_sauce_bottle",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			}
-		],
-		"ars_nouveau:mana_regen": [
-			{
-				"item": "ars_nouveau:source_berry_pie",
-				"nutrition": 9,
-				"saturationModifier": 0.8999999761581421,
-				"durationTicks": 1200,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "ars_nouveau:source_berry_roll",
-				"nutrition": 8,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ars_nouveau:sourceberry_bush",
-				"nutrition": 2,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 100,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:source_berry_cookie",
-				"nutrition": 2,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 60,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:source_berry_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 80,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "delightful:source_berry_ice_cream",
-				"nutrition": 6,
-				"saturationModifier": 0.4000000059604645,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:source_berry_milkshake",
-				"nutrition": 2,
-				"saturationModifier": 1.5,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:source_berry_pie_slice",
-				"nutrition": 3,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 300,
-				"amplifier": 1,
-				"probability": 1
-			}
-		],
-		"ars_nouveau:recovery": [
-			{
-				"item": "ars_nouveau:mendosteen_pod",
-				"nutrition": 4,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			}
-		],
-		"ars_nouveau:shielding": [
-			{
-				"item": "ars_nouveau:bastion_pod",
-				"nutrition": 4,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			}
-		],
-		"ars_nouveau:freezing": [
-			{
-				"item": "ars_nouveau:frostaya_pod",
-				"nutrition": 4,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			}
-		],
-		"ars_nouveau:blasting": [
-			{
-				"item": "ars_nouveau:bombegranate_pod",
-				"nutrition": 4,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 200,
-				"amplifier": 0,
-				"probability": 1
-			}
-		],
-		"minecraft:health_boost": [
-			{
-				"item": "ends_delight:ender_congee",
-				"nutrition": 10,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 900,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "rusticdelight:cherry_blossom_pancake",
-				"nutrition": 4,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "rusticdelight:pumpkin_pancake",
-				"nutrition": 4,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "veggiesdelight:fermented_garlic_honey",
-				"nutrition": 7,
-				"saturationModifier": 0.699999988079071,
-				"durationTicks": 100,
+				"durationTicks": 2400,
 				"amplifier": 0,
 				"probability": 1
 			}
 		],
 		"minecraft:strength": [
-			{
-				"item": "collectorsreap:asparagus_aspic",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 200,
-				"amplifier": 3,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:deific_blood",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 1800,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:mint_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 800,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:pink_dragon_fruit_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:portobello_burger",
-				"nutrition": 12,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "corn_delight:taco",
-				"nutrition": 12,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "create_central_kitchen:passion_fruit_cake_slice",
-				"nutrition": 1,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:cactus_chili",
-				"nutrition": 10,
-				"saturationModifier": 0.699999988079071,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:cheeseburger",
-				"nutrition": 11,
-				"saturationModifier": 0.8500000238418579,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:deluxe_cheeseburger",
-				"nutrition": 13,
-				"saturationModifier": 1,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:assorted_salad",
-				"nutrition": 14,
-				"saturationModifier": 0.5,
-				"durationTicks": 500,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:dragon_breath_and_chorus_soup",
-				"nutrition": 16,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 1200,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:dragon_breath_soda",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 1200,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:dragon_meat_stew",
-				"nutrition": 10,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 600,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:fried_dragon_egg",
-				"nutrition": 20,
-				"saturationModifier": 0.5,
-				"durationTicks": 4800,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:liquid_dragon_egg",
-				"nutrition": 14,
-				"saturationModifier": 0.5,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "ends_delight:steamed_dragon_egg",
-				"nutrition": 12,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 1200,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "malum:cursed_sap",
-				"nutrition": 6,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			},
 			{
 				"item": "tconstruct:venom_bottle",
 				"nutrition": 0,
@@ -5343,12 +1349,34 @@
 				"durationTicks": 600,
 				"amplifier": 0,
 				"probability": 1
-			},
+			}
+		],
+		"undergarden:brittleness": [
 			{
-				"item": "veggiesdelight:cesar_salad",
-				"nutrition": 10,
-				"saturationModifier": 0.699999988079071,
-				"durationTicks": 100,
+				"item": "undergarden:bloody_stew",
+				"nutrition": 4,
+				"saturationModifier": 0.4000000059604645,
+				"durationTicks": 600,
+				"amplifier": 0,
+				"probability": 1
+			}
+		],
+		"undergarden:virulent_resistance": [
+			{
+				"item": "undergarden:gloomgourd_pie",
+				"nutrition": 8,
+				"saturationModifier": 0.5,
+				"durationTicks": 600,
+				"amplifier": 0,
+				"probability": 1
+			}
+		],
+		"minecraft:jump_boost": [
+			{
+				"item": "undergarden:gloomper_leg",
+				"nutrition": 6,
+				"saturationModifier": 0.8999999761581421,
+				"durationTicks": 600,
 				"amplifier": 0,
 				"probability": 1
 			}
@@ -5363,69 +1391,7 @@
 				"probability": 1
 			}
 		],
-		"undergarden:virulent_resistance": [
-			{
-				"item": "delightful:gloomgourd_pie_slice",
-				"nutrition": 3,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "undergarden:gloomgourd_pie",
-				"nutrition": 8,
-				"saturationModifier": 0.5,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			}
-		],
-		"minecraft:jump_boost": [
-			{
-				"item": "collectorsreap:banana_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 200,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "undergarden:gloomper_leg",
-				"nutrition": 6,
-				"saturationModifier": 0.8999999761581421,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			}
-		],
-		"undergarden:brittleness": [
-			{
-				"item": "undergarden:bloody_stew",
-				"nutrition": 4,
-				"saturationModifier": 0.4000000059604645,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			}
-		],
 		"minecraft:slow_falling": [
-			{
-				"item": "delightful:cooked_marshmallow_stick",
-				"nutrition": 5,
-				"saturationModifier": 0.3499999940395355,
-				"durationTicks": 300,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:smore",
-				"nutrition": 8,
-				"saturationModifier": 0.4000000059604645,
-				"durationTicks": 200,
-				"amplifier": 0,
-				"probability": 1
-			},
 			{
 				"item": "undergarden:veiled_stew",
 				"nutrition": 4,
@@ -5444,874 +1410,6 @@
 				"amplifier": 0,
 				"probability": 1
 			}
-		],
-		"collectorsreap:volatility": [
-			{
-				"item": "collectorsreap:chocolate_arils",
-				"nutrition": 4,
-				"saturationModifier": 0.25,
-				"durationTicks": 200,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:crimson_carrot_roast",
-				"nutrition": 6,
-				"saturationModifier": 0.5,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:deific_blood",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 2400,
-				"amplifier": 4,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:deluxe_salad",
-				"nutrition": 10,
-				"saturationModifier": 0.75,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:glazed_strider",
-				"nutrition": 10,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:pink_limeade",
-				"nutrition": 5,
-				"saturationModifier": 1,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:pomegranate_bean_salad",
-				"nutrition": 8,
-				"saturationModifier": 0.3499999940395355,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:pomegranate_black_tea",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:pomegranate_cake_slice",
-				"nutrition": 2,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 300,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:pomegranate_chicken",
-				"nutrition": 14,
-				"saturationModifier": 0.75,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:pomegranate_custard",
-				"nutrition": 8,
-				"saturationModifier": 0.6499999761581421,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:pomegranate_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 200,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:pomegranate_ice_cream",
-				"nutrition": 6,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 1600,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:pomegranate_milkshake",
-				"nutrition": 2,
-				"saturationModifier": 1.5,
-				"durationTicks": 800,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:pomegranate_mutton",
-				"nutrition": 14,
-				"saturationModifier": 0.75,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:pomegranate_pork",
-				"nutrition": 16,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:pomegranate_seeds",
-				"nutrition": 2,
-				"saturationModifier": 0.5,
-				"durationTicks": 100,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:pomegranate_slice",
-				"nutrition": 4,
-				"saturationModifier": 0.5,
-				"durationTicks": 200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:pomegranate_smoothie",
-				"nutrition": 3,
-				"saturationModifier": 0.20000000298023224,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:spicy_grenadine_jelly",
-				"nutrition": 7,
-				"saturationModifier": 1.2000000476837158,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:stygian_pomegranate",
-				"nutrition": 10,
-				"saturationModifier": 0.4000000059604645,
-				"durationTicks": 400,
-				"amplifier": 4,
-				"probability": 1
-			}
-		],
-		"collectorsreap:corrosion": [
-			{
-				"item": "collectorsreap:berry_limeade",
-				"nutrition": 5,
-				"saturationModifier": 0.20000000298023224,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:bullet_pepper_popper",
-				"nutrition": 8,
-				"saturationModifier": 0.75,
-				"durationTicks": 400,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:candied_lime",
-				"nutrition": 3,
-				"saturationModifier": 1.100000023841858,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:cannoli",
-				"nutrition": 8,
-				"saturationModifier": 1.25,
-				"durationTicks": 600,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:carbonara_pasta",
-				"nutrition": 14,
-				"saturationModifier": 0.800000011920929,
-				"durationTicks": 400,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:chocolate_cannoli",
-				"nutrition": 8,
-				"saturationModifier": 1.25,
-				"durationTicks": 600,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:coffee_cannoli",
-				"nutrition": 8,
-				"saturationModifier": 1.25,
-				"durationTicks": 600,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:crab_lasagna",
-				"nutrition": 10,
-				"saturationModifier": 0.8500000238418579,
-				"durationTicks": 400,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:cream_cheese",
-				"nutrition": 4,
-				"saturationModifier": 0.5,
-				"durationTicks": 400,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:deluxe_salad",
-				"nutrition": 10,
-				"saturationModifier": 0.75,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:hermits_sour",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 2400,
-				"amplifier": 4,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:honey_lime_chicken",
-				"nutrition": 14,
-				"saturationModifier": 0.75,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:lime",
-				"nutrition": 2,
-				"saturationModifier": 0.20000000298023224,
-				"durationTicks": 200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:lime_cake_slice",
-				"nutrition": 2,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 300,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:lime_cookie",
-				"nutrition": 3,
-				"saturationModifier": 0.20000000298023224,
-				"durationTicks": 100,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:lime_green_tea",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:lime_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 200,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:lime_ice_cream",
-				"nutrition": 6,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 1200,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:lime_milkshake",
-				"nutrition": 2,
-				"saturationModifier": 1.5,
-				"durationTicks": 600,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:lime_pie_slice",
-				"nutrition": 3,
-				"saturationModifier": 0.20000000298023224,
-				"durationTicks": 300,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:lime_popsicle",
-				"nutrition": 3,
-				"saturationModifier": 0.20000000298023224,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:lime_slice",
-				"nutrition": 1,
-				"saturationModifier": 0.20000000298023224,
-				"durationTicks": 100,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:limeade",
-				"nutrition": 3,
-				"saturationModifier": 0.20000000298023224,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:lucuma_cannoli",
-				"nutrition": 8,
-				"saturationModifier": 1.25,
-				"durationTicks": 600,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:mint_cannoli",
-				"nutrition": 8,
-				"saturationModifier": 1.25,
-				"durationTicks": 600,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:mint_limeade",
-				"nutrition": 6,
-				"saturationModifier": 0.3499999940395355,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:pink_limeade",
-				"nutrition": 5,
-				"saturationModifier": 1,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:potato_fritters",
-				"nutrition": 7,
-				"saturationModifier": 1,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:prawn_spread",
-				"nutrition": 9,
-				"saturationModifier": 0.8500000238418579,
-				"durationTicks": 400,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:salmon_tartare",
-				"nutrition": 7,
-				"saturationModifier": 0.6499999761581421,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:strawberry_cannoli",
-				"nutrition": 8,
-				"saturationModifier": 1.25,
-				"durationTicks": 600,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:strawberry_jam_bun",
-				"nutrition": 8,
-				"saturationModifier": 0.550000011920929,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:strong_limeade",
-				"nutrition": 3,
-				"saturationModifier": 0.20000000298023224,
-				"durationTicks": 1200,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:strong_vernal_purge",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 200,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:stuffed_pasta_shells",
-				"nutrition": 12,
-				"saturationModifier": 0.8999999761581421,
-				"durationTicks": 400,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:vanilla_cannoli",
-				"nutrition": 8,
-				"saturationModifier": 1.25,
-				"durationTicks": 600,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:vernal_purge",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:crab_rangoon",
-				"nutrition": 10,
-				"saturationModifier": 0.5,
-				"durationTicks": 400,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "delightful:roe_blini",
-				"nutrition": 10,
-				"saturationModifier": 0.699999988079071,
-				"durationTicks": 400,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "delightful:salmon_and_roe_blini",
-				"nutrition": 11,
-				"saturationModifier": 0.75,
-				"durationTicks": 400,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "delightful:sinigang",
-				"nutrition": 12,
-				"saturationModifier": 0.699999988079071,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:sinigang_cup",
-				"nutrition": 6,
-				"saturationModifier": 0.3499999940395355,
-				"durationTicks": 300,
-				"amplifier": 0,
-				"probability": 1
-			}
-		],
-		"collectorsreap:surge": [
-			{
-				"item": "collectorsreap:dragon_stew",
-				"nutrition": 8,
-				"saturationModifier": 1.100000023841858,
-				"durationTicks": 800,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:dragon_stew_cup",
-				"nutrition": 4,
-				"saturationModifier": 0.550000011920929,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:dragons_passion",
-				"nutrition": 5,
-				"saturationModifier": 1,
-				"durationTicks": 800,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:dried_pink_dragon_fruit",
-				"nutrition": 6,
-				"saturationModifier": 0.4000000059604645,
-				"durationTicks": 800,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:pink_dragon_fruit",
-				"nutrition": 3,
-				"saturationModifier": 0.20000000298023224,
-				"durationTicks": 400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:pink_dragon_fruit_cake_slice",
-				"nutrition": 2,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 300,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:pink_dragon_fruit_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 600,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:pink_dragon_fruit_ice_cream",
-				"nutrition": 6,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 1600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:pink_dragon_fruit_milkshake",
-				"nutrition": 2,
-				"saturationModifier": 1.5,
-				"durationTicks": 800,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:pink_noodles",
-				"nutrition": 12,
-				"saturationModifier": 0.8999999761581421,
-				"durationTicks": 800,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:tropical_shaved_ice",
-				"nutrition": 15,
-				"saturationModifier": 0.6000000238418579,
-				"durationTicks": 800,
-				"amplifier": 0,
-				"probability": 1
-			}
-		],
-		"collectorsreap:rebound": [
-			{
-				"item": "collectorsreap:gilded_lucuma",
-				"nutrition": 4,
-				"saturationModifier": 1.25,
-				"durationTicks": 3600,
-				"amplifier": 3,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:heavens_cream",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 2400,
-				"amplifier": 4,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:long_sweet_recovery",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 1200,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:lucuma",
-				"nutrition": 2,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:lucuma_bread",
-				"nutrition": 7,
-				"saturationModifier": 0.44999998807907104,
-				"durationTicks": 1600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:lucuma_cake_slice",
-				"nutrition": 2,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 300,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:lucuma_cannoli",
-				"nutrition": 8,
-				"saturationModifier": 1.25,
-				"durationTicks": 600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:lucuma_gazpacho",
-				"nutrition": 8,
-				"saturationModifier": 0.699999988079071,
-				"durationTicks": 2400,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:lucuma_gazpacho_cup",
-				"nutrition": 4,
-				"saturationModifier": 0.3499999940395355,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:lucuma_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 600,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:lucuma_ice_cream",
-				"nutrition": 6,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 1600,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:lucuma_milkshake",
-				"nutrition": 2,
-				"saturationModifier": 1.5,
-				"durationTicks": 1600,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:lucuma_pudding",
-				"nutrition": 8,
-				"saturationModifier": 0.6499999761581421,
-				"durationTicks": 1200,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:strong_sweet_recovery",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 300,
-				"amplifier": 3,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:sunny_ice_cream",
-				"nutrition": 12,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 1600,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:sweet_recovery",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 600,
-				"amplifier": 2,
-				"probability": 1
-			}
-		],
-		"minecraft:instant_health": [
-			{
-				"item": "collectorsreap:long_sweet_recovery",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 1,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:melon_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 1,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:strawberry_cannoli",
-				"nutrition": 8,
-				"saturationModifier": 1.25,
-				"durationTicks": 1,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:strawberry_gummy",
-				"nutrition": 2,
-				"saturationModifier": 0,
-				"durationTicks": 1,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:strawberry_jam_bun",
-				"nutrition": 8,
-				"saturationModifier": 0.550000011920929,
-				"durationTicks": 1,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:strong_sweet_recovery",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 1,
-				"amplifier": 2,
-				"probability": 1
-			},
-			{
-				"item": "collectorsreap:sweet_recovery",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 1,
-				"amplifier": 1,
-				"probability": 1
-			},
-			{
-				"item": "delightful:berry_matcha_latte",
-				"nutrition": 8,
-				"saturationModifier": 0.6499999761581421,
-				"durationTicks": 1,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:ender_nectar",
-				"nutrition": 4,
-				"saturationModifier": 0,
-				"durationTicks": 1,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "delightful:matcha_latte",
-				"nutrition": 6,
-				"saturationModifier": 0.5,
-				"durationTicks": 1,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
-				"item": "malum:runic_sap",
-				"nutrition": 6,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 1,
-				"amplifier": 0,
-				"probability": 1
-			}
-		],
-		"minecraft:conduit_power": [
-			{
-				"item": "collectorsreap:rose_moon",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 1800,
-				"amplifier": 0,
-				"probability": 1
-			}
-		],
-		"tconstruct:experienced": [
-			{
-				"item": "tconstruct:earth_slime_bottle",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 2400,
-				"amplifier": 0,
-				"probability": 1
-			}
-		],
-		"tconstruct:ricochet": [
-			{
-				"item": "tconstruct:sky_slime_bottle",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 2400,
-				"amplifier": 0,
-				"probability": 1
-			}
-		],
-		"tconstruct:enderference": [
-			{
-				"item": "tconstruct:ender_slime_bottle",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 1200,
-				"amplifier": 0,
-				"probability": 1
-			}
-		],
-		"supplementaries:flammable": [
-			{
-				"item": "supplementaries:lumisene_bottle",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 300,
-				"amplifier": 0,
-				"probability": 1
-			}
 		]
 	},
 	"byDietGroup": {
@@ -6322,11 +1420,8 @@
 			"blue_skies:pine_fruit",
 			"blue_skies:pink_brewberry",
 			"blue_skies:scalefruit",
-			"collectorsreap:lime",
-			"collectorsreap:stygian_pomegranate",
 			"create:chocolate_glazed_berries",
 			"create:honeyed_apple",
-			"delightful:salmonberries",
 			"farmersdelight:honey_glazed_ham",
 			"farmersdelight:stuffed_pumpkin",
 			"minecraft:apple",
@@ -6339,22 +1434,7 @@
 			"undergarden:blisterberry",
 			"undergarden:droopvine_item"
 		],
-		"grains": [
-			"create:sweet_roll",
-			"farmersdelight:honey_glazed_ham",
-			"farmersdelight:pie_crust",
-			"farmersdelight:raw_pasta",
-			"farmersdelight:roast_chicken",
-			"farmersdelight:stuffed_pumpkin",
-			"iceandfire:cannoli",
-			"minecraft:bread",
-			"oceansdelight:elder_guardian_roll",
-			"oceansdelight:fugu_roll",
-			"oceansdelight:squid_rings",
-			"twilightforest:maze_wafer"
-		],
 		"proteins": [
-			"artifacts:everlasting_beef",
 			"blue_skies:carabeef",
 			"blue_skies:charscale_moki",
 			"blue_skies:cooked_charscale_moki",
@@ -6368,20 +1448,6 @@
 			"blue_skies:municipal_monkfish",
 			"blue_skies:solnut",
 			"blue_skies:venison",
-			"collectorsreap:chieftain_claw",
-			"collectorsreap:chieftain_leg",
-			"collectorsreap:clam_meat",
-			"collectorsreap:crab_miso",
-			"collectorsreap:platinum_bass",
-			"collectorsreap:platinum_bass_head",
-			"collectorsreap:tiger_prawn",
-			"collectorsreap:uni",
-			"delightful:acorn",
-			"delightful:animal_fat",
-			"delightful:crab_rangoon",
-			"delightful:honey_glazed_walnut",
-			"delightful:raw_goat",
-			"delightful:venison_chops",
 			"farmersdelight:cabbage_rolls",
 			"farmersdelight:fried_egg",
 			"farmersdelight:ham",
@@ -6406,27 +1472,8 @@
 			"minecraft:spider_eye",
 			"minecraft:suspicious_stew",
 			"minecraft:tropical_fish",
-			"oceansdelight:baked_tentacle_on_a_stick",
-			"oceansdelight:bowl_of_guardian_soup",
-			"oceansdelight:braised_sea_pickle",
-			"oceansdelight:cabbage_wrapped_elder_guardian",
-			"oceansdelight:cooked_elder_guardian_slice",
-			"oceansdelight:cooked_guardian_tail",
-			"oceansdelight:cooked_stuffed_cod",
-			"oceansdelight:cut_tentacles",
-			"oceansdelight:elder_guardian_roll",
-			"oceansdelight:elder_guardian_slab",
-			"oceansdelight:elder_guardian_slice",
-			"oceansdelight:fugu_roll",
-			"oceansdelight:fugu_slice",
-			"oceansdelight:guardian_tail",
-			"oceansdelight:squid_rings",
-			"oceansdelight:stuffed_cod",
-			"oceansdelight:tentacle_on_a_stick",
-			"oceansdelight:tentacles",
+			"pneumaticcraft:salmon_tempura",
 			"quark:crab_leg",
-			"rusticdelight:calamari",
-			"rusticdelight:cooked_calamari",
 			"starcatcher:agave_bream",
 			"starcatcher:amethystback",
 			"starcatcher:aquamarine_pike",
@@ -6521,10 +1568,6 @@
 		"vegetables": [
 			"blue_skies:cryo_root",
 			"blue_skies:winter_leaves",
-			"collectorsreap:crab_miso",
-			"corn_delight:corn",
-			"corn_delight:nachos_bowl",
-			"delightful:green_tea_leaf",
 			"farmersdelight:cabbage",
 			"farmersdelight:cabbage_rolls",
 			"farmersdelight:onion",
@@ -6539,41 +1582,37 @@
 			"minecraft:golden_carrot",
 			"minecraft:poisonous_potato",
 			"minecraft:potato",
-			"oceansdelight:bowl_of_guardian_soup",
-			"oceansdelight:braised_sea_pickle",
-			"oceansdelight:cabbage_wrapped_elder_guardian",
-			"oceansdelight:cooked_stuffed_cod",
-			"oceansdelight:honey_fried_kelp",
-			"oceansdelight:seagrass_salad",
-			"oceansdelight:stuffed_cod",
-			"undergarden:underbeans",
-			"veggiesdelight:bellpepper",
-			"veggiesdelight:broccoli",
-			"veggiesdelight:cauliflower",
-			"veggiesdelight:dandelion_leaf",
-			"veggiesdelight:sweet_potato",
-			"veggiesdelight:turnip",
-			"veggiesdelight:zucchini"
+			"pneumaticcraft:chips",
+			"undergarden:underbeans"
 		],
 		"sugars": [
 			"create:bar_of_chocolate",
 			"create:chocolate_glazed_berries",
 			"create:honeyed_apple",
 			"create:sweet_roll",
-			"delightful:honey_glazed_walnut",
-			"delightful:rock_candy",
 			"farmersdelight:honey_glazed_ham",
 			"iceandfire:cannoli",
 			"iceandfire:pixie_dust",
 			"minecraft:honey_bottle",
-			"oceansdelight:honey_fried_kelp",
 			"twilightforest:experiment_115"
+		],
+		"grains": [
+			"create:sweet_roll",
+			"farmersdelight:honey_glazed_ham",
+			"farmersdelight:pie_crust",
+			"farmersdelight:raw_pasta",
+			"farmersdelight:roast_chicken",
+			"farmersdelight:stuffed_pumpkin",
+			"iceandfire:cannoli",
+			"minecraft:bread",
+			"pneumaticcraft:salmon_tempura",
+			"twilightforest:maze_wafer"
 		]
 	},
 	"byDietGroupCount": {
-		"0": 816,
-		"1": 199,
-		"2": 16,
+		"0": 221,
+		"1": 160,
+		"2": 6,
 		"3": 3,
 		"4": 1
 	},
@@ -6588,7 +1627,6 @@
 		"ars_nouveau:sourceberry_bush",
 		"blue_skies:cryo_root",
 		"blue_skies:pink_brewberry",
-		"botania:mana_cookie",
 		"brewinandchewin:beer",
 		"brewinandchewin:bloody_mary",
 		"brewinandchewin:cheesy_pasta",
@@ -6612,250 +1650,9 @@
 		"brewinandchewin:vegetable_omelet",
 		"brewinandchewin:vodka",
 		"brewinandchewin:withering_dross",
-		"collectorsreap:adzuki_gummy",
-		"collectorsreap:aloe_gummy",
-		"collectorsreap:apple_gummy",
-		"collectorsreap:asparagus_aspic",
-		"collectorsreap:banana_gummy",
-		"collectorsreap:beetroot_gummy",
-		"collectorsreap:berry_limeade",
-		"collectorsreap:black_tea_gummy",
-		"collectorsreap:bullet_pepper_gummy",
-		"collectorsreap:bullet_pepper_popper",
-		"collectorsreap:candied_lime",
-		"collectorsreap:cannoli",
-		"collectorsreap:carbonara_pasta",
-		"collectorsreap:carrot_gummy",
-		"collectorsreap:chocolate_arils",
-		"collectorsreap:chocolate_cannoli",
-		"collectorsreap:chocolate_gummy",
-		"collectorsreap:clam_chowder",
-		"collectorsreap:clam_meatball_stew",
-		"collectorsreap:clam_meatball_stew_cup",
-		"collectorsreap:clam_pasta",
-		"collectorsreap:cod_ceviche",
-		"collectorsreap:coffee_cannoli",
-		"collectorsreap:coffee_gummy",
-		"collectorsreap:crab_lasagna",
-		"collectorsreap:crab_noodles",
-		"collectorsreap:cream_cheese",
-		"collectorsreap:crimson_carrot_roast",
-		"collectorsreap:deific_blood",
-		"collectorsreap:deluxe_salad",
-		"collectorsreap:dragon_stew",
-		"collectorsreap:dragon_stew_cup",
-		"collectorsreap:dragons_passion",
-		"collectorsreap:dried_pink_dragon_fruit",
-		"collectorsreap:gilded_lucuma",
-		"collectorsreap:glazed_strider",
-		"collectorsreap:glow_berry_gummy",
-		"collectorsreap:green_tea_gummy",
-		"collectorsreap:heavens_cream",
-		"collectorsreap:hemp_gummy",
-		"collectorsreap:hermits_sour",
-		"collectorsreap:honey_lime_chicken",
-		"collectorsreap:land_and_sea_burger",
-		"collectorsreap:limbo_brew",
-		"collectorsreap:lime",
-		"collectorsreap:lime_cake_slice",
-		"collectorsreap:lime_cookie",
-		"collectorsreap:lime_green_tea",
-		"collectorsreap:lime_gummy",
-		"collectorsreap:lime_ice_cream",
-		"collectorsreap:lime_milkshake",
-		"collectorsreap:lime_pie_slice",
-		"collectorsreap:lime_popsicle",
-		"collectorsreap:lime_slice",
-		"collectorsreap:limeade",
-		"collectorsreap:long_sweet_recovery",
-		"collectorsreap:lucuma",
-		"collectorsreap:lucuma_bread",
-		"collectorsreap:lucuma_cake_slice",
-		"collectorsreap:lucuma_cannoli",
-		"collectorsreap:lucuma_gazpacho",
-		"collectorsreap:lucuma_gazpacho_cup",
-		"collectorsreap:lucuma_gummy",
-		"collectorsreap:lucuma_ice_cream",
-		"collectorsreap:lucuma_milkshake",
-		"collectorsreap:lucuma_pudding",
-		"collectorsreap:mediterranean_salmon",
-		"collectorsreap:melon_gummy",
-		"collectorsreap:mint_cannoli",
-		"collectorsreap:mint_gummy",
-		"collectorsreap:mint_limeade",
-		"collectorsreap:passion_fruit_gummy",
-		"collectorsreap:peanut_gummy",
-		"collectorsreap:pink_dragon_fruit",
-		"collectorsreap:pink_dragon_fruit_cake_slice",
-		"collectorsreap:pink_dragon_fruit_gummy",
-		"collectorsreap:pink_dragon_fruit_ice_cream",
-		"collectorsreap:pink_dragon_fruit_milkshake",
-		"collectorsreap:pink_limeade",
-		"collectorsreap:pink_noodles",
-		"collectorsreap:platinum_bass_stew",
-		"collectorsreap:platinum_bass_stew_cup",
-		"collectorsreap:pomegranate_bean_salad",
-		"collectorsreap:pomegranate_black_tea",
-		"collectorsreap:pomegranate_cake_slice",
-		"collectorsreap:pomegranate_chicken",
-		"collectorsreap:pomegranate_custard",
-		"collectorsreap:pomegranate_gummy",
-		"collectorsreap:pomegranate_ice_cream",
-		"collectorsreap:pomegranate_milkshake",
-		"collectorsreap:pomegranate_mutton",
-		"collectorsreap:pomegranate_pork",
-		"collectorsreap:pomegranate_seeds",
-		"collectorsreap:pomegranate_slice",
-		"collectorsreap:pomegranate_smoothie",
-		"collectorsreap:portobello_burger",
-		"collectorsreap:portobello_pasta",
-		"collectorsreap:portobello_rice_soup",
-		"collectorsreap:portobello_rice_soup_cup",
-		"collectorsreap:portobello_risotto",
-		"collectorsreap:potato_fritters",
-		"collectorsreap:prawn_ceviche",
-		"collectorsreap:prawn_noodles",
-		"collectorsreap:prawn_spread",
-		"collectorsreap:prawn_stew",
-		"collectorsreap:prawn_stew_cup",
-		"collectorsreap:prickly_pear_gummy",
-		"collectorsreap:pumpkin_gummy",
-		"collectorsreap:reanimators_garden",
-		"collectorsreap:rose_moon",
-		"collectorsreap:salmon_tartare",
-		"collectorsreap:sea_wrap",
-		"collectorsreap:spicy_grenadine_jelly",
-		"collectorsreap:strawberry_cannoli",
-		"collectorsreap:strawberry_gummy",
-		"collectorsreap:strawberry_jam_bun",
-		"collectorsreap:strong_limbo_brew",
-		"collectorsreap:strong_limeade",
-		"collectorsreap:strong_sweet_recovery",
-		"collectorsreap:strong_vernal_purge",
-		"collectorsreap:stuffed_pasta_shells",
-		"collectorsreap:stygian_pomegranate",
-		"collectorsreap:sunny_ice_cream",
-		"collectorsreap:sweet_berry_gummy",
-		"collectorsreap:sweet_recovery",
-		"collectorsreap:tiger_prawn",
-		"collectorsreap:tropical_shaved_ice",
-		"collectorsreap:vanilla_cannoli",
-		"collectorsreap:vanilla_gummy",
-		"collectorsreap:vernal_purge",
-		"collectorsreap:wild_berry_gummy",
-		"collectorsreap:yellow_tea_gummy",
-		"collectorsreap:yucca_gummy",
-		"corn_delight:corn_soup",
-		"corn_delight:cornbread_stuffing",
-		"corn_delight:creamed_corn",
-		"corn_delight:creamy_corn_drink",
-		"corn_delight:nachos_bowl",
-		"corn_delight:taco",
 		"create:builders_tea",
-		"create_central_kitchen:aloe_cake_slice",
-		"create_central_kitchen:chocolate_cake_slice",
-		"create_central_kitchen:honey_cake_slice",
-		"create_central_kitchen:mulberry_pie_slice",
-		"create_central_kitchen:passion_fruit_cake_slice",
-		"create_central_kitchen:pumpkin_cake_slice",
-		"create_central_kitchen:pumpkin_pie_slice",
-		"create_central_kitchen:sweet_berry_cake_slice",
-		"create_central_kitchen:yucca_cake_slice",
 		"creatingspace:space_food",
 		"deeperdarker:bloom_berries",
-		"delightful:acorn",
-		"delightful:aged_fish_roe",
-		"delightful:aged_prawn_roe",
-		"delightful:azalea_tea",
-		"delightful:baklava_slice",
-		"delightful:berry_matcha_latte",
-		"delightful:blueberry_pie_slice",
-		"delightful:cactus_chili",
-		"delightful:cactus_soup",
-		"delightful:cactus_soup_cup",
-		"delightful:cantaloupe_bread",
-		"delightful:cantaloupe_gummy",
-		"delightful:cantaloupe_popsicle",
-		"delightful:cantaloupe_slice",
-		"delightful:cheeseburger",
-		"delightful:chorus_muffin",
-		"delightful:chorus_pie_slice",
-		"delightful:chunkwich",
-		"delightful:coconut_curry",
-		"delightful:cooked_marshmallow_stick",
-		"delightful:crab_rangoon",
-		"delightful:deluxe_cheeseburger",
-		"delightful:ender_nectar",
-		"delightful:field_salad",
-		"delightful:gloomgourd_pie_slice",
-		"delightful:glow_jam_cookie",
-		"delightful:glow_jam_jar",
-		"delightful:green_apple_pie_slice",
-		"delightful:lavender_tea",
-		"delightful:long_prickly_pear_juice",
-		"delightful:marshmallow_stick",
-		"delightful:matcha_gummy",
-		"delightful:matcha_ice_cream",
-		"delightful:matcha_latte",
-		"delightful:matcha_milkshake",
-		"delightful:mulberry_pie_slice",
-		"delightful:mutton_pie_slice",
-		"delightful:nut_butter_and_jam_sandwich",
-		"delightful:nut_dough",
-		"delightful:passion_fruit_tart_slice",
-		"delightful:prickly_pear_juice",
-		"delightful:pumpkin_pie_slice",
-		"delightful:rock_candy",
-		"delightful:roe_blini",
-		"delightful:salmon_and_roe_blini",
-		"delightful:salmonberries",
-		"delightful:salmonberry_gummy",
-		"delightful:salmonberry_ice_cream",
-		"delightful:salmonberry_milkshake",
-		"delightful:salmonberry_pie_slice",
-		"delightful:sinigang",
-		"delightful:sinigang_cup",
-		"delightful:smore",
-		"delightful:source_berry_cookie",
-		"delightful:source_berry_gummy",
-		"delightful:source_berry_ice_cream",
-		"delightful:source_berry_milkshake",
-		"delightful:source_berry_pie_slice",
-		"delightful:stuffed_cantaloupe",
-		"delightful:venison_stew",
-		"delightful:venison_stew_cup",
-		"delightful:wrapped_cantaloupe",
-		"ends_delight:assorted_salad",
-		"ends_delight:chorus_flower_pie",
-		"ends_delight:chorus_flower_tea",
-		"ends_delight:chorus_fruit_pie_slice",
-		"ends_delight:dragon_breath_and_chorus_soup",
-		"ends_delight:dragon_breath_soda",
-		"ends_delight:dragon_leg_with_sauce",
-		"ends_delight:dragon_meat_stew",
-		"ends_delight:end_barbecue_stick",
-		"ends_delight:end_mixed_salad",
-		"ends_delight:ender_bamboo_rice",
-		"ends_delight:ender_congee",
-		"ends_delight:ender_noodle",
-		"ends_delight:ender_sausage",
-		"ends_delight:enderman_gristle_stew",
-		"ends_delight:fried_dragon_egg",
-		"ends_delight:grilled_shulker",
-		"ends_delight:liquid_dragon_egg",
-		"ends_delight:roasted_dragon_meat",
-		"ends_delight:roasted_dragon_meat_cuts",
-		"ends_delight:roasted_dragon_steak",
-		"ends_delight:roasted_shulker_meat",
-		"ends_delight:roasted_shulker_meat_slice",
-		"ends_delight:shulker_meat",
-		"ends_delight:shulker_meat_slice",
-		"ends_delight:shulker_omelette",
-		"ends_delight:shulker_omelette_mixture",
-		"ends_delight:shulker_soup",
-		"ends_delight:smoked_dragon_leg",
-		"ends_delight:steamed_dragon_egg",
-		"ends_delight:stir_fried_shulker_meat",
 		"everythingcopper:copper_nugget",
 		"farmersdelight:apple_cider",
 		"farmersdelight:apple_pie_slice",
@@ -6871,6 +1668,7 @@
 		"farmersdelight:fish_stew",
 		"farmersdelight:fried_rice",
 		"farmersdelight:fruit_salad",
+		"farmersdelight:gleaming_salad",
 		"farmersdelight:glow_berry_custard",
 		"farmersdelight:grilled_salmon",
 		"farmersdelight:honey_glazed_ham",
@@ -6878,8 +1676,10 @@
 		"farmersdelight:mushroom_rice",
 		"farmersdelight:nether_salad",
 		"farmersdelight:noodle_soup",
+		"farmersdelight:onion_soup",
 		"farmersdelight:pasta_with_meatballs",
 		"farmersdelight:pasta_with_mutton_chop",
+		"farmersdelight:pumpkin_pie_slice",
 		"farmersdelight:pumpkin_soup",
 		"farmersdelight:ratatouille",
 		"farmersdelight:raw_pasta",
@@ -6893,45 +1693,12 @@
 		"farmersdelight:vegetable_noodles",
 		"farmersdelight:vegetable_soup",
 		"farmersdelight:wheat_dough",
-		"farmersrespite:black_cod",
-		"farmersrespite:black_tea",
-		"farmersrespite:blazing_chili",
-		"farmersrespite:coffee",
-		"farmersrespite:coffee_berries",
-		"farmersrespite:coffee_cake_slice",
-		"farmersrespite:dandelion_tea",
-		"farmersrespite:green_tea",
-		"farmersrespite:green_tea_cookie",
-		"farmersrespite:long_apple_cider",
-		"farmersrespite:long_black_tea",
-		"farmersrespite:long_coffee",
-		"farmersrespite:long_dandelion_tea",
-		"farmersrespite:long_green_tea",
-		"farmersrespite:long_purulent_tea",
-		"farmersrespite:long_rose_hip_tea",
-		"farmersrespite:long_yellow_tea",
-		"farmersrespite:nether_wart_sourdough",
-		"farmersrespite:purulent_tea",
-		"farmersrespite:rose_hip_pie_slice",
-		"farmersrespite:rose_hip_tea",
-		"farmersrespite:strong_apple_cider",
-		"farmersrespite:strong_black_tea",
-		"farmersrespite:strong_coffee",
-		"farmersrespite:strong_green_tea",
-		"farmersrespite:strong_purulent_tea",
-		"farmersrespite:strong_rose_hip_tea",
-		"farmersrespite:strong_yellow_tea",
-		"farmersrespite:tea_curry",
-		"farmersrespite:yellow_tea",
 		"fiahi:leftover_meat",
 		"fiahi:leftover_vegetable",
 		"immersive_weathering:enchanted_golden_moss_clump",
 		"immersive_weathering:golden_moss_clump",
 		"immersive_weathering:ice_sickle",
 		"immersive_weathering:icicle",
-		"malum:cursed_sap",
-		"malum:rotting_essence",
-		"malum:runic_sap",
 		"minecraft:chicken",
 		"minecraft:enchanted_golden_apple",
 		"minecraft:golden_apple",
@@ -6939,86 +1706,6 @@
 		"minecraft:pufferfish",
 		"minecraft:rotten_flesh",
 		"minecraft:spider_eye",
-		"mynethersdelight:bleeding_tartar",
-		"mynethersdelight:blue_tenderloin_steak",
-		"mynethersdelight:breakfast_sampler",
-		"mynethersdelight:bullet_pepper",
-		"mynethersdelight:burnt_roll",
-		"mynethersdelight:chilidog",
-		"mynethersdelight:crimson_stroganoff",
-		"mynethersdelight:deviled_egg",
-		"mynethersdelight:egg_soup",
-		"mynethersdelight:enchanted_golden_egg",
-		"mynethersdelight:fried_hoglin_chop",
-		"mynethersdelight:ghast_dough",
-		"mynethersdelight:ghast_salad",
-		"mynethersdelight:ghast_sourdough",
-		"mynethersdelight:ghasta",
-		"mynethersdelight:golden_egg",
-		"mynethersdelight:hoglin_loin",
-		"mynethersdelight:hoglin_sausage",
-		"mynethersdelight:hot_cream",
-		"mynethersdelight:hot_cream_cone",
-		"mynethersdelight:hot_wings",
-		"mynethersdelight:hot_wings_bucket",
-		"mynethersdelight:hotdog_with_mixed_salad",
-		"mynethersdelight:hotdog_with_nether_salad",
-		"mynethersdelight:magma_cake_slice",
-		"mynethersdelight:plate_of_cold_striderloaf",
-		"mynethersdelight:plate_of_ghasta_with_cream",
-		"mynethersdelight:plate_of_striderloaf",
-		"mynethersdelight:plate_of_stuffed_hoglin",
-		"mynethersdelight:plate_of_stuffed_hoglin_ham",
-		"mynethersdelight:plate_of_stuffed_hoglin_snout",
-		"mynethersdelight:rock_soup",
-		"mynethersdelight:scotch_eggs",
-		"mynethersdelight:sizzling_pudding",
-		"mynethersdelight:spicy_cotton",
-		"mynethersdelight:spicy_curry",
-		"mynethersdelight:spicy_hoglin_stew",
-		"mynethersdelight:spicy_noodle_soup",
-		"mynethersdelight:spicy_skewer",
-		"mynethersdelight:strider_slice",
-		"mynethersdelight:strider_stew",
-		"mynethersdelight:strider_with_grilled_fungus",
-		"mynethersdelight:stuffed_pepper",
-		"mynethersdelight:tear_popsicle",
-		"mynethersdelight:twisted_ghasta",
-		"occultism:datura",
-		"occultism:datura_seeds",
-		"occultism:demons_dream_essence",
-		"occultism:otherworld_essence",
-		"oceansdelight:bowl_of_guardian_soup",
-		"oceansdelight:cabbage_wrapped_elder_guardian",
-		"oceansdelight:elder_guardian_slice",
-		"oceansdelight:tentacles",
-		"rusticdelight:batter",
-		"rusticdelight:bell_pepper_pasta",
-		"rusticdelight:bell_pepper_soup",
-		"rusticdelight:cherry_blossom_cheesecake_slice",
-		"rusticdelight:cherry_blossom_pancake",
-		"rusticdelight:chocolate_coffee",
-		"rusticdelight:chocolate_pancake",
-		"rusticdelight:coffee",
-		"rusticdelight:coffee_braised_beef",
-		"rusticdelight:cooking_oil",
-		"rusticdelight:dark_coffee",
-		"rusticdelight:fried_calamari",
-		"rusticdelight:fried_chicken",
-		"rusticdelight:fried_mushrooms",
-		"rusticdelight:fruit_beignet",
-		"rusticdelight:honey_coffee",
-		"rusticdelight:honey_pancake",
-		"rusticdelight:milk_coffee",
-		"rusticdelight:potato_salad",
-		"rusticdelight:pumpkin_pancake",
-		"rusticdelight:sweet_salad",
-		"rusticdelight:syrup",
-		"rusticdelight:syrup_cheesecake_slice",
-		"rusticdelight:syrup_coffee",
-		"rusticdelight:vegetable_pancake",
-		"supplementaries:lumisene_bottle",
-		"supplementaries:soap",
 		"tconstruct:earth_slime_bottle",
 		"tconstruct:ender_slime_bottle",
 		"tconstruct:ichor_slime_bottle",
@@ -7027,29 +1714,6 @@
 		"tconstruct:venom_bottle",
 		"twilightforest:hydra_chop",
 		"twilightforest:torchberries",
-		"ubesdelight:arroz_caldo",
-		"ubesdelight:bangsilog",
-		"ubesdelight:bulalo",
-		"ubesdelight:chicken_inasal_rice",
-		"ubesdelight:condensed_milk_bottle",
-		"ubesdelight:ensaymada_raw",
-		"ubesdelight:ensaymada_ube",
-		"ubesdelight:ensaymada_ube_raw",
-		"ubesdelight:fish_sauce_bottle",
-		"ubesdelight:halo_halo",
-		"ubesdelight:hopia_munggo_raw",
-		"ubesdelight:hopia_ube",
-		"ubesdelight:hopia_ube_raw",
-		"ubesdelight:kinilaw",
-		"ubesdelight:mechado",
-		"ubesdelight:milk_tea_ube",
-		"ubesdelight:pandesal_raw",
-		"ubesdelight:pandesal_ube",
-		"ubesdelight:pandesal_ube_raw",
-		"ubesdelight:sinangag",
-		"ubesdelight:sisig",
-		"ubesdelight:tosilog",
-		"ubesdelight:ube_cake_slice",
 		"undergarden:blood_globule",
 		"undergarden:bloody_stew",
 		"undergarden:droopvine_item",
@@ -7060,41 +1724,7 @@
 		"undergarden:inky_stew",
 		"undergarden:rotten_blisterberry",
 		"undergarden:slop_bowl",
-		"undergarden:veiled_stew",
-		"veggiesdelight:beetroot_brownie",
-		"veggiesdelight:broccoli_salad",
-		"veggiesdelight:broccoli_soup",
-		"veggiesdelight:cacciatore",
-		"veggiesdelight:carrot_juice",
-		"veggiesdelight:cauliflower_kuku",
-		"veggiesdelight:cauliflower_soup",
-		"veggiesdelight:cesar_salad",
-		"veggiesdelight:coleslaw",
-		"veggiesdelight:dandelion_and_eggs",
-		"veggiesdelight:dandelion_juice",
-		"veggiesdelight:dandelion_leaf",
-		"veggiesdelight:fermented_garlic_honey",
-		"veggiesdelight:fish_and_chips",
-		"veggiesdelight:garlic_baked_cod",
-		"veggiesdelight:garlic_chicken_stew",
-		"veggiesdelight:garlic_rice_with_cauliflower",
-		"veggiesdelight:lasagna_slice",
-		"veggiesdelight:mashed_potatoes",
-		"veggiesdelight:pasta_with_broccoli",
-		"veggiesdelight:potato_noodles",
-		"veggiesdelight:rice_and_vegetables",
-		"veggiesdelight:roasted_vegetables",
-		"veggiesdelight:shakshouka",
-		"veggiesdelight:steak_and_broccoli",
-		"veggiesdelight:stuffed_bellpepper",
-		"veggiesdelight:stuffed_zucchinis",
-		"veggiesdelight:sweet_potato_cupcake",
-		"veggiesdelight:sweet_potato_dough",
-		"veggiesdelight:sweet_potato_pancakes",
-		"veggiesdelight:turnip_beef_stew",
-		"veggiesdelight:turnip_cake",
-		"veggiesdelight:turnip_salad",
-		"veggiesdelight:turnip_water"
+		"undergarden:veiled_stew"
 	],
 	"foodsWithoutEffects": [
 		"aether:blue_berry",
@@ -7104,14 +1734,6 @@
 		"aether:gingerbread_man",
 		"aether:golden_gummy_swet",
 		"aether:white_apple",
-		"apotheotic_additions:commonapple",
-		"apotheotic_additions:epicapple",
-		"apotheotic_additions:mythicapple",
-		"apotheotic_additions:rareapple",
-		"apotheotic_additions:uncommonapple",
-		"artifacts:eternal_steak",
-		"artifacts:everlasting_beef",
-		"artifacts:onion_ring",
 		"blue_skies:black_brewberry",
 		"blue_skies:brewberry",
 		"blue_skies:carabeef",
@@ -7135,7 +1757,6 @@
 		"blue_skies:solnut",
 		"blue_skies:venison",
 		"blue_skies:winter_leaves",
-		"botania:mana_bottle",
 		"brewinandchewin:apple_jelly",
 		"brewinandchewin:flaxen_cheese_wedge",
 		"brewinandchewin:glow_berry_marmalade",
@@ -7149,95 +1770,11 @@
 		"brewinandchewin:scarlet_cheese_wedge",
 		"brewinandchewin:sweet_berry_jam",
 		"cold_sweat:soul_sprout",
-		"collectorsreap:baked_portobello_cap",
-		"collectorsreap:big_rice_ball",
-		"collectorsreap:buttered_legs",
-		"collectorsreap:chieftain_claw",
-		"collectorsreap:chieftain_crab_meat",
-		"collectorsreap:chieftain_leg",
-		"collectorsreap:clam_meat",
-		"collectorsreap:clam_roll",
-		"collectorsreap:cooked_platinum_bass",
-		"collectorsreap:cooked_platinum_bass_head",
-		"collectorsreap:cooked_platinum_bass_slice",
-		"collectorsreap:cooked_tiger_prawn",
-		"collectorsreap:crab_miso",
-		"collectorsreap:fish_mix",
-		"collectorsreap:panettone_slice",
-		"collectorsreap:platinum_bass",
-		"collectorsreap:platinum_bass_head",
-		"collectorsreap:platinum_bass_slice",
-		"collectorsreap:portobello_quiche_slice",
-		"collectorsreap:portobello_wrap",
-		"collectorsreap:prawn_po_boy",
-		"collectorsreap:prawn_roll",
-		"collectorsreap:salmon_wrapped_prawn",
-		"collectorsreap:shimmering_apple",
-		"collectorsreap:stuffed_portobello_cap",
-		"collectorsreap:uni",
-		"collectorsreap:uni_roll",
-		"corn_delight:boiled_corn",
-		"corn_delight:caramel_popcorn",
-		"corn_delight:classic_corn_dog",
-		"corn_delight:corn",
-		"corn_delight:corn_dog",
-		"corn_delight:corn_seeds",
-		"corn_delight:cornbread",
-		"corn_delight:cornbread_batter",
-		"corn_delight:grilled_corn",
-		"corn_delight:popcorn",
-		"corn_delight:tortilla",
-		"corn_delight:tortilla_chip",
-		"corn_delight:tortilla_raw",
 		"create:bar_of_chocolate",
 		"create:chocolate_glazed_berries",
 		"create:honeyed_apple",
 		"create:sweet_roll",
-		"create_central_kitchen:incomplete_apple_pie",
-		"create_central_kitchen:incomplete_bacon_sandwich",
-		"create_central_kitchen:incomplete_chicken_sandwich",
-		"create_central_kitchen:incomplete_chorus_flower_pie",
-		"create_central_kitchen:incomplete_chorus_fruit_pie",
-		"create_central_kitchen:incomplete_egg_sandwich",
-		"create_central_kitchen:incomplete_hamburger",
-		"create_central_kitchen:incomplete_lime_pie",
-		"create_central_kitchen:incomplete_mulberry_pie",
-		"create_central_kitchen:incomplete_mutton_wrap",
-		"create_central_kitchen:incomplete_portobello_burger",
-		"create_central_kitchen:incomplete_portobello_quiche",
-		"create_central_kitchen:incomplete_portobello_wrap",
-		"create_central_kitchen:incomplete_pumpkin_pie",
-		"create_central_kitchen:incomplete_sweet_berry_cheesecake",
-		"delightful:animal_fat",
-		"delightful:cactus_flesh",
-		"delightful:cactus_steak",
-		"delightful:chopped_clover",
-		"delightful:cooked_goat",
-		"delightful:cooked_venison_chops",
-		"delightful:green_tea_leaf",
-		"delightful:honey_glazed_walnut",
-		"delightful:jam_jar",
-		"delightful:nut_butter_bottle",
-		"delightful:raw_goat",
-		"delightful:roasted_acorn",
-		"delightful:venison_chops",
 		"dynamictreesplus:saguaro_cactus_seed",
-		"ends_delight:bubble_tea",
-		"ends_delight:chorus_cookie",
-		"ends_delight:chorus_fruit_grain",
-		"ends_delight:chorus_fruit_milk_tea",
-		"ends_delight:chorus_fruit_popsicle",
-		"ends_delight:chorus_fruit_wine",
-		"ends_delight:chorus_sauce",
-		"ends_delight:chorus_succulent",
-		"ends_delight:dragon_leg",
-		"ends_delight:dried_endermite_meat",
-		"ends_delight:enderman_gristle",
-		"ends_delight:raw_dragon_meat",
-		"ends_delight:raw_dragon_meat_cuts",
-		"ends_delight:raw_ender_mite_meat",
-		"ends_delight:raw_ender_sausage",
-		"ends_delight:stuffed_rice_cake",
 		"fallout_wastelands_:absinthe",
 		"fallout_wastelands_:beer",
 		"fallout_wastelands_:bloat_fly_meat",
@@ -7321,8 +1858,6 @@
 		"iceandfire:pixie_dust",
 		"immersive_weathering:azalea_flowers",
 		"immersive_weathering:moss_clump",
-		"malum:chunk_of_brilliance",
-		"malum:concentrated_gluttony",
 		"minecraft:apple",
 		"minecraft:baked_potato",
 		"minecraft:beef",
@@ -7349,28 +1884,13 @@
 		"minecraft:mutton",
 		"minecraft:porkchop",
 		"minecraft:potato",
+		"minecraft:pumpkin_pie",
 		"minecraft:rabbit",
 		"minecraft:rabbit_stew",
 		"minecraft:salmon",
 		"minecraft:suspicious_stew",
 		"minecraft:sweet_berries",
 		"minecraft:tropical_fish",
-		"mynethersdelight:bacon-wrapped_sausage_on_a_stick",
-		"mynethersdelight:boiled_egg",
-		"mynethersdelight:cooked_loin",
-		"mynethersdelight:dried_ghast_with_milk",
-		"mynethersdelight:fries_ghasta",
-		"mynethersdelight:giant_takoyaki",
-		"mynethersdelight:hotdog",
-		"mynethersdelight:minced_strider",
-		"mynethersdelight:nether_burger",
-		"mynethersdelight:red_loin_on_a_stick",
-		"mynethersdelight:roast_ear",
-		"mynethersdelight:roasted_sausage",
-		"mynethersdelight:sausage_and_potatoes",
-		"mynethersdelight:slices_of_bread",
-		"mynethersdelight:strider_egg",
-		"mynethersdelight:toasts",
 		"natures_spirit:coconut_half",
 		"natures_spirit:desert_turnip",
 		"natures_spirit:half_pizza",
@@ -7378,63 +1898,13 @@
 		"natures_spirit:quarter_pizza",
 		"natures_spirit:three_quarters_pizza",
 		"natures_spirit:whole_pizza",
-		"occultism:beaver_nugget",
-		"oceansdelight:baked_tentacle_on_a_stick",
-		"oceansdelight:braised_sea_pickle",
-		"oceansdelight:cooked_elder_guardian_slice",
-		"oceansdelight:cooked_guardian_tail",
-		"oceansdelight:cooked_stuffed_cod",
-		"oceansdelight:cut_tentacles",
-		"oceansdelight:elder_guardian_roll",
-		"oceansdelight:elder_guardian_slab",
-		"oceansdelight:fugu_roll",
-		"oceansdelight:fugu_slice",
-		"oceansdelight:guardian_tail",
-		"oceansdelight:honey_fried_kelp",
-		"oceansdelight:seagrass_salad",
-		"oceansdelight:squid_rings",
-		"oceansdelight:stuffed_cod",
-		"oceansdelight:tentacle_on_a_stick",
+		"pneumaticcraft:chips",
+		"pneumaticcraft:cod_n_chips",
+		"pneumaticcraft:salmon_tempura",
+		"pneumaticcraft:sourdough_bread",
 		"quark:ancient_fruit",
 		"quark:cooked_crab_leg",
 		"quark:crab_leg",
-		"reliquary:glowing_bread",
-		"rusticdelight:baked_potato_slices",
-		"rusticdelight:bell_pepper_green",
-		"rusticdelight:bell_pepper_red",
-		"rusticdelight:bell_pepper_roll_green",
-		"rusticdelight:bell_pepper_roll_red",
-		"rusticdelight:bell_pepper_roll_yellow",
-		"rusticdelight:bell_pepper_slice_green",
-		"rusticdelight:bell_pepper_slice_red",
-		"rusticdelight:bell_pepper_slice_yellow",
-		"rusticdelight:bell_pepper_yellow",
-		"rusticdelight:calamari",
-		"rusticdelight:calamari_roll",
-		"rusticdelight:calamari_slice",
-		"rusticdelight:cherry_blossom_cookie",
-		"rusticdelight:cherry_blossom_roll",
-		"rusticdelight:coffee_cookie",
-		"rusticdelight:cooked_calamari",
-		"rusticdelight:cooked_calamari_slice",
-		"rusticdelight:fried_dough",
-		"rusticdelight:fried_dumplings",
-		"rusticdelight:golden_coffee_beans",
-		"rusticdelight:pancake",
-		"rusticdelight:potato_slices",
-		"rusticdelight:roasted_bell_pepper_green",
-		"rusticdelight:roasted_bell_pepper_red",
-		"rusticdelight:roasted_bell_pepper_slice_green",
-		"rusticdelight:roasted_bell_pepper_slice_red",
-		"rusticdelight:roasted_bell_pepper_slice_yellow",
-		"rusticdelight:roasted_bell_pepper_yellow",
-		"rusticdelight:roasted_coffee_beans",
-		"rusticdelight:spring_rolls",
-		"rusticdelight:stuffed_bell_pepper_green",
-		"rusticdelight:stuffed_bell_pepper_red",
-		"rusticdelight:stuffed_bell_pepper_yellow",
-		"rusticdelight:syrup_cookie",
-		"rusticdelight:syrup_sandwich",
 		"starcatcher:agave_bream",
 		"starcatcher:amethystback",
 		"starcatcher:aquamarine_pike",
@@ -7519,7 +1989,6 @@
 		"starcatcher:willow_bream",
 		"starcatcher:wintery_pike",
 		"starcatcher:yellowstone_fish",
-		"supplementaries:candy",
 		"tconstruct:bacon",
 		"tconstruct:cheese_block",
 		"tconstruct:cheese_ingot",
@@ -7533,25 +2002,6 @@
 		"twilightforest:meef_stroganoff",
 		"twilightforest:raw_meef",
 		"twilightforest:raw_venison",
-		"ubesdelight:chicken_inasal",
-		"ubesdelight:cookie_ginger",
-		"ubesdelight:cookie_ube",
-		"ubesdelight:ensaymada",
-		"ubesdelight:garlic",
-		"ubesdelight:garlic_chop",
-		"ubesdelight:ginger",
-		"ubesdelight:ginger_chop",
-		"ubesdelight:hopia_munggo",
-		"ubesdelight:leche_flan",
-		"ubesdelight:lemongrass",
-		"ubesdelight:lumpia",
-		"ubesdelight:pandesal",
-		"ubesdelight:polvorone",
-		"ubesdelight:polvorone_cc",
-		"ubesdelight:polvorone_pinipig",
-		"ubesdelight:polvorone_ube",
-		"ubesdelight:tocino",
-		"ubesdelight:ube",
 		"undergarden:blisterberry",
 		"undergarden:cooked_gwibling",
 		"undergarden:dweller_steak",
@@ -7559,62 +2009,7 @@
 		"undergarden:raw_gloomper_leg",
 		"undergarden:raw_gwibling",
 		"undergarden:roasted_underbeans",
-		"undergarden:underbeans",
-		"undergardendelight:baked_gwibling_and_vegetables",
-		"undergardendelight:blood_tomato_soup",
-		"undergardendelight:cooked_dweller_meat_slice",
-		"undergardendelight:cooked_gloomper_cuts",
-		"undergardendelight:cooked_gwibling_fillet",
-		"undergardendelight:depth_shroom_cream_soup",
-		"undergardendelight:droopstew",
-		"undergardendelight:dweller_meat_slice",
-		"undergardendelight:glitterdish",
-		"undergardendelight:glitterwrap",
-		"undergardendelight:gloomgourd_pie_slice",
-		"undergardendelight:gloomgourd_slice",
-		"undergardendelight:gronglet_roll",
-		"undergardendelight:gronglet_with_roasted_veggies",
-		"undergardendelight:gronglunch",
-		"undergardendelight:mogsteak",
-		"undergardendelight:raw_gloomper_cuts",
-		"undergardendelight:raw_gwibling_fillet",
-		"undergardendelight:roasted_underbean_on_a_stick",
-		"undergardendelight:scintling_stew",
-		"undergardendelight:shimmerpearl",
-		"undergardendelight:stuffed_gloomgourd_bowl",
-		"undergardendelight:underbean_salad",
-		"veggiesdelight:baked_sweet_potato",
-		"veggiesdelight:bellpepper",
-		"veggiesdelight:broccoli",
-		"veggiesdelight:carrot_cake_slice",
-		"veggiesdelight:cauliflower",
-		"veggiesdelight:cauliflower_bread",
-		"veggiesdelight:cauliflower_floret",
-		"veggiesdelight:chicken_fajitas_wrap",
-		"veggiesdelight:cooked_vegetarian_patty",
-		"veggiesdelight:garlic_bread",
-		"veggiesdelight:garlic_clove",
-		"veggiesdelight:garlic_stuffed_mushrooms",
-		"veggiesdelight:mhadjeb",
-		"veggiesdelight:potato_noodle",
-		"veggiesdelight:raw_vegetarian_patty",
-		"veggiesdelight:roasted_cauliflower_floret",
-		"veggiesdelight:roasted_garlic_clove",
-		"veggiesdelight:roasted_zucchini",
-		"veggiesdelight:smoked_bellpepper",
-		"veggiesdelight:stuffed_zucchini_boat",
-		"veggiesdelight:sweet_potato",
-		"veggiesdelight:sweet_potato_pie_slice",
-		"veggiesdelight:turnip",
-		"veggiesdelight:turnip_mutton_skewer",
-		"veggiesdelight:uncooked_mhadjeb",
-		"veggiesdelight:vegan_pizza_slice",
-		"veggiesdelight:vegetables_wrap",
-		"veggiesdelight:vegetarian_burger",
-		"veggiesdelight:zucchini",
-		"veggiesdelight:zucchini_quiche_slice",
-		"veggiesdelight:zucchini_sandwich",
-		"veggiesdelight:zucchini_slice"
+		"undergarden:underbeans"
 	],
 	"errorCount": 0
 }

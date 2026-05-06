@@ -1,0 +1,21 @@
+{
+	id: "9CE4EAE5C8575E5D",
+	group: "default",
+	title: "Start",
+	icon: "minecraft:grass_block",
+	order_index: 10,
+	quests: [
+		{
+			id: "57ED0623C2B6B954",
+			title: "Start Here",
+			icon: "minecraft:book",
+			shape: "rsquare",
+			size: 1.0d,
+			x: 0.0d,
+			y: 0.0d,
+			description: ["Placeholder quest used to validate the quest graph pipeline."],
+			tasks: [{id: "C0C3D97DA50CFF76", type: "item", item: "minecraft:dirt", count: 1}],
+			rewards: []
+		}
+	]
+}

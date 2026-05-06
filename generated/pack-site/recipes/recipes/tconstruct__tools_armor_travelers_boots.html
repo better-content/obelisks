@@ -1,0 +1,71 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>tconstruct:tools/armor/travelers/boots</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>tconstruct:tools/armor/travelers/boots</h1>
+<p><b>Type:</b> tconstruct:crafting_shaped_materials | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../items/tconstruct__fake_ingot.html">tconstruct:fake_ingot</a></li><li><a href="../tags/forge__leather.html">#forge:leather</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/tconstruct__travelers_boots.html">tconstruct:travelers_boots</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: null
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;category&quot;: &quot;equipment&quot;,
+  &quot;extra_materials&quot;: [
+    &quot;tconstruct:leather&quot;
+  ],
+  &quot;key&quot;: {
+    &quot;c&quot;: [
+      {
+        &quot;material&quot;: {
+          &quot;predicates&quot;: [
+            {
+              &quot;predicates&quot;: [
+                &quot;tconstruct:castable&quot;,
+                &quot;tconstruct:composite&quot;
+              ],
+              &quot;type&quot;: &quot;mantle:or&quot;
+            },
+            {
+              &quot;stat_type&quot;: &quot;tconstruct:plating_boots&quot;,
+              &quot;type&quot;: &quot;tconstruct:stat_type&quot;
+            }
+          ],
+          &quot;type&quot;: &quot;mantle:and&quot;
+        },
+        &quot;type&quot;: &quot;tconstruct:material_value&quot;,
+        &quot;value&quot;: 1
+      },
+      {
+        &quot;item&quot;: &quot;tconstruct:fake_ingot&quot;,
+        &quot;material&quot;: {
+          &quot;stat_type&quot;: &quot;tconstruct:plating_boots&quot;,
+          &quot;type&quot;: &quot;tconstruct:stat_type&quot;
+        },
+        &quot;type&quot;: &quot;tconstruct:material&quot;
+      }
+    ],
+    &quot;l&quot;: {
+      &quot;tag&quot;: &quot;forge:leather&quot;
+    }
+  },
+  &quot;parts&quot;: &quot;c&quot;,
+  &quot;pattern&quot;: [
+    &quot;c c&quot;,
+    &quot;l l&quot;
+  ],
+  &quot;result&quot;: {
+    &quot;item&quot;: &quot;tconstruct:travelers_boots&quot;
+  },
+  &quot;show_notification&quot;: true,
+  &quot;type&quot;: &quot;tconstruct:crafting_shaped_materials&quot;
+}</pre></main></body></html>

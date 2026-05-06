@@ -1,0 +1,117 @@
+424717:
+
+Total Usage - 3387 loaders, 137902 classes:
+  Non-Class: 21478 chunks,   434.73 MB capacity,  434.05 MB (>99%) committed,   431.54 MB (>99%) used,     2.48 MB ( <1%) free,    22.07 KB ( <1%) waste , deallocated: 976 blocks with 298.46 KB
+      Class: 8884 chunks,    109.20 MB capacity,  109.02 MB (>99%) committed,   107.10 MB ( 98%) used,     1.92 MB (  2%) free,     1.02 KB ( <1%) waste , deallocated: 4918 blocks with 1.27 MB
+       Both: 30362 chunks,   543.94 MB capacity,  543.06 MB (>99%) committed,   538.64 MB (>99%) used,     4.40 MB ( <1%) free,    23.09 KB ( <1%) waste , deallocated: 5894 blocks with 1.57 MB
+
+
+Virtual space:
+  Non-class space:      448.00 MB reserved,     434.06 MB ( 97%) committed,  7 nodes.
+      Class space:        1.00 GB reserved,     109.06 MB ( 11%) committed,  1 nodes.
+             Both:        1.44 GB reserved,     543.12 MB ( 37%) committed. 
+
+
+Chunk freelists:
+   Non-Class:
+
+ 16m: (none)
+  8m:    2, capacity=16.00 MB, committed=0 bytes (  0%)
+  4m:    2, capacity=8.00 MB, committed=0 bytes (  0%)
+  2m: (none)
+  1m:    2, capacity=2.00 MB, committed=0 bytes (  0%)
+512k: (none)
+256k:    2, capacity=512.00 KB, committed=0 bytes (  0%)
+128k: (none)
+ 64k: (none)
+ 32k: (none)
+ 16k:    2, capacity=32.00 KB, committed=0 bytes (  0%)
+  8k: (none)
+  4k: (none)
+  2k: (none)
+  1k: (none)
+Total word size: 26.53 MB, committed: 0 bytes (  0%)
+
+       Class:
+
+ 16m: (none)
+  8m: (none)
+  4m: (none)
+  2m:    1, capacity=2.00 MB, committed=0 bytes (  0%)
+  1m: (none)
+512k:    1, capacity=512.00 KB, committed=0 bytes (  0%)
+256k:    1, capacity=256.00 KB, committed=0 bytes (  0%)
+128k: (none)
+ 64k: (none)
+ 32k:    1, capacity=32.00 KB, committed=0 bytes (  0%)
+ 16k: (none)
+  8k:    1, capacity=8.00 KB, committed=0 bytes (  0%)
+  4k:    1, capacity=4.00 KB, committed=0 bytes (  0%)
+  2k:    1, capacity=2.00 KB, committed=0 bytes (  0%)
+  1k:    1, capacity=1.00 KB, committed=0 bytes (  0%)
+Total word size: 2.80 MB, committed: 0 bytes (  0%)
+
+        Both:
+
+ 16m: (none)
+  8m:    2, capacity=16.00 MB, committed=0 bytes (  0%)
+  4m:    2, capacity=8.00 MB, committed=0 bytes (  0%)
+  2m:    1, capacity=2.00 MB, committed=0 bytes (  0%)
+  1m:    2, capacity=2.00 MB, committed=0 bytes (  0%)
+512k:    1, capacity=512.00 KB, committed=0 bytes (  0%)
+256k:    3, capacity=768.00 KB, committed=0 bytes (  0%)
+128k: (none)
+ 64k: (none)
+ 32k:    1, capacity=32.00 KB, committed=0 bytes (  0%)
+ 16k:    2, capacity=32.00 KB, committed=0 bytes (  0%)
+  8k:    1, capacity=8.00 KB, committed=0 bytes (  0%)
+  4k:    1, capacity=4.00 KB, committed=0 bytes (  0%)
+  2k:    1, capacity=2.00 KB, committed=0 bytes (  0%)
+  1k:    1, capacity=1.00 KB, committed=0 bytes (  0%)
+Total word size: 29.33 MB, committed: 0 bytes (  0%)
+
+
+
+Waste (unused committed space):(percentages refer to total committed size 543.12 MB):
+        Waste in chunks in use:     23.09 KB ( <1%)
+        Free in chunks in use:      4.40 MB ( <1%)
+                In free chunks:      0 bytes (  0%)
+Deallocated from chunks in use:      1.57 MB ( <1%) (5894 blocks)
+                       -total-:      5.99 MB (  1%)
+
+chunk header pool: 30376 items, 2.10 MB.
+
+Internal statistics:
+
+num_allocs_failed_limit: 539.
+num_arena_births: 6798.
+num_arena_deaths: 24.
+num_vsnodes_births: 8.
+num_vsnodes_deaths: 0.
+num_space_committed: 8681.
+num_space_uncommitted: 0.
+num_chunks_returned_to_freelist: 574.
+num_chunks_taken_from_freelist: 30398.
+num_chunk_merges: 539.
+num_chunk_splits: 21618.
+num_chunks_enlarged: 15641.
+num_inconsistent_stats: 0.
+
+
+Settings:
+MaxMetaspaceSize: unlimited
+CompressedClassSpaceSize: 1.00 GB
+Initial GC threshold: 21.00 MB
+Current GC threshold: 891.06 MB
+CDS: off
+MetaspaceReclaimPolicy: balanced
+ - commit_granule_bytes: 65536.
+ - commit_granule_words: 8192.
+ - virtual_space_node_default_size: 8388608.
+ - enlarge_chunks_in_place: 1.
+ - new_chunks_are_fully_committed: 0.
+ - uncommit_free_chunks: 1.
+ - use_allocation_guard: 0.
+ - handle_deallocations: 1.
+
+

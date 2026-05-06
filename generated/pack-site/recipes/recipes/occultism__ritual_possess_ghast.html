@@ -1,0 +1,80 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>occultism:ritual/possess_ghast</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>occultism:ritual/possess_ghast</h1>
+<p><b>Type:</b> occultism:ritual | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../tags/forge__netherrack.html">#forge:netherrack</a></li><li><a href="../tags/forge__netherrack.html">#forge:netherrack</a></li><li><a href="../tags/forge__netherrack.html">#forge:netherrack</a></li><li><a href="../tags/forge__magma.html">#forge:magma</a></li><li><a href="../tags/forge__magma.html">#forge:magma</a></li><li><a href="../tags/forge__magma.html">#forge:magma</a></li><li><a href="../items/minecraft__lava_bucket.html">minecraft:lava_bucket</a></li><li><a href="../items/minecraft__lava_bucket.html">minecraft:lava_bucket</a></li><li><a href="../items/minecraft__lava_bucket.html">minecraft:lava_bucket</a></li><li><a href="../tags/forge__gems_diamond.html">#forge:gems/diamond</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/minecraft__ghast_tear.html">minecraft:ghast_tear</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: 60
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;activation_item&quot;: {
+    &quot;item&quot;: &quot;occultism:book_of_binding_bound_djinni&quot;
+  },
+  &quot;duration&quot;: 60,
+  &quot;entity_to_sacrifice&quot;: {
+    &quot;display_name&quot;: &quot;ritual.occultism.sacrifice.cows&quot;,
+    &quot;tag&quot;: &quot;forge:cows&quot;
+  },
+  &quot;entity_to_summon&quot;: &quot;occultism:possessed_ghast&quot;,
+  &quot;ingredients&quot;: [
+    {
+      &quot;tag&quot;: &quot;forge:netherrack&quot;
+    },
+    {
+      &quot;tag&quot;: &quot;forge:netherrack&quot;
+    },
+    {
+      &quot;tag&quot;: &quot;forge:netherrack&quot;
+    },
+    {
+      &quot;tag&quot;: &quot;forge:magma&quot;
+    },
+    {
+      &quot;tag&quot;: &quot;forge:magma&quot;
+    },
+    {
+      &quot;tag&quot;: &quot;forge:magma&quot;
+    },
+    {
+      &quot;item&quot;: &quot;minecraft:lava_bucket&quot;
+    },
+    {
+      &quot;item&quot;: &quot;minecraft:lava_bucket&quot;
+    },
+    {
+      &quot;item&quot;: &quot;minecraft:lava_bucket&quot;
+    },
+    {
+      &quot;tag&quot;: &quot;forge:gems/diamond&quot;
+    }
+  ],
+  &quot;pentacle_id&quot;: &quot;occultism:possess_djinni&quot;,
+  &quot;result&quot;: {
+    &quot;item&quot;: &quot;minecraft:ghast_tear&quot;,
+    &quot;nbt&quot;: {
+      &quot;display&quot;: {
+        &quot;Lore&quot;: [
+          &quot;[{\&quot;translate\&quot;:\&quot;item.occultism.ritual_dummy.possess_ghast.tooltip\&quot;}]&quot;
+        ],
+        &quot;Name&quot;: &quot;[{\&quot;translate\&quot;:\&quot;item.occultism.ritual_dummy.possess_ghast\&quot;}]&quot;
+      }
+    }
+  },
+  &quot;ritual_dummy&quot;: {
+    &quot;item&quot;: &quot;occultism:ritual_dummy/possess_ghast&quot;
+  },
+  &quot;ritual_type&quot;: &quot;occultism:summon&quot;,
+  &quot;type&quot;: &quot;occultism:ritual&quot;
+}</pre></main></body></html>

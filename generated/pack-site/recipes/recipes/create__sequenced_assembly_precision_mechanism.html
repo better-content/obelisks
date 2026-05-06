@@ -1,0 +1,116 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>create:sequenced_assembly/precision_mechanism</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>create:sequenced_assembly/precision_mechanism</h1>
+<p><b>Type:</b> create:sequenced_assembly | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../tags/forge__plates_gold.html">#forge:plates/gold</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/create__precision_mechanism.html">create:precision_mechanism</a></li><li><a href="../items/chemlib__gold_plate.html">chemlib:gold_plate</a></li><li><a href="../items/create__andesite_alloy.html">create:andesite_alloy</a></li><li><a href="../items/create__cogwheel.html">create:cogwheel</a></li><li><a href="../items/minecraft__gold_nugget.html">minecraft:gold_nugget</a></li><li><a href="../items/create__shaft.html">create:shaft</a></li><li><a href="../items/create__crushed_raw_gold.html">create:crushed_raw_gold</a></li><li><a href="../items/minecraft__iron_ingot.html">minecraft:iron_ingot</a></li><li><a href="../items/minecraft__clock.html">minecraft:clock</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: null
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;ingredient&quot;: {
+    &quot;tag&quot;: &quot;forge:plates/gold&quot;
+  },
+  &quot;loops&quot;: 5,
+  &quot;results&quot;: [
+    {
+      &quot;chance&quot;: 120,
+      &quot;item&quot;: &quot;create:precision_mechanism&quot;
+    },
+    {
+      &quot;chance&quot;: 8,
+      &quot;item&quot;: &quot;chemlib:gold_plate&quot;
+    },
+    {
+      &quot;chance&quot;: 8,
+      &quot;item&quot;: &quot;create:andesite_alloy&quot;
+    },
+    {
+      &quot;chance&quot;: 5,
+      &quot;item&quot;: &quot;create:cogwheel&quot;
+    },
+    {
+      &quot;chance&quot;: 3,
+      &quot;item&quot;: &quot;minecraft:gold_nugget&quot;
+    },
+    {
+      &quot;chance&quot;: 2,
+      &quot;item&quot;: &quot;create:shaft&quot;
+    },
+    {
+      &quot;chance&quot;: 2,
+      &quot;item&quot;: &quot;create:crushed_raw_gold&quot;
+    },
+    {
+      &quot;item&quot;: &quot;minecraft:iron_ingot&quot;
+    },
+    {
+      &quot;item&quot;: &quot;minecraft:clock&quot;
+    }
+  ],
+  &quot;sequence&quot;: [
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;create:incomplete_precision_mechanism&quot;
+        },
+        {
+          &quot;item&quot;: &quot;create:cogwheel&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;create:incomplete_precision_mechanism&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:deploying&quot;
+    },
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;create:incomplete_precision_mechanism&quot;
+        },
+        {
+          &quot;item&quot;: &quot;create:large_cogwheel&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;create:incomplete_precision_mechanism&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:deploying&quot;
+    },
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;create:incomplete_precision_mechanism&quot;
+        },
+        {
+          &quot;tag&quot;: &quot;forge:nuggets/iron&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;create:incomplete_precision_mechanism&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:deploying&quot;
+    }
+  ],
+  &quot;transitionalItem&quot;: {
+    &quot;item&quot;: &quot;create:incomplete_precision_mechanism&quot;
+  },
+  &quot;type&quot;: &quot;create:sequenced_assembly&quot;
+}</pre></main></body></html>

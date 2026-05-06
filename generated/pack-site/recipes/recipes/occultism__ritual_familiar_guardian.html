@@ -1,0 +1,68 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>occultism:ritual/familiar_guardian</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>occultism:ritual/familiar_guardian</h1>
+<p><b>Type:</b> occultism:ritual | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../tags/forge__gems_diamond.html">#forge:gems/diamond</a></li><li><a href="../tags/forge__gems_diamond.html">#forge:gems/diamond</a></li><li><a href="../tags/forge__gems_diamond.html">#forge:gems/diamond</a></li><li><a href="../tags/forge__gems_diamond.html">#forge:gems/diamond</a></li><li><a href="../items/minecraft__golden_apple.html">minecraft:golden_apple</a></li><li><a href="../items/minecraft__golden_apple.html">minecraft:golden_apple</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/occultism__spawn_egg_familiar_guardian.html">occultism:spawn_egg/familiar_guardian</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: 60
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;activation_item&quot;: {
+    &quot;item&quot;: &quot;occultism:book_of_binding_bound_afrit&quot;
+  },
+  &quot;duration&quot;: 60,
+  &quot;entity_to_sacrifice&quot;: {
+    &quot;display_name&quot;: &quot;ritual.occultism.sacrifice.humans&quot;,
+    &quot;tag&quot;: &quot;occultism:humans&quot;
+  },
+  &quot;entity_to_summon&quot;: &quot;occultism:guardian_familiar&quot;,
+  &quot;ingredients&quot;: [
+    {
+      &quot;tag&quot;: &quot;forge:gems/diamond&quot;
+    },
+    {
+      &quot;tag&quot;: &quot;forge:gems/diamond&quot;
+    },
+    {
+      &quot;tag&quot;: &quot;forge:gems/diamond&quot;
+    },
+    {
+      &quot;tag&quot;: &quot;forge:gems/diamond&quot;
+    },
+    {
+      &quot;item&quot;: &quot;minecraft:golden_apple&quot;
+    },
+    {
+      &quot;item&quot;: &quot;minecraft:golden_apple&quot;
+    }
+  ],
+  &quot;pentacle_id&quot;: &quot;occultism:possess_afrit&quot;,
+  &quot;result&quot;: {
+    &quot;item&quot;: &quot;occultism:spawn_egg/familiar_guardian&quot;,
+    &quot;nbt&quot;: {
+      &quot;display&quot;: {
+        &quot;Lore&quot;: [
+          &quot;[{\&quot;translate\&quot;:\&quot;item.occultism.ritual_dummy.familiar_guardian.tooltip\&quot;}]&quot;
+        ],
+        &quot;Name&quot;: &quot;[{\&quot;translate\&quot;:\&quot;item.occultism.ritual_dummy.familiar_guardian\&quot;}]&quot;
+      }
+    }
+  },
+  &quot;ritual_dummy&quot;: {
+    &quot;item&quot;: &quot;occultism:ritual_dummy/familiar_guardian&quot;
+  },
+  &quot;ritual_type&quot;: &quot;occultism:familiar&quot;,
+  &quot;type&quot;: &quot;occultism:ritual&quot;
+}</pre></main></body></html>

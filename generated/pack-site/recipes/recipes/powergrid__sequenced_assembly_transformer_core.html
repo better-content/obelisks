@@ -1,0 +1,81 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>powergrid:sequenced_assembly/transformer_core</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>powergrid:sequenced_assembly/transformer_core</h1>
+<p><b>Type:</b> create:sequenced_assembly | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../tags/forge__plates_iron.html">#forge:plates/iron</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/powergrid__transformer_core.html">powergrid:transformer_core</a></li><li><a href="../items/minecraft__iron_door.html">minecraft:iron_door</a></li><li><a href="../items/minecraft__cauldron.html">minecraft:cauldron</a></li><li><a href="../items/chemlib__iron_plate.html">chemlib:iron_plate</a></li><li><a href="../items/minecraft__iron_ingot.html">minecraft:iron_ingot</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: null
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;ingredient&quot;: {
+    &quot;tag&quot;: &quot;forge:plates/iron&quot;
+  },
+  &quot;loops&quot;: 3,
+  &quot;results&quot;: [
+    {
+      &quot;chance&quot;: 100,
+      &quot;item&quot;: &quot;powergrid:transformer_core&quot;
+    },
+    {
+      &quot;chance&quot;: 5,
+      &quot;item&quot;: &quot;minecraft:iron_door&quot;
+    },
+    {
+      &quot;chance&quot;: 3,
+      &quot;item&quot;: &quot;minecraft:cauldron&quot;
+    },
+    {
+      &quot;item&quot;: &quot;chemlib:iron_plate&quot;
+    },
+    {
+      &quot;item&quot;: &quot;minecraft:iron_ingot&quot;
+    }
+  ],
+  &quot;sequence&quot;: [
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;powergrid:incomplete_transformer_core&quot;
+        },
+        {
+          &quot;tag&quot;: &quot;forge:plates/iron&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;powergrid:incomplete_transformer_core&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:deploying&quot;
+    },
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;powergrid:incomplete_transformer_core&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;powergrid:incomplete_transformer_core&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:pressing&quot;
+    }
+  ],
+  &quot;transitionalItem&quot;: {
+    &quot;item&quot;: &quot;powergrid:incomplete_transformer_core&quot;
+  },
+  &quot;type&quot;: &quot;create:sequenced_assembly&quot;
+}</pre></main></body></html>

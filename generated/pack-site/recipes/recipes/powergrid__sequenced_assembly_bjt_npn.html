@@ -1,0 +1,95 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>powergrid:sequenced_assembly/bjt_npn</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>powergrid:sequenced_assembly/bjt_npn</h1>
+<p><b>Type:</b> create:sequenced_assembly | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../tags/forge__plates_iron.html">#forge:plates/iron</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/powergrid__bjt_npn.html">powergrid:bjt_npn</a></li><li><a href="../items/powergrid__bjt_pnp.html">powergrid:bjt_pnp</a></li><li><a href="../items/chemlib__iron_plate.html">chemlib:iron_plate</a></li><li><a href="../items/create__electron_tube.html">create:electron_tube</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: null
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;ingredient&quot;: {
+    &quot;tag&quot;: &quot;forge:plates/iron&quot;
+  },
+  &quot;loops&quot;: 1,
+  &quot;results&quot;: [
+    {
+      &quot;chance&quot;: 100,
+      &quot;item&quot;: &quot;powergrid:bjt_npn&quot;
+    },
+    {
+      &quot;chance&quot;: 10,
+      &quot;item&quot;: &quot;powergrid:bjt_pnp&quot;
+    },
+    {
+      &quot;chance&quot;: 3,
+      &quot;item&quot;: &quot;chemlib:iron_plate&quot;
+    },
+    {
+      &quot;chance&quot;: 3,
+      &quot;item&quot;: &quot;create:electron_tube&quot;
+    }
+  ],
+  &quot;sequence&quot;: [
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;powergrid:incomplete_bjt_npn&quot;
+        },
+        {
+          &quot;item&quot;: &quot;create:polished_rose_quartz&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;powergrid:incomplete_bjt_npn&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:deploying&quot;
+    },
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;powergrid:incomplete_bjt_npn&quot;
+        },
+        {
+          &quot;tag&quot;: &quot;forge:wires/gold&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;powergrid:incomplete_bjt_npn&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:deploying&quot;
+    },
+    {
+      &quot;ingredients&quot;: [
+        {
+          &quot;item&quot;: &quot;powergrid:incomplete_bjt_npn&quot;
+        }
+      ],
+      &quot;results&quot;: [
+        {
+          &quot;item&quot;: &quot;powergrid:incomplete_bjt_npn&quot;
+        }
+      ],
+      &quot;type&quot;: &quot;create:pressing&quot;
+    }
+  ],
+  &quot;transitionalItem&quot;: {
+    &quot;item&quot;: &quot;powergrid:incomplete_bjt_npn&quot;
+  },
+  &quot;type&quot;: &quot;create:sequenced_assembly&quot;
+}</pre></main></body></html>

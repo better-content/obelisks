@@ -1,0 +1,56 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>malum:create/crushing/crush_brilliance_stone</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>malum:create/crushing/crush_brilliance_stone</h1>
+<p><b>Type:</b> create:crushing | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../items/malum__brilliant_stone.html">malum:brilliant_stone</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/malum__crushed_brilliance.html">malum:crushed_brilliance</a></li><li><a href="../items/malum__crushed_brilliance.html">malum:crushed_brilliance</a></li><li><a href="../items/create__experience_nugget.html">create:experience_nugget</a></li><li><a href="../items/minecraft__cobblestone.html">minecraft:cobblestone</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: 300
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;conditions&quot;: [
+    {
+      &quot;modid&quot;: &quot;create&quot;,
+      &quot;type&quot;: &quot;forge:mod_loaded&quot;
+    }
+  ],
+  &quot;ingredients&quot;: [
+    {
+      &quot;item&quot;: &quot;malum:brilliant_stone&quot;
+    }
+  ],
+  &quot;processingTime&quot;: 300,
+  &quot;results&quot;: [
+    {
+      &quot;count&quot;: 1,
+      &quot;item&quot;: &quot;malum:crushed_brilliance&quot;
+    },
+    {
+      &quot;chance&quot;: 0.75,
+      &quot;count&quot;: 1,
+      &quot;item&quot;: &quot;malum:crushed_brilliance&quot;
+    },
+    {
+      &quot;chance&quot;: 0.75,
+      &quot;count&quot;: 3,
+      &quot;item&quot;: &quot;create:experience_nugget&quot;
+    },
+    {
+      &quot;chance&quot;: 0.125,
+      &quot;count&quot;: 1,
+      &quot;item&quot;: &quot;minecraft:cobblestone&quot;
+    }
+  ],
+  &quot;type&quot;: &quot;create:crushing&quot;
+}</pre></main></body></html>

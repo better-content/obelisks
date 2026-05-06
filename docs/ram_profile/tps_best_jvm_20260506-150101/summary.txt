@@ -1,0 +1,6 @@
+status=PASS
+reason=tps_samples_collected
+samples=10
+interval_sec=30
+jvm_args=-Xms2000M -Xmx5120M -XX:-UseTransparentHugePages
+server_log=/home/gerald/obelisks/docs/ram_profile/tps_best_jvm_20260506-150101/server-console.log

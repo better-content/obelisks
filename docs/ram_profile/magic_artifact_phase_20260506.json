@@ -1,0 +1,24 @@
+[
+  {
+    "name": "baseline",
+    "description": "full pack, no jars disabled",
+    "disable": []
+  },
+  {
+    "name": "no_magic_artifact_set",
+    "description": "Botania, Malum, Occultism, Theurgy, Apotheosis, Apothic Attributes, Apotheotic Additions, Dynamic Trees Malum, Reliquary, Relics, and Artifacts disabled",
+    "disable": [
+      "^Botania-.*\\.jar$",
+      "^malum-.*\\.jar$",
+      "^occultism-.*\\.jar$",
+      "^theurgy-.*\\.jar$",
+      "^Apotheosis-.*\\.jar$",
+      "^ApotheoticAdditions.*\\.jar$",
+      "^ApothicAttributes-.*\\.jar$",
+      "^dtmalum-.*\\.jar$",
+      "^reliquary-.*\\.jar$",
+      "^relics-.*\\.jar$",
+      "^artifacts-forge-.*\\.jar$"
+    ]
+  }
+]

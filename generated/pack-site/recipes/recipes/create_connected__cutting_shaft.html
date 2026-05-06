@@ -1,0 +1,40 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>create_connected:cutting/shaft</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>create_connected:cutting/shaft</h1>
+<p><b>Type:</b> create:cutting | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../items/create__shaft.html">create:shaft</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/create_connected__shear_pin.html">create_connected:shear_pin</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: 200
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;conditions&quot;: [
+    {
+      &quot;feature&quot;: &quot;create_connected:shear_pin&quot;,
+      &quot;type&quot;: &quot;create_connected:feature_enabled&quot;
+    }
+  ],
+  &quot;ingredients&quot;: [
+    {
+      &quot;item&quot;: &quot;create:shaft&quot;
+    }
+  ],
+  &quot;processingTime&quot;: 200,
+  &quot;results&quot;: [
+    {
+      &quot;item&quot;: &quot;create_connected:shear_pin&quot;
+    }
+  ],
+  &quot;type&quot;: &quot;create:cutting&quot;
+}</pre></main></body></html>

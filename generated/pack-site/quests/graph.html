@@ -1,0 +1,15 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Quest Graph</title><link rel="stylesheet" href="../assets/site.css"></head>
+<body><main><p><a href="../index.html">Pack Cockpit</a></p>
+    <h1>Quest Graph</h1>
+    <div class="toolbar">
+      <input id="graph-search" placeholder="Search graph">
+      <select id="graph-kind"><option value="">All node types</option></select>
+    </div>
+    <div id="graph"></div>
+    <aside id="graph-details">Select a node.</aside>
+    <script src="../assets/cytoscape.min.js"></script>
+    <script src="../assets/quest-graph-data.js"></script>
+    <script>window.GRAPH_DATA = window.QUEST_GRAPH;</script>
+    <script src="../assets/graph.js"></script>
+    </main></body></html>

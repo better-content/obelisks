@@ -1,0 +1,61 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>occultism:ritual/possess_endermite</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>occultism:ritual/possess_endermite</h1>
+<p><b>Type:</b> occultism:ritual | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../items/minecraft__dirt.html">minecraft:dirt</a></li><li><a href="../items/minecraft__stone.html">minecraft:stone</a></li><li><a href="../items/minecraft__dirt.html">minecraft:dirt</a></li><li><a href="../items/minecraft__stone.html">minecraft:stone</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/minecraft__end_stone.html">minecraft:end_stone</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: 30
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;activation_item&quot;: {
+    &quot;item&quot;: &quot;occultism:book_of_binding_bound_foliot&quot;
+  },
+  &quot;duration&quot;: 30,
+  &quot;entity_to_summon&quot;: &quot;occultism:possessed_endermite&quot;,
+  &quot;ingredients&quot;: [
+    {
+      &quot;item&quot;: &quot;minecraft:dirt&quot;
+    },
+    {
+      &quot;item&quot;: &quot;minecraft:stone&quot;
+    },
+    {
+      &quot;item&quot;: &quot;minecraft:dirt&quot;
+    },
+    {
+      &quot;item&quot;: &quot;minecraft:stone&quot;
+    }
+  ],
+  &quot;item_to_use&quot;: {
+    &quot;item&quot;: &quot;minecraft:egg&quot;
+  },
+  &quot;pentacle_id&quot;: &quot;occultism:possess_foliot&quot;,
+  &quot;result&quot;: {
+    &quot;item&quot;: &quot;minecraft:end_stone&quot;,
+    &quot;nbt&quot;: {
+      &quot;display&quot;: {
+        &quot;Lore&quot;: [
+          &quot;[{\&quot;translate\&quot;:\&quot;item.occultism.ritual_dummy.possess_endermite.tooltip\&quot;}]&quot;
+        ],
+        &quot;Name&quot;: &quot;[{\&quot;translate\&quot;:\&quot;item.occultism.ritual_dummy.possess_endermite\&quot;}]&quot;
+      }
+    }
+  },
+  &quot;ritual_dummy&quot;: {
+    &quot;item&quot;: &quot;occultism:ritual_dummy/possess_endermite&quot;
+  },
+  &quot;ritual_type&quot;: &quot;occultism:summon&quot;,
+  &quot;type&quot;: &quot;occultism:ritual&quot;
+}</pre></main></body></html>

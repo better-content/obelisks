@@ -83,7 +83,7 @@
 
 	[gamerules.updates]
 		#Whether the daylight cycle and moon phases progress.
-		do_daylight_cycle = true
+		do_daylight_cycle = false
 		#Whether fire should spread and naturally extinguish
 		do_fire_tick = true
 		#Whether vines can spread to other blocks. Cave vines, weeping vines, and twisting vines are not affected.
@@ -107,7 +107,7 @@
 		#Whether mobs should naturally spawn. Does not affect monster spawners.
 		do_mob_spawning = true
 		#Whether patrols can spawn.
-		do_patrol_spawning = true
+		do_patrol_spawning = false
 		#Whether wandering traders can spawn.
 		do_trader_spawning = true
 		#Whether wardens can spawn.
@@ -171,6 +171,7 @@
 			seasonalEvents = true
 			cravingsStreaks = true
 			cravingsPalateCleanser = true
+			slushSourceConversion = false
 
 			[gamerules.modded.player.artifacts]
 

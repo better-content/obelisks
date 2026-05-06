@@ -1,0 +1,53 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>protection_pixel:jetloot</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>protection_pixel:jetloot</h1>
+<p><b>Type:</b> create:mechanical_crafting | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../tags/forge__ingots_iron.html">#forge:ingots/iron</a></li><li><a href="../items/create__precision_mechanism.html">create:precision_mechanism</a></li><li><a href="../items/create__chute.html">create:chute</a></li><li><a href="../items/create__mechanical_pump.html">create:mechanical_pump</a></li><li><a href="../items/create__fluid_tank.html">create:fluid_tank</a></li><li><a href="../items/create__andesite_alloy.html">create:andesite_alloy</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/protection_pixel__heatpulsethruster.html">protection_pixel:heatpulsethruster</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: null
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;acceptMirrored&quot;: true,
+  &quot;key&quot;: {
+    &quot;A&quot;: {
+      &quot;tag&quot;: &quot;forge:ingots/iron&quot;
+    },
+    &quot;B&quot;: {
+      &quot;item&quot;: &quot;create:precision_mechanism&quot;
+    },
+    &quot;C&quot;: {
+      &quot;item&quot;: &quot;create:chute&quot;
+    },
+    &quot;D&quot;: {
+      &quot;item&quot;: &quot;create:mechanical_pump&quot;
+    },
+    &quot;E&quot;: {
+      &quot;item&quot;: &quot;create:fluid_tank&quot;
+    },
+    &quot;F&quot;: {
+      &quot;item&quot;: &quot;create:andesite_alloy&quot;
+    }
+  },
+  &quot;pattern&quot;: [
+    &quot; ABA &quot;,
+    &quot;CDEDC&quot;,
+    &quot;CFFFC&quot;
+  ],
+  &quot;result&quot;: {
+    &quot;count&quot;: 1,
+    &quot;item&quot;: &quot;protection_pixel:heatpulsethruster&quot;
+  },
+  &quot;type&quot;: &quot;create:mechanical_crafting&quot;
+}</pre></main></body></html>

@@ -8,7 +8,7 @@ var BTM_CREATE_DEPOSITS = [
     { id: 'tin', tag: 'kubejs:deposit_blocks/tin', crushed: 'realisticores:crushed_tin_ore', wash: [{ item: 'create:crushed_raw_tin', count: 2 }, { item: 'minecraft:quartz', chance: 0.40 }, { item: 'chemlib:tungsten', chance: 0.12 }], fluid: 'forge:molten_tin', amount: 180, temp: 225 },
     { id: 'zinc', tag: 'kubejs:deposit_blocks/zinc', crushed: 'realisticores:crushed_zinc_ore', wash: [{ item: 'create:crushed_raw_zinc', count: 2 }, { item: 'create:crushed_raw_lead', chance: 0.30 }, { item: 'chemlib:cadmium', chance: 0.12 }], fluid: 'forge:molten_zinc', amount: 180, temp: 420 },
     { id: 'lead_zinc_vein', tag: 'kubejs:deposit_blocks/lead_zinc_vein', crushed: 'realisticores:crushed_lead_zinc_vein', wash: [{ item: 'create:crushed_raw_lead', count: 2 }, { item: 'create:crushed_raw_zinc', chance: 0.45 }, { item: 'create:crushed_raw_silver', chance: 0.25 }], fluid: 'forge:molten_lead', amount: 180, temp: 420 },
-    { id: 'quartz_vein', tag: 'kubejs:deposit_blocks/quartz_vein', crushed: 'realisticores:crushed_quartz_vein', wash: [{ item: 'minecraft:quartz', count: 3 }, { item: 'chemlib:silicon', chance: 0.35 }, { item: 'create:crushed_raw_gold', chance: 0.12 }, { item: 'create:crushed_raw_copper', chance: 0.12 }], fluid: 'forge:molten_quartz', amount: 100, temp: 700 },
+    { id: 'quartz_vein', tag: 'kubejs:deposit_blocks/quartz_vein', crushed: 'realisticores:crushed_quartz_vein', wash: [{ item: 'minecraft:quartz', count: 3 }, { item: 'chemlib:silicon', chance: 0.35 }, { item: 'create:crushed_raw_gold', chance: 0.12 }, { item: 'create:crushed_raw_copper', chance: 0.12 }], fluid: 'tconstruct:molten_quartz', amount: 100, temp: 700 },
     { id: 'bauxite_laterite', tag: 'kubejs:deposit_blocks/bauxite_laterite', crushed: 'realisticores:crushed_bauxite_laterite', wash: [{ item: 'create:crushed_raw_aluminum', count: 2 }, { item: 'create:crushed_raw_iron', chance: 0.35 }, { item: 'create:crushed_raw_nickel', chance: 0.20 }], fluid: 'forge:molten_aluminum', amount: 180, temp: 660 },
     { id: 'nickel_sulfide', tag: 'kubejs:deposit_blocks/nickel_sulfide', crushed: 'realisticores:crushed_nickel_sulfide_ore', wash: [{ item: 'create:crushed_raw_nickel', count: 2 }, { item: 'create:crushed_raw_iron', chance: 0.35 }, { item: 'chemlib:sulfur', chance: 0.35 }, { item: 'chemlib:platinum', chance: 0.08 }], fluid: 'forge:molten_nickel', amount: 180, temp: 700 },
     { id: 'tin_tungsten_greisen', tag: 'kubejs:deposit_blocks/tin_tungsten_greisen', crushed: 'realisticores:crushed_tin_tungsten_greisen', wash: [{ item: 'create:crushed_raw_tin', count: 1 }, { item: 'chemlib:tungsten', count: 1 }, { item: 'chemlib:silicon', chance: 0.35 }], fluid: 'forge:molten_tin', amount: 120, temp: 700 },
@@ -29,6 +29,13 @@ function btmResult(entry) {
     if (entry.count) result.count = entry.count
     if (entry.chance) result.chance = entry.chance
     return result
+}
+
+function btmFluidOutput(ref, amount) {
+    var output = { amount: amount }
+    if (ref.indexOf('forge:') === 0) output.tag = ref
+    else output.fluid = ref
+    return output
 }
 
 ServerEvents.recipes(function (event) {
@@ -59,7 +66,7 @@ ServerEvents.recipes(function (event) {
             event.custom({
                 type: 'tconstruct:melting',
                 ingredient: { item: dep.crushed },
-                result: { amount: dep.amount, tag: dep.fluid },
+                result: btmFluidOutput(dep.fluid, dep.amount),
                 temperature: dep.temp,
                 time: 120
             }).id('kubejs:tconstruct/melting/crushed_deposit/' + dep.id)
@@ -67,7 +74,7 @@ ServerEvents.recipes(function (event) {
             event.custom({
                 type: 'tconstruct:ore_melting',
                 ingredient: { item: dep.crushed },
-                result: { amount: dep.amount + 90, tag: dep.fluid },
+                result: btmFluidOutput(dep.fluid, dep.amount + 90),
                 rate: 'metal',
                 temperature: dep.temp,
                 time: 160

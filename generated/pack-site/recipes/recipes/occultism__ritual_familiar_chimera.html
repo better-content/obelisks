@@ -1,0 +1,77 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>occultism:ritual/familiar_chimera</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>occultism:ritual/familiar_chimera</h1>
+<p><b>Type:</b> occultism:ritual | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../tags/forge__leather.html">#forge:leather</a></li><li><a href="../tags/forge__string.html">#forge:string</a></li><li><a href="../tags/forge__feathers.html">#forge:feathers</a></li><li><a href="../tags/minecraft__wool.html">#minecraft:wool</a></li><li><a href="../tags/forge__bones.html">#forge:bones</a></li><li><a href="../items/minecraft__mutton.html">minecraft:mutton</a></li><li><a href="../items/minecraft__beef.html">minecraft:beef</a></li><li><a href="../items/minecraft__porkchop.html">minecraft:porkchop</a></li><li><a href="../items/minecraft__chicken.html">minecraft:chicken</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/occultism__spawn_egg_familiar_chimera.html">occultism:spawn_egg/familiar_chimera</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: 60
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;activation_item&quot;: {
+    &quot;item&quot;: &quot;occultism:book_of_binding_bound_djinni&quot;
+  },
+  &quot;duration&quot;: 60,
+  &quot;entity_to_sacrifice&quot;: {
+    &quot;display_name&quot;: &quot;ritual.occultism.sacrifice.sheep&quot;,
+    &quot;tag&quot;: &quot;forge:sheep&quot;
+  },
+  &quot;entity_to_summon&quot;: &quot;occultism:chimera_familiar&quot;,
+  &quot;ingredients&quot;: [
+    {
+      &quot;tag&quot;: &quot;forge:leather&quot;
+    },
+    {
+      &quot;tag&quot;: &quot;forge:string&quot;
+    },
+    {
+      &quot;tag&quot;: &quot;forge:feathers&quot;
+    },
+    {
+      &quot;tag&quot;: &quot;minecraft:wool&quot;
+    },
+    {
+      &quot;tag&quot;: &quot;forge:bones&quot;
+    },
+    {
+      &quot;item&quot;: &quot;minecraft:mutton&quot;
+    },
+    {
+      &quot;item&quot;: &quot;minecraft:beef&quot;
+    },
+    {
+      &quot;item&quot;: &quot;minecraft:porkchop&quot;
+    },
+    {
+      &quot;item&quot;: &quot;minecraft:chicken&quot;
+    }
+  ],
+  &quot;pentacle_id&quot;: &quot;occultism:possess_djinni&quot;,
+  &quot;result&quot;: {
+    &quot;item&quot;: &quot;occultism:spawn_egg/familiar_chimera&quot;,
+    &quot;nbt&quot;: {
+      &quot;display&quot;: {
+        &quot;Lore&quot;: [
+          &quot;[{\&quot;translate\&quot;:\&quot;item.occultism.ritual_dummy.familiar_chimera.tooltip\&quot;}]&quot;
+        ],
+        &quot;Name&quot;: &quot;[{\&quot;translate\&quot;:\&quot;item.occultism.ritual_dummy.familiar_chimera\&quot;}]&quot;
+      }
+    }
+  },
+  &quot;ritual_dummy&quot;: {
+    &quot;item&quot;: &quot;occultism:ritual_dummy/familiar_chimera&quot;
+  },
+  &quot;ritual_type&quot;: &quot;occultism:familiar&quot;,
+  &quot;type&quot;: &quot;occultism:ritual&quot;
+}</pre></main></body></html>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>occultism:ritual/possess_phantom</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>occultism:ritual/possess_phantom</h1>
+<p><b>Type:</b> occultism:ritual | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../tags/forge__leather.html">#forge:leather</a></li><li><a href="../tags/forge__feathers.html">#forge:feathers</a></li><li><a href="../tags/forge__leather.html">#forge:leather</a></li><li><a href="../tags/forge__feathers.html">#forge:feathers</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/minecraft__phantom_membrane.html">minecraft:phantom_membrane</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: 30
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;activation_item&quot;: {
+    &quot;item&quot;: &quot;occultism:book_of_binding_bound_foliot&quot;
+  },
+  &quot;duration&quot;: 30,
+  &quot;entity_to_sacrifice&quot;: {
+    &quot;display_name&quot;: &quot;ritual.occultism.sacrifice.flying_passive&quot;,
+    &quot;tag&quot;: &quot;occultism:flying_passive&quot;
+  },
+  &quot;entity_to_summon&quot;: &quot;occultism:possessed_phantom&quot;,
+  &quot;ingredients&quot;: [
+    {
+      &quot;tag&quot;: &quot;forge:leather&quot;
+    },
+    {
+      &quot;tag&quot;: &quot;forge:feathers&quot;
+    },
+    {
+      &quot;tag&quot;: &quot;forge:leather&quot;
+    },
+    {
+      &quot;tag&quot;: &quot;forge:feathers&quot;
+    }
+  ],
+  &quot;pentacle_id&quot;: &quot;occultism:possess_foliot&quot;,
+  &quot;result&quot;: {
+    &quot;item&quot;: &quot;minecraft:phantom_membrane&quot;,
+    &quot;nbt&quot;: {
+      &quot;display&quot;: {
+        &quot;Lore&quot;: [
+          &quot;[{\&quot;translate\&quot;:\&quot;item.occultism.ritual_dummy.possess_phantom.tooltip\&quot;}]&quot;
+        ],
+        &quot;Name&quot;: &quot;[{\&quot;translate\&quot;:\&quot;item.occultism.ritual_dummy.possess_phantom\&quot;}]&quot;
+      }
+    }
+  },
+  &quot;ritual_dummy&quot;: {
+    &quot;item&quot;: &quot;occultism:ritual_dummy/possess_phantom&quot;
+  },
+  &quot;ritual_type&quot;: &quot;occultism:summon&quot;,
+  &quot;type&quot;: &quot;occultism:ritual&quot;
+}</pre></main></body></html>

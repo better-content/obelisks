@@ -1,0 +1,61 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>create_central_kitchen:compacting/cake</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>create_central_kitchen:compacting/cake</h1>
+<p><b>Type:</b> create:compacting | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../tags/forge__eggs.html">#forge:eggs</a></li><li><a href="../items/minecraft__sugar.html">minecraft:sugar</a></li><li><a href="../items/minecraft__sugar.html">minecraft:sugar</a></li><li><a href="../tags/forge__flour_wheat.html">#forge:flour/wheat</a></li><li><a href="../tags/forge__flour_wheat.html">#forge:flour/wheat</a></li><li><a href="../tags/forge__flour_wheat.html">#forge:flour/wheat</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/minecraft__cake.html">minecraft:cake</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: null
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;conditions&quot;: [
+    {
+      &quot;type&quot;: &quot;forge:not&quot;,
+      &quot;value&quot;: {
+        &quot;modid&quot;: &quot;createaddition&quot;,
+        &quot;type&quot;: &quot;forge:mod_loaded&quot;
+      }
+    }
+  ],
+  &quot;ingredients&quot;: [
+    {
+      &quot;tag&quot;: &quot;forge:eggs&quot;
+    },
+    {
+      &quot;item&quot;: &quot;minecraft:sugar&quot;
+    },
+    {
+      &quot;item&quot;: &quot;minecraft:sugar&quot;
+    },
+    {
+      &quot;tag&quot;: &quot;forge:flour/wheat&quot;
+    },
+    {
+      &quot;tag&quot;: &quot;forge:flour/wheat&quot;
+    },
+    {
+      &quot;tag&quot;: &quot;forge:flour/wheat&quot;
+    },
+    {
+      &quot;amount&quot;: 1000,
+      &quot;fluidTag&quot;: &quot;forge:milk&quot;
+    }
+  ],
+  &quot;results&quot;: [
+    {
+      &quot;item&quot;: &quot;minecraft:cake&quot;
+    }
+  ],
+  &quot;type&quot;: &quot;create:compacting&quot;
+}</pre></main></body></html>

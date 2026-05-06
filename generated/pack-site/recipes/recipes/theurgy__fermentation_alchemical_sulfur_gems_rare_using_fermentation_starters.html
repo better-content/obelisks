@@ -1,0 +1,56 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>theurgy:fermentation/alchemical_sulfur_gems_rare_using_fermentation_starters</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>theurgy:fermentation/alchemical_sulfur_gems_rare_using_fermentation_starters</h1>
+<p><b>Type:</b> theurgy:fermentation | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../tags/theurgy__alchemical_sulfurs_gems_rare.html">#theurgy:alchemical_sulfurs/gems/rare</a></li><li><a href="../tags/theurgy__fermentation_starters.html">#theurgy:fermentation_starters</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/theurgy__alchemical_sulfur_gems_rare.html">theurgy:alchemical_sulfur_gems_rare</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: 200
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;conditions&quot;: [
+    {
+      &quot;type&quot;: &quot;forge:not&quot;,
+      &quot;value&quot;: {
+        &quot;tag&quot;: &quot;theurgy:alchemical_sulfurs/gems/rare&quot;,
+        &quot;type&quot;: &quot;forge:tag_empty&quot;
+      }
+    },
+    {
+      &quot;type&quot;: &quot;forge:not&quot;,
+      &quot;value&quot;: {
+        &quot;tag&quot;: &quot;theurgy:fermentation_starters&quot;,
+        &quot;type&quot;: &quot;forge:tag_empty&quot;
+      }
+    }
+  ],
+  &quot;fluid&quot;: {
+    &quot;tag&quot;: &quot;minecraft:water&quot;
+  },
+  &quot;fluidAmount&quot;: 500,
+  &quot;ingredients&quot;: [
+    {
+      &quot;tag&quot;: &quot;theurgy:alchemical_sulfurs/gems/rare&quot;
+    },
+    {
+      &quot;tag&quot;: &quot;theurgy:fermentation_starters&quot;
+    }
+  ],
+  &quot;result&quot;: {
+    &quot;Count&quot;: 1,
+    &quot;id&quot;: &quot;theurgy:alchemical_sulfur_gems_rare&quot;
+  },
+  &quot;time&quot;: 200,
+  &quot;type&quot;: &quot;theurgy:fermentation&quot;
+}</pre></main></body></html>

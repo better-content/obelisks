@@ -1,0 +1,44 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>tconstruct:tools/materials/necronium</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>tconstruct:tools/materials/necronium</h1>
+<p><b>Type:</b> tconstruct:material | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../items/tconstruct__necronium_bone.html">tconstruct:necronium_bone</a></li></ul>
+<h2>Outputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: null
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;conditions&quot;: [
+    {
+      &quot;type&quot;: &quot;forge:or&quot;,
+      &quot;values&quot;: [
+        {
+          &quot;prop&quot;: &quot;force_integration_materials&quot;,
+          &quot;type&quot;: &quot;tconstruct:config&quot;
+        },
+        {
+          &quot;tag&quot;: &quot;forge:ingots/uranium&quot;,
+          &quot;type&quot;: &quot;mantle:tag_filled&quot;
+        }
+      ]
+    }
+  ],
+  &quot;ingredient&quot;: {
+    &quot;item&quot;: &quot;tconstruct:necronium_bone&quot;
+  },
+  &quot;material&quot;: &quot;tconstruct:necronium&quot;,
+  &quot;needed&quot;: 1,
+  &quot;type&quot;: &quot;tconstruct:material&quot;,
+  &quot;value&quot;: 1
+}</pre></main></body></html>

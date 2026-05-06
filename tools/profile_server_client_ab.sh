@@ -1,19 +1,25 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 
-# Dedicated server + Prism client A/B profiler.
+# Dedicated server + real Prism client A/B profiler.
 # A = baseline (fake player disabled), B = fake player enabled.
 
 ROOT="${ROOT:-/home/gerald/obelisks}"
 SERVER_DIR="${SERVER_DIR:-$ROOT/server-instance}"
 PRISM_ROOT="${PRISM_ROOT:-$HOME/.local/share/PrismLauncher}"
 PRISM_INSTANCE="${PRISM_INSTANCE:-Bound to Matter-Playtest 3 - v1}"
+CLIENT_CONNECT_HOST="${CLIENT_CONNECT_HOST:-127.0.0.1}"
 OUT_DIR="${OUT_DIR:-$ROOT/docs/memory_variants}"
 SAMPLE_SEC="${SAMPLE_SEC:-2}"
 BOOT_TIMEOUT_SEC="${BOOT_TIMEOUT_SEC:-600}"
 JOIN_TIMEOUT_SEC="${JOIN_TIMEOUT_SEC:-420}"
 POST_JOIN_SETTLE_SEC="${POST_JOIN_SETTLE_SEC:-90}"
 BASE_PORT="${BASE_PORT:-27200}"
+CLIENT_USERNAME_PREFIX="${CLIENT_USERNAME_PREFIX:-AutoTester}"
+CLIENT_CONNECT_MODE="${CLIENT_CONNECT_MODE:-auto}"
+CLIENT_CONNECT_ARGS="${CLIENT_CONNECT_ARGS:-}"
+CLIENT_OFFLINE="${CLIENT_OFFLINE:-0}"
+RUN_FAKE_PHASE="${RUN_FAKE_PHASE:-1}"
 
 mkdir -p "$OUT_DIR"
 STAMP="$(date +%Y%m%d-%H%M%S)"
@@ -129,6 +135,7 @@ set_fake_player_enabled() {
 start_server() {
   local phase="$1"
   local port="$2"
+  SERVER_LOG="$OUT_DIR/${phase}.server.log"
   rm -f "$SERVER_LOG"
   rm -rf "$SERVER_DIR/world" "$SERVER_DIR/world_nether" "$SERVER_DIR/world_the_end"
 
@@ -145,7 +152,7 @@ start_server() {
   (
     cd "$SERVER_DIR"
     ./run.sh nogui
-  ) > "$OUT_DIR/${phase}.server.log" 2>&1 &
+  ) > "$SERVER_LOG" 2>&1 &
   server_launcher_pid=$!
 
   local t
@@ -154,7 +161,12 @@ start_server() {
       server_java_pid="$(pick_java_child "$server_launcher_pid" || true)"
       return 0
     fi
-    if [[ -f "$SERVER_LOG" ]] && rg -q 'Mod Loading has failed|FAILED TO BIND TO PORT|FATAL|Exception' "$SERVER_LOG"; then
+
+    if [[ -f "$SERVER_LOG" ]] && rg -q 'FAILED TO BIND TO PORT|Mod Loading has failed|Error: Failed to initialize|Encountered an unexpected exception|Preparing crash report|This crash report has been saved' "$SERVER_LOG"; then
+      return 1
+    fi
+
+    if ! kill -0 "$server_launcher_pid" 2>/dev/null; then
       return 1
     fi
     sleep 1
@@ -164,12 +176,58 @@ start_server() {
 
 start_client() {
   local phase="$1"
-  "$PRISM_LAUNCH" "$PRISM_INSTANCE" -- --offline Dev > "$OUT_DIR/${phase}.client.log" 2>&1 &
+  local port="$2"
+  local username="$3"
+  local client_log="$OUT_DIR/${phase}.client.log"
+  local minecraft_log="$PRISM_ROOT/instances/$PRISM_INSTANCE/minecraft/logs/latest.log"
+  local before_mtime
+  local fresh_client_log=0
+  local host="$CLIENT_CONNECT_HOST"
+  local quick_play_args=()
+  local args=()
+  local extra_args=()
+  local mode="${CLIENT_CONNECT_MODE:-auto}"
+
+  if [[ -n "${CLIENT_CONNECT_ARGS}" ]]; then
+    read -r -a extra_args <<< "$CLIENT_CONNECT_ARGS"
+    args+=("${extra_args[@]}")
+  fi
+  if [[ "${CLIENT_OFFLINE:-0}" == "1" && -n "$username" ]]; then
+    args+=("--offline" "$username")
+  fi
+
+  if [[ "$mode" == "auto" || "$mode" == "quickplay" || "$mode" == "legacy" ]]; then
+    if [[ "$mode" == "quickplay" ]]; then
+      echo "Quick-play requested, mapped to Prism --server for compatibility." >> "$client_log"
+    fi
+    quick_play_args=("--server" "${host}:${port}")
+  fi
+
+  if [[ "${#quick_play_args[@]}" -gt 0 ]]; then
+    args=("${quick_play_args[@]}" "${args[@]}")
+  fi
+  if [[ "${#args[@]}" -eq 0 ]]; then
+    args=("--server" "${host}:${port}")
+  fi
+
+  if [[ -n "${CLIENT_CONNECT_ARGS:-}" || "${CLIENT_OFFLINE:-0}" == "1" ]]; then
+    echo "Client args: ${args[*]}" >> "$client_log"
+  fi
+
+  before_mtime="$(stat -c %Y "$minecraft_log" 2>/dev/null || echo 0)"
+  "$PRISM_LAUNCH" "$PRISM_INSTANCE" "${args[@]}" > "$client_log" 2>&1 &
   client_root_pid=$!
   local t
   for ((t=0; t<120; t++)); do
+    if [[ "$(stat -c %Y "$minecraft_log" 2>/dev/null || echo 0)" -gt "$before_mtime" ]]; then
+      fresh_client_log=1
+    fi
+    if ! kill -0 "$client_root_pid" 2>/dev/null && [[ "$fresh_client_log" == "0" ]]; then
+      return 1
+    fi
     client_java_pid="$(pick_java_child "$client_root_pid" || true)"
     [[ -n "$client_java_pid" ]] && return 0
+    [[ "$fresh_client_log" == "1" ]] && return 0
     sleep 1
   done
   return 1
@@ -179,12 +237,16 @@ run_phase() {
   local phase="$1"       # baseline | fakeplayer
   local fake_enabled="$2" # 0|1
   local port="$3"
+  local username="${CLIENT_USERNAME_PREFIX}_${phase}_${port}"
+  local server_log="$OUT_DIR/${phase}.server.log"
+  local client_log="$OUT_DIR/${phase}.client.log"
+  local combined_log="$OUT_DIR/${phase}.combined.log"
 
   echo "=== phase=$phase fake_player_enabled=$fake_enabled port=$port ===" | tee -a "$SUMMARY"
   set_fake_player_enabled "$fake_enabled"
 
   start_server "$phase" "$port" || { echo "Server failed in $phase" | tee -a "$SUMMARY"; return 1; }
-  start_client "$phase" || { echo "Client failed in $phase" | tee -a "$SUMMARY"; return 1; }
+  start_client "$phase" "$port" "$username" || { echo "Client failed in $phase" | tee -a "$SUMMARY"; return 1; }
 
   local start now elapsed joined=0
   local joined_at=-1
@@ -203,6 +265,10 @@ run_phase() {
     (( c_rss > peak_client )) && peak_client="$c_rss"
 
     if [[ -f "$SERVER_LOG" ]] && rg -q 'joined the game|logged in with entity id' "$SERVER_LOG"; then
+      joined=1
+      if (( joined_at < 0 )); then joined_at="$elapsed"; fi
+    fi
+    if [[ -f "$client_log" ]] && rg -q 'Connecting to|connected to|joined server' "$client_log"; then
       joined=1
       if (( joined_at < 0 )); then joined_at="$elapsed"; fi
     fi
@@ -242,10 +308,23 @@ run_phase() {
   client_java_pid=""
   server_launcher_pid=""
   server_java_pid=""
+
+  if [[ -f "$server_log" || -f "$client_log" ]]; then
+    {
+      echo "===== SERVER LOG (${server_log}) ====="
+      cat "$server_log"
+      echo "===== CLIENT LOG (${client_log}) ====="
+      cat "$client_log"
+    } > "$combined_log"
+  fi
+  echo "combined_log=$combined_log" | tee -a "$SUMMARY"
 }
 
 run_phase baseline 0 "$BASE_PORT"
-run_phase fakeplayer 1 "$((BASE_PORT + 1))"
+
+if [[ "$RUN_FAKE_PHASE" != "0" ]]; then
+  run_phase fakeplayer 1 "$((BASE_PORT + 1))"
+fi
 
 echo "CSV: $CSV" | tee -a "$SUMMARY"
 echo "Summary: $SUMMARY" | tee -a "$SUMMARY"

@@ -1,0 +1,1331 @@
+2026-05-06 13:58:40,669 main WARN Advanced terminal features are not available in this environment
+[13:58:40] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeserver, --fml.forgeVersion, 47.4.13, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, nogui]
+[13:58:40] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 21.0.11 by Eclipse Adoptium; OS Linux arch amd64 version 6.12.74+deb13+1-amd64
+[13:58:41] [main/INFO] [ne.mi.fm.lo.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgeserver
+[13:58:41] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/home/gerald/obelisks/server-instance/libraries/org/spongepowered/mixin/0.8.5/mixin-0.8.5.jar%2365!/ Service=ModLauncher Env=SERVER
+[13:58:41] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /home/gerald/obelisks/server-instance/libraries/net/minecraftforge/fmlcore/1.20.1-47.4.13/fmlcore-1.20.1-47.4.13.jar is missing mods.toml file
+[13:58:41] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /home/gerald/obelisks/server-instance/libraries/net/minecraftforge/javafmllanguage/1.20.1-47.4.13/javafmllanguage-1.20.1-47.4.13.jar is missing mods.toml file
+[13:58:41] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /home/gerald/obelisks/server-instance/libraries/net/minecraftforge/lowcodelanguage/1.20.1-47.4.13/lowcodelanguage-1.20.1-47.4.13.jar is missing mods.toml file
+[13:58:41] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /home/gerald/obelisks/server-instance/libraries/net/minecraftforge/mclanguage/1.20.1-47.4.13/mclanguage-1.20.1-47.4.13.jar is missing mods.toml file
+[13:58:41] [main/WARN] [ne.mi.ja.se.JarSelector/]: Attempted to select a dependency jar for JarJar which was passed in as source: geckolib. Using Mod File: /home/gerald/obelisks/server-instance/mods/geckolib-forge-1.20.1-4.8.3.jar
+[13:58:41] [main/WARN] [ne.mi.ja.se.JarSelector/]: Attempted to select a dependency jar for JarJar which was passed in as source: curios. Using Mod File: /home/gerald/obelisks/server-instance/mods/curios-forge-5.14.1+1.20.1.jar
+[13:58:41] [main/INFO] [ne.mi.fm.lo.mo.JarInJarDependencyLocator/]: Found 33 dependencies adding them to mods collection
+[13:58:43] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[13:58:43] [main/INFO] [cp.mo.mo.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeserver' with arguments [nogui]
+[13:58:43] [main/WARN] [mixin/]: Reference map 'mixins.wares.refmap.json' for mixins.wares.json could not be read. If this is a development environment you can ignore this message
+[13:58:43] [main/WARN] [mixin/]: Reference map 'nitrogen_internals.refmap.json' for nitrogen_internals.mixins.json could not be read. If this is a development environment you can ignore this message
+[13:58:43] [main/WARN] [mixin/]: Reference map 'puzzlesaccessapi.common.refmap.json' for puzzlesaccessapi.common.mixins.json could not be read. If this is a development environment you can ignore this message
+[13:58:43] [main/WARN] [mixin/]: Reference map 'transmissionloss.refmap.json' for transmissionloss.mixins.json could not be read. If this is a development environment you can ignore this message
+[13:58:43] [main/WARN] [mixin/]: Reference map 'modonomicon.refmap.json' for modonomicon.mixins.json could not be read. If this is a development environment you can ignore this message
+[13:58:43] [main/WARN] [mixin/]: Reference map 'modonomicon.refmap.json' for modonomicon.forge.mixins.json could not be read. If this is a development environment you can ignore this message
+[13:58:43] [main/WARN] [mixin/]: Reference map 'coroutil.refmap.json' for coroutil.mixins.json could not be read. If this is a development environment you can ignore this message
+[13:58:43] [main/INFO] [Puzzles Lib/]: Loading 172 mods:
+	- acid_vat 0.1.0
+	- ae2 15.4.10
+	- aether 1.20.1-1.5.2-neoforge
+		|-- cumulus_menus 1.20.1-1.0.1-neoforge
+		\-- nitrogen_internals 1.20.1-1.0.12-neoforge
+	- alchemistry 2.3.4
+	- alchemylib 1.0.30
+	- alekiships 1.0.14
+	- appleskin 2.5.1+mc1.20.1
+	- architectury 9.2.14
+	- ars_nouveau 4.12.7
+	- bettercombat 1.9.0+1.20.1
+	- bloodmagic 3.3.7-49
+	- blue_skies 1.3.31
+	- blueprint 7.1.3
+	- brewinandchewin 1.20.1-3.2.1
+	- btmfixes 0.1.0
+	- buildinggadgets2 1.0.8
+	- chemlib 2.0.19
+	- citadel 2.6.3
+	- classselector 1.0.0
+	- cloth_config 11.1.136
+	- cobblegenhaters 1.0.1
+	- cold_sweat 2.4
+	- collective 8.20
+	- compressedcreativity 1.20.1-0.2.0
+	- computerbridge 0.1.0
+	- coroutil 1.20.1-1.3.7
+	- create 6.0.8
+	- create_cold_sweat 1.1.2
+	- create_new_age 1.1.7f+mc1.20.1
+		\-- esl 1.1.3
+	- createbigcannons 5.11.3
+	- createdieselgenerators 1.20.1-1.3.12
+	- creatingspace 1.20.1_1.7.13
+	- creativecore 2.12.35
+	- cristellib 1.1.6
+	- ctov 3.4.14
+	- curios 5.14.1+1.20.1
+	- cursedbiomes 0.1.0
+	- deeperdarker 1.3.3
+	- diet 2.1.1+1.20.1
+	- distanthorizons 2.4.5-b
+	- dotcoinmod 20.18.1
+	- dtarsnouveau 1.20.1-1.2.0
+	- dtnatures_spirit 1.3
+	- dtquark 1.20.1-2.5.3
+	- dynamic_asset_generator 4.2.2
+	- dynamictrees 1.20.1-1.4.10
+	- dynamictreesplus 1.20.1-1.2.2
+	- dynamicvillagertrades 1.3.1
+	- everythingcopper 1.20.1-2.3.4
+	- excavated_variants 3.0.9
+		\-- defaultresources 2.0.0
+	- explosionoverhaul 0.2.3.0-forge
+	- fallout_wastelands_ 1.0.0
+	- farmersdelight 1.20.1-1.3.1
+	- farsightedmobs 1.1
+	- fiahi 3.1.6
+	- findme 3.2.3
+	- finite_water 1.0.0
+	- fission_reactor 0.1.0
+	- forge 47.4.13
+	- ftblibrary 2001.2.12
+	- ftbquests 2001.4.21
+	- ftbteams 2001.3.2
+	- gases_and_plasmas 0.1.0
+	- geckolib 4.8.3
+	- glitchcore 0.0.1.1
+	- globalgamerules 8.1.0.12
+	- golemoverhaul 1.1.0
+	- guardvillagers 1.20.1-1.6.17
+	- guideme 20.1.14
+	- hangglider 8.0.1
+	- heatsync 0.1.0
+	- hyle 2.0.0-1.20.1-forge
+	- iceandfire 2.1.13-1.20.1
+	- immersive_weathering 1.20.1-2.0.5
+	- incontrol 1.20-9.4.6
+	- inventorysorter 23.1.9
+	- jei 15.20.0.130
+	- k_turrets 3.0.44-1.20.1
+	- kotlinforforge 4.12.0
+	- kubejs 2001.6.5-build.16
+	- kubejs_create 2001.3.0-build.8
+	- kubejsbloodmagic 1.0.2-1.20.1
+	- liquid_coolant 0.1.0
+	- lithostitched 1.4.11
+	- littlelogistics 1.20.1.2
+	- looot 1.2.0.4
+	- lootjs 1.20.1-2.13.1
+	- lootr 0.7.35.94
+	- lostcities 1.20-7.4.11
+	- mantle 1.11.104
+	- markdown_manual 1.2.5+c3f0b88
+	- minecraft 1.20.1
+	- modonomicon 1.79.3
+	- moonlight 1.20-2.16.30
+		\-- mixinsquared 0.1.1
+	- morered 4.0.0.4
+		|-- jumbofurnace 4.0.0.5
+		\-- useitemonblockevent 1.0.0.2
+	- natures_spirit 2.2.5-1.20.1
+	- naturescompass 1.20.1-1.12.0-forge
+	- nomobfarm 1.6.6
+	- notreepunching 7.1.0
+	- obelisks 1.0.0
+	- oc2r 2.2.12
+		\-- sedna 1.0.68
+	- particular 1.2.7
+	- patchouli 1.20.1-85-FORGE
+	- pillagercampaigns 0.2.0
+	- playeranimator 1.0.2-rc1+1.20
+	- playerrevive 2.0.31
+	- pneumaticcraft 6.0.22+mc1.20.1
+	- polymorph 0.49.10+1.20.1
+		\-- spectrelib 0.13.17+1.20.1
+	- powergrid 0.5.4
+	- procedural_bouquets 0.1.0
+	- protection_pixel 2.2.1
+	- puzzleslib 8.1.33
+		\-- puzzlesaccessapi 20.1.1
+	- quark 4.0-462
+	- realisticores 0.1.0
+	- realisticphysics 1.0.1
+	- resourcefulconfig 2.1.3
+	- resourcefullib 2.1.29
+	- rhino 2001.2.3-build.10
+	- ritchiesprojectilelib 2.1.1
+	- rpgstats 1.0.0
+	- rsgauges 1.2.22
+	- satako 7.0.33-1.20.1
+	- savage_and_ravage 6.0.1
+	- sereneseasons 9.1.0.2
+	- settlementroads 0.1.0
+	- sleepingoverhaul 2.1.0-Forge-1.20.1
+	- solcarrot 1.15.1
+	- sophisticatedbackpacks 3.24.35.1675
+	- sophisticatedcore 1.3.21.1676
+	- sophisticatedstorage 1.4.39.1666
+	- staaaaaaaaaaaack 1.20.1-1.5-71
+	- starcatcher 2.2.1-FORGE-1.20.1
+		\-- tinymultiblocklib 3.0
+	- structure_gel 2.16.2
+	- t_and_t 0.0NONE
+	- takesapillage 1.0.3
+	- tconjei 1.5.4
+	- tconstruct 3.11.2.166
+	- tectonic 3.0.17
+	- terrablender 3.0.1.10
+	- the_finley_dimension_remastered 1.6.3
+	- theoneprobe 1.20.1-10.0.3
+	- thirst 1.20.1-1.4.0
+	- tinkers_better_combat 1.8.6
+	- tntutils 1.20.1-2.0.4
+	- tomeofblood 0.4.5
+	- tponder 1.1
+		|-- flywheel 1.0.6-278
+		\-- ponder 1.0.91
+	- tradingpost 8.0.2
+	- transmissionloss 0.1.0
+	- travelerstitles 1.20-Forge-4.0.2
+	- twilightforest 4.3.2508
+	- undergarden 0.8.14
+	- unearthed 2.3.0-1.20.1-forge
+	- villagespawnpoint 4.6
+	- villagewalls 1.0.0
+	- wands 3.0.4
+	- wares 1.2.10
+	- weather2 1.20.1-2.8.3
+	- yungsapi 1.20-Forge-4.0.6
+	- zeta 1.0-31
+[13:58:43] [main/WARN] [mixin/]: Reference map 'cristellib-forge-refmap.json' for cristellib.mixins.json could not be read. If this is a development environment you can ignore this message
+[13:58:43] [main/WARN] [mixin/]: Error loading class: tschipp/carryon/common/config/ListHandler (java.lang.ClassNotFoundException: tschipp.carryon.common.config.ListHandler)
+[13:58:43] [main/WARN] [mixin/]: @Mixin target tschipp.carryon.common.config.ListHandler was not found tinymultiblocklib.mixins.json:carryon.ListHandlerMixin
+[13:58:43] [main/WARN] [mixin/]: Error loading class: tschipp/carryon/common/carry/PickupHandler (java.lang.ClassNotFoundException: tschipp.carryon.common.carry.PickupHandler)
+[13:58:43] [main/WARN] [mixin/]: @Mixin target tschipp.carryon.common.carry.PickupHandler was not found tinymultiblocklib.mixins.json:carryon.PickupHandlerMixin
+[13:58:43] [main/WARN] [mixin/]: Error loading class: umpaz/farmersrespite/common/block/entity/KettleBlockEntity (java.lang.ClassNotFoundException: umpaz.farmersrespite.common.block.entity.KettleBlockEntity)
+[13:58:43] [main/WARN] [mixin/]: @Mixin target umpaz.farmersrespite.common.block.entity.KettleBlockEntity was not found thirst.mixin.json:farmersrespite.MixinKettleBlockEntity
+[13:58:43] [main/WARN] [mixin/]: Error loading class: snownee/jade/api/view/FluidView (java.lang.ClassNotFoundException: snownee.jade.api.view.FluidView)
+[13:58:43] [main/WARN] [mixin/]: @Mixin target snownee.jade.api.view.FluidView was not found thirst.mixin.json:jade.MixinFluidView
+[13:58:43] [main/WARN] [mixin/]: Error loading class: toughasnails/item/EmptyCanteenItem (java.lang.ClassNotFoundException: toughasnails.item.EmptyCanteenItem)
+[13:58:43] [main/WARN] [mixin/]: @Mixin target toughasnails.item.EmptyCanteenItem was not found thirst.mixin.json:toughasnails.MixinEmptyCanteenItem
+[13:58:43] [main/WARN] [mixin/]: Error loading class: toughasnails/config/ThirstConfig (java.lang.ClassNotFoundException: toughasnails.config.ThirstConfig)
+[13:58:43] [main/WARN] [mixin/]: @Mixin target toughasnails.config.ThirstConfig was not found thirst.mixin.json:toughasnails.MixinServerConfig
+[13:58:43] [main/WARN] [mixin/]: Error loading class: toughasnails/thirst/ThirstHandler (java.lang.ClassNotFoundException: toughasnails.thirst.ThirstHandler)
+[13:58:43] [main/WARN] [mixin/]: @Mixin target toughasnails.thirst.ThirstHandler was not found thirst.mixin.json:toughasnails.MixinThirstHandler
+[13:58:43] [main/WARN] [mixin/]: Error loading class: toughasnails/thirst/ThirstHelperImpl (java.lang.ClassNotFoundException: toughasnails.thirst.ThirstHelperImpl)
+[13:58:43] [main/WARN] [mixin/]: @Mixin target toughasnails.thirst.ThirstHelperImpl was not found thirst.mixin.json:toughasnails.MixinThirstHelperImpl
+[13:58:43] [main/WARN] [mixin/]: Error loading class: vazkii/botania/forge/xplat/ForgeXplatImpl (java.lang.ClassNotFoundException: vazkii.botania.forge.xplat.ForgeXplatImpl)
+[13:58:43] [main/WARN] [mixin/]: @Mixin target vazkii.botania.forge.xplat.ForgeXplatImpl was not found thirst.mixin.json:botania.MixinForgeXplatImpl
+[13:58:43] [main/WARN] [mixin/]: Error loading class: net/minecraft/client/renderer/entity/PhantomRenderer (java.lang.ClassNotFoundException: net.minecraft.client.renderer.entity.PhantomRenderer)
+[13:58:43] [main/WARN] [mixin/]: @Mixin target net.minecraft.client.renderer.entity.PhantomRenderer was not found mixins.deeperdarker.json:PhantomRendererMixin
+[13:58:43] [main/ERROR] [ne.mi.fm.lo.RuntimeDistCleaner/DISTXFORM]: Attempted to load class net/minecraft/client/gui/screens/inventory/AbstractContainerScreen for invalid dist DEDICATED_SERVER
+[13:58:43] [main/WARN] [mixin/]: Error loading class: net/minecraft/client/gui/screens/inventory/AbstractContainerScreen (java.lang.RuntimeException: Attempted to load class net/minecraft/client/gui/screens/inventory/AbstractContainerScreen for invalid dist DEDICATED_SERVER)
+[13:58:43] [main/WARN] [mixin/]: @Mixin target net.minecraft.client.gui.screens.inventory.AbstractContainerScreen was not found dotcoinmod.mixins.json:AbstractContainerScreenAccessor
+[13:58:43] [main/WARN] [mixin/]: Error loading class: xfacthd/framedblocks/common/blockentity/doubled/FramedAdjustableDoubleBlockEntity (java.lang.ClassNotFoundException: xfacthd.framedblocks.common.blockentity.doubled.FramedAdjustableDoubleBlockEntity)
+[13:58:43] [main/WARN] [mixin/]: @Mixin target xfacthd.framedblocks.common.blockentity.doubled.FramedAdjustableDoubleBlockEntity was not found createbigcannons.mixins.json:compat.FramedAdjustableDoubleBlockEntityAccessor
+[13:58:43] [main/WARN] [mixin/]: Error loading class: com/mrbysco/spoiled/config/SpoiledConfigCache (java.lang.ClassNotFoundException: com.mrbysco.spoiled.config.SpoiledConfigCache)
+[13:58:43] [main/WARN] [mixin/]: @Mixin target com.mrbysco.spoiled.config.SpoiledConfigCache was not found cold_sweat.mixin.json:compat.MixinSpoiledIcebox$ContainerModifier
+[13:58:43] [main/INFO] [MixinExtras|Service/]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.3).
+[13:58:45] [main/WARN] [mixin/]: @Final field f_26027_:Lnet/minecraft/world/entity/ai/targeting/TargetingConditions; in guardvillagers.mixins.json:DefendVillageGoalGolemMixin should be final
+[13:58:46] [modloading-worker-0/INFO] [Tinkers' Ponder/]: Tinker's Ponder has loaded!.
+[13:58:46] [modloading-worker-0/INFO] [wi.rs.ModRsGauges/]: Gauges and Switches GIT id #325ffff.
+[13:58:46] [modloading-worker-0/INFO] [satako/]: Satako loaded
+[13:58:46] [Modding Legacy/blue_skies/Supporters thread/INFO] [ModdingLegacy/blue_skies/Supporter/]: Attempting to load the Modding Legacy supporters list from https://moddinglegacy.com/supporters-changelogs/supporters.txt
+[13:58:46] [modloading-worker-0/INFO] [dynamicvillagertrades/]: register minecraft:buy_for_one_emerald
+[13:58:46] [modloading-worker-0/INFO] [co.ge.pi.PillagerCampaignsMod/]: Loaded mod pillagercampaigns
+[13:58:46] [modloading-worker-0/INFO] [dynamicvillagertrades/]: register minecraft:sell_item
+[13:58:46] [modloading-worker-0/INFO] [dynamicvillagertrades/]: register minecraft:sell_suspicious_stew
+[13:58:46] [modloading-worker-0/INFO] [dynamicvillagertrades/]: register minecraft:process_item
+[13:58:46] [modloading-worker-0/INFO] [dynamicvillagertrades/]: register minecraft:sell_enchanted_tool
+[13:58:46] [modloading-worker-0/INFO] [dynamicvillagertrades/]: register minecraft:type_aware_buy_for_one_emerald
+[13:58:46] [modloading-worker-0/INFO] [dynamicvillagertrades/]: register minecraft:sell_potion_holding_item
+[13:58:46] [modloading-worker-0/INFO] [dynamicvillagertrades/]: register minecraft:enchant_book
+[13:58:46] [modloading-worker-0/INFO] [dynamicvillagertrades/]: register minecraft:sell_map
+[13:58:46] [modloading-worker-0/INFO] [dynamicvillagertrades/]: register minecraft:sell_dyed_armor
+[13:58:46] [modloading-worker-0/INFO] [dynamicvillagertrades/]: register dynamicvillagertrades:sell_item_for_items
+[13:58:46] [modloading-worker-0/INFO] [dynamicvillagertrades/]: register dynamicvillagertrades:type_aware_sell_item_for_items
+[13:58:46] [modloading-worker-0/INFO] [dynamicvillagertrades/]: register dynamicvillagertrades:type_aware
+[13:58:46] [modloading-worker-0/INFO] [dynamicvillagertrades/]: register dynamicvillagertrades:enchant_specific_book
+[13:58:46] [modloading-worker-0/INFO] [dynamicvillagertrades/]: register dynamicvillagertrades:sell_specific_potion_holding_item
+[13:58:46] [modloading-worker-0/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Configuration file /home/gerald/obelisks/server-instance/config/guardvillagers-common.toml is not correct. Correcting
+[13:58:46] [modloading-worker-0/INFO] [coroutil/]: forge loader environment detected
+[13:58:46] [modloading-worker-0/INFO] [or.an.cn.CreateNewAge/]: Hello 1.20.1 Create!
+[13:58:46] [modloading-worker-0/INFO] [ne.or.cr.CreateColdSweat/]: Registering to events..
+[13:58:46] [modloading-worker-0/INFO] [ne.or.cr.CreateColdSweat/]: Event registering complete.
+[13:58:46] [modloading-worker-0/INFO] [Puzzles Lib/]: Constructing common components for hangglider:main
+[13:58:46] [modloading-worker-0/ERROR] [ne.mi.fm.lo.RuntimeDistCleaner/DISTXFORM]: Attempted to load class org/antarcticgardens/cna/CreateNewAgeClientForge for invalid dist DEDICATED_SERVER
+[13:58:46] [modloading-worker-0/INFO] [or.an.cn.CreateNewAge/]: Running in dedicated server
+[13:58:46] [modloading-worker-0/INFO] [Collective/]: Loading Collective version 8.20.
+[13:58:46] [modloading-worker-0/INFO] [lostcities/]: Creating standard profiles into 'config/lostcities/profiles'
+[13:58:46] [modloading-worker-0/INFO] [co.ae.cu.Cumulus/]: Disabling Cumulus as it is on server.
+[13:58:46] [modloading-worker-0/INFO] [lostcities/]: Reading existing profiles from 'config/lostcities/profiles'
+[13:58:46] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id architectury:sync_ids
+[13:58:46] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id findme:default/93a3df5fb37f371cb25c481f6e5b9323
+[13:58:46] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id findme:default/b71e26ec071d32928d9fb5d2c3ec8a7a
+[13:58:46] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id findme:default/1f516f929b313631ad555a7b42b1d39c
+[13:58:47] [modloading-worker-0/INFO] [Puzzles Lib/]: Constructing common components for tradingpost:main
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftblibrary:edit_nbt_response
+[13:58:47] [modloading-worker-0/INFO] [de.yo.ob.ObelisksMod/]: Starting Dimensional Scar Expeditions
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbteams:open_gui
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbteams:update_settings
+[13:58:47] [modloading-worker-0/INFO] [Unearthed/]: UE: Blocks registered!
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbteams:send_message
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbteams:create_party
+[13:58:47] [modloading-worker-0/INFO] [Unearthed/]: UE: Items registered!
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbteams:player_gui_operation
+[13:58:47] [modloading-worker-0/INFO] [KubeJS/]: Loaded common.properties
+[13:58:47] [modloading-worker-0/INFO] [KubeJS/]: Loaded dev.properties
+[13:58:47] [modloading-worker-0/INFO] [de.yo.ob.da.ObeliskDataManager/]: Loaded 7 obelisk definitions, 4 reward tables, and 1 worldgen families
+[13:58:47] [modloading-worker-0/INFO] [or.pa.po.PowerGrid/]: Power grid starting, prepare to be electrocuted
+[13:58:47] [modloading-worker-0/INFO] [KubeJS/]: Looking for KubeJS plugins...
+[13:58:47] [modloading-worker-0/INFO] [KubeJS/]: Found plugin source kubejs
+[13:58:47] [modloading-worker-0/INFO] [or.pa.po.PowerGrid/]: Native backend loaded successfully
+[13:58:47] [modloading-worker-0/WARN] [KubeJS/]: Plugin dev.latvian.mods.kubejs.forge.BuiltinKubeJSForgeClientPlugin does not load on server side, skipping
+[13:58:47] [modloading-worker-0/WARN] [KubeJS/]: Plugin dev.latvian.mods.kubejs.integration.forge.gamestages.GameStagesIntegration does not have required mod gamestages loaded, skipping
+[13:58:47] [modloading-worker-0/INFO] [KubeJS/]: Found plugin source rpgstats
+[13:58:47] [modloading-worker-0/INFO] [KubeJS/]: Found plugin source createdieselgenerators
+[13:58:47] [modloading-worker-0/INFO] [KubeJS/]: Found plugin source wares
+[13:58:47] [modloading-worker-0/INFO] [KubeJS/]: Found plugin source lootjs
+[13:58:47] [modloading-worker-0/INFO] [KubeJS/]: Found plugin source acid_vat
+[13:58:47] [modloading-worker-0/INFO] [particular/]: I am quite particular about the effects I choose to add :3
+[13:58:47] [modloading-worker-0/INFO] [ne.mi.co.ForgeMod/FORGEMOD]: Forge mod loading, version 47.4.13, for MC 1.20.1 with MCP 20230612.114412
+[13:58:47] [modloading-worker-0/INFO] [ne.mi.co.MinecraftForge/FORGE]: MinecraftForge v47.4.13 Initialized
+[13:58:47] [modloading-worker-0/INFO] [KubeJS/]: Found plugin source kubejsbloodmagic
+[13:58:47] [modloading-worker-0/INFO] [KubeJS/]: Found plugin source kubejs_create
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id sleepingoverhaul:is_really_sleeping
+[13:58:47] [modloading-worker-0/INFO] [KubeJS/]: Found plugin source cold_sweat
+[13:58:47] [modloading-worker-0/INFO] [KubeJS/]: Done in 130.4 ms
+[13:58:47] [modloading-worker-0/INFO] [dotcoinmod/]: Loading DCM config
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id dotcoinmod:networking_channel/9aa753400a5f374b8ad6e12f1d136068
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id dotcoinmod:networking_channel/1fced775c05032deaf5ff5884b5a8400
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id dotcoinmod:networking_channel/7981bfe5f75931ed9d6b56e644b166c2
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id dotcoinmod:networking_channel/2c7f3fb8104f38fab5e18c3c2e44cc22
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id dotcoinmod:networking_channel/17b3f334f4cb34898f17a71f7b613596
+[13:58:47] [modloading-worker-0/INFO] [co.al.no.NoTreePunching/]: I tried to punch tree. It didn't work, my hands are now covered in blood and splinters. Need to try something else ...
+[13:58:47] [modloading-worker-0/INFO] [Rhino Script Remapper/]: Loading Rhino Minecraft remapper...
+[13:58:47] [modloading-worker-0/INFO] [de.la.mo.rh.mo.ut.RhinoProperties/]: Rhino properties loaded.
+[13:58:47] [modloading-worker-0/INFO] [Rhino Script Remapper/]: Loading mappings for 1.20.1
+[13:58:47] [modloading-worker-0/INFO] [co.ex.cu.CursedBiomesMod/]: Loaded mod cursedbiomes
+[13:58:47] [modloading-worker-0/INFO] [Rhino Script Remapper/]: Done in 0.063 s
+Loading schematic: bloodmagic:t_corridor
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@5bdfd0b
+Loading schematic: bloodmagic:four_way_corridor_loot
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@140ba7a3
+Loading schematic: bloodmagic:four_way_corridor
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@333e13d0
+Loading schematic: bloodmagic:standard/ore_hold_1
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@4e89140a
+Loading schematic: bloodmagic:straight_corridor
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@70c44909
+Loading schematic: bloodmagic:overlapped_corridor
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@13529ce4
+Loading schematic: bloodmagic:spiral_staircase
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@a701779
+Loading schematic: bloodmagic:standard/water_way
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@11558366
+Loading schematic: bloodmagic:standard/mine_entrance
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@3719fd99
+Loading schematic: bloodmagic:mines/mine_key
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@311ec3a8
+Loading schematic: bloodmagic:mines/pit
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@51749e6a
+Loading schematic: bloodmagic:mines/corner_zombie_trap
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@6185fc91
+Loading schematic: bloodmagic:mines/split_road
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@1d3b0b7c
+Loading schematic: bloodmagic:mines/station
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@6e40e404
+Loading schematic: bloodmagic:mines/downward_tunnel
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@3748c9c8
+Loading schematic: bloodmagic:mines/junction_station
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@596535ad
+Loading schematic: bloodmagic:mines/downward_shaft
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@126ef34e
+Loading schematic: bloodmagic:mines/nature_crossroad
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@68d3943f
+Loading schematic: bloodmagic:mines/wolf_den
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@3d5aa50e
+Loading schematic: bloodmagic:mines/ore_cavern
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@18485e30
+Loading schematic: bloodmagic:mines/straight_corridor
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@1688a977
+Loading schematic: bloodmagic:mines/bent_corridor
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@5d22b1fd
+Loading schematic: bloodmagic:mines/fourway_corridor
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@7a1072b7
+Loading schematic: bloodmagic:mini_dungeon/library
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@7884b56a
+Loading schematic: bloodmagic:mini_dungeon/armoury
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@6bd3ca5f
+Loading schematic: bloodmagic:mini_dungeon/farm
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@21e48141
+Loading schematic: bloodmagic:mini_dungeon/portal_nether
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@2228143b
+Loading schematic: bloodmagic:mini_dungeon/crypt
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@944774e
+Loading schematic: bloodmagic:standard/challenge_tower
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@163531a5
+Loading schematic: bloodmagic:standard/big_library
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@11aeae6e
+Loading schematic: bloodmagic:standard/small_crane
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@346f68ae
+Loading schematic: bloodmagic:standard/small_library
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@738c8f35
+Loading schematic: bloodmagic:standard/small_smithy
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@5de6f8e8
+Loading schematic: bloodmagic:standard/tall_spiral
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@67b7a19d
+Loading schematic: bloodmagic:standard/small_arena
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@42d09e92
+Loading schematic: bloodmagic:standard/antechamber
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@5fe425bc
+Loading schematic: bloodmagic:standard/destroyed_end_portal
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@78c09bd7
+Loading schematic: bloodmagic:standard/four_way_corridor_loot
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@147fc69
+Loading schematic: bloodmagic:t3_entrance
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@1a6c8c66
+Loading schematic: bloodmagic:standard_entrance
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@5aa9f1f6
+Loading schematic: bloodmagic:default_deadend
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@2d00df6d
+Loading schematic: bloodmagic:mines/deadend
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@61e198d4
+# schematics: 42
+Config updated!
+Config loaded!
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id wands:global_settings_packet
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id wands:key_packet
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id wands:palette_packet
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id wands:wand_packet
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id wands:sync_rock_packet
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id wands:pos_packet
+[13:58:47] [modloading-worker-0/INFO] [th.ko.te.KotlinForForge/]: Kotlin For Forge Enabled!
+[13:58:47] [modloading-worker-0/INFO] [co.si.cr.Create/]: Create 6.0.8 initializing! Commit hash: 1a1a9a2819b4f89f78caec41b55ed8cb222fa24b
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:submit_task
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:claim_reward
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:get_emergency_items
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:claim_all_rewards
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:claim_choice_reward
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:toggle_pinned
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:toggle_chapter_pinned
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:toggle_editing_mode
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:force_save
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:set_custom_image
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:task_screen_config_resp
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:give_item_to_player
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:reorder_item
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:change_progress
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:create_object
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:create_task_at
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:delete_object
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:edit_object
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:move_chapter
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:move_quest
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:change_chapter_group
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:move_chapter_group
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:copy_quest
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:copy_chapter_image
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:sync_structures_request
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:request_team_data
+[13:58:47] [modloading-worker-0/INFO] [co.ge.co.ComputerBridgeMod/]: Loaded computerbridge
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id powergrid:main/893804baf0ca3e9c8686f973e3846242
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id powergrid:main/73ca2b3fecb833f19a37fa383fd73c52
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id powergrid:main/a5bb533d09793128bd42a1ea819744a8
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id powergrid:main/01aea357875d3b6e9b3c5b46f8624a22
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id powergrid:main/2a4815ddfd31312cafa545eaf659351a
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id powergrid:main/62d2735a731f3a42a724994dbbe7c39d
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id powergrid:main/b998fc3850fc36219e22c58fd0d562fe
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id powergrid:main/2afa62329f363192aa5ce38137c7a765
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id powergrid:main/78b5f986765e30b1a069c4c96d89d62a
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id powergrid:main/868559c19ec934bebb21fb91fb085312
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id powergrid:main/d1bbd210201235c08fe35dad72aa33da
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id powergrid:main/4e901bcc05483b8eaa947d37b32f942d
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id powergrid:main/67bd24b7ef3d32c198fdcd6fb99f62ce
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id powergrid:main/005ee3768ad0376c8285daff5e970432
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id powergrid:main/149a90a9225c3521b0df347c19ae2fac
+[13:58:47] [modloading-worker-0/INFO] [co.ge.li.LiquidCoolantMod/]: Loaded mod liquid_coolant
+[13:58:47] [modloading-worker-0/INFO] [co.ex.ga.GasesAndPlasmasMod/]: Loaded mod gases_and_plasmas
+[13:58:47] [modloading-worker-0/INFO] [co.ge.fi.FissionReactorMod/]: Loaded mod fission_reactor
+[13:58:47] [modloading-worker-0/INFO] [Puzzles Lib/]: Constructing common components for puzzleslib:main
+[13:58:47] [modloading-worker-0/INFO] [co.ge.he.HeatSyncMod/]: Enabled Cold Sweat bridge hooks
+[13:58:47] [modloading-worker-0/INFO] [co.ge.he.HeatSyncMod/]: Loaded mod heatsync
+[13:58:47] [modloading-worker-0/INFO] [KubeJS Startup/]: Loaded script startup_scripts:00_globals/20_progression_catalogues.js in 0.045 s
+[13:58:47] [modloading-worker-0/INFO] [KubeJS Startup/]: 10_items_blocks/10_thats_crate_registry.js#28: Loaded Java class 'java.math.BigInteger'
+[13:58:47] [modloading-worker-0/INFO] [KubeJS Startup/]: Loaded script startup_scripts:10_items_blocks/10_thats_crate_registry.js in 0.012 s
+[13:58:47] [modloading-worker-0/INFO] [KubeJS Startup/]: Loaded script startup_scripts:10_items_blocks/20_triple_flint_durability.js in 0.001 s
+[13:58:47] [modloading-worker-0/INFO] [KubeJS Startup/]: Loaded script startup_scripts:10_items_blocks/30_progression_items.js in 0.001 s
+[13:58:47] [modloading-worker-0/INFO] [KubeJS Startup/]: Loaded script startup_scripts:20_blocks/10_ae2_skystone_hardness.js in 0.001 s
+[13:58:47] [modloading-worker-0/INFO] [KubeJS Startup/]: 20_globals/10_immobile_spawn.js#4: [no_moving_spawn] registering PlayerSetSpawnEvent cancel
+[13:58:47] [modloading-worker-0/INFO] [KubeJS Startup/]: Loaded script startup_scripts:20_globals/10_immobile_spawn.js in 0.002 s
+[13:58:47] [modloading-worker-0/INFO] [KubeJS Startup/]: Loaded script startup_scripts:20_globals/30_blood_heart_types.js in 0.001 s
+[13:58:47] [modloading-worker-0/INFO] [KubeJS Startup/]: Loaded script startup_scripts:30_hide_vanilla_tools_from_creative.js in 0.001 s
+[13:58:47] [modloading-worker-0/INFO] [KubeJS Startup/]: 40_potion_brewing_registry.js#4: Loaded Java class 'net.minecraft.world.item.alchemy.Potions'
+[13:58:47] [modloading-worker-0/INFO] [pneumaticcraft/]: Thirdparty integration activated for [theoneprobe,jei,curios,patchouli,create]
+[13:58:47] [modloading-worker-0/ERROR] [KubeJS Startup/]: 40_potion_brewing_registry.js#6: ReferenceError: "MoreJSEvents" is not defined.
+[13:58:47] [modloading-worker-0/INFO] [quark/]: Initializing TerraBlender underground biome compat
+[13:58:47] [modloading-worker-0/INFO] [KubeJS Startup/]: Loaded 8/9 KubeJS startup scripts in 0.448 s with 1 errors and 0 warnings
+[13:58:47] [modloading-worker-0/INFO] [RPGStats/HeartTypes/]: Loaded 5 KubeJS heart type definitions.
+[13:58:47] [modloading-worker-0/INFO] [zeta/]: Doing super early config setup for zeta
+[13:58:47] [modloading-worker-0/INFO] [KubeJS Startup/]: 10_items_blocks/10_thats_crate_registry.js#128: [crates] registry bases=16
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id kubejs:send_data_from_client
+[13:58:47] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id kubejs:first_click
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Discovered 164 modules to load.
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Abacus...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Adjustable Chat...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Ambient Discs...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Ancient Tomes...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Ancient Wood...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Armed Armor Stands...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Auto Walk Keybind...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Automatic Recipe Unlock...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Automatic Tool Restock...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Azalea Wood...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Back Button Keybind...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Backpack...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Beacon Redirection...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Better Elytra Rocket...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Big Stone Clusters...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Blossom Trees...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Bottled Cloud...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Buckets Show Inhabitants...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Camera...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Campfires Boost Elytra...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Celebratory Lamps...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Chains Connect Blocks...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Chest Searching...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Chorus Vegetation...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Chute...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Climate Control Remover...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Color Runes...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Compasses Work Everywhere...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Compressed Blocks...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Coral On Cactus...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Corundum...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Crabs...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Crafter...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Crate...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Diamond Repair...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Dispensers Place Blocks...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Double Door Opening...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Dragon Scales...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Duskbound Blocks...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Dyeable Item Frames...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Easy Transfering...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Elytra Indicator...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Emotes...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Enchantment Predicates...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Enchantments Begone...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Ender Watcher...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Endermosh Music Disc...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Enhanced Ladders...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Expanded Item Interactions...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Fairy Rings...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Fallen Logs...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Feeding Trough...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Forgotten...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Foxhound...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Framed Glass...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Game Nerfs...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Glass Item Frame...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Glass Shard...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Glimmering Weald...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Gold Bars...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Gold Tools Have Fortune...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Grab Chickens...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Grate...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Gravisand...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Greener Grass...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Hedges...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Hoe Harvesting...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Hollow Logs...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Horses Swim...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Hotbar Changer...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Improved Sponges...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Improved Tooltips...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Industrial Palette...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Inventory Sorting...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Iron Rod...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Item Sharing...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Japanese Palette...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Leaf Carpet...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Lock Rotation...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Long Range Pick Block...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Magma Keeps Concrete Powder...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Magnets...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Map Washing...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Matrix Enchanting...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Metal Buttons...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Microcrafting Helper...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Midori...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Monster Box...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module More Banner Layers...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module More Brick Types...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module More Mud Blocks...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module More Note Block Sounds...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module More Potted Plants...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module More Villagers...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Narrator Readout...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Nether Brick Fence Gate...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Nether Obsidian Spikes...
+[13:58:48] [Modding Legacy/blue_skies/Supporters thread/INFO] [ModdingLegacy/blue_skies/Supporter/]: Successfully loaded the Modding Legacy supporters list.
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module New Stone Types...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module No Durability On Cosmetics...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module No More Lava Pockets...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Obsidian Plate...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Overlay Shader...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Parrot Eggs...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Pat The Dogs...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Pathfinder Maps...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Permafrost...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Petals On Water...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Pickarang...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Pig Litters...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Pipes...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Pistons Move Tile Entities...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Poison Potato Usage...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Quick Armor Swapping...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Rainbow Lamps...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Raw Metal Bricks...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Reacharound Placing...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Redstone Randomizer...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Renewable Spore Blossoms...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Replace Scaffolding...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Rope...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Safer Creatures...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Seed Pouch...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Shear Vines...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Shiba...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Shingles...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Shulker Packing...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Simple Harvest...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Skull Pikes...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Slabs To Blocks...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Slime In A Bucket...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Slimes To Magma Cubes...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Snow Golem Player Heads...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Soul Candles...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Soul Sandstone...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Spawner Replacer...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Spiral Spires...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Stonelings...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Stools...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Sturdy Stone...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Thatch...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Tiny Potato...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Torch Arrow...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Toretoise...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Totem Of Holding...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Trowel...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Usage Ticker...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Uses For Curses...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Utility Recipes...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Variant Animal Textures...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Variant Bookshelves...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Variant Chests...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Variant Furnaces...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Variant Ladders...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Variant Selector...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Vertical Planks...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Vertical Slabs...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Vexes Die With Their Masters...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Villager Rerolling Rework...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Villagers Follow Emeralds...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Wooden Posts...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Wool Shuts Up Minecarts...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Wraith...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Zombie Villagers On Normal...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module More Stone Variants...
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Constructed 164 modules.
+[13:58:48] [modloading-worker-0/INFO] [quark-zeta/]: Doing super early config setup for quark
+[13:58:48] [main/INFO] [Cold Sweat/]: Gathering Cold Sweat registries
+[13:58:48] [main/INFO] [Cold Sweat/]: The event bus was started early to gather Cold Sweat registries; it will now be stopped again until the correct loading phase.
+[13:58:48] [main/WARN] [mixin/]: @Inject(@At("INVOKE")) Shift.BY=2 on cold_sweat.mixin.json:MixinRegistration::handler$cap000$loadRegistryContents exceeds the maximum allowed value: 0. Increase the value of maxShiftBy to suppress this warning.
+[13:58:48] [Thread-3/WARN] [Collective/]: [Update] Collective has an update available: 8.20 -> 8.22
+[13:58:48] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:sound_event]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:49] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:fluid]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:50] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:block]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:attribute]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:mob_effect]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:particle_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:item]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [RPGStats/HeartTypes/]: Registered typed heart item 'kubejs:archmage_blood_heart'
+[13:58:53] [main/INFO] [RPGStats/HeartTypes/]: Registered typed heart item 'kubejs:master_blood_heart'
+[13:58:53] [main/INFO] [RPGStats/HeartTypes/]: Registered typed heart item 'kubejs:magician_blood_heart'
+[13:58:53] [main/INFO] [RPGStats/HeartTypes/]: Registered typed heart item 'kubejs:apprentice_blood_heart'
+[13:58:53] [main/INFO] [RPGStats/HeartTypes/]: Registered typed heart item 'kubejs:weak_blood_heart'
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:entity_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [Moonlight/]: Initialized block sets in 13ms
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:sensor_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:memory_module_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:potion]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:game_event]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:enchantment]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:block_entity_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:painting_variant]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:stat_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:custom_stat]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:chunk_status]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:rule_test]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:rule_block_entity_modifier]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:pos_rule_test]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:menu]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:recipe_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:recipe_serializer]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:position_source_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:command_argument_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:villager_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:villager_profession]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:point_of_interest_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:schedule]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:activity]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:loot_pool_entry_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:loot_function_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:loot_condition_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:loot_number_provider_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:loot_nbt_provider_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:loot_score_provider_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:float_provider_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:int_provider_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:height_provider_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:block_predicate_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:worldgen/carver]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:worldgen/feature]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:worldgen/structure_processor]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:worldgen/structure_placement]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:worldgen/structure_piece]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:worldgen/structure_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:worldgen/placement_modifier_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:worldgen/block_state_provider_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:worldgen/foliage_placer_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:worldgen/trunk_placer_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:worldgen/root_placer_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:worldgen/tree_decorator_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:worldgen/feature_size_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:worldgen/biome_source]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:worldgen/chunk_generator]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:worldgen/material_condition]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:worldgen/material_rule]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:worldgen/density_function_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:worldgen/structure_pool_element]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:cat_variant]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:frog_variant]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:banner_pattern]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:instrument]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:decorated_pot_patterns]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:53] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:creative_mode_tab]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / ae2:keytypes]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / aether:advancement_sound_override]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / aether:moa_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / bloodmagic:anointment]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+Attempting to load Anointment: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23269!/data/bloodmagic/anointment/melee_damage.json, path: /data/bloodmagic/anointment/melee_damage.json
+Attempting to load Anointment: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23269!/data/bloodmagic/anointment/holy_water.json, path: /data/bloodmagic/anointment/holy_water.json
+Attempting to load Anointment: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23269!/data/bloodmagic/anointment/hidden_knowledge.json, path: /data/bloodmagic/anointment/hidden_knowledge.json
+Attempting to load Anointment: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23269!/data/bloodmagic/anointment/quick_draw.json, path: /data/bloodmagic/anointment/quick_draw.json
+Attempting to load Anointment: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23269!/data/bloodmagic/anointment/bow_power.json, path: /data/bloodmagic/anointment/bow_power.json
+Attempting to load Anointment: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23269!/data/bloodmagic/anointment/bow_velocity.json, path: /data/bloodmagic/anointment/bow_velocity.json
+Attempting to load Anointment: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23269!/data/bloodmagic/anointment/repairing.json, path: /data/bloodmagic/anointment/repairing.json
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / bloodmagic:bloodorbs]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / bloodmagic:upgrades]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23269!/data/bloodmagic/living_armor/arrow_protect.json, path: /data/bloodmagic/living_armor/arrow_protect.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23269!/data/bloodmagic/living_armor/fall_protect.json, path: /data/bloodmagic/living_armor/fall_protect.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23269!/data/bloodmagic/living_armor/physical_protect.json, path: /data/bloodmagic/living_armor/physical_protect.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23269!/data/bloodmagic/living_armor/jump.json, path: /data/bloodmagic/living_armor/jump.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23269!/data/bloodmagic/living_armor/health.json, path: /data/bloodmagic/living_armor/health.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23269!/data/bloodmagic/living_armor/experienced.json, path: /data/bloodmagic/living_armor/experienced.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23269!/data/bloodmagic/living_armor/sprint_attack.json, path: /data/bloodmagic/living_armor/sprint_attack.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23269!/data/bloodmagic/living_armor/self_sacrifice.json, path: /data/bloodmagic/living_armor/self_sacrifice.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23269!/data/bloodmagic/living_armor/speed.json, path: /data/bloodmagic/living_armor/speed.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23269!/data/bloodmagic/living_armor/poison_resist.json, path: /data/bloodmagic/living_armor/poison_resist.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23269!/data/bloodmagic/living_armor/fire_resist.json, path: /data/bloodmagic/living_armor/fire_resist.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23269!/data/bloodmagic/living_armor/digging.json, path: /data/bloodmagic/living_armor/digging.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23269!/data/bloodmagic/living_armor/knockback_resist.json, path: /data/bloodmagic/living_armor/knockback_resist.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23269!/data/bloodmagic/living_armor/diamond_protect.json, path: /data/bloodmagic/living_armor/diamond_protect.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23269!/data/bloodmagic/living_armor/elytra.json, path: /data/bloodmagic/living_armor/elytra.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23269!/data/bloodmagic/living_armor/curios_socket.json, path: /data/bloodmagic/living_armor/curios_socket.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23269!/data/bloodmagic/living_armor/melee_damage.json, path: /data/bloodmagic/living_armor/melee_damage.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23269!/data/bloodmagic/living_armor/repair.json, path: /data/bloodmagic/living_armor/repair.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23269!/data/bloodmagic/living_armor/gilded.json, path: /data/bloodmagic/living_armor/gilded.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23269!/data/bloodmagic/living_armor/downgrade/quenched.json, path: /data/bloodmagic/living_armor/downgrade/quenched.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23269!/data/bloodmagic/living_armor/downgrade/storm_trooper.json, path: /data/bloodmagic/living_armor/downgrade/storm_trooper.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23269!/data/bloodmagic/living_armor/downgrade/battle_hungry.json, path: /data/bloodmagic/living_armor/downgrade/battle_hungry.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23269!/data/bloodmagic/living_armor/downgrade/melee_decrease.json, path: /data/bloodmagic/living_armor/downgrade/melee_decrease.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23269!/data/bloodmagic/living_armor/downgrade/dig_slowdown.json, path: /data/bloodmagic/living_armor/downgrade/dig_slowdown.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23269!/data/bloodmagic/living_armor/downgrade/slow_heal.json, path: /data/bloodmagic/living_armor/downgrade/slow_heal.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23269!/data/bloodmagic/living_armor/downgrade/crippled_arm.json, path: /data/bloodmagic/living_armor/downgrade/crippled_arm.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23269!/data/bloodmagic/living_armor/downgrade/swim_decrease.json, path: /data/bloodmagic/living_armor/downgrade/swim_decrease.json
+Attempting to load Living Armour Upgrade: union:/home/gerald/obelisks/server-instance/mods/bloodmagic-1.20.1-3.3.7-49.jar%23269!/data/bloodmagic/living_armor/downgrade/speed_decrease.json, path: /data/bloodmagic/living_armor/downgrade/speed_decrease.json
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / cold_sweat:temp_effect]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / create:arm_interaction_point_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / create:contraption_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / create:display_source]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / create:display_target]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / create:fan_processing_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / create:item_attribute_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / create:mounted_fluid_storage_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / create:mounted_item_storage_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / create:potato_projectile/block_hit_action]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / create:potato_projectile/entity_hit_action]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / create:potato_projectile/render_mode]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / createbigcannons:block_recipe_serializers]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / createbigcannons:block_recipe_types]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / createbigcannons:cannon_cast_shapes]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / creatingspace:exhaust_pack_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / creatingspace:power_pack_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / creatingspace:propellant_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / creatingspace:rocket_accessible_dimension]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: minecraft:buy_for_one_emerald
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: minecraft:sell_item
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: minecraft:sell_suspicious_stew
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: minecraft:process_item
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: minecraft:sell_enchanted_tool
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: minecraft:type_aware_buy_for_one_emerald
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: minecraft:sell_potion_holding_item
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: minecraft:enchant_book
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: minecraft:sell_map
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: minecraft:sell_dyed_armor
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: dynamicvillagertrades:sell_item_for_items
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: dynamicvillagertrades:type_aware_sell_item_for_items
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: dynamicvillagertrades:type_aware
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: dynamicvillagertrades:enchant_specific_book
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: dynamicvillagertrades:sell_specific_potion_holding_item
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / forge:biome_modifier_serializers]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [ModdingLegacy/StructureGel/]: [structure_gel] Registering data for structure_gel:loot_table_alias
+[13:58:54] [main/INFO] [ModdingLegacy/StructureGel/]: [structure_gel] Registering data for structure_gel:data_handler_type
+[13:58:54] [main/INFO] [ModdingLegacy/StructureGel/]: [structure_gel] Registering data for structure_gel:dynamic_spawner
+[13:58:54] [main/INFO] [ModdingLegacy/StructureGel/]: [structure_gel] Registering data for structure_gel:jigsaw_type
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / forge:display_contexts]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / forge:entity_data_serializers]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / forge:fluid_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / forge:global_loot_modifier_serializers]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / forge:holder_set_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / forge:structure_modifier_serializers]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / lithostitched:modifier_predicate_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / lithostitched:modifier_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / lithostitched:placement_condition_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / lithostitched:processor_condition_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / minecraft:worldgen/biome]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / oc2r:block_device_data]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / oc2r:block_device_provider]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / oc2r:device_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / oc2r:firmware]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / oc2r:item_device_provider]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / pneumaticcraft:harvest_handlers]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / pneumaticcraft:hoe_handlers]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / pneumaticcraft:prog_widgets]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / powergrid:components]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / starcatcher:bobber_skin]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / starcatcher:catch_modifiers]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / starcatcher:minigame_modifiers]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / starcatcher:sweet_spot_behaviour]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / twilight:biome_layer_type]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / twilightforest:dwarf_rabbit_variant]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / twilightforest:enforcement]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/INFO] [dynamicvillagertrades/]: ResourceKey[minecraft:root / twilightforest:tiny_bird_variant]_ResourceKey[minecraft:root / dynamicvillagertrades:trade_offer_factory]
+[13:58:54] [main/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Configuration file /home/gerald/obelisks/server-instance/config/guardvillagers-common.toml is not correct. Correcting
+[13:58:54] [Thread-5/WARN] [ne.mi.fm.co.ConfigFileTypeHandler/CONFIG]: Configuration file /home/gerald/obelisks/server-instance/config/guardvillagers-common.toml is not correct. Correcting
+PER_BLOCK
+PER_BLOCK
+PER_BLOCK
+[13:58:54] [Thread-5/FATAL] [mc.th.TheOneProbe/CORE]: theoneprobe config just got changed on the file system!
+[13:58:54] [Thread-5/FATAL] [mc.th.TheOneProbe/CORE]: theoneprobe config just got changed on the file system!
+[13:58:54] [Thread-5/INFO] [quark-zeta/]: About to refresh quark's config, looking for better thread than 'Thread-5'...
+[13:58:54] [Thread-5/WARN] [quark-zeta/]: Using thread 'Thread-5' instead of the server thread
+[13:58:54] [Thread-5/INFO] [quark-zeta/]: quark's config is 'BEFORE_INIT', ignoring config refresh. Current thread: Thread-5
+[13:58:54] [modloading-worker-0/INFO] [incontrol/]: Enabling support for Lost Cities
+[13:58:54] [modloading-worker-0/INFO] [incontrol/]: Enabling support for Lost Cities
+[13:58:54] [modloading-worker-0/INFO] [incontrol/]: Enabling support for Serene Seasons
+[13:58:54] [modloading-worker-0/INFO] [terrablender/]: Registered region minecraft:overworld to index 0 for type OVERWORLD
+[13:58:54] [modloading-worker-0/INFO] [terrablender/]: Registered region minecraft:nether to index 0 for type NETHER
+[13:58:54] [modloading-worker-0/INFO] [terrablender/]: Registered region natures_spirit:terra_ferax to index 1 for type OVERWORLD
+[13:58:54] [modloading-worker-0/INFO] [terrablender/]: Registered region natures_spirit:terra_solaris to index 2 for type OVERWORLD
+[13:58:54] [modloading-worker-0/INFO] [terrablender/]: Registered region natures_spirit:terra_flava to index 3 for type OVERWORLD
+[13:58:54] [modloading-worker-0/INFO] [terrablender/]: Registered region natures_spirit:terra_mater to index 4 for type OVERWORLD
+[13:58:54] [modloading-worker-0/INFO] [terrablender/]: Registered region natures_spirit:terra_laeta to index 5 for type OVERWORLD
+Registered Resource Key for biome: sugi_forest
+Registered Resource Key for biome: windswept_sugi_forest
+Registered Resource Key for biome: blooming_sugi_forest
+Registered Resource Key for biome: lavender_fields
+Registered Resource Key for biome: marsh
+Registered Resource Key for biome: bamboo_wetlands
+Registered Resource Key for biome: wisteria_forest
+Registered Resource Key for biome: redwood_forest
+Registered Resource Key for biome: snowy_redwood_forest
+Registered Resource Key for biome: aspen_forest
+Registered Resource Key for biome: maple_woodlands
+Registered Resource Key for biome: golden_wilds
+Registered Resource Key for biome: marigold_meadows
+Registered Resource Key for biome: fir_forest
+Registered Resource Key for biome: snowy_fir_forest
+Registered Resource Key for biome: cypress_fields
+Registered Resource Key for biome: carnation_fields
+Registered Resource Key for biome: stratified_desert
+Registered Resource Key for biome: blooming_dunes
+Registered Resource Key for biome: lively_dunes
+Registered Resource Key for biome: drylands
+Registered Resource Key for biome: wooded_drylands
+Registered Resource Key for biome: xeric_plains
+Registered Resource Key for biome: cedar_thicket
+Registered Resource Key for biome: white_cliffs
+Registered Resource Key for biome: prairie
+Registered Resource Key for biome: oak_savanna
+Registered Resource Key for biome: heather_fields
+Registered Resource Key for biome: tundra
+Registered Resource Key for biome: alpine_clearings
+Registered Resource Key for biome: alpine_highlands
+Registered Resource Key for biome: coniferous_covert
+Registered Resource Key for biome: boreal_taiga
+Registered Resource Key for biome: tropical_shores
+Registered Resource Key for biome: tropical_woods
+Registered Resource Key for biome: sparse_tropical_woods
+Registered Resource Key for biome: tropical_basin
+Registered Resource Key for biome: arid_savanna
+Registered Resource Key for biome: scorched_dunes
+Registered Resource Key for biome: flowering_shrubland
+Registered Resource Key for biome: shrubland
+Registered Resource Key for biome: arid_highlands
+Registered Resource Key for biome: shrubby_highlands
+Registered Resource Key for biome: woody_highlands
+Registered Resource Key for biome: red_peaks
+Registered Resource Key for biome: dusty_slopes
+Registered Resource Key for biome: snowcapped_red_peaks
+Registered Resource Key for biome: sleeted_slopes
+Registered Resource Key for biome: blooming_highlands
+Registered Resource Key for biome: chaparral
+Registered Resource Key for biome: floral_ridges
+[13:58:54] [modloading-worker-0/ERROR] [patchouli/]: Failed to load book dtarsnouveau:guide defined by mod dtarsnouveau, skipping
+java.lang.IllegalArgumentException: Book dtarsnouveau:guide has use_resource_pack set to false. This behaviour was removed in 1.20. The book author should enable this flag and move all book contents clientside to /assets/, leaving the book.json in /data/. See https://vazkiimods.github.io/Patchouli/docs/upgrading/upgrade-guide-120 for details.
+	at vazkii.patchouli.common.book.Book.<init>(Book.java:145) ~[Patchouli-1.20.1-85-FORGE.jar%23361!/:1.20.1-85-FORGE] {re:classloading}
+	at vazkii.patchouli.common.book.BookRegistry.loadBook(BookRegistry.java:90) ~[Patchouli-1.20.1-85-FORGE.jar%23361!/:1.20.1-85-FORGE] {re:classloading}
+	at vazkii.patchouli.common.book.BookRegistry.lambda$init$3(BookRegistry.java:75) ~[Patchouli-1.20.1-85-FORGE.jar%23361!/:1.20.1-85-FORGE] {re:classloading}
+	at java.util.HashMap.forEach(HashMap.java:1429) ~[?:?] {re:mixin}
+	at vazkii.patchouli.common.book.BookRegistry.init(BookRegistry.java:70) ~[Patchouli-1.20.1-85-FORGE.jar%23361!/:1.20.1-85-FORGE] {re:classloading}
+	at vazkii.patchouli.forge.common.ForgeModInitializer.onInitialize(ForgeModInitializer.java:76) ~[Patchouli-1.20.1-85-FORGE.jar%23361!/:1.20.1-85-FORGE] {re:classloading}
+	at vazkii.patchouli.forge.common.__ForgeModInitializer_onInitialize_FMLCommonSetupEvent.invoke(.dynamic) ~[Patchouli-1.20.1-85-FORGE.jar%23361!/:1.20.1-85-FORGE] {re:classloading,pl:eventbus:B}
+	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:73) ~[eventbus-6.0.5.jar%2352!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:315) ~[eventbus-6.0.5.jar%2352!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:296) ~[eventbus-6.0.5.jar%2352!/:?] {}
+	at net.minecraftforge.fml.javafmlmod.FMLModContainer.acceptEvent(FMLModContainer.java:121) ~[javafmllanguage-1.20.1-47.4.13.jar%23419!/:?] {}
+	at net.minecraftforge.fml.ModContainer.lambda$buildTransitionHandler$5(ModContainer.java:127) ~[fmlcore-1.20.1-47.4.13.jar%23418!/:?] {}
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796) ~[?:?] {}
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) ~[?:?] {re:computing_frames}
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) ~[?:?] {re:computing_frames}
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) ~[?:?] {}
+[13:58:54] [modloading-worker-0/INFO] [pneumaticcraft/]: PneumaticCraft: Repressurized is loading!
+[13:58:54] [modloading-worker-0/INFO] [xb.re.RealisticPhysics/]: Loading Realistic Physics configuration.
+[13:58:54] [modloading-worker-0/INFO] [xb.re.RealisticPhysics/]: Initialising Realistic Physics configuration directories.
+[13:58:54] [modloading-worker-0/INFO] [xb.re.RealisticPhysics/]: Reading Realistic Physics world definition configurations.
+[13:58:54] [modloading-worker-0/INFO] [xb.re.RealisticPhysics/]: Searching for Realistic Physics mod plugins.
+[13:58:54] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [blue_skies] Starting version check at http://changelogs.moddinglegacy.com/blue-skies.json
+[13:58:54] [modloading-worker-0/INFO] [li.ci.oc.co.in.InternetManagerImpl/]: Internet card is disabled; Internet manager will not start
+[13:58:54] [modloading-worker-0/INFO] [li.ci.oc.co.vx.TunnelManager/]: Initializing outernet tunnel manager
+[13:58:54] [modloading-worker-0/INFO] [ne.ni.wa.WandsMod/]: Has opac!! false
+[13:58:54] [modloading-worker-0/INFO] [ne.ni.wa.WandsMod/]: Has ftbchunks!! false
+[13:58:54] [modloading-worker-0/INFO] [ne.ni.wa.WandsMod/]: Has flan!! false
+[13:58:54] [modloading-worker-0/INFO] [co.lg.co.CompressedCreativity/]: HELLO FROM PREINIT
+[13:58:54] [main/INFO] [fiahi/]: Loaded 2 pouched food data types.
+[13:58:54] [main/INFO] [co.al.no.Config/]: Loading NoTreePunching Config
+[13:58:54] [main/INFO] [co.al.no.Config/]: Loaded NoTreePunching Config
+[13:58:54] [main/INFO] [Moonlight/]: Initialized color sets in 28ms
+[13:58:54] [main/INFO] [zeta/]: Common setup: Performing initial refresh of zeta's config on thread 'main'
+[13:58:54] [main/INFO] [zeta/]: 'zeta' is enabling Zeta's piston structure resolver.
+[13:58:54] [main/INFO] [zeta/]: Waiting for server start before accepting filewatcher changes to zeta's config
+[13:58:54] [main/INFO] [terrablender/]: Registered region quark:biome_provider to index 6 for type OVERWORLD
+[13:58:54] [main/INFO] [quark-zeta/]: Common setup: Performing initial refresh of quark's config on thread 'main'
+[13:58:54] [main/INFO] [quark-zeta/]: Waiting for server start before accepting filewatcher changes to quark's config
+[13:58:54] [main/INFO] [terrablender/]: Registered region ars_nouveau:overworld to index 7 for type OVERWORLD
+[13:58:54] [modloading-worker-0/INFO] [Di.fo.co.se.di.co.AbstractModInitializer/]: Initializing Distant Horizons server, firing DhApiBeforeDhInitEvent event...
+[13:58:54] [modloading-worker-0/INFO] [Di.se.di.co.Initializer/]: Running library validation...
+[13:58:54] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [blue_skies] Found status: UP_TO_DATE Current: 1.3.31 Target: null
+[13:58:54] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [aether] Starting version check at https://github.com/The-Aether-Team/The-Aether/raw/1.20.1-develop/update.json
+[13:58:54] [modloading-worker-0/INFO] [Di.se.di.co.Initializer/]: Garbage collectors: [G1 Young Generation, G1 Concurrent GC, G1 Old Generation]
+[13:58:54] [modloading-worker-0/WARN] [Di.se.di.co.Initializer/]: Distant Horizons: G1 Garbage collector detected. 
+This garbage collector can cause FPS stuttering. 
+It's recommended to use a concurrent garbage collector 
+like ZGC (Java 21+) or Shenandoah (Java 8 through 17) for a smoother experience. 
+
+[13:58:54] [modloading-worker-0/INFO] [Di.fo.co.se.di.co.AbstractModInitializer/]: Distant Horizons, Version: 2.4.5-b
+[13:58:54] [modloading-worker-0/INFO] [Di.fo.co.se.di.co.AbstractModInitializer/]: Skipping mod compatibility accessor for: [optifine]
+[13:58:54] [modloading-worker-0/INFO] [Di.fo.co.se.di.co.AbstractModInitializer/]: Skipping mod compatibility accessor for: [oculus]
+[13:58:54] [modloading-worker-0/INFO] [Di.fo.co.se.di.co.AbstractModInitializer/]: Distant Horizons server Initialized, adding event subscribers...
+[13:58:54] [modloading-worker-0/INFO] [pneumaticcraft/]: Sending IMC messages.
+[13:58:54] [modloading-worker-0/INFO] [we.Weather/]: Got IMC []
+[13:58:54] [modloading-worker-0/INFO] [pneumaticcraft/]: Enabled support for The One Probe
+[13:58:54] [modloading-worker-0/INFO] [KubeJS Startup/]: 10_items_blocks/10_thats_crate_registry.js#119: [crates] postInit bases=16
+[13:58:54] [modloading-worker-0/ERROR] [KubeJS/]: Startup script errors:
+1) 40_potion_brewing_registry.js#6: ReferenceError: "MoreJSEvents" is not defined.
+[13:58:54] [modloading-worker-0/ERROR] [ne.mi.fm.ja.FMLModContainer/]: Exception caught during firing event: There were KubeJS startup script syntax errors! See logs/kubejs/startup.log for more info
+	Index: 1
+	Listeners:
+		0: LOW
+		1: net.minecraftforge.eventbus.EventBus$$Lambda/0x00007f2280ce0000@5722e33e
+java.lang.RuntimeException: There were KubeJS startup script syntax errors! See logs/kubejs/startup.log for more info
+	at TRANSFORMER/kubejs@2001.6.5-build.16/dev.latvian.mods.kubejs.KubeJS.loadComplete(KubeJS.java:226)
+	at TRANSFORMER/kubejs@2001.6.5-build.16/dev.latvian.mods.kubejs.forge.KubeJSForge.loadComplete(KubeJSForge.java:135)
+	at MC-BOOTSTRAP/net.minecraftforge.eventbus/net.minecraftforge.eventbus.EventBus.doCastFilter(EventBus.java:260)
+	at MC-BOOTSTRAP/net.minecraftforge.eventbus/net.minecraftforge.eventbus.EventBus.lambda$addListener$11(EventBus.java:252)
+	at MC-BOOTSTRAP/net.minecraftforge.eventbus/net.minecraftforge.eventbus.EventBus.post(EventBus.java:315)
+	at MC-BOOTSTRAP/net.minecraftforge.eventbus/net.minecraftforge.eventbus.EventBus.post(EventBus.java:296)
+	at LAYER PLUGIN/javafmllanguage@1.20.1-47.4.13/net.minecraftforge.fml.javafmlmod.FMLModContainer.acceptEvent(FMLModContainer.java:121)
+	at LAYER PLUGIN/fmlcore@1.20.1-47.4.13/net.minecraftforge.fml.ModContainer.lambda$buildTransitionHandler$5(ModContainer.java:127)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+
+[13:58:54] [modloading-worker-0/ERROR] [ne.mi.fm.ja.FMLModContainer/LOADING]: Caught exception during event FMLLoadCompleteEvent dispatch for modid kubejs
+java.lang.RuntimeException: There were KubeJS startup script syntax errors! See logs/kubejs/startup.log for more info
+	at dev.latvian.mods.kubejs.KubeJS.loadComplete(KubeJS.java:226) ~[kubejs-forge-2001.6.5-build.16.jar%23340!/:2001.6.5-build.16] {re:classloading}
+	at dev.latvian.mods.kubejs.forge.KubeJSForge.loadComplete(KubeJSForge.java:135) ~[kubejs-forge-2001.6.5-build.16.jar%23340!/:2001.6.5-build.16] {re:classloading}
+	at net.minecraftforge.eventbus.EventBus.doCastFilter(EventBus.java:260) ~[eventbus-6.0.5.jar%2352!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.lambda$addListener$11(EventBus.java:252) ~[eventbus-6.0.5.jar%2352!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:315) ~[eventbus-6.0.5.jar%2352!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:296) ~[eventbus-6.0.5.jar%2352!/:?] {}
+	at net.minecraftforge.fml.javafmlmod.FMLModContainer.acceptEvent(FMLModContainer.java:121) ~[javafmllanguage-1.20.1-47.4.13.jar%23419!/:?] {}
+	at net.minecraftforge.fml.ModContainer.lambda$buildTransitionHandler$5(ModContainer.java:127) ~[fmlcore-1.20.1-47.4.13.jar%23418!/:?] {}
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796) ~[?:?] {}
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) ~[?:?] {re:computing_frames}
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) ~[?:?] {re:computing_frames}
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) ~[?:?] {}
+[13:58:54] [main/FATAL] [ne.mi.fm.ModLoader/LOADING]: Failed to complete lifecycle event COMPLETE, 1 errors found
+Negative index in crash report handler (16/18)
+[13:58:54] [main/FATAL] [ne.mi.co.ForgeMod/]: Preparing crash report with UUID f7f83238-9617-4bcd-9c2c-b0a70fe43280
+[13:58:54] [main/FATAL] [ne.mi.se.lo.ServerModLoader/]: Crash report saved to ./crash-reports/crash-2026-05-06_13.58.54-fml.txt
+[13:58:54] [main/FATAL] [ne.mi.co.ForgeMod/]: Preparing crash report with UUID b2efb20d-f0b3-4ad7-bedb-8dca8fb8c0eb
+---- Minecraft Crash Report ----
+// Everything's going to plan. No, really, that was supposed to happen.
+
+Time: 2026-05-06 13:58:54
+Description: Mod loading error has occurred
+
+java.lang.Exception: Mod Loading has failed
+	at net.minecraftforge.logging.CrashReportExtender.dumpModLoadingCrashReport(CrashReportExtender.java:60) ~[forge-1.20.1-47.4.13-universal.jar%23422!/:?] {re:classloading}
+	at net.minecraftforge.server.loading.ServerModLoader.load(ServerModLoader.java:37) ~[forge-1.20.1-47.4.13-universal.jar%23422!/:?] {re:classloading}
+	at net.minecraft.server.Main.main(Main.java:125) ~[server-1.20.1-20230612.114412-srg.jar%23417!/:?] {re:classloading}
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}
+	at java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:111) ~[fmlloader-1.20.1-47.4.13.jar%2369!/:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.serverService(CommonLaunchHandler.java:103) ~[fmlloader-1.20.1-47.4.13.jar%2369!/:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonServerLaunchHandler.lambda$makeService$0(CommonServerLaunchHandler.java:27) ~[fmlloader-1.20.1-47.4.13.jar%2369!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:108) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:78) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) ~[bootstraplauncher-1.1.2.jar:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: main
+Suspected Mod: 
+	KubeJS (kubejs), Version: 2001.6.5-build.16
+		Issue tracker URL: https://kubejs.com/support?source=kubejs&mc=2001&loader=forge
+		at TRANSFORMER/kubejs@2001.6.5-build.16/dev.latvian.mods.kubejs.KubeJS.loadComplete(KubeJS.java:226)
+Stacktrace:
+	at dev.latvian.mods.kubejs.KubeJS.loadComplete(KubeJS.java:226) ~[kubejs-forge-2001.6.5-build.16.jar%23340!/:2001.6.5-build.16] {re:classloading}
+-- MOD kubejs --
+Details:
+	Mod File: /home/gerald/obelisks/server-instance/mods/kubejs-forge-2001.6.5-build.16.jar
+	Failure message: KubeJS (kubejs) encountered an error during the complete event phase
+		java.lang.RuntimeException: There were KubeJS startup script syntax errors! See logs/kubejs/startup.log for more info
+	Mod Version: 2001.6.5-build.16
+	Mod Issue URL: https://kubejs.com/support?source=kubejs&mc=2001&loader=forge
+	Exception message: java.lang.RuntimeException: There were KubeJS startup script syntax errors! See logs/kubejs/startup.log for more info
+Stacktrace:
+	at dev.latvian.mods.kubejs.KubeJS.loadComplete(KubeJS.java:226) ~[kubejs-forge-2001.6.5-build.16.jar%23340!/:2001.6.5-build.16] {re:classloading}
+	at dev.latvian.mods.kubejs.forge.KubeJSForge.loadComplete(KubeJSForge.java:135) ~[kubejs-forge-2001.6.5-build.16.jar%23340!/:2001.6.5-build.16] {re:classloading}
+	at net.minecraftforge.eventbus.EventBus.doCastFilter(EventBus.java:260) ~[eventbus-6.0.5.jar%2352!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.lambda$addListener$11(EventBus.java:252) ~[eventbus-6.0.5.jar%2352!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:315) ~[eventbus-6.0.5.jar%2352!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:296) ~[eventbus-6.0.5.jar%2352!/:?] {}
+	at net.minecraftforge.fml.javafmlmod.FMLModContainer.acceptEvent(FMLModContainer.java:121) ~[javafmllanguage-1.20.1-47.4.13.jar%23419!/:?] {}
+	at net.minecraftforge.fml.ModContainer.lambda$buildTransitionHandler$5(ModContainer.java:127) ~[fmlcore-1.20.1-47.4.13.jar%23418!/:?] {}
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796) ~[?:?] {}
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) ~[?:?] {re:computing_frames}
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) ~[?:?] {re:computing_frames}
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) ~[?:?] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.20.1
+	Minecraft Version ID: 1.20.1
+	Operating System: Linux (amd64) version 6.12.74+deb13+1-amd64
+	Java Version: 21.0.11, Eclipse Adoptium
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Eclipse Adoptium
+	Memory: 1178599424 bytes (1124 MiB) / 4873781248 bytes (4648 MiB) up to 16223567872 bytes (15472 MiB)
+	CPUs: 12
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD Ryzen 5 9600X 6-Core Processor
+	Identifier: AuthenticAMD Family 26 Model 68 Stepping 0
+	Microarchitecture: unknown
+	Frequency (GHz): -0.00
+	Number of physical packages: 1
+	Number of physical CPUs: 6
+	Number of logical CPUs: 12
+	Graphics card #0 name: GA104 [GeForce RTX 3070]
+	Graphics card #0 vendor: NVIDIA Corporation (0x10de)
+	Graphics card #0 VRAM (MB): 288.00
+	Graphics card #0 deviceId: 0x2484
+	Graphics card #0 versionInfo: unknown
+	Graphics card #1 name: Granite Ridge [Radeon Graphics]
+	Graphics card #1 vendor: Advanced Micro Devices, Inc. [AMD/ATI] (0x1002)
+	Graphics card #1 VRAM (MB): 258.00
+	Graphics card #1 deviceId: 0x13c0
+	Graphics card #1 versionInfo: unknown
+	Virtual memory max (MB): 70982.27
+	Virtual memory used (MB): 20194.26
+	Swap memory total (MB): 40047.00
+	Swap memory used (MB): 0.25
+	JVM Flags: 0 total; 
+	ModLauncher: 10.0.9+10.0.9+main.dcd20f30
+	ModLauncher launch target: forgeserver
+	ModLauncher naming: srg
+	ModLauncher services: 
+		mixin-0.8.5.jar mixin PLUGINSERVICE 
+		eventbus-6.0.5.jar eventbus PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.13.jar slf4jfixer PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.13.jar object_holder_definalize PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.13.jar runtime_enum_extender PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.13.jar capability_token_subclass PLUGINSERVICE 
+		accesstransformers-8.0.4.jar accesstransformer PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.13.jar runtimedistcleaner PLUGINSERVICE 
+		modlauncher-10.0.9.jar mixin TRANSFORMATIONSERVICE 
+		modlauncher-10.0.9.jar fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		minecraft@1.0
+		lowcodefml@null
+		kotlinforforge@4.12.0
+		javafml@null
+	Mod List: 
+		GlobalGameRules-1.20.1-8.1.0.12.jar               |Global GameRules              |globalgamerules               |8.1.0.12            |DONE      |Manifest: 15:a4:a3:0e:d2:f8:64:0c:a4:97:30:5f:48:ba:5f:69:f9:23:42:14:a8:5a:60:3a:b1:b1:29:1a:0a:37:3c:79
+		blue_skies-1.20.1-1.3.31.jar                      |Blue Skies                    |blue_skies                    |1.3.31              |DONE      |Manifest: NOSIGNATURE
+		alchemylib-1.20.1-1.0.30.jar                      |AlchemyLib                    |alchemylib                    |1.0.30              |DONE      |Manifest: NOSIGNATURE
+		sedna.jar                                         |Sedna for Minecraft           |sedna                         |1.0.68              |DONE      |Manifest: NOSIGNATURE
+		Explosion-Overhaul-0.2.3.0-forge-.jar             |Explosion Overhaul: A new leve|explosionoverhaul             |0.2.3.0-forge       |DONE      |Manifest: NOSIGNATURE
+		geckolib-forge-1.20.1-4.8.3.jar                   |GeckoLib 4                    |geckolib                      |4.8.3               |DONE      |Manifest: NOSIGNATURE
+		tiny-multiblock-lib-forge-1.20.1-3.0.jar          |Tiny Multiblock Lib           |tinymultiblocklib             |3.0                 |DONE      |Manifest: NOSIGNATURE
+		player-animation-lib-forge-1.0.2-rc1+1.20.jar     |Player Animator               |playeranimator                |1.0.2-rc1+1.20      |DONE      |Manifest: NOSIGNATURE
+		aether-1.20.1-1.5.2-neoforge.jar                  |The Aether                    |aether                        |1.20.1-1.5.2-neoforg|DONE      |Manifest: NOSIGNATURE
+		incontrol-1.20-9.4.6.jar                          |InControl                     |incontrol                     |1.20-9.4.6          |DONE      |Manifest: NOSIGNATURE
+		Satako-7.0.33-1.20.1.jar                          |Satako                        |satako                        |7.0.33-1.20.1       |DONE      |Manifest: NOSIGNATURE
+		dynamicvillagertrades-1.3.1-forge-1.20.jar        |Dynamic Villager Trades       |dynamicvillagertrades         |1.3.1               |DONE      |Manifest: NOSIGNATURE
+		tponder-1.1.jar                                   |Tinkers' Ponder               |tponder                       |1.1                 |DONE      |Manifest: NOSIGNATURE
+		sophisticatedcore-1.20.1-1.3.21.1676.jar          |Sophisticated Core            |sophisticatedcore             |1.3.21.1676         |DONE      |Manifest: NOSIGNATURE
+		looot-1.20.1-1.2.0.4.jar                          |Looot                         |looot                         |1.2.0.4             |DONE      |Manifest: NOSIGNATURE
+		rsgauges-1.2.22.jar                               |Gauges and Switches           |rsgauges                      |1.2.22              |DONE      |Manifest: NOSIGNATURE
+		excavatedvariants-neoforge-1.20.1-3.0.9.jar       |Excavated Variants            |excavated_variants            |3.0.9               |DONE      |Manifest: NOSIGNATURE
+		rpgstats-1.0.0.jar                                |RPG Stats                     |rpgstats                      |1.0.0               |DONE      |Manifest: NOSIGNATURE
+		pillagercampaigns-0.2.0.jar                       |Pillager Campaigns            |pillagercampaigns             |0.2.0               |DONE      |Manifest: NOSIGNATURE
+		ritchiesprojectilelib-2.1.1-mc.1.20.1-forge.jar   |Ritchie's Projectile Library  |ritchiesprojectilelib         |2.1.1               |DONE      |Manifest: NOSIGNATURE
+		citadel-2.6.3-1.20.1.jar                          |Citadel                       |citadel                       |2.6.3               |DONE      |Manifest: NOSIGNATURE
+		everythingcopper-1.20.1-2.3.4.jar                 |Everything is Copper          |everythingcopper              |1.20.1-2.3.4        |DONE      |Manifest: NOSIGNATURE
+		useitemonblockevent-1.20.1-1.0.0.2.jar            |Use Item on Block Event       |useitemonblockevent           |1.0.0.2             |DONE      |Manifest: NOSIGNATURE
+		YungsApi-1.20-Forge-4.0.6.jar                     |YUNG's API                    |yungsapi                      |1.20-Forge-4.0.6    |DONE      |Manifest: NOSIGNATURE
+		jumbofurnace-1.20.1-4.0.0.5.jar                   |Jumbo Furnace                 |jumbofurnace                  |4.0.0.5             |DONE      |Manifest: NOSIGNATURE
+		weather2-1.20.1-2.8.3.jar                         |Weather2                      |weather2                      |1.20.1-2.8.3        |DONE      |Manifest: NOSIGNATURE
+		sophisticatedbackpacks-1.20.1-3.24.35.1675.jar    |Sophisticated Backpacks       |sophisticatedbackpacks        |3.24.35.1675        |DONE      |Manifest: NOSIGNATURE
+		guardvillagers-1.20.1-1.6.17.jar                  |Guard Villagers               |guardvillagers                |1.20.1-1.6.17       |DONE      |Manifest: NOSIGNATURE
+		createdieselgenerators-1.20.1-1.3.12.jar          |Create: Diesel Generators     |createdieselgenerators        |1.20.1-1.3.12       |DONE      |Manifest: NOSIGNATURE
+		takesapillage-1.0.3-1.20.1.jar                    |It Takes A Pillage            |takesapillage                 |1.0.3               |DONE      |Manifest: NOSIGNATURE
+		wares-1.20.1-1.2.10.jar                           |Wares                         |wares                         |1.2.10              |DONE      |Manifest: NOSIGNATURE
+		create-new-age-1.1.7f+forge-mc1.20.1.jar          |Create: New Age               |create_new_age                |1.1.7f+mc1.20.1     |DONE      |Manifest: NOSIGNATURE
+		villagewalls-1.0.0.jar                            |Village Walls                 |villagewalls                  |1.0.0               |DONE      |Manifest: NOSIGNATURE
+		K-Turrets-3.0.44-1.20.1.jar                       |K-Turrets                     |k_turrets                     |3.0.44-1.20.1       |DONE      |Manifest: NOSIGNATURE
+		cloth-config-11.1.136-forge.jar                   |Cloth Config v10 API          |cloth_config                  |11.1.136            |DONE      |Manifest: NOSIGNATURE
+		[forge]ctov-3.4.14.jar                            |ChoiceTheorem's Overhauled Vil|ctov                          |3.4.14              |DONE      |Manifest: NOSIGNATURE
+		tntutils-forge-1.20.1-2.0.4.jar                   |TNTUtils                      |tntutils                      |1.20.1-2.0.4        |DONE      |Manifest: NOSIGNATURE
+		twilightforest-1.20.1-4.3.2508-universal.jar      |The Twilight Forest           |twilightforest                |4.3.2508            |DONE      |Manifest: NOSIGNATURE
+		staaaaaaaaaaaack-forge-1.20.1-1.5-71.jar          |Staaaaaaaaaaaack              |staaaaaaaaaaaack              |1.20.1-1.5-71       |DONE      |Manifest: NOSIGNATURE
+		structure_gel-1.20.1-2.16.2.jar                   |Structure Gel API             |structure_gel                 |2.16.2              |DONE      |Manifest: NOSIGNATURE
+		natures_spirit-2.2.5-1.20.1.jar                   |Nature's Spirit               |natures_spirit                |2.2.5-1.20.1        |DONE      |Manifest: NOSIGNATURE
+		FarmersDelight-1.20.1-1.3.1.jar                   |Farmer's Delight              |farmersdelight                |1.20.1-1.3.1        |DONE      |Manifest: NOSIGNATURE
+		starcatcher-2.2.1-FORGE-1.20.1.jar                |Starcatcher                   |starcatcher                   |2.2.1-FORGE-1.20.1  |DONE      |Manifest: NOSIGNATURE
+		create_cold_sweat-1.1.2.jar                       |Create: Cold Sweat            |create_cold_sweat             |1.1.2               |DONE      |Manifest: NOSIGNATURE
+		Cobble-Gen-Haters-1.20-1.0.1.jar                  |Cobble Gen Hater              |cobblegenhaters               |1.0.1               |DONE      |Manifest: NOSIGNATURE
+		nomobfarm-forge-1.6.6.jar                         |No mob Farms                  |nomobfarm                     |1.6.6               |DONE      |Manifest: NOSIGNATURE
+		alekiNiftyShips-FORGE-1.20.1-1.0.14.jar           |aleki's Nifty Ships           |alekiships                    |1.0.14              |DONE      |Manifest: NOSIGNATURE
+		defaultresources-forge-1.20-2.0.0.jar             |Default Resources             |defaultresources              |2.0.0               |DONE      |Manifest: NOSIGNATURE
+		resourcefulconfig-forge-1.20.1-2.1.3.jar          |Resourcefulconfig             |resourcefulconfig             |2.1.3               |DONE      |Manifest: NOSIGNATURE
+		procedural_bouquets-0.1.0.jar                     |Procedural Bouquets           |procedural_bouquets           |0.1.0               |DONE      |Manifest: NOSIGNATURE
+		HangGlider-v8.0.1-1.20.1-Forge.jar                |Hang Glider                   |hangglider                    |8.0.1               |DONE      |Manifest: 9a:09:85:98:65:c4:8c:11:c5:49:f6:d6:33:23:39:df:8d:b4:ff:92:84:b8:bd:a5:83:9f:ac:7f:2a:d1:4b:6a
+		villagespawnpoint-1.20.1-4.6.jar                  |Village Spawn Point           |villagespawnpoint             |4.6                 |DONE      |Manifest: NOSIGNATURE
+		curios-forge-5.14.1+1.20.1.jar                    |Curios API                    |curios                        |5.14.1+1.20.1       |DONE      |Manifest: NOSIGNATURE
+		classselector-1.0.0.jar                           |Class Selector                |classselector                 |1.0.0               |DONE      |Manifest: NOSIGNATURE
+		Patchouli-1.20.1-85-FORGE.jar                     |Patchouli                     |patchouli                     |1.20.1-85-FORGE     |DONE      |Manifest: NOSIGNATURE
+		collective-1.20.1-8.20.jar                        |Collective                    |collective                    |8.20                |DONE      |Manifest: NOSIGNATURE
+		btmfixes-0.1.0.jar                                |Bound to Matter Fixes         |btmfixes                      |0.1.0               |DONE      |Manifest: NOSIGNATURE
+		lostcities-1.20-7.4.11.jar                        |LostCities                    |lostcities                    |1.20-7.4.11         |DONE      |Manifest: NOSIGNATURE
+		ThirstWasTaken-1.20.1-1.4.0.jar                   |Thirst was Taken              |thirst                        |1.20.1-1.4.0        |DONE      |Manifest: NOSIGNATURE
+		realisticores-0.1.0.jar                           |Realistic Ores                |realisticores                 |0.1.0               |DONE      |Manifest: NOSIGNATURE
+		resourcefullib-forge-1.20.1-2.1.29.jar            |Resourceful Lib               |resourcefullib                |2.1.29              |DONE      |Manifest: NOSIGNATURE
+		oc2r-1.20.1-forge-2.2.12-all.jar                  |OpenComputers II: Reimagined  |oc2r                          |2.2.12              |DONE      |Manifest: NOSIGNATURE
+		cumulus_menus-1.20.1-1.0.1-neoforge.jar           |Cumulus                       |cumulus_menus                 |1.20.1-1.0.1-neoforg|DONE      |Manifest: NOSIGNATURE
+		lootjs-forge-1.20.1-2.13.1.jar                    |LootJS                        |lootjs                        |1.20.1-2.13.1       |DONE      |Manifest: NOSIGNATURE
+		littlelogistics-mc1.20.1-v1.20.1.2.jar            |Little Logistics              |littlelogistics               |1.20.1.2            |DONE      |Manifest: NOSIGNATURE
+		deeperdarker-forge-1.20.1-1.3.3.jar               |Deeper and Darker             |deeperdarker                  |1.3.3               |DONE      |Manifest: NOSIGNATURE
+		architectury-9.2.14-forge.jar                     |Architectury                  |architectury                  |9.2.14              |DONE      |Manifest: NOSIGNATURE
+		findme-3.2.3-forge.jar                            |FindMe                        |findme                        |3.2.3               |DONE      |Manifest: NOSIGNATURE
+		finite_water-1.20.1-1.0.0.jar                     |Finite Water                  |finite_water                  |1.0.0               |DONE      |Manifest: NOSIGNATURE
+		The_Undergarden-1.20.1-0.8.14.jar                 |The Undergarden               |undergarden                   |0.8.14              |DONE      |Manifest: NOSIGNATURE
+		nitrogen_internals-1.20.1-1.0.12-neoforge.jar     |Nitrogen                      |nitrogen_internals            |1.20.1-1.0.12-neofor|DONE      |Manifest: NOSIGNATURE
+		settlementroads-0.1.0.jar                         |Settlement Roads              |settlementroads               |0.1.0               |DONE      |Manifest: NOSIGNATURE
+		Towns-and-Towers-1.12-Fabric+Forge.jar            |Towns and Towers              |t_and_t                       |0.0NONE             |DONE      |Manifest: NOSIGNATURE
+		DynamicTrees-1.20.1-1.4.10.jar                    |Dynamic Trees                 |dynamictrees                  |1.20.1-1.4.10       |DONE      |Manifest: NOSIGNATURE
+		DynamicTreesPlus-1.20.1-1.2.2.jar                 |Dynamic Trees Plus            |dynamictreesplus              |1.20.1-1.2.2        |DONE      |Manifest: NOSIGNATURE
+		dtnatures_spirit-1.20.1-forge-1.3-all.jar         |Dynamic Trees for Nature's Spi|dtnatures_spirit              |1.3                 |DONE      |Manifest: NOSIGNATURE
+		PlayerRevive_FORGE_v2.0.31_mc1.20.1.jar           |PlayerRevive                  |playerrevive                  |2.0.31              |DONE      |Manifest: NOSIGNATURE
+		Hyle-2.0.0-1.20.1-forge-all.jar                   |Hyle                          |hyle                          |2.0.0-1.20.1-forge  |DONE      |Manifest: NOSIGNATURE
+		UnEarthed-2.3.0-1.20.1-forge-all.jar              |Unearthed                     |unearthed                     |2.3.0-1.20.1-forge  |DONE      |Manifest: NOSIGNATURE
+		TradingPost-v8.0.2-1.20.1-Forge.jar               |Trading Post                  |tradingpost                   |8.0.2               |DONE      |Manifest: 9a:09:85:98:65:c4:8c:11:c5:49:f6:d6:33:23:39:df:8d:b4:ff:92:84:b8:bd:a5:83:9f:ac:7f:2a:d1:4b:6a
+		esl-forge-1.20.1-1.1.3+forge-mc1.20.1.jar         |ESL                           |esl                           |1.1.3               |DONE      |Manifest: NOSIGNATURE
+		creatingspace-1.20.1-1.7.13.jar                   |Creating Space                |creatingspace                 |1.20.1_1.7.13       |DONE      |Manifest: NOSIGNATURE
+		inventorysorter-1.20.1-23.1.9.jar                 |Simple Inventory Sorter (Confi|inventorysorter               |23.1.9              |DONE      |Manifest: NOSIGNATURE
+		rhino-forge-2001.2.3-build.10.jar                 |Rhino                         |rhino                         |2001.2.3-build.10   |DONE      |Manifest: NOSIGNATURE
+		ftb-library-forge-2001.2.12.jar                   |FTB Library                   |ftblibrary                    |2001.2.12           |DONE      |Manifest: NOSIGNATURE
+		ftb-teams-forge-2001.3.2.jar                      |FTB Teams                     |ftbteams                      |2001.3.2            |DONE      |Manifest: NOSIGNATURE
+		TinkerBetterCombat 0.14.jar                       |Tinkers' Better Combat        |tinkers_better_combat         |1.8.6               |DONE      |Manifest: NOSIGNATURE
+		sophisticatedstorage-1.20.1-1.4.39.1666.jar       |Sophisticated Storage         |sophisticatedstorage          |1.4.39.1666         |DONE      |Manifest: NOSIGNATURE
+		obelisks-1.0.0.jar                                |Dimensional Scar Expeditions  |obelisks                      |1.0.0               |DONE      |Manifest: NOSIGNATURE
+		jei-1.20.1-forge-15.20.0.130.jar                  |Just Enough Items             |jei                           |15.20.0.130         |DONE      |Manifest: NOSIGNATURE
+		kubejs-forge-2001.6.5-build.16.jar                |KubeJS                        |kubejs                        |2001.6.5-build.16   |ERROR     |Manifest: NOSIGNATURE
+		lithostitched-forge-1.20.1-1.4.11.jar             |Lithostitched                 |lithostitched                 |1.4.11              |DONE      |Manifest: NOSIGNATURE
+		immersive_weathering-1.20.1-2.0.5-forge.jar       |Immersive Weathering          |immersive_weathering          |1.20.1-2.0.5        |DONE      |Manifest: NOSIGNATURE
+		NaturesCompass-1.20.1-1.12.0-forge.jar            |Nature's Compass              |naturescompass                |1.20.1-1.12.0-forge |DONE      |Manifest: NOSIGNATURE
+		powergrid-mc1.20.1-0.5.4.jar                      |Create: Power Grid            |powergrid                     |0.5.4               |DONE      |Manifest: NOSIGNATURE
+		GlitchCore-forge-1.20.1-0.0.1.1.jar               |GlitchCore                    |glitchcore                    |0.0.1.1             |DONE      |Manifest: NOSIGNATURE
+		SereneSeasons-forge-1.20.1-9.1.0.2.jar            |Serene Seasons                |sereneseasons                 |9.1.0.2             |DONE      |Manifest: NOSIGNATURE
+		pneumaticcraft-repressurized-6.0.22+mc1.20.1.jar  |PneumaticCraft: Repressurized |pneumaticcraft                |6.0.22+mc1.20.1     |DONE      |Manifest: NOSIGNATURE
+		farsighted-mobs-forge-1.1-1.20.1.jar              |Farsighted Mobs               |farsightedmobs                |1.1                 |DONE      |Manifest: NOSIGNATURE
+		particular-1.20.1-Forge-1.2.7.jar                 |Particular                    |particular                    |1.2.7               |DONE      |Manifest: NOSIGNATURE
+		guideme-20.1.14.jar                               |GuideME                       |guideme                       |20.1.14             |DONE      |Manifest: NOSIGNATURE
+		realisticphysics-1.20.1-1.0.1.jar                 |Realistic Physics             |realisticphysics              |1.0.1               |DONE      |Manifest: NOSIGNATURE
+		iceandfire-2.1.13-1.20.1-beta-5.jar               |Ice and Fire                  |iceandfire                    |2.1.13-1.20.1       |DONE      |Manifest: NOSIGNATURE
+		blueprint-1.20.1-7.1.3.jar                        |Blueprint                     |blueprint                     |7.1.3               |DONE      |Manifest: NOSIGNATURE
+		savage_and_ravage-1.20.1-6.0.1.jar                |Savage & Ravage               |savage_and_ravage             |6.0.1               |DONE      |Manifest: NOSIGNATURE
+		fiahi-3.1.6.jar                                   |Freeze It, and Heat It!       |fiahi                         |3.1.6               |DONE      |Manifest: NOSIGNATURE
+		ars_nouveau-1.20.1-4.12.7-all.jar                 |Ars Nouveau                   |ars_nouveau                   |4.12.7              |DONE      |Manifest: NOSIGNATURE
+		DynamicTreesArsNouveau-1.20.1-1.2.0.jar           |Dynamic Trees for Ars Nouveau |dtarsnouveau                  |1.20.1-1.2.0        |DONE      |Manifest: NOSIGNATURE
+		puzzlesaccessapi-forge-20.1.1.jar                 |Puzzles Access Api            |puzzlesaccessapi              |20.1.1              |DONE      |Manifest: NOSIGNATURE
+		forge-1.20.1-47.4.13-universal.jar                |Forge                         |forge                         |47.4.13             |DONE      |Manifest: NOSIGNATURE
+		TravelersTitles-1.20-Forge-4.0.2.jar              |Traveler's Titles             |travelerstitles               |1.20-Forge-4.0.2    |DONE      |Manifest: NOSIGNATURE
+		SleepingOverhaul-2.1.0-Forge-1.20.1.jar           |Sleeping Overhaul 2           |sleepingoverhaul              |2.1.0-Forge-1.20.1  |DONE      |Manifest: NOSIGNATURE
+		bloodmagic-1.20.1-3.3.7-49.jar                    |Blood Magic                   |bloodmagic                    |3.3.7-49            |DONE      |Manifest: NOSIGNATURE
+		tomeofblood-1.20.1-0.4.5.jar                      |Tome of Blood: Rebirth        |tomeofblood                   |0.4.5               |DONE      |Manifest: NOSIGNATURE
+		golemoverhaul-forge-1.20.1-1.1.0.jar              |Golem Overhaul                |golemoverhaul                 |1.1.0               |DONE      |Manifest: NOSIGNATURE
+		dotcoinmod-forge-20.18.1.jar                      |Dot Coin Mod                  |dotcoinmod                    |20.18.1             |DONE      |Manifest: NOSIGNATURE
+		alchemistry-1.20.1-2.3.4.jar                      |Alchemistry                   |alchemistry                   |2.3.4               |DONE      |Manifest: NOSIGNATURE
+		tectonic-3.0.17-forge-1.20.1.jar                  |Tectonic                      |tectonic                      |3.0.17              |DONE      |Manifest: NOSIGNATURE
+		server-1.20.1-20230612.114412-srg.jar             |Minecraft                     |minecraft                     |1.20.1              |DONE      |Manifest: NOSIGNATURE
+		the_finley_dimension_remastered-1.6.3-forge-1.20.1|The Finley Dimension Remastere|the_finley_dimension_remastere|1.6.3               |DONE      |Manifest: NOSIGNATURE
+		notreepunching-forge-1.20-7.1.0.jar               |No Tree Punching              |notreepunching                |7.1.0               |DONE      |Manifest: NOSIGNATURE
+		protection_pixel-2.2.1-forge-1.20.1.jar           |Protection Pixel              |protection_pixel              |2.2.1               |DONE      |Manifest: NOSIGNATURE
+		Fallout Wasteland 1.20.1 Beta 3.8.1.jar           |Fallout_Wastelands_2          |fallout_wastelands_           |1.0.0               |DONE      |Manifest: NOSIGNATURE
+		DistantHorizons-2.4.5-b-1.20.1-fabric-forge.jar   |Distant Horizons              |distanthorizons               |2.4.5-b             |DONE      |Manifest: NOSIGNATURE
+		TConstruct-1.20.1-3.11.2.166.jar                  |Tinkers' Construct            |tconstruct                    |3.11.2.166          |DONE      |Manifest: NOSIGNATURE
+		cursedbiomes-0.1.0.jar                            |Cursed Biomes                 |cursedbiomes                  |0.1.0               |DONE      |Manifest: NOSIGNATURE
+		dynamicassetgenerator-forge-1.20.1-4.2.2.jar      |Dynamic Asset Generator       |dynamic_asset_generator       |4.2.2               |DONE      |Manifest: NOSIGNATURE
+		theoneprobe-1.20.1-10.0.3.jar                     |The One Probe                 |theoneprobe                   |1.20.1-10.0.3       |DONE      |Manifest: NOSIGNATURE
+		appliedenergistics2-forge-15.4.10.jar             |Applied Energistics 2         |ae2                           |15.4.10             |DONE      |Manifest: NOSIGNATURE
+		TerraBlender-forge-1.20.1-3.0.1.10.jar            |TerraBlender                  |terrablender                  |3.0.1.10            |DONE      |Manifest: NOSIGNATURE
+		moonlight-1.20-2.16.30-forge.jar                  |Moonlight Library             |moonlight                     |1.20-2.16.30        |DONE      |Manifest: NOSIGNATURE
+		bettercombat-forge-1.9.0+1.20.1.jar               |Better Combat                 |bettercombat                  |1.9.0+1.20.1        |DONE      |Manifest: NOSIGNATURE
+		ftb-quests-forge-2001.4.21.jar                    |FTB Quests                    |ftbquests                     |2001.4.21           |DONE      |Manifest: NOSIGNATURE
+		mixinsquared-forge-0.1.1.jar                      |MixinSquared                  |mixinsquared                  |0.1.1               |DONE      |Manifest: NOSIGNATURE
+		BuildingWands-forge-MC1.20.1-3.0.4.jar            |Building Wands                |wands                         |3.0.4               |DONE      |Manifest: NOSIGNATURE
+		CreativeCore_FORGE_v2.12.35_mc1.20.1.jar          |CreativeCore                  |creativecore                  |2.12.35             |DONE      |Manifest: NOSIGNATURE
+		KubeJS Blood Magic-1.0.2-1.20.1.jar               |KubeJS Blood Magic            |kubejsbloodmagic              |1.0.2-1.20.1        |DONE      |Manifest: NOSIGNATURE
+		spectrelib-forge-0.13.17+1.20.1.jar               |SpectreLib                    |spectrelib                    |0.13.17+1.20.1      |DONE      |Manifest: NOSIGNATURE
+		tconjei-1.20.1-1.5.4.jar                          |TConJEI                       |tconjei                       |1.5.4               |DONE      |Manifest: NOSIGNATURE
+		kffmod-4.12.0.jar                                 |Kotlin For Forge              |kotlinforforge                |4.12.0              |DONE      |Manifest: NOSIGNATURE
+		BrewinAndChewin-1.20.1-3.2.1.jar                  |Brewin' And Chewin'           |brewinandchewin               |1.20.1-3.2.1        |DONE      |Manifest: NOSIGNATURE
+		flywheel-forge-1.20.1-1.0.6-278.jar               |Flywheel                      |flywheel                      |1.0.6-278           |DONE      |Manifest: NOSIGNATURE
+		Ponder-Forge-1.20.1-1.0.91.jar                    |Ponder                        |ponder                        |1.0.91              |DONE      |Manifest: NOSIGNATURE
+		compressedcreativity-1.20.1-0.2.0-all.jar         |Compressed Creativity         |compressedcreativity          |1.20.1-0.2.0        |DONE      |Manifest: NOSIGNATURE
+		create-1.20.1-6.0.8.jar                           |Create                        |create                        |6.0.8               |DONE      |Manifest: NOSIGNATURE
+		create-transmission-loss-0.1.0.jar                |Create Transmission Loss      |transmissionloss              |0.1.0               |DONE      |Manifest: NOSIGNATURE
+		createbigcannons-5.11.3-mc.1.20.1-forge.jar       |Create Big Cannons            |createbigcannons              |5.11.3              |DONE      |Manifest: NOSIGNATURE
+		computerbridge-0.1.0.jar                          |ComputerBridge                |computerbridge                |0.1.0               |DONE      |Manifest: NOSIGNATURE
+		Mantle-1.20.1-1.11.104.jar                        |Mantle                        |mantle                        |1.11.104            |DONE      |Manifest: NOSIGNATURE
+		diet-forge-2.1.1+1.20.1.jar                       |Diet                          |diet                          |2.1.1+1.20.1        |DONE      |Manifest: NOSIGNATURE
+		chemlib-1.20.1-2.0.19.jar                         |ChemLib                       |chemlib                       |2.0.19              |DONE      |Manifest: NOSIGNATURE
+		fission_reactor-0.1.0.jar                         |Fission Reactor               |fission_reactor               |0.1.0               |DONE      |Manifest: NOSIGNATURE
+		liquid_coolant-0.1.0.jar                          |Liquid Coolant                |liquid_coolant                |0.1.0               |DONE      |Manifest: NOSIGNATURE
+		acid_vat-0.1.0.jar                                |Acid Vat                      |acid_vat                      |0.1.0               |DONE      |Manifest: NOSIGNATURE
+		gases_and_plasmas-0.1.0.jar                       |Gases and Plasmas             |gases_and_plasmas             |0.1.0               |DONE      |Manifest: NOSIGNATURE
+		polymorph-forge-0.49.10+1.20.1.jar                |Polymorph                     |polymorph                     |0.49.10+1.20.1      |DONE      |Manifest: NOSIGNATURE
+		markdown_manual-MC1.20.1-forge-1.2.5+c3f0b88.jar  |Markdown Manual               |markdown_manual               |1.2.5+c3f0b88       |DONE      |Manifest: NOSIGNATURE
+		Zeta-1.0-31.jar                                   |Zeta                          |zeta                          |1.0-31              |DONE      |Manifest: NOSIGNATURE
+		buildinggadgets2-1.0.8.jar                        |Building Gadgets 2            |buildinggadgets2              |1.0.8               |DONE      |Manifest: NOSIGNATURE
+		modonomicon-1.20.1-forge-1.79.3.jar               |Modonomicon                   |modonomicon                   |1.79.3              |DONE      |Manifest: NOSIGNATURE
+		kubejs-create-forge-2001.3.0-build.8.jar          |KubeJS Create                 |kubejs_create                 |2001.3.0-build.8    |DONE      |Manifest: NOSIGNATURE
+		coroutil-forge-1.20.1-1.3.7.jar                   |CoroUtil                      |coroutil                      |1.20.1-1.3.7        |DONE      |Manifest: NOSIGNATURE
+		appleskin-forge-mc1.20.1-2.5.1.jar                |AppleSkin                     |appleskin                     |2.5.1+mc1.20.1      |DONE      |Manifest: NOSIGNATURE
+		lootr-forge-1.20-0.7.35.94.jar                    |Lootr                         |lootr                         |0.7.35.94           |DONE      |Manifest: NOSIGNATURE
+		Quark-4.0-462.jar                                 |Quark                         |quark                         |4.0-462             |DONE      |Manifest: NOSIGNATURE
+		DynamicTreesQuark-1.20.1-2.5.3.jar                |Dynamic Trees for Quark       |dtquark                       |1.20.1-2.5.3        |DONE      |Manifest: NOSIGNATURE
+		solcarrot-1.20.1-1.15.1.jar                       |Spice of Life: Carrot Edition |solcarrot                     |1.15.1              |DONE      |Manifest: NOSIGNATURE
+		PuzzlesLib-v8.1.33-1.20.1-Forge.jar               |Puzzles Lib                   |puzzleslib                    |8.1.33              |DONE      |Manifest: 9a:09:85:98:65:c4:8c:11:c5:49:f6:d6:33:23:39:df:8d:b4:ff:92:84:b8:bd:a5:83:9f:ac:7f:2a:d1:4b:6a
+		ColdSweat-2.4.jar                                 |Cold Sweat                    |cold_sweat                    |2.4                 |DONE      |Manifest: NOSIGNATURE
+		heatsync-0.1.0.jar                                |HeatSync                      |heatsync                      |0.1.0               |DONE      |Manifest: NOSIGNATURE
+		morered-1.20.1-4.0.0.4.jar                        |More Red                      |morered                       |4.0.0.4             |DONE      |Manifest: NOSIGNATURE
+		cristellib-1.1.6-forge.jar                        |Cristel Lib                   |cristellib                    |1.1.6               |DONE      |Manifest: NOSIGNATURE
+	Crash Report UUID: b2efb20d-f0b3-4ad7-bedb-8dca8fb8c0eb
+	FML: 47.4
+	Forge: net.minecraftforge:47.4.13[13:58:54] [main/ERROR] [minecraft/Main]: Failed to start the minecraft server
+net.minecraftforge.fml.LoadingFailedException: Loading errors encountered: [
+	KubeJS (kubejs) encountered an error during the complete event phase
+§7java.lang.RuntimeException: There were KubeJS startup script syntax errors! See logs/kubejs/startup.log for more info
+]
+	at net.minecraftforge.fml.ModLoader.waitForTransition(ModLoader.java:246) ~[fmlcore-1.20.1-47.4.13.jar%23418!/:?] {}
+	at net.minecraftforge.fml.ModLoader.lambda$dispatchAndHandleError$20(ModLoader.java:210) ~[fmlcore-1.20.1-47.4.13.jar%23418!/:?] {}
+	at java.util.Optional.ifPresent(Optional.java:178) ~[?:?] {re:mixin}
+	at net.minecraftforge.fml.ModLoader.dispatchAndHandleError(ModLoader.java:210) ~[fmlcore-1.20.1-47.4.13.jar%23418!/:?] {}
+	at net.minecraftforge.fml.ModLoader.lambda$finishMods$17(ModLoader.java:197) ~[fmlcore-1.20.1-47.4.13.jar%23418!/:?] {}
+	at java.lang.Iterable.forEach(Iterable.java:75) ~[?:?] {re:mixin}
+	at net.minecraftforge.fml.ModLoader.finishMods(ModLoader.java:197) ~[fmlcore-1.20.1-47.4.13.jar%23418!/:?] {}
+	at net.minecraftforge.server.loading.ServerModLoader.load(ServerModLoader.java:32) ~[forge-1.20.1-47.4.13-universal.jar%23422!/:?] {re:classloading}
+	at net.minecraft.server.Main.main(Main.java:125) ~[server-1.20.1-20230612.114412-srg.jar%23417!/:?] {re:classloading}
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}
+	at java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:111) ~[fmlloader-1.20.1-47.4.13.jar%2369!/:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.serverService(CommonLaunchHandler.java:103) ~[fmlloader-1.20.1-47.4.13.jar%2369!/:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonServerLaunchHandler.lambda$makeService$0(CommonServerLaunchHandler.java:27) ~[fmlloader-1.20.1-47.4.13.jar%2369!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:108) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:78) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) ~[bootstraplauncher-1.1.2.jar:?] {}
+[13:58:55] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [aether] Found status: UP_TO_DATE Current: 1.20.1-1.5.2-neoforge Target: null
+[13:58:55] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [rsgauges] Starting version check at https://raw.githubusercontent.com/stfwi/rsgauges/versions/1.19.json
+[13:58:55] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [rsgauges] Found status: BETA Current: 1.2.22 Target: null
+[13:58:55] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [guardvillagers] Starting version check at https://raw.githubusercontent.com/seymourimadeit/guardvillagers/master/update.json
+[13:58:55] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [guardvillagers] Found status: BETA Current: 1.20.1-1.6.17 Target: 1.20-1.6.5
+[13:58:55] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [ctov] Starting version check at https://api.modrinth.com/updates/fgmhI8kH/forge_updates.json
+[13:58:55] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [ctov] Found status: UP_TO_DATE Current: 3.4.14 Target: null
+[13:58:55] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [twilightforest] Starting version check at https://gh.tamaized.com/TeamTwilight/twilightforest/update.json
+[13:58:57] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [twilightforest] Found status: AHEAD Current: 4.3.2508 Target: null
+[13:58:57] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [structure_gel] Starting version check at http://changelogs.moddinglegacy.com/structure-gel.json
+[13:58:57] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [structure_gel] Found status: BETA Current: 2.16.2 Target: null
+[13:58:57] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [natures_spirit] Starting version check at https://api.modrinth.com/updates/WBvnqHfV/forge_updates.json
+[13:58:57] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [natures_spirit] Found status: UP_TO_DATE Current: 2.2.5-1.20.1 Target: null
+[13:58:57] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [hangglider] Starting version check at https://raw.githubusercontent.com/Fuzss/modresources/main/update/hangglider.json
+[13:58:57] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [hangglider] Found status: UP_TO_DATE Current: 8.0.1 Target: null
+[13:58:57] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [cumulus_menus] Starting version check at https://github.com/The-Aether-Team/Cumulus/raw/1.20.1-develop/update.json

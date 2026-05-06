@@ -1,0 +1,1547 @@
+[32m[11:41:12] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeserver, --fml.forgeVersion, 47.4.13, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, nogui]
+[m[32m[11:41:12] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 21.0.11 by Eclipse Adoptium; OS Linux arch amd64 version 6.12.74+deb13+1-amd64
+[m[32m[11:41:13] [main/INFO] [ne.mi.fm.lo.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgeserver
+[m[32m[11:41:13] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/home/gerald/obelisks/server-instance/libraries/org/spongepowered/mixin/0.8.5/mixin-0.8.5.jar%2365!/ Service=ModLauncher Env=SERVER
+[m[33m[11:41:13] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /home/gerald/obelisks/server-instance/libraries/net/minecraftforge/fmlcore/1.20.1-47.4.13/fmlcore-1.20.1-47.4.13.jar is missing mods.toml file
+[m[33m[11:41:13] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /home/gerald/obelisks/server-instance/libraries/net/minecraftforge/javafmllanguage/1.20.1-47.4.13/javafmllanguage-1.20.1-47.4.13.jar is missing mods.toml file
+[m[33m[11:41:13] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /home/gerald/obelisks/server-instance/libraries/net/minecraftforge/lowcodelanguage/1.20.1-47.4.13/lowcodelanguage-1.20.1-47.4.13.jar is missing mods.toml file
+[m[33m[11:41:13] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /home/gerald/obelisks/server-instance/libraries/net/minecraftforge/mclanguage/1.20.1-47.4.13/mclanguage-1.20.1-47.4.13.jar is missing mods.toml file
+[m[33m[11:41:13] [main/WARN] [ne.mi.ja.se.JarSelector/]: Attempted to select a dependency jar for JarJar which was passed in as source: geckolib. Using Mod File: /home/gerald/obelisks/server-instance/mods/geckolib-forge-1.20.1-4.8.3.jar
+[m[33m[11:41:13] [main/WARN] [ne.mi.ja.se.JarSelector/]: Attempted to select a dependency jar for JarJar which was passed in as source: curios. Using Mod File: /home/gerald/obelisks/server-instance/mods/curios-forge-5.14.1+1.20.1.jar
+[m[33m[11:41:13] [main/WARN] [ne.mi.ja.se.JarSelector/]: Attempted to select a dependency jar for JarJar which was passed in as source: architectury. Using Mod File: /home/gerald/obelisks/server-instance/mods/architectury-9.2.14-forge.jar
+[m[32m[11:41:13] [main/INFO] [ne.mi.fm.lo.mo.JarInJarDependencyLocator/]: Found 108 dependencies adding them to mods collection
+[m[32m[11:41:17] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[m[1;31m[11:41:17] [main/ERROR] [mixin/]: Mixin config fabric-item-group-api-v1.mixins.json does not specify "minVersion" property
+[m[1;31m[11:41:17] [main/ERROR] [mixin/]: Mixin config fabric-item-group-api-v1.client.mixins.json does not specify "minVersion" property
+[m[1;31m[11:41:17] [main/ERROR] [mixin/]: Mixin config fabric-item-api-v1.client.mixins.json does not specify "minVersion" property
+[m[1;31m[11:41:17] [main/ERROR] [mixin/]: Mixin config fabric-data-attachment-api-v1.mixins.json does not specify "minVersion" property
+[m[1;31m[11:41:17] [main/ERROR] [mixin/]: Mixin config fabric-data-attachment-api-v1.client.mixins.json does not specify "minVersion" property
+[m[1;31m[11:41:17] [main/ERROR] [mixin/]: Mixin config createadditionallogistics.mixins.json does not specify "minVersion" property
+[m[1;31m[11:41:17] [main/ERROR] [mixin/]: Mixin config create_bb.mixins.json does not specify "minVersion" property
+[m[32m[11:41:17] [main/INFO] [ne.fa.lo.im.bo.FabricLoaderBootstrap/]: Propagating FML mod list to Fabric Loader
+[m[32m[11:41:17] [main/INFO] [cp.mo.mo.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeserver' with arguments [nogui]
+[m[32m[11:41:17] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.fixes.worldgen.threading_issues.mixin
+[m[32m[11:41:17] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.rewrites.chunk_serializer.mixin
+[m[32m[11:41:17] [main/INFO] [C2ME Config System/]: Disabling config ioSystem.gcFreeChunkSerializer: Incompatible with architectury@9.2.14 (*) (defined in c2me)
+[m[32m[11:41:17] [main/INFO] [C2ME Modules Manager/]: Disabling com.ishland.c2me.rewrites.chunk_serializer.mixin
+[m[32m[11:41:17] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.fixes.general.threading_issues.mixin
+[m[32m[11:41:17] [main/INFO] [ModernFix/]: Loaded configuration file for ModernFix 5.27.12+mc1.20.1: 108 options available, 4 override(s) found
+[m[33m[11:41:17] [main/WARN] [ModernFix/]: Option 'mixin.perf.release_protochunks' overriden (by mods [c2me]) to 'false'
+[m[33m[11:41:17] [main/WARN] [ModernFix/]: Option 'mixin.bugfix.paper_chunk_patches' overriden (by mods [c2me]) to 'false'
+[m[33m[11:41:17] [main/WARN] [ModernFix/]: Option 'mixin.bugfix.chunk_deadlock' overriden (by mods [c2me]) to 'false'
+[m[33m[11:41:17] [main/WARN] [ModernFix/]: Option 'mixin.perf.cache_strongholds' overriden (by mods [c2me]) to 'false'
+[m[32m[11:41:17] [main/INFO] [ModernFix/]: Applying Nashorn fix
+[m[32m[11:41:17] [main/INFO] [ModernFix/]: Applied Forge config corruption patch
+[m[32m[11:41:17] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.base.mixin
+[m[33m[11:41:17] [main/WARN] [mixin/]: Reference map 'createmoredrillheads.refmap.json' for createmoredrillheads.mixins.json could not be read. If this is a development environment you can ignore this message
+[m[33m[11:41:17] [main/WARN] [mixin/]: Reference map 'nitrogen_internals.refmap.json' for nitrogen_internals.mixins.json could not be read. If this is a development environment you can ignore this message
+[m[32m[11:41:17] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.threading.lighting.mixin
+[m[33m[11:41:17] [main/WARN] [mixin/]: Reference map 'puzzlesaccessapi.common.refmap.json' for puzzlesaccessapi.common.mixins.json could not be read. If this is a development environment you can ignore this message
+[m[32m[11:41:17] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.opts.worldgen.vanilla.mixin
+[m[32m[11:41:17] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.opts.scheduling.mixin
+[m[33m[11:41:17] [main/WARN] [mixin/]: Reference map 'farmersrespite.refmap.json' for farmersrespite.mixins.json could not be read. If this is a development environment you can ignore this message
+[m[32m[11:41:17] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.notickvd.mixin
+[m[32m[11:41:17] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.threading.worldgen.mixin
+[m[32m[11:41:17] [main/INFO] [Puzzles Lib/]: Loading 352 mods:
+	- acid_vat 0.1.0
+	- additionalweaponry 1.1.3
+	- addonapi 2.0.0
+	- adlods 8.1.9.0
+	- adpother 8.1.43.0
+	- advanced_ae 1.3.5-1.20.1
+		\-- ae2addonlib 1.0.4-1.20.1
+	- ae2 15.4.10
+	- ae2additions 5.1.1
+	- ae2netanalyser 1.20-1.0.6-forge
+	- ae2things 1.2.1
+	- aether 1.20.1-1.5.2-neoforge
+		|-- cumulus_menus 1.20.1-1.0.1-neoforge
+		\-- nitrogen_internals 1.20.1-1.0.12-neoforge
+	- alchemistry 2.3.4
+	- alchemylib 1.0.30
+	- alekiships 1.0.14
+	- alltheleaks 1.1.1+1.20.1-forge
+		\-- mixinsquared 0.3.6-beta.1
+	- almostunified 1.20.1-0.11.0
+	- ambientsounds 6.3.4
+	- amendments 1.20-2.2.5
+	- apotheosis 7.4.8
+	- apotheotic_additions 2.2.2
+	- appleskin 2.5.1+mc1.20.1
+	- architectury 9.2.14
+	- ars_nouveau 4.12.7
+	- artifacts 9.5.19
+		\-- expandability 9.0.4
+	- athena 3.1.2
+	- attributeslib 1.3.7
+	- bettercombat 1.9.0+1.20.1
+	- blockswap 5.0.0.0
+	- bloodmagic 3.3.7-49
+	- blue_skies 1.3.31
+	- blueprint 7.1.3
+	- brewinandchewin 1.20.1-3.2.1
+	- btmfixes 0.1.0
+	- buildinggadgets2 1.0.8
+	- c2me 0.2.0+alpha.13
+		|-- c2me_base 0.2.0+alpha.13
+		|-- c2me_client_uncapvd 0.2.0+alpha.13
+		|-- c2me_fixes_chunkio_threading_issues 0.2.0+alpha.13
+		|-- c2me_fixes_general_threading_issues 0.2.0+alpha.13
+		|-- c2me_fixes_worldgen_threading_issues 0.2.0+alpha.13
+		|-- c2me_fixes_worldgen_vanilla_bugs 0.2.0+alpha.13
+		|-- c2me_notickvd 0.2.0+alpha.13
+		|-- c2me_opts_allocs 0.2.0+alpha.13
+		|-- c2me_opts_chunk_access 0.2.0+alpha.13
+		|-- c2me_opts_chunkio 0.2.0+alpha.13
+		|-- c2me_opts_math 0.2.0+alpha.13
+		|-- c2me_opts_scheduling 0.2.0+alpha.13
+		|-- c2me_opts_worldgen_general 0.2.0+alpha.13
+		|-- c2me_opts_worldgen_vanilla 0.2.0+alpha.13
+		|-- c2me_rewrites_chunk_serializer 0.2.0+alpha.13
+		|-- c2me_rewrites_chunkio 0.2.0+alpha.13
+		|-- c2me_server_utils 0.2.0+alpha.13
+		|-- c2me_threading_chunkio 0.2.0+alpha.13
+		|-- c2me_threading_lighting 0.2.0+alpha.13
+		\-- c2me_threading_worldgen 0.2.0+alpha.13
+	- caelus 3.2.0+1.20.1
+	- cerbons_api 1.1.0
+	- chefsdelight 1.0.4-forge-1.20.1
+	- chemlib 2.0.19
+	- citadel 2.6.3
+	- classselector 1.0.0
+	- cloth_config 11.1.136
+	- cobblegenhaters 1.0.1
+	- cold_sweat 2.4
+	- collective 8.20
+	- collectorsreap 1.5.5
+	- compressedcreativity 1.20.1-0.2.0
+	- computerbridge 0.1.0
+	- configurabledeath 1.20.1-1.0.3
+	- controlling 12.0.2
+	- corn_delight 1.1.9-1.20.1
+	- coroutil 1.20.1-1.3.7
+	- cravings 1.2.1
+	- create 6.0.8
+		\-- ponder 1.0.91
+	- create_bb 1.0.7
+	- create_central_kitchen 1.4.3b
+	- create_cold_sweat 1.1.2
+	- create_connected 1.1.13-mc1.20.1
+	- create_enchantment_industry 1.3.3-for-create-6.0.6
+	- create_more_additions 2.0.0
+	- create_new_age 1.1.7f+mc1.20.1
+		\-- esl 1.1.3
+	- create_power_loader 2.0.3-mc1.20.1
+	- create_sa 2.1.2
+	- create_things_and_misc 4.1.0
+	- createadditionallogistics 1.4.5
+	- createaddoncompatibility 0.2.4
+	- createadvlogistics 0.2.0
+	- createappliedkinetics 1.5.1-1.20.1
+	- createbigcannons 5.11.3
+	- createdieselgenerators 1.20.1-1.3.12
+	- createfix 1.0.0
+	- createliquidfuel 2.1.1-1.20.1
+	- createmoredrillheads 2.1.0-1.20.1
+	- creatingspace 1.20.1_1.7.13
+	- creativecore 2.12.35
+	- cristellib 1.1.6
+	- ctov 3.4.14
+	- curios 5.14.1+1.20.1
+	- cursedbiomes 0.1.0
+	- deeperdarker 1.3.3
+	- delightful 3.7.8
+	- diet 2.1.1+1.20.1
+	- ding 1.5.0
+	- distanthorizons 2.4.5-b
+	- dotcoinmod 20.18.1
+	- dragonlib 1.20.1-beta-3.0.24
+	- dtarsnouveau 1.20.1-1.2.0
+	- dtmalum 1.0.0
+	- dtnatures_spirit 1.3
+	- dtquark 1.20.1-2.5.3
+	- dynamic_asset_generator 4.2.2
+	- dynamictrees 1.20.1-1.4.10
+	- dynamictreesplus 1.20.1-1.2.2
+	- dynamicvillagertrades 1.3.1
+	- emi 1.1.22+1.20.1+forge
+	- emitrades 1.2.1+mc1.20.1
+	- ends_delight 2.5.1+forge.1.20.1
+	- enhancedai 3.3.6.3
+	- etstlib 3.0.0-beta.20
+	- everythingcopper 1.20.1-2.3.4
+	- excavated_variants 3.0.9
+		\-- defaultresources 2.0.0
+	- expatternprovider 1.20-1.4.14-forge
+	- explosionoverhaul 0.2.3.0-forge
+	- fabric_api 0.92.6+1.11.14+1.20.1
+		|-- fabric_api_base 0.4.32+ef105b4977
+		|-- fabric_api_lookup_api_v1 1.6.37+67f9824077
+		|-- fabric_biome_api_v1 13.0.14+dc36698e77
+		|-- fabric_block_api_v1 1.0.12+0e6cb7f777
+		|-- fabric_block_view_api_v2 1.0.3+53347ba977
+		|-- fabric_blockrenderlayer_v1 1.1.42+1d0da21e77
+		|-- fabric_client_tags_api_v1 1.1.3+5d6761b877
+		|-- fabric_command_api_v1 1.2.35+f71b366f77
+		|-- fabric_command_api_v2 2.2.14+561530ec77
+		|-- fabric_content_registries_v0 4.0.13+a670df1e77
+		|-- fabric_convention_tags_v1 1.5.6+fa3d1c0177
+		|-- fabric_data_attachment_api_v1 1.0.2+30ef839e77
+		|-- fabric_data_generation_api_v1 12.3.7+369cb3a477
+		|-- fabric_dimensions_v1 2.1.55+8005d10d77
+		|-- fabric_entity_events_v1 1.6.1+4ca7515277
+		|-- fabric_events_interaction_v0 0.6.5+0f26153f77
+		|-- fabric_game_rule_api_v1 1.0.41+683d4da877
+		|-- fabric_item_api_v1 2.1.29+4d0bbcfa77
+		|-- fabric_item_group_api_v1 4.0.14+c9161c2d77
+		|-- fabric_key_binding_api_v1 1.0.38+561530ec77
+		|-- fabric_lifecycle_events_v1 2.2.23+afab492177
+		|-- fabric_loot_api_v2 1.2.3+eb28f93e77
+		|-- fabric_message_api_v1 5.1.10+52cc178c77
+		|-- fabric_mining_level_api_v1 2.1.52+561530ec77
+		|-- fabric_model_loading_api_v1 1.0.4+6274ab9d77
+		|-- fabric_models_v0 0.4.3+7c3892a477
+		|-- fabric_networking_api_v1 1.3.14+fb7c822677
+		|-- fabric_object_builder_api_v1 11.1.5+f8c414ce77
+		|-- fabric_particles_v1 1.1.3+78e1ecb877
+		|-- fabric_recipe_api_v1 1.0.24+514a076577
+		|-- fabric_registry_sync_v0 2.3.6+1c0ea72177
+		|-- fabric_renderer_api_v1 3.2.2+cf68abbe77
+		|-- fabric_renderer_indigo 1.5.3+b5b2da4177
+		|-- fabric_rendering_data_attachment_v1 0.3.39+a6081afc77
+		|-- fabric_rendering_fluids_v1 3.0.29+4ac5e37a77
+		|-- fabric_rendering_v1 3.0.9+66e9a48f77
+		|-- fabric_resource_conditions_api_v1 2.3.9+996d00b277
+		|-- fabric_resource_loader_v0 0.11.12+4b4151c077
+		|-- fabric_screen_api_v1 2.0.9+45a670a577
+		|-- fabric_screen_handler_api_v1 1.3.33+561530ec77
+		|-- fabric_sound_api_v1 1.0.14+4f23bd8477
+		|-- fabric_transfer_api_v1 3.3.6+631c9cd677
+		\-- fabric_transitive_access_wideners_v1 4.3.2+1880499877
+	- fallout_wastelands_ 1.0.0
+	- farmersdelight 1.20.1-1.3.1
+	- farmersrespite 1.20.1-2.1
+	- farsightedmobs 1.1
+	- fastbench 8.0.4
+	- fastfurnace 8.0.2
+	- ferritecore 6.0.1
+	- fiahi 3.1.6
+	- findme 3.2.3
+	- finite_water 1.0.0
+	- fission_reactor 0.1.0
+	- flib 0.0.15
+	- forge 47.4.13
+	- forgeendertech 11.1.10.0
+	- framedblocks 9.4.3
+	- framework 0.8.0
+	- ftblibrary 2001.2.12
+	- ftbquests 2001.4.21
+	- ftbteams 2001.3.2
+	- ftbxmodcompat 2.1.3
+	- fzzy_config 0.7.6+1.20.1+forge
+	- gases_and_plasmas 0.1.0
+	- geckolib 4.8.3
+	- geophilic 3.4.6
+	- glitchcore 0.0.1.1
+	- globalgamerules 8.1.0.12
+	- glodium 1.20-1.5-forge
+	- golemoverhaul 1.1.0
+	- guardvillagers 1.20.1-1.6.17
+	- guideme 20.1.14
+	- hangglider 8.0.1
+	- heatsync 0.1.0
+	- hyle 2.0.0-1.20.1-forge
+	- iceandfire 2.1.13-1.20.1
+	- ichunutil 1.0.3
+	- immersive_weathering 1.20.1-2.0.5
+	- incontrol 1.20-9.4.6
+	- inline 1.20.1-1.2.2
+	- insanelib 1.23.4.4
+	- inventorysorter 23.1.9
+	- jei 15.20.0.130
+	- jsonthings 0.9.13
+	- k_turrets 3.0.44-1.20.1
+	- keepcuriosinventory 1.20.1-1.0.0
+	- konkrete 1.8.0
+	- kotlinforforge 4.12.0
+	- kubejs 2001.6.5-build.16
+	- kubejs_create 2001.3.0-build.8
+	- kubejsbloodmagic 1.0.2-1.20.1
+	- lithostitched 1.4.11
+	- littlelogistics 1.20.1.2
+	- lodestone 1.20.1-1.6.4.1
+	- logbegone 1.0.8
+	- looot 1.2.0.4
+	- lootjs 1.20.1-2.13.1
+	- lootr 0.7.35.94
+	- lostcities 1.20-7.4.11
+	- mae2 2.0.0
+	- malum 1.20.1-1.6.7
+	- mantle 1.11.104
+	- markdown_manual 1.2.5+c3f0b88
+	- melody 1.0.2
+	- merequester 1.20.1-1.1.5
+	- minecraft 1.20.1
+	- modernfix 5.27.12+mc1.20.1
+	- modonomicon 1.79.3
+	- moonlight 1.20-2.16.30
+	- morejs 0.10.1
+	- morered 4.0.0.4
+		|-- jumbofurnace 4.0.0.5
+		\-- useitemonblockevent 1.0.0.2
+	- mousetweaks 2.25.1
+	- mynethersdelight 1.20.1-1.7.5
+	- mysterious_mountain_lib 1.6.34-1.20.1
+	- natures_spirit 2.2.5-1.20.1
+	- naturescompass 1.20.1-1.12.0-forge
+	- nerb 0.4.1
+	- nomobfarm 1.6.6
+	- nomorepopups 2.2.0
+	- norecipebookreborn 1.0.5
+	- notreepunching 7.1.0
+	- obelisks 1.0.0
+	- oc2r 2.2.12
+		\-- sedna 1.0.68
+	- occultism 1.157.0
+	- oceansdelight 1.0.2-1.20
+	- octolib 0.5.0.1
+	- particular 1.2.7
+	- patchouli 1.20.1-85-FORGE
+	- pillagercampaigns 0.2.0
+	- pillagerpressure 0.2.0
+	- placebo 8.6.3
+	- playeranimator 1.0.2-rc1+1.20
+	- playerrevive 2.0.31
+	- plonk 10.0.5
+	- pneumaticcraft 6.0.22+mc1.20.1
+	- polyeng 0.1.1-1.20.1
+	- polymorph 0.49.10+1.20.1
+		\-- spectrelib 0.13.17+1.20.1
+	- powergrid 0.5.4
+	- procedural_bouquets 0.1.0
+	- protection_pixel 2.2.1
+	- puzzleslib 8.1.33
+		\-- puzzlesaccessapi 20.1.1
+	- quark 4.0-462
+	- raider_detector 1.0.0
+	- rbp 1.0.0
+	- realisticores 0.1.0
+	- realisticphysics 1.0.1
+	- rehooked 1.8.3-1.20.1
+	- relics 0.8.0.13
+	- reliquary 2.0.56.1418
+	- resourcefulconfig 2.1.3
+	- resourcefullib 2.1.29
+	- rhino 2001.2.3-build.10
+	- ritchiesprojectilelib 2.1.1
+	- rpgstats 1.0.0
+	- rsgauges 1.2.22
+	- rusticdelight 1.6.0
+	- satako 7.0.33-1.20.1
+	- savage_and_ravage 6.0.1
+	- searchables 1.0.3
+	- sereneseasons 9.1.0.2
+	- settlementroads 0.1.0
+	- simpledaylengthextender 1.2.1-Forge-1.20.1
+	- sleepingoverhaul 2.1.0-Forge-1.20.1
+	- smartbrainlib 1.15
+	- solcarrot 1.15.1
+	- sophisticatedbackpacks 3.24.35.1675
+	- sophisticatedcore 1.3.21.1676
+	- sophisticatedstorage 1.4.39.1666
+	- sophisticatedstorageinmotion 0.10.28.198
+	- spark 1.10.53
+	- staaaaaaaaaaaack 1.20.1-1.5-71
+	- starcatcher 2.2.1-FORGE-1.20.1
+		\-- tinymultiblocklib 3.0
+	- structure_gel 2.16.2
+	- supplementaries 1.20-3.1.42
+	- t_and_t 0.0NONE
+	- takesapillage 1.0.3
+	- tconjei 1.5.4
+	- tconstruct 3.11.2.166
+	- tectonic 3.0.17
+	- terrablender 3.0.1.10
+	- the_finley_dimension_remastered 1.6.3
+	- theoneprobe 1.20.1-10.0.3
+	- theurgy 1.28.0
+	- thirst 1.20.1-1.4.0
+	- tinkers_advanced 3.0.0-beta.5
+	- tinkers_advanced_tools 3.0.0-beta.4
+	- tinkers_battle_spades 1.2.1
+	- tinkers_better_combat 1.8.6
+	- tinkersweaponry 1.20.1-0.0.5
+	- tinycoal 1.1.5
+	- tntutils 1.20.1-2.0.4
+	- tomeofblood 0.4.5
+	- tponder 1.1
+		\-- flywheel 1.0.6-278
+	- tradingpost 8.0.2
+	- transmissionloss 0.1.0
+	- travelerstitles 1.20-Forge-4.0.2
+	- twilightforest 4.3.2508
+	- ubesdelight 0.4.11
+		\-- midnightlib 1.4.2
+	- undergarden 0.8.14
+	- undergardendelight 1.1.2
+	- unearthed 2.3.0-1.20.1-forge
+	- valhelsia_core 1.1.2
+	- veggiesdelight 1.9.2
+	- villagespawnpoint 4.6
+	- villagewalls 1.0.0
+	- wands 3.0.4
+	- wares 1.2.10
+	- weather2 1.20.1-2.8.3
+	- xlpackets 1.18.2-2.1
+	- yungsapi 1.20-Forge-4.0.6
+	- zeta 1.0-31
+[m[33m[11:41:17] [main/WARN] [mixin/]: Reference map 'cristellib-forge-refmap.json' for cristellib.mixins.json could not be read. If this is a development environment you can ignore this message
+[m[32m[11:41:17] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.opts.math.mixin
+[m[33m[11:41:17] [main/WARN] [mixin/]: Reference map 'mixins.wares.refmap.json' for mixins.wares.json could not be read. If this is a development environment you can ignore this message
+[m[32m[11:41:17] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.fixes.worldgen.vanilla_bugs.mixin
+[m[32m[11:41:17] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.fixes.chunkio.threading_issues.mixin
+[m[32m[11:41:17] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.client.uncapvd.mixin
+[m[33m[11:41:17] [main/WARN] [mixin/]: Reference map 'CerbonsAPI-Forge-1.20.1-forge-refmap.json' for cerbons_api.mixins.json could not be read. If this is a development environment you can ignore this message
+[m[33m[11:41:17] [main/WARN] [mixin/]: Reference map 'CreateLiquidFuel.refmap.json' for createliquidfuel.mixins.json could not be read. If this is a development environment you can ignore this message
+[m[32m[11:41:17] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.rewrites.chunkio.mixin
+[m[32m[11:41:17] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.opts.allocs.mixin
+[m[33m[11:41:17] [main/WARN] [mixin/]: Reference map 'xlpackets.refmap.json' for xlpackets.mixins.json could not be read. If this is a development environment you can ignore this message
+[m[33m[11:41:17] [main/WARN] [mixin/]: Reference map 'multiloader.refmap.json' for tinycoal.mixins.json could not be read. If this is a development environment you can ignore this message
+[m[33m[11:41:17] [main/WARN] [mixin/]: Reference map 'multiloader.refmap.json' for tinycoal.forge.mixins.json could not be read. If this is a development environment you can ignore this message
+[m[33m[11:41:17] [main/WARN] [mixin/]: Reference map 'transmissionloss.refmap.json' for transmissionloss.mixins.json could not be read. If this is a development environment you can ignore this message
+[m[32m[11:41:17] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.threading.chunkio.mixin
+[m[33m[11:41:17] [main/WARN] [mixin/]: Reference map 'createappliedkinetics.refmap.json' for createappliedkinetics.mixins.json could not be read. If this is a development environment you can ignore this message
+[m[32m[11:41:17] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.opts.chunk_access.mixin
+[m[32m[11:41:17] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.server.utils.mixin
+[m[32m[11:41:17] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.opts.worldgen.general.mixin
+[m[32m[11:41:17] [main/INFO] [C2ME Modules Manager/]: Initializing com.ishland.c2me.opts.chunkio.mixin
+[m[33m[11:41:17] [main/WARN] [mixin/]: Reference map 'modonomicon.refmap.json' for modonomicon.mixins.json could not be read. If this is a development environment you can ignore this message
+[m[33m[11:41:17] [main/WARN] [mixin/]: Reference map 'modonomicon.refmap.json' for modonomicon.forge.mixins.json could not be read. If this is a development environment you can ignore this message
+[m[33m[11:41:17] [main/WARN] [mixin/]: Reference map 'coroutil.refmap.json' for coroutil.mixins.json could not be read. If this is a development environment you can ignore this message
+[m[33m[11:41:17] [main/WARN] [mixin/]: Reference map 'moonshot.refmap.json' for createadvlogistics.mixins.json could not be read. If this is a development environment you can ignore this message
+[m[33m[11:41:17] [main/WARN] [mixin/]: Error loading class: tschipp/carryon/common/config/ListHandler (java.lang.ClassNotFoundException: tschipp.carryon.common.config.ListHandler)
+[m[33m[11:41:17] [main/WARN] [mixin/]: @Mixin target tschipp.carryon.common.config.ListHandler was not found tinymultiblocklib.mixins.json:carryon.ListHandlerMixin
+[m[33m[11:41:17] [main/WARN] [mixin/]: Error loading class: tschipp/carryon/common/carry/PickupHandler (java.lang.ClassNotFoundException: tschipp.carryon.common.carry.PickupHandler)
+[m[33m[11:41:17] [main/WARN] [mixin/]: @Mixin target tschipp.carryon.common.carry.PickupHandler was not found tinymultiblocklib.mixins.json:carryon.PickupHandlerMixin
+[m[32m[11:41:17] [main/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 1 calls to Enchantment#getMaxLevel() in net/minecraft/world/entity/npc/VillagerTrades$EnchantBookForEmeralds
+[m[32m[11:41:17] [main/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 1 calls to Enchantment#isTreasureOnly() in net/minecraft/world/entity/npc/VillagerTrades$EnchantBookForEmeralds
+[m[32m[11:41:17] [main/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 1 calls to Enchantment#isTradeable() in net/minecraft/world/entity/npc/VillagerTrades$EnchantBookForEmeralds
+[m[32m[11:41:17] [main/INFO] [ne.mi.co.Co.placebo/COREMODLOG]: Patching IForgeItemStack#getEnchantmentLevel
+[m[32m[11:41:17] [main/INFO] [ne.mi.co.Co.placebo/COREMODLOG]: Patching IForgeItemStack#getEnchantmentLevel
+[m[32m[11:41:17] [main/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 2 calls to Enchantment#getMaxLevel() in net/minecraft/world/inventory/AnvilMenu
+[m[32m[11:41:17] [main/INFO] [ne.mi.co.Co.placebo/COREMODLOG]: Patching IForgeItemStack#getEnchantmentLevel
+[m[32m[11:41:17] [main/INFO] [ne.mi.co.Co.placebo/COREMODLOG]: Patching IForgeItemStack#getEnchantmentLevel
+[m[1;31m[11:41:17] [main/ERROR] [ne.mi.fm.lo.RuntimeDistCleaner/DISTXFORM]: Attempted to load class net/minecraft/client/MouseHandler for invalid dist DEDICATED_SERVER
+[m[33m[11:41:17] [main/WARN] [mixin/]: Error loading class: net/minecraft/client/MouseHandler (java.lang.RuntimeException: Attempted to load class net/minecraft/client/MouseHandler for invalid dist DEDICATED_SERVER)
+[m[33m[11:41:17] [main/WARN] [mixin/]: @Mixin target net.minecraft.client.MouseHandler was not found fabric-screen-api-v1.mixins.json:MouseMixin
+[m[1;31m[11:41:17] [main/ERROR] [ne.mi.fm.lo.RuntimeDistCleaner/DISTXFORM]: Attempted to load class net/minecraft/client/gui/screens/Screen for invalid dist DEDICATED_SERVER
+[m[33m[11:41:17] [main/WARN] [mixin/]: Error loading class: net/minecraft/client/gui/screens/Screen (java.lang.RuntimeException: Attempted to load class net/minecraft/client/gui/screens/Screen for invalid dist DEDICATED_SERVER)
+[m[33m[11:41:17] [main/WARN] [mixin/]: @Mixin target net.minecraft.client.gui.screens.Screen was not found fabric-screen-api-v1.mixins.json:ScreenAccessor
+[m[33m[11:41:17] [main/WARN] [mixin/]: Error loading class: snownee/jade/api/view/FluidView (java.lang.ClassNotFoundException: snownee.jade.api.view.FluidView)
+[m[33m[11:41:17] [main/WARN] [mixin/]: @Mixin target snownee.jade.api.view.FluidView was not found thirst.mixin.json:jade.MixinFluidView
+[m[33m[11:41:17] [main/WARN] [mixin/]: Error loading class: toughasnails/item/EmptyCanteenItem (java.lang.ClassNotFoundException: toughasnails.item.EmptyCanteenItem)
+[m[33m[11:41:17] [main/WARN] [mixin/]: @Mixin target toughasnails.item.EmptyCanteenItem was not found thirst.mixin.json:toughasnails.MixinEmptyCanteenItem
+[m[33m[11:41:17] [main/WARN] [mixin/]: Error loading class: toughasnails/config/ThirstConfig (java.lang.ClassNotFoundException: toughasnails.config.ThirstConfig)
+[m[33m[11:41:17] [main/WARN] [mixin/]: @Mixin target toughasnails.config.ThirstConfig was not found thirst.mixin.json:toughasnails.MixinServerConfig
+[m[33m[11:41:17] [main/WARN] [mixin/]: Error loading class: toughasnails/thirst/ThirstHandler (java.lang.ClassNotFoundException: toughasnails.thirst.ThirstHandler)
+[m[33m[11:41:17] [main/WARN] [mixin/]: @Mixin target toughasnails.thirst.ThirstHandler was not found thirst.mixin.json:toughasnails.MixinThirstHandler
+[m[33m[11:41:17] [main/WARN] [mixin/]: Error loading class: toughasnails/thirst/ThirstHelperImpl (java.lang.ClassNotFoundException: toughasnails.thirst.ThirstHelperImpl)
+[m[33m[11:41:17] [main/WARN] [mixin/]: @Mixin target toughasnails.thirst.ThirstHelperImpl was not found thirst.mixin.json:toughasnails.MixinThirstHelperImpl
+[m[33m[11:41:18] [main/WARN] [mixin/]: Error loading class: vazkii/botania/forge/xplat/ForgeXplatImpl (java.lang.ClassNotFoundException: vazkii.botania.forge.xplat.ForgeXplatImpl)
+[m[33m[11:41:18] [main/WARN] [mixin/]: @Mixin target vazkii.botania.forge.xplat.ForgeXplatImpl was not found thirst.mixin.json:botania.MixinForgeXplatImpl
+[m[1;31m[11:41:18] [main/ERROR] [ne.mi.co.Co.adpother/COREMODLOG]: FAILED: target node not found!
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.leaks.common.mods.zeta.Issue69 will be loaded as it matches versions: 1.0-31 in [1.0-19,)
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Mixins added to allowed list: [main.RecipeCrawlHandlerMixin]
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.leaks.common.mods.spark.Issue447 will be loaded as it matches versions: 1.10.53 in *
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Mixins added to allowed list: [main.ForgeServerSparkPluginMixin]
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.leaks.common.mods.sereneseasons.UntrackedIssue001 will be loaded as it matches versions: 9.1.0.2 in [9.1.0.0,)
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.leaks.common.mods.pneumaticcraft.UntrackedIssue001 will be loaded as it matches versions: 6.0.22+mc1.20.1 in [6.0.15,)
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Mixins added to allowed list: [main.DroneEntityMixin, main.ProgrammableControllerBlockEntityMixin, main.AerialInterfaceBlockEntityMixin]
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.leaks.common.mods.occultism.UntrackedIssue001 will be loaded as it matches versions: 1.157.0 in [1.80.7,)
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Mixins added to allowed list: [main.OccultismCapabilitiesMixin]
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.leaks.common.mods.moonlight.UntrackedIssue001 will be loaded as it matches versions: 1.20-2.16.30 in [1.20-2.13.32,)
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Mixins added to allowed list: [main.FakeLevelManagerMixin]
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.leaks.common.mods.minecraft.UntrackedIssue002 will be loaded as it matches versions: 1.20.1 in 1.20.1
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Mixins added to allowed list: [main.EntityTickListMixin]
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.leaks.common.mods.minecraft.UntrackedIssue001 will be loaded as it matches versions: 1.20.1 in 1.20.1
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.leaks.common.mods.forge.UntrackedIssue002 will be loaded as it matches versions: 47.4.13 in [47.2,)
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Mixins added to allowed list: [accessor.FakePlayerNetHandlerAccessor, accessor.ConnectionAccessor]
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.leaks.common.mods.forge.UntrackedIssue001 will be loaded as it matches versions: 47.4.13 in [47.2,)
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Mixins added to allowed list: [main.ServerPlayerMixin, main.PlayerListMixin, accessor.PlayerAdvancementsAccessor]
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.leaks.common.mods.forge.Issue39 will be loaded as it matches versions: 47.4.13 in [47.2,)
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.leaks.common.mods.forge.Issue10684 will be loaded as it matches versions: 47.4.13 in *
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.leaks.common.mods.curios.UntrackedIssue001 will be loaded as it matches versions: 5.14.1+1.20.1 in [5.9.1,)
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Mixins added to allowed list: [main.CuriosEventHandlerMixin]
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.leaks.common.mods.create.UntrackedIssue001 will be loaded as it matches versions: 6.0.8 in [0.5.1.c,)
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Mixins added to allowed list: [accessor.ExtendoGripItemAccessor]
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.leaks.common.mods.citadel.UntrackedIssue001 will be loaded as it matches versions: 2.6.3 in [2.5.4,)
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.leaks.common.mods.ars_nouveau.UntrackedIssue003 will be loaded as it matches versions: 4.12.7 in *
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Mixins added to allowed list: [accessor.ConnectionAccessor]
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.leaks.common.mods.architectury.UntrackedIssue001 will be loaded as it matches versions: 9.2.14 in [9.0.8,)
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.leaks.common.mods.aether.UntrackedIssue001 will be loaded as it matches versions: 1.20.1-1.5.2-neoforge in [1.20.1-1.4.2,)
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Mixins added to allowed list: [main.DroppedItemCapabilityMixin]
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.fix.common.mods.zeta.FixCopyStack will be loaded as it matches versions: 1.0-31 in *
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Mixins added to allowed list: [main.StackFixRecipeCrawlHandlerMixin]
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.fix.common.mods.occultism.FixCreateTags will be loaded as it matches versions: 1.157.0 in *
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Mixins added to allowed list: [main.SoulGemItemMixin]
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.fix.common.mods.modernfix.CancelRLMixin will be loaded as it matches versions: 5.27.12+mc1.20.1 in [5.0.0,)
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Mixins added to cancel list: [org.embeddedt.modernfix.common.mixin.perf.deduplicate_location.MixinResourceLocation]
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.fix.common.mods.kubejs.FixItemStackModification will be loaded as it matches versions: 2001.6.5-build.16 in *
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Mixins added to allowed list: [main.IngredientKJSMixin]
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.fix.common.mods.jei.FixItemStackCopy will be loaded as it matches versions: 15.20.0.130 in *
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Mixins added to allowed list: [main.SmithingCategoryExtensionMixin, main.NormalizedTypedItemStackMixin, main.IngredientSetMixin]
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.fix.common.mods.bloodmagic.FixItemStackCopy will be loaded as it matches versions: 3.3.7-49 in *
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Mixins added to allowed list: [main.ARCRecipeCategoryMixin]
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.fix.common.mods.alchemylib.FixItemStackCopy will be loaded as it matches versions: 1.0.30 in *
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Mixins added to allowed list: [main.IngredientStackMixin]
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.feature.common.mods.minecraft.MemoryMonitor will be loaded as it matches versions: 1.20.1 in 1.20.1
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Mixins added to allowed list: [main.PlayerMixin, main.ChunkAccessMixin, main.LevelMixin, main.MinecraftServerMixin]
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Class dev.uncandango.alltheleaks.feature.common.mods.minecraft.ClearLeakedLevelChunks will be loaded as it matches versions: 1.20.1 in 1.20.1
+[m[32m[11:41:18] [main/INFO] [AllTheLeaks/]: Mixins added to allowed list: [accessor.LevelAccessor, main.RebindableTickingBlockEntityWrapperMixin, accessor.LevelChunkAccessor]
+[m[33m[11:41:18] [main/WARN] [mixin/]: Error loading class: com/mrbysco/spoiled/config/SpoiledConfigCache (java.lang.ClassNotFoundException: com.mrbysco.spoiled.config.SpoiledConfigCache)
+[m[33m[11:41:18] [main/WARN] [mixin/]: @Mixin target com.mrbysco.spoiled.config.SpoiledConfigCache was not found cold_sweat.mixin.json:compat.MixinSpoiledIcebox$ContainerModifier
+[m[1;31m[11:41:18] [main/ERROR] [ne.mi.fm.lo.RuntimeDistCleaner/DISTXFORM]: Attempted to load class net/minecraft/client/gui/screens/Screen for invalid dist DEDICATED_SERVER
+[m[33m[11:41:18] [main/WARN] [mixin/]: Error loading class: net/minecraft/client/gui/screens/Screen (java.lang.RuntimeException: Attempted to load class net/minecraft/client/gui/screens/Screen for invalid dist DEDICATED_SERVER)
+[m[33m[11:41:18] [main/WARN] [mixin/]: @Mixin target net.minecraft.client.gui.screens.Screen was not found relics.mixins.json:ScreenMixin
+[m[33m[11:41:18] [main/WARN] [mixin/]: Error loading class: com/drmangotea/tfmg/content/machinery/misc/exhaust/ExhaustBlockEntity (java.lang.ClassNotFoundException: com.drmangotea.tfmg.content.machinery.misc.exhaust.ExhaustBlockEntity)
+[m[33m[11:41:18] [main/WARN] [mixin/]: Error loading class: com/drmangotea/tfmg/content/machinery/misc/flarestack/FlarestackBlockEntity (java.lang.ClassNotFoundException: com.drmangotea.tfmg.content.machinery.misc.flarestack.FlarestackBlockEntity)
+[m[33m[11:41:18] [main/WARN] [mixin/]: Error loading class: com/drmangotea/tfmg/content/machinery/misc/smokestack/SmokestackBlockEntity (java.lang.ClassNotFoundException: com.drmangotea.tfmg.content.machinery.misc.smokestack.SmokestackBlockEntity)
+[m[33m[11:41:18] [main/WARN] [mixin/]: Error loading class: mctmods/immersivetechnology/common/multiblocks/metal/logic/BoilerLiquidLogic (java.lang.ClassNotFoundException: mctmods.immersivetechnology.common.multiblocks.metal.logic.BoilerLiquidLogic)
+[m[33m[11:41:18] [main/WARN] [mixin/]: Error loading class: mctmods/immersivetechnology/common/multiblocks/metal/logic/BoilerSolidLogic (java.lang.ClassNotFoundException: mctmods.immersivetechnology.common.multiblocks.metal.logic.BoilerSolidLogic)
+[m[33m[11:41:18] [main/WARN] [mixin/]: Error loading class: mctmods/immersivetechnology/common/multiblocks/metal/logic/GasTurbineLogic (java.lang.ClassNotFoundException: mctmods.immersivetechnology.common.multiblocks.metal.logic.GasTurbineLogic)
+[m[33m[11:41:18] [main/WARN] [mixin/]: Error loading class: com/mcwwindows/kikoz/objects/WindowBarred (java.lang.ClassNotFoundException: com.mcwwindows.kikoz.objects.WindowBarred)
+[m[33m[11:41:18] [main/WARN] [mixin/]: Error loading class: com/copycatsplus/copycats/content/copycat/slab/CopycatSlabBlock (java.lang.ClassNotFoundException: com.copycatsplus.copycats.content.copycat.slab.CopycatSlabBlock)
+[m[33m[11:41:18] [main/WARN] [mixin/]: @Mixin target com.copycatsplus.copycats.content.copycat.slab.CopycatSlabBlock was not found create_connected.mixins.json:compat.CopycatBlockMixin
+[m[33m[11:41:18] [main/WARN] [mixin/]: Error loading class: com/copycatsplus/copycats/content/copycat/board/CopycatBoardBlock (java.lang.ClassNotFoundException: com.copycatsplus.copycats.content.copycat.board.CopycatBoardBlock)
+[m[33m[11:41:18] [main/WARN] [mixin/]: @Mixin target com.copycatsplus.copycats.content.copycat.board.CopycatBoardBlock was not found create_connected.mixins.json:compat.CopycatBlockMixin
+[m[33m[11:41:18] [main/WARN] [mixin/]: Error loading class: me/jellysquid/mods/lithium/common/ai/pathing/PathNodeDefaults (java.lang.ClassNotFoundException: me.jellysquid.mods.lithium.common.ai.pathing.PathNodeDefaults)
+[m[32m[11:41:18] [main/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 2 calls to Enchantment#getMaxLevel() in net/minecraft/world/item/CreativeModeTabs
+[m[33m[11:41:18] [main/WARN] [mixin/]: Error loading class: net/minecraft/client/OptionInstance (java.lang.ClassNotFoundException: net.minecraft.client.OptionInstance)
+[m[33m[11:41:18] [main/WARN] [mixin/]: @Mixin target net.minecraft.client.OptionInstance was not found c2me_client_uncapvd.mixins.json:ISimpleOption
+[m[1;31m[11:41:18] [main/ERROR] [ne.mi.fm.lo.RuntimeDistCleaner/DISTXFORM]: Attempted to load class net/minecraft/client/Options for invalid dist DEDICATED_SERVER
+[m[33m[11:41:18] [main/WARN] [mixin/]: Error loading class: net/minecraft/client/Options (java.lang.RuntimeException: Attempted to load class net/minecraft/client/Options for invalid dist DEDICATED_SERVER)
+[m[33m[11:41:18] [main/WARN] [mixin/]: @Mixin target net.minecraft.client.Options was not found c2me_client_uncapvd.mixins.json:MixinGameOptions
+[m[33m[11:41:18] [main/WARN] [mixin/]: Error loading class: me/jellysquid/mods/sodium/client/gui/SodiumGameOptionPages (java.lang.ClassNotFoundException: me.jellysquid.mods.sodium.client.gui.SodiumGameOptionPages)
+[m[33m[11:41:18] [main/WARN] [mixin/]: Error loading class: net/caffeinemc/sodium/config/user/UserConfigCategories (java.lang.ClassNotFoundException: net.caffeinemc.sodium.config.user.UserConfigCategories)
+[m[33m[11:41:18] [main/WARN] [mixin/]: Error loading class: net/minecraft/client/renderer/entity/PhantomRenderer (java.lang.ClassNotFoundException: net.minecraft.client.renderer.entity.PhantomRenderer)
+[m[33m[11:41:18] [main/WARN] [mixin/]: @Mixin target net.minecraft.client.renderer.entity.PhantomRenderer was not found mixins.deeperdarker.json:PhantomRendererMixin
+[m[33m[11:41:18] [main/WARN] [mixin/]: Error loading class: blusunrize/immersiveengineering/api/wires/GlobalWireNetwork (java.lang.ClassNotFoundException: blusunrize.immersiveengineering.api.wires.GlobalWireNetwork)
+[m[33m[11:41:18] [main/WARN] [mixin/]: @Mixin target blusunrize.immersiveengineering.api.wires.GlobalWireNetwork was not found mixins.epp.json:MixinGlobalWireNetwork
+[m[1;31m[11:41:18] [main/ERROR] [ne.mi.fm.lo.RuntimeDistCleaner/DISTXFORM]: Attempted to load class net/minecraft/client/resources/model/ModelBakery for invalid dist DEDICATED_SERVER
+[m[33m[11:41:18] [main/WARN] [mixin/]: Error loading class: net/minecraft/client/resources/model/ModelBakery (java.lang.RuntimeException: Attempted to load class net/minecraft/client/resources/model/ModelBakery for invalid dist DEDICATED_SERVER)
+[m[33m[11:41:18] [main/WARN] [mixin/]: @Mixin target net.minecraft.client.resources.model.ModelBakery was not found mixins.aae.json:client.ModelBakeryMixin
+[m[1;31m[11:41:18] [main/ERROR] [ne.mi.fm.lo.RuntimeDistCleaner/DISTXFORM]: Attempted to load class net/minecraft/client/gui/screens/inventory/AbstractContainerScreen for invalid dist DEDICATED_SERVER
+[m[33m[11:41:18] [main/WARN] [mixin/]: Error loading class: net/minecraft/client/gui/screens/inventory/AbstractContainerScreen (java.lang.RuntimeException: Attempted to load class net/minecraft/client/gui/screens/inventory/AbstractContainerScreen for invalid dist DEDICATED_SERVER)
+[m[33m[11:41:18] [main/WARN] [mixin/]: @Mixin target net.minecraft.client.gui.screens.inventory.AbstractContainerScreen was not found dotcoinmod.mixins.json:AbstractContainerScreenAccessor
+[m[33m[11:41:18] [main/WARN] [mixin/]: Error loading class: com/railwayteam/railways/content/bogey_menu/BogeyMenuScreen (java.lang.ClassNotFoundException: com.railwayteam.railways.content.bogey_menu.BogeyMenuScreen)
+[m[33m[11:41:18] [main/WARN] [mixin/]: @Mixin target com.railwayteam.railways.content.bogey_menu.BogeyMenuScreen was not found create_bb.mixins.json:BogeyMenuScreenMixin
+[m[32m[11:41:18] [main/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 1 calls to Enchantment#getMaxLevel() in net/minecraft/world/level/storage/loot/functions/EnchantRandomlyFunction
+[m[32m[11:41:18] [main/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 1 calls to Enchantment#isDiscoverable() in net/minecraft/world/level/storage/loot/functions/EnchantRandomlyFunction
+[m[1;31m[11:41:18] [main/ERROR] [ne.mi.fm.lo.RuntimeDistCleaner/DISTXFORM]: Attempted to load class net/minecraft/client/player/AbstractClientPlayer for invalid dist DEDICATED_SERVER
+[m[33m[11:41:18] [main/WARN] [mixin/]: Error loading class: net/minecraft/client/player/AbstractClientPlayer (java.lang.RuntimeException: Attempted to load class net/minecraft/client/player/AbstractClientPlayer for invalid dist DEDICATED_SERVER)
+[m[33m[11:41:18] [main/WARN] [mixin/]: @Mixin target net.minecraft.client.player.AbstractClientPlayer was not found mixins.create_sa.json:AbstractClientPlayerMixin
+[m[32m[11:41:18] [main/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Patching FishingHook#catchingFish
+[m[33m[11:41:18] [main/WARN] [mixin/]: Error loading class: vazkii/quark/addons/oddities/inventory/BackpackMenu (java.lang.ClassNotFoundException: vazkii.quark.addons.oddities.inventory.BackpackMenu)
+[m[33m[11:41:18] [main/WARN] [mixin/]: Error loading class: net/minecraft/client/gui/screens/inventory/CraftingScreen (java.lang.ClassNotFoundException: net.minecraft.client.gui.screens.inventory.CraftingScreen)
+[m[33m[11:41:18] [main/WARN] [mixin/]: @Mixin target net.minecraft.client.gui.screens.inventory.CraftingScreen was not found fastbench.mixins.json:MixinCraftingScreen
+[m[33m[11:41:18] [main/WARN] [mixin/]: Error loading class: com/drmangotea/tfmg/blocks/machines/metal_processing/blast_furnace/BlastFurnaceOutputBlockEntity (java.lang.ClassNotFoundException: com.drmangotea.tfmg.blocks.machines.metal_processing.blast_furnace.BlastFurnaceOutputBlockEntity)
+[m[33m[11:41:18] [main/WARN] [mixin/]: Error loading class: com/mojang/blaze3d/platform/InputConstants$Key (java.lang.ClassNotFoundException: com.mojang.blaze3d.platform.InputConstants$Key)
+[m[32m[11:41:18] [main/INFO] [MixinExtras|Service/]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.3).
+[m[33m[11:41:18] [main/WARN] [mixin/]: Static binding violation: PRIVATE @Overwrite method m_216202_ in modernfix-modernfix.mixins.json:perf.tag_id_caching.TagOrElementLocationMixin cannot reduce visibiliy of PUBLIC target method, visibility will be upgraded.
+[m[32m[11:41:18] [main/INFO] [minecraft/Bootstrap]: ModernFix reached bootstrap stage (7.300 s after launch)
+[m[33m[11:41:18] [main/WARN] [mixin/]: @Final field delegatesByName:Ljava/util/Map; in modernfix-modernfix.mixins.json:perf.forge_registry_alloc.ForgeRegistryMixin should be final
+[m[33m[11:41:18] [main/WARN] [mixin/]: @Final field delegatesByValue:Ljava/util/Map; in modernfix-modernfix.mixins.json:perf.forge_registry_alloc.ForgeRegistryMixin should be final
+[m[32m[11:41:19] [main/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 2 calls to Enchantment#getMaxLevel() in net/minecraft/world/item/CreativeModeTabs
+[m[32m[11:41:19] [main/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 1 calls to Enchantment#getMaxLevel() in org/violetmoon/quark/content/experimental/module/GameNerfsModule
+[m[32m[11:41:19] [main/INFO] [minecraft/Bootstrap]: Vanilla bootstrap took 998 milliseconds
+[m[32m[11:41:20] [main/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 5 calls to Enchantment#getMaxLevel() in org/violetmoon/quark/content/tools/module/AncientTomesModule
+[m[32m[11:41:20] [main/INFO] [ne.mi.co.Co.placebo/COREMODLOG]: Patching IForgeItemStack#getEnchantmentLevel
+[m[32m[11:41:20] [main/INFO] [ne.mi.co.Co.placebo/COREMODLOG]: Patching IForgeItemStack#getEnchantmentLevel
+[m[32m[11:41:20] [main/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 2 calls to Enchantment#getMaxLevel() in net/minecraft/world/inventory/AnvilMenu
+[m[33m[11:41:20] [main/WARN] [mixin/]: @Final field f_26027_:Lnet/minecraft/world/entity/ai/targeting/TargetingConditions; in guardvillagers.mixins.json:DefendVillageGoalGolemMixin should be final
+[m[32m[11:41:20] [main/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Patching FishingHook#catchingFish
+[m[32m[11:41:20] [main/INFO] [minecraft/ChunkStatus]: minecraft:empty task radius: -1 -> -1
+[m[32m[11:41:20] [main/INFO] [minecraft/ChunkStatus]: minecraft:structure_starts task radius: 0 -> 0
+[m[32m[11:41:20] [main/INFO] [minecraft/ChunkStatus]: minecraft:structure_references task radius: 8 -> 0
+[m[32m[11:41:20] [main/INFO] [minecraft/ChunkStatus]: minecraft:biomes task radius: 8 -> 0
+[m[32m[11:41:20] [main/INFO] [minecraft/ChunkStatus]: minecraft:noise task radius: 8 -> 0
+[m[32m[11:41:20] [main/INFO] [minecraft/ChunkStatus]: minecraft:surface task radius: 8 -> 0
+[m[32m[11:41:20] [main/INFO] [minecraft/ChunkStatus]: minecraft:carvers task radius: 8 -> 0
+[m[32m[11:41:20] [main/INFO] [minecraft/ChunkStatus]: minecraft:features task radius: 8 -> 1
+[m[32m[11:41:20] [main/INFO] [minecraft/ChunkStatus]: minecraft:initialize_light task radius: 0 -> 0
+[m[32m[11:41:20] [main/INFO] [minecraft/ChunkStatus]: minecraft:light task radius: 1 -> 1
+[m[32m[11:41:20] [main/INFO] [minecraft/ChunkStatus]: minecraft:spawn task radius: 0 -> 0
+[m[32m[11:41:20] [main/INFO] [minecraft/ChunkStatus]: minecraft:full task radius: 0 -> 0
+[m[32m[11:41:21] [main/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 1 calls to Enchantment#getMaxLevel() in net/minecraft/world/level/storage/loot/functions/EnchantRandomlyFunction
+[m[32m[11:41:21] [main/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 1 calls to Enchantment#isDiscoverable() in net/minecraft/world/level/storage/loot/functions/EnchantRandomlyFunction
+[m[33m[11:41:21] [main/WARN] [mixin/]: Static binding violation: PRIVATE @Overwrite method m_47505_ in modernfix-modernfix.mixins.json:perf.remove_biome_temperature_cache.BiomeMixin cannot reduce visibiliy of PUBLIC target method, visibility will be upgraded.
+[m[32m[11:41:21] [main/INFO] [co.al.me.MERequester/]: Registering content
+[m[32m[11:41:21] [modloading-worker-0/INFO] [co.oe.re.ReHookedMod/]: ReHooked started initializing...
+[m[32m[11:41:21] [modloading-worker-0/INFO] [satako/]: Satako loaded
+[m[33m[11:41:21] [modloading-worker-0/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Configuration file /home/gerald/obelisks/server-instance/config/guardvillagers-common.toml is not correct. Correcting
+[m[32m[11:41:21] [modloading-worker-0/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 1 calls to Enchantment#getMaxLevel() in net/minecraft/world/entity/npc/VillagerTrades$EnchantBookForEmeralds
+[m[32m[11:41:21] [modloading-worker-0/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 1 calls to Enchantment#isTreasureOnly() in net/minecraft/world/entity/npc/VillagerTrades$EnchantBookForEmeralds
+[m[32m[11:41:21] [modloading-worker-0/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 1 calls to Enchantment#isTradeable() in net/minecraft/world/entity/npc/VillagerTrades$EnchantBookForEmeralds
+[m[32m[11:41:21] [modloading-worker-0/INFO] [co.oe.re.ReHookedMod/]: ReHooked finished registration.
+[m[32m[11:41:21] [modloading-worker-0/INFO] [coroutil/]: forge loader environment detected
+[m[32m[11:41:21] [modloading-worker-0/INFO] [or.an.cn.CreateNewAge/]: Hello 1.20.1 Create!
+[m[32m[11:41:21] [modloading-worker-0/INFO] [dynamicvillagertrades/]: register minecraft:buy_for_one_emerald
+[m[32m[11:41:21] [modloading-worker-0/INFO] [dynamicvillagertrades/]: register minecraft:sell_item
+[m[32m[11:41:21] [modloading-worker-0/INFO] [dynamicvillagertrades/]: register minecraft:sell_suspicious_stew
+[m[32m[11:41:21] [modloading-worker-0/INFO] [dynamicvillagertrades/]: register minecraft:process_item
+[m[32m[11:41:21] [modloading-worker-0/INFO] [dynamicvillagertrades/]: register minecraft:sell_enchanted_tool
+[m[32m[11:41:21] [modloading-worker-0/INFO] [dynamicvillagertrades/]: register minecraft:type_aware_buy_for_one_emerald
+[m[32m[11:41:21] [modloading-worker-0/INFO] [dynamicvillagertrades/]: register minecraft:sell_potion_holding_item
+[m[32m[11:41:21] [modloading-worker-0/INFO] [dynamicvillagertrades/]: register minecraft:enchant_book
+[m[32m[11:41:21] [modloading-worker-0/INFO] [dynamicvillagertrades/]: register minecraft:sell_map
+[m[32m[11:41:21] [modloading-worker-0/INFO] [dynamicvillagertrades/]: register minecraft:sell_dyed_armor
+[m[32m[11:41:21] [modloading-worker-0/INFO] [dynamicvillagertrades/]: register dynamicvillagertrades:sell_item_for_items
+[m[32m[11:41:21] [modloading-worker-0/INFO] [dynamicvillagertrades/]: register dynamicvillagertrades:type_aware_sell_item_for_items
+[m[32m[11:41:21] [modloading-worker-0/INFO] [dynamicvillagertrades/]: register dynamicvillagertrades:type_aware
+[m[32m[11:41:21] [modloading-worker-0/INFO] [dynamicvillagertrades/]: register dynamicvillagertrades:enchant_specific_book
+[m[32m[11:41:21] [modloading-worker-0/INFO] [dynamicvillagertrades/]: register dynamicvillagertrades:sell_specific_potion_holding_item
+[m[32m[11:41:21] [modloading-worker-0/INFO] [ne.or.cr.CreateColdSweat/]: Registering to events..
+[m[32m[11:41:21] [modloading-worker-0/INFO] [ne.or.cr.CreateColdSweat/]: Event registering complete.
+[m[32m[11:41:21] [modloading-worker-0/INFO] [co.ae.cu.Cumulus/]: Disabling Cumulus as it is on server.
+[m[32m[11:41:21] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.animal.AnimalScaredAttack
+[m[32m[11:41:21] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.animal.AnimalsPanic
+[m[32m[11:41:21] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.animal.NotTemptedAnimals
+[m[32m[11:41:21] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.blaze.BlazeAttack
+[m[32m[11:41:21] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.bugs.silverfish.mergewithstone.SilverfishMergeWithStone
+[m[32m[11:41:21] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.bugs.silverfish.wakeupfriends.SilverfishWakeUpFriends
+[m[32m[11:41:21] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.creeper.DisableFallingSwelling
+[m[32m[11:41:21] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.creeper.TNTLike
+[m[32m[11:41:21] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.creeper.launch.CreeperLaunch
+[m[32m[11:41:21] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.creeper.swell.CreeperSwell
+[m[32m[11:41:21] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.drowned.BetterDrownedSwimUp
+[m[32m[11:41:21] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.drowned.DrownedAttackDuringDay
+[m[32m[11:41:21] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.drowned.SunResistantDrowned
+[m[32m[11:41:21] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.drowned.drowningtargets.DrowningTargets
+[m[32m[11:41:21] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.ghast.GhastShooting
+[m[32m[11:41:21] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.illager.RavagerFeature
+[m[32m[11:41:21] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.illager.shoot.PillagerShoot
+[m[32m[11:41:21] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.mobs.AirSteal
+[m[32m[11:41:21] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.mobs.BitingMobs
+[m[32m[11:41:21] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.mobs.FireImmuneTicks
+[m[1;31m[11:41:21] [modloading-worker-0/ERROR] [ne.mi.fm.lo.RuntimeDistCleaner/DISTXFORM]: Attempted to load class org/antarcticgardens/cna/CreateNewAgeClientForge for invalid dist DEDICATED_SERVER
+[m[32m[11:41:21] [modloading-worker-0/INFO] [or.an.cn.CreateNewAge/]: Running in dedicated server
+[m[32m[11:41:21] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.mobs.FleeTarget
+[m[32m[11:41:21] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.mobs.ItemDisruption
+[m[32m[11:41:21] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.mobs.Jump
+[m[32m[11:41:21] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.mobs.Leaders
+[m[32m[11:41:21] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.mobs.MPRDataPack
+[m[32m[11:41:21] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.mobs.MeleeAttacking
+[m[32m[11:41:21] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.mobs.OpenDoors
+[m[32m[11:41:21] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.mobs.Panic
+[m[32m[11:41:21] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.mobs.Pathfinding
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.mobs.PushResistance
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.mobs.RandomStroll
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.mobs.Shielding
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.mobs.Spawning
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.mobs.Swimmers
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.mobs.anticheese.VehicleAntiCheese
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.mobs.avoidexplosion.AvoidExplosions
+[m[32m[11:41:22] [modloading-worker-0/INFO] [ne.mi.co.ForgeMod/FORGEMOD]: Forge mod loading, version 47.4.13, for MC 1.20.1 with MCP 20230612.114412
+[m[32m[11:41:22] [modloading-worker-0/INFO] [ne.mi.co.MinecraftForge/FORGE]: MinecraftForge v47.4.13 Initialized
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.mobs.blindnessaffected.ActualBlindness
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.mobs.breakanger.BreakAnger
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.mobs.climbing.Climbing
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.mobs.fallingshockwave.FallingShockwave
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.mobs.fisher.FisherMobs
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.mobs.miner.MinerMobs
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.mobs.parkour.Parkour
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.mobs.pearler.PearlerMobs
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.mobs.pickandthrow.PickUpAndThrow
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.mobs.riding.Riding
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.mobs.sprint.Sprint
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.mobs.targeting.Targeting
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.mobs.teleportanticheese.TeleportAntiCheese
+[m[32m[11:41:22] [modloading-worker-0/INFO] [co.al.no.NoTreePunching/]: I tried to punch tree. It didn't work, my hands are now covered in blood and splinters. Need to try something else ...
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.mobs.teleporttotarget.TeleportToTarget
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.mobs.webber.ThrowingWeb
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.shulker.ShulkerArmor
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.shulker.ShulkerBullets
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.shulker.shulkerattack.ShulkerAttack
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.skeleton.SkeletonFleeTarget
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.skeleton.WitherSkeletons
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.skeleton.shoot.SkeletonShoot
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.slime.MagmaCubeSurfSpeed
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.slime.SlimeAttackFix
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.slime.SlimeJumpDelay
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.slime.SlimeSize
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.snowgolem.SnowGolemsDamagingSnowballs
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.snowgolem.SnowGolemsFreezingSnowballs
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.snowgolem.SnowGolemsHealedBySnowballs
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.snowgolem.SnowballsInvulnerabilityFrames
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.spider.StuckFix
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.villager.VillagerAlertProtectors
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.villager.VillagerAttacking
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.warden.WardenDarknessRange
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.warden.WardenListenRange
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.warden.WardenSonicBoomRange
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.witch.ThirstyWitches
+[m[Mouse Tweaks] Disabled because not running on the client.
+[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.witch.alliedmonsters.AlliedMonsters
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.witch.darkart.DarkArt
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.enhancedai.modules.witch.throwing.WitchPotionThrowing
+[m[1;31m[11:41:22] [modloading-worker-0/ERROR] [me.ic.mo.di.co.Ding/]: You are loading Ding on a server. Ding is a client only mod!
+[m[32m[11:41:22] [modloading-worker-0/INFO] [co.ex.cu.CursedBiomesMod/]: Loaded mod cursedbiomes
+[m[33m[11:41:22] [modloading-worker-0/WARN] [mixinsquared-annotation-adjuster/]: Modified mixin "dev.uncandango.alltheleaks.mixin.core.main.AerialInterfaceBlockEntityMixin". Check debug logs for more information.
+[m[32m[11:41:22] [modloading-worker-0/INFO] [Puzzles Lib/]: Constructing common components for puzzleslib:main
+[m[33m[11:41:22] [modloading-worker-0/WARN] [mixinsquared-annotation-adjuster/]: Modified mixin "dev.uncandango.alltheleaks.mixin.core.main.SoulGemItemMixin". Check debug logs for more information.
+[m[32m[11:41:22] [Modding Legacy/blue_skies/Supporters thread/INFO] [ModdingLegacy/blue_skies/Supporter/]: Attempting to load the Modding Legacy supporters list from https://moddinglegacy.com/supporters-changelogs/supporters.txt
+[m[32m[11:41:22] [modloading-worker-0/INFO] [co.ge.pi.PillagerPressureMod/]: Loaded mod pillagerpressure
+[m[32m[11:41:22] [modloading-worker-0/INFO] [Tinkers' Ponder/]: Tinker's Ponder has loaded!.
+[m[32m[11:41:22] [modloading-worker-0/INFO] [th.ko.te.KotlinForForge/]: Kotlin For Forge Enabled!
+[m[32m[11:41:22] [modloading-worker-0/INFO] [wi.rs.ModRsGauges/]: Gauges and Switches GIT id #325ffff.
+[m[32m[11:41:22] [modloading-worker-0/INFO] [zeta/]: Doing super early config setup for zeta
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.insanelib.module.base.FixesFeature
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.insanelib.module.base.TagsFeature
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.insanelib.module.base.TimeStopNoPlayerOnline
+[m[32m[11:41:22] [modloading-worker-0/INFO] [in.in.InsaneLib/]: Found (COMMON) InsaneLib Feature class insane96mcp.insanelib.module.base.betterfallingblocks.BetterFallingBlocks
+[m[33m[11:41:22] [modloading-worker-0/WARN] [mixinsquared-annotation-adjuster/]: Modified mixin "dev.uncandango.alltheleaks.mixin.core.main.RecipeCrawlHandlerMixin". Check debug logs for more information.
+[m[33m[11:41:22] [modloading-worker-0/WARN] [mixinsquared-annotation-adjuster/]: Modified mixin "dev.uncandango.alltheleaks.mixin.core.main.RecipeCrawlHandlerMixin". Check debug logs for more information.
+[m[33m[11:41:22] [modloading-worker-0/WARN] [mixinsquared-annotation-adjuster/]: Modified mixin "dev.uncandango.alltheleaks.mixin.core.main.RecipeCrawlHandlerMixin". Check debug logs for more information.
+[m[32m[11:41:22] [modloading-worker-0/INFO] [co.ge.pi.PillagerCampaignsMod/]: Loaded mod pillagercampaigns
+[m[32m[11:41:22] [modloading-worker-0/INFO] [de.ke.me.Melody/]: [MELODY] Disabling Melody since it's loaded server-side.
+[m[32m[11:41:22] [modloading-worker-0/INFO] [de.ke.ko.Konkrete/]: [KONKRETE] Successfully initialized!
+[m[32m[11:41:22] [modloading-worker-0/INFO] [de.ke.ko.Konkrete/]: [KONKRETE] Server-side libs ready to use!
+[m[32m[11:41:22] [modloading-worker-0/INFO] [Puzzles Lib/]: Constructing common components for hangglider:main
+[m[32m[11:41:22] [modloading-worker-0/INFO] [Unearthed/]: UE: Blocks registered!
+[m[32m[11:41:22] [modloading-worker-0/INFO] [Unearthed/]: UE: Items registered!
+[m[32m[11:41:22] [modloading-worker-0/INFO] [pneumaticcraft/]: Thirdparty integration activated for [theoneprobe,jei,curios,patchouli,create]
+[m[32m[11:41:22] [modloading-worker-0/INFO] [Collective/]: Loading Collective version 8.20.
+[m[32m[11:41:22] [modloading-worker-0/INFO] [lostcities/]: Creating standard profiles into 'config/lostcities/profiles'
+[m[32m[11:41:22] [modloading-worker-0/INFO] [lostcities/]: Reading existing profiles from 'config/lostcities/profiles'
+[m[32m[11:41:22] [modloading-worker-0/INFO] [Puzzles Lib/]: Constructing common components for tradingpost:main
+[m[32m[11:41:22] [modloading-worker-0/INFO] [ConfigurableDeath/]: [Configurable Death] Initializing...
+[m[32m[11:41:22] [modloading-worker-0/INFO] [de.yo.ob.ObelisksMod/]: Starting Dimensional Scar Expeditions
+[m[32m[11:41:22] [modloading-worker-0/INFO] [co.si.cr.Create/]: Create 6.0.8 initializing! Commit hash: 1a1a9a2819b4f89f78caec41b55ed8cb222fa24b
+[m[32m[11:41:22] [modloading-worker-0/INFO] [de.yo.ob.da.ObeliskDataManager/]: Loaded 7 obelisk definitions, 4 reward tables, and 1 worldgen families
+[m[32m[11:41:23] [modloading-worker-0/INFO] [co.ge.co.ComputerBridgeMod/]: Loaded computerbridge
+[m[1;31m[11:41:23] [modloading-worker-0/ERROR] [ne.mi.co.Co.adpother/COREMODLOG]: FAILED: target node not found!
+[m[32m[11:41:23] [modloading-worker-0/INFO] [particular/]: I am quite particular about the effects I choose to add :3
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id architectury:sync_ids
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id artifacts:networking_channel/42a7ad70b1cc371599a0eff744096b8a
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id artifacts:networking_channel/74a5e841822a3a87854ae896a33430d6
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id artifacts:networking_channel/eb3d1e2748533430848cadf0f37c7e9c
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id artifacts:networking_channel/91c8520f19f93b3e8b6a727568e194ab
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id artifacts:networking_channel/8c2784d778293fd482ed84b8aa5fedb9
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id artifacts:networking_channel/ea038224ea783d40b2863f52239e2604
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id artifacts:networking_channel/97ad64b7ecaf33209991c4f031501a58
+[m[32m[11:41:23] [KubeJS Background Thread/INFO] [KubeJS/]: Loaded common.properties
+[m[32m[11:41:23] [KubeJS Background Thread/INFO] [KubeJS/]: Loaded dev.properties
+[m[32m[11:41:23] [modloading-worker-0/INFO] [DragonLib Networking System/]: Registering C2S network packet of type SEND with id 'update_writable_sign' in 'dragonlib:network'.
+[m[32m[11:41:23] [modloading-worker-0/INFO] [KubeJS/]: Looking for KubeJS plugins...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [DragonLib Networking System/]: Registering C2S network packet of type SEND with id 'string_message' in 'dragonlib:network_test'.
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftblibrary:edit_nbt_response
+[m[32m[11:41:23] [modloading-worker-0/INFO] [DragonLib Networking System/]: Registering C2S network packet of type SEND_AND_RECEIVE with id 'test_msg' in 'dragonlib:network_test'.
+[m[32m[11:41:23] [modloading-worker-0/INFO] [DragonLib/]: Starting the setup of DragonLib...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [KubeJS/]: Found plugin source kubejs
+[m[32m[11:41:23] [Mountain Dragon/INFO] [DragonLib/]:                              +++ 🐉 +++                             
+[m[32m[11:41:23] [Mountain Dragon/INFO] [DragonLib/]: ---------------------------------------------------------------------
+[m[32m[11:41:23] [Mountain Dragon/INFO] [DragonLib/]:           Loaded DragonLib v1.20.1-beta-3.0.24 by MrJulsen!          
+[m[32m[11:41:23] [Mountain Dragon/INFO] [DragonLib/]:                 Minecraft Forge Server 1.20.1-47.4.13                
+[m[32m[11:41:23] [Mountain Dragon/INFO] [DragonLib/]: 
+[m[32m[11:41:23] [Mountain Dragon/INFO] [DragonLib/]:                 Discord: https://discord.mrjulsen.net                
+[m[32m[11:41:23] [Mountain Dragon/INFO] [DragonLib/]:                        Documentation: unknown                       
+[m[32m[11:41:23] [Mountain Dragon/INFO] [DragonLib/]:   Bug Reports: https://github.com/MisterJulsen/MC-DragonLib2/issues  
+[m[32m[11:41:23] [Mountain Dragon/INFO] [DragonLib/]: ---------------------------------------------------------------------
+[m[32m[11:41:23] [Mountain Dragon/INFO] [DragonLib/]:                              +++ 🐉 +++                             
+[m[33m[11:41:23] [modloading-worker-0/WARN] [KubeJS/]: Plugin dev.latvian.mods.kubejs.forge.BuiltinKubeJSForgeClientPlugin does not load on server side, skipping
+[m[33m[11:41:23] [modloading-worker-0/WARN] [KubeJS/]: Plugin dev.latvian.mods.kubejs.integration.forge.gamestages.GameStagesIntegration does not have required mod gamestages loaded, skipping
+[m[32m[11:41:23] [modloading-worker-0/INFO] [KubeJS/]: Found plugin source createdieselgenerators
+[mConfig updated!
+Config loaded!
+[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id findme:default/93a3df5fb37f371cb25c481f6e5b9323
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id findme:default/b71e26ec071d32928d9fb5d2c3ec8a7a
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id wands:global_settings_packet
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id wands:key_packet
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id wands:palette_packet
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id wands:wand_packet
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id wands:sync_rock_packet
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id wands:pos_packet
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id findme:default/1f516f929b313631ad555a7b42b1d39c
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbteams:open_gui
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbteams:update_settings
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbteams:send_message
+[m[32m[11:41:23] [modloading-worker-0/INFO] [KubeJS/]: Found plugin source ftbxmodcompat
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbteams:create_party
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbteams:player_gui_operation
+[m[33m[11:41:23] [modloading-worker-0/WARN] [KubeJS/]: Plugin dev.ftb.mods.ftbxmodcompat.ftbchunks.kubejs.FTBChunksKubeJSPlugin does not have required mod ftbchunks loaded, skipping
+[m[33m[11:41:23] [modloading-worker-0/WARN] [KubeJS/]: Plugin dev.ftb.mods.ftbxmodcompat.ftbfiltersystem.kubejs.FFSKubeJSPlugin does not have required mod ftbfiltersystem loaded, skipping
+[m[32m[11:41:23] [modloading-worker-0/INFO] [KubeJS/]: Found plugin source acid_vat
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id sleepingoverhaul:is_really_sleeping
+[m[32m[11:41:23] [modloading-worker-0/INFO] [or.pa.po.PowerGrid/]: Power grid starting, prepare to be electrocuted
+[m[32m[11:41:23] [modloading-worker-0/INFO] [dotcoinmod/]: Loading DCM config
+[m[32m[11:41:23] [modloading-worker-0/INFO] [or.pa.po.PowerGrid/]: Native backend loaded successfully
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id dotcoinmod:networking_channel/9aa753400a5f374b8ad6e12f1d136068
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id dotcoinmod:networking_channel/1fced775c05032deaf5ff5884b5a8400
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id dotcoinmod:networking_channel/7981bfe5f75931ed9d6b56e644b166c2
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id dotcoinmod:networking_channel/2c7f3fb8104f38fab5e18c3c2e44cc22
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id dotcoinmod:networking_channel/17b3f334f4cb34898f17a71f7b613596
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:submit_task
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:claim_reward
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:get_emergency_items
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:claim_all_rewards
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:claim_choice_reward
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:toggle_pinned
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:toggle_chapter_pinned
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:toggle_editing_mode
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:force_save
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:set_custom_image
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:task_screen_config_resp
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:give_item_to_player
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:reorder_item
+[m[32m[11:41:23] [modloading-worker-0/INFO] [KubeJS/]: Found plugin source kubejs_create
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:change_progress
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:create_object
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:create_task_at
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:delete_object
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:edit_object
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:move_chapter
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:move_quest
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:change_chapter_group
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:move_chapter_group
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:copy_quest
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:copy_chapter_image
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:sync_structures_request
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id ftbquests:request_team_data
+[m[32m[11:41:23] [modloading-worker-0/INFO] [KubeJS/]: Found plugin source cold_sweat
+[m[32m[11:41:23] [modloading-worker-0/INFO] [KubeJS/]: Found plugin source morejs
+[m[32m[11:41:23] [modloading-worker-0/INFO] [KubeJS/]: Found plugin source rpgstats
+[m[32m[11:41:23] [modloading-worker-0/INFO] [KubeJS/]: Found plugin source wares
+[m[32m[11:41:23] [modloading-worker-0/INFO] [KubeJS/]: Found plugin source lootjs
+[m[32m[11:41:23] [modloading-worker-0/INFO] [KubeJS/]: Found plugin source kubejsbloodmagic
+[m[32m[11:41:23] [modloading-worker-0/INFO] [KubeJS/]: Done in 111.4 ms
+[mLoading schematic: bloodmagic:t_corridor
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@302a2fa0
+Loading schematic: bloodmagic:four_way_corridor_loot
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@8605cf1
+Loading schematic: bloodmagic:four_way_corridor
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@6f438698
+Loading schematic: bloodmagic:standard/ore_hold_1
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@16f1d74e
+Loading schematic: bloodmagic:straight_corridor
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@1701c4e7
+Loading schematic: bloodmagic:overlapped_corridor
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@67a1908e
+Loading schematic: bloodmagic:spiral_staircase
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@5ab68b50
+Loading schematic: bloodmagic:standard/water_way
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@7120b463
+Loading schematic: bloodmagic:standard/mine_entrance
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@182cbf8d
+Loading schematic: bloodmagic:mines/mine_key
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@192283fb
+Loading schematic: bloodmagic:mines/pit
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@562b3d8b
+Loading schematic: bloodmagic:mines/corner_zombie_trap
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@60621e08
+Loading schematic: bloodmagic:mines/split_road
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@2ffbfede
+Loading schematic: bloodmagic:mines/station
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@73e11c77
+Loading schematic: bloodmagic:mines/downward_tunnel
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@33cbdea
+Loading schematic: bloodmagic:mines/junction_station
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@4faa3a5e
+Loading schematic: bloodmagic:mines/downward_shaft
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@44a352ab
+Loading schematic: bloodmagic:mines/nature_crossroad
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@712d6048
+Loading schematic: bloodmagic:mines/wolf_den
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@620f97a7
+Loading schematic: bloodmagic:mines/ore_cavern
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@203873fa
+Loading schematic: bloodmagic:mines/straight_corridor
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@c87f8ac
+Loading schematic: bloodmagic:mines/bent_corridor
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@54a78c5b
+Loading schematic: bloodmagic:mines/fourway_corridor
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@e871ecb
+Loading schematic: bloodmagic:mini_dungeon/library
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@55cb67d3
+Loading schematic: bloodmagic:mini_dungeon/armoury
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@17d18cf9
+Loading schematic: bloodmagic:mini_dungeon/farm
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@6c758eef
+Loading schematic: bloodmagic:mini_dungeon/portal_nether
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@2707ddee
+Loading schematic: bloodmagic:mini_dungeon/crypt
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@1db09d8a
+Loading schematic: bloodmagic:standard/challenge_tower
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@26dc0e65
+Loading schematic: bloodmagic:standard/big_library
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@686dd1d9
+Loading schematic: bloodmagic:standard/small_crane
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@216e7818
+Loading schematic: bloodmagic:standard/small_library
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@78e2f1cb
+Loading schematic: bloodmagic:standard/small_smithy
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@1cd60d
+Loading schematic: bloodmagic:standard/tall_spiral
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@2ca7a493
+Loading schematic: bloodmagic:standard/small_arena
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@13320722
+Loading schematic: bloodmagic:standard/antechamber
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@e4da12d
+Loading schematic: bloodmagic:standard/destroyed_end_portal
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@15951fb7
+Loading schematic: bloodmagic:standard/four_way_corridor_loot
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@75644d5c
+Loading schematic: bloodmagic:t3_entrance
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@74c75b98
+Loading schematic: bloodmagic:standard_entrance
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@7cb5c6d0
+Loading schematic: bloodmagic:default_deadend
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@64540773
+Loading schematic: bloodmagic:mines/deadend
+Resulting dungeon: wayoftime.bloodmagic.structures.DungeonRoom@8486266
+# schematics: 42
+[32m[11:41:23] [modloading-worker-0/INFO] [quark/]: Initializing TerraBlender underground biome compat
+[m[32m[11:41:23] [modloading-worker-0/INFO] [co.th.ae.LoggerKt/]: Integration for AE2 Things has been loaded
+[m[32m[11:41:23] [modloading-worker-0/INFO] [co.th.ae.LoggerKt/]: Integration for The One Probe has been loaded
+[m[32m[11:41:23] [modloading-worker-0/INFO] [co.th.ae.LoggerKt/]: Integration for FTB Teams has been loaded
+[m[32m[11:41:23] [modloading-worker-0/INFO] [FTB XMod Compat/]: [FTB Quests] Enabled KubeJS integration
+[m[32m[11:41:23] [modloading-worker-0/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 1 calls to Enchantment#getMaxLevel() in org/violetmoon/quark/content/experimental/module/GameNerfsModule
+[m[32m[11:41:23] [modloading-worker-0/INFO] [Rhino Script Remapper/]: Loading Rhino Minecraft remapper...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.la.mo.rh.mo.ut.RhinoProperties/]: Rhino properties loaded.
+[m[32m[11:41:23] [modloading-worker-0/INFO] [Rhino Script Remapper/]: Loading mappings for 1.20.1
+[m[32m[11:41:23] [modloading-worker-0/INFO] [co.ge.he.HeatSyncMod/]: Enabled Cold Sweat bridge hooks
+[m[32m[11:41:23] [modloading-worker-0/INFO] [co.ex.ga.GasesAndPlasmasMod/]: Loaded mod gases_and_plasmas
+[m[32m[11:41:23] [modloading-worker-0/INFO] [co.ge.he.HeatSyncMod/]: Loaded mod heatsync
+[m[32m[11:41:23] [modloading-worker-0/INFO] [co.ge.fi.FissionReactorMod/]: Loaded mod fission_reactor
+[m[32m[11:41:23] [modloading-worker-0/INFO] [Rhino Script Remapper/]: Done in 0.054 s
+[m[32m[11:41:23] [modloading-worker-0/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 5 calls to Enchantment#getMaxLevel() in org/violetmoon/quark/content/tools/module/AncientTomesModule
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Discovered 164 modules to load.
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Abacus...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [be.fl.ex.ExpandAbility/]: ExpandAbility here, who dis?
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Adjustable Chat...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Ambient Discs...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Ancient Tomes...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [ne.mi.co.Co.apotheosis/COREMODLOG]: Replaced 3 calls to Enchantment#getMaxLevel() in org/violetmoon/quark/content/tools/item/AncientTomeItem
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Ancient Wood...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Armed Armor Stands...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Auto Walk Keybind...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Automatic Recipe Unlock...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Automatic Tool Restock...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Azalea Wood...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Back Button Keybind...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Backpack...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Beacon Redirection...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Better Elytra Rocket...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Big Stone Clusters...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Blossom Trees...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Bottled Cloud...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [create_bb/]: Registered styles/menu selections for Create: Blocks & Bogies
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Buckets Show Inhabitants...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [create_bb/]: Registered bogie blocks for Create: Blocks & Bogies
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Camera...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Campfires Boost Elytra...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Celebratory Lamps...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Chains Connect Blocks...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Chest Searching...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Chorus Vegetation...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Chute...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [create_bb/]: Registered block entities for Create: Blocks & Bogies
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Climate Control Remover...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Color Runes...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Compasses Work Everywhere...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Compressed Blocks...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Coral On Cactus...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Corundum...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [create_bb/]: Registered partial models for Create: Blocks & Bogies
+[m[33m[11:41:23] [modloading-worker-0/WARN] [mixin/]: @Inject(@At("INVOKE")) Shift.BY=3 on etstlib.mixins.json:TconMixin.CastingBlockEntityMixin::handler$zoj000$increaseProcessSpeed exceeds the maximum allowed value: 0. Increase the value of maxShiftBy to suppress this warning.
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Crabs...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Crafter...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Crate...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Diamond Repair...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Dispensers Place Blocks...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Double Door Opening...
+[m[32m[11:41:23] [modloading-worker-0/INFO] [quark-zeta/]: Constructing module Dragon Scales...
+[m[1;31m[11:41:23] [modloading-worker-0/ERROR] [ne.mi.fm.ja.FMLModContainer/LOADING]: Failed to create mod instance. ModID: quark, class org.violetmoon.quark.base.Quark
+java.lang.ArrayIndexOutOfBoundsException: Index 256 out of bounds for length 129
+	at it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap.rehash(Object2ObjectOpenHashMap.java:1275) ~[fastutil-8.5.9.jar%2390!/:?] {re:mixin}
+	at it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap.insert(Object2ObjectOpenHashMap.java:245) ~[fastutil-8.5.9.jar%2390!/:?] {re:mixin}
+	at it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap.put(Object2ObjectOpenHashMap.java:253) ~[fastutil-8.5.9.jar%2390!/:?] {re:mixin}
+	at org.violetmoon.zetaimplforge.event.ForgeZetaEventBus.subscribeMethod(ForgeZetaEventBus.java:87) ~[Zeta-1.0-31.jar%23643!/:1.0-31] {re:classloading}
+	at org.violetmoon.zeta.event.bus.ZetaEventBus.lambda$subscribe$0(ZetaEventBus.java:60) ~[Zeta-1.0-31.jar%23643!/:1.0-31] {re:classloading}
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184) ~[?:?] {}
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179) ~[?:?] {}
+	at java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024) ~[?:?] {}
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[?:?] {}
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[?:?] {}
+	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151) ~[?:?] {}
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174) ~[?:?] {}
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[?:?] {}
+	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596) ~[?:?] {}
+	at org.violetmoon.zeta.event.bus.ZetaEventBus.subscribe(ZetaEventBus.java:60) ~[Zeta-1.0-31.jar%23643!/:1.0-31] {re:classloading}
+	at org.violetmoon.zeta.module.ZetaModuleManager.constructAndSetup(ZetaModuleManager.java:155) ~[Zeta-1.0-31.jar%23643!/:1.0-31] {re:classloading}
+	at org.violetmoon.zeta.module.ZetaModuleManager.load(ZetaModuleManager.java:121) ~[Zeta-1.0-31.jar%23643!/:1.0-31] {re:classloading}
+	at org.violetmoon.zeta.Zeta.loadModules(Zeta.java:140) ~[Zeta-1.0-31.jar%23643!/:1.0-31] {re:mixin,re:classloading}
+	at org.violetmoon.quark.base.proxy.CommonProxy.start(CommonProxy.java:82) ~[Quark-4.0-462.jar%23576!/:4.0-462] {re:classloading}
+	at org.violetmoon.quark.base.Quark.<init>(Quark.java:53) ~[Quark-4.0-462.jar%23576!/:4.0-462] {re:classloading,re:mixin}
+	at jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?] {}
+	at java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?] {}
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?] {}
+	at net.minecraftforge.fml.javafmlmod.FMLModContainer.constructMod(FMLModContainer.java:77) ~[javafmllanguage-1.20.1-47.4.13.jar%23647!/:?] {}
+	at net.minecraftforge.fml.ModContainer.lambda$buildTransitionHandler$5(ModContainer.java:126) ~[fmlcore-1.20.1-47.4.13.jar%23646!/:?] {}
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796) ~[?:?] {}
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) ~[?:?] {re:mixin,re:computing_frames}
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) ~[?:?] {re:mixin,re:computing_frames}
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) ~[?:?] {re:mixin}
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id powergrid:main/893804baf0ca3e9c8686f973e3846242
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id powergrid:main/73ca2b3fecb833f19a37fa383fd73c52
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id powergrid:main/a5bb533d09793128bd42a1ea819744a8
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id powergrid:main/01aea357875d3b6e9b3c5b46f8624a22
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id powergrid:main/2a4815ddfd31312cafa545eaf659351a
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id powergrid:main/62d2735a731f3a42a724994dbbe7c39d
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id powergrid:main/b998fc3850fc36219e22c58fd0d562fe
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id powergrid:main/2afa62329f363192aa5ce38137c7a765
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id powergrid:main/78b5f986765e30b1a069c4c96d89d62a
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id powergrid:main/868559c19ec934bebb21fb91fb085312
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id powergrid:main/d1bbd210201235c08fe35dad72aa33da
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id powergrid:main/4e901bcc05483b8eaa947d37b32f942d
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id powergrid:main/67bd24b7ef3d32c198fdcd6fb99f62ce
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id powergrid:main/005ee3768ad0376c8285daff5e970432
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id powergrid:main/149a90a9225c3521b0df347c19ae2fac
+[m[32m[11:41:23] [modloading-worker-0/INFO] [KubeJS/]: Added bindings for script type STARTUP from mod 'almostunified': [AlmostUnified]
+[m[32m[11:41:23] [modloading-worker-0/INFO] [KubeJS Startup/]: Loaded script startup_scripts:00_globals/20_progression_catalogues.js in 0.023 s
+[m[32m[11:41:23] [modloading-worker-0/INFO] [KubeJS Startup/]: 10_items_blocks/10_thats_crate_registry.js#28: Loaded Java class 'java.math.BigInteger'
+[m[32m[11:41:23] [modloading-worker-0/INFO] [KubeJS Startup/]: Loaded script startup_scripts:10_items_blocks/10_thats_crate_registry.js in 0.008 s
+[m[32m[11:41:23] [modloading-worker-0/INFO] [KubeJS Startup/]: Loaded script startup_scripts:10_items_blocks/20_triple_flint_durability.js in 0.001 s
+[m[32m[11:41:23] [modloading-worker-0/INFO] [KubeJS Startup/]: Loaded script startup_scripts:10_items_blocks/30_progression_items.js in 0.001 s
+[m[32m[11:41:23] [modloading-worker-0/INFO] [KubeJS Startup/]: Loaded script startup_scripts:20_blocks/10_ae2_skystone_hardness.js in 0.001 s
+[m[32m[11:41:23] [modloading-worker-0/INFO] [KubeJS Startup/]: 20_globals/10_immobile_spawn.js#4: [no_moving_spawn] registering PlayerSetSpawnEvent cancel
+[m[32m[11:41:23] [modloading-worker-0/INFO] [KubeJS Startup/]: Loaded script startup_scripts:20_globals/10_immobile_spawn.js in 0.001 s
+[m[32m[11:41:23] [modloading-worker-0/INFO] [KubeJS Startup/]: Loaded script startup_scripts:20_globals/30_blood_heart_types.js in 0.0 s
+[m[32m[11:41:23] [modloading-worker-0/INFO] [KubeJS Startup/]: Loaded script startup_scripts:30_hide_vanilla_tools_from_creative.js in 0.001 s
+[m[32m[11:41:23] [modloading-worker-0/INFO] [KubeJS Startup/]: 40_potion_brewing_registry.js#4: Loaded Java class 'net.minecraft.world.item.alchemy.Potions'
+[m[32m[11:41:23] [modloading-worker-0/INFO] [KubeJS Startup/]: Loaded script startup_scripts:40_potion_brewing_registry.js in 0.002 s
+[m[32m[11:41:23] [modloading-worker-0/INFO] [KubeJS Startup/]: Loaded 9/9 KubeJS startup scripts in 0.241 s with 0 errors and 0 warnings
+[m[32m[11:41:23] [modloading-worker-0/INFO] [RPGStats/HeartTypes/]: Loaded 5 KubeJS heart type definitions.
+[m[32m[11:41:23] [modloading-worker-0/INFO] [KubeJS Startup/]: 10_items_blocks/10_thats_crate_registry.js#128: [crates] registry bases=16
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id kubejs:send_data_from_client
+[m[32m[11:41:23] [modloading-worker-0/INFO] [de.ar.ne.fo.NetworkManagerImpl/]: Registering C2S receiver with id kubejs:first_click
+[m[1;31m[11:41:23] [main/FATAL] [ne.mi.fm.ModLoader/LOADING]: Failed to complete lifecycle event CONSTRUCT, 1 errors found
+[m[32m[11:41:23] [Modding Legacy/blue_skies/Supporters thread/INFO] [ModdingLegacy/blue_skies/Supporter/]: Successfully loaded the Modding Legacy supporters list.
+[mNegative index in crash report handler (16/18)
+[1;31m[11:41:23] [main/FATAL] [ne.mi.co.ForgeMod/]: Preparing crash report with UUID 7a5ce782-f0cc-4b47-a851-1f9987b8a109
+[m[1;31m[11:41:23] [main/FATAL] [ne.mi.se.lo.ServerModLoader/]: Crash report saved to ./crash-reports/crash-2026-05-06_11.41.23-fml.txt
+[m[1;31m[11:41:23] [main/FATAL] [ne.mi.co.ForgeMod/]: Preparing crash report with UUID 649b4e7b-c610-4e9f-a225-e26e7bb79e0a
+[m---- Minecraft Crash Report ----
+// Don't be sad. I'll do better next time, I promise!
+
+Time: 2026-05-06 11:41:23
+Description: Mod loading error has occurred
+
+java.lang.Exception: Mod Loading has failed
+	at net.minecraftforge.logging.CrashReportExtender.dumpModLoadingCrashReport(CrashReportExtender.java:60) ~[forge-1.20.1-47.4.13-universal.jar%23650!/:?] {re:classloading}
+	at net.minecraftforge.server.loading.ServerModLoader.load(ServerModLoader.java:37) ~[forge-1.20.1-47.4.13-universal.jar%23650!/:?] {re:classloading}
+	at net.minecraft.server.Main.main(Main.java:125) ~[server-1.20.1-20230612.114412-srg.jar%23645!/:?] {re:mixin,re:classloading,pl:mixin:A}
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}
+	at java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:111) ~[fmlloader-1.20.1-47.4.13.jar%2369!/:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.serverService(CommonLaunchHandler.java:103) ~[fmlloader-1.20.1-47.4.13.jar%2369!/:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonServerLaunchHandler.lambda$makeService$0(CommonServerLaunchHandler.java:27) ~[fmlloader-1.20.1-47.4.13.jar%2369!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:108) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:78) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) ~[bootstraplauncher-1.1.2.jar:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: main
+Suspected Mods: NONE
+Stacktrace:
+	at it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap.rehash(Object2ObjectOpenHashMap.java:1275) ~[fastutil-8.5.9.jar%2390!/:?] {re:mixin}
+-- MOD quark --
+Details:
+	Mod File: /home/gerald/obelisks/server-instance/mods/Quark-4.0-462.jar
+	Failure message: Quark (quark) has failed to load correctly
+		java.lang.ArrayIndexOutOfBoundsException: Index 256 out of bounds for length 129
+	Mod Version: 4.0-462
+	Mod Issue URL: https://github.com/VazkiiMods/Quark
+	Exception message: java.lang.ArrayIndexOutOfBoundsException: Index 256 out of bounds for length 129
+Stacktrace:
+	at it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap.rehash(Object2ObjectOpenHashMap.java:1275) ~[fastutil-8.5.9.jar%2390!/:?] {re:mixin}
+	at it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap.insert(Object2ObjectOpenHashMap.java:245) ~[fastutil-8.5.9.jar%2390!/:?] {re:mixin}
+	at it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap.put(Object2ObjectOpenHashMap.java:253) ~[fastutil-8.5.9.jar%2390!/:?] {re:mixin}
+	at org.violetmoon.zetaimplforge.event.ForgeZetaEventBus.subscribeMethod(ForgeZetaEventBus.java:87) ~[Zeta-1.0-31.jar%23643!/:1.0-31] {re:classloading}
+	at org.violetmoon.zeta.event.bus.ZetaEventBus.lambda$subscribe$0(ZetaEventBus.java:60) ~[Zeta-1.0-31.jar%23643!/:1.0-31] {re:classloading}
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184) ~[?:?] {}
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179) ~[?:?] {}
+	at java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024) ~[?:?] {}
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[?:?] {}
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[?:?] {}
+	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151) ~[?:?] {}
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174) ~[?:?] {}
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[?:?] {}
+	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596) ~[?:?] {}
+	at org.violetmoon.zeta.event.bus.ZetaEventBus.subscribe(ZetaEventBus.java:60) ~[Zeta-1.0-31.jar%23643!/:1.0-31] {re:classloading}
+	at org.violetmoon.zeta.module.ZetaModuleManager.constructAndSetup(ZetaModuleManager.java:155) ~[Zeta-1.0-31.jar%23643!/:1.0-31] {re:classloading}
+	at org.violetmoon.zeta.module.ZetaModuleManager.load(ZetaModuleManager.java:121) ~[Zeta-1.0-31.jar%23643!/:1.0-31] {re:classloading}
+	at org.violetmoon.zeta.Zeta.loadModules(Zeta.java:140) ~[Zeta-1.0-31.jar%23643!/:1.0-31] {re:mixin,re:classloading}
+	at org.violetmoon.quark.base.proxy.CommonProxy.start(CommonProxy.java:82) ~[Quark-4.0-462.jar%23576!/:4.0-462] {re:classloading}
+	at org.violetmoon.quark.base.Quark.<init>(Quark.java:53) ~[Quark-4.0-462.jar%23576!/:4.0-462] {re:classloading,re:mixin}
+	at jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?] {}
+	at java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?] {}
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?] {}
+	at net.minecraftforge.fml.javafmlmod.FMLModContainer.constructMod(FMLModContainer.java:77) ~[javafmllanguage-1.20.1-47.4.13.jar%23647!/:?] {}
+	at net.minecraftforge.fml.ModContainer.lambda$buildTransitionHandler$5(ModContainer.java:126) ~[fmlcore-1.20.1-47.4.13.jar%23646!/:?] {}
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796) ~[?:?] {}
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) ~[?:?] {re:mixin,re:computing_frames}
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) ~[?:?] {re:mixin,re:computing_frames}
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) ~[?:?] {re:mixin}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.20.1
+	Minecraft Version ID: 1.20.1
+	Operating System: Linux (amd64) version 6.12.74+deb13+1-amd64
+	Java Version: 21.0.11, Eclipse Adoptium
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Eclipse Adoptium
+	Memory: 1835531696 bytes (1750 MiB) / 3103784960 bytes (2960 MiB) up to 16223567872 bytes (15472 MiB)
+	CPUs: 12
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD Ryzen 5 9600X 6-Core Processor
+	Identifier: AuthenticAMD Family 26 Model 68 Stepping 0
+	Microarchitecture: unknown
+	Frequency (GHz): -0.00
+	Number of physical packages: 1
+	Number of physical CPUs: 6
+	Number of logical CPUs: 12
+	Graphics card #0 name: GA104 [GeForce RTX 3070]
+	Graphics card #0 vendor: NVIDIA Corporation (0x10de)
+	Graphics card #0 VRAM (MB): 288.00
+	Graphics card #0 deviceId: 0x2484
+	Graphics card #0 versionInfo: unknown
+	Graphics card #1 name: Granite Ridge [Radeon Graphics]
+	Graphics card #1 vendor: Advanced Micro Devices, Inc. [AMD/ATI] (0x1002)
+	Graphics card #1 VRAM (MB): 258.00
+	Graphics card #1 deviceId: 0x13c0
+	Graphics card #1 versionInfo: unknown
+	Virtual memory max (MB): 70982.27
+	Virtual memory used (MB): 16083.91
+	Swap memory total (MB): 40047.00
+	Swap memory used (MB): 0.00
+	JVM Flags: 0 total; 
+	ModLauncher: 10.0.9+10.0.9+main.dcd20f30
+	ModLauncher launch target: forgeserver
+	ModLauncher naming: srg
+	ModLauncher services: 
+		mixin-0.8.5.jar mixin PLUGINSERVICE 
+		eventbus-6.0.5.jar eventbus PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.13.jar slf4jfixer PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.13.jar object_holder_definalize PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.13.jar runtime_enum_extender PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.13.jar capability_token_subclass PLUGINSERVICE 
+		accesstransformers-8.0.4.jar accesstransformer PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.13.jar runtimedistcleaner PLUGINSERVICE 
+		modlauncher-10.0.9.jar mixin TRANSFORMATIONSERVICE 
+		modlauncher-10.0.9.jar fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		minecraft@1.0
+		kotlinforforge@4.12.0
+		javafml@null
+		__fabric_loader_bootstrap@2.6.0+0.15.0+1.20.1
+		lowcodefml@null
+	Mod List: 
+		c2meF-fixes-worldgen-threading-issues-mc1.20.1-0.2|Concurrent Chunk Management En|c2me_fixes_worldgen_threading_|0.2.0+alpha.13      |COMMON_SET|Manifest: NOSIGNATURE
+		GlobalGameRules-1.20.1-8.1.0.12.jar               |Global GameRules              |globalgamerules               |8.1.0.12            |COMMON_SET|Manifest: 15:a4:a3:0e:d2:f8:64:0c:a4:97:30:5f:48:ba:5f:69:f9:23:42:14:a8:5a:60:3a:b1:b1:29:1a:0a:37:3c:79
+		tiny-multiblock-lib-forge-1.20.1-3.0.jar          |Tiny Multiblock Lib           |tinymultiblocklib             |3.0                 |COMMON_SET|Manifest: NOSIGNATURE
+		player-animation-lib-forge-1.0.2-rc1+1.20.jar     |Player Animator               |playeranimator                |1.0.2-rc1+1.20      |COMMON_SET|Manifest: NOSIGNATURE
+		c2meF-rewrites-chunk-serializer-mc1.20.1-0.2.0+alp|Concurrent Chunk Management En|c2me_rewrites_chunk_serializer|0.2.0+alpha.13      |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-rendering-fluids-v1-3.0.29+4ac5e37a77.jar  |Fabric Rendering Fluids (v1)  |fabric_rendering_fluids_v1    |3.0.29+4ac5e37a77   |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-models-v0-0.4.3+7c3892a477.jar             |Fabric Models (v0)            |fabric_models_v0              |0.4.3+7c3892a477    |COMMON_SET|Manifest: NOSIGNATURE
+		Satako-7.0.33-1.20.1.jar                          |Satako                        |satako                        |7.0.33-1.20.1       |COMMON_SET|Manifest: NOSIGNATURE
+		rehooked-1.8.3-1.20.1.jar                         |ReHooked                      |rehooked                      |1.8.3-1.20.1        |COMMON_SET|Manifest: NOSIGNATURE
+		dynamicvillagertrades-1.3.1-forge-1.20.jar        |Dynamic Villager Trades       |dynamicvillagertrades         |1.3.1               |COMMON_SET|Manifest: NOSIGNATURE
+		looot-1.20.1-1.2.0.4.jar                          |Looot                         |looot                         |1.2.0.4             |COMMON_SET|Manifest: NOSIGNATURE
+		ForgeEndertech-1.20.1-11.1.10.0-build.2048.jar    |ForgeEndertech                |forgeendertech                |11.1.10.0           |COMMON_SET|Manifest: NOSIGNATURE
+		c2meF-fixes-general-threading-issues-mc1.20.1-0.2.|Concurrent Chunk Management En|c2me_fixes_general_threading_i|0.2.0+alpha.13      |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-convention-tags-v1-1.5.6+fa3d1c0177.jar    |Fabric Convention Tags        |fabric_convention_tags_v1     |1.5.6+fa3d1c0177    |COMMON_SET|Manifest: NOSIGNATURE
+		modernfix-forge-5.27.12+mc1.20.1.jar              |ModernFix                     |modernfix                     |5.27.12+mc1.20.1    |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-command-api-v1-1.2.35+f71b366f77.jar       |Fabric Command API (v1)       |fabric_command_api_v1         |1.2.35+f71b366f77   |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-block-view-api-v2-1.0.3+53347ba977.jar     |Fabric BlockView API (v2)     |fabric_block_view_api_v2      |1.0.3+53347ba977    |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-command-api-v2-2.2.14+561530ec77.jar       |Fabric Command API (v2)       |fabric_command_api_v2         |2.2.14+561530ec77   |COMMON_SET|Manifest: NOSIGNATURE
+		everythingcopper-1.20.1-2.3.4.jar                 |Everything is Copper          |everythingcopper              |1.20.1-2.3.4        |COMMON_SET|Manifest: NOSIGNATURE
+		useitemonblockevent-1.20.1-1.0.0.2.jar            |Use Item on Block Event       |useitemonblockevent           |1.0.0.2             |COMMON_SET|Manifest: NOSIGNATURE
+		YungsApi-1.20-Forge-4.0.6.jar                     |YUNG's API                    |yungsapi                      |1.20-Forge-4.0.6    |COMMON_SET|Manifest: NOSIGNATURE
+		jumbofurnace-1.20.1-4.0.0.5.jar                   |Jumbo Furnace                 |jumbofurnace                  |4.0.0.5             |COMMON_SET|Manifest: NOSIGNATURE
+		weather2-1.20.1-2.8.3.jar                         |Weather2                      |weather2                      |1.20.1-2.8.3        |COMMON_SET|Manifest: NOSIGNATURE
+		guardvillagers-1.20.1-1.6.17.jar                  |Guard Villagers               |guardvillagers                |1.20.1-1.6.17       |COMMON_SET|Manifest: NOSIGNATURE
+		createdieselgenerators-1.20.1-1.3.12.jar          |Create: Diesel Generators     |createdieselgenerators        |1.20.1-1.3.12       |COMMON_SET|Manifest: NOSIGNATURE
+		c2meF-0.2.0+alpha.13-all.jar                      |Concurrent Chunk Management En|c2me                          |0.2.0+alpha.13      |COMMON_SET|Manifest: NOSIGNATURE
+		Apotheosis-1.20.1-7.4.8.jar                       |Apotheosis                    |apotheosis                    |7.4.8               |COMMON_SET|Manifest: NOSIGNATURE
+		create-new-age-1.1.7f+forge-mc1.20.1.jar          |Create: New Age               |create_new_age                |1.1.7f+mc1.20.1     |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-screen-api-v1-2.0.9+45a670a577.jar         |Fabric Screen API (v1)        |fabric_screen_api_v1          |2.0.9+45a670a577    |COMMON_SET|Manifest: NOSIGNATURE
+		K-Turrets-3.0.44-1.20.1.jar                       |K-Turrets                     |k_turrets                     |3.0.44-1.20.1       |COMMON_SET|Manifest: NOSIGNATURE
+		c2meF-base-mc1.20.1-0.2.0+alpha.13.jar            |Concurrent Chunk Management En|c2me_base                     |0.2.0+alpha.13      |COMMON_SET|Manifest: NOSIGNATURE
+		cloth-config-11.1.136-forge.jar                   |Cloth Config v10 API          |cloth_config                  |11.1.136            |COMMON_SET|Manifest: NOSIGNATURE
+		[forge]ctov-3.4.14.jar                            |ChoiceTheorem's Overhauled Vil|ctov                          |3.4.14              |COMMON_SET|Manifest: NOSIGNATURE
+		tntutils-forge-1.20.1-2.0.4.jar                   |TNTUtils                      |tntutils                      |1.20.1-2.0.4        |COMMON_SET|Manifest: NOSIGNATURE
+		staaaaaaaaaaaack-forge-1.20.1-1.5-71.jar          |Staaaaaaaaaaaack              |staaaaaaaaaaaack              |1.20.1-1.5-71       |COMMON_SET|Manifest: NOSIGNATURE
+		Geophilic v3.4.6.mod.jar                          |Geophilic                     |geophilic                     |3.4.6               |COMMON_SET|Manifest: NOSIGNATURE
+		athena-forge-1.20.1-3.1.2.jar                     |Athena                        |athena                        |3.1.2               |COMMON_SET|Manifest: NOSIGNATURE
+		structure_gel-1.20.1-2.16.2.jar                   |Structure Gel API             |structure_gel                 |2.16.2              |COMMON_SET|Manifest: NOSIGNATURE
+		Glodium-1.20-1.5-forge.jar                        |Glodium                       |glodium                       |1.20-1.5-forge      |COMMON_SET|Manifest: NOSIGNATURE
+		rbp-1.20.1-1.0.0.jar                              |Realistic Block Physics       |rbp                           |1.0.0               |COMMON_SET|Manifest: NOSIGNATURE
+		create_cold_sweat-1.1.2.jar                       |Create: Cold Sweat            |create_cold_sweat             |1.1.2               |COMMON_SET|Manifest: NOSIGNATURE
+		Cobble-Gen-Haters-1.20-1.0.1.jar                  |Cobble Gen Hater              |cobblegenhaters               |1.0.1               |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-game-rule-api-v1-1.0.41+683d4da877.jar     |Fabric Game Rule API (v1)     |fabric_game_rule_api_v1       |1.0.41+683d4da877   |COMMON_SET|Manifest: NOSIGNATURE
+		alekiNiftyShips-FORGE-1.20.1-1.0.14.jar           |aleki's Nifty Ships           |alekiships                    |1.0.14              |COMMON_SET|Manifest: NOSIGNATURE
+		createmoredrillheads-2.1.0-1.20.1.jar             |Create: More Drill Heads      |createmoredrillheads          |2.1.0-1.20.1        |COMMON_SET|Manifest: NOSIGNATURE
+		resourcefulconfig-forge-1.20.1-2.1.3.jar          |Resourcefulconfig             |resourcefulconfig             |2.1.3               |COMMON_SET|Manifest: NOSIGNATURE
+		procedural_bouquets-0.1.0.jar                     |Procedural Bouquets           |procedural_bouquets           |0.1.0               |COMMON_SET|Manifest: NOSIGNATURE
+		spark-1.10.53-forge.jar                           |spark                         |spark                         |1.10.53             |COMMON_SET|Manifest: NOSIGNATURE
+		TinkersBattleSpades-1.20.1-1.2.1.jar              |Tinkers' Battle Spades        |tinkers_battle_spades         |1.2.1               |COMMON_SET|Manifest: NOSIGNATURE
+		curios-forge-5.14.1+1.20.1.jar                    |Curios API                    |curios                        |5.14.1+1.20.1       |COMMON_SET|Manifest: NOSIGNATURE
+		classselector-1.0.0.jar                           |Class Selector                |classselector                 |1.0.0               |COMMON_SET|Manifest: NOSIGNATURE
+		MyNethersDelight-1.20.1-0.1.8.jar                 |My Nether's Delight           |mynethersdelight              |1.20.1-1.7.5        |COMMON_SET|Manifest: NOSIGNATURE
+		btmfixes-0.1.0.jar                                |Bound to Matter Fixes         |btmfixes                      |0.1.0               |COMMON_SET|Manifest: NOSIGNATURE
+		Searchables-forge-1.20.1-1.0.3.jar                |Searchables                   |searchables                   |1.0.3               |COMMON_SET|Manifest: NOSIGNATURE
+		ApothicAttributes-1.20.1-1.3.7.jar                |Apothic Attributes            |attributeslib                 |1.3.7               |COMMON_SET|Manifest: NOSIGNATURE
+		ThirstWasTaken-1.20.1-1.4.0.jar                   |Thirst was Taken              |thirst                        |1.20.1-1.4.0        |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-entity-events-v1-1.6.1+4ca7515277.jar      |Fabric Entity Events (v1)     |fabric_entity_events_v1       |1.6.1+4ca7515277    |COMMON_SET|Manifest: NOSIGNATURE
+		etstlib-3.0.0-beta.20.jar                         |EtSTLib                       |etstlib                       |3.0.0-beta.20       |COMMON_SET|Manifest: NOSIGNATURE
+		cumulus_menus-1.20.1-1.0.1-neoforge.jar           |Cumulus                       |cumulus_menus                 |1.20.1-1.0.1-neoforg|COMMON_SET|Manifest: NOSIGNATURE
+		littlelogistics-mc1.20.1-v1.20.1.2.jar            |Little Logistics              |littlelogistics               |1.20.1.2            |COMMON_SET|Manifest: NOSIGNATURE
+		finite_water-1.20.1-1.0.0.jar                     |Finite Water                  |finite_water                  |1.0.0               |COMMON_SET|Manifest: NOSIGNATURE
+		flib-1.20.1-0.0.15.jar                            |flib                          |flib                          |0.0.15              |COMMON_SET|Manifest: 1f:47:ac:b1:61:82:96:b8:47:19:16:d2:61:81:11:60:3a:06:4b:61:31:56:7d:44:31:1e:0c:6f:22:5b:4c:ed
+		fabric-rendering-data-attachment-v1-0.3.39+a6081af|Fabric Rendering Data Attachme|fabric_rendering_data_attachme|0.3.39+a6081afc77   |COMMON_SET|Manifest: NOSIGNATURE
+		enhancedai-3.3.6.3.jar                            |Enhanced AI                   |enhancedai                    |3.3.6.3             |COMMON_SET|Manifest: NOSIGNATURE
+		nitrogen_internals-1.20.1-1.0.12-neoforge.jar     |Nitrogen                      |nitrogen_internals            |1.20.1-1.0.12-neofor|COMMON_SET|Manifest: NOSIGNATURE
+		settlementroads-0.1.0.jar                         |Settlement Roads              |settlementroads               |0.1.0               |COMMON_SET|Manifest: NOSIGNATURE
+		DynamicTrees-1.20.1-1.4.10.jar                    |Dynamic Trees                 |dynamictrees                  |1.20.1-1.4.10       |COMMON_SET|Manifest: NOSIGNATURE
+		DynamicTreesPlus-1.20.1-1.2.2.jar                 |Dynamic Trees Plus            |dynamictreesplus              |1.20.1-1.2.2        |COMMON_SET|Manifest: NOSIGNATURE
+		PlayerRevive_FORGE_v2.0.31_mc1.20.1.jar           |PlayerRevive                  |playerrevive                  |2.0.31              |COMMON_SET|Manifest: NOSIGNATURE
+		Hyle-2.0.0-1.20.1-forge-all.jar                   |Hyle                          |hyle                          |2.0.0-1.20.1-forge  |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-client-tags-api-v1-1.1.3+5d6761b877.jar    |Fabric Client Tags            |fabric_client_tags_api_v1     |1.1.3+5d6761b877    |COMMON_SET|Manifest: NOSIGNATURE
+		SmartBrainLib-forge-1.20.1-1.15.jar               |SmartBrainLib                 |smartbrainlib                 |1.15                |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-dimensions-v1-2.1.55+8005d10d77.jar        |Fabric Dimensions API (v1)    |fabric_dimensions_v1          |2.1.55+8005d10d77   |COMMON_SET|Manifest: NOSIGNATURE
+		creatingspace-1.20.1-1.7.13.jar                   |Creating Space                |creatingspace                 |1.20.1_1.7.13       |COMMON_SET|Manifest: NOSIGNATURE
+		c2meF-threading-lighting-mc1.20.1-0.2.0+alpha.13.j|Concurrent Chunk Management En|c2me_threading_lighting       |0.2.0+alpha.13      |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-model-loading-api-v1-1.0.4+6274ab9d77.jar  |Fabric Model Loading API (v1) |fabric_model_loading_api_v1   |1.0.4+6274ab9d77    |COMMON_SET|Manifest: NOSIGNATURE
+		lithostitched-forge-1.20.1-1.4.11.jar             |Lithostitched                 |lithostitched                 |1.4.11              |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-screen-handler-api-v1-1.3.33+561530ec77.jar|Fabric Screen Handler API (v1)|fabric_screen_handler_api_v1  |1.3.33+561530ec77   |COMMON_SET|Manifest: NOSIGNATURE
+		caelus-forge-3.2.0+1.20.1.jar                     |Caelus API                    |caelus                        |3.2.0+1.20.1        |COMMON_SET|Manifest: NOSIGNATURE
+		immersive_weathering-1.20.1-2.0.5-forge.jar       |Immersive Weathering          |immersive_weathering          |1.20.1-2.0.5        |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-rendering-v1-3.0.9+66e9a48f77.jar          |Fabric Rendering (v1)         |fabric_rendering_v1           |3.0.9+66e9a48f77    |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-renderer-indigo-1.5.3+b5b2da4177.jar       |Fabric Renderer - Indigo      |fabric_renderer_indigo        |1.5.3+b5b2da4177    |COMMON_SET|Manifest: NOSIGNATURE
+		ApotheoticAdditionsV2.2.2.jar                     |Apotheotic Additions          |apotheotic_additions          |2.2.2               |COMMON_SET|Manifest: NOSIGNATURE
+		NaturesCompass-1.20.1-1.12.0-forge.jar            |Nature's Compass              |naturescompass                |1.20.1-1.12.0-forge |COMMON_SET|Manifest: NOSIGNATURE
+		GlitchCore-forge-1.20.1-0.0.1.1.jar               |GlitchCore                    |glitchcore                    |0.0.1.1             |COMMON_SET|Manifest: NOSIGNATURE
+		SereneSeasons-forge-1.20.1-9.1.0.2.jar            |Serene Seasons                |sereneseasons                 |9.1.0.2             |COMMON_SET|Manifest: NOSIGNATURE
+		pneumaticcraft-repressurized-6.0.22+mc1.20.1.jar  |PneumaticCraft: Repressurized |pneumaticcraft                |6.0.22+mc1.20.1     |COMMON_SET|Manifest: NOSIGNATURE
+		midnightlib-1.4.2-forge.jar                       |MidnightLib                   |midnightlib                   |1.4.2               |COMMON_SET|Manifest: NOSIGNATURE
+		SimpleDayLengthExtender-1.2.1-Forge-1.20.1.jar    |Simple Day Length Extender    |simpledaylengthextender       |1.2.1-Forge-1.20.1  |COMMON_SET|Manifest: NOSIGNATURE
+		realisticphysics-1.20.1-1.0.1.jar                 |Realistic Physics             |realisticphysics              |1.0.1               |COMMON_SET|Manifest: NOSIGNATURE
+		fiahi-3.1.6.jar                                   |Freeze It, and Heat It!       |fiahi                         |3.1.6               |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-particles-v1-1.1.3+78e1ecb877.jar          |Fabric Particles (v1)         |fabric_particles_v1           |1.1.3+78e1ecb877    |COMMON_SET|Manifest: NOSIGNATURE
+		puzzlesaccessapi-forge-20.1.1.jar                 |Puzzles Access Api            |puzzlesaccessapi              |20.1.1              |COMMON_SET|Manifest: NOSIGNATURE
+		keepcuriosinventory-1.20.1-1.0.0.jar              |KeepCuriosInventory           |keepcuriosinventory           |1.20.1-1.0.0        |COMMON_SET|Manifest: NOSIGNATURE
+		forge-1.20.1-47.4.13-universal.jar                |Forge                         |forge                         |47.4.13             |COMMON_SET|Manifest: NOSIGNATURE
+		c2meF-opts-worldgen-vanilla-mc1.20.1-0.2.0+alpha.1|Concurrent Chunk Management En|c2me_opts_worldgen_vanilla    |0.2.0+alpha.13      |COMMON_SET|Manifest: NOSIGNATURE
+		c2meF-opts-scheduling-mc1.20.1-0.2.0+alpha.13.jar |Concurrent Chunk Management En|c2me_opts_scheduling          |0.2.0+alpha.13      |COMMON_SET|Manifest: NOSIGNATURE
+		Log-Begone-Forge-1.20.1-1.0.8.jar                 |Log Begone                    |logbegone                     |1.0.8               |COMMON_SET|Manifest: NOSIGNATURE
+		JsonThings-1.20.1-0.9.13.jar                      |Json Things                   |jsonthings                    |0.9.13              |COMMON_SET|Manifest: NOSIGNATURE
+		alchemistry-1.20.1-2.3.4.jar                      |Alchemistry                   |alchemistry                   |2.3.4               |COMMON_SET|Manifest: NOSIGNATURE
+		tectonic-3.0.17-forge-1.20.1.jar                  |Tectonic                      |tectonic                      |3.0.17              |COMMON_SET|Manifest: NOSIGNATURE
+		server-1.20.1-20230612.114412-srg.jar             |Minecraft                     |minecraft                     |1.20.1              |COMMON_SET|Manifest: NOSIGNATURE
+		the_finley_dimension_remastered-1.6.3-forge-1.20.1|The Finley Dimension Remastere|the_finley_dimension_remastere|1.6.3               |COMMON_SET|Manifest: NOSIGNATURE
+		notreepunching-forge-1.20-7.1.0.jar               |No Tree Punching              |notreepunching                |7.1.0               |COMMON_SET|Manifest: NOSIGNATURE
+		Fallout Wasteland 1.20.1 Beta 3.8.1.jar           |Fallout_Wastelands_2          |fallout_wastelands_           |1.0.0               |COMMON_SET|Manifest: NOSIGNATURE
+		plonk-1.20.1-10.0.5-forge.jar                     |Plonk                         |plonk                         |10.0.5              |COMMON_SET|Manifest: NOSIGNATURE
+		cursedbiomes-0.1.0.jar                            |Cursed Biomes                 |cursedbiomes                  |0.1.0               |COMMON_SET|Manifest: NOSIGNATURE
+		theoneprobe-1.20.1-10.0.3.jar                     |The One Probe                 |theoneprobe                   |1.20.1-10.0.3       |COMMON_SET|Manifest: NOSIGNATURE
+		TerraBlender-forge-1.20.1-3.0.1.10.jar            |TerraBlender                  |terrablender                  |3.0.1.10            |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-api-base-0.4.32+ef105b4977.jar             |Fabric API Base               |fabric_api_base               |0.4.32+ef105b4977   |COMMON_SET|Manifest: NOSIGNATURE
+		MouseTweaks-forge-mc1.20.1-2.25.1.jar             |Mouse Tweaks                  |mousetweaks                   |2.25.1              |COMMON_SET|Manifest: NOSIGNATURE
+		bettercombat-forge-1.9.0+1.20.1.jar               |Better Combat                 |bettercombat                  |1.9.0+1.20.1        |COMMON_SET|Manifest: NOSIGNATURE
+		alltheleaks-1.1.1+1.20.1-forge.jar                |All The Leaks                 |alltheleaks                   |1.1.1+1.20.1-forge  |COMMON_SET|Manifest: NOSIGNATURE
+		AdLods-1.20.1-8.1.9.0-build.2084.jar              |Large Ore Deposits            |adlods                        |8.1.9.0             |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-block-api-v1-1.0.12+0e6cb7f777.jar         |Fabric Block API (v1)         |fabric_block_api_v1           |1.0.12+0e6cb7f777   |COMMON_SET|Manifest: NOSIGNATURE
+		spectrelib-forge-0.13.17+1.20.1.jar               |SpectreLib                    |spectrelib                    |0.13.17+1.20.1      |COMMON_SET|Manifest: NOSIGNATURE
+		Ding-1.20.1-Forge-1.5.0.jar                       |Ding                          |ding                          |1.5.0               |COMMON_SET|Manifest: ae:67:c5:55:fb:7e:f3:4e:5c:71:f4:50:9e:df:a2:b0:32:86:cf:09:f2:fe:9b:db:94:3b:09:88:a2:3d:91:1f
+		fabric-resource-conditions-api-v1-2.3.9+996d00b277|Fabric Resource Conditions API|fabric_resource_conditions_api|2.3.9+996d00b277    |COMMON_SET|Manifest: NOSIGNATURE
+		tconjei-1.20.1-1.5.4.jar                          |TConJEI                       |tconjei                       |1.5.4               |COMMON_SET|Manifest: NOSIGNATURE
+		kffmod-4.12.0.jar                                 |Kotlin For Forge              |kotlinforforge                |4.12.0              |COMMON_SET|Manifest: NOSIGNATURE
+		BrewinAndChewin-1.20.1-3.2.1.jar                  |Brewin' And Chewin'           |brewinandchewin               |1.20.1-3.2.1        |COMMON_SET|Manifest: NOSIGNATURE
+		farmersrespite-1.20.1-2.1.2.jar                   |Farmer's Respite              |farmersrespite                |1.20.1-2.1          |COMMON_SET|Manifest: NOSIGNATURE
+		flywheel-forge-1.20.1-1.0.6-278.jar               |Flywheel                      |flywheel                      |1.0.6-278           |COMMON_SET|Manifest: NOSIGNATURE
+		Ponder-Forge-1.20.1-1.0.91.jar                    |Ponder                        |ponder                        |1.0.91              |COMMON_SET|Manifest: NOSIGNATURE
+		compressedcreativity-1.20.1-0.2.0-all.jar         |Compressed Creativity         |compressedcreativity          |1.20.1-0.2.0        |COMMON_SET|Manifest: NOSIGNATURE
+		Mantle-1.20.1-1.11.104.jar                        |Mantle                        |mantle                        |1.11.104            |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-item-group-api-v1-4.0.14+c9161c2d77.jar    |Fabric Item Group API (v1)    |fabric_item_group_api_v1      |4.0.14+c9161c2d77   |COMMON_SET|Manifest: NOSIGNATURE
+		polymorph-forge-0.49.10+1.20.1.jar                |Polymorph                     |polymorph                     |0.49.10+1.20.1      |COMMON_SET|Manifest: NOSIGNATURE
+		c2meF-notickvd-mc1.20.1-0.2.0+alpha.13.jar        |Concurrent Chunk Management En|c2me_notickvd                 |0.2.0+alpha.13      |COMMON_SET|Manifest: NOSIGNATURE
+		almostunified-forge-1.20.1-0.11.0.jar             |AlmostUnified                 |almostunified                 |1.20.1-0.11.0       |COMMON_SET|Manifest: NOSIGNATURE
+		emi-1.1.22+1.20.1+forge.jar                       |EMI                           |emi                           |1.1.22+1.20.1+forge |COMMON_SET|Manifest: NOSIGNATURE
+		jei-1.20.1-forge-15.20.0.130.jar                  |Just Enough Items             |jei                           |15.20.0.130         |COMMON_SET|Manifest: NOSIGNATURE
+		Zeta-1.0-31.jar                                   |Zeta                          |zeta                          |1.0-31              |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-registry-sync-v0-2.3.6+1c0ea72177.jar      |Fabric Registry Sync (v0)     |fabric_registry_sync_v0       |2.3.6+1c0ea72177    |COMMON_SET|Manifest: NOSIGNATURE
+		FastFurnace-1.20.1-8.0.2.jar                      |FastFurnace                   |fastfurnace                   |8.0.2               |COMMON_SET|Manifest: NOSIGNATURE
+		c2meF-threading-worldgen-mc1.20.1-0.2.0+alpha.13.j|Concurrent Chunk Management En|c2me_threading_worldgen       |0.2.0+alpha.13      |COMMON_SET|Manifest: NOSIGNATURE
+		oceansdelight-1.0.2-1.20.jar                      |Ocean's Delight               |oceansdelight                 |1.0.2-1.20          |COMMON_SET|Manifest: NOSIGNATURE
+		appleskin-forge-mc1.20.1-2.5.1.jar                |AppleSkin                     |appleskin                     |2.5.1+mc1.20.1      |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-recipe-api-v1-1.0.24+514a076577.jar        |Fabric Recipe API (v1)        |fabric_recipe_api_v1          |1.0.24+514a076577   |COMMON_SET|Manifest: NOSIGNATURE
+		lootr-forge-1.20-0.7.35.94.jar                    |Lootr                         |lootr                         |0.7.35.94           |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-object-builder-api-v1-11.1.5+f8c414ce77.jar|Fabric Object Builder API (v1)|fabric_object_builder_api_v1  |11.1.5+f8c414ce77   |COMMON_SET|Manifest: NOSIGNATURE
+		occultism-1.20.1-1.157.0.jar                      |Occultism                     |occultism                     |1.157.0             |COMMON_SET|Manifest: NOSIGNATURE
+		ubesdelight-forge-1.20.1-0.4.11.jar               |Ube's Delight                 |ubesdelight                   |0.4.11              |COMMON_SET|Manifest: NOSIGNATURE
+		addonapi-mc1.20.1-2.0.0.jar                       |AddonAPI                      |addonapi                      |2.0.0               |COMMON_SET|Manifest: NOSIGNATURE
+		PuzzlesLib-v8.1.33-1.20.1-Forge.jar               |Puzzles Lib                   |puzzleslib                    |8.1.33              |COMMON_SET|Manifest: 9a:09:85:98:65:c4:8c:11:c5:49:f6:d6:33:23:39:df:8d:b4:ff:92:84:b8:bd:a5:83:9f:ac:7f:2a:d1:4b:6a
+		create_power_loader-2.0.3-mc1.20.1.jar            |Create: Power Loader          |create_power_loader           |2.0.3-mc1.20.1      |COMMON_SET|Manifest: NOSIGNATURE
+		ColdSweat-2.4.jar                                 |Cold Sweat                    |cold_sweat                    |2.4                 |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-sound-api-v1-1.0.14+4f23bd8477.jar         |Fabric Sound API (v1)         |fabric_sound_api_v1           |1.0.14+4f23bd8477   |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-message-api-v1-5.1.10+52cc178c77.jar       |Fabric Message API (v1)       |fabric_message_api_v1         |5.1.10+52cc178c77   |COMMON_SET|Manifest: NOSIGNATURE
+		morered-1.20.1-4.0.0.4.jar                        |More Red                      |morered                       |4.0.0.4             |COMMON_SET|Manifest: NOSIGNATURE
+		cristellib-1.1.6-forge.jar                        |Cristel Lib                   |cristellib                    |1.1.6               |COMMON_SET|Manifest: NOSIGNATURE
+		create_things_and_misc-4.1.0-forge-1.20.1.jar     |create: things and misc       |create_things_and_misc        |4.1.0               |COMMON_SET|Manifest: NOSIGNATURE
+		blue_skies-1.20.1-1.3.31.jar                      |Blue Skies                    |blue_skies                    |1.3.31              |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-renderer-api-v1-3.2.2+cf68abbe77.jar       |Fabric Renderer API (v1)      |fabric_renderer_api_v1        |3.2.2+cf68abbe77    |COMMON_SET|Manifest: NOSIGNATURE
+		alchemylib-1.20.1-1.0.30.jar                      |AlchemyLib                    |alchemylib                    |1.0.30              |COMMON_SET|Manifest: NOSIGNATURE
+		sedna.jar                                         |Sedna for Minecraft           |sedna                         |1.0.68              |COMMON_SET|Manifest: NOSIGNATURE
+		Explosion-Overhaul-0.2.3.0-forge-.jar             |Explosion Overhaul: A new leve|explosionoverhaul             |0.2.3.0-forge       |COMMON_SET|Manifest: NOSIGNATURE
+		geckolib-forge-1.20.1-4.8.3.jar                   |GeckoLib 4                    |geckolib                      |4.8.3               |COMMON_SET|Manifest: NOSIGNATURE
+		ars_nouveau-1.20.1-4.12.7-all.jar                 |Ars Nouveau                   |ars_nouveau                   |4.12.7              |COMMON_SET|Manifest: NOSIGNATURE
+		pillagerpressure-0.2.0.jar                        |Pillager Pressure             |pillagerpressure              |0.2.0               |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-item-api-v1-2.1.29+4d0bbcfa77.jar          |Fabric Item API (v1)          |fabric_item_api_v1            |2.1.29+4d0bbcfa77   |COMMON_SET|Manifest: NOSIGNATURE
+		aether-1.20.1-1.5.2-neoforge.jar                  |The Aether                    |aether                        |1.20.1-1.5.2-neoforg|COMMON_SET|Manifest: NOSIGNATURE
+		morejs-forge-1.20.1-0.10.1.jar                    |MoreJS                        |morejs                        |0.10.1              |COMMON_SET|Manifest: NOSIGNATURE
+		incontrol-1.20-9.4.6.jar                          |InControl                     |incontrol                     |1.20-9.4.6          |COMMON_SET|Manifest: NOSIGNATURE
+		tponder-1.1.jar                                   |Tinkers' Ponder               |tponder                       |1.1                 |COMMON_SET|Manifest: NOSIGNATURE
+		sophisticatedcore-1.20.1-1.3.21.1676.jar          |Sophisticated Core            |sophisticatedcore             |1.3.21.1676         |COMMON_SET|Manifest: NOSIGNATURE
+		rsgauges-1.2.22.jar                               |Gauges and Switches           |rsgauges                      |1.2.22              |COMMON_SET|Manifest: NOSIGNATURE
+		insanelib-1.23.4.4.jar                            |InsaneLib                     |insanelib                     |1.23.4.4            |COMMON_SET|Manifest: NOSIGNATURE
+		excavatedvariants-neoforge-1.20.1-3.0.9.jar       |Excavated Variants            |excavated_variants            |3.0.9               |COMMON_SET|Manifest: NOSIGNATURE
+		rpgstats-1.0.0.jar                                |RPG Stats                     |rpgstats                      |1.0.0               |COMMON_SET|Manifest: NOSIGNATURE
+		pillagercampaigns-0.2.0.jar                       |Pillager Campaigns            |pillagercampaigns             |0.2.0               |COMMON_SET|Manifest: NOSIGNATURE
+		ritchiesprojectilelib-2.1.1-mc.1.20.1-forge.jar   |Ritchie's Projectile Library  |ritchiesprojectilelib         |2.1.1               |COMMON_SET|Manifest: NOSIGNATURE
+		Controlling-forge-1.20.1-12.0.2.jar               |Controlling                   |controlling                   |12.0.2              |COMMON_SET|Manifest: NOSIGNATURE
+		Placebo-1.20.1-8.6.3.jar                          |Placebo                       |placebo                       |8.6.3               |COMMON_SET|Manifest: NOSIGNATURE
+		citadel-2.6.3-1.20.1.jar                          |Citadel                       |citadel                       |2.6.3               |COMMON_SET|Manifest: NOSIGNATURE
+		iceandfire-2.1.13-1.20.1-beta-5.jar               |Ice and Fire                  |iceandfire                    |2.1.13-1.20.1       |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-data-attachment-api-v1-1.0.2+30ef839e77.jar|Fabric Data Attachment API (v1|fabric_data_attachment_api_v1 |1.0.2+30ef839e77    |COMMON_SET|Manifest: NOSIGNATURE
+		create_more_additions-2.0.0-forge-1.20.1.jar      |Create: Crafts & (More) Additi|create_more_additions         |2.0.0               |COMMON_SET|Manifest: NOSIGNATURE
+		emitrades-forge-1.2.1+mc1.20.1.jar                |EMI Trades                    |emitrades                     |1.2.1+mc1.20.1      |COMMON_SET|Manifest: NOSIGNATURE
+		sophisticatedbackpacks-1.20.1-3.24.35.1675.jar    |Sophisticated Backpacks       |sophisticatedbackpacks        |3.24.35.1675        |COMMON_SET|Manifest: NOSIGNATURE
+		c2meF-opts-math-mc1.20.1-0.2.0+alpha.13.jar       |Concurrent Chunk Management En|c2me_opts_math                |0.2.0+alpha.13      |COMMON_SET|Manifest: NOSIGNATURE
+		relics-1.20.1-0.8.0.13.jar                        |Relics                        |relics                        |0.8.0.13            |COMMON_SET|Manifest: NOSIGNATURE
+		takesapillage-1.0.3-1.20.1.jar                    |It Takes A Pillage            |takesapillage                 |1.0.3               |COMMON_SET|Manifest: NOSIGNATURE
+		wares-1.20.1-1.2.10.jar                           |Wares                         |wares                         |1.2.10              |COMMON_SET|Manifest: NOSIGNATURE
+		villagewalls-1.0.0.jar                            |Village Walls                 |villagewalls                  |1.0.0               |COMMON_SET|Manifest: NOSIGNATURE
+		AdPother-1.20.1-8.1.43.0-build.2132.jar           |Pollution of the Realms       |adpother                      |8.1.43.0            |COMMON_SET|Manifest: NOSIGNATURE
+		melody_forge_1.0.3_MC_1.20.1-1.20.4.jar           |Melody                        |melody                        |1.0.2               |COMMON_SET|Manifest: NOSIGNATURE
+		dtnatures_spirit-1.20.1-forge-1.3-all.jar         |Dynamic Trees for Nature's Spi|dtnatures_spirit              |1.3                 |COMMON_SET|Manifest: NOSIGNATURE
+		fzzy_config-0.7.6+1.20.1+forge.jar                |Fzzy Config                   |fzzy_config                   |0.7.6+1.20.1+forge  |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-api-0.92.6+1.11.14+1.20.1.jar              |Forgified Fabric API          |fabric_api                    |0.92.6+1.11.14+1.20.|COMMON_SET|Manifest: NOSIGNATURE
+		c2meF-fixes-worldgen-vanilla-bugs-mc1.20.1-0.2.0+a|Concurrent Chunk Management En|c2me_fixes_worldgen_vanilla_bu|0.2.0+alpha.13      |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-content-registries-v0-4.0.13+a670df1e77.jar|Fabric Content Registries (v0)|fabric_content_registries_v0  |4.0.13+a670df1e77   |COMMON_SET|Manifest: NOSIGNATURE
+		twilightforest-1.20.1-4.3.2508-universal.jar      |The Twilight Forest           |twilightforest                |4.3.2508            |COMMON_SET|Manifest: NOSIGNATURE
+		konkrete_forge_1.8.0_MC_1.20-1.20.1.jar           |Konkrete                      |konkrete                      |1.8.0               |COMMON_SET|Manifest: NOSIGNATURE
+		undergardendelight-1.1.2-forge-1.20.1.jar         |Undergarden Delight           |undergardendelight            |1.1.2               |COMMON_SET|Manifest: NOSIGNATURE
+		create_connected-1.1.13-mc1.20.1-all.jar          |Create: Connected             |create_connected              |1.1.13-mc1.20.1     |COMMON_SET|Manifest: NOSIGNATURE
+		natures_spirit-2.2.5-1.20.1.jar                   |Nature's Spirit               |natures_spirit                |2.2.5-1.20.1        |COMMON_SET|Manifest: NOSIGNATURE
+		FarmersDelight-1.20.1-1.3.1.jar                   |Farmer's Delight              |farmersdelight                |1.20.1-1.3.1        |COMMON_SET|Manifest: NOSIGNATURE
+		chefsdelight-1.0.4-forge-1.20.1.jar               |Chefs Delight                 |chefsdelight                  |1.0.4-forge-1.20.1  |COMMON_SET|Manifest: NOSIGNATURE
+		rusticdelight-forge-1.20.1-1.6.0.jar              |Rustic Delight                |rusticdelight                 |1.6.0               |COMMON_SET|Manifest: NOSIGNATURE
+		ends_delight-2.5.1+forge.1.20.1.jar               |End's Delight                 |ends_delight                  |2.5.1+forge.1.20.1  |COMMON_SET|Manifest: NOSIGNATURE
+		starcatcher-2.2.1-FORGE-1.20.1.jar                |Starcatcher                   |starcatcher                   |2.2.1-FORGE-1.20.1  |COMMON_SET|Manifest: NOSIGNATURE
+		AmbientSounds_FORGE_v6.3.4_mc1.20.1.jar           |AmbientSounds                 |ambientsounds                 |6.3.4               |COMMON_SET|Manifest: NOSIGNATURE
+		nomobfarm-forge-1.6.6.jar                         |No mob Farms                  |nomobfarm                     |1.6.6               |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-api-lookup-api-v1-1.6.37+67f9824077.jar    |Fabric API Lookup API (v1)    |fabric_api_lookup_api_v1      |1.6.37+67f9824077   |COMMON_SET|Manifest: NOSIGNATURE
+		c2meF-fixes-chunkio-threading-issues-mc1.20.1-0.2.|Concurrent Chunk Management En|c2me_fixes_chunkio_threading_i|0.2.0+alpha.13      |COMMON_SET|Manifest: NOSIGNATURE
+		c2meF-client-uncapvd-mc1.20.1-0.2.0+alpha.13.jar  |Concurrent Chunk Management En|c2me_client_uncapvd           |0.2.0+alpha.13      |COMMON_SET|Manifest: NOSIGNATURE
+		defaultresources-forge-1.20-2.0.0.jar             |Default Resources             |defaultresources              |2.0.0               |COMMON_SET|Manifest: NOSIGNATURE
+		UnEarthed-2.3.0-1.20.1-forge-all.jar              |Unearthed                     |unearthed                     |2.3.0-1.20.1-forge  |COMMON_SET|Manifest: NOSIGNATURE
+		HangGlider-v8.0.1-1.20.1-Forge.jar                |Hang Glider                   |hangglider                    |8.0.1               |COMMON_SET|Manifest: 9a:09:85:98:65:c4:8c:11:c5:49:f6:d6:33:23:39:df:8d:b4:ff:92:84:b8:bd:a5:83:9f:ac:7f:2a:d1:4b:6a
+		villagespawnpoint-1.20.1-4.6.jar                  |Village Spawn Point           |villagespawnpoint             |4.6                 |COMMON_SET|Manifest: NOSIGNATURE
+		protection_pixel-2.2.1-forge-1.20.1.jar           |Protection Pixel              |protection_pixel              |2.2.1               |COMMON_SET|Manifest: NOSIGNATURE
+		Patchouli-1.20.1-85-FORGE.jar                     |Patchouli                     |patchouli                     |1.20.1-85-FORGE     |COMMON_SET|Manifest: NOSIGNATURE
+		collective-1.20.1-8.20.jar                        |Collective                    |collective                    |8.20                |COMMON_SET|Manifest: NOSIGNATURE
+		CerbonsAPI-Forge-1.20.1-1.1.0.jar                 |Cerbons API                   |cerbons_api                   |1.1.0               |COMMON_SET|Manifest: NOSIGNATURE
+		lostcities-1.20-7.4.11.jar                        |LostCities                    |lostcities                    |1.20-7.4.11         |COMMON_SET|Manifest: NOSIGNATURE
+		cravings-1.2.1-forge-1.20.1.jar                   |Cravings!                     |cravings                      |1.2.1               |COMMON_SET|Manifest: NOSIGNATURE
+		realisticores-0.1.0.jar                           |Realistic Ores                |realisticores                 |0.1.0               |COMMON_SET|Manifest: NOSIGNATURE
+		resourcefullib-forge-1.20.1-2.1.29.jar            |Resourceful Lib               |resourcefullib                |2.1.29              |COMMON_SET|Manifest: NOSIGNATURE
+		oc2r-1.20.1-forge-2.2.12-all.jar                  |OpenComputers II: Reimagined  |oc2r                          |2.2.12              |COMMON_SET|Manifest: NOSIGNATURE
+		createliquidfuel-2.1.1-1.20.1.jar                 |Create Liquid Fuel            |createliquidfuel              |2.1.1-1.20.1        |COMMON_SET|Manifest: NOSIGNATURE
+		lootjs-forge-1.20.1-2.13.1.jar                    |LootJS                        |lootjs                        |1.20.1-2.13.1       |COMMON_SET|Manifest: NOSIGNATURE
+		deeperdarker-forge-1.20.1-1.3.3.jar               |Deeper and Darker             |deeperdarker                  |1.3.3               |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-loot-api-v2-1.2.3+eb28f93e77.jar           |Fabric Loot API (v2)          |fabric_loot_api_v2            |1.2.3+eb28f93e77    |COMMON_SET|Manifest: NOSIGNATURE
+		The_Undergarden-1.20.1-0.8.14.jar                 |The Undergarden               |undergarden                   |0.8.14              |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-networking-api-v1-1.3.14+fb7c822677.jar    |Fabric Networking API (v1)    |fabric_networking_api_v1      |1.3.14+fb7c822677   |COMMON_SET|Manifest: NOSIGNATURE
+		framework-forge-1.20.1-0.8.0.jar                  |Framework                     |framework                     |0.8.0               |COMMON_SET|Manifest: 0d:78:5f:44:c0:47:0c:8c:e2:63:a3:04:43:d4:12:7d:b0:7c:35:37:dc:40:b1:c1:98:ec:51:eb:3b:3c:45:99
+		c2meF-rewrites-chunkio-mc1.20.1-0.2.0+alpha.13.jar|Concurrent Chunk Management En|c2me_rewrites_chunkio         |0.2.0+alpha.13      |COMMON_SET|Manifest: NOSIGNATURE
+		Towns-and-Towers-1.12-Fabric+Forge.jar            |Towns and Towers              |t_and_t                       |0.0NONE             |COMMON_SET|Manifest: NOSIGNATURE
+		c2meF-opts-allocs-mc1.20.1-0.2.0+alpha.13.jar     |Concurrent Chunk Management En|c2me_opts_allocs              |0.2.0+alpha.13      |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-lifecycle-events-v1-2.2.23+afab492177.jar  |Fabric Lifecycle Events (v1)  |fabric_lifecycle_events_v1    |2.2.23+afab492177   |COMMON_SET|Manifest: NOSIGNATURE
+		TradingPost-v8.0.2-1.20.1-Forge.jar               |Trading Post                  |tradingpost                   |8.0.2               |COMMON_SET|Manifest: 9a:09:85:98:65:c4:8c:11:c5:49:f6:d6:33:23:39:df:8d:b4:ff:92:84:b8:bd:a5:83:9f:ac:7f:2a:d1:4b:6a
+		fabric-key-binding-api-v1-1.0.38+561530ec77.jar   |Fabric Key Binding API (v1)   |fabric_key_binding_api_v1     |1.0.38+561530ec77   |COMMON_SET|Manifest: NOSIGNATURE
+		esl-forge-1.20.1-1.1.3+forge-mc1.20.1.jar         |ESL                           |esl                           |1.1.3               |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-transfer-api-v1-3.3.6+631c9cd677.jar       |Fabric Transfer API (v1)      |fabric_transfer_api_v1        |3.3.6+631c9cd677    |COMMON_SET|Manifest: NOSIGNATURE
+		inventorysorter-1.20.1-23.1.9.jar                 |Simple Inventory Sorter (Confi|inventorysorter               |23.1.9              |COMMON_SET|Manifest: NOSIGNATURE
+		rhino-forge-2001.2.3-build.10.jar                 |Rhino                         |rhino                         |2001.2.3-build.10   |COMMON_SET|Manifest: NOSIGNATURE
+		configurabledeath-1.20.1-1.0.3.jar                |Configurable Death            |configurabledeath             |1.20.1-1.0.3        |COMMON_SET|Manifest: NOSIGNATURE
+		TinkerBetterCombat 0.14.jar                       |Tinkers' Better Combat        |tinkers_better_combat         |1.8.6               |COMMON_SET|Manifest: NOSIGNATURE
+		sophisticatedstorage-1.20.1-1.4.39.1666.jar       |Sophisticated Storage         |sophisticatedstorage          |1.4.39.1666         |COMMON_SET|Manifest: NOSIGNATURE
+		obelisks-1.0.0.jar                                |Dimensional Scar Expeditions  |obelisks                      |1.0.0               |COMMON_SET|Manifest: NOSIGNATURE
+		xlpackets-1.18.2-2.1.jar                          |XL Packets                    |xlpackets                     |1.18.2-2.1          |COMMON_SET|Manifest: NOSIGNATURE
+		VeggiesDelight-1.20.1-1.9.2.jar                   |Veggies Delight               |veggiesdelight                |1.9.2               |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-resource-loader-v0-0.11.12+4b4151c077.jar  |Fabric Resource Loader (v0)   |fabric_resource_loader_v0     |0.11.12+4b4151c077  |COMMON_SET|Manifest: NOSIGNATURE
+		TinyCoal-forge-1.20.1-1.1.5.jar                   |Tiny Coal                     |tinycoal                      |1.1.5               |COMMON_SET|Manifest: NOSIGNATURE
+		create-1.20.1-6.0.8.jar                           |Create                        |create                        |6.0.8               |COMMON_SET|Manifest: NOSIGNATURE
+		createfix-0.5.jar                                 |Create Potato Cannon Fix      |createfix                     |1.0.0               |COMMON_SET|Manifest: NOSIGNATURE
+		FramedBlocks-9.4.3.jar                            |FramedBlocks                  |framedblocks                  |9.4.3               |COMMON_SET|Manifest: NOSIGNATURE
+		createbigcannons-5.11.3-mc.1.20.1-forge.jar       |Create Big Cannons            |createbigcannons              |5.11.3              |COMMON_SET|Manifest: NOSIGNATURE
+		computerbridge-0.1.0.jar                          |ComputerBridge                |computerbridge                |0.1.0               |COMMON_SET|Manifest: NOSIGNATURE
+		createadditionallogistics-1.20.1-1.4.5.jar        |Create: Additional Logistics  |createadditionallogistics     |1.4.5               |COMMON_SET|Manifest: NOSIGNATURE
+		create_central_kitchen-1.20.1-for-create-6.0.6-1.4|Create: Central Kitchen       |create_central_kitchen        |1.4.3b              |COMMON_SET|Manifest: NOSIGNATURE
+		create-transmission-loss-0.1.0.jar                |Create Transmission Loss      |transmissionloss              |0.1.0               |COMMON_SET|Manifest: NOSIGNATURE
+		c2meF-threading-chunkio-mc1.20.1-0.2.0+alpha.13.ja|Concurrent Chunk Management En|c2me_threading_chunkio        |0.2.0+alpha.13      |COMMON_SET|Manifest: NOSIGNATURE
+		DynamicTreesArsNouveau-1.20.1-1.2.0.jar           |Dynamic Trees for Ars Nouveau |dtarsnouveau                  |1.20.1-1.2.0        |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-mining-level-api-v1-2.1.52+561530ec77.jar  |Fabric Mining Level API (v1)  |fabric_mining_level_api_v1    |2.1.52+561530ec77   |COMMON_SET|Manifest: NOSIGNATURE
+		artifacts-forge-9.5.19.jar                        |Artifacts                     |artifacts                     |9.5.19              |COMMON_SET|Manifest: NOSIGNATURE
+		farsighted-mobs-forge-1.1-1.20.1.jar              |Farsighted Mobs               |farsightedmobs                |1.1                 |COMMON_SET|Manifest: NOSIGNATURE
+		nomorepopups-forge-1.20.1-2.2.0.jar               |No More Pop-ups               |nomorepopups                  |2.2.0               |COMMON_SET|Manifest: NOSIGNATURE
+		particular-1.20.1-Forge-1.2.7.jar                 |Particular                    |particular                    |1.2.7               |COMMON_SET|Manifest: NOSIGNATURE
+		guideme-20.1.14.jar                               |GuideME                       |guideme                       |20.1.14             |COMMON_SET|Manifest: NOSIGNATURE
+		appliedenergistics2-forge-15.4.10.jar             |Applied Energistics 2         |ae2                           |15.4.10             |COMMON_SET|Manifest: NOSIGNATURE
+		ae2addonlib-1.0.4-1.20.1.jar                      |AE2AddonLib                   |ae2addonlib                   |1.0.4-1.20.1        |COMMON_SET|Manifest: NOSIGNATURE
+		AE2NetworkAnalyzer-1.20-1.0.6-forge.jar           |AE2NetworkAnalyzer            |ae2netanalyser                |1.20-1.0.6-forge    |COMMON_SET|Manifest: NOSIGNATURE
+		mae2-2.0.0.jar                                    |Modern AE2 Additions          |mae2                          |2.0.0               |COMMON_SET|Manifest: NOSIGNATURE
+		merequester-forge-1.20.1-1.1.5.jar                |ME Requester                  |merequester                   |1.20.1-1.1.5        |COMMON_SET|Manifest: NOSIGNATURE
+		createappliedkinetics-1.5.1-1.20.1.jar            |Create Applied Kinetics       |createappliedkinetics         |1.5.1-1.20.1        |COMMON_SET|Manifest: NOSIGNATURE
+		ExtendedAE-1.20-1.4.14-forge.jar                  |ExtendedAE                    |expatternprovider             |1.20-1.4.14-forge   |COMMON_SET|Manifest: NOSIGNATURE
+		DistantHorizons-2.4.5-b-1.20.1-fabric-forge.jar   |Distant Horizons              |distanthorizons               |2.4.5-b             |COMMON_SET|Manifest: NOSIGNATURE
+		Block Swap-forge-1.20.1-5.0.0.0.jar               |Block Swap                    |blockswap                     |5.0.0.0             |COMMON_SET|Manifest: NOSIGNATURE
+		iChunUtil-1.20.1-Forge-1.0.3.jar                  |iChunUtil                     |ichunutil                     |1.0.3               |COMMON_SET|Manifest: ae:67:c5:55:fb:7e:f3:4e:5c:71:f4:50:9e:df:a2:b0:32:86:cf:09:f2:fe:9b:db:94:3b:09:88:a2:3d:91:1f
+		blueprint-1.20.1-7.1.3.jar                        |Blueprint                     |blueprint                     |7.1.3               |COMMON_SET|Manifest: NOSIGNATURE
+		savage_and_ravage-1.20.1-6.0.1.jar                |Savage & Ravage               |savage_and_ravage             |6.0.1               |COMMON_SET|Manifest: NOSIGNATURE
+		collectorsreap-1.20.1-1.5.5.jar                   |Collector's Reap              |collectorsreap                |1.5.5               |COMMON_SET|Manifest: NOSIGNATURE
+		AdvancedAE-1.3.5-1.20.1.jar                       |Advanced AE                   |advanced_ae                   |1.3.5-1.20.1        |COMMON_SET|Manifest: NOSIGNATURE
+		c2meF-opts-chunk-access-mc1.20.1-0.2.0+alpha.13.ja|Concurrent Chunk Management En|c2me_opts_chunk_access        |0.2.0+alpha.13      |COMMON_SET|Manifest: NOSIGNATURE
+		TravelersTitles-1.20-Forge-4.0.2.jar              |Traveler's Titles             |travelerstitles               |1.20-Forge-4.0.2    |COMMON_SET|Manifest: NOSIGNATURE
+		bloodmagic-1.20.1-3.3.7-49.jar                    |Blood Magic                   |bloodmagic                    |3.3.7-49            |COMMON_SET|Manifest: NOSIGNATURE
+		tomeofblood-1.20.1-0.4.5.jar                      |Tome of Blood: Rebirth        |tomeofblood                   |0.4.5               |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-transitive-access-wideners-v1-4.3.2+1880499|Fabric Transitive Access Widen|fabric_transitive_access_widen|4.3.2+1880499877    |COMMON_SET|Manifest: NOSIGNATURE
+		TConstruct-1.20.1-3.11.2.166.jar                  |Tinkers' Construct            |tconstruct                    |3.11.2.166          |COMMON_SET|Manifest: NOSIGNATURE
+		tinkers_advanced_core-3.0.0-beta.5.jar            |Tinkers' Advanced             |tinkers_advanced              |3.0.0-beta.5        |COMMON_SET|Manifest: NOSIGNATURE
+		tinkersweaponry-1.20.1-0.0.5.jar                  |Tinkers' Weaponry             |tinkersweaponry               |1.20.1-0.0.5        |COMMON_SET|Manifest: NOSIGNATURE
+		tinkers_advanced_tools-3.0.0-beta.4.jar           |Tinkers' Advanced-Tools       |tinkers_advanced_tools        |3.0.0-beta.4        |COMMON_SET|Manifest: NOSIGNATURE
+		Additional-Weaponry-1.20.1-1.1.3.jar              |Additional Weaponry           |additionalweaponry            |1.1.3               |COMMON_SET|Manifest: NOSIGNATURE
+		dragonlib-forge-1.20.1-beta-3.0.24.jar            |DragonLib                     |dragonlib                     |1.20.1-beta-3.0.24  |COMMON_SET|Manifest: NOSIGNATURE
+		architectury-9.2.14-forge.jar                     |Architectury                  |architectury                  |9.2.14              |COMMON_SET|Manifest: NOSIGNATURE
+		kubejs-forge-2001.6.5-build.16.jar                |KubeJS                        |kubejs                        |2001.6.5-build.16   |COMMON_SET|Manifest: NOSIGNATURE
+		Not Enough Recipe Book-FORGE-0.4.1+1.20.1.jar     |Not Enough Recipe Book        |nerb                          |0.4.1               |COMMON_SET|Manifest: NOSIGNATURE
+		ftb-library-forge-2001.2.12.jar                   |FTB Library                   |ftblibrary                    |2001.2.12           |COMMON_SET|Manifest: NOSIGNATURE
+		golemoverhaul-forge-1.20.1-1.1.0.jar              |Golem Overhaul                |golemoverhaul                 |1.1.0               |COMMON_SET|Manifest: NOSIGNATURE
+		BuildingWands-forge-MC1.20.1-3.0.4.jar            |Building Wands                |wands                         |3.0.4               |COMMON_SET|Manifest: NOSIGNATURE
+		markdown_manual-MC1.20.1-forge-1.2.5+c3f0b88.jar  |Markdown Manual               |markdown_manual               |1.2.5+c3f0b88       |COMMON_SET|Manifest: NOSIGNATURE
+		kubejs-create-forge-2001.3.0-build.8.jar          |KubeJS Create                 |kubejs_create                 |2001.3.0-build.8    |COMMON_SET|Manifest: NOSIGNATURE
+		findme-3.2.3-forge.jar                            |FindMe                        |findme                        |3.2.3               |COMMON_SET|Manifest: NOSIGNATURE
+		ftb-teams-forge-2001.3.2.jar                      |FTB Teams                     |ftbteams                      |2001.3.2            |COMMON_SET|Manifest: NOSIGNATURE
+		ftb-quests-forge-2001.4.21.jar                    |FTB Quests                    |ftbquests                     |2001.4.21           |COMMON_SET|Manifest: NOSIGNATURE
+		ftb-xmod-compat-forge-2.1.3.jar                   |FTB XMod Compat               |ftbxmodcompat                 |2.1.3               |COMMON_SET|Manifest: NOSIGNATURE
+		OctoLib-FORGE-0.5.0.1+1.20.1.jar                  |OctoLib                       |octolib                       |0.5.0.1             |COMMON_SET|Manifest: NOSIGNATURE
+		powergrid-mc1.20.1-0.5.4.jar                      |Create: Power Grid            |powergrid                     |0.5.4               |COMMON_SET|Manifest: NOSIGNATURE
+		SleepingOverhaul-2.1.0-Forge-1.20.1.jar           |Sleeping Overhaul 2           |sleepingoverhaul              |2.1.0-Forge-1.20.1  |COMMON_SET|Manifest: NOSIGNATURE
+		dotcoinmod-forge-20.18.1.jar                      |Dot Coin Mod                  |dotcoinmod                    |20.18.1             |COMMON_SET|Manifest: NOSIGNATURE
+		dynamicassetgenerator-forge-1.20.1-4.2.2.jar      |Dynamic Asset Generator       |dynamic_asset_generator       |4.2.2               |COMMON_SET|Manifest: NOSIGNATURE
+		moonlight-1.20-2.16.30-forge.jar                  |Moonlight Library             |moonlight                     |1.20-2.16.30        |COMMON_SET|Manifest: NOSIGNATURE
+		mysterious_mountain_lib-1.6.34-1.20.1.jar         |Mysterious Mountain Lib       |mysterious_mountain_lib       |1.6.34-1.20.1       |COMMON_SET|Manifest: NOSIGNATURE
+		corn_delight-1.1.9-1.20.1.jar                     |Corn Delight                  |corn_delight                  |1.1.9-1.20.1        |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-blockrenderlayer-v1-1.1.42+1d0da21e77.jar  |Fabric BlockRenderLayer Regist|fabric_blockrenderlayer_v1    |1.1.42+1d0da21e77   |COMMON_SET|Manifest: NOSIGNATURE
+		mixinsquared-forge-0.3.6-beta.1.jar               |MixinSquared                  |mixinsquared                  |0.3.6-beta.1        |COMMON_SET|Manifest: NOSIGNATURE
+		create_bb-1.0.7-1.20.1-Forge.jar                  |Create: Blocks & Bogies       |create_bb                     |1.0.7               |COMMON_SET|Manifest: NOSIGNATURE
+		norecipebookreborn-1.0.5.jar                      |No Recipe Book Reborn         |norecipebookreborn            |1.0.5               |COMMON_SET|Manifest: NOSIGNATURE
+		AE2-Things-1.2.1.jar                              |AE2 Things                    |ae2things                     |1.2.1               |COMMON_SET|Manifest: NOSIGNATURE
+		AEAdditions-1.20.1-5.1.1.jar                      |AE Additions                  |ae2additions                  |5.1.1               |COMMON_SET|Manifest: NOSIGNATURE
+		CreativeCore_FORGE_v2.12.35_mc1.20.1.jar          |CreativeCore                  |creativecore                  |2.12.35             |COMMON_SET|Manifest: NOSIGNATURE
+		KubeJS Blood Magic-1.0.2-1.20.1.jar               |KubeJS Blood Magic            |kubejsbloodmagic              |1.0.2-1.20.1        |COMMON_SET|Manifest: NOSIGNATURE
+		c2meF-server-utils-mc1.20.1-0.2.0+alpha.13.jar    |Concurrent Chunk Management En|c2me_server_utils             |0.2.0+alpha.13      |COMMON_SET|Manifest: NOSIGNATURE
+		theurgy-1.20.1-1.28.0.jar                         |Theurgy                       |theurgy                       |1.28.0              |COMMON_SET|Manifest: NOSIGNATURE
+		reliquary-1.20.1-2.0.56.1418.jar                  |Reliquary                     |reliquary                     |2.0.56.1418         |COMMON_SET|Manifest: NOSIGNATURE
+		Quark-4.0-462.jar                                 |Quark                         |quark                         |4.0-462             |ERROR     |Manifest: NOSIGNATURE
+		supplementaries-1.20-3.1.42-forge.jar             |Supplementaries               |supplementaries               |1.20-3.1.42         |COMMON_SET|Manifest: NOSIGNATURE
+		DynamicTreesQuark-1.20.1-2.5.3.jar                |Dynamic Trees for Quark       |dtquark                       |1.20.1-2.5.3        |COMMON_SET|Manifest: NOSIGNATURE
+		amendments-1.20-2.2.5.jar                         |Amendments                    |amendments                    |1.20-2.2.5          |COMMON_SET|Manifest: NOSIGNATURE
+		diet-forge-2.1.1+1.20.1.jar                       |Diet                          |diet                          |2.1.1+1.20.1        |COMMON_SET|Manifest: NOSIGNATURE
+		create-stuff-additions1.20.1_v2.1.2.jar           |Create Stuff 'N Additions     |create_sa                     |2.1.2               |COMMON_SET|Manifest: NOSIGNATURE
+		chemlib-1.20.1-2.0.19.jar                         |ChemLib                       |chemlib                       |2.0.19              |COMMON_SET|Manifest: NOSIGNATURE
+		acid_vat-0.1.0.jar                                |Acid Vat                      |acid_vat                      |0.1.0               |COMMON_SET|Manifest: NOSIGNATURE
+		gases_and_plasmas-0.1.0.jar                       |Gases and Plasmas             |gases_and_plasmas             |0.1.0               |COMMON_SET|Manifest: NOSIGNATURE
+		heatsync-0.1.0.jar                                |HeatSync                      |heatsync                      |0.1.0               |COMMON_SET|Manifest: NOSIGNATURE
+		fission_reactor-0.1.0.jar                         |Fission Reactor               |fission_reactor               |0.1.0               |COMMON_SET|Manifest: NOSIGNATURE
+		polyeng-forge-0.1.1-1.20.1.jar                    |Polymorphic Energistics       |polyeng                       |0.1.1-1.20.1        |COMMON_SET|Manifest: NOSIGNATURE
+		malum-1.20.1-1.6.7.jar                            |Malum                         |malum                         |1.20.1-1.6.7        |COMMON_SET|Manifest: NOSIGNATURE
+		Delightful-1.20.1-3.7.8.jar                       |Delightful                    |delightful                    |3.7.8               |COMMON_SET|Manifest: NOSIGNATURE
+		dtmalum-1.0.0.jar                                 |Dynamic Trees for Malum       |dtmalum                       |1.0.0               |COMMON_SET|Manifest: NOSIGNATURE
+		FastWorkbench-1.20.1-8.0.4.jar                    |Fast Workbench                |fastbench                     |8.0.4               |COMMON_SET|Manifest: NOSIGNATURE
+		createaddoncompatibility-0.2.4.jar                |Create: Addon Compatibility   |createaddoncompatibility      |0.2.4               |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-biome-api-v1-13.0.14+dc36698e77.jar        |Fabric Biome API (v1)         |fabric_biome_api_v1           |13.0.14+dc36698e77  |COMMON_SET|Manifest: NOSIGNATURE
+		buildinggadgets2-1.0.8.jar                        |Building Gadgets 2            |buildinggadgets2              |1.0.8               |COMMON_SET|Manifest: NOSIGNATURE
+		c2meF-opts-worldgen-general-mc1.20.1-0.2.0+alpha.1|Concurrent Chunk Management En|c2me_opts_worldgen_general    |0.2.0+alpha.13      |COMMON_SET|Manifest: NOSIGNATURE
+		c2meF-opts-chunkio-mc1.20.1-0.2.0+alpha.13.jar    |Concurrent Chunk Management En|c2me_opts_chunkio             |0.2.0+alpha.13      |COMMON_SET|Manifest: NOSIGNATURE
+		modonomicon-1.20.1-forge-1.79.3.jar               |Modonomicon                   |modonomicon                   |1.79.3              |COMMON_SET|Manifest: NOSIGNATURE
+		coroutil-forge-1.20.1-1.3.7.jar                   |CoroUtil                      |coroutil                      |1.20.1-1.3.7        |COMMON_SET|Manifest: NOSIGNATURE
+		ferritecore-6.0.1-forge.jar                       |Ferrite Core                  |ferritecore                   |6.0.1               |COMMON_SET|Manifest: 41:ce:50:66:d1:a0:05:ce:a1:0e:02:85:9b:46:64:e0:bf:2e:cf:60:30:9a:fe:0c:27:e0:63:66:9a:84:ce:8a
+		solcarrot-1.20.1-1.15.1.jar                       |Spice of Life: Carrot Edition |solcarrot                     |1.15.1              |COMMON_SET|Manifest: NOSIGNATURE
+		inline-forge-1.20.1-1.2.2.jar                     |Inline                        |inline                        |1.20.1-1.2.2        |COMMON_SET|Manifest: NOSIGNATURE
+		lodestone-1.20.1-1.6.4.1.jar                      |Lodestone                     |lodestone                     |1.20.1-1.6.4.1      |COMMON_SET|Manifest: NOSIGNATURE
+		createadvlogistics-0.2.0.jar                      |Create: Advanced Logistics    |createadvlogistics            |0.2.0               |COMMON_SET|Manifest: NOSIGNATURE
+		expandability-forge-9.0.4.jar                     |ExpandAbility                 |expandability                 |9.0.4               |COMMON_SET|Manifest: NOSIGNATURE
+		valhelsia_core-forge-1.20.1-1.1.2.jar             |Valhelsia Core                |valhelsia_core                |1.1.2               |COMMON_SET|Manifest: NOSIGNATURE
+		create_enchantment_industry-1.3.3-for-create-6.0.6|Create Enchantment Industry   |create_enchantment_industry   |1.3.3-for-create-6.0|COMMON_SET|Manifest: NOSIGNATURE
+		fabric-data-generation-api-v1-12.3.7+369cb3a477.ja|Fabric Data Generation API (v1|fabric_data_generation_api_v1 |12.3.7+369cb3a477   |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-events-interaction-v0-0.6.5+0f26153f77.jar |Fabric Events Interaction (v0)|fabric_events_interaction_v0  |0.6.5+0f26153f77    |COMMON_SET|Manifest: NOSIGNATURE
+		sophisticatedstorageinmotion-1.20.1-0.10.28.198.ja|Sophisticated Storage In Motio|sophisticatedstorageinmotion  |0.10.28.198         |COMMON_SET|Manifest: NOSIGNATURE
+		raider_detector-1.0.0.jar                         |Raider Detector               |raider_detector               |1.0.0               |COMMON_SET|Manifest: NOSIGNATURE
+	Crash Report UUID: 649b4e7b-c610-4e9f-a225-e26e7bb79e0a
+	FML: 47.4
+	Forge: net.minecraftforge:47.4.13[1;31m[11:41:23] [main/ERROR] [minecraft/Main]: Failed to start the minecraft server
+net.minecraftforge.fml.LoadingFailedException: Loading errors encountered: [
+	Quark (quark) has failed to load correctly
+§7java.lang.ArrayIndexOutOfBoundsException: Index 256 out of bounds for length 129
+]
+	at net.minecraftforge.fml.ModLoader.waitForTransition(ModLoader.java:246) ~[fmlcore-1.20.1-47.4.13.jar%23646!/:?] {}
+	at net.minecraftforge.fml.ModLoader.lambda$dispatchAndHandleError$20(ModLoader.java:210) ~[fmlcore-1.20.1-47.4.13.jar%23646!/:?] {}
+	at java.util.Optional.ifPresent(Optional.java:178) ~[?:?] {re:mixin}
+	at net.minecraftforge.fml.ModLoader.dispatchAndHandleError(ModLoader.java:210) ~[fmlcore-1.20.1-47.4.13.jar%23646!/:?] {}
+	at net.minecraftforge.fml.ModLoader.lambda$gatherAndInitializeMods$13(ModLoader.java:183) ~[fmlcore-1.20.1-47.4.13.jar%23646!/:?] {}
+	at java.lang.Iterable.forEach(Iterable.java:75) ~[?:?] {re:mixin}
+	at net.minecraftforge.fml.ModLoader.gatherAndInitializeMods(ModLoader.java:183) ~[fmlcore-1.20.1-47.4.13.jar%23646!/:?] {}
+	at net.minecraftforge.server.loading.ServerModLoader.load(ServerModLoader.java:30) ~[forge-1.20.1-47.4.13-universal.jar%23650!/:?] {re:classloading}
+	at net.minecraft.server.Main.main(Main.java:125) ~[server-1.20.1-20230612.114412-srg.jar%23645!/:?] {re:mixin,re:classloading,pl:mixin:A}
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}
+	at java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:111) ~[fmlloader-1.20.1-47.4.13.jar%2369!/:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.serverService(CommonLaunchHandler.java:103) ~[fmlloader-1.20.1-47.4.13.jar%2369!/:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonServerLaunchHandler.lambda$makeService$0(CommonServerLaunchHandler.java:27) ~[fmlloader-1.20.1-47.4.13.jar%2369!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:108) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:78) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) ~[bootstraplauncher-1.1.2.jar:?] {}
+[m[33m[11:41:24] [Thread-4/WARN] [Collective/]: [Update] Collective has an update available: 8.20 -> 8.22
+[m

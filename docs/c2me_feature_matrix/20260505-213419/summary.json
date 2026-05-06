@@ -1,0 +1,35 @@
+{
+  "matrix_dir": "/home/gerald/obelisks/docs/c2me_feature_matrix/20260505-213419",
+  "results": [
+    {
+      "variant": "no_tick_view_distance",
+      "overrides": {
+        "no_tick_view_distance": true
+      },
+      "status": "PASS",
+      "reason": "client_joined_server",
+      "probe_returncode": 0,
+      "probe_run_dir": "/home/gerald/obelisks/docs/client_join_probe/20260505-213501"
+    },
+    {
+      "variant": "io_async",
+      "overrides": {
+        "io_async": true
+      },
+      "status": "PASS",
+      "reason": "client_joined_server",
+      "probe_returncode": 0,
+      "probe_run_dir": "/home/gerald/obelisks/docs/client_join_probe/20260505-213722"
+    },
+    {
+      "variant": "async_chunk_request",
+      "overrides": {
+        "optimize_async_chunk_request": true
+      },
+      "status": "PASS",
+      "reason": "client_joined_server",
+      "probe_returncode": 0,
+      "probe_run_dir": "/home/gerald/obelisks/docs/client_join_probe/20260505-213939"
+    }
+  ]
+}

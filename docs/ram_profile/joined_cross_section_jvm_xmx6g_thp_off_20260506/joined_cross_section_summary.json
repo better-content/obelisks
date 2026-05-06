@@ -1,0 +1,30 @@
+[
+  {
+    "phase": "trimmed_repo_stack",
+    "description": "repo reduced stack after moving unkept mods to oldmods; client kept to same jar filenames",
+    "status": "PASS",
+    "reason": "client_joined_server",
+    "run_dir": "/home/gerald/obelisks/docs/ram_profile/joined_cross_section_jvm_xmx6g_thp_off_20260506/01_trimmed_repo_stack/client_join_probe/20260506-143152",
+    "max_client_mib": 9978.8,
+    "max_root_mib": 10059.9,
+    "joined_at_sec": 104,
+    "rss_mib": 10309.8,
+    "pss_mib": 10278.9,
+    "private_clean_mib": 62.6,
+    "private_dirty_mib": 10215.1,
+    "anonymous_mib": 10184.9,
+    "anonhugepages_mib": 8400.0,
+    "heap_total_mib": 6144.0,
+    "heap_used_mib": 4559.1,
+    "hist_total_mib": 4033.4,
+    "byte_arrays_mib": 666.5,
+    "int_arrays_mib": 462.2,
+    "baked_quads_mib": 85.9,
+    "emi_item_stacks_mib": 0.0,
+    "item_stacks_mib": 34.9,
+    "block_atlas": "16384x8192x4",
+    "server_rss_mib": 5869.7,
+    "combined_server_client_rss_mib": 15848.5,
+    "disabled_count": 131
+  }
+]

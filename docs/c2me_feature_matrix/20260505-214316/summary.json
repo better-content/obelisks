@@ -1,0 +1,33 @@
+{
+  "matrix_dir": "/home/gerald/obelisks/docs/c2me_feature_matrix/20260505-214316",
+  "results": [
+    {
+      "variant": "baseline",
+      "overrides": {},
+      "status": "FAIL",
+      "reason": "launcher_exited_before_client_log",
+      "probe_returncode": 1,
+      "probe_run_dir": "/home/gerald/obelisks/docs/client_join_probe/20260505-214400",
+      "analysis_hits": {
+        "c2me_random_thread": [
+          "server-console.log"
+        ],
+        "structure_worldgen": [
+          "server-console.log"
+        ],
+        "dh": [
+          "server-console.log"
+        ],
+        "villagewalls": [
+          "server-console.log"
+        ],
+        "settlementroads": [
+          "server-console.log"
+        ],
+        "modernfix_c2me": [
+          "server-console.log"
+        ]
+      }
+    }
+  ]
+}

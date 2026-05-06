@@ -1,0 +1,32 @@
+policies:
+  compressed_iron_create_only:
+    description: Compressed iron must only be produced by Create pressing.
+    severity: error
+    target:
+      kind: item
+      id: pneumaticcraft:ingot_iron_compressed
+    allowed_recipe_types:
+      - create:pressing
+    forbidden_recipe_types:
+      - pneumaticcraft:explosion_crafting
+      - pneumaticcraft:pressure_chamber
+
+  compressed_stone_create_only:
+    description: Compressed stone must only be produced by Create pressing.
+    severity: error
+    target:
+      kind: item
+      id: pneumaticcraft:compressed_stone
+    allowed_recipe_types:
+      - create:pressing
+
+  aoe_trading_post_late_game:
+    description: AOE villager trading block should require late-game materials. PROVISIONAL - requires playtesting.
+    severity: warning
+    target:
+      kind: item
+      id: tradingpost:trading_post
+    must_require_any:
+      - ae2:engineering_processor
+      - pneumaticcraft:printed_circuit_board
+      - kubejs:ae2_machine_casing

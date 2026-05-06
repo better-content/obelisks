@@ -1,0 +1,22 @@
+{
+	id: "7190252F46AE017A",
+	group: "default",
+	title: "Automation",
+	icon: "create:cogwheel",
+	order_index: 40,
+	quests: [
+		{
+			id: "69691D287C7BB20E",
+			title: "Automation Intro",
+			icon: "create:cogwheel",
+			shape: "rsquare",
+			size: 1.0d,
+			x: 2.0d,
+			y: 0.0d,
+			dependencies: ["57ED0623C2B6B954"],
+			description: ["Placeholder quest used to validate dependencies and export."],
+			tasks: [{id: "7F513058AB02869B", type: "item", item: "minecraft:cobblestone", count: 1}],
+			rewards: []
+		}
+	]
+}

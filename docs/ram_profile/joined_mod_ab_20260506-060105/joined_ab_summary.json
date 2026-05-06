@@ -1,0 +1,62 @@
+[
+  {
+    "phase": "baseline",
+    "status": "PASS",
+    "reason": "client_joined_server",
+    "run_dir": "/home/gerald/obelisks/docs/ram_profile/joined_mod_ab_20260506-060105/baseline/client_join_probe/20260506-060141",
+    "max_client_mib": 10442.5,
+    "max_root_mib": 10537.5,
+    "joined_at_sec": 53,
+    "smaps_rss_mib": 13505.4,
+    "smaps_anon_mib": 13363.5,
+    "hist_total_mib": 4706.4,
+    "heap_total_mib": 7308.0,
+    "heap_used_mib": 6052.4,
+    "metaspace_used_mib": 556.4
+  },
+  {
+    "phase": "no_chipped",
+    "status": "PASS",
+    "reason": "client_joined_server",
+    "run_dir": "/home/gerald/obelisks/docs/ram_profile/joined_mod_ab_20260506-060105/no_chipped/client_join_probe/20260506-060538",
+    "max_client_mib": 11831.8,
+    "max_root_mib": 11927.6,
+    "joined_at_sec": 51,
+    "smaps_rss_mib": 12355.4,
+    "smaps_anon_mib": 12211.7,
+    "hist_total_mib": 4390.3,
+    "heap_total_mib": 6268.0,
+    "heap_used_mib": 5080.8,
+    "metaspace_used_mib": 555.1
+  },
+  {
+    "phase": "no_ticex",
+    "status": "PASS",
+    "reason": "client_joined_server",
+    "run_dir": "/home/gerald/obelisks/docs/ram_profile/joined_mod_ab_20260506-060105/no_ticex/client_join_probe/20260506-060949",
+    "max_client_mib": 9635.5,
+    "max_root_mib": 9733.0,
+    "joined_at_sec": 50,
+    "smaps_rss_mib": 11917.4,
+    "smaps_anon_mib": 11775.5,
+    "hist_total_mib": 3949.1,
+    "heap_total_mib": 7380.0,
+    "heap_used_mib": 6614.3,
+    "metaspace_used_mib": 555.2
+  },
+  {
+    "phase": "no_chipped_no_ticex",
+    "status": "PASS",
+    "reason": "client_joined_server",
+    "run_dir": "/home/gerald/obelisks/docs/ram_profile/joined_mod_ab_20260506-060105/no_chipped_no_ticex/client_join_probe/20260506-061403",
+    "max_client_mib": 10441.4,
+    "max_root_mib": 10536.7,
+    "joined_at_sec": 51,
+    "smaps_rss_mib": 10734.5,
+    "smaps_anon_mib": 10588.6,
+    "hist_total_mib": 3632.7,
+    "heap_total_mib": 5788.0,
+    "heap_used_mib": 4998.9,
+    "metaspace_used_mib": 554.6
+  }
+]

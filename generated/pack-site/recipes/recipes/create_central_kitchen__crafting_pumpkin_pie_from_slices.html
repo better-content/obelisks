@@ -1,0 +1,55 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>create_central_kitchen:crafting/pumpkin_pie_from_slices</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>create_central_kitchen:crafting/pumpkin_pie_from_slices</h1>
+<p><b>Type:</b> minecraft:crafting_shapeless | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<ul><li><a href="../items/create_central_kitchen__pumpkin_pie_slice.html">create_central_kitchen:pumpkin_pie_slice</a></li><li><a href="../items/create_central_kitchen__pumpkin_pie_slice.html">create_central_kitchen:pumpkin_pie_slice</a></li><li><a href="../items/create_central_kitchen__pumpkin_pie_slice.html">create_central_kitchen:pumpkin_pie_slice</a></li><li><a href="../items/create_central_kitchen__pumpkin_pie_slice.html">create_central_kitchen:pumpkin_pie_slice</a></li></ul>
+<h2>Outputs</h2>
+<ul><li><a href="../items/minecraft__pumpkin_pie.html">minecraft:pumpkin_pie</a></li></ul>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: null
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;category&quot;: &quot;misc&quot;,
+  &quot;conditions&quot;: [
+    {
+      &quot;config&quot;: &quot;pie_overhaul&quot;,
+      &quot;type&quot;: &quot;create_central_kitchen:config&quot;
+    },
+    {
+      &quot;type&quot;: &quot;forge:not&quot;,
+      &quot;value&quot;: {
+        &quot;config&quot;: &quot;pie_overhaul_black_list&quot;,
+        &quot;type&quot;: &quot;create_central_kitchen:config_list&quot;,
+        &quot;value&quot;: &quot;minecraft:pumpkin_pie&quot;
+      }
+    }
+  ],
+  &quot;ingredients&quot;: [
+    {
+      &quot;item&quot;: &quot;create_central_kitchen:pumpkin_pie_slice&quot;
+    },
+    {
+      &quot;item&quot;: &quot;create_central_kitchen:pumpkin_pie_slice&quot;
+    },
+    {
+      &quot;item&quot;: &quot;create_central_kitchen:pumpkin_pie_slice&quot;
+    },
+    {
+      &quot;item&quot;: &quot;create_central_kitchen:pumpkin_pie_slice&quot;
+    }
+  ],
+  &quot;result&quot;: {
+    &quot;item&quot;: &quot;minecraft:pumpkin_pie&quot;
+  },
+  &quot;type&quot;: &quot;minecraft:crafting_shapeless&quot;
+}</pre></main></body></html>

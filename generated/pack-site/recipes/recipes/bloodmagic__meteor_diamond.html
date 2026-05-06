@@ -1,0 +1,71 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>bloodmagic:meteor/diamond</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main><p><a href="../../index.html">Pack Cockpit</a></p><h1>bloodmagic:meteor/diamond</h1>
+<p><b>Type:</b> bloodmagic:meteor | <b>Parsed:</b> True</p>
+<h2>Inputs</h2>
+<p><em>None.</em></p>
+<h2>Outputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Inputs</h2>
+<p><em>None.</em></p>
+<h2>Fluid Outputs</h2>
+<p><em>None.</em></p>
+<h2>Requirements</h2>
+<pre>{
+  &quot;heat&quot;: null,
+  &quot;pressure&quot;: null,
+  &quot;energy&quot;: null,
+  &quot;time&quot;: null
+}</pre>
+<h2>Raw</h2>
+<pre>{
+  &quot;explosion&quot;: 8,
+  &quot;input&quot;: {
+    &quot;tag&quot;: &quot;forge:gems/diamond&quot;
+  },
+  &quot;layers&quot;: [
+    {
+      &quot;additionalWeight&quot;: 0,
+      &quot;fill&quot;: {
+        &quot;block&quot;: &quot;minecraft:diamond_ore&quot;
+      },
+      &quot;minWeight&quot;: 0,
+      &quot;radius&quot;: 2
+    },
+    {
+      &quot;additionalWeight&quot;: 0,
+      &quot;fill&quot;: {
+        &quot;block&quot;: &quot;minecraft:cobblestone&quot;
+      },
+      &quot;minWeight&quot;: 1000,
+      &quot;radius&quot;: 5,
+      &quot;weightMap&quot;: [
+        {
+          &quot;index&quot;: 0,
+          &quot;tag&quot;: &quot;forge:ores/sapphire&quot;,
+          &quot;weight&quot;: 100
+        },
+        {
+          &quot;index&quot;: 0,
+          &quot;tag&quot;: &quot;forge:ores/ruby&quot;,
+          &quot;weight&quot;: 100
+        },
+        {
+          &quot;block&quot;: &quot;minecraft:diamond_ore&quot;,
+          &quot;weight&quot;: 100
+        },
+        {
+          &quot;block&quot;: &quot;minecraft:emerald_ore&quot;,
+          &quot;weight&quot;: 75
+        },
+        {
+          &quot;index&quot;: 0,
+          &quot;tag&quot;: &quot;forge:ores/cinnabar&quot;,
+          &quot;weight&quot;: 200
+        }
+      ]
+    }
+  ],
+  &quot;syphon&quot;: 1000000,
+  &quot;type&quot;: &quot;bloodmagic:meteor&quot;
+}</pre></main></body></html>

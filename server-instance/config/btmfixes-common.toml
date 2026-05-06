@@ -11,3 +11,9 @@
 	#Keeps Unearthed/Hyle stone replacement enabled while avoiding ArrayIndexOutOfBoundsException in RoughNoiseSampler.selectTertiary.
 	safeTertiarySelection = true
 
+[apotheosis]
+	#Skips Apotheosis' client tooltip augmentation when another mod computes tooltips off the Minecraft client thread.
+	#This prevents C2ME's safe-random guard from reporting off-thread world random access during EMI tooltip indexing.
+	#Normal render-thread tooltips are left unchanged.
+	skipOffThreadTooltips = true
+

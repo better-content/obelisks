@@ -1,0 +1,798 @@
+[
+  {
+    "name": "reduced_baseline_top4",
+    "description": "TiCEX, Steam Rails, Botania, and Chipped disabled together",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_repeat_top4",
+    "description": "Reduced baseline repeat for noise check",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_ars",
+    "description": "Reduced baseline plus Ars Nouveau family disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^ars_nouveau-.*\\.jar$",
+      "^DynamicTreesArsNouveau-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_bloodmagic",
+    "description": "Reduced baseline plus Blood Magic family disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^bloodmagic-.*\\.jar$",
+      "^KubeJS Blood Magic-.*\\.jar$",
+      "^tomeofblood-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_malum",
+    "description": "Reduced baseline plus Malum family disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^malum-.*\\.jar$",
+      "^dtmalum-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_occultism",
+    "description": "Reduced baseline plus Occultism disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^occultism-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_quark",
+    "description": "Reduced baseline plus Quark and its dynamic tree bridge disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^Quark-.*\\.jar$",
+      "^DynamicTreesQuark-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_supplementaries",
+    "description": "Reduced baseline plus Supplementaries disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^supplementaries-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_amendments",
+    "description": "Reduced baseline plus Amendments disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^amendments-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_farmers_delight",
+    "description": "Reduced baseline plus Farmer's Delight disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^FarmersDelight-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_brewin_and_chewin",
+    "description": "Reduced baseline plus Brewin And Chewin disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^BrewinAndChewin-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_delightful",
+    "description": "Reduced baseline plus Delightful disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^Delightful-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_my_nethers_delight",
+    "description": "Reduced baseline plus My Nether's Delight disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^MyNethersDelight-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_veggies_delight",
+    "description": "Reduced baseline plus Veggies Delight disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^VeggiesDelight-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_ubes_delight",
+    "description": "Reduced baseline plus Ube's Delight disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^ubesdelight-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_undergarden_delight",
+    "description": "Reduced baseline plus Undergarden Delight disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^undergardendelight-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_chefs_delight",
+    "description": "Reduced baseline plus Chef's Delight disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^chefsdelight-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_collectors_reap",
+    "description": "Reduced baseline plus Collector's Reap disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^collectorsreap-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_corn_delight",
+    "description": "Reduced baseline plus Corn Delight disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^corn_delight-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_ends_delight",
+    "description": "Reduced baseline plus End's Delight disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^ends_delight-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_farmers_respite",
+    "description": "Reduced baseline plus Farmer's Respite disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^farmersrespite-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_oceans_delight",
+    "description": "Reduced baseline plus Ocean's Delight disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^oceansdelight-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_rustic_delight",
+    "description": "Reduced baseline plus Rustic Delight disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^rusticdelight-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_diet",
+    "description": "Reduced baseline plus Diet disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^diet-forge-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_solcarrot",
+    "description": "Reduced baseline plus Spice of Life Carrot disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^solcarrot-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_thirst",
+    "description": "Reduced baseline plus Thirst Was Taken disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^ThirstWasTaken-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_appleskin",
+    "description": "Reduced baseline plus AppleSkin disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^appleskin-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_cravings",
+    "description": "Reduced baseline plus Cravings disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^cravings-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_acid_vat",
+    "description": "Reduced baseline plus custom acid_vat disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^acid_vat-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_btmfixes",
+    "description": "Reduced baseline plus custom btmfixes disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^btmfixes-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_classselector",
+    "description": "Reduced baseline plus custom classselector disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^classselector-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_computerbridge",
+    "description": "Reduced baseline plus custom computerbridge disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^computerbridge-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_transmissionloss",
+    "description": "Reduced baseline plus custom create-transmission-loss disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^create-transmission-loss-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_cursedbiomes",
+    "description": "Reduced baseline plus custom cursedbiomes disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^cursedbiomes-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_fission_reactor",
+    "description": "Reduced baseline plus custom fission_reactor disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^fission_reactor-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_gases_and_plasmas",
+    "description": "Reduced baseline plus custom gases_and_plasmas disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^gases_and_plasmas-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_heatsync",
+    "description": "Reduced baseline plus custom heatsync disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^heatsync-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_liquid_coolant",
+    "description": "Reduced baseline plus custom liquid_coolant disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^liquid_coolant-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_obelisks",
+    "description": "Reduced baseline plus custom obelisks disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^obelisks-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_pillagercampaigns",
+    "description": "Reduced baseline plus custom pillagercampaigns disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^pillagercampaigns-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_procedural_bouquets",
+    "description": "Reduced baseline plus custom procedural_bouquets disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^procedural_bouquets-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_realisticores",
+    "description": "Reduced baseline plus custom realisticores disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^realisticores-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_rpgstats",
+    "description": "Reduced baseline plus custom rpgstats disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^rpgstats-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_settlementroads",
+    "description": "Reduced baseline plus custom settlementroads disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^settlementroads-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_villagewalls",
+    "description": "Reduced baseline plus custom villagewalls disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^villagewalls-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_compressedcreativity",
+    "description": "Reduced baseline plus Compressed Creativity disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^compressedcreativity-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_create_new_age",
+    "description": "Reduced baseline plus Create New Age and direct bridge disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^create-new-age-.*\\.jar$",
+      "^create_cold_sweat-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_create_stuff_additions",
+    "description": "Reduced baseline plus Create Stuff Additions disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^create-stuff-additions.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_create_bb",
+    "description": "Reduced baseline plus Create Big Beacons disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^create_bb-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_create_central_kitchen",
+    "description": "Reduced baseline plus Create Central Kitchen disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^create_central_kitchen-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_create_cold_sweat",
+    "description": "Reduced baseline plus Create Cold Sweat disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^create_cold_sweat-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_create_connected",
+    "description": "Reduced baseline plus Create Connected disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^create_connected-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_create_enchantment_industry",
+    "description": "Reduced baseline plus Create Enchantment Industry disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^create_enchantment_industry-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_create_more_additions",
+    "description": "Reduced baseline plus Create More Additions disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^create_more_additions-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_create_power_loader",
+    "description": "Reduced baseline plus Create Power Loader disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^create_power_loader-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_create_things_and_misc",
+    "description": "Reduced baseline plus Create Things and Misc disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^create_things_and_misc-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_create_additional_logistics",
+    "description": "Reduced baseline plus Create Additional Logistics disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^createadditionallogistics-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_create_addon_compatibility",
+    "description": "Reduced baseline plus Create Addon Compatibility disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^createaddoncompatibility-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_create_adv_logistics",
+    "description": "Reduced baseline plus Create Advanced Logistics disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^createadvlogistics-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_create_applied_kinetics",
+    "description": "Reduced baseline plus Create Applied Kinetics disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^createappliedkinetics-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_create_big_cannons",
+    "description": "Reduced baseline plus Create Big Cannons disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^createbigcannons-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_create_diesel_generators",
+    "description": "Reduced baseline plus Create Diesel Generators disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^createdieselgenerators-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_create_liquid_fuel",
+    "description": "Reduced baseline plus Create Liquid Fuel disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^createliquidfuel-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_create_more_drill_heads",
+    "description": "Reduced baseline plus Create More Drill Heads disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^createmoredrillheads-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_ae2_things",
+    "description": "Reduced baseline plus AE2 Things disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^AE2-Things-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_ae2_network_analyzer",
+    "description": "Reduced baseline plus AE2 Network Analyzer disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^AE2NetworkAnalyzer-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_ae_additions",
+    "description": "Reduced baseline plus AE Additions disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^AEAdditions-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_advanced_ae",
+    "description": "Reduced baseline plus Advanced AE disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^AdvancedAE-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_extended_ae",
+    "description": "Reduced baseline plus Extended AE disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^ExtendedAE-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_mae2",
+    "description": "Reduced baseline plus MEGA Cells/MAE2 disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^mae2-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_merequester",
+    "description": "Reduced baseline plus ME Requester disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^merequester-.*\\.jar$"
+    ]
+  },
+  {
+    "name": "reduced_no_polyeng",
+    "description": "Reduced baseline plus PolyEng disabled",
+    "disable": [
+      "^ticex-.*\\.jar$",
+      "^Steam_Rails-.*\\.jar$",
+      "^Botania-.*\\.jar$",
+      "^chipped-forge-.*\\.jar$",
+      "^polyeng-forge-.*\\.jar$"
+    ]
+  }
+]

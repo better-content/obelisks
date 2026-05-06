@@ -1,0 +1,1382 @@
+309414:   /home/gerald/.local/share/PrismLauncher/java/java-runtime-gamma/bin/java -Xms2000m -Xmx8192m -Duser.language=en -Djava.library.path=/home/gerald/.local/share/PrismLauncher/instances/Bound to Matter-Playtest 3 - v1/natives -cp /tmp/.mount_PrismLMmjmcM/share/PrismLauncher/NewLaunch.jar:/home/gerald/.local/share/PrismLauncher/libraries/org/lwjgl/lwjgl-glfw-natives-linux/3.3.2-lwjgl.1/lwjgl-glfw-natives-linux-3.3.2-lwjgl.1.jar:/home/gerald/.local/share/PrismLauncher/libraries/org/lwjgl/lwjgl-glfw/3.3.1/lwjgl-glfw-3.3.1.jar:/home/gerald/.local/share/PrismLauncher/libraries/org/lwjgl/lwjgl-jemalloc-natives-linux/3.3.1/lwjgl-jemalloc-natives-linux-3.3.1.jar:/home/gerald/.local/share/PrismLauncher/libraries/org/lwjgl/lwjgl-jemalloc/3.3.1/lwjgl-jemalloc-3.3.1.jar:/home/gerald/.local/share/PrismLauncher/libraries/org/lwjgl/lwjgl-natives-linux/3.3.1/lwjgl-natives-linux-3.3.1.jar:/home/gerald/.local/share/PrismLauncher/libraries/org/lwjgl/lwjgl-openal-natives-linux/3.3.1/lwjgl-openal-natives-linux-3.3.1.jar:/home/gerald/.local/share/PrismLauncher/libraries/org/lwjgl/lwjgl-openal/3.3.1/lwjgl-openal-3.3.1.jar:/home/gerald/.local/share/PrismLauncher/libraries/org/lwjgl/lwjgl-opengl-natives-linux/3.3.1/lwjgl-opengl-natives-linux-3.3.1.jar:/home/gerald/.local/share/PrismLauncher/libraries/org/lwjgl/lwjgl-opengl/3.3.1/lwjgl-opengl-3.3.1.jar:/home/gerald/.local/share/PrismLauncher/libraries/org/lwjgl/lwjgl-stb-natives-linux/3.3.1/lwjgl-stb-natives-linux-3.3.1.jar:/home/gerald/.local/share/PrismLauncher/libraries/org/lwjgl/lwjgl-stb/3.3.1/lwjgl-stb-3.3.1.jar:/home/gerald/.local/share/PrismLauncher/libraries/org/lwjgl/lwjgl-tinyfd-natives-linux/3.3.1/lwjgl-tinyfd-natives-linux-3.3.1.jar:/home/gerald/.local/share/PrismLauncher/libraries/org/lwjgl/lwjgl-tinyfd/3.3.1/lwjgl-tinyfd-3.3.1.jar:/home/gerald/.local/share/PrismLauncher/libraries/org/lwjgl/lwjgl/3.3.1/lwjgl-3.3.1.jar:/home/gerald/.local/share/PrismLauncher/libraries/com/github/oshi/oshi-core/6.2.2/oshi-core-6.2.2.jar:/home/gerald/.local/share/PrismLauncher/libraries/com/google/code/gson/gson/2.10/gson-2.10.jar:/home/gerald/.local/share/PrismLauncher/libraries/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/home/gerald/.local/share/PrismLauncher/libraries/com/google/guava/guava/31.1-jre/guava-31.1-jre.jar:/home/gerald/.local/share/PrismLauncher/libraries/com/ibm/icu/icu4j/71.1/icu4j-71.1.jar:/home/gerald/.local/share/PrismLauncher/libraries/com/mojang/authlib/4.0.43/authlib-4.0.43.jar:/home/gerald/.local/share/PrismLauncher/libraries/com/mojang/blocklist/1.0.10/blocklist-1.0.10.jar:/home/gerald/.local/share/PrismLauncher/libraries/com/mojang/brigadier/1.1.8/brigadier-1.1.8.jar:/home/gerald/.local/share/PrismLauncher/libraries/com/mojang/datafixerupper/6.0.8/datafixerupper-6.0.8.jar:/home/gerald/.local/share/PrismLauncher/libraries/com/mojang/logging/1.1.1/logging-1.1.1.jar:/home/gerald/.local/share/PrismLauncher/libraries/com/mojang/patchy/2.2.10/patchy-2.2.10.jar:/home/gerald/.local/share/PrismLauncher/libraries/com/mojang/text2speech/1.17.9/text2speech-1.17.9.jar:/home/gerald/.local/share/PrismLauncher/libraries/commons-codec/commons-codec/1.15/commons-codec-1.15.jar:/home/gerald/.local/share/PrismLauncher/libraries/commons-io/commons-io/2.11.0/commons-io-2.11.0.jar:/home/gerald/.local/share/PrismLauncher/libraries/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/gerald/.local/share/PrismLauncher/libraries/io/netty/netty-buffer/4.1.82.Final/netty-buffer-4.1.82.Final.jar:/home/gerald/.local/share/PrismLauncher/libraries/io/netty/netty-codec/4.1.82.Final/netty-codec-4.1.82.Final.jar:/home/gerald/.local/share/PrismLauncher/libraries/io/netty/netty-common/4.1.82.Final/netty-common-4.1.82.Final.jar:/home/gerald/.local/share/PrismLauncher/libraries/io/netty/netty-handler/4.1.82.Final/netty-handler-4.1.82.Final.jar:/home/gerald/.local/share/PrismLauncher/libraries/io/netty/netty-resolver/4.1.82.Final/netty-resolver-4.1.82.Final.jar:/home/gerald/.local/share/PrismLauncher/libraries/io/netty/netty-transport-classes-epoll/4.1.82.Final/netty-transport-classes-epoll-4.1.82.Final.jar:/home/gerald/.local/share/PrismLauncher/libraries/io/netty/netty-transport-native-epoll/4.1.82.Final/netty-transport-native-epoll-4.1.82.Final-linux-aarch_64.jar:/home/gerald/.local/share/PrismLauncher/libraries/io/netty/netty-transport-native-epoll/4.1.82.Final/netty-transport-native-epoll-4.1.82.Final-linux-x86_64.jar:/home/gerald/.local/share/PrismLauncher/libraries/io/netty/netty-transport-native-unix-common/4.1.82.Final/netty-transport-native-unix-common-4.1.82.Final.jar:/home/gerald/.local/share/PrismLauncher/libraries/io/netty/netty-transport/4.1.82.Final/netty-transport-4.1.82.Final.jar:/home/gerald/.local/share/PrismLauncher/libraries/it/unimi/dsi/fastutil/8.5.9/fastutil-8.5.9.jar:/home/gerald/.local/share/PrismLauncher/libraries/net/java/dev/jna/jna-platform/5.12.1/jna-platform-5.12.1.jar:/home/gerald/.local/share/PrismLauncher/libraries/net/java/dev/jna/jna/5.12.1/jna-5.12.1.jar:/home/gerald/.local/share/PrismLauncher/libraries/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar:/home/gerald/.local/share/PrismLauncher/libraries/org/apache/commons/commons-compress/1.21/commons-compress-1.21.jar:/home/gerald/.local/share/PrismLauncher/libraries/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar:/home/gerald/.local/share/PrismLauncher/libraries/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/home/gerald/.local/share/PrismLauncher/libraries/org/apache/httpcomponents/httpcore/4.4.15/httpcore-4.4.15.jar:/home/gerald/.local/share/PrismLauncher/libraries/org/apache/logging/log4j/log4j-api/2.19.0/log4j-api-2.19.0.jar:/home/gerald/.local/share/PrismLauncher/libraries/org/apache/logging/log4j/log4j-core/2.19.0/log4j-core-2.19.0.jar:/home/gerald/.local/share/PrismLauncher/libraries/org/apache/logging/log4j/log4j-slf4j2-impl/2.19.0/log4j-slf4j2-impl-2.19.0.jar:/home/gerald/.local/share/PrismLauncher/libraries/org/joml/joml/1.10.5/joml-1.10.5.jar:/home/gerald/.local/share/PrismLauncher/libraries/org/slf4j/slf4j-api/2.0.1/slf4j-api-2.0.1.jar:/home/gerald/.local/share/PrismLauncher/libraries/io/github/zekerzhayard/ForgeWrapper/prism-2025-12-07/ForgeWrapper-prism-2025-12-07.jar:/home/gerald/.local/share/PrismLauncher/libraries/cpw/mods/securejarhandler/2.1.10/securejarhandler-2.1.10.jar:/home/gerald/.local/share/PrismLauncher/libraries/org/ow2/asm/asm/9.8/asm-9.8.jar:/home/gerald/.local/share/PrismLauncher/libraries/org/ow2/asm/asm-commons/9.8/asm-commons-9.8.jar:/home/gerald/.local/share/PrismLauncher/libraries/org/ow2/asm/asm-tree/9.8/asm-tree-9.8.jar:/home/gerald/.local/share/PrismLauncher/libraries/org/ow2/asm/asm-util/9.8/asm-util-9.8.jar:/home/gerald/.local/share/PrismLauncher/libraries/org/ow2/asm/asm-analysis/9.8/asm-analysis-9.8.jar:/home/gerald/.local/share/PrismLauncher/libraries/net/minecraftforge/accesstransformers/8.0.4/accesstransformers-8.0.4.jar:/home/gerald/.local/share/PrismLauncher/libraries/org/antlr/antlr4-runtime/4.9.1/antlr4-runtime-4.9.1.jar:/home/gerald/.local/share/PrismLauncher/libraries/net/minecraftforge/eventbus/6.0.5/eventbus-6.0.5.jar:/home/gerald/.local/share/PrismLauncher/libraries/net/minecraftforge/forgespi/7.0.1/forgespi-7.0.1.jar:/home/gerald/.local/share/PrismLauncher/libraries/net/minecraftforge/coremods/5.2.4/coremods-5.2.4.jar:/home/gerald/.local/share/PrismLauncher/libraries/cpw/mods/modlauncher/10.0.9/modlauncher-10.0.9.jar:/home/gerald/.local/share/PrismLauncher/libraries/net/minecraftforge/unsafe/0.2.0/unsafe-0.2.0.jar:/home/gerald/.local/share/PrismLauncher/libraries/net/minecraftforge/mergetool/1.1.5/mergetool-1.1.5-api.jar:/home/gerald/.local/share/PrismLauncher/libraries/com/electronwill/night-config/core/3.6.4/core-3.6.4.jar:/home/gerald/.local/share/PrismLauncher/libraries/com/electronwill/night-config/toml/3.6.4/toml-3.6.4.jar:/home/gerald/.local/share/PrismLauncher/libraries/org/apache/maven/maven-artifact/3.8.5/maven-artifact-3.8.5.jar:/home/gerald/.local/share/PrismLauncher/libraries/net/jodah/typetools/0.6.3/typetools-0.6.3.jar:/home/gerald/.local/share/PrismLauncher/libraries/net/minecrell/terminalconsoleappender/1.2.0/terminalconsoleappender-1.2.0.jar:/home/gerald/.local/share/PrismLauncher/libraries/org/jline/jline-reader/3.12.1/jline-reader-3.12.1.jar:/home/gerald/.local/share/PrismLauncher/libraries/org/jline/jline-terminal/3.12.1/jline-terminal-3.12.1.jar:/home/gerald/.local/share/PrismLauncher/libraries/org/spongepowered/mixin/0.8.5/mixin-0.8.5.jar:/home/gerald/.local/share/PrismLauncher/libraries/org/openjdk/nashorn/nashorn-core/15.4/nashorn-core-15.4.jar:/home/gerald/.local/share/PrismLauncher/libraries/net/minecraftforge/JarJarSelector/0.3.19/JarJarSelector-0.3.19.jar:/home/gerald/.local/share/PrismLauncher/libraries/net/minecraftforge/JarJarMetadata/0.3.19/JarJarMetadata-0.3.19.jar:/home/gerald/.local/share/PrismLauncher/libraries/cpw/mods/bootstraplauncher/1.1.2/bootstraplauncher-1.1.2.jar:/home/gerald/.local/share/PrismLauncher/libraries/net/minecraftforge/JarJarFileSystems/0.3.19/JarJarFileSystems-0.3.19.jar:/home/gerald/.local/share/PrismLauncher/libraries/net/minecraftforge/fmlloader/1.20.1-47.4.13/fmlloader-1.20.1-47.4.13.jar:/home/gerald/.local/share/PrismLauncher/libraries/net/minecraftforge/fmlearlydisplay/1.20.1-47.4.13/fmlearlydisplay-1.20.1-47.4.13.jar:/home/gerald/.local/share/PrismLauncher/libraries/com/mojang/minecraft/1.20.1/minecraft-1.20.1-client.jar org.prismlauncher.EntryPoint
+Address           Kbytes     RSS   Dirty Mode  Mapping
+00000000401fc000     700     700     700 rw---   [ anon ]
+0000000041e8a000       8       8       8 r-xs- .glXXXXXX (deleted)
+0000000600000000 5124096 5124096 5124096 rw---   [ anon ]
+0000000738c00000 3264512       0       0 -----   [ anon ]
+0000000800000000     128     128     128 rw---   [ anon ]
+0000000800020000     128     128     128 rw---   [ anon ]
+0000000800040000     512     512     512 rw---   [ anon ]
+00000008000c0000     256     256     256 rw---   [ anon ]
+0000000800100000     256     252     252 rw---   [ anon ]
+0000000800140000     512     512     512 rw---   [ anon ]
+00000008001c0000     768     768     768 rw---   [ anon ]
+0000000800280000     256     256     256 rw---   [ anon ]
+00000008002c0000     256     256     256 rw---   [ anon ]
+0000000800300000    5120    5108    5108 rw---   [ anon ]
+0000000800800000    9600    9600    9600 rw---   [ anon ]
+0000000801160000     128     128     128 rw---   [ anon ]
+0000000801180000   76032   76032   76032 rw---   [ anon ]
+0000000805bc0000     256     256     256 rw---   [ anon ]
+0000000805c00000   10112   10088   10088 rw---   [ anon ]
+00000008065e0000     128      92      92 rw---   [ anon ]
+0000000806600000    7104    7080    7080 rw---   [ anon ]
+0000000806cf0000  937024       0       0 -----   [ anon ]
+0000558760999000       4       4       0 r-x-- java
+000055876099b000       4       4       4 r---- java
+000055876099c000       4       4       4 rw--- java
+0000558771503000    1844    1436    1436 rw---   [ anon ]
+00007efe74000000   31648    7660    7660 rw---   [ anon ]
+00007efe75ee8000   33888       0       0 -----   [ anon ]
+00007efe7c000000   62620   21912   21912 rw---   [ anon ]
+00007efe7fd27000    2916       0       0 -----   [ anon ]
+00007efe82e00000    2048    2048    2048 rw-s- nvidiactl
+00007efe83000000    2048    2048       0 rw-s- nvidiactl
+00007efe83200000   71680   12288   12288 rw---   [ anon ]
+00007efe87900000   31744   12288   12288 rw---   [ anon ]
+00007efe89900000    9216       0       0 rw---   [ anon ]
+00007efe8a380000   29184    8188    8188 rw---   [ anon ]
+00007efe8c080000    5632    4096    4096 rw---   [ anon ]
+00007efe8c700000   50176   14336   14336 rw---   [ anon ]
+00007efe8f900000   13312    2132    2132 rw---   [ anon ]
+00007efe90700000    9216       0       0 rw---   [ anon ]
+00007efe91180000  127488   43008   43008 rw---   [ anon ]
+00007efe98f00000   29696   14420   14420 rw---   [ anon ]
+00007efe9ad00000   23552    8276    8276 rw---   [ anon ]
+00007efe9c580000   18944    4096    4096 rw---   [ anon ]
+00007efe9d900000    7168    2048    2048 rw---   [ anon ]
+00007efe9e100000    9216       0       0 rw---   [ anon ]
+00007efe9ea80000    7680    2048    2048 rw---   [ anon ]
+00007efe9f380000    8704    6144    6144 rw---   [ anon ]
+00007efe9fd00000    3072    2048    2048 rw---   [ anon ]
+00007efea3000000  405504    2048    2048 rw---   [ anon ]
+00007efec6400000    4096    4096    4096 rw-s- nvidiactl
+00007efec6800000    4096    4096    4036 rw-s- nvidiactl
+00007efec6c00000    4096    4096    4036 rw-s- nvidiactl
+00007efec7400000    4096    4096    4036 rw-s- nvidiactl
+00007efed6800000    4096    4096    4096 rw-s- nvidiactl
+00007efee0800000  712704    2076    2076 rw---   [ anon ]
+00007eff0c000000   65468   19984   19984 rw---   [ anon ]
+00007eff0ffef000      68       0       0 -----   [ anon ]
+00007eff10200000    2048    2048    2048 rw---   [ anon ]
+00007eff10400000   16384   16384       0 rw-s- nvidiactl
+00007eff114ff000       4       0       0 -----   [ anon ]
+00007eff11500000      16       0       0 -----   [ anon ]
+00007eff11504000    1008     120     120 rw---   [ anon ]
+00007eff12600000   16384   16384   16384 rw-s- nvidiactl
+00007eff136ff000       4       0       0 -----   [ anon ]
+00007eff13700000      16       0       0 -----   [ anon ]
+00007eff13704000    1008      88      88 rw---   [ anon ]
+00007eff13800000    2048    2048     160 rw-s- nvidiactl
+00007eff13aff000       4       0       0 -----   [ anon ]
+00007eff13b00000      16       0       0 -----   [ anon ]
+00007eff13b04000    1008      88      88 rw---   [ anon ]
+00007eff13c00000    4096    4096    4096 rw---   [ anon ]
+00007eff140f9000       4       0       0 -----   [ anon ]
+00007eff140fa000      16       0       0 -----   [ anon ]
+00007eff140fe000    1008      96      96 rw---   [ anon ]
+00007eff141fa000       4       0       0 -----   [ anon ]
+00007eff141fb000      16       0       0 -----   [ anon ]
+00007eff141ff000    1008      92      92 rw---   [ anon ]
+00007eff142fb000       4       0       0 -----   [ anon ]
+00007eff142fc000      16       0       0 -----   [ anon ]
+00007eff14300000    1008      24      24 rw---   [ anon ]
+00007eff143fc000       4       0       0 -----   [ anon ]
+00007eff143fd000      16       0       0 -----   [ anon ]
+00007eff14401000    1008     116     116 rw---   [ anon ]
+00007eff144fd000       4       0       0 -----   [ anon ]
+00007eff144fe000      16       0       0 -----   [ anon ]
+00007eff14502000    1008     120     120 rw---   [ anon ]
+00007eff145fe000       4       0       0 -----   [ anon ]
+00007eff145ff000      16       0       0 -----   [ anon ]
+00007eff14603000    1008      92      92 rw---   [ anon ]
+00007eff146ff000       4       0       0 -----   [ anon ]
+00007eff14700000      16       0       0 -----   [ anon ]
+00007eff14704000    1008     100     100 rw---   [ anon ]
+00007eff14800000  319488       0       0 rw---   [ anon ]
+00007eff28000000   42496   42480   42480 rw---   [ anon ]
+00007eff2a980000     256     236     236 rw---   [ anon ]
+00007eff2a9c0000     256       0       0 -----   [ anon ]
+00007eff2aa00000    8448    8428    8428 rw---   [ anon ]
+00007eff2b240000   14080       0       0 -----   [ anon ]
+00007eff2c000000   51184   50992   50992 rw---   [ anon ]
+00007eff2f1fc000   14352       0       0 -----   [ anon ]
+00007eff300fd000       4       0       0 -----   [ anon ]
+00007eff300fe000      16       0       0 -----   [ anon ]
+00007eff30102000    1008      92      92 rw---   [ anon ]
+00007eff301fe000       4       0       0 -----   [ anon ]
+00007eff301ff000      16       0       0 -----   [ anon ]
+00007eff30203000    1008     100     100 rw---   [ anon ]
+00007eff302ff000       4       0       0 -----   [ anon ]
+00007eff30300000      16       0       0 -----   [ anon ]
+00007eff30304000    1008     112     112 rw---   [ anon ]
+00007eff30400000   61440       0       0 rw---   [ anon ]
+00007eff34000000   61796   61796   61796 rw---   [ anon ]
+00007eff37c59000    3740       0       0 -----   [ anon ]
+00007eff38000000   61796   61796   61796 rw---   [ anon ]
+00007eff3bc59000    3740       0       0 -----   [ anon ]
+00007eff3c000000   61488   61488   61488 rw---   [ anon ]
+00007eff3fc0c000    4048       0       0 -----   [ anon ]
+00007eff40000000   61792   61792   61792 rw---   [ anon ]
+00007eff43c58000    3744       0       0 -----   [ anon ]
+00007eff44000000   61792   61792   61792 rw---   [ anon ]
+00007eff47c58000    3744       0       0 -----   [ anon ]
+00007eff48000000   61796   61796   61796 rw---   [ anon ]
+00007eff4bc59000    3740       0       0 -----   [ anon ]
+00007eff4c000000   61796   61796   61796 rw---   [ anon ]
+00007eff4fc59000    3740       0       0 -----   [ anon ]
+00007eff50000000   61796   61796   61796 rw---   [ anon ]
+00007eff53c59000    3740       0       0 -----   [ anon ]
+00007eff54000000   61488   61488   61488 rw---   [ anon ]
+00007eff57c0c000    4048       0       0 -----   [ anon ]
+00007eff58000000   61792   61792   61792 rw---   [ anon ]
+00007eff5bc58000    3744       0       0 -----   [ anon ]
+00007eff5c000000   61792   61792   61792 rw---   [ anon ]
+00007eff5fc58000    3744       0       0 -----   [ anon ]
+00007eff60000000   61796   61796   61796 rw---   [ anon ]
+00007eff63c59000    3740       0       0 -----   [ anon ]
+00007eff64000000   62348   47632   47632 rw---   [ anon ]
+00007eff67ce3000    3188       0       0 -----   [ anon ]
+00007eff680f7000       4       0       0 -----   [ anon ]
+00007eff680f8000      16       0       0 -----   [ anon ]
+00007eff680fc000    1008     112     112 rw---   [ anon ]
+00007eff681f8000       4       0       0 -----   [ anon ]
+00007eff681f9000      16       0       0 -----   [ anon ]
+00007eff681fd000    1008      92      92 rw---   [ anon ]
+00007eff682f9000       4       0       0 -----   [ anon ]
+00007eff682fa000      16       0       0 -----   [ anon ]
+00007eff682fe000    1008      96      96 rw---   [ anon ]
+00007eff683fa000       4       0       0 -----   [ anon ]
+00007eff683fb000      16       0       0 -----   [ anon ]
+00007eff683ff000    1008     108     108 rw---   [ anon ]
+00007eff684fb000       4       0       0 -----   [ anon ]
+00007eff684fc000      16       0       0 -----   [ anon ]
+00007eff68500000    1008      92      92 rw---   [ anon ]
+00007eff685fc000       4       0       0 -----   [ anon ]
+00007eff685fd000      16       0       0 -----   [ anon ]
+00007eff68601000    1008      88      88 rw---   [ anon ]
+00007eff686fd000       4       0       0 -----   [ anon ]
+00007eff686fe000      16       0       0 -----   [ anon ]
+00007eff68702000    1008     100     100 rw---   [ anon ]
+00007eff687fe000       4       0       0 -----   [ anon ]
+00007eff687ff000      16       0       0 -----   [ anon ]
+00007eff68803000    1008      96      96 rw---   [ anon ]
+00007eff688ff000       4       0       0 -----   [ anon ]
+00007eff68900000      16       0       0 -----   [ anon ]
+00007eff68904000    1008     108     108 rw---   [ anon ]
+00007eff68a00000      68      64      64 r-x-- libnetty_transport_native_epoll_x86_64968498515260773850.so (deleted)
+00007eff68a11000    2044       0       0 ----- libnetty_transport_native_epoll_x86_64968498515260773850.so (deleted)
+00007eff68c10000      12      12      12 r---- libnetty_transport_native_epoll_x86_64968498515260773850.so (deleted)
+00007eff68c13000       4       4       4 rw---   [ anon ]
+00007eff68cff000       4       0       0 -----   [ anon ]
+00007eff68d00000      16       0       0 -----   [ anon ]
+00007eff68d04000    1008     108     108 rw---   [ anon ]
+00007eff68e00000  196608      60      60 rw---   [ anon ]
+00007eff74efa000       4       0       0 -----   [ anon ]
+00007eff74efb000      16       0       0 -----   [ anon ]
+00007eff74eff000    1008     100     100 rw---   [ anon ]
+00007eff74ffb000 1425428  872508  872508 rw---   [ anon ]
+00007effcc000000  409600       0       0 rw---   [ anon ]
+00007effe50fd000       4       0       0 -----   [ anon ]
+00007effe50fe000      16       0       0 -----   [ anon ]
+00007effe5102000    1008     116     116 rw---   [ anon ]
+00007effe51fe000       4       0       0 -----   [ anon ]
+00007effe51ff000    8192       8       8 rw---   [ anon ]
+00007effe59ff000    5120       0       0 rw---   [ anon ]
+00007effe5eff000   65536      32      32 rw-s- memfd:pulseaudio (deleted)
+00007effe9eff000       4       0       0 -----   [ anon ]
+00007effe9f00000    8192      24      24 rw---   [ anon ]
+00007effea700000   33792   26624   26624 rw---   [ anon ]
+00007effec900000   39936   38312   38312 rw---   [ anon ]
+00007effef07f000       4       0       0 -----   [ anon ]
+00007effef080000      16       0       0 -----   [ anon ]
+00007effef084000    1008      92      92 rw---   [ anon ]
+00007effef180000   20992   20992   20992 rw---   [ anon ]
+00007efff06fd000       4       0       0 -----   [ anon ]
+00007efff06fe000      16       0       0 -----   [ anon ]
+00007efff0702000    1008     124     124 rw---   [ anon ]
+00007efff07fe000       4       0       0 -----   [ anon ]
+00007efff07ff000      16       0       0 -----   [ anon ]
+00007efff0803000    1008      24      24 rw---   [ anon ]
+00007efff08ff000       4       0       0 -----   [ anon ]
+00007efff0900000      16       0       0 -----   [ anon ]
+00007efff0904000    1008      88      88 rw---   [ anon ]
+00007efff0a00000  253952  241732  241732 rw---   [ anon ]
+00007f0000200000     156     156       0 r---- libSDL2.so
+00007f0000227000    2200     756       0 r-x-- libSDL2.so
+00007f000044d000     620     268       0 r---- libSDL2.so
+00007f00004e8000      28      28      28 r---- libSDL2.so
+00007f00004ef000      52      52      52 rw--- libSDL2.so
+00007f00004fc000      24      12      12 rw---   [ anon ]
+00007f00005fe000       4       0       0 -----   [ anon ]
+00007f00005ff000      16       0       0 -----   [ anon ]
+00007f0000603000    1008      92      92 rw---   [ anon ]
+00007f00006ff000       4       0       0 -----   [ anon ]
+00007f0000700000      16       0       0 -----   [ anon ]
+00007f0000704000    1008      92      92 rw---   [ anon ]
+00007f0000800000   81920   28672   28672 rw---   [ anon ]
+00007f0005800000    1012     896     896 r-x-- sqlite-3.47.2.0-3cf93c5e-bc0e-439c-aa33-45e02078ac86-libsqlitejdbc.so
+00007f00058fd000    2048       0       0 ----- sqlite-3.47.2.0-3cf93c5e-bc0e-439c-aa33-45e02078ac86-libsqlitejdbc.so
+00007f0005afd000      32      32      32 rw--- sqlite-3.47.2.0-3cf93c5e-bc0e-439c-aa33-45e02078ac86-libsqlitejdbc.so
+00007f0005c00000     956     704     704 r-x-- libzstd-jni_dh-1.5.7-610249712628051618012.so (deleted)
+00007f0005cef000    2044       0       0 ----- libzstd-jni_dh-1.5.7-610249712628051618012.so (deleted)
+00007f0005eee000       4       4       4 rw--- libzstd-jni_dh-1.5.7-610249712628051618012.so (deleted)
+00007f0005eff000       4       0       0 -----   [ anon ]
+00007f0005f00000      16       0       0 -----   [ anon ]
+00007f0005f04000    1008      92      92 rw---   [ anon ]
+00007f0006000000   65536   65536   65536 rw---   [ anon ]
+00007f000a0fd000       4       0       0 -----   [ anon ]
+00007f000a0fe000      16       0       0 -----   [ anon ]
+00007f000a102000    1008      92      92 rw---   [ anon ]
+00007f000a1fe000       4       0       0 -----   [ anon ]
+00007f000a1ff000      16       0       0 -----   [ anon ]
+00007f000a203000    1008      88      88 rw---   [ anon ]
+00007f000a2ff000       4       0       0 -----   [ anon ]
+00007f000a300000      16       0       0 -----   [ anon ]
+00007f000a304000    1008     100     100 rw---   [ anon ]
+00007f000a400000  243712  239900  239900 rw---   [ anon ]
+00007f0019600000   90112   69632   69632 rw---   [ anon ]
+00007f001ef00000   33792   33792   33792 rw---   [ anon ]
+00007f0021100000  123904  121856  121856 rw---   [ anon ]
+00007f0028a80000   22016   22016   22016 rw---   [ anon ]
+00007f002a100000   15360   15360   15360 rw---   [ anon ]
+00007f002b100000   19456   19408   19408 rw---   [ anon ]
+00007f002c4fd000       4       0       0 -----   [ anon ]
+00007f002c4fe000      16       0       0 -----   [ anon ]
+00007f002c502000    1008      24      24 rw---   [ anon ]
+00007f002c5fe000       4       0       0 -----   [ anon ]
+00007f002c5ff000      16       0       0 -----   [ anon ]
+00007f002c603000    1008      88      88 rw---   [ anon ]
+00007f002c6ff000       4       0       0 -----   [ anon ]
+00007f002c700000      16       0       0 -----   [ anon ]
+00007f002c704000    1008      96      96 rw---   [ anon ]
+00007f002c800000    8192    8192    8192 rw---   [ anon ]
+00007f002d0fb000   12288   12280   12280 rw---   [ anon ]
+00007f002dcfb000       4       0       0 -----   [ anon ]
+00007f002dcfc000      16       0       0 -----   [ anon ]
+00007f002dd00000    1008      24      24 rw---   [ anon ]
+00007f002ddfc000       4       0       0 -----   [ anon ]
+00007f002ddfd000      16       0       0 -----   [ anon ]
+00007f002de01000    1008      24      24 rw---   [ anon ]
+00007f002defd000       4       0       0 -----   [ anon ]
+00007f002defe000      16       0       0 -----   [ anon ]
+00007f002df02000    1008      92      92 rw---   [ anon ]
+00007f002dffe000       4       0       0 -----   [ anon ]
+00007f002dfff000      16       0       0 -----   [ anon ]
+00007f002e003000    1008      92      92 rw---   [ anon ]
+00007f002e0ff000       4       0       0 -----   [ anon ]
+00007f002e100000      16       0       0 -----   [ anon ]
+00007f002e104000    1008      92      92 rw---   [ anon ]
+00007f002e200000   10240   10240   10240 rw---   [ anon ]
+00007f002ec80000   34304   34304   34304 rw---   [ anon ]
+00007f0030f00000   13312   13312   13312 rw---   [ anon ]
+00007f0031d00000   35840   35820   35820 rw---   [ anon ]
+00007f0034000000   65536   49864   49864 rw---   [ anon ]
+00007f003807c000       4       0       0 -----   [ anon ]
+00007f003807d000      16       0       0 -----   [ anon ]
+00007f0038081000    1008      88      88 rw---   [ anon ]
+00007f003817d000    2560    2496    2496 rw---   [ anon ]
+00007f00383fd000       4       0       0 -----   [ anon ]
+00007f00383fe000      16       0       0 -----   [ anon ]
+00007f0038402000    1008      88      88 rw---   [ anon ]
+00007f00384fe000    6656    6656    6656 rw---   [ anon ]
+00007f0038b7e000       4       0       0 -----   [ anon ]
+00007f0038b7f000      16       0       0 -----   [ anon ]
+00007f0038b83000    1008      88      88 rw---   [ anon ]
+00007f0038c7f000    2560    2560    2560 rw---   [ anon ]
+00007f0038eff000       4       0       0 -----   [ anon ]
+00007f0038f00000      16       0       0 -----   [ anon ]
+00007f0038f04000    1008      88      88 rw---   [ anon ]
+00007f0039000000    4096    4096    4096 rw---   [ anon ]
+00007f00398fd000       4       0       0 -----   [ anon ]
+00007f00398fe000      16       0       0 -----   [ anon ]
+00007f0039902000    1008      88      88 rw---   [ anon ]
+00007f00399fe000       4       0       0 -----   [ anon ]
+00007f00399ff000      16       0       0 -----   [ anon ]
+00007f0039a03000    1008      88      88 rw---   [ anon ]
+00007f0039aff000       4       0       0 -----   [ anon ]
+00007f0039b00000      16       0       0 -----   [ anon ]
+00007f0039b04000    1008      88      88 rw---   [ anon ]
+00007f0039c00000    4096    4096    4096 rw---   [ anon ]
+00007f003a0ff000       4       0       0 -----   [ anon ]
+00007f003a100000      16       0       0 -----   [ anon ]
+00007f003a104000    1008      88      88 rw---   [ anon ]
+00007f003a200000   30720   25600   25600 rw---   [ anon ]
+00007f003c000000   12900   12900   12900 rw---   [ anon ]
+00007f003cc99000   52636       0       0 -----   [ anon ]
+00007f00400ff000       4       0       0 -----   [ anon ]
+00007f0040100000      16       0       0 -----   [ anon ]
+00007f0040104000    1008      88      88 rw---   [ anon ]
+00007f0040200000   26624   24944   24944 rw---   [ anon ]
+00007f0041d00000   13312   13284   13284 rw---   [ anon ]
+00007f0042a7f000    2560    2560    2560 rw---   [ anon ]
+00007f0042cff000       4       0       0 -----   [ anon ]
+00007f0042d00000      16       0       0 -----   [ anon ]
+00007f0042d04000    1008      24      24 rw---   [ anon ]
+00007f0042e00000    8192    8192    8192 rw---   [ anon ]
+00007f00436ff000       4       0       0 -----   [ anon ]
+00007f0043700000      16       0       0 -----   [ anon ]
+00007f0043704000    1008     132     132 rw---   [ anon ]
+00007f0043800000    4096    4096    4096 rw---   [ anon ]
+00007f0043cff000       4       0       0 -----   [ anon ]
+00007f0043d00000      16       0       0 -----   [ anon ]
+00007f0043d04000    1008     120     120 rw---   [ anon ]
+00007f0043e00000    2048    2048    2048 rw---   [ anon ]
+00007f0044000000   19336   19336   19336 rw---   [ anon ]
+00007f00452e2000   46200       0       0 -----   [ anon ]
+00007f0048000000     248     244     244 rw---   [ anon ]
+00007f004803e000   65288       0       0 -----   [ anon ]
+00007f004c000000    1468    1436    1436 rw---   [ anon ]
+00007f004c16f000   64068       0       0 -----   [ anon ]
+00007f00500ff000       4       0       0 -----   [ anon ]
+00007f0050100000      16       0       0 -----   [ anon ]
+00007f0050104000    1008     116     116 rw---   [ anon ]
+00007f0050200000    2048    2048    2048 rw---   [ anon ]
+00007f00504ff000       4       0       0 -----   [ anon ]
+00007f0050500000      16       0       0 -----   [ anon ]
+00007f0050504000    1008     112     112 rw---   [ anon ]
+00007f0050600000    2048    2048    2048 rw---   [ anon ]
+00007f00508ff000       4       0       0 -----   [ anon ]
+00007f0050900000      16       0       0 -----   [ anon ]
+00007f0050904000    1008     120     120 rw---   [ anon ]
+00007f0050a00000   12288    9764    9764 rw---   [ anon ]
+00007f00516f9000       4       0       0 -----   [ anon ]
+00007f00516fa000      16       0       0 -----   [ anon ]
+00007f00516fe000    1008     116     116 rw---   [ anon ]
+00007f00517fa000       4       0       0 -----   [ anon ]
+00007f00517fb000      16       0       0 -----   [ anon ]
+00007f00517ff000    1008     116     116 rw---   [ anon ]
+00007f00518fb000       4       0       0 -----   [ anon ]
+00007f00518fc000      16       0       0 -----   [ anon ]
+00007f0051900000    1008      24      24 rw---   [ anon ]
+00007f00519fc000       4       0       0 -----   [ anon ]
+00007f00519fd000      16       0       0 -----   [ anon ]
+00007f0051a01000    1008      24      24 rw---   [ anon ]
+00007f0051afd000       4       0       0 -----   [ anon ]
+00007f0051afe000      16       0       0 -----   [ anon ]
+00007f0051b02000    1008      24      24 rw---   [ anon ]
+00007f0051bfe000       4       0       0 -----   [ anon ]
+00007f0051bff000      16       0       0 -----   [ anon ]
+00007f0051c03000    1008      24      24 rw---   [ anon ]
+00007f0051cff000       4       0       0 -----   [ anon ]
+00007f0051d00000      16       0       0 -----   [ anon ]
+00007f0051d04000    1008      24      24 rw---   [ anon ]
+00007f0051e00000    4096    4096    4096 rw---   [ anon ]
+00007f00522fd000       4       0       0 -----   [ anon ]
+00007f00522fe000      16       0       0 -----   [ anon ]
+00007f0052302000    1008      24      24 rw---   [ anon ]
+00007f00523fe000       4       0       0 -----   [ anon ]
+00007f00523ff000      16       0       0 -----   [ anon ]
+00007f0052403000    1008     112     112 rw---   [ anon ]
+00007f00524ff000       4       0       0 -----   [ anon ]
+00007f0052500000      16       0       0 -----   [ anon ]
+00007f0052504000    1008      24      24 rw---   [ anon ]
+00007f0052600000    4096    3316    3316 rw---   [ anon ]
+00007f0052aff000       4       0       0 -----   [ anon ]
+00007f0052b00000      16       0       0 -----   [ anon ]
+00007f0052b04000    1008      96      96 rw---   [ anon ]
+00007f0052c00000      44      44       0 r---- libflite_cmu_us_kal16.so.2.2
+00007f0052c0b000       4       4       0 r-x-- libflite_cmu_us_kal16.so.2.2
+00007f0052c0c000    3860      64       0 r---- libflite_cmu_us_kal16.so.2.2
+00007f0052fd1000      28      28      28 r---- libflite_cmu_us_kal16.so.2.2
+00007f0052fd8000       4       4       4 rw--- libflite_cmu_us_kal16.so.2.2
+00007f0053000000   17408   17408   17408 rw---   [ anon ]
+00007f0054100000    1024    1024    1024 rw---   [ anon ]
+00007f0054200000   32512   32512   32512 rw---   [ anon ]
+00007f00561c0000     256     256     256 rw---   [ anon ]
+00007f0056200000    7168    7168    7168 rw---   [ anon ]
+00007f0056900000    6144    6144    6144 rw---   [ anon ]
+00007f0056f00000    1024    1024    1024 rw---   [ anon ]
+00007f0057000000  204800   12464   12464 rw---   [ anon ]
+00007f0063900000   13312    3716    3716 rw---   [ anon ]
+00007f0064700000  386048    2064    2064 rw---   [ anon ]
+00007f007c000000    1960    1952    1952 rw---   [ anon ]
+00007f007c1ea000   63576       0       0 -----   [ anon ]
+00007f00800ff000       4       0       0 -----   [ anon ]
+00007f0080100000      16       0       0 -----   [ anon ]
+00007f0080104000    1008      24      24 rw---   [ anon ]
+00007f0080200000    2048    2048      56 rw-s- nvidiactl
+00007f0080400000    4096    2048    2048 rw---   [ anon ]
+00007f0080880000   32256    8208    8208 rw---   [ anon ]
+00007f00828fe000       4       0       0 -----   [ anon ]
+00007f00828ff000      16       0       0 -----   [ anon ]
+00007f0082903000    1008     116     116 rw---   [ anon ]
+00007f00829ff000       4       0       0 -----   [ anon ]
+00007f0082a00000    8192      24      24 rw---   [ anon ]
+00007f0083200000      28      28       0 r---- libopus.so.0.10.1
+00007f0083207000     396      64       0 r-x-- libopus.so.0.10.1
+00007f008326a000    3032       0       0 r---- libopus.so.0.10.1
+00007f0083560000      12      12      12 r---- libopus.so.0.10.1
+00007f0083563000       4       4       4 rw--- libopus.so.0.10.1
+00007f0083638000     168     168       0 r---- libdb-5.3.so
+00007f0083662000    1332    1076       0 r-x-- libdb-5.3.so
+00007f00837af000     280      64       0 r---- libdb-5.3.so
+00007f00837f5000      32      32      32 r---- libdb-5.3.so
+00007f00837fd000      12      12      12 rw--- libdb-5.3.so
+00007f0083800000     628     628       0 r---- libstdc++.so.6.0.33
+00007f008389d000    1188     588       0 r-x-- libstdc++.so.6.0.33
+00007f00839c6000     568      64       0 r---- libstdc++.so.6.0.33
+00007f0083a54000      44      44      44 r---- libstdc++.so.6.0.33
+00007f0083a5f000      12      12      12 rw--- libstdc++.so.6.0.33
+00007f0083a62000      16      12      12 rw---   [ anon ]
+00007f0083adf000     192     192       0 r---- libasound.so.2.0.0
+00007f0083b0f000     648      64       0 r-x-- libasound.so.2.0.0
+00007f0083bb1000     280       0       0 r---- libasound.so.2.0.0
+00007f0083bf7000      32      32      32 r---- libasound.so.2.0.0
+00007f0083bff000       4       4       4 rw--- libasound.so.2.0.0
+00007f0083c00000     948     832     832 r-x-- libopenal.so
+00007f0083ced000    2044       0       0 ----- libopenal.so
+00007f0083eec000      20      20      20 r---- libopenal.so
+00007f0083ef1000       4       4       4 rw--- libopenal.so
+00007f0083ef2000     500     500     500 rw---   [ anon ]
+00007f0084000000    2476    2284    2284 rw---   [ anon ]
+00007f008426b000   63060       0       0 -----   [ anon ]
+00007f0088000000    1036    1016    1016 rw---   [ anon ]
+00007f0088103000   64500       0       0 -----   [ anon ]
+00007f008c000000    3808    3116    3116 rw---   [ anon ]
+00007f008c3b8000   61728       0       0 -----   [ anon ]
+00007f0090000000    2884    2476    2476 rw---   [ anon ]
+00007f00902d1000   62652       0       0 -----   [ anon ]
+00007f0094000000   31520   31124   31124 rw---   [ anon ]
+00007f0095ec8000   34016       0       0 -----   [ anon ]
+00007f0098000000   32480   32356   32356 rw---   [ anon ]
+00007f0099fb8000   33056       0       0 -----   [ anon ]
+00007f009c000000    4196    3740    3740 rw---   [ anon ]
+00007f009c419000   61340       0       0 -----   [ anon ]
+00007f00a0000000    2604    2340    2340 rw---   [ anon ]
+00007f00a028b000   62932       0       0 -----   [ anon ]
+00007f00a4000000   65536   65536   65536 rw---   [ anon ]
+00007f00a8000000     168     168     168 rw---   [ anon ]
+00007f00a802a000   65368       0       0 -----   [ anon ]
+00007f00ac000000    2184    2156    2156 rw---   [ anon ]
+00007f00ac222000   63352       0       0 -----   [ anon ]
+00007f00b0000000     212     204     204 rw---   [ anon ]
+00007f00b0035000   65324       0       0 -----   [ anon ]
+00007f00b4000000     160     160     160 rw---   [ anon ]
+00007f00b4028000   65376       0       0 -----   [ anon ]
+00007f00b8000000     180     180     180 rw---   [ anon ]
+00007f00b802d000   65356       0       0 -----   [ anon ]
+00007f00bc000000     188     176     176 rw---   [ anon ]
+00007f00bc02f000   65348       0       0 -----   [ anon ]
+00007f00c0000000   11264   11264   11264 rw---   [ anon ]
+00007f00c0b00000    1024    1024    1024 rw---   [ anon ]
+00007f00c0c00000   53248   53248   53248 rw---   [ anon ]
+00007f00c4000000   17344   17344   17344 rw---   [ anon ]
+00007f00c50f0000   48192       0       0 -----   [ anon ]
+00007f00c8000000     428     428     428 rw---   [ anon ]
+00007f00c806b000   65108       0       0 -----   [ anon ]
+00007f00cc000000     132      16      16 rw---   [ anon ]
+00007f00cc021000   65404       0       0 -----   [ anon ]
+00007f00d0000000     188     184     184 rw---   [ anon ]
+00007f00d002f000   65348       0       0 -----   [ anon ]
+00007f00d4000000    1296    1292    1292 rw---   [ anon ]
+00007f00d4144000   64240       0       0 -----   [ anon ]
+00007f00d8000000     132      20      20 rw---   [ anon ]
+00007f00d8021000   65404       0       0 -----   [ anon ]
+00007f00dc000000     132      60      60 rw---   [ anon ]
+00007f00dc021000   65404       0       0 -----   [ anon ]
+00007f00e0000000     144     128     128 rw---   [ anon ]
+00007f00e0024000   65392       0       0 -----   [ anon ]
+00007f00e4000000   61184   61184   61184 rw---   [ anon ]
+00007f00e7bc0000     256     256     256 rw---   [ anon ]
+00007f00e7c00000    4096    4096    4096 rw---   [ anon ]
+00007f00e8000000    5452    5444    5444 rw---   [ anon ]
+00007f00e8553000   60084       0       0 -----   [ anon ]
+00007f00ec000000    5904    5892    5892 rw---   [ anon ]
+00007f00ec5c4000   59632       0       0 -----   [ anon ]
+00007f00f0000000    5852    5852    5852 rw---   [ anon ]
+00007f00f05b7000   59684       0       0 -----   [ anon ]
+00007f00f4000000    5524    5340    5340 rw---   [ anon ]
+00007f00f4565000   60012       0       0 -----   [ anon ]
+00007f00f8000000    6752    6724    6724 rw---   [ anon ]
+00007f00f8698000   58784       0       0 -----   [ anon ]
+00007f00fc000000    5564    5560    5560 rw---   [ anon ]
+00007f00fc56f000   59972       0       0 -----   [ anon ]
+00007f0100000000    5164    5136    5136 rw---   [ anon ]
+00007f010050b000   60372       0       0 -----   [ anon ]
+00007f0104000000   16976   16720   16720 rw---   [ anon ]
+00007f0105094000   48560       0       0 -----   [ anon ]
+00007f0108000000    5556    5532    5532 rw---   [ anon ]
+00007f010856d000   59980       0       0 -----   [ anon ]
+00007f010c000000    5288    5288    5288 rw---   [ anon ]
+00007f010c52a000   60248       0       0 -----   [ anon ]
+00007f0110000000     168     168     168 rw---   [ anon ]
+00007f011002a000   65368       0       0 -----   [ anon ]
+00007f0114000000   10484   10460   10460 rw---   [ anon ]
+00007f0114a3d000   55052       0       0 -----   [ anon ]
+00007f0118000000     256     256     256 rw---   [ anon ]
+00007f0118040000   65280       0       0 -----   [ anon ]
+00007f011c000000     132      52      52 rw---   [ anon ]
+00007f011c021000   65404       0       0 -----   [ anon ]
+00007f0120000000   23332   23332   23332 rw---   [ anon ]
+00007f01216c9000   42204       0       0 -----   [ anon ]
+00007f0124000000     132      36      36 rw---   [ anon ]
+00007f0124021000   65404       0       0 -----   [ anon ]
+00007f0128000000     636     576     576 rw---   [ anon ]
+00007f012809f000   64900       0       0 -----   [ anon ]
+00007f012c060000      28      28       0 r---- libflite_cmulex.so.2.2
+00007f012c067000       4       4       0 r-x-- libflite_cmulex.so.2.2
+00007f012c068000     556     128       0 r---- libflite_cmulex.so.2.2
+00007f012c0f3000      12      12      12 r---- libflite_cmulex.so.2.2
+00007f012c0f6000       4       4       4 rw--- libflite_cmulex.so.2.2
+00007f012c0f7000       4       0       0 -----   [ anon ]
+00007f012c0f8000      16       0       0 -----   [ anon ]
+00007f012c0fc000    1008      92      92 rw---   [ anon ]
+00007f012c1f8000       4       0       0 -----   [ anon ]
+00007f012c1f9000      16       0       0 -----   [ anon ]
+00007f012c1fd000    1008      96      96 rw---   [ anon ]
+00007f012c2f9000       4       0       0 -----   [ anon ]
+00007f012c2fa000      16       0       0 -----   [ anon ]
+00007f012c2fe000    1008      92      92 rw---   [ anon ]
+00007f012c3fa000       4       0       0 -----   [ anon ]
+00007f012c3fb000      16       0       0 -----   [ anon ]
+00007f012c3ff000    1008      96      96 rw---   [ anon ]
+00007f012c4fb000       4       0       0 -----   [ anon ]
+00007f012c4fc000      16       0       0 -----   [ anon ]
+00007f012c500000    1008     120     120 rw---   [ anon ]
+00007f012c5fc000       4       0       0 -----   [ anon ]
+00007f012c5fd000      16       0       0 -----   [ anon ]
+00007f012c601000    1008      96      96 rw---   [ anon ]
+00007f012c6fd000       4       0       0 -----   [ anon ]
+00007f012c6fe000      16       0       0 -----   [ anon ]
+00007f012c702000    1008     108     108 rw---   [ anon ]
+00007f012c7fe000       4       0       0 -----   [ anon ]
+00007f012c7ff000      16       0       0 -----   [ anon ]
+00007f012c803000    1008      92      92 rw---   [ anon ]
+00007f012c8ff000       4       0       0 -----   [ anon ]
+00007f012c900000      16       0       0 -----   [ anon ]
+00007f012c904000    1008      24      24 rw---   [ anon ]
+00007f012ca00000      76      76       0 r---- libpowergridNative5.so
+00007f012ca13000    2816     128       0 r-x-- libpowergridNative5.so
+00007f012ccd3000      68      64       0 r---- libpowergridNative5.so
+00007f012cce4000       4       4       4 r---- libpowergridNative5.so
+00007f012cce5000       8       8       8 rw--- libpowergridNative5.so
+00007f012cce7000       8       4       4 rw---   [ anon ]
+00007f012cceb000       4       0       0 -----   [ anon ]
+00007f012ccec000      16       0       0 -----   [ anon ]
+00007f012ccf0000    1008      88      88 rw---   [ anon ]
+00007f012cdec000       4       0       0 -----   [ anon ]
+00007f012cded000      16       0       0 -----   [ anon ]
+00007f012cdf1000    1008      92      92 rw---   [ anon ]
+00007f012ceed000       4       0       0 -----   [ anon ]
+00007f012ceee000      16       0       0 -----   [ anon ]
+00007f012cef2000    1008      88      88 rw---   [ anon ]
+00007f012cfee000       4       0       0 -----   [ anon ]
+00007f012cfef000      16       0       0 -----   [ anon ]
+00007f012cff3000    1008      92      92 rw---   [ anon ]
+00007f012d0ef000       4       0       0 -----   [ anon ]
+00007f012d0f0000      16       0       0 -----   [ anon ]
+00007f012d0f4000    1008      24      24 rw---   [ anon ]
+00007f012d1f0000       4       0       0 -----   [ anon ]
+00007f012d1f1000      16       0       0 -----   [ anon ]
+00007f012d1f5000    1008      24      24 rw---   [ anon ]
+00007f012d2f1000       4       0       0 -----   [ anon ]
+00007f012d2f2000      16       0       0 -----   [ anon ]
+00007f012d2f6000    1008     116     116 rw---   [ anon ]
+00007f012d3f2000       4       0       0 -----   [ anon ]
+00007f012d3f3000      16       0       0 -----   [ anon ]
+00007f012d3f7000    1008      96      96 rw---   [ anon ]
+00007f012d4f3000       4       0       0 -----   [ anon ]
+00007f012d4f4000      16       0       0 -----   [ anon ]
+00007f012d4f8000    1008      92      92 rw---   [ anon ]
+00007f012d5f4000       4       0       0 -----   [ anon ]
+00007f012d5f5000      16       0       0 -----   [ anon ]
+00007f012d5f9000    1008      88      88 rw---   [ anon ]
+00007f012d6f5000       4       0       0 -----   [ anon ]
+00007f012d6f6000      16       0       0 -----   [ anon ]
+00007f012d6fa000    1008      92      92 rw---   [ anon ]
+00007f012d7f6000       4       0       0 -----   [ anon ]
+00007f012d7f7000      16       0       0 -----   [ anon ]
+00007f012d7fb000    1008      96      96 rw---   [ anon ]
+00007f012d8f7000       4       0       0 -----   [ anon ]
+00007f012d8f8000      16       0       0 -----   [ anon ]
+00007f012d8fc000    1008      88      88 rw---   [ anon ]
+00007f012d9f8000       4       0       0 -----   [ anon ]
+00007f012d9f9000      16       0       0 -----   [ anon ]
+00007f012d9fd000    1008     136     136 rw---   [ anon ]
+00007f012daf9000       4       0       0 -----   [ anon ]
+00007f012dafa000      16       0       0 -----   [ anon ]
+00007f012dafe000    1008     156     156 rw---   [ anon ]
+00007f012dbfa000       4       0       0 -----   [ anon ]
+00007f012dbfb000      16       0       0 -----   [ anon ]
+00007f012dbff000    1008     128     128 rw---   [ anon ]
+00007f012dcfb000       4       0       0 -----   [ anon ]
+00007f012dcfc000      16       0       0 -----   [ anon ]
+00007f012dd00000    1008     132     132 rw---   [ anon ]
+00007f012ddfc000       4       0       0 -----   [ anon ]
+00007f012ddfd000      16       0       0 -----   [ anon ]
+00007f012de01000    1008     136     136 rw---   [ anon ]
+00007f012defd000       4       0       0 -----   [ anon ]
+00007f012defe000      16       0       0 -----   [ anon ]
+00007f012df02000    1008     124     124 rw---   [ anon ]
+00007f012dffe000       4       0       0 -----   [ anon ]
+00007f012dfff000      16       0       0 -----   [ anon ]
+00007f012e003000    1008     124     124 rw---   [ anon ]
+00007f012e0ff000       4       0       0 -----   [ anon ]
+00007f012e100000      16       0       0 -----   [ anon ]
+00007f012e104000    1008     128     128 rw---   [ anon ]
+00007f012e200000   30720    4096    4096 rw---   [ anon ]
+00007f0130000000     132      32      32 rw---   [ anon ]
+00007f0130021000   65404       0       0 -----   [ anon ]
+00007f0134000000     132      20      20 rw---   [ anon ]
+00007f0134021000   65404       0       0 -----   [ anon ]
+00007f0138000000    6528    6528    6528 rw---   [ anon ]
+00007f0138660000     768     768     768 rw---   [ anon ]
+00007f0138720000   20736   20736   20736 rw---   [ anon ]
+00007f0139b60000     128     128     128 rw---   [ anon ]
+00007f0139b80000    1536    1536    1536 rw---   [ anon ]
+00007f0139d00000     256     256     256 rw---   [ anon ]
+00007f0139d40000     256     256     256 rw---   [ anon ]
+00007f0139d80000    1536    1536    1536 rw---   [ anon ]
+00007f0139f00000    2944    2944    2944 rw---   [ anon ]
+00007f013a1e0000    8576    8576    8576 rw---   [ anon ]
+00007f013aa40000   22272   22272   22272 rw---   [ anon ]
+00007f013c000000     132      24      24 rw---   [ anon ]
+00007f013c021000   65404       0       0 -----   [ anon ]
+00007f0140000000     320     320     320 rw---   [ anon ]
+00007f0140050000   65216       0       0 -----   [ anon ]
+00007f0144000000     132      24      24 rw---   [ anon ]
+00007f0144021000   65404       0       0 -----   [ anon ]
+00007f0148000000     132      28      28 rw---   [ anon ]
+00007f0148021000   65404       0       0 -----   [ anon ]
+00007f014c000000   26320   26320   26320 rw---   [ anon ]
+00007f014d9b4000   39216       0       0 -----   [ anon ]
+00007f0150000000   40564   40548   40548 rw---   [ anon ]
+00007f015279d000   24972       0       0 -----   [ anon ]
+00007f0154000000   24452   24452   24452 rw---   [ anon ]
+00007f01557e1000   41084       0       0 -----   [ anon ]
+00007f0158000000    2972    2732    2732 rw---   [ anon ]
+00007f01582e7000   62564       0       0 -----   [ anon ]
+00007f015c000000   61768   55180   55180 rw---   [ anon ]
+00007f015fc52000    3768       0       0 -----   [ anon ]
+00007f0160000000     132      36      36 rw---   [ anon ]
+00007f0160021000   65404       0       0 -----   [ anon ]
+00007f0164000000     132      36      36 rw---   [ anon ]
+00007f0164021000   65404       0       0 -----   [ anon ]
+00007f0168000000   20752   20728   20728 rw---   [ anon ]
+00007f0169444000   44784       0       0 -----   [ anon ]
+00007f016c000000     132      76      76 rw---   [ anon ]
+00007f016c021000   65404       0       0 -----   [ anon ]
+00007f0170000000     132      48      48 rw---   [ anon ]
+00007f0170021000   65404       0       0 -----   [ anon ]
+00007f0174000000    1372     456     456 rw---   [ anon ]
+00007f0174157000   64164       0       0 -----   [ anon ]
+00007f017807e000      24      24       0 r---- libmp3lame.so.0.0.0
+00007f0178084000     196      64       0 r-x-- libmp3lame.so.0.0.0
+00007f01780b5000      72       0       0 r---- libmp3lame.so.0.0.0
+00007f01780c7000       8       8       8 r---- libmp3lame.so.0.0.0
+00007f01780c9000       4       4       4 rw--- libmp3lame.so.0.0.0
+00007f01780ca000     180       0       0 rw---   [ anon ]
+00007f01780f7000       4       0       0 -----   [ anon ]
+00007f01780f8000      16       0       0 -----   [ anon ]
+00007f01780fc000    1008     124     124 rw---   [ anon ]
+00007f01781f8000       4       0       0 -----   [ anon ]
+00007f01781f9000      16       0       0 -----   [ anon ]
+00007f01781fd000    1008     128     128 rw---   [ anon ]
+00007f01782f9000       4       0       0 -----   [ anon ]
+00007f01782fa000      16       0       0 -----   [ anon ]
+00007f01782fe000    1008     132     132 rw---   [ anon ]
+00007f01783fa000       4       0       0 -----   [ anon ]
+00007f01783fb000      16       0       0 -----   [ anon ]
+00007f01783ff000    1008      88      88 rw---   [ anon ]
+00007f01784fb000       4       0       0 -----   [ anon ]
+00007f01784fc000      16       0       0 -----   [ anon ]
+00007f0178500000    1008      92      92 rw---   [ anon ]
+00007f01785fc000       4       0       0 -----   [ anon ]
+00007f01785fd000      16       0       0 -----   [ anon ]
+00007f0178601000    1008      92      92 rw---   [ anon ]
+00007f01786fd000       4       0       0 -----   [ anon ]
+00007f01786fe000      16       0       0 -----   [ anon ]
+00007f0178702000    1008      92      92 rw---   [ anon ]
+00007f01787fe000       4       0       0 -----   [ anon ]
+00007f01787ff000      16       0       0 -----   [ anon ]
+00007f0178803000    1008      88      88 rw---   [ anon ]
+00007f01788ff000       4       0       0 -----   [ anon ]
+00007f0178900000      16       0       0 -----   [ anon ]
+00007f0178904000    1008     116     116 rw---   [ anon ]
+00007f0178a00000    2048    2048    2048 rw---   [ anon ]
+00007f0178c22000      80      80       0 r---- libflite_usenglish.so.2.2
+00007f0178c36000      20      20       0 r-x-- libflite_usenglish.so.2.2
+00007f0178c3b000      24      24       0 r---- libflite_usenglish.so.2.2
+00007f0178c41000      48      48      48 r---- libflite_usenglish.so.2.2
+00007f0178c4d000       4       4       4 rw--- libflite_usenglish.so.2.2
+00007f0178c4e000      80      80       0 r---- libvorbisenc.so.2.0.12
+00007f0178c62000      12      12       0 r-x-- libvorbisenc.so.2.0.12
+00007f0178c65000     476       0       0 r---- libvorbisenc.so.2.0.12
+00007f0178cdc000     112     112     112 r---- libvorbisenc.so.2.0.12
+00007f0178cf8000       4       4       4 rw--- libvorbisenc.so.2.0.12
+00007f0178cf9000       4       0       0 -----   [ anon ]
+00007f0178cfa000    1024       8       8 rw---   [ anon ]
+00007f0178dfa000       4       0       0 -----   [ anon ]
+00007f0178dfb000    1024       8       8 rw---   [ anon ]
+00007f0178efb000       4       0       0 -----   [ anon ]
+00007f0178efc000    1024       8       8 rw---   [ anon ]
+00007f0178ffc000       4       0       0 -----   [ anon ]
+00007f0178ffd000    1024       8       8 rw---   [ anon ]
+00007f01790fd000       4       0       0 -----   [ anon ]
+00007f01790fe000    1024       8       8 rw---   [ anon ]
+00007f01791fe000       4       0       0 -----   [ anon ]
+00007f01791ff000    1024       8       8 rw---   [ anon ]
+00007f01792ff000       4       0       0 -----   [ anon ]
+00007f0179300000      16       0       0 -----   [ anon ]
+00007f0179304000    1008      88      88 rw---   [ anon ]
+00007f0179400000     120     120       0 r-x-- jna8747346537764497273.tmp (deleted)
+00007f017941e000    2044       0       0 ----- jna8747346537764497273.tmp (deleted)
+00007f017961d000       4       4       4 rw--- jna8747346537764497273.tmp (deleted)
+00007f017961e000       4       4       4 rw---   [ anon ]
+00007f0179632000      52      52       0 r---- libflite.so.2.2
+00007f017963f000     136     128       0 r-x-- libflite.so.2.2
+00007f0179661000      48      48       0 r---- libflite.so.2.2
+00007f017966d000       8       8       8 r---- libflite.so.2.2
+00007f017966f000       4       4       4 rw--- libflite.so.2.2
+00007f0179670000      36      36       0 r---- libsndfile.so.1.0.37
+00007f0179679000     380      64       0 r-x-- libsndfile.so.1.0.37
+00007f01796d8000     128       0       0 r---- libsndfile.so.1.0.37
+00007f01796f8000      12      12      12 r---- libsndfile.so.1.0.37
+00007f01796fb000       4       4       4 rw--- libsndfile.so.1.0.37
+00007f01796fc000      12       0       0 rw---   [ anon ]
+00007f01796ff000       4       0       0 -----   [ anon ]
+00007f0179700000      16       0       0 -----   [ anon ]
+00007f0179704000    1008      88      88 rw---   [ anon ]
+00007f0179c08000     772     352       0 r-x-- libawt.so
+00007f0179cc9000       4       0       0 ----- libawt.so
+00007f0179cca000       8       8       8 r---- libawt.so
+00007f0179ccc000      44      44      44 rw--- libawt.so
+00007f0179cd7000     148       8       8 rw---   [ anon ]
+00007f0179cfc000       4       0       0 -----   [ anon ]
+00007f0179cfd000      16       0       0 -----   [ anon ]
+00007f0179d01000    1008      92      92 rw---   [ anon ]
+00007f0179dfd000       4       0       0 -----   [ anon ]
+00007f0179dfe000      16       0       0 -----   [ anon ]
+00007f0179e02000    1008      24      24 rw---   [ anon ]
+00007f0179efe000       4       0       0 -----   [ anon ]
+00007f0179eff000      16       0       0 -----   [ anon ]
+00007f0179f03000    1008      96      96 rw---   [ anon ]
+00007f0179fff000       4       0       0 -----   [ anon ]
+00007f017a000000    8192      12      12 rw---   [ anon ]
+00007f017a8ff000       4       0       0 -----   [ anon ]
+00007f017a900000      16       0       0 -----   [ anon ]
+00007f017a904000    1008      88      88 rw---   [ anon ]
+00007f017aaff000       4       0       0 -----   [ anon ]
+00007f017ab00000      16       0       0 -----   [ anon ]
+00007f017ab04000    1008      24      24 rw---   [ anon ]
+00007f017ac00000    2048    2048    1848 rw-s- nvidiactl
+00007f017ae00000     448     448     448 r-x-- liblwjgl_stb.so
+00007f017ae70000    2048       0       0 ----- liblwjgl_stb.so
+00007f017b070000       4       4       4 r---- liblwjgl_stb.so
+00007f017b071000       4       4       4 rw--- liblwjgl_stb.so
+00007f017b0a2000      24      24       0 r---- libmpg123.so.0.48.3
+00007f017b0a8000     228      64       0 r-x-- libmpg123.so.0.48.3
+00007f017b0e1000     112       0       0 r---- libmpg123.so.0.48.3
+00007f017b0fd000       4       4       4 r---- libmpg123.so.0.48.3
+00007f017b0fe000       4       4       4 rw--- libmpg123.so.0.48.3
+00007f017b0ff000       4       0       0 -----   [ anon ]
+00007f017b100000      16       0       0 -----   [ anon ]
+00007f017b104000    1008      24      24 rw---   [ anon ]
+00007f017b200000   10240    6560    6560 rw---   [ anon ]
+00007f017bc00000     344     320     320 r-x-- liblwjgl_opengl.so
+00007f017bc56000    2044       0       0 ----- liblwjgl_opengl.so
+00007f017be55000       4       4       4 r---- liblwjgl_opengl.so
+00007f017be56000       4       4       4 rw--- liblwjgl_opengl.so
+00007f017be77000      80      80       0 r---- libpulsecommon-17.0.so
+00007f017be8b000     292     292       0 r-x-- libpulsecommon-17.0.so
+00007f017bed4000     156     112       0 r---- libpulsecommon-17.0.so
+00007f017befb000      12      12      12 r---- libpulsecommon-17.0.so
+00007f017befe000       4       4       4 rw--- libpulsecommon-17.0.so
+00007f017beff000       4       0       0 -----   [ anon ]
+00007f017bf00000    1024       8       8 rw---   [ anon ]
+00007f017c000000   18356   18240   18240 rw---   [ anon ]
+00007f017d1ed000   47180       0       0 -----   [ anon ]
+00007f0180000000   18748   18744   18744 rw---   [ anon ]
+00007f018124f000   46788       0       0 -----   [ anon ]
+00007f0184014000      40      40       0 r---- libFLAC.so.14.0.0
+00007f018401e000     328      64       0 r-x-- libFLAC.so.14.0.0
+00007f0184070000      44       0       0 r---- libFLAC.so.14.0.0
+00007f018407b000       8       8       8 r---- libFLAC.so.14.0.0
+00007f018407d000       4       4       4 rw--- libFLAC.so.14.0.0
+00007f018407e000       4       0       0 -----   [ anon ]
+00007f018407f000    1024       8       8 rw---   [ anon ]
+00007f018417f000    2560       0       0 rw---   [ anon ]
+00007f01843ff000       4       0       0 -----   [ anon ]
+00007f0184400000    8192      24      24 rw---   [ anon ]
+00007f0184c00000    8192    5860    5860 rw---   [ anon ]
+00007f0185400000    1712    1712       0 r---- libnvidia-gpucomp.so.550.163.01
+00007f01855ac000   31872    7360       0 r-x-- libnvidia-gpucomp.so.550.163.01
+00007f01874cc000    6804    1424       0 r---- libnvidia-gpucomp.so.550.163.01
+00007f0187b71000    1768    1768    1768 r---- libnvidia-gpucomp.so.550.163.01
+00007f0187d2b000     484     104     104 rw--- libnvidia-gpucomp.so.550.163.01
+00007f0187da4000     392     388     388 rw---   [ anon ]
+00007f0187e06000    1024    1024       0 rw-s- nvidiactl
+00007f0187f06000      76      76       0 rw-s- nvidiactl
+00007f0187f19000     256     256       0 rw-s- nvidiactl
+00007f0187f59000     128     128       4 rw-s- nvidiactl
+00007f0187f79000     268     268       0 r---- libGL.so.1.7.0
+00007f0187fbc000     124      64       0 r-x-- libGL.so.1.7.0
+00007f0187fdb000      84      64       0 r---- libGL.so.1.7.0
+00007f0187ff0000      56      56      56 r---- libGL.so.1.7.0
+00007f0187ffe000       4       4       4 rw--- libGL.so.1.7.0
+00007f0187fff000   18896   18892   18892 rw---   [ anon ]
+00007f0189273000   46644       0       0 -----   [ anon ]
+00007f018c000000    2828    1800    1800 rw---   [ anon ]
+00007f018c2c3000   62708       0       0 -----   [ anon ]
+00007f0190000000    6628    6628    6628 rw---   [ anon ]
+00007f0190679000   58908       0       0 -----   [ anon ]
+00007f0194000000   26116   26116   26116 rw---   [ anon ]
+00007f0195981000   39420       0       0 -----   [ anon ]
+00007f0198000000     752     752     752 rw---   [ anon ]
+00007f01980bc000   64784       0       0 -----   [ anon ]
+00007f019c000000    2288    2232    2232 rw---   [ anon ]
+00007f019c23c000   63248       0       0 -----   [ anon ]
+00007f01a0003000      16      16       0 rw-s- nvidiactl
+00007f01a0007000       4       0       0 rw-s- nvidia0
+00007f01a0008000       8       8       4 rw-s- nvidiactl
+00007f01a000a000       4       4       4 rw-s- nvidiactl
+00007f01a000b000     256     256       0 rw-s- nvidiactl
+00007f01a004b000     256     256       4 rw-s- nvidiactl
+00007f01a008b000       8       8       8 rw-s- .glXXXXXX (deleted)
+00007f01a009b000      12      12       0 r---- libvorbis.so.0.4.9
+00007f01a009e000      96      64       0 r-x-- libvorbis.so.0.4.9
+00007f01a00b6000      68       0       0 r---- libvorbis.so.0.4.9
+00007f01a00c7000       4       4       4 r---- libvorbis.so.0.4.9
+00007f01a00c8000       4       4       4 rw--- libvorbis.so.0.4.9
+00007f01a00c9000      48      48       0 r---- libpulse.so.0.24.3
+00007f01a00d5000     192     192       0 r-x-- libpulse.so.0.24.3
+00007f01a0105000      88      64       0 r---- libpulse.so.0.24.3
+00007f01a011b000       8       8       8 r---- libpulse.so.0.24.3
+00007f01a011d000       4       4       4 rw--- libpulse.so.0.24.3
+00007f01a011e000       4       4       0 r---- libnss_mdns4_minimal.so.2
+00007f01a011f000       8       8       0 r-x-- libnss_mdns4_minimal.so.2
+00007f01a0121000       4       4       0 r---- libnss_mdns4_minimal.so.2
+00007f01a0122000       4       4       4 r---- libnss_mdns4_minimal.so.2
+00007f01a0123000       4       4       4 rw--- libnss_mdns4_minimal.so.2
+00007f01a013f000       4       4       0 r---- liboc2rnet.so
+00007f01a0140000       4       4       0 r-x-- liboc2rnet.so
+00007f01a0141000       4       4       4 r---- liboc2rnet.so
+00007f01a0142000       8       8       0 r-x-- libextnet.so
+00007f01a0144000       4       4       4 r---- libextnet.so
+00007f01a0145000       4       4       4 rw--- libextnet.so
+00007f01a0146000       4       4       4 rw---   [ anon ]
+00007f01a0147000       4       4       4 rw---   [ anon ]
+00007f01a0148000      32      32       0 r---- libudev.so.1.7.10
+00007f01a0150000     144     144       0 r-x-- libudev.so.1.7.10
+00007f01a0174000      76      64       0 r---- libudev.so.1.7.10
+00007f01a0187000      20      20      20 r---- libudev.so.1.7.10
+00007f01a018c000       4       4       4 rw--- libudev.so.1.7.10
+00007f01a0200000     340     320     320 r-x-- libjemalloc.so
+00007f01a0255000    2048       0       0 ----- libjemalloc.so
+00007f01a0455000      20      20      20 r---- libjemalloc.so
+00007f01a045a000       4       4       4 rw--- libjemalloc.so
+00007f01a045b000    2120      52      52 rw---   [ anon ]
+00007f01a0716000     128     128       4 rw-s- nvidiactl
+00007f01a0737000      12      12       0 rw-s- nvidiactl
+00007f01a083a000     512     512     404 rw-s- nvidiactl
+00007f01a08ba000     256     256       0 rw-s- nvidiactl
+00007f01a08fa000     256     256       4 rw-s- nvidiactl
+00007f01a093a000     512       0       0 rw-s- nvidia0
+00007f01a09ba000    2324      64      64 rw-s- .nvidia_drv.XXXXXX (deleted)
+00007f01a0bff000       4       0       0 -----   [ anon ]
+00007f01a0c00000    8192      28      28 rw---   [ anon ]
+00007f01a1400000   29856   11580       0 r-x-- libnvidia-glcore.so.550.163.01
+00007f01a3128000    1424    1396    1396 r---- libnvidia-glcore.so.550.163.01
+00007f01a328c000     428     428     424 rw--- libnvidia-glcore.so.550.163.01
+00007f01a32f7000     120     100     100 rw---   [ anon ]
+00007f01a3319000      76      76       4 rw-s- nvidiactl
+00007f01a332c000     128     128       4 rw-s- nvidiactl
+00007f01a334c000     256     256     256 rw-s- nvidiactl
+00007f01a338c000     112     112       0 r---- libsystemd.so.0.40.0
+00007f01a33a8000     700      64       0 r-x-- libsystemd.so.0.40.0
+00007f01a3457000     236       0       0 r---- libsystemd.so.0.40.0
+00007f01a3492000      52      52      52 r---- libsystemd.so.0.40.0
+00007f01a349f000       4       4       4 rw--- libsystemd.so.0.40.0
+00007f01a34a0000       4       0       0 rw---   [ anon ]
+00007f01a34a1000      56      56       0 r---- libdbus-1.so.3.38.3
+00007f01a34af000     196     196       0 r-x-- libdbus-1.so.3.38.3
+00007f01a34e0000      84      64       0 r---- libdbus-1.so.3.38.3
+00007f01a34f5000       8       8       8 r---- libdbus-1.so.3.38.3
+00007f01a34f7000       4       4       4 rw--- libdbus-1.so.3.38.3
+00007f01a34f8000      60      60       0 r---- libnvidia-glsi.so.550.163.01
+00007f01a3507000     372     144       0 r-x-- libnvidia-glsi.so.550.163.01
+00007f01a3564000     112      64       0 r---- libnvidia-glsi.so.550.163.01
+00007f01a3580000      24      24      24 r---- libnvidia-glsi.so.550.163.01
+00007f01a3586000       4       4       4 rw--- libnvidia-glsi.so.550.163.01
+00007f01a3587000      32      28      28 rw---   [ anon ]
+00007f01a358f000     324     312       0 r---- libGLX_nvidia.so.550.163.01
+00007f01a35e0000     580     320       0 r-x-- libGLX_nvidia.so.550.163.01
+00007f01a3671000     128      64       0 r---- libGLX_nvidia.so.550.163.01
+00007f01a3691000     128     128     128 r---- libGLX_nvidia.so.550.163.01
+00007f01a36b1000      20      20      20 rw--- libGLX_nvidia.so.550.163.01
+00007f01a36b6000       8       8       8 rw---   [ anon ]
+00007f01a36b8000     112     112       0 r---- libX11.so.6.4.0
+00007f01a36d4000     576     576       0 r-x-- libX11.so.6.4.0
+00007f01a3764000     600     176       0 r---- libX11.so.6.4.0
+00007f01a37fa000       4       4       4 r---- libX11.so.6.4.0
+00007f01a37fb000      20      20      20 rw--- libX11.so.6.4.0
+00007f01a3800000     428     384     384 r-x-- liblwjgl.so
+00007f01a386b000    2044       0       0 ----- liblwjgl.so
+00007f01a3a6a000       4       4       4 r---- liblwjgl.so
+00007f01a3a6b000       4       4       4 rw--- liblwjgl.so
+00007f01a3a6c000     128     128       4 rw-s- nvidiactl
+00007f01a3a8c000      20      20       0 r---- libdrm.so.2.124.0
+00007f01a3a91000      48      48       0 r-x-- libdrm.so.2.124.0
+00007f01a3a9d000      16       0       0 r---- libdrm.so.2.124.0
+00007f01a3aa1000       4       4       4 r---- libdrm.so.2.124.0
+00007f01a3aa2000       4       4       4 rw--- libdrm.so.2.124.0
+00007f01a3aa4000       4       4       4 rw---   [ anon ]
+00007f01a3aa5000     128     128      24 rw-s- nvidiactl
+00007f01a3ac5000       8       8       0 r---- libxcb-dri3.so.0.1.0
+00007f01a3ac7000       8       8       0 r-x-- libxcb-dri3.so.0.1.0
+00007f01a3ac9000       4       0       0 r---- libxcb-dri3.so.0.1.0
+00007f01a3aca000       4       4       4 r---- libxcb-dri3.so.0.1.0
+00007f01a3acb000       4       4       4 rw--- libxcb-dri3.so.0.1.0
+00007f01a3acc000      28      28       0 r---- libxcb-randr.so.0.1.0
+00007f01a3ad3000      24      24       0 r-x-- libxcb-randr.so.0.1.0
+00007f01a3ad9000      12       0       0 r---- libxcb-randr.so.0.1.0
+00007f01a3adc000       4       4       4 r---- libxcb-randr.so.0.1.0
+00007f01a3add000       4       4       4 rw--- libxcb-randr.so.0.1.0
+00007f01a3ade000      44      44       0 r---- libxcb-glx.so.0.0.0
+00007f01a3ae9000      40      40       0 r-x-- libxcb-glx.so.0.0.0
+00007f01a3af3000      20       0       0 r---- libxcb-glx.so.0.0.0
+00007f01a3af8000       8       8       8 r---- libxcb-glx.so.0.0.0
+00007f01a3afa000       4       4       4 rw--- libxcb-glx.so.0.0.0
+00007f01a3afb000       4       0       0 -----   [ anon ]
+00007f01a3afc000      16       0       0 -----   [ anon ]
+00007f01a3b00000    1008      92      92 rw---   [ anon ]
+00007f01a3bfc000       4       0       0 -----   [ anon ]
+00007f01a3bfd000      16       0       0 -----   [ anon ]
+00007f01a3c01000    1008      24      24 rw---   [ anon ]
+00007f01a3cfd000       4       0       0 -----   [ anon ]
+00007f01a3cfe000    1024      16      16 rw---   [ anon ]
+00007f01a3dfe000       4       0       0 -----   [ anon ]
+00007f01a3dff000    1024      16      16 rw---   [ anon ]
+00007f01a3eff000       4       0       0 -----   [ anon ]
+00007f01a3f00000    1024      16      16 rw---   [ anon ]
+00007f01a4000000     440     440     440 rw---   [ anon ]
+00007f01a406e000   65096       0       0 -----   [ anon ]
+00007f01a8000000     344     344     344 rw---   [ anon ]
+00007f01a8056000   65192       0       0 -----   [ anon ]
+00007f01ac000000     456     456     456 rw---   [ anon ]
+00007f01ac072000   65080       0       0 -----   [ anon ]
+00007f01b0000000     432     432     432 rw---   [ anon ]
+00007f01b006c000   65104       0       0 -----   [ anon ]
+00007f01b4000000    4796    4796    4796 rw---   [ anon ]
+00007f01b44af000   60740       0       0 -----   [ anon ]
+00007f01b8000000   15824   15636   15636 rw---   [ anon ]
+00007f01b8f74000   49712       0       0 -----   [ anon ]
+00007f01bc000000   42520   42520   42520 rw---   [ anon ]
+00007f01be986000   23016       0       0 -----   [ anon ]
+00007f01c0000000   18400   18400   18400 rw---   [ anon ]
+00007f01c11f8000   47136       0       0 -----   [ anon ]
+00007f01c4000000     132      48      48 rw---   [ anon ]
+00007f01c4021000   65404       0       0 -----   [ anon ]
+00007f01c8000000   27984   27984   27984 rw---   [ anon ]
+00007f01c9b54000   37552       0       0 -----   [ anon ]
+00007f01cc000000     132      16      16 rw---   [ anon ]
+00007f01cc021000   65404       0       0 -----   [ anon ]
+00007f01d0000000     132      16      16 rw---   [ anon ]
+00007f01d0021000   65404       0       0 -----   [ anon ]
+00007f01d4000000   19112   19104   19104 rw---   [ anon ]
+00007f01d52aa000   46424       0       0 -----   [ anon ]
+00007f01d8000000     964     964     964 rw---   [ anon ]
+00007f01d80f1000   64572       0       0 -----   [ anon ]
+00007f01dc000000     132      28      28 rw---   [ anon ]
+00007f01dc021000   65404       0       0 -----   [ anon ]
+00007f01e0000000   40536   40512   40512 rw---   [ anon ]
+00007f01e2796000   25000       0       0 -----   [ anon ]
+00007f01e4000000     132      28      28 rw---   [ anon ]
+00007f01e4021000   65404       0       0 -----   [ anon ]
+00007f01e8000000    2548    2548    2548 rw---   [ anon ]
+00007f01e827d000   62988       0       0 -----   [ anon ]
+00007f01ec000000     132      52      52 rw---   [ anon ]
+00007f01ec021000   65404       0       0 -----   [ anon ]
+00007f01f0000000     132      64      64 rw---   [ anon ]
+00007f01f0021000   65404       0       0 -----   [ anon ]
+00007f01f4000000    4224    4224    4224 rw---   [ anon ]
+00007f01f4420000     128     128     128 rw---   [ anon ]
+00007f01f4440000     256     256     256 rw---   [ anon ]
+00007f01f4480000     512     512     512 rw---   [ anon ]
+00007f01f4500000    2048    2048    2048 rw---   [ anon ]
+00007f01f4700000     768     768     768 rw---   [ anon ]
+00007f01f47c0000    1280    1280    1280 rw---   [ anon ]
+00007f01f4900000     256     252     252 rw---   [ anon ]
+00007f01f4940000     256     256     256 rw---   [ anon ]
+00007f01f4980000    1536    1536    1536 rw---   [ anon ]
+00007f01f4b00000    1024    1024    1024 rw---   [ anon ]
+00007f01f4c00000     384     384     384 rw---   [ anon ]
+00007f01f4c60000     128     128     128 rw---   [ anon ]
+00007f01f4c80000     512     512     512 rw---   [ anon ]
+00007f01f4d00000    2048    2048    2048 rw---   [ anon ]
+00007f01f4f00000    1024    1024    1024 rw---   [ anon ]
+00007f01f5000000    2048    2048    2048 rw---   [ anon ]
+00007f01f5200000     512     512     512 rw---   [ anon ]
+00007f01f5280000     512     512     512 rw---   [ anon ]
+00007f01f5300000    1536    1536    1536 rw---   [ anon ]
+00007f01f5480000     512     512     512 rw---   [ anon ]
+00007f01f5500000    2560    2560    2560 rw---   [ anon ]
+00007f01f5780000     512     512     512 rw---   [ anon ]
+00007f01f5800000    2048    2048    2048 rw---   [ anon ]
+00007f01f5a00000     512     512     512 rw---   [ anon ]
+00007f01f5a80000     256     256     256 rw---   [ anon ]
+00007f01f5ac0000    1024    1024    1024 rw---   [ anon ]
+00007f01f5bc0000     256     256     256 rw---   [ anon ]
+00007f01f5c00000    1792    1792    1792 rw---   [ anon ]
+00007f01f5dc0000     256     256     256 rw---   [ anon ]
+00007f01f5e00000    2048    2048    2048 rw---   [ anon ]
+00007f01f6000000    1024    1024    1024 rw---   [ anon ]
+00007f01f6100000    1024    1024    1024 rw---   [ anon ]
+00007f01f6200000   15872   15764   15764 rw---   [ anon ]
+00007f01f7180000     512     512     512 rw---   [ anon ]
+00007f01f7200000    3840    3760    3760 rw---   [ anon ]
+00007f01f75c0000     256     256     256 rw---   [ anon ]
+00007f01f7600000    7168    7152    7152 rw---   [ anon ]
+00007f01f7d00000    1024    1024    1024 rw---   [ anon ]
+00007f01f7e00000    1408    1408    1408 rw---   [ anon ]
+00007f01f7f60000     640     640     640 rw---   [ anon ]
+00007f01f8000000     668     664     664 rw---   [ anon ]
+00007f01f80a7000   64868       0       0 -----   [ anon ]
+00007f01fc000000    3880    3880    3880 rw---   [ anon ]
+00007f01fc3ca000   61656       0       0 -----   [ anon ]
+00007f0200000000     740     740     740 rw---   [ anon ]
+00007f02000b9000   64796       0       0 -----   [ anon ]
+00007f0204000000       4       4       4 r-x-- liblwjgl.so
+00007f0204001000       4       4       4 rw---   [ anon ]
+00007f0204002000       4       4       0 r---- libnvidia-tls.so.550.163.01
+00007f0204003000       8       8       0 r-x-- libnvidia-tls.so.550.163.01
+00007f0204005000       4       4       0 r---- libnvidia-tls.so.550.163.01
+00007f0204006000       4       4       4 r---- libnvidia-tls.so.550.163.01
+00007f0204007000       4       4       4 rw--- libnvidia-tls.so.550.163.01
+00007f0204008000     260     260       0 r---- libGLdispatch.so.0.0.0
+00007f0204049000      12      12       0 r-x-- libGLdispatch.so.0.0.0
+00007f020404c000     236     236     108 r-x-- libGLdispatch.so.0.0.0
+00007f0204087000       4       4       0 r-x-- libGLdispatch.so.0.0.0
+00007f0204088000      80      80       0 r---- libGLdispatch.so.0.0.0
+00007f020409c000     112     112     112 r---- libGLdispatch.so.0.0.0
+00007f02040b8000       4       4       4 rw--- libGLdispatch.so.0.0.0
+00007f02040b9000      32       4       4 rw---   [ anon ]
+00007f02040c1000      12      12       0 r---- libGLX.so.0.0.0
+00007f02040c4000     108     108       0 r-x-- libGLX.so.0.0.0
+00007f02040df000      16      16       0 r---- libGLX.so.0.0.0
+00007f02040e3000       4       4       4 r---- libGLX.so.0.0.0
+00007f02040e4000       4       4       4 rw--- libGLX.so.0.0.0
+00007f02040e5000      64       4       4 rw---   [ anon ]
+00007f02040f5000       4       4       0 r---- libX11-xcb.so.1.0.0
+00007f02040f6000       4       4       0 r-x-- libX11-xcb.so.1.0.0
+00007f02040f7000       4       0       0 r---- libX11-xcb.so.1.0.0
+00007f02040f8000       4       4       4 r---- libX11-xcb.so.1.0.0
+00007f02040f9000       4       4       4 rw--- libX11-xcb.so.1.0.0
+00007f02040fa000       4       0       0 -----   [ anon ]
+00007f02040fb000    1024      16      16 rw---   [ anon ]
+00007f02041fb000       4       0       0 -----   [ anon ]
+00007f02041fc000    1024      16      16 rw---   [ anon ]
+00007f02042fc000       4       0       0 -----   [ anon ]
+00007f02042fd000    1024      16      16 rw---   [ anon ]
+00007f02043fd000       4       0       0 -----   [ anon ]
+00007f02043fe000    1024      16      16 rw---   [ anon ]
+00007f02044fe000       4       0       0 -----   [ anon ]
+00007f02044ff000    1024      16      16 rw---   [ anon ]
+00007f02045ff000       4       0       0 -----   [ anon ]
+00007f0204600000    1024      16      16 rw---   [ anon ]
+00007f0204700000       4       0       0 -----   [ anon ]
+00007f0204701000    1024      16      16 rw---   [ anon ]
+00007f0204801000       4       0       0 -----   [ anon ]
+00007f0204802000    1024      16      16 rw---   [ anon ]
+00007f0204902000       4       0       0 -----   [ anon ]
+00007f0204903000      16       0       0 -----   [ anon ]
+00007f0204907000    1008      92      92 rw---   [ anon ]
+00007f0204a03000   18404   18404   18404 rw---   [ anon ]
+00007f0205bfc000       4       0       0 -----   [ anon ]
+00007f0205bfd000      16       0       0 -----   [ anon ]
+00007f0205c01000    1008      24      24 rw---   [ anon ]
+00007f0205cfd000       4       0       0 -----   [ anon ]
+00007f0205cfe000      16       0       0 -----   [ anon ]
+00007f0205d02000    1008      88      88 rw---   [ anon ]
+00007f0205dfe000       4       0       0 -----   [ anon ]
+00007f0205dff000    1024       8       8 rw---   [ anon ]
+00007f0205eff000       4       0       0 -----   [ anon ]
+00007f0205f00000      16       0       0 -----   [ anon ]
+00007f0205f04000    1008       8       8 rw---   [ anon ]
+00007f0206000000   32900      20      20 rw---   [ anon ]
+00007f0208021000   65404       0       0 -----   [ anon ]
+00007f020c000000     796     796     796 rw---   [ anon ]
+00007f020c0c7000   64740       0       0 -----   [ anon ]
+00007f0210000000     396     396     396 rw---   [ anon ]
+00007f0210063000   65140       0       0 -----   [ anon ]
+00007f0214000000      16      16      16 rw-s- nvidiactl
+00007f0214004000       8       8       0 r---- libXfixes.so.3.1.0
+00007f0214006000      12      12       0 r-x-- libXfixes.so.3.1.0
+00007f0214009000       4       0       0 r---- libXfixes.so.3.1.0
+00007f021400a000       4       4       4 r---- libXfixes.so.3.1.0
+00007f021400b000       4       4       4 rw--- libXfixes.so.3.1.0
+00007f021400c000      12      12       0 r---- libXcursor.so.1.0.2
+00007f021400f000      24      24       0 r-x-- libXcursor.so.1.0.2
+00007f0214015000       8       8       0 r---- libXcursor.so.1.0.2
+00007f0214017000       4       4       4 r---- libXcursor.so.1.0.2
+00007f0214018000       4       4       4 rw--- libXcursor.so.1.0.2
+00007f0214019000       8       8       0 r---- libXrender.so.1.3.0
+00007f021401b000      28      28       0 r-x-- libXrender.so.1.3.0
+00007f0214022000       8       8       0 r---- libXrender.so.1.3.0
+00007f0214024000       4       4       4 r---- libXrender.so.1.3.0
+00007f0214025000       4       4       4 rw--- libXrender.so.1.3.0
+00007f0214026000       8       8       0 r---- libXrandr.so.2.2.0
+00007f0214028000      28      28       0 r-x-- libXrandr.so.2.2.0
+00007f021402f000       8       8       0 r---- libXrandr.so.2.2.0
+00007f0214031000       4       4       4 r---- libXrandr.so.2.2.0
+00007f0214032000       4       4       4 rw--- libXrandr.so.2.2.0
+00007f0214033000      12      12       0 r---- libXi.so.6.1.0
+00007f0214036000      48      48       0 r-x-- libXi.so.6.1.0
+00007f0214042000      12      12       0 r---- libXi.so.6.1.0
+00007f0214045000       4       4       4 r---- libXi.so.6.1.0
+00007f0214046000       4       4       4 rw--- libXi.so.6.1.0
+00007f0214047000      48      48       0 r---- libxcb.so.1.1.0
+00007f0214053000      80      80       0 r-x-- libxcb.so.1.1.0
+00007f0214067000      36      36       0 r---- libxcb.so.1.1.0
+00007f0214070000       4       4       4 r---- libxcb.so.1.1.0
+00007f0214071000       4       4       4 rw--- libxcb.so.1.1.0
+00007f0214072000      56      56      56 r---- libglfw.so
+00007f0214080000     120     120     120 r-x-- libglfw.so
+00007f021409e000     204     200     200 r---- libglfw.so
+00007f02140d1000       4       0       0 ----- libglfw.so
+00007f02140d2000      12      12      12 r---- libglfw.so
+00007f02140d5000      12      12      12 rw--- libglfw.so
+00007f02140d8000     140     136     136 rw---   [ anon ]
+00007f02140fb000       4       0       0 -----   [ anon ]
+00007f02140fc000      16       0       0 -----   [ anon ]
+00007f0214100000    1008       8       8 rw---   [ anon ]
+00007f02141fc000       4       0       0 -----   [ anon ]
+00007f02141fd000      16       0       0 -----   [ anon ]
+00007f0214201000    1008      64      64 rw---   [ anon ]
+00007f02142fd000       4       0       0 -----   [ anon ]
+00007f02142fe000      16       0       0 -----   [ anon ]
+00007f0214302000    1008      76      76 rw---   [ anon ]
+00007f02143fe000       4       0       0 -----   [ anon ]
+00007f02143ff000      16       0       0 -----   [ anon ]
+00007f0214403000    1008       8       8 rw---   [ anon ]
+00007f02144ff000       4       0       0 -----   [ anon ]
+00007f0214500000      16       0       0 -----   [ anon ]
+00007f0214504000    1008       8       8 rw---   [ anon ]
+00007f0214600000    2996      64       0 r---- locale-archive
+00007f02148ed000       4       4       0 r---- libXinerama.so.1.0.0
+00007f02148ee000       4       4       0 r-x-- libXinerama.so.1.0.0
+00007f02148ef000       4       4       0 r---- libXinerama.so.1.0.0
+00007f02148f0000       4       4       4 r---- libXinerama.so.1.0.0
+00007f02148f1000       4       4       4 rw--- libXinerama.so.1.0.0
+00007f02148f2000      16      16       0 r---- libXext.so.6.4.0
+00007f02148f6000      44      44       0 r-x-- libXext.so.6.4.0
+00007f0214901000      16      16       0 r---- libXext.so.6.4.0
+00007f0214905000       4       4       4 r---- libXext.so.6.4.0
+00007f0214906000       4       4       4 rw--- libXext.so.6.4.0
+00007f0214907000       4       4       0 r---- libXxf86vm.so.1.0.0
+00007f0214908000      12      12       0 r-x-- libXxf86vm.so.1.0.0
+00007f021490b000       4       4       0 r---- libXxf86vm.so.1.0.0
+00007f021490c000       4       4       4 r---- libXxf86vm.so.1.0.0
+00007f021490d000       4       4       4 rw--- libXxf86vm.so.1.0.0
+00007f021490e000       8       8       0 r---- libXdmcp.so.6.0.0
+00007f0214910000       8       8       0 r-x-- libXdmcp.so.6.0.0
+00007f0214912000       8       0       0 r---- libXdmcp.so.6.0.0
+00007f0214914000       4       4       4 r---- libXdmcp.so.6.0.0
+00007f0214915000       4       4       4 rw--- libXdmcp.so.6.0.0
+00007f0214916000       4       0       0 rw-s- nvidia0
+00007f0214917000       8       8       4 rw-s- nvidiactl
+00007f0214919000       4       4       0 rw-s- nvidiactl
+00007f021491a000       4       4       4 rw-s- nvidiactl
+00007f021491b000       4       4       4 rw-s- nvidiactl
+00007f021491c000      12      12       0 r---- libcap.so.2.75
+00007f021491f000      20      20       0 r-x-- libcap.so.2.75
+00007f0214924000       8       0       0 r---- libcap.so.2.75
+00007f0214926000       4       4       4 r---- libcap.so.2.75
+00007f0214927000       4       4       4 rw--- libcap.so.2.75
+00007f0214928000      64       0       0 rw-s- nvidia0
+00007f0214938000       4       0       0 -----   [ anon ]
+00007f0214939000      16       0       0 -----   [ anon ]
+00007f021493d000     120      24      24 rw---   [ anon ]
+00007f021495b000      52      52       0 r-x-- libverify.so
+00007f0214968000       8       8       8 r---- libverify.so
+00007f021496a000       4       4       4 rw--- libverify.so
+00007f021496b000     196     196     196 rw---   [ anon ]
+00007f021499c000       4       0       0 -----   [ anon ]
+00007f021499d000      16       0       0 -----   [ anon ]
+00007f02149a1000    1008       8       8 rw---   [ anon ]
+00007f0214a9d000       4       0       0 -----   [ anon ]
+00007f0214a9e000      16       0       0 -----   [ anon ]
+00007f0214aa2000    1008      92      92 rw---   [ anon ]
+00007f0214b9e000       4       0       0 -----   [ anon ]
+00007f0214b9f000      16       0       0 -----   [ anon ]
+00007f0214ba3000    1008      88      88 rw---   [ anon ]
+00007f0214c9f000       4       0       0 -----   [ anon ]
+00007f0214ca0000    1024      24      24 rw---   [ anon ]
+00007f0214da0000     824      64       0 r-x-- libjsvml.so
+00007f0214e6e000       4       4       4 r---- libjsvml.so
+00007f0214e6f000       4       4       4 rw--- libjsvml.so
+00007f0214e71000      44      44       0 r---- libjack.so.0.1.0
+00007f0214e7c000     180     180       0 r-x-- libjack.so.0.1.0
+00007f0214ea9000      92      92       0 r---- libjack.so.0.1.0
+00007f0214ec0000      12      12      12 r---- libjack.so.0.1.0
+00007f0214ec3000       4       4       4 rw--- libjack.so.0.1.0
+00007f0214ec4000      16      16       0 r---- libgcc_s.so.1
+00007f0214ec8000     140     108       0 r-x-- libgcc_s.so.1
+00007f0214eeb000      16      16       0 r---- libgcc_s.so.1
+00007f0214eef000       4       4       4 r---- libgcc_s.so.1
+00007f0214ef0000       4       4       4 rw--- libgcc_s.so.1
+00007f0214ef1000       4       0       0 -----   [ anon ]
+00007f0214ef2000    1024       8       8 rw---   [ anon ]
+00007f0214ff2000       4       0       0 -----   [ anon ]
+00007f0214ff3000    1024       8       8 rw---   [ anon ]
+00007f02150f3000   10280     736     736 rw---   [ anon ]
+00007f0215afd000       4       0       0 -----   [ anon ]
+00007f0215afe000    1024      16      16 rw---   [ anon ]
+00007f0215bfe000       4       0       0 -----   [ anon ]
+00007f0215bff000    1024      16      16 rw---   [ anon ]
+00007f0215cff000       4       0       0 -----   [ anon ]
+00007f0215d00000    1024      16      16 rw---   [ anon ]
+00007f0215e00000   80064   75456   75456 rw---   [ anon ]
+00007f021ac30000   51008       0       0 -----   [ anon ]
+00007f021de00000   80064   75456   75456 rw---   [ anon ]
+00007f0222c30000   51008       0       0 -----   [ anon ]
+00007f0225e00000   10008    5624    5624 rw---   [ anon ]
+00007f02267c6000    6376       0       0 -----   [ anon ]
+00007f0226e00000   10008   10008   10008 rw---   [ anon ]
+00007f02277c6000    6376       0       0 -----   [ anon ]
+00007f0227e00000   10008    9160    9160 rw---   [ anon ]
+00007f02287c6000    6376       0       0 -----   [ anon ]
+00007f0228e00000       4       4       4 rw-s- .nvidia_drv.XXXXXX (deleted)
+00007f0228e01000     360     128       0 r---- LC_CTYPE
+00007f0228e5b000     364     360     360 rw---   [ anon ]
+00007f0228ebb000       8       8       0 r---- libogg.so.0.8.5
+00007f0228ebd000      12      12       0 r-x-- libogg.so.0.8.5
+00007f0228ec0000      12       0       0 r---- libogg.so.0.8.5
+00007f0228ec3000       4       4       4 r---- libogg.so.0.8.5
+00007f0228ec4000       4       4       4 rw--- libogg.so.0.8.5
+00007f0228ec5000       4       4       0 r---- libasyncns.so.0.3.1
+00007f0228ec6000      12      12       0 r-x-- libasyncns.so.0.3.1
+00007f0228ec9000       4       0       0 r---- libasyncns.so.0.3.1
+00007f0228eca000       4       4       4 r---- libasyncns.so.0.3.1
+00007f0228ecb000       4       4       4 rw--- libasyncns.so.0.3.1
+00007f0228edf000      32      32       0 rw-s- DistantHorizons.sqlite-shm
+00007f0228ee7000       4       4       4 r-x-- WRBLb5 (deleted)
+00007f0228ee8000      16      16      16 rw---   [ anon ]
+00007f0228eec000       4       4       4 r-x-- WRBLb5 (deleted)
+00007f0228eed000       4       4       4 rw---   [ anon ]
+00007f0228eee000      28      28       0 r-x-- libawt_headless.so
+00007f0228ef5000       4       4       4 r---- libawt_headless.so
+00007f0228ef6000       4       4       4 rw--- libawt_headless.so
+00007f0228ef7000    9252    4304    4304 rw---   [ anon ]
+00007f0229800000   87936   87904   87904 rwx--   [ anon ]
+00007f022ede0000   32092       0       0 -----   [ anon ]
+00007f0230d37000    3648    3256    3256 rwx--   [ anon ]
+00007f02310c7000    2056       0       0 -----   [ anon ]
+00007f02312c9000   50112   50068   50068 rwx--   [ anon ]
+00007f02343b9000   69916       0       0 -----   [ anon ]
+00007f0238800000   56864   20668       0 r--s- modules
+00007f023bf88000       4       4       0 r--s- nvidiactl
+00007f023bf89000      24      24       0 r-x-- libmanagement_ext.so
+00007f023bf8f000       4       4       4 r---- libmanagement_ext.so
+00007f023bf90000       4       4       4 rw--- libmanagement_ext.so
+00007f023bf91000      84      84       0 r-x-- libnet.so
+00007f023bfa6000       4       0       0 ----- libnet.so
+00007f023bfa7000       4       4       4 r---- libnet.so
+00007f023bfa8000       4       4       4 rw--- libnet.so
+00007f023bfa9000      76      64       0 r-x-- libnio.so
+00007f023bfbc000       4       0       0 ----- libnio.so
+00007f023bfbd000       4       4       4 r---- libnio.so
+00007f023bfbe000       4       4       4 rw--- libnio.so
+00007f023bfbf000   65776   51368   51368 rw---   [ anon ]
+00007f023fffb000      20       0       0 -----   [ anon ]
+00007f0240000000       4       4       4 r-x--   [ anon ]
+00007f0240001000       4       4       0 r---- libXau.so.6.0.0
+00007f0240002000       4       4       0 r-x-- libXau.so.6.0.0
+00007f0240003000       4       4       0 r---- libXau.so.6.0.0
+00007f0240004000       4       4       4 r---- libXau.so.6.0.0
+00007f0240005000       4       4       4 rw--- libXau.so.6.0.0
+00007f0240006000       4       0       0 r----   [ anon ]
+00007f0240007000      16      16       0 r-x-- libmanagement.so
+00007f024000b000       4       4       4 r---- libmanagement.so
+00007f024000c000       4       4       4 rw--- libmanagement.so
+00007f024000d000       4       4       0 r---- LC_NUMERIC
+00007f024000e000       4       4       0 r---- LC_TIME
+00007f024000f000       4       4       0 r---- LC_COLLATE
+00007f0240010000       4       4       0 r---- LC_MONETARY
+00007f0240011000       4       4       0 r---- SYS_LC_MESSAGES
+00007f0240012000       4       4       0 r---- LC_PAPER
+00007f0240013000       4       4       0 r---- LC_NAME
+00007f0240014000       4       4       0 r---- LC_ADDRESS
+00007f0240015000       4       4       0 r---- LC_TELEPHONE
+00007f0240016000      28      28       0 r--s- gconv-modules.cache
+00007f024001d000      28      28       0 r-x-- libzip.so
+00007f0240024000       4       0       0 ----- libzip.so
+00007f0240025000       4       4       4 r---- libzip.so
+00007f0240026000       4       4       4 rw--- libzip.so
+00007f0240027000    2212    2012    2012 rw---   [ anon ]
+00007f0240250000     548       0       0 -----   [ anon ]
+00007f02402d9000     688     688     688 rw---   [ anon ]
+00007f0240385000     252       0       0 -----   [ anon ]
+00007f02403c4000      32      32      32 rw---   [ anon ]
+00007f02403cc000      16       0       0 -----   [ anon ]
+00007f02403d0000     144     128       0 r-x-- libjava.so
+00007f02403f4000       4       0       0 ----- libjava.so
+00007f02403f5000       4       4       4 r---- libjava.so
+00007f02403f6000       4       4       4 rw--- libjava.so
+00007f02403f7000       4       4       4 rw---   [ anon ]
+00007f02403f8000      32      32      32 rw-s- 309414
+00007f0240400000   18636   14976       0 r-x-- libjvm.so
+00007f0241633000       4       0       0 ----- libjvm.so
+00007f0241634000     740     740     740 r---- libjvm.so
+00007f02416ed000     212     212     192 rw--- libjvm.so
+00007f0241722000     364     316     316 rw---   [ anon ]
+00007f024177d000       4       4       0 r---- LC_MEASUREMENT
+00007f024177e000       4       4       0 r---- LC_IDENTIFICATION
+00007f024177f000      16       0       0 -----   [ anon ]
+00007f0241783000    1008     172     172 rw---   [ anon ]
+00007f024187f000      68      64       0 r---- libm.so.6
+00007f0241890000     500     372       0 r-x-- libm.so.6
+00007f024190d000     384     140       0 r---- libm.so.6
+00007f024196d000       4       4       4 r---- libm.so.6
+00007f024196e000       4       4       4 rw--- libm.so.6
+00007f024196f000       4       4       0 r---- librt.so.1
+00007f0241970000       4       4       0 r-x-- librt.so.1
+00007f0241971000       4       0       0 r---- librt.so.1
+00007f0241972000       4       4       4 r---- librt.so.1
+00007f0241973000       4       4       4 rw--- librt.so.1
+00007f0241974000      12       8       8 rw---   [ anon ]
+00007f0241977000     160     156       0 r---- libc.so.6
+00007f024199f000    1420    1412       0 r-x-- libc.so.6
+00007f0241b02000     344     280       0 r---- libc.so.6
+00007f0241b58000      16      16      16 r---- libc.so.6
+00007f0241b5c000       8       8       8 rw--- libc.so.6
+00007f0241b5e000      60      32      32 rw---   [ anon ]
+00007f0241b6d000       4       4       0 r---- libdl.so.2
+00007f0241b6e000       4       4       0 r-x-- libdl.so.2
+00007f0241b6f000       4       0       0 r---- libdl.so.2
+00007f0241b70000       4       4       4 r---- libdl.so.2
+00007f0241b71000       4       4       4 rw--- libdl.so.2
+00007f0241b72000       4       4       0 r---- libpthread.so.0
+00007f0241b73000       4       4       0 r-x-- libpthread.so.0
+00007f0241b74000       4       0       0 r---- libpthread.so.0
+00007f0241b75000       4       4       4 r---- libpthread.so.0
+00007f0241b76000       4       4       4 rw--- libpthread.so.0
+00007f0241b77000      56      56       0 r-x-- libjli.so
+00007f0241b85000       4       0       0 ----- libjli.so
+00007f0241b86000       4       4       4 r---- libjli.so
+00007f0241b87000       4       4       4 rw--- libjli.so
+00007f0241b88000      12      12       0 r---- libz.so.1.3.1
+00007f0241b8b000      80      80       0 r-x-- libz.so.1.3.1
+00007f0241b9f000      28      24       0 r---- libz.so.1.3.1
+00007f0241ba6000       4       4       4 r---- libz.so.1.3.1
+00007f0241ba7000       4       4       4 rw--- libz.so.1.3.1
+00007f0241ba8000       4       0       0 -----   [ anon ]
+00007f0241ba9000       4       0       0 r----   [ anon ]
+00007f0241baa000       4       0       0 -----   [ anon ]
+00007f0241bab000     108      88       0 r-x-- libjimage.so
+00007f0241bc6000       4       0       0 ----- libjimage.so
+00007f0241bc7000       8       8       8 r---- libjimage.so
+00007f0241bc9000       4       4       4 rw--- libjimage.so
+00007f0241bca000       8       8       8 rw---   [ anon ]
+00007f0241bcc000      16       0       0 r----   [ anon ]
+00007f0241bd0000       8       8       0 r-x--   [ anon ]
+00007f0241bd2000       4       4       0 r---- ld-linux-x86-64.so.2
+00007f0241bd3000     160     160       0 r-x-- ld-linux-x86-64.so.2
+00007f0241bfb000      44      44       0 r---- ld-linux-x86-64.so.2
+00007f0241c06000       8       8       8 r---- ld-linux-x86-64.so.2
+00007f0241c08000       4       4       4 rw--- ld-linux-x86-64.so.2
+00007f0241c09000       4       4       4 rw---   [ anon ]
+00007fff61cfd000     144      48      48 rw---   [ stack ]
+---------------- ------- ------- ------- 
+total kB         24552564 10110564 10011504

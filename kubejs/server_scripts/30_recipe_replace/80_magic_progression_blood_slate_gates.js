@@ -18,12 +18,17 @@ ServerEvents.recipes(function (event) {
     gate(event, { id: 'rootsclassic:altar' }, '#forge:storage_blocks/gold', BM_SLATE_T1)
     gate(event, { id: 'reliquary:apothecary_cauldron' }, 'reliquary:catalyzing_gland', BM_SLATE_T1)
 
-    // Altar II: Ars Nouveau entry.
+    // Altar II: purified Blood Magic becomes basic Ars source material work.
+    gate(event, { output: 'ars_nouveau:source_gem' }, 'minecraft:amethyst_shard', BM_SLATE_T2)
+    gate(event, { output: 'ars_nouveau:source_gem_block' }, 'ars_nouveau:source_gem', BM_SLATE_T2)
     gate(event, { id: 'ars_nouveau:imbuement_chamber' }, '#forge:ingots/gold', BM_SLATE_T2)
     gate(event, { id: 'ars_nouveau:novice_spell_book' }, 'minecraft:book', BM_SLATE_T2)
-    gate(event, { id: 'ars_nouveau:enchanting_apparatus' }, '#forge:ingots/gold', BM_SLATE_T2)
 
-    // Altar II: restrained Ars addon entry points.
+    // Altar III: real Ars apparatus and glyph expansion.
+    gate(event, { id: 'ars_nouveau:enchanting_apparatus' }, '#forge:ingots/gold', BM_SLATE_T3)
+    gate(event, { id: 'ars_nouveau:apprentice_spell_book_upgrade' }, 'minecraft:diamond', BM_SLATE_T3)
+
+    // Altar II/III: restrained Ars addon entry points.
     gate(event, { id: 'ars_additions:apparatus/advanced_dominion_wand' }, 'minecraft:gold_ingot', BM_SLATE_T2)
     gate(event, { id: 'ars_instrumentum:apparatus/numeric_mana_charm' }, '#forge:ingots/gold', BM_SLATE_T2)
     gate(event, { id: 'ars_elemental:imbuement_lesser_air_focus' }, 'minecraft:gold_ingot', BM_SLATE_T2)

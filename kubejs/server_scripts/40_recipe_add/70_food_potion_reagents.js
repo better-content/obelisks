@@ -2,11 +2,27 @@
 // the brewing stand only combines already processed extracts into vanilla potions.
 
 ServerEvents.recipes(function (event) {
+    function exists(item) {
+        try { return Item.exists(item) } catch (e) { return false }
+    }
+
+    function inputExists(input) {
+        return input.indexOf('#') === 0 || exists(input)
+    }
+
+    function inputsExist(inputs) {
+        for (var i = 0; i < inputs.length; i++) {
+            if (!inputExists(inputs[i])) return false
+        }
+        return true
+    }
+
     function add(json, id) {
         event.custom(json).id('kubejs:food_reagents/' + id)
     }
 
     function cutting(input, output, count, id) {
+        if (!Platform.isLoaded('farmersdelight') || !exists(input) || !exists(output)) return
         add({
             type: 'farmersdelight:cutting',
             ingredients: [{ item: input }],
@@ -16,6 +32,7 @@ ServerEvents.recipes(function (event) {
     }
 
     function campfire(input, output, id, time) {
+        if (!exists(input) || !exists(output)) return
         add({
             type: 'minecraft:campfire_cooking',
             category: 'misc',
@@ -27,6 +44,7 @@ ServerEvents.recipes(function (event) {
     }
 
     function cooking(inputs, output, id, time) {
+        if (!Platform.isLoaded('farmersdelight') || !exists(output) || !inputsExist(inputs)) return
         add({
             type: 'farmersdelight:cooking',
             ingredients: inputs.map(function (input) { return input.indexOf('#') === 0 ? { tag: input.substring(1) } : { item: input } }),
@@ -39,6 +57,7 @@ ServerEvents.recipes(function (event) {
     }
 
     function kettlePour(fluid, output, id) {
+        if (!Platform.isLoaded('farmersrespite') || !exists(output)) return
         add({
             type: 'farmersrespite:kettle_pouring',
             amount: 250,
@@ -49,6 +68,7 @@ ServerEvents.recipes(function (event) {
     }
 
     function kegPour(fluid, output, id) {
+        if (!Platform.isLoaded('brewinandchewin') || !exists(output)) return
         add({
             type: 'brewinandchewin:keg_pouring',
             amount: 250,

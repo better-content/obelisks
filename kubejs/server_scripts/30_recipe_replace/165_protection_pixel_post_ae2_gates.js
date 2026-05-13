@@ -62,13 +62,6 @@ function btmPpFillLava(transitional, amount) {
 ServerEvents.recipes(function (event) {
     if (!btmPpExists('protection_pixel:armorloadplatform')) return
 
-    // Advanced AE quantum armor is not the pack's body capstone. Keep Advanced AE as
-    // quantum manufacturing infrastructure and move the STRONK armor reward here.
-    event.remove({ output: 'advanced_ae:quantum_helmet' })
-    event.remove({ output: 'advanced_ae:quantum_chestplate' })
-    event.remove({ output: 'advanced_ae:quantum_leggings' })
-    event.remove({ output: 'advanced_ae:quantum_boots' })
-
     btmPpRemove(event, [
         'protection_pixel:smallnetheritesheet',
         'protection_pixel:ironarmorplate',
@@ -100,7 +93,7 @@ ServerEvents.recipes(function (event) {
         ingredients: [
             { item: 'minecraft:netherite_ingot' },
             { item: 'kubejs:sky_steel_sheet' },
-            { item: 'advanced_ae:quantum_alloy_plate' },
+            { item: 'kubejs:sky_steel_sheet' },
             { item: 'chemlib:osmium_plate' },
             { item: 'chemlib:iridium_plate' }
         ],
@@ -136,7 +129,7 @@ ServerEvents.recipes(function (event) {
     btmPpSequence(event, 'protection_pixel:smallnetheritesheet', 'protection_pixel:incompletealloyarmorplate', 'protection_pixel:alloyarmorplate', [
         btmPpPress('protection_pixel:incompletealloyarmorplate'),
         btmPpDeploy('protection_pixel:incompletealloyarmorplate', 'kubejs:sky_steel_sheet'),
-        btmPpDeploy('protection_pixel:incompletealloyarmorplate', 'advanced_ae:quantum_alloy_plate'),
+        btmPpDeploy('protection_pixel:incompletealloyarmorplate', 'kubejs:sky_steel_sheet'),
         btmPpDeploy('protection_pixel:incompletealloyarmorplate', 'bloodmagic:etherealslate'),
         btmPpDeploy('protection_pixel:incompletealloyarmorplate', 'chemlib:iridium_plate')
     ], 2, 'kubejs:protection_pixel/alloy_armor_plate')
@@ -149,11 +142,11 @@ ServerEvents.recipes(function (event) {
         'SQSQS'
     ], {
         S: { item: 'kubejs:sky_steel_sheet' },
-        Q: { item: 'advanced_ae:quantum_alloy_plate' },
+        Q: { item: 'kubejs:sky_steel_sheet' },
         L: { item: 'create_new_age:heat_pipe' },
         A: { item: 'protection_pixel:alloyarmorplate' },
         F: { item: 'fission_reactor:fission_reactor_rod' },
-        C: { item: 'kubejs:ae2_machine_casing' }
+        C: { item: 'kubejs:impossible_machine_casing' }
     }, 'kubejs:create/mechanical_crafting/protection_pixel/armor_load_platform')
 
     btmPpMechanical(event, 'protection_pixel:powerengine', [
@@ -165,8 +158,8 @@ ServerEvents.recipes(function (event) {
     ], {
         H: { item: 'create_new_age:heat_pipe' },
         F: { item: 'fission_reactor:fission_reactor_rod' },
-        Q: { item: 'advanced_ae:quantum_core' },
-        C: { item: 'kubejs:ae2_machine_casing' },
+        Q: { item: 'kubejs:impossible_circuit' },
+        C: { item: 'kubejs:impossible_machine_casing' },
         A: { item: 'protection_pixel:alloyarmorplate' }
     }, 'kubejs:create/mechanical_crafting/protection_pixel/power_engine')
 
@@ -177,7 +170,7 @@ ServerEvents.recipes(function (event) {
     ], {
         R: { item: 'chemlib:ruthenium_plate' },
         H: { item: 'create_new_age:heat_pump' },
-        Q: { item: 'advanced_ae:quantum_processor' },
+        Q: { item: 'kubejs:impossible_circuit' },
         E: { item: 'protection_pixel:powerengine' }
     }, 'kubejs:create/mechanical_crafting/protection_pixel/heat_overlock_mechanism')
 
@@ -191,7 +184,7 @@ ServerEvents.recipes(function (event) {
         F: { item: 'protection_pixel:reinforcedfiber' },
         H: { item: 'protection_pixel:heatresistantceramicsheet' },
         A: { item: 'protection_pixel:alloyarmorplate' },
-        P: { item: 'advanced_ae:quantum_alloy_plate' },
+        P: { item: 'kubejs:sky_steel_sheet' },
         E: { item: 'protection_pixel:powerengine' }
     }, 'kubejs:create/mechanical_crafting/protection_pixel/equipment_kit')
 
@@ -205,7 +198,7 @@ ServerEvents.recipes(function (event) {
         A: { item: 'protection_pixel:alloyarmorplate' },
         F: { item: 'protection_pixel:reinforcedfiber' },
         H: { item: 'protection_pixel:heatresistantceramicsheet' },
-        P: { item: 'advanced_ae:quantum_processor' },
+        P: { item: 'kubejs:impossible_circuit' },
         K: { item: 'protection_pixel:equipmentkit' },
         E: { item: 'bloodmagic:etherealslate' }
     }, 'kubejs:create/mechanical_crafting/protection_pixel/armor_plate_kit')
@@ -218,7 +211,7 @@ ServerEvents.recipes(function (event) {
         F: { item: 'protection_pixel:reinforcedfiber' },
         H: { item: 'protection_pixel:heatresistantceramicsheet' },
         A: { item: 'protection_pixel:alloyarmorplate' },
-        P: { item: 'advanced_ae:quantum_processor' }
+        P: { item: 'kubejs:impossible_circuit' }
     }, 'kubejs:create/mechanical_crafting/protection_pixel/chestplate_lining')
 
     btmPpMechanical(event, 'protection_pixel:leggingslining', [
@@ -229,7 +222,7 @@ ServerEvents.recipes(function (event) {
         F: { item: 'protection_pixel:reinforcedfiber' },
         H: { item: 'protection_pixel:heatresistantceramicsheet' },
         A: { item: 'protection_pixel:alloyarmorplate' },
-        P: { item: 'advanced_ae:quantum_processor' }
+        P: { item: 'kubejs:impossible_circuit' }
     }, 'kubejs:create/mechanical_crafting/protection_pixel/leggings_lining')
 
     btmPpMechanical(event, 'protection_pixel:socks_boots', [
@@ -248,7 +241,7 @@ ServerEvents.recipes(function (event) {
         'F F'
     ], {
         A: { item: 'protection_pixel:alloyarmorplate' },
-        P: { item: 'advanced_ae:quantum_processor' },
+        P: { item: 'kubejs:impossible_circuit' },
         H: { item: 'protection_pixel:heatresistantceramicsheet' },
         N: { item: 'minecraft:netherite_helmet' },
         F: { item: 'protection_pixel:reinforcedfiber' }
@@ -260,7 +253,7 @@ ServerEvents.recipes(function (event) {
         'APA'
     ], {
         A: { item: 'protection_pixel:alloyarmorplate' },
-        P: { item: 'advanced_ae:quantum_processor' },
+        P: { item: 'kubejs:impossible_circuit' },
         H: { item: 'protection_pixel:chestplatelining' },
         N: { item: 'minecraft:netherite_chestplate' }
     }, 'kubejs:create/mechanical_crafting/protection_pixel/linkplate_chestplate')
@@ -271,7 +264,7 @@ ServerEvents.recipes(function (event) {
         'P P'
     ], {
         A: { item: 'protection_pixel:alloyarmorplate' },
-        P: { item: 'advanced_ae:quantum_processor' },
+        P: { item: 'kubejs:impossible_circuit' },
         H: { item: 'protection_pixel:leggingslining' },
         N: { item: 'minecraft:netherite_leggings' }
     }, 'kubejs:create/mechanical_crafting/protection_pixel/linkplate_leggings')
@@ -282,7 +275,7 @@ ServerEvents.recipes(function (event) {
         'ANA'
     ], {
         A: { item: 'protection_pixel:alloyarmorplate' },
-        P: { item: 'advanced_ae:quantum_processor' },
+        P: { item: 'kubejs:impossible_circuit' },
         H: { item: 'protection_pixel:socks_boots' },
         N: { item: 'minecraft:netherite_boots' }
     }, 'kubejs:create/mechanical_crafting/protection_pixel/linkplate_boots')
@@ -295,10 +288,10 @@ ServerEvents.recipes(function (event) {
         'SPEPS'
     ], {
         S: { item: 'protection_pixel:smallnetheritesheet' },
-        P: { item: 'advanced_ae:quantum_alloy_plate' },
+        P: { item: 'kubejs:sky_steel_sheet' },
         E: { item: 'protection_pixel:powerengine' },
         F: { item: 'protection_pixel:reinforcedfiber' },
-        C: { item: 'kubejs:ae2_machine_casing' },
+        C: { item: 'kubejs:impossible_machine_casing' },
         A: { item: 'protection_pixel:armorloadplatform' }
     }, 'kubejs:create/mechanical_crafting/protection_pixel/steam_exoskeleton')
 
@@ -308,7 +301,7 @@ ServerEvents.recipes(function (event) {
         'TPT'
     ], {
         T: { item: 'create:copper_backtank' },
-        P: { item: 'advanced_ae:quantum_processor' },
+        P: { item: 'kubejs:impossible_circuit' },
         F: { item: 'protection_pixel:reinforcedfiber' },
         E: { item: 'protection_pixel:powerengine' }
     }, 'kubejs:create/mechanical_crafting/protection_pixel/susp_jetpack')
@@ -318,18 +311,18 @@ ServerEvents.recipes(function (event) {
         'FWBWF',
         'PFEFP'
     ], {
-        P: { item: 'advanced_ae:quantum_alloy_plate' },
+        P: { item: 'kubejs:sky_steel_sheet' },
         F: { item: 'protection_pixel:reinforcedfiber' },
         E: { item: 'protection_pixel:powerengine' },
         W: { item: 'minecraft:elytra' },
-        B: { item: 'kubejs:ae2_machine_casing' }
+        B: { item: 'kubejs:impossible_machine_casing' }
     }, 'kubejs:create/mechanical_crafting/protection_pixel/maneuvering_wing')
 
     btmPpSequence(event, 'protection_pixel:wingsofprism_chestplate', 'protection_pixel:incompletewingsofprism', 'protection_pixel:wingsofprismas_chestplate', [
         btmPpFillLava('protection_pixel:incompletewingsofprism', 500),
         btmPpPress('protection_pixel:incompletewingsofprism'),
         btmPpDeploy('protection_pixel:incompletewingsofprism', 'protection_pixel:heatoverlockingmechanism'),
-        btmPpDeploy('protection_pixel:incompletewingsofprism', 'advanced_ae:quantum_core'),
+        btmPpDeploy('protection_pixel:incompletewingsofprism', 'kubejs:impossible_circuit'),
         btmPpDeploy('protection_pixel:incompletewingsofprism', 'bloodmagic:etherealslate'),
         btmPpDeploy('protection_pixel:incompletewingsofprism', 'chemlib:iridium_plate')
     ], 2, 'kubejs:protection_pixel/wingsofprism_as')
@@ -350,8 +343,8 @@ ServerEvents.recipes(function (event) {
         if (!btmPpExists(lateOutputs[i])) continue
         event.replaceInput({ output: lateOutputs[i] }, 'minecraft:iron_ingot', 'protection_pixel:alloyarmorplate')
         event.replaceInput({ output: lateOutputs[i] }, '#forge:ingots/iron', 'protection_pixel:alloyarmorplate')
-        event.replaceInput({ output: lateOutputs[i] }, 'create:andesite_alloy', 'kubejs:ae2_machine_casing')
-        event.replaceInput({ output: lateOutputs[i] }, 'create:precision_mechanism', 'advanced_ae:quantum_processor')
+        event.replaceInput({ output: lateOutputs[i] }, 'create:andesite_alloy', 'kubejs:impossible_machine_casing')
+        event.replaceInput({ output: lateOutputs[i] }, 'create:precision_mechanism', 'kubejs:impossible_circuit')
         event.replaceInput({ output: lateOutputs[i] }, 'create:brass_sheet', 'protection_pixel:smallnetheritesheet')
         event.replaceInput({ output: lateOutputs[i] }, '#forge:ingots/brass', 'protection_pixel:smallnetheritesheet')
     }

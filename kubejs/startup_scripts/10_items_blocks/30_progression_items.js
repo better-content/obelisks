@@ -40,6 +40,38 @@ StartupEvents.registry('item', function (event) {
     event.create('sky_steel_ingot').displayName('Sky Steel Ingot')
     event.create('sky_steel_sheet').displayName('Sky Steel Sheet')
 
+    var overhaulIntermediates = [
+        ['rotational_compressor_core', 'Rotational Compressor Core'],
+        ['pressure_seal', 'Pressure Seal'],
+        ['purified_blood_catalyst', 'Purified Blood Catalyst'],
+        ['purified_source_core', 'Purified Source Core'],
+        ['impossible_circuit', 'Impossible Circuit'],
+        ['living_binding', 'Living Binding'],
+        ['mountain_beryl_lens', 'Mountain Beryl Lens'],
+        ['corundum_lapping_grit', 'Corundum Lapping Grit'],
+        ['kimberlite_diamond_seed', 'Kimberlite Diamond Seed'],
+        ['tungsten_carbide_insert', 'Tungsten Carbide Insert'],
+        ['titanium_thermal_plate', 'Titanium Thermal Plate'],
+        ['fissile_salt_blend', 'Fissile Salt Blend'],
+        ['soulstone_carbon_matrix', 'Soulstone Carbon Matrix'],
+        ['redbed_signal_salt', 'Redbed Signal Salt'],
+        ['lazurite_logic_pigment', 'Lazurite Logic Pigment'],
+        ['phosphate_flux', 'Phosphate Flux'],
+        ['platinum_group_residue', 'Platinum Group Residue'],
+        ['andesite_grinding_ball', 'Andesite Grinding Ball'],
+        ['iron_grinding_ball', 'Iron Grinding Ball'],
+        ['brass_grinding_ball', 'Brass Grinding Ball'],
+        ['steel_grinding_ball', 'Steel Grinding Ball'],
+        ['nickel_grinding_ball', 'Nickel Grinding Ball'],
+        ['titanium_grinding_ball', 'Titanium Grinding Ball'],
+        ['blood_infused_grinding_ball', 'Blood-Infused Grinding Ball'],
+        ['fluix_grinding_ball', 'Fluix Grinding Ball']
+    ]
+
+    for (var o = 0; o < overhaulIntermediates.length; o++) {
+        event.create(overhaulIntermediates[o][0]).displayName(overhaulIntermediates[o][1])
+    }
+
     var reagents = [
         ['cut_green_tea_leaves', 'Cut Green Tea Leaves'],
         ['roasted_coffee_reagent', 'Roasted Coffee Reagent'],

@@ -41,8 +41,8 @@ ServerEvents.recipes(function (event) {
         'reliquary:apothecary_cauldron'
     ], commonVanillaValuables.concat(['minecraft:torch', 'reliquary:catalyzing_gland']), BTM_MAGIC_T1)
 
-    // Blood II: Ars entry and environmental infrastructure. Ritual tablets are the first major
-    // practical power spike after the apparatus/imbuement chamber.
+    // Blood III: Ars apparatus, glyph, and ritual expansion. Apprentice-tier only purifies
+    // source basics; practical Ars power waits for Magician-tier Blood Magic.
     btmMagicGateOutputs(event, [
         'ars_nouveau:ritual_brazier',
         'ars_nouveau:ritual_scrying',
@@ -69,7 +69,7 @@ ServerEvents.recipes(function (event) {
     ], commonVanillaValuables.concat([
         '#forge:storage_blocks/source', '#forge:gems/source', 'ars_nouveau:source_gem',
         'ars_nouveau:earth_essence', 'ars_nouveau:air_essence', 'minecraft:ender_pearl'
-    ]), BTM_MAGIC_T2)
+    ]), BTM_MAGIC_T3)
 
     btmMagicGateOutputs(event, [
         'naturesaura:slime_split_generator',

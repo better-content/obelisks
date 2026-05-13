@@ -19,8 +19,8 @@ ServerEvents.recipes(function (event) {
     ], {
         F: 'farmersdelight:roast_chicken_block',
         D: 'sophisticatedbackpacks:upgrade_base',
-        C: 'kubejs:ae2_machine_casing',
-        A: 'advanced_ae:quantum_core'
+        C: 'kubejs:impossible_machine_casing',
+        A: 'kubejs:impossible_circuit'
     }, 'kubejs:sophisticatedbackpacks/feeding_upgrade_post_ae2')
 
     btmBpRecipe(event, 'sophisticatedbackpacks:advanced_feeding_upgrade', [
@@ -29,9 +29,9 @@ ServerEvents.recipes(function (event) {
         'SQS'
     ], {
         S: 'kubejs:sky_steel_sheet',
-        Q: 'advanced_ae:quantum_alloy_plate',
+        Q: 'kubejs:sky_steel_sheet',
         U: 'sophisticatedbackpacks:feeding_upgrade',
-        C: 'kubejs:ae2_machine_casing'
+        C: 'kubejs:impossible_machine_casing'
     }, 'kubejs:sophisticatedbackpacks/advanced_feeding_upgrade_post_ae2')
 
     btmBpRecipe(event, 'sophisticatedbackpacks:alchemy_upgrade', [
@@ -41,7 +41,7 @@ ServerEvents.recipes(function (event) {
     ], {
         E: 'bloodmagic:etherealslate',
         S: 'ars_nouveau:source_gem_block',
-        C: 'kubejs:ae2_machine_casing',
+        C: 'kubejs:impossible_machine_casing',
         A: 'sophisticatedbackpacks:upgrade_base'
     }, 'kubejs:sophisticatedbackpacks/alchemy_upgrade_post_ae2')
 
@@ -51,9 +51,9 @@ ServerEvents.recipes(function (event) {
         'SQS'
     ], {
         S: 'kubejs:sky_steel_sheet',
-        Q: 'advanced_ae:quantum_core',
+        Q: 'kubejs:impossible_circuit',
         U: 'sophisticatedbackpacks:alchemy_upgrade',
-        C: 'kubejs:ae2_machine_casing'
+        C: 'kubejs:impossible_machine_casing'
     }, 'kubejs:sophisticatedbackpacks/advanced_alchemy_upgrade_post_ae2')
 
     btmBpRecipe(event, 'sophisticatedbackpacks:tool_swapper_upgrade', [
@@ -62,8 +62,8 @@ ServerEvents.recipes(function (event) {
         'TQT'
     ], {
         T: 'create:mechanical_arm',
-        Q: 'advanced_ae:quantum_alloy_plate',
-        C: 'kubejs:ae2_machine_casing',
+        Q: 'kubejs:sky_steel_sheet',
+        C: 'kubejs:impossible_machine_casing',
         A: 'sophisticatedbackpacks:upgrade_base'
     }, 'kubejs:sophisticatedbackpacks/tool_swapper_upgrade_post_ae2')
 
@@ -73,9 +73,9 @@ ServerEvents.recipes(function (event) {
         'SQS'
     ], {
         S: 'kubejs:sky_steel_sheet',
-        Q: 'advanced_ae:quantum_core',
+        Q: 'kubejs:impossible_circuit',
         U: 'sophisticatedbackpacks:tool_swapper_upgrade',
-        C: 'kubejs:ae2_machine_casing'
+        C: 'kubejs:impossible_machine_casing'
     }, 'kubejs:sophisticatedbackpacks/advanced_tool_swapper_upgrade_post_ae2')
 
     btmBpRecipe(event, 'sophisticatedstorage:alchemy_upgrade', [
@@ -85,7 +85,7 @@ ServerEvents.recipes(function (event) {
     ], {
         E: 'bloodmagic:etherealslate',
         S: 'ars_nouveau:source_gem_block',
-        C: 'kubejs:ae2_machine_casing',
+        C: 'kubejs:impossible_machine_casing',
         A: 'sophisticatedstorage:upgrade_base'
     }, 'kubejs:sophisticatedstorage/alchemy_upgrade_post_ae2')
 
@@ -95,8 +95,8 @@ ServerEvents.recipes(function (event) {
         'SQS'
     ], {
         S: 'kubejs:sky_steel_sheet',
-        Q: 'advanced_ae:quantum_core',
+        Q: 'kubejs:impossible_circuit',
         U: 'sophisticatedstorage:alchemy_upgrade',
-        C: 'kubejs:ae2_machine_casing'
+        C: 'kubejs:impossible_machine_casing'
     }, 'kubejs:sophisticatedstorage/advanced_alchemy_upgrade_post_ae2')
 })

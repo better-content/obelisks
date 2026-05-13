@@ -6,28 +6,28 @@
 var BTM_EXTREME = {
     mountain: {
         emerald: 'minecraft:emerald',
-        ruby: 'art_update:ruby',
-        sapphire: 'iceandfire:sapphire_gem'
+        ruby: 'kubejs:corundum_lapping_grit',
+        sapphire: 'kubejs:mountain_beryl_lens'
     },
     deepslate: {
-        platinum: 'chemlib:platinum_plate',
-        palladium: 'chemlib:palladium_plate',
-        rhodium: 'chemlib:rhodium_plate',
-        ruthenium: 'chemlib:ruthenium_plate'
+        platinum: 'kubejs:platinum_group_residue',
+        palladium: 'kubejs:tungsten_carbide_insert',
+        rhodium: 'kubejs:titanium_thermal_plate',
+        ruthenium: 'kubejs:kimberlite_diamond_seed'
     },
     lava: {
-        uranium: 'chemlib:uranium_plate',
-        thorium: 'chemlib:thorium_plate',
-        osmium: 'chemlib:osmium_plate',
-        iridium: 'chemlib:iridium_plate',
+        uranium: 'kubejs:fissile_salt_blend',
+        thorium: 'kubejs:fissile_salt_blend',
+        osmium: 'kubejs:soulstone_carbon_matrix',
+        iridium: 'kubejs:titanium_thermal_plate',
         debris: 'minecraft:netherite_scrap'
     },
     gate: {
         brass: 'kubejs:brass_machine_casing',
-        power: 'kubejs:power_grid_machine_casing',
-        oc2r: 'kubejs:oc2r_machine_casing',
+        power: 'kubejs:electrical_machine_casing',
+        oc2r: 'kubejs:circuited_machine_casing',
         space: 'kubejs:space_machine_casing',
-        ae2: 'kubejs:ae2_machine_casing',
+        ae2: 'kubejs:impossible_machine_casing',
         etherealSlate: 'bloodmagic:etherealslate'
     }
 }
@@ -168,111 +168,6 @@ ServerEvents.recipes(function (event) {
         P: BTM_EXTREME.deepslate.palladium,
         B: BTM_EXTREME.gate.ae2
     }, 'kubejs:extreme_y_rewards/lava_depths/universal_attractor')
-
-    btmExtremeRecipe(event, 'advanced_ae:lava_immunity_card', [
-        'UTU',
-        'OBO',
-        'UTU'
-    ], {
-        U: BTM_EXTREME.lava.uranium,
-        T: BTM_EXTREME.lava.thorium,
-        O: BTM_EXTREME.lava.osmium,
-        B: 'advanced_ae:quantum_upgrade_base'
-    }, 'kubejs:extreme_y_rewards/lava_depths/advanced_ae_lava_immunity_card')
-
-    btmExtremeRecipe(event, 'advanced_ae:regeneration_card', [
-        'ITI',
-        'EBO',
-        'ITI'
-    ], {
-        I: BTM_EXTREME.lava.iridium,
-        T: BTM_EXTREME.lava.thorium,
-        E: BTM_EXTREME.gate.etherealSlate,
-        B: 'advanced_ae:quantum_upgrade_base',
-        O: BTM_EXTREME.lava.osmium
-    }, 'kubejs:extreme_y_rewards/lava_depths/advanced_ae_regeneration_card')
-
-    btmExtremeRecipe(event, 'advanced_ae:strength_card', [
-        'OIO',
-        'UBU',
-        'OIO'
-    ], {
-        O: BTM_EXTREME.lava.osmium,
-        I: BTM_EXTREME.lava.iridium,
-        U: BTM_EXTREME.lava.uranium,
-        B: 'advanced_ae:quantum_upgrade_base'
-    }, 'kubejs:extreme_y_rewards/lava_depths/advanced_ae_strength_card')
-
-    btmExtremeRecipe(event, 'advanced_ae:reach_card', [
-        'IRI',
-        'UBU',
-        'IRI'
-    ], {
-        I: BTM_EXTREME.lava.iridium,
-        R: BTM_EXTREME.deepslate.ruthenium,
-        U: BTM_EXTREME.lava.uranium,
-        B: 'advanced_ae:quantum_upgrade_base'
-    }, 'kubejs:extreme_y_rewards/lava_depths/advanced_ae_reach_card')
-
-    btmExtremeRecipe(event, 'advanced_ae:magnet_card', [
-        'OPO',
-        'IBI',
-        'OPO'
-    ], {
-        O: BTM_EXTREME.lava.osmium,
-        P: BTM_EXTREME.deepslate.palladium,
-        I: BTM_EXTREME.lava.iridium,
-        B: 'advanced_ae:quantum_upgrade_base'
-    }, 'kubejs:extreme_y_rewards/lava_depths/advanced_ae_magnet_card')
-
-    btmExtremeRecipe(event, 'advanced_ae:quantum_helmet', [
-        'IUI',
-        'PBP',
-        'EAE'
-    ], {
-        I: BTM_EXTREME.lava.iridium,
-        U: BTM_EXTREME.lava.uranium,
-        P: 'advanced_ae:quantum_alloy_plate',
-        B: BTM_EXTREME.gate.ae2,
-        E: 'ae2:engineering_processor',
-        A: BTM_EXTREME.gate.etherealSlate
-    }, 'kubejs:extreme_y_rewards/lava_depths/advanced_ae_quantum_helmet')
-
-    btmExtremeRecipe(event, 'advanced_ae:quantum_chestplate', [
-        'PBP',
-        'IOI',
-        'UTU'
-    ], {
-        P: 'advanced_ae:quantum_alloy_plate',
-        B: BTM_EXTREME.gate.ae2,
-        I: BTM_EXTREME.lava.iridium,
-        O: BTM_EXTREME.lava.osmium,
-        U: BTM_EXTREME.lava.uranium,
-        T: BTM_EXTREME.lava.thorium
-    }, 'kubejs:extreme_y_rewards/lava_depths/advanced_ae_quantum_chestplate')
-
-    btmExtremeRecipe(event, 'advanced_ae:quantum_leggings', [
-        'IOI',
-        'PBP',
-        'U U'
-    ], {
-        I: BTM_EXTREME.lava.iridium,
-        O: BTM_EXTREME.lava.osmium,
-        P: 'advanced_ae:quantum_alloy_plate',
-        B: BTM_EXTREME.gate.ae2,
-        U: BTM_EXTREME.lava.uranium
-    }, 'kubejs:extreme_y_rewards/lava_depths/advanced_ae_quantum_leggings')
-
-    btmExtremeRecipe(event, 'advanced_ae:quantum_boots', [
-        'PBP',
-        'I I',
-        'O O'
-    ], {
-        P: 'advanced_ae:quantum_alloy_plate',
-        B: BTM_EXTREME.gate.ae2,
-        I: BTM_EXTREME.lava.iridium,
-        O: BTM_EXTREME.lava.osmium
-    }, 'kubejs:extreme_y_rewards/lava_depths/advanced_ae_quantum_boots')
 
     btmExtremeRecipe(event, 'sophisticatedstorage:netherite_chest', [
         'IDI',

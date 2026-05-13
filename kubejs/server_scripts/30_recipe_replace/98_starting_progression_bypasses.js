@@ -2,7 +2,7 @@
 // this file removes Create/TCon shortcuts that bypass early metallurgy and deployer assembly.
 
 ServerEvents.recipes(function (event) {
-    // Andesite alloy must come from TCon alloying -> molten andesite alloy -> TCon casting.
+    // Andesite alloy must come from TCon molten handling before Create casing work.
     var andesiteAlloyBypassIds = [
         'create:crafting/materials/andesite_alloy',
         'create:crafting/materials/andesite_alloy_from_zinc',
@@ -11,21 +11,30 @@ ServerEvents.recipes(function (event) {
         'create:mixing/andesite_alloy',
         'create:mixing/andesite_alloy_from_zinc',
         'create:cutting/andesite_alloy',
+        'tconstruct:compat/create/andesite_alloy_iron',
+        'tconstruct:compat/create/andesite_alloy_zinc',
         'tconstruct:casting_basin/compat/create/andesite_alloy_iron',
         'tconstruct:casting_basin/compat/create/andesite_alloy_zinc'
     ]
     andesiteAlloyBypassIds.forEach(function (id) { event.remove({ id: id }) })
 
     event.custom({
-        type: 'tconstruct:alloy',
-        inputs: [
-            { tag: 'forge:molten_iron', amount: 90 },
-            { tag: 'forge:molten_zinc', amount: 90 },
-            { tag: 'tconstruct:molten_quartz', amount: 50 }
-        ],
-        result: { fluid: 'tinkersinnovation:molten_andesite_alloy', amount: 180 },
-        temperature: 800
-    }).id('kubejs:tconstruct/alloy/andesite_alloy')
+        type: 'tconstruct:casting_basin',
+        cast: { item: 'minecraft:andesite' },
+        cast_consumed: true,
+        fluid: { tag: 'forge:molten_zinc', amount: 90 },
+        result: 'create:andesite_alloy',
+        cooling_time: 80
+    }).id('kubejs:tconstruct/casting_basin/andesite_alloy_zinc')
+
+    event.custom({
+        type: 'tconstruct:casting_basin',
+        cast: { item: 'minecraft:andesite' },
+        cast_consumed: true,
+        fluid: { tag: 'forge:molten_iron', amount: 90 },
+        result: 'create:andesite_alloy',
+        cooling_time: 80
+    }).id('kubejs:tconstruct/casting_basin/andesite_alloy_iron')
 
     // Andesite casing requires Deployer assembly; item application is the bypass.
     event.remove({ id: 'create:item_application/andesite_casing_from_log' })

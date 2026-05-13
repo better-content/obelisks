@@ -31,11 +31,11 @@ ServerEvents.recipes(function (event) {
         ],
         key: {
             S: { item: 'kubejs:sky_steel_sheet' },
-            Q: { item: 'advanced_ae:quantum_alloy_plate' },
+            Q: { item: 'kubejs:sky_steel_sheet' },
             E: { item: 'bloodmagic:etherealslate' },
             F: { item: 'ae2:fluix_pearl' },
             R: { item: 'fission_reactor:fission_reactor_rod' },
-            A: { item: 'kubejs:ae2_machine_casing' }
+            A: { item: 'kubejs:impossible_machine_casing' }
         },
         result: { item: 'ticex:reconstruction_core' }
     }).id('kubejs:create/mechanical_crafting/ticex/reconstruction_core')
@@ -49,8 +49,8 @@ ServerEvents.recipes(function (event) {
                 { item: 'ticex:reconstruction_core' },
                 { item: 'ticex:reconstruction_core' },
                 { item: 'ticex:reconstruction_core' },
-                { item: 'advanced_ae:quantum_core' },
-                { item: 'advanced_ae:quantum_processor' },
+                { item: 'kubejs:impossible_circuit' },
+                { item: 'kubejs:impossible_circuit' },
                 { item: 'minecraft:nether_star' },
                 { item: 'fission_reactor:fission_reactor_rod' }
             ],

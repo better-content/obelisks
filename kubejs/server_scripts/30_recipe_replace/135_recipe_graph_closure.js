@@ -7,10 +7,10 @@ var BTM_CLOSURE = {
     scorched: 'kubejs:scorched_machine_casing',
     andesite: 'kubejs:andesite_machine_casing',
     brass: 'kubejs:brass_machine_casing',
-    power: 'kubejs:power_grid_machine_casing',
-    oc2r: 'kubejs:oc2r_machine_casing',
+    power: 'kubejs:electrical_machine_casing',
+    oc2r: 'kubejs:circuited_machine_casing',
     space: 'kubejs:space_machine_casing',
-    ae2: 'kubejs:ae2_machine_casing',
+    ae2: 'kubejs:impossible_machine_casing',
     ironPlate: '#forge:plates/iron',
     copperPlate: '#forge:plates/copper',
     goldPlate: '#forge:plates/gold',
@@ -52,7 +52,7 @@ function btmClosureReplace(event, outputs, oldInputs, newInput) {
 }
 
 ServerEvents.recipes(function (event) {
-    // Alchemistry remains a compatibility/reference mod. Acid Vat is the player-facing chemistry surface.
+    // Alchemistry and ChemLib own chemistry identity; Acid Vat is retired from the active pack.
     event.remove({ id: 'alchemistry:patchouli_book' })
 
     // Remove controller casting shortcuts so the controller recipes visibly consume machine casings.
@@ -205,32 +205,7 @@ ServerEvents.recipes(function (event) {
         'SBS',
         'AZA'
     ], { A: 'create:andesite_alloy', Z: '#forge:ingots/zinc', F: 'create:fluid_pipe', S: BTM_CLOSURE.ironPlate, B: BTM_CLOSURE.brass }, 'kubejs:closure/createdieselgenerators/engine_turbocharger')
-    btmClosureShaped(event, 'createdieselgenerators:pumpjack_bearing', [
-        'AZA',
-        'ZBZ',
-        'ACA'
-    ], { A: 'create:andesite_alloy', Z: '#forge:ingots/zinc', B: BTM_CLOSURE.brass, C: 'create:mechanical_bearing' }, 'kubejs:closure/createdieselgenerators/pumpjack_bearing')
-    btmClosureShaped(event, 'createdieselgenerators:pumpjack_crank', [
-        'AIA',
-        'SBS',
-        'AZA'
-    ], { A: 'create:andesite_alloy', I: BTM_CLOSURE.ironPlate, S: 'create:shaft', B: BTM_CLOSURE.brass, Z: '#forge:ingots/zinc' }, 'kubejs:closure/createdieselgenerators/pumpjack_crank')
-
-    btmClosureShaped(event, 'acid_vat:mechanical_slurry_pump', [
-        ' C ',
-        'TBT',
-        ' C '
-    ], { C: 'create:cogwheel', T: 'acid_vat:acid_tube', B: BTM_CLOSURE.brass }, 'kubejs:closure/acid_vat/mechanical_slurry_pump')
-    btmClosureShaped(event, 'acid_vat:centrifuge_bearing', [
-        ' B ',
-        'ACA',
-        ' S '
-    ], { B: BTM_CLOSURE.brassPlate, A: 'create:andesite_alloy', C: BTM_CLOSURE.brass, S: 'create:shaft' }, 'kubejs:closure/acid_vat/centrifuge_bearing')
-    btmClosureShaped(event, 'acid_vat:centrifuge_chamber', [
-        ' B ',
-        'GTG',
-        ' C '
-    ], { B: BTM_CLOSURE.brassPlate, G: 'minecraft:glass', T: 'acid_vat:smart_slurry_pipe', C: BTM_CLOSURE.brass }, 'kubejs:closure/acid_vat/centrifuge_chamber')
+    event.remove({ type: 'createdieselgenerators:distillation' })
 
     // Heat/electricity machinery belongs to the power-grid casing tier.
     btmClosureShaped(event, 'create_new_age:reactor_casing', [

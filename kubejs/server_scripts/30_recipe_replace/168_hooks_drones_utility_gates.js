@@ -19,7 +19,7 @@ ServerEvents.recipes(function (event) {
     ], {
         H: 'minecraft:blaze_rod',
         B: 'rehooked:diamond_hook',
-        P: 'kubejs:power_grid_machine_casing',
+        P: 'kubejs:electrical_machine_casing',
         C: 'create_new_age:heat_pipe'
     }, 'kubejs:rehooked/blaze_hook_post_electricity')
 
@@ -38,10 +38,10 @@ ServerEvents.recipes(function (event) {
         'HRH',
         'QAQ'
     ], {
-        Q: 'advanced_ae:quantum_alloy_plate',
-        A: 'kubejs:ae2_machine_casing',
+        Q: 'kubejs:sky_steel_sheet',
+        A: 'kubejs:impossible_machine_casing',
         H: 'rehooked:ender_hook',
-        R: 'advanced_ae:quantum_core'
+        R: 'kubejs:impossible_circuit'
     }, 'kubejs:rehooked/red_hook_post_ae2')
 
     btmMobilityShaped(event, 'create_sa:brass_drone', [
@@ -49,10 +49,10 @@ ServerEvents.recipes(function (event) {
         'DAD',
         'QSQ'
     ], {
-        Q: 'advanced_ae:quantum_alloy_plate',
+        Q: 'kubejs:sky_steel_sheet',
         P: 'create:precision_mechanism',
         D: 'create:brass_sheet',
-        A: 'kubejs:ae2_machine_casing',
+        A: 'kubejs:impossible_machine_casing',
         S: 'create_sa:zinc_handle'
     }, 'kubejs:create_sa/brass_drone_post_ae2')
 })

@@ -7,10 +7,10 @@ var BTM_MAT = {
     seared: 'kubejs:seared_machine_casing',
     andesite: 'kubejs:andesite_machine_casing',
     brass: 'kubejs:brass_machine_casing',
-    power: 'kubejs:power_grid_machine_casing',
-    oc2r: 'kubejs:oc2r_machine_casing',
+    power: 'kubejs:electrical_machine_casing',
+    oc2r: 'kubejs:circuited_machine_casing',
     space: 'kubejs:space_machine_casing',
-    ae2: 'kubejs:ae2_machine_casing',
+    ae2: 'kubejs:impossible_machine_casing',
     ironSheet: 'create:iron_sheet',
     copperSheet: 'create:copper_sheet',
     goldSheet: 'create:golden_sheet',
@@ -201,20 +201,6 @@ ServerEvents.recipes(function (event) {
     ], ['minecraft:copper_ingot', '#forge:ingots/copper'], BTM_MAT.reinforcedCopper)
 
     btmMatReplaceOutputs(event, ['ae2additions:me_wireless_transceiver'], ['minecraft:diamond', '#forge:gems/diamond'], BTM_MAT.network)
-
-    // Advanced AE cards and quantum work: do not let vanilla gems/metals carry post-AE power.
-    btmMatReplaceOutputs(event, [
-        'advanced_ae:luck_card',
-        'advanced_ae:sprint_speed_card',
-        'advanced_ae:walk_speed_card'
-    ], ['minecraft:amethyst_shard', '#forge:gems/amethyst', 'minecraft:redstone', '#forge:dusts/redstone'], BTM_MAT.palladium)
-
-    btmMatReplaceOutputs(event, [
-        'advanced_ae:throughput_monitor_configurator',
-        'advanced_ae:adv_pattern_encoder',
-        'advanced_ae:small_adv_pattern_provider',
-        'advanced_ae:adv_pattern_provider_upgrade'
-    ], ['minecraft:iron_ingot', '#forge:ingots/iron', 'minecraft:redstone', '#forge:dusts/redstone'], BTM_MAT.skySteelSheet)
 
     // Blood Magic: normal player logistics must not get teleportation from gold alone.
     event.remove({ output: 'bloodmagic:teleposer' })

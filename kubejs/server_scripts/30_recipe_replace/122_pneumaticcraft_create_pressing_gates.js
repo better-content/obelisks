@@ -39,4 +39,29 @@ ServerEvents.recipes(function (event) {
             { item: compressedStone }
         ]
     }).id('kubejs:create/pressing/pneumaticcraft/compressed_stone')
+
+    event.remove({ output: 'pneumaticcraft:solar_compressor' })
+    event.remove({ output: 'pneumaticcraft:flux_compressor' })
+    event.remove({ output: 'pneumaticcraft:jet_boots_upgrade_4' })
+    event.remove({ output: 'pneumaticcraft:jet_boots_upgrade_5' })
+
+    event.replaceInput({ output: 'pneumaticcraft:air_compressor' }, 'minecraft:furnace', 'kubejs:rotational_compressor_core')
+    event.replaceInput({ output: 'pneumaticcraft:thermal_compressor' }, 'pneumaticcraft:air_compressor', 'kubejs:rotational_compressor_core')
+    event.replaceInput({ output: 'pneumaticcraft:liquid_compressor' }, 'pneumaticcraft:air_compressor', 'kubejs:rotational_compressor_core')
+    event.replaceInput({ output: 'pneumaticcraft:advanced_air_compressor' }, 'pneumaticcraft:air_compressor', 'kubejs:rotational_compressor_core')
+
+    event.remove({ id: 'pneumaticcraft:printed_circuit_board' })
+    event.custom({
+        type: 'pneumaticcraft:pressure_chamber',
+        inputs: [
+            { item: 'pneumaticcraft:unassembled_pcb' },
+            { item: 'pneumaticcraft:capacitor' },
+            { item: 'pneumaticcraft:capacitor' },
+            { item: 'pneumaticcraft:transistor' },
+            { item: 'pneumaticcraft:transistor' },
+            { item: 'kubejs:pressure_seal' }
+        ],
+        pressure: 2.0,
+        results: [{ item: 'pneumaticcraft:printed_circuit_board' }]
+    }).id('kubejs:pneumaticcraft/pressure_chamber/printed_circuit_board')
 })

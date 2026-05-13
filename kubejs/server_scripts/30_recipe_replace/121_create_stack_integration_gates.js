@@ -6,9 +6,9 @@
 var BTM_CREATE_STACK = {
     andesite: 'kubejs:andesite_machine_casing',
     brass: 'kubejs:brass_machine_casing',
-    power: 'kubejs:power_grid_machine_casing',
-    oc2r: 'kubejs:oc2r_machine_casing',
-    ae2: 'kubejs:ae2_machine_casing',
+    power: 'kubejs:electrical_machine_casing',
+    oc2r: 'kubejs:circuited_machine_casing',
+    ae2: 'kubejs:impossible_machine_casing',
     ironPlate: '#forge:plates/iron',
     copperPlate: '#forge:plates/copper',
     brassPlate: '#forge:plates/brass',
@@ -294,21 +294,9 @@ ServerEvents.recipes(function (event) {
         'railways:fuel_tank'
     ], ['minecraft:iron_ingot', '#forge:ingots/iron', 'minecraft:copper_ingot', '#forge:ingots/copper'], BTM_CREATE_STACK.brassPlate)
 
-    // Diesel branch: oil discovery/refining is brass logistics; bigger engines need power-grid control.
-    btmCreateShaped(event, 'createdieselgenerators:oil_scanner', [
-        ' G ',
-        'RBR',
-        ' P '
-    ], {
-        G: 'minecraft:glass_pane',
-        R: BTM_CREATE_STACK.redstoneRelay,
-        B: BTM_CREATE_STACK.brass,
-        P: 'create:precision_mechanism'
-    }, 'kubejs:create_stack/createdieselgenerators/oil_scanner')
-
+    // Diesel branch: CDG burns liquid fuels; PNCR owns oil discovery/refining.
+    event.remove({ type: 'createdieselgenerators:distillation' })
     btmCreateReplaceInputs(event, [
-        'createdieselgenerators:pumpjack_bearing',
-        'createdieselgenerators:pumpjack_crank',
         'createdieselgenerators:bulk_fermenter',
         'createdieselgenerators:basin_lid',
         'createdieselgenerators:oil_barrel',

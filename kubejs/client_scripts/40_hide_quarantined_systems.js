@@ -19,7 +19,17 @@ var BTM_HIDDEN_QUARANTINED_ITEMS = [
     'occultism:miner_afrit_deeps',
     'occultism:miner_marid_master',
     'sophisticatedbackpacks:stack_upgrade_omega_tier',
-    'sophisticatedstorage:stack_upgrade_omega_tier'
+    'sophisticatedstorage:stack_upgrade_omega_tier',
+    'createdieselgenerators:distillation_controller',
+    'createdieselgenerators:pumpjack_head',
+    'createdieselgenerators:pumpjack_hole',
+    'createdieselgenerators:pumpjack_bearing',
+    'createdieselgenerators:pumpjack_crank',
+    'createdieselgenerators:oil_scanner',
+    'pneumaticcraft:solar_compressor',
+    'pneumaticcraft:flux_compressor',
+    'pneumaticcraft:jet_boots_upgrade_4',
+    'pneumaticcraft:jet_boots_upgrade_5'
 ]
 
 JEIEvents.hideItems(function (event) {

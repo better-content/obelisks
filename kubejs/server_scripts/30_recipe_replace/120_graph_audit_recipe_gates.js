@@ -4,9 +4,9 @@
 var BTM_GRAPH_GATE = {
     andesite: 'kubejs:andesite_machine_casing',
     brass: 'kubejs:brass_machine_casing',
-    power: 'kubejs:power_grid_machine_casing',
-    oc2r: 'kubejs:oc2r_machine_casing',
-    ae2: 'kubejs:ae2_machine_casing',
+    power: 'kubejs:electrical_machine_casing',
+    oc2r: 'kubejs:circuited_machine_casing',
+    ae2: 'kubejs:impossible_machine_casing',
     demonic: 'bloodmagic:demonslate',
     ethereal: 'bloodmagic:etherealslate'
 }
@@ -88,59 +88,7 @@ ServerEvents.recipes(function (event) {
         P: 'create:precision_mechanism'
     }, 'kubejs:graph_gate/create_connected/linked_transmitter')
 
-    btmGraphShaped(event, 'createdieselgenerators:distillation_controller', [
-        'PBP',
-        'TCT',
-        'PBP'
-    ], {
-        P: 'create:brass_sheet',
-        B: BTM_GRAPH_GATE.brass,
-        T: 'create:fluid_tank',
-        C: 'create:precision_mechanism'
-    }, 'kubejs:graph_gate/createdieselgenerators/distillation_controller')
-
-    btmGraphShaped(event, 'createdieselgenerators:pumpjack_hole', [
-        'SBS',
-        'PAP',
-        'SBS'
-    ], {
-        S: 'create:shaft',
-        B: BTM_GRAPH_GATE.brass,
-        P: 'create:fluid_pipe',
-        A: 'create:precision_mechanism'
-    }, 'kubejs:graph_gate/createdieselgenerators/pumpjack_hole')
-
-    btmGraphShaped(event, 'createdieselgenerators:pumpjack_head', [
-        'SPS',
-        'ABA',
-        'SPS'
-    ], {
-        S: 'create:shaft',
-        P: 'create:fluid_pipe',
-        A: 'create:brass_sheet',
-        B: BTM_GRAPH_GATE.brass
-    }, 'kubejs:graph_gate/createdieselgenerators/pumpjack_head')
-
-    // Acid Vat logistics stay brass-era chemistry infrastructure.
-    btmGraphShaped(event, 'acid_vat:smart_slurry_pipe', [
-        'RPR',
-        'PBP',
-        'RPR'
-    ], {
-        R: 'minecraft:redstone',
-        P: 'acid_vat:acid_tube',
-        B: BTM_GRAPH_GATE.brass
-    }, 'kubejs:graph_gate/acid_vat/smart_slurry_pipe')
-
-    btmGraphShaped(event, 'acid_vat:portable_slurry_interface', [
-        'TPT',
-        'PBP',
-        'TPT'
-    ], {
-        T: 'acid_vat:slurry_tank',
-        P: 'acid_vat:smart_slurry_pipe',
-        B: BTM_GRAPH_GATE.brass
-    }, 'kubejs:graph_gate/acid_vat/portable_slurry_interface')
+    event.remove({ type: 'createdieselgenerators:distillation' })
 
     // Power Grid / New Age heat infrastructure should not be simple Create-era crafting.
     btmGraphShaped(event, 'create_new_age:heat_pipe', [

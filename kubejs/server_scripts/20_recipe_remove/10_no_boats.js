@@ -1,30 +1,8 @@
 // KubeJS 6+ / Forge 1.20.1
-// Disables boat / chest boat / raft / chest raft crafting for selected namespaces.
+// Disables vanilla-style boat / chest boat / raft / chest raft crafting.
 // Rhino-safe: uses var, arrays, while iterators, no fancy JS.
 
 var BuiltInRegistries = Java.loadClass('net.minecraft.core.registries.BuiltInRegistries');
-
-var BOAT_NAMESPACES = [
-    'minecraft',
-'quark',
-'undergarden',
-'hexerei',
-'twilightforest',
-'regions_unexplored',
-'sophisticatedstorageinmotion',
-'forbidden_arcanus',
-'malum',
-'deeperdarker',
-'goety',
-'vampirism'
-];
-
-function inArray(arr, value) {
-    for (var i = 0; i < arr.length; i++) {
-        if (arr[i] === value) return true;
-    }
-    return false;
-}
 
 function isBoatLikePath(path) {
     return (
@@ -51,10 +29,8 @@ function collectBoatItems() {
 
         if (split.length !== 2) continue;
 
-        var namespace = split[0];
         var path = split[1];
 
-        if (!inArray(BOAT_NAMESPACES, namespace)) continue;
         if (!isBoatLikePath(path)) continue;
 
         found.push(id);

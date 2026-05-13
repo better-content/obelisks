@@ -18,7 +18,7 @@ ServerEvents.recipes(function (event) {
             P: { item: 'powergrid:copper_coil' },
             F: { item: 'create:fluid_tank' },
             B: { item: 'create:brass_sheet' },
-            C: { item: 'kubejs:power_grid_machine_casing' },
+            C: { item: 'kubejs:electrical_machine_casing' },
             T: { item: 'create_new_age:heat_pump' }
         },
         result: { item: 'liquid_coolant:coolant_exchanger' }

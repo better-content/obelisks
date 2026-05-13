@@ -30,7 +30,17 @@ const DISABLED_ITEMS = [
 'occultism:miner_marid_master',
 'sophisticatedbackpacks:stack_upgrade_omega_tier',
 'sophisticatedstorage:stack_upgrade_omega_tier',
-'bloodmagic:teleposer'
+'bloodmagic:teleposer',
+'createdieselgenerators:distillation_controller',
+'createdieselgenerators:pumpjack_head',
+'createdieselgenerators:pumpjack_hole',
+'createdieselgenerators:pumpjack_bearing',
+'createdieselgenerators:pumpjack_crank',
+'createdieselgenerators:oil_scanner',
+'pneumaticcraft:solar_compressor',
+'pneumaticcraft:flux_compressor',
+'pneumaticcraft:jet_boots_upgrade_4',
+'pneumaticcraft:jet_boots_upgrade_5'
 ]
 
 function safeString(value) {
@@ -56,6 +66,9 @@ function recipeJsonString(recipe) {
 
 ServerEvents.recipes(event => {
     console.log('========== Disabled item deep scan start ==========')
+
+    event.remove({ id: 'burnt:gunpowder_recipe' })
+    event.remove({ id: 'burnt:fire_barrel_recipe_2' })
 
     // Normal output selector pass.
     DISABLED_ITEMS.forEach(item => {

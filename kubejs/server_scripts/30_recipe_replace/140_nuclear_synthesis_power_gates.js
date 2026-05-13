@@ -29,10 +29,10 @@ ServerEvents.recipes(function (event) {
         ],
         key: {
             P: { item: 'create_new_age:heat_pipe' },
-            U: { item: 'chemlib:uranium_plate' },
+            U: { item: 'kubejs:fissile_salt_blend' },
             H: { item: 'create_new_age:reactor_casing' },
-            C: { item: 'kubejs:power_grid_machine_casing' },
-            T: { item: 'chemlib:thorium_plate' }
+            C: { item: 'kubejs:electrical_machine_casing' },
+            T: { item: 'kubejs:titanium_thermal_plate' }
         },
         result: { item: 'fission_reactor:fission_fuel_acceptor' }
     }).id('kubejs:create/mechanical_crafting/fission/fuel_acceptor')
@@ -46,8 +46,8 @@ ServerEvents.recipes(function (event) {
             ' P '
         ],
         key: {
-            P: { item: 'chemlib:platinum_plate' },
-            U: { item: 'chemlib:uranium_plate' },
+            P: { item: 'kubejs:platinum_group_residue' },
+            U: { item: 'kubejs:fissile_salt_blend' },
             R: { item: 'create_new_age:reactor_rod' }
         },
         result: { item: 'fission_reactor:fission_reactor_rod' }
@@ -127,7 +127,7 @@ ServerEvents.recipes(function (event) {
             S: { item: 'kubejs:sky_steel_sheet' },
             F: { item: 'ae2:fluix_crystal' },
             M: { item: 'powergrid:electromagnet' },
-            C: { item: 'kubejs:ae2_machine_casing' }
+            C: { item: 'kubejs:impossible_machine_casing' }
         },
         result: { item: 'gases_and_plasmas:electromagnet' }
     }).id('kubejs:create/mechanical_crafting/gases/electromagnet')
@@ -144,7 +144,7 @@ ServerEvents.recipes(function (event) {
             F: { item: 'ae2:fluix_glass_cable' },
             E: { item: 'gases_and_plasmas:electromagnet' },
             C: { item: 'powergrid:transformer_core' },
-            A: { item: 'kubejs:ae2_machine_casing' },
+            A: { item: 'kubejs:impossible_machine_casing' },
             R: { item: 'fission_reactor:fission_reactor_rod' }
         },
         result: { item: 'gases_and_plasmas:ionizer' }

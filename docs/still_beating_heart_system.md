@@ -2,7 +2,7 @@
 
 Namespace: `rpgstats`
 
-Source: `/home/gerald/mcmods/rpgstats`
+Source: `/home/gerald/mcmods/rpg-stats`
 
 ## Design Role
 
@@ -59,25 +59,15 @@ Other confirmed item:
 
 ## Source Mechanics
 
-`StillBeatingHeartData.create(player, source)` stores a snapshot under `StillBeatingHeartData` NBT.
-
-Captured data includes:
-
-- player identity, display name, XP, score
-- death message and damage cause id
-- attacker and direct entity, if present
-- dimension and block position
-- health, max health, absorption, food, saturation, air, fire ticks
-- RPG Stats data, including life peak, unspent points, total allocated points, total points this life, and stat entries
-- ritual data, if a ritual dagger was used before death
-- attributes
-- equipment snapshot
+`StillBeatingHeartData.create(player, source)` stores only schema version and captured XP level under `StillBeatingHeartData` NBT.
 
 Death handling:
 
-- `CommonForgeEvents.onLivingDeath` captures hearts for non-spectator server players.
+- `CommonForgeEvents.onLivingDeath` captures hearts for non-spectator server players only when Blood Magic is installed.
 - Captured hearts are queued in persistent player data and delivered to inventory or ender chest after respawn.
 - `rpgstats:still_beating_heart` stacks to 1.
+- Placing a Still-Beating Heart in a Blood Altar generates LP/t from its level: 5 LP/t base, doubling every 10 captured levels, capped at 4096 LP/t.
+- The Still-Beating Heart texture is animated through native item texture animation metadata.
 
 ## Typed Heart Conversion
 
@@ -104,24 +94,24 @@ Existing script:
 Current behavior:
 
 - Removes default Blood Magic blood orb altar recipes.
-- Adds heart-NBT-based Blood Altar recipes:
-- Any captured heart -> `bloodmagic:weakbloodorb`.
-- Levelled heart -> `bloodmagic:apprenticebloodorb`.
-- Levelled heart with high Hemostasis -> `bloodmagic:magicianbloodorb`.
-- Levelled heart with high Hemostasis and Wither death -> `bloodmagic:masterbloodorb`.
-- Levelled heart with high Hemostasis and Ender Dragon death -> `bloodmagic:archmagebloodorb`.
+- Adds level-only heart-key Blood Altar recipes:
+- Level 0+ heart key -> `bloodmagic:weakbloodorb`.
+- Level 10+ heart key -> `bloodmagic:apprenticebloodorb`.
+- Level 20+ heart key -> `bloodmagic:magicianbloodorb`.
+- Level 30+ heart key -> `bloodmagic:masterbloodorb`.
+- Level 40+ heart key -> `bloodmagic:archmagebloodorb`.
+- `kubejs/server_scripts/30_recipe_replace/82_blood_magic_lifeforce_rework.js` makes Blood Altars expensive and pushes non-heart LP/t helpers, such as sacrifice runes and the Dagger of Sacrifice, deeper into Blood Magic.
 
 Design risk:
 
 - This is a strong thematic bridge, but it consumes hearts directly for every Blood Orb tier.
 - Under the trophy rule, this should remain a milestone path, not become a repeated resource sink.
-- Weak Orb from any captured heart may be too broad if heart production is easy or every ordinary death produces one.
+- Heart production is constrained by Blood Magic being present, Blood Altar cost, and level thresholds for orb escalation.
 
 Recommended review:
 
 - Keep hearts as Blood Magic bridge items.
-- Consider using one heart per Blood Magic tier milestone, not repeated recipe fuel.
-- Consider using typed/category hearts for tier-specific gates instead of generic hearts for many recipes.
+- Keep orb escalation level-only unless a future design explicitly reintroduces death-category trophies.
 - Avoid using Still-Beating Hearts in side-magic workstation spam gates; side magic should use Blood Magic slates.
 
 ## Intended Heart Categories
@@ -138,5 +128,5 @@ Conceptual categories for later content:
 
 Implementation note:
 
-- Current source supports matching by NBT: death cause id, attacker/direct entity, dimension, stats, ritual tier, level, and stat thresholds.
-- Future categories can be implemented as typed-heart definitions or recipe predicates without inventing unrelated materials.
+- Current new heart data intentionally supports level matching only. Legacy captured hearts may still carry older snapshot fields, but new progression should not depend on them.
+- Future categories should be a deliberate new design pass, not accidental reuse of old snapshot NBT.

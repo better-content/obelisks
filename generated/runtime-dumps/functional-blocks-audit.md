@@ -1,0 +1,333 @@
+# Functional Blocks Audit From Runtime Dumps
+
+Source inputs: `generated/runtime-dumps/recipes.json`, blockstate files from the freshly bootstrapped disposable server jars in `/tmp/btm-dump-server-redo/mods`, and previously audited vanilla/client-only blockstate rows when no server jar blockstate was available.
+
+Limits: `registries.json` and `tags.json` currently contain empty registries/tags, so block IDs are inferred from blockstate files and filtered by functional/process keywords. This is comprehensive for named functional block candidates, but keyword based, so verify borderline decorative/storage hits in-game before using it as a hard progression gate list.
+
+- Total blockstate IDs scanned: 19941
+- Runtime recipes scanned: 35400
+- Recipe serializer types: 447
+- Process/crafting serializer types: 220
+- Functional block candidates: 3738
+
+## Functional Candidate Counts By Namespace
+- `chipped`: 641
+- `railways`: 499
+- `tconstruct`: 161
+- `quark`: 157
+- `botania`: 134
+- `malum`: 128
+- `createadditionallogistics`: 121
+- `swem`: 117
+- `create`: 111
+- `ars_nouveau`: 103
+- `natures_spirit`: 103
+- `blue_skies`: 85
+- `minecraft`: 76
+- `everythingcopper`: 74
+- `twilightforest`: 67
+- `pneumaticcraft`: 62
+- `deeperdarker`: 61
+- `fallout_wastelands_`: 53
+- `bloodmagic`: 40
+- `sophisticatedstorage`: 38
+- `reliquary`: 35
+- `burnt`: 34
+- `createbigcannons`: 33
+- `createdeco`: 33
+- `undergarden`: 32
+- `apotheosis`: 31
+- `framedblocks`: 31
+- `immersive_weathering`: 31
+- `createdieselgenerators`: 30
+- `createmoredrillheads`: 30
+- `iceandfire`: 28
+- `ae2`: 27
+- `alekiships`: 24
+- `farmersdelight`: 24
+- `compressedcreativity`: 23
+- `create_connected`: 22
+- `delightful`: 22
+- `supplementaries`: 22
+- `callfromthedepth_`: 21
+- `collectorsreap`: 20
+- `morered`: 19
+- `powergrid`: 19
+- `aether`: 17
+- `creatingspace`: 16
+- `create_new_age`: 15
+- `expatternprovider`: 14
+- `theurgy`: 13
+- `unearthed`: 13
+- `apotheotic_additions`: 12
+- `mynethersdelight`: 11
+- `ticex`: 11
+- `acid_vat`: 10
+- `alchemistry`: 10
+- `undergardendelight`: 10
+- `veggiesdelight`: 10
+- `advanced_ae`: 9
+- `rsgauges`: 9
+- `rusticdelight`: 9
+- `dtmalum`: 8
+- `oc2r`: 8
+- `brewinandchewin`: 7
+- `savage_and_ravage`: 7
+- `ubesdelight`: 7
+- `amendments`: 6
+- `occultism`: 6
+- `mae2`: 5
+- `ae2additions`: 4
+- `create_power_loader`: 4
+- `create_things_and_misc`: 4
+- `dtnatures_spirit`: 4
+- `dynamictrees`: 4
+- `farmersrespite`: 4
+- `gases_and_plasmas`: 4
+- `lootr`: 4
+- `realisticores`: 4
+- `the_finley_dimension_remastered`: 4
+- `cold_sweat`: 3
+- `liquid_coolant`: 3
+- `create_central_kitchen`: 2
+- `create_more_additions`: 2
+- `dtquark`: 2
+- `ends_delight`: 2
+- `fission_reactor`: 2
+- `littlelogistics`: 2
+- `protection_pixel`: 2
+- `chemlib`: 1
+- `corn_delight`: 1
+- `create_enchantment_industry`: 1
+- `createappliedkinetics`: 1
+- `dynamictreesplus`: 1
+- `ftbquests`: 1
+- `k_turrets`: 1
+- `notreepunching`: 1
+- `procedural_bouquets`: 1
+- `relics`: 1
+- `the_flesh_that_hates`: 1
+- `wares`: 1
+- `weather2`: 1
+
+## Runtime Process Recipe Types
+- `acid_vat:acid`: 4 recipes
+- `acid_vat:acid_vat`: 4 recipes
+- `acid_vat:centrifuge`: 3 recipes
+- `advanced_ae:reaction`: 16 recipes
+- `ae2:charger`: 3 recipes
+- `ae2:inscriber`: 6 recipes
+- `aether:accessory_freezable`: 2 recipes
+- `aether:ambrosium_enchanting`: 1 recipes
+- `aether:enchanting`: 10 recipes
+- `aether:freezing`: 9 recipes
+- `aether:icestone_freezable`: 2 recipes
+- `aether:incubation`: 3 recipes
+- `alchemistry:fission`: 117 recipes
+- `alchemistry:fusion`: 3481 recipes
+- `apotheosis:enchanting`: 16 recipes
+- `apotheosis:keep_nbt_enchanting`: 1 recipes
+- `apotheosis:potion_charm_enchanting`: 1 recipes
+- `ars_nouveau:armor_upgrade`: 2 recipes
+- `ars_nouveau:book_upgrade`: 2 recipes
+- `ars_nouveau:budding_conversion`: 1 recipes
+- `ars_nouveau:caster_tome`: 27 recipes
+- `ars_nouveau:crush`: 26 recipes
+- `ars_nouveau:dispel_entity`: 1 recipes
+- `ars_nouveau:dye`: 19 recipes
+- `ars_nouveau:enchanting_apparatus`: 80 recipes
+- `ars_nouveau:enchantment`: 96 recipes
+- `ars_nouveau:glyph`: 83 recipes
+- `ars_nouveau:imbuement`: 14 recipes
+- `ars_nouveau:potion_flask`: 3 recipes
+- `ars_nouveau:reactive_enchantment`: 1 recipes
+- `ars_nouveau:scry_ritual`: 12 recipes
+- `ars_nouveau:spell_write`: 1 recipes
+- `ars_nouveau:summon_ritual`: 1 recipes
+- `bloodmagic:alchemytable`: 131 recipes
+- `bloodmagic:altar`: 26 recipes
+- `bloodmagic:anointment_apply`: 1 recipes
+- `bloodmagic:arc`: 94 recipes
+- `bloodmagic:arc_potion`: 1 recipes
+- `bloodmagic:array`: 26 recipes
+- `bloodmagic:filter_copy`: 1 recipes
+- `bloodmagic:filteralchemytable`: 3 recipes
+- `bloodmagic:flask_potioncycle`: 1 recipes
+- `bloodmagic:flask_potioneffect`: 14 recipes
+- `bloodmagic:flask_potionfill`: 2 recipes
+- `bloodmagic:flask_potionflasktransform`: 2 recipes
+- `bloodmagic:flask_potionlength`: 46 recipes
+- `bloodmagic:flask_potionpotency`: 32 recipes
+- `bloodmagic:flask_potiontransform`: 13 recipes
+- `bloodmagic:livingdowngrade`: 9 recipes
+- `bloodmagic:meteor`: 8 recipes
+- `bloodmagic:soulforge`: 89 recipes
+- `bloodmagic:tome_combine`: 1 recipes
+- `botania:brew`: 20 recipes
+- `botania:mana_infusion`: 140 recipes
+- `brewinandchewin:create_potion_pouring`: 1 recipes
+- `brewinandchewin:fermenting`: 31 recipes
+- `brewinandchewin:keg_pouring`: 62 recipes
+- `chipped:alchemy_bench`: 1 recipes
+- `create_enchantment_industry:disenchanting`: 6 recipes
+- `create:compacting`: 37 recipes
+- `create:crushing`: 179 recipes
+- `create:cutting`: 995 recipes
+- `create:deploying`: 141 recipes
+- `create:emptying`: 98 recipes
+- `create:filling`: 127 recipes
+- `create:haunting`: 28 recipes
+- `create:item_application`: 49 recipes
+- `create:item_copying`: 1 recipes
+- `create:mechanical_crafting`: 211 recipes
+- `create:milling`: 94 recipes
+- `create:mixing`: 1158 recipes
+- `create:pressing`: 32 recipes
+- `create:sandpaper_polishing`: 4 recipes
+- `create:sequenced_assembly`: 317 recipes
+- `create:splashing`: 48 recipes
+- `create:toolbox_dyeing`: 1 recipes
+- `createbigcannons:autocannon_ammo_container_filling_deployer`: 1 recipes
+- `createbigcannons:big_cartridge_filling`: 1 recipes
+- `createbigcannons:big_cartridge_filling_deployer`: 1 recipes
+- `createbigcannons:cartridge_assembly`: 1 recipes
+- `createbigcannons:cartridge_assembly_deployer`: 1 recipes
+- `createbigcannons:melting`: 12 recipes
+- `createbigcannons:munition_fuzing_deployer`: 1 recipes
+- `createbigcannons:tracer_application_deployer`: 1 recipes
+- `createdieselgenerators:basin_fermenting`: 6 recipes
+- `createdieselgenerators:bulk_fermenting`: 4 recipes
+- `createdieselgenerators:casting`: 1 recipes
+- `createdieselgenerators:compression_molding`: 7 recipes
+- `createdieselgenerators:wire_cutting`: 2 recipes
+- `excavated_variants:ore_conversion`: 1 recipes
+- `expatternprovider:circuit_cutter`: 5 recipes
+- `farmersdelight:cooking`: 254 recipes
+- `farmersdelight:cutting`: 303 recipes
+- `farmersrespite:brewing`: 47 recipes
+- `iceandfire:dragonforge`: 4 recipes
+- `jumbofurnace:jumbo_smelting`: 2 recipes
+- `malum:node_blasting`: 9 recipes
+- `malum:node_smelting`: 9 recipes
+- `malum:spirit_infusion`: 107 recipes
+- `mantle:crafting_shaped_retextured`: 15 recipes
+- `minecraft:blasting`: 232 recipes
+- `minecraft:campfire_cooking`: 108 recipes
+- `minecraft:crafting_decorated_pot`: 1 recipes
+- `minecraft:crafting_shaped`: 9193 recipes
+- `minecraft:crafting_shapeless`: 3773 recipes
+- `minecraft:crafting_special_armordye`: 1 recipes
+- `minecraft:crafting_special_bannerduplicate`: 1 recipes
+- `minecraft:crafting_special_bookcloning`: 1 recipes
+- `minecraft:crafting_special_firework_rocket`: 1 recipes
+- `minecraft:crafting_special_firework_star`: 1 recipes
+- `minecraft:crafting_special_firework_star_fade`: 1 recipes
+- `minecraft:crafting_special_mapcloning`: 1 recipes
+- `minecraft:crafting_special_mapextending`: 1 recipes
+- `minecraft:crafting_special_repairitem`: 1 recipes
+- `minecraft:crafting_special_shielddecoration`: 1 recipes
+- `minecraft:crafting_special_shulkerboxcoloring`: 1 recipes
+- `minecraft:crafting_special_suspiciousstew`: 1 recipes
+- `minecraft:crafting_special_tippedarrow`: 1 recipes
+- `minecraft:smelting`: 557 recipes
+- `minecraft:smithing_transform`: 75 recipes
+- `minecraft:smithing_trim`: 20 recipes
+- `minecraft:smoking`: 144 recipes
+- `minecraft:stonecutting`: 5026 recipes
+- `morered:soldering`: 25 recipes
+- `notreepunching:empty`: 10 recipes
+- `occultism:crafting_special_book_binding`: 1 recipes
+- `occultism:crushing`: 57 recipes
+- `occultism:ritual`: 66 recipes
+- `pneumaticcraft:amadron`: 12 recipes
+- `pneumaticcraft:assembly_drill`: 4 recipes
+- `pneumaticcraft:assembly_laser`: 3 recipes
+- `pneumaticcraft:compressor_upgrade_crafting`: 2 recipes
+- `pneumaticcraft:crafting_shaped_no_mirror`: 2 recipes
+- `pneumaticcraft:crafting_shaped_pressurizable`: 11 recipes
+- `pneumaticcraft:drone_color_crafting`: 1 recipes
+- `pneumaticcraft:drone_upgrade_crafting`: 1 recipes
+- `pneumaticcraft:explosion_crafting`: 3 recipes
+- `pneumaticcraft:fluid_mixer`: 2 recipes
+- `pneumaticcraft:fuel_quality`: 7 recipes
+- `pneumaticcraft:gun_ammo_potion_crafting`: 1 recipes
+- `pneumaticcraft:heat_frame_cooling`: 3 recipes
+- `pneumaticcraft:heat_properties`: 34 recipes
+- `pneumaticcraft:one_probe_helmet_crafting`: 1 recipes
+- `pneumaticcraft:patchouli_book_crafting`: 1 recipes
+- `pneumaticcraft:pressure_chamber`: 15 recipes
+- `pneumaticcraft:pressure_chamber_disenchanting`: 1 recipes
+- `pneumaticcraft:pressure_chamber_enchanting`: 1 recipes
+- `pneumaticcraft:refinery`: 3 recipes
+- `pneumaticcraft:thermo_plant`: 26 recipes
+- `powergrid:crafting_special_string_light_cord`: 1 recipes
+- `quark:smithing_rune`: 18 recipes
+- `reliquary:alkahestry_crafting`: 22 recipes
+- `sophisticatedbackpacks:smithing_backpack_upgrade`: 1 recipes
+- `sophisticatedstorageinmotion:uncraft_moving_storage`: 1 recipes
+- `starcatcher:fishing_rod_smithing`: 2 recipes
+- `supplementaries:bubble_blower_charge`: 1 recipes
+- `supplementaries:sus_crafting`: 3 recipes
+- `tconstruct:ageable_severing`: 3 recipes
+- `tconstruct:alloy`: 19 recipes
+- `tconstruct:armor_dyeing_modifier`: 1 recipes
+- `tconstruct:armor_trim_modifier`: 1 recipes
+- `tconstruct:basin_casting_composite`: 1 recipes
+- `tconstruct:basin_casting_material`: 1 recipes
+- `tconstruct:basin_filling`: 10 recipes
+- `tconstruct:casting_basin`: 137 recipes
+- `tconstruct:casting_table`: 261 recipes
+- `tconstruct:casting_table_potion`: 4 recipes
+- `tconstruct:casting_table_tipped_clearing`: 3 recipes
+- `tconstruct:casting_table_tipping`: 3 recipes
+- `tconstruct:crafting_overslime_modifier`: 4 recipes
+- `tconstruct:crafting_shaped_materials`: 10 recipes
+- `tconstruct:crafting_shapeless_materials`: 1 recipes
+- `tconstruct:crafting_table_repair`: 1 recipes
+- `tconstruct:damagable_melting`: 61 recipes
+- `tconstruct:enchantment_converting`: 10 recipes
+- `tconstruct:entity_melting`: 32 recipes
+- `tconstruct:extract_modifier`: 10 recipes
+- `tconstruct:incremental_modifier`: 46 recipes
+- `tconstruct:item_part_builder`: 125 recipes
+- `tconstruct:material`: 179 recipes
+- `tconstruct:material_fluid`: 63 recipes
+- `tconstruct:material_melting`: 41 recipes
+- `tconstruct:melting`: 321 recipes
+- `tconstruct:melting_fuel`: 23 recipes
+- `tconstruct:modifier`: 138 recipes
+- `tconstruct:modifier_repair`: 1 recipes
+- `tconstruct:modifier_salvage`: 150 recipes
+- `tconstruct:modifier_set_worktable`: 2 recipes
+- `tconstruct:modifier_sorting`: 1 recipes
+- `tconstruct:molding_table`: 62 recipes
+- `tconstruct:mooshroom_demushrooming`: 1 recipes
+- `tconstruct:multilevel_incremental_modifier`: 2 recipes
+- `tconstruct:multilevel_modifier`: 1 recipes
+- `tconstruct:ore_melting`: 104 recipes
+- `tconstruct:overslime_modifier`: 16 recipes
+- `tconstruct:part_builder`: 26 recipes
+- `tconstruct:part_builder_recycling`: 37 recipes
+- `tconstruct:part_builder_tool_recycling`: 13 recipes
+- `tconstruct:player_beheading`: 1 recipes
+- `tconstruct:remove_modifier`: 2 recipes
+- `tconstruct:retextured_casting_basin`: 5 recipes
+- `tconstruct:severing`: 30 recipes
+- `tconstruct:sheep_shearing`: 1 recipes
+- `tconstruct:snow_golem_beheading`: 1 recipes
+- `tconstruct:swappable_modifier`: 41 recipes
+- `tconstruct:table_casting_composite`: 29 recipes
+- `tconstruct:table_casting_material`: 51 recipes
+- `tconstruct:table_casting_part_swapping`: 10 recipes
+- `tconstruct:table_duplication`: 1 recipes
+- `tconstruct:table_filling`: 4 recipes
+- `tconstruct:table_tool_casting`: 2 recipes
+- `tconstruct:tinker_station_damaging`: 6 recipes
+- `tconstruct:tinker_station_part_swapping`: 3 recipes
+- `tconstruct:tinker_station_repair`: 1 recipes
+- `tconstruct:tipped_tool_transform`: 1 recipes
+- `tconstruct:toggle_interaction`: 1 recipes
+- `tconstruct:tool_building`: 37 recipes
+- `theurgy:fermentation`: 250 recipes
+- `theurgy:incubation`: 141 recipes
+- `twilightforest:uncrafting`: 2 recipes

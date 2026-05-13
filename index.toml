@@ -5302,7 +5302,7 @@ hash = "90183d8ccf316b92b53afc0c5f04e536cbdb83a445b0c595ca46b9871e63c990"
 
 [[files]]
 file = "config/biomespawnpoint/spawnbiomes.txt"
-hash = "cceb291d5fb99607685b8963497b0c733776891fdea875e37ef28e1598c394f6"
+hash = "ea0104af93914bb710aede4f6953d79e8c69f3acd3478a57d4ea067fb08126cc"
 
 [[files]]
 file = "config/blockswap/block_swap.json5"
@@ -5795,6 +5795,10 @@ hash = "f21ac2755be0bec1716b8cec02fe90cc3d785c5030de19973a07c9705015d40c"
 [[files]]
 file = "config/iceandfire-client.toml"
 hash = "2951cb48c8ceb7c4ab70652af11efc6f7fdfa65237a718697c4282026cd5fa1e"
+
+[[files]]
+file = "config/iceandfire-common.toml"
+hash = "e056b1c974cff0d96bca7de572adeb1c517c9f55f42c076259ef40c0aed678a5"
 
 [[files]]
 file = "config/iceandfire/amphithere_biomes.json"
@@ -6471,6 +6475,10 @@ hash = "d9a720cd84b9c6678350d82d9542c135e3b6b843c7cc877596848baf594bb3f5"
 [[files]]
 file = "config/starcatcher-client.toml"
 hash = "dd7415a83aef00c385628fe1756a0a97738b8dffd00f30effd08dd5e1da27431"
+
+[[files]]
+file = "config/structurify.json"
+hash = "84ca80f22cdd1f71da03ddcc6f72996b3bd637c56caf476eb1169fa3d6cdebec"
 
 [[files]]
 file = "config/survivalisland.json"
@@ -7534,7 +7542,7 @@ hash = "bdc1efea748879ac6430ebdfa2d69f341e11d2e2e3f7ab17d255274c91bb2b38"
 
 [[files]]
 file = "kubejs/client_scripts/10_blood_orb_heart_requirements_tooltips.js"
-hash = "254510a376ef1667c32d56561f435fe94ab942f3890f92cec4d8c51bbed306cf"
+hash = "39e70d5010bbebe1f5eda30ae8902b8cbc3391b3ba81fa2eb605d28d70c380a2"
 
 [[files]]
 file = "kubejs/client_scripts/20_hide_vanilla_tools.js"
@@ -8293,6 +8301,10 @@ file = "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate
 hash = "243eb349f55ecf681c613e8bb6d8b68d26c535e5bc2e5773bbbe62521cc5933f"
 
 [[files]]
+file = "kubejs/server_scripts/30_recipe_replace/82_blood_magic_lifeforce_rework.js"
+hash = "ca2839b8a0c732c06a837eae083c975fad772c2066efb5d6821ffa23e3be6ebd"
+
+[[files]]
 file = "kubejs/server_scripts/30_recipe_replace/85_dirt_grass_tag_compat.js"
 hash = "a76dfcfd2a449c3bb97932e2bf04c53442c6649be9bce49859b8f17dbcc1f14c"
 
@@ -8330,7 +8342,7 @@ hash = "7c8bff0a167e5ca668f70047727a398e3965656b7160ebd344d7d31449fa6ad2"
 
 [[files]]
 file = "kubejs/server_scripts/40_recipe_add/40_blood_orbs_from_still_beating_hearts.js"
-hash = "b7841bc002e33ab0ec22a7280ca8fa67749ce74594cb83b9943142463ad0ee73"
+hash = "9087bc1d11f2d0028c1f9cceffc2422d87f6012b4ece85674a4f43329debaecc"
 
 [[files]]
 file = "kubejs/server_scripts/40_recipe_add/45_deposit_furnace_fallbacks.js"
@@ -8418,7 +8430,7 @@ hash = "222e35db563a535007bd5913a2129fce5abd2b41d1d54d7399d36d1e5e631aa3"
 
 [[files]]
 file = "kubejs/startup_scripts/20_globals/30_blood_heart_types.js"
-hash = "37d52a1a911e7de3a696a1f0f70a4b8edf56f88ae23761ebffb9c603ac713911"
+hash = "81bc078b554fba8b07f4a87b86591c0af1ce1772a7c88e9f995724b17df4d01e"
 
 [[files]]
 file = "kubejs/startup_scripts/30_hide_vanilla_tools_from_creative.js"
@@ -8431,10 +8443,6 @@ hash = "2f877d1dcdfe376099f4fd6df097168f161caa846416332e19fe64637c45ad83"
 [[files]]
 file = "kubejs/startup_scripts/README.md"
 hash = "3903307df08d606c37af90ecb8d1e13c2b0694bf1a989abec250268f562e8cc4"
-
-[[files]]
-file = "mods/acid_vat-0.1.0.jar"
-hash = "11eaeb6134fde9e4adef4cd5a2f2aa7298186d339e6c1afcb839110901c03d52"
 
 [[files]]
 file = "mods/advanced-loot-info.pw.toml"
@@ -8919,6 +8927,11 @@ hash = "94c7c45a70d0cea86695ecd467f8e5c22510442c53c44291a570986e234428e5"
 metafile = true
 
 [[files]]
+file = "mods/immersive-aircraft.pw.toml"
+hash = "82f389d06c0e19d2ffcd75d5d85e0d9f09ec17178b8dd3e5afe9350a271e0443"
+metafile = true
+
+[[files]]
 file = "mods/immersive-weathering-forge.pw.toml"
 hash = "0df8d2be472d58b97f73621390c6d3cbaf538de65e9092c03146f102bfed63fe"
 metafile = true
@@ -9015,6 +9028,11 @@ metafile = true
 [[files]]
 file = "mods/lootr.pw.toml"
 hash = "e8b4876d403b4f4daab64bad9704a5b271a33031d1ff8d19d23ebd1e3b8dd39a"
+metafile = true
+
+[[files]]
+file = "mods/man-of-many-planes.pw.toml"
+hash = "e3b7a1a0ed3353dead103974c5249ddfcab3e70a1c77fab5fd3a47b19b4ba26b"
 metafile = true
 
 [[files]]
@@ -9210,7 +9228,7 @@ metafile = true
 
 [[files]]
 file = "mods/rpgstats-1.0.0.jar"
-hash = "a6f4cac217063a09ead3a1fa426a75c81524e8616c18c2b8b56ef31c7c7c8d88"
+hash = "9d325550d69589d3588a0c92f9cad91609a3e4c3bd3677fa81caef7364c33476"
 
 [[files]]
 file = "mods/satako-library.pw.toml"
@@ -9294,6 +9312,16 @@ metafile = true
 [[files]]
 file = "mods/structure-gel-api.pw.toml"
 hash = "5dfd5e42573659ad84a5d870082aae38aaa8469aba2655e5b2cb14de4ca4cbdd"
+metafile = true
+
+[[files]]
+file = "mods/structurify.pw.toml"
+hash = "2e42d0a7b8d4b7136e3b1c183ffbb256267448b93e724a8275360d1d766eaac7"
+metafile = true
+
+[[files]]
+file = "mods/swem.pw.toml"
+hash = "2a94ad4b0ce05cccaccbabffc78b1897cb361cc357fe296fe082730ca0972c36"
 metafile = true
 
 [[files]]
@@ -9428,6 +9456,11 @@ metafile = true
 [[files]]
 file = "mods/xl-packets.pw.toml"
 hash = "69a85643d125b0454ed6408cfa4a7cea1b3566c78ed3fd5f3107f93fa852f1c9"
+metafile = true
+
+[[files]]
+file = "mods/yacl.pw.toml"
+hash = "c08817fe8025a9d62c8f7abd5f56a54b90673e5ab60f39ae8fa1d70d5ace529b"
 metafile = true
 
 [[files]]

@@ -1,0 +1,62 @@
+{
+	"andesite_alloy_non_alloying": [
+		{
+			"id": "create:crafting/materials/andesite_alloy",
+			"type": "minecraft:crafting_shaped"
+		},
+		{
+			"id": "create:crafting/materials/andesite_alloy_from_block",
+			"type": "minecraft:crafting_shapeless"
+		},
+		{
+			"id": "create:mixing/andesite_alloy",
+			"type": "create:mixing"
+		},
+		{
+			"id": "create:crafting/materials/andesite_alloy_from_zinc",
+			"type": "minecraft:crafting_shaped"
+		},
+		{
+			"id": "create:mixing/andesite_alloy_from_zinc",
+			"type": "create:mixing"
+		}
+	],
+	"andesite_casing_item_application": [
+		{
+			"id": "create:item_application/andesite_casing_from_log",
+			"type": "create:item_application"
+		},
+		{
+			"id": "create:item_application/andesite_casing_from_wood",
+			"type": "create:item_application"
+		}
+	],
+	"nether_grout_crafting": [
+		{
+			"id": "tconstruct:common/fantastic_foundry",
+			"type": "minecraft:crafting_shapeless"
+		},
+		{
+			"id": "tconstruct:smeltery/scorched/nether_grout",
+			"type": "minecraft:crafting_shapeless"
+		},
+		{
+			"id": "tconstruct:smeltery/scorched/nether_grout_multiple",
+			"type": "minecraft:crafting_shapeless"
+		}
+	],
+	"teleposer_present": [
+		{
+			"id": "bloodmagic:alchemytable/reagent_suppression",
+			"type": "bloodmagic:alchemytable"
+		},
+		{
+			"id": "bloodmagic:alchemytable/reagent_teleposition",
+			"type": "bloodmagic:alchemytable"
+		},
+		{
+			"id": "bloodmagic:teleposer",
+			"type": "minecraft:crafting_shaped"
+		}
+	]
+}

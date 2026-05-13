@@ -1,5 +1,6 @@
 // RPGStats typed heart definitions used as Blood Magic orb keys.
 // A Still-Beating Heart is converted by using it with a matching catalyst in the offhand.
+// These keys are level-only wrappers so Blood Magic altar recipes can stay item-based.
 
 if (typeof RPGStatsEvents !== 'undefined') {
     RPGStatsEvents.heartTypes(function (event) {
@@ -11,7 +12,7 @@ if (typeof RPGStatsEvents !== 'undefined') {
             .consumeCatalyst(false)
             .channelTime(45)
             .priority(210)
-            .requireRitualTierMin(1)
+            .requireLevelMin(0)
 
         event.heartType('kubejs:apprentice_blood')
             .item('kubejs:apprentice_blood_heart')
@@ -21,7 +22,6 @@ if (typeof RPGStatsEvents !== 'undefined') {
             .consumeCatalyst(false)
             .channelTime(60)
             .priority(220)
-            .requireRitualTierMin(1)
             .requireLevelMin(10)
 
         event.heartType('kubejs:magician_blood')
@@ -32,9 +32,7 @@ if (typeof RPGStatsEvents !== 'undefined') {
             .consumeCatalyst(false)
             .channelTime(75)
             .priority(230)
-            .requireRitualTierMin(2)
             .requireLevelMin(20)
-            .requireStatMin('rpgstats:hemostasis', 20)
 
         event.heartType('kubejs:master_blood')
             .item('kubejs:master_blood_heart')
@@ -44,10 +42,7 @@ if (typeof RPGStatsEvents !== 'undefined') {
             .consumeCatalyst(false)
             .channelTime(90)
             .priority(240)
-            .requireRitualTierMin(3)
             .requireLevelMin(30)
-            .requireStatMin('rpgstats:hemostasis', 28)
-            .requireDeathCause('wither')
 
         event.heartType('kubejs:archmage_blood')
             .item('kubejs:archmage_blood_heart')
@@ -57,9 +52,6 @@ if (typeof RPGStatsEvents !== 'undefined') {
             .consumeCatalyst(false)
             .channelTime(110)
             .priority(250)
-            .requireRitualTierMin(4)
             .requireLevelMin(40)
-            .requireDimension('minecraft:the_end')
-            .requireStatMin('rpgstats:hemostasis', 36)
     })
 }

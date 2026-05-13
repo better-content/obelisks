@@ -1,5 +1,5 @@
-// Blood Magic orbs are milestone outputs from specific RPGStats typed hearts.
-// The typed-heart conversion uses Blood Orbs as non-consumed catalysts; the altar consumes the resulting heart key.
+// Blood Magic orbs are milestone outputs from level-only RPGStats heart keys.
+// Still-Beating Hearts store only level; the typed key layer exists so altar recipes remain JEI-visible item recipes.
 
 var DEFAULT_BLOODMAGIC_ORB_ALTAR_RECIPE_IDS = [
     'bloodmagic:altar/weakbloodorb',

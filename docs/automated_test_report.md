@@ -1,10 +1,10 @@
 # Automated Pack Test Report
 
-Generated: 2026-05-16T05:04:29.050Z
+Generated: 2026-05-16T05:19:50.268Z
 
 Repo: `/home/gerald/obelisks`
 
-Instance: `/tmp/btm-latent-coverage-smoke`
+Instance: `/tmp/btm-latent-gametest-smoke`
 
 ## Result
 
@@ -32,7 +32,7 @@ Instance: `/tmp/btm-latent-coverage-smoke`
 | progression catalog parses                                              | 12 tiers                                                                              |
 | all repo JSON parses                                                    | 180 files                                                                             |
 | all KubeJS/tool JS parses with node --check                             | 97 files                                                                              |
-| performance budget: JSON and JS syntax validation                       | 4465.08 ms <= 8000 ms                                                                 |
+| performance budget: JSON and JS syntax validation                       | 4454.61 ms <= 8000 ms                                                                 |
 | critical expert-pack surfaces exist                                     | 19 files                                                                              |
 | retired Acid Vat deposit slurry script is absent                        |                                                                                       |
 | server runtime mod pruner uses shared side-exclusion policy             |                                                                                       |
@@ -50,41 +50,41 @@ Instance: `/tmp/btm-latent-coverage-smoke`
 | Fallout Wastelands portal is gated by Creating Space                    |                                                                                       |
 | Twilight Forest portal is advancement-locked by Creating Space          |                                                                                       |
 | Creating Space access advancement has a concrete space item trigger     |                                                                                       |
-| performance budget: critical progression surfaces                       | 4.93 ms <= 750 ms                                                                     |
+| performance budget: critical progression surfaces                       | 4.96 ms <= 750 ms                                                                     |
 | quest book is intentionally empty                                       | 0 chapters and no chapter groups                                                      |
-| performance budget: quest book validation                               | 0.44 ms <= 250 ms                                                                     |
+| performance budget: quest book validation                               | 0.33 ms <= 250 ms                                                                     |
 | Wares contracts do not use emerald currency                             | 17 tables                                                                             |
 | Wares contracts contain Create Deco coin currency                       | 17 tables                                                                             |
 | villager trade script covers broad profession set                       | 13 professions                                                                        |
 | villager trade script has no emerald currency                           |                                                                                       |
 | sell-trade helper pays copper coins instead of emeralds                 |                                                                                       |
-| performance budget: Wares and villager trade validation                 | 0.82 ms <= 250 ms                                                                     |
+| performance budget: Wares and villager trade validation                 | 0.8 ms <= 250 ms                                                                      |
 | repo loot table JSON parses                                             | 96 tables                                                                             |
 | repo loot tables inject many coin sources                               | 32 tables                                                                             |
 | repo loot tables contain no direct emerald loot                         |                                                                                       |
 | repo loot tables contain no obvious high-power outputs                  |                                                                                       |
-| performance budget: repo loot data validation                           | 2.03 ms <= 500 ms                                                                     |
+| performance budget: repo loot data validation                           | 2.23 ms <= 500 ms                                                                     |
 | generated recipe chunks match manifest                                  | 26352 recipes                                                                         |
 | generated recipes have unique IDs                                       |                                                                                       |
 | generated recipe JSON parses                                            |                                                                                       |
 | no forbidden creative/debug outputs are craftable                       |                                                                                       |
-| performance budget: generated recipe graph validation                   | 158.47 ms <= 5000 ms                                                                  |
-| performance budget: generated loot dump validation                      | 0.22 ms <= 2500 ms                                                                    |
+| performance budget: generated recipe graph validation                   | 167.99 ms <= 5000 ms                                                                  |
+| performance budget: generated loot dump validation                      | 0.23 ms <= 2500 ms                                                                    |
 | latest engine log is recent                                             | 0.09 minutes old                                                                      |
 | engine reached dedicated server startup                                 |                                                                                       |
 | world became playable/servable                                          | dedicated server Done marker                                                          |
-| spawn preparation budget                                                | 24028 ms <= 60000 ms                                                                  |
+| spawn preparation budget                                                | 29754 ms <= 60000 ms                                                                  |
 | server tick-behind budget                                               | 0 warnings, max 0 ms                                                                  |
-| world save budget                                                       | 782 ms <= 10000 ms                                                                    |
+| world save budget                                                       | 647 ms <= 10000 ms                                                                    |
 | dimension save fanout                                                   | 21 dimensions                                                                         |
 | Distant Horizons shutdown backlog                                       | 0 incomplete tasks                                                                    |
 | KubeJS recipe parse health                                              | 0 parse errors, 0 failed recipes                                                      |
 | no newer crash report than latest engine log                            |                                                                                       |
-| performance budget: engine and world performance log analysis           | 37.52 ms <= 250 ms                                                                    |
+| performance budget: engine and world performance log analysis           | 38.06 ms <= 250 ms                                                                    |
 | KubeJS custom assets validate                                           | ok - kubejs assets validate (54 custom items, 10 casings, 16 crate tiers, 106 models) |
-| performance budget: KubeJS asset validation                             | 69.01 ms <= 500 ms                                                                    |
+| performance budget: KubeJS asset validation                             | 74.18 ms <= 500 ms                                                                    |
 | chemistry identity matrix validates                                     | ok - chemistry identity matrix validates                                              |
-| performance budget: chemistry identity validation                       | 64.04 ms <= 500 ms                                                                    |
+| performance budget: chemistry identity validation                       | 63.46 ms <= 500 ms                                                                    |
 | dev dump script emits expected artifacts                                |                                                                                       |
 | dev food effect dump script emits expected artifacts                    |                                                                                       |
 | food effect graph analyzer emits expected artifacts                     |                                                                                       |
@@ -100,7 +100,7 @@ Instance: `/tmp/btm-latent-coverage-smoke`
 | food and TCon quest showcase validation | quest book removed                                                                             |
 | Alchemistry player-facing recipe check  | current KubeJS dump is a pre-mutation audit; disabled Alchemistry removals run after this dump |
 | final effective recipe graph assertions | current KubeJS dump is a pre-mutation audit; it does not include kubejs-added recipe IDs       |
-| generated loot dump tests               | missing /tmp/btm-latent-coverage-smoke/dump/data_raw/loot_tables                               |
+| generated loot dump tests               | missing /tmp/btm-latent-gametest-smoke/dump/data_raw/loot_tables                               |
 
 ## Metrics
 
@@ -110,22 +110,22 @@ Instance: `/tmp/btm-latent-coverage-smoke`
   "villagerProfessionsCovered": 13,
   "generatedRecipes": 26352,
   "engineWorld": {
-    "latestLog": "/tmp/btm-latent-coverage-smoke/logs/latest.log",
+    "latestLog": "/tmp/btm-latent-gametest-smoke/logs/latest.log",
     "latestLogAgeMinutes": 0.09,
-    "latestLogLines": 16820,
+    "latestLogLines": 16833,
     "reachedIntegratedServer": false,
     "reachedDedicatedServer": true,
     "startedServingLan": false,
     "reachedInGame": true,
     "mainMenuToInGameMs": null,
     "totalLoadToWorldMs": null,
-    "spawnPrepTimeMs": 24028,
+    "spawnPrepTimeMs": 29754,
     "serverTickBehindWarnings": 0,
     "maxTickBehindMs": 0,
     "totalTickBehindMs": 0,
     "maxTickBehindTicks": 0,
-    "worldSaveDurationMs": 782,
-    "worldSaveFromSavingWorldsMs": 781,
+    "worldSaveDurationMs": 647,
+    "worldSaveFromSavingWorldsMs": 646,
     "dimensionSaveCount": 21,
     "distantHorizonsIncompleteTasks": 0,
     "settlementRoadsRebuilds": 0,
@@ -170,61 +170,61 @@ Instance: `/tmp/btm-latent-coverage-smoke`
     "results": [
       {
         "name": "JSON and JS syntax validation",
-        "durationMs": 4465.08,
+        "durationMs": 4454.61,
         "budgetMs": 8000,
         "hardLimitMs": 24000
       },
       {
         "name": "critical progression surfaces",
-        "durationMs": 4.93,
+        "durationMs": 4.96,
         "budgetMs": 750,
         "hardLimitMs": 3000
       },
       {
         "name": "quest book validation",
-        "durationMs": 0.44,
+        "durationMs": 0.33,
         "budgetMs": 250,
         "hardLimitMs": 1500
       },
       {
         "name": "Wares and villager trade validation",
-        "durationMs": 0.82,
+        "durationMs": 0.8,
         "budgetMs": 250,
         "hardLimitMs": 1500
       },
       {
         "name": "repo loot data validation",
-        "durationMs": 2.03,
+        "durationMs": 2.23,
         "budgetMs": 500,
         "hardLimitMs": 3000
       },
       {
         "name": "generated recipe graph validation",
-        "durationMs": 158.47,
+        "durationMs": 167.99,
         "budgetMs": 5000,
         "hardLimitMs": 20000
       },
       {
         "name": "generated loot dump validation",
-        "durationMs": 0.22,
+        "durationMs": 0.23,
         "budgetMs": 2500,
         "hardLimitMs": 10000
       },
       {
         "name": "engine and world performance log analysis",
-        "durationMs": 37.52,
+        "durationMs": 38.06,
         "budgetMs": 250,
         "hardLimitMs": 1500
       },
       {
         "name": "KubeJS asset validation",
-        "durationMs": 69.01,
+        "durationMs": 74.18,
         "budgetMs": 500,
         "hardLimitMs": 2000
       },
       {
         "name": "chemistry identity validation",
-        "durationMs": 64.04,
+        "durationMs": 63.46,
         "budgetMs": 500,
         "hardLimitMs": 2000
       },

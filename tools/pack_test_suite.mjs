@@ -2,6 +2,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { spawnSync } from 'node:child_process'
+import { scanHardFailures } from './log_hard_failure_scan.mjs'
 
 const repo = process.cwd()
 const defaultInstance = '/home/gerald/.local/share/PrismLauncher/instances/Bound to Matter-Playtest 3 - v1/minecraft'
@@ -794,6 +795,7 @@ function testEngineWorldPerformanceLogs() {
     emiSlowestPlugin: null,
     kubejsRecipeParseErrors: 0,
     kubejsFailedRecipeCount: 0,
+    hardLogFindings: 0,
     newestCrashReport: null,
     newestCrashReportAfterLatestLog: false
   }
@@ -866,6 +868,11 @@ function testEngineWorldPerformanceLogs() {
     logMetrics.newestCrashReportAfterLatestLog = newestCrash.mtimeMs > logStat.mtimeMs
   }
 
+  const hardLogScan = scanHardFailures({ logPath, instanceDir: instance })
+  logMetrics.kubejsRecipeParseErrors = hardLogScan.parseErrorCount
+  logMetrics.kubejsFailedRecipeCount = hardLogScan.failedRecipeCount
+  logMetrics.hardLogFindings = hardLogScan.findings.length
+
   metrics.engineWorld = logMetrics
 
   logAgeMinutes <= 1440 ? ok('latest engine log is recent', `${logAgeMinutes} minutes old`) : finding('latest engine log is stale', `${logAgeMinutes} minutes old`, 'SHOULD')
@@ -922,7 +929,9 @@ function testEngineWorldPerformanceLogs() {
       : ok('EMI reload budget', `${logMetrics.emiTotalReloadMs} ms <= 90000 ms`)
   }
 
-  if (logMetrics.kubejsRecipeParseErrors > 0 || logMetrics.kubejsFailedRecipeCount > 0) {
+  if (!hardLogScan.ok) {
+    fail('hard engine log failure scan', hardLogScan.findings.map(f => `${f.key}:${f.count}`).join(', '))
+  } else if (logMetrics.kubejsRecipeParseErrors > 0 || logMetrics.kubejsFailedRecipeCount > 0) {
     fail('KubeJS recipe parse health', `${logMetrics.kubejsRecipeParseErrors} parse errors, ${logMetrics.kubejsFailedRecipeCount} failed recipes`)
   } else {
     ok('KubeJS recipe parse health', '0 parse errors, 0 failed recipes')

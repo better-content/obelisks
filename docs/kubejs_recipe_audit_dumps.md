@@ -32,3 +32,11 @@ The pack keeps `writeFullRecipeIndex` enabled for dev. Full graph output is chun
 This is more useful than the current external recipe dump when validating KubeJS changes because it runs inside `ServerEvents.recipes` after the pack scripts earlier in load order have made their changes.
 
 It is still a text/JSON scan. It should be treated as an audit aid, not a formal proof. Final validation still needs in-game EMI checks for important recipes and a fresh startup log review.
+
+For routine recipe and content work, prefer the end-to-end server smoke wrapper:
+
+```sh
+tools/server_content_smoke.sh --server-dir /tmp/btm-content-smoke --reset-runtime
+```
+
+That command bootstraps a disposable server, prunes stale runtime mods, waits for the dedicated server `Done` marker, stops cleanly, scans hard log failures, and runs `tools/pack_test_suite.mjs` against the same runtime.

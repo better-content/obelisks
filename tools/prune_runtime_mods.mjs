@@ -104,7 +104,11 @@ for (const name of unexpected) {
   if (apply) fs.rmSync(fullPath, { force: true })
 }
 
-console.log(`runtime mod prune: side=${side} expected=${expected.size} actual=${actual.length} unexpected=${unexpected.length} missing=${missing.length} excluded=${excluded} mode=${apply ? 'apply' : 'dry-run'}`)
-if (missing.length) {
-  console.log(`missing expected runtime mods: ${missing.slice(0, 40).join(', ')}${missing.length > 40 ? `, ... (${missing.length - 40} more)` : ''}`)
+const finalActual = apply ? listFiles(targetModsDir, name => name.endsWith('.jar') || name.endsWith('.so')) : actual
+const finalUnexpected = finalActual.filter(name => !expected.has(name)).sort()
+const finalMissing = [...expected].filter(name => !finalActual.includes(name)).sort()
+
+console.log(`runtime mod prune: side=${side} expected=${expected.size} actual=${finalActual.length} unexpected=${finalUnexpected.length} missing=${finalMissing.length} excluded=${excluded} removed=${apply ? unexpected.length : 0} mode=${apply ? 'apply' : 'dry-run'}`)
+if (finalMissing.length) {
+  console.log(`missing expected runtime mods: ${finalMissing.slice(0, 40).join(', ')}${finalMissing.length > 40 ? `, ... (${finalMissing.length - 40} more)` : ''}`)
 }

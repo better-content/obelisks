@@ -61,6 +61,7 @@ Do not sync or delete player/runtime state by default. Use explicit reset flags 
 - Bootstrap client: `tools/bootstrap_client_runtime.sh --client-dir /tmp/btm-client`
 - Launch direct client: `tools/launch_client_direct.sh --client-dir /tmp/btm-client --username AgentClient --server 127.0.0.1:25566`
 - Direct join probe: `tools/client_join_probe_direct.sh --client-dir /tmp/btm-client --server 127.0.0.1:25566`
+- Content smoke: `tools/server_content_smoke.sh --server-dir /tmp/btm-content-smoke --port 25566 --reset-runtime`
 - Prism fallback: `tools/launch_prism_instance.sh "Bound to Matter"`
 
 The sync scripts use managed source path lists and excludes for runtime state. Server sync also excludes known client-only mod entries so client-only jars do not enter the dedicated server runtime. Bootstrap scripts resolve current `.pw.toml` downloads into generated server/client roots; use `tools/resolve_packwiz_downloads.mjs --dry-run --pack-root . --target-dir /tmp/btm-server --side server` to inspect that step directly.
@@ -101,6 +102,14 @@ Current LC/DH scenario:
 3. Confirm recipe visibility (EMI/JEI-facing paths).
 4. Recheck known chokepoints (alloy, casing, grout, gates, coins/trades).
 5. Record findings in `docs/`.
+
+Recommended validation ladder:
+1. Static checks: `node --check` for touched JS, JSON parsing for touched data, and targeted validators such as `node tools/validate_kubejs_assets.mjs`.
+2. Existing fresh runtime: `BTM_INSTANCE=/path/to/runtime node tools/pack_test_suite.mjs`.
+3. Server-only content smoke for recipe/config/content changes: `tools/server_content_smoke.sh --server-dir /tmp/btm-content-smoke --reset-runtime`.
+4. Client/server scenario harnesses for stability, rendering, login, LC/DH/TFTH, or client-only work.
+
+Treat `tools/pack_test_suite.mjs` as authoritative only when it reads a recent runtime log from a fresh or intentionally reused runtime. For routine KubeJS recipe work, prefer `tools/server_content_smoke.sh` because it bootstraps, prunes stale mods, boots the server, scans hard log failures, and then runs the suite.
 
 For runtime/tooling changes, also run:
 1. `bash -n tools/*.sh`

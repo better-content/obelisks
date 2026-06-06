@@ -4,7 +4,7 @@
 var BtmNtprEventResult = Java.loadClass('net.minecraftforge.eventbus.api.Event$Result')
 var BtmNtprForgeRegistries = Java.loadClass('net.minecraftforge.registries.ForgeRegistries')
 
-var BtmNtprAssignments = global.BTM_NTPR_AUDIT_ASSIGNMENTS || { blocks: {}, items: {} }
+var BtmNtprAssignments = null
 
 function btmNtprCall(target, methodNames, args) {
     if (target === null || target === undefined) return null
@@ -36,32 +36,48 @@ function btmNtprMakeSet(values) {
     return out
 }
 
-var BtmNtprBlockSets = {
-    hand: btmNtprMakeSet(BtmNtprAssignments.blocks.hand),
-    knife: btmNtprMakeSet(BtmNtprAssignments.blocks.knife),
-    axe: btmNtprMakeSet(BtmNtprAssignments.blocks.axe),
-    pickaxe: btmNtprMakeSet(BtmNtprAssignments.blocks.pickaxe),
-    shovel: btmNtprMakeSet(BtmNtprAssignments.blocks.shovel),
-    hoe: btmNtprMakeSet(BtmNtprAssignments.blocks.hoe),
-    sword: btmNtprMakeSet(BtmNtprAssignments.blocks.sword)
-}
-var BtmNtprItemSets = {
-    knife: btmNtprMakeSet(BtmNtprAssignments.items.knife),
-    axe: btmNtprMakeSet(BtmNtprAssignments.items.axe),
-    pickaxe: btmNtprMakeSet(BtmNtprAssignments.items.pickaxe),
-    shovel: btmNtprMakeSet(BtmNtprAssignments.items.shovel),
-    hoe: btmNtprMakeSet(BtmNtprAssignments.items.hoe),
-    sword: btmNtprMakeSet(BtmNtprAssignments.items.sword)
+var BtmNtprBlockSets = {}
+var BtmNtprItemSets = {}
+var BtmNtprLoadedSchema = null
+
+function btmNtprRefreshAssignments() {
+    var current = global.BTM_NTPR_AUDIT_ASSIGNMENTS || { blocks: {}, items: {} }
+    var schema = String(current.schema || 'UNKNOWN')
+    if (BtmNtprAssignments === current && BtmNtprLoadedSchema === schema) return
+
+    BtmNtprAssignments = current
+    BtmNtprLoadedSchema = schema
+    var blocks = BtmNtprAssignments.blocks || {}
+    var items = BtmNtprAssignments.items || {}
+    BtmNtprBlockSets = {
+        hand: btmNtprMakeSet(blocks.hand),
+        knife: btmNtprMakeSet(blocks.knife),
+        axe: btmNtprMakeSet(blocks.axe),
+        pickaxe: btmNtprMakeSet(blocks.pickaxe),
+        shovel: btmNtprMakeSet(blocks.shovel),
+        hoe: btmNtprMakeSet(blocks.hoe),
+        sword: btmNtprMakeSet(blocks.sword)
+    }
+    BtmNtprItemSets = {
+        knife: btmNtprMakeSet(items.knife),
+        axe: btmNtprMakeSet(items.axe),
+        pickaxe: btmNtprMakeSet(items.pickaxe),
+        shovel: btmNtprMakeSet(items.shovel),
+        hoe: btmNtprMakeSet(items.hoe),
+        sword: btmNtprMakeSet(items.sword)
+    }
+
+    console.info('[BTM-NTPR] loaded audited block gates schema=' + schema +
+        ' hand=' + Object.keys(BtmNtprBlockSets.hand).length +
+        ' knife=' + Object.keys(BtmNtprBlockSets.knife).length +
+        ' axe=' + Object.keys(BtmNtprBlockSets.axe).length +
+        ' pickaxe=' + Object.keys(BtmNtprBlockSets.pickaxe).length +
+        ' shovel=' + Object.keys(BtmNtprBlockSets.shovel).length +
+        ' hoe=' + Object.keys(BtmNtprBlockSets.hoe).length +
+        ' sword=' + Object.keys(BtmNtprBlockSets.sword).length)
 }
 
-console.info('[BTM-NTPR] registering audited block gates schema=' + (BtmNtprAssignments.schema || 'UNKNOWN') +
-    ' hand=' + Object.keys(BtmNtprBlockSets.hand).length +
-    ' knife=' + Object.keys(BtmNtprBlockSets.knife).length +
-    ' axe=' + Object.keys(BtmNtprBlockSets.axe).length +
-    ' pickaxe=' + Object.keys(BtmNtprBlockSets.pickaxe).length +
-    ' shovel=' + Object.keys(BtmNtprBlockSets.shovel).length +
-    ' hoe=' + Object.keys(BtmNtprBlockSets.hoe).length +
-    ' sword=' + Object.keys(BtmNtprBlockSets.sword).length)
+btmNtprRefreshAssignments()
 
 function btmNtprStackIsEmpty(stack) {
     if (stack === null || stack === undefined) return true
@@ -118,6 +134,7 @@ function btmNtprHasMatchingTool(player, state) {
 }
 
 function btmNtprShouldDeny(player, state) {
+    btmNtprRefreshAssignments()
     if (!player || !state) return false
     var id = btmNtprStateId(state)
     if (!id) return false

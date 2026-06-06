@@ -527,6 +527,26 @@ function validateVanillaStyleToolSuppression() {
     : ok('vanilla-style tool recipe removals are unconditional')
 }
 
+function validateNoTreePunchingReplacement() {
+  const hook = read('kubejs/startup_scripts/20_blocks/20_no_tree_punching_replacement.js')
+  const assignments = read('kubejs/startup_scripts/99_ntp_audit_assignments.js')
+  const handBreakable = readJson('kubejs/data/kubejs/tags/blocks/hand_breakable.json')
+
+  const assignmentsContainGravel = /"hand"\s*:\s*\[[\s\S]*"minecraft:gravel"/.test(assignments)
+  assignmentsContainGravel
+    ? ok('NTP audited assignments keep gravel hand-breakable')
+    : fail('NTP audited assignments keep gravel hand-breakable', 'minecraft:gravel missing from blocks.hand')
+
+  const handTagText = JSON.stringify(handBreakable)
+  handTagText.includes('minecraft:gravel') && handTagText.includes('#forge:gravel')
+    ? ok('NTP hand-breakable tag covers vanilla and forge gravel')
+    : fail('NTP hand-breakable tag covers vanilla and forge gravel', 'missing minecraft:gravel or #forge:gravel')
+
+  hook.includes('function btmNtprRefreshAssignments()') && /function btmNtprShouldDeny[\s\S]*btmNtprRefreshAssignments\(\)/.test(hook)
+    ? ok('NTP hook refreshes audited assignments after startup load ordering')
+    : fail('NTP hook refreshes audited assignments after startup load ordering', 'hook must not snapshot global.BTM_NTPR_AUDIT_ASSIGNMENTS before 99_ntp_audit_assignments.js loads')
+}
+
 function validateVanillishExpertRecipePass() {
   const recipeFile = 'kubejs/server_scripts/30_recipe_replace/145_vanillish_recipe_expert_pass.js'
   if (!exists(recipeFile)) {
@@ -1128,6 +1148,7 @@ validateEconomy()
 validateMagicBody()
 validateClientQuestIntent()
 validateVanillaStyleToolSuppression()
+validateNoTreePunchingReplacement()
 validateVanillishExpertRecipePass()
 validateNonGrownInfiniteResourceBoundaries()
 validateWorldgenStaticContracts()

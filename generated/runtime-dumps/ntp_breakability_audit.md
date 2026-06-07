@@ -8,11 +8,11 @@ Runtime probe schema: `obelisks.block_hardness_probe.v3`
 
 - Breakable block records: 14630
 - Item records: 21286
-- Hand blocks: 193
+- Hand blocks: 197
 - Knife blocks: 972
 - Axe blocks: 3090
-- Pickaxe blocks: 5646
-- Shovel blocks: 332
+- Pickaxe blocks: 5647
+- Shovel blocks: 327
 - Hoe blocks: 128
 - Sword blocks: 56
 - Unassigned breakable blocks: 4516

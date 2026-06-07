@@ -23,6 +23,8 @@ tools/test_agent_validate_surfaces.sh --include-static --runtime /path/to/fresh/
 - `--smoke`: fresh disposable server bootstrap, boot, hard-log scan, and strict runtime suite.
 - `BTM_INSTANCE` can provide the runtime path. `BTM_VALIDATE_JOBS=N` caps parallel JS syntax workers.
 
+Primitive mining static regressions now cover soft-ground hand breakability, representative pick/axe/shovel gates, primitive flint butcher knife and hand axe recipes, Farmer's Delight straw-harvester knife tags, and ore/deepslate hardness probe coverage. The exact deepslate `+1` hardness assertion is enforced when a retained `generated/runtime-dumps/block_hardness_probe.json` exists.
+
 Run `tools/test_agent_validate_surfaces.sh` after changing validation entry points. Add `--include-static --runtime /path/to/fresh/runtime` when changing evidence claims, static isolation, or strict data-dump behavior.
 
 ## Routine Checks

@@ -547,6 +547,158 @@ function validateNoTreePunchingReplacement() {
     : fail('NTP hook refreshes audited assignments after startup load ordering', 'hook must not snapshot global.BTM_NTPR_AUDIT_ASSIGNMENTS before 99_ntp_audit_assignments.js loads')
 }
 
+function validatePrimitiveMiningRegressionContracts() {
+  const assignmentText = read('kubejs/startup_scripts/99_ntp_audit_assignments.js')
+  const assignmentMatch = assignmentText.match(/global\.BTM_NTPR_AUDIT_ASSIGNMENTS\s*=\s*({[\s\S]*})\s*$/)
+  const assignments = assignmentMatch ? JSON.parse(assignmentMatch[1]) : null
+  const blockSets = Object.fromEntries(Object.entries(assignments?.blocks || {}).map(([key, values]) => [key, new Set(values)]))
+
+  function blocksIn(group, ids) {
+    return ids.filter(id => !blockSets[group]?.has(id))
+  }
+
+  const handSoftBlocks = [
+    'minecraft:sand',
+    'minecraft:red_sand',
+    'minecraft:gravel',
+    'minecraft:dirt',
+    'minecraft:coarse_dirt',
+    'minecraft:rooted_dirt',
+    'minecraft:mud',
+    'minecraft:grass_block',
+    'immersive_weathering:loam',
+    'immersive_weathering:silt',
+    'dynamictrees:rooty_gravel'
+  ]
+  const missingHandSoft = blocksIn('hand', handSoftBlocks)
+  missingHandSoft.length
+    ? fail('primitive soft ground blocks remain hand-mineable', missingHandSoft.join(', '))
+    : ok('primitive soft ground blocks remain hand-mineable', `${handSoftBlocks.length} representative blocks`)
+
+  const pickStoneBlocks = [
+    'minecraft:stone',
+    'minecraft:cobblestone',
+    'minecraft:deepslate',
+    'minecraft:tuff',
+    'minecraft:calcite',
+    'minecraft:granite',
+    'minecraft:diorite',
+    'minecraft:andesite',
+    'minecraft:basalt'
+  ]
+  const missingPickStone = blocksIn('pickaxe', pickStoneBlocks)
+  missingPickStone.length
+    ? fail('stone-like blocks remain pickaxe-mineable', missingPickStone.join(', '))
+    : ok('stone-like blocks remain pickaxe-mineable', `${pickStoneBlocks.length} representative blocks`)
+
+  const axeWoodBlocks = [
+    'minecraft:oak_log',
+    'minecraft:oak_wood',
+    'minecraft:stripped_oak_log',
+    'minecraft:oak_planks',
+    'malum:runewood_log',
+    'hexerei:willow_log',
+    'dynamictrees:oak_branch'
+  ]
+  const missingAxeWood = blocksIn('axe', axeWoodBlocks)
+  missingAxeWood.length
+    ? fail('wood-like blocks remain axe-mineable', missingAxeWood.join(', '))
+    : ok('wood-like blocks remain axe-mineable', `${axeWoodBlocks.length} representative blocks`)
+
+  const shovelSoftBlocks = [
+    'minecraft:sand',
+    'minecraft:gravel',
+    'minecraft:dirt',
+    'minecraft:coarse_dirt',
+    'minecraft:rooted_dirt',
+    'minecraft:mud',
+    'minecraft:grass_block',
+    'immersive_weathering:grassy_silt'
+  ]
+  const missingShovelSoft = shovelSoftBlocks.filter(id => !blockSets.hand?.has(id) && !blockSets.shovel?.has(id))
+  missingShovelSoft.length
+    ? fail('soft ground blocks remain shovel-usable through hand or shovel gates', missingShovelSoft.join(', '))
+    : ok('soft ground blocks remain shovel-usable through hand or shovel gates', `${shovelSoftBlocks.length} representative blocks`)
+
+  const grassPickBlocks = [
+    'unearthed:beige_limestone_grassy_regolith',
+    'unearthed:conglomerate_grassy_regolith',
+    'unearthed:limestone_grassy_regolith',
+    'unearthed:stone_grassy_regolith'
+  ]
+  const missingGrassPick = blocksIn('pickaxe', grassPickBlocks)
+  missingGrassPick.length
+    ? fail('grass-over-stone blocks remain pickaxe-mineable', missingGrassPick.join(', '))
+    : ok('grass-over-stone blocks remain pickaxe-mineable', `${grassPickBlocks.length} representative blocks`)
+
+  const butcherKnife = readJson('kubejs/data/kubejs/recipes/primitive/flint_butcher_knife.json')
+  const handAxe = readJson('kubejs/data/kubejs/recipes/primitive/flint_hand_axe.json')
+  function ingredientCount(recipe, item) {
+    return (recipe.ingredients || []).filter(ingredient => ingredient.item === item).length
+  }
+  const knifeNbt = String(butcherKnife.result?.nbt || '')
+  const knifeProblems = []
+  if (butcherKnife.result?.item !== 'additionalweaponry:butcher_knife') knifeProblems.push(`result=${butcherKnife.result?.item}`)
+  if (ingredientCount(butcherKnife, 'minecraft:flint') !== 3) knifeProblems.push('flint count')
+  if (ingredientCount(butcherKnife, 'minecraft:stick') !== 1) knifeProblems.push('stick count')
+  if (!knifeNbt.includes('tconstruct:flint') || !knifeNbt.includes('tconstruct:wood')) knifeProblems.push('TConstruct flint/wood NBT')
+  knifeProblems.length
+    ? fail('flint/wood butcher knife primitive recipe remains craftable', knifeProblems.join(', '))
+    : ok('flint/wood butcher knife primitive recipe remains craftable')
+
+  const axeNbt = String(handAxe.result?.nbt || '')
+  const axeProblems = []
+  if (handAxe.result?.item !== 'tconstruct:hand_axe') axeProblems.push(`result=${handAxe.result?.item}`)
+  if (ingredientCount(handAxe, 'minecraft:flint') !== 2) axeProblems.push('flint count')
+  if (ingredientCount(handAxe, 'farmersdelight:straw') !== 1) axeProblems.push('straw count')
+  if (ingredientCount(handAxe, 'minecraft:stick') !== 1) axeProblems.push('stick count')
+  if (!axeNbt.includes('tconstruct:flint') || !axeNbt.includes('tconstruct:wood')) axeProblems.push('TConstruct flint/wood NBT')
+  axeProblems.length
+    ? fail('straw/flint/stick hand axe primitive recipe remains craftable', axeProblems.join(', '))
+    : ok('straw/flint/stick hand axe primitive recipe remains craftable')
+
+  const fdKnives = readJson('kubejs/data/farmersdelight/tags/items/tools/knives.json')
+  const fdStrawHarvesters = readJson('kubejs/data/farmersdelight/tags/items/straw_harvesters.json')
+  const knifeTagProblems = []
+  if (!fdKnives.values?.includes('additionalweaponry:butcher_knife')) knifeTagProblems.push('farmersdelight:tools/knives')
+  if (!fdStrawHarvesters.values?.includes('additionalweaponry:butcher_knife')) knifeTagProblems.push('farmersdelight:straw_harvesters')
+  knifeTagProblems.length
+    ? fail('flint butcher knife remains a Farmer Delight straw harvester', knifeTagProblems.join(', '))
+    : ok('flint butcher knife remains a Farmer Delight straw harvester')
+
+  const hardnessProbe = readJson('kubejs/config/block_hardness_probe.json')
+  const hardnessIds = new Set(hardnessProbe.blockIds || [])
+  const orePairs = ['coal', 'copper', 'iron', 'gold', 'redstone', 'lapis', 'diamond', 'emerald']
+  const missingOreProbeIds = []
+  for (const ore of orePairs) {
+    if (!hardnessIds.has(`minecraft:${ore}_ore`)) missingOreProbeIds.push(`minecraft:${ore}_ore`)
+    if (!hardnessIds.has(`minecraft:deepslate_${ore}_ore`)) missingOreProbeIds.push(`minecraft:deepslate_${ore}_ore`)
+  }
+  missingOreProbeIds.length
+    ? fail('hardness probe covers ore tier and deepslate representative pairs', missingOreProbeIds.join(', '))
+    : ok('hardness probe covers ore tier and deepslate representative pairs', `${orePairs.length} ore families`)
+
+  const hardnessDump = firstExistingFile([full('generated/runtime-dumps/block_hardness_probe.json')])
+  if (hardnessDump) {
+    const dump = JSON.parse(readAbs(hardnessDump.file))
+    const rows = [...(dump.allBlocks || []), ...(dump.selectedBlocks || [])]
+    const byId = new Map(rows.map(row => [row.id, row]))
+    const deepslateProblems = []
+    for (const ore of orePairs) {
+      const normal = Number(byId.get(`minecraft:${ore}_ore`)?.defaultDestroyTime)
+      const deepslate = Number(byId.get(`minecraft:deepslate_${ore}_ore`)?.defaultDestroyTime)
+      if (!Number.isFinite(normal) || !Number.isFinite(deepslate) || Math.abs(deepslate - normal - 1) > 0.001) {
+        deepslateProblems.push(`${ore}: ${normal}->${deepslate}`)
+      }
+    }
+    deepslateProblems.length
+      ? fail('deepslate ore variants add exactly +1 hardness in retained runtime probe', deepslateProblems.join(', '))
+      : ok('deepslate ore variants add exactly +1 hardness in retained runtime probe')
+  } else {
+    ok('deepslate ore hardness runtime check is probe-ready', 'no retained block_hardness_probe.json')
+  }
+}
+
 function validateVanillishExpertRecipePass() {
   const recipeFile = 'kubejs/server_scripts/30_recipe_replace/145_vanillish_recipe_expert_pass.js'
   if (!exists(recipeFile)) {
@@ -1149,6 +1301,7 @@ validateMagicBody()
 validateClientQuestIntent()
 validateVanillaStyleToolSuppression()
 validateNoTreePunchingReplacement()
+validatePrimitiveMiningRegressionContracts()
 validateVanillishExpertRecipePass()
 validateNonGrownInfiniteResourceBoundaries()
 validateWorldgenStaticContracts()

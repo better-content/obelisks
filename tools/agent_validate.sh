@@ -80,6 +80,10 @@ run_static_validators() {
   pids+=("$!")
   names+=("player_progression")
 
+  run_named_check progression_reachability node "$ROOT/tools/validate_progression_reachability.mjs" >"$tmpdir/7.log" 2>&1 &
+  pids+=("$!")
+  names+=("progression_reachability")
+
   set +e
   for i in "${!pids[@]}"; do
     wait "${pids[$i]}"

@@ -86,7 +86,7 @@ ServerEvents.recipes(function (event) {
         processingTime: 80,
         results: [
             { item: 'minecraft:flint', chance: 0.25 },
-            { item: 'minecraft:gunpowder', chance: 0.12 }
+            { item: 'minecraft:gunpowder', chance: 0.06 }
         ]
     }).id('kubejs:create/milling/gravel_to_flint_and_gunpowder')
 

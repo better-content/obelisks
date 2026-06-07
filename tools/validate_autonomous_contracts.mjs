@@ -712,6 +712,11 @@ function validatePrimitiveMiningRegressionContracts() {
     ? fail('TConstruct shapeless gravel-to-flint shortcut stays removed', missingFlintBypassMarkers.join(', '))
     : ok('TConstruct shapeless gravel-to-flint shortcut stays removed')
 
+  const gravelBlockDrops = read('kubejs/server_scripts/50_loot/10_overworld_block_drops.js')
+  startingBypasses.includes("{ item: 'minecraft:gunpowder', chance: 0.06 }") && gravelBlockDrops.includes('m.addLoot("minecraft:gunpowder").randomChance(0.125)')
+    ? ok('gunpowder from gravel stays at reduced chance')
+    : fail('gunpowder from gravel stays at reduced chance', 'expected Create milling 0.06 and gravel block loot 0.125')
+
   const hardnessProbe = readJson('kubejs/config/block_hardness_probe.json')
   const hardnessIds = new Set(hardnessProbe.blockIds || [])
   const orePairs = ['coal', 'copper', 'iron', 'gold', 'redstone', 'lapis', 'diamond', 'emerald']

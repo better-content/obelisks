@@ -557,6 +557,10 @@ function validatePrimitiveMiningRegressionContracts() {
     return ids.filter(id => !blockSets[group]?.has(id))
   }
 
+  function sortUnique(values) {
+    return Array.from(new Set(values)).sort()
+  }
+
   const handSoftBlocks = [
     'minecraft:sand',
     'minecraft:red_sand',
@@ -630,6 +634,23 @@ function validatePrimitiveMiningRegressionContracts() {
   missingGrassPick.length
     ? fail('grass-over-stone blocks remain pickaxe-mineable', missingGrassPick.join(', '))
     : ok('grass-over-stone blocks remain pickaxe-mineable', `${grassPickBlocks.length} representative blocks`)
+
+  const primaryCraftingNamespaces = ['bloodmagic', 'create', 'tconstruct', 'pneumaticcraft', 'compressedcreativity']
+  const nonHandToolGroups = ['knife', 'axe', 'pickaxe', 'shovel', 'hoe', 'sword']
+  const allAssignedBlocks = Object.values(assignments?.blocks || {}).flat()
+  for (const namespace of primaryCraftingNamespaces) {
+    const prefix = `${namespace}:`
+    const auditedIds = sortUnique([
+      ...allAssignedBlocks.filter(id => id.startsWith(prefix)),
+      ...(assignments?.unassignedBreakableBlocks || []).filter(id => id.startsWith(prefix))
+    ])
+    const handBreakable = auditedIds.filter(id => blockSets.hand?.has(id))
+    const unassigned = (assignments?.unassignedBreakableBlocks || []).filter(id => id.startsWith(prefix))
+    const missingToolGate = auditedIds.filter(id => !nonHandToolGroups.some(group => blockSets[group]?.has(id)))
+    handBreakable.length || unassigned.length || missingToolGate.length
+      ? fail(`${namespace} breakable blocks are NTP tool-gated`, `hand=${handBreakable.join(', ')} unassigned=${unassigned.join(', ')} missingTool=${missingToolGate.join(', ')}`)
+      : ok(`${namespace} breakable blocks are NTP tool-gated`, `${auditedIds.length} audited blocks`)
+  }
 
   const primaryCraftingSurfacePickaxeBlocks = {
     'Blood Magic crafting surfaces': [

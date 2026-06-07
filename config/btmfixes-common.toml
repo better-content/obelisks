@@ -16,6 +16,12 @@
 	#Normal render-thread tooltips are left unchanged.
 	skipOffThreadTooltips = true
 
+[structureGenerationImprover]
+	#Runs Hyle's stone replacer again after Structure Generation Improver conforms structure terrain.
+	#SGI writes new vanilla terrain after normal biome decoration, which means Hyle/Unearthed has already run and cannot replace those blocks.
+	#This post-pass keeps SGI foundations and blended terrain in the same Unearthed stone/regolith palette as surrounding terrain.
+	rerunHyleAfterSurfaceConform = true
+
 [lostCities]
 	#Serializes Lost Cities feature placement only in the lostcities:lostcity dimension when Lost Cities, Distant Horizons, and C2ME are all loaded.
 	#This keeps Lost Cities structures, Distant Horizons generation, and C2ME threaded settings active while avoiding shared Lost Cities generation-state races from DH/C2ME worker threads.

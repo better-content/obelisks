@@ -2,6 +2,11 @@
 // this file removes Create/TCon shortcuts that bypass early metallurgy and deployer assembly.
 
 ServerEvents.recipes(function (event) {
+    event.remove({ id: 'tconstruct:common/materials/flint_from_gravel' })
+    event.remove({ id: 'tconstruct:materials/flint_from_gravel' })
+    event.remove({ id: 'tconstruct:flint_from_gravel' })
+    event.remove({ type: 'minecraft:crafting_shapeless', input: 'minecraft:gravel', output: 'minecraft:flint' })
+
     // Andesite alloy must come from TCon molten handling before Create casing work.
     var andesiteAlloyBypassIds = [
         'create:crafting/materials/andesite_alloy',

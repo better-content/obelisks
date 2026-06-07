@@ -666,6 +666,19 @@ function validatePrimitiveMiningRegressionContracts() {
     ? fail('flint butcher knife remains a Farmer Delight straw harvester', knifeTagProblems.join(', '))
     : ok('flint butcher knife remains a Farmer Delight straw harvester')
 
+  const startingBypasses = read('kubejs/server_scripts/30_recipe_replace/98_starting_progression_bypasses.js')
+  const flintBypassMarkers = [
+    "event.remove({ id: 'tconstruct:common/materials/flint_from_gravel' })",
+    "event.remove({ id: 'tconstruct:materials/flint_from_gravel' })",
+    "event.remove({ id: 'tconstruct:flint_from_gravel' })",
+    "event.remove({ type: 'minecraft:crafting_shapeless', input: 'minecraft:gravel', output: 'minecraft:flint' })",
+    "kubejs:create/milling/gravel_to_flint_and_gunpowder"
+  ]
+  const missingFlintBypassMarkers = flintBypassMarkers.filter(marker => !startingBypasses.includes(marker))
+  missingFlintBypassMarkers.length
+    ? fail('TConstruct shapeless gravel-to-flint shortcut stays removed', missingFlintBypassMarkers.join(', '))
+    : ok('TConstruct shapeless gravel-to-flint shortcut stays removed')
+
   const hardnessProbe = readJson('kubejs/config/block_hardness_probe.json')
   const hardnessIds = new Set(hardnessProbe.blockIds || [])
   const orePairs = ['coal', 'copper', 'iron', 'gold', 'redstone', 'lapis', 'diamond', 'emerald']

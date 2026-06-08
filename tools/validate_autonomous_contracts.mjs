@@ -1003,6 +1003,7 @@ function validateWorldgenStaticContracts() {
 
   const ntpAssignments = JSON.parse(read('kubejs/startup_scripts/99_ntp_audit_assignments.js').match(/global\.BTM_NTPR_AUDIT_ASSIGNMENTS\s*=\s*({[\s\S]*})\s*$/)[1])
   const rbpGeneratedSolid = read('config/rbp/block_definitions/generated_pack_solid_blocks.toml')
+  const rbpGeneratedModdedSand = read('config/rbp/block_definitions/generated_modded_sand.toml')
   const expectedGravelEvOres = [
     'gravel_arcane_crystal_ore',
     'gravel_bauxite_laterite',
@@ -1016,7 +1017,10 @@ function validateWorldgenStaticContracts() {
   const pickaxeSet = new Set(ntpAssignments.blocks?.pickaxe || [])
   const missingGravelShovel = expectedGravelEvOres.filter(id => !shovelSet.has(id))
   const wronglyPickaxeGravel = expectedGravelEvOres.filter(id => pickaxeSet.has(id))
-  const missingGravelRbp = expectedGravelEvOres.filter(id => !rbpGeneratedSolid.includes(`"${id}"`))
+  const missingGravelRbp = expectedGravelEvOres.filter(id => {
+    const key = `"${id}"`
+    return !rbpGeneratedSolid.includes(key) && !rbpGeneratedModdedSand.includes(key)
+  })
   missingGravelShovel.length || wronglyPickaxeGravel.length || missingGravelRbp.length
     ? fail('gravel Excavated Variants ore blocks stay shovel-gated and RBP-managed', `shovel=${missingGravelShovel.join(', ')} pickaxe=${wronglyPickaxeGravel.join(', ')} rbp=${missingGravelRbp.join(', ')}`)
     : ok('gravel Excavated Variants ore blocks stay shovel-gated and RBP-managed', `${expectedGravelEvOres.length} representatives`)

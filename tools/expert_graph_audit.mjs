@@ -152,7 +152,7 @@ function inferIngredientTier(items) {
     }
     if (item === 'create:brass_casing' || item === 'create:precision_mechanism') tier = maxTier(tier, 'create_brass')
     if (item === 'powergrid:conductive_casing' || item.startsWith('powergrid:')) tier = maxTier(tier, 'power_grid')
-    if (item.startsWith('oc2r:')) tier = maxTier(tier, 'oc2r')
+    if (item.startsWith('oc2r:')) tier = maxTier(tier, 'power_grid')
     if (item.startsWith('creatingspace:')) tier = maxTier(tier, 'space')
     if (item.startsWith('ae2:') || item.startsWith('advanced_ae:') || item.startsWith('ae2additions:')) tier = maxTier(tier, 'ae2')
   }
@@ -173,7 +173,7 @@ function intendedTier(output) {
   if (casingToTier[output]) return casingToTier[output]
   if (machineNamespaceTier[n]) return machineNamespaceTier[n]
   if (name.includes('wireless') || name.includes('spatial')) return 'ae2'
-  if (name.includes('teleport') || name.includes('chunk_loader')) return 'oc2r'
+  if (name.includes('teleport') || name.includes('chunk_loader')) return 'power_grid'
   return 'survival'
 }
 

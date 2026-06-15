@@ -43,18 +43,16 @@ The active casing catalogue is `global.BTM_MACHINE_CASING_TIERS` in `kubejs/star
 
 | Order | Casing | Authority |
 | --- | --- | --- |
-| 1 | `kubejs:seared_machine_casing` | TCon seared |
-| 2 | `kubejs:scorched_machine_casing` | TCon scorched |
-| 3 | `kubejs:andesite_machine_casing` | Create andesite |
-| 4 | `kubejs:brass_machine_casing` | Create brass |
-| 5 | `kubejs:airtight_machine_casing` | PneumaticCraft pressure |
-| 6 | `kubejs:electrical_machine_casing` | Power Grid and electrical work |
-| 7 | `kubejs:circuited_machine_casing` | PNCR assembly and OC2R |
-| 8 | `kubejs:space_machine_casing` | Creating Space |
-| 9 | `kubejs:raw_impossible_casing` | unfinished AE2 body |
-| 10 | `kubejs:impossible_machine_casing` | AE2 and final Blood Magic |
+| 1 | `kubejs:seared_machine_casing` | TCon seared/scorched |
+| 2 | `kubejs:andesite_machine_casing` | Create andesite |
+| 3 | `kubejs:brass_machine_casing` | Create brass |
+| 4 | `kubejs:airtight_machine_casing` | PneumaticCraft pressure |
+| 5 | `kubejs:electrical_machine_casing` | Power Grid, PNCR assembly, and OC2R |
+| 6 | `kubejs:space_machine_casing` | Creating Space |
+| 7 | `kubejs:raw_impossible_casing` | unfinished AE2 body |
+| 8 | `kubejs:impossible_machine_casing` | AE2 and final Blood Magic |
 
-`kubejs/server_scripts/30_recipe_replace/99_machine_casing_progression.js`, `136_machine_casing_ecosystem_expansion.js`, and related replacement passes keep high-impact machines tied to this ladder. Each new tier should depend on earlier tier capabilities and add a real manufacturing dependency from its own tier.
+`kubejs/server_scripts/30_recipe_replace/99_machine_casing_progression.js`, `136_machine_casing_ecosystem_expansion.js`, and related replacement passes keep high-impact machines tied to this ladder. Seared and scorched are merged into one TCon casing tier; recipes that need scorched proof consume scorched bricks/glass directly. Electrical and circuited are merged into one post-airtight electrical/control casing built from Power Grid, PNCR, and OC2R parts. Each new tier should depend on earlier tier capabilities and add a real manufacturing dependency from its own tier.
 
 ## Early Chokepoints
 

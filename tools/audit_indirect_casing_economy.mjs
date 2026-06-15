@@ -20,12 +20,10 @@ const CRAFTING_TYPES = new Set([
 
 const CASINGS = [
   'kubejs:seared_machine_casing',
-  'kubejs:scorched_machine_casing',
   'kubejs:andesite_machine_casing',
   'kubejs:brass_machine_casing',
   'kubejs:airtight_machine_casing',
   'kubejs:electrical_machine_casing',
-  'kubejs:circuited_machine_casing',
   'kubejs:space_machine_casing',
   'kubejs:raw_impossible_casing',
   'kubejs:impossible_machine_casing'

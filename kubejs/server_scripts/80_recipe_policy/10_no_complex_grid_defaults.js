@@ -97,7 +97,6 @@ var BTM_GRID_POLICY_MAGIC_NAMESPACES = {
 var BTM_GRID_POLICY_ROOT_OUTPUTS = {
     'bloodmagic:altar': true,
     'kubejs:andesite_machine_casing': true,
-    'kubejs:scorched_machine_casing': true,
     'kubejs:seared_machine_casing': true,
     'tconstruct:crafting_station': true,
     'tconstruct:grout': true,

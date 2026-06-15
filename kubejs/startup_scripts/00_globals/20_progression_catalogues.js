@@ -12,13 +12,11 @@ global.BTM_COIN_TIERS = [
 ]
 
 global.BTM_MACHINE_CASING_TIERS = [
-    { id: 'seared', item: 'kubejs:seared_machine_casing', display: 'Seared Machine Casing', authority: 'TCon seared' },
-    { id: 'scorched', item: 'kubejs:scorched_machine_casing', display: 'Scorched Machine Casing', authority: 'TCon scorched' },
+    { id: 'seared', item: 'kubejs:seared_machine_casing', display: 'Seared Machine Casing', authority: 'TCon seared/scorched' },
     { id: 'andesite', item: 'kubejs:andesite_machine_casing', display: 'Andesite Machine Casing', authority: 'Create andesite' },
     { id: 'brass', item: 'kubejs:brass_machine_casing', display: 'Brass Machine Casing', authority: 'Create brass' },
     { id: 'airtight', item: 'kubejs:airtight_machine_casing', display: 'Airtight Casing', authority: 'PneumaticCraft pressure' },
-    { id: 'electrical', item: 'kubejs:electrical_machine_casing', display: 'Electrical Machine Casing', authority: 'Create: Power Grid' },
-    { id: 'circuited', item: 'kubejs:circuited_machine_casing', display: 'Circuited Casing', authority: 'PNCR assembly and OC2R' },
+    { id: 'electrical', item: 'kubejs:electrical_machine_casing', display: 'Electrical Machine Casing', authority: 'Power Grid, PNCR assembly, and OC2R' },
     { id: 'space', item: 'kubejs:space_machine_casing', display: 'Space Machine Casing', authority: 'Creating Space' },
     { id: 'raw_impossible', item: 'kubejs:raw_impossible_casing', display: 'Raw Impossible Casing', authority: 'Unfinished AE2 body' },
     { id: 'impossible', item: 'kubejs:impossible_machine_casing', display: 'Impossible Casing', authority: 'AE2 and final Blood Magic' }

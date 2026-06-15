@@ -144,7 +144,7 @@ ServerEvents.recipes(function (event) {
         C: 'minecraft:chest',
         A: 'immersive_aircraft:airship',
         H: 'immersive_aircraft:hull',
-        B: 'kubejs:circuited_machine_casing'
+        B: 'kubejs:electrical_machine_casing'
     }, 'kubejs:dimension_graph/aether/cargo_airship')
 
     // Everdawn -> advanced hydration and drink route supplies. Basic Thirst

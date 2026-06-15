@@ -111,7 +111,7 @@ ServerEvents.recipes(function (event) {
         ],
         key: {
             I: { item: 'kubejs:impossible_machine_casing' },
-            C: { item: 'kubejs:circuited_machine_casing' },
+            C: { item: 'kubejs:electrical_machine_casing' },
             F: { item: 'ae2:fluix_crystal' },
             A: { item: 'ae2:engineering_processor' },
             K: { item: 'kubejs:kimberlite_diamond_seed' },

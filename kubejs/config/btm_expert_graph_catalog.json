@@ -3,12 +3,10 @@
   "tierOrder": [
     "survival",
     "tcon_seared",
-    "tcon_scorched",
     "create_andesite",
     "create_brass",
     "airtight",
     "power_grid",
-    "oc2r",
     "space",
     "raw_impossible",
     "ae2",
@@ -92,20 +90,14 @@
     {
       "id": "tcon_seared",
       "casing": "kubejs:seared_machine_casing",
-      "authority": "TCon seared",
+      "authority": "TCon seared/scorched",
       "requiresPrevious": null
-    },
-    {
-      "id": "tcon_scorched",
-      "casing": "kubejs:scorched_machine_casing",
-      "authority": "TCon scorched",
-      "requiresPrevious": "tcon_seared"
     },
     {
       "id": "create_andesite",
       "casing": "kubejs:andesite_machine_casing",
       "authority": "Create andesite",
-      "requiresPrevious": "tcon_scorched"
+      "requiresPrevious": "tcon_seared"
     },
     {
       "id": "create_brass",
@@ -122,20 +114,14 @@
     {
       "id": "power_grid",
       "casing": "kubejs:electrical_machine_casing",
-      "authority": "Create: Power Grid",
+      "authority": "Power Grid, PNCR assembly, and OC2R",
       "requiresPrevious": "airtight"
-    },
-    {
-      "id": "oc2r",
-      "casing": "kubejs:circuited_machine_casing",
-      "authority": "PNCR assembly and OC2R",
-      "requiresPrevious": "power_grid"
     },
     {
       "id": "space",
       "casing": "kubejs:space_machine_casing",
       "authority": "Creating Space",
-      "requiresPrevious": "oc2r"
+      "requiresPrevious": "power_grid"
     },
     {
       "id": "raw_impossible",

@@ -135,7 +135,7 @@ if (fs.existsSync(shaderBlockPropertiesPath)) {
   for (const stale of ['kubejs:power_grid_machine_casing', 'kubejs:oc2r_machine_casing', 'kubejs:ae2_machine_casing']) {
     if (shaderSpecialLine.includes(stale)) fail(`shader special block list still references stale casing ID ${stale}`)
   }
-  for (const current of ['kubejs:electrical_machine_casing', 'kubejs:circuited_machine_casing', 'kubejs:raw_impossible_casing', 'kubejs:impossible_machine_casing']) {
+  for (const current of ['kubejs:electrical_machine_casing', 'kubejs:raw_impossible_casing', 'kubejs:impossible_machine_casing']) {
     if (!shaderSpecialLine.includes(current)) fail(`shader special block list missing current casing ID ${current}`)
   }
 }
@@ -171,12 +171,10 @@ for (const staleAsset of [
 
 for (const currentCasing of [
   'seared_machine_casing',
-  'scorched_machine_casing',
   'andesite_machine_casing',
   'brass_machine_casing',
   'airtight_machine_casing',
   'electrical_machine_casing',
-  'circuited_machine_casing',
   'space_machine_casing',
   'raw_impossible_casing',
   'impossible_machine_casing'

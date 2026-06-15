@@ -204,7 +204,7 @@ function itemLabel(id) {
     'minecraft:tnt': 'TNT',
     'ae2:spatial_io_port': 'Spatial IO Port',
     'kubejs:electrical_machine_casing': 'Electrical Machine Casing',
-    'kubejs:circuited_machine_casing': 'Circuited Machine Casing',
+    'kubejs:electrical_machine_casing': 'Electrical Machine Casing',
     'kubejs:impossible_machine_casing': 'Impossible Machine Casing',
     'bloodmagic:blankslate': 'Blank Slate',
     'bloodmagic:reinforcedslate': 'Reinforced Slate',
@@ -427,9 +427,9 @@ const majorQuestIconScale = 1.18
 const importantQuestIds = {
   SO: ['SO_MELTERY', 'SO_EXIT_TECH', 'SO_EXIT_MAGIC'],
   MG: ['MG_START', 'MG_AE2', 'MG_POST_AE2'],
-  TC: ['TC_SEARED_CASE', 'TC_SCORCHED', 'TC_FOUNDRY'],
+  TC: ['TC_SEARED_CASE', 'TC_FOUNDRY'],
   TC1: ['TC_SEARED_CASE', 'TC_SMELTERY', 'TC_REPAIR_LOOP'],
-  TC2: ['TC_SCORCHED', 'TC_FOUNDRY', 'TC_MOLTEN_LOGISTICS'],
+  TC2: ['TC_FOUNDRY', 'TC_MOLTEN_LOGISTICS'],
   TA: ['TC_SHOWCASE_CORE_TOOLS', 'TC_SHOWCASE_LATE_TOOLS', 'TA_ROUTE_ARMORY'],
   DE: ['DE_HEART', 'DE_WEAK_ORB', 'DE_BLANK'],
   FB: ['FB_STOVE', 'FB_FILTER', 'FB_POTION_ENGINEERING'],
@@ -447,7 +447,7 @@ const importantQuestIds = {
   GP: ['GP_CASE', 'GP_BATTERY', 'GP_RELAY'],
   FI: ['FI_FISSION_ROD', 'FI_AE_CONTROL', 'FI_READY'],
   CAK: ['CAK_ENERGY_PROVIDER', 'CAK_ME_PROXY', 'CAK_PROCESSORS'],
-  OC: ['OC_CASE', 'OC_COMPUTER', 'OC_NETWORK'],
+  OC: ['OC_TRANSISTOR', 'OC_COMPUTER', 'OC_NETWORK'],
   SP: ['SP_CASE', 'SP_CHEM', 'SP_SUIT_ADV'],
   AE: ['AE_CASE', 'AE_CONTROLLER', 'AE_SPATIAL'],
   M1: ['M1_BLANK', 'M1_DEMONIC', 'M1_ETHEREAL'],
@@ -737,7 +737,7 @@ const chapters = [
       q('MG_TCON', 'Tinkers Metallurgy Gate', 2, -2, [item('tconstruct:foundry_controller')], ['MG_START', 'TC_FOUNDRY'], ['Tinkers proves deposit interpretation and alloy authority before Create becomes the infrastructure layer.']),
       q('MG_CREATE', 'Create Manufacturing Gate', 4, -2, [item('kubejs:brass_machine_casing')], ['MG_TCON', 'C2_BRASS'], ['Create proves sequenced manufacturing, brass, presses, and manufactured casings.']),
       q('MG_POWER', 'Grid Power Gate', 6, -1, [item('kubejs:electrical_machine_casing')], ['MG_CREATE', 'GP_CASE'], ['SU and heat feed Power Grid, where rotational infrastructure becomes stored electricity. The casing is the manufacturing proof for this tier.']),
-      q('MG_OC2R', 'OC2R Control Gate', 8, -1, [item('kubejs:circuited_machine_casing')], ['MG_POWER', 'OC_CASE'], ['OC2R is the intersite communication/control track before AE2 local intelligence. The casing proves the electronics line is online.']),
+      q('MG_OC2R', 'OC2R Control Gate', 8, -1, [item('kubejs:electrical_machine_casing')], ['MG_POWER', 'OC_NETWORK'], ['OC2R is the intersite communication/control track before AE2 local intelligence. The electrical casing proves the electronics line is online.']),
       q('MG_SPACE', 'Space Logistics Gate', 10, 0, [item('kubejs:space_machine_casing')], ['MG_OC2R', 'SP_CASE'], ['Space is a logistics and chemistry commitment that consumes the earlier factory rather than replacing it. The casing is the launch-era authority item.']),
       q('MG_MAGIC', 'Blood Magic Gate', 4, 2, [item('bloodmagic:etherealslate')], ['MG_START', 'M1_ETHEREAL'], ['Magic progresses through Blood Magic slate permissions. Ethereal Slate proves the late magic stream is ready to contribute.']),
       q('MG_ECONOMY', 'Village Economy Gate', 6, 3, [item('wares:completed_delivery_agreement')], ['MG_MAGIC', 'VE_COMPLETED'], ['Coins, Wares, villages, and routes are a parallel crafting economy.']),
@@ -761,10 +761,9 @@ const chapters = [
     filename: 'tinkers_ii', prefix: 'TC2', id: 'BTM_TINKERS_II', order: 1, title: 'Tinkers II', tier: 'iron', group: 'workshop',
     description: ['Scorched progression upgrades metallurgy into foundry-scale interpretation and alloy control.', 'Use this chapter to prove you can convert mixed deposits into planned outputs, not random ingot luck.'],
     quests: [
-      q('TC_SCORCHED', 'Scorched Machine Casing', 0, 0, [item('kubejs:scorched_machine_casing')], ['TC_REPAIR_LOOP']),
-      q('TC_ALLOYER', 'Scorched Alloying', 2, -1, [item('tconstruct:scorched_alloyer')], ['TC_SCORCHED']),
-      q('TC_FUEL', 'Scorched Fuel Handling', 2, 1, [item('tconstruct:scorched_fuel_tank')], ['TC_SCORCHED']),
-      q('TC_FOUNDRY', 'Foundry Reads Geology', 4, 0, [item('tconstruct:foundry_controller')], ['TC_SCORCHED']),
+      q('TC_ALLOYER', 'Scorched Alloying', 2, -1, [item('tconstruct:scorched_alloyer')], ['TC_SMELTERY']),
+      q('TC_FUEL', 'Scorched Fuel Handling', 2, 1, [item('tconstruct:scorched_fuel_tank')], ['TC_SMELTERY']),
+      q('TC_FOUNDRY', 'Foundry Reads Geology', 4, 0, [item('tconstruct:foundry_controller')], ['TC_SMELTERY']),
       q('TC_MOLTEN_LOGISTICS', 'Molten Logistics', 6, 0, [item('tconstruct:scorched_drain'), item('tconstruct:scorched_chute')], ['TC_ALLOYER', 'TC_FUEL', 'TC_FOUNDRY'], ['This is the metallurgy capstone for early progression: stable heat, alloy control, and deliberate molten routing in one station set.'])
     ]
   },
@@ -775,7 +774,7 @@ const chapters = [
       q('TC_SHOWCASE_CORE_TOOLS', 'Showcase: Core Tools', 0, -3, itemAnyList(tconShowcase.coreTools), ['TC_SMELTERY'], ['Tinkers tools are material platforms. This node shows the core mining, digging, chopping, and hybrid tool forms you can build without caring which material or modifier NBT they carry.']),
       q('TC_SHOWCASE_MELEE', 'Showcase: Melee Weapons', 0, -1, itemAnyList(tconShowcase.meleeWeapons), ['TC_SMELTERY'], ['The combat catalogue is broad. Build the weapon form that matches the route, mob pressure, and reach pattern you actually need.']),
       q('TC_SHOWCASE_RANGED', 'Showcase: Ranged Weapons', 0, 1, itemAnyList(tconShowcase.rangedWeapons), ['TC_SMELTERY'], ['Ranged Tinkers tools and addon weapons give options for hostile routes before the pack becomes a gun or spell problem.']),
-      q('TC_SHOWCASE_ARMOR', 'Showcase: Armor and Travel', 0, 3, itemAnyList(tconShowcase.armorAndTravel), ['TC_SCORCHED'], ['Armor, shields, slime gear, and traveller gear are part of the same toolcraft economy. Treat them as route preparation.']),
+      q('TC_SHOWCASE_ARMOR', 'Showcase: Armor and Travel', 0, 3, itemAnyList(tconShowcase.armorAndTravel), ['TC_SMELTERY'], ['Armor, shields, slime gear, and traveller gear are part of the same toolcraft economy. Treat them as route preparation.']),
       q('TC_SHOWCASE_LATE_TOOLS', 'Showcase: Late Tool Forms', 2, 0, itemAnyList(tconShowcase.lateTools), ['TC_FOUNDRY'], ['These forms point toward later Tinkers branches and post-AE2 tool escalation. They are displayed here so the tool catalogue is visible early.']),
       q('TA_ROUTE_ARMORY', 'Route Armory', 4, 0, [item('tconstruct:travelers_helmet'), item('tconstruct:travelers_chestplate'), item('tconstruct:travelers_leggings'), item('tconstruct:travelers_boots')], ['TC_SHOWCASE_CORE_TOOLS', 'TC_SHOWCASE_MELEE', 'TC_SHOWCASE_RANGED', 'TC_SHOWCASE_ARMOR', 'TC_SHOWCASE_LATE_TOOLS'], ['The arsenal capstone is a full route kit: mining, combat, mobility, and repair options selected intentionally for your next dangerous branch.'])
     ]
@@ -959,8 +958,7 @@ const chapters = [
   {
     filename: 'oc2r', prefix: 'OC', id: 'BTM_OC2R', order: 1, title: 'OC2R', tier: 'silver', group: 'power', description: ['OC2R is the preferred intersite communication layer. It should coordinate routes and machines without becoming item teleportation.'], quests: [
       q('OC_TRANSISTOR', 'Transistor', 0, -1, [item('oc2r:transistor')], ['GP_BATTERY']),
-      q('OC_CASE', 'Circuited Machine Casing', 0, 1, [item('kubejs:circuited_machine_casing')], ['GP_BATTERY']),
-      q('OC_COMPUTER', 'Local Computer', 2, 0, [item('oc2r:computer')], ['OC_TRANSISTOR', 'OC_CASE']),
+      q('OC_COMPUTER', 'Local Computer', 2, 0, [item('oc2r:computer')], ['OC_TRANSISTOR']),
       q('OC_NETWORK', 'Wired Site Communication', 4, 0, [item('oc2r:network_hub'), item('oc2r:network_connector')], ['OC_COMPUTER']),
       q('OC_CREATE_BRIDGE', 'Create Device Bridge', 6, -2, [item('create:speedometer'), item('create:stressometer'), item('oc2r:network_connector')], ['OC_NETWORK'], ['ComputerBridge exposes Create machines to OC2R. It is intersite communication and observability, not item teleportation.']),
       q('OC_ROBOT', 'Authored Field Work', 6, -1, [item('oc2r:robot')], ['OC_NETWORK']),

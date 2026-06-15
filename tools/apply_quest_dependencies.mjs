@@ -23,8 +23,7 @@ const deps = {
   tinkers_construct: {
     TC_SEARED_CASE: ['SO_MELTERY'],
     TC_SMELTERY: ['TC_SEARED_CASE'],
-    TC_SCORCHED: ['TC_SMELTERY'],
-    TC_FOUNDRY: ['TC_SCORCHED']
+    TC_FOUNDRY: ['TC_SMELTERY']
   },
   create_i: {
     C1_ALLOY: ['TC_FOUNDRY'],
@@ -70,8 +69,8 @@ const deps = {
     PG_BATTERY: ['PG_CASE']
   },
   oc2r: {
-    OC_CASE: ['PG_BATTERY'],
-    OC_COMPUTER: ['OC_CASE'],
+    OC_TRANSISTOR: ['PG_BATTERY'],
+    OC_COMPUTER: ['OC_TRANSISTOR'],
     OC_NETWORK: ['OC_COMPUTER']
   },
   space: {

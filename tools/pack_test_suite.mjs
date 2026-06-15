@@ -240,7 +240,7 @@ function inferTierFromItems(items) {
     }
     if (item === 'create:brass_casing' || item === 'create:precision_mechanism') tier = 'create_brass'
     if (item.startsWith('powergrid:')) tier = tierAtLeast(tier, 'power_grid') ? tier : 'power_grid'
-    if (item.startsWith('oc2r:')) tier = tierAtLeast(tier, 'oc2r') ? tier : 'oc2r'
+    if (item.startsWith('oc2r:')) tier = tierAtLeast(tier, 'power_grid') ? tier : 'power_grid'
     if (item.startsWith('creatingspace:')) tier = tierAtLeast(tier, 'space') ? tier : 'space'
     if (item.startsWith('ae2:') || item.startsWith('advanced_ae:') || item.startsWith('ae2additions:')) tier = tierAtLeast(tier, 'ae2') ? tier : 'ae2'
   }
@@ -255,7 +255,7 @@ function intendedMachineTier(output) {
   if (ns === 'create') return name.includes('brass') || name.includes('precision') ? 'create_brass' : 'create_andesite'
   if (['railways', 'createdieselgenerators', 'create_connected'].includes(ns)) return 'create_brass'
   if (ns === 'powergrid') return 'power_grid'
-  if (ns === 'oc2r') return 'oc2r'
+  if (ns === 'oc2r') return 'power_grid'
   if (ns === 'creatingspace') return 'space'
   if (['ae2', 'advanced_ae', 'ae2additions', 'expatternprovider', 'merequester', 'createappliedkinetics'].includes(ns)) return 'ae2'
   return null
@@ -656,12 +656,10 @@ function testQuestBook() {
   const chapterText = questFiles.map(f => `${path.basename(f)}\n${read(f)}`).join('\n')
   const requiredNodes = [
     'kubejs:seared_machine_casing',
-    'kubejs:scorched_machine_casing',
     'kubejs:andesite_machine_casing',
     'kubejs:brass_machine_casing',
     'kubejs:airtight_machine_casing',
     'kubejs:electrical_machine_casing',
-    'kubejs:circuited_machine_casing',
     'kubejs:space_machine_casing',
     'kubejs:raw_impossible_casing',
     'kubejs:impossible_machine_casing',

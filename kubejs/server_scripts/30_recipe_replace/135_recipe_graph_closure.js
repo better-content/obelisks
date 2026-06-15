@@ -4,11 +4,11 @@
 
 var BTM_CLOSURE = {
     seared: 'kubejs:seared_machine_casing',
-    scorched: 'kubejs:scorched_machine_casing',
+    scorched: 'tconstruct:scorched_bricks',
     andesite: 'kubejs:andesite_machine_casing',
     brass: 'kubejs:brass_machine_casing',
     power: 'kubejs:electrical_machine_casing',
-    oc2r: 'kubejs:circuited_machine_casing',
+    oc2r: 'kubejs:electrical_machine_casing',
     space: 'kubejs:space_machine_casing',
     ae2: 'kubejs:impossible_machine_casing',
     ironPlate: '#forge:plates/iron',
@@ -73,7 +73,7 @@ ServerEvents.recipes(function (event) {
     ], {
         B: 'tconstruct:scorched_bricks',
         G: 'tconstruct:scorched_glass',
-        C: BTM_CLOSURE.scorched
+        C: 'tconstruct:scorched_brick'
     }, 'kubejs:closure/tconstruct/foundry_controller')
 
     // Andesite Create machines and controls: gearbox/control infrastructure should be casing-visible.

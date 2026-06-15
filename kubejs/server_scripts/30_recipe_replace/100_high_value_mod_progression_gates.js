@@ -7,7 +7,7 @@ var BTM_GATE = {
     andesite: 'kubejs:andesite_machine_casing',
     brass: 'kubejs:brass_machine_casing',
     power: 'kubejs:electrical_machine_casing',
-    oc2r: 'kubejs:circuited_machine_casing',
+    oc2r: 'kubejs:electrical_machine_casing',
     space: 'kubejs:space_machine_casing',
     ae2: 'kubejs:impossible_machine_casing',
     blankSlate: 'bloodmagic:blankslate',

@@ -3,12 +3,10 @@
   "expectedTierOrder": [
     "survival",
     "tcon_seared",
-    "tcon_scorched",
     "create_andesite",
     "create_brass",
     "airtight",
     "power_grid",
-    "oc2r",
     "space",
     "raw_impossible",
     "ae2",
@@ -88,37 +86,15 @@
       ]
     },
     {
-      "id": "tcon_scorched",
-      "tier": "tcon_scorched",
-      "outputs": [
-        "kubejs:scorched_machine_casing"
-      ],
-      "requiresPrevious": "tcon_seared",
-      "route": [
-        "seared casing",
-        "TConstruct scorched materials",
-        "scorched machine casing"
-      ],
-      "sourceAssertions": [
-        {
-          "file": "kubejs/server_scripts/30_recipe_replace/99_machine_casing_progression.js",
-          "all": [
-            "kubejs:scorched_machine_casing",
-            "kubejs:seared_machine_casing",
-            "tconstruct:scorched_bricks"
-          ]
-        }
-      ]
-    },
-    {
       "id": "create_andesite",
       "tier": "create_andesite",
       "outputs": [
         "create:andesite_alloy",
         "kubejs:andesite_machine_casing"
       ],
-      "requiresPrevious": "tcon_scorched",
+      "requiresPrevious": "tcon_seared",
       "route": [
+        "TConstruct scorched component proof",
         "TConstruct alloy/casting andesite alloy",
         "andesite machine casing"
       ],
@@ -139,7 +115,7 @@
           "file": "kubejs/server_scripts/30_recipe_replace/99_machine_casing_progression.js",
           "all": [
             "kubejs:andesite_machine_casing",
-            "kubejs:scorched_machine_casing",
+            "tconstruct:scorched_bricks",
             "create:andesite_alloy"
           ]
         }
@@ -205,13 +181,16 @@
       "id": "power_grid",
       "tier": "power_grid",
       "outputs": [
-        "kubejs:electrical_machine_casing"
+        "kubejs:electrical_machine_casing",
+        "ae2:engineering_processor"
       ],
       "requiresPrevious": "airtight",
       "route": [
         "airtight casing",
-        "Power Grid conductive/electrical work",
-        "electrical machine casing"
+        "Power Grid conductive work",
+        "PNCR assembly laser/drill circuit completion",
+        "OC2R network components",
+        "combined electrical machine casing"
       ],
       "sourceAssertions": [
         {
@@ -219,7 +198,8 @@
           "all": [
             "kubejs:electrical_machine_casing",
             "kubejs:airtight_machine_casing",
-            "powergrid:conductive_casing"
+            "powergrid:conductive_casing",
+            "oc2r:network_connector"
           ]
         },
         {
@@ -227,30 +207,6 @@
           "all": [
             "kubejs:airtight_machine_casing",
             "latent_chemlib:sealed_chemical_cell"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "oc2r",
-      "tier": "oc2r",
-      "outputs": [
-        "kubejs:circuited_machine_casing",
-        "ae2:engineering_processor"
-      ],
-      "requiresPrevious": "power_grid",
-      "route": [
-        "electrical casing",
-        "PNCR assembly laser/drill circuit completion",
-        "circuited casing and OC2R authority"
-      ],
-      "sourceAssertions": [
-        {
-          "file": "kubejs/server_scripts/30_recipe_replace/99_machine_casing_progression.js",
-          "all": [
-            "kubejs:circuited_machine_casing",
-            "kubejs:electrical_machine_casing",
-            "powergrid:integrated_circuit"
           ]
         },
         {
@@ -270,9 +226,9 @@
       "outputs": [
         "kubejs:space_machine_casing"
       ],
-      "requiresPrevious": "oc2r",
+      "requiresPrevious": "power_grid",
       "route": [
-        "circuited casing",
+        "electrical casing",
         "Creating Space authority",
         "space machine casing"
       ],
@@ -281,7 +237,7 @@
           "file": "kubejs/server_scripts/30_recipe_replace/99_machine_casing_progression.js",
           "all": [
             "kubejs:space_machine_casing",
-            "kubejs:circuited_machine_casing",
+            "kubejs:electrical_machine_casing",
             "creatingspace:"
           ]
         },
@@ -438,12 +394,10 @@
   ],
   "forbiddenBypassOutputs": [
     "kubejs:seared_machine_casing",
-    "kubejs:scorched_machine_casing",
     "kubejs:andesite_machine_casing",
     "kubejs:brass_machine_casing",
     "kubejs:airtight_machine_casing",
     "kubejs:electrical_machine_casing",
-    "kubejs:circuited_machine_casing",
     "kubejs:space_machine_casing",
     "kubejs:raw_impossible_casing",
     "kubejs:impossible_machine_casing",
@@ -485,30 +439,6 @@
         ]
       },
       {
-        "id": "tconstruct_scorched_foundry_access",
-        "milestone": "tcon_scorched",
-        "sourceFiles": [
-          "kubejs/server_scripts/30_recipe_replace/95_acid_and_nether_grout_unification.js",
-          "kubejs/server_scripts/30_recipe_replace/99_machine_casing_progression.js",
-          "kubejs/server_scripts/30_recipe_replace/136_machine_casing_ecosystem_expansion.js"
-        ],
-        "requiredOutputs": [
-          "kubejs:scorched_machine_casing",
-          "tconstruct:foundry_controller",
-          "tconstruct:scorched_alloyer",
-          "tconstruct:scorched_table",
-          "tconstruct:scorched_basin",
-          "tconstruct:scorched_faucet",
-          "tconstruct:scorched_drain",
-          "tconstruct:scorched_fuel_tank"
-        ],
-        "requiredGateItems": [
-          "kubejs:seared_machine_casing",
-          "kubejs:scorched_machine_casing",
-          "tconstruct:nether_grout"
-        ]
-      },
-      {
         "id": "create_andesite_kinetics_access",
         "milestone": "create_andesite",
         "sourceFiles": [
@@ -529,7 +459,6 @@
           "create:crushing_wheel"
         ],
         "requiredGateItems": [
-          "kubejs:scorched_machine_casing",
           "kubejs:andesite_machine_casing",
           "create:andesite_alloy"
         ]
@@ -587,33 +516,6 @@
         ]
       },
       {
-        "id": "pneumaticcraft_assembly_and_processing_access",
-        "milestone": "oc2r",
-        "sourceFiles": [
-          "kubejs/server_scripts/30_recipe_replace/122_pneumaticcraft_create_pressing_gates.js",
-          "kubejs/server_scripts/30_recipe_replace/136_machine_casing_ecosystem_expansion.js",
-          "kubejs/server_scripts/30_recipe_replace/143_circuit_pncr_assembly_authority.js"
-        ],
-        "requiredOutputs": [
-          "pneumaticcraft:refinery",
-          "pneumaticcraft:refinery_output",
-          "pneumaticcraft:thermopneumatic_processing_plant",
-          "pneumaticcraft:fluid_mixer",
-          "pneumaticcraft:assembly_controller",
-          "pneumaticcraft:assembly_platform",
-          "pneumaticcraft:assembly_laser",
-          "pneumaticcraft:assembly_drill",
-          "pneumaticcraft:unassembled_pcb",
-          "ae2:engineering_processor"
-        ],
-        "requiredGateItems": [
-          "kubejs:airtight_machine_casing",
-          "kubejs:pressure_seal",
-          "pneumaticcraft:printed_circuit_board",
-          "powergrid:integrated_circuit"
-        ]
-      },
-      {
         "id": "blood_magic_body_and_slate_access",
         "milestone": "blood_magic",
         "sourceFiles": [
@@ -644,29 +546,161 @@
       }
     ],
     "sourceRecipeSurfaces": [
-      { "id": "bloodmagic:altar", "needles": [ "event.recipes.bloodmagic", "type: 'bloodmagic:altar'" ] },
-      { "id": "bloodmagic:alchemytable", "needles": [ "type: 'bloodmagic:alchemytable'" ] },
-      { "id": "bloodmagic:arc", "needles": [ "type: 'bloodmagic:arc'" ] },
-      { "id": "bloodmagic:soulforge", "needles": [ "bloodmagic:soulforge" ] },
-      { "id": "create:compacting", "needles": [ "type: 'create:compacting'", "type: \"create:compacting\"" ] },
-      { "id": "create:crushing", "needles": [ "type: 'create:crushing'", "type: \"create:crushing\"" ] },
-      { "id": "create:deploying", "needles": [ "type: 'create:deploying'", "type: \"create:deploying\"" ] },
-      { "id": "create:filling", "needles": [ "type: 'create:filling'", "type: \"create:filling\"" ] },
-      { "id": "create:mechanical_crafting", "needles": [ "type: 'create:mechanical_crafting'", "global.btmCreateMechanicalCrafting" ] },
-      { "id": "create:milling", "needles": [ "type: 'create:milling'", "type: \"create:milling\"" ] },
-      { "id": "create:mixing", "needles": [ "type: 'create:mixing'", "type: \"create:mixing\"" ] },
-      { "id": "create:pressing", "needles": [ "type: 'create:pressing'", "type: \"create:pressing\"" ] },
-      { "id": "create:splashing", "needles": [ "type: 'create:splashing'", "type: \"create:splashing\"" ] },
-      { "id": "create:sequenced_assembly", "needles": [ "type: 'create:sequenced_assembly'", "type: \"create:sequenced_assembly\"" ] },
-      { "id": "tconstruct:casting_table", "needles": [ "tconstruct:casting_table", "casting_table" ] },
-      { "id": "tconstruct:casting_basin", "needles": [ "tconstruct:casting_basin", "casting_basin" ] },
-      { "id": "pneumaticcraft:pressure_chamber", "needles": [ "type: 'pneumaticcraft:pressure_chamber'" ] },
-      { "id": "pneumaticcraft:thermo_plant", "needles": [ "type: 'pneumaticcraft:thermo_plant'" ] },
-      { "id": "pneumaticcraft:fluid_mixer", "needles": [ "type: 'pneumaticcraft:fluid_mixer'", "pneumaticcraft:fluid_mixer" ] },
-      { "id": "pneumaticcraft:refinery", "needles": [ "type: 'pneumaticcraft:refinery'", "pneumaticcraft:refinery" ] },
-      { "id": "pneumaticcraft:assembly_laser", "needles": [ "pneumaticcraft:assembly_laser", "type: 'pneumaticcraft:assembly_' + program" ] },
-      { "id": "pneumaticcraft:assembly_drill", "needles": [ "pneumaticcraft:assembly_drill", "type: 'pneumaticcraft:assembly_' + program" ] },
-      { "id": "pneumaticcraft:explosion_crafting", "needles": [ "pneumaticcraft:explosion_crafting" ] }
+      {
+        "id": "bloodmagic:altar",
+        "needles": [
+          "event.recipes.bloodmagic",
+          "type: 'bloodmagic:altar'"
+        ]
+      },
+      {
+        "id": "bloodmagic:alchemytable",
+        "needles": [
+          "type: 'bloodmagic:alchemytable'"
+        ]
+      },
+      {
+        "id": "bloodmagic:arc",
+        "needles": [
+          "type: 'bloodmagic:arc'"
+        ]
+      },
+      {
+        "id": "bloodmagic:soulforge",
+        "needles": [
+          "bloodmagic:soulforge"
+        ]
+      },
+      {
+        "id": "create:compacting",
+        "needles": [
+          "type: 'create:compacting'",
+          "type: \"create:compacting\""
+        ]
+      },
+      {
+        "id": "create:crushing",
+        "needles": [
+          "type: 'create:crushing'",
+          "type: \"create:crushing\""
+        ]
+      },
+      {
+        "id": "create:deploying",
+        "needles": [
+          "type: 'create:deploying'",
+          "type: \"create:deploying\""
+        ]
+      },
+      {
+        "id": "create:filling",
+        "needles": [
+          "type: 'create:filling'",
+          "type: \"create:filling\""
+        ]
+      },
+      {
+        "id": "create:mechanical_crafting",
+        "needles": [
+          "type: 'create:mechanical_crafting'",
+          "global.btmCreateMechanicalCrafting"
+        ]
+      },
+      {
+        "id": "create:milling",
+        "needles": [
+          "type: 'create:milling'",
+          "type: \"create:milling\""
+        ]
+      },
+      {
+        "id": "create:mixing",
+        "needles": [
+          "type: 'create:mixing'",
+          "type: \"create:mixing\""
+        ]
+      },
+      {
+        "id": "create:pressing",
+        "needles": [
+          "type: 'create:pressing'",
+          "type: \"create:pressing\""
+        ]
+      },
+      {
+        "id": "create:splashing",
+        "needles": [
+          "type: 'create:splashing'",
+          "type: \"create:splashing\""
+        ]
+      },
+      {
+        "id": "create:sequenced_assembly",
+        "needles": [
+          "type: 'create:sequenced_assembly'",
+          "type: \"create:sequenced_assembly\""
+        ]
+      },
+      {
+        "id": "tconstruct:casting_table",
+        "needles": [
+          "tconstruct:casting_table",
+          "casting_table"
+        ]
+      },
+      {
+        "id": "tconstruct:casting_basin",
+        "needles": [
+          "tconstruct:casting_basin",
+          "casting_basin"
+        ]
+      },
+      {
+        "id": "pneumaticcraft:pressure_chamber",
+        "needles": [
+          "type: 'pneumaticcraft:pressure_chamber'"
+        ]
+      },
+      {
+        "id": "pneumaticcraft:thermo_plant",
+        "needles": [
+          "type: 'pneumaticcraft:thermo_plant'"
+        ]
+      },
+      {
+        "id": "pneumaticcraft:fluid_mixer",
+        "needles": [
+          "type: 'pneumaticcraft:fluid_mixer'",
+          "pneumaticcraft:fluid_mixer"
+        ]
+      },
+      {
+        "id": "pneumaticcraft:refinery",
+        "needles": [
+          "type: 'pneumaticcraft:refinery'",
+          "pneumaticcraft:refinery"
+        ]
+      },
+      {
+        "id": "pneumaticcraft:assembly_laser",
+        "needles": [
+          "pneumaticcraft:assembly_laser",
+          "type: 'pneumaticcraft:assembly_' + program"
+        ]
+      },
+      {
+        "id": "pneumaticcraft:assembly_drill",
+        "needles": [
+          "pneumaticcraft:assembly_drill",
+          "type: 'pneumaticcraft:assembly_' + program"
+        ]
+      },
+      {
+        "id": "pneumaticcraft:explosion_crafting",
+        "needles": [
+          "pneumaticcraft:explosion_crafting"
+        ]
+      }
     ],
     "runtimeRecipeSurfaces": [
       "bloodmagic:alchemytable",

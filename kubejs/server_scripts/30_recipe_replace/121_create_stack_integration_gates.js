@@ -5,11 +5,11 @@
 
 var BTM_CREATE_STACK = {
     seared: 'kubejs:seared_machine_casing',
-    scorched: 'kubejs:scorched_machine_casing',
+    scorched: 'tconstruct:scorched_bricks',
     andesite: 'kubejs:andesite_machine_casing',
     brass: 'kubejs:brass_machine_casing',
     power: 'kubejs:electrical_machine_casing',
-    oc2r: 'kubejs:circuited_machine_casing',
+    oc2r: 'kubejs:electrical_machine_casing',
     ae2: 'kubejs:impossible_machine_casing',
     ironPlate: '#forge:plates/iron',
     copperPlate: '#forge:plates/copper',

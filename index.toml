@@ -8125,6 +8125,10 @@ file = "datapacks/realistic_ores_lava_depths/pack.mcmeta"
 hash = "2e69b890b2e44b67e2d5adc2cd88b4cfab95bd588cee3f3d92abcbec99f21e36"
 
 [[files]]
+file = "datapacks/worldgen_compat_fixes/data/kubejs/forge/biome_modifier/remove_vanilla_overworld_ores.json"
+hash = "10fca11921bacfb6d8c482eca4626b03e73d1b832f0e418a75241db96b0aa032"
+
+[[files]]
 file = "datapacks/worldgen_compat_fixes/data/projectvibrantjourneys/worldgen/configured_feature/charred_bones.json"
 hash = "ea7264356b67359e9f9951341e916a724554c903a6f36b06e7da9ce7b44bbebe"
 
@@ -9286,11 +9290,11 @@ hash = "dc753044f39d65b2a0106b3ea4005dd10287e94c4ce1cc7d5bb4f9948bbb37c2"
 
 [[files]]
 file = "kubejs/config/player_progression_regression.json"
-hash = "7f61d1e250b4d572a6e7d29854ff63e7c40f27a1b6338314bfc36d2e448256e4"
+hash = "925d746f34cca5100e62afca8fbadd86952945c7f2f235156030e666c2b1dd4a"
 
 [[files]]
 file = "kubejs/config/progression_reachability_sources.json"
-hash = "f5f47801c5f713248be511381db0168aec707d46f1bb33e674088ff555cf8f71"
+hash = "12b5f9209d35f5d342f2789e830491e9785c0b13ec9c67b4757c66f409ad72bc"
 
 [[files]]
 file = "kubejs/config/runtime_graph_dumps.json"
@@ -10586,7 +10590,7 @@ hash = "8115b072cf7bd319ef8efa094d360b029b6b778cf3bb5f7c18b5783d25e53a6e"
 
 [[files]]
 file = "kubejs/server_scripts/30_recipe_replace/82_blood_magic_lifeforce_rework.js"
-hash = "98ec11133a081a15f37320b97a7abaa1471de71ce622c061452875d0382d5519"
+hash = "0bf938ff3dd93fb044c59a27485f3f0d14836375b84c2ea35ad6353274e790d2"
 
 [[files]]
 file = "kubejs/server_scripts/30_recipe_replace/85_dirt_grass_tag_compat.js"
@@ -10630,7 +10634,7 @@ hash = "7c8bff0a167e5ca668f70047727a398e3965656b7160ebd344d7d31449fa6ad2"
 
 [[files]]
 file = "kubejs/server_scripts/40_recipe_add/40_blood_orbs_from_still_beating_hearts.js"
-hash = "9087bc1d11f2d0028c1f9cceffc2422d87f6012b4ece85674a4f43329debaecc"
+hash = "cd90c26a1b2343ea4f490d6bd5391115dbee827a598988b1339d0a8d19ba7341"
 
 [[files]]
 file = "kubejs/server_scripts/40_recipe_add/45_deposit_furnace_fallbacks.js"
@@ -10642,11 +10646,19 @@ hash = "ca73733e78a1b7cb0bd490c90d5fb1c89e57f97f3f6e9497444793e602407fe1"
 
 [[files]]
 file = "kubejs/server_scripts/40_recipe_add/55_realistic_ores_identity_outputs.js"
-hash = "ccc72676b73bb2ce870f1bcb732c70a9b8727fa7dca0dbadfd4d42bbd36011d3"
+hash = "8fdd0b3d1421f60cf8dcb8e89207a285be1ced9e0c79b8f20846f6b089ec6ac7"
 
 [[files]]
 file = "kubejs/server_scripts/40_recipe_add/56_alchemistry_dissolver_create_port.js"
 hash = "56684be9b144296eb60ffaf5ff5019083502440a9e708a746c07a4a265cdaa84"
+
+[[files]]
+file = "kubejs/server_scripts/40_recipe_add/57_grown_material_acid_ball_processing.js"
+hash = "b1c6963f3840e7c2aca720a5ef12bf55cf8178e0fff325d1c7b526013a278808"
+
+[[files]]
+file = "kubejs/server_scripts/40_recipe_add/58_blood_magic_manual_create_yields.js"
+hash = "7301d6fa0c6003e04ff2047871a3e5ecefa320f74184eab6821bc73857f25f02"
 
 [[files]]
 file = "kubejs/server_scripts/40_recipe_add/58_create_pncr_molecular_synthesis.js"

@@ -522,6 +522,7 @@
           "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js",
           "kubejs/server_scripts/30_recipe_replace/82_blood_magic_lifeforce_rework.js",
           "kubejs/server_scripts/40_recipe_add/40_blood_orbs_from_still_beating_hearts.js",
+          "kubejs/server_scripts/40_recipe_add/58_blood_magic_manual_create_yields.js",
           "kubejs/server_scripts/40_recipe_add/59_formulaic_synthesis_magic_routes.js"
         ],
         "requiredOutputs": [
@@ -538,6 +539,7 @@
           "bloodmagic:etherealslate"
         ],
         "requiredGateItems": [
+          "rpgstats:still_beating_heart",
           "kubejs:weak_blood_heart",
           "kubejs:archmage_blood_heart",
           "bloodmagic:blankslate",

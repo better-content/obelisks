@@ -22,6 +22,7 @@ Deposit processing is multi-surface:
 - `60_worldgen/10_r_ores_melted.js`: TCon melter and ore-melting outputs.
 - `50_create_deposit_preprocessing.js`: Create crushing/washing preparation.
 - `55_realistic_ores_identity_outputs.js`: deposit identity outputs and acid/ball routes.
+- `57_grown_material_acid_ball_processing.js`: plant, fungus, honeycomb, and animal acid/ball extraction.
 - `56_alchemistry_dissolver_create_port.js`, `58_create_pncr_molecular_synthesis.js`, and `59_formulaic_synthesis_magic_routes.js`: Create/PNCR/magic-facing chemistry parity.
 - `65_chemlib_plate_manufacturing_routes.js`: Chemlib plates through Create pressing and TCon casting where supported.
 
@@ -30,6 +31,8 @@ Alchemistry/ChemLib content informs material identity, but the authored progress
 Non-grown infinite matter is not an authored resource source. `30_remove_items.js` removes passive ore/matter generators such as Occultism miners, Blood Magic meteors, Botania Orechid/Marimorphosis/catalyst routes, Ars conjured islands/fluid glyph routes, and Create Diesel lava fermentation. Create bottomless draining and finite-water biome refills are disabled in config; raw/geologic/material villager buy restocks are skipped by `35_villager_trades/10_coin_villager_trades.js`. Renewable grown sources such as crops, trees, animals, and ordinary biological drops remain valid economy inputs.
 
 The lava-depth material loop is a late exception within the Overworld geology stack. Tectonic extends terrain to Y -64; `datapacks/realistic_ores_lava_depths` places only lava-exposed Realistic Ores uranium, thorium, and osmiridium lava sulfide in the Y -64 to 0 band. Osmiridium feeds Create washing, TCon ore melting, acid/ball chemistry, Protection Pixel Tosaki gear, and selected post-AE2 utility.
+
+Vanilla Overworld ore placed features are removed by `datapacks/worldgen_compat_fixes`, and representative vanilla ore value is folded back into Realistic Ores acid/ball outputs through explicit deposit/solvent/media extras.
 
 ## Create And Tinkers
 
@@ -51,7 +54,7 @@ Realistic Block Physics stays explicit-definition only in `config/rbp/world_defi
 
 ## Blood Magic And Body Systems
 
-Blood Magic is the magic parent spine. `40_blood_orbs_from_still_beating_hearts.js` removes default Blood Orb altar recipes and replaces them with level-threshold heart-key recipes. `82_blood_magic_lifeforce_rework.js` makes altar/rune escalation costly, uses Undergarden materials for the Blood Altar body, and keeps sacrifice helpers deeper in the tree.
+Blood Magic is the magic parent spine. `40_blood_orbs_from_still_beating_hearts.js` removes default Blood Orb altar recipes and replaces them with level-threshold heart-key recipes, including a direct still-beating-heart fallback for the first weak orb. `82_blood_magic_lifeforce_rework.js` makes the first Blood Altar heart-bound instead of dimension-bound, keeps rune escalation costly, and keeps sacrifice helpers deeper in the tree. `58_blood_magic_manual_create_yields.js` adds LP-paid manual batch alternatives for essential Create materials without replacing factory automation.
 
 The death overhaul is a body-system progression surface. `defaultconfigs/configurabledeath-server.toml` keeps carried items and food state on death, so deaths are not balanced around random inventory scatter. `rpg-stats` owns the life ledger: `PointAwarder` grants power from new XP levels above `lifePeakLevel`, `CommonForgeEvents` clears allocations and unspent points on death, and `StillBeatingHeartData` creates the respawn-delivered `rpgstats:still_beating_heart` with that life's level. The intended pressure is "how long and how far did this life get" plus the return to the locked spawn.
 

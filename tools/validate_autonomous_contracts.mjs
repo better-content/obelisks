@@ -311,17 +311,19 @@ function validateMagicBody() {
   const heartText = read('kubejs/server_scripts/40_recipe_add/40_blood_orbs_from_still_beating_hearts.js')
   const recipes = [...heartText.matchAll(/addTypedHeartOrbRecipe\(event, '[^']+', '([^']+)', '([^']+)', (\d+), (\d+), (\d+), (\d+)\)/g)]
     .map(match => ({ output: match[1], input: match[2], tier: Number(match[3]), syphon: Number(match[4]), rate: Number(match[5]), drain: Number(match[6]) }))
+  const typedRecipes = recipes.filter(recipe => recipe.input.startsWith('kubejs:') && recipe.input.endsWith('_blood_heart'))
+  const fallbackRecipes = recipes.filter(recipe => recipe.input === 'rpgstats:still_beating_heart' && recipe.output === 'bloodmagic:weakbloodorb')
   const expectedOutputs = ['bloodmagic:weakbloodorb', 'bloodmagic:apprenticebloodorb', 'bloodmagic:magicianbloodorb', 'bloodmagic:masterbloodorb', 'bloodmagic:archmagebloodorb']
   const heartFailures = []
-  if (recipes.length !== expectedOutputs.length) heartFailures.push(`expected ${expectedOutputs.length} heart-orb recipes, found ${recipes.length}`)
-  for (let i = 0; i < recipes.length; i++) {
-    if (recipes[i].output !== expectedOutputs[i]) heartFailures.push(`unexpected orb at ${i}: ${recipes[i].output}`)
-    if (!recipes[i].input.startsWith('kubejs:') || !recipes[i].input.endsWith('_blood_heart')) heartFailures.push(`non typed-heart input: ${recipes[i].input}`)
-    if (i > 0 && !(recipes[i].tier > recipes[i - 1].tier && recipes[i].syphon > recipes[i - 1].syphon && recipes[i].rate > recipes[i - 1].rate && recipes[i].drain > recipes[i - 1].drain)) {
-      heartFailures.push(`non-monotonic Blood Orb escalation at ${recipes[i].output}`)
+  if (typedRecipes.length !== expectedOutputs.length) heartFailures.push(`expected ${expectedOutputs.length} typed heart-orb recipes, found ${typedRecipes.length}`)
+  if (fallbackRecipes.length !== 1) heartFailures.push(`expected one still-beating-heart weak orb fallback, found ${fallbackRecipes.length}`)
+  for (let i = 0; i < typedRecipes.length; i++) {
+    if (typedRecipes[i].output !== expectedOutputs[i]) heartFailures.push(`unexpected typed orb at ${i}: ${typedRecipes[i].output}`)
+    if (i > 0 && !(typedRecipes[i].tier > typedRecipes[i - 1].tier && typedRecipes[i].syphon > typedRecipes[i - 1].syphon && typedRecipes[i].rate > typedRecipes[i - 1].rate && typedRecipes[i].drain > typedRecipes[i - 1].drain)) {
+      heartFailures.push(`non-monotonic Blood Orb escalation at ${typedRecipes[i].output}`)
     }
   }
-  heartFailures.length ? fail('Blood Orb heart bridge escalates monotonically', heartFailures.join('\n')) : ok('Blood Orb heart bridge escalates monotonically', `${recipes.length} orb tiers`)
+  heartFailures.length ? fail('Blood Orb heart bridge escalates monotonically', heartFailures.join('\n')) : ok('Blood Orb heart bridge escalates monotonically', `${typedRecipes.length} typed orb tiers + weak fallback`)
 
   const lifeforce = read('kubejs/server_scripts/30_recipe_replace/82_blood_magic_lifeforce_rework.js')
   const lifeforceMarkers = ['bloodmagic:altar', 'bloodmagic:daggerofsacrifice', 'upgradeLevel(4)', 'altarSyphon(60000)', 'bloodmagic:etherealslate']

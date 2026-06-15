@@ -42,7 +42,54 @@ var BTM_RO_SOLVENT_GAS_PRODUCTS = {
     phosphoric: { item: 'chemlib:hydrogen', chance: 0.08 }
 }
 
-var BTM_RO_CREATE_ITEM_OUTPUT_LIMIT = 4
+var BTM_RO_CREATE_ITEM_OUTPUT_LIMIT = 6
+
+var BTM_RO_OVERWORLD_ORE_EXTRAS = {
+    coal_measures: {
+        ethanol: { andesite: 'minecraft:coal', steel: 'minecraft:coal' },
+        sulfuric: { iron: 'create:crushed_raw_iron' },
+        nitric: { titanium: 'minecraft:coal', blood_infused: 'minecraft:soul_sand' }
+    },
+    ironstone: {
+        sulfuric: { iron: 'minecraft:raw_iron', steel: 'create:crushed_raw_iron' },
+        hydrochloric: { iron: 'minecraft:raw_iron', nickel: 'chemlib:nickel' },
+        phosphoric: { blood_infused: 'minecraft:redstone' }
+    },
+    copper_sulfide: {
+        acetic: { brass: 'minecraft:raw_copper' },
+        sulfuric: { brass: 'create:crushed_raw_copper', steel: 'minecraft:raw_copper' },
+        hydrochloric: { brass: 'minecraft:raw_copper', blood_infused: 'minecraft:redstone' }
+    },
+    quartz_vein: {
+        hydrochloric: { fluix: 'ae2:certus_quartz_crystal', titanium: 'minecraft:quartz' },
+        nitric: { titanium: 'minecraft:gold_nugget', fluix: 'ae2:fluix_dust' }
+    },
+    kimberlite_pipe: {
+        sulfuric: { nickel: 'minecraft:diamond' },
+        hydrochloric: { titanium: 'minecraft:diamond' },
+        nitric: { titanium: 'minecraft:diamond', blood_infused: 'minecraft:soul_sand' }
+    },
+    emerald_schist_beryl: {
+        sulfuric: { titanium: 'minecraft:emerald' },
+        hydrochloric: { fluix: 'ae2:certus_quartz_crystal' },
+        phosphoric: { titanium: 'minecraft:emerald' }
+    },
+    cupriferous_redbed_redstone_vein: {
+        acetic: { brass: 'minecraft:redstone' },
+        sulfuric: { brass: 'minecraft:raw_copper', steel: 'minecraft:redstone' },
+        nitric: { blood_infused: 'minecraft:redstone', fluix: 'ae2:fluix_dust' }
+    },
+    lazurite_vein: {
+        acetic: { brass: 'minecraft:lapis_lazuli' },
+        hydrochloric: { fluix: 'ae2:certus_quartz_crystal' },
+        phosphoric: { titanium: 'minecraft:lapis_lazuli' }
+    },
+    sulfur_bearing_pyrite_ore: {
+        sulfuric: { iron: 'create:crushed_raw_iron', brass: 'minecraft:raw_copper' },
+        nitric: { titanium: 'create:crushed_raw_gold' },
+        hydrochloric: { steel: 'minecraft:raw_iron' }
+    }
+}
 
 var BTM_RO_DEPOSITS = [
     {
@@ -225,11 +272,22 @@ function btmRoRecipeResults(dep, solvent, ball) {
     btmRoAddResult(results, dep.primary, btmRoPrimaryCount(solvent, ball), null)
     btmRoAddResult(results, dep[solvent.id], 1, solvent.secondary + ball.secondaryBonus)
     btmRoAddResult(results, btmRoBallResult(dep, ball), 1, 0.42 + ball.secondaryBonus)
+    btmRoAddOverworldOreExtra(results, dep, solvent, ball)
     btmRoAddResult(results, dep.trace, 1, solvent.trace + ball.traceBonus)
     var retained = BTM_RO_RETENTION[solvent.id][ball.id]
     if (retained && retained > 0) btmRoPushResult(results, { item: ball.item, chance: retained })
     btmRoAddGasSideProducts(results, dep, solvent)
     return results
+}
+
+function btmRoAddOverworldOreExtra(results, dep, solvent, ball) {
+    var byDeposit = BTM_RO_OVERWORLD_ORE_EXTRAS[dep.id]
+    if (!byDeposit) return
+    var bySolvent = byDeposit[solvent.id]
+    if (!bySolvent) return
+    var extra = bySolvent[ball.id] || bySolvent[ball.bias]
+    if (!extra) return
+    btmRoAddResult(results, extra, 1, 0.18 + solvent.trace + ball.traceBonus)
 }
 
 function btmRoMixing(event, dep, solvent, ball) {

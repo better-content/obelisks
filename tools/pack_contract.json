@@ -171,6 +171,7 @@
         "kubejs/server_scripts/40_recipe_add/50_create_deposit_preprocessing.js",
         "kubejs/server_scripts/40_recipe_add/55_realistic_ores_identity_outputs.js",
         "kubejs/server_scripts/40_recipe_add/56_alchemistry_dissolver_create_port.js",
+        "kubejs/server_scripts/40_recipe_add/57_grown_material_acid_ball_processing.js",
         "kubejs/server_scripts/40_recipe_add/58_create_pncr_molecular_synthesis.js",
         "kubejs/server_scripts/40_recipe_add/59_formulaic_synthesis_magic_routes.js",
         "kubejs/server_scripts/40_recipe_add/65_chemlib_plate_manufacturing_routes.js",
@@ -190,7 +191,16 @@
             "global.BTM_RO_DEPOSITS",
             "global.BTM_RO_SOLVENTS",
             "global.BTM_RO_BALLS",
-            "BTM_RO_RETENTION"
+            "BTM_RO_RETENTION",
+            "BTM_RO_OVERWORLD_ORE_EXTRAS"
+          ]
+        },
+        {
+          "file": "kubejs/server_scripts/40_recipe_add/57_grown_material_acid_ball_processing.js",
+          "all": [
+            "BTM_GROWN_MATERIALS",
+            "kubejs:grown_materials/acid_ball/",
+            "global.BTM_RO_SOLVENTS"
           ]
         },
         {
@@ -249,6 +259,7 @@
         "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js",
         "kubejs/server_scripts/30_recipe_replace/82_blood_magic_lifeforce_rework.js",
         "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js",
+        "kubejs/server_scripts/40_recipe_add/58_blood_magic_manual_create_yields.js",
         "kubejs/server_scripts/40_recipe_add/70_food_potion_reagents.js",
         "kubejs/server_scripts/90_dev_debug/20_food_effect_audit_dumps.js",
         "tools/analyze_food_effect_graph.mjs",
@@ -261,7 +272,16 @@
           "file": "kubejs/server_scripts/40_recipe_add/40_blood_orbs_from_still_beating_hearts.js",
           "all": [
             "kubejs:weak_blood_heart",
-            "bloodmagic:weakbloodorb"
+            "bloodmagic:weakbloodorb",
+            "rpgstats:still_beating_heart"
+          ]
+        },
+        {
+          "file": "kubejs/server_scripts/40_recipe_add/58_blood_magic_manual_create_yields.js",
+          "all": [
+            "bloodmagic:alchemytable",
+            "create:andesite_alloy",
+            "create:precision_mechanism"
           ]
         },
         {

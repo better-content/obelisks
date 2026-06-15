@@ -9,13 +9,13 @@ ServerEvents.recipes(function (event) {
         'BFB',
         'CSC'
     ], {
-        O: 'undergarden:shiverstone',
+        O: 'minecraft:obsidian',
         G: 'minecraft:gold_block',
-        B: 'undergarden:cloggrum_ingot',
+        B: 'minecraft:bone_block',
         F: 'minecraft:furnace',
-        C: 'undergarden:regalium_crystal',
-        S: 'undergarden:blood_globule'
-    }).id('kubejs:bloodmagic/expensive_blood_altar')
+        C: 'minecraft:copper_block',
+        S: 'rpgstats:still_beating_heart'
+    }).id('kubejs:bloodmagic/heart_bound_blood_altar')
 
     if (event.recipes.bloodmagic && event.recipes.bloodmagic.altar) {
         event.remove({ id: 'bloodmagic:altar/daggerofsacrifice' })

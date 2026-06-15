@@ -22,14 +22,14 @@ Spawn is intentionally sticky. New players use Class Selector or embark onboardi
 
 Meteor/obelisk dimensions are origin proofs for outside reward systems. A valid edge needs native dimensional resources, hazards or structures, a first meaningful proof item, and a system whose entry feels earned there. The dimension is not a self-label and does not take ownership of the main tech or magic spine.
 
-Current graph-start recipe gates are in `kubejs/server_scripts/30_recipe_replace/155_dimension_proof_graph_starts.js`. Existing Nether and Undergarden edges live in the TCon grout and Blood Magic altar passes.
+Current graph-start recipe gates are in `kubejs/server_scripts/30_recipe_replace/155_dimension_proof_graph_starts.js`. Existing Nether proof lives in the TCon grout pass; Undergarden now remains a later deep-survival material route rather than the first Blood Altar body.
 
 Dimension travel has two authored surfaces only: Dimensional Fonts from `dimensionalfonts-1.0.0.jar` plus `config/obelisks/`, and Creating Space rocket graph entries under `kubejs/data/*/creatingspace/rocket_accessible_dimension/`. Direct portal/key routes are removed or hidden by `170_space_dimension_access_gates.js`, `40_hide_quarantined_systems.js`, `config/twilightforest-common.toml`, and `config/structurify.json`. Lost Cities, Twilight Forest, Fallout Wastelands, Finley, and Call From The Depths are space-routed adventure dimensions.
 
 | Dimension | Graph Start Opened | Proof Route |
 | --- | --- | --- |
 | Nether | TConstruct metallurgy proof edge | Netherrack grout and Nether heat/material recipes prove the first serious molten-material route. This keeps TCon rooted in the tech spine while letting Nether travel supply its first hard proof. |
-| Undergarden | Blood Magic altar/body proof edge | Shiverstone, depthrock, cloggrum, regalium, and blood globules build the altar body and bind deep survival to the still-beating-heart magic bridge. |
+| Undergarden | Deep survival and later magic materials | Shiverstone, depthrock, cloggrum, regalium, and blood globules remain deep-route materials for later magic and survival escalation after the first heart-bound Blood Altar is online. |
 | Aether | Air travel and expedition mobility | `aether:blue_aercloud`, `aether:skyroot_stick`, `aether:zanite_gemstone`, `aether:aerogel`, `aether:quicksoil_glass`, and `aether:ambrosium_shard` enter Hang Glider wings/frameworks and Immersive Aircraft sail/hull/propeller components. |
 | Everdawn | Heat/desert hydration and brewing route supplies | `blue_skies:brewberry`, `blue_skies:pyrope_gem`, `blue_skies:lunar_planks`, and `blue_skies:polished_umber` open Cold Sweat waterskins and Brewin kegs. Thirst bowls, bottles, buckets, and basic water purification remain ungated by dimensions. |
 
@@ -87,7 +87,9 @@ All non-grown renewable resource sources should be absent or quarantined. Geolog
 
 ## Magic Gates
 
-Still-Beating Hearts bridge the death loop and body systems into Blood Magic. `rpgstats:still_beating_heart` is a milestone item, not bulk fuel. Current KubeJS adds pack-owned heart keys and Blood Orb altar recipes in `40_blood_orbs_from_still_beating_hearts.js`; `82_blood_magic_lifeforce_rework.js` makes Blood Altar infrastructure more expensive and routes the altar body through Undergarden shiverstone, cloggrum, regalium, and blood globules instead of Nether mob/block materials.
+Still-Beating Hearts bridge the death loop and body systems into Blood Magic. `rpgstats:still_beating_heart` is a milestone item, not bulk fuel. Current KubeJS adds pack-owned heart keys and Blood Orb altar recipes in `40_blood_orbs_from_still_beating_hearts.js`; the weak orb also has a direct still-beating-heart altar fallback so the first Blood Magic loop is not bricked by its own catalyst chain. `82_blood_magic_lifeforce_rework.js` makes the Blood Altar consume the heart directly, while later altar/rune escalation remains costly.
+
+Growables now feed chemistry through `57_grown_material_acid_ball_processing.js`. Plants, fungi, honeycomb, meat, fish, hide, bone, feather, and venomous tissue use the same solvent/grinding-ball language as Realistic Ores, so farm and animal loops produce differentiated chemical side streams rather than one generic biomass output.
 
 Blood Magic slates are the side-magic authority:
 

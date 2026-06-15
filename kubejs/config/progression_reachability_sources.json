@@ -1,6 +1,7 @@
 {
   "schema": "btm.progression_reachability_sources.v1",
   "seedItems": [
+    "minecraft:bone_block",
     "minecraft:andesite",
     "minecraft:blaze_powder",
     "minecraft:blast_furnace",
@@ -29,7 +30,7 @@
     "chemlib:zinc_ingot",
     "create:piston_extension_pole",
     "farmersdelight:straw",
-    "kubejs:weak_blood_heart",
+    "rpgstats:still_beating_heart",
     "kubejs:apprentice_blood_heart",
     "kubejs:magician_blood_heart",
     "kubejs:master_blood_heart",
@@ -673,27 +674,69 @@
         "bloodmagic:altar"
       ],
       "inputs": [
-        "minecraft:stone",
+        "minecraft:obsidian",
+        "minecraft:bone_block",
         "minecraft:copper_ingot",
         "minecraft:gold_ingot",
-        "kubejs:weak_blood_heart"
+        "rpgstats:still_beating_heart"
       ]
     },
     {
-      "id": "btm:blood/orbs",
+      "id": "btm:blood/weak_heart",
       "outputs": [
-        "bloodmagic:weakbloodorb",
-        "bloodmagic:apprenticebloodorb",
-        "bloodmagic:magicianbloodorb",
-        "bloodmagic:masterbloodorb",
+        "kubejs:weak_blood_heart"
+      ],
+      "inputs": [
+        "rpgstats:still_beating_heart"
+      ]
+    },
+    {
+      "id": "btm:blood/weak_orb",
+      "outputs": [
+        "bloodmagic:weakbloodorb"
+      ],
+      "inputs": [
+        "bloodmagic:altar",
+        "rpgstats:still_beating_heart"
+      ]
+    },
+    {
+      "id": "btm:blood/apprentice_orb",
+      "outputs": [
+        "bloodmagic:apprenticebloodorb"
+      ],
+      "inputs": [
+        "bloodmagic:altar",
+        "kubejs:apprentice_blood_heart"
+      ]
+    },
+    {
+      "id": "btm:blood/magician_orb",
+      "outputs": [
+        "bloodmagic:magicianbloodorb"
+      ],
+      "inputs": [
+        "bloodmagic:altar",
+        "kubejs:magician_blood_heart"
+      ]
+    },
+    {
+      "id": "btm:blood/master_orb",
+      "outputs": [
+        "bloodmagic:masterbloodorb"
+      ],
+      "inputs": [
+        "bloodmagic:altar",
+        "kubejs:master_blood_heart"
+      ]
+    },
+    {
+      "id": "btm:blood/archmage_orb",
+      "outputs": [
         "bloodmagic:archmagebloodorb"
       ],
       "inputs": [
         "bloodmagic:altar",
-        "kubejs:weak_blood_heart",
-        "kubejs:apprentice_blood_heart",
-        "kubejs:magician_blood_heart",
-        "kubejs:master_blood_heart",
         "kubejs:archmage_blood_heart"
       ]
     },

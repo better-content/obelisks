@@ -91,6 +91,10 @@ Still-Beating Hearts bridge the death loop and body systems into Blood Magic. `r
 
 Growables now feed chemistry through `57_grown_material_acid_ball_processing.js`. Plants, fungi, honeycomb, meat, fish, hide, bone, feather, and venomous tissue use the same solvent/grinding-ball language as Realistic Ores, so farm and animal loops produce differentiated chemical side streams rather than one generic biomass output.
 
+The downstream chemistry pass makes those side streams matter without turning them into free matter. `60_create_chemical_transformations.js` supplies carbonate roasting, oxide reduction, leaching, precipitation, salt conversion, and gas-scrubbing loops. `61_chemical_existing_item_alternatives.js` spends chemicals on existing pack items such as grout, technical glass, explosives, Create mechanisms, PNCR pressure hardware, and shielding. `62_chemical_electronics_magic_growth_routes.js` spends chemicals on electronics precursors, magic salts, Blood Magic manual alternatives, fertilizer, feed, and biological material substitutes.
+
+Chemical alternatives can offer higher yield, earlier access with more setup, or byproduct-consuming substitutions depending on the target. Finished circuits remain PNCR assembly authority; chemistry prepares wafers, boards, printed processors, etchants, capacitors, and transistors rather than bypassing that completion step.
+
 Blood Magic slates are the side-magic authority:
 
 - Blank Slate: first side-magic/workstation permissions such as Hexerei, Malum, and early utility.

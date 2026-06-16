@@ -24,9 +24,10 @@ Deposit processing is multi-surface:
 - `55_realistic_ores_identity_outputs.js`: deposit identity outputs and acid/ball routes.
 - `57_grown_material_acid_ball_processing.js`: plant, fungus, honeycomb, and animal acid/ball extraction.
 - `56_alchemistry_dissolver_create_port.js`, `58_create_pncr_molecular_synthesis.js`, and `59_formulaic_synthesis_magic_routes.js`: Create/PNCR/magic-facing chemistry parity.
+- `60_create_chemical_transformations.js`, `61_chemical_existing_item_alternatives.js`, and `62_chemical_electronics_magic_growth_routes.js`: downstream chemistry use. These scripts turn acid/ball outputs into transformation loops, existing-item alternate crafts, electronics precursors, magic reagents, fertilizer/feed routes, explosives, refractory materials, and pressure/electronics components.
 - `65_chemlib_plate_manufacturing_routes.js`: Chemlib plates through Create pressing and TCon casting where supported.
 
-Alchemistry/ChemLib content informs material identity, but the authored progression route is Create, TCon, PNCR, and Blood Magic-adjacent synthesis rather than a direct free transmutation lane.
+Alchemistry/ChemLib content informs material identity, but the authored progression route is Create, TCon, PNCR, and Blood Magic-adjacent synthesis rather than a direct free transmutation lane. Chemicals now have downstream jobs as reagents, intermediates, and specialty manufacturing inputs: common biological and ore byproducts feed bulk routes, while rarer salts, oxides, platinum-group materials, tungsten, beryllium, thorium, uranium, and titanium chemistry feed precision machinery and late protection.
 
 Non-grown infinite matter is not an authored resource source. `30_remove_items.js` removes passive ore/matter generators such as Occultism miners, Blood Magic meteors, Botania Orechid/Marimorphosis/catalyst routes, Ars conjured islands/fluid glyph routes, and Create Diesel lava fermentation. Create bottomless draining and finite-water biome refills are disabled in config; raw/geologic/material villager buy restocks are skipped by `35_villager_trades/10_coin_villager_trades.js`. Renewable grown sources such as crops, trees, animals, and ordinary biological drops remain valid economy inputs.
 
@@ -48,6 +49,8 @@ Create trains and physical logistics are a first-class progression lane. Package
 
 `123_more_red_primitive_circuitry.js` makes More Red the primitive electronics layer. Red alloy is a terrestrial Create mixing product, red alloy wire is pressed from that alloy, and the soldering table is built from andesite-tier Create parts. Later circuit recipes in Power Grid, PneumaticCraft, OC2R, AE2, and redstone-bearing Create controls consume More Red wire/diodes/gates before escalating to Power Grid integrated circuits. `143_circuit_pncr_assembly_authority.js` makes the finished circuit step a PNCR assembly laser/drill operation: upstream processes can prepare boards, traces, wafers, or printed processors, but completed PCB, Power Grid, OC2R, AE2, and impossible-circuit outputs come from PNCR assembly.
 
+Chemistry alternates respect that boundary. Create, Blood Magic, and PNCR pressure routes may prepare etched boards, doped wafers, capacitors, transistors, printed AE2 precursors, ceramic substrates, and trace chemicals, but finished circuit outputs remain under the existing PNCR assembly authority for their tier.
+
 ## World Physics
 
 Realistic Block Physics stays explicit-definition only in `config/rbp/world_definitions/overworld.toml`; the default block definition remains empty so non-solid blocks are not swept in by fallback physics. `tools/generate_rbp_pack_solid_blocks.mjs` generates `config/rbp/block_definitions/generated_pack_solid_blocks.toml` from the runtime block audit plus current RBP IDs, giving pack solid/collision-like blocks RBP coverage while excluding bedrock, Dynamic Trees-managed blocks, virtual/control blocks, plants/fluids, attached thin controls, and support-owned blocks.
@@ -61,6 +64,8 @@ The death overhaul is a body-system progression surface. `defaultconfigs/configu
 Permanent-ish spawn is owned by Class Selector onboarding and the no-moving-spawn startup hook. Players lock a starting site during class or embark selection; ordinary spawn changes are cancelled, bed and respawn-anchor updates are rejected while the class spawn is locked, and respawn teleports back to the stored `classselector:respawn_*` point with mob repel protection plus scripted sound and sculk-particle FX. Any future player-facing spawn relocation should be late-game content, not a bed-level convenience.
 
 Food and potion identity are handled through `70_food_potion_reagents.js`: food blocks discover/refine effect identity, and the brewing stand combines processed extracts rather than serving as the main discovery ladder. Body-survival mods and configs include Diet, Thirst Was Taken, Cold Sweat, Diminishing Health defaults, PlayerRevive, and related KubeJS tooltip/content support.
+
+Grown-material chemistry is also a production lane. Crop, tree, animal, bone, hide, feather, honeycomb, and venom acid/ball outputs can be spent on fertilizer, feed, leather/string/slime alternatives, potion-adjacent reagents, and Blood Magic/magic salts. These routes are renewable but infrastructure-heavy; they are not a passive replacement for finite geology.
 
 Non-village natural crop and edible-plant diversity is relocated into Undergarden forage by `datapacks/datapack_foraging_everywhere`. Village farms, Wares, and villager food routes remain the explicit surface exception; ordinary Overworld biome forage should not be the first renewable source for specialty crops.
 

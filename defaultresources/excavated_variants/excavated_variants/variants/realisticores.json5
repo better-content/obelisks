@@ -1,0 +1,511 @@
+{
+  "mod_id": "realisticores",
+  "provided_stones": [],
+  "provided_ores": [
+    {
+      "id": "bauxite_laterite",
+      "stone": [
+        "stone",
+        "deepslate",
+        "gravel"
+      ],
+      "block_id": [
+        "realisticores:bauxite_laterite",
+        "realisticores:deepslate_bauxite_laterite",
+        "realisticores:bauxite_laterite"
+      ],
+      "lang": {
+        "en_us": "Bauxite Laterite"
+      },
+      "types": [
+        "stone",
+        "gravel"
+      ],
+      "orename": [
+        "aluminum_ore"
+      ]
+    },
+    {
+      "id": "coal_measures",
+      "stone": [
+        "stone",
+        "deepslate",
+        "gravel"
+      ],
+      "block_id": [
+        "realisticores:coal_measures",
+        "realisticores:deepslate_coal_measures",
+        "realisticores:coal_measures"
+      ],
+      "lang": {
+        "en_us": "Coal Measures"
+      },
+      "types": [
+        "stone",
+        "gravel"
+      ],
+      "orename": [
+        "coal_ore"
+      ]
+    },
+    {
+      "id": "copper_sulfide",
+      "stone": [
+        "stone",
+        "deepslate",
+        "gravel"
+      ],
+      "block_id": [
+        "realisticores:copper_sulfide_ore",
+        "realisticores:deepslate_copper_sulfide_ore",
+        "realisticores:copper_sulfide_ore"
+      ],
+      "lang": {
+        "en_us": "Copper Sulfide Ore"
+      },
+      "types": [
+        "stone",
+        "gravel"
+      ],
+      "orename": [
+        "copper_ore"
+      ]
+    },
+    {
+      "id": "corundum_beryl_gem_vein",
+      "stone": [
+        "stone",
+        "deepslate",
+        "gravel"
+      ],
+      "block_id": [
+        "realisticores:corundum_beryl_gem_vein",
+        "realisticores:deepslate_corundum_beryl_gem_vein",
+        "realisticores:corundum_beryl_gem_vein"
+      ],
+      "lang": {
+        "en_us": "Corundum Beryl Gem Vein"
+      },
+      "types": [
+        "stone",
+        "gravel"
+      ]
+    },
+    {
+      "id": "cupriferous_redbed_redstone_vein",
+      "stone": [
+        "stone",
+        "deepslate",
+        "gravel"
+      ],
+      "block_id": [
+        "realisticores:cupriferous_redbed_redstone_vein",
+        "realisticores:deepslate_cupriferous_redbed_redstone_vein",
+        "realisticores:cupriferous_redbed_redstone_vein"
+      ],
+      "lang": {
+        "en_us": "Cupriferous Redbed Redstone Vein"
+      },
+      "types": [
+        "stone",
+        "gravel"
+      ],
+      "orename": [
+        "copper_ore",
+        "redstone_ore"
+      ]
+    },
+    {
+      "id": "emerald_schist_beryl_vein",
+      "stone": [
+        "stone",
+        "deepslate",
+        "gravel"
+      ],
+      "block_id": [
+        "realisticores:emerald_schist_beryl_vein",
+        "realisticores:deepslate_emerald_schist_beryl_vein",
+        "realisticores:emerald_schist_beryl_vein"
+      ],
+      "lang": {
+        "en_us": "Emerald Schist Beryl Vein"
+      },
+      "types": [
+        "stone",
+        "gravel"
+      ],
+      "orename": [
+        "emerald_ore"
+      ]
+    },
+    {
+      "id": "ironstone",
+      "stone": [
+        "stone",
+        "deepslate",
+        "gravel"
+      ],
+      "block_id": [
+        "realisticores:ironstone",
+        "realisticores:deepslate_ironstone",
+        "realisticores:ironstone"
+      ],
+      "lang": {
+        "en_us": "Ironstone"
+      },
+      "types": [
+        "stone",
+        "gravel"
+      ],
+      "orename": [
+        "iron_ore"
+      ]
+    },
+    {
+      "id": "kimberlite_pipe",
+      "stone": [
+        "stone",
+        "deepslate",
+        "gravel"
+      ],
+      "block_id": [
+        "realisticores:kimberlite_pipe",
+        "realisticores:deepslate_kimberlite_pipe",
+        "realisticores:kimberlite_pipe"
+      ],
+      "lang": {
+        "en_us": "Kimberlite Pipe"
+      },
+      "types": [
+        "stone",
+        "gravel"
+      ],
+      "orename": [
+        "diamond_ore"
+      ]
+    },
+    {
+      "id": "lazurite_vein",
+      "stone": [
+        "stone",
+        "deepslate",
+        "gravel"
+      ],
+      "block_id": [
+        "realisticores:lazurite_vein",
+        "realisticores:deepslate_lazurite_vein",
+        "realisticores:lazurite_vein"
+      ],
+      "lang": {
+        "en_us": "Lazurite Vein"
+      },
+      "types": [
+        "stone",
+        "gravel"
+      ],
+      "orename": [
+        "lapis_ore"
+      ]
+    },
+    {
+      "id": "lead_zinc_vein",
+      "stone": [
+        "stone",
+        "deepslate",
+        "gravel"
+      ],
+      "block_id": [
+        "realisticores:lead_zinc_vein",
+        "realisticores:deepslate_lead_zinc_vein",
+        "realisticores:lead_zinc_vein"
+      ],
+      "lang": {
+        "en_us": "Lead Zinc Vein"
+      },
+      "types": [
+        "stone",
+        "gravel"
+      ],
+      "orename": [
+        "lead_ore",
+        "zinc_ore"
+      ]
+    },
+    {
+      "id": "nickel_sulfide",
+      "stone": [
+        "stone",
+        "deepslate",
+        "gravel"
+      ],
+      "block_id": [
+        "realisticores:nickel_sulfide_ore",
+        "realisticores:deepslate_nickel_sulfide_ore",
+        "realisticores:nickel_sulfide_ore"
+      ],
+      "lang": {
+        "en_us": "Nickel Sulfide Ore"
+      },
+      "types": [
+        "stone",
+        "gravel"
+      ],
+      "orename": [
+        "nickel_ore"
+      ]
+    },
+    {
+      "id": "osmiridium_lava_sulfide",
+      "stone": [
+        "stone",
+        "deepslate",
+        "gravel"
+      ],
+      "block_id": [
+        "realisticores:osmiridium_lava_sulfide_ore",
+        "realisticores:deepslate_osmiridium_lava_sulfide_ore",
+        "realisticores:osmiridium_lava_sulfide_ore"
+      ],
+      "lang": {
+        "en_us": "Osmiridium Lava Sulfide Ore"
+      },
+      "types": [
+        "stone",
+        "gravel"
+      ],
+      "orename": [
+        "osmium_ore",
+        "iridium_ore"
+      ]
+    },
+    {
+      "id": "phosphate_rock",
+      "stone": [
+        "stone",
+        "deepslate",
+        "gravel"
+      ],
+      "block_id": [
+        "realisticores:phosphate_rock",
+        "realisticores:deepslate_phosphate_rock",
+        "realisticores:phosphate_rock"
+      ],
+      "lang": {
+        "en_us": "Phosphate Rock"
+      },
+      "types": [
+        "stone",
+        "gravel"
+      ],
+      "orename": [
+        "phosphate_ore"
+      ]
+    },
+    {
+      "id": "quartz_vein",
+      "stone": [
+        "stone",
+        "deepslate",
+        "gravel"
+      ],
+      "block_id": [
+        "realisticores:quartz_vein",
+        "realisticores:deepslate_quartz_vein",
+        "realisticores:quartz_vein"
+      ],
+      "lang": {
+        "en_us": "Quartz Vein"
+      },
+      "types": [
+        "stone",
+        "gravel"
+      ],
+      "orename": [
+        "quartz_ore"
+      ]
+    },
+    {
+      "id": "soul_bearing_black_shale_soulstone_vein",
+      "stone": [
+        "stone",
+        "deepslate",
+        "gravel"
+      ],
+      "block_id": [
+        "realisticores:soul_bearing_black_shale_soulstone_vein",
+        "realisticores:deepslate_soul_bearing_black_shale_soulstone_vein",
+        "realisticores:soul_bearing_black_shale_soulstone_vein"
+      ],
+      "lang": {
+        "en_us": "Soul Bearing Black Shale Soulstone Vein"
+      },
+      "types": [
+        "stone",
+        "gravel"
+      ]
+    },
+    {
+      "id": "sulfur_bearing_pyrite",
+      "stone": [
+        "stone",
+        "deepslate",
+        "gravel"
+      ],
+      "block_id": [
+        "realisticores:sulfur_bearing_pyrite_ore",
+        "realisticores:deepslate_sulfur_bearing_pyrite_ore",
+        "realisticores:sulfur_bearing_pyrite_ore"
+      ],
+      "lang": {
+        "en_us": "Sulfur Bearing Pyrite Ore"
+      },
+      "types": [
+        "stone",
+        "gravel"
+      ],
+      "orename": [
+        "sulfur_ore"
+      ]
+    },
+    {
+      "id": "thorium",
+      "stone": [
+        "stone",
+        "deepslate",
+        "gravel"
+      ],
+      "block_id": [
+        "realisticores:thorium_ore",
+        "realisticores:deepslate_thorium_ore",
+        "realisticores:thorium_ore"
+      ],
+      "lang": {
+        "en_us": "Thorium Ore"
+      },
+      "types": [
+        "stone",
+        "gravel"
+      ],
+      "orename": [
+        "thorium_ore"
+      ]
+    },
+    {
+      "id": "tin",
+      "stone": [
+        "stone",
+        "deepslate",
+        "gravel"
+      ],
+      "block_id": [
+        "realisticores:tin_ore",
+        "realisticores:deepslate_tin_ore",
+        "realisticores:tin_ore"
+      ],
+      "lang": {
+        "en_us": "Tin Ore"
+      },
+      "types": [
+        "stone",
+        "gravel"
+      ],
+      "orename": [
+        "tin_ore"
+      ]
+    },
+    {
+      "id": "tin_tungsten_greisen",
+      "stone": [
+        "stone",
+        "deepslate",
+        "gravel"
+      ],
+      "block_id": [
+        "realisticores:tin_tungsten_greisen",
+        "realisticores:deepslate_tin_tungsten_greisen",
+        "realisticores:tin_tungsten_greisen"
+      ],
+      "lang": {
+        "en_us": "Tin Tungsten Greisen"
+      },
+      "types": [
+        "stone",
+        "gravel"
+      ],
+      "orename": [
+        "tin_ore",
+        "tungsten_ore"
+      ]
+    },
+    {
+      "id": "titanium_iron_oxide",
+      "stone": [
+        "stone",
+        "deepslate",
+        "gravel"
+      ],
+      "block_id": [
+        "realisticores:titanium_iron_oxide_ore",
+        "realisticores:deepslate_titanium_iron_oxide_ore",
+        "realisticores:titanium_iron_oxide_ore"
+      ],
+      "lang": {
+        "en_us": "Titanium Iron Oxide Ore"
+      },
+      "types": [
+        "stone",
+        "gravel"
+      ],
+      "orename": [
+        "iron_ore",
+        "titanium_ore"
+      ]
+    },
+    {
+      "id": "uranium",
+      "stone": [
+        "stone",
+        "deepslate",
+        "gravel"
+      ],
+      "block_id": [
+        "realisticores:uranium_ore",
+        "realisticores:deepslate_uranium_ore",
+        "realisticores:uranium_ore"
+      ],
+      "lang": {
+        "en_us": "Uranium Ore"
+      },
+      "types": [
+        "stone",
+        "gravel"
+      ],
+      "orename": [
+        "uranium_ore"
+      ]
+    },
+    {
+      "id": "zinc",
+      "stone": [
+        "stone",
+        "deepslate",
+        "gravel"
+      ],
+      "block_id": [
+        "realisticores:zinc_ore",
+        "realisticores:deepslate_zinc_ore",
+        "realisticores:zinc_ore"
+      ],
+      "lang": {
+        "en_us": "Zinc Ore"
+      },
+      "types": [
+        "stone",
+        "gravel"
+      ],
+      "orename": [
+        "zinc_ore"
+      ]
+    }
+  ]
+}

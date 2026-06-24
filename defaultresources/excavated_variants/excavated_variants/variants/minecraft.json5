@@ -7,6 +7,16 @@
   mod_id: 'minecraft',
   provided_stones: [
     {
+      id: 'gravel',
+      lang: {
+        en_us: 'Gravel',
+      },
+      block_id: 'minecraft:gravel',
+      types: [
+        'gravel',
+      ],
+    },
+    {
       id: 'stone',
       lang: {
         en_us: 'Stone',

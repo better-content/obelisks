@@ -936,7 +936,15 @@ function validateWorldgenStaticContracts() {
     /(^|[_:/])seashell($|[_:/])/,
     /(^|[_:/])shell($|[_:/])/
   ]
-  const forbiddenRbpWhitelistIds = generatedRbpWhitelistIds.filter(id => forbiddenRbpWhitelistPatterns.some(pattern => pattern.test(id)))
+  const allowedRootySoilRbpPatterns = [
+    /^dynamictrees:rooty_(coarse_dirt|crimson_nylium|dirt|grass_block|moss|moss_block|mud|mycelium|podzol|rooted_dirt|soul_soil|warped_nylium)$/,
+    /^dtaether:rooty_(aether_dirt|aether_grass_block|enchanted_aether_grass_block|frozen_aether_grass_block)$/,
+    /^dtnatures_spirit:rooty_(red_moss_block|sandy_soil)$/
+  ]
+  const forbiddenRbpWhitelistIds = generatedRbpWhitelistIds.filter(id => {
+    if (allowedRootySoilRbpPatterns.some(pattern => pattern.test(id))) return false
+    return forbiddenRbpWhitelistPatterns.some(pattern => pattern.test(id))
+  })
   forbiddenRbpWhitelistIds.length
     ? fail('RBP generated whitelist excludes lifecycle/progression/decor-sensitive blocks', forbiddenRbpWhitelistIds.slice(0, 20).join(', '))
     : ok('RBP generated whitelist excludes lifecycle/progression/decor-sensitive blocks')

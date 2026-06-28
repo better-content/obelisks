@@ -1,4 +1,16 @@
 LootJS.modifiers(event => {
+    const grassSeedDrops = [
+        "swem:alfalfa_seeds",
+        "minecraft:wheat_seeds",
+        "swem:oat_seeds",
+        "swem:timothy_seeds"
+    ];
+
+    const grassDrops = event.addBlockLootModifier(/^(minecraft:grass|minecraft:tall_grass|projectvibrantjourneys:short_grass)$/);
+    grassSeedDrops.forEach(seed => grassDrops.removeLoot(seed));
+});
+
+LootJS.modifiers(event => {
     event.addBlockLootModifier(/dynamictrees:.*_leaves/)
     .addLoot("minecraft:stick")
     .randomChance(0.5);    // always drops; lower this for actual randomness

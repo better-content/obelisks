@@ -6,6 +6,10 @@ import re
 import subprocess
 from pathlib import Path
 
+from legacy_live_tool_guard import require_legacy_live_tool_opt_in
+
+require_legacy_live_tool_opt_in()
+
 ROOT = Path("/home/gerald/obelisks")
 PRISM_ROOT = Path(os.environ.get("PRISM_ROOT", str(Path.home() / ".local/share/PrismLauncher")))
 INSTANCE = os.environ.get("INSTANCE", "Bound to Matter-Playtest 4 - v1")

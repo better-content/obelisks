@@ -21,7 +21,10 @@ from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
 
+from legacy_live_tool_guard import require_legacy_live_tool_opt_in
 from pack_mod_source import bundled_mod_regexes
+
+require_legacy_live_tool_opt_in()
 
 
 ROOT = Path(os.environ.get("ROOT", "/home/gerald/obelisks"))

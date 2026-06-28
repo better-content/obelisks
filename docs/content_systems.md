@@ -96,4 +96,4 @@ Trades should support recovery and route planning without replacing factories, m
 
 ## Quests
 
-Quest generation is driven by `tools/generate_expert_quest_book.mjs` and exported generated state under `generated/ftbquests/`. The generator still contains references to some inactive or candidate mods; only installed manifests, bundled jars, and emitted current quest data should be treated as source truth. When quest intent changes, update this doc or `progression.md`, then regenerate and validate the generated quest content.
+Quest generation is driven by `tools/generate_expert_quest_book.mjs` and exported generated state under `generated/ftbquests/`. The generator retains future/candidate quest definitions, but only installed manifests, bundled jars, and emitted current quest files are source truth. When quest intent changes, update this doc or `progression.md`, then regenerate and validate the generated quest content.

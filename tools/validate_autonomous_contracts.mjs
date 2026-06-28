@@ -299,7 +299,9 @@ function validateMagicBody() {
       'kubejs/config/audit_dumps.json',
       'kubejs/config/food_effect_progression_candidates.json'
     ])
-    if (newestSourceMtime && dumpFile.mtimeMs + 1000 < newestSourceMtime) {
+    if (!instance && dumpFile.file === full('generated/runtime-dumps/kubejs-config/food_effect_index.json')) {
+      ok('runtime food effect dump freshness uses generated fallback only', 'ignored generated dump is not authoritative runtime evidence')
+    } else if (newestSourceMtime && dumpFile.mtimeMs + 1000 < newestSourceMtime) {
       fail('runtime food effect dump is fresh enough for source inputs', `${path.relative(repo, dumpFile.file) || dumpFile.file} is older than food audit sources; rerun a dump-enabled runtime`)
     } else {
       ok('runtime food effect dump is fresh enough for source inputs')

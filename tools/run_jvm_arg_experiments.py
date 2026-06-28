@@ -16,6 +16,10 @@ import subprocess
 from dataclasses import dataclass
 from pathlib import Path
 
+from legacy_live_tool_guard import require_legacy_live_tool_opt_in
+
+require_legacy_live_tool_opt_in()
+
 
 ROOT = Path("/home/gerald/obelisks")
 INSTANCE = Path.home() / ".local/share/PrismLauncher/instances/Bound to Matter-Playtest 4 - v1"

@@ -4,7 +4,10 @@ set -Eeuo pipefail
 # Exhaustive mod memory cross-section (client/Prism side).
 # Method: baseline repeats + disable exactly one mod jar per run.
 
-ROOT="${ROOT:-/home/gerald/obelisks}"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ROOT="${ROOT:-${SCRIPT_DIR%/tools}}"
+source "$SCRIPT_DIR/legacy_live_tool_guard.sh"
+btm_require_legacy_live_tool_opt_in
 PRISM_ROOT="${PRISM_ROOT:-$HOME/.local/share/PrismLauncher}"
 INSTANCE="${INSTANCE:-Bound to Matter-Playtest 4 - v1}"
 MC_DIR="$PRISM_ROOT/instances/$INSTANCE/minecraft"

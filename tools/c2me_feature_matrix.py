@@ -9,7 +9,10 @@ import time
 from contextlib import contextmanager
 from pathlib import Path
 
+from legacy_live_tool_guard import require_legacy_live_tool_opt_in
 from pack_mod_source import bundled_mod_jar_patterns
+
+require_legacy_live_tool_opt_in()
 
 ROOT = Path(os.environ.get("ROOT", "/home/gerald/obelisks"))
 SERVER_DIR = ROOT / "server-instance"

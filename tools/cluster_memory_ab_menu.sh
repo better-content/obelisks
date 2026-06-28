@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
-cd /home/gerald/obelisks
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ROOT="${ROOT:-${SCRIPT_DIR%/tools}}"
+cd "$ROOT"
+source "$SCRIPT_DIR/legacy_live_tool_guard.sh"
+btm_require_legacy_live_tool_opt_in
 OUT="${OUT:-/tmp/btm-memory-variants/cluster_ab_$(date +%Y%m%d-%H%M%S)}"
 mkdir -p "$OUT"
 CSV="$OUT/results.csv"

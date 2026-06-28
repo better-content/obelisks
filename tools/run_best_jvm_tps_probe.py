@@ -12,6 +12,10 @@ import time
 from datetime import datetime
 from pathlib import Path
 
+from legacy_live_tool_guard import require_legacy_live_tool_opt_in
+
+require_legacy_live_tool_opt_in()
+
 
 ROOT = Path("/home/gerald/obelisks")
 SERVER_DIR = ROOT / "server-instance"

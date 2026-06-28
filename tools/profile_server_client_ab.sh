@@ -4,7 +4,10 @@ set -Eeuo pipefail
 # Dedicated server + real Prism client A/B profiler.
 # A = baseline (fake player disabled), B = fake player enabled.
 
-ROOT="${ROOT:-/home/gerald/obelisks}"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ROOT="${ROOT:-${SCRIPT_DIR%/tools}}"
+source "$SCRIPT_DIR/legacy_live_tool_guard.sh"
+btm_require_legacy_live_tool_opt_in
 SERVER_DIR="${SERVER_DIR:-$ROOT/server-instance}"
 PRISM_ROOT="${PRISM_ROOT:-$HOME/.local/share/PrismLauncher}"
 PRISM_INSTANCE="${PRISM_INSTANCE:-Bound to Matter-Playtest 4 - v1}"

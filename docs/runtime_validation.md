@@ -74,6 +74,8 @@ Use `BTM_INSTANCE=/path/to/runtime BTM_STRICT_RUNTIME=1 node tools/pack_test_sui
 
 Portable harness mechanics live in `tools/portable_minecraft_harness.py`. Scenario scripts should create disposable server/client runtimes under `/tmp` and keep raw evidence there.
 
+Older Prism/server-instance profiling tools that mutate live mod directories or kill broad launcher/java processes are guarded by `BTM_ALLOW_LEGACY_LIVE_MUTATION=1`. Use them only for intentional archival profiling; current validation should use disposable runtimes and the portable harness layer.
+
 All-dimension worldgen stress:
 
 ```bash

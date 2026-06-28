@@ -21,7 +21,10 @@ import tomllib
 import zipfile
 from pathlib import Path
 
+from legacy_live_tool_guard import require_legacy_live_tool_opt_in
 from pack_mod_source import bundled_mod_ids
+
+require_legacy_live_tool_opt_in()
 
 
 ROOT = Path(os.environ.get("ROOT", "/home/gerald/obelisks"))

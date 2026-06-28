@@ -7,12 +7,14 @@ Active downloaded mods are the current `mods/*.pw.toml` files. Active custom bun
 - `btmfixes-0.1.0.jar`
 - `classselector-1.0.0.jar`
 - `computerbridge-0.1.0.jar`
+- `create-train-fuel-scaling-0.1.0.jar`
 - `create-transmission-loss-0.1.0.jar`
+- `dimensionalfonts-1.0.0.jar`
 - `dthexerei-1.0.0.jar`
 - `dtmalum-1.0.0.jar`
 - `heatsync-0.1.0.jar`
 - `latent_chemlib-0.1.0.jar`
-- `dimensionalfonts-1.0.0.jar`
+- `oc2rwireless-1.0.0.jar`
 - `pillagercampaigns-0.2.0.jar`
 - `procedural_bouquets-0.1.0.jar`
 - `realisticores-0.1.0.jar`

@@ -125,24 +125,22 @@ For runtime/tooling changes, also run:
 
 ## Custom Mods Source (`generated/custom-mod-sources`)
 Active pack-critical sources:
-- `acid-vat` (`acid_vat`)
 - `bound-to-matter-fixes` (`btmfixes`)
 - `class-selector` (`classselector`)
 - `create-transmission-loss` (`transmissionloss`)
-- `cursed-biomes` (`cursedbiomes`)
 - `dynamic-trees-hexerei` (`dthexerei`)
 - `dynamic-trees-malum` (`dtmalum`)
 - `heat-sync` (`heatsync`)
+- `latent_chemlib` (`latent_chemlib`)
 - `dimensional-fonts` (`obelisks`)
 - `oc2r-create-bridge` (`computerbridge`)
+- `oc2rwireless-global-pubsub-addon` (`oc2rwireless`)
 - `pillager-campaigns` (`pillagercampaigns`)
 - `procedural-bouquets` (`procedural_bouquets`)
 - `realistic-ores` (`realisticores`)
 - `rpg-stats` (`rpgstats`)
 - `settlement-roads` (`settlementroads`)
 - `village-walls` (`villagewalls`)
-Deferred:
-- `deferred/oc2rwireless` (`oc2rwireless`)
 
 Note: `settlementroads` appears in multiple dirs; use `generated/custom-mod-sources/settlement-roads` as canonical unless explicitly told otherwise.
 

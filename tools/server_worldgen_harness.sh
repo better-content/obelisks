@@ -3,6 +3,8 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PACK_ROOT="${SCRIPT_DIR%/tools}"
+source "${SCRIPT_DIR}/legacy_live_tool_guard.sh"
+btm_require_legacy_live_tool_opt_in
 
 SERVER_DIR="${1:-/home/gerald/obelisks/server-instance}"
 CYCLES="${2:-100}"

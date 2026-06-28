@@ -14,6 +14,10 @@ import os
 from dataclasses import dataclass, field
 from pathlib import Path
 
+from legacy_live_tool_guard import require_legacy_live_tool_opt_in
+
+require_legacy_live_tool_opt_in()
+
 
 ROOT = Path("/home/gerald/obelisks")
 OLDMODS = Path.home() / "oldmods"

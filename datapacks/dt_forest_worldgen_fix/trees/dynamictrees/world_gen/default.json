@@ -57,7 +57,13 @@
   {
     "select": "minecraft:dark_forest",
     "apply": {
-      "species": "dark_oak",
+      "species": {
+        "random": {
+          "dark_oak": 12,
+          "dynamictreesplus:brown_mushroom": 1,
+          "dynamictreesplus:red_mushroom": 1
+        }
+      },
       "density": [
         16
       ],

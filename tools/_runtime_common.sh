@@ -25,6 +25,10 @@ btm_need() {
   }
 }
 
+btm_have() {
+  command -v "$1" >/dev/null 2>&1
+}
+
 btm_java17() {
   if [[ -n "${JAVA17:-}" && -x "${JAVA17:-}" ]]; then
     echo "$JAVA17"

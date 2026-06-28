@@ -54,7 +54,9 @@ fi
 for jar_cache in "$ROOT/server-template/mods" "$ROOT/server-instance/mods"; do
   [[ -d "$jar_cache" ]] || continue
   [[ "$(cd "$jar_cache" && pwd)" == "$(cd "$server_dir/mods" 2>/dev/null && pwd)" ]] && continue
-  rsync -a --ignore-existing --include='*/' --include='*.jar' --include='*.so' --exclude='*' "$jar_cache/" "$server_dir/mods/"
+  if btm_have rsync; then
+    rsync -a --ignore-existing --include='*/' --include='*.jar' --include='*.so' --exclude='*' "$jar_cache/" "$server_dir/mods/"
+  fi
 done
 
 for library_cache in \
@@ -64,7 +66,9 @@ for library_cache in \
   [[ -d "$library_cache" ]] || continue
   mkdir -p "$server_dir/libraries"
   [[ "$(cd "$library_cache" && pwd)" == "$(cd "$server_dir/libraries" && pwd)" ]] && continue
-  rsync -a --ignore-existing --include='*/' --include='*.jar' --include='*.pom' --exclude='*' "$library_cache/" "$server_dir/libraries/"
+  if btm_have rsync; then
+    rsync -a --ignore-existing --include='*/' --include='*.jar' --include='*.pom' --exclude='*' "$library_cache/" "$server_dir/libraries/"
+  fi
 done
 
 "$ROOT/tools/prune_runtime_mods.mjs" --apply --pack-root "$ROOT" --target-dir "$server_dir" --side server
@@ -73,7 +77,8 @@ mkdir -p "$server_dir/world/datapacks"
 if [[ -d "$ROOT/datapacks" ]]; then
   for datapack in "$ROOT"/datapacks/*; do
     [[ -e "$datapack" ]] || continue
-    rsync -a "$datapack" "$server_dir/world/datapacks/"
+    rm -rf "$server_dir/world/datapacks/$(basename "$datapack")"
+    cp -a "$datapack" "$server_dir/world/datapacks/"
   done
 fi
 

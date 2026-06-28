@@ -10,7 +10,6 @@ Active downloaded mods are the current `mods/*.pw.toml` files. Active custom bun
 - `create-train-fuel-scaling-0.1.0.jar`
 - `create-transmission-loss-0.1.0.jar`
 - `dimensionalfonts-1.0.0.jar`
-- `dthexerei-1.0.0.jar`
 - `dtmalum-1.0.0.jar`
 - `heatsync-0.1.0.jar`
 - `latent_chemlib-0.1.0.jar`
@@ -72,7 +71,7 @@ Prior repairs worth retaining as current expectations:
 - `pillagercampaigns` placement and materialization scans should use already-loaded `LevelChunk` data via `getChunkNow`, not blocking `ServerLevel.getHeight` or `getBlockState` calls from chunk-load paths.
 - `btmfixes` includes compatibility behavior for C2ME safe-random guard noise around EMI tooltip indexing.
 - Worldgen C2ME compatibility fixes now include a pack datapack no-op for PVJ Nether `charred_bones` groundcover, and `meteor_ore_relocation` routes relocated Malum cthonic gold through vanilla `minecraft:ore` instead of Malum's custom cross-chunk writer.
-- `dtmalum` and `dthexerei` are the Dynamic Trees extension jars for Malum and Hexerei; rebuild and run both their unit tests and Forge game tests before redeploying either jar.
+- `dtmalum` is the remaining active Dynamic Trees extension jar in `mods/`; rebuild and run its unit tests and Forge game tests before redeploying it. The old `dthexerei` bridge is no longer an active pack jar.
 - `class-selector` owns the embark point-buy path and spawn lock handoff. Keep `config/classselector/embark.json` small, high-signal, and support-only, and keep spawn-biome selection temperate so the locked-spawn loop starts in intended climates.
 - `realisticores` plus Excavated Variants should produce gravel variants for every custom deposit covered by the stone configured features. If deposit ids change in the custom source, regenerate both `defaultresources/excavated_variants/excavated_variants/variants/realisticores.json5` and the matching `datapacks/worldgen_compat_fixes/data/realisticores/worldgen/configured_feature/*_stone.json` overrides.
 

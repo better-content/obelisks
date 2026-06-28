@@ -8125,6 +8125,10 @@ file = "datapacks/realistic_ores_lava_depths/pack.mcmeta"
 hash = "2e69b890b2e44b67e2d5adc2cd88b4cfab95bd588cee3f3d92abcbec99f21e36"
 
 [[files]]
+file = "datapacks/worldgen_compat_fixes/data/kubejs/forge/biome_modifier/remove_hexerei_mahogany_tree.json"
+hash = "5245b6adf7d098e72e5e56c2e8b45b7ec04a796528fdb2b524491f2f328e2215"
+
+[[files]]
 file = "datapacks/worldgen_compat_fixes/data/kubejs/forge/biome_modifier/remove_vanilla_overworld_ores.json"
 hash = "10fca11921bacfb6d8c482eca4626b03e73d1b832f0e418a75241db96b0aa032"
 
@@ -9323,6 +9327,10 @@ hash = "59064d5328a7bbea72f00bd820a051c59af9a7f283d2c0a6f3967922b7ed2345"
 [[files]]
 file = "kubejs/client_scripts/45_hide_vanilla_style_boats.js"
 hash = "2a0748c7f0c3689b5d975d75b1e0d84a732b47f1d2c5903349b0cfb0ac4463fd"
+
+[[files]]
+file = "kubejs/client_scripts/46_hide_hexerei_mahogany_tree_products.js"
+hash = "4bf9f917342167f9ee92cb2cd605d0348fa2853b6e31714920aa15e530134be3"
 
 [[files]]
 file = "kubejs/client_scripts/90_dev_debug/10_perf_probe.js"
@@ -10617,6 +10625,10 @@ file = "kubejs/server_scripts/30_recipe_replace/145_vanillish_recipe_expert_pass
 hash = "0bb96fc5c4dc5087d33217b76f206298001704fb219f0d1a439b0d4bc1f876bc"
 
 [[files]]
+file = "kubejs/server_scripts/30_recipe_replace/146_hexerei_mahogany_to_natures_spirit.js"
+hash = "75c34cda07a496087efc62f13bdd49693b05b0f02d2fce0c3c9af3c7d4d3d2a1"
+
+[[files]]
 file = "kubejs/server_scripts/30_recipe_replace/150_integrated_deferred_mod_gates.js"
 hash = "1c5853c058571abb869a83d44e4e5a4ce69c8aa2d547caa1d402837e41dfc1c1"
 
@@ -10969,7 +10981,7 @@ metafile = true
 
 [[files]]
 file = "mods/btmfixes-0.1.0.jar"
-hash = "832553d7e2fad989f144544f1ca76dc6487d8dfbc6f013a5615408454b99b115"
+hash = "01e7e8eb8d7667f036da8f6eb66bf11f5019f5bbb3401e89f257321d11614c79"
 
 [[files]]
 file = "mods/building-gadgets.pw.toml"
@@ -11134,7 +11146,7 @@ metafile = true
 
 [[files]]
 file = "mods/dimensionalfonts-1.0.0.jar"
-hash = "86acf2bb64937e28a3c9546a9298d268be4f22e1e9b9af6216daea436d6b6fb0"
+hash = "8f11b0ec0344dd3f34ce95f3b7d04a849d8f87b2da6d4fa36b5347608321d2d7"
 
 [[files]]
 file = "mods/ding.pw.toml"
@@ -11145,10 +11157,6 @@ metafile = true
 file = "mods/distant-horizons.pw.toml"
 hash = "6a18fc39dbe317dcdba9aac9d5457e1bb2aa6decf77a6f4d6e67d7fbff0831d0"
 metafile = true
-
-[[files]]
-file = "mods/dthexerei-1.0.0.jar"
-hash = "da3fc3a21df9248b9dbf0b0f0d59793e16327f83a0ad513062d3bec866f8de4e"
 
 [[files]]
 file = "mods/dtmalum-1.0.0.jar"

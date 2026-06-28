@@ -128,14 +128,14 @@ while (( SECONDS < deadline )); do
     tail -160 "$server_log" >&2 || true
     exit 1
   fi
-  if [[ -f "$latest_log" ]] && rg -q 'Done \([\d.]+s\)! For help, type "help"' "$latest_log"; then
+  if [[ -f "$server_log" ]] && rg -q 'Done \([\d.]+s\)! For help, type "help"' "$server_log"; then
     echo "content smoke: server reached Done"
     break
   fi
   sleep 2
 done
 
-if [[ ! -f "$latest_log" ]] || ! rg -q 'Done \([\d.]+s\)! For help, type "help"' "$latest_log"; then
+if [[ ! -f "$server_log" ]] || ! rg -q 'Done \([\d.]+s\)! For help, type "help"' "$server_log"; then
   echo "content smoke: timed out waiting for server Done marker after ${timeout}s" >&2
   tail -120 "$server_log" >&2 || true
   exit 1

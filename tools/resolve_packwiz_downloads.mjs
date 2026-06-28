@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 import { createHash } from 'node:crypto'
 import { createWriteStream } from 'node:fs'
-import { mkdir, readdir, readFile, rename, rm, stat } from 'node:fs/promises'
+import { mkdir, copyFile, readdir, readFile, rename, rm, stat } from 'node:fs/promises'
 import path from 'node:path'
 import { pipeline } from 'node:stream/promises'
 
 const args = parseArgs(process.argv.slice(2))
 const root = path.resolve(args['pack-root'] || process.cwd())
 const targetDir = path.resolve(required(args, 'target-dir'))
+const cacheDir = path.resolve(args['cache-dir'] || path.join(root, 'generated', 'cache', 'packwiz-downloads'))
 const side = args.side || 'both'
 const apply = Boolean(args.apply)
 const dryRun = Boolean(args['dry-run']) || !apply
@@ -37,9 +38,11 @@ for (const file of await packwizFiles(root)) {
 
 let skipped = 0
 let present = 0
+let cached = 0
 let downloaded = 0
 for (const entry of entries) {
   const dest = path.join(targetDir, entry.dir, entry.filename)
+  const cachePath = path.join(cacheDir, entry.dir, entry.filename)
   const ok = await existingOk(dest, entry)
   if (ok) {
     present += 1
@@ -53,17 +56,29 @@ for (const entry of entries) {
     continue
   }
   if (dryRun) {
-    console.log(`would download ${path.relative(targetDir, dest)} <- ${url}`)
+    if (await existingOk(cachePath, entry)) {
+      console.log(`would restore ${path.relative(targetDir, dest)} <- cache`)
+    } else {
+      console.log(`would download ${path.relative(targetDir, dest)} <- ${url}`)
+    }
     continue
   }
   await mkdir(path.dirname(dest), { recursive: true })
-  await download(url, dest)
-  await assertHash(dest, entry)
+  if (await existingOk(cachePath, entry)) {
+    await restoreFromCache(cachePath, dest)
+    cached += 1
+    console.log(`cached ${path.relative(targetDir, dest)}`)
+    continue
+  }
+  await mkdir(path.dirname(cachePath), { recursive: true })
+  await download(url, cachePath)
+  await assertHash(cachePath, entry)
+  await restoreFromCache(cachePath, dest)
   downloaded += 1
   console.log(`downloaded ${path.relative(targetDir, dest)}`)
 }
 
-console.log(`packwiz downloads: entries=${entries.length} present=${present} downloaded=${downloaded} skipped=${skipped} mode=${dryRun ? 'dry-run' : 'apply'} side=${side}`)
+console.log(`packwiz downloads: entries=${entries.length} present=${present} cached=${cached} downloaded=${downloaded} skipped=${skipped} mode=${dryRun ? 'dry-run' : 'apply'} side=${side} cache=${cacheDir}`)
 
 function parseArgs(argv) {
   const out = {}
@@ -181,6 +196,11 @@ async function download(url, dest) {
     await rm(tmp, { force: true }).catch(() => {})
     throw new Error(`download failed: ${url}: ${err.message}`)
   }
+}
+
+async function restoreFromCache(cachePath, dest) {
+  if (path.resolve(cachePath) === path.resolve(dest)) return
+  await copyFile(cachePath, dest)
 }
 
 async function assertHash(file, entry) {

@@ -84,6 +84,10 @@ run_static_validators() {
   pids+=("$!")
   names+=("progression_reachability")
 
+  run_named_check burnt_coverage node "$ROOT/tools/validate_burnt_coverage.mjs" >"$tmpdir/8.log" 2>&1 &
+  pids+=("$!")
+  names+=("burnt_coverage")
+
   set +e
   for i in "${!pids[@]}"; do
     wait "${pids[$i]}"

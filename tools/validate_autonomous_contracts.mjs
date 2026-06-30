@@ -327,6 +327,17 @@ function validateMagicBody() {
   }
   heartFailures.length ? fail('Blood Orb heart bridge escalates monotonically', heartFailures.join('\n')) : ok('Blood Orb heart bridge escalates monotonically', `${typedRecipes.length} typed orb tiers + weak fallback`)
 
+  const fontHeartTagPath = 'generated/custom-mod-sources/dimensional-fonts/src/main/resources/data/dimensionalfonts/tags/items/font_hearts.json'
+  if (fs.existsSync(full(fontHeartTagPath))) {
+    const fontHeartTag = readJson(fontHeartTagPath)
+    const fontHeartValues = (fontHeartTag.values || []).map(value => typeof value === 'string' ? value : value.id)
+    fontHeartValues.includes('rpgstats:still_beating_heart')
+      ? ok('Dimensional Fonts accepts RPG Stats still-beating hearts')
+      : fail('Dimensional Fonts accepts RPG Stats still-beating hearts', `${fontHeartTagPath} is missing rpgstats:still_beating_heart`)
+  } else {
+    fail('Dimensional Fonts accepts RPG Stats still-beating hearts', `${fontHeartTagPath} is missing`)
+  }
+
   const lifeforce = read('kubejs/server_scripts/30_recipe_replace/82_blood_magic_lifeforce_rework.js')
   const lifeforceMarkers = ['bloodmagic:altar', 'bloodmagic:daggerofsacrifice', 'upgradeLevel(4)', 'altarSyphon(60000)', 'bloodmagic:etherealslate']
   const missingMarkers = lifeforceMarkers.filter(marker => !lifeforce.includes(marker))
@@ -355,7 +366,8 @@ function validateMagicBody() {
     'newStats.unspentPoints = 0',
     'newStats.allocations.clear()',
     'StillBeatingHeartData.create',
-    'root.putInt("level", player.experienceLevel)',
+    'createForLevel(player.experienceLevel',
+    'root.putInt("level", level.coerceAtLeast(0))',
     'classselector:respawn_dim',
     'PlayerSetSpawnEvent',
     'event.setCanceled(true)',

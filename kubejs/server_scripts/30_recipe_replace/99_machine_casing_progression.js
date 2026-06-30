@@ -248,16 +248,16 @@ ServerEvents.recipes(function (event) {
     event.remove({ output: 'pneumaticcraft:pressure_chamber_glass' })
     event.remove({ output: 'pneumaticcraft:pressure_chamber_interface' })
 
-    global.btmCreateMechanicalCrafting(event, 'kubejs:pneumaticcraft/pressure_chamber_wall_airtight', 'pneumaticcraft:pressure_chamber_wall', 16, [
+    global.btmFactoryCrafting(event, 'kubejs:pneumaticcraft/pressure_chamber_wall_airtight', 'pneumaticcraft:pressure_chamber_wall', 16, [
         'RRR',
         'RAR',
         'RRR'
     ], {
         R: 'pneumaticcraft:reinforced_bricks',
         A: 'kubejs:airtight_machine_casing'
-    }, true)
+    }, { mirrored: true })
 
-    global.btmCreateMechanicalCrafting(event, 'kubejs:pneumaticcraft/pressure_chamber_glass_airtight', 'pneumaticcraft:pressure_chamber_glass', 16, [
+    global.btmFactoryCrafting(event, 'kubejs:pneumaticcraft/pressure_chamber_glass_airtight', 'pneumaticcraft:pressure_chamber_glass', 16, [
         'RGR',
         'GAG',
         'RGR'
@@ -265,14 +265,17 @@ ServerEvents.recipes(function (event) {
         R: 'pneumaticcraft:reinforced_bricks',
         G: '#forge:glass',
         A: 'kubejs:airtight_machine_casing'
-    }, true)
+    }, { mirrored: true })
 
-    global.btmCreateMechanicalFromInputs(event, 'kubejs:pneumaticcraft/pressure_chamber_interface_airtight', 'pneumaticcraft:pressure_chamber_interface', 2, [
-        'minecraft:hopper',
-        'kubejs:airtight_machine_casing',
-        'pneumaticcraft:pressure_chamber_wall',
-        'pneumaticcraft:pressure_chamber_wall'
-    ])
+    event.remove({ output: 'pneumaticcraft:pressure_chamber_interface' })
+    event.shaped('2x pneumaticcraft:pressure_chamber_interface', [
+        'HW',
+        'AW'
+    ], {
+        H: 'minecraft:hopper',
+        A: 'kubejs:airtight_machine_casing',
+        W: 'pneumaticcraft:pressure_chamber_wall'
+    }).id('kubejs:pneumaticcraft/pressure_chamber_interface_airtight')
 
     // First block-like machines per tier. Avoid deadlocking Deployer; it remains pre-casing.
     btmGateAny(event, [

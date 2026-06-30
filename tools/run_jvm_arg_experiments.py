@@ -22,7 +22,7 @@ require_legacy_live_tool_opt_in()
 
 
 ROOT = Path("/home/gerald/obelisks")
-INSTANCE = Path.home() / ".local/share/PrismLauncher/instances/Bound to Matter-Playtest 4 - v1"
+INSTANCE = Path.home() / ".local/share/PrismLauncher/instances/Better Content-Playtest 4 - v1"
 INSTANCE_CFG = INSTANCE / "instance.cfg"
 SERVER_JVM_ARGS = ROOT / "server-instance/user_jvm_args.txt"
 PHASES_FILE = Path(os.environ.get("PHASES_FILE", str(ROOT / "generated" / "validation" / "trimmed_repo_stack_join_phase_20260506.json")))

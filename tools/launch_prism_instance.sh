@@ -43,8 +43,8 @@ Environment:
 
 Examples:
   tools/launch_prism_instance.sh list
-  tools/launch_prism_instance.sh "Bound to Matter"
-  tools/launch_prism_instance.sh "Bound to Matter" -- --offline Dev
+  tools/launch_prism_instance.sh "Better Content"
+  tools/launch_prism_instance.sh "Better Content" -- --offline Dev
 USAGE
 }
 

@@ -14,7 +14,7 @@ require_legacy_live_tool_opt_in()
 
 ROOT = Path("/home/gerald/obelisks")
 PRISM_ROOT = Path(os.environ.get("PRISM_ROOT", str(Path.home() / ".local/share/PrismLauncher")))
-INSTANCE = os.environ.get("INSTANCE", "Bound to Matter-Playtest 4 - v1")
+INSTANCE = os.environ.get("INSTANCE", "Better Content-Playtest 4 - v1")
 MODS_DIR = PRISM_ROOT / "instances" / INSTANCE / "minecraft" / "mods"
 PROFILE = ROOT / "tools" / "profile_prism_variant.sh"
 OUT_BASE = Path(os.environ.get("OUT_BASE", "/tmp/btm-memory-variants"))

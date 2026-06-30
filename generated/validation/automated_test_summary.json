@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-06-24T23:33:59.575Z",
+  "generatedAt": "2026-06-30T03:28:09.356Z",
   "repo": "/home/dev/workspace",
-  "instance": "/home/gerald/.local/share/PrismLauncher/instances/Bound to Matter-Playtest 3 - v1/minecraft",
+  "instance": "/home/gerald/.local/share/PrismLauncher/instances/Better Content-Playtest 4 - v1/minecraft",
   "explicitInstance": false,
   "strictRuntime": false,
   "strictDataDumps": false,
   "runtimeEvidenceClaim": "opportunistic-runtime",
   "dataDumpEvidenceClaim": "opportunistic-vanilla-dump",
   "dataDumpEvidenceScope": "vanilla /dump output under dump/data_raw, separate from KubeJS audit dumps under kubejs/config",
-  "passes": 65,
-  "hardFailures": 2,
+  "passes": 64,
+  "hardFailures": 0,
   "softFindings": 0,
-  "skips": 3,
+  "skips": 8,
   "metrics": {
-    "questChapters": 56,
+    "questChapters": 4,
     "villagerProfessionsCovered": 13,
     "performance": {
       "budgetsMs": {
@@ -28,6 +28,7 @@
         "generated recipe graph validation": 5000,
         "generated loot dump validation": 2500,
         "engine and world performance log analysis": 250,
+        "Realistic Hands validation": 250,
         "KubeJS asset validation": 500,
         "chemistry identity validation": 500,
         "dev dump health validation": 50
@@ -44,6 +45,7 @@
         "generated recipe graph validation": 20000,
         "generated loot dump validation": 10000,
         "engine and world performance log analysis": 1500,
+        "Realistic Hands validation": 1500,
         "KubeJS asset validation": 2000,
         "chemistry identity validation": 2000,
         "dev dump health validation": 500
@@ -51,85 +53,91 @@
       "results": [
         {
           "name": "JSON and JS syntax validation",
-          "durationMs": 228,
+          "durationMs": 214.77,
           "budgetMs": 8000,
           "hardLimitMs": 24000
         },
         {
           "name": "critical progression surfaces",
-          "durationMs": 7.53,
+          "durationMs": 8.38,
           "budgetMs": 750,
           "hardLimitMs": 3000
         },
         {
           "name": "pack contract validation",
-          "durationMs": 82.16,
+          "durationMs": 78.87,
           "budgetMs": 1000,
           "hardLimitMs": 5000
         },
         {
           "name": "contract completeness classification",
-          "durationMs": 15.4,
+          "durationMs": 14.82,
           "budgetMs": 1000,
           "hardLimitMs": 5000
         },
         {
           "name": "autonomous contract validation",
-          "durationMs": 80.53,
+          "durationMs": 106.82,
           "budgetMs": 1500,
           "hardLimitMs": 6000
         },
         {
           "name": "quest book validation",
-          "durationMs": 10.42,
+          "durationMs": 0.87,
           "budgetMs": 250,
           "hardLimitMs": 1500
         },
         {
           "name": "Wares and villager trade validation",
-          "durationMs": 0.53,
+          "durationMs": 0.51,
           "budgetMs": 250,
           "hardLimitMs": 1500
         },
         {
           "name": "repo loot data validation",
-          "durationMs": 2.11,
+          "durationMs": 2.03,
           "budgetMs": 500,
           "hardLimitMs": 3000
         },
         {
           "name": "generated recipe graph validation",
-          "durationMs": 0.27,
+          "durationMs": 0.23,
           "budgetMs": 5000,
           "hardLimitMs": 20000
         },
         {
           "name": "generated loot dump validation",
-          "durationMs": 0.05,
+          "durationMs": 0.06,
           "budgetMs": 2500,
           "hardLimitMs": 10000
         },
         {
           "name": "engine and world performance log analysis",
-          "durationMs": 0.18,
+          "durationMs": 0.16,
+          "budgetMs": 250,
+          "hardLimitMs": 1500
+        },
+        {
+          "name": "Realistic Hands validation",
+          "durationMs": 46.79,
           "budgetMs": 250,
           "hardLimitMs": 1500
         },
         {
           "name": "KubeJS asset validation",
-          "durationMs": 22.89,
+          "durationMs": 19.85,
           "budgetMs": 500,
           "hardLimitMs": 2000
         },
         {
           "name": "chemistry identity validation",
-          "durationMs": 26.15,
+          "durationMs": 29.54,
           "budgetMs": 500,
           "hardLimitMs": 2000
         },
         {
           "name": "dev dump health validation",
-          "durationMs": 0.14,
+          "durationMs": 0.19,
           "budgetMs": 50,
           "hardLimitMs": 500
         }

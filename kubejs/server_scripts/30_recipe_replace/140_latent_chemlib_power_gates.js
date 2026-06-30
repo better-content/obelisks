@@ -2,89 +2,59 @@
 // neutron-economy traversal. Heat transfer uses HeatSync.
 
 ServerEvents.recipes(function (event) {
-    event.custom({
-        type: 'create:mechanical_crafting',
-        acceptMirrored: false,
-        pattern: [
-            ' V ',
-            'ACA',
-            ' P '
-        ],
-        key: {
-            V: { item: 'create:fluid_valve' },
-            A: { item: 'kubejs:airtight_machine_casing' },
-            C: { item: 'pneumaticcraft:pressure_chamber_wall' },
-            P: { item: 'pneumaticcraft:reinforced_pressure_tube' }
-        },
-        result: { item: 'latent_chemlib:gas_capture' }
-    }).id('kubejs:create/mechanical_crafting/latent_chemlib/gas_capture')
+    global.btmFactoryCrafting(event, 'kubejs:create/assembly/latent_chemlib/gas_capture', 'latent_chemlib:gas_capture', 1, [
+        ' V ',
+        'ACA',
+        ' P '
+    ], {
+        V: 'create:fluid_valve',
+        A: 'kubejs:airtight_machine_casing',
+        C: 'kubejs:airtight_fluid_module',
+        P: 'pneumaticcraft:reinforced_pressure_tube'
+    }, { mirrored: false })
 
-    event.custom({
-        type: 'create:mechanical_crafting',
-        acceptMirrored: false,
-        pattern: [
-            'GPG',
-            'ACA',
-            'GPG'
-        ],
-        key: {
-            G: { tag: 'forge:glass' },
-            P: { item: 'heatsync:heat_pipe' },
-            A: { item: 'kubejs:airtight_machine_casing' },
-            C: { item: 'latent_chemlib:gas_capture' }
-        },
-        result: { item: 'latent_chemlib:gas_tank' }
-    }).id('kubejs:create/mechanical_crafting/latent_chemlib/gas_tank')
+    global.btmFactoryCrafting(event, 'kubejs:create/assembly/latent_chemlib/gas_tank', 'latent_chemlib:gas_tank', 1, [
+        'GPG',
+        'ACA',
+        'GPG'
+    ], {
+        G: '#forge:glass',
+        P: 'heatsync:heat_pipe',
+        A: 'kubejs:airtight_machine_casing',
+        C: 'latent_chemlib:gas_capture'
+    }, { mirrored: false })
 
-    event.custom({
-        type: 'create:mechanical_crafting',
-        acceptMirrored: false,
-        pattern: [
-            'SES',
-            'TCT',
-            'SPS'
-        ],
-        key: {
-            S: { item: 'creatingspace:inconel_sheet' },
-            E: { item: 'powergrid:electromagnet' },
-            T: { item: 'latent_chemlib:gas_tank' },
-            C: { item: 'kubejs:space_machine_casing' },
-            P: { item: 'powergrid:battery' }
-        },
-        result: { item: 'latent_chemlib:gas_reaction_chamber' }
-    }).id('kubejs:create/mechanical_crafting/latent_chemlib/gas_reaction_chamber')
+    global.btmFactoryCrafting(event, 'kubejs:create/assembly/latent_chemlib/gas_reaction_chamber', 'latent_chemlib:gas_reaction_chamber', 1, [
+        'SES',
+        'TCT',
+        'SPS'
+    ], {
+        S: 'creatingspace:inconel_sheet',
+        E: 'powergrid:electromagnet',
+        T: 'latent_chemlib:gas_tank',
+        C: 'kubejs:space_machine_casing',
+        P: 'powergrid:battery'
+    }, { mirrored: false })
 
-    event.custom({
-        type: 'create:mechanical_crafting',
-        acceptMirrored: false,
-        pattern: [
-            ' P ',
-            'TCT',
-            ' V '
-        ],
-        key: {
-            P: { item: 'create:propeller' },
-            T: { item: 'heatsync:heat_pipe' },
-            C: { item: 'latent_chemlib:gas_tank' },
-            V: { item: 'create:fluid_valve' }
-        },
-        result: { item: 'latent_chemlib:gas_release' }
-    }).id('kubejs:create/mechanical_crafting/latent_chemlib/gas_release')
+    global.btmFactoryCrafting(event, 'kubejs:create/assembly/latent_chemlib/gas_release', 'latent_chemlib:gas_release', 1, [
+        ' P ',
+        'TCT',
+        ' V '
+    ], {
+        P: 'create:propeller',
+        T: 'heatsync:heat_pipe',
+        C: 'latent_chemlib:gas_tank',
+        V: 'create:fluid_valve'
+    }, { mirrored: false })
 
-    event.custom({
-        type: 'create:mechanical_crafting',
-        acceptMirrored: true,
-        pattern: [
-            ' G ',
-            'SCS',
-            ' P '
-        ],
-        key: {
-            G: { tag: 'forge:glass' },
-            S: { item: 'kubejs:pressure_seal' },
-            C: { item: 'pneumaticcraft:small_tank' },
-            P: { item: 'heatsync:heat_pipe' }
-        },
-        result: { item: 'latent_chemlib:sealed_chemical_cell', count: 4 }
-    }).id('kubejs:create/mechanical_crafting/latent_chemlib/sealed_chemical_cell')
+    global.btmFactoryCrafting(event, 'kubejs:create/assembly/latent_chemlib/sealed_chemical_cell', 'latent_chemlib:sealed_chemical_cell', 4, [
+        ' G ',
+        'SCS',
+        ' P '
+    ], {
+        G: '#forge:glass',
+        S: 'kubejs:pressure_seal',
+        C: 'pneumaticcraft:small_tank',
+        P: 'heatsync:heat_pipe'
+    }, { mirrored: true })
 })

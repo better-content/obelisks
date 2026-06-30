@@ -18,7 +18,7 @@ ROOT = Path(os.environ.get("ROOT", "/home/gerald/obelisks"))
 SERVER_DIR = ROOT / "server-instance"
 LIVE_MC = Path(os.environ.get(
     "LIVE_MC",
-    "/home/gerald/.local/share/PrismLauncher/instances/Bound to Matter-Playtest 4 - v1/minecraft",
+    "/home/gerald/.local/share/PrismLauncher/instances/Better Content-Playtest 4 - v1/minecraft",
 ))
 OUT_ROOT = Path(os.environ.get("OUT_ROOT", "/tmp/btm-c2me-feature-matrix"))
 PORT = int(os.environ.get("SERVER_PORT", "25565"))

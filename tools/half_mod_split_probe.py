@@ -32,7 +32,7 @@ SERVER = ROOT / "server-instance"
 LIVE = Path(
     os.environ.get(
         "LIVE_MC",
-        "/home/gerald/.local/share/PrismLauncher/instances/Bound to Matter-Playtest 4 - v1/minecraft",
+        "/home/gerald/.local/share/PrismLauncher/instances/Better Content-Playtest 4 - v1/minecraft",
     )
 )
 OUT_ROOT = Path(os.environ.get("OUT_ROOT", "/tmp/btm-half-mod-tests"))
@@ -232,7 +232,7 @@ def kill_lingering() -> None:
     patterns = [
         "java @user_jvm_args.txt @libraries/net/minecraftforge/forge/1.20.1-47.4.13/unix_args.txt nogui",
         "sh ./run.sh nogui",
-        "PrismLauncher.*Bound to Matter-Playtest 4 - v1",
+        "PrismLauncher.*Better Content-Playtest 4 - v1",
     ]
     for pattern in patterns:
         run(["pkill", "-TERM", "-f", pattern], timeout=10)

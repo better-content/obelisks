@@ -30,7 +30,7 @@ require_legacy_live_tool_opt_in()
 ROOT = Path(os.environ.get("ROOT", "/home/gerald/obelisks"))
 SERVER_DIR = Path(os.environ.get("SERVER_DIR", str(ROOT / "server-instance")))
 PRISM_ROOT = Path(os.environ.get("PRISM_ROOT", str(Path.home() / ".local/share/PrismLauncher")))
-PRISM_INSTANCE = os.environ.get("PRISM_INSTANCE", "Bound to Matter-Playtest 4 - v1")
+PRISM_INSTANCE = os.environ.get("PRISM_INSTANCE", "Better Content-Playtest 4 - v1")
 LIVE_MODS = PRISM_ROOT / "instances" / PRISM_INSTANCE / "minecraft" / "mods"
 SERVER_MODS = SERVER_DIR / "mods"
 CLIENT_JOIN_PROBE = ROOT / "tools" / "client_join_probe.sh"

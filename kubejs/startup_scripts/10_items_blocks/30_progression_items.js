@@ -50,6 +50,10 @@ StartupEvents.registry('item', function (event) {
     var overhaulIntermediates = [
         ['rotational_compressor_core', 'Rotational Compressor Core'],
         ['pressure_seal', 'Pressure Seal'],
+        ['brass_control_assembly', 'Brass Control Assembly'],
+        ['airtight_fluid_module', 'Airtight Fluid Module'],
+        ['electrical_control_module', 'Electrical Control Module'],
+        ['ae_logic_package', 'AE Logic Package'],
         ['purified_blood_catalyst', 'Purified Blood Catalyst'],
         ['purified_source_core', 'Purified Source Core'],
         ['raw_impossible_circuit', 'Raw Impossible Circuit'],

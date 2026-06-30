@@ -9,7 +9,7 @@ ROOT="${ROOT:-${SCRIPT_DIR%/tools}}"
 source "$SCRIPT_DIR/legacy_live_tool_guard.sh"
 btm_require_legacy_live_tool_opt_in
 PRISM_ROOT="${PRISM_ROOT:-$HOME/.local/share/PrismLauncher}"
-INSTANCE="${INSTANCE:-Bound to Matter-Playtest 4 - v1}"
+INSTANCE="${INSTANCE:-Better Content-Playtest 4 - v1}"
 MC_DIR="$PRISM_ROOT/instances/$INSTANCE/minecraft"
 MODS_DIR="$MC_DIR/mods"
 OUT_BASE="${OUT_BASE:-/tmp/btm-memory-variants}"

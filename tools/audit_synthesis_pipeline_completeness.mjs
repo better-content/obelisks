@@ -5,7 +5,7 @@ import vm from 'node:vm'
 import { execFileSync } from 'node:child_process'
 
 const repo = process.cwd()
-const fallbackMods = '/home/gerald/.local/share/PrismLauncher/instances/Bound to Matter-Playtest 4 - v1/minecraft/mods'
+const fallbackMods = '/home/gerald/.local/share/PrismLauncher/instances/Better Content-Playtest 4 - v1/minecraft/mods'
 
 function read(rel) {
   return fs.readFileSync(path.join(repo, rel), 'utf8')

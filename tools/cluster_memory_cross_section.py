@@ -12,7 +12,7 @@ from pathlib import Path
 
 ROOT = Path(os.environ.get("ROOT", "/home/gerald/obelisks"))
 PRISM_ROOT = Path(os.environ.get("PRISM_ROOT", str(Path.home() / ".local/share/PrismLauncher")))
-INSTANCE = os.environ.get("INSTANCE", "Bound to Matter-Playtest 4 - v1")
+INSTANCE = os.environ.get("INSTANCE", "Better Content-Playtest 4 - v1")
 MODS_DIR = PRISM_ROOT / "instances" / INSTANCE / "minecraft" / "mods"
 PROFILE = ROOT / "tools" / "profile_prism_variant.sh"
 

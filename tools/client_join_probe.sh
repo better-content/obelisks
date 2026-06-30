@@ -6,7 +6,7 @@ ROOT="${ROOT:-${SCRIPT_DIR%/tools}}"
 source "$SCRIPT_DIR/legacy_live_tool_guard.sh"
 btm_require_legacy_live_tool_opt_in
 PRISM_ROOT="${PRISM_ROOT:-$HOME/.local/share/PrismLauncher}"
-PRISM_INSTANCE="${PRISM_INSTANCE:-Bound to Matter-Playtest 4 - v1}"
+PRISM_INSTANCE="${PRISM_INSTANCE:-Better Content-Playtest 4 - v1}"
 PRISM_LAUNCH="${PRISM_LAUNCH:-$ROOT/tools/launch_prism_instance.sh}"
 SERVER_DIR="${SERVER_DIR:-$ROOT/server-instance}"
 SERVER_HOST="${SERVER_HOST:-127.0.0.1}"

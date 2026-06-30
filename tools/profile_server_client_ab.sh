@@ -10,7 +10,7 @@ source "$SCRIPT_DIR/legacy_live_tool_guard.sh"
 btm_require_legacy_live_tool_opt_in
 SERVER_DIR="${SERVER_DIR:-$ROOT/server-instance}"
 PRISM_ROOT="${PRISM_ROOT:-$HOME/.local/share/PrismLauncher}"
-PRISM_INSTANCE="${PRISM_INSTANCE:-Bound to Matter-Playtest 4 - v1}"
+PRISM_INSTANCE="${PRISM_INSTANCE:-Better Content-Playtest 4 - v1}"
 CLIENT_CONNECT_HOST="${CLIENT_CONNECT_HOST:-127.0.0.1}"
 OUT_DIR="${OUT_DIR:-/tmp/btm-memory-variants}"
 SAMPLE_SEC="${SAMPLE_SEC:-2}"

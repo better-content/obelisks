@@ -2,7 +2,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 
-const defaultInstance = '/home/gerald/.local/share/PrismLauncher/instances/Bound to Matter-Playtest 4 - v1/minecraft'
+const defaultInstance = '/home/gerald/.local/share/PrismLauncher/instances/Better Content-Playtest 4 - v1/minecraft'
 const args = process.argv.slice(2)
 function arg(name, fallback = null) {
   const i = args.indexOf(name)

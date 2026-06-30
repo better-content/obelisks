@@ -56,7 +56,7 @@
 		#Whether the player should take damage when inside powder snow.
 		freeze_damage = true
 		#Whether the player should keep items and experience in their inventory after death .
-		keep_inventory = true
+		keep_inventory = false
 		#Whether the player can regenerate health naturally if their hunger is full enough (doesn't affect external healing, such as golden apples, the Regeneration effect, etc.)
 		natural_regeneration = true
 		#What percentage of players must sleep to skip the night.
@@ -372,4 +372,3 @@
 	#A comma separated list of commands to run on world join, @p is replaced with joining player name, command is run by the server
 	#Example: default_commands = ["/tellraw @p [\"\",{\"text\":\"Hi \"},{\"text\":\"@p\",\"color\":\"aqua\"}]"]
 	default_commands = []
-

@@ -11,7 +11,7 @@ SCHEMA = "obelisks.recipe_graph.v1"
 MC_VERSION = "1.20.1"
 DEFAULT_SOURCE = (
     "/home/gerald/.local/share/PrismLauncher/instances/"
-    "Bound to Matter-Playtest 4 - v1/minecraft/kubejs/config"
+    "Better Content-Playtest 4 - v1/minecraft/kubejs/config"
 )
 
 
@@ -313,4 +313,3 @@ def _display_name(path: str) -> str:
 
 if __name__ == "__main__":
     main()
-

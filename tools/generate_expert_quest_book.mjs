@@ -5,7 +5,7 @@ import crypto from 'node:crypto'
 
 const root = process.cwd()
 const chapterDir = path.join(root, 'config/ftbquests/quests/chapters')
-const registryFile = "/home/gerald/.local/share/PrismLauncher/instances/Bound to Matter-Playtest 4 - v1/minecraft/dump/registry_builtin/minecraft/item/_entries.txt"
+const registryFile = "/home/gerald/.local/share/PrismLauncher/instances/Better Content-Playtest 4 - v1/minecraft/dump/registry_builtin/minecraft/item/_entries.txt"
 const registry = fs.existsSync(registryFile) ? fs.readFileSync(registryFile, 'utf8') : ''
 const knownItems = new Set([...registry.matchAll(/^([^\s]+)\s+raw_id=/gm)].map(m => m[1]))
 const shouldValidateItems = knownItems.size > 0

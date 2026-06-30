@@ -20,7 +20,7 @@ require_legacy_live_tool_opt_in()
 ROOT = Path("/home/gerald/obelisks")
 SERVER_DIR = ROOT / "server-instance"
 SERVER_JVM_ARGS = SERVER_DIR / "user_jvm_args.txt"
-INSTANCE_NAME = "Bound to Matter-Playtest 4 - v1"
+INSTANCE_NAME = "Better Content-Playtest 4 - v1"
 INSTANCE_CFG = Path.home() / ".local/share/PrismLauncher/instances" / INSTANCE_NAME / "instance.cfg"
 LIVE_MODS = Path.home() / ".local/share/PrismLauncher/instances" / INSTANCE_NAME / "minecraft/mods"
 SERVER_MODS = SERVER_DIR / "mods"

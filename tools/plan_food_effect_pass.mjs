@@ -3,7 +3,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 
 const repoRoot = process.cwd()
-const instanceConfig = '/home/gerald/.local/share/PrismLauncher/instances/Bound to Matter-Playtest 4 - v1/minecraft/kubejs/config'
+const instanceConfig = '/home/gerald/.local/share/PrismLauncher/instances/Better Content-Playtest 4 - v1/minecraft/kubejs/config'
 const foodDumpPath = process.argv[2] || path.join(instanceConfig, 'food_effect_index.json')
 const recipeManifestPath = process.argv[3] || path.join(instanceConfig, 'full_recipe_index_manifest.json')
 const reportPath = process.argv[4] || path.join(repoRoot, 'generated/validation/food_effect_potion_engineering_pass_plan.md')

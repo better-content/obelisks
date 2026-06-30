@@ -3,7 +3,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 
 const repo = process.cwd()
-const defaultInstance = '/home/gerald/.local/share/PrismLauncher/instances/Bound to Matter-Playtest 4 - v1/minecraft'
+const defaultInstance = '/home/gerald/.local/share/PrismLauncher/instances/Better Content-Playtest 4 - v1/minecraft'
 const instance = process.env.BTM_INSTANCE || defaultInstance
 const configDir = path.join(instance, 'kubejs/config')
 const dumpDir = path.join(instance, 'dump/data_raw')

@@ -354,6 +354,8 @@ function btmGridPolicyRerouteShaped(event, recipe) {
         if (btmGridPolicyAlchemyRecipe(event, btmGridPolicyReplacementId('blood_alchemy', originalId), result, alchemyInputs, 1)) return true
     }
 
+    if (!global.btmIsMechanicalOnlyRecipe(data.pattern, output, false)) return false
+
     event.custom({
         type: 'create:mechanical_crafting',
         acceptMirrored: true,
@@ -401,8 +403,10 @@ ServerEvents.recipes(function (event) {
     event.forEachRecipe({ type: 'minecraft:crafting_shaped' }, function (recipe) {
         var output = btmGridPolicyOutput(btmGridPolicyRecipeJson(recipe))
         if (btmGridPolicyShouldRemove(output)) {
-            idsToRemove.push(btmGridPolicySafeString(recipe.getId()))
-            if (btmGridPolicyRerouteShaped(event, recipe)) replacements++
+            if (btmGridPolicyRerouteShaped(event, recipe)) {
+                idsToRemove.push(btmGridPolicySafeString(recipe.getId()))
+                replacements++
+            }
         }
     })
     event.forEachRecipe({ type: 'minecraft:crafting_shapeless' }, function (recipe) {

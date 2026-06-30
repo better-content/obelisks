@@ -226,7 +226,7 @@ if (exists(coreFiles[5])) {
 
 if (exists(coreFiles[6])) {
   const text = read(coreFiles[6])
-  if (!text.includes("result: { item: 'latent_chemlib:sealed_chemical_cell'")) {
+  if (!text.includes('latent_chemlib:sealed_chemical_cell') || (!text.includes('global.btmFactoryCrafting(') && !text.includes("result: { item: 'latent_chemlib:sealed_chemical_cell'"))) {
     fail('sealed chemical cell recipe is missing from Latent ChemLib gates')
   }
 }

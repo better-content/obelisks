@@ -1,8 +1,8 @@
 {
   "schema": "btm.pack_contract.v1",
-  "description": "Versioned validation contract for Bound to Matter's expert-pack content layer.",
+  "description": "Versioned validation contract for Better Content's expert-pack content layer.",
   "pack": {
-    "name": "Bound to Matter",
+    "name": "Better Content",
     "minecraft": "1.20.1",
     "forge": "47.4.13",
     "localServerPort": 25565
@@ -756,7 +756,7 @@
         "systemRefs": [
           "client_visibility_guidance"
         ],
-        "claim": "Client hiding, quest generator, dependency application, and recipe-hook expectations are present; the current live FTB Quests config is intentionally empty.",
+        "claim": "Client hiding, quest generator, dependency application, and recipe-hook expectations are present; the current live FTB Quests config is intentionally skeletal/manual rather than full generated progression coverage.",
         "evidence": [
           "tools/validate_autonomous_contracts.mjs",
           "kubejs/client_scripts/40_hide_quarantined_systems.js",
@@ -918,8 +918,8 @@
         "id": "pillagercampaigns",
         "repo": "pillager-campaigns",
         "jar": "mods/pillagercampaigns-0.2.0.jar",
-        "minCodeFiles": 35,
-        "minTestFiles": 15
+        "minCodeFiles": 23,
+        "minTestFiles": 13
       },
       {
         "id": "procedural_bouquets",

@@ -32,7 +32,7 @@ function btmCreateRemove(event, outputs) {
 function btmCreateShaped(event, output, pattern, keys, id) {
     if (!btmCreateExists(output)) return
     event.remove({ output: output })
-    global.btmCreateMechanicalCrafting(event, id, output, 1, pattern, keys, true)
+    global.btmFactoryCrafting(event, id, output, 1, pattern, keys, { mirrored: true })
 }
 
 function btmCreateReplaceInputs(event, outputs, oldInputs, newInput) {

@@ -11,7 +11,7 @@ try:
 except Exception as e:
     tomllib = None
 
-mods_dir = Path(sys.argv[1]) if len(sys.argv) > 1 else Path.home() / '.local/share/PrismLauncher/instances/Bound to Matter-Playtest 4 - v1/minecraft/mods'
+mods_dir = Path(sys.argv[1]) if len(sys.argv) > 1 else Path.home() / '.local/share/PrismLauncher/instances/Better Content-Playtest 4 - v1/minecraft/mods'
 out_dir = Path(sys.argv[2]) if len(sys.argv) > 2 else Path('/tmp/btm-memory-variants')
 out_dir.mkdir(parents=True, exist_ok=True)
 

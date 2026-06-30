@@ -96,7 +96,7 @@ fi
 "$ROOT/tools/prune_runtime_mods.mjs" --apply --pack-root "$ROOT" --target-dir "$client_dir" --side client
 
 cat > "$client_dir/README.agent-runtime.txt" <<EOF
-Bound to Matter direct client runtime
+Better Content direct client runtime
 
 Minecraft: ${BTM_MC_VERSION}
 Forge: ${BTM_FORGE_VERSION}

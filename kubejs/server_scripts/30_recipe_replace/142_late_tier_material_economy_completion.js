@@ -5,6 +5,10 @@
 // machines whose blocks are casing-gated elsewhere.
 
 var BTM_LATE_ECON = {
+    brassControlAssembly: 'kubejs:brass_control_assembly',
+    airtightFluidModule: 'kubejs:airtight_fluid_module',
+    electricalControlModule: 'kubejs:electrical_control_module',
+    aeLogicPackage: 'kubejs:ae_logic_package',
     sealedCell: 'latent_chemlib:sealed_chemical_cell',
     pressureSeal: 'kubejs:pressure_seal',
     redstoneRelay: 'powergrid:redstone_relay',
@@ -18,6 +22,23 @@ var BTM_LATE_ECON = {
 
 function btmLateExists(id) {
     try { return Item.exists(id) } catch (e) { return false }
+}
+
+function btmLateSequenced(event, id, input, transitionalItem, output, loops, steps, bonusResults) {
+    if (!btmLateCanMake(output, [input])) return
+    event.remove({ output: output })
+    var results = [{ item: output }]
+    if (bonusResults) {
+        for (var i = 0; i < bonusResults.length; i++) results.push(bonusResults[i])
+    }
+    event.custom({
+        type: 'create:sequenced_assembly',
+        ingredient: { item: input },
+        transitionalItem: { item: transitionalItem },
+        sequence: steps,
+        results: results,
+        loops: loops || 1
+    }).id('kubejs:late_material_economy/create_sequenced/' + id)
 }
 
 function btmLateIngredientExists(input) {
@@ -84,12 +105,43 @@ function btmLateShaped(event, output, pattern, keys, id) {
 }
 
 ServerEvents.recipes(function (event) {
+    btmLateSequenced(event, 'brass_control_assembly', 'create:precision_mechanism', 'create:incomplete_precision_mechanism', BTM_LATE_ECON.brassControlAssembly, 1, [
+        {
+            type: 'create:deploying',
+            ingredients: [{ item: 'create:incomplete_precision_mechanism' }, { item: 'create:brass_sheet' }],
+            results: [{ item: 'create:incomplete_precision_mechanism' }]
+        },
+        {
+            type: 'create:deploying',
+            ingredients: [{ item: 'create:incomplete_precision_mechanism' }, { item: 'create:electron_tube' }],
+            results: [{ item: 'create:incomplete_precision_mechanism' }]
+        },
+        {
+            type: 'create:deploying',
+            ingredients: [{ item: 'create:incomplete_precision_mechanism' }, { item: BTM_LATE_ECON.redstoneRelay }],
+            results: [{ item: 'create:incomplete_precision_mechanism' }]
+        },
+        {
+            type: 'create:pressing',
+            ingredients: [{ item: 'create:incomplete_precision_mechanism' }],
+            results: [{ item: 'create:incomplete_precision_mechanism' }]
+        }
+    ])
+
     // Gas cells are PNCR-sealed pressure goods, not generic mechanical-crafter parts.
     btmLatePressure(event, 'sealed_chemical_cell', BTM_LATE_ECON.sealedCell, 4, 2.0, [
         { id: 'pneumaticcraft:small_tank' },
         { id: BTM_LATE_ECON.pressureSeal, count: 2 },
         { id: 'heatsync:heat_pipe' },
         { id: '#forge:glass', count: 2 }
+    ])
+
+    btmLatePressure(event, 'airtight_fluid_module', BTM_LATE_ECON.airtightFluidModule, 2, 2.5, [
+        { id: BTM_LATE_ECON.pressureSeal, count: 2 },
+        { id: '#forge:glass' },
+        { id: 'pneumaticcraft:pressure_tube' },
+        { id: 'pneumaticcraft:small_tank' },
+        { id: 'heatsync:heat_pipe' }
     ])
 
     // OC2R electronics become authored pressure/assembly outputs before they are
@@ -146,6 +198,12 @@ ServerEvents.recipes(function (event) {
         'powergrid:electromagnet',
         'powergrid:capacitor'
     ])
+    btmLatePressure(event, 'electrical_control_module', BTM_LATE_ECON.electricalControlModule, 1, 3.5, [
+        { id: BTM_LATE_ECON.circuit },
+        { id: 'powergrid:electrical_gizmo' },
+        { id: 'powergrid:battery' },
+        { id: 'powergrid:capacitor' }
+    ])
 
     // AE2 processors should cross the programmable-control economy before AE2
     // becomes the dominant logistics authority.
@@ -168,4 +226,11 @@ ServerEvents.recipes(function (event) {
     btmLateReplace(event, ['creatingspace:rocket_engine'], ['creatingspace:rocket_casing'], 'creatingspace:hastelloy_injector_grid')
     btmLateReplace(event, ['creatingspace:rocket_generator'], ['powergrid:electric_motor'], 'powergrid:electrical_gizmo')
     btmLateReplace(event, ['latent_chemlib:gas_reaction_chamber'], ['creatingspace:inconel_sheet'], 'creatingspace:inconel_engine_wall')
+
+    btmLatePressure(event, 'ae_logic_package', BTM_LATE_ECON.aeLogicPackage, 1, 4.5, [
+        { id: 'kubejs:sky_steel_sheet', count: 2 },
+        { id: 'oc2r:circuit_board' },
+        { id: 'ae2:logic_processor' },
+        { id: 'kubejs:raw_impossible_circuit' }
+    ])
 })

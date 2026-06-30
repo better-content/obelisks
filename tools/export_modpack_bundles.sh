@@ -7,11 +7,11 @@ source "$ROOT/tools/_runtime_common.sh"
 
 packwiz_bin="${PACKWIZ:-}"
 exports_dir="$ROOT/generated/exports"
-server_tree_dir="$exports_dir/server-tree/bound-to-matter-server"
-client_cf_zip="$exports_dir/bound-to-matter-playtest-4-v1-curseforge.zip"
-server_cf_zip="$exports_dir/bound-to-matter-playtest-4-v1-server-curseforge.zip"
-client_alias_zip="$exports_dir/bound-to-matter-curseforge.zip"
-server_tree_zip="$exports_dir/bound-to-matter-playtest-4-v1-server.zip"
+server_tree_dir="$exports_dir/server-tree/better-content-server"
+client_cf_zip="$exports_dir/better-content-playtest-4-v1-curseforge.zip"
+server_cf_zip="$exports_dir/better-content-playtest-4-v1-server-curseforge.zip"
+client_alias_zip="$exports_dir/better-content-curseforge.zip"
+server_tree_zip="$exports_dir/better-content-playtest-4-v1-server.zip"
 skip_cf=0
 skip_server_tree=0
 clean_server_tree=0
@@ -53,14 +53,14 @@ while (($#)); do
   esac
 done
 
-client_cf_zip="$exports_dir/bound-to-matter-playtest-4-v1-curseforge.zip"
-server_cf_zip="$exports_dir/bound-to-matter-playtest-4-v1-server-curseforge.zip"
-client_alias_zip="$exports_dir/bound-to-matter-curseforge.zip"
+client_cf_zip="$exports_dir/better-content-playtest-4-v1-curseforge.zip"
+server_cf_zip="$exports_dir/better-content-playtest-4-v1-server-curseforge.zip"
+client_alias_zip="$exports_dir/better-content-curseforge.zip"
 if [[ "$server_tree_dir_custom" != "1" ]]; then
-  server_tree_dir="$exports_dir/server-tree/bound-to-matter-server"
+  server_tree_dir="$exports_dir/server-tree/better-content-server"
 fi
 if [[ "$server_tree_zip_custom" != "1" ]]; then
-  server_tree_zip="$exports_dir/bound-to-matter-playtest-4-v1-server.zip"
+  server_tree_zip="$exports_dir/better-content-playtest-4-v1-server.zip"
 fi
 
 if [[ -z "$packwiz_bin" ]]; then
@@ -150,7 +150,7 @@ install_forge_server() {
 
 write_server_bundle_notes() {
   cat > "$server_tree_dir/SERVER_README.txt" <<EOF
-Bound to Matter complete server bundle
+Better Content complete server bundle
 
 Minecraft: ${BTM_MC_VERSION}
 Forge: ${BTM_FORGE_VERSION}

@@ -5,7 +5,7 @@ variant="${1:?variant name required}"
 shift || true
 patterns=("$@")
 root="${PRISM_ROOT:-$HOME/.local/share/PrismLauncher}"
-instance_name="${BTM_PRISM_INSTANCE:-Bound to Matter-Playtest 4 - v1}"
+instance_name="${BTM_PRISM_INSTANCE:-Better Content-Playtest 4 - v1}"
 mc="$root/instances/$instance_name/minecraft"
 instance_cfg="$root/instances/$instance_name/instance.cfg"
 perf_probe_cfg="$mc/kubejs/config/perf_probe.json"

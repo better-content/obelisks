@@ -12,6 +12,10 @@ Local logistics stays first. Create trains and physical routes should matter bef
 
 Pillager campaign pressure is adaptive by warband rather than global time scaling. New warbands open at modest strength, each successfully defeated raid increases that warband's future raid strength by 1, and each raid that kills a player reduces its future strength by 1. This keeps successful settlements under escalating surface pressure while giving losing players an automatic easing path instead of stacking extra setback cooldowns.
 
+Tier design should feel like conquest rather than checklisting: each new tier needs a new resource domain plus a signature transformation, not just a renamed ingredient. Matter should keep memory of where it came from, so geology, death, heat, pressure, distance, and biological growth remain visible in downstream recipes instead of collapsing into generic dusts.
+
+Death-native magic starts from Blood Magic, Malum, Occultism, and similar substrate languages; reformist or abstraction-heavy schools such as Ars-style spellcraft should be parented by the Blood Magic/slate spine instead of opening as independent vanilla crafting islands.
+
 ## Death Loop
 
 Death is a structured life-length and location penalty, not a random item-loss pressure. `defaultconfigs/configurabledeath-server.toml` keeps inventory, armor, hotbar, mainhand, offhand, food, and saturation on death, with no durability loss on kept items. The costly loss is the current life's RPG Stats power and the trip back to the locked spawn.
@@ -19,6 +23,8 @@ Death is a structured life-length and location penalty, not a random item-loss p
 RPG Stats awards one stat point for each new XP level above `lifePeakLevel`. On death, `generated/custom-mod-sources/rpg-stats` clears unspent points and allocations, baselines the next life to the post-death XP level, and delivers a level-stamped `rpgstats:still_beating_heart` on respawn when Blood Magic is present. The heart records how far that life got and then feeds the Blood Magic bridge; it is the high-score token for the run, not a bulk currency.
 
 Spawn is intentionally sticky. New players use Class Selector or embark onboarding to lock both starting supplies and a starting site. `config/biomespawnpoint/spawnbiomes.txt` is constrained to temperate grass/forest starts, with `kubejs/data/kubejs/tags/worldgen/biome/temperate_spawn_biomes.json` documenting the same target set for datapack-side consumers. `kubejs/startup_scripts/20_globals/10_immobile_spawn.js` cancels ordinary spawn changes, and Class Selector persists `classselector:respawn_*` coordinates, refreshes them before death, rejects bed and respawn-anchor style changes while locked, and teleports the player back there on respawn with protection plus scripted sound and particle FX. Player-facing spawn relocation should remain a very-late-game exception; normal beds are not a progression bypass.
+
+Starting identities should read like jobs with partial truths, not solved classes. Useful loadout space is route support, hydration, light, food variety, low-value trade, animal handling, and camp utility. Unsafe loadout space is production machinery, storage systems, strong tools, raw metals, casing/circuit materials, explosives, magic/network starts, armor, and anything that skips the first logistics problem.
 
 ## Obelisk Dimension Graph Starts
 
@@ -76,6 +82,7 @@ Deadlock checks:
 - Do not require Nether/blaze materials for the first primitive circuit table or More Red red-alloy wire.
 - Do not require AE2 storage or automation before the AE2 casing tier itself.
 - If grout requires netherrack, Nether access must remain reachable before melter/smeltery dependence.
+- Starting options, quest rewards, village trades, Wares, and loot must not expose future milestone outputs before their casing, slate, dimension, or route proof exists.
 
 ## Deposits And Y Bands
 

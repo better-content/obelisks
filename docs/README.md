@@ -24,3 +24,5 @@ Do not add new one-off audits, pass reports, JSON summaries, raw logs, RAM dumps
 When progression behavior changes, update `progression.md` and/or `content_systems.md`. When validation behavior or outcomes change, update `runtime_validation.md`. When mod composition, performance, or runtime compatibility changes, update `performance_and_mods.md`.
 
 Claims in these docs must be checked against current source files. If an ID, mod, recipe, or config cannot be confirmed, write `UNKNOWN` or frame it as a future candidate.
+
+Historical notes, generated Markdown reports, old schema notes, and retired tool matrices belong under `quarantine/docs/` after their durable conclusions are folded into these five files. Do not classify `.txt` files by extension alone: many launcher, Forge, FancyMenu, KubeJS, shaderpack, and mod files are live config or runtime inputs.

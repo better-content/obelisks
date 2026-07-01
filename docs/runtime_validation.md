@@ -6,6 +6,8 @@ Raw logs, crash reports, generated worlds, and machine summaries belong in `/tmp
 
 Do not treat stale client/server logs or stale jar caches as evidence. Re-sync or re-bootstrap before making runtime claims.
 
+Generated Markdown reports under `generated/` are temporary evidence products. Fold durable conclusions into these five living docs, then archive the reports under `quarantine/docs/` if they must remain available for archaeology.
+
 ## Agent Entry Points
 
 ```bash
@@ -75,6 +77,8 @@ tools/btm test smoke --server-dir /tmp/btm-content-smoke --port 25565 --reset-ru
 
 Older Prism/server-instance profiling tools that mutate live mod directories or kill broad launcher/java processes are guarded by `BTM_ALLOW_LEGACY_LIVE_MUTATION=1`. Use them only for intentional archival profiling; current validation should use disposable runtimes and the portable harness layer.
 
+The supported public tool surface is `tools/btm`. Kotlin-backed `btm test`, `btm build`, and `btm doctor` flows are the front door; direct shell, Python, Node, and one-off generator entry points are internal or quarantined unless a current `btm` command explicitly delegates to them. Tool migration notes belong here as current policy, not as separate standalone matrices.
+
 All-dimension worldgen stress:
 
 ```bash
@@ -98,3 +102,5 @@ Expected full validation: three clean boot/join/space-routed dimension teleport/
 - Validate long settlement-roads and village-walls generation beyond boot/join.
 - Confirm Unearthed/Hyle deepslate replacement in fresh terrain.
 - Re-run LC/DH/C2ME/TFTH after mod, config, worldgen, or custom jar changes affecting those systems.
+- Add deterministic seed sampling for deposits, Y-bands, villages, roads, walls, structures, forageables, and spawn viability, then define acceptable distribution bounds.
+- Capture playtest telemetry for time-to-tier, deaths, lookup stalls, travel distance, recovery loops, and player confusion before setting friction budgets.

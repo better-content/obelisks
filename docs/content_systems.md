@@ -15,6 +15,8 @@ Important policies:
 Dimension travel is intentionally narrow: Dimensional Fonts and Creating Space rocket routes are the only authored cross-dimension surfaces. Direct portal/key recipes, portal structures, and JEI/EMI visibility for those route items should stay disabled unless a route is deliberately re-authored through one of those two surfaces.
 Current Dimensional Fonts graveyard generation is structure-set driven rather than biome-modifier feature driven. The procedural graveyard design still embeds each raised altar into a copper-framed square junction court: packed mud stays the outer graveyard path language, the altar seam is reclaimed into a built ritual square, and biome-reactive court dressing is limited to perimeter pots rather than loose center clutter.
 
+KubeJS layout remains load-order grouped by responsibility. `startup_scripts/00_boot` is for shared globals/helpers, startup item/block registration lives under startup item/block domains, and global startup behavior toggles live under startup globals. Server scripts use `10_tags`, `20_recipe_remove`, `30_recipe_replace`, `35_villager_trades`, `40_recipe_add`, `50_loot`, `60_worldgen`, `70_spawn`, `80_recipe_policy`, and `90_dev_debug`; keep `90_dev_debug` empty for release. Client scripts own JEI/EMI visibility, tooltips, and client-only presentation.
+
 ## Materials And Chemistry
 
 Deposit processing is multi-surface:
@@ -55,6 +57,8 @@ Chemistry alternates respect that boundary. Create, Blood Magic, and PNCR pressu
 ## World Physics
 
 Realistic Block Physics stays explicit-definition only in `config/rbp/world_definitions/overworld.toml`; the default block definition remains empty so non-solid blocks are not swept in by fallback physics. The generated `config/rbp/block_definitions/generated_pack_solid_blocks.toml` surface comes from the current runtime block audit plus RBP IDs, giving pack solid/collision-like blocks RBP coverage while excluding bedrock, Dynamic Trees-managed blocks, virtual/control blocks, plants/fluids, attached thin controls, and support-owned blocks. Known explicit overrides matter: Dynamic Trees rooty soils are dirt-profile physics blocks, and `quark:stick_block` belongs to the wood profile rather than generated stone/solid profiles so placed sticks remain axe-breakable.
+
+RBP coverage should continue as explicit generated allowlists by profile, not broad fallback physics. Solid candidates include terrain mass, construction blocks, storage/metals, solid machine bodies, utility blocks with real block bodies, FramedBlocks solid construction forms, pack-owned casings/crates, and normal modded leaves outside Dynamic Trees. Exclude lifecycle/support/admin blocks such as crops, vines, flower pots, candles, torches, carpets, signs, rails, buttons, beds, doors, portal/control/debug blocks, locked adventure structure controls, and Dynamic Trees-owned blocks. Any broad RBP expansion needs a generator/audit pass plus fresh runtime registry or collision evidence before acceptance.
 
 ## Burnt Compatibility
 
@@ -104,3 +108,7 @@ Trades should support recovery and route planning without replacing factories, m
 ## Quests
 
 Quest generation is driven by the internal quest-book generator and exported generated state under `generated/ftbquests/`. The generator retains future/candidate quest definitions, but only installed manifests, bundled jars, and emitted current quest files are source truth. When quest intent changes, update this doc or `progression.md`, then regenerate and validate the generated quest content.
+
+Quest authoring uses stable chapter and node keys with explicit stage, icon, position, body, tasks, rewards, dependency, source tag, mod tag, optional-branch, FTB-export, and icon-path metadata where needed. Supported task shapes are item, fluid, and entity tasks; rewards are item-shaped unless an exporter explicitly adds more. Generated quest/site outputs are build products, not living documentation.
+
+Explosion Overhaul helper files are config surfaces, not docs. `DestroyingBlacklist.json` lists crater-immune blocks, `GlassBlacklist.json` lists blocks exempt from glass breaking, and `ExplosionSourceBlacklist.json` maps entity IDs to `DEFAULT`, `VANILLA`, `NO_DESTRUCTION`, or `NO_DESTRUCTION_GLASSWORKS`. These JSON files must remain strict JSON because invalid syntax causes the mod to fall back to defaults.

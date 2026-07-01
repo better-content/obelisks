@@ -1,5 +1,7 @@
 # Explosion Overhaul Config Helpers
 
+These files are live mod config helpers. Keep them valid JSON; comments, trailing commas, or malformed values can make the mod fall back to defaults after restart.
+
 ## Blacklist Files (.json)
 
 ### DestroyingBlacklist.json
@@ -18,6 +20,4 @@
   - `NO_DESTRUCTION`: Concussions and sounds only (no crater or glass breaking).
   - `NO_DESTRUCTION_GLASSWORKS`: Like NO_DESTRUCTION, but glass still shatters.
 
-**Note**: Invalid JSON (extra commas, comments) will cause the mod to use defaults. Restart the game/server for changes to take effect.
-
-https://www.youtube.com/watch?v=dQw4w9WgXcQ
+Restart the game/server for changes to take effect.

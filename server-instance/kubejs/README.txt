@@ -1,15 +1,16 @@
-Find out more info on the website: https://kubejs.com/
+# KubeJS Runtime Directory
 
-Directory information:
+This directory is the KubeJS copy inside the generated server runtime. The source-of-truth KubeJS files live at the repository root in `kubejs/`.
 
-assets - Acts as a resource pack, you can put any client resources in here, like textures, models, etc. Example: assets/kubejs/textures/item/test_item.png
-data - Acts as a datapack, you can put any server resources in here, like loot tables, functions, etc. Example: data/kubejs/loot_tables/blocks/test_block.json
+Runtime layout:
 
-startup_scripts - Scripts that get loaded once during game startup - Used for adding items and other things that can only happen while the game is loading (Can be reloaded with /kubejs reload_startup_scripts, but it may not work!)
-server_scripts - Scripts that get loaded every time server resources reload - Used for modifying recipes, tags, loot tables, and handling server events (Can be reloaded with /reload)
-client_scripts - Scripts that get loaded every time client resources reload - Used for JEI events, tooltips and other client side things (Can be reloaded with F3+T)
+- `assets/`: resource-pack content such as textures, models, and lang files.
+- `data/`: datapack content such as loot tables, tags, recipes, and functions.
+- `startup_scripts/`: startup-time scripts for registrations and global setup.
+- `server_scripts/`: reloadable server scripts for recipes, tags, loot, worldgen, and server events.
+- `client_scripts/`: client-resource scripts for JEI/EMI hiding, tooltips, and client-only presentation.
+- `config/`: KubeJS config and audit dump storage.
 
-config - KubeJS config storage. This is also the only directory that scripts can access other than world directory
-exported - Data dumps like texture atlases end up here
+Use `/reload` for reloadable server resources and F3+T for client resources. Startup script changes usually require a full restart.
 
-You can find type-specific logs in logs/kubejs/ directory
+Type-specific KubeJS logs are written under `logs/kubejs/`.

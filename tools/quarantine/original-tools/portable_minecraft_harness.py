@@ -97,7 +97,7 @@ class PortableMinecraftHarness:
             shutil.rmtree(client_dir, ignore_errors=True)
             self.run_checked(
                 [
-                    str(self.repo_root / "tools/bootstrap_server.sh"),
+                    str(self.repo_root / "tools/quarantine/original-tools/bootstrap_server.sh"),
                     "--server-dir",
                     str(server_dir),
                     "--port",
@@ -107,7 +107,7 @@ class PortableMinecraftHarness:
                 evidence_dir / "bootstrap-server.log",
             )
             self.run_checked(
-                [str(self.repo_root / "tools/bootstrap_client_runtime.sh"), "--client-dir", str(client_dir)],
+                [str(self.repo_root / "tools/quarantine/original-tools/bootstrap_client_runtime.sh"), "--client-dir", str(client_dir)],
                 evidence_dir / "bootstrap-client.log",
             )
         result.phases.append("bootstrap")
@@ -121,7 +121,13 @@ class PortableMinecraftHarness:
 
     def start_server(self, server_dir: Path, evidence_dir: Path, port: int) -> subprocess.Popen[str]:
         return subprocess.Popen(
-            [str(self.repo_root / "tools/launch_server_direct.sh"), "--server-dir", str(server_dir), "--", "nogui"],
+            [
+                str(self.repo_root / "tools/quarantine/original-tools/launch_server_direct.sh"),
+                "--server-dir",
+                str(server_dir),
+                "--",
+                "nogui",
+            ],
             cwd=self.repo_root,
             stdin=subprocess.PIPE,
             stdout=(evidence_dir / "server-console.log").open("w", encoding="utf-8"),
@@ -133,7 +139,7 @@ class PortableMinecraftHarness:
     def start_client(self, client_dir: Path, evidence_dir: Path, port: int) -> subprocess.Popen[str]:
         return subprocess.Popen(
             [
-                str(self.repo_root / "tools/launch_client_direct.sh"),
+                str(self.repo_root / "tools/quarantine/original-tools/launch_client_direct.sh"),
                 "--client-dir",
                 str(client_dir),
                 "--username",

@@ -87,7 +87,7 @@ CONFIG = HarnessConfig(
 
 def main() -> int:
     args = parse_args()
-    root = Path(__file__).resolve().parents[1]
+    root = Path(__file__).resolve().parents[3]
     harness = PortableMinecraftHarness(root, CONFIG, args)
     harness.prepare()
 

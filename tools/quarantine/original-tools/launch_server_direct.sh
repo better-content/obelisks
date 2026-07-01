@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 
-ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
-# shellcheck source=tools/_runtime_common.sh
-source "$ROOT/tools/_runtime_common.sh"
+TOOL_ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck source=tools/quarantine/original-tools/_runtime_common.sh
+source "$TOOL_ROOT/_runtime_common.sh"
 
 server_dir="${SERVER_DIR:-$BTM_DEFAULT_SERVER_DIR}"
 

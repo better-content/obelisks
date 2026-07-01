@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 
-ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
-# shellcheck source=tools/_runtime_common.sh
-source "$ROOT/tools/_runtime_common.sh"
+TOOL_ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd -- "$TOOL_ROOT/../../.." && pwd)"
+# shellcheck source=tools/quarantine/original-tools/_runtime_common.sh
+source "$TOOL_ROOT/_runtime_common.sh"
 
 mode=""
 server_dir="${SERVER_DIR:-$BTM_DEFAULT_SERVER_DIR}"
@@ -35,21 +36,21 @@ if btm_have rsync; then
   [[ "$mode" == "--dry-run" ]] && rsync_flags+=(--dry-run --itemize-changes)
 
   for path in "${btm_managed_paths[@]}"; do
-    [[ -e "$ROOT/$path" ]] || continue
-    if [[ -d "$ROOT/$path" ]]; then
+    [[ -e "$REPO_ROOT/$path" ]] || continue
+    if [[ -d "$REPO_ROOT/$path" ]]; then
       mkdir -p "$server_dir/$path"
-      rsync "${rsync_flags[@]}" "${excludes[@]}" "$ROOT/$path/" "$server_dir/$path/"
+      rsync "${rsync_flags[@]}" "${excludes[@]}" "$REPO_ROOT/$path/" "$server_dir/$path/"
     else
       mkdir -p "$server_dir/$(dirname "$path")"
-      rsync "${rsync_flags[@]}" "${excludes[@]}" "$ROOT/$path" "$server_dir/$path"
+      rsync "${rsync_flags[@]}" "${excludes[@]}" "$REPO_ROOT/$path" "$server_dir/$path"
     fi
   done
 else
   echo "sync_to_server: rsync unavailable, using local copy fallback" >&2
   shopt -s dotglob nullglob extglob
   for path in "${btm_managed_paths[@]}"; do
-    [[ -e "$ROOT/$path" ]] || continue
-    src="$ROOT/$path"
+    [[ -e "$REPO_ROOT/$path" ]] || continue
+    src="$REPO_ROOT/$path"
     dst="$server_dir/$path"
     if [[ "$mode" == "--dry-run" ]]; then
       echo "COPY $path -> $dst"

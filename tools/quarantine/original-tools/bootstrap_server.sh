@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 
-ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
-# shellcheck source=tools/_runtime_common.sh
-source "$ROOT/tools/_runtime_common.sh"
+TOOL_ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd -- "$TOOL_ROOT/../../.." && pwd)"
+SHIM_ROOT="$REPO_ROOT/tools/quarantine/pruned-non-kts/compat-shims"
+# shellcheck source=tools/quarantine/original-tools/_runtime_common.sh
+source "$TOOL_ROOT/_runtime_common.sh"
 
 server_dir="${SERVER_DIR:-$BTM_DEFAULT_SERVER_DIR}"
 port="$BTM_SERVER_PORT"
@@ -32,7 +34,7 @@ while (($#)); do
 done
 
 java_bin="$(btm_java17)"
-installer="$(btm_find_forge_installer "$ROOT")"
+installer="$(btm_find_forge_installer "$REPO_ROOT")"
 [[ -n "$installer" && -f "$installer" ]] || {
   echo "ERROR: forge-${BTM_FORGE_COORD}-installer.jar not found under repo/server roots" >&2
   exit 1
@@ -44,14 +46,14 @@ if [[ "$reset" == "1" ]]; then
   rm -rf "$server_dir/world" "$server_dir/logs" "$server_dir/crash-reports"
 fi
 
-"$ROOT/tools/sync_to_server.sh" --apply --server-dir "$server_dir"
+"$TOOL_ROOT/sync_to_server.sh" --apply --server-dir "$server_dir"
 cp "$installer" "$server_dir/forge-${BTM_FORGE_COORD}-installer.jar"
 
 if [[ "${BTM_SKIP_PACKWIZ_DOWNLOADS:-0}" != "1" ]]; then
-  "$ROOT/tools/resolve_packwiz_downloads.mjs" --apply --pack-root "$ROOT" --target-dir "$server_dir" --side server
+  node "$SHIM_ROOT/resolve_packwiz_downloads.mjs" --apply --target-dir "$server_dir" --side server
 fi
 
-for jar_cache in "$ROOT/server-template/mods" "$ROOT/server-instance/mods"; do
+for jar_cache in "$REPO_ROOT/server-template/mods" "$REPO_ROOT/server-instance/mods"; do
   [[ -d "$jar_cache" ]] || continue
   [[ "$(cd "$jar_cache" && pwd)" == "$(cd "$server_dir/mods" 2>/dev/null && pwd)" ]] && continue
   if btm_have rsync; then
@@ -60,8 +62,8 @@ for jar_cache in "$ROOT/server-template/mods" "$ROOT/server-instance/mods"; do
 done
 
 for library_cache in \
-  "$ROOT/server-template/libraries" \
-  "$ROOT/server-instance/libraries" \
+  "$REPO_ROOT/server-template/libraries" \
+  "$REPO_ROOT/server-instance/libraries" \
   "${BTM_PRISM_ROOT:-$HOME/.local/share/PrismLauncher}/libraries"; do
   [[ -d "$library_cache" ]] || continue
   mkdir -p "$server_dir/libraries"
@@ -71,11 +73,11 @@ for library_cache in \
   fi
 done
 
-"$ROOT/tools/prune_runtime_mods.mjs" --apply --pack-root "$ROOT" --target-dir "$server_dir" --side server
+node "$SHIM_ROOT/prune_runtime_mods.mjs" --apply --target-dir "$server_dir" --side server
 
 mkdir -p "$server_dir/world/datapacks"
-if [[ -d "$ROOT/datapacks" ]]; then
-  for datapack in "$ROOT"/datapacks/*; do
+if [[ -d "$REPO_ROOT/datapacks" ]]; then
+  for datapack in "$REPO_ROOT"/datapacks/*; do
     [[ -e "$datapack" ]] || continue
     rm -rf "$server_dir/world/datapacks/$(basename "$datapack")"
     cp -a "$datapack" "$server_dir/world/datapacks/"

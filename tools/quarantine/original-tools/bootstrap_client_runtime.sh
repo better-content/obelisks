@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 
-ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
-# shellcheck source=tools/_runtime_common.sh
-source "$ROOT/tools/_runtime_common.sh"
+TOOL_ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd -- "$TOOL_ROOT/../../.." && pwd)"
+SHIM_ROOT="$REPO_ROOT/tools/quarantine/pruned-non-kts/compat-shims"
+# shellcheck source=tools/quarantine/original-tools/_runtime_common.sh
+source "$TOOL_ROOT/_runtime_common.sh"
 
 client_dir="${CLIENT_DIR:-}"
 
@@ -29,7 +31,7 @@ done
 [[ -n "$client_dir" ]] || btm_usage_error "--client-dir is required"
 
 mkdir -p "$client_dir"/{logs,saves,versions,libraries,assets}
-"$ROOT/tools/sync_to_client.sh" --apply --client-dir "$client_dir"
+"$TOOL_ROOT/sync_to_client.sh" --apply --client-dir "$client_dir"
 
 prism_root="${BTM_PRISM_ROOT:-$HOME/.local/share/PrismLauncher}"
 forge_client_id="${BTM_MC_VERSION}-forge-${BTM_FORGE_VERSION}"
@@ -49,6 +51,26 @@ if [[ -f "$prism_root/libraries/com/mojang/minecraft/${BTM_MC_VERSION}/minecraft
   mkdir -p "$client_dir/versions/${BTM_MC_VERSION}"
   ln -sf "$prism_root/libraries/com/mojang/minecraft/${BTM_MC_VERSION}/minecraft-${BTM_MC_VERSION}-client.jar" "$client_dir/versions/${BTM_MC_VERSION}/${BTM_MC_VERSION}.jar"
 fi
+if [[ ! -f "$client_dir/versions/${BTM_MC_VERSION}/${BTM_MC_VERSION}.json" ]]; then
+  mkdir -p "$client_dir/versions/${BTM_MC_VERSION}"
+  python3 - "$client_dir/versions/${BTM_MC_VERSION}/${BTM_MC_VERSION}.json" "$BTM_MC_VERSION" <<'PY'
+import json
+import sys
+import urllib.request
+
+dest, version = sys.argv[1], sys.argv[2]
+with urllib.request.urlopen("https://launchermeta.mojang.com/mc/game/version_manifest_v2.json") as resp:
+    manifest = json.load(resp)
+entry = next((item for item in manifest.get("versions", []) if item.get("id") == version), None)
+if entry is None:
+    raise SystemExit(f"missing version metadata in Mojang manifest: {version}")
+with urllib.request.urlopen(entry["url"]) as resp:
+    version_json = json.load(resp)
+with open(dest, "w", encoding="utf-8") as fh:
+    json.dump(version_json, fh, indent=2)
+    fh.write("\n")
+PY
+fi
 if [[ -f "$prism_root/meta/net.minecraftforge/${BTM_FORGE_VERSION}.json" ]]; then
   mkdir -p "$client_dir/versions/${forge_client_id}"
   node --input-type=module - "$prism_root/meta/net.minecraftforge/${BTM_FORGE_VERSION}.json" "$client_dir/versions/${forge_client_id}/${forge_client_id}.json" "$BTM_MC_VERSION" "$forge_client_id" <<'NODE'
@@ -67,13 +89,15 @@ writeFileSync(dest, JSON.stringify(out, null, 2) + '\n')
 NODE
 fi
 
-for jar_cache in "$ROOT/server-template/mods" "$ROOT/server-instance/mods"; do
+for jar_cache in "$REPO_ROOT/server-template/mods" "$REPO_ROOT/server-instance/mods"; do
   [[ -d "$jar_cache" ]] || continue
   [[ "$(cd "$jar_cache" && pwd)" == "$(cd "$client_dir/mods" 2>/dev/null && pwd)" ]] && continue
-  rsync -a --ignore-existing --include='*/' --include='*.jar' --include='*.so' --exclude='*' "$jar_cache/" "$client_dir/mods/"
+  if btm_have rsync; then
+    rsync -a --ignore-existing --include='*/' --include='*.jar' --include='*.so' --exclude='*' "$jar_cache/" "$client_dir/mods/"
+  fi
 done
 
-installer="$(btm_find_forge_installer "$ROOT")"
+installer="$(btm_find_forge_installer "$REPO_ROOT")"
 if [[ -n "$installer" && -f "$installer" ]]; then
   java_bin="$(btm_java17)"
   cp "$installer" "$client_dir/forge-${BTM_FORGE_COORD}-installer.jar"
@@ -90,10 +114,10 @@ EOF
 fi
 
 if [[ "${BTM_SKIP_PACKWIZ_DOWNLOADS:-0}" != "1" ]]; then
-  "$ROOT/tools/resolve_packwiz_downloads.mjs" --apply --pack-root "$ROOT" --target-dir "$client_dir" --side client
+  node "$SHIM_ROOT/resolve_packwiz_downloads.mjs" --apply --target-dir "$client_dir" --side client
 fi
 
-"$ROOT/tools/prune_runtime_mods.mjs" --apply --pack-root "$ROOT" --target-dir "$client_dir" --side client
+node "$SHIM_ROOT/prune_runtime_mods.mjs" --apply --target-dir "$client_dir" --side client
 
 cat > "$client_dir/README.agent-runtime.txt" <<EOF
 Better Content direct client runtime
@@ -102,10 +126,10 @@ Minecraft: ${BTM_MC_VERSION}
 Forge: ${BTM_FORGE_VERSION}
 
 Managed content is synced from:
-  $ROOT
+  $REPO_ROOT
 
 Launch through:
-  $ROOT/tools/launch_client_direct.sh --client-dir "$client_dir" --username AgentClient --server 127.0.0.1:${BTM_SERVER_PORT}
+  $TOOL_ROOT/launch_client_direct.sh --client-dir "$client_dir" --username AgentClient --server 127.0.0.1:${BTM_SERVER_PORT}
 
 This directory is runtime state. Do not commit saves, logs, screenshots, options,
 account files, assets, libraries, or downloaded versions.

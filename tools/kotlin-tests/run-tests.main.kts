@@ -67,12 +67,10 @@ test("build sync server dry-run works") {
 
 test("runtime mod prune removes source jars") {
     val temp = Files.createTempDirectory("btm-kotlin-test-prune-runtime-mods")
-    val sourcesJar = root.resolve("mods/create-transmission-loss-0.1.0-sources.jar")
-    val dest = temp.resolve("mods/${sourcesJar.fileName}")
+    val dest = temp.resolve("mods/synthetic-fixture-sources.jar")
     try {
-        assertTrue(Files.exists(sourcesJar), "expected fixture sources jar to exist: $sourcesJar")
         Files.createDirectories(dest.parent)
-        Files.copy(sourcesJar, dest)
+        Files.write(dest, byteArrayOf())
         val (exit, output) = runCommand("tools/btm", "internal", "prune-runtime-mods", "--target-dir", temp.toString(), "--side", "server", "--apply")
         assertTrue(exit == 1, "internal prune-runtime-mods should report missing expected runtime mods on an incomplete temp dir, got $exit")
         assertTrue(!Files.exists(dest), "prune-runtime-mods should remove source jars from runtime mods")

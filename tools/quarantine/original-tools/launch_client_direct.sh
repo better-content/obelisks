@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 
-ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
-# shellcheck source=tools/_runtime_common.sh
-source "$ROOT/tools/_runtime_common.sh"
+TOOL_ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd -- "$TOOL_ROOT/../../.." && pwd)"
+SHIM_ROOT="$REPO_ROOT/tools/quarantine/pruned-non-kts/compat-shims"
+# shellcheck source=tools/quarantine/original-tools/_runtime_common.sh
+source "$TOOL_ROOT/_runtime_common.sh"
 
 client_dir="${CLIENT_DIR:-}"
 username="${CLIENT_USERNAME:-AgentClient}"
@@ -33,6 +35,10 @@ while (($#)); do
 done
 
 [[ -n "$client_dir" ]] || btm_usage_error "--client-dir is required"
+if [[ -z "${DISPLAY:-}" && -z "${WAYLAND_DISPLAY:-}" ]]; then
+  echo "ERROR: no graphical display detected. Set DISPLAY or WAYLAND_DISPLAY before launching the client runtime." >&2
+  exit 1
+fi
 java_bin="$(btm_java17)"
 version_id="${BTM_MC_VERSION}-forge-${BTM_FORGE_VERSION}"
 version_json=""
@@ -48,13 +54,18 @@ done
 
 [[ -n "$version_json" ]] || {
   echo "ERROR: Forge client version JSON for $version_id was not found." >&2
-  echo "Run: $ROOT/tools/bootstrap_client_runtime.sh --client-dir '$client_dir'" >&2
+  echo "Run: $TOOL_ROOT/bootstrap_client_runtime.sh --client-dir '$client_dir'" >&2
+  exit 1
+}
+[[ -f "$client_dir/versions/${BTM_MC_VERSION}/${BTM_MC_VERSION}.json" ]] || {
+  echo "ERROR: vanilla client version JSON for ${BTM_MC_VERSION} was not found in $client_dir/versions/${BTM_MC_VERSION}/." >&2
+  echo "Re-run: $TOOL_ROOT/bootstrap_client_runtime.sh --client-dir '$client_dir'" >&2
   exit 1
 }
 
 argfile="$client_dir/.runtime/launch-${version_id}.args"
-"$ROOT/tools/minecraft_client_argfile.mjs" --client-dir "$client_dir" --version-id "$version_id" --username "$username" --server "$server" --out "$argfile" >/dev/null
-
 mkdir -p "$client_dir/logs" "$client_dir/.runtime"
+node "$SHIM_ROOT/minecraft_client_argfile.mjs" --client-dir "$client_dir" --version-id "$version_id" --username "$username" --server "$server" --out "$argfile"
+
 cd "$client_dir"
 exec "$java_bin" ${extra_jvm} @"$argfile"

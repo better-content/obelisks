@@ -16,6 +16,9 @@ var BTM_DIRECT_DIMENSION_ROUTE_ITEMS = [
     'bloodmagic:teleposerfocus',
     'bloodmagic:reinforcedteleposerfocus',
     'bloodmagic:enhancedteleposerfocus',
+    'irons_spellbooks:portal_frame',
+    'irons_spellbooks:pocket_dimension_portal_frame',
+    'irons_spellbooks:wayward_compass',
     'aether:aether_portal_frame',
     'blue_skies:everbright_portal',
     'blue_skies:everdawn_portal',
@@ -37,6 +40,8 @@ ServerEvents.recipes(function (event) {
     event.remove({ id: 'callfromthedepth_:depthkeycraft' })
     event.remove({ id: 'bloodmagic:soulforge/simple_key' })
     event.remove({ id: 'bloodmagic:soulforge/mine_key' })
+    event.remove({ id: 'irons_spellbooks:portal_frame' })
+    event.remove({ id: 'irons_spellbooks:wayward_compass' })
 
     console.info('[space-dimension-access] disabled direct portal/key recipe outputs; use meteor rifts or Creating Space rocket routes')
 })

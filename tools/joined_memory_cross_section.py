@@ -209,7 +209,6 @@ DEFAULT_PHASES: list[Phase] = [
         [
             r"^ars_nouveau-.*\.jar$",
             r"^DynamicTreesArsNouveau-.*\.jar$",
-            r"^Botania-.*\.jar$",
             r"^bloodmagic-.*\.jar$",
             r"^KubeJS Blood Magic-.*\.jar$",
             r"^tomeofblood-.*\.jar$",

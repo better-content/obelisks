@@ -15,7 +15,6 @@ Limits: `registries.json` and `tags.json` currently contain empty registries/tag
 - `railways`: 499
 - `tconstruct`: 161
 - `quark`: 157
-- `botania`: 134
 - `malum`: 128
 - `createadditionallogistics`: 121
 - `swem`: 117
@@ -163,8 +162,6 @@ Limits: `registries.json` and `tags.json` currently contain empty registries/tag
 - `bloodmagic:meteor`: 8 recipes
 - `bloodmagic:soulforge`: 89 recipes
 - `bloodmagic:tome_combine`: 1 recipes
-- `botania:brew`: 20 recipes
-- `botania:mana_infusion`: 140 recipes
 - `brewinandchewin:create_potion_pouring`: 1 recipes
 - `brewinandchewin:fermenting`: 31 recipes
 - `brewinandchewin:keg_pouring`: 62 recipes

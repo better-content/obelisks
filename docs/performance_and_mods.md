@@ -23,7 +23,7 @@ Active downloaded mods are the current `mods/*.pw.toml` files. Active custom bun
 - `settlementroads-0.1.0.jar`
 - `villagewalls-1.0.0.jar`
 
-Do not infer active state from old RAM cuts or runtime caches. In the current repo, Botania, Hexerei, Iron's Spells, Malum, Occultism, Goety, Forbidden and Arcanus, and Reliquary have active manifests. Theurgy, Psi, and Hex Casting do not have active `mods/*.pw.toml` entries and should be treated as inactive/future unless re-added.
+Do not infer active state from old RAM cuts or runtime caches. In the current repo, Hexerei, Iron's Spells, Malum, Occultism, Goety, Forbidden and Arcanus, and Reliquary have active manifests. Theurgy, Psi, and Hex Casting do not have active `mods/*.pw.toml` entries and should be treated as inactive/future unless re-added.
 
 ## Runtime Pruning
 

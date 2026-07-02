@@ -1032,7 +1032,7 @@ fun validateDimensionProofGraphStartsImpl() {
             if (pattern.containsMatchIn(graphStart)) listOf("$dimension -> $graphStart") else emptyList()
         }
     if (forbiddenPositiveMappings.isEmpty()) ok("obelisk graph starts reject self-label dimension mappings") else fail("obelisk graph starts reject self-label dimension mappings", forbiddenPositiveMappings.joinToString(", "))
-    val spineTerms = listOf("Create", "AE2", "PneumaticCraft", "OC2R", "Botania", "Ars", "Hexerei", "Malum", "Goety", "Iron's Spells")
+    val spineTerms = listOf("Create", "AE2", "PneumaticCraft", "OC2R", "Ars", "Hexerei", "Malum", "Goety", "Iron's Spells")
     val positiveTableSpineClaims = tableRows.filter { "| Nether |" !in it && "| Undergarden |" !in it }.filter { row -> spineTerms.any { term -> (row.split('|').getOrNull(2)?.trim().orEmpty()).contains(term) } }
     if (positiveTableSpineClaims.isEmpty()) ok("obelisk graph-start table does not reassign tech or magic spines") else fail("obelisk graph-start table does not reassign tech or magic spines", positiveTableSpineClaims.joinToString("\n"))
     val everdawnRow = tableRows.find { "| Everdawn |" in it }.orEmpty()

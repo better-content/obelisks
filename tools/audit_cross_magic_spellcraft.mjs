@@ -77,7 +77,7 @@ for (const entry of ironEntries) {
 
 const magicRecipeTypes = {}
 for (const jarName of fs.readdirSync(modsDir).filter((file) => file.endsWith('.jar'))) {
-  if (!/(ars|bloodmagic|Botania|hexerei|malum|occultism|goety|forbidden|reliquary)/i.test(jarName)) continue
+  if (!/(ars|bloodmagic|hexerei|malum|occultism|goety|forbidden|reliquary)/i.test(jarName)) continue
   const jar = path.join(modsDir, jarName)
   for (const entry of jarEntries(jar)) {
     if (!entry.includes('/recipes/') || !entry.endsWith('.json')) continue

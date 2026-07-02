@@ -15,7 +15,7 @@ Important policies:
 - Keep recipes Rhino-safe and deterministic under `kubejs:*` IDs.
 
 Dimension travel is intentionally narrow: Dimensional Fonts and Creating Space rocket routes are the only authored cross-dimension surfaces. Direct portal/key recipes, portal structures, and JEI/EMI visibility for those route items should stay disabled unless a route is deliberately re-authored through one of those two surfaces.
-Current Dimensional Fonts graveyard generation is structure-set driven rather than biome-modifier feature driven. The procedural graveyard design still embeds each raised altar into a copper-framed square junction court: packed mud stays the outer graveyard path language, the altar seam is reclaimed into a built ritual square, and biome-reactive court dressing is limited to perimeter pots rather than loose center clutter.
+Current Dimensional Fonts reliquary generation is structure-set driven rather than biome-modifier feature driven. The procedural site design embeds each raised altar into a copper-framed square junction court, uses packed-mud paths and relic/trophy dressing as the ancient interdimensional language, and no longer registers or places grave-soil tiles.
 
 KubeJS layout remains load-order grouped by responsibility. `startup_scripts/00_boot` is for shared globals/helpers, startup item/block registration lives under startup item/block domains, and global startup behavior toggles live under startup globals. Server scripts use `10_tags`, `20_recipe_remove`, `30_recipe_replace`, `35_villager_trades`, `40_recipe_add`, `50_loot`, `60_worldgen`, `70_spawn`, `80_recipe_policy`, and `90_dev_debug`; keep `90_dev_debug` empty for release. Client scripts own JEI/EMI visibility, tooltips, and client-only presentation.
 

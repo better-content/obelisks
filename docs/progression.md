@@ -72,7 +72,7 @@ The pack currently uses a narrow set of standalone KubeJS intermediates where th
 
 ## Early Chokepoints
 
-- No Tree Punching is replaced by a KubeJS first-hour gate: bare hands can break only the `kubejs:hand_breakable` block whitelist and loose surfaces such as sand or gravel, while other blocks need matching tools. Surface plants and all leaf-like blocks, including Dynamic Trees leaves, are knife-only. The first authored tools are a flint TConstruct hand axe made from flint, Farmer's Delight straw, and a stick, and a flint/wood TConstruct butcher knife made from three flint and a stick.
+- No Tree Punching is replaced by a KubeJS first-hour gate: bare hands can break only the `kubejs:hand_breakable` block whitelist and loose surfaces such as sand or gravel, while other blocks need matching tools. Surface plants and all leaf-like blocks, including Dynamic Trees leaves, are knife-only. The first authored tools are TConstruct hand axes and butcher knives made from flint, PVJ bones, or PVJ rocks. Hand axes use two head materials plus Farmer's Delight straw and a stick; butcher knives use three head materials plus a stick.
 - TConstruct tool variety comes from authored tool families rather than vanilla-tier disposable tools. Current add-ons include Additional Weaponry, Battle Spades, Tinkers' Things, Katanas, Rapier, and Weaponry; their Better Combat categories are explicit datapack attributes so halberds, katanas, rapiers, lances, pikes, greatswords, and related tools animate consistently.
 - Netherrack grout keeps seared metallurgy tied to Nether-obelisk preparation.
 - `create:andesite_alloy` is an alloying output, not easy nugget crafting.

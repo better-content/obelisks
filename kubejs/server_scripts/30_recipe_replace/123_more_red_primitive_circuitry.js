@@ -43,6 +43,7 @@ function btmMoreRedReplace(event, outputs, oldInputs, newInput) {
 ServerEvents.recipes(function (event) {
     event.remove({ output: BTM_MORERED.alloy })
     event.remove({ output: BTM_MORERED.wire })
+    event.remove({ output: BTM_MORERED.plate })
     event.remove({ id: 'morered:soldering_table' })
 
     event.custom({

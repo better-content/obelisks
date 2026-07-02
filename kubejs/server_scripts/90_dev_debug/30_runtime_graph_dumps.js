@@ -6,8 +6,6 @@
 
 var BTM_RUNTIME_DUMP_CONFIG = 'kubejs/config/runtime_graph_dumps.json'
 var BTM_RUNTIME_DUMP_DIR = 'generated/runtime-dumps/'
-var BtmRuntimeDumpFiles = Java.loadClass('java.nio.file.Files')
-var BtmRuntimeDumpPaths = Java.loadClass('java.nio.file.Paths')
 
 function btmRuntimeDumpConfig() {
     var fallback = {
@@ -22,9 +20,9 @@ function btmRuntimeDumpConfig() {
     }
 }
 
-function btmRuntimeEnsureOutputDir(outputDir) {
+function btmRuntimeNormalizeOutputDir(outputDir) {
     var dir = String(outputDir || BTM_RUNTIME_DUMP_DIR)
-    BtmRuntimeDumpFiles.createDirectories(BtmRuntimeDumpPaths.get(dir))
+    if (!dir.endsWith('/')) dir += '/'
     return dir
 }
 
@@ -156,7 +154,7 @@ function btmRuntimeMachines(type) {
 ServerEvents.recipes(function (event) {
     var cfg = btmRuntimeDumpConfig()
     if (!cfg.enabled) return
-    cfg.outputDir = btmRuntimeEnsureOutputDir(cfg.outputDir)
+    cfg.outputDir = btmRuntimeNormalizeOutputDir(cfg.outputDir)
 
     var recipes = []
     event.forEachRecipe({}, function (recipe) {

@@ -19,11 +19,6 @@ global.btmRecipeKey = function (keys) {
     return out
 }
 
-global.BTM_MECHANICAL_MILESTONE_OUTPUTS = {
-    'compressedcreativity:rotational_compressor': true,
-    'kubejs:raw_impossible_circuit': true
-}
-
 global.btmPatternWidth = function (pattern) {
     var width = 0
     for (var i = 0; i < pattern.length; i++) {
@@ -37,31 +32,21 @@ global.btmIsLargeFormatPattern = function (pattern) {
     return pattern.length > 3 || global.btmPatternWidth(pattern) > 3
 }
 
-global.btmIsMechanicalOnlyRecipe = function (pattern, output, forceMechanical) {
-    if (forceMechanical) return true
-    if (global.btmIsLargeFormatPattern(pattern)) return true
-    return !!global.BTM_MECHANICAL_MILESTONE_OUTPUTS[output]
+global.btmIsMechanicalOnlyRecipe = function () {
+    return false
 }
 
 global.btmFactoryCrafting = function (event, id, output, count, pattern, keys, options) {
     var recipeCount = count || 1
-    var mechanicalOnly = global.btmIsMechanicalOnlyRecipe(pattern, output, options && options.forceMechanical)
-    if (mechanicalOnly) {
-        global.btmCreateMechanicalCrafting(event, id, output, recipeCount, pattern, keys, !options || options.mirrored !== false)
+    if (global.btmIsLargeFormatPattern(pattern)) {
         return
     }
     var result = recipeCount > 1 ? (recipeCount + 'x ' + output) : output
     event.shaped(result, pattern, keys).id(id)
 }
 
-global.btmCreateMechanicalCrafting = function (event, id, output, count, pattern, keys, mirrored) {
-    event.custom({
-        type: 'create:mechanical_crafting',
-        acceptMirrored: mirrored !== false,
-        pattern: pattern,
-        key: global.btmRecipeKey(keys),
-        result: global.btmRecipeResult(output, count || 1)
-    }).id(id)
+global.btmCreateMechanicalCrafting = function () {
+    return
 }
 
 global.btmCreateMechanicalFromInputs = function (event, id, output, count, inputs) {

@@ -125,6 +125,9 @@ function btmSynArsImbuement(event, id, input, output, pedestalItems, sourceCost)
 
 function btmSynArsApparatus(event, id, reagent, output, pedestalItems, sourceCost) {
     if (!btmSynExists(reagent) || !btmSynExists(output)) return
+    for (var i = 0; i < pedestalItems.length; i++) {
+        if (!btmSynExists(pedestalItems[i])) return
+    }
     event.custom({
         type: 'ars_nouveau:enchanting_apparatus',
         keepNbtOfReagent: false,

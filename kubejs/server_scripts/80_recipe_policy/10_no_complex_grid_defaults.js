@@ -354,16 +354,7 @@ function btmGridPolicyRerouteShaped(event, recipe) {
         if (btmGridPolicyAlchemyRecipe(event, btmGridPolicyReplacementId('blood_alchemy', originalId), result, alchemyInputs, 1)) return true
     }
 
-    if (!global.btmIsMechanicalOnlyRecipe(data.pattern, output, false)) return false
-
-    event.custom({
-        type: 'create:mechanical_crafting',
-        acceptMirrored: true,
-        pattern: data.pattern,
-        key: data.key,
-        result: result
-    }).id(btmGridPolicyReplacementId('create_mechanical', originalId))
-    return true
+    return false
 }
 
 function btmGridPolicyRerouteShapeless(event, recipe) {

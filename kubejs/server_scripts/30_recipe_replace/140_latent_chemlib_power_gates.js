@@ -1,8 +1,21 @@
 // Latent ChemLib owns chemical cloud containment, high-energy reactions, and
 // neutron-economy traversal. Heat transfer uses HeatSync.
 
+function btmLatentExists(id) {
+    try { return Item.exists(id) } catch (e) { return false }
+}
+
+function btmLatentFactory(event, id, output, count, pattern, keys, mirrored) {
+    if (!btmLatentExists(output)) return
+    for (var key in keys) {
+        var ingredient = keys[key]
+        if (ingredient && ingredient.charAt && ingredient.charAt(0) !== '#' && ingredient.indexOf(':') >= 0 && !btmLatentExists(ingredient)) return
+    }
+    global.btmFactoryCrafting(event, id, output, count, pattern, keys, { mirrored: mirrored })
+}
+
 ServerEvents.recipes(function (event) {
-    global.btmFactoryCrafting(event, 'kubejs:create/assembly/latent_chemlib/gas_capture', 'latent_chemlib:gas_capture', 1, [
+    btmLatentFactory(event, 'kubejs:create/assembly/latent_chemlib/gas_capture', 'latent_chemlib:gas_capture', 1, [
         ' V ',
         'ACA',
         ' P '
@@ -11,9 +24,9 @@ ServerEvents.recipes(function (event) {
         A: 'kubejs:airtight_machine_casing',
         C: 'kubejs:airtight_fluid_module',
         P: 'pneumaticcraft:reinforced_pressure_tube'
-    }, { mirrored: false })
+    }, false)
 
-    global.btmFactoryCrafting(event, 'kubejs:create/assembly/latent_chemlib/gas_tank', 'latent_chemlib:gas_tank', 1, [
+    btmLatentFactory(event, 'kubejs:create/assembly/latent_chemlib/gas_tank', 'latent_chemlib:gas_tank', 1, [
         'GPG',
         'ACA',
         'GPG'
@@ -22,9 +35,9 @@ ServerEvents.recipes(function (event) {
         P: 'heatsync:heat_pipe',
         A: 'kubejs:airtight_machine_casing',
         C: 'latent_chemlib:gas_capture'
-    }, { mirrored: false })
+    }, false)
 
-    global.btmFactoryCrafting(event, 'kubejs:create/assembly/latent_chemlib/gas_reaction_chamber', 'latent_chemlib:gas_reaction_chamber', 1, [
+    btmLatentFactory(event, 'kubejs:create/assembly/latent_chemlib/gas_reaction_chamber', 'latent_chemlib:gas_reaction_chamber', 1, [
         'SES',
         'TCT',
         'SPS'
@@ -34,9 +47,9 @@ ServerEvents.recipes(function (event) {
         T: 'latent_chemlib:gas_tank',
         C: 'kubejs:space_machine_casing',
         P: 'powergrid:battery'
-    }, { mirrored: false })
+    }, false)
 
-    global.btmFactoryCrafting(event, 'kubejs:create/assembly/latent_chemlib/gas_release', 'latent_chemlib:gas_release', 1, [
+    btmLatentFactory(event, 'kubejs:create/assembly/latent_chemlib/gas_release', 'latent_chemlib:gas_release', 1, [
         ' P ',
         'TCT',
         ' V '
@@ -45,9 +58,9 @@ ServerEvents.recipes(function (event) {
         T: 'heatsync:heat_pipe',
         C: 'latent_chemlib:gas_tank',
         V: 'create:fluid_valve'
-    }, { mirrored: false })
+    }, false)
 
-    global.btmFactoryCrafting(event, 'kubejs:create/assembly/latent_chemlib/sealed_chemical_cell', 'latent_chemlib:sealed_chemical_cell', 4, [
+    btmLatentFactory(event, 'kubejs:create/assembly/latent_chemlib/sealed_chemical_cell', 'latent_chemlib:sealed_chemical_cell', 4, [
         ' G ',
         'SCS',
         ' P '
@@ -56,5 +69,5 @@ ServerEvents.recipes(function (event) {
         S: 'kubejs:pressure_seal',
         C: 'pneumaticcraft:small_tank',
         P: 'heatsync:heat_pipe'
-    }, { mirrored: true })
+    }, true)
 })

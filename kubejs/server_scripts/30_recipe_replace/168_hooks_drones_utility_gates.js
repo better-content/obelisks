@@ -13,6 +13,8 @@ function btmMobilityMechanical(event, output, pattern, key, recipeId) {
 }
 
 ServerEvents.recipes(function (event) {
+    if (!btmMobilityExists('kubejs:sky_steel_sheet') || !btmMobilityExists('kubejs:impossible_circuit')) return
+
     btmMobilityMechanical(event, 'rehooked:wood_chain', [
         ' SS',
         'SCS',

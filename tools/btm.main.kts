@@ -1769,8 +1769,7 @@ fun runChemistryIdentityValidation(): ProcessRun {
     val manufacturedPassPath = "kubejs/server_scripts/30_recipe_replace/130_manufactured_plate_recipe_pass.js"
     if (!repoExists(manufacturedPassPath)) fail("missing manufactured plate recipe pass") else {
         val manufacturedText = repoText(manufacturedPassPath)
-        if (!manufacturedText.contains("id('kubejs:powergrid/mechanical_crafting/integrated_circuit_nonrecursive')")) fail("Power Grid integrated circuit must have an explicit non-recursive KubeJS recipe")
-        if (!manufacturedText.contains("C: { item: 'powergrid:incomplete_circuit' }")) fail("Power Grid integrated circuit recipe must consume the etched/incomplete circuit board")
+        if (manufacturedText.contains("id('kubejs:powergrid/mechanical_crafting/integrated_circuit_nonrecursive')")) fail("Power Grid integrated circuit should not retain the retired KubeJS mechanical-crafting rewrite")
     }
     val recursiveReplacePattern = Regex("""btm(?:Plate|Mat|Late|Eco|Aesthetic|Closure|Create)?Replace(?:Outputs)?\(\s*event,\s*\[[^\]]*'powergrid:integrated_circuit'[^\]]*\]\s*,\s*\[[^\]]*minecraft:redstone[^\]]*\]\s*,\s*(?:BTM_[A-Z_]+\.)?(?:powerCircuit|circuit)""")
     val recursiveDirectReplacePattern = Regex("""replaceInput\(\s*\{\s*output:\s*['"]powergrid:integrated_circuit['"][^)]*minecraft:redstone[^)]*powergrid:integrated_circuit""")

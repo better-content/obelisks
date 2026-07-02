@@ -290,6 +290,15 @@ function btmRoAddOverworldOreExtra(results, dep, solvent, ball) {
     btmRoAddResult(results, extra, 1, 0.18 + solvent.trace + ball.traceBonus)
 }
 
+function btmRoIngredientsExist(ingredients) {
+    for (var i = 0; i < ingredients.length; i++) {
+        var ingredient = ingredients[i]
+        if (!ingredient || !ingredient.item) continue
+        if (!btmRoItemExists(ingredient.item)) return false
+    }
+    return true
+}
+
 function btmRoMixing(event, dep, solvent, ball) {
     if (!btmRoItemExists(dep.crushed) || !btmRoItemExists(ball.item)) return
     var recipe = {
@@ -307,6 +316,7 @@ function btmRoMixing(event, dep, solvent, ball) {
 }
 
 function btmRoMixingComponent(event, id, output, ingredients, heat) {
+    if (!output || !output.item || !btmRoItemExists(output.item) || !btmRoIngredientsExist(ingredients)) return
     var recipe = {
         type: 'create:mixing',
         ingredients: ingredients,
@@ -318,6 +328,7 @@ function btmRoMixingComponent(event, id, output, ingredients, heat) {
 }
 
 function btmRoPressing(event, id, output, input) {
+    if (!btmRoItemExists(output) || !btmRoItemExists(input)) return
     event.custom({
         type: 'create:pressing',
         ingredients: [{ item: input }],
@@ -326,7 +337,7 @@ function btmRoPressing(event, id, output, input) {
 }
 
 ServerEvents.recipes(function (event) {
-    global.btmCreateCompacting(event, 'kubejs:realistic_ores/grinding_ball/andesite', 'kubejs:andesite_grinding_ball', 1, [
+    if (btmRoItemExists('kubejs:andesite_grinding_ball')) global.btmCreateCompacting(event, 'kubejs:realistic_ores/grinding_ball/andesite', 'kubejs:andesite_grinding_ball', 1, [
         'create:andesite_alloy',
         'create:andesite_alloy',
         'create:andesite_alloy',
@@ -334,7 +345,7 @@ ServerEvents.recipes(function (event) {
         'create:andesite_alloy'
     ])
 
-    global.btmCreateCompacting(event, 'kubejs:realistic_ores/grinding_ball/iron', 'kubejs:iron_grinding_ball', 1, [
+    if (btmRoItemExists('kubejs:iron_grinding_ball')) global.btmCreateCompacting(event, 'kubejs:realistic_ores/grinding_ball/iron', 'kubejs:iron_grinding_ball', 1, [
         '#forge:ingots/iron',
         '#forge:ingots/iron',
         '#forge:ingots/iron',
@@ -342,7 +353,7 @@ ServerEvents.recipes(function (event) {
         '#forge:ingots/iron'
     ])
 
-    global.btmCreateCompacting(event, 'kubejs:realistic_ores/grinding_ball/brass', 'kubejs:brass_grinding_ball', 1, [
+    if (btmRoItemExists('kubejs:brass_grinding_ball')) global.btmCreateCompacting(event, 'kubejs:realistic_ores/grinding_ball/brass', 'kubejs:brass_grinding_ball', 1, [
         '#forge:ingots/brass',
         '#forge:ingots/brass',
         '#forge:ingots/brass',
@@ -350,7 +361,7 @@ ServerEvents.recipes(function (event) {
         '#forge:ingots/brass'
     ])
 
-    global.btmCreateCompacting(event, 'kubejs:realistic_ores/grinding_ball/steel', 'kubejs:steel_grinding_ball', 1, [
+    if (btmRoItemExists('kubejs:steel_grinding_ball') && btmRoItemExists('kubejs:iron_grinding_ball')) global.btmCreateCompacting(event, 'kubejs:realistic_ores/grinding_ball/steel', 'kubejs:steel_grinding_ball', 1, [
         '#forge:ingots/steel',
         '#forge:ingots/steel',
         '#forge:ingots/steel',
@@ -358,7 +369,7 @@ ServerEvents.recipes(function (event) {
         'kubejs:iron_grinding_ball'
     ], 'heated')
 
-    global.btmCreateCompacting(event, 'kubejs:realistic_ores/grinding_ball/nickel', 'kubejs:nickel_grinding_ball', 1, [
+    if (btmRoItemExists('kubejs:nickel_grinding_ball') && btmRoItemExists('kubejs:steel_grinding_ball')) global.btmCreateCompacting(event, 'kubejs:realistic_ores/grinding_ball/nickel', 'kubejs:nickel_grinding_ball', 1, [
         '#forge:ingots/nickel',
         '#forge:ingots/nickel',
         '#forge:ingots/nickel',
@@ -366,7 +377,7 @@ ServerEvents.recipes(function (event) {
         'kubejs:steel_grinding_ball'
     ], 'heated')
 
-    global.btmCreateCompacting(event, 'kubejs:realistic_ores/grinding_ball/titanium', 'kubejs:titanium_grinding_ball', 1, [
+    if (btmRoItemExists('kubejs:titanium_grinding_ball') && btmRoItemExists('kubejs:nickel_grinding_ball')) global.btmCreateCompacting(event, 'kubejs:realistic_ores/grinding_ball/titanium', 'kubejs:titanium_grinding_ball', 1, [
         'chemlib:titanium_ingot',
         'chemlib:titanium_ingot',
         'chemlib:titanium_ingot',
@@ -374,7 +385,7 @@ ServerEvents.recipes(function (event) {
         'kubejs:nickel_grinding_ball'
     ], 'heated')
 
-    global.btmCreateCompacting(event, 'kubejs:realistic_ores/grinding_ball/blood_infused', 'kubejs:blood_infused_grinding_ball', 1, [
+    if (btmRoItemExists('kubejs:blood_infused_grinding_ball') && btmRoItemExists('kubejs:steel_grinding_ball')) global.btmCreateCompacting(event, 'kubejs:realistic_ores/grinding_ball/blood_infused', 'kubejs:blood_infused_grinding_ball', 1, [
         'bloodmagic:demonslate',
         'bloodmagic:demonslate',
         'bloodmagic:demonslate',
@@ -384,7 +395,7 @@ ServerEvents.recipes(function (event) {
         'kubejs:steel_grinding_ball'
     ], 'heated')
 
-    global.btmCreateCompacting(event, 'kubejs:realistic_ores/grinding_ball/fluix', 'kubejs:fluix_grinding_ball', 1, [
+    if (btmRoItemExists('kubejs:fluix_grinding_ball') && btmRoItemExists('kubejs:steel_grinding_ball')) global.btmCreateCompacting(event, 'kubejs:realistic_ores/grinding_ball/fluix', 'kubejs:fluix_grinding_ball', 1, [
         'ae2:fluix_crystal',
         'ae2:fluix_crystal',
         'ae2:certus_quartz_crystal',

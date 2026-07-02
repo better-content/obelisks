@@ -7,19 +7,11 @@ function btmPpExists(id) {
 }
 
 function btmPpRemove(event, outputs) {
-    for (var i = 0; i < outputs.length; i++) if (btmPpExists(outputs[i])) event.remove({ output: outputs[i] })
+    return
 }
 
 function btmPpMechanical(event, output, pattern, key, id) {
     if (!btmPpExists(output)) return
-    event.remove({ output: output })
-    event.custom({
-        type: 'create:mechanical_crafting',
-        acceptMirrored: false,
-        pattern: pattern,
-        key: key,
-        result: { item: output }
-    }).id(id)
 }
 
 function btmPpSequence(event, input, transitional, output, sequence, loops, id) {
@@ -61,6 +53,7 @@ function btmPpFillLava(transitional, amount) {
 
 ServerEvents.recipes(function (event) {
     if (!btmPpExists('protection_pixel:armorloadplatform')) return
+    if (!btmPpExists('kubejs:sky_steel_sheet') || !btmPpExists('kubejs:impossible_circuit')) return
 
     btmPpRemove(event, [
         'protection_pixel:smallnetheritesheet',

@@ -13,6 +13,10 @@ function btmGateAny(event, outputs, oldInputs, newInput) {
     }
 }
 
+function btmMachineProgExists(id) {
+    try { return Item.exists(id) } catch (e) { return false }
+}
+
 ServerEvents.recipes(function (event) {
     // Casing source-of-truth recipes.
     event.shaped('kubejs:seared_machine_casing', [
@@ -88,76 +92,60 @@ ServerEvents.recipes(function (event) {
         loops: 2
     }).id('kubejs:create/sequenced_assembly/machine_casing/brass')
 
-    global.btmCreateCompacting(event, 'kubejs:pneumaticcraft/pressure_seal', 'kubejs:pressure_seal', 1, [
-        'minecraft:dried_kelp',
-        'minecraft:dried_kelp',
-        'minecraft:dried_kelp',
-        'minecraft:dried_kelp',
-        'minecraft:dried_kelp',
-        'minecraft:dried_kelp',
-        'minecraft:dried_kelp',
-        'minecraft:dried_kelp',
-        'minecraft:slime_ball'
-    ])
+    if (btmMachineProgExists('kubejs:pressure_seal')) {
+        global.btmCreateCompacting(event, 'kubejs:pneumaticcraft/pressure_seal', 'kubejs:pressure_seal', 1, [
+            'minecraft:dried_kelp',
+            'minecraft:dried_kelp',
+            'minecraft:dried_kelp',
+            'minecraft:dried_kelp',
+            'minecraft:dried_kelp',
+            'minecraft:dried_kelp',
+            'minecraft:dried_kelp',
+            'minecraft:dried_kelp',
+            'minecraft:slime_ball'
+        ])
+    }
 
-    event.custom({
-        type: 'create:sequenced_assembly',
-        ingredient: { item: 'create:precision_mechanism' },
-        transitionalItem: { item: 'create:incomplete_precision_mechanism' },
-        sequence: [
-            {
-                type: 'create:deploying',
-                ingredients: [
-                    { item: 'create:incomplete_precision_mechanism' },
-                    { item: 'create:shaft' }
-                ],
-                results: [{ item: 'create:incomplete_precision_mechanism' }]
-            },
-            {
-                type: 'create:deploying',
-                ingredients: [
-                    { item: 'create:incomplete_precision_mechanism' },
-                    { item: 'pneumaticcraft:pressure_tube' }
-                ],
-                results: [{ item: 'create:incomplete_precision_mechanism' }]
-            },
-            {
-                type: 'create:deploying',
-                ingredients: [
-                    { item: 'create:incomplete_precision_mechanism' },
-                    { item: 'pneumaticcraft:ingot_iron_compressed' }
-                ],
-                results: [{ item: 'create:incomplete_precision_mechanism' }]
-            },
-            {
-                type: 'create:pressing',
-                ingredients: [{ item: 'create:incomplete_precision_mechanism' }],
-                results: [{ item: 'create:incomplete_precision_mechanism' }]
-            }
-        ],
-        results: [{ item: 'kubejs:rotational_compressor_core' }],
-        loops: 2
-    }).id('kubejs:create/sequenced_assembly/pneumaticcraft/rotational_compressor_core')
-
-    event.custom({
-        type: 'create:mechanical_crafting',
-        acceptMirrored: false,
-        pattern: [
-            'SISI',
-            'PBGP',
-            'PGCP',
-            'ISIS'
-        ],
-        key: {
-            S: { item: 'kubejs:pressure_seal' },
-            I: { item: 'pneumaticcraft:ingot_iron_compressed' },
-            P: { item: 'pneumaticcraft:pressure_tube' },
-            G: { item: 'minecraft:glass' },
-            C: { item: 'kubejs:rotational_compressor_core' },
-            B: { item: 'kubejs:brass_machine_casing' }
-        },
-        result: { item: 'kubejs:airtight_machine_casing' }
-    }).id('kubejs:create/mechanical_crafting/machine_casing/airtight')
+    if (btmMachineProgExists('kubejs:rotational_compressor_core')) {
+        event.custom({
+            type: 'create:sequenced_assembly',
+            ingredient: { item: 'create:precision_mechanism' },
+            transitionalItem: { item: 'create:incomplete_precision_mechanism' },
+            sequence: [
+                {
+                    type: 'create:deploying',
+                    ingredients: [
+                        { item: 'create:incomplete_precision_mechanism' },
+                        { item: 'create:shaft' }
+                    ],
+                    results: [{ item: 'create:incomplete_precision_mechanism' }]
+                },
+                {
+                    type: 'create:deploying',
+                    ingredients: [
+                        { item: 'create:incomplete_precision_mechanism' },
+                        { item: 'pneumaticcraft:pressure_tube' }
+                    ],
+                    results: [{ item: 'create:incomplete_precision_mechanism' }]
+                },
+                {
+                    type: 'create:deploying',
+                    ingredients: [
+                        { item: 'create:incomplete_precision_mechanism' },
+                        { item: 'pneumaticcraft:ingot_iron_compressed' }
+                    ],
+                    results: [{ item: 'create:incomplete_precision_mechanism' }]
+                },
+                {
+                    type: 'create:pressing',
+                    ingredients: [{ item: 'create:incomplete_precision_mechanism' }],
+                    results: [{ item: 'create:incomplete_precision_mechanism' }]
+                }
+            ],
+            results: [{ item: 'kubejs:rotational_compressor_core' }],
+            loops: 2
+        }).id('kubejs:create/sequenced_assembly/pneumaticcraft/rotational_compressor_core')
+    }
 
     event.custom({
         type: 'pneumaticcraft:pressure_chamber',
@@ -177,19 +165,21 @@ ServerEvents.recipes(function (event) {
         results: [{ item: 'kubejs:electrical_machine_casing' }]
     }).id('kubejs:pneumaticcraft/pressure_chamber/machine_casing/electrical')
 
-    event.custom({
-        type: 'pneumaticcraft:pressure_chamber',
-        inputs: [
-            { type: 'pneumaticcraft:stacked_item', item: 'kubejs:electrical_machine_casing', count: 1 },
-            { type: 'pneumaticcraft:stacked_item', item: 'creatingspace:rocket_casing', count: 2 },
-            { type: 'pneumaticcraft:stacked_item', item: 'kubejs:titanium_thermal_plate', count: 1 },
-            { type: 'pneumaticcraft:stacked_item', item: 'creatingspace:inconel_sheet', count: 2 },
-            { type: 'pneumaticcraft:stacked_item', item: 'creatingspace:hastelloy_ingot', count: 1 },
-            { type: 'pneumaticcraft:stacked_item', item: 'pneumaticcraft:pressure_tube', count: 2 }
-        ],
-        pressure: 4.5,
-        results: [{ item: 'kubejs:space_machine_casing' }]
-    }).id('kubejs:pneumaticcraft/pressure_chamber/machine_casing/space')
+    if (btmMachineProgExists('kubejs:titanium_thermal_plate')) {
+        event.custom({
+            type: 'pneumaticcraft:pressure_chamber',
+            inputs: [
+                { type: 'pneumaticcraft:stacked_item', item: 'kubejs:electrical_machine_casing', count: 1 },
+                { type: 'pneumaticcraft:stacked_item', item: 'creatingspace:rocket_casing', count: 2 },
+                { type: 'pneumaticcraft:stacked_item', item: 'kubejs:titanium_thermal_plate', count: 1 },
+                { type: 'pneumaticcraft:stacked_item', item: 'creatingspace:inconel_sheet', count: 2 },
+                { type: 'pneumaticcraft:stacked_item', item: 'creatingspace:hastelloy_ingot', count: 1 },
+                { type: 'pneumaticcraft:stacked_item', item: 'pneumaticcraft:pressure_tube', count: 2 }
+            ],
+            pressure: 4.5,
+            results: [{ item: 'kubejs:space_machine_casing' }]
+        }).id('kubejs:pneumaticcraft/pressure_chamber/machine_casing/space')
+    }
 
     event.custom({
         type: 'create:mixing',

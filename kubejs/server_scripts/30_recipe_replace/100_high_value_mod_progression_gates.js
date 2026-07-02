@@ -17,6 +17,7 @@ var BTM_GATE = {
 }
 
 function btmReplaceInputs(event, output, oldInputs, newInput) {
+    if (newInput && newInput.charAt && newInput.charAt(0) !== '#' && newInput.indexOf(':') >= 0 && !btmGateItemExists(newInput)) return
     for (var i = 0; i < oldInputs.length; i++) {
         event.replaceInput({ output: output }, oldInputs[i], newInput)
     }
@@ -41,6 +42,10 @@ function btmGatePath(id) {
 
 function btmMechanicalGate(event, output, pattern, keys, id, count) {
     if (!btmGateItemExists(output)) return
+    for (var key in keys) {
+        var ingredient = keys[key]
+        if (ingredient && ingredient.charAt && ingredient.charAt(0) !== '#' && ingredient.indexOf(':') >= 0 && !btmGateItemExists(ingredient)) return
+    }
     event.remove({ output: output })
     global.btmCreateMechanicalCrafting(event, id, output, count || 1, pattern, keys, true)
 }

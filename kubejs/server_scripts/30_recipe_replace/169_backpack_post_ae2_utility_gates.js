@@ -7,6 +7,10 @@ function btmBpExists(id) {
 
 function btmBpRecipe(event, output, pattern, key, id) {
     if (!btmBpExists(output)) return
+    for (var symbol in key) {
+        var ingredient = key[symbol]
+        if (ingredient && ingredient.charAt && ingredient.charAt(0) !== '#' && ingredient.indexOf(':') >= 0 && !btmBpExists(ingredient)) return
+    }
     event.remove({ output: output })
     global.btmCreateMechanicalCrafting(event, id, output, 1, pattern, key, true)
 }

@@ -47,29 +47,7 @@ StartupEvents.registry('item', function (event) {
     event.create('sky_steel_ingot').displayName('Sky Steel Ingot')
     event.create('sky_steel_sheet').displayName('Sky Steel Sheet')
 
-    var overhaulIntermediates = [
-        ['rotational_compressor_core', 'Rotational Compressor Core'],
-        ['pressure_seal', 'Pressure Seal'],
-        ['brass_control_assembly', 'Brass Control Assembly'],
-        ['airtight_fluid_module', 'Airtight Fluid Module'],
-        ['electrical_control_module', 'Electrical Control Module'],
-        ['ae_logic_package', 'AE Logic Package'],
-        ['purified_blood_catalyst', 'Purified Blood Catalyst'],
-        ['purified_source_core', 'Purified Source Core'],
-        ['raw_impossible_circuit', 'Raw Impossible Circuit'],
-        ['impossible_circuit', 'Impossible Circuit'],
-        ['living_binding', 'Living Binding'],
-        ['mountain_beryl_lens', 'Mountain Beryl Lens'],
-        ['corundum_lapping_grit', 'Corundum Lapping Grit'],
-        ['kimberlite_diamond_seed', 'Kimberlite Diamond Seed'],
-        ['tungsten_carbide_insert', 'Tungsten Carbide Insert'],
-        ['titanium_thermal_plate', 'Titanium Thermal Plate'],
-        ['fissile_salt_blend', 'Fissile Salt Blend'],
-        ['soulstone_carbon_matrix', 'Soulstone Carbon Matrix'],
-        ['redbed_signal_salt', 'Redbed Signal Salt'],
-        ['lazurite_logic_pigment', 'Lazurite Logic Pigment'],
-        ['phosphate_flux', 'Phosphate Flux'],
-        ['platinum_group_residue', 'Platinum Group Residue'],
+    var processingMedia = [
         ['andesite_grinding_ball', 'Andesite Grinding Ball'],
         ['iron_grinding_ball', 'Iron Grinding Ball'],
         ['brass_grinding_ball', 'Brass Grinding Ball'],
@@ -80,8 +58,8 @@ StartupEvents.registry('item', function (event) {
         ['fluix_grinding_ball', 'Fluix Grinding Ball']
     ]
 
-    for (var o = 0; o < overhaulIntermediates.length; o++) {
-        event.create(overhaulIntermediates[o][0]).displayName(overhaulIntermediates[o][1])
+    for (var p = 0; p < processingMedia.length; p++) {
+        event.create(processingMedia[p][0]).displayName(processingMedia[p][1])
     }
 
     var magicCuttingFluids = [

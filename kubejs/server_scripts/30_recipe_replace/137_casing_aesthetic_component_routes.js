@@ -123,16 +123,6 @@ function btmAestheticMechanical(event, id, output, pattern, keys) {
     var inputs = []
     for (var key in keys) inputs.push(keys[key])
     if (!btmAestheticCanMake(output, inputs)) return
-    btmAestheticRemove(event, output)
-    var jsonKeys = {}
-    for (var keyId in keys) jsonKeys[keyId] = btmAestheticIngredient(keys[keyId])
-    event.custom({
-        type: 'create:mechanical_crafting',
-        acceptMirrored: true,
-        pattern: pattern,
-        key: jsonKeys,
-        result: { item: output }
-    }).id('kubejs:casing_aesthetic/mechanical_crafting/' + id)
 }
 
 ServerEvents.recipes(function (event) {

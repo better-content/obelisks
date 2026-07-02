@@ -2,6 +2,7 @@
 // materials. These are not free bypasses: slates and LP replace automation.
 
 function btmBmManualAlchemy(event, id, inputs, output, syphon, ticks, tier) {
+    if (!output || !output.item || !Item.exists(output.item)) return
     event.custom({
         type: 'bloodmagic:alchemytable',
         input: inputs,

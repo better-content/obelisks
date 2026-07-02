@@ -52,46 +52,29 @@ ServerEvents.recipes(function (event) {
         ]
     }).id('kubejs:create/pressing/pneumaticcraft/compressed_stone')
 
-    event.remove({ output: 'compressedcreativity:rotational_compressor' })
     for (var c = 0; c < retiredCompressors.length; c++) {
         event.remove({ output: retiredCompressors[c] })
     }
     event.remove({ output: 'pneumaticcraft:jet_boots_upgrade_4' })
     event.remove({ output: 'pneumaticcraft:jet_boots_upgrade_5' })
 
-    event.custom({
-        type: 'create:mechanical_crafting',
-        acceptMirrored: false,
-        pattern: [
-            'PTP',
-            'PCP',
-            'SAS'
-        ],
-        key: {
-            P: { item: 'pneumaticcraft:pressure_tube' },
-            T: { item: 'pneumaticcraft:turbine_blade' },
-            C: { item: 'kubejs:rotational_compressor_core' },
-            S: { item: 'kubejs:pressure_seal' },
-            A: { item: 'kubejs:airtight_machine_casing' }
-        },
-        result: { item: 'compressedcreativity:rotational_compressor' }
-    }).id('kubejs:create/mechanical_crafting/compressedcreativity/rotational_compressor')
-
-    event.remove({ id: 'pneumaticcraft:assembly/unassembled_pcb' })
-    event.remove({ output: 'pneumaticcraft:unassembled_pcb' })
-    event.custom({
-        type: 'pneumaticcraft:pressure_chamber',
-        inputs: [
-            { item: 'pneumaticcraft:empty_pcb' },
-            { item: 'pneumaticcraft:capacitor' },
-            { item: 'pneumaticcraft:transistor' },
-            { item: 'morered:diode' },
-            { item: 'morered:red_alloy_wire' },
-            { item: 'chemlib:copper_chloride' },
-            { item: 'chemlib:silicon_dioxide' },
-            { item: 'kubejs:pressure_seal' }
-        ],
-        pressure: 2.0,
-        results: [{ item: 'pneumaticcraft:unassembled_pcb' }]
-    }).id('kubejs:pneumaticcraft/pressure_chamber/unassembled_pcb_with_primitive_logic')
+    if (Item.exists('kubejs:pressure_seal')) {
+        event.remove({ id: 'pneumaticcraft:assembly/unassembled_pcb' })
+        event.remove({ output: 'pneumaticcraft:unassembled_pcb' })
+        event.custom({
+            type: 'pneumaticcraft:pressure_chamber',
+            inputs: [
+                { item: 'pneumaticcraft:empty_pcb' },
+                { item: 'pneumaticcraft:capacitor' },
+                { item: 'pneumaticcraft:transistor' },
+                { item: 'morered:diode' },
+                { item: 'morered:red_alloy_wire' },
+                { item: 'chemlib:copper_chloride' },
+                { item: 'chemlib:silicon_dioxide' },
+                { item: 'kubejs:pressure_seal' }
+            ],
+            pressure: 2.0,
+            results: [{ item: 'pneumaticcraft:unassembled_pcb' }]
+        }).id('kubejs:pneumaticcraft/pressure_chamber/unassembled_pcb_with_primitive_logic')
+    }
 })

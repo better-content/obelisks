@@ -108,30 +108,6 @@ ServerEvents.recipes(function (event) {
         'powergrid:varistor'
     ], ['minecraft:redstone', '#forge:dusts/redstone'], BTM_PLATE.redstoneRelay)
 
-    // Do not rewrite the Power Grid circuit's own redstone into itself. The
-    // circuit should close the printed/etched board chain, then become the
-    // replacement part for later Power Grid electronics.
-    event.remove({ id: 'powergrid:mechanical_crafting/integrated_circuit' })
-    event.custom({
-        type: 'create:mechanical_crafting',
-        acceptMirrored: true,
-        pattern: [
-            '  L  ',
-            'GDQDG',
-            'WCFCW'
-        ],
-        key: {
-            L: { tag: 'forge:gems/lapis' },
-            G: { tag: 'forge:nuggets/gold' },
-            Q: { item: 'create:rose_quartz' },
-            D: { item: 'morered:diode' },
-            W: { item: 'morered:red_alloy_wire' },
-            C: { item: 'powergrid:incomplete_circuit' },
-            F: { tag: 'forge:plates/copper' }
-        },
-        result: { item: 'powergrid:integrated_circuit' }
-    }).id('kubejs:powergrid/mechanical_crafting/integrated_circuit_nonrecursive')
-
     // OC2R is intersite communication authority. Basic boards and cases use plates;
     // redstone-bearing electronics use Power Grid output.
     var oc2rIronHardware = [

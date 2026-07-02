@@ -750,7 +750,7 @@ fun validatePrimitiveMiningRegressionContracts() = validateByNodeParity("validat
 fun validateVanillishExpertRecipePass() = validateSimpleRecipePass(
     "kubejs/server_scripts/30_recipe_replace/145_vanillish_recipe_expert_pass.js",
     listOf("event.shaped(", "event.shapeless(", "event.smelting(", "event.blasting("),
-    listOf("create:mechanical_crafting","create:deploying","create:compacting","minecraft:piston","minecraft:hopper","minecraft:observer","minecraft:rail","minecraft:minecart","createbigcannons:cannon_builder","immersive_aircraft:engine","everythingcopper:copper_hopper","chemlibDustIngots","btmVanRemoveCooking(event, 'minecraft:iron_ingot')","ae2:silicon"),
+    listOf("create:deploying","create:compacting","minecraft:piston","minecraft:hopper","minecraft:observer","minecraft:rail","minecraft:minecart","createbigcannons:cannon_builder","immersive_aircraft:engine","everythingcopper:copper_hopper","chemlibDustIngots","btmVanRemoveCooking(event, 'minecraft:iron_ingot')","ae2:silicon"),
     listOf("bloodmagic:alchemytable","minecraft:brewing_stand","minecraft:enchanting_table","minecraft:beacon","bloodmagic:ingot_hellforged","ars_nouveau:scribes_table","ars_nouveau:imbuement_chamber","ars_nouveau:enchanting_apparatus","bloodmagic:reinforcedslate","bloodmagic:infusedslate","bloodmagic:etherealslate"),
 )
 
@@ -760,7 +760,7 @@ fun validateSimpleRecipePass(file: String, forbiddenConstructors: List<String>, 
     val forbidden = forbiddenConstructors.filter(text::contains)
     if (forbidden.isEmpty()) ok("vanillish recipe pass does not add grid or furnace recipes") else fail("vanillish recipe pass does not add grid or furnace recipes", forbidden.joinToString(", "))
     val missingCreate = createMarkers.filterNot(text::contains)
-    if (missingCreate.isEmpty()) ok("vanillish non-magic shortcuts are routed to Create surfaces", "${createMarkers.size} markers") else fail("vanillish non-magic shortcuts are routed to Create surfaces", missingCreate.joinToString(", "))
+    if (missingCreate.isEmpty()) ok("vanillish non-magic shortcuts retain authored non-grid Create surfaces where intended", "${createMarkers.size} markers") else fail("vanillish non-magic shortcuts retain authored non-grid Create surfaces where intended", missingCreate.joinToString(", "))
     val missingBlood = bloodMarkers.filterNot(text::contains)
     if (missingBlood.isEmpty()) ok("vanillish magic shortcuts are routed to Blood Magic alchemy", "${bloodMarkers.size} markers") else fail("vanillish magic shortcuts are routed to Blood Magic alchemy", missingBlood.joinToString(", "))
 }

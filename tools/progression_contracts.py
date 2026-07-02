@@ -694,7 +694,7 @@ def infer_tech_parent(item: str):
         return "brass", f"namespace:{item_ns}"
     if item_ns in {"pneumaticcraft", "heatsync", "latent_chemlib", "forgeendertech", "adpother", "pollution_of_the_realms", "pollution-of-the-realms"}:
         return "airtight", f"namespace:{item_ns}"
-    if item_ns in {"powergrid", "power_grid", "oc2r", "oc2rwireless", "computerbridge"}:
+    if item_ns in {"powergrid", "power_grid", "oc2r", "oc2rwireless", "computerbridge", "k_turrets"}:
         return "electrical", f"namespace:{item_ns}"
     if item_ns in {"creatingspace", "create_jetpack", "create_air"}:
         return "space", f"namespace:{item_ns}"

@@ -3,6 +3,118 @@
   "description": "Authoritative Blood-parented magic progression for magic craftables and route surfaces.",
   "entries": [
     {
+      "id": "crafted:kubejs:replace_input_gate:ars_additions:advanced_dominion_wand",
+      "kind": "crafted",
+      "mod": "ars_additions",
+      "output": "ars_additions:advanced_dominion_wand",
+      "authority": "namespace:ars_additions",
+      "surface_type": "kubejs:replace_input_gate",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:66"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "light",
+      "weight_class": "utility_support"
+    },
+    {
+      "id": "crafted:kubejs:replace_input_gate:ars_caelum:ritual_conjure_island_geode",
+      "kind": "crafted",
+      "mod": "ars_caelum",
+      "output": "ars_caelum:ritual_conjure_island_geode",
+      "authority": "namespace:ars_caelum",
+      "surface_type": "kubejs:replace_input_gate",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:86"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "light",
+      "weight_class": "utility_support"
+    },
+    {
+      "id": "crafted:kubejs:replace_input_gate:ars_caelum:ritual_sedimentation",
+      "kind": "crafted",
+      "mod": "ars_caelum",
+      "output": "ars_caelum:ritual_sedimentation",
+      "authority": "namespace:ars_caelum",
+      "surface_type": "kubejs:replace_input_gate",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:87"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "light",
+      "weight_class": "utility_support"
+    },
+    {
+      "id": "crafted:kubejs:replace_input_gate:ars_creo:starbuncle_wheel",
+      "kind": "crafted",
+      "mod": "ars_creo",
+      "output": "ars_creo:starbuncle_wheel",
+      "authority": "namespace:ars_creo",
+      "surface_type": "kubejs:replace_input_gate",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:84"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "light",
+      "weight_class": "utility_support"
+    },
+    {
+      "id": "crafted:kubejs:replace_input_gate:ars_elemental:imbuement_lesser_air_focus",
+      "kind": "crafted",
+      "mod": "ars_elemental",
+      "output": "ars_elemental:imbuement_lesser_air_focus",
+      "authority": "namespace:ars_elemental",
+      "surface_type": "kubejs:replace_input_gate",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:68"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "light",
+      "weight_class": "utility_support"
+    },
+    {
+      "id": "crafted:kubejs:replace_input_gate:ars_elemental:imbuement_lesser_earth_focus",
+      "kind": "crafted",
+      "mod": "ars_elemental",
+      "output": "ars_elemental:imbuement_lesser_earth_focus",
+      "authority": "namespace:ars_elemental",
+      "surface_type": "kubejs:replace_input_gate",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:69"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "light",
+      "weight_class": "utility_support"
+    },
+    {
+      "id": "crafted:kubejs:replace_input_gate:ars_elemental:imbuement_lesser_fire_focus",
+      "kind": "crafted",
+      "mod": "ars_elemental",
+      "output": "ars_elemental:imbuement_lesser_fire_focus",
+      "authority": "namespace:ars_elemental",
+      "surface_type": "kubejs:replace_input_gate",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:70"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "light",
+      "weight_class": "utility_support"
+    },
+    {
+      "id": "crafted:kubejs:replace_input_gate:ars_elemental:imbuement_lesser_water_focus",
+      "kind": "crafted",
+      "mod": "ars_elemental",
+      "output": "ars_elemental:imbuement_lesser_water_focus",
+      "authority": "namespace:ars_elemental",
+      "surface_type": "kubejs:replace_input_gate",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:71"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "light",
+      "weight_class": "utility_support"
+    },
+    {
       "id": "machine_output:ars_nouveau:imbuement:ars_nouveau:abjuration_essence",
       "kind": "machine_output",
       "mod": "ars_nouveau",
@@ -186,18 +298,18 @@
       "weight_class": "utility_support"
     },
     {
-      "id": "crafted:event.custom(kubejs):ars_nouveau:apprentice_spell_book_upgrade",
+      "id": "crafted:kubejs:replace_input_gate:ars_nouveau:apprentice_spell_book_upgrade",
       "kind": "crafted",
       "mod": "ars_nouveau",
       "output": "ars_nouveau:apprentice_spell_book_upgrade",
+      "authority": "exact:slate_t4_demonic/light",
+      "surface_type": "kubejs:replace_input_gate",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:65"
+      ],
       "blood_era": "slate_t4_demonic",
       "branch": "light",
-      "weight_class": "structural_progression",
-      "authority": "synthetic_exact:slate_t4_demonic/light",
-      "surface_type": "event.custom(kubejs)",
-      "evidence": [
-        "kubejs/config/player_progression_regression.json"
-      ]
+      "weight_class": "structural_progression"
     },
     {
       "id": "crafted:minecraft:crafting_shaped:ars_nouveau:arcane_core",
@@ -393,6 +505,20 @@
       ],
       "blood_era": "slate_t4_demonic",
       "branch": "light",
+      "weight_class": "decor_theme"
+    },
+    {
+      "id": "crafted:kubejs:replace_input_gate:ars_nouveau:archmage_spell_book_upgrade",
+      "kind": "crafted",
+      "mod": "ars_nouveau",
+      "output": "ars_nouveau:archmage_spell_book_upgrade",
+      "authority": "exact:slate_t5_ethereal/hybrid",
+      "surface_type": "kubejs:replace_input_gate",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:100"
+      ],
+      "blood_era": "slate_t5_ethereal",
+      "branch": "hybrid",
       "weight_class": "decor_theme"
     },
     {
@@ -1114,6 +1240,20 @@
       "blood_era": "slate_t4_demonic",
       "branch": "light",
       "weight_class": "utility_support"
+    },
+    {
+      "id": "crafted:kubejs:replace_input_gate:ars_nouveau:enchanting_apparatus",
+      "kind": "crafted",
+      "mod": "ars_nouveau",
+      "output": "ars_nouveau:enchanting_apparatus",
+      "authority": "exact:slate_t4_demonic/light",
+      "surface_type": "kubejs:replace_input_gate",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:64"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "light",
+      "weight_class": "structural_progression"
     },
     {
       "id": "crafted:minecraft:crafting_shaped:ars_nouveau:enchanting_apparatus",
@@ -2670,6 +2810,20 @@
       "weight_class": "utility_support"
     },
     {
+      "id": "crafted:kubejs:replace_input_gate:ars_nouveau:imbuement_chamber",
+      "kind": "crafted",
+      "mod": "ars_nouveau",
+      "output": "ars_nouveau:imbuement_chamber",
+      "authority": "exact:slate_t4_demonic/light",
+      "surface_type": "kubejs:replace_input_gate",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:62"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
       "id": "crafted:minecraft:crafting_shaped:ars_nouveau:imbuement_chamber",
       "kind": "crafted",
       "mod": "ars_nouveau",
@@ -2889,6 +3043,20 @@
       "surface_type": "ars_nouveau:dye",
       "evidence": [
         "ars_nouveau:dye_novice_spell_book"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:replace_input_gate:ars_nouveau:novice_spell_book",
+      "kind": "crafted",
+      "mod": "ars_nouveau",
+      "output": "ars_nouveau:novice_spell_book",
+      "authority": "exact:slate_t4_demonic/light",
+      "surface_type": "kubejs:replace_input_gate",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:63"
       ],
       "blood_era": "slate_t4_demonic",
       "branch": "light",
@@ -4693,6 +4861,48 @@
       "weight_class": "structural_progression"
     },
     {
+      "id": "machine_output:event.custom(kubejs):ars_nouveau:source_gem",
+      "kind": "machine_output",
+      "mod": "ars_nouveau",
+      "output": "ars_nouveau:source_gem",
+      "authority": "exact:slate_t4_demonic/light",
+      "surface_type": "event.custom(kubejs)",
+      "evidence": [
+        "kubejs/server_scripts/40_recipe_add/63_chemlib_full_integration_routes.js:260"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:ars_nouveau:source_gem",
+      "kind": "crafted",
+      "mod": "ars_nouveau",
+      "output": "ars_nouveau:source_gem",
+      "authority": "exact:slate_t4_demonic/light",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/40_recipe_add/62_chemical_electronics_magic_growth_routes.js:240"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:replace_input_gate:ars_nouveau:source_gem",
+      "kind": "crafted",
+      "mod": "ars_nouveau",
+      "output": "ars_nouveau:source_gem",
+      "authority": "exact:slate_t4_demonic/light",
+      "surface_type": "kubejs:replace_input_gate",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:60"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
       "id": "crafted:minecraft:crafting_shapeless:ars_nouveau:source_gem",
       "kind": "crafted",
       "mod": "ars_nouveau",
@@ -4715,6 +4925,34 @@
       "surface_type": "ars_nouveau:imbuement",
       "evidence": [
         "ars_nouveau:imbuement_amethyst_block"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "machine_output:event.custom(kubejs):ars_nouveau:source_gem_block",
+      "kind": "machine_output",
+      "mod": "ars_nouveau",
+      "output": "ars_nouveau:source_gem_block",
+      "authority": "exact:slate_t4_demonic/light",
+      "surface_type": "event.custom(kubejs)",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:61"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:replace_input_gate:ars_nouveau:source_gem_block",
+      "kind": "crafted",
+      "mod": "ars_nouveau",
+      "output": "ars_nouveau:source_gem_block",
+      "authority": "exact:slate_t4_demonic/light",
+      "surface_type": "kubejs:replace_input_gate",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:61"
       ],
       "blood_era": "slate_t4_demonic",
       "branch": "light",
@@ -5958,13 +6196,41 @@
       "weight_class": "utility_support"
     },
     {
-      "id": "crafted:event.custom(kubejs):arseng:me_source_jar",
+      "id": "crafted:kubejs:replace_input_gate:ars_technica:source_engine",
+      "kind": "crafted",
+      "mod": "ars_technica",
+      "output": "ars_technica:source_engine",
+      "authority": "namespace:ars_technica",
+      "surface_type": "kubejs:replace_input_gate",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:85"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:replace_input_gate:arseng:me_source_jar",
       "kind": "crafted",
       "mod": "arseng",
       "output": "arseng:me_source_jar",
+      "authority": "exact:slate_t5_ethereal/hybrid",
+      "surface_type": "kubejs:replace_input_gate",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:97"
+      ],
       "blood_era": "slate_t5_ethereal",
       "branch": "hybrid",
-      "weight_class": "structural_progression",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:event.custom(kubejs):arseng:portable_source_cell_256k",
+      "kind": "crafted",
+      "mod": "arseng",
+      "output": "arseng:portable_source_cell_256k",
+      "blood_era": "slate_t5_ethereal",
+      "branch": "hybrid",
+      "weight_class": "decor_theme",
       "authority": "synthetic_exact:slate_t5_ethereal/hybrid",
       "surface_type": "event.custom(kubejs)",
       "evidence": [
@@ -5972,32 +6238,46 @@
       ]
     },
     {
-      "id": "crafted:event.custom(kubejs):arseng:source_acceptor",
+      "id": "crafted:event.custom(kubejs):arseng:portable_source_cell_64k",
+      "kind": "crafted",
+      "mod": "arseng",
+      "output": "arseng:portable_source_cell_64k",
+      "blood_era": "slate_t5_ethereal",
+      "branch": "hybrid",
+      "weight_class": "decor_theme",
+      "authority": "synthetic_exact:slate_t5_ethereal/hybrid",
+      "surface_type": "event.custom(kubejs)",
+      "evidence": [
+        "kubejs/config/player_progression_regression.json"
+      ]
+    },
+    {
+      "id": "crafted:kubejs:replace_input_gate:arseng:source_acceptor",
       "kind": "crafted",
       "mod": "arseng",
       "output": "arseng:source_acceptor",
+      "authority": "exact:slate_t5_ethereal/hybrid",
+      "surface_type": "kubejs:replace_input_gate",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:98"
+      ],
       "blood_era": "slate_t5_ethereal",
       "branch": "hybrid",
-      "weight_class": "structural_progression",
-      "authority": "synthetic_exact:slate_t5_ethereal/hybrid",
-      "surface_type": "event.custom(kubejs)",
-      "evidence": [
-        "kubejs/config/player_progression_regression.json"
-      ]
+      "weight_class": "structural_progression"
     },
     {
-      "id": "crafted:event.custom(kubejs):arseng:source_cell_housing",
+      "id": "crafted:kubejs:replace_input_gate:arseng:source_cell_housing",
       "kind": "crafted",
       "mod": "arseng",
       "output": "arseng:source_cell_housing",
+      "authority": "exact:slate_t5_ethereal/hybrid",
+      "surface_type": "kubejs:replace_input_gate",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:99"
+      ],
       "blood_era": "slate_t5_ethereal",
       "branch": "hybrid",
-      "weight_class": "structural_progression",
-      "authority": "synthetic_exact:slate_t5_ethereal/hybrid",
-      "surface_type": "event.custom(kubejs)",
-      "evidence": [
-        "kubejs/config/player_progression_regression.json"
-      ]
+      "weight_class": "structural_progression"
     },
     {
       "id": "machine_output:bloodmagic:arc:bloodmagic:accelerationrune",
@@ -6448,6 +6728,20 @@
       "surface_type": "bloodmagic:altar",
       "evidence": [
         "bloodmagic:altar/slate"
+      ],
+      "blood_era": "blood_root",
+      "branch": "blood_root",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:bloodmagic:blankslate",
+      "kind": "crafted",
+      "mod": "bloodmagic",
+      "output": "bloodmagic:blankslate",
+      "authority": "exact:blood_root/blood_root",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/40_recipe_add/62_chemical_electronics_magic_growth_routes.js:183"
       ],
       "blood_era": "blood_root",
       "branch": "blood_root",
@@ -6934,6 +7228,20 @@
       "surface_type": "bloodmagic:altar",
       "evidence": [
         "bloodmagic:altar/demonicslate"
+      ],
+      "blood_era": "blood_root",
+      "branch": "blood_root",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:bloodmagic:demonslate",
+      "kind": "crafted",
+      "mod": "bloodmagic",
+      "output": "bloodmagic:demonslate",
+      "authority": "exact:blood_root/blood_root",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/40_recipe_add/62_chemical_electronics_magic_growth_routes.js:198"
       ],
       "blood_era": "blood_root",
       "branch": "blood_root",
@@ -10501,6 +10809,20 @@
       "weight_class": "structural_progression"
     },
     {
+      "id": "crafted:kubejs:authored_recipe:bloodmagic:infusedslate",
+      "kind": "crafted",
+      "mod": "bloodmagic",
+      "output": "bloodmagic:infusedslate",
+      "authority": "exact:blood_root/blood_root",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/40_recipe_add/62_chemical_electronics_magic_growth_routes.js:193"
+      ],
+      "blood_era": "blood_root",
+      "branch": "blood_root",
+      "weight_class": "structural_progression"
+    },
+    {
       "id": "crafted:minecraft:blasting:bloodmagic:ingot_hellforged",
       "kind": "crafted",
       "mod": "bloodmagic",
@@ -11661,6 +11983,20 @@
       "weight_class": "structural_progression"
     },
     {
+      "id": "crafted:kubejs:authored_recipe:bloodmagic:reinforcedslate",
+      "kind": "crafted",
+      "mod": "bloodmagic",
+      "output": "bloodmagic:reinforcedslate",
+      "authority": "exact:blood_root/blood_root",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/40_recipe_add/62_chemical_electronics_magic_growth_routes.js:188"
+      ],
+      "blood_era": "blood_root",
+      "branch": "blood_root",
+      "weight_class": "structural_progression"
+    },
+    {
       "id": "crafted:minecraft:crafting_shapeless:bloodmagic:reinforcedteleposerfocus",
       "kind": "crafted",
       "mod": "bloodmagic",
@@ -12444,6 +12780,20 @@
       "weight_class": "utility_support"
     },
     {
+      "id": "machine_output:event.custom(kubejs):bloodmagic:teleposer",
+      "kind": "machine_output",
+      "mod": "bloodmagic",
+      "output": "bloodmagic:teleposer",
+      "authority": "namespace:bloodmagic",
+      "surface_type": "event.custom(kubejs)",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/115_material_economy_recipe_pass.js:206"
+      ],
+      "blood_era": "blood_root",
+      "branch": "blood_root",
+      "weight_class": "utility_support"
+    },
+    {
       "id": "machine_output:bloodmagic:soulforge:bloodmagic:throwing_dagger",
       "kind": "machine_output",
       "mod": "bloodmagic",
@@ -12846,52 +13196,178 @@
       "weight_class": "decor_theme"
     },
     {
-      "id": "crafted:event.custom(kubejs):botania:apothecary_default",
+      "id": "machine_output:event.custom(kubejs):botania:apothecary_default",
+      "kind": "machine_output",
+      "mod": "botania",
+      "output": "botania:apothecary_default",
+      "authority": "exact:slate_t2_reinforced/light",
+      "surface_type": "event.custom(kubejs)",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:24"
+      ],
+      "blood_era": "slate_t2_reinforced",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:replace_input_gate:botania:apothecary_default",
       "kind": "crafted",
       "mod": "botania",
       "output": "botania:apothecary_default",
+      "authority": "exact:slate_t2_reinforced/light",
+      "surface_type": "kubejs:replace_input_gate",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:24"
+      ],
       "blood_era": "slate_t2_reinforced",
       "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:event.custom(kubejs):botania:avatar",
+      "kind": "crafted",
+      "mod": "botania",
+      "output": "botania:avatar",
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
       "weight_class": "structural_progression",
-      "authority": "synthetic_exact:slate_t2_reinforced/light",
+      "authority": "synthetic_exact:slate_t3_infused/light",
       "surface_type": "event.custom(kubejs)",
       "evidence": [
         "kubejs/config/player_progression_regression.json"
       ]
     },
     {
-      "id": "crafted:event.custom(kubejs):botania:mana_spreader",
+      "id": "crafted:event.custom(kubejs):botania:cell_block",
+      "kind": "crafted",
+      "mod": "botania",
+      "output": "botania:cell_block",
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "structural_progression",
+      "authority": "synthetic_exact:slate_t3_infused/light",
+      "surface_type": "event.custom(kubejs)",
+      "evidence": [
+        "kubejs/config/player_progression_regression.json"
+      ]
+    },
+    {
+      "id": "crafted:event.custom(kubejs):botania:fel_pumpkin",
+      "kind": "crafted",
+      "mod": "botania",
+      "output": "botania:fel_pumpkin",
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "structural_progression",
+      "authority": "synthetic_exact:slate_t3_infused/light",
+      "surface_type": "event.custom(kubejs)",
+      "evidence": [
+        "kubejs/config/player_progression_regression.json"
+      ]
+    },
+    {
+      "id": "machine_output:event.custom(kubejs):botania:mana_spreader",
+      "kind": "machine_output",
+      "mod": "botania",
+      "output": "botania:mana_spreader",
+      "authority": "exact:slate_t2_reinforced/light",
+      "surface_type": "event.custom(kubejs)",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:23"
+      ],
+      "blood_era": "slate_t2_reinforced",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:replace_input_gate:botania:mana_spreader",
       "kind": "crafted",
       "mod": "botania",
       "output": "botania:mana_spreader",
+      "authority": "exact:slate_t2_reinforced/light",
+      "surface_type": "kubejs:replace_input_gate",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:23"
+      ],
       "blood_era": "slate_t2_reinforced",
       "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:event.custom(kubejs):botania:pump",
+      "kind": "crafted",
+      "mod": "botania",
+      "output": "botania:pump",
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
       "weight_class": "structural_progression",
-      "authority": "synthetic_exact:slate_t2_reinforced/light",
+      "authority": "synthetic_exact:slate_t3_infused/light",
       "surface_type": "event.custom(kubejs)",
       "evidence": [
         "kubejs/config/player_progression_regression.json"
       ]
     },
     {
-      "id": "crafted:event.custom(kubejs):botania:pure_daisy",
+      "id": "machine_output:event.custom(kubejs):botania:pure_daisy",
+      "kind": "machine_output",
+      "mod": "botania",
+      "output": "botania:pure_daisy",
+      "authority": "exact:slate_t2_reinforced/light",
+      "surface_type": "event.custom(kubejs)",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:25"
+      ],
+      "blood_era": "slate_t2_reinforced",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:replace_input_gate:botania:pure_daisy",
       "kind": "crafted",
       "mod": "botania",
       "output": "botania:pure_daisy",
+      "authority": "exact:slate_t2_reinforced/light",
+      "surface_type": "kubejs:replace_input_gate",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:25"
+      ],
       "blood_era": "slate_t2_reinforced",
       "branch": "light",
-      "weight_class": "structural_progression",
-      "authority": "synthetic_exact:slate_t2_reinforced/light",
-      "surface_type": "event.custom(kubejs)",
-      "evidence": [
-        "kubejs/config/player_progression_regression.json"
-      ]
+      "weight_class": "structural_progression"
     },
     {
-      "id": "crafted:event.custom(kubejs):botania:terrasteel_ingot",
+      "id": "crafted:kubejs:replace_input_gate:botania:runic_altar",
       "kind": "crafted",
       "mod": "botania",
-      "output": "botania:terrasteel_ingot",
+      "output": "botania:runic_altar",
+      "authority": "exact:slate_t3_infused/light",
+      "surface_type": "kubejs:replace_input_gate",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:30"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:replace_input_gate:botania:runic_altar_alt",
+      "kind": "crafted",
+      "mod": "botania",
+      "output": "botania:runic_altar_alt",
+      "authority": "namespace:botania",
+      "surface_type": "kubejs:replace_input_gate",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:31"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:event.custom(kubejs):botania:terra_plate",
+      "kind": "crafted",
+      "mod": "botania",
+      "output": "botania:terra_plate",
       "blood_era": "slate_t4_demonic",
       "branch": "light",
       "weight_class": "structural_progression",
@@ -12902,80 +13378,108 @@
       ]
     },
     {
-      "id": "crafted:event.custom(kubejs):eidolon:crucible",
+      "id": "crafted:kubejs:replace_input_gate:botania:terrasteel_ingot",
+      "kind": "crafted",
+      "mod": "botania",
+      "output": "botania:terrasteel_ingot",
+      "authority": "exact:slate_t4_demonic/light",
+      "surface_type": "kubejs:replace_input_gate",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:78"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:replace_input_gate:eidolon:crucible",
       "kind": "crafted",
       "mod": "eidolon",
       "output": "eidolon:crucible",
+      "authority": "exact:slate_t3_infused/dark",
+      "surface_type": "kubejs:replace_input_gate",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:56"
+      ],
       "blood_era": "slate_t3_infused",
       "branch": "dark",
-      "weight_class": "structural_progression",
-      "authority": "synthetic_exact:slate_t3_infused/dark",
-      "surface_type": "event.custom(kubejs)",
-      "evidence": [
-        "kubejs/config/player_progression_regression.json"
-      ]
+      "weight_class": "structural_progression"
     },
     {
-      "id": "crafted:event.custom(kubejs):eidolon:soul_enchanter",
+      "id": "crafted:kubejs:replace_input_gate:eidolon:soul_enchanter",
       "kind": "crafted",
       "mod": "eidolon",
       "output": "eidolon:soul_enchanter",
+      "authority": "exact:slate_t3_infused/dark",
+      "surface_type": "kubejs:replace_input_gate",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:57"
+      ],
       "blood_era": "slate_t3_infused",
       "branch": "dark",
-      "weight_class": "structural_progression",
-      "authority": "synthetic_exact:slate_t3_infused/dark",
-      "surface_type": "event.custom(kubejs)",
-      "evidence": [
-        "kubejs/config/player_progression_regression.json"
-      ]
+      "weight_class": "structural_progression"
     },
     {
-      "id": "crafted:event.custom(kubejs):forbidden_arcanus:clibano_core",
+      "id": "crafted:kubejs:replace_input_gate:forbidden_arcanus:clibano_core",
       "kind": "crafted",
       "mod": "forbidden_arcanus",
       "output": "forbidden_arcanus:clibano_core",
+      "authority": "exact:slate_t4_demonic/dark",
+      "surface_type": "kubejs:replace_input_gate",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:80"
+      ],
       "blood_era": "slate_t4_demonic",
       "branch": "dark",
-      "weight_class": "structural_progression",
-      "authority": "synthetic_exact:slate_t4_demonic/dark",
-      "surface_type": "event.custom(kubejs)",
-      "evidence": [
-        "kubejs/config/player_progression_regression.json"
-      ]
+      "weight_class": "structural_progression"
     },
     {
-      "id": "crafted:event.custom(kubejs):forbidden_arcanus:deorum_ingot",
+      "id": "crafted:kubejs:replace_input_gate:forbidden_arcanus:deorum_ingot",
       "kind": "crafted",
       "mod": "forbidden_arcanus",
       "output": "forbidden_arcanus:deorum_ingot",
+      "authority": "exact:slate_t4_demonic/dark",
+      "surface_type": "kubejs:replace_input_gate",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:81"
+      ],
       "blood_era": "slate_t4_demonic",
       "branch": "dark",
-      "weight_class": "structural_progression",
-      "authority": "synthetic_exact:slate_t4_demonic/dark",
-      "surface_type": "event.custom(kubejs)",
-      "evidence": [
-        "kubejs/config/player_progression_regression.json"
-      ]
+      "weight_class": "structural_progression"
     },
     {
-      "id": "crafted:event.custom(kubejs):goety:cursed_cage",
+      "id": "crafted:kubejs:replace_input_gate:goety:cursed_cage",
       "kind": "crafted",
       "mod": "goety",
       "output": "goety:cursed_cage",
+      "authority": "exact:slate_t4_demonic/dark",
+      "surface_type": "kubejs:replace_input_gate",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:73"
+      ],
       "blood_era": "slate_t4_demonic",
       "branch": "dark",
-      "weight_class": "structural_progression",
-      "authority": "synthetic_exact:slate_t4_demonic/dark",
-      "surface_type": "event.custom(kubejs)",
-      "evidence": [
-        "kubejs/config/player_progression_regression.json"
-      ]
+      "weight_class": "structural_progression"
     },
     {
-      "id": "crafted:event.custom(kubejs):goety:dark_altar",
+      "id": "crafted:kubejs:replace_input_gate:goety:dark_altar",
       "kind": "crafted",
       "mod": "goety",
       "output": "goety:dark_altar",
+      "authority": "exact:slate_t4_demonic/dark",
+      "surface_type": "kubejs:replace_input_gate",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:74"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "dark",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:event.custom(kubejs):goety:empty_focus",
+      "kind": "crafted",
+      "mod": "goety",
+      "output": "goety:empty_focus",
       "blood_era": "slate_t4_demonic",
       "branch": "dark",
       "weight_class": "structural_progression",
@@ -12986,74 +13490,1138 @@
       ]
     },
     {
-      "id": "crafted:event.custom(kubejs):hexerei:mixing_cauldron",
+      "id": "crafted:event.custom(kubejs):goety:focus_bag",
+      "kind": "crafted",
+      "mod": "goety",
+      "output": "goety:focus_bag",
+      "blood_era": "slate_t4_demonic",
+      "branch": "dark",
+      "weight_class": "structural_progression",
+      "authority": "synthetic_exact:slate_t4_demonic/dark",
+      "surface_type": "event.custom(kubejs)",
+      "evidence": [
+        "kubejs/config/player_progression_regression.json"
+      ]
+    },
+    {
+      "id": "crafted:event.custom(kubejs):goety:focus_pack",
+      "kind": "crafted",
+      "mod": "goety",
+      "output": "goety:focus_pack",
+      "blood_era": "slate_t4_demonic",
+      "branch": "dark",
+      "weight_class": "structural_progression",
+      "authority": "synthetic_exact:slate_t4_demonic/dark",
+      "surface_type": "event.custom(kubejs)",
+      "evidence": [
+        "kubejs/config/player_progression_regression.json"
+      ]
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:hexerei:blood_bottle",
+      "kind": "crafted",
+      "mod": "hexerei",
+      "output": "hexerei:blood_bottle",
+      "authority": "namespace:hexerei",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/40_recipe_add/62_chemical_electronics_magic_growth_routes.js:229"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "dark",
+      "weight_class": "utility_support"
+    },
+    {
+      "id": "crafted:event.custom(kubejs):hexerei:book_of_shadows_altar",
+      "kind": "crafted",
+      "mod": "hexerei",
+      "output": "hexerei:book_of_shadows_altar",
+      "blood_era": "slate_t4_demonic",
+      "branch": "dark",
+      "weight_class": "structural_progression",
+      "authority": "synthetic_exact:slate_t4_demonic/dark",
+      "surface_type": "event.custom(kubejs)",
+      "evidence": [
+        "kubejs/config/player_progression_regression.json"
+      ]
+    },
+    {
+      "id": "crafted:kubejs:replace_input_gate:hexerei:mixing_cauldron",
       "kind": "crafted",
       "mod": "hexerei",
       "output": "hexerei:mixing_cauldron",
+      "authority": "exact:slate_t4_demonic/dark",
+      "surface_type": "kubejs:replace_input_gate",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:72"
+      ],
       "blood_era": "slate_t4_demonic",
       "branch": "dark",
-      "weight_class": "structural_progression",
-      "authority": "synthetic_exact:slate_t4_demonic/dark",
-      "surface_type": "event.custom(kubejs)",
-      "evidence": [
-        "kubejs/config/player_progression_regression.json"
-      ]
+      "weight_class": "structural_progression"
     },
     {
-      "id": "crafted:event.custom(kubejs):irons_spellbooks:arcane_ingot",
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:affinity_ring",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:affinity_ring",
+      "authority": "namespace:irons_spellbooks",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "utility_support"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:alchemist_cauldron",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:alchemist_cauldron",
+      "authority": "namespace:irons_spellbooks",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:amethyst_resonance_charm",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:amethyst_resonance_charm",
+      "authority": "namespace:irons_spellbooks",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "utility_support"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:arcane_anvil",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:arcane_anvil",
+      "authority": "exact:slate_t3_infused/dark",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "dark",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:arcane_ingot",
       "kind": "crafted",
       "mod": "irons_spellbooks",
       "output": "irons_spellbooks:arcane_ingot",
+      "authority": "exact:slate_t2_reinforced/light",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
       "blood_era": "slate_t2_reinforced",
       "branch": "light",
-      "weight_class": "structural_progression",
-      "authority": "synthetic_exact:slate_t2_reinforced/light",
-      "surface_type": "event.custom(kubejs)",
-      "evidence": [
-        "kubejs/config/player_progression_regression.json"
-      ]
+      "weight_class": "structural_progression"
     },
     {
-      "id": "crafted:event.custom(kubejs):irons_spellbooks:blank_rune",
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:arcane_rune",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:arcane_rune",
+      "authority": "exact:slate_t3_infused/light",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:artificer_cane",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:artificer_cane",
+      "authority": "exact:slate_t4_demonic/dark",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "dark",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:blank_rune",
       "kind": "crafted",
       "mod": "irons_spellbooks",
       "output": "irons_spellbooks:blank_rune",
+      "authority": "exact:slate_t2_reinforced/light",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
       "blood_era": "slate_t2_reinforced",
       "branch": "light",
-      "weight_class": "structural_progression",
-      "authority": "synthetic_exact:slate_t2_reinforced/light",
-      "surface_type": "event.custom(kubejs)",
-      "evidence": [
-        "kubejs/config/player_progression_regression.json"
-      ]
+      "weight_class": "structural_progression"
     },
     {
-      "id": "crafted:event.custom(kubejs):irons_spellbooks:magic_cloth",
+      "id": "machine_output:event.custom(kubejs):irons_spellbooks:blood_rune",
+      "kind": "machine_output",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:blood_rune",
+      "authority": "exact:slate_t3_infused/light",
+      "surface_type": "event.custom(kubejs)",
+      "evidence": [
+        "kubejs/server_scripts/40_recipe_add/62_chemical_electronics_magic_growth_routes.js:210"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:blood_rune",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:blood_rune",
+      "authority": "exact:slate_t3_infused/light",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:blood_upgrade_orb",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:blood_upgrade_orb",
+      "authority": "exact:slate_t4_demonic/dark",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "dark",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:cast_time_ring",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:cast_time_ring",
+      "authority": "namespace:irons_spellbooks",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "utility_support"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:concentration_amulet",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:concentration_amulet",
+      "authority": "namespace:irons_spellbooks",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "utility_support"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:conjurers_talisman",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:conjurers_talisman",
+      "authority": "namespace:irons_spellbooks",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "utility_support"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:cooldown_ring",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:cooldown_ring",
+      "authority": "namespace:irons_spellbooks",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "utility_support"
+    },
+    {
+      "id": "machine_output:event.custom(kubejs):irons_spellbooks:cooldown_rune",
+      "kind": "machine_output",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:cooldown_rune",
+      "authority": "exact:slate_t3_infused/light",
+      "surface_type": "event.custom(kubejs)",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js:183"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:cooldown_rune",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:cooldown_rune",
+      "authority": "exact:slate_t3_infused/light",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:cooldown_upgrade_orb",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:cooldown_upgrade_orb",
+      "authority": "exact:slate_t4_demonic/dark",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "dark",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:copper_spell_book",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:copper_spell_book",
+      "authority": "namespace:irons_spellbooks",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "utility_support"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:cursed_doll_spell_book",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:cursed_doll_spell_book",
+      "authority": "exact:slate_t4_demonic/dark",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "dark",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:diamond_spell_book",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:diamond_spell_book",
+      "authority": "exact:slate_t4_demonic/light",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:divine_pearl",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:divine_pearl",
+      "authority": "namespace:irons_spellbooks",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "utility_support"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:dragonskin_spell_book",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:dragonskin_spell_book",
+      "authority": "exact:slate_t5_ethereal/hybrid",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t5_ethereal",
+      "branch": "hybrid",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:druidic_spell_book",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:druidic_spell_book",
+      "authority": "exact:slate_t4_demonic/light",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:eldritch_manuscript",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:eldritch_manuscript",
+      "authority": "exact:slate_t5_ethereal/hybrid",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t5_ethereal",
+      "branch": "hybrid",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:emerald_stoneplate_ring",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:emerald_stoneplate_ring",
+      "authority": "namespace:irons_spellbooks",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "utility_support"
+    },
+    {
+      "id": "machine_output:event.custom(kubejs):irons_spellbooks:ender_rune",
+      "kind": "machine_output",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:ender_rune",
+      "authority": "exact:slate_t3_infused/light",
+      "surface_type": "event.custom(kubejs)",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js:184"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:ender_rune",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:ender_rune",
+      "authority": "exact:slate_t3_infused/light",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:ender_upgrade_orb",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:ender_upgrade_orb",
+      "authority": "exact:slate_t4_demonic/dark",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "dark",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:energized_core",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:energized_core",
+      "authority": "namespace:irons_spellbooks",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "utility_support"
+    },
+    {
+      "id": "machine_output:event.custom(kubejs):irons_spellbooks:evocation_rune",
+      "kind": "machine_output",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:evocation_rune",
+      "authority": "exact:slate_t3_infused/light",
+      "surface_type": "event.custom(kubejs)",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js:185"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:evocation_rune",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:evocation_rune",
+      "authority": "exact:slate_t3_infused/light",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:evocation_upgrade_orb",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:evocation_upgrade_orb",
+      "authority": "exact:slate_t4_demonic/dark",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "dark",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "machine_output:event.custom(kubejs):irons_spellbooks:fire_rune",
+      "kind": "machine_output",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:fire_rune",
+      "authority": "exact:slate_t3_infused/light",
+      "surface_type": "event.custom(kubejs)",
+      "evidence": [
+        "kubejs/server_scripts/40_recipe_add/62_chemical_electronics_magic_growth_routes.js:206"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:fire_rune",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:fire_rune",
+      "authority": "exact:slate_t3_infused/light",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:fire_upgrade_orb",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:fire_upgrade_orb",
+      "authority": "exact:slate_t4_demonic/dark",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "dark",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:fireward_ring",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:fireward_ring",
+      "authority": "namespace:irons_spellbooks",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "utility_support"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:frostward_ring",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:frostward_ring",
+      "authority": "namespace:irons_spellbooks",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "utility_support"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:gold_spell_book",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:gold_spell_book",
+      "authority": "exact:slate_t3_infused/light",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:graybeard_staff",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:graybeard_staff",
+      "authority": "namespace:irons_spellbooks",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "utility_support"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:greater_conjurers_talisman",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:greater_conjurers_talisman",
+      "authority": "namespace:irons_spellbooks",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "utility_support"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:heavy_chain_necklace",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:heavy_chain_necklace",
+      "authority": "namespace:irons_spellbooks",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "utility_support"
+    },
+    {
+      "id": "machine_output:event.custom(kubejs):irons_spellbooks:holy_rune",
+      "kind": "machine_output",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:holy_rune",
+      "authority": "exact:slate_t3_infused/light",
+      "surface_type": "event.custom(kubejs)",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js:187"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:holy_rune",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:holy_rune",
+      "authority": "exact:slate_t3_infused/light",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:holy_upgrade_orb",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:holy_upgrade_orb",
+      "authority": "exact:slate_t4_demonic/dark",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "dark",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "machine_output:event.custom(kubejs):irons_spellbooks:ice_rune",
+      "kind": "machine_output",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:ice_rune",
+      "authority": "exact:slate_t3_infused/light",
+      "surface_type": "event.custom(kubejs)",
+      "evidence": [
+        "kubejs/server_scripts/40_recipe_add/62_chemical_electronics_magic_growth_routes.js:207"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:ice_rune",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:ice_rune",
+      "authority": "exact:slate_t3_infused/light",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:ice_spell_book",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:ice_spell_book",
+      "authority": "exact:slate_t3_infused/light",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:ice_staff",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:ice_staff",
+      "authority": "namespace:irons_spellbooks",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "utility_support"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:ice_upgrade_orb",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:ice_upgrade_orb",
+      "authority": "exact:slate_t4_demonic/dark",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "dark",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:inscription_table",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:inscription_table",
+      "authority": "exact:slate_t3_infused/dark",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "dark",
+      "weight_class": "decor_theme"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:iron_spell_book",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:iron_spell_book",
+      "authority": "exact:slate_t3_infused/light",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:lesser_spell_slot_upgrade",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:lesser_spell_slot_upgrade",
+      "authority": "namespace:irons_spellbooks",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "utility_support"
+    },
+    {
+      "id": "machine_output:event.custom(kubejs):irons_spellbooks:lightning_rune",
+      "kind": "machine_output",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:lightning_rune",
+      "authority": "exact:slate_t3_infused/light",
+      "surface_type": "event.custom(kubejs)",
+      "evidence": [
+        "kubejs/server_scripts/40_recipe_add/62_chemical_electronics_magic_growth_routes.js:208"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:lightning_rune",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:lightning_rune",
+      "authority": "exact:slate_t3_infused/light",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:lightning_upgrade_orb",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:lightning_upgrade_orb",
+      "authority": "exact:slate_t4_demonic/dark",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "dark",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:magic_cloth",
       "kind": "crafted",
       "mod": "irons_spellbooks",
       "output": "irons_spellbooks:magic_cloth",
+      "authority": "exact:slate_t1_blank/dark",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
       "blood_era": "slate_t1_blank",
       "branch": "dark",
-      "weight_class": "structural_progression",
-      "authority": "synthetic_exact:slate_t1_blank/dark",
-      "surface_type": "event.custom(kubejs)",
-      "evidence": [
-        "kubejs/config/player_progression_regression.json"
-      ]
+      "weight_class": "structural_progression"
     },
     {
-      "id": "crafted:event.custom(kubejs):irons_spellbooks:scroll_forge",
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:mana_ring",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:mana_ring",
+      "authority": "namespace:irons_spellbooks",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "utility_support"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:mana_upgrade_orb",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:mana_upgrade_orb",
+      "authority": "exact:slate_t4_demonic/dark",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js:396"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "dark",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:mithril_weave",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:mithril_weave",
+      "authority": "exact:slate_t4_demonic/dark",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "dark",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "machine_output:event.custom(kubejs):irons_spellbooks:nature_rune",
+      "kind": "machine_output",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:nature_rune",
+      "authority": "exact:slate_t3_infused/light",
+      "surface_type": "event.custom(kubejs)",
+      "evidence": [
+        "kubejs/server_scripts/40_recipe_add/62_chemical_electronics_magic_growth_routes.js:211"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:nature_rune",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:nature_rune",
+      "authority": "exact:slate_t3_infused/light",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:nature_upgrade_orb",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:nature_upgrade_orb",
+      "authority": "exact:slate_t4_demonic/dark",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "dark",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:netherite_spell_book",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:netherite_spell_book",
+      "authority": "exact:slate_t5_ethereal/hybrid",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t5_ethereal",
+      "branch": "hybrid",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:poisonward_ring",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:poisonward_ring",
+      "authority": "namespace:irons_spellbooks",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "utility_support"
+    },
+    {
+      "id": "machine_output:event.custom(kubejs):irons_spellbooks:protection_rune",
+      "kind": "machine_output",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:protection_rune",
+      "authority": "exact:slate_t3_infused/light",
+      "surface_type": "event.custom(kubejs)",
+      "evidence": [
+        "kubejs/server_scripts/40_recipe_add/62_chemical_electronics_magic_growth_routes.js:209"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:protection_rune",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:protection_rune",
+      "authority": "exact:slate_t3_infused/light",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:protection_upgrade_orb",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:protection_upgrade_orb",
+      "authority": "exact:slate_t4_demonic/dark",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "dark",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:pyrium_staff",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:pyrium_staff",
+      "authority": "exact:slate_t4_demonic/dark",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "dark",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:scroll_forge",
       "kind": "crafted",
       "mod": "irons_spellbooks",
       "output": "irons_spellbooks:scroll_forge",
+      "authority": "exact:slate_t2_reinforced/light",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
       "blood_era": "slate_t2_reinforced",
       "branch": "light",
-      "weight_class": "structural_progression",
-      "authority": "synthetic_exact:slate_t2_reinforced/light",
-      "surface_type": "event.custom(kubejs)",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:replace_input_gate:irons_spellbooks:scroll_forge",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:scroll_forge",
+      "authority": "exact:slate_t2_reinforced/light",
+      "surface_type": "kubejs:replace_input_gate",
       "evidence": [
-        "kubejs/config/player_progression_regression.json"
-      ]
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:27"
+      ],
+      "blood_era": "slate_t2_reinforced",
+      "branch": "light",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:shriving_stone",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:shriving_stone",
+      "authority": "namespace:irons_spellbooks",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "utility_support"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:spellbreaker",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:spellbreaker",
+      "authority": "exact:slate_t4_demonic/dark",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "dark",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:twilight_gale",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:twilight_gale",
+      "authority": "exact:slate_t4_demonic/dark",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "dark",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:upgrade_orb",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:upgrade_orb",
+      "authority": "exact:slate_t3_infused/dark",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "dark",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:irons_spellbooks:visibility_ring",
+      "kind": "crafted",
+      "mod": "irons_spellbooks",
+      "output": "irons_spellbooks:visibility_ring",
+      "authority": "namespace:irons_spellbooks",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/126_cross_magic_irons_spellcraft.js"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "light",
+      "weight_class": "utility_support"
     },
     {
       "id": "crafted:event.custom(kubejs):kubejs:apprentice_blood_heart",
@@ -13084,18 +14652,18 @@
       ]
     },
     {
-      "id": "crafted:event.custom(kubejs):kubejs:living_binding",
+      "id": "crafted:kubejs:authored_recipe:kubejs:living_binding",
       "kind": "crafted",
       "mod": "kubejs",
       "output": "kubejs:living_binding",
+      "authority": "exact:slate_t5_ethereal/hybrid",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/166_tome_of_blood_post_ae2_gates.js:99"
+      ],
       "blood_era": "slate_t5_ethereal",
       "branch": "hybrid",
-      "weight_class": "structural_progression",
-      "authority": "synthetic_exact:slate_t5_ethereal/hybrid",
-      "surface_type": "event.custom(kubejs)",
-      "evidence": [
-        "kubejs/config/player_progression_regression.json"
-      ]
+      "weight_class": "structural_progression"
     },
     {
       "id": "crafted:event.custom(kubejs):kubejs:magician_blood_heart",
@@ -13126,32 +14694,32 @@
       ]
     },
     {
-      "id": "crafted:event.custom(kubejs):kubejs:purified_blood_catalyst",
+      "id": "crafted:kubejs:authored_recipe:kubejs:purified_blood_catalyst",
       "kind": "crafted",
       "mod": "kubejs",
       "output": "kubejs:purified_blood_catalyst",
+      "authority": "exact:slate_t5_ethereal/hybrid",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/166_tome_of_blood_post_ae2_gates.js:93"
+      ],
       "blood_era": "slate_t5_ethereal",
       "branch": "hybrid",
-      "weight_class": "structural_progression",
-      "authority": "synthetic_exact:slate_t5_ethereal/hybrid",
-      "surface_type": "event.custom(kubejs)",
-      "evidence": [
-        "kubejs/config/player_progression_regression.json"
-      ]
+      "weight_class": "structural_progression"
     },
     {
-      "id": "crafted:event.custom(kubejs):kubejs:purified_source_core",
-      "kind": "crafted",
+      "id": "machine_output:event.custom(kubejs):kubejs:purified_source_core",
+      "kind": "machine_output",
       "mod": "kubejs",
       "output": "kubejs:purified_source_core",
-      "blood_era": "slate_t5_ethereal",
-      "branch": "hybrid",
-      "weight_class": "structural_progression",
-      "authority": "synthetic_exact:slate_t5_ethereal/hybrid",
+      "authority": "exact:slate_t5_ethereal/hybrid",
       "surface_type": "event.custom(kubejs)",
       "evidence": [
-        "kubejs/config/player_progression_regression.json"
-      ]
+        "kubejs/server_scripts/30_recipe_replace/166_tome_of_blood_post_ae2_gates.js:122"
+      ],
+      "blood_era": "slate_t5_ethereal",
+      "branch": "hybrid",
+      "weight_class": "structural_progression"
     },
     {
       "id": "crafted:event.custom(kubejs):kubejs:weak_blood_heart",
@@ -13168,74 +14736,130 @@
       ]
     },
     {
-      "id": "crafted:event.custom(kubejs):mahoutsukai:attuned_diamond",
-      "kind": "crafted",
+      "id": "machine_output:event.custom(kubejs):mahoutsukai:attuned_diamond",
+      "kind": "machine_output",
       "mod": "mahoutsukai",
       "output": "mahoutsukai:attuned_diamond",
-      "blood_era": "slate_t3_infused",
-      "branch": "dark",
-      "weight_class": "structural_progression",
-      "authority": "synthetic_exact:slate_t3_infused/dark",
+      "authority": "exact:slate_t3_infused/dark",
       "surface_type": "event.custom(kubejs)",
       "evidence": [
-        "kubejs/config/player_progression_regression.json"
-      ]
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:49"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "dark",
+      "weight_class": "structural_progression"
     },
     {
-      "id": "crafted:event.custom(kubejs):malum:spirit_altar",
+      "id": "crafted:kubejs:replace_input_gate:malum:spirit_altar",
       "kind": "crafted",
       "mod": "malum",
       "output": "malum:spirit_altar",
+      "authority": "exact:slate_t1_blank/dark",
+      "surface_type": "kubejs:replace_input_gate",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:17"
+      ],
       "blood_era": "slate_t1_blank",
       "branch": "dark",
-      "weight_class": "structural_progression",
-      "authority": "synthetic_exact:slate_t1_blank/dark",
-      "surface_type": "event.custom(kubejs)",
-      "evidence": [
-        "kubejs/config/player_progression_regression.json"
-      ]
+      "weight_class": "structural_progression"
     },
     {
-      "id": "crafted:event.custom(kubejs):reliquary:alkahestry_altar",
+      "id": "crafted:kubejs:authored_recipe:occultism:chalk_gold",
+      "kind": "crafted",
+      "mod": "occultism",
+      "output": "occultism:chalk_gold",
+      "authority": "exact:slate_t4_demonic/dark",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/40_recipe_add/62_chemical_electronics_magic_growth_routes.js:223"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "dark",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:occultism:chalk_white",
+      "kind": "crafted",
+      "mod": "occultism",
+      "output": "occultism:chalk_white",
+      "authority": "exact:slate_t3_infused/dark",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/40_recipe_add/62_chemical_electronics_magic_growth_routes.js:217"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "dark",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:replace_input_gate:occultism:chalk_white_impure",
+      "kind": "crafted",
+      "mod": "occultism",
+      "output": "occultism:chalk_white_impure",
+      "authority": "exact:slate_t3_infused/dark",
+      "surface_type": "kubejs:replace_input_gate",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:34"
+      ],
+      "blood_era": "slate_t3_infused",
+      "branch": "dark",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:replace_input_gate:occultism:dimensional_mineshaft",
+      "kind": "crafted",
+      "mod": "occultism",
+      "output": "occultism:dimensional_mineshaft",
+      "authority": "exact:slate_t4_demonic/dark",
+      "surface_type": "kubejs:replace_input_gate",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:77"
+      ],
+      "blood_era": "slate_t4_demonic",
+      "branch": "dark",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:replace_input_gate:reliquary:alkahestry_altar",
       "kind": "crafted",
       "mod": "reliquary",
       "output": "reliquary:alkahestry_altar",
+      "authority": "exact:slate_t4_demonic/dark",
+      "surface_type": "kubejs:replace_input_gate",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:88"
+      ],
       "blood_era": "slate_t4_demonic",
       "branch": "dark",
-      "weight_class": "structural_progression",
-      "authority": "synthetic_exact:slate_t4_demonic/dark",
-      "surface_type": "event.custom(kubejs)",
-      "evidence": [
-        "kubejs/config/player_progression_regression.json"
-      ]
+      "weight_class": "structural_progression"
     },
     {
-      "id": "crafted:event.custom(kubejs):reliquary:alkahestry_tome",
+      "id": "crafted:kubejs:replace_input_gate:reliquary:alkahestry_tome",
       "kind": "crafted",
       "mod": "reliquary",
       "output": "reliquary:alkahestry_tome",
+      "authority": "exact:slate_t5_ethereal/hybrid",
+      "surface_type": "kubejs:replace_input_gate",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:101"
+      ],
       "blood_era": "slate_t5_ethereal",
       "branch": "hybrid",
-      "weight_class": "structural_progression",
-      "authority": "synthetic_exact:slate_t5_ethereal/hybrid",
-      "surface_type": "event.custom(kubejs)",
-      "evidence": [
-        "kubejs/config/player_progression_regression.json"
-      ]
+      "weight_class": "structural_progression"
     },
     {
-      "id": "crafted:event.custom(kubejs):reliquary:apothecary_cauldron",
+      "id": "crafted:kubejs:replace_input_gate:reliquary:apothecary_cauldron",
       "kind": "crafted",
       "mod": "reliquary",
       "output": "reliquary:apothecary_cauldron",
+      "authority": "exact:slate_t1_blank/dark",
+      "surface_type": "kubejs:replace_input_gate",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:19"
+      ],
       "blood_era": "slate_t1_blank",
       "branch": "dark",
-      "weight_class": "structural_progression",
-      "authority": "synthetic_exact:slate_t1_blank/dark",
-      "surface_type": "event.custom(kubejs)",
-      "evidence": [
-        "kubejs/config/player_progression_regression.json"
-      ]
+      "weight_class": "structural_progression"
     },
     {
       "id": "crafted:event.custom(kubejs):rpgstats:still_beating_heart",
@@ -13252,60 +14876,60 @@
       ]
     },
     {
-      "id": "crafted:event.custom(kubejs):tomeofblood:apprentice_tome_of_blood",
+      "id": "crafted:kubejs:authored_recipe:tomeofblood:apprentice_tome_of_blood",
       "kind": "crafted",
       "mod": "tomeofblood",
       "output": "tomeofblood:apprentice_tome_of_blood",
+      "authority": "exact:slate_t5_ethereal/hybrid",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/166_tome_of_blood_post_ae2_gates.js:148"
+      ],
       "blood_era": "slate_t5_ethereal",
       "branch": "hybrid",
-      "weight_class": "structural_progression",
-      "authority": "synthetic_exact:slate_t5_ethereal/hybrid",
-      "surface_type": "event.custom(kubejs)",
-      "evidence": [
-        "kubejs/config/player_progression_regression.json"
-      ]
+      "weight_class": "structural_progression"
     },
     {
-      "id": "crafted:event.custom(kubejs):tomeofblood:archmage_tome_of_blood",
+      "id": "crafted:kubejs:authored_recipe:tomeofblood:archmage_tome_of_blood",
       "kind": "crafted",
       "mod": "tomeofblood",
       "output": "tomeofblood:archmage_tome_of_blood",
+      "authority": "exact:slate_t5_ethereal/hybrid",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/166_tome_of_blood_post_ae2_gates.js:157"
+      ],
       "blood_era": "slate_t5_ethereal",
       "branch": "hybrid",
-      "weight_class": "decor_theme",
-      "authority": "synthetic_exact:slate_t5_ethereal/hybrid",
-      "surface_type": "event.custom(kubejs)",
-      "evidence": [
-        "kubejs/config/player_progression_regression.json"
-      ]
+      "weight_class": "decor_theme"
     },
     {
-      "id": "crafted:event.custom(kubejs):tomeofblood:glyph_sentient_harm",
+      "id": "crafted:kubejs:authored_recipe:tomeofblood:glyph_sentient_harm",
       "kind": "crafted",
       "mod": "tomeofblood",
       "output": "tomeofblood:glyph_sentient_harm",
+      "authority": "exact:slate_t5_ethereal/hybrid",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/166_tome_of_blood_post_ae2_gates.js:166"
+      ],
       "blood_era": "slate_t5_ethereal",
       "branch": "hybrid",
-      "weight_class": "structural_progression",
-      "authority": "synthetic_exact:slate_t5_ethereal/hybrid",
-      "surface_type": "event.custom(kubejs)",
-      "evidence": [
-        "kubejs/config/player_progression_regression.json"
-      ]
+      "weight_class": "structural_progression"
     },
     {
-      "id": "crafted:event.custom(kubejs):tomeofblood:glyph_sentient_wrath",
+      "id": "crafted:kubejs:authored_recipe:tomeofblood:glyph_sentient_wrath",
       "kind": "crafted",
       "mod": "tomeofblood",
       "output": "tomeofblood:glyph_sentient_wrath",
+      "authority": "exact:slate_t5_ethereal/hybrid",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/166_tome_of_blood_post_ae2_gates.js:173"
+      ],
       "blood_era": "slate_t5_ethereal",
       "branch": "hybrid",
-      "weight_class": "structural_progression",
-      "authority": "synthetic_exact:slate_t5_ethereal/hybrid",
-      "surface_type": "event.custom(kubejs)",
-      "evidence": [
-        "kubejs/config/player_progression_regression.json"
-      ]
+      "weight_class": "structural_progression"
     },
     {
       "id": "machine_output:ars_nouveau:dye:tomeofblood:living_mage_boots",
@@ -13316,6 +14940,20 @@
       "surface_type": "ars_nouveau:dye",
       "evidence": [
         "ars_nouveau:dye_living_mage_boots"
+      ],
+      "blood_era": "slate_t5_ethereal",
+      "branch": "hybrid",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:tomeofblood:living_mage_boots",
+      "kind": "crafted",
+      "mod": "tomeofblood",
+      "output": "tomeofblood:living_mage_boots",
+      "authority": "exact:slate_t5_ethereal/hybrid",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/166_tome_of_blood_post_ae2_gates.js:185"
       ],
       "blood_era": "slate_t5_ethereal",
       "branch": "hybrid",
@@ -13336,6 +14974,20 @@
       "weight_class": "structural_progression"
     },
     {
+      "id": "crafted:kubejs:authored_recipe:tomeofblood:living_mage_hood",
+      "kind": "crafted",
+      "mod": "tomeofblood",
+      "output": "tomeofblood:living_mage_hood",
+      "authority": "exact:slate_t5_ethereal/hybrid",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/166_tome_of_blood_post_ae2_gates.js:182"
+      ],
+      "blood_era": "slate_t5_ethereal",
+      "branch": "hybrid",
+      "weight_class": "structural_progression"
+    },
+    {
       "id": "machine_output:ars_nouveau:dye:tomeofblood:living_mage_leggings",
       "kind": "machine_output",
       "mod": "tomeofblood",
@@ -13344,6 +14996,20 @@
       "surface_type": "ars_nouveau:dye",
       "evidence": [
         "ars_nouveau:dye_living_mage_leggings"
+      ],
+      "blood_era": "slate_t5_ethereal",
+      "branch": "hybrid",
+      "weight_class": "structural_progression"
+    },
+    {
+      "id": "crafted:kubejs:authored_recipe:tomeofblood:living_mage_leggings",
+      "kind": "crafted",
+      "mod": "tomeofblood",
+      "output": "tomeofblood:living_mage_leggings",
+      "authority": "exact:slate_t5_ethereal/hybrid",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/166_tome_of_blood_post_ae2_gates.js:184"
       ],
       "blood_era": "slate_t5_ethereal",
       "branch": "hybrid",
@@ -13364,6 +15030,20 @@
       "weight_class": "structural_progression"
     },
     {
+      "id": "crafted:kubejs:authored_recipe:tomeofblood:living_mage_robes",
+      "kind": "crafted",
+      "mod": "tomeofblood",
+      "output": "tomeofblood:living_mage_robes",
+      "authority": "exact:slate_t5_ethereal/hybrid",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/166_tome_of_blood_post_ae2_gates.js:183"
+      ],
+      "blood_era": "slate_t5_ethereal",
+      "branch": "hybrid",
+      "weight_class": "structural_progression"
+    },
+    {
       "id": "machine_output:bloodmagic:alchemytable:tomeofblood:mint_tea",
       "kind": "machine_output",
       "mod": "tomeofblood",
@@ -13378,18 +15058,18 @@
       "weight_class": "utility_support"
     },
     {
-      "id": "crafted:event.custom(kubejs):tomeofblood:novice_tome_of_blood",
+      "id": "crafted:kubejs:authored_recipe:tomeofblood:novice_tome_of_blood",
       "kind": "crafted",
       "mod": "tomeofblood",
       "output": "tomeofblood:novice_tome_of_blood",
+      "authority": "exact:slate_t5_ethereal/hybrid",
+      "surface_type": "kubejs:authored_recipe",
+      "evidence": [
+        "kubejs/server_scripts/30_recipe_replace/166_tome_of_blood_post_ae2_gates.js:138"
+      ],
       "blood_era": "slate_t5_ethereal",
       "branch": "hybrid",
-      "weight_class": "structural_progression",
-      "authority": "synthetic_exact:slate_t5_ethereal/hybrid",
-      "surface_type": "event.custom(kubejs)",
-      "evidence": [
-        "kubejs/config/player_progression_regression.json"
-      ]
+      "weight_class": "structural_progression"
     }
   ]
 }

@@ -109,6 +109,18 @@ MAGIC_NAMESPACES = {
 
 TECH_EXACT_ERA = {
     "kubejs:seared_machine_casing": "seared",
+    "tconstruct:smeltery_controller": "seared",
+    "tconstruct:seared_melter": "seared",
+    "tconstruct:seared_heater": "seared",
+    "tconstruct:seared_table": "seared",
+    "tconstruct:seared_basin": "seared",
+    "tconstruct:seared_drain": "seared",
+    "tconstruct:seared_faucet": "seared",
+    "tconstruct:seared_channel": "seared",
+    "tconstruct:seared_chute": "seared",
+    "tconstruct:seared_casting_tank": "seared",
+    "tconstruct:seared_fuel_tank": "seared",
+    "tconstruct:seared_fuel_gauge": "seared",
     "create:basin": "seared",
     "create:depot": "seared",
     "create:chute": "seared",
@@ -135,6 +147,25 @@ TECH_EXACT_ERA = {
     "create:gearshift": "andesite",
     "create:clutch": "andesite",
     "rehooked:iron_hook": "andesite",
+    "morered:red_alloy_wire": "andesite",
+    "morered:diode": "andesite",
+    "morered:soldering_table": "andesite",
+    "minecraft:piston": "andesite",
+    "minecraft:sticky_piston": "andesite",
+    "minecraft:hopper": "andesite",
+    "minecraft:dropper": "andesite",
+    "minecraft:dispenser": "andesite",
+    "minecraft:observer": "andesite",
+    "minecraft:repeater": "andesite",
+    "minecraft:comparator": "andesite",
+    "minecraft:daylight_detector": "andesite",
+    "minecraft:rail": "andesite",
+    "minecraft:powered_rail": "andesite",
+    "minecraft:detector_rail": "andesite",
+    "minecraft:activator_rail": "andesite",
+    "minecraft:minecart": "andesite",
+    "minecraft:chest_minecart": "andesite",
+    "minecraft:furnace_minecart": "andesite",
     "create:precision_mechanism": "brass",
     "kubejs:brass_machine_casing": "brass",
     "create:steam_engine": "brass",
@@ -165,11 +196,17 @@ TECH_EXACT_ERA = {
     "create:empty_blaze_burner": "brass",
     "createdieselgenerators:engine_piston": "brass",
     "createdieselgenerators:diesel_engine": "brass",
+    "createdieselgenerators:pumpjack_bearing": "brass",
+    "createdieselgenerators:distillation_controller": "brass",
+    "createdieselgenerators:pumpjack_hole": "brass",
+    "createdieselgenerators:pumpjack_head": "brass",
+    "createdieselgenerators:pumpjack_crank": "brass",
     "create_connected:kinetic_battery": "brass",
     "create_connected:brake": "brass",
     "createadvlogistics:package_content_filter": "brass",
     "createadvlogistics:redstone_radio": "electrical",
-    "hang_glider:glider": "brass",
+    "hangglider:hang_glider": "brass",
+    "hangglider:reinforced_hang_glider": "impossible",
     "rehooked:diamond_chain": "brass",
     "rehooked:diamond_hook": "brass",
     "kubejs:pressure_seal": "airtight",
@@ -178,18 +215,101 @@ TECH_EXACT_ERA = {
     "latent_chemlib:sealed_chemical_cell": "airtight",
     "latent_chemlib:gas_reaction_chamber": "airtight",
     "kubejs:electrical_machine_casing": "electrical",
+    "powergrid:battery": "electrical",
+    "powergrid:portable_battery": "electrical",
+    "powergrid:electric_motor": "electrical",
+    "powergrid:constant_speed_motor": "electrical",
+    "powergrid:generator_housing": "electrical",
+    "powergrid:generator_clutch": "electrical",
+    "powergrid:relay": "electrical",
+    "powergrid:relay_dpdt": "electrical",
+    "powergrid:current_gauge": "electrical",
+    "powergrid:voltage_gauge": "electrical",
+    "powergrid:power_gauge": "electrical",
+    "powergrid:device_connector": "electrical",
+    "powergrid:heavy_wire_connector": "electrical",
+    "powergrid:heating_coil": "electrical",
+    "powergrid:carbon_pile_coil": "electrical",
+    "powergrid:electromagnet": "electrical",
+    "powergrid:electrical_gizmo": "electrical",
     "oc2r:raw_silicon_wafer": "electrical",
     "oc2r:silicon_wafer": "electrical",
     "oc2r:transistor": "electrical",
     "oc2r:circuit_board": "electrical",
-    "create-creating-space:dummy": "space",
+    "oc2r:bus_cable": "electrical",
+    "oc2r:network_connector": "electrical",
+    "oc2r:computer": "electrical",
+    "oc2r:network_hub": "electrical",
+    "oc2r:disk_drive": "electrical",
+    "oc2r:monitor": "electrical",
+    "oc2r:charger": "electrical",
+    "oc2r:bus_interface": "electrical",
+    "oc2r:redstone_interface": "electrical",
+    "oc2r:block_operations_module": "electrical",
+    "oc2r:inventory_operations_module": "electrical",
+    "oc2r:network_interface_card": "electrical",
+    "oc2r:redstone_interface_card": "electrical",
+    "oc2r:cpu_tier_2": "electrical",
+    "oc2r:hard_drive_large": "electrical",
+    "oc2r:memory_large": "electrical",
     "kubejs:space_machine_casing": "space",
+    "creatingspace:mechanical_electrolyzer": "space",
+    "creatingspace:air_liquefier": "space",
+    "creatingspace:oxygen_sealer": "space",
+    "creatingspace:rocket_engine": "space",
+    "creatingspace:rocket_controls": "space",
+    "creatingspace:rocket_generator": "space",
+    "creatingspace:cryogenic_tank": "space",
+    "creatingspace:flight_recorder": "space",
+    "creatingspace:flow_meter": "space",
+    "creatingspace:engine_blueprint": "space",
+    "creatingspace:power_pack": "space",
+    "creatingspace:exhaust_pack": "space",
+    "creatingspace:copper_oxygen_backtank": "space",
+    "creatingspace:netherite_oxygen_backtank": "space",
+    "creatingspace:advanced_spacesuit_fabric": "space",
     "kubejs:raw_impossible_casing": "raw_impossible",
     "kubejs:sky_steel_ingot": "raw_impossible",
     "kubejs:sky_steel_sheet": "raw_impossible",
     "kubejs:impossible_machine_casing": "impossible",
     "kubejs:ae_logic_package": "impossible",
     "ae2:controller": "impossible",
+    "ae2:drive": "impossible",
+    "ae2:energy_acceptor": "impossible",
+    "ae2:interface": "impossible",
+    "ae2:io_port": "impossible",
+    "ae2:spatial_io_port": "impossible",
+    "ae2:condenser": "impossible",
+    "ae2:molecular_assembler": "impossible",
+    "ae2:pattern_provider": "impossible",
+    "ae2:cell_workbench": "impossible",
+    "ae2:crafting_unit": "impossible",
+    "ae2:wireless_access_point": "impossible",
+    "ae2:annihilation_plane": "impossible",
+    "ae2:formation_plane": "impossible",
+    "ae2:pattern_encoding_terminal": "impossible",
+    "buildinggadgets2:gadget_building": "impossible",
+    "buildinggadgets2:gadget_exchanging": "impossible",
+    "buildinggadgets2:gadget_copy_paste": "impossible",
+    "buildinggadgets2:gadget_cut_paste": "impossible",
+    "buildinggadgets2:gadget_destruction": "impossible",
+    "buildinggadgets2:template_manager": "impossible",
+    "protection_pixel:smallnetheritesheet": "impossible",
+    "protection_pixel:reinforcedfiber": "impossible",
+    "protection_pixel:heatresistantceramicsheet": "impossible",
+    "protection_pixel:alloyarmorplate": "impossible",
+    "protection_pixel:armorloadplatform": "impossible",
+    "protection_pixel:powerengine": "impossible",
+    "protection_pixel:heatoverlockingmechanism": "impossible",
+    "protection_pixel:equipmentkit": "impossible",
+    "protection_pixel:armorplatekit": "impossible",
+    "protection_pixel:chestplatelining": "impossible",
+    "protection_pixel:leggingslining": "impossible",
+    "protection_pixel:socks_boots": "impossible",
+    "protection_pixel:linkplate_helmet": "impossible",
+    "protection_pixel:linkplate_chestplate": "impossible",
+    "protection_pixel:linkplate_leggings": "impossible",
+    "protection_pixel:linkplate_boots": "impossible",
     "create_sa:brass_drone": "impossible",
     "rehooked:blaze_hook": "electrical",
     "rehooked:ender_hook": "space",
@@ -224,6 +344,30 @@ MAGIC_EXACT = {
     "irons_spellbooks:scroll_forge": ("slate_t2_reinforced", "light"),
     "irons_spellbooks:arcane_ingot": ("slate_t2_reinforced", "light"),
     "irons_spellbooks:blank_rune": ("slate_t2_reinforced", "light"),
+    "botania:runic_altar": ("slate_t3_infused", "light"),
+    "botania:pump": ("slate_t3_infused", "light"),
+    "botania:avatar": ("slate_t3_infused", "light"),
+    "botania:fel_pumpkin": ("slate_t3_infused", "light"),
+    "botania:cell_block": ("slate_t3_infused", "light"),
+    "irons_spellbooks:arcane_rune": ("slate_t3_infused", "light"),
+    "irons_spellbooks:blood_rune": ("slate_t3_infused", "light"),
+    "irons_spellbooks:cooldown_rune": ("slate_t3_infused", "light"),
+    "irons_spellbooks:ender_rune": ("slate_t3_infused", "light"),
+    "irons_spellbooks:evocation_rune": ("slate_t3_infused", "light"),
+    "irons_spellbooks:fire_rune": ("slate_t3_infused", "light"),
+    "irons_spellbooks:holy_rune": ("slate_t3_infused", "light"),
+    "irons_spellbooks:ice_rune": ("slate_t3_infused", "light"),
+    "irons_spellbooks:lightning_rune": ("slate_t3_infused", "light"),
+    "irons_spellbooks:nature_rune": ("slate_t3_infused", "light"),
+    "irons_spellbooks:protection_rune": ("slate_t3_infused", "light"),
+    "irons_spellbooks:upgrade_orb": ("slate_t3_infused", "dark"),
+    "irons_spellbooks:inscription_table": ("slate_t3_infused", "dark"),
+    "irons_spellbooks:arcane_anvil": ("slate_t3_infused", "dark"),
+    "irons_spellbooks:iron_spell_book": ("slate_t3_infused", "light"),
+    "irons_spellbooks:gold_spell_book": ("slate_t3_infused", "light"),
+    "irons_spellbooks:ice_spell_book": ("slate_t3_infused", "light"),
+    "occultism:chalk_white_impure": ("slate_t3_infused", "dark"),
+    "occultism:chalk_white": ("slate_t3_infused", "dark"),
     "eidolon:crucible": ("slate_t3_infused", "dark"),
     "eidolon:soul_enchanter": ("slate_t3_infused", "dark"),
     "mahoutsukai:attuned_diamond": ("slate_t3_infused", "dark"),
@@ -234,12 +378,38 @@ MAGIC_EXACT = {
     "ars_nouveau:enchanting_apparatus": ("slate_t4_demonic", "light"),
     "ars_nouveau:apprentice_spell_book_upgrade": ("slate_t4_demonic", "light"),
     "botania:terrasteel_ingot": ("slate_t4_demonic", "light"),
+    "botania:terra_plate": ("slate_t4_demonic", "light"),
     "hexerei:mixing_cauldron": ("slate_t4_demonic", "dark"),
+    "hexerei:book_of_shadows_altar": ("slate_t4_demonic", "dark"),
     "goety:cursed_cage": ("slate_t4_demonic", "dark"),
     "goety:dark_altar": ("slate_t4_demonic", "dark"),
+    "goety:empty_focus": ("slate_t4_demonic", "dark"),
+    "goety:focus_bag": ("slate_t4_demonic", "dark"),
+    "goety:focus_pack": ("slate_t4_demonic", "dark"),
     "forbidden_arcanus:clibano_core": ("slate_t4_demonic", "dark"),
     "forbidden_arcanus:deorum_ingot": ("slate_t4_demonic", "dark"),
     "reliquary:alkahestry_altar": ("slate_t4_demonic", "dark"),
+    "occultism:dimensional_mineshaft": ("slate_t4_demonic", "dark"),
+    "occultism:chalk_gold": ("slate_t4_demonic", "dark"),
+    "irons_spellbooks:mithril_weave": ("slate_t4_demonic", "dark"),
+    "irons_spellbooks:blood_upgrade_orb": ("slate_t4_demonic", "dark"),
+    "irons_spellbooks:cooldown_upgrade_orb": ("slate_t4_demonic", "dark"),
+    "irons_spellbooks:ender_upgrade_orb": ("slate_t4_demonic", "dark"),
+    "irons_spellbooks:evocation_upgrade_orb": ("slate_t4_demonic", "dark"),
+    "irons_spellbooks:fire_upgrade_orb": ("slate_t4_demonic", "dark"),
+    "irons_spellbooks:holy_upgrade_orb": ("slate_t4_demonic", "dark"),
+    "irons_spellbooks:ice_upgrade_orb": ("slate_t4_demonic", "dark"),
+    "irons_spellbooks:lightning_upgrade_orb": ("slate_t4_demonic", "dark"),
+    "irons_spellbooks:nature_upgrade_orb": ("slate_t4_demonic", "dark"),
+    "irons_spellbooks:protection_upgrade_orb": ("slate_t4_demonic", "dark"),
+    "irons_spellbooks:mana_upgrade_orb": ("slate_t4_demonic", "dark"),
+    "irons_spellbooks:diamond_spell_book": ("slate_t4_demonic", "light"),
+    "irons_spellbooks:druidic_spell_book": ("slate_t4_demonic", "light"),
+    "irons_spellbooks:cursed_doll_spell_book": ("slate_t4_demonic", "dark"),
+    "irons_spellbooks:pyrium_staff": ("slate_t4_demonic", "dark"),
+    "irons_spellbooks:artificer_cane": ("slate_t4_demonic", "dark"),
+    "irons_spellbooks:spellbreaker": ("slate_t4_demonic", "dark"),
+    "irons_spellbooks:twilight_gale": ("slate_t4_demonic", "dark"),
     "kubejs:purified_blood_catalyst": ("slate_t5_ethereal", "hybrid"),
     "kubejs:living_binding": ("slate_t5_ethereal", "hybrid"),
     "kubejs:purified_source_core": ("slate_t5_ethereal", "hybrid"),
@@ -253,23 +423,40 @@ MAGIC_EXACT = {
     "tomeofblood:living_mage_leggings": ("slate_t5_ethereal", "hybrid"),
     "tomeofblood:living_mage_boots": ("slate_t5_ethereal", "hybrid"),
     "reliquary:alkahestry_tome": ("slate_t5_ethereal", "hybrid"),
+    "ars_nouveau:archmage_spell_book_upgrade": ("slate_t5_ethereal", "hybrid"),
     "arseng:me_source_jar": ("slate_t5_ethereal", "hybrid"),
     "arseng:source_acceptor": ("slate_t5_ethereal", "hybrid"),
     "arseng:source_cell_housing": ("slate_t5_ethereal", "hybrid"),
+    "arseng:portable_source_cell_64k": ("slate_t5_ethereal", "hybrid"),
+    "arseng:portable_source_cell_256k": ("slate_t5_ethereal", "hybrid"),
+    "irons_spellbooks:netherite_spell_book": ("slate_t5_ethereal", "hybrid"),
+    "irons_spellbooks:dragonskin_spell_book": ("slate_t5_ethereal", "hybrid"),
+    "irons_spellbooks:eldritch_manuscript": ("slate_t5_ethereal", "hybrid"),
 }
 
 TECH_ASSERTIONS = [
     ("kubejs:seared_machine_casing", "seared"),
+    ("tconstruct:smeltery_controller", "seared"),
     ("create:basin", "seared"),
     ("create:andesite_alloy", "andesite"),
     ("kubejs:andesite_machine_casing", "andesite"),
+    ("morered:red_alloy_wire", "andesite"),
     ("create:precision_mechanism", "brass"),
     ("kubejs:brass_machine_casing", "brass"),
+    ("hangglider:hang_glider", "brass"),
     ("kubejs:airtight_machine_casing", "airtight"),
+    ("pneumaticcraft:reinforced_pressure_tube", "airtight"),
     ("kubejs:electrical_machine_casing", "electrical"),
+    ("powergrid:battery", "electrical"),
+    ("oc2r:computer", "electrical"),
     ("kubejs:space_machine_casing", "space"),
+    ("creatingspace:rocket_engine", "space"),
     ("kubejs:raw_impossible_casing", "raw_impossible"),
+    ("ae2:item_cell_housing", "raw_impossible"),
     ("kubejs:impossible_machine_casing", "impossible"),
+    ("ae2:controller", "impossible"),
+    ("buildinggadgets2:gadget_building", "impossible"),
+    ("protection_pixel:powerengine", "impossible"),
 ]
 
 MAGIC_ASSERTIONS = [
@@ -277,10 +464,17 @@ MAGIC_ASSERTIONS = [
     ("bloodmagic:etherealslate", "blood_root", "blood_root"),
     ("malum:spirit_altar", "slate_t1_blank", "dark"),
     ("botania:mana_spreader", "slate_t2_reinforced", "light"),
+    ("botania:runic_altar", "slate_t3_infused", "light"),
+    ("occultism:chalk_white_impure", "slate_t3_infused", "dark"),
     ("eidolon:crucible", "slate_t3_infused", "dark"),
     ("ars_nouveau:enchanting_apparatus", "slate_t4_demonic", "light"),
+    ("botania:terrasteel_ingot", "slate_t4_demonic", "light"),
     ("hexerei:mixing_cauldron", "slate_t4_demonic", "dark"),
+    ("goety:dark_altar", "slate_t4_demonic", "dark"),
+    ("forbidden_arcanus:deorum_ingot", "slate_t4_demonic", "dark"),
+    ("irons_spellbooks:mithril_weave", "slate_t4_demonic", "dark"),
     ("kubejs:purified_blood_catalyst", "slate_t5_ethereal", "hybrid"),
+    ("arseng:me_source_jar", "slate_t5_ethereal", "hybrid"),
 ]
 
 
@@ -334,6 +528,8 @@ def normalize_surface(recipe_type: str) -> str:
 
 
 def infer_kind(recipe_type: str) -> str:
+    if recipe_type.startswith("kubejs:"):
+        return "crafted"
     return "crafted" if recipe_type in VANILLA_CRAFTED else "machine_output"
 
 
@@ -607,6 +803,135 @@ def build_recipe_indexes(recipe_rows):
         for output in outputs:
             recipe_index[(surface, output)].append(recipe["id"])
     return recipe_index, sorted(surface_types)
+
+
+def recipe_id_to_output(recipe_id: str) -> str:
+    overrides = {
+        "botania:terra_plate/terrasteel_ingot": "botania:terrasteel_ingot",
+        "occultism:crafting/chalk_white_impure": "occultism:chalk_white_impure",
+        "occultism:ritual/craft_dimensional_mineshaft": "occultism:dimensional_mineshaft",
+    }
+    if recipe_id in overrides:
+        return overrides[recipe_id]
+    namespace = ns(recipe_id)
+    name = local(recipe_id).split("/")[-1]
+    if name.startswith("craft_"):
+        name = name[len("craft_") :]
+    return f"{namespace}:{name}"
+
+
+def authored_row(output: str, surface: str, evidence: list[str]):
+    return {
+        "surface": surface,
+        "output": output,
+        "evidence": evidence[:5],
+    }
+
+
+def parse_js_string_arrays(text: str, var_name: str):
+    match = re.search(rf"var {re.escape(var_name)} = \[(.*?)\n\]", text, re.S)
+    if not match:
+        return []
+    return re.findall(r"'([a-z0-9_.-]+:[a-z0-9_./-]+)'", match.group(1))
+
+
+def parse_authored_kubejs_surfaces():
+    rows_by_key = {}
+    output_arg1 = re.compile(
+        r"\b(?:btmEcoRecipe|btmCreateShaped|btmMobilityMechanical|btmDimProofMechanical|"
+        r"btmPpMechanical|btmBpRecipe|btmExtremeRecipe|btmTobAlchemy|btmTobGlyph|btmTobArmor|"
+        r"btmClosureShaped|btmClosureShapeless|btmGraphShaped)"
+        r"\(event,\s*'([a-z0-9_.-]+:[a-z0-9_./-]+)'"
+    )
+    output_arg0 = re.compile(r"\bbtmEcoRecipe\(\s*'([a-z0-9_.-]+:[a-z0-9_./-]+)'")
+    output_arg2 = re.compile(
+        r"\b(?:btmIrons[A-Za-z]+|btmLate[A-Za-z]+|btmChem(?:Alt|Use)[A-Za-z]+|btmPpSequence|"
+        r"btmAesthetic[A-Za-z]+)\(event,\s*'[^']+'\s*,\s*'([a-z0-9_.-]+:[a-z0-9_./-]+)'"
+    )
+    custom_output = re.compile(r"\boutput:\s*(?:btmIronsResult\()?['{ ]*(?:item:\s*)?'([a-z0-9_.-]+:[a-z0-9_./-]+)'")
+    gate_output = re.compile(r"gate\(event,\s*\{\s*output:\s*'([a-z0-9_.-]+:[a-z0-9_./-]+)'")
+    gate_id = re.compile(r"gate\(event,\s*\{\s*id:\s*'([a-z0-9_.-]+:[a-z0-9_./-]+)'")
+
+    for path in sorted((ROOT / "kubejs" / "server_scripts").glob("**/*.js")):
+        rel = path.relative_to(ROOT).as_posix()
+        text = path.read_text(encoding="utf-8")
+        for line_no, line in enumerate(text.splitlines(), start=1):
+            evidence = [f"{rel}:{line_no}"]
+            for pattern, surface in [
+                (output_arg0, "kubejs:authored_recipe"),
+                (output_arg1, "kubejs:authored_recipe"),
+                (output_arg2, "kubejs:authored_recipe"),
+                (custom_output, "event.custom(kubejs)"),
+                (gate_output, "kubejs:replace_input_gate"),
+            ]:
+                for output in pattern.findall(line):
+                    rows_by_key[(surface, output)] = authored_row(output, surface, evidence)
+            for recipe_id in gate_id.findall(line):
+                output = recipe_id_to_output(recipe_id)
+                rows_by_key[("kubejs:replace_input_gate", output)] = authored_row(
+                    output, "kubejs:replace_input_gate", evidence
+                )
+
+        if path.name == "126_cross_magic_irons_spellcraft.js":
+            for output in parse_js_string_arrays(text, "BTM_IRONS_SPELLCRAFT_OUTPUTS"):
+                rows_by_key[("kubejs:authored_recipe", output)] = authored_row(
+                    output, "kubejs:authored_recipe", [rel]
+                )
+            for rune_id, output in re.findall(
+                r"\{\s*id:\s*'([a-z0-9_]+)'\s*,\s*output:\s*'([a-z0-9_.-]+:[a-z0-9_./-]+)'",
+                text,
+            ):
+                rows_by_key[("kubejs:authored_recipe", output)] = authored_row(
+                    output, "kubejs:authored_recipe", [rel]
+                )
+                upgrade = f"irons_spellbooks:{rune_id}_upgrade_orb"
+                rows_by_key[("kubejs:authored_recipe", upgrade)] = authored_row(
+                    upgrade, "kubejs:authored_recipe", [rel]
+                )
+
+    return list(rows_by_key.values())
+
+
+def add_authored_script_entries(tech_entries, magic_entries, recipe_index):
+    existing = set(recipe_index.keys())
+    existing.update((entry["surface_type"], entry["output"]) for entry in tech_entries)
+    existing.update((entry["surface_type"], entry["output"]) for entry in magic_entries)
+    for row in parse_authored_kubejs_surfaces():
+        key = (row["surface"], row["output"])
+        if key in existing:
+            continue
+        output = row["output"]
+        entry = {
+            "id": f"{infer_kind(row['surface'])}:{row['surface']}:{output}",
+            "kind": infer_kind(row["surface"]),
+            "mod": ns(output),
+            "output": output,
+            "authority": "",
+            "surface_type": row["surface"],
+            "evidence": row["evidence"],
+        }
+        if ns(output) in MAGIC_NAMESPACES or output in MAGIC_EXACT:
+            era, branch, authority = infer_magic_parent(output)
+            entry.update(
+                {
+                    "blood_era": era,
+                    "branch": branch,
+                    "weight_class": magic_weight(output),
+                    "authority": authority,
+                }
+            )
+            magic_entries.append(entry)
+        else:
+            era, authority = infer_tech_parent(output)
+            entry.update(
+                {
+                    "era": era,
+                    "weight_class": tech_weight(output),
+                    "authority": authority,
+                }
+            )
+            tech_entries.append(entry)
+        existing.add(key)
 
 
 def add_synthetic_core_entries(tech_entries, magic_entries):
@@ -908,6 +1233,7 @@ def build_contracts():
     recipe_rows = load_recipe_rows()
     recipe_index, surface_types = build_recipe_indexes(recipe_rows)
     tech_entries, magic_entries = classify_recipe_entries(recipe_index)
+    add_authored_script_entries(tech_entries, magic_entries, recipe_index)
     tech_entries.extend(parse_dimension_access())
     add_synthetic_core_entries(tech_entries, magic_entries)
 
@@ -952,7 +1278,9 @@ def build_contracts():
     surface_registry = {
         "schema": "btm.surface_registry.v1",
         "description": "Authoritative registry of sanctioned crafting and acquisition surfaces.",
-        "recipe_surface_types": sorted(surface_types + ["dimension_access", "event.custom(kubejs)"]),
+        "recipe_surface_types": sorted(
+            surface_types + ["dimension_access", "event.custom(kubejs)", "kubejs:authored_recipe", "kubejs:replace_input_gate"]
+        ),
         "acquisition_surface_types": [
             "villager_trade",
             "wanderer_trade",

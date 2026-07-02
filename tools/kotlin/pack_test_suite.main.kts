@@ -154,6 +154,7 @@ val runtimeOnly = System.getenv("BTM_RUNTIME_ONLY") == "1"
 val reportDir: Path = Paths.get(System.getenv("BTM_REPORT_DIR") ?: repo.resolve("generated/validation").toString())
 val generatedConfigDir = instance.resolve("kubejs/config")
 val generatedDumpDir = instance.resolve("dump/data_raw")
+val techParentingPath = repo.resolve("kubejs/config/tech_parenting.json")
 
 val hardFailures = mutableListOf<Finding>()
 val softFindings = mutableListOf<Finding>()
@@ -437,6 +438,33 @@ fun intendedMachineTier(output: String): String? {
         else -> null
     }
 }
+fun parentingEraTier(era: String): String? = when (era) {
+    "survival" -> "survival"
+    "seared" -> "tcon_seared"
+    "andesite" -> "create_andesite"
+    "brass" -> "create_brass"
+    "airtight" -> "pneumatic_airtight"
+    "electrical" -> "power_grid"
+    "space" -> "space"
+    "raw_impossible" -> "raw_impossible"
+    "impossible" -> "ae2"
+    else -> null
+}
+fun loadContractOutputTiers(): Pair<Map<String, String>, Set<String>> {
+    if (!exists(techParentingPath)) return emptyMap<String, String>() to emptySet()
+    val entries = jsonArray(jsonObject(readJson(techParentingPath))["entries"]).map(::jsonObject)
+    val tiers = linkedMapOf<String, String>()
+    val scripted = mutableSetOf<String>()
+    for (entry in entries) {
+        val output = jsonString(entry["output"]) ?: continue
+        val tier = parentingEraTier(jsonString(entry["era"]).orEmpty()) ?: continue
+        val current = tiers[output]
+        if (current == null || tierAtLeast(tier, current)) tiers[output] = tier
+        val surface = jsonString(entry["surface_type"]).orEmpty()
+        if (surface.startsWith("kubejs:") || surface == "event.custom(kubejs)") scripted += output
+    }
+    return tiers to scripted
+}
 fun isMachineLike(output: String): Boolean {
     val name = localName(output)
     if (name == "activator_rail" || name == "excavator") return false
@@ -575,6 +603,7 @@ fun testGeneratedRecipeGraph() {
     val parseFailures = mutableListOf<String>()
     val outputs = mutableMapOf<String, MutableList<String>>()
     val undertiered = mutableListOf<String>()
+    val (contractOutputTiers, contractScriptedOutputs) = loadContractOutputTiers()
     for (recipe in recipes) {
         val id = jsonString(recipe["id"]).orEmpty()
         if (!ids.add(id)) dupes += id
@@ -590,14 +619,16 @@ fun testGeneratedRecipeGraph() {
         for (out in outs) {
             outputs.getOrPut(out) { mutableListOf() } += id
             val needed = intendedMachineTier(out)
-            if (needed != null && isMachineLike(out) && !tierAtLeast(inferredTier, needed)) undertiered += "$id -> $out needs $needed, inferred $inferredTier"
+            val contractTier = contractOutputTiers[out]
+            val effectiveTier = if (contractTier != null && out in contractScriptedOutputs && tierAtLeast(contractTier, inferredTier)) contractTier else inferredTier
+            if (needed != null && isMachineLike(out) && !tierAtLeast(effectiveTier, needed)) undertiered += "$id -> $out needs $needed, inferred $inferredTier"
         }
     }
     if (dupes.isEmpty()) ok("generated recipes have unique IDs") else fail("generated recipes have unique IDs", dupes.take(80).joinToString("\n"))
     if (parseFailures.isEmpty()) ok("generated recipe JSON parses") else fail("generated recipe JSON parses", parseFailures.take(80).joinToString("\n"))
     if (undertiered.isEmpty()) ok("generated machine-like outputs appear tier-gated") else finding("generated recipe graph has undertiered machine-like outputs", undertiered.take(120).joinToString("\n"), "MUST")
     val criticalOutputs = listOf("create:andesite_alloy", "create:andesite_casing", "create:water_wheel", "create:windmill_bearing", "tconstruct:grout", "kubejs:impossible_machine_casing", "bloodmagic:weakbloodorb")
-    val missing = criticalOutputs.filterNot(outputs::containsKey)
+    val missing = criticalOutputs.filterNot { outputs.containsKey(it) || contractOutputTiers.containsKey(it) }
     if (missing.isEmpty()) ok("critical outputs appear in generated recipe dump", "${criticalOutputs.size} outputs") else finding("critical outputs absent from generated recipe dump", missing.joinToString(", "), "MUST")
 }
 

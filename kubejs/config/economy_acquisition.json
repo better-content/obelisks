@@ -537,7 +537,11 @@
       "source": "loot",
       "output": "farmersrespite:kettle",
       "policy": "support_only",
-      "era_reference": null,
+      "era_reference": {
+        "contract": "tech_parenting",
+        "output": "farmersrespite:kettle",
+        "era": "survival"
+      },
       "evidence": [
         "kubejs/data/farmersrespite/loot_tables/blocks/kettle.json"
       ]

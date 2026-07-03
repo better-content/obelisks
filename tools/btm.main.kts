@@ -1629,6 +1629,7 @@ fun runStaticValidation(): ProcessRun {
         appendLine("tools/btm internal validate-player-progression-contracts")
         appendLine("tools/btm internal validate-progression-reachability")
         appendLine("tools/btm internal validate-burnt-coverage")
+        appendLine("tools/btm internal validate-lc-tfth-dh-contracts")
     }
     return runBash(script)
 }
@@ -2513,6 +2514,9 @@ fun runBurntCoverageValidation(): ProcessRun {
     return ProcessRun(0, output.joinToString("\n"))
 }
 
+fun runLcTfthDhContractsValidation(): ProcessRun =
+    runKotlinScript(root.resolve("tools/kotlin/validate_lc_tfth_dh_contracts.main.kts"))
+
 fun runSmokeValidation(serverDir: Path, port: Int, reset: Boolean): ProcessRun {
     val stamp = timestamp()
     val bootstrap = bootstrapServerRuntime(serverDir, port, reset)
@@ -3040,6 +3044,10 @@ fun handleInternal(subArgs: List<String>): CommandResult {
         "validate-burnt-coverage" -> {
             val run = runBurntCoverageValidation()
             CommandResult("internal validate-burnt-coverage", if (run.exitCode == 0) "success" else "failure", run.output, exitCode = if (run.exitCode == 0) 0 else 1)
+        }
+        "validate-lc-tfth-dh-contracts" -> {
+            val run = runLcTfthDhContractsValidation()
+            CommandResult("internal validate-lc-tfth-dh-contracts", if (run.exitCode == 0) "success" else "failure", run.output, exitCode = if (run.exitCode == 0) 0 else 1)
         }
         else -> usageError("unknown internal command: ${subArgs.first()}", internalHelp())
     }

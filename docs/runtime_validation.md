@@ -30,6 +30,7 @@ tools/btm doctor runtime --instance /path/to/fresh/runtime
 - `--smoke`: fresh disposable server bootstrap, boot, hard-log scan, and strict runtime suite.
 - `tools/btm test scenario` is the supported front door for harness-backed runtime scenarios.
 - `tools/btm doctor ...` is the supported front door for prerequisite, repo-surface, and runtime-shape checks.
+- `tools/btm internal validate-lc-tfth-dh-contracts` is a source-level LC/TFTH/DH correctness contract and is included in `tools/btm test static`; it does not launch Minecraft.
 
 Realistic Hands static regressions now cover primitive loose-earth hand breakability, representative knife/sword separation, first-class tool coverage, primitive flint/bone/rock butcher knife and hand axe recipes, Farmer's Delight straw-harvester knife tags, and ore/deepslate hardness probe coverage. The exact deepslate `+1` hardness assertion is enforced when a retained `generated/runtime-dumps/block_hardness_probe.json` exists.
 
@@ -42,6 +43,8 @@ After changing validation entry points or evidence claims, re-run the relevant `
 For normal content work:
 
 ```bash
+tools/btm doctor env
+tools/btm test kotlin
 tools/btm test static
 tools/btm doctor repo
 ```
@@ -49,6 +52,9 @@ tools/btm doctor repo
 For runtime-facing content changes:
 
 ```bash
+tools/btm doctor env
+tools/btm test kotlin
+tools/btm test static
 tools/btm test runtime --instance /path/to/fresh/runtime
 tools/btm test smoke --server-dir /tmp/btm-content-smoke --port 25565 --reset-runtime
 ```
@@ -99,7 +105,21 @@ tools/btm test scenario lc_tfth_c2me_dh
 tools/btm test scenario lc_tfth_c2me_dh --cycles 1 --idle-seconds 30 --tfth-seconds 30
 ```
 
-Expected full validation: three clean boot/join/space-routed dimension teleport/Distant Horizons generation/TFTH pressure cycles, required jars present, no crash reports, no ModernFix watchdog, no C2ME thread-guard failures, and Distant Horizons activity observed.
+LC/TFTH/DH correctness contract: `tools/btm test static` runs `tools/btm internal validate-lc-tfth-dh-contracts`, which verifies the Lost Cities, TFTH, C2ME, Distant Horizons, and `btmfixes` source contracts without launching Minecraft. The contract checks active manifests/custom jars, parseable `config/c2me.toml`, `config/DistantHorizons.toml`, `config/TFTH.toml`, and `config/TFTH-Data.toml`, Lost Cities Creating Space route ownership, required scenario fatal classifiers, and the requirement that Distant Horizons activity is observed before the scenario can pass.
+
+LC/TFTH/DH runtime stability is a targeted lane, not a default correctness gate. Run the short profile after touching C2ME, Distant Horizons, Lost Cities, TFTH, dimension routing, custom worldgen jars, entity/worldgen behavior, or scenario harness logic:
+
+```bash
+tools/btm test scenario lc_tfth_c2me_dh --cycles 1 --idle-seconds 30 --tfth-seconds 30
+```
+
+Run the default three-cycle profile for release candidates or after high-risk fixes in those systems:
+
+```bash
+tools/btm test scenario lc_tfth_c2me_dh
+```
+
+Expected full validation: three clean boot/join/space-routed dimension teleport/Distant Horizons generation/TFTH pressure cycles, required jars present, no crash reports, no ModernFix watchdog, no C2ME thread-guard failures, no DH/Lost Cities/TFTH exceptions, and Distant Horizons activity observed.
 
 Opening progression runtime validation:
 

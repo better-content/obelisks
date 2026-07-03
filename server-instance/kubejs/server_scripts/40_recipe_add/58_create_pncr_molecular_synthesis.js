@@ -8,10 +8,8 @@ function btmChemItem(id) {
     try { return Item.exists(id) } catch (e) { return false }
 }
 
-var BTM_CHEM_SEALED_CELL = 'latent_chemlib:sealed_chemical_cell'
-
 function btmChemGas(original) {
-    return btmChemItem(BTM_CHEM_SEALED_CELL) ? { item: BTM_CHEM_SEALED_CELL } : { item: original }
+    return { item: original }
 }
 
 function btmChemResults(primaryResults, sideProducts) {
@@ -39,6 +37,12 @@ function btmChemMixing(event, id, ingredients, results, heat, time) {
 }
 
 function btmChemCompacting(event, id, ingredients, results, heat) {
+    for (var i = 0; i < results.length; i++) {
+        if (results[i].item && !btmChemItem(results[i].item)) return
+    }
+    for (var j = 0; j < ingredients.length; j++) {
+        if (ingredients[j].item && !btmChemItem(ingredients[j].item)) return
+    }
     var recipe = {
         type: 'create:compacting',
         ingredients: ingredients,
@@ -49,6 +53,10 @@ function btmChemCompacting(event, id, ingredients, results, heat) {
 }
 
 function btmChemPressure(event, id, inputs, result, pressure) {
+    if (result.item && !btmChemItem(result.item)) return
+    for (var i = 0; i < inputs.length; i++) {
+        if (inputs[i].item && !btmChemItem(inputs[i].item)) return
+    }
     event.custom({
         type: 'pneumaticcraft:pressure_chamber',
         inputs: inputs.map(function (input) {

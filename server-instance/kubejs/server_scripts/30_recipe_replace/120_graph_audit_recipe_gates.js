@@ -22,7 +22,7 @@ function btmGraphRemoveOutputs(event, outputs) {
 function btmGraphShaped(event, output, pattern, keys, id) {
     if (!btmGraphItemExists(output)) return
     event.remove({ output: output })
-    global.btmCreateMechanicalCrafting(event, id, output, 1, pattern, keys, true)
+    global.btmFactoryCrafting(event, id, output, 1, pattern, keys, true)
 }
 
 ServerEvents.recipes(function (event) {

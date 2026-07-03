@@ -6,6 +6,10 @@
 var BTM_CASING_AESTHETIC = {
     pressureSeal: 'kubejs:pressure_seal',
     compressorCore: 'kubejs:rotational_compressor_core',
+    brassUtilityAssembly: 'kubejs:brass_utility_assembly',
+    electricalInstrumentationModule: 'kubejs:electrical_instrumentation_module',
+    spaceExpeditionKit: 'kubejs:space_expedition_kit',
+    impossibleSupportMatrix: 'kubejs:impossible_support_matrix',
     ironPlate: '#forge:plates/iron',
     brassPlate: '#forge:plates/brass',
     copperPlate: '#forge:plates/copper',
@@ -124,15 +128,7 @@ function btmAestheticMechanical(event, id, output, pattern, keys) {
     for (var key in keys) inputs.push(keys[key])
     if (!btmAestheticCanMake(output, inputs)) return
     btmAestheticRemove(event, output)
-    var jsonKeys = {}
-    for (var keyId in keys) jsonKeys[keyId] = btmAestheticIngredient(keys[keyId])
-    event.custom({
-        type: 'create:mechanical_crafting',
-        acceptMirrored: true,
-        pattern: pattern,
-        key: jsonKeys,
-        result: { item: output }
-    }).id('kubejs:casing_aesthetic/mechanical_crafting/' + id)
+    global.btmFactoryCrafting(event, 'kubejs:casing_aesthetic/factory/' + id, output, 1, pattern, keys, { mirrored: true })
 }
 
 ServerEvents.recipes(function (event) {
@@ -157,13 +153,13 @@ ServerEvents.recipes(function (event) {
     btmAestheticSequenced(event, 'display_link', 'create:electron_tube', 'create:display_link', 1, [
         BTM_CASING_AESTHETIC.redstoneRelay,
         'create:precision_mechanism',
-        BTM_CASING_AESTHETIC.brassPlate,
+        BTM_CASING_AESTHETIC.brassUtilityAssembly,
         'create:pressing'
     ], 1)
     btmAestheticSequenced(event, 'display_board', 'create:electron_tube', 'create:display_board', 1, [
         BTM_CASING_AESTHETIC.glass,
         'create:precision_mechanism',
-        BTM_CASING_AESTHETIC.brassPlate,
+        BTM_CASING_AESTHETIC.brassUtilityAssembly,
         'create:pressing'
     ], 2)
     btmAestheticSequenced(event, 'portable_storage_interface', 'create:andesite_funnel', 'create:portable_storage_interface', 1, [
@@ -181,7 +177,7 @@ ServerEvents.recipes(function (event) {
     btmAestheticSequenced(event, 'stock_link', 'create:electron_tube', 'create:stock_link', 1, [
         BTM_CASING_AESTHETIC.redstoneRelay,
         'create:precision_mechanism',
-        BTM_CASING_AESTHETIC.brassPlate,
+        BTM_CASING_AESTHETIC.brassUtilityAssembly,
         'create:pressing'
     ], 2)
     btmAestheticSequenced(event, 'stock_ticker', 'create:stock_link', 'create:stock_ticker', 1, [
@@ -284,7 +280,11 @@ ServerEvents.recipes(function (event) {
         { id: BTM_CASING_AESTHETIC.redstoneRelay },
         { id: BTM_CASING_AESTHETIC.circuit }
     ])
-    btmAestheticAssembly(event, 'laser', 'oc2r_cpu_tier_2', 'oc2r:circuit_board', 'oc2r:cpu_tier_2')
+    btmAestheticPressure(event, 'oc2r_cpu_tier_2', 'oc2r:cpu_tier_2', 1, 3.5, [
+        { id: 'oc2r:circuit_board' },
+        { id: 'oc2r:transistor', count: 2 },
+        { id: BTM_CASING_AESTHETIC.electricalInstrumentationModule }
+    ])
     btmAestheticPressure(event, 'oc2r_hard_drive_large', 'oc2r:hard_drive_large', 1, 3.0, [
         { id: 'oc2r:silicon_wafer', count: 4 },
         { id: 'oc2r:circuit_board' },
@@ -293,7 +293,8 @@ ServerEvents.recipes(function (event) {
     btmAestheticPressure(event, 'oc2r_memory_large', 'oc2r:memory_large', 1, 3.0, [
         { id: 'oc2r:silicon_wafer', count: 2 },
         { id: 'oc2r:transistor', count: 2 },
-        { id: 'oc2r:circuit_board' }
+        { id: 'oc2r:circuit_board' },
+        { id: BTM_CASING_AESTHETIC.electricalInstrumentationModule }
     ])
 
     // AE2 addon part/full conversions should spend impossible-tier logic, not
@@ -305,7 +306,7 @@ ServerEvents.recipes(function (event) {
     ], {
         S: 'kubejs:sky_steel_sheet',
         P: 'ae2:capacity_card',
-        C: 'kubejs:impossible_circuit',
+        C: BTM_CASING_AESTHETIC.impossibleSupportMatrix,
         I: 'expatternprovider:ex_interface'
     })
     btmAestheticMechanical(event, 'expatternprovider_oversize_interface_part', 'expatternprovider:oversize_interface_part', [
@@ -315,7 +316,7 @@ ServerEvents.recipes(function (event) {
     ], {
         S: 'kubejs:sky_steel_sheet',
         P: 'ae2:engineering_processor',
-        C: 'kubejs:impossible_circuit',
+        C: BTM_CASING_AESTHETIC.impossibleSupportMatrix,
         I: 'expatternprovider:oversize_interface'
     })
 
@@ -325,23 +326,23 @@ ServerEvents.recipes(function (event) {
     btmAestheticPressure(event, 'engine_blueprint', 'creatingspace:engine_blueprint', 1, 2.0, [
         { id: 'minecraft:paper', count: 2 },
         { id: BTM_CASING_AESTHETIC.circuit },
-        { id: 'creatingspace:inconel_sheet' }
+        { id: BTM_CASING_AESTHETIC.spaceExpeditionKit }
     ])
     btmAestheticPressure(event, 'power_pack', 'creatingspace:power_pack', 1, 3.0, [
         { id: 'powergrid:battery', count: 2 },
         { id: BTM_CASING_AESTHETIC.electricalGizmo },
-        { id: 'creatingspace:inconel_sheet', count: 2 }
+        { id: BTM_CASING_AESTHETIC.spaceExpeditionKit }
     ])
     btmAestheticPressure(event, 'exhaust_pack', 'creatingspace:exhaust_pack', 1, 3.0, [
         { id: 'pneumaticcraft:reinforced_pressure_tube', count: 2 },
         { id: BTM_CASING_AESTHETIC.pressureSeal, count: 2 },
-        { id: 'creatingspace:hastelloy_sheet', count: 2 }
+        { id: BTM_CASING_AESTHETIC.spaceExpeditionKit }
     ])
     btmAestheticPressure(event, 'copper_oxygen_backtank', 'creatingspace:copper_oxygen_backtank', 1, 3.0, [
         { id: 'pneumaticcraft:small_tank' },
         { id: 'pneumaticcraft:reinforced_pressure_tube', count: 2 },
         { id: BTM_CASING_AESTHETIC.pressureSeal, count: 2 },
-        { id: BTM_CASING_AESTHETIC.copperPlate, count: 2 }
+        { id: BTM_CASING_AESTHETIC.spaceExpeditionKit }
     ])
     btmAestheticPressure(event, 'netherite_oxygen_backtank', 'creatingspace:netherite_oxygen_backtank', 1, 4.0, [
         { id: 'creatingspace:copper_oxygen_backtank' },
@@ -352,6 +353,6 @@ ServerEvents.recipes(function (event) {
         { id: 'creatingspace:basic_spacesuit_fabric', count: 2 },
         { id: 'kubejs:titanium_thermal_plate', count: 2 },
         { id: BTM_CASING_AESTHETIC.titaniumOxide },
-        { id: BTM_CASING_AESTHETIC.pressureSeal, count: 2 }
+        { id: BTM_CASING_AESTHETIC.spaceExpeditionKit }
     ])
 })

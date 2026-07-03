@@ -12,7 +12,7 @@ function btmDimProofShaped(event, output, pattern, keys, recipeId, count) {
 
 function btmDimProofMechanical(event, output, pattern, keys, recipeId, count) {
     event.remove({ output: output })
-    global.btmCreateMechanicalCrafting(event, recipeId, output, count || 1, pattern, keys, true)
+    global.btmFactoryCrafting(event, recipeId, output, count || 1, pattern, keys, true)
     BTM_DIM_PROOF_ADDED++
 }
 
@@ -147,8 +147,8 @@ ServerEvents.recipes(function (event) {
         B: 'kubejs:electrical_machine_casing'
     }, 'kubejs:dimension_graph/aether/cargo_airship')
 
-    // Everdawn -> advanced hydration and drink route supplies. Basic Thirst
-    // bowls, bottles, buckets, and early water purification stay outside this gate.
+    // Everdawn -> light-side expedition support. Basic Thirst bowls, bottles,
+    // buckets, and early water purification stay outside this gate.
     btmDimProofShaped(event, 'cold_sweat:waterskin', [
         ' B ',
         'LPL',
@@ -169,6 +169,28 @@ ServerEvents.recipes(function (event) {
         I: '#forge:plates/iron',
         C: 'minecraft:honeycomb'
     }, 'kubejs:dimension_graph/everdawn/keg')
+
+    // Everbright -> dark-side expedition support. These routes deliberately stay
+    // on scouting, reagent, and fieldcraft outputs instead of assigning the dark
+    // magic spine to the dimension itself.
+    btmDimProofShaped(event, 'minecraft:soul_torch', [
+        ' M ',
+        ' S '
+    ], {
+        M: 'blue_skies:moonstone',
+        S: 'blue_skies:starlit_stick'
+    }, 'kubejs:dimension_graph/everbright/soul_torch', 4)
+
+    btmDimProofShaped(event, 'minecraft:fermented_spider_eye', [
+        ' M ',
+        'SES',
+        ' A '
+    ], {
+        M: 'minecraft:brown_mushroom',
+        S: 'minecraft:sugar',
+        E: 'minecraft:spider_eye',
+        A: 'blue_skies:aquite'
+    }, 'kubejs:dimension_graph/everbright/fermented_spider_eye', 2)
 
     console.info('[dimension-proof-graph-starts] registered ' + BTM_DIM_PROOF_ADDED + ' recipe gates')
 })

@@ -125,6 +125,9 @@ function btmSynArsImbuement(event, id, input, output, pedestalItems, sourceCost)
 
 function btmSynArsApparatus(event, id, reagent, output, pedestalItems, sourceCost) {
     if (!btmSynExists(reagent) || !btmSynExists(output)) return
+    for (var i = 0; i < pedestalItems.length; i++) {
+        if (!btmSynExists(pedestalItems[i])) return
+    }
     event.custom({
         type: 'ars_nouveau:enchanting_apparatus',
         keepNbtOfReagent: false,
@@ -150,12 +153,12 @@ var BTM_SYN_ELEMENTS = [
 ]
 
 var BTM_SYN_FAMILIES = [
-    { id: 'oxide', suffix: 'oxide', fluid: 'minecraft:water', amount: 125, reagent: 'latent_chemlib:sealed_chemical_cell', heat: 'heated', time: 180 },
+    { id: 'oxide', suffix: 'oxide', fluid: 'minecraft:water', amount: 125, reagent: 'chemlib:oxygen', heat: 'heated', time: 180 },
     { id: 'hydroxide', suffix: 'hydroxide', fluid: 'minecraft:water', amount: 250, reagent: 'chemlib:sodium_hydroxide', heat: null, time: 180, gas: { item: 'chemlib:hydrogen', chance: 0.10 } },
     { id: 'carbonate', suffix: 'carbonate', fluid: 'minecraft:water', amount: 250, reagent: 'chemlib:carbon', heat: null, time: 180, gas: { item: 'chemlib:carbon_dioxide', chance: 0.12 } },
-    { id: 'chloride', suffix: 'chloride', fluid: 'chemlib:hydrochloric_acid_fluid', amount: 250, reagent: 'chemlib:sodium_chloride', pressureReagent: 'latent_chemlib:sealed_chemical_cell', heat: 'heated', time: 220, gas: { item: 'chemlib:hydrogen', chance: 0.18 } },
-    { id: 'nitrate', suffix: 'nitrate', fluid: 'chemlib:nitric_acid_fluid', amount: 250, reagent: 'latent_chemlib:sealed_chemical_cell', pressureReagent: 'minecraft:redstone', heat: 'heated', time: 240, gas: { item: 'chemlib:nitrogen_dioxide', chance: 0.22 } },
-    { id: 'sulfate', suffix: 'sulfate', fluid: 'chemlib:sulfuric_acid_fluid', amount: 250, reagent: 'chemlib:sulfur', pressureReagent: 'latent_chemlib:sealed_chemical_cell', heat: 'heated', time: 230, gas: { item: 'chemlib:sulfur_dioxide', chance: 0.18 } },
+    { id: 'chloride', suffix: 'chloride', fluid: 'chemlib:hydrochloric_acid_fluid', amount: 250, reagent: 'chemlib:sodium_chloride', thermo: true, heat: 'heated', time: 220, gas: { item: 'chemlib:hydrogen', chance: 0.18 } },
+    { id: 'nitrate', suffix: 'nitrate', fluid: 'chemlib:nitric_acid_fluid', amount: 250, reagent: 'minecraft:redstone', thermo: true, heat: 'heated', time: 240, gas: { item: 'chemlib:nitrogen_dioxide', chance: 0.22 } },
+    { id: 'sulfate', suffix: 'sulfate', fluid: 'chemlib:sulfuric_acid_fluid', amount: 250, reagent: 'chemlib:sulfur', thermo: true, heat: 'heated', time: 230, gas: { item: 'chemlib:sulfur_dioxide', chance: 0.18 } },
     { id: 'sulfide', suffix: 'sulfide', fluid: 'minecraft:water', amount: 125, reagent: 'chemlib:sulfur', heat: 'heated', time: 210, gas: { item: 'chemlib:hydrogen_sulfide', chance: 0.16 } },
     { id: 'phosphate', suffix: 'phosphate', fluid: 'kubejs:phosphoric_acid_fluid', amount: 250, reagent: 'chemlib:phosphorus', heat: 'heated', time: 230, gas: { item: 'chemlib:oxygen', chance: 0.10 } }
 ]
@@ -264,7 +267,7 @@ ServerEvents.recipes(function (event) {
                 { fluid: family.fluid, amount: family.amount }
             ]
             btmSynMixing(event, element + '/' + family.id, ingredients, { item: outputId, count: 2 }, family.heat, family.time, family.gas ? [family.gas] : [])
-            if (family.pressureReagent) {
+            if (family.thermo) {
                 btmSynThermo(event, element + '/' + family.id, { item: elementId }, family.fluid, family.amount, { item: outputId, count: 3 }, family.id === 'nitrate' ? 3.5 : 2.75, family.id === 'nitrate' ? 573 : 523)
             }
         }

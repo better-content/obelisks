@@ -141,9 +141,8 @@
       "id": "blood_1",
       "gate": "bloodmagic:blankslate",
       "mods": [
-        "hexerei",
-        "rootsclassic",
         "malum",
+        "rootsclassic",
         "reliquary"
       ]
     },
@@ -151,11 +150,7 @@
       "id": "blood_2",
       "gate": "bloodmagic:reinforcedslate",
       "mods": [
-        "ars_nouveau",
-        "ars_additions",
-        "ars_instrumentum",
-        "ars_elemental",
-        "naturesaura",
+        "hexerei",
         "irons_spellbooks"
       ]
     },
@@ -165,15 +160,18 @@
       "mods": [
         "occultism",
         "mahoutsukai",
-        "eidolon",
-        "goety"
+        "eidolon"
       ]
     },
     {
       "id": "blood_4",
       "gate": "bloodmagic:demonslate",
       "mods": [
-        "botania",
+        "ars_nouveau",
+        "ars_additions",
+        "ars_instrumentum",
+        "ars_elemental",
+        "goety",
         "forbidden_arcanus",
         "theurgy",
         "ars_creo",
@@ -206,6 +204,8 @@
   "criticalRules": [
     "Block-like machines must require their assigned casing tier.",
     "Magic workstations must be parented to Blood Magic tiers.",
+    "Hexerei progression must precede Occultism attunement and Ars source precision.",
+    "Exact duplicate physical materials should collapse to canonical pack families; mahogany standardizes on natures_spirit.",
     "Loot, Wares, trades, mob drops, and quests are recipe-equivalent material sources.",
     "Emerald currency must not drive villager or Wares economy.",
     "Alchemistry is compatibility/reference; Create and PneumaticCraft synthesis are player-facing chemistry.",
@@ -219,9 +219,9 @@
         "ae2",
         "bloodmagic:etherealslate",
         "ars_nouveau:archmage_spell_book",
-        "kubejs:impossible_circuit"
+        "kubejs:ae_logic_package"
       ],
-      "role": "late Blood Magic + Ars Nouveau combat-magic branch"
+      "role": "late hybrid Blood Magic + Ars Nouveau combat-magic finisher after AE2 impossible-matter proof"
     }
   ]
 }

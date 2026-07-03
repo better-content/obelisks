@@ -1,5 +1,5 @@
 {
-  "generatedBy": "tools/audit_starting_item_economy.mjs",
+  "generatedBy": "tools/kotlin/audit_starting_item_economy.main.kts",
   "source": {
     "recipeDump": "generated/runtime-dumps/kubejs-config",
     "recipeCount": 23169,
@@ -21,7 +21,7 @@
       "item": "thirst:terracotta_bowl",
       "category": "Water",
       "count": 1,
-      "cost": 1,
+      "cost": 1.0,
       "role": "Water",
       "inputRecipeCount": 1,
       "outputRecipeCount": 2,
@@ -33,14 +33,16 @@
         "minecraft:smelting"
       ],
       "progressionRecipeParticipant": false,
-      "rejectionReasons": []
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "embark:filled_waterskin",
       "item": "cold_sweat:filled_waterskin",
       "category": "Water",
       "count": 1,
-      "cost": 2,
+      "cost": 2.0,
       "role": "Water",
       "inputRecipeCount": 10,
       "outputRecipeCount": 6,
@@ -54,30 +56,36 @@
         "minecraft:smelting"
       ],
       "progressionRecipeParticipant": false,
-      "rejectionReasons": []
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "embark:thermometer",
       "item": "cold_sweat:thermometer",
       "category": "Climate",
       "count": 1,
-      "cost": 2,
+      "cost": 2.0,
       "role": "Other",
       "inputRecipeCount": 0,
       "outputRecipeCount": 1,
-      "sampleInputTypes": [],
+      "sampleInputTypes": [
+
+      ],
       "sampleOutputTypes": [
         "minecraft:crafting_shaped"
       ],
       "progressionRecipeParticipant": false,
-      "rejectionReasons": []
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "embark:torch_bundle",
       "item": "minecraft:torch",
       "category": "Camp",
       "count": 12,
-      "cost": 1,
+      "cost": 1.0,
       "role": "Camp",
       "inputRecipeCount": 21,
       "outputRecipeCount": 3,
@@ -94,15 +102,17 @@
       "sampleOutputTypes": [
         "minecraft:crafting_shaped"
       ],
-      "progressionRecipeParticipant": true,
-      "rejectionReasons": []
+      "progressionRecipeParticipant": false,
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "embark:rope_coil",
       "item": "farmersdelight:rope",
       "category": "Route",
       "count": 8,
-      "cost": 2,
+      "cost": 2.0,
       "role": "Route",
       "inputRecipeCount": 3,
       "outputRecipeCount": 2,
@@ -114,14 +124,16 @@
         "minecraft:crafting_shapeless"
       ],
       "progressionRecipeParticipant": false,
-      "rejectionReasons": []
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "embark:compass",
       "item": "minecraft:compass",
       "category": "Route",
       "count": 1,
-      "cost": 2,
+      "cost": 2.0,
       "role": "Route",
       "inputRecipeCount": 19,
       "outputRecipeCount": 2,
@@ -138,15 +150,17 @@
         "minecraft:crafting_shaped",
         "tconstruct:casting_table"
       ],
-      "progressionRecipeParticipant": true,
-      "rejectionReasons": []
+      "progressionRecipeParticipant": false,
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "embark:clock",
       "item": "minecraft:clock",
       "category": "Route",
       "count": 1,
-      "cost": 2,
+      "cost": 2.0,
       "role": "Route",
       "inputRecipeCount": 23,
       "outputRecipeCount": 2,
@@ -164,31 +178,37 @@
         "minecraft:crafting_shaped",
         "tconstruct:casting_table"
       ],
-      "progressionRecipeParticipant": true,
-      "rejectionReasons": []
+      "progressionRecipeParticipant": false,
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "embark:empty_map",
       "item": "minecraft:map",
       "category": "Route",
       "count": 1,
-      "cost": 1,
+      "cost": 1.0,
       "role": "Route",
       "inputRecipeCount": 0,
       "outputRecipeCount": 1,
-      "sampleInputTypes": [],
+      "sampleInputTypes": [
+
+      ],
       "sampleOutputTypes": [
         "minecraft:crafting_shaped"
       ],
       "progressionRecipeParticipant": false,
-      "rejectionReasons": []
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "embark:rail_bundle",
       "item": "minecraft:rail",
       "category": "Route",
       "count": 16,
-      "cost": 2,
+      "cost": 2.0,
       "role": "Route",
       "inputRecipeCount": 3,
       "outputRecipeCount": 1,
@@ -201,14 +221,16 @@
         "minecraft:crafting_shaped"
       ],
       "progressionRecipeParticipant": false,
-      "rejectionReasons": []
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "embark:minecart",
       "item": "minecraft:minecart",
       "category": "Route",
       "count": 1,
-      "cost": 2,
+      "cost": 2.0,
       "role": "Route",
       "inputRecipeCount": 14,
       "outputRecipeCount": 2,
@@ -221,15 +243,17 @@
         "minecraft:crafting_shaped",
         "minecraft:crafting_shapeless"
       ],
-      "progressionRecipeParticipant": true,
-      "rejectionReasons": []
+      "progressionRecipeParticipant": false,
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "embark:apple_ration",
       "item": "minecraft:apple",
       "category": "Food",
       "count": 6,
-      "cost": 1,
+      "cost": 1.0,
       "role": "Food",
       "inputRecipeCount": 23,
       "outputRecipeCount": 1,
@@ -247,14 +271,16 @@
         "minecraft:crafting_shapeless"
       ],
       "progressionRecipeParticipant": false,
-      "rejectionReasons": []
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "embark:bread_ration",
       "item": "minecraft:bread",
       "category": "Food",
       "count": 6,
-      "cost": 2,
+      "cost": 2.0,
       "role": "Food",
       "inputRecipeCount": 4,
       "outputRecipeCount": 8,
@@ -270,7 +296,9 @@
         "minecraft:smoking"
       ],
       "progressionRecipeParticipant": false,
-      "rejectionReasons": []
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "kit:wayfinder",
@@ -294,8 +322,10 @@
         "minecraft:crafting_shaped",
         "tconstruct:casting_table"
       ],
-      "progressionRecipeParticipant": true,
-      "rejectionReasons": []
+      "progressionRecipeParticipant": false,
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "kit:wayfinder",
@@ -306,12 +336,16 @@
       "role": "Route",
       "inputRecipeCount": 0,
       "outputRecipeCount": 1,
-      "sampleInputTypes": [],
+      "sampleInputTypes": [
+
+      ],
       "sampleOutputTypes": [
         "minecraft:crafting_shaped"
       ],
       "progressionRecipeParticipant": false,
-      "rejectionReasons": []
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "kit:wayfinder",
@@ -332,7 +366,9 @@
         "minecraft:crafting_shaped"
       ],
       "progressionRecipeParticipant": false,
-      "rejectionReasons": []
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "kit:wayfinder",
@@ -350,7 +386,9 @@
         "minecraft:crafting_shaped"
       ],
       "progressionRecipeParticipant": false,
-      "rejectionReasons": []
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "kit:wayfinder",
@@ -374,8 +412,10 @@
       "sampleOutputTypes": [
         "minecraft:crafting_shaped"
       ],
-      "progressionRecipeParticipant": true,
-      "rejectionReasons": []
+      "progressionRecipeParticipant": false,
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "kit:wayfinder",
@@ -394,7 +434,9 @@
         "minecraft:smelting"
       ],
       "progressionRecipeParticipant": false,
-      "rejectionReasons": []
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "kit:field_cook",
@@ -412,7 +454,9 @@
         "minecraft:crafting_shaped"
       ],
       "progressionRecipeParticipant": false,
-      "rejectionReasons": []
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "kit:field_cook",
@@ -427,9 +471,13 @@
         "create:milling",
         "farmersdelight:cutting"
       ],
-      "sampleOutputTypes": [],
+      "sampleOutputTypes": [
+
+      ],
       "progressionRecipeParticipant": false,
-      "rejectionReasons": []
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "kit:field_cook",
@@ -448,7 +496,9 @@
         "minecraft:crafting_shapeless"
       ],
       "progressionRecipeParticipant": false,
-      "rejectionReasons": []
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "kit:field_cook",
@@ -469,7 +519,9 @@
         "minecraft:crafting_shapeless"
       ],
       "progressionRecipeParticipant": false,
-      "rejectionReasons": []
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "kit:field_cook",
@@ -494,7 +546,9 @@
         "minecraft:crafting_shapeless"
       ],
       "progressionRecipeParticipant": false,
-      "rejectionReasons": []
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "kit:field_cook",
@@ -519,7 +573,9 @@
         "minecraft:crafting_shapeless"
       ],
       "progressionRecipeParticipant": false,
-      "rejectionReasons": []
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "kit:field_cook",
@@ -540,7 +596,9 @@
         "minecraft:smelting"
       ],
       "progressionRecipeParticipant": false,
-      "rejectionReasons": []
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "kit:field_cook",
@@ -559,7 +617,9 @@
         "minecraft:smelting"
       ],
       "progressionRecipeParticipant": false,
-      "rejectionReasons": []
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "kit:rail_scout",
@@ -579,7 +639,9 @@
         "minecraft:crafting_shaped"
       ],
       "progressionRecipeParticipant": false,
-      "rejectionReasons": []
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "kit:rail_scout",
@@ -600,7 +662,9 @@
         "minecraft:crafting_shaped"
       ],
       "progressionRecipeParticipant": false,
-      "rejectionReasons": []
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "kit:rail_scout",
@@ -620,8 +684,10 @@
         "minecraft:crafting_shaped",
         "minecraft:crafting_shapeless"
       ],
-      "progressionRecipeParticipant": true,
-      "rejectionReasons": []
+      "progressionRecipeParticipant": false,
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "kit:rail_scout",
@@ -645,8 +711,10 @@
         "minecraft:crafting_shaped",
         "tconstruct:casting_table"
       ],
-      "progressionRecipeParticipant": true,
-      "rejectionReasons": []
+      "progressionRecipeParticipant": false,
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "kit:rail_scout",
@@ -670,8 +738,10 @@
       "sampleOutputTypes": [
         "minecraft:crafting_shaped"
       ],
-      "progressionRecipeParticipant": true,
-      "rejectionReasons": []
+      "progressionRecipeParticipant": false,
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "kit:rail_scout",
@@ -690,7 +760,9 @@
         "minecraft:smelting"
       ],
       "progressionRecipeParticipant": false,
-      "rejectionReasons": []
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "kit:flood_runner",
@@ -708,7 +780,9 @@
         "minecraft:crafting_shaped"
       ],
       "progressionRecipeParticipant": false,
-      "rejectionReasons": []
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "kit:flood_runner",
@@ -725,8 +799,10 @@
       "sampleOutputTypes": [
         "minecraft:crafting_shaped"
       ],
-      "progressionRecipeParticipant": true,
-      "rejectionReasons": []
+      "progressionRecipeParticipant": false,
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "kit:flood_runner",
@@ -747,7 +823,9 @@
         "minecraft:smelting"
       ],
       "progressionRecipeParticipant": false,
-      "rejectionReasons": []
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "kit:flood_runner",
@@ -766,7 +844,9 @@
         "minecraft:crafting_shapeless"
       ],
       "progressionRecipeParticipant": false,
-      "rejectionReasons": []
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "kit:flood_runner",
@@ -785,7 +865,9 @@
         "minecraft:smelting"
       ],
       "progressionRecipeParticipant": false,
-      "rejectionReasons": []
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "kit:market_runner",
@@ -796,10 +878,16 @@
       "role": "Trade",
       "inputRecipeCount": 0,
       "outputRecipeCount": 0,
-      "sampleInputTypes": [],
-      "sampleOutputTypes": [],
+      "sampleInputTypes": [
+
+      ],
+      "sampleOutputTypes": [
+
+      ],
       "progressionRecipeParticipant": false,
-      "rejectionReasons": []
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "kit:market_runner",
@@ -810,10 +898,16 @@
       "role": "Trade",
       "inputRecipeCount": 0,
       "outputRecipeCount": 0,
-      "sampleInputTypes": [],
-      "sampleOutputTypes": [],
+      "sampleInputTypes": [
+
+      ],
+      "sampleOutputTypes": [
+
+      ],
       "progressionRecipeParticipant": false,
-      "rejectionReasons": []
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "kit:market_runner",
@@ -837,8 +931,10 @@
         "minecraft:crafting_shaped",
         "tconstruct:casting_table"
       ],
-      "progressionRecipeParticipant": true,
-      "rejectionReasons": []
+      "progressionRecipeParticipant": false,
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "kit:market_runner",
@@ -863,7 +959,9 @@
         "minecraft:crafting_shapeless"
       ],
       "progressionRecipeParticipant": false,
-      "rejectionReasons": []
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "kit:market_runner",
@@ -882,7 +980,9 @@
         "minecraft:smelting"
       ],
       "progressionRecipeParticipant": false,
-      "rejectionReasons": []
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "kit:trail_wrangler",
@@ -903,7 +1003,9 @@
         "minecraft:crafting_shaped"
       ],
       "progressionRecipeParticipant": false,
-      "rejectionReasons": []
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "kit:trail_wrangler",
@@ -914,12 +1016,16 @@
       "role": "Route",
       "inputRecipeCount": 0,
       "outputRecipeCount": 6,
-      "sampleInputTypes": [],
+      "sampleInputTypes": [
+
+      ],
       "sampleOutputTypes": [
         "minecraft:crafting_shaped"
       ],
       "progressionRecipeParticipant": false,
-      "rejectionReasons": []
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "kit:trail_wrangler",
@@ -937,7 +1043,9 @@
         "minecraft:crafting_shaped"
       ],
       "progressionRecipeParticipant": false,
-      "rejectionReasons": []
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "kit:trail_wrangler",
@@ -961,7 +1069,9 @@
         "minecraft:crafting_shapeless"
       ],
       "progressionRecipeParticipant": false,
-      "rejectionReasons": []
+      "rejectionReasons": [
+
+      ]
     },
     {
       "source": "kit:trail_wrangler",
@@ -980,14 +1090,17 @@
         "minecraft:smelting"
       ],
       "progressionRecipeParticipant": false,
-      "rejectionReasons": []
+      "rejectionReasons": [
+
+      ]
     }
   ],
   "candidateRoles": {
     "Camp": [
       {
         "item": "minecraft:charcoal",
-        "score": 17,
+        "role": "Camp",
+        "score": 17.0,
         "inputRecipeCount": 26,
         "outputRecipeCount": 6,
         "sampleInputTypes": [
@@ -1001,10 +1114,14 @@
           "minecraft:crafting_shaped",
           "minecraft:crafting_shapeless",
           "minecraft:smelting"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "minecraft:torch",
+        "role": "Camp",
         "score": 16.5,
         "inputRecipeCount": 21,
         "outputRecipeCount": 3,
@@ -1017,11 +1134,15 @@
         ],
         "sampleOutputTypes": [
           "minecraft:crafting_shaped"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "minecraft:candle",
-        "score": 15.67,
+        "role": "Camp",
+        "score": 15.666666666666666,
         "inputRecipeCount": 16,
         "outputRecipeCount": 2,
         "sampleInputTypes": [
@@ -1029,11 +1150,15 @@
         ],
         "sampleOutputTypes": [
           "minecraft:crafting_shaped"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "natures_spirit:paper_lantern",
-        "score": 14.5,
+        "role": "Camp",
+        "score": 14.499999999999998,
         "inputRecipeCount": 16,
         "outputRecipeCount": 1,
         "sampleInputTypes": [
@@ -1041,10 +1166,14 @@
         ],
         "sampleOutputTypes": [
           "minecraft:crafting_shaped"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "minecraft:soul_torch",
+        "role": "Camp",
         "score": 13.5,
         "inputRecipeCount": 10,
         "outputRecipeCount": 1,
@@ -1055,11 +1184,15 @@
         ],
         "sampleOutputTypes": [
           "minecraft:crafting_shaped"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "minecraft:lantern",
-        "score": 11.67,
+        "role": "Camp",
+        "score": 11.666666666666666,
         "inputRecipeCount": 4,
         "outputRecipeCount": 2,
         "sampleInputTypes": [
@@ -1071,11 +1204,15 @@
         "sampleOutputTypes": [
           "minecraft:crafting_shaped",
           "tconstruct:casting_table"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "minecraft:soul_lantern",
-        "score": 11,
+        "role": "Camp",
+        "score": 11.0,
         "inputRecipeCount": 2,
         "outputRecipeCount": 2,
         "sampleInputTypes": [
@@ -1085,10 +1222,14 @@
         "sampleOutputTypes": [
           "minecraft:crafting_shaped",
           "tconstruct:casting_table"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "minecraft:sea_lantern",
+        "role": "Camp",
         "score": 10.5,
         "inputRecipeCount": 1,
         "outputRecipeCount": 1,
@@ -1097,10 +1238,14 @@
         ],
         "sampleOutputTypes": [
           "minecraft:crafting_shaped"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "aether:ambrosium_torch",
+        "role": "Camp",
         "score": 9.5,
         "inputRecipeCount": 1,
         "outputRecipeCount": 1,
@@ -1109,10 +1254,14 @@
         ],
         "sampleOutputTypes": [
           "minecraft:crafting_shaped"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "everythingcopper:copper_lantern",
+        "role": "Camp",
         "score": 9.5,
         "inputRecipeCount": 1,
         "outputRecipeCount": 1,
@@ -1121,10 +1270,14 @@
         ],
         "sampleOutputTypes": [
           "minecraft:crafting_shaped"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "everythingcopper:copper_soul_lantern",
+        "role": "Camp",
         "score": 9.5,
         "inputRecipeCount": 1,
         "outputRecipeCount": 1,
@@ -1133,10 +1286,14 @@
         ],
         "sampleOutputTypes": [
           "minecraft:crafting_shaped"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "quark:paper_lantern",
+        "role": "Camp",
         "score": 9.5,
         "inputRecipeCount": 1,
         "outputRecipeCount": 1,
@@ -1145,10 +1302,14 @@
         ],
         "sampleOutputTypes": [
           "minecraft:crafting_shaped"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "undergarden:shard_torch",
+        "role": "Camp",
         "score": 9.5,
         "inputRecipeCount": 1,
         "outputRecipeCount": 1,
@@ -1157,11 +1318,15 @@
         ],
         "sampleOutputTypes": [
           "minecraft:crafting_shaped"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "minecraft:torchflower",
-        "score": 9,
+        "role": "Camp",
+        "score": 9.0,
         "inputRecipeCount": 3,
         "outputRecipeCount": 0,
         "sampleInputTypes": [
@@ -1169,46 +1334,70 @@
           "farmersdelight:cutting",
           "minecraft:crafting_shapeless"
         ],
-        "sampleOutputTypes": []
+        "sampleOutputTypes": [
+
+        ],
+        "rejectionReasons": [
+
+        ]
       },
       {
         "item": "twilightforest:torchberries",
-        "score": 7.67,
+        "role": "Camp",
+        "score": 7.666666666666667,
         "inputRecipeCount": 2,
         "outputRecipeCount": 0,
         "sampleInputTypes": [
           "minecraft:crafting_shaped",
           "minecraft:crafting_shapeless"
         ],
-        "sampleOutputTypes": []
+        "sampleOutputTypes": [
+
+        ],
+        "rejectionReasons": [
+
+        ]
       },
       {
         "item": "framedblocks:framed_soul_torch",
-        "score": 7.33,
+        "role": "Camp",
+        "score": 7.333333333333333,
         "inputRecipeCount": 0,
         "outputRecipeCount": 2,
-        "sampleInputTypes": [],
+        "sampleInputTypes": [
+
+        ],
         "sampleOutputTypes": [
           "framedblocks:frame",
           "minecraft:crafting_shaped"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "framedblocks:framed_torch",
-        "score": 7.33,
+        "role": "Camp",
+        "score": 7.333333333333333,
         "inputRecipeCount": 0,
         "outputRecipeCount": 2,
-        "sampleInputTypes": [],
+        "sampleInputTypes": [
+
+        ],
         "sampleOutputTypes": [
           "framedblocks:frame",
           "minecraft:crafting_shaped"
+        ],
+        "rejectionReasons": [
+
         ]
       }
     ],
     "Water": [
       {
         "item": "minecraft:bowl",
-        "score": 16.33,
+        "role": "Water",
+        "score": 16.333333333333336,
         "inputRecipeCount": 42,
         "outputRecipeCount": 2,
         "sampleInputTypes": [
@@ -1221,11 +1410,15 @@
         "sampleOutputTypes": [
           "minecraft:crafting_shaped",
           "minecraft:crafting_shapeless"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "cold_sweat:filled_waterskin",
-        "score": 13.33,
+        "role": "Water",
+        "score": 13.333333333333334,
         "inputRecipeCount": 10,
         "outputRecipeCount": 6,
         "sampleInputTypes": [
@@ -1236,11 +1429,15 @@
         "sampleOutputTypes": [
           "minecraft:campfire_cooking",
           "minecraft:smelting"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "thirst:terracotta_water_bowl",
-        "score": 12.83,
+        "role": "Water",
+        "score": 12.833333333333332,
         "inputRecipeCount": 9,
         "outputRecipeCount": 5,
         "sampleInputTypes": [
@@ -1251,11 +1448,15 @@
         "sampleOutputTypes": [
           "minecraft:campfire_cooking",
           "minecraft:smelting"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "create:copper_diving_boots",
-        "score": 9.83,
+        "role": "Water",
+        "score": 9.833333333333334,
         "inputRecipeCount": 2,
         "outputRecipeCount": 1,
         "sampleInputTypes": [
@@ -1263,11 +1464,15 @@
         ],
         "sampleOutputTypes": [
           "minecraft:crafting_shaped"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "create:copper_diving_helmet",
-        "score": 9.83,
+        "role": "Water",
+        "score": 9.833333333333334,
         "inputRecipeCount": 2,
         "outputRecipeCount": 1,
         "sampleInputTypes": [
@@ -1275,11 +1480,15 @@
         ],
         "sampleOutputTypes": [
           "minecraft:crafting_shaped"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "thirst:clay_bowl",
-        "score": 9.83,
+        "role": "Water",
+        "score": 9.833333333333334,
         "inputRecipeCount": 2,
         "outputRecipeCount": 1,
         "sampleInputTypes": [
@@ -1288,11 +1497,15 @@
         ],
         "sampleOutputTypes": [
           "minecraft:crafting_shaped"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "thirst:terracotta_bowl",
-        "score": 9.67,
+        "role": "Water",
+        "score": 9.666666666666666,
         "inputRecipeCount": 1,
         "outputRecipeCount": 2,
         "sampleInputTypes": [
@@ -1301,10 +1514,14 @@
         "sampleOutputTypes": [
           "minecraft:campfire_cooking",
           "minecraft:smelting"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "cold_sweat:waterskin",
+        "role": "Water",
         "score": 9.5,
         "inputRecipeCount": 1,
         "outputRecipeCount": 1,
@@ -1313,33 +1530,49 @@
         ],
         "sampleOutputTypes": [
           "minecraft:crafting_shaped"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "starcatcher:murkwater_bait",
-        "score": 7.33,
+        "role": "Water",
+        "score": 7.333333333333333,
         "inputRecipeCount": 0,
         "outputRecipeCount": 2,
-        "sampleInputTypes": [],
+        "sampleInputTypes": [
+
+        ],
         "sampleOutputTypes": [
           "starcatcher:modifier_shapeless_recipe"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "undergarden:slop_bowl",
-        "score": 7.33,
+        "role": "Water",
+        "score": 7.333333333333333,
         "inputRecipeCount": 0,
         "outputRecipeCount": 2,
-        "sampleInputTypes": [],
+        "sampleInputTypes": [
+
+        ],
         "sampleOutputTypes": [
           "minecraft:crafting_shapeless"
+        ],
+        "rejectionReasons": [
+
         ]
       }
     ],
     "Route": [
       {
         "item": "minecraft:clock",
-        "score": 16.33,
+        "role": "Route",
+        "score": 16.333333333333336,
         "inputRecipeCount": 23,
         "outputRecipeCount": 2,
         "sampleInputTypes": [
@@ -1352,11 +1585,15 @@
         "sampleOutputTypes": [
           "minecraft:crafting_shaped",
           "tconstruct:casting_table"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "minecraft:compass",
-        "score": 16.33,
+        "role": "Route",
+        "score": 16.333333333333336,
         "inputRecipeCount": 19,
         "outputRecipeCount": 2,
         "sampleInputTypes": [
@@ -1369,11 +1606,15 @@
         "sampleOutputTypes": [
           "minecraft:crafting_shaped",
           "tconstruct:casting_table"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "minecraft:minecart",
-        "score": 15,
+        "role": "Route",
+        "score": 15.000000000000002,
         "inputRecipeCount": 14,
         "outputRecipeCount": 2,
         "sampleInputTypes": [
@@ -1384,11 +1625,15 @@
         "sampleOutputTypes": [
           "minecraft:crafting_shaped",
           "minecraft:crafting_shapeless"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "minecraft:spyglass",
-        "score": 11.83,
+        "role": "Route",
+        "score": 11.833333333333334,
         "inputRecipeCount": 5,
         "outputRecipeCount": 1,
         "sampleInputTypes": [
@@ -1399,11 +1644,15 @@
         ],
         "sampleOutputTypes": [
           "minecraft:crafting_shaped"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "minecraft:saddle",
-        "score": 11.67,
+        "role": "Route",
+        "score": 11.666666666666666,
         "inputRecipeCount": 4,
         "outputRecipeCount": 2,
         "sampleInputTypes": [
@@ -1414,10 +1663,14 @@
         ],
         "sampleOutputTypes": [
           "minecraft:crafting_shaped"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "minecraft:powered_rail",
+        "role": "Route",
         "score": 11.5,
         "inputRecipeCount": 4,
         "outputRecipeCount": 1,
@@ -1429,11 +1682,15 @@
         ],
         "sampleOutputTypes": [
           "minecraft:crafting_shaped"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "farmersdelight:rope",
-        "score": 11.33,
+        "role": "Route",
+        "score": 11.333333333333332,
         "inputRecipeCount": 3,
         "outputRecipeCount": 2,
         "sampleInputTypes": [
@@ -1442,11 +1699,15 @@
         "sampleOutputTypes": [
           "minecraft:crafting_shaped",
           "minecraft:crafting_shapeless"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "minecraft:activator_rail",
-        "score": 11.17,
+        "role": "Route",
+        "score": 11.166666666666668,
         "inputRecipeCount": 3,
         "outputRecipeCount": 1,
         "sampleInputTypes": [
@@ -1456,11 +1717,15 @@
         ],
         "sampleOutputTypes": [
           "minecraft:crafting_shaped"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "minecraft:detector_rail",
-        "score": 11.17,
+        "role": "Route",
+        "score": 11.166666666666668,
         "inputRecipeCount": 3,
         "outputRecipeCount": 1,
         "sampleInputTypes": [
@@ -1470,11 +1735,15 @@
         ],
         "sampleOutputTypes": [
           "minecraft:crafting_shaped"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "minecraft:rail",
-        "score": 11.17,
+        "role": "Route",
+        "score": 11.166666666666668,
         "inputRecipeCount": 3,
         "outputRecipeCount": 1,
         "sampleInputTypes": [
@@ -1484,10 +1753,14 @@
         ],
         "sampleOutputTypes": [
           "minecraft:crafting_shaped"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "everythingcopper:copper_minecart",
+        "role": "Route",
         "score": 10.5,
         "inputRecipeCount": 4,
         "outputRecipeCount": 1,
@@ -1496,10 +1769,14 @@
         ],
         "sampleOutputTypes": [
           "minecraft:crafting_shaped"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "minecraft:recovery_compass",
+        "role": "Route",
         "score": 10.5,
         "inputRecipeCount": 1,
         "outputRecipeCount": 1,
@@ -1508,11 +1785,15 @@
         ],
         "sampleOutputTypes": [
           "minecraft:crafting_shaped"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "create:minecart_coupling",
-        "score": 10.17,
+        "role": "Route",
+        "score": 10.166666666666668,
         "inputRecipeCount": 3,
         "outputRecipeCount": 1,
         "sampleInputTypes": [
@@ -1521,11 +1802,15 @@
         ],
         "sampleOutputTypes": [
           "minecraft:crafting_shaped"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "framedblocks:framed_fancy_activator_rail",
-        "score": 10,
+        "role": "Route",
+        "score": 10.0,
         "inputRecipeCount": 2,
         "outputRecipeCount": 2,
         "sampleInputTypes": [
@@ -1535,11 +1820,15 @@
         "sampleOutputTypes": [
           "framedblocks:frame",
           "minecraft:crafting_shaped"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "framedblocks:framed_fancy_detector_rail",
-        "score": 10,
+        "role": "Route",
+        "score": 10.0,
         "inputRecipeCount": 2,
         "outputRecipeCount": 2,
         "sampleInputTypes": [
@@ -1549,11 +1838,15 @@
         "sampleOutputTypes": [
           "framedblocks:frame",
           "minecraft:crafting_shaped"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "framedblocks:framed_fancy_powered_rail",
-        "score": 10,
+        "role": "Route",
+        "score": 10.0,
         "inputRecipeCount": 2,
         "outputRecipeCount": 2,
         "sampleInputTypes": [
@@ -1563,11 +1856,15 @@
         "sampleOutputTypes": [
           "framedblocks:frame",
           "minecraft:crafting_shaped"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "framedblocks:framed_fancy_rail",
-        "score": 10,
+        "role": "Route",
+        "score": 10.0,
         "inputRecipeCount": 2,
         "outputRecipeCount": 2,
         "sampleInputTypes": [
@@ -1577,11 +1874,15 @@
         "sampleOutputTypes": [
           "framedblocks:frame",
           "minecraft:crafting_shaped"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "blue_skies:maple_stick",
-        "score": 9.83,
+        "role": "Route",
+        "score": 9.833333333333334,
         "inputRecipeCount": 2,
         "outputRecipeCount": 1,
         "sampleInputTypes": [
@@ -1589,11 +1890,15 @@
         ],
         "sampleOutputTypes": [
           "minecraft:crafting_shaped"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "hangglider:hang_glider",
-        "score": 9.83,
+        "role": "Route",
+        "score": 9.833333333333334,
         "inputRecipeCount": 2,
         "outputRecipeCount": 1,
         "sampleInputTypes": [
@@ -1601,11 +1906,15 @@
         ],
         "sampleOutputTypes": [
           "minecraft:crafting_shaped"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "cold_sweat:minecart_insulation",
-        "score": 9.67,
+        "role": "Route",
+        "score": 9.666666666666666,
         "inputRecipeCount": 1,
         "outputRecipeCount": 2,
         "sampleInputTypes": [
@@ -1613,13 +1922,17 @@
         ],
         "sampleOutputTypes": [
           "minecraft:crafting_shaped"
+        ],
+        "rejectionReasons": [
+
         ]
       }
     ],
     "Food": [
       {
         "item": "minecraft:apple",
-        "score": 16.17,
+        "role": "Food",
+        "score": 16.166666666666664,
         "inputRecipeCount": 23,
         "outputRecipeCount": 1,
         "sampleInputTypes": [
@@ -1631,11 +1944,15 @@
         ],
         "sampleOutputTypes": [
           "minecraft:crafting_shapeless"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "minecraft:carrot",
-        "score": 15,
+        "role": "Food",
+        "score": 15.000000000000002,
         "inputRecipeCount": 14,
         "outputRecipeCount": 2,
         "sampleInputTypes": [
@@ -1647,11 +1964,15 @@
         ],
         "sampleOutputTypes": [
           "minecraft:crafting_shapeless"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "minecraft:potato",
-        "score": 13.67,
+        "role": "Food",
+        "score": 13.666666666666668,
         "inputRecipeCount": 10,
         "outputRecipeCount": 2,
         "sampleInputTypes": [
@@ -1663,11 +1984,15 @@
         ],
         "sampleOutputTypes": [
           "minecraft:crafting_shapeless"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "minecraft:brown_mushroom",
-        "score": 13.33,
+        "role": "Food",
+        "score": 13.333333333333332,
         "inputRecipeCount": 16,
         "outputRecipeCount": 0,
         "sampleInputTypes": [
@@ -1677,11 +2002,17 @@
           "farmersdelight:cooking",
           "farmersdelight:cutting"
         ],
-        "sampleOutputTypes": []
+        "sampleOutputTypes": [
+
+        ],
+        "rejectionReasons": [
+
+        ]
       },
       {
         "item": "minecraft:baked_potato",
-        "score": 13.17,
+        "role": "Food",
+        "score": 13.166666666666666,
         "inputRecipeCount": 8,
         "outputRecipeCount": 3,
         "sampleInputTypes": [
@@ -1691,11 +2022,15 @@
           "minecraft:campfire_cooking",
           "minecraft:smelting",
           "minecraft:smoking"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "the_flesh_that_hates:piece_of_flesh",
-        "score": 13,
+        "role": "Food",
+        "score": 13.0,
         "inputRecipeCount": 19,
         "outputRecipeCount": 0,
         "sampleInputTypes": [
@@ -1704,11 +2039,17 @@
           "minecraft:smelting",
           "minecraft:smoking"
         ],
-        "sampleOutputTypes": []
+        "sampleOutputTypes": [
+
+        ],
+        "rejectionReasons": [
+
+        ]
       },
       {
         "item": "farmersdelight:pie_crust",
-        "score": 12.83,
+        "role": "Food",
+        "score": 12.833333333333332,
         "inputRecipeCount": 8,
         "outputRecipeCount": 1,
         "sampleInputTypes": [
@@ -1718,11 +2059,15 @@
         ],
         "sampleOutputTypes": [
           "minecraft:crafting_shaped"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "minecraft:bread",
-        "score": 12.67,
+        "role": "Food",
+        "score": 12.666666666666666,
         "inputRecipeCount": 4,
         "outputRecipeCount": 8,
         "sampleInputTypes": [
@@ -1735,10 +2080,14 @@
           "minecraft:crafting_shaped",
           "minecraft:smelting",
           "minecraft:smoking"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "farmersdelight:cooked_rice",
+        "role": "Food",
         "score": 12.5,
         "inputRecipeCount": 7,
         "outputRecipeCount": 1,
@@ -1748,10 +2097,14 @@
         ],
         "sampleOutputTypes": [
           "farmersdelight:cooking"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "farmersdelight:tomato_sauce",
+        "role": "Food",
         "score": 12.5,
         "inputRecipeCount": 7,
         "outputRecipeCount": 1,
@@ -1762,11 +2115,15 @@
         ],
         "sampleOutputTypes": [
           "farmersdelight:cooking"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "farmersdelight:cabbage",
-        "score": 12,
+        "role": "Food",
+        "score": 12.0,
         "inputRecipeCount": 5,
         "outputRecipeCount": 2,
         "sampleInputTypes": [
@@ -1777,11 +2134,15 @@
         ],
         "sampleOutputTypes": [
           "minecraft:crafting_shapeless"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "farmersdelight:rice",
-        "score": 12,
+        "role": "Food",
+        "score": 12.0,
         "inputRecipeCount": 5,
         "outputRecipeCount": 2,
         "sampleInputTypes": [
@@ -1791,11 +2152,15 @@
         ],
         "sampleOutputTypes": [
           "minecraft:crafting_shapeless"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "minecraft:cake",
-        "score": 11.67,
+        "role": "Food",
+        "score": 11.666666666666666,
         "inputRecipeCount": 1,
         "outputRecipeCount": 8,
         "sampleInputTypes": [
@@ -1804,10 +2169,14 @@
         "sampleOutputTypes": [
           "minecraft:crafting_shaped",
           "minecraft:crafting_shapeless"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "farmersdelight:rice_panicle",
+        "role": "Food",
         "score": 11.5,
         "inputRecipeCount": 4,
         "outputRecipeCount": 1,
@@ -1819,10 +2188,14 @@
         ],
         "sampleOutputTypes": [
           "minecraft:crafting_shapeless"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "farmersdelight:tomato",
+        "role": "Food",
         "score": 11.5,
         "inputRecipeCount": 4,
         "outputRecipeCount": 1,
@@ -1834,11 +2207,15 @@
         ],
         "sampleOutputTypes": [
           "minecraft:crafting_shapeless"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "minecraft:ghast_tear",
-        "score": 11.33,
+        "role": "Food",
+        "score": 11.333333333333334,
         "inputRecipeCount": 10,
         "outputRecipeCount": 0,
         "sampleInputTypes": [
@@ -1848,11 +2225,17 @@
           "bloodmagic:livingdowngrade",
           "minecraft:crafting_shaped"
         ],
-        "sampleOutputTypes": []
+        "sampleOutputTypes": [
+
+        ],
+        "rejectionReasons": [
+
+        ]
       },
       {
         "item": "minecraft:wheat_seeds",
-        "score": 11.33,
+        "role": "Food",
+        "score": 11.333333333333334,
         "inputRecipeCount": 10,
         "outputRecipeCount": 0,
         "sampleInputTypes": [
@@ -1861,11 +2244,17 @@
           "brewinandchewin:fermenting",
           "create:milling"
         ],
-        "sampleOutputTypes": []
+        "sampleOutputTypes": [
+
+        ],
+        "rejectionReasons": [
+
+        ]
       },
       {
         "item": "farmersdelight:chocolate_pie",
-        "score": 11,
+        "role": "Food",
+        "score": 11.0,
         "inputRecipeCount": 2,
         "outputRecipeCount": 2,
         "sampleInputTypes": [
@@ -1874,11 +2263,15 @@
         ],
         "sampleOutputTypes": [
           "minecraft:crafting_shaped"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "minecraft:pumpkin_seeds",
-        "score": 11,
+        "role": "Food",
+        "score": 11.0,
         "inputRecipeCount": 2,
         "outputRecipeCount": 2,
         "sampleInputTypes": [
@@ -1887,11 +2280,15 @@
         ],
         "sampleOutputTypes": [
           "minecraft:crafting_shapeless"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "minecraft:pumpkin_pie",
-        "score": 11,
+        "role": "Food",
+        "score": 11.0,
         "inputRecipeCount": 1,
         "outputRecipeCount": 4,
         "sampleInputTypes": [
@@ -1900,12 +2297,16 @@
         "sampleOutputTypes": [
           "minecraft:crafting_shaped",
           "minecraft:crafting_shapeless"
+        ],
+        "rejectionReasons": [
+
         ]
       }
     ],
     "Trade": [
       {
         "item": "swem:coin_copper",
+        "role": "Trade",
         "score": 9.5,
         "inputRecipeCount": 1,
         "outputRecipeCount": 1,
@@ -1914,10 +2315,14 @@
         ],
         "sampleOutputTypes": [
           "minecraft:crafting_shaped"
+        ],
+        "rejectionReasons": [
+
         ]
       },
       {
         "item": "swem:coin_iron",
+        "role": "Trade",
         "score": 9.5,
         "inputRecipeCount": 1,
         "outputRecipeCount": 1,
@@ -1926,6 +2331,9 @@
         ],
         "sampleOutputTypes": [
           "minecraft:crafting_shaped"
+        ],
+        "rejectionReasons": [
+
         ]
       }
     ]

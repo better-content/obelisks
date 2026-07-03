@@ -159,7 +159,7 @@ ServerEvents.recipes(function (event) {
     ], null, null)
     btmChemXPressure(event, 'chloralkali_salt_cell', 'chemlib:sodium_hydroxide', 2, [
         'chemlib:sodium_chloride',
-        'latent_chemlib:sealed_chemical_cell',
+        'kubejs:pressure_seal',
         '#forge:plates/copper'
     ], 2.5)
     btmChemXPressure(event, 'beryllium_from_beryllium_chloride', 'chemlib:beryllium', 1, [

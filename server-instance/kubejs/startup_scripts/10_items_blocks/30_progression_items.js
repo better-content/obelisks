@@ -50,14 +50,20 @@ StartupEvents.registry('item', function (event) {
     var overhaulIntermediates = [
         ['rotational_compressor_core', 'Rotational Compressor Core'],
         ['pressure_seal', 'Pressure Seal'],
+        ['seared_service_fitting', 'Seared Service Fitting'],
+        ['andesite_utility_frame', 'Andesite Utility Frame'],
         ['brass_control_assembly', 'Brass Control Assembly'],
+        ['brass_utility_assembly', 'Brass Utility Assembly'],
         ['airtight_fluid_module', 'Airtight Fluid Module'],
+        ['airtight_service_module', 'Airtight Service Module'],
         ['electrical_control_module', 'Electrical Control Module'],
+        ['electrical_instrumentation_module', 'Electrical Instrumentation Module'],
+        ['space_expedition_kit', 'Space Expedition Kit'],
+        ['raw_impossible_storage_matrix', 'Raw Impossible Storage Matrix'],
         ['ae_logic_package', 'AE Logic Package'],
+        ['impossible_support_matrix', 'Impossible Support Matrix'],
         ['purified_blood_catalyst', 'Purified Blood Catalyst'],
         ['purified_source_core', 'Purified Source Core'],
-        ['raw_impossible_circuit', 'Raw Impossible Circuit'],
-        ['impossible_circuit', 'Impossible Circuit'],
         ['living_binding', 'Living Binding'],
         ['mountain_beryl_lens', 'Mountain Beryl Lens'],
         ['corundum_lapping_grit', 'Corundum Lapping Grit'],
@@ -69,7 +75,14 @@ StartupEvents.registry('item', function (event) {
         ['redbed_signal_salt', 'Redbed Signal Salt'],
         ['lazurite_logic_pigment', 'Lazurite Logic Pigment'],
         ['phosphate_flux', 'Phosphate Flux'],
-        ['platinum_group_residue', 'Platinum Group Residue'],
+        ['platinum_group_residue', 'Platinum Group Residue']
+    ]
+
+    for (var o = 0; o < overhaulIntermediates.length; o++) {
+        event.create(overhaulIntermediates[o][0]).displayName(overhaulIntermediates[o][1])
+    }
+
+    var processingMedia = [
         ['andesite_grinding_ball', 'Andesite Grinding Ball'],
         ['iron_grinding_ball', 'Iron Grinding Ball'],
         ['brass_grinding_ball', 'Brass Grinding Ball'],
@@ -80,8 +93,8 @@ StartupEvents.registry('item', function (event) {
         ['fluix_grinding_ball', 'Fluix Grinding Ball']
     ]
 
-    for (var o = 0; o < overhaulIntermediates.length; o++) {
-        event.create(overhaulIntermediates[o][0]).displayName(overhaulIntermediates[o][1])
+    for (var p = 0; p < processingMedia.length; p++) {
+        event.create(processingMedia[p][0]).displayName(processingMedia[p][1])
     }
 
     var magicCuttingFluids = [
@@ -126,5 +139,35 @@ StartupEvents.registry('item', function (event) {
 
     for (var r = 0; r < reagents.length; r++) {
         event.create(reagents[r][0]).displayName(reagents[r][1])
+    }
+
+    var arsManuscripts = [
+        ['manuscript_touch', 'Touch Manuscript'],
+        ['manuscript_self', 'Self Manuscript'],
+        ['manuscript_projectile', 'Projectile Manuscript'],
+        ['manuscript_break', 'Break Manuscript'],
+        ['manuscript_harm', 'Harm Manuscript'],
+        ['manuscript_light', 'Light Manuscript'],
+        ['manuscript_interact', 'Interact Manuscript'],
+        ['manuscript_ignite', 'Ignite Manuscript'],
+        ['manuscript_launch', 'Launch Manuscript'],
+        ['manuscript_harvest', 'Harvest Manuscript'],
+        ['manuscript_leap', 'Leap Manuscript'],
+        ['manuscript_freeze', 'Freeze Manuscript'],
+        ['manuscript_glide', 'Glide Manuscript'],
+        ['manuscript_blink', 'Blink Manuscript'],
+        ['manuscript_extract', 'Extract Manuscript'],
+        ['manuscript_exchange', 'Exchange Manuscript'],
+        ['manuscript_redstone_signal', 'Redstone Signal Manuscript'],
+        ['manuscript_extend_time', 'Extend Time Manuscript'],
+        ['manuscript_wall', 'Wall Manuscript'],
+        ['manuscript_linger', 'Linger Manuscript'],
+        ['manuscript_lightning', 'Lightning Manuscript'],
+        ['manuscript_wither', 'Wither Manuscript']
+    ]
+
+    for (var a = 0; a < arsManuscripts.length; a++) {
+        event.create(arsManuscripts[a][0])
+            .displayName(arsManuscripts[a][1])
     }
 })

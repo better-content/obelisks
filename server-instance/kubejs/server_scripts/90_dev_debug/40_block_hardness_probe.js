@@ -3,6 +3,7 @@
 
 var BTM_BLOCK_PROBE_CONFIG = 'kubejs/config/block_hardness_probe.json'
 var BTM_BLOCK_PROBE_DEFAULT_DIR = 'generated/runtime-dumps/'
+var BTM_BLOCK_PROBE_FALLBACK_PATH = 'kubejs/config/block_hardness_probe.runtime.json'
 
 var BtmBlockProbeBuiltInRegistries = Java.loadClass('net.minecraft.core.registries.BuiltInRegistries')
 var BtmBlockProbeResourceLocation = Java.loadClass('net.minecraft.resources.ResourceLocation')
@@ -441,9 +442,22 @@ function btmBlockProbeSummarize(records) {
     }
 }
 
+function btmBlockProbeWrite(outputDir, payload) {
+    var primaryPath = outputDir + 'block_hardness_probe.json'
+    try {
+        JsonIO.write(primaryPath, payload)
+        return primaryPath
+    } catch (e) {
+        JsonIO.write(BTM_BLOCK_PROBE_FALLBACK_PATH, payload)
+        console.warn('[BTM-BLOCK-HARDNESS-PROBE] primary write failed for ' + primaryPath + '; wrote fallback ' + BTM_BLOCK_PROBE_FALLBACK_PATH + ' (' + e + ')')
+        return BTM_BLOCK_PROBE_FALLBACK_PATH
+    }
+}
+
 ServerEvents.recipes(function (event) {
     var cfg = btmBlockProbeReadConfig()
     if (!cfg.enabled) return
+    if (!String(cfg.outputDir).endsWith('/')) cfg.outputDir = String(cfg.outputDir) + '/'
 
     var selected = []
     for (var i = 0; i < cfg.blockIds.length; i++) selected.push(btmBlockProbeRecord(cfg.blockIds[i]))
@@ -471,6 +485,6 @@ ServerEvents.recipes(function (event) {
         allItems: cfg.writeAllBlocks ? allItems : []
     }
 
-    JsonIO.write(cfg.outputDir + 'block_hardness_probe.json', out)
-    console.info('[BTM-BLOCK-HARDNESS-PROBE] wrote ' + selected.length + ' selected blocks' + (cfg.writeAllBlocks ? ', ' + allBlocks.length + ' all-block records, and ' + allItems.length + ' item records' : '') + ' to ' + cfg.outputDir + 'block_hardness_probe.json')
+    var writtenPath = btmBlockProbeWrite(cfg.outputDir, out)
+    console.info('[BTM-BLOCK-HARDNESS-PROBE] wrote ' + selected.length + ' selected blocks' + (cfg.writeAllBlocks ? ', ' + allBlocks.length + ' all-block records, and ' + allItems.length + ' item records' : '') + ' to ' + writtenPath)
 })

@@ -7,8 +7,12 @@ function btmBpExists(id) {
 
 function btmBpRecipe(event, output, pattern, key, id) {
     if (!btmBpExists(output)) return
+    for (var symbol in key) {
+        var ingredient = key[symbol]
+        if (ingredient && ingredient.charAt && ingredient.charAt(0) !== '#' && ingredient.indexOf(':') >= 0 && !btmBpExists(ingredient)) return
+    }
     event.remove({ output: output })
-    global.btmCreateMechanicalCrafting(event, id, output, 1, pattern, key, true)
+    global.btmFactoryCrafting(event, id, output, 1, pattern, key, true)
 }
 
 ServerEvents.recipes(function (event) {
@@ -20,7 +24,7 @@ ServerEvents.recipes(function (event) {
         F: 'farmersdelight:roast_chicken_block',
         D: 'sophisticatedbackpacks:upgrade_base',
         C: 'kubejs:impossible_machine_casing',
-        A: 'kubejs:impossible_circuit'
+        A: 'kubejs:ae_logic_package'
     }, 'kubejs:sophisticatedbackpacks/feeding_upgrade_post_ae2')
 
     btmBpRecipe(event, 'sophisticatedbackpacks:advanced_feeding_upgrade', [
@@ -51,7 +55,7 @@ ServerEvents.recipes(function (event) {
         'SQS'
     ], {
         S: 'kubejs:sky_steel_sheet',
-        Q: 'kubejs:impossible_circuit',
+        Q: 'kubejs:ae_logic_package',
         U: 'sophisticatedbackpacks:alchemy_upgrade',
         C: 'kubejs:impossible_machine_casing'
     }, 'kubejs:sophisticatedbackpacks/advanced_alchemy_upgrade_post_ae2')
@@ -73,7 +77,7 @@ ServerEvents.recipes(function (event) {
         'SQS'
     ], {
         S: 'kubejs:sky_steel_sheet',
-        Q: 'kubejs:impossible_circuit',
+        Q: 'kubejs:ae_logic_package',
         U: 'sophisticatedbackpacks:tool_swapper_upgrade',
         C: 'kubejs:impossible_machine_casing'
     }, 'kubejs:sophisticatedbackpacks/advanced_tool_swapper_upgrade_post_ae2')
@@ -95,7 +99,7 @@ ServerEvents.recipes(function (event) {
         'SQS'
     ], {
         S: 'kubejs:sky_steel_sheet',
-        Q: 'kubejs:impossible_circuit',
+        Q: 'kubejs:ae_logic_package',
         U: 'sophisticatedstorage:alchemy_upgrade',
         C: 'kubejs:impossible_machine_casing'
     }, 'kubejs:sophisticatedstorage/advanced_alchemy_upgrade_post_ae2')

@@ -73,6 +73,14 @@ Realistic Block Physics stays explicit-definition only in `config/rbp/world_defi
 
 RBP coverage should continue as explicit allowlists by profile, not broad fallback physics. Solid generated candidates include terrain mass, construction blocks, storage/metals, solid machine bodies, utility blocks with real block bodies, FramedBlocks solid construction forms, pack-owned casings/crates, and normal modded leaves outside Dynamic Trees. Lifecycle, support, admin, and attached decor blocks should not enter the generated solid sweep; if they need physics at all, keep them in narrow explicit support profiles like the current door, bed, miscellaneous, ladder, or flower-pot style definitions. Any broad RBP expansion needs a generator/audit pass plus fresh runtime registry or collision evidence before acceptance.
 
+## Spatial Threat Model
+
+Hostile pressure is authored as a terrain and route problem, not a simple night-cycle timer. Normal surface spawns are reduced, but ordinary hostiles should not spawn directly under open sky day or night. Covered ground, caves, and other underground-adjacent spaces remain active hostile feeders; those mobs persist through daytime and use increased pathing range so they can leave caves and pursue nearby players on the surface. Daylight reduces direct spawn injection, not existing-threat pressure.
+
+Pillager Campaigns follows the same rule. Warbands stage away from the player and path across the world into contact, so settlement defense depends on line of sight, perimeter control, cave sealing, walls, elevation, and route management rather than on surviving a fixed night window. Difficulty should feel spatial: the world gets more dangerous when nearby terrain can deliver enemies to you, not merely because the clock advanced.
+
+Vertical danger is also explicit. Born in Chaos monsters are confined to the Overworld below Y 0, making the deep band a separate combat regime rather than a generic cave extension. The lava-depth ore route in `datapacks/realistic_ores_lava_depths` is therefore both a geology gate and a survival-equipment gate: uranium, thorium, and osmiridium lava sulfide recovery is intended to require prepared lava diving, with Protection Pixel Tosaki gear as the expected late solution.
+
 ## Burnt Compatibility
 
 Burnt compatibility is now split into three maintained surfaces: generated compatibility block tags under `kubejs/data/{burnt,minecraft,forge}/tags/blocks/`, explicit false-positive exclusions in `tools/burnt_coverage_block_tag_exclusions.json`, and downstream validation behind the Kotlin-backed `tools/btm internal validate-burnt-coverage` and `tools/btm internal sync-burnt-coverage-tags` paths for the `config/adpother/Emitters/burnt$*.cfg` and `config/adpother/Breakables/burnt$burnt_blocks.cfg` consumers. The generated pass keeps manual tag values intact and treats `burnt:grass_blocks` as an audited/generated surface instead of a tiny hand-maintained list.

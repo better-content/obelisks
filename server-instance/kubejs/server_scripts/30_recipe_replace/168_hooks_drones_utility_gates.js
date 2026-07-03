@@ -9,10 +9,12 @@ function btmMobilityExists(id) {
 function btmMobilityMechanical(event, output, pattern, key, recipeId) {
     if (!btmMobilityExists(output)) return
     event.remove({ output: output })
-    global.btmCreateMechanicalCrafting(event, recipeId, output, 1, pattern, key, true)
+    global.btmFactoryCrafting(event, recipeId, output, 1, pattern, key, true)
 }
 
 ServerEvents.recipes(function (event) {
+    if (!btmMobilityExists('kubejs:sky_steel_sheet') || !btmMobilityExists('kubejs:ae_logic_package')) return
+
     btmMobilityMechanical(event, 'rehooked:wood_chain', [
         ' SS',
         'SCS',
@@ -94,7 +96,7 @@ ServerEvents.recipes(function (event) {
         Q: 'kubejs:sky_steel_sheet',
         A: 'kubejs:impossible_machine_casing',
         H: 'rehooked:ender_hook',
-        R: 'kubejs:impossible_circuit'
+        R: 'kubejs:ae_logic_package'
     }, 'kubejs:rehooked/red_hook_post_ae2')
 
     btmMobilityMechanical(event, 'create_sa:brass_drone', [

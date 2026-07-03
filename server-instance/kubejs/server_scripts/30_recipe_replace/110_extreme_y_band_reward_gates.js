@@ -42,9 +42,16 @@ function btmExtremeRecipe(event, output, pattern, keys, id) {
         console.info('[extreme-y-rewards] Skipping recipe for missing optional output: ' + output)
         return
     }
+    for (var key in keys) {
+        var ingredient = keys[key]
+        if (ingredient && ingredient.charAt && ingredient.charAt(0) !== '#' && ingredient.indexOf(':') >= 0 && !btmExtremeItemExists(ingredient)) {
+            console.info('[extreme-y-rewards] Skipping recipe for missing ingredient: ' + ingredient)
+            return
+        }
+    }
 
     event.remove({ output: output })
-    global.btmCreateMechanicalCrafting(event, id, output, 1, pattern, keys, true)
+    global.btmFactoryCrafting(event, id, output, 1, pattern, keys, true)
 }
 
 ServerEvents.recipes(function (event) {

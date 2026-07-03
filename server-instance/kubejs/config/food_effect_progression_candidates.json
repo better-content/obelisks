@@ -26,7 +26,6 @@
       "blue_skies:municipal_monkfish",
       "blue_skies:solnut",
       "blue_skies:venison",
-      "botania:mana_bottle",
       "brewinandchewin:glow_berry_marmalade",
       "brewinandchewin:jerky",
       "brewinandchewin:kimchi",
@@ -949,7 +948,6 @@
       "veggiesdelight:sweet_potato_dough"
     ],
     "utility_supply": [
-      "botania:mana_cookie",
       "brewinandchewin:kombucha",
       "collectorsreap:green_tea_gummy",
       "collectorsreap:lime_green_tea",
@@ -1154,7 +1152,6 @@
       "undergarden:indigo_stew"
     ],
     "minecraft:saturation": [
-      "botania:mana_cookie",
       "collectorsreap:pumpkin_gummy",
       "delightful:long_prickly_pear_juice",
       "delightful:prickly_pear_juice"
@@ -16236,30 +16233,6 @@
           "amplifier": 0,
           "durationTicks": 600,
           "probability": 0.30000001192092896,
-          "ambient": false,
-          "visible": true,
-          "showIcon": true
-        }
-      ]
-    },
-    {
-      "id": "botania:mana_cookie",
-      "score": 14,
-      "category": "utility_supply",
-      "suggestedStage": "early_kitchen_or_showcase",
-      "dietGroups": [],
-      "dietGroupCount": 0,
-      "dietGroupValues": {},
-      "dietSource": null,
-      "nutritionScore": 0,
-      "nutrition": 0,
-      "saturationModifier": 0.10000000149011612,
-      "effects": [
-        {
-          "effect": "minecraft:saturation",
-          "amplifier": 0,
-          "durationTicks": 20,
-          "probability": 1,
           "ambient": false,
           "visible": true,
           "showIcon": true

@@ -149,8 +149,7 @@
       "id": "airtight",
       "tier": "airtight",
       "outputs": [
-        "kubejs:airtight_machine_casing",
-        "compressedcreativity:rotational_compressor"
+        "kubejs:airtight_machine_casing"
       ],
       "requiresPrevious": "create_brass",
       "route": [
@@ -164,14 +163,6 @@
           "all": [
             "kubejs:rotational_compressor_core",
             "kubejs:brass_machine_casing",
-            "kubejs:airtight_machine_casing"
-          ]
-        },
-        {
-          "file": "kubejs/server_scripts/30_recipe_replace/122_pneumaticcraft_create_pressing_gates.js",
-          "all": [
-            "compressedcreativity:rotational_compressor",
-            "kubejs:rotational_compressor_core",
             "kubejs:airtight_machine_casing"
           ]
         }
@@ -493,14 +484,12 @@
         "milestone": "airtight",
         "sourceFiles": [
           "kubejs/server_scripts/30_recipe_replace/99_machine_casing_progression.js",
-          "kubejs/server_scripts/30_recipe_replace/122_pneumaticcraft_create_pressing_gates.js",
           "kubejs/server_scripts/30_recipe_replace/136_machine_casing_ecosystem_expansion.js"
         ],
         "requiredOutputs": [
           "kubejs:pressure_seal",
           "kubejs:rotational_compressor_core",
           "kubejs:airtight_machine_casing",
-          "compressedcreativity:rotational_compressor",
           "pneumaticcraft:pressure_chamber_wall",
           "pneumaticcraft:pressure_chamber_glass",
           "pneumaticcraft:pressure_chamber_interface",
@@ -599,13 +588,6 @@
         "needles": [
           "type: 'create:filling'",
           "type: \"create:filling\""
-        ]
-      },
-      {
-        "id": "create:mechanical_crafting",
-        "needles": [
-          "type: 'create:mechanical_crafting'",
-          "global.btmCreateMechanicalCrafting"
         ]
       },
       {
@@ -717,7 +699,6 @@
       "create:emptying",
       "create:filling",
       "create:haunting",
-      "create:mechanical_crafting",
       "create:milling",
       "create:mixing",
       "create:pressing",

@@ -1,6 +1,6 @@
 # Automated Pack Test Report
 
-Generated: 2026-07-02T06:22:59.162227779Z
+Generated: 2026-07-02T23:26:06.944807653Z
 
 Repo: `/home/dev/workspace`
 
@@ -32,11 +32,11 @@ Data dump evidence mode: `opportunistic`
 | latest engine log is recent                                   | 0.03 minutes old     |
 | engine reached dedicated server startup                       |                      |
 | world became playable/servable                                |                      |
-| spawn preparation budget                                      | 19539 ms <= 60000 ms |
+| spawn preparation budget                                      | 33601 ms <= 60000 ms |
 | server tick-behind budget                                     | 0 warnings, max 0 ms |
-| world save budget                                             | 1205 ms <= 10000 ms  |
+| world save budget                                             | 1338 ms <= 10000 ms  |
 | hard engine log failure scan                                  |                      |
-| performance budget: engine and world performance log analysis | 502.82 ms <= 750 ms  |
+| performance budget: engine and world performance log analysis | 525.03 ms <= 750 ms  |
 ## Skipped
 | Test                                        | Detail                                                  |
 | ------------------------------------------- | ------------------------------------------------------- |
@@ -45,5 +45,5 @@ Data dump evidence mode: `opportunistic`
 ## Metrics
 
 ```json
-{"engineWorld":{"latestLog":"/tmp/btm-content-smoke/logs/latest.log", "latestLogAgeMinutes":0.03, "latestLogLines":24346, "reachedIntegratedServer":false, "reachedDedicatedServer":true, "startedServingLan":false, "reachedInGame":true, "spawnPrepTimeMs":19539, "serverTickBehindWarnings":0, "maxTickBehindMs":0, "distantHorizonsIncompleteTasks":0, "emiTotalReloadMs":null, "kubejsRecipeParseErrors":0, "kubejsFailedRecipeCount":0, "newestCrashReport":null, "newestCrashReportAfterLatestLog":false, "hardLogScanOk":true, "hardLogScan":"ok - hard log failure scan (/tmp/btm-content-smoke/logs/latest.log)"}, "performance":{"budgetsMs":{"JSON and JS syntax validation":8000, "critical progression surfaces":750, "progression parenting and economy validation":2500, "pack contract validation":1000, "contract completeness classification":1000, "autonomous contract validation":1500, "quest book validation":250, "Wares and villager trade validation":250, "repo loot data validation":500, "generated recipe graph validation":5000, "generated loot dump validation":2500, "engine and world performance log analysis":750, "Realistic Hands validation":2000, "KubeJS asset validation":2000, "chemistry identity validation":1500, "dev dump health validation":50}, "hardLimitsMs":{"JSON and JS syntax validation":24000, "critical progression surfaces":3000, "progression parenting and economy validation":10000, "pack contract validation":5000, "contract completeness classification":5000, "autonomous contract validation":6000, "quest book validation":1500, "Wares and villager trade validation":1500, "repo loot data validation":3000, "generated recipe graph validation":20000, "generated loot dump validation":10000, "engine and world performance log analysis":1500, "Realistic Hands validation":4000, "KubeJS asset validation":4000, "chemistry identity validation":4000, "dev dump health validation":500}, "results":[{"name":"engine and world performance log analysis", "durationMs":502.82, "budgetMs":750, "hardLimitMs":1500}]}}
+{"engineWorld":{"latestLog":"/tmp/btm-content-smoke/logs/latest.log", "latestLogAgeMinutes":0.03, "latestLogLines":23741, "reachedIntegratedServer":false, "reachedDedicatedServer":true, "startedServingLan":false, "reachedInGame":true, "spawnPrepTimeMs":33601, "serverTickBehindWarnings":0, "maxTickBehindMs":0, "distantHorizonsIncompleteTasks":0, "emiTotalReloadMs":null, "kubejsRecipeParseErrors":0, "kubejsFailedRecipeCount":0, "newestCrashReport":null, "newestCrashReportAfterLatestLog":false, "hardLogScanOk":true, "hardLogScan":"ok - hard log failure scan (/tmp/btm-content-smoke/logs/latest.log)"}, "performance":{"budgetsMs":{"JSON and JS syntax validation":8000, "critical progression surfaces":750, "progression parenting and economy validation":2500, "pack contract validation":1000, "contract completeness classification":1000, "autonomous contract validation":1500, "quest book validation":250, "Wares and villager trade validation":250, "repo loot data validation":500, "generated recipe graph validation":5000, "generated loot dump validation":2500, "engine and world performance log analysis":750, "Realistic Hands validation":2000, "KubeJS asset validation":2000, "chemistry identity validation":1500, "dev dump health validation":50}, "hardLimitsMs":{"JSON and JS syntax validation":24000, "critical progression surfaces":3000, "progression parenting and economy validation":10000, "pack contract validation":5000, "contract completeness classification":5000, "autonomous contract validation":6000, "quest book validation":1500, "Wares and villager trade validation":1500, "repo loot data validation":3000, "generated recipe graph validation":20000, "generated loot dump validation":10000, "engine and world performance log analysis":1500, "Realistic Hands validation":4000, "KubeJS asset validation":4000, "chemistry identity validation":4000, "dev dump health validation":500}, "results":[{"name":"engine and world performance log analysis", "durationMs":525.03, "budgetMs":750, "hardLimitMs":1500}]}}
 ```

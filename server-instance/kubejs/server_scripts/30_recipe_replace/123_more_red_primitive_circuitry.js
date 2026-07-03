@@ -43,6 +43,7 @@ function btmMoreRedReplace(event, outputs, oldInputs, newInput) {
 ServerEvents.recipes(function (event) {
     event.remove({ output: BTM_MORERED.alloy })
     event.remove({ output: BTM_MORERED.wire })
+    event.remove({ output: BTM_MORERED.plate })
     event.remove({ id: 'morered:soldering_table' })
 
     event.custom({
@@ -65,7 +66,7 @@ ServerEvents.recipes(function (event) {
         results: [{ item: BTM_MORERED.wire, count: 2 }]
     }).id('kubejs:morered/create_pressing/red_alloy_wire')
 
-    global.btmCreateMechanicalCrafting(event, 'kubejs:morered/soldering_table_terrestrial_create', BTM_MORERED.solderingTable, 1, [
+    global.btmFactoryCrafting(event, 'kubejs:morered/soldering_table_terrestrial_create', BTM_MORERED.solderingTable, 1, [
         'PPP',
         'WCW',
         ' A '

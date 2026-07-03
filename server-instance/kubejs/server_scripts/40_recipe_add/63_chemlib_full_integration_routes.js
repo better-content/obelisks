@@ -208,11 +208,11 @@ var BTM_FULL_CHEM_ELEMENT_GROUPS = [
 ]
 
 var BTM_FULL_CHEM_FAMILIES = [
-    { id: 'oxide', suffix: 'oxide', fluid: 'minecraft:water', amount: 125, reagent: 'latent_chemlib:sealed_chemical_cell', side: [{ item: 'chemlib:oxygen', chance: 0.08 }], heat: 'heated', pressure: 2.0, temp: 473 },
+    { id: 'oxide', suffix: 'oxide', fluid: 'minecraft:water', amount: 125, reagent: 'chemlib:oxygen', side: [{ item: 'chemlib:oxygen', chance: 0.08 }], heat: 'heated', pressure: 2.0, temp: 473 },
     { id: 'hydroxide', suffix: 'hydroxide', fluid: 'minecraft:water', amount: 250, reagent: 'chemlib:sodium_hydroxide', side: [{ item: 'chemlib:hydrogen', chance: 0.10 }], heat: null, pressure: 2.0, temp: 423 },
     { id: 'carbonate', suffix: 'carbonate', fluid: 'minecraft:water', amount: 250, reagent: 'chemlib:carbon', side: [{ item: 'chemlib:carbon_dioxide', chance: 0.12 }], heat: null, pressure: 2.25, temp: 423 },
     { id: 'chloride', suffix: 'chloride', fluid: 'chemlib:hydrochloric_acid_fluid', amount: 250, reagent: 'chemlib:sodium_chloride', side: [{ item: 'chemlib:hydrogen', chance: 0.16 }], heat: 'heated', pressure: 2.75, temp: 523 },
-    { id: 'nitrate', suffix: 'nitrate', fluid: 'chemlib:nitric_acid_fluid', amount: 250, reagent: 'latent_chemlib:sealed_chemical_cell', side: [{ item: 'chemlib:nitrogen_dioxide', chance: 0.22 }], heat: 'heated', pressure: 3.25, temp: 573 },
+    { id: 'nitrate', suffix: 'nitrate', fluid: 'chemlib:nitric_acid_fluid', amount: 250, reagent: 'minecraft:redstone', side: [{ item: 'chemlib:nitrogen_dioxide', chance: 0.22 }], heat: 'heated', pressure: 3.25, temp: 573 },
     { id: 'sulfate', suffix: 'sulfate', fluid: 'chemlib:sulfuric_acid_fluid', amount: 250, reagent: 'chemlib:sulfur', side: [{ item: 'chemlib:sulfur_dioxide', chance: 0.18 }], heat: 'heated', pressure: 3.0, temp: 548 },
     { id: 'sulfide', suffix: 'sulfide', fluid: 'minecraft:water', amount: 125, reagent: 'chemlib:sulfur', side: [{ item: 'chemlib:hydrogen_sulfide', chance: 0.16 }], heat: 'heated', pressure: 2.5, temp: 523 },
     { id: 'phosphate', suffix: 'phosphate', fluid: 'kubejs:phosphoric_acid_fluid', amount: 250, reagent: 'chemlib:phosphorus', side: [{ item: 'chemlib:oxygen', chance: 0.10 }], heat: 'heated', pressure: 3.0, temp: 548 }
@@ -260,7 +260,7 @@ var BTM_FULL_CHEM_GROUP_SINKS = {
         { id: 'biogenic_source_gem', output: 'ars_nouveau:source_gem', count: 1, inputs: ['minecraft:amethyst_shard', 'bloodmagic:blankslate'], kind: 'mix' }
     ],
     gas: [
-        { id: 'gas_lamp_glass', output: 'minecraft:glass_bottle', count: 4, inputs: ['minecraft:glass', 'latent_chemlib:sealed_chemical_cell'], kind: 'pressure', pressure: 2.0 },
+        { id: 'gas_lamp_glass', output: 'minecraft:glass_bottle', count: 4, inputs: ['minecraft:glass', 'kubejs:pressure_seal'], kind: 'pressure', pressure: 2.0 },
         { id: 'gas_coolant_charge', output: 'kubejs:pressure_seal', count: 2, inputs: ['minecraft:dried_kelp', 'minecraft:slime_ball'], kind: 'pressure', pressure: 2.25 }
     ]
 }
@@ -283,7 +283,7 @@ var BTM_FULL_CHEM_MOLECULES = [
     { id: 'ammonium', item: 'chemlib:ammonium', source: [{ item: 'chemlib:ammonia' }, { item: 'chemlib:hydrogen' }, { fluid: 'minecraft:water', amount: 250 }], outputs: [{ item: 'chemlib:diammonium_phosphate', count: 2 }], process: 'fertilizer_salt', slate: 'bloodmagic:reinforcedslate' },
     { id: 'ammonium_chloride', item: 'chemlib:ammonium_chloride', source: [{ item: 'chemlib:ammonium' }, { item: 'chemlib:chlorine' }, { fluid: 'minecraft:water', amount: 250 }], outputs: [{ item: 'pneumaticcraft:empty_pcb', count: 2 }], process: 'flux_cleaning', slate: 'bloodmagic:infusedslate' },
     { id: 'diammonium_phosphate', item: 'chemlib:diammonium_phosphate', source: [{ item: 'chemlib:ammonium' }, { item: 'chemlib:phosphoric_acid' }, { fluid: 'minecraft:water', amount: 250 }], outputs: [{ item: 'minecraft:bone_meal', count: 12 }], process: 'fertilizer_prilling', slate: 'bloodmagic:infusedslate' },
-    { id: 'hydrogen_sulfide', item: 'chemlib:hydrogen_sulfide', source: [{ item: 'chemlib:sulfur' }, { item: 'chemlib:hydrogen' }, { item: 'latent_chemlib:sealed_chemical_cell' }], outputs: [{ item: 'chemlib:sulfur', count: 3 }], process: 'sulfide_precipitation', slate: 'bloodmagic:demonslate' },
+    { id: 'hydrogen_sulfide', item: 'chemlib:hydrogen_sulfide', source: [{ item: 'chemlib:sulfur' }, { item: 'chemlib:hydrogen' }], outputs: [{ item: 'chemlib:sulfur', count: 3 }], process: 'sulfide_precipitation', slate: 'bloodmagic:demonslate' },
     { id: 'sulfur_dioxide', item: 'chemlib:sulfur_dioxide', source: [{ item: 'chemlib:sulfur' }, { item: 'chemlib:oxygen' }], outputs: [{ item: 'chemlib:sulfuric_acid', count: 2 }], process: 'acid_gas', slate: 'bloodmagic:demonslate' },
     { id: 'sulfur_trioxide', item: 'chemlib:sulfur_trioxide', source: [{ item: 'chemlib:sulfur_dioxide' }, { item: 'chemlib:oxygen' }], outputs: [{ item: 'chemlib:sulfuric_acid', count: 3 }], process: 'acid_upgrade', slate: 'bloodmagic:demonslate' },
     { id: 'nitric_oxide', item: 'chemlib:nitric_oxide', source: [{ item: 'chemlib:nitrogen' }, { item: 'chemlib:oxygen' }, { item: 'minecraft:redstone' }], outputs: [{ item: 'chemlib:nitrogen_dioxide', count: 2 }], process: 'oxidation_gas', slate: 'bloodmagic:demonslate' },
@@ -308,7 +308,7 @@ function btmFullChemRegisterElement(event, group, element) {
         btmFullChemBlood(event, 'source/' + group.id + '/' + element, [
             { item: group.source },
             { item: group.slate },
-            { item: 'latent_chemlib:sealed_chemical_cell' }
+            { item: 'kubejs:pressure_seal' }
         ], { item: elementItem, count: group.id === 'noble' || group.id === 'radioactive' ? 2 : 4 }, group.id === 'noble' || group.id === 'radioactive' ? 18000 : 9000, 360, group.slate === 'bloodmagic:etherealslate' ? 4 : 3)
     }
 
@@ -369,7 +369,7 @@ function btmFullChemRegisterMolecule(event, molecule) {
     if (!btmFullChemExists(molecule.item)) return
 
     btmFullChemMix(event, 'molecule/source/' + molecule.id, molecule.source, [{ item: molecule.item, count: 2 }], 'heated', 220)
-    btmFullChemPressure(event, 'molecule/pressure_source/' + molecule.id, molecule.source.concat([{ item: 'latent_chemlib:sealed_chemical_cell' }]), { item: molecule.item, count: 3 }, 2.75)
+    btmFullChemPressure(event, 'molecule/pressure_source/' + molecule.id, molecule.source, { item: molecule.item, count: 3 }, 2.75)
     btmFullChemBlood(event, 'molecule/manual_yield/' + molecule.id, molecule.source.concat([{ item: molecule.slate }]), { item: molecule.item, count: 5 }, 8000, 240, 2)
 
     btmFullChemMix(event, 'molecule/use/' + molecule.id + '/' + molecule.process, [{ item: molecule.item }], molecule.outputs, molecule.id.indexOf('oxide') >= 0 ? 'heated' : null, 180)

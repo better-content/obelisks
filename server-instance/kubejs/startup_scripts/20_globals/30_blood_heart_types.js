@@ -6,7 +6,6 @@ if (typeof RPGStatsEvents !== 'undefined') {
     RPGStatsEvents.heartTypes(function (event) {
         event.heartType('kubejs:weak_blood')
             .item('kubejs:weak_blood_heart')
-            .asset('rpgstats:item/still_beating_heart')
             .displayName('Blood-Touched Heart')
             .catalyst('bloodmagic:sacrificialdagger')
             .consumeCatalyst(false)
@@ -16,7 +15,6 @@ if (typeof RPGStatsEvents !== 'undefined') {
 
         event.heartType('kubejs:apprentice_blood')
             .item('kubejs:apprentice_blood_heart')
-            .asset('rpgstats:item/still_beating_heart')
             .displayName('Levelled Blood Heart')
             .catalyst('bloodmagic:weakbloodorb')
             .consumeCatalyst(false)
@@ -26,7 +24,6 @@ if (typeof RPGStatsEvents !== 'undefined') {
 
         event.heartType('kubejs:magician_blood')
             .item('kubejs:magician_blood_heart')
-            .asset('rpgstats:item/still_beating_heart')
             .displayName('Hemostatic Blood Heart')
             .catalyst('bloodmagic:apprenticebloodorb')
             .consumeCatalyst(false)
@@ -36,7 +33,6 @@ if (typeof RPGStatsEvents !== 'undefined') {
 
         event.heartType('kubejs:master_blood')
             .item('kubejs:master_blood_heart')
-            .asset('rpgstats:item/still_beating_heart')
             .displayName('Withered Blood Heart')
             .catalyst('bloodmagic:magicianbloodorb')
             .consumeCatalyst(false)
@@ -46,7 +42,6 @@ if (typeof RPGStatsEvents !== 'undefined') {
 
         event.heartType('kubejs:archmage_blood')
             .item('kubejs:archmage_blood_heart')
-            .asset('rpgstats:item/still_beating_heart')
             .displayName('Draconic Blood Heart')
             .catalyst('bloodmagic:masterbloodorb')
             .consumeCatalyst(false)

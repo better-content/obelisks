@@ -29,7 +29,14 @@
 			id: "0F3870494C55ACF1"
 			tasks: [{
 				id: "1EE068EE9E6B4AD7"
-				item: "minecraft:flint"
+				item: {
+					Count: 1
+					id: "ftbfiltersystem:smart_filter"
+					tag: {
+						"ftbfiltersystem:filter": "ftbfiltersystem:item_tag(kubejs:primitive_tcon_tool_materials)"
+					}
+				}
+				title: "Any starter tool material"
 				type: "item"
 			}]
 			x: -13.5d
@@ -151,6 +158,7 @@
 						}
 					}
 				}
+				match_nbt: false
 				type: "item"
 			}]
 			x: -12.5d
@@ -216,6 +224,7 @@
 						}
 					}
 				}
+				match_nbt: false
 				type: "item"
 			}]
 			x: -9.6d

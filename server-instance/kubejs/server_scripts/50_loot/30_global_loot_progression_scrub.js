@@ -15,8 +15,6 @@ var BTM_LOOT_REMOVE_ITEMS = [
     'bloodmagic:fragment_netherite_scrap',
     'bloodmagic:gravel_netherite_scrap',
     'bloodmagic:sand_netherite',
-    'botania:corporea_spark_creative',
-    'botania:creative_pool',
     'create:creative_blaze_cake',
     'create:creative_crate',
     'create:creative_fluid_tank',

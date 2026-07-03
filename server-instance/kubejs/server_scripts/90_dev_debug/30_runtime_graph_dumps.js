@@ -6,8 +6,7 @@
 
 var BTM_RUNTIME_DUMP_CONFIG = 'kubejs/config/runtime_graph_dumps.json'
 var BTM_RUNTIME_DUMP_DIR = 'generated/runtime-dumps/'
-var BtmRuntimeDumpFiles = Java.loadClass('java.nio.file.Files')
-var BtmRuntimeDumpPaths = Java.loadClass('java.nio.file.Paths')
+var BTM_RUNTIME_FALLBACK_PREFIX = 'kubejs/config/runtime_graph_'
 
 function btmRuntimeDumpConfig() {
     var fallback = {
@@ -22,10 +21,23 @@ function btmRuntimeDumpConfig() {
     }
 }
 
-function btmRuntimeEnsureOutputDir(outputDir) {
+function btmRuntimeNormalizeOutputDir(outputDir) {
     var dir = String(outputDir || BTM_RUNTIME_DUMP_DIR)
-    BtmRuntimeDumpFiles.createDirectories(BtmRuntimeDumpPaths.get(dir))
+    if (!dir.endsWith('/')) dir += '/'
     return dir
+}
+
+function btmRuntimeWriteFile(outputDir, fileName, payload) {
+    var primaryPath = outputDir + fileName
+    try {
+        JsonIO.write(primaryPath, payload)
+        return primaryPath
+    } catch (e) {
+        var fallbackPath = BTM_RUNTIME_FALLBACK_PREFIX + fileName
+        JsonIO.write(fallbackPath, payload)
+        console.warn('[BTM-RUNTIME-GRAPH] primary write failed for ' + primaryPath + '; wrote fallback ' + fallbackPath + ' (' + e + ')')
+        return fallbackPath
+    }
 }
 
 function btmRuntimeEntry(kind, id, count) {
@@ -156,14 +168,14 @@ function btmRuntimeMachines(type) {
 ServerEvents.recipes(function (event) {
     var cfg = btmRuntimeDumpConfig()
     if (!cfg.enabled) return
-    cfg.outputDir = btmRuntimeEnsureOutputDir(cfg.outputDir)
+    cfg.outputDir = btmRuntimeNormalizeOutputDir(cfg.outputDir)
 
     var recipes = []
     event.forEachRecipe({}, function (recipe) {
         recipes.push(btmRuntimeRecipeRecord(recipe))
     })
 
-    JsonIO.write(cfg.outputDir + 'recipes.json', {
+    var recipesPath = btmRuntimeWriteFile(cfg.outputDir, 'recipes.json', {
         schema: 'obelisks.recipe_graph.v1',
         minecraft: '1.20.1',
         loader: 'forge',
@@ -171,7 +183,7 @@ ServerEvents.recipes(function (event) {
         recipes: recipes
     })
 
-    JsonIO.write(cfg.outputDir + 'registries.json', {
+    btmRuntimeWriteFile(cfg.outputDir, 'registries.json', {
         schema: 'obelisks.registries.v1',
         items: {},
         blocks: {},
@@ -179,16 +191,16 @@ ServerEvents.recipes(function (event) {
         entities: {}
     })
 
-    JsonIO.write(cfg.outputDir + 'tags.json', {
+    btmRuntimeWriteFile(cfg.outputDir, 'tags.json', {
         schema: 'obelisks.tags.v1',
         item_tags: {},
         fluid_tags: {}
     })
 
-    JsonIO.write(cfg.outputDir + 'mods.json', {
+    btmRuntimeWriteFile(cfg.outputDir, 'mods.json', {
         schema: 'obelisks.mods.v1',
         mods: {}
     })
 
-    console.info('[BTM-RUNTIME-GRAPH] wrote ' + recipes.length + ' recipes to ' + cfg.outputDir + 'recipes.json')
+    console.info('[BTM-RUNTIME-GRAPH] wrote ' + recipes.length + ' recipes to ' + recipesPath)
 })

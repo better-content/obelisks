@@ -34,15 +34,12 @@ ServerEvents.recipes(function (event) {
 
     // Blood I: first folk/spirit power should consume actual altar output, not only vanilla craft stock.
     btmMagicGateOutputs(event, [
-        'hexerei:book_of_shadows_altar',
-        'hexerei:mixing_cauldron',
         'malum:spirit_altar',
         'rootsclassic:altar',
         'reliquary:apothecary_cauldron'
     ], commonVanillaValuables.concat(['minecraft:torch', 'reliquary:catalyzing_gland']), BTM_MAGIC_T1)
 
-    // Blood III: Ars apparatus, glyph, and ritual expansion. Apprentice-tier only purifies
-    // source basics; practical Ars power waits for Magician-tier Blood Magic.
+    // Blood III: early Ars operations start once the teaser book can be fed by real proof.
     btmMagicGateOutputs(event, [
         'ars_nouveau:ritual_brazier',
         'ars_nouveau:ritual_scrying',
@@ -72,19 +69,17 @@ ServerEvents.recipes(function (event) {
     ]), BTM_MAGIC_T3)
 
     btmMagicGateOutputs(event, [
-        'naturesaura:slime_split_generator',
-        'naturesaura:animal_generator',
-        'naturesaura:flower_generator',
-        'naturesaura:chorus_generator',
-        'naturesaura:auto_crafter'
-    ], commonVanillaValuables.concat(['naturesaura:infused_iron']), BTM_MAGIC_T2)
-
-    btmMagicGateOutputs(event, [
         'irons_spellbooks:pumpkin_helmet'
     ], commonVanillaValuables, BTM_MAGIC_T2)
 
-    // Blood III: Goety/Eidolon/Occultism operational power. Keep Goety's internal focus chain,
-    // but make the cheap focus entry and altar variants require an Imbued Slate.
+    // Blood II: Hexerei is the first folk surface off the Fonts spine.
+    btmMagicGateOutputs(event, [
+        'hexerei:book_of_shadows_altar',
+        'hexerei:mixing_cauldron'
+    ], commonVanillaValuables.concat(['minecraft:torch']), BTM_MAGIC_T2)
+
+    // Blood IV: Goety/Eidolon operational power. Keep Goety's internal focus chain,
+    // but make the cheap focus entry and altar variants require a Demonic Slate.
     btmMagicGateOutputs(event, [
         'eidolon:wooden_altar',
         'eidolon:necrotic_focus',
@@ -139,16 +134,9 @@ ServerEvents.recipes(function (event) {
         'minecraft:tnt', '#forge:gunpowder', '#forge:rods/blaze', '#forge:ender_pearls',
         '#forge:gems/quartz', '#forge:ingots/iron', 'goety:magic_emerald', 'goety:cursed_bars',
         'goety:mystic_core', 'goety:empty_focus'
-    ]), BTM_MAGIC_T3)
+    ]), BTM_MAGIC_T4)
 
-    // Blood IV: Botania engineering, Theurgy matter work, and large Ars Caelum rituals.
-    btmMagicGateOutputs(event, [
-        'botania:runic_altar',
-        'botania:pump',
-        'botania:avatar',
-        'botania:fel_pumpkin',
-        'botania:cell_block'
-    ], commonVanillaValuables.concat(['botania:livingrock', 'botania:mana_pearl', '#botania:mana_diamond_gems']), BTM_MAGIC_T4)
+    // Blood IV: Theurgy matter work and large Ars Caelum rituals.
 
     btmMagicGateOutputs(event, [
         'theurgy:incubator',

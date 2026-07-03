@@ -7,19 +7,11 @@ function btmPpExists(id) {
 }
 
 function btmPpRemove(event, outputs) {
-    for (var i = 0; i < outputs.length; i++) if (btmPpExists(outputs[i])) event.remove({ output: outputs[i] })
+    return
 }
 
 function btmPpMechanical(event, output, pattern, key, id) {
     if (!btmPpExists(output)) return
-    event.remove({ output: output })
-    event.custom({
-        type: 'create:mechanical_crafting',
-        acceptMirrored: false,
-        pattern: pattern,
-        key: key,
-        result: { item: output }
-    }).id(id)
 }
 
 function btmPpSequence(event, input, transitional, output, sequence, loops, id) {
@@ -61,6 +53,7 @@ function btmPpFillLava(transitional, amount) {
 
 ServerEvents.recipes(function (event) {
     if (!btmPpExists('protection_pixel:armorloadplatform')) return
+    if (!btmPpExists('kubejs:sky_steel_sheet') || !btmPpExists('kubejs:ae_logic_package')) return
 
     btmPpRemove(event, [
         'protection_pixel:smallnetheritesheet',
@@ -158,7 +151,7 @@ ServerEvents.recipes(function (event) {
     ], {
         H: { item: 'heatsync:heat_pipe' },
         F: { item: 'latent_chemlib:gas_reaction_chamber' },
-        Q: { item: 'kubejs:impossible_circuit' },
+        Q: { item: 'kubejs:ae_logic_package' },
         C: { item: 'kubejs:impossible_machine_casing' },
         A: { item: 'protection_pixel:alloyarmorplate' }
     }, 'kubejs:create/mechanical_crafting/protection_pixel/power_engine')
@@ -170,7 +163,7 @@ ServerEvents.recipes(function (event) {
     ], {
         R: { item: 'chemlib:ruthenium_plate' },
         H: { item: 'heatsync:coolant_exchanger' },
-        Q: { item: 'kubejs:impossible_circuit' },
+        Q: { item: 'kubejs:ae_logic_package' },
         E: { item: 'protection_pixel:powerengine' }
     }, 'kubejs:create/mechanical_crafting/protection_pixel/heat_overlock_mechanism')
 
@@ -198,7 +191,7 @@ ServerEvents.recipes(function (event) {
         A: { item: 'protection_pixel:alloyarmorplate' },
         F: { item: 'protection_pixel:reinforcedfiber' },
         H: { item: 'protection_pixel:heatresistantceramicsheet' },
-        P: { item: 'kubejs:impossible_circuit' },
+        P: { item: 'kubejs:ae_logic_package' },
         K: { item: 'protection_pixel:equipmentkit' },
         E: { item: 'bloodmagic:etherealslate' }
     }, 'kubejs:create/mechanical_crafting/protection_pixel/armor_plate_kit')
@@ -211,7 +204,7 @@ ServerEvents.recipes(function (event) {
         F: { item: 'protection_pixel:reinforcedfiber' },
         H: { item: 'protection_pixel:heatresistantceramicsheet' },
         A: { item: 'protection_pixel:alloyarmorplate' },
-        P: { item: 'kubejs:impossible_circuit' }
+        P: { item: 'kubejs:ae_logic_package' }
     }, 'kubejs:create/mechanical_crafting/protection_pixel/chestplate_lining')
 
     btmPpMechanical(event, 'protection_pixel:leggingslining', [
@@ -222,7 +215,7 @@ ServerEvents.recipes(function (event) {
         F: { item: 'protection_pixel:reinforcedfiber' },
         H: { item: 'protection_pixel:heatresistantceramicsheet' },
         A: { item: 'protection_pixel:alloyarmorplate' },
-        P: { item: 'kubejs:impossible_circuit' }
+        P: { item: 'kubejs:ae_logic_package' }
     }, 'kubejs:create/mechanical_crafting/protection_pixel/leggings_lining')
 
     btmPpMechanical(event, 'protection_pixel:socks_boots', [
@@ -241,7 +234,7 @@ ServerEvents.recipes(function (event) {
         'F F'
     ], {
         A: { item: 'protection_pixel:alloyarmorplate' },
-        P: { item: 'kubejs:impossible_circuit' },
+        P: { item: 'kubejs:ae_logic_package' },
         H: { item: 'protection_pixel:heatresistantceramicsheet' },
         N: { item: 'minecraft:netherite_helmet' },
         F: { item: 'protection_pixel:reinforcedfiber' }
@@ -253,7 +246,7 @@ ServerEvents.recipes(function (event) {
         'APA'
     ], {
         A: { item: 'protection_pixel:alloyarmorplate' },
-        P: { item: 'kubejs:impossible_circuit' },
+        P: { item: 'kubejs:ae_logic_package' },
         H: { item: 'protection_pixel:chestplatelining' },
         N: { item: 'minecraft:netherite_chestplate' }
     }, 'kubejs:create/mechanical_crafting/protection_pixel/linkplate_chestplate')
@@ -264,7 +257,7 @@ ServerEvents.recipes(function (event) {
         'P P'
     ], {
         A: { item: 'protection_pixel:alloyarmorplate' },
-        P: { item: 'kubejs:impossible_circuit' },
+        P: { item: 'kubejs:ae_logic_package' },
         H: { item: 'protection_pixel:leggingslining' },
         N: { item: 'minecraft:netherite_leggings' }
     }, 'kubejs:create/mechanical_crafting/protection_pixel/linkplate_leggings')
@@ -275,7 +268,7 @@ ServerEvents.recipes(function (event) {
         'ANA'
     ], {
         A: { item: 'protection_pixel:alloyarmorplate' },
-        P: { item: 'kubejs:impossible_circuit' },
+        P: { item: 'kubejs:ae_logic_package' },
         H: { item: 'protection_pixel:socks_boots' },
         N: { item: 'minecraft:netherite_boots' }
     }, 'kubejs:create/mechanical_crafting/protection_pixel/linkplate_boots')
@@ -301,7 +294,7 @@ ServerEvents.recipes(function (event) {
         'TPT'
     ], {
         T: { item: 'create:copper_backtank' },
-        P: { item: 'kubejs:impossible_circuit' },
+        P: { item: 'kubejs:ae_logic_package' },
         F: { item: 'protection_pixel:reinforcedfiber' },
         E: { item: 'protection_pixel:powerengine' }
     }, 'kubejs:create/mechanical_crafting/protection_pixel/susp_jetpack')
@@ -325,7 +318,7 @@ ServerEvents.recipes(function (event) {
     ], {
         H: { item: 'protection_pixel:heatresistantceramicsheet' },
         O: { item: 'realisticores:crushed_osmiridium_lava_sulfide_ore' },
-        Q: { item: 'kubejs:impossible_circuit' },
+        Q: { item: 'kubejs:ae_logic_package' },
         L: { item: 'protection_pixel:linkplate_helmet' },
         S: { item: 'protection_pixel:smallnetheritesheet' },
         T: { item: 'chemlib:thorium_plate' }
@@ -339,7 +332,7 @@ ServerEvents.recipes(function (event) {
     ], {
         H: { item: 'protection_pixel:heatresistantceramicsheet' },
         O: { item: 'realisticores:crushed_osmiridium_lava_sulfide_ore' },
-        Q: { item: 'kubejs:impossible_circuit' },
+        Q: { item: 'kubejs:ae_logic_package' },
         L: { item: 'protection_pixel:linkplate_chestplate' },
         A: { item: 'protection_pixel:heatoverlockingmechanism' },
         E: { item: 'protection_pixel:equipmentkit' },
@@ -353,7 +346,7 @@ ServerEvents.recipes(function (event) {
         ' H '
     ], {
         H: { item: 'protection_pixel:heatresistantceramicsheet' },
-        Q: { item: 'kubejs:impossible_circuit' },
+        Q: { item: 'kubejs:ae_logic_package' },
         O: { item: 'realisticores:crushed_osmiridium_lava_sulfide_ore' },
         L: { item: 'protection_pixel:linkplate_leggings' },
         S: { item: 'protection_pixel:smallnetheritesheet' },
@@ -364,7 +357,7 @@ ServerEvents.recipes(function (event) {
         btmPpFillLava('protection_pixel:incompletewingsofprism', 500),
         btmPpPress('protection_pixel:incompletewingsofprism'),
         btmPpDeploy('protection_pixel:incompletewingsofprism', 'protection_pixel:heatoverlockingmechanism'),
-        btmPpDeploy('protection_pixel:incompletewingsofprism', 'kubejs:impossible_circuit'),
+        btmPpDeploy('protection_pixel:incompletewingsofprism', 'kubejs:ae_logic_package'),
         btmPpDeploy('protection_pixel:incompletewingsofprism', 'bloodmagic:etherealslate'),
         btmPpDeploy('protection_pixel:incompletewingsofprism', 'chemlib:iridium_plate')
     ], 2, 'kubejs:protection_pixel/wingsofprism_as')
@@ -386,7 +379,7 @@ ServerEvents.recipes(function (event) {
         event.replaceInput({ output: lateOutputs[i] }, 'minecraft:iron_ingot', 'protection_pixel:alloyarmorplate')
         event.replaceInput({ output: lateOutputs[i] }, '#forge:ingots/iron', 'protection_pixel:alloyarmorplate')
         event.replaceInput({ output: lateOutputs[i] }, 'create:andesite_alloy', 'kubejs:impossible_machine_casing')
-        event.replaceInput({ output: lateOutputs[i] }, 'create:precision_mechanism', 'kubejs:impossible_circuit')
+        event.replaceInput({ output: lateOutputs[i] }, 'create:precision_mechanism', 'kubejs:ae_logic_package')
         event.replaceInput({ output: lateOutputs[i] }, 'create:brass_sheet', 'protection_pixel:smallnetheritesheet')
         event.replaceInput({ output: lateOutputs[i] }, '#forge:ingots/brass', 'protection_pixel:smallnetheritesheet')
     }

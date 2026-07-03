@@ -12,36 +12,20 @@ function gate(event, filter, oldInput, newInput) {
 }
 
 ServerEvents.recipes(function (event) {
-    // Altar I: early folk, spirit, and utility magic.
-    gate(event, { id: 'hexerei:mixing_cauldron' }, 'minecraft:torch', BM_SLATE_T1)
+    // Altar I: first dirty-magic proofs.
     gate(event, { id: 'malum:spirit_altar' }, '#forge:ingots/gold', BM_SLATE_T1)
     gate(event, { id: 'rootsclassic:altar' }, '#forge:storage_blocks/gold', BM_SLATE_T1)
     gate(event, { id: 'reliquary:apothecary_cauldron' }, 'reliquary:catalyzing_gland', BM_SLATE_T1)
 
-    // Altar II: purified Blood Magic becomes basic Ars source material work.
-    gate(event, { output: 'ars_nouveau:source_gem' }, 'minecraft:amethyst_shard', BM_SLATE_T2)
-    gate(event, { output: 'ars_nouveau:source_gem_block' }, 'ars_nouveau:source_gem', BM_SLATE_T2)
-    gate(event, { id: 'ars_nouveau:imbuement_chamber' }, '#forge:ingots/gold', BM_SLATE_T2)
-    gate(event, { id: 'ars_nouveau:novice_spell_book' }, 'minecraft:book', BM_SLATE_T2)
-
-    // Altar III: real Ars apparatus and glyph expansion.
-    gate(event, { id: 'ars_nouveau:enchanting_apparatus' }, '#forge:ingots/gold', BM_SLATE_T3)
-    gate(event, { id: 'ars_nouveau:apprentice_spell_book_upgrade' }, 'minecraft:diamond', BM_SLATE_T3)
-
-    // Altar II/III: restrained Ars addon entry points.
-    gate(event, { id: 'ars_additions:apparatus/advanced_dominion_wand' }, 'minecraft:gold_ingot', BM_SLATE_T2)
-    gate(event, { id: 'ars_instrumentum:apparatus/numeric_mana_charm' }, '#forge:ingots/gold', BM_SLATE_T2)
-    gate(event, { id: 'ars_elemental:imbuement_lesser_air_focus' }, 'minecraft:gold_ingot', BM_SLATE_T2)
-    gate(event, { id: 'ars_elemental:imbuement_lesser_earth_focus' }, 'minecraft:gold_ingot', BM_SLATE_T2)
-    gate(event, { id: 'ars_elemental:imbuement_lesser_fire_focus' }, 'minecraft:gold_ingot', BM_SLATE_T2)
-    gate(event, { id: 'ars_elemental:imbuement_lesser_water_focus' }, 'minecraft:gold_ingot', BM_SLATE_T2)
-    gate(event, { id: 'naturesaura:offering_table' }, 'naturesaura:infused_iron', BM_SLATE_T2)
+    // Altar II: Hexerei is the first authored folk branch off fonts. Ars gets an
+    // early teaser book separately, but real source work still waits for later proof.
+    gate(event, { id: 'hexerei:mixing_cauldron' }, 'minecraft:torch', BM_SLATE_T2)
     gate(event, { id: 'irons_spellbooks:scroll_forge' }, 'minecraft:polished_deepslate', BM_SLATE_T2)
 
-    // Altar III: Occultism ritual-start access (gate chalk path, not guidebook).
+    // Altar III: Occultism completes the Fonts -> Hexerei -> Occultism spine.
     gate(event, { id: 'occultism:crafting/chalk_white_impure' }, 'occultism:burnt_otherstone', BM_SLATE_T3)
 
-    // Altar III: dangerous magic, spirits, and servants.
+    // Altar III: dangerous bridge magic, spirits, and servants.
     // Tome of Blood moved to the post-AE2 hybrid branch in
     // 166_tome_of_blood_post_ae2_gates.js.
 
@@ -63,15 +47,26 @@ ServerEvents.recipes(function (event) {
 
     gate(event, { id: 'eidolon:crucible' }, 'eidolon:pewter_ingot', BM_SLATE_T3)
     gate(event, { id: 'eidolon:soul_enchanter' }, '#forge:gems/diamond', BM_SLATE_T3)
-    gate(event, { id: 'goety:cursed_cage' }, 'goety:cursed_bars', BM_SLATE_T3)
-    gate(event, { id: 'goety:dark_altar' }, 'goety:magic_emerald', BM_SLATE_T3)
 
-    // Altar IV: Occultism high automation/mining and Botania engineering.
+    // Altar III: Ars source handling begins once both dirty spines can already feed it.
+    gate(event, { output: 'ars_nouveau:source_gem' }, 'minecraft:amethyst_shard', BM_SLATE_T3)
+    gate(event, { output: 'ars_nouveau:source_gem_block' }, 'ars_nouveau:source_gem', BM_SLATE_T3)
+    gate(event, { id: 'ars_nouveau:imbuement_chamber' }, '#forge:ingots/gold', BM_SLATE_T3)
+
+    // Altar IV: heavier Ars apparatus and Goety operations.
+    gate(event, { id: 'ars_nouveau:enchanting_apparatus' }, '#forge:ingots/gold', BM_SLATE_T4)
+    gate(event, { id: 'ars_nouveau:apprentice_spell_book_upgrade' }, 'minecraft:diamond', BM_SLATE_T4)
+    gate(event, { id: 'ars_additions:apparatus/advanced_dominion_wand' }, 'minecraft:gold_ingot', BM_SLATE_T4)
+    gate(event, { id: 'ars_instrumentum:apparatus/numeric_mana_charm' }, '#forge:ingots/gold', BM_SLATE_T4)
+    gate(event, { id: 'ars_elemental:imbuement_lesser_air_focus' }, 'minecraft:gold_ingot', BM_SLATE_T4)
+    gate(event, { id: 'ars_elemental:imbuement_lesser_earth_focus' }, 'minecraft:gold_ingot', BM_SLATE_T4)
+    gate(event, { id: 'ars_elemental:imbuement_lesser_fire_focus' }, 'minecraft:gold_ingot', BM_SLATE_T4)
+    gate(event, { id: 'ars_elemental:imbuement_lesser_water_focus' }, 'minecraft:gold_ingot', BM_SLATE_T4)
+    gate(event, { id: 'goety:cursed_cage' }, 'goety:cursed_bars', BM_SLATE_T4)
+    gate(event, { id: 'goety:dark_altar' }, 'goety:magic_emerald', BM_SLATE_T4)
+
+    // Altar IV: Occultism high automation/mining.
     gate(event, { id: 'occultism:ritual/craft_dimensional_mineshaft' }, 'occultism:spirit_attuned_crystal', BM_SLATE_T4)
-
-    gate(event, { id: 'botania:runic_altar' }, 'botania:mana_pearl', BM_SLATE_T4)
-    gate(event, { id: 'botania:runic_altar_alt' }, '#botania:mana_diamond_gems', BM_SLATE_T4)
-    gate(event, { id: 'botania:terra_plate/terrasteel_ingot' }, 'botania:mana_diamond', BM_SLATE_T4)
 
     gate(event, { id: 'forbidden_arcanus:clibano_core' }, 'minecraft:blast_furnace', BM_SLATE_T4)
     gate(event, { id: 'forbidden_arcanus:deorum_ingot' }, 'minecraft:gold_ingot', BM_SLATE_T4)

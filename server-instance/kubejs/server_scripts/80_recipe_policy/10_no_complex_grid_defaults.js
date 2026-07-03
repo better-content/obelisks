@@ -18,7 +18,6 @@ var BTM_GRID_POLICY_COMPLEX_NAMESPACES = {
     ars_technica: true,
     arseng: true,
     bloodmagic: true,
-    botania: true,
     buildinggadgets2: true,
     compressedcreativity: true,
     create: true,
@@ -75,7 +74,6 @@ var BTM_GRID_POLICY_MAGIC_NAMESPACES = {
     ars_nouveau: true,
     ars_technica: true,
     bloodmagic: true,
-    botania: true,
     eidolon: true,
     forbidden_arcanus: true,
     goety: true,
@@ -354,16 +352,7 @@ function btmGridPolicyRerouteShaped(event, recipe) {
         if (btmGridPolicyAlchemyRecipe(event, btmGridPolicyReplacementId('blood_alchemy', originalId), result, alchemyInputs, 1)) return true
     }
 
-    if (!global.btmIsMechanicalOnlyRecipe(data.pattern, output, false)) return false
-
-    event.custom({
-        type: 'create:mechanical_crafting',
-        acceptMirrored: true,
-        pattern: data.pattern,
-        key: data.key,
-        result: result
-    }).id(btmGridPolicyReplacementId('create_mechanical', originalId))
-    return true
+    return false
 }
 
 function btmGridPolicyRerouteShapeless(event, recipe) {

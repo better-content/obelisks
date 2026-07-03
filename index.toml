@@ -5325,6 +5325,14 @@ file = "config/create_train_fuel_scaling-common.toml"
 hash = "e1ac48c727652278e503a9126b3391d732a96f38667c8c7a1870e957e4a74509"
 
 [[files]]
+file = "config/darkmodeeverywhere-client.toml"
+hash = "a622d9a2de612771f38790e64e7c0c9a8ea9e501cbf4bd4bfe42789c1ccc1a2a"
+
+[[files]]
+file = "config/darkmodeeverywhereshaders.json"
+hash = "d07b4d9e27a533ee0eeb42b0df17a14018cb5992a1e9867e81207690dc7b0fc6"
+
+[[files]]
 file = "config/dcm.json"
 hash = "b171a1b06507d4f85131fc40b9953ab071a6488e87b95ac454ca502f33c47c1d"
 
@@ -5502,23 +5510,27 @@ hash = "3a9d2c8f78ed10b9dba2febb9c18a39c397448dc3eb60fbbb91034a16028b7ad"
 
 [[files]]
 file = "config/ftbquests/quests/chapter_groups.snbt"
-hash = "e57d8311aec9f524911ed1313cabf138bb7fa5a2d3ba985a00a2a267ff35ef78"
+hash = "84b93b9be41acc8a7dfd31f18a4b33b303deed5a191e2397ede357a27822f6fe"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/better_tools.snbt"
-hash = "59131717f7c848d4bd15c90e6e44171f9ffe32a73495fa51b589c2077ca4d9a8"
+hash = "562cb84b0bfc586c310d673de1311986c2ee3231c8dd0d64f8b50f6d48af3a18"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/casings.snbt"
-hash = "327ea7e19c19e03f82ebaa059ea68b9628fedb6e68d67fef9ff6359b913b424c"
+hash = "fc8d79fd48bb1f08a93585334f5801287e4509fbffcfaef02fd9e487acc1a22f"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/dimensions.snbt"
-hash = "cf4b1b4a9524b41aab5760c45c5c1176728edd2d66e5ee0d6239b6d78277225c"
+hash = "056c4003aac9ae1099367ac354bfb04348a9fcefe2bf922d0b17e548db8aaa2b"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/information.snbt"
+hash = "bf8b4c8cbec756d825d133eb18d91715e812536c3ccb54ddc6c8f3d508fcea9d"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/the_situation.snbt"
-hash = "d277ef54fc31d0aaa141b15454ec9f493839576c536fb30a410a8f3b1f3245f4"
+hash = "e2bd0221226f1a3f22b302374df827294cd0c19181966e546c994a4ad2e1e469"
 
 [[files]]
 file = "config/ftbquests/quests/data.snbt"
@@ -9465,6 +9477,10 @@ file = "kubejs/client_scripts/46_hide_hexerei_mahogany_tree_products.js"
 hash = "4bf9f917342167f9ee92cb2cd605d0348fa2853b6e31714920aa15e530134be3"
 
 [[files]]
+file = "kubejs/client_scripts/47_hide_ae2_facades_from_emi.js"
+hash = "7ff999bfda91396044c85870d9cd3b009b4866c0b2a4535e24867f4ec6816ce6"
+
+[[files]]
 file = "kubejs/client_scripts/90_dev_debug/10_perf_probe.js"
 hash = "e281c330c03d65a0dfa8a392be4a99bb8f998ea1226a1807f5f5e1854a156faa"
 
@@ -10921,10 +10937,6 @@ file = "kubejs/server_scripts/40_recipe_add/20_tcon_steel_block_casting.js"
 hash = "8b1dcdb6c42f1617d143e7b139e9786cc85bcabd9172535810b0c2f9124a8c86"
 
 [[files]]
-file = "kubejs/server_scripts/40_recipe_add/30_thats_crate_recipes.js"
-hash = "7c8bff0a167e5ca668f70047727a398e3965656b7160ebd344d7d31449fa6ad2"
-
-[[files]]
 file = "kubejs/server_scripts/40_recipe_add/40_blood_orbs_from_still_beating_hearts.js"
 hash = "cd90c26a1b2343ea4f490d6bd5391115dbee827a598988b1339d0a8d19ba7341"
 
@@ -11035,10 +11047,6 @@ hash = "cd76f7161ab2ad7d4713652ce5a1e898624752ffc3d8450aabb4b9ec575fedc8"
 [[files]]
 file = "kubejs/startup_scripts/00_globals/20_progression_catalogues.js"
 hash = "4170f2eb14a8d5204188e275c6747d267056aed52e83e43bfb3a98cd26ab927d"
-
-[[files]]
-file = "kubejs/startup_scripts/10_items_blocks/10_thats_crate_registry.js"
-hash = "967a736c0355743c7a6acbecf2772bb1a5be27db9620debc1cc1775ea9aada9b"
 
 [[files]]
 file = "kubejs/startup_scripts/10_items_blocks/30_progression_items.js"
@@ -11169,11 +11177,11 @@ metafile = true
 
 [[files]]
 file = "mods/btmfixes-0.1.0-all.jar"
-hash = "d9af68d5cf708468fdc050ba094cbafa0ba5c0659a778deea27f11e72fa0a2e6"
+hash = "178749261fc833caa1d67a9ed8f90468be013849d050dc00ba31cfc1905c7bd3"
 
 [[files]]
 file = "mods/btmfixes-0.1.0.jar"
-hash = "99c736708c111cacd7e0c80d54b71b736b75fcfcd8e9b84b655760f0202d8e8b"
+hash = "f4ea6b123fde7921a4a040bb5c655ffb50ff58d9369ecb11625a0bda5c004cdf"
 
 [[files]]
 file = "mods/building-gadgets.pw.toml"
@@ -11212,7 +11220,7 @@ metafile = true
 
 [[files]]
 file = "mods/classselector-1.0.0.jar"
-hash = "ce8dbee4078d7d62540d325d566b9f0be722bae28fb515d688064649515d4d10"
+hash = "441960a314e4a108bba784cf1b3ae7bf14c38674858373af998de3c425e0153f"
 
 [[files]]
 file = "mods/cloth-config.pw.toml"
@@ -11241,7 +11249,7 @@ metafile = true
 
 [[files]]
 file = "mods/computerbridge-0.1.0.jar"
-hash = "0943e10ab4415526c9adee655240b402c55e9a2a1ccb52580e113050db3b0ae0"
+hash = "3bd1437bee3626244c8416ad11b656e1a0014c2edee4ff869e6011517ede9afe"
 
 [[files]]
 file = "mods/concurrent-chunk-management-engine-for-forge-the.pw.toml"
@@ -11300,11 +11308,11 @@ metafile = true
 
 [[files]]
 file = "mods/create-train-fuel-scaling-0.1.0.jar"
-hash = "6205ad6a8f724ba932dd09a30ecab93648e8f94a50416bfae1f3443f20b71eac"
+hash = "fa0ba3e06c89907d6faf0248590e60dd4fcd552a93c9f13d8841a3675f0a2153"
 
 [[files]]
 file = "mods/create-transmission-loss-0.1.0.jar"
-hash = "f50b929999e03af26addcd9224dae5c2b0bcb1c2e676427f9ba9634b4012eac2"
+hash = "b6e77611a28e3a4cc1a71ce85081c3289454b2b2571d04a3ffb1d4f02960993a"
 
 [[files]]
 file = "mods/create.pw.toml"
@@ -11348,7 +11356,7 @@ metafile = true
 
 [[files]]
 file = "mods/dimensionalfonts-1.0.0.jar"
-hash = "873d67165dd1acb3d4dd120e370854dbafbd68dc425ed049be45b66723f20092"
+hash = "809e8b537d550df6cde09c002d89477e6bc859890dc186c0ca3e88dc86433228"
 
 [[files]]
 file = "mods/ding.pw.toml"
@@ -11362,11 +11370,11 @@ metafile = true
 
 [[files]]
 file = "mods/dthexerei-1.0.0.jar"
-hash = "2404d4636d9539f4da18172c56cd1c167fe2371d32e4402e8ddb1c5836df3564"
+hash = "13288f8926f2c80000f257744bd841fa3f6f0f200cbf09f110d5219d2d37512f"
 
 [[files]]
 file = "mods/dtmalum-1.0.0.jar"
-hash = "364433db9833b9732364da71e78305b0796e7622e3a22367d43277c82c7df369"
+hash = "613f60b65013c6821e9fbc47745fbdc492b8ab6481550681705df3c7f7ecb2ad"
 
 [[files]]
 file = "mods/dungeon-crawl.pw.toml"
@@ -11610,7 +11618,7 @@ metafile = true
 
 [[files]]
 file = "mods/heatsync-0.1.0.jar"
-hash = "57e97e1616c311b5eccf1010f0b8ebbe8e92d301636086aca0cd14fa1bd486e9"
+hash = "ac2903c2f9bbcb451e0eb400b4039177824145ed2551ddebd114dc8977f11ef7"
 
 [[files]]
 file = "mods/hexerei.pw.toml"
@@ -11729,7 +11737,7 @@ metafile = true
 
 [[files]]
 file = "mods/latent_chemlib-0.1.0.jar"
-hash = "ffe12620fec8e2577d9c77e9177871d0ce20269f8f1d673b7fd1491451495c09"
+hash = "1135431b8515062b2de21abdd3e495a04b3e1a6d3ddc8388ff2f84be792017c7"
 
 [[files]]
 file = "mods/lithostitched.pw.toml"
@@ -11858,7 +11866,7 @@ metafile = true
 
 [[files]]
 file = "mods/oc2rwireless-1.0.0.jar"
-hash = "fd0b3ec93e7646f0d38f9bf9f0a3de050b5ac890f201e559657bab3caaf1e309"
+hash = "d3c9418fb98ba50d58150cd54be24f496bfbfe5059aa3546bf86ee6f3ac7afa2"
 
 [[files]]
 file = "mods/occultism.pw.toml"
@@ -11882,7 +11890,7 @@ metafile = true
 
 [[files]]
 file = "mods/pillagercampaigns-0.2.0.jar"
-hash = "2ffeb0a9b76f7d9a2a4bf3a3b0d289f94010c2acce7473787283ab7c941d5265"
+hash = "9c7babfa29e9cec955baf3a4ed9033cc795361674c3ffebe16a4f01cef2ec05b"
 
 [[files]]
 file = "mods/placebo.pw.toml"
@@ -11926,7 +11934,7 @@ metafile = true
 
 [[files]]
 file = "mods/procedural_bouquets-0.1.0.jar"
-hash = "94267f089d207b7d8ff9647adcb861f3e3ea0670264bd243347230e6fe329916"
+hash = "b1dc5167ff9f770471a4bcedfcabd510b85a1722feeff1d5f40113ef35473aa4"
 
 [[files]]
 file = "mods/project-vibrant-journeys.pw.toml"
@@ -11965,7 +11973,7 @@ metafile = true
 
 [[files]]
 file = "mods/realisticores-0.1.0.jar"
-hash = "d0e3599a76dddbd5ee800bc28b71cecd0f360376407da35386cb8b3a9756a2ef"
+hash = "516d038ff290a65f2ec8de6cd0e73d7ba706cb9d10e7648aa751618a3378219d"
 
 [[files]]
 file = "mods/rehooked.pw.toml"
@@ -12004,7 +12012,7 @@ metafile = true
 
 [[files]]
 file = "mods/rpgstats-1.0.0.jar"
-hash = "42e912320e9109214fa2df67e4ffc93967b7d368e8bc0db7136552da12ae98ac"
+hash = "f194f717f17b6906501cdc70229f0928977909f8c3dbd8f973bf696919ae1343"
 
 [[files]]
 file = "mods/rustic-delight.pw.toml"
@@ -12038,7 +12046,7 @@ metafile = true
 
 [[files]]
 file = "mods/settlementroads-0.1.0.jar"
-hash = "ba2151db9de2b8dae274fab2b52c21a28eb74a28c17ae0846e9d73846c910204"
+hash = "2584ddbf2417aeb3b6309fbea769ee9c6a939ff60d1118e164e90c189d4ac90e"
 
 [[files]]
 file = "mods/shatterbyte-lib.pw.toml"
@@ -12302,7 +12310,7 @@ metafile = true
 
 [[files]]
 file = "mods/villagewalls-1.0.0.jar"
-hash = "38a5856fbddcc264cf9944039620836ccb5e1cc89bbc33818b151e24774de137"
+hash = "a0113b3c6e202d07f9124c29975ec5c4b1da1a63238a0b8c4539cdfe7d4316fa"
 
 [[files]]
 file = "mods/wares.pw.toml"
@@ -12336,7 +12344,7 @@ metafile = true
 
 [[files]]
 file = "options.txt"
-hash = "ccf01b1e6cabba4e5e0ad9a08c92515a4aff881f955da89d36922b24741713d7"
+hash = "2f6ad32e090a7481a9fcdf9dc3bbd720efffa5dcada8efb1ad3f9f05c73c9d77"
 
 [[files]]
 file = "quests/graph.yml"

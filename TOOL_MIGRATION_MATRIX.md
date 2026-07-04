@@ -14,7 +14,9 @@ Public commands:
 
 The Kotlin-backed `tools/btm` surface is the maintained interface for pack work.
 
-Legacy shell, Python, Node, and one-off generators may still exist internally under `tools/` or `tools/quarantine/`, but they are not the user-facing contract unless a current `tools/btm` command delegates to them.
+Active repo tooling under `tools/` is Kotlin-first. Active `tools/` source files must not use `.py` or `.sh`; `tools/btm test static` now enforces that through `tools/btm internal validate-kotlin-tool-surface`.
+
+Legacy shell, Python, Node, and one-off generators live under `tools/quarantine/` only. They are not the user-facing contract unless a current Kotlin `tools/btm` command explicitly routes through them as a compatibility backend.
 
 ## Current State
 
@@ -27,11 +29,13 @@ Legacy shell, Python, Node, and one-off generators may still exist internally un
 | Runtime validation | `tools/btm test runtime --instance ...` | Strict runtime evidence |
 | Fresh smoke | `tools/btm test smoke --server-dir ... --reset-runtime` | Disposable server bootstrap and strict runtime suite |
 | Scenario harnesses | `tools/btm test scenario ...` | Portable server/client scenarios |
+| Versioned scenario contracts | `tools/worldgen_sampling_contract.json`, `tools/client_smoke_contract.json` | Checked-in quick/release lane contracts |
 | Sync server/client | `tools/btm build sync server ...`, `tools/btm build sync client ...` | Supported sync flows |
 | Bundle export | `tools/btm build bundle ...` | Supported export flows |
 
 ## Legacy Status
 
 - `tools/quarantine/original-tools/` is archival only.
-- Checked-in non-`btm` files under `tools/` may remain as implementation detail during migration.
+- Previously active `tools/*.py` and `tools/*.sh` sources have been quarantined.
+- Kotlin wrapper scenarios under `tools/kotlin/` are the supported entrypoints for LC/TFTH/DH, dimension worldgen, opening progression, worldgen sampling, and client smoke.
 - Validation and documentation should describe the `btm` commands, not the legacy direct entrypoints.

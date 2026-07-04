@@ -1,15 +1,23 @@
-#!/usr/bin/env bash
-set -euo pipefail
+#!/usr/bin/env -S java --source 17
 
-ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
-if command -v kotlin >/dev/null 2>&1; then
-  exec kotlin "$ROOT/tools/btm.main.kts" "$@"
-fi
+class btm {
+    public static void main(String[] args) throws Exception {
+        Path self = Paths.get(System.getProperty("jdk.launcher.sourcefile")).toAbsolutePath().normalize();
+        Path root = self.getParent().getParent();
+        List<String> command = new ArrayList<>();
+        command.add("kotlin");
+        command.add(root.resolve("tools/btm.main.kts").toString());
+        for (String arg : args) command.add(arg);
 
-if command -v kotlinc >/dev/null 2>&1; then
-  exec kotlinc -script "$ROOT/tools/btm.main.kts" -- "$@"
-fi
-
-echo "ERROR: Kotlin was not found. Install \`kotlin\` or \`kotlinc\`, then rerun tools/btm." >&2
-exit 3
+        Process process = new ProcessBuilder(command)
+            .directory(root.toFile())
+            .inheritIO()
+            .start();
+        System.exit(process.waitFor());
+    }
+}

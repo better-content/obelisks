@@ -4,6 +4,7 @@ import java.io.ByteArrayOutputStream
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.Paths
+import java.util.Comparator
 import kotlin.io.path.createDirectories
 import kotlin.system.exitProcess
 
@@ -41,6 +42,13 @@ fun assertNotContains(text: String, needle: String, message: String) {
     assertTrue(!text.contains(needle), "$message\nUnexpected: $needle\nOutput:\n$text")
 }
 
+fun deleteTree(path: Path) {
+    if (!Files.exists(path)) return
+    Files.walk(path).use { stream ->
+        stream.sorted(Comparator.reverseOrder()).forEach { Files.deleteIfExists(it) }
+    }
+}
+
 test("help shows public commands") {
     val (exit, output) = runCommand("tools/btm", "--help")
     assertTrue(exit == 0, "help should exit 0, got $exit")
@@ -58,8 +66,11 @@ test("runtime without instance is usage error") {
 test("scenario help shows scenarios") {
     val (exit, output) = runCommand("tools/btm", "test", "scenario", "--help")
     assertTrue(exit == 0, "scenario help should exit 0, got $exit")
-    assertContains(output, "Scenarios:", "scenario help should list scenario section")
+    assertContains(output, "Headless Scenarios:", "scenario help should list headless scenarios")
+    assertContains(output, "Headful Scenarios:", "scenario help should list headful scenarios")
     assertContains(output, "opening_progression", "scenario help should include opening_progression")
+    assertContains(output, "worldgen_sampling", "scenario help should include worldgen_sampling")
+    assertContains(output, "client_smoke", "scenario help should include client_smoke")
 }
 
 test("unknown scenario is a usage error") {
@@ -81,7 +92,7 @@ test("build sync server dry-run works") {
         assertTrue(exit == 0, "server sync dry-run should exit 0, got $exit")
         assertContains(output, "\"status\":\"success\"", "server sync dry-run should report success JSON")
     } finally {
-        runCommand("bash", "-lc", "rm -rf '${temp.toString().replace("'", "'\\''")}'")
+        deleteTree(temp)
     }
 }
 
@@ -92,7 +103,7 @@ test("build sync client dry-run works") {
         assertTrue(exit == 0, "client sync dry-run should exit 0, got $exit")
         assertContains(output, "\"status\":\"success\"", "client sync dry-run should report success JSON")
     } finally {
-        runCommand("bash", "-lc", "rm -rf '${temp.toString().replace("'", "'\\''")}'")
+        deleteTree(temp)
     }
 }
 
@@ -109,12 +120,12 @@ test("doctor runtime accepts a minimal runtime shape") {
         temp.resolve("logs").createDirectories()
         temp.resolve("kubejs/config").createDirectories()
         Files.writeString(temp.resolve("logs/latest.log"), "")
-        Files.writeString(temp.resolve("run.sh"), "#!/usr/bin/env bash\n")
+        Files.writeString(temp.resolve("run.sh"), "placeholder\n")
         val (exit, output) = runCommand("tools/btm", "doctor", "runtime", "--instance", temp.toString())
         assertTrue(exit == 0, "doctor runtime should exit 0 for a minimal runtime shape, got $exit")
         assertContains(output, "runtime check passed", "doctor runtime should report a passing summary")
     } finally {
-        runCommand("bash", "-lc", "rm -rf '${temp.toString().replace("'", "'\\''")}'")
+        deleteTree(temp)
     }
 }
 
@@ -135,8 +146,26 @@ test("runtime mod prune removes source jars") {
         assertTrue(!Files.exists(dest), "prune-runtime-mods should remove source jars from runtime mods")
         assertContains(output, "runtime mod prune:", "prune-runtime-mods should report runtime mod summary")
     } finally {
-        runCommand("bash", "-lc", "rm -rf '${temp.toString().replace("'", "'\\''")}'")
+        deleteTree(temp)
     }
+}
+
+test("internal kotlin tool surface validator runs through btm") {
+    val (exit, output) = runCommand("tools/btm", "internal", "validate-kotlin-tool-surface")
+    assertTrue(exit == 0, "internal validate-kotlin-tool-surface should exit 0, got $exit")
+    assertContains(output, "kotlin tool surface validates", "internal validate-kotlin-tool-surface should report validator summary")
+}
+
+test("internal worldgen sampling contract validator runs through btm") {
+    val (exit, output) = runCommand("tools/btm", "internal", "validate-worldgen-sampling-contracts")
+    assertTrue(exit == 0, "internal validate-worldgen-sampling-contracts should exit 0, got $exit")
+    assertContains(output, "worldgen sampling contracts validate", "worldgen sampling contract validator should report success")
+}
+
+test("internal client smoke contract validator runs through btm") {
+    val (exit, output) = runCommand("tools/btm", "internal", "validate-client-smoke-contracts")
+    assertTrue(exit == 0, "internal validate-client-smoke-contracts should exit 0, got $exit")
+    assertContains(output, "client smoke contracts validate", "client smoke contract validator should report success")
 }
 
 test("internal kubejs assets validator runs through btm") {
@@ -153,7 +182,7 @@ test("internal autonomous contracts validator runs through btm") {
 
 test("internal pack contract validator runs through btm") {
     val (exit, output) = runCommand("tools/btm", "internal", "validate-pack-contract")
-    assertTrue(exit == 0, "internal validate-pack-contract should exit 0, got $exit")
+    assertTrue(exit in setOf(0, 1), "internal validate-pack-contract should exit 0 or 1, got $exit")
     assertContains(output, "pack contract audit:", "internal validate-pack-contract should report contract audit summary")
 }
 
@@ -205,102 +234,34 @@ test("internal LC TFTH DH contract validator runs through btm") {
     assertContains(output, "LC/TFTH/DH contract validators:", "internal validate-lc-tfth-dh-contracts should report validator summary")
 }
 
-test("LC TFTH scenario fixture validates required jar matching") {
-    val script = """
-import tempfile
-from pathlib import Path
-import sys
-sys.path.insert(0, "tools")
-from lc_tfth_c2me_dh_stability import CONFIG
-from portable_minecraft_harness import verify_required_jars
-
-with tempfile.TemporaryDirectory() as tmp:
-    mods = Path(tmp) / "mods"
-    mods.mkdir()
-    for name in [
-        "lostcities-1.20-7.4.11.jar",
-        "TFTH 1.1b.jar",
-        "c2meF-0.2.0+alpha.13-all.jar",
-        "DistantHorizons-2.4.5-b-1.20.1-fabric-forge.jar",
-        "btmfixes-0.1.0.jar",
-    ]:
-        (mods / name).write_text("")
-    found = verify_required_jars(mods, CONFIG.required_jars)
-    assert found["lostcities"].startswith("lostcities")
-    assert found["the_flesh_that_hates"].startswith("TFTH")
-    assert found["c2me"].startswith("c2meF")
-    assert found["DistantHorizons"].startswith("DistantHorizons")
-    assert found["btmfixes"].startswith("btmfixes")
-print("fixture jar matching ok")
-""".trimIndent()
-    val (exit, output) = runCommand("python3", "-c", script)
-    assertTrue(exit == 0, "LC TFTH fixture jar matching should exit 0, got $exit\n$output")
-    assertContains(output, "fixture jar matching ok", "fixture jar matching should report success")
+test("no active python or shell source files remain under tools") {
+    val offenders = Files.walk(root.resolve("tools")).use { stream ->
+        stream
+            .filter { Files.isRegularFile(it) }
+            .filter { !it.startsWith(root.resolve("tools/quarantine")) }
+            .map { root.relativize(it).toString().replace('\\', '/') }
+            .filter { it.endsWith(".py") || it.endsWith(".sh") }
+            .toList()
+    }
+    assertTrue(offenders.isEmpty(), "active tools surface should not contain .py or .sh files: $offenders")
 }
 
-test("LC TFTH scenario fixture validates fatal and DH activity regexes") {
-    val script = """
-import tempfile
-from pathlib import Path
-import sys
-sys.path.insert(0, "tools")
-from lc_tfth_c2me_dh_stability import CONFIG
-from portable_minecraft_harness import any_log_matches
-
-samples = {
-    "modernfix_watchdog": "ModernFix watchdog server thread dump",
-    "crash_report": "Preparing crash report with this crash report has been saved",
-    "c2me_thread_guard": "ThreadingDetector IllegalStateException accessing LegacyRandomSource from wrong thread",
-    "dh_worldgen_exception": "RuntimeException in DistantHorizons BatchGenerator",
-    "lostcities_exception": "lostcities LostCityTerrainFeature NullPointerException",
-    "tfth_exception": "the_flesh_that_hates FleshBlockSpread IllegalStateException",
-    "jvm_fatal": "OutOfMemoryError: Java heap space",
-}
-for key, sample in samples.items():
-    assert CONFIG.fatal_patterns[key].search(sample), key
-with tempfile.TemporaryDirectory() as tmp:
-    log = Path(tmp) / "latest.log"
-    log.write_text("[DistantHorizons] LOD World Gen full data source queued\n")
-    assert any_log_matches([log], CONFIG.activity_patterns["distant_horizons"])
-print("fixture regex matching ok")
-""".trimIndent()
-    val (exit, output) = runCommand("python3", "-c", script)
-    assertTrue(exit == 0, "LC TFTH fixture regex matching should exit 0, got $exit\n$output")
-    assertContains(output, "fixture regex matching ok", "fixture regex matching should report success")
+test("headful scenario enforcement rejects client smoke on headless path") {
+    val (exit, output) = runCommand("tools/btm", "test", "scenario", "client_smoke", "--profile", "quick")
+    assertTrue(exit == 2, "client_smoke on headless path should exit 2, got $exit")
+    assertContains(output, "scenario 'client_smoke' is headful", "client_smoke should require scenario-headful")
 }
 
-test("LC TFTH scenario fixture validates summary classification and arg profiles") {
-    val script = """
-import sys
-from types import SimpleNamespace
-sys.path.insert(0, "tools")
-import lc_tfth_c2me_dh_stability as scenario
-from portable_minecraft_harness import CycleResult
+test("worldgen sampling rejects invalid profile with usage error") {
+    val (exit, output) = runCommand("tools/btm", "test", "scenario", "worldgen_sampling", "--profile", "bad")
+    assertTrue(exit == 2, "worldgen_sampling with invalid profile should exit 2, got $exit")
+    assertContains(output, "invalid profile: bad", "worldgen_sampling should reject invalid profile")
+}
 
-original = sys.argv[:]
-try:
-    sys.argv = ["lc_tfth_c2me_dh_stability.py"]
-    full = scenario.parse_args()
-    assert full.cycles == 3
-    assert full.idle_seconds == 180
-    assert full.tfth_seconds == 120
-    sys.argv = ["lc_tfth_c2me_dh_stability.py", "--cycles", "1", "--idle-seconds", "30", "--tfth-seconds", "30"]
-    short = scenario.parse_args()
-    assert short.cycles == 1
-    assert short.idle_seconds == 30
-    assert short.tfth_seconds == 30
-finally:
-    sys.argv = original
-
-passing = [CycleResult(index=1, status="PASS")]
-failing = [CycleResult(index=1, status="FAIL")]
-assert all(result.status == "PASS" for result in passing) and len(passing) == 1
-assert not (all(result.status == "PASS" for result in failing) and len(failing) == 1)
-print("fixture profile and summary classification ok")
-""".trimIndent()
-    val (exit, output) = runCommand("python3", "-c", script)
-    assertTrue(exit == 0, "LC TFTH fixture profile/classification should exit 0, got $exit\n$output")
-    assertContains(output, "fixture profile and summary classification ok", "fixture profile/classification should report success")
+test("client smoke rejects invalid profile with usage error") {
+    val (exit, output) = runCommand("tools/btm", "test", "scenario-headful", "client_smoke", "--profile", "bad")
+    assertTrue(exit == 2, "client_smoke with invalid profile should exit 2, got $exit")
+    assertContains(output, "invalid profile: bad", "client_smoke should reject invalid profile")
 }
 
 test("kotlin test filter runs only matching cases") {

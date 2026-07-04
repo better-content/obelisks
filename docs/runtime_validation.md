@@ -18,6 +18,10 @@ tools/btm test smoke --server-dir /tmp/btm-agent-validate-smoke --port 25565 --r
 tools/btm test scenario dimension_worldgen --cycles 1 --radius 1 --samples 1
 tools/btm test scenario lc_tfth_c2me_dh --cycles 1 --idle-seconds 30 --tfth-seconds 30
 tools/btm test scenario opening_progression --cycles 1
+tools/btm test scenario worldgen_sampling --profile quick
+tools/btm test scenario worldgen_sampling --profile release
+tools/btm test scenario-headful client_smoke --profile quick
+tools/btm test scenario-headful client_smoke --profile release
 tools/btm test kotlin
 tools/btm doctor env
 tools/btm doctor repo
@@ -29,12 +33,16 @@ tools/btm doctor runtime --instance /path/to/fresh/runtime
 - `--strict-data-dumps`: additionally requires vanilla `/dump` output such as `dump/data_raw/loot_tables`; this is separate from KubeJS audit dumps under `kubejs/config`.
 - `--smoke`: fresh disposable server bootstrap, boot, hard-log scan, and strict runtime suite.
 - `tools/btm test scenario` is the supported front door for harness-backed runtime scenarios.
+- `worldgen_sampling` and `client_smoke` are versioned scenario lanes with checked-in contracts at `tools/worldgen_sampling_contract.json` and `tools/client_smoke_contract.json`.
 - `tools/btm doctor ...` is the supported front door for prerequisite, repo-surface, and runtime-shape checks.
+- `tools/btm internal validate-kotlin-tool-surface` fails if active `tools/` contains `.py` or `.sh` files outside `tools/quarantine/`.
 - `tools/btm internal validate-lc-tfth-dh-contracts` is a source-level LC/TFTH/DH correctness contract and is included in `tools/btm test static`; it does not launch Minecraft.
 
 Realistic Hands static regressions now cover primitive loose-earth hand breakability, representative knife/sword separation, first-class tool coverage, primitive flint/bone/rock butcher knife and hand axe recipes, Farmer's Delight straw-harvester knife tags, and ore/deepslate hardness probe coverage. The exact deepslate `+1` hardness assertion is enforced when a retained `generated/runtime-dumps/block_hardness_probe.json` exists.
 
 Player progression regressions are data-driven by `kubejs/config/player_progression_regression.json` plus the authoritative parenting/acquisition manifests in `kubejs/config/tech_parenting.json`, `magic_parenting.json`, `economy_acquisition.json`, and `surface_registry.json`. `tools/btm internal validate-player-progression-contracts` now checks the primitive tool route, the full machine casing ladder, Blood Magic heart/orb/slate authority, Creating Space dimension routes, reward-surface bypass bans, direct coin-crafting bans, Font coin-only payouts, registered recipe/acquisition surfaces, and parenting coverage for retained craftable outputs. Effective recipe graph route reachability still requires a refreshed strict runtime dump.
+
+Completionist quest validation is part of the pack suite. It parses chapter SNBT quest blocks directly, then compares item tasks, effect source quests, enchantment quests, and plant entries against current runtime/source dumps without broad regex block slicing. This keeps large generated chapter files fast enough to remain in normal validation.
 
 After changing validation entry points or evidence claims, re-run the relevant `tools/btm test ...` modes and confirm the generated validation report still matches the intended evidence level.
 
@@ -86,7 +94,7 @@ Current smoke evidence: `/tmp/btm-content-smoke` passed `tools/btm test smoke --
 
 Older Prism/server-instance profiling tools that mutate live mod directories or kill broad launcher/java processes are guarded by `BTM_ALLOW_LEGACY_LIVE_MUTATION=1`. Use them only for intentional archival profiling; current validation should use disposable runtimes and the portable harness layer.
 
-The supported public tool surface is `tools/btm`. Kotlin-backed `btm test`, `btm build`, and `btm doctor` flows are the front door; direct shell, Python, Node, and one-off generator entry points are internal or quarantined unless a current `btm` command explicitly delegates to them. Tool migration notes belong here as current policy, not as separate standalone matrices.
+The supported public tool surface is `tools/btm`. Kotlin-backed `btm test`, `btm build`, `btm doctor`, and `btm internal` flows are the front door. Active repo tooling under `tools/` is Kotlin-first; Python and shell sources live only under `tools/quarantine/original-tools/` as archival compatibility backends while migration remains in progress.
 
 All-dimension worldgen stress:
 
@@ -128,6 +136,24 @@ tools/btm test scenario opening_progression --cycles 1
 ```
 
 Expected validation: a fresh disposable pack server boots normally, then the `sam validate_opening_progression` runtime validator proves gravel hand-breakability, hand denial on stone and logs, live flint availability from placed gravel, straw drops from placed tall grass cut with the primitive butcher knife, runtime primitive recipe presence for the butcher knife and hand axe, and first log access with the crafted primitive hand axe.
+
+Worldgen sampling:
+
+```bash
+tools/btm test scenario worldgen_sampling --profile quick
+tools/btm test scenario worldgen_sampling --profile release
+```
+
+`quick` is the short seeded Overworld lane; `release` broadens the dimension set and sample count. Both profiles are validated against `tools/worldgen_sampling_contract.json` before the runtime backend starts.
+
+Client smoke:
+
+```bash
+tools/btm test scenario-headful client_smoke --profile quick
+tools/btm test scenario-headful client_smoke --profile release
+```
+
+`client_smoke` is a headful-only lane. Its checked-in contract lives at `tools/client_smoke_contract.json`; run it through `scenario-headful` only.
 
 Current fresh smoke/runtime evidence: `/tmp/btm-content-smoke` passed `tools/btm test smoke --server-dir /tmp/btm-content-smoke --port 25565 --reset-runtime` and `tools/btm test runtime --instance /tmp/btm-content-smoke` on 2026-07-02 after removing unsupported KubeJS startup `.asset(...)` builder calls and restoring the missing `A` key in seven `171_k_turrets_electrical_gates.js` shaped recipes. The fresh runtime now loads all 10 startup scripts and 86 server scripts with 0 KubeJS errors/warnings, and the runtime recipe audit reports no failed recipes.
 

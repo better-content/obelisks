@@ -1,0 +1,4 @@
+# Bound to Matter runtime mitigation:
+# keep Forge early mod construction single-threaded to avoid the
+# Quark/Zeta startup subscribe race seen in disposable client harnesses.
+maxThreads = 1

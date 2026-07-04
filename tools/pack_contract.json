@@ -405,14 +405,13 @@
       "requiredFiles": [
         "tools/btm",
         "tools/btm.main.kts",
-        "tools/quarantine/original-tools/portable_minecraft_harness.py",
-        "tools/quarantine/original-tools/lc_tfth_c2me_dh_stability.py",
+        "tools/kotlin/lc_tfth_c2me_dh_stability.main.kts",
         "config/c2me.toml",
         "config/DistantHorizons.toml"
       ],
       "contains": [
         {
-          "file": "tools/quarantine/original-tools/lc_tfth_c2me_dh_stability.py",
+          "file": "tools/kotlin/lc_tfth_c2me_dh_stability.main.kts",
           "all": [
             "modernfix_watchdog",
             "C2ME",
@@ -451,8 +450,8 @@
       "id": "worldgen_statistical_sampling",
       "tier": "L5",
       "requiredFiles": [
-        "tools/quarantine/original-tools/content_memory_inventory.py",
-        "tools/quarantine/original-tools/c2me_feature_matrix.py",
+        "tools/kotlin/worldgen_sampling.main.kts",
+        "tools/worldgen_sampling_contract.json",
         "datapacks/realistic_ores_lava_depths/pack.mcmeta",
         "datapacks/hyle_deep/pack.mcmeta"
       ],
@@ -513,16 +512,16 @@
       "requiredTools": [
         "tools/btm",
         "tools/btm.main.kts",
-        "tools/quarantine/original-tools/lc_tfth_c2me_dh_stability.py"
+        "tools/kotlin/lc_tfth_c2me_dh_stability.main.kts"
       ]
     },
     {
       "id": "L5",
       "name": "statistical seed/worldgen/performance sampling",
       "requiredTools": [
-        "tools/quarantine/original-tools/c2me_feature_matrix.py",
-        "tools/quarantine/original-tools/content_memory_inventory.py",
-        "tools/quarantine/original-tools/joined_memory_cross_section.py"
+        "tools/kotlin/worldgen_sampling.main.kts",
+        "tools/kotlin/validate_worldgen_sampling_contracts.main.kts",
+        "tools/worldgen_sampling_contract.json"
       ]
     }
   ],
@@ -695,7 +694,7 @@
           "config/twilightforest-common.toml",
           "config/structurify.json",
           "config/obelisks/obelisks/aether.json",
-          "tools/quarantine/original-tools/lc_tfth_c2me_dh_stability.py"
+          "tools/kotlin/lc_tfth_c2me_dh_stability.main.kts"
         ],
         "validators": [
           "tools/btm",
@@ -722,13 +721,12 @@
           "tools/btm",
           "tools/btm.main.kts",
           "tools/kotlin/pack_test_suite.main.kts",
-          "tools/quarantine/original-tools/portable_minecraft_harness.py",
-          "tools/quarantine/original-tools/lc_tfth_c2me_dh_stability.py"
+          "tools/kotlin/lc_tfth_c2me_dh_stability.main.kts"
         ],
         "validators": [
           "tools/btm",
           "tools/kotlin/pack_test_suite.main.kts",
-          "tools/quarantine/original-tools/lc_tfth_c2me_dh_stability.py"
+          "tools/kotlin/lc_tfth_c2me_dh_stability.main.kts"
         ],
         "openRequirements": []
       },
@@ -766,15 +764,15 @@
         "claim": "Worldgen datapacks, C2ME matrix tooling, memory inventory, and known follow-ups exist; density and accessibility proof requires seed sampling.",
         "evidence": [
           "tools/kotlin/validate_autonomous_contracts.main.kts",
-          "tools/quarantine/original-tools/c2me_feature_matrix.py",
-          "tools/quarantine/original-tools/content_memory_inventory.py",
+          "tools/kotlin/worldgen_sampling.main.kts",
+          "tools/worldgen_sampling_contract.json",
           "datapacks/realistic_ores_lava_depths/pack.mcmeta",
           "datapacks/hyle_deep/pack.mcmeta"
         ],
         "validators": [
           "tools/kotlin/validate_autonomous_contracts.main.kts",
-          "tools/quarantine/original-tools/c2me_feature_matrix.py",
-          "tools/quarantine/original-tools/content_memory_inventory.py"
+          "tools/kotlin/worldgen_sampling.main.kts",
+          "tools/kotlin/validate_worldgen_sampling_contracts.main.kts"
         ],
         "openRequirements": [
           "Add deterministic seed sampling for deposits, Y-bands, villages, roads, walls, structures, forageables, and spawn viability.",

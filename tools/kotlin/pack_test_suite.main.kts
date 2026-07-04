@@ -1,6 +1,7 @@
 #!/usr/bin/env kotlin
 
 import java.io.ByteArrayOutputStream
+import java.io.File
 import java.nio.file.FileVisitResult
 import java.nio.file.Files
 import java.nio.file.Path
@@ -16,6 +17,7 @@ data class Finding(val name: String, val detail: String, val severity: String = 
 data class Pass(val name: String, val detail: String = "")
 data class Skip(val name: String, val detail: String = "")
 data class CmdResult(val exitCode: Int, val output: String)
+data class QuestBlock(val id: String, val title: String, val items: List<String>, val block: String)
 
 class JsonParser(private val text: String) {
     private var index = 0
@@ -357,9 +359,13 @@ fun scanHardFailuresInline(logPath: Path, instanceDir: Path): Pair<Boolean, Stri
     return (findingsByKey.isEmpty()) to output
 }
 
-fun commandExists(command: String): Boolean = try {
-    ProcessBuilder("bash", "-lc", "command -v '$command' >/dev/null 2>&1").start().waitFor() == 0
-} catch (_: Exception) { false }
+fun commandExists(command: String): Boolean =
+    System.getenv("PATH")
+        .orEmpty()
+        .split(File.pathSeparator)
+        .filter { it.isNotBlank() }
+        .map { Paths.get(it).resolve(command) }
+        .any { Files.isExecutable(it) && !Files.isDirectory(it) }
 
 fun runMeasured(name: String, block: () -> Unit) {
     val start = System.nanoTime()
@@ -386,18 +392,61 @@ fun runMeasured(name: String, block: () -> Unit) {
     }
 }
 
-fun parseQuestFile(file: Path): List<Map<String, Any?>> {
+fun parseQuestBlocks(file: Path): List<QuestBlock> {
     val text = read(file)
+    val blocks = mutableListOf<String>()
+    val current = StringBuilder()
+    var inQuests = false
+    var inQuestBlock = false
+    var braceDepth = 0
+
+    for (line in text.lineSequence()) {
+        val trimmed = line.trim()
+        if (!inQuests) {
+            if (trimmed == "quests: [") inQuests = true
+            continue
+        }
+        if (!inQuestBlock) {
+            when {
+                line.startsWith("\t\t{") -> {
+                    inQuestBlock = true
+                    braceDepth = 0
+                    current.clear()
+                }
+                line.startsWith("\t]") -> break
+                else -> continue
+            }
+        }
+
+        current.appendLine(line)
+        braceDepth += line.count { it == '{' }
+        braceDepth -= line.count { it == '}' }
+        if (braceDepth <= 0) {
+            blocks += current.toString()
+            inQuestBlock = false
+        }
+    }
+
+    return blocks.map { block ->
+        QuestBlock(
+            id = Regex("""\bid:\s*"([0-9A-Fa-f]{16})"""").find(block)?.groupValues?.get(1).orEmpty(),
+            title = Regex("""\btitle:\s*"([^"]+)"""").find(block)?.groupValues?.get(1).orEmpty(),
+            items = Regex("""\bitem:\s*"([^"]+)"""").findAll(block).map { it.groupValues[1] }.toList(),
+            block = block,
+        )
+    }
+}
+
+fun parseQuestFile(file: Path): List<Map<String, Any?>> {
     val quests = mutableListOf<Map<String, Any?>>()
-    val questBlocks = Regex("""\{id:"([^"]+)"[\s\S]*?(?=\n\t\t\{id:"|\n\t\]\n\})""").findAll(text)
     fun parseItemList(segment: String): List<Map<String, Any?>> =
-        Regex("""type:"item"\s+item:"([^"]+)"(?:\s+count:([0-9]+)L?)?""").findAll(segment).map {
+        Regex("""type:\s*"item"[\s\S]*?\bitem:\s*"([^"]+)"(?:[\s\S]*?\bcount:\s*([0-9]+)L?)?""").findAll(segment).map {
             mapOf("item" to it.groupValues[1], "count" to (it.groupValues.getOrNull(2)?.toIntOrNull() ?: 1))
         }.toList()
-    for (match in questBlocks) {
-        val block = match.value
+    for (quest in parseQuestBlocks(file)) {
+        val block = quest.block
         quests += mapOf(
-            "id" to match.groupValues[1],
+            "id" to quest.id,
             "block" to block,
             "icon" to (Regex("""\sicon:"([^"]+)"""").find(block)?.groupValues?.get(1) ?: ""),
             "disableJei" to (Regex("""\sdisable_jei:(true|false)""").find(block)?.groupValues?.get(1) ?: ""),
@@ -622,15 +671,9 @@ fun testQuestBook() {
     val seenEnchantments = mutableSetOf<String>()
     val seenEffects = mutableSetOf<String>()
     for (file in questFiles.filter { it.fileName.toString().startsWith("completionist_") }) {
-        val text = read(file)
-        val titleByQuestId = Regex("""id:\s*"([0-9A-Fa-f]{16})"[\s\S]*?title:\s*"([^"]+)"""").findAll(text).associate { it.groupValues[1] to it.groupValues[2] }
-        val questBlocks = Regex("""\{[\s\S]*?tasks:\s*\[[\s\S]*?]}""").findAll(text)
-        for (questBlock in questBlocks) {
-            val block = questBlock.value
-            val questId = Regex("""id:\s*"([0-9A-Fa-f]{16})"""").find(block)?.groupValues?.get(1).orEmpty()
-            val questTitle = Regex("""title:\s*"([^"]+)"""").find(block)?.groupValues?.get(1) ?: titleByQuestId[questId] ?: file.fileName.toString()
-            Regex("""\bitem:\s*"([^"]+)"""").findAll(block).forEach { match ->
-                val itemId = match.groupValues[1]
+        for (quest in parseQuestBlocks(file)) {
+            val questTitle = quest.title.ifBlank { file.fileName.toString() }
+            for (itemId in quest.items) {
                 if (itemId !in validDumpItems) badQuestItems += "${file.fileName}: $questTitle -> $itemId"
                 if (file.fileName.toString() == "completionist_plants.snbt" && !isPlantCollectionCandidate(itemId, questTitle, burntCoverageCategories)) {
                     badPlantEntries += "${file.fileName}: $questTitle -> $itemId"
@@ -643,7 +686,7 @@ fun testQuestBook() {
                     badEffects += "${file.fileName}: unknown $questTitle"
                 } else {
                     seenEffects += effectTitle
-                    val actualSources = Regex("""\bitem:\s*"([^"]+)"""").findAll(block).map { it.groupValues[1] }.toList()
+                    val actualSources = quest.items
                     if (actualSources.isEmpty()) badEffects += "${file.fileName}: $questTitle has no item tasks"
                     else if (actualSources != expectedSources) badEffects += "${file.fileName}: $questTitle -> ${actualSources.joinToString(", ")} expected ${expectedSources.joinToString(", ")}"
                 }
@@ -670,6 +713,7 @@ fun testQuestBook() {
 
 fun loadQuestDumpItemIds(): Set<String>? {
     val resourceLocationPattern = Regex("""^[a-z0-9_.-]+:[a-z0-9/._-]+$""")
+    val missingIconPath = "assets/icons/missing.png"
     fun isValidResourceLocation(id: String): Boolean = resourceLocationPattern.matches(id)
     val registriesPath = repo.resolve("generated/runtime-dumps/registries.json")
     if (exists(registriesPath)) {
@@ -679,7 +723,14 @@ fun loadQuestDumpItemIds(): Set<String>? {
     }
     val iconManifestPath = repo.resolve("generated/pack-site/assets/icon-manifest.json")
     if (!exists(iconManifestPath)) return null
-    return jsonObject(readJson(iconManifestPath)).keys.filter(::isValidResourceLocation).toSet()
+    val items = jsonObject(readJson(iconManifestPath)).entries
+        .mapNotNull { (key, value) ->
+            val itemId = key as? String ?: return@mapNotNull null
+            val iconPath = value as? String ?: return@mapNotNull null
+            itemId.takeIf { isValidResourceLocation(it) && iconPath != missingIconPath }
+        }
+        .toSet()
+    return items.ifEmpty { null }
 }
 
 fun loadQuestDumpEnchantments(): Map<String, String>? {

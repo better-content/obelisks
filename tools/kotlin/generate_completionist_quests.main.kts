@@ -300,6 +300,7 @@ fun stableId(key: String): String {
 }
 
 val resourceLocationPattern = Regex("""^[a-z0-9_.-]+:[a-z0-9/._-]+$""")
+const val missingIconPath = "assets/icons/missing.png"
 
 fun isValidResourceLocation(id: String): Boolean = resourceLocationPattern.matches(id)
 
@@ -319,9 +320,13 @@ fun loadValidItemIds(): Set<String> {
     val iconManifestPath = root.resolve("generated/pack-site/assets/icon-manifest.json")
     if (iconManifestPath.exists()) {
         val json = parseJson(read(iconManifestPath)) as? Map<*, *>
-        json?.keys
-            ?.filterIsInstance<String>()
-            ?.filter(::isValidResourceLocation)
+        json?.entries
+            ?.asSequence()
+            ?.mapNotNull { (key, value) ->
+                val itemId = key as? String ?: return@mapNotNull null
+                val iconPath = value as? String ?: return@mapNotNull null
+                itemId.takeIf { isValidResourceLocation(it) && iconPath != missingIconPath }
+            }
             ?.forEach(ids::add)
     }
     return ids

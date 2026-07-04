@@ -68,7 +68,7 @@
 			icon: "aether:zanite_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 2.8d
+			x: 2.75d
 			y: 0.0d
 			tasks: [
 				{
@@ -105,7 +105,7 @@
 			shape: "square"
 			size: 0.8d
 			x: 0.0d
-			y: 2.0d
+			y: 3.25d
 			tasks: [
 				{
 					id: "8D1645AD5D8F1056"
@@ -123,7 +123,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 1.5d
-			y: 2.0d
+			y: 3.25d
 			tasks: [
 				{
 					id: "A09E086BCB10B6FB"
@@ -158,8 +158,8 @@
 			icon: "ars_nouveau:battlemage_robes"
 			shape: "rsquare"
 			size: 1.0d
-			x: 2.8d
-			y: 2.0d
+			x: 2.75d
+			y: 3.25d
 			tasks: [
 				{
 					id: "BD0F1A994C5C7021"
@@ -195,7 +195,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 4.0d
-			y: 2.0d
+			y: 3.25d
 			tasks: [
 				{
 					id: "DCB942565ADB2B93"
@@ -231,7 +231,7 @@
 			shape: "square"
 			size: 0.8d
 			x: 0.0d
-			y: 4.0d
+			y: 6.5d
 			tasks: [
 				{
 					id: "00A8C5AA2977C214"
@@ -249,7 +249,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 1.5d
-			y: 4.0d
+			y: 6.5d
 			tasks: [
 				{
 					id: "40445327E6DACF88"
@@ -284,8 +284,8 @@
 			icon: "blue_skies:charoite_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 2.8d
-			y: 4.0d
+			x: 2.75d
+			y: 6.5d
 			tasks: [
 				{
 					id: "AB39FFD66565C2DA"
@@ -321,7 +321,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 4.0d
-			y: 4.0d
+			y: 6.5d
 			tasks: [
 				{
 					id: "E659B8B29EEFD3C9"
@@ -356,8 +356,8 @@
 			icon: "blue_skies:horizonite_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 5.2d
-			y: 4.0d
+			x: 5.25d
+			y: 6.5d
 			tasks: [
 				{
 					id: "48F424234529B730"
@@ -393,7 +393,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 6.5d
-			y: 4.0d
+			y: 6.5d
 			tasks: [
 				{
 					id: "02C5162AA70176AE"
@@ -423,139 +423,13 @@
 			rewards: [ ]
 		}
 		{
-			id: "2096CF4D2635F400"
-			title: "callfromthedepth_"
-			icon: "callfromthedepth_:immemorialarmor_boots"
-			shape: "square"
-			size: 0.8d
-			x: 0.0d
-			y: 6.0d
-			tasks: [
-				{
-					id: "E72AF37BD3F6B9AF"
-					type: "checkmark"
-					title: "callfromthedepth_"
-				}
-			]
-			rewards: [ ]
-			description: ["3 starter stubs."]
-		}
-		{
-			id: "4E1C8A8E492E9609"
-			title: "All Armour Sets: Immemorialarmor"
-			icon: "callfromthedepth_:immemorialarmor_chestplate"
-			shape: "rsquare"
-			size: 1.0d
-			x: 1.5d
-			y: 6.0d
-			tasks: [
-				{
-					id: "B1C3FF75F317FE0D"
-					type: "item"
-					item: "callfromthedepth_:immemorialarmor_boots"
-					count: 1
-				}
-				{
-					id: "E1EFAD2AFECAED2F"
-					type: "item"
-					item: "callfromthedepth_:immemorialarmor_chestplate"
-					count: 1
-				}
-				{
-					id: "CF2E72324837F663"
-					type: "item"
-					item: "callfromthedepth_:immemorialarmor_helmet"
-					count: 1
-				}
-				{
-					id: "67134C02F85CA315"
-					type: "item"
-					item: "callfromthedepth_:immemorialarmor_leggings"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "0AB13D49DAD71184"
-			title: "All Armour Sets: Marblearmor"
-			icon: "callfromthedepth_:marblearmor_chestplate"
-			shape: "rsquare"
-			size: 1.0d
-			x: 2.8d
-			y: 6.0d
-			tasks: [
-				{
-					id: "01F67DD1AE1CD197"
-					type: "item"
-					item: "callfromthedepth_:marblearmor_boots"
-					count: 1
-				}
-				{
-					id: "723F046AC4A1E361"
-					type: "item"
-					item: "callfromthedepth_:marblearmor_chestplate"
-					count: 1
-				}
-				{
-					id: "D816BF4618556E62"
-					type: "item"
-					item: "callfromthedepth_:marblearmor_helmet"
-					count: 1
-				}
-				{
-					id: "76FFFD1549AFB0F2"
-					type: "item"
-					item: "callfromthedepth_:marblearmor_leggings"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "157821D6A7AD6992"
-			title: "All Armour Sets: Soularmor"
-			icon: "callfromthedepth_:soularmor_chestplate"
-			shape: "rsquare"
-			size: 1.0d
-			x: 4.0d
-			y: 6.0d
-			tasks: [
-				{
-					id: "AB6F412E605F7D86"
-					type: "item"
-					item: "callfromthedepth_:soularmor_boots"
-					count: 1
-				}
-				{
-					id: "3CF83E64B2E53CB8"
-					type: "item"
-					item: "callfromthedepth_:soularmor_chestplate"
-					count: 1
-				}
-				{
-					id: "056B00C878194D6E"
-					type: "item"
-					item: "callfromthedepth_:soularmor_helmet"
-					count: 1
-				}
-				{
-					id: "FCDFFBB436CCED71"
-					type: "item"
-					item: "callfromthedepth_:soularmor_leggings"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
 			id: "FAF985F0CA67F395"
 			title: "cold_sweat"
 			icon: "cold_sweat:chameleon_boots"
 			shape: "square"
 			size: 0.8d
 			x: 0.0d
-			y: 8.0d
+			y: 9.75d
 			tasks: [
 				{
 					id: "A71E5ED299B36F9B"
@@ -573,7 +447,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 1.5d
-			y: 8.0d
+			y: 9.75d
 			tasks: [
 				{
 					id: "0F8C2376D32520D0"
@@ -608,8 +482,8 @@
 			icon: "cold_sweat:goat_fur_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 2.8d
-			y: 8.0d
+			x: 2.75d
+			y: 9.75d
 			tasks: [
 				{
 					id: "64713C64EB7B3717"
@@ -645,7 +519,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 4.0d
-			y: 8.0d
+			y: 9.75d
 			tasks: [
 				{
 					id: "4088A0E8DB82E1A3"
@@ -681,7 +555,7 @@
 			shape: "square"
 			size: 0.8d
 			x: 0.0d
-			y: 10.0d
+			y: 13.0d
 			tasks: [
 				{
 					id: "3157F5A72FE1957B"
@@ -699,7 +573,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 1.5d
-			y: 10.0d
+			y: 13.0d
 			tasks: [
 				{
 					id: "5BD69C301E7B767E"
@@ -734,8 +608,8 @@
 			icon: "create:copper_diving_boots"
 			shape: "rsquare"
 			size: 1.0d
-			x: 2.8d
-			y: 10.0d
+			x: 2.75d
+			y: 13.0d
 			tasks: [
 				{
 					id: "CB80863A02934B94"
@@ -759,7 +633,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 4.0d
-			y: 10.0d
+			y: 13.0d
 			tasks: [
 				{
 					id: "7DF5F00F9390F75C"
@@ -783,7 +657,7 @@
 			shape: "square"
 			size: 0.8d
 			x: 0.0d
-			y: 12.0d
+			y: 16.25d
 			tasks: [
 				{
 					id: "FD1C5F28DFE51F43"
@@ -801,7 +675,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 1.5d
-			y: 12.0d
+			y: 16.25d
 			tasks: [
 				{
 					id: "F3C1CDE10E86559B"
@@ -830,8 +704,8 @@
 			icon: "creatingspace:basic_spacesuit_boots"
 			shape: "rsquare"
 			size: 1.0d
-			x: 2.8d
-			y: 12.0d
+			x: 2.75d
+			y: 16.25d
 			tasks: [
 				{
 					id: "8CB847EDB8EA7E03"
@@ -861,7 +735,7 @@
 			shape: "square"
 			size: 0.8d
 			x: 0.0d
-			y: 14.0d
+			y: 19.5d
 			tasks: [
 				{
 					id: "F0EE5C14F4A4DBF3"
@@ -879,7 +753,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 1.5d
-			y: 14.0d
+			y: 19.5d
 			tasks: [
 				{
 					id: "345F6331E08E03FC"
@@ -914,8 +788,8 @@
 			icon: "deeperdarker:warden_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 2.8d
-			y: 14.0d
+			x: 2.75d
+			y: 19.5d
 			tasks: [
 				{
 					id: "8D40B7E935EBB325"
@@ -951,7 +825,7 @@
 			shape: "square"
 			size: 0.8d
 			x: 0.0d
-			y: 16.0d
+			y: 22.75d
 			tasks: [
 				{
 					id: "788EEF5267DE27F6"
@@ -969,7 +843,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 1.5d
-			y: 16.0d
+			y: 22.75d
 			tasks: [
 				{
 					id: "5764E56D6B1F3184"
@@ -1005,7 +879,7 @@
 			shape: "square"
 			size: 0.8d
 			x: 0.0d
-			y: 18.0d
+			y: 26.0d
 			tasks: [
 				{
 					id: "0BA6BDA8AF6B5469"
@@ -1023,7 +897,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 1.5d
-			y: 18.0d
+			y: 26.0d
 			tasks: [
 				{
 					id: "8871D80A61AE460F"
@@ -1058,8 +932,8 @@
 			icon: "fallout_wastelands_:combatarmor_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 2.8d
-			y: 18.0d
+			x: 2.75d
+			y: 26.0d
 			tasks: [
 				{
 					id: "FD5D817374F1867D"
@@ -1095,7 +969,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 4.0d
-			y: 18.0d
+			y: 26.0d
 			tasks: [
 				{
 					id: "3363C3EB680BBDF0"
@@ -1130,8 +1004,8 @@
 			icon: "fallout_wastelands_:raiderduster_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 5.2d
-			y: 18.0d
+			x: 5.25d
+			y: 26.0d
 			tasks: [
 				{
 					id: "A28F361C72E2C221"
@@ -1167,7 +1041,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 6.5d
-			y: 18.0d
+			y: 26.0d
 			tasks: [
 				{
 					id: "8ED68B76B71E3059"
@@ -1202,8 +1076,8 @@
 			icon: "fallout_wastelands_:taloncombatarmor_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 7.8d
-			y: 18.0d
+			x: 7.75d
+			y: 26.0d
 			tasks: [
 				{
 					id: "375EEACECC45A7E0"
@@ -1239,7 +1113,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 9.0d
-			y: 18.0d
+			y: 26.0d
 			tasks: [
 				{
 					id: "074D302C37FAF609"
@@ -1275,7 +1149,7 @@
 			shape: "square"
 			size: 0.8d
 			x: 0.0d
-			y: 20.0d
+			y: 29.25d
 			tasks: [
 				{
 					id: "A9EDB7D3AF5BB724"
@@ -1293,7 +1167,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 1.5d
-			y: 20.0d
+			y: 29.25d
 			tasks: [
 				{
 					id: "AECB8256BC575E0C"
@@ -1328,8 +1202,8 @@
 			icon: "iceandfire:armor_black_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 2.8d
-			y: 20.0d
+			x: 2.75d
+			y: 29.25d
 			tasks: [
 				{
 					id: "E8A61FC42ED9227B"
@@ -1365,7 +1239,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 4.0d
-			y: 20.0d
+			y: 29.25d
 			tasks: [
 				{
 					id: "9016FB5FDCFABF1E"
@@ -1400,8 +1274,8 @@
 			icon: "iceandfire:armor_bronze_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 5.2d
-			y: 20.0d
+			x: 5.25d
+			y: 29.25d
 			tasks: [
 				{
 					id: "523487B76B986342"
@@ -1437,7 +1311,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 6.5d
-			y: 20.0d
+			y: 29.25d
 			tasks: [
 				{
 					id: "4CD42BBC24CBE928"
@@ -1472,8 +1346,8 @@
 			icon: "iceandfire:armor_copper_metal_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 7.8d
-			y: 20.0d
+			x: 7.75d
+			y: 29.25d
 			tasks: [
 				{
 					id: "D05E4EBCCC105C5C"
@@ -1509,7 +1383,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 9.0d
-			y: 20.0d
+			y: 29.25d
 			tasks: [
 				{
 					id: "24DB5F511A3E7EF6"
@@ -1544,8 +1418,8 @@
 			icon: "iceandfire:armor_gray_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 10.2d
-			y: 20.0d
+			x: 10.25d
+			y: 29.25d
 			tasks: [
 				{
 					id: "BFA8A0FAEC6ABC1C"
@@ -1581,7 +1455,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 11.5d
-			y: 20.0d
+			y: 29.25d
 			tasks: [
 				{
 					id: "F0E1D7F661577182"
@@ -1616,8 +1490,8 @@
 			icon: "iceandfire:armor_red_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 12.8d
-			y: 20.0d
+			x: 12.75d
+			y: 29.25d
 			tasks: [
 				{
 					id: "B33749EABB6002DE"
@@ -1653,7 +1527,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 14.0d
-			y: 20.0d
+			y: 29.25d
 			tasks: [
 				{
 					id: "2DC96A1C10103362"
@@ -1688,8 +1562,8 @@
 			icon: "iceandfire:armor_silver_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 15.2d
-			y: 20.0d
+			x: 15.25d
+			y: 29.25d
 			tasks: [
 				{
 					id: "906528D179C623F3"
@@ -1724,8 +1598,8 @@
 			icon: "iceandfire:armor_silver_metal_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 16.5d
-			y: 20.0d
+			x: 1.5d
+			y: 30.5d
 			tasks: [
 				{
 					id: "FA88901BF19BB744"
@@ -1760,8 +1634,8 @@
 			icon: "iceandfire:armor_white_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 17.8d
-			y: 20.0d
+			x: 2.75d
+			y: 30.5d
 			tasks: [
 				{
 					id: "1819456F0CDB3E6C"
@@ -1796,8 +1670,8 @@
 			icon: "iceandfire:deathworm_red_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 19.0d
-			y: 20.0d
+			x: 4.0d
+			y: 30.5d
 			tasks: [
 				{
 					id: "580084ECBD7CC72C"
@@ -1832,8 +1706,8 @@
 			icon: "iceandfire:deathworm_white_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 20.2d
-			y: 20.0d
+			x: 5.25d
+			y: 30.5d
 			tasks: [
 				{
 					id: "027A6A246194C872"
@@ -1868,8 +1742,8 @@
 			icon: "iceandfire:deathworm_yellow_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 21.5d
-			y: 20.0d
+			x: 6.5d
+			y: 30.5d
 			tasks: [
 				{
 					id: "67032537D673E112"
@@ -1904,8 +1778,8 @@
 			icon: "iceandfire:dragonsteel_fire_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 22.8d
-			y: 20.0d
+			x: 7.75d
+			y: 30.5d
 			tasks: [
 				{
 					id: "5957BEB2A4696668"
@@ -1940,8 +1814,8 @@
 			icon: "iceandfire:dragonsteel_ice_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 24.0d
-			y: 20.0d
+			x: 9.0d
+			y: 30.5d
 			tasks: [
 				{
 					id: "79324C3234C4F1EA"
@@ -1976,8 +1850,8 @@
 			icon: "iceandfire:dragonsteel_lightning_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 25.2d
-			y: 20.0d
+			x: 10.25d
+			y: 30.5d
 			tasks: [
 				{
 					id: "FCB0D0D68A8C856D"
@@ -2012,8 +1886,8 @@
 			icon: "iceandfire:forest_troll_leather_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 26.5d
-			y: 20.0d
+			x: 11.5d
+			y: 30.5d
 			tasks: [
 				{
 					id: "6E143E4EF7143B33"
@@ -2048,8 +1922,8 @@
 			icon: "iceandfire:frost_troll_leather_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 27.8d
-			y: 20.0d
+			x: 12.75d
+			y: 30.5d
 			tasks: [
 				{
 					id: "A383495B928CCB5D"
@@ -2084,8 +1958,8 @@
 			icon: "iceandfire:mountain_troll_leather_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 29.0d
-			y: 20.0d
+			x: 14.0d
+			y: 30.5d
 			tasks: [
 				{
 					id: "BDB6D682F9B3DFE5"
@@ -2120,8 +1994,8 @@
 			icon: "iceandfire:myrmex_desert_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 30.2d
-			y: 20.0d
+			x: 15.25d
+			y: 30.5d
 			tasks: [
 				{
 					id: "C8572E9542D2A541"
@@ -2156,8 +2030,8 @@
 			icon: "iceandfire:myrmex_jungle_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 31.5d
-			y: 20.0d
+			x: 1.5d
+			y: 31.75d
 			tasks: [
 				{
 					id: "4F78D2E3D2AC55AF"
@@ -2192,8 +2066,8 @@
 			icon: "iceandfire:sheep_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 32.8d
-			y: 20.0d
+			x: 2.75d
+			y: 31.75d
 			tasks: [
 				{
 					id: "C3DB01797F9BC60D"
@@ -2228,8 +2102,8 @@
 			icon: "iceandfire:tide_blue_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 34.0d
-			y: 20.0d
+			x: 4.0d
+			y: 31.75d
 			tasks: [
 				{
 					id: "E2D8C85308808242"
@@ -2264,8 +2138,8 @@
 			icon: "iceandfire:tide_bronze_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 35.2d
-			y: 20.0d
+			x: 5.25d
+			y: 31.75d
 			tasks: [
 				{
 					id: "E659C4474EB3101B"
@@ -2300,8 +2174,8 @@
 			icon: "iceandfire:tide_deepblue_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 36.5d
-			y: 20.0d
+			x: 6.5d
+			y: 31.75d
 			tasks: [
 				{
 					id: "34C5AF6F03A475B1"
@@ -2336,8 +2210,8 @@
 			icon: "iceandfire:tide_green_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 37.8d
-			y: 20.0d
+			x: 7.75d
+			y: 31.75d
 			tasks: [
 				{
 					id: "6095924A729FF183"
@@ -2372,8 +2246,8 @@
 			icon: "iceandfire:tide_purple_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 39.0d
-			y: 20.0d
+			x: 9.0d
+			y: 31.75d
 			tasks: [
 				{
 					id: "055254165C56BAE3"
@@ -2408,8 +2282,8 @@
 			icon: "iceandfire:tide_red_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 40.2d
-			y: 20.0d
+			x: 10.25d
+			y: 31.75d
 			tasks: [
 				{
 					id: "6BAC8B229CA20CC6"
@@ -2444,8 +2318,8 @@
 			icon: "iceandfire:tide_teal_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 41.5d
-			y: 20.0d
+			x: 11.5d
+			y: 31.75d
 			tasks: [
 				{
 					id: "C31404EB02E7C516"
@@ -2481,7 +2355,7 @@
 			shape: "square"
 			size: 0.8d
 			x: 0.0d
-			y: 22.0d
+			y: 35.0d
 			tasks: [
 				{
 					id: "08EEAE2B534A6BC8"
@@ -2499,7 +2373,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 1.5d
-			y: 22.0d
+			y: 35.0d
 			tasks: [
 				{
 					id: "BD1D6F8A87B4DB42"
@@ -2534,8 +2408,8 @@
 			icon: "minecraft:diamond_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 2.8d
-			y: 22.0d
+			x: 2.75d
+			y: 35.0d
 			tasks: [
 				{
 					id: "421E5CB37ACB67C0"
@@ -2571,7 +2445,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 4.0d
-			y: 22.0d
+			y: 35.0d
 			tasks: [
 				{
 					id: "9258DBF485153826"
@@ -2606,8 +2480,8 @@
 			icon: "minecraft:iron_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 5.2d
-			y: 22.0d
+			x: 5.25d
+			y: 35.0d
 			tasks: [
 				{
 					id: "8BEE558B667D2C1E"
@@ -2643,7 +2517,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 6.5d
-			y: 22.0d
+			y: 35.0d
 			tasks: [
 				{
 					id: "49634A94B95677AD"
@@ -2678,8 +2552,8 @@
 			icon: "minecraft:netherite_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 7.8d
-			y: 22.0d
+			x: 7.75d
+			y: 35.0d
 			tasks: [
 				{
 					id: "DBF656138D5DB43A"
@@ -2715,7 +2589,7 @@
 			shape: "square"
 			size: 0.8d
 			x: 0.0d
-			y: 24.0d
+			y: 38.25d
 			tasks: [
 				{
 					id: "D377BE399532CC26"
@@ -2733,7 +2607,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 1.5d
-			y: 24.0d
+			y: 38.25d
 			tasks: [
 				{
 					id: "35258DE0E87B6A18"
@@ -2768,8 +2642,8 @@
 			icon: "pneumaticcraft:pneumatic_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 2.8d
-			y: 24.0d
+			x: 2.75d
+			y: 38.25d
 			tasks: [
 				{
 					id: "14D4381AECCC549B"
@@ -2805,7 +2679,7 @@
 			shape: "square"
 			size: 0.8d
 			x: 0.0d
-			y: 26.0d
+			y: 41.5d
 			tasks: [
 				{
 					id: "0866AA16D7B99FE4"
@@ -2823,7 +2697,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 1.5d
-			y: 26.0d
+			y: 41.5d
 			tasks: [
 				{
 					id: "780E848D6B8389D8"
@@ -2853,7 +2727,7 @@
 			shape: "square"
 			size: 0.8d
 			x: 0.0d
-			y: 28.0d
+			y: 44.75d
 			tasks: [
 				{
 					id: "5598B23D143AE0FB"
@@ -2871,7 +2745,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 1.5d
-			y: 28.0d
+			y: 44.75d
 			tasks: [
 				{
 					id: "F9BF48F9B5E92F73"
@@ -2907,7 +2781,7 @@
 			shape: "square"
 			size: 0.8d
 			x: 0.0d
-			y: 30.0d
+			y: 48.0d
 			tasks: [
 				{
 					id: "5F834C1B3F5FCD5C"
@@ -2925,7 +2799,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 1.5d
-			y: 30.0d
+			y: 48.0d
 			tasks: [
 				{
 					id: "EB0D514AC9A5D8C6"
@@ -2960,8 +2834,8 @@
 			icon: "tconstruct:slime_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 2.8d
-			y: 30.0d
+			x: 2.75d
+			y: 48.0d
 			tasks: [
 				{
 					id: "B7FA5B7EAA79BDFA"
@@ -2997,7 +2871,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 4.0d
-			y: 30.0d
+			y: 48.0d
 			tasks: [
 				{
 					id: "CB93D20DFE5BC7C5"
@@ -3033,7 +2907,7 @@
 			shape: "square"
 			size: 0.8d
 			x: 0.0d
-			y: 32.0d
+			y: 51.25d
 			tasks: [
 				{
 					id: "2B0220F2ECD116BC"
@@ -3051,7 +2925,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 1.5d
-			y: 32.0d
+			y: 51.25d
 			tasks: [
 				{
 					id: "012D4AB40F90ED72"
@@ -3081,103 +2955,13 @@
 			rewards: [ ]
 		}
 		{
-			id: "3FF79D4D3696FD9B"
-			title: "the_flesh_that_hates"
-			icon: "the_flesh_that_hates:flesh_boot_boots"
-			shape: "square"
-			size: 0.8d
-			x: 0.0d
-			y: 34.0d
-			tasks: [
-				{
-					id: "00D2539EC4B805DA"
-					type: "checkmark"
-					title: "the_flesh_that_hates"
-				}
-			]
-			rewards: [ ]
-			description: ["2 starter stubs."]
-		}
-		{
-			id: "5ED4F53977088001"
-			title: "All Armour Sets: Flesh"
-			icon: "the_flesh_that_hates:flesh_chest_chestplate"
-			shape: "rsquare"
-			size: 1.0d
-			x: 1.5d
-			y: 34.0d
-			tasks: [
-				{
-					id: "26178B51463CF854"
-					type: "item"
-					item: "the_flesh_that_hates:flesh_boot_boots"
-					count: 1
-				}
-				{
-					id: "C470ABC9043E5CF6"
-					type: "item"
-					item: "the_flesh_that_hates:flesh_chest_chestplate"
-					count: 1
-				}
-				{
-					id: "B34C6DE7C420E8D2"
-					type: "item"
-					item: "the_flesh_that_hates:flesh_mask_helmet"
-					count: 1
-				}
-				{
-					id: "672BB3115DD07DEF"
-					type: "item"
-					item: "the_flesh_that_hates:flesh_pants_leggings"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "56FCB14118FFD16E"
-			title: "All Armour Sets: Skeletal"
-			icon: "the_flesh_that_hates:skeletal_chestplate_chestplate"
-			shape: "rsquare"
-			size: 1.0d
-			x: 2.8d
-			y: 34.0d
-			tasks: [
-				{
-					id: "87B57476C03C1F2C"
-					type: "item"
-					item: "the_flesh_that_hates:skeletal_boots_boots"
-					count: 1
-				}
-				{
-					id: "09EBAD7225E8C316"
-					type: "item"
-					item: "the_flesh_that_hates:skeletal_chestplate_chestplate"
-					count: 1
-				}
-				{
-					id: "B4AFFFD6A2E22AFC"
-					type: "item"
-					item: "the_flesh_that_hates:skeletal_helmet_helmet"
-					count: 1
-				}
-				{
-					id: "87C5EBC37AB57B8E"
-					type: "item"
-					item: "the_flesh_that_hates:skeletal_pants_leggings"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
 			id: "164DB07CB3752271"
 			title: "tomeofblood"
 			icon: "tomeofblood:living_mage_boots"
 			shape: "square"
 			size: 0.8d
 			x: 0.0d
-			y: 36.0d
+			y: 54.5d
 			tasks: [
 				{
 					id: "9E0447435D3488FA"
@@ -3195,7 +2979,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 1.5d
-			y: 36.0d
+			y: 54.5d
 			tasks: [
 				{
 					id: "804297B54CA6643B"
@@ -3231,7 +3015,7 @@
 			shape: "square"
 			size: 0.8d
 			x: 0.0d
-			y: 38.0d
+			y: 57.75d
 			tasks: [
 				{
 					id: "5F6EF4C155D69567"
@@ -3249,7 +3033,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 1.5d
-			y: 38.0d
+			y: 57.75d
 			tasks: [
 				{
 					id: "DA2B888C532057C5"
@@ -3284,8 +3068,8 @@
 			icon: "twilightforest:fiery_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 2.8d
-			y: 38.0d
+			x: 2.75d
+			y: 57.75d
 			tasks: [
 				{
 					id: "70D2F1F1CFD2AADA"
@@ -3321,7 +3105,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 4.0d
-			y: 38.0d
+			y: 57.75d
 			tasks: [
 				{
 					id: "FD6A8E52622D0D13"
@@ -3356,8 +3140,8 @@
 			icon: "twilightforest:knightmetal_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 5.2d
-			y: 38.0d
+			x: 5.25d
+			y: 57.75d
 			tasks: [
 				{
 					id: "2CE78393AEC7EA48"
@@ -3393,7 +3177,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 6.5d
-			y: 38.0d
+			y: 57.75d
 			tasks: [
 				{
 					id: "01E99535BA2A15EE"
@@ -3416,8 +3200,8 @@
 			icon: "twilightforest:steeleaf_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 7.8d
-			y: 38.0d
+			x: 7.75d
+			y: 57.75d
 			tasks: [
 				{
 					id: "304DF12F2A1E80AF"
@@ -3453,7 +3237,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 9.0d
-			y: 38.0d
+			y: 57.75d
 			tasks: [
 				{
 					id: "A4D9E142C8A93A63"
@@ -3489,7 +3273,7 @@
 			shape: "square"
 			size: 0.8d
 			x: 0.0d
-			y: 40.0d
+			y: 61.0d
 			tasks: [
 				{
 					id: "11FB3055370F963E"
@@ -3507,7 +3291,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 1.5d
-			y: 40.0d
+			y: 61.0d
 			tasks: [
 				{
 					id: "ABBF6AD4A9739866"
@@ -3542,8 +3326,8 @@
 			icon: "undergarden:froststeel_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 2.8d
-			y: 40.0d
+			x: 2.75d
+			y: 61.0d
 			tasks: [
 				{
 					id: "17FAE45738C3B261"
@@ -3579,7 +3363,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 4.0d
-			y: 40.0d
+			y: 61.0d
 			tasks: [
 				{
 					id: "8F9C253672A05D7A"
@@ -3609,5 +3393,4 @@
 			rewards: [ ]
 		}
 	]
-	title: "Armour Sets"
 }

@@ -163,7 +163,7 @@ fun expectLostCitiesRouting() {
 }
 
 fun expectScenarioHarnessContracts() {
-    val path = "tools/lc_tfth_c2me_dh_stability.py"
+    val path = "tools/kotlin/lc_tfth_c2me_dh_stability.main.kts"
     if (!rel(path).isRegularFile()) {
         fail("LC/TFTH/DH scenario harness exists", "missing $path")
         return
@@ -182,7 +182,7 @@ fun expectScenarioHarnessContracts() {
     if (missingFatalKeys.isEmpty()) ok("LC/TFTH/DH harness keeps required fatal classifiers", "${requiredFatalKeys.size} classifiers")
     else fail("LC/TFTH/DH harness keeps required fatal classifiers", missingFatalKeys.joinToString(", "))
 
-    val activityNeedles = listOf("\"distant_horizons\"", "missing_dh_activity", "activity_seen.get(\"distant_horizons\")")
+    val activityNeedles = listOf("\"distant_horizons\"", "missing_dh_activity", "requireDhActivity = true")
     val missingActivityNeedles = activityNeedles.filterNot(text::contains)
     if (missingActivityNeedles.isEmpty()) ok("LC/TFTH/DH harness requires DH activity before pass")
     else fail("LC/TFTH/DH harness requires DH activity before pass", missingActivityNeedles.joinToString(", "))

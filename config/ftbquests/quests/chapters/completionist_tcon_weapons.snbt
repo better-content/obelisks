@@ -11,7 +11,7 @@
 		{
 			id: "1DDAC44A74F57739"
 			title: "additionalweaponry"
-			icon: "additionalweaponry:arrow_sling"
+			icon: "additionalweaponry:butcher_knife"
 			shape: "square"
 			size: 0.8d
 			x: 0.0d
@@ -24,25 +24,7 @@
 				}
 			]
 			rewards: [ ]
-			description: ["9 starter stubs."]
-		}
-		{
-			id: "4A379A7DF74E666E"
-			title: "All TCon Weapons: Arrow Sling"
-			icon: "additionalweaponry:arrow_sling"
-			shape: "rsquare"
-			size: 1.0d
-			x: 1.5d
-			y: 0.0d
-			tasks: [
-				{
-					id: "4AAB2191BE5C42A0"
-					type: "item"
-					item: "additionalweaponry:arrow_sling"
-					count: 1
-				}
-			]
-			rewards: [ ]
+			description: ["5 starter stubs."]
 		}
 		{
 			id: "F07A8FB86F044567"
@@ -50,7 +32,7 @@
 			icon: "additionalweaponry:butcher_knife"
 			shape: "rsquare"
 			size: 1.0d
-			x: 2.8d
+			x: 1.5d
 			y: 0.0d
 			tasks: [
 				{
@@ -68,7 +50,7 @@
 			icon: "additionalweaponry:cutlass"
 			shape: "rsquare"
 			size: 1.0d
-			x: 4.0d
+			x: 2.75d
 			y: 0.0d
 			tasks: [
 				{
@@ -86,7 +68,7 @@
 			icon: "additionalweaponry:pitchfork"
 			shape: "rsquare"
 			size: 1.0d
-			x: 5.2d
+			x: 4.0d
 			y: 0.0d
 			tasks: [
 				{
@@ -99,30 +81,12 @@
 			rewards: [ ]
 		}
 		{
-			id: "E40EC8986ADE4374"
-			title: "All TCon Weapons: Propeller Cap"
-			icon: "additionalweaponry:propeller_cap"
-			shape: "rsquare"
-			size: 1.0d
-			x: 6.5d
-			y: 0.0d
-			tasks: [
-				{
-					id: "104D0632E985B4ED"
-					type: "item"
-					item: "additionalweaponry:propeller_cap"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
 			id: "3EB29801D614E517"
 			title: "All TCon Weapons: Scepter"
 			icon: "additionalweaponry:scepter"
 			shape: "rsquare"
 			size: 1.0d
-			x: 7.8d
+			x: 5.25d
 			y: 0.0d
 			tasks: [
 				{
@@ -135,48 +99,12 @@
 			rewards: [ ]
 		}
 		{
-			id: "80412CF1D6CCB82E"
-			title: "All TCon Weapons: Sling"
-			icon: "additionalweaponry:sling"
-			shape: "rsquare"
-			size: 1.0d
-			x: 9.0d
-			y: 0.0d
-			tasks: [
-				{
-					id: "098E5844EA5A3372"
-					type: "item"
-					item: "additionalweaponry:sling"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "ECA2F6265BAA79AF"
-			title: "All TCon Weapons: Sniffer Claws"
-			icon: "additionalweaponry:sniffer_claws"
-			shape: "rsquare"
-			size: 1.0d
-			x: 10.2d
-			y: 0.0d
-			tasks: [
-				{
-					id: "EA4CCC3DDB86E3CE"
-					type: "item"
-					item: "additionalweaponry:sniffer_claws"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
 			id: "B5E4BFD8440983D5"
 			title: "All TCon Weapons: Wrench"
 			icon: "additionalweaponry:wrench"
 			shape: "rsquare"
 			size: 1.0d
-			x: 11.5d
+			x: 6.5d
 			y: 0.0d
 			tasks: [
 				{
@@ -195,7 +123,7 @@
 			shape: "square"
 			size: 0.8d
 			x: 0.0d
-			y: 2.0d
+			y: 3.25d
 			tasks: [
 				{
 					id: "11E72D700FB9DC93"
@@ -204,7 +132,7 @@
 				}
 			]
 			rewards: [ ]
-			description: ["10 starter stubs."]
+			description: ["9 starter stubs."]
 		}
 		{
 			id: "33CFE1AF042FF603"
@@ -213,7 +141,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 1.5d
-			y: 2.0d
+			y: 3.25d
 			tasks: [
 				{
 					id: "B356E8095C05268C"
@@ -230,8 +158,8 @@
 			icon: "tconstruct:earth_staff"
 			shape: "rsquare"
 			size: 1.0d
-			x: 2.8d
-			y: 2.0d
+			x: 2.75d
+			y: 3.25d
 			tasks: [
 				{
 					id: "9E973E5A76C12881"
@@ -249,7 +177,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 4.0d
-			y: 2.0d
+			y: 3.25d
 			tasks: [
 				{
 					id: "7656F6DAF288DA4F"
@@ -266,8 +194,8 @@
 			icon: "tconstruct:ichor_staff"
 			shape: "rsquare"
 			size: 1.0d
-			x: 5.2d
-			y: 2.0d
+			x: 5.25d
+			y: 3.25d
 			tasks: [
 				{
 					id: "1EA00A2E98DD786B"
@@ -279,31 +207,13 @@
 			rewards: [ ]
 		}
 		{
-			id: "454228050D5A2070"
-			title: "All TCon Weapons: Minotaur Axe"
-			icon: "tconstruct:minotaur_axe"
-			shape: "rsquare"
-			size: 1.0d
-			x: 6.5d
-			y: 2.0d
-			tasks: [
-				{
-					id: "32A9D0965F5CF0F9"
-					type: "item"
-					item: "tconstruct:minotaur_axe"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
 			id: "0EC6FC4FD2E2741A"
 			title: "All TCon Weapons: Plate Shield"
 			icon: "tconstruct:plate_shield"
 			shape: "rsquare"
 			size: 1.0d
-			x: 7.8d
-			y: 2.0d
+			x: 6.5d
+			y: 3.25d
 			tasks: [
 				{
 					id: "CDEB352B8F5927F9"
@@ -320,8 +230,8 @@
 			icon: "tconstruct:shuriken"
 			shape: "rsquare"
 			size: 1.0d
-			x: 9.0d
-			y: 2.0d
+			x: 7.75d
+			y: 3.25d
 			tasks: [
 				{
 					id: "AEBD4B3D5A31C009"
@@ -338,8 +248,8 @@
 			icon: "tconstruct:sky_staff"
 			shape: "rsquare"
 			size: 1.0d
-			x: 10.2d
-			y: 2.0d
+			x: 9.0d
+			y: 3.25d
 			tasks: [
 				{
 					id: "546F6FC5444BB061"
@@ -356,8 +266,8 @@
 			icon: "tconstruct:throwing_axe"
 			shape: "rsquare"
 			size: 1.0d
-			x: 11.5d
-			y: 2.0d
+			x: 10.25d
+			y: 3.25d
 			tasks: [
 				{
 					id: "B86DCC88A105F5A9"
@@ -374,67 +284,13 @@
 			icon: "tconstruct:travelers_shield"
 			shape: "rsquare"
 			size: 1.0d
-			x: 12.8d
-			y: 2.0d
+			x: 11.5d
+			y: 3.25d
 			tasks: [
 				{
 					id: "BEDB794F1BC20D65"
 					type: "item"
 					item: "tconstruct:travelers_shield"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "C386754867A1C83D"
-			title: "tinker_rapier"
-			icon: "tinker_rapier:estoc_tic"
-			shape: "square"
-			size: 0.8d
-			x: 0.0d
-			y: 4.0d
-			tasks: [
-				{
-					id: "B1C7CA89F7F42B30"
-					type: "checkmark"
-					title: "tinker_rapier"
-				}
-			]
-			rewards: [ ]
-			description: ["2 starter stubs."]
-		}
-		{
-			id: "C30B359D292564C6"
-			title: "All TCon Weapons: Estoc Tic"
-			icon: "tinker_rapier:estoc_tic"
-			shape: "rsquare"
-			size: 1.0d
-			x: 1.5d
-			y: 4.0d
-			tasks: [
-				{
-					id: "3009B2F4CB4C27BF"
-					type: "item"
-					item: "tinker_rapier:estoc_tic"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "3A2EF6D9FA68C576"
-			title: "All TCon Weapons: Rapier Tic"
-			icon: "tinker_rapier:rapier_tic"
-			shape: "rsquare"
-			size: 1.0d
-			x: 2.8d
-			y: 4.0d
-			tasks: [
-				{
-					id: "778A9C5E7ADC7003"
-					type: "item"
-					item: "tinker_rapier:rapier_tic"
 					count: 1
 				}
 			]
@@ -447,7 +303,7 @@
 			shape: "square"
 			size: 0.8d
 			x: 0.0d
-			y: 6.0d
+			y: 6.5d
 			tasks: [
 				{
 					id: "FCDCF6E64570F104"
@@ -465,210 +321,12 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 1.5d
-			y: 6.0d
+			y: 6.5d
 			tasks: [
 				{
 					id: "963A49FDFBBDE963"
 					type: "item"
 					item: "tinkers_battle_spades:battle_spade"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "EAA4941411CD52F7"
-			title: "tinkers_katanas"
-			icon: "tinkers_katanas:fuma_shuriken"
-			shape: "square"
-			size: 0.8d
-			x: 0.0d
-			y: 8.0d
-			tasks: [
-				{
-					id: "2E5D1ED9E1516464"
-					type: "checkmark"
-					title: "tinkers_katanas"
-				}
-			]
-			rewards: [ ]
-			description: ["2 starter stubs."]
-		}
-		{
-			id: "4A19CD2F89D42AD4"
-			title: "All TCon Weapons: Fuma Shuriken"
-			icon: "tinkers_katanas:fuma_shuriken"
-			shape: "rsquare"
-			size: 1.0d
-			x: 1.5d
-			y: 8.0d
-			tasks: [
-				{
-					id: "3C08C68654224298"
-					type: "item"
-					item: "tinkers_katanas:fuma_shuriken"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "5CB163B5ADAF9234"
-			title: "All TCon Weapons: Katana"
-			icon: "tinkers_katanas:katana"
-			shape: "rsquare"
-			size: 1.0d
-			x: 2.8d
-			y: 8.0d
-			tasks: [
-				{
-					id: "CEA4800D35C37D74"
-					type: "item"
-					item: "tinkers_katanas:katana"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "1DC1DA54AD6AF6BF"
-			title: "tinkers_things"
-			icon: "tinkers_things:amethyst_staff"
-			shape: "square"
-			size: 0.8d
-			x: 0.0d
-			y: 10.0d
-			tasks: [
-				{
-					id: "BA865D2F96AC0B29"
-					type: "checkmark"
-					title: "tinkers_things"
-				}
-			]
-			rewards: [ ]
-			description: ["7 starter stubs."]
-		}
-		{
-			id: "C2A81526973D38D0"
-			title: "All TCon Weapons: Amethyst Staff"
-			icon: "tinkers_things:amethyst_staff"
-			shape: "rsquare"
-			size: 1.0d
-			x: 1.5d
-			y: 10.0d
-			tasks: [
-				{
-					id: "0A2624651A96A12B"
-					type: "item"
-					item: "tinkers_things:amethyst_staff"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "D32EDF7C57508425"
-			title: "All TCon Weapons: Blockram"
-			icon: "tinkers_things:blockram"
-			shape: "rsquare"
-			size: 1.0d
-			x: 2.8d
-			y: 10.0d
-			tasks: [
-				{
-					id: "115C66FF8F982D30"
-					type: "item"
-					item: "tinkers_things:blockram"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "52EA2D27EB69BED8"
-			title: "All TCon Weapons: Blowpipe"
-			icon: "tinkers_things:blowpipe"
-			shape: "rsquare"
-			size: 1.0d
-			x: 4.0d
-			y: 10.0d
-			tasks: [
-				{
-					id: "EC236FCD862CB31F"
-					type: "item"
-					item: "tinkers_things:blowpipe"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "7D33D2314F7F8ADD"
-			title: "All TCon Weapons: Chisel"
-			icon: "tinkers_things:chisel"
-			shape: "rsquare"
-			size: 1.0d
-			x: 5.2d
-			y: 10.0d
-			tasks: [
-				{
-					id: "B3501DF36CC3665D"
-					type: "item"
-					item: "tinkers_things:chisel"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "53E34E1AEACCE6C7"
-			title: "All TCon Weapons: Halberd"
-			icon: "tinkers_things:halberd"
-			shape: "rsquare"
-			size: 1.0d
-			x: 6.5d
-			y: 10.0d
-			tasks: [
-				{
-					id: "DC94054121C81E03"
-					type: "item"
-					item: "tinkers_things:halberd"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "94B274968EA13032"
-			title: "All TCon Weapons: Shortbow"
-			icon: "tinkers_things:shortbow"
-			shape: "rsquare"
-			size: 1.0d
-			x: 7.8d
-			y: 10.0d
-			tasks: [
-				{
-					id: "7C88769F5307543A"
-					type: "item"
-					item: "tinkers_things:shortbow"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "1E7D915F999D0441"
-			title: "All TCon Weapons: Shovel"
-			icon: "tinkers_things:shovel"
-			shape: "rsquare"
-			size: 1.0d
-			x: 9.0d
-			y: 10.0d
-			tasks: [
-				{
-					id: "B5048CE57D85F945"
-					type: "item"
-					item: "tinkers_things:shovel"
 					count: 1
 				}
 			]
@@ -681,7 +339,7 @@
 			shape: "square"
 			size: 0.8d
 			x: 0.0d
-			y: 12.0d
+			y: 9.75d
 			tasks: [
 				{
 					id: "118CDD2EDC78DDAB"
@@ -699,7 +357,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 1.5d
-			y: 12.0d
+			y: 9.75d
 			tasks: [
 				{
 					id: "5326E4637F8882F6"
@@ -716,8 +374,8 @@
 			icon: "tinkersweaponry:lance"
 			shape: "rsquare"
 			size: 1.0d
-			x: 2.8d
-			y: 12.0d
+			x: 2.75d
+			y: 9.75d
 			tasks: [
 				{
 					id: "188F17A7D6764231"
@@ -735,7 +393,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			x: 4.0d
-			y: 12.0d
+			y: 9.75d
 			tasks: [
 				{
 					id: "0E90A4C246D6BFD0"
@@ -747,5 +405,4 @@
 			rewards: [ ]
 		}
 	]
-	title: "TCon Weapons"
 }

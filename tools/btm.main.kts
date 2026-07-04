@@ -112,7 +112,6 @@ val toolsDir: Path = root.resolve("tools")
 val btmPath: Path = toolsDir.resolve("btm")
 val btmMainPath: Path = toolsDir.resolve("btm.main.kts")
 val migrationMatrixPath: Path = root.resolve("TOOL_MIGRATION_MATRIX.md")
-val quarantineToolsDir: Path = toolsDir.resolve("quarantine/original-tools")
 
 val defaultServerDir = root.resolve("server-instance").toString()
 val defaultExportsDir = root.resolve("generated/exports").toString()
@@ -213,19 +212,30 @@ val scenarios = linkedMapOf(
     "lc_tfth_c2me_dh" to ScenarioDefinition(
         "lc_tfth_c2me_dh",
         "Lost Cities + TFTH + C2ME + Distant Horizons stability cycle",
-        "tools/lc_tfth_c2me_dh_stability.py",
+        "tools/kotlin/lc_tfth_c2me_dh_stability.main.kts",
         headful = true,
     ),
     "dimension_worldgen" to ScenarioDefinition(
         "dimension_worldgen",
         "All-dimension worldgen stress run",
-        "tools/dimension_worldgen_stress.py",
+        "tools/kotlin/dimension_worldgen_stress.main.kts",
         headful = true,
     ),
     "opening_progression" to ScenarioDefinition(
         "opening_progression",
         "Opening progression runtime validation",
-        "tools/opening_progression_runtime_validation.py",
+        "tools/kotlin/opening_progression_runtime_validation.main.kts",
+    ),
+    "worldgen_sampling" to ScenarioDefinition(
+        "worldgen_sampling",
+        "Seeded worldgen sampling lane with quick/release profiles",
+        "tools/kotlin/worldgen_sampling.main.kts",
+    ),
+    "client_smoke" to ScenarioDefinition(
+        "client_smoke",
+        "Client-facing quick/release smoke lane",
+        "tools/kotlin/client_smoke.main.kts",
+        headful = true,
     ),
 )
 
@@ -251,6 +261,7 @@ Public commands:
   tools/btm test runtime --instance PATH [--strict-data-dumps]
   tools/btm test smoke [--server-dir PATH] [--port N] [--reset-runtime]
   tools/btm test scenario NAME [scenario args]
+  tools/btm test scenario-headful NAME [scenario args]
   tools/btm build sync server --dir PATH --dry-run|--apply
   tools/btm build sync client --dir PATH --dry-run|--apply
   tools/btm build bundle curseforge [--exports-dir PATH]
@@ -280,7 +291,7 @@ ${scenarios.values.filter { it.headful }.joinToString("\n") { "  ${it.name.padEn
 
 fun canRunHeadfulScenario(): Boolean {
     if (!System.getenv("DISPLAY").isNullOrBlank()) return true
-    return runProcess(listOf("bash", "-lc", "command -v xvfb-run >/dev/null 2>&1")).exitCode == 0
+    return commandExists("xvfb-run")
 }
 
 fun buildHelp(): String = """
@@ -303,7 +314,7 @@ Commands:
 """.trimIndent()
 
 fun internalHelp(): String = """
-Usage: tools/btm internal <resolve-packwiz-downloads|prune-runtime-mods|log-hard-failure-scan|minecraft-client-argfile|sync-burnt-coverage-tags|generate-completionist-quests|check-js-syntax|check-json-surface|validate-pack-contract|contract-completeness-report|validate-kubejs-assets|validate-autonomous-contracts|validate-realistic-hands|validate-chemistry-identity|validate-synthesis-pipeline|validate-player-progression-contracts|validate-progression-reachability|validate-burnt-coverage|validate-lc-tfth-dh-contracts> ...
+Usage: tools/btm internal <resolve-packwiz-downloads|prune-runtime-mods|log-hard-failure-scan|minecraft-client-argfile|sync-burnt-coverage-tags|generate-completionist-quests|check-js-syntax|check-json-surface|validate-pack-contract|contract-completeness-report|validate-kubejs-assets|validate-autonomous-contracts|validate-realistic-hands|validate-chemistry-identity|validate-synthesis-pipeline|validate-player-progression-contracts|validate-progression-reachability|validate-burnt-coverage|validate-lc-tfth-dh-contracts|validate-kotlin-tool-surface|validate-worldgen-sampling-contracts|validate-client-smoke-contracts> ...
 """.trimIndent()
 
 fun usageError(message: String, help: String = mainHelp()): CommandResult =
@@ -359,12 +370,21 @@ fun success(
     exitCode = 0,
 )
 
-fun commandExists(command: String): Boolean =
-    try {
-        ProcessBuilder("bash", "-lc", "command -v ${command.replace("'", "'\\''")} >/dev/null 2>&1").start().waitFor() == 0
-    } catch (_: Exception) {
-        false
+fun findCommandPath(command: String): String? {
+    val candidate = Paths.get(command)
+    if (command.contains(File.separatorChar) || candidate.nameCount > 1) {
+        return if (Files.isExecutable(candidate) && !Files.isDirectory(candidate)) candidate.toAbsolutePath().normalize().toString() else null
     }
+    for (entry in System.getenv("PATH").orEmpty().split(File.pathSeparator).filter { it.isNotBlank() }) {
+        val resolved = Paths.get(entry).resolve(command)
+        if (Files.isExecutable(resolved) && !Files.isDirectory(resolved)) {
+            return resolved.toAbsolutePath().normalize().toString()
+        }
+    }
+    return null
+}
+
+fun commandExists(command: String): Boolean = findCommandPath(command) != null
 
 fun readCommand(command: List<String>): String =
     try {
@@ -549,6 +569,70 @@ fun resolveUserPath(input: String): Path {
     return if (raw.isAbsolute) raw.normalize() else root.resolve(input).normalize()
 }
 
+fun deleteTree(path: Path) {
+    if (!path.exists()) return
+    Files.walk(path).use { stream ->
+        stream.sorted(Comparator.reverseOrder()).forEach { Files.deleteIfExists(it) }
+    }
+}
+
+fun copyTree(source: Path, destination: Path) {
+    if (!source.exists()) return
+    Files.walk(source).use { stream ->
+        stream.forEach { entry ->
+            val relative = source.relativize(entry)
+            val target = if (relative.toString().isEmpty()) destination else destination.resolve(relative.toString())
+            when {
+                Files.isSymbolicLink(entry) -> {
+                    target.parent?.createDirectories()
+                    Files.deleteIfExists(target)
+                    Files.createSymbolicLink(target, Files.readSymbolicLink(entry))
+                }
+                Files.isDirectory(entry) -> target.createDirectories()
+                else -> {
+                    target.parent?.createDirectories()
+                    Files.copy(entry, target, StandardCopyOption.REPLACE_EXISTING, StandardCopyOption.COPY_ATTRIBUTES)
+                }
+            }
+        }
+    }
+}
+
+fun moveReplace(source: Path, destination: Path) {
+    deleteTree(destination)
+    destination.parent?.createDirectories()
+    try {
+        Files.move(source, destination, StandardCopyOption.REPLACE_EXISTING)
+    } catch (_: Exception) {
+        copyTree(source, destination)
+        deleteTree(source)
+    }
+}
+
+fun ensureLinkedOrCopiedDirectory(path: Path, target: Path) {
+    if (Files.isSymbolicLink(path) && runCatching { Files.readSymbolicLink(path) == target }.getOrDefault(false)) return
+    if (path.exists()) deleteTree(path)
+    path.parent?.createDirectories()
+    try {
+        Files.createSymbolicLink(path, target)
+    } catch (_: Exception) {
+        copyTree(target, path)
+    }
+}
+
+fun extractZipEntry(archive: Path, entryName: String, destination: Path): ProcessRun = try {
+    java.util.zip.ZipFile(archive.toFile()).use { zip ->
+        val entry = zip.getEntry(entryName) ?: return ProcessRun(1, "missing zip entry $entryName in $archive")
+        destination.parent?.createDirectories()
+        zip.getInputStream(entry).use { input ->
+            Files.copy(input, destination, StandardCopyOption.REPLACE_EXISTING)
+        }
+    }
+    ProcessRun(0, destination.toString())
+} catch (error: Exception) {
+    ProcessRun(1, "failed to extract $entryName from $archive: ${error.message}")
+}
+
 fun requireJava17Path(): String {
     val envJava17 = System.getenv("JAVA17")
     if (!envJava17.isNullOrBlank() && Files.isExecutable(Paths.get(envJava17))) {
@@ -565,9 +649,9 @@ fun requireJava17Path(): String {
         }
     }
     if (commandExists("java")) {
-        val version = readCommand(listOf("bash", "-lc", "java -version 2>&1"))
+        val version = readCommand(listOf(findCommandPath("java") ?: "java", "-version"))
         if (Regex("""version "17\.|openjdk version "17\.""" ).containsMatchIn(version)) {
-            return readCommand(listOf("bash", "-lc", "command -v java")).ifBlank { "java" }
+            return findCommandPath("java") ?: "java"
         }
     }
     throw IllegalStateException("Java 17 was not found")
@@ -580,14 +664,13 @@ fun findForgeInstaller(): Path {
         root.resolve("forge-$forgeCoord-installer.jar"),
     )
     candidates.firstOrNull { it.exists() }?.let { return it }
-    val result = readCommand(
-        listOf(
-            "bash",
-            "-lc",
-            "find '${root.toString().replace("'", "'\\''")}' -maxdepth 3 -type f -name 'forge-$forgeCoord-installer.jar' -print -quit 2>/dev/null",
-        ),
-    )
-    if (result.isNotBlank()) return Paths.get(result.trim())
+    val discovered = Files.walk(root, 3).use { stream ->
+        stream
+            .filter { Files.isRegularFile(it) && it.fileName.toString() == "forge-$forgeCoord-installer.jar" }
+            .findFirst()
+            .orElse(null)
+    }
+    if (discovered != null) return discovered
     throw IllegalStateException("forge-$forgeCoord-installer.jar not found under repo/server roots")
 }
 
@@ -615,9 +698,6 @@ white-list=false
 """.trimIndent() + "\n"
     Files.writeString(path, text)
 }
-
-fun runBash(script: String, extraEnv: Map<String, String> = emptyMap(), stream: Boolean = !jsonOutput && !quiet): ProcessRun =
-    runProcess(listOf("bash", "-lc", script), extraEnv, stream)
 
 fun runKotlinScript(script: Path, scriptArgs: List<String> = emptyList(), extraEnv: Map<String, String> = emptyMap()): ProcessRun {
     if (!script.exists()) return ProcessRun(4, "missing Kotlin script: $script")
@@ -1288,14 +1368,8 @@ fun mirrorRepoDatapacks(worldDir: Path) {
     Files.list(sourceRoot).use { stream ->
         stream.forEach { datapack ->
             val target = targetRoot.resolve(datapack.fileName.toString())
-            runProcess(
-                listOf(
-                    "bash",
-                    "-lc",
-                    "rm -rf '${target.toString().replace("'", "'\\''")}' && cp -a '${datapack.toString().replace("'", "'\\''")}' '${targetRoot.toString().replace("'", "'\\''")}/'"
-                ),
-                stream = false,
-            )
+            deleteTree(target)
+            copyTree(datapack, target)
         }
     }
 }
@@ -1377,7 +1451,7 @@ fun generateMinecraftClientArgfile(clientDir: Path, versionId: String, username:
     fileArgs += gameArgs
     if (server.isNotBlank()) {
         val (host, port) = splitServer(server)
-        fileArgs += listOf("--quickPlayMultiplayer", "$host:$port", "--server", host, "--port", port)
+        fileArgs += listOf("--quickPlayMultiplayer", "$host:$port")
     }
     Files.writeString(out, fileArgs.joinToString("\n") { quoteArgfile(it) } + "\n")
     return ProcessRun(0, out.toString())
@@ -1427,19 +1501,14 @@ fun syncManaged(side: String, targetDir: Path, apply: Boolean): ProcessRun {
 }
 
 fun bootstrapServerRuntime(serverDir: Path, port: Int, reset: Boolean): ProcessRun {
-    val exportsDir = root.resolve("generated/exports")
+    val bundleWorkRoot = serverDir.parent.resolve("${serverDir.fileName}.bundle-work")
+    val exportsDir = bundleWorkRoot.resolve("exports")
     val serverTreeDir = exportsDir.resolve("server-tree/better-content-server")
     val serverZip = exportsDir.resolve("better-content-playtest-4-v1-server.zip")
-    val extractRoot = serverDir.parent.resolve("${serverDir.fileName}.bundle-work/unzipped")
+    val extractRoot = bundleWorkRoot.resolve("unzipped")
     if (reset) {
-        runProcess(
-            listOf(
-                "bash",
-                "-lc",
-                "rm -rf '${extractRoot.parent.toString().replace("'", "'\\''")}' '${serverDir.toString().replace("'", "'\\''")}'"
-            ),
-            stream = false,
-        )
+        deleteTree(bundleWorkRoot)
+        deleteTree(serverDir)
     }
     val bundle = buildServerBundle(exportsDir, serverTreeDir, serverZip, clean = true)
     if (bundle.exitCode != 0) return bundle
@@ -1447,14 +1516,7 @@ fun bootstrapServerRuntime(serverDir: Path, port: Int, reset: Boolean): ProcessR
     if (extracted.exitCode != 0) return extracted
     val extractedServerDir = extractRoot.resolve(serverTreeDir.fileName.toString())
     if (!extractedServerDir.exists()) return ProcessRun(1, "server bundle zip did not contain ${serverTreeDir.fileName}")
-    runProcess(
-        listOf(
-            "bash",
-            "-lc",
-            "rm -rf '${serverDir.toString().replace("'", "'\\''")}' && mkdir -p '${serverDir.parent.toString().replace("'", "'\\''")}' && mv '${extractedServerDir.toString().replace("'", "'\\''")}' '${serverDir.toString().replace("'", "'\\''")}'"
-        ),
-        stream = false,
-    )
+    moveReplace(extractedServerDir, serverDir)
     val runSh = serverDir.resolve("run.sh")
     if (runSh.exists()) {
         runProcess(listOf("chmod", "+x", runSh.toString()), stream = false)
@@ -1475,38 +1537,44 @@ fun bootstrapClientRuntime(clientDir: Path): ProcessRun {
     if (sync.exitCode != 0) return sync
     val javaBin = requireJava17Path()
     val installer = try { findForgeInstaller() } catch (_: Exception) { null }
-    val escapedRoot = root.toString().replace("'", "'\\''")
-    val escapedClient = clientDir.toString().replace("'", "'\\''")
-    val script = buildString {
-        appendLine("set -Eeuo pipefail")
-        appendLine("ROOT='$escapedRoot'")
-        appendLine("CLIENT_DIR='$escapedClient'")
-        appendLine("mkdir -p \"\$CLIENT_DIR\"/{logs,saves,versions,libraries,assets}")
-        appendLine("prism_root=\"\${BTM_PRISM_ROOT:-\$HOME/.local/share/PrismLauncher}\"")
-        appendLine("forge_client_id=\"${mcVersion}-forge-$forgeVersion\"")
-        appendLine("if [[ -d \"\$prism_root/libraries\" && ! -L \"\$CLIENT_DIR/libraries\" ]]; then rm -rf \"\$CLIENT_DIR/libraries\"; ln -s \"\$prism_root/libraries\" \"\$CLIENT_DIR/libraries\"; fi")
-        appendLine("if [[ -d \"\$prism_root/assets\" && ! -L \"\$CLIENT_DIR/assets\" ]]; then rm -rf \"\$CLIENT_DIR/assets\"; ln -s \"\$prism_root/assets\" \"\$CLIENT_DIR/assets\"; fi")
-        appendLine("if [[ -f \"\$prism_root/meta/net.minecraft/$mcVersion.json\" ]]; then mkdir -p \"\$CLIENT_DIR/versions/$mcVersion\"; cp \"\$prism_root/meta/net.minecraft/$mcVersion.json\" \"\$CLIENT_DIR/versions/$mcVersion/$mcVersion.json\"; fi")
-        appendLine("if [[ -f \"\$prism_root/libraries/com/mojang/minecraft/$mcVersion/minecraft-$mcVersion-client.jar\" ]]; then mkdir -p \"\$CLIENT_DIR/versions/$mcVersion\"; ln -sf \"\$prism_root/libraries/com/mojang/minecraft/$mcVersion/minecraft-$mcVersion-client.jar\" \"\$CLIENT_DIR/versions/$mcVersion/$mcVersion.jar\"; fi")
-        appendLine("for jar_cache in \"\$ROOT/server-template/mods\" \"\$ROOT/server-instance/mods\"; do")
-        appendLine("  [[ -d \"\$jar_cache\" ]] || continue")
-        appendLine("  [[ \"\$(cd \"\$jar_cache\" && pwd)\" == \"\$(cd \"\$CLIENT_DIR/mods\" 2>/dev/null && pwd)\" ]] && continue")
-        appendLine("  mkdir -p \"\$CLIENT_DIR/mods\"")
-        appendLine("  while IFS= read -r -d '' file; do")
-        appendLine("    rel=\"\${file#\"\$jar_cache\"/}\"")
-        appendLine("    dest=\"\$CLIENT_DIR/mods/\$rel\"")
-        appendLine("    [[ -e \"\$dest\" ]] && continue")
-        appendLine("    mkdir -p \"\$(dirname \"\$dest\")\"")
-        appendLine("    cp -p \"\$file\" \"\$dest\"")
-        appendLine("  done < <(find \"\$jar_cache\" -type f \\( -name '*.jar' -o -name '*.so' \\) -print0)")
-        appendLine("done")
-        if (installer != null) {
-            appendLine("cp '${installer.toString().replace("'", "'\\''")}' \"\$CLIENT_DIR/forge-$forgeCoord-installer.jar\"")
+    listOf("logs", "saves", "versions", "libraries", "assets").forEach { clientDir.resolve(it).createDirectories() }
+    val prismRoot = resolveUserPath(System.getenv("BTM_PRISM_ROOT") ?: "${System.getProperty("user.home")}/.local/share/PrismLauncher")
+    val prismLibraries = prismRoot.resolve("libraries")
+    if (prismLibraries.exists()) ensureLinkedOrCopiedDirectory(clientDir.resolve("libraries"), prismLibraries)
+    val prismAssets = prismRoot.resolve("assets")
+    if (prismAssets.exists()) ensureLinkedOrCopiedDirectory(clientDir.resolve("assets"), prismAssets)
+    val vanillaMeta = prismRoot.resolve("meta/net.minecraft/$mcVersion.json")
+    if (vanillaMeta.exists()) {
+        val dest = clientDir.resolve("versions/$mcVersion/$mcVersion.json")
+        dest.parent.createDirectories()
+        Files.copy(vanillaMeta, dest, StandardCopyOption.REPLACE_EXISTING)
+    }
+    val vanillaJar = prismRoot.resolve("libraries/com/mojang/minecraft/$mcVersion/minecraft-$mcVersion-client.jar")
+    if (vanillaJar.exists()) {
+        val dest = clientDir.resolve("versions/$mcVersion/$mcVersion.jar")
+        dest.parent.createDirectories()
+        try {
+            Files.deleteIfExists(dest)
+            Files.createSymbolicLink(dest, vanillaJar)
+        } catch (_: Exception) {
+            Files.copy(vanillaJar, dest, StandardCopyOption.REPLACE_EXISTING)
         }
     }
-    val run = runBash(script)
-    if (run.exitCode != 0) return run
-    val prismRoot = resolveUserPath(System.getenv("BTM_PRISM_ROOT") ?: "${System.getProperty("user.home")}/.local/share/PrismLauncher")
+    for (jarCache in listOf(root.resolve("server-template/mods"), root.resolve("server-instance/mods"))) {
+        if (!jarCache.exists()) continue
+        if (runCatching { jarCache.toRealPath() == clientDir.resolve("mods").toRealPath() }.getOrDefault(false)) continue
+        walkFiles(jarCache) { isRuntimeModArtifact(it.fileName.toString()) }.forEach { file ->
+            val rel = jarCache.relativize(file)
+            val dest = clientDir.resolve("mods").resolve(rel.toString())
+            if (!dest.exists()) {
+                dest.parent?.createDirectories()
+                Files.copy(file, dest, StandardCopyOption.REPLACE_EXISTING, StandardCopyOption.COPY_ATTRIBUTES)
+            }
+        }
+    }
+    if (installer != null) {
+        Files.copy(installer, clientDir.resolve("forge-$forgeCoord-installer.jar"), StandardCopyOption.REPLACE_EXISTING)
+    }
     val forgeMeta = prismRoot.resolve("meta/net.minecraftforge/$forgeVersion.json")
     if (forgeMeta.exists()) {
         val forge = jsonObject(parseJson(Files.readString(forgeMeta)))
@@ -1525,8 +1593,10 @@ fun bootstrapClientRuntime(clientDir: Path): ProcessRun {
     }
     if (installer != null) {
         val forgeClientId = "$mcVersion-forge-$forgeVersion"
-        val unzip = runProcess(
-            listOf("bash", "-lc", "unzip -p '${clientDir.resolve("forge-$forgeCoord-installer.jar").toString().replace("'", "'\\''")}' version.json > '${clientDir.resolve("versions/$forgeClientId/$forgeClientId.json").toString().replace("'", "'\\''")}'"),
+        val unzip = extractZipEntry(
+            clientDir.resolve("forge-$forgeCoord-installer.jar"),
+            "version.json",
+            clientDir.resolve("versions/$forgeClientId/$forgeClientId.json"),
         )
         if (unzip.exitCode != 0) return unzip
         val launcherProfiles = clientDir.resolve("launcher_profiles.json")
@@ -1630,24 +1700,32 @@ fun stopProcess(runningProcess: RunningProcess?, stopCommand: String? = null) {
 }
 
 fun runStaticValidation(): ProcessRun {
-    val script = buildString {
-        appendLine("set -Eeuo pipefail")
-        appendLine("cd '${root.toString().replace("'", "'\\''")}'")
-        appendLine("tools/btm internal check-js-syntax")
-        appendLine("tools/btm internal check-json-surface")
-        appendLine("tools/btm internal validate-pack-contract")
-        appendLine("tools/btm internal contract-completeness-report --check --no-write")
-        appendLine("tools/btm internal validate-autonomous-contracts")
-        appendLine("OUT_DIR=/tmp/btm-indirect-casing-audit kotlin tools/kotlin/audit_indirect_casing_economy.main.kts --check")
-        appendLine("tools/btm internal validate-kubejs-assets")
-        appendLine("tools/btm internal validate-chemistry-identity")
-        appendLine("tools/btm internal validate-synthesis-pipeline")
-        appendLine("tools/btm internal validate-player-progression-contracts")
-        appendLine("tools/btm internal validate-progression-reachability")
-        appendLine("tools/btm internal validate-burnt-coverage")
-        appendLine("tools/btm internal validate-lc-tfth-dh-contracts")
+    val commands = listOf(
+        listOf("tools/btm", "internal", "validate-kotlin-tool-surface"),
+        listOf("tools/btm", "internal", "check-js-syntax"),
+        listOf("tools/btm", "internal", "check-json-surface"),
+        listOf("tools/btm", "internal", "validate-pack-contract"),
+        listOf("tools/btm", "internal", "contract-completeness-report", "--check", "--no-write"),
+        listOf("tools/btm", "internal", "validate-autonomous-contracts"),
+        listOf("kotlin", "tools/kotlin/audit_indirect_casing_economy.main.kts", "--check"),
+        listOf("tools/btm", "internal", "validate-kubejs-assets"),
+        listOf("tools/btm", "internal", "validate-chemistry-identity"),
+        listOf("tools/btm", "internal", "validate-synthesis-pipeline"),
+        listOf("tools/btm", "internal", "validate-player-progression-contracts"),
+        listOf("tools/btm", "internal", "validate-progression-reachability"),
+        listOf("tools/btm", "internal", "validate-burnt-coverage"),
+        listOf("tools/btm", "internal", "validate-lc-tfth-dh-contracts"),
+        listOf("tools/btm", "internal", "validate-worldgen-sampling-contracts"),
+        listOf("tools/btm", "internal", "validate-client-smoke-contracts"),
+    )
+    val output = mutableListOf<String>()
+    for (command in commands) {
+        val extraEnv = if (command.contains("audit_indirect_casing_economy.main.kts")) mapOf("OUT_DIR" to "/tmp/btm-indirect-casing-audit") else emptyMap()
+        val run = runProcess(command, extraEnv = extraEnv, stream = false)
+        if (run.output.isNotBlank()) output += run.output
+        if (run.exitCode != 0) return ProcessRun(run.exitCode, output.joinToString("\n"))
     }
-    return runBash(script)
+    return ProcessRun(0, output.joinToString("\n"))
 }
 
 fun runPackSuite(instance: Path, strictDataDumps: Boolean, runtimeOnly: Boolean = false): ProcessRun {
@@ -2188,7 +2266,7 @@ fun runPlayerProgressionContractsValidation(): ProcessRun {
     validatePrimaryCraftingSpine(manifest, milestones)
     validateBypassSurfaces(manifest)
     validateRuntimeGraphReadiness(manifest)
-    val parentingValidation = runProcess(listOf("python3", "tools/progression_contracts.py", "validate"), stream = false)
+    val parentingValidation = runKotlinScript(root.resolve("tools/kotlin/validate_progression_contracts.main.kts"))
     if (parentingValidation.exitCode == 0) {
         ok("era parenting and economy manifests validate", parentingValidation.output.trim().ifBlank { "ok" })
     } else {
@@ -2715,17 +2793,24 @@ fun runBurntCoverageTagSync(
 
 fun exportCurseforgeBundles(exportsDir: Path): ProcessRun {
     exportsDir.createDirectories()
-    val script = """
-set -Eeuo pipefail
-cd '${root.toString().replace("'", "'\\''")}'
-packwiz curseforge export -o '${exportsDir.resolve("better-content-playtest-4-v1-curseforge.zip").toString().replace("'", "'\\''")}' -s client -y
-""".trimIndent()
-    return runBash(script)
+    return runProcess(
+        listOf(
+            "packwiz",
+            "curseforge",
+            "export",
+            "-o",
+            exportsDir.resolve("better-content-playtest-4-v1-curseforge.zip").toString(),
+            "-s",
+            "client",
+            "-y",
+        ),
+        workDir = root,
+    )
 }
 
 fun buildServerBundle(exportsDir: Path, serverTreeDir: Path, serverZip: Path, clean: Boolean): ProcessRun {
     if (clean && serverTreeDir.exists()) {
-        runProcess(listOf("bash", "-lc", "rm -rf '${serverTreeDir.toString().replace("'", "'\\''")}'"))
+        deleteTree(serverTreeDir)
     }
     val sync = syncManaged("server", serverTreeDir, apply = true)
     if (sync.exitCode != 0) return sync
@@ -2745,7 +2830,9 @@ fun buildServerBundle(exportsDir: Path, serverTreeDir: Path, serverZip: Path, cl
         if (install.exitCode != 0) return install
     }
     mirrorRepoDatapacks(serverTreeDir.resolve("world"))
-    runProcess(listOf("bash", "-lc", "rm -rf '${serverTreeDir.resolve("world").toString().replace("'", "'\\''")}' '${serverTreeDir.resolve("logs").toString().replace("'", "'\\''")}' '${serverTreeDir.resolve("crash-reports").toString().replace("'", "'\\''")}'"))
+    deleteTree(serverTreeDir.resolve("world"))
+    deleteTree(serverTreeDir.resolve("logs"))
+    deleteTree(serverTreeDir.resolve("crash-reports"))
     mirrorRepoDatapacks(serverTreeDir.resolve("world"))
     Files.writeString(
         serverTreeDir.resolve("SERVER_README.txt"),
@@ -2789,7 +2876,7 @@ fun handleDoctor(subArgs: List<String>): CommandResult {
     return when (subArgs.first()) {
         "env" -> {
             val findings = mutableListOf<ValidationFinding>()
-            val required = listOf("kotlin", "python3", "java", "curl", "bash", "rg")
+            val required = listOf("kotlin", "java", "rg")
             for (command in required) {
                 if (!commandExists(command)) {
                     findings += ValidationFinding("error", "missing required command: $command")
@@ -2804,10 +2891,9 @@ fun handleDoctor(subArgs: List<String>): CommandResult {
             val details = linkedMapOf<String, Any?>(
                 "repoRoot" to root.toString(),
                 "kotlin" to readCommand(listOf("kotlin", "-version")).ifBlank { null },
-                "python3" to readCommand(listOf("python3", "--version")).ifBlank { null },
-                "java" to readCommand(listOf("bash", "-lc", "java -version 2>&1 | head -n 1")).ifBlank { null },
-                "rg" to readCommand(listOf("bash", "-lc", "command -v rg || true")).ifBlank { null },
-                "packwiz" to readCommand(listOf("bash", "-lc", "command -v packwiz || true")).ifBlank { null },
+                "java" to readCommand(listOf(findCommandPath("java") ?: "java", "-version")).lineSequence().firstOrNull()?.ifBlank { null },
+                "rg" to findCommandPath("rg"),
+                "packwiz" to findCommandPath("packwiz"),
             )
             if (findings.any { it.severity == "error" }) {
                 prereqFailure("environment check failed", findings).copy(command = "doctor env", details = details)
@@ -2837,14 +2923,38 @@ fun handleDoctor(subArgs: List<String>): CommandResult {
                 val path = root.resolve(rel)
                 if (path.exists()) null else ValidationFinding("error", "missing required repo path: $rel")
             }.toMutableList()
-            val legacyCount = Files.list(toolsDir).use { stream ->
-                stream.filter { entry -> entry.fileName.toString() != "btm" && entry.fileName.toString() != "btm.main.kts" }.count()
+            val quarantineDir = toolsDir.resolve("quarantine")
+            val activeLegacySources = Files.walk(toolsDir).use { stream ->
+                stream
+                    .filter(Files::isRegularFile)
+                    .filter { !it.startsWith(quarantineDir) }
+                    .filter {
+                        val name = it.fileName.toString()
+                        name.endsWith(".py") || name.endsWith(".sh") || name.endsWith(".mjs")
+                    }
+                    .count()
             }
-            findings += ValidationFinding("warning", "legacy tool files still exist internally: $legacyCount")
+            val quarantinedLegacySources = if (quarantineDir.exists()) {
+                Files.walk(quarantineDir).use { stream ->
+                    stream
+                        .filter(Files::isRegularFile)
+                        .filter {
+                            val name = it.fileName.toString()
+                            name.endsWith(".py") || name.endsWith(".sh") || name.endsWith(".mjs")
+                        }
+                        .count()
+                }
+            } else {
+                0L
+            }
+            if (activeLegacySources > 0) {
+                findings += ValidationFinding("warning", "active legacy tool source files remain under tools/: $activeLegacySources")
+            }
             val details = mapOf(
                 "repoRoot" to root.toString(),
                 "migrationMatrix" to migrationMatrixPath.toString(),
-                "legacyToolFiles" to legacyCount,
+                "activeLegacyToolSources" to activeLegacySources,
+                "quarantinedLegacyToolSources" to quarantinedLegacySources,
             )
             if (findings.any { it.severity == "error" }) {
                 prereqFailure("repo check failed", findings).copy(command = "doctor repo", details = details)
@@ -3072,6 +3182,18 @@ fun handleInternal(subArgs: List<String>): CommandResult {
             val run = runLcTfthDhContractsValidation()
             CommandResult("internal validate-lc-tfth-dh-contracts", if (run.exitCode == 0) "success" else "failure", run.output, exitCode = if (run.exitCode == 0) 0 else 1)
         }
+        "validate-kotlin-tool-surface" -> {
+            val run = runKotlinScript(root.resolve("tools/kotlin/validate_kotlin_tool_surface.main.kts"))
+            CommandResult("internal validate-kotlin-tool-surface", if (run.exitCode == 0) "success" else "failure", run.output, exitCode = if (run.exitCode == 0) 0 else 1)
+        }
+        "validate-worldgen-sampling-contracts" -> {
+            val run = runKotlinScript(root.resolve("tools/kotlin/validate_worldgen_sampling_contracts.main.kts"))
+            CommandResult("internal validate-worldgen-sampling-contracts", if (run.exitCode == 0) "success" else "failure", run.output, exitCode = if (run.exitCode == 0) 0 else 1)
+        }
+        "validate-client-smoke-contracts" -> {
+            val run = runKotlinScript(root.resolve("tools/kotlin/validate_client_smoke_contracts.main.kts"))
+            CommandResult("internal validate-client-smoke-contracts", if (run.exitCode == 0) "success" else "failure", run.output, exitCode = if (run.exitCode == 0) 0 else 1)
+        }
         else -> usageError("unknown internal command: ${subArgs.first()}", internalHelp())
     }
 }
@@ -3082,7 +3204,7 @@ fun handleTest(subArgs: List<String>): CommandResult {
     }
     return when (subArgs.first()) {
         "static" -> {
-            val missing = ensureCommands("bash", "kotlin")
+            val missing = ensureCommands("kotlin")
             if (missing.isNotEmpty()) return prereqFailure("static validation prerequisites missing", missing)
             val run = runStaticValidation()
             val exitCode = if (run.exitCode == 0) 0 else if (run.exitCode == 2) 2 else 1
@@ -3152,7 +3274,7 @@ fun handleTest(subArgs: List<String>): CommandResult {
             )
         }
         "smoke" -> {
-            val missing = ensureCommands("bash", "kotlin", "java", "curl")
+            val missing = ensureCommands("kotlin", "java")
             if (missing.isNotEmpty()) return prereqFailure("smoke validation prerequisites missing", missing)
             var serverDir = "/tmp/btm-agent-validate-smoke"
             var port = "25565"
@@ -3200,7 +3322,7 @@ fun handleTest(subArgs: List<String>): CommandResult {
             )
         }
         "scenario", "scenario-headful" -> {
-            val missing = ensureCommands("python3")
+            val missing = ensureCommands("kotlin")
             if (missing.isNotEmpty()) return prereqFailure("scenario prerequisites missing", missing)
             val name = subArgs.getOrNull(1) ?: return usageError("test scenario requires a scenario name", testHelp())
             val headfulCommand = subArgs.first() == "scenario-headful"
@@ -3221,11 +3343,11 @@ fun handleTest(subArgs: List<String>): CommandResult {
             val passthroughArgs = subArgs.drop(2)
             wrapProcessResult(
                 commandName = if (scenario.headful) "test scenario-headful $name" else "test scenario $name",
-                processCommand = listOf("python3", scenario.script) + passthroughArgs,
+                processCommand = listOf("kotlin", scenario.script) + passthroughArgs,
                 summaryOnSuccess = "scenario $name passed",
                 evidenceLevel = "scenario-runtime",
                 mutated = true,
-                exitMapper = { exitCode, _ -> if (exitCode == 0) 0 else 1 },
+                exitMapper = { exitCode, _ -> when (exitCode) { 0 -> 0; 2 -> 2; else -> 1 } },
                 details = mapOf("scenario" to scenario.name, "script" to scenario.script, "args" to passthroughArgs, "headful" to scenario.headful),
             )
         }
@@ -3295,8 +3417,6 @@ fun handleBuild(subArgs: List<String>): CommandResult {
             }
             if (dir.isNullOrBlank()) return usageError("build sync $side requires --dir PATH", buildHelp())
             if (mode == null) return usageError("build sync $side requires --dry-run or --apply", buildHelp())
-            val prereqs = ensureCommands("bash")
-            if (prereqs.isNotEmpty()) return prereqFailure("sync prerequisites missing", prereqs)
             val targetPath = resolveUserPath(dir!!)
             val run = syncManaged(side, targetPath, mode == "--apply")
             val exitCode = classifyBuildExit(run.exitCode, run.output)
@@ -3323,7 +3443,7 @@ fun handleBuild(subArgs: List<String>): CommandResult {
             val target = subArgs.getOrNull(1) ?: return usageError("build bundle requires curseforge or server", buildHelp())
             return when (target) {
                 "curseforge" -> {
-                    val prereqs = ensureCommands("bash", "packwiz")
+                    val prereqs = ensureCommands("packwiz")
                     if (prereqs.isNotEmpty()) return prereqFailure("bundle prerequisites missing", prereqs)
                     var exportsDir = defaultExportsDir
                     val rest = subArgs.drop(2)
@@ -3361,7 +3481,7 @@ fun handleBuild(subArgs: List<String>): CommandResult {
                     )
                 }
                 "server" -> {
-                    val prereqs = ensureCommands("bash", "packwiz", "curl")
+                    val prereqs = ensureCommands("packwiz")
                     if (prereqs.isNotEmpty()) return prereqFailure("bundle prerequisites missing", prereqs)
                     if (!detectJava17()) return prereqFailure("Java 17 is required for build bundle server")
                     var exportsDir = defaultExportsDir

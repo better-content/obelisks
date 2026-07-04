@@ -76,15 +76,11 @@ Original shell/Python tools are quarantined under `tools/quarantine/original-too
 - Run `tools/btm doctor env` before claiming the toolchain is usable.
 - Current practical prerequisites for supported workflows include:
   - `kotlin`
-  - `python3`
   - `java` with Java 17
-  - `bash`
   - `rg`
-  - `rsync` for sync flows
-  - `curl` for runtime/bootstrap and server bundle flows
   - `packwiz` for bundle export flows
 - Treat `tools/btm doctor env` as authoritative when a command fails due to missing local dependencies.
-- `tools/btm` is the only supported front door. Some internal generators and archival compatibility shims remain outside Kotlin, but supported `test`, `build`, and `doctor` flows should not be taught as Node entrypoints.
+- `tools/btm` is the only supported front door. Archived compatibility shims may remain under `tools/quarantine/`, but supported `test`, `build`, and `doctor` flows should not depend on them or be taught as live entrypoints.
 - KubeJS scripts are the only normal place for pack-authored JavaScript. Repo tooling should be Kotlin unless the user explicitly asks for a quarantined compatibility path.
 
 ## Modular Harnesses
@@ -114,6 +110,7 @@ Current LC/DH scenario:
 - Full validation expectation: 3 clean boot/join/LC teleport/DH generation/TFTH pressure cycles, required jars present on server and client, no crash reports, no ModernFix watchdog, no C2ME thread-guard failures, and DH activity observed.
 
 ## Core Rules
+- Prototype freeze policy: until the user explicitly says the freeze is released, do not add new features, new progression branches, new content systems, or broad UX/theme expansions. Balance tuning is allowed, but keep it scoped to the existing systems and avoid feature drift. Limit work to stabilization, crash fixes, progression deadlock fixes, balance changes, validation/tooling fixes, packaging, questbook authoring/revision, menu clarity, and other changes required to ship or playtest the frozen prototype.
 - Do not invent IDs; mark unknowns as `UNKNOWN`.
 - Keep KubeJS Rhino-safe and deterministic (`kubejs:*` IDs).
 - Prefer data-driven generation over copy-paste recipes.

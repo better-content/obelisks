@@ -1,0 +1,72 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "planets"
+	group: "3D1BF480E4BCDBA6"
+	id: "5F91B2C7A4E86D10"
+	order_index: 3
+	quest_links: [ ]
+	quests: [
+		{
+			id: "F9C3B76D8410A25E"
+			tasks: [{
+				dimension: "creatingspace:earth_orbit"
+				id: "2B0E7C5A1FD64B3C"
+				type: "dimension"
+			}]
+			x: -5.5d
+			y: -2.5d
+		}
+		{
+			id: "B07D8FE1C3A95426"
+			tasks: [{
+				dimension: "creatingspace:moon_orbit"
+				id: "A36FD7C54E9182B0"
+				type: "dimension"
+			}]
+			x: -5.5d
+			y: -1.5d
+		}
+		{
+			id: "7E10A4BD2C658F93"
+			tasks: [{
+				dimension: "creatingspace:the_moon"
+				id: "1C96E5AF30B274D8"
+				type: "dimension"
+			}]
+			x: -5.5d
+			y: -0.5d
+		}
+		{
+			id: "D3A1485EB97C20F1"
+			tasks: [{
+				dimension: "creatingspace:mars_orbit"
+				id: "4FD7B9028A61CE35"
+				type: "dimension"
+			}]
+			x: -5.5d
+			y: 0.5d
+		}
+		{
+			id: "89E2C7A10B4FD635"
+			tasks: [{
+				dimension: "creatingspace:mars"
+				id: "C51A8DE37F0264B9"
+				type: "dimension"
+			}]
+			x: -5.5d
+			y: 1.5d
+		}
+		{
+			id: "24BF67D9E81A3C50"
+			tasks: [{
+				dimension: "creatingspace:venus"
+				id: "E0D34A6CB58F2197"
+				type: "dimension"
+			}]
+			x: -5.5d
+			y: 2.5d
+		}
+	]
+	title: "Planets"
+}

@@ -53,6 +53,8 @@ Realistic Hands static regressions now cover primitive loose-earth hand breakabi
 
 Player progression regressions are data-driven by `kubejs/config/player_progression_regression.json` plus the authoritative parenting/acquisition manifests in `kubejs/config/tech_parenting.json`, `magic_parenting.json`, `economy_acquisition.json`, and `surface_registry.json`. `tools/btm internal validate-player-progression-contracts` now checks the primitive tool route, the full machine casing ladder, Blood Magic heart/orb/slate authority, Creating Space dimension routes, reward-surface bypass bans, direct coin-crafting bans, Font coin-only payouts, registered recipe/acquisition surfaces, and parenting coverage for retained craftable outputs. Effective recipe graph route reachability still requires a refreshed strict runtime dump.
 
+Core wood-tag regressions now fail the pack suite when repo-owned risky `minecraft` block/item tags drift, when runtime recipe evidence shows an item-tag consumer without the matching owned item tag, or when representative generic and wood-specific wood recipes disappear or lose their intended wood identity.
+
 Completionist quest validation is part of the pack suite. It parses chapter SNBT quest blocks directly, then compares item tasks, effect source quests, enchantment quests, and plant entries against current runtime/source dumps without broad regex block slicing. This keeps large generated chapter files fast enough to remain in normal validation.
 
 After changing validation entry points or evidence claims, re-run the relevant `tools/btm test ...` modes and confirm the generated validation report still matches the intended evidence level.

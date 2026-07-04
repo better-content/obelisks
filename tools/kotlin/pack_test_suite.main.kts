@@ -155,6 +155,8 @@ val strictDataDumps = (System.getenv("BTM_STRICT_DATA_DUMPS") == "1") || args.co
 val runtimeOnly = System.getenv("BTM_RUNTIME_ONLY") == "1"
 val reportDir: Path = Paths.get(System.getenv("BTM_REPORT_DIR") ?: repo.resolve("generated/validation").toString())
 val generatedConfigDir = instance.resolve("kubejs/config")
+val retainedRuntimeDumpDir = repo.resolve("generated/runtime-dumps")
+val retainedGeneratedConfigDir = retainedRuntimeDumpDir.resolve("kubejs-config")
 val generatedDumpDir = instance.resolve("dump/data_raw")
 val techParentingPath = repo.resolve("kubejs/config/tech_parenting.json")
 
@@ -175,6 +177,7 @@ val performanceBudgetsMs = linkedMapOf(
     "quest book validation" to mapOf("budget" to 250, "hard" to 1500),
     "Wares and villager trade validation" to mapOf("budget" to 250, "hard" to 1500),
     "repo loot data validation" to mapOf("budget" to 500, "hard" to 3000),
+    "runtime core tag regression validation" to mapOf("budget" to 1500, "hard" to 6000),
     "generated recipe graph validation" to mapOf("budget" to 5000, "hard" to 20000),
     "generated loot dump validation" to mapOf("budget" to 2500, "hard" to 10000),
     "engine and world performance log analysis" to mapOf("budget" to 750, "hard" to 1500),
@@ -224,6 +227,7 @@ fun exists(path: Path): Boolean = Files.exists(path)
 fun read(path: Path): String = Files.readString(path)
 fun readJson(path: Path): Any? = parseJson(read(path))
 fun latestRuntimeLog(): Path = instance.resolve("logs/latest.log")
+fun firstExisting(vararg candidates: Path): Path? = candidates.firstOrNull(::exists)
 fun unique(values: List<String>): List<String> = values.filter { it.isNotBlank() }.distinct()
 fun namespace(id: String): String = if (":" in id) id.substringBefore(':') else "minecraft"
 fun localName(id: String): String = if (":" in id) id.substringAfter(':') else id
@@ -243,6 +247,8 @@ fun walk(rootDir: Path, predicate: (Path) -> Boolean = { true }): List<Path> {
 fun countOccurrences(text: String, needle: String): Int = Regex(Regex.escape(needle)).findAll(text).count()
 fun newestFile(files: List<Path>): Path? = files.maxByOrNull { Files.getLastModifiedTime(it).toMillis() }
 fun roundMs(value: Double): Double = round(value * 100.0) / 100.0
+fun runtimeGeneratedConfigFile(name: String): Path? = firstExisting(generatedConfigDir.resolve(name), retainedGeneratedConfigDir.resolve(name))
+fun runtimeRecipeGraphFile(): Path? = firstExisting(instance.resolve("recipes.json"), instance.resolve("dump/recipes.json"), retainedRuntimeDumpDir.resolve("recipes.json"))
 fun humanizeId(id: String): String =
     id.substringAfter(':')
         .replace('/', ' ')
@@ -803,13 +809,13 @@ fun testLootData() {
 }
 
 fun loadGeneratedRecipes(): Pair<Map<String, Any?>, List<Map<String, Any?>>>? {
-    val manifestPath = generatedConfigDir.resolve("full_recipe_index_manifest.json")
-    if (!exists(manifestPath)) return null
+    val manifestPath = runtimeGeneratedConfigFile("full_recipe_index_manifest.json") ?: return null
     val manifest = jsonObject(readJson(manifestPath))
     val recipes = mutableListOf<Map<String, Any?>>()
     val chunkCount = jsonInt(manifest["chunkCount"]) ?: 0
+    val chunkRoot = manifestPath.parent
     for (i in 0 until chunkCount) {
-        val chunkPath = generatedConfigDir.resolve("full_recipe_index_${i.toString().padStart(4, '0')}.json")
+        val chunkPath = chunkRoot.resolve("full_recipe_index_${i.toString().padStart(4, '0')}.json")
         if (!exists(chunkPath)) {
             fail("generated recipe chunk exists", rel(chunkPath))
             continue
@@ -818,6 +824,147 @@ fun loadGeneratedRecipes(): Pair<Map<String, Any?>, List<Map<String, Any?>>>? {
         recipes += jsonArray(chunk["recipes"]).map(::jsonObject)
     }
     return manifest to recipes
+}
+
+data class OwnedTag(val path: Path, val replace: Boolean, val values: List<String>)
+
+fun loadOwnedTag(kind: String, name: String): OwnedTag? {
+    val path = repo.resolve("kubejs/data/minecraft/tags/$kind/$name.json")
+    if (!exists(path)) return null
+    val root = jsonObject(readJson(path))
+    return OwnedTag(
+        path = path,
+        replace = jsonBool(root["replace"]) ?: false,
+        values = unique(jsonArray(root["values"]).mapNotNull(::jsonString)),
+    )
+}
+
+fun recipeWindow(text: String, id: String, windowChars: Int = 6000): String? {
+    val anchor = Regex(""""id"\s*:\s*"${Regex.escape(id)}"\s*,\s*"type"\s*:""")
+    val match = anchor.find(text) ?: return null
+    val start = match.range.first
+    return text.substring(start, minOf(text.length, start + windowChars))
+}
+
+fun sourceContainsAll(path: Path, needles: List<String>): Boolean {
+    if (!exists(path)) return false
+    val text = read(path)
+    return needles.all(text::contains)
+}
+
+fun testRuntimeCoreTagRegressions() {
+    val riskyPairs = listOf(
+        "planks",
+        "logs",
+        "logs_that_burn",
+        "wooden_buttons",
+        "wooden_slabs",
+        "wooden_doors",
+        "wooden_pressure_plates",
+        "wooden_stairs",
+        "wooden_trapdoors",
+        "fence_gates",
+        "wooden_fences",
+    )
+    val recipeGraphPath = runtimeRecipeGraphFile()
+    if (recipeGraphPath == null) return missingRuntimeEvidence("runtime core tag regression validation", retainedRuntimeDumpDir.resolve("recipes.json").toString())
+    val recipeGraph = read(recipeGraphPath)
+    metrics["runtimeCoreTagRecipeGraph"] = mapOf(
+        "path" to recipeGraphPath.toString(),
+        "sizeBytes" to Files.size(recipeGraphPath),
+    )
+
+    val runtimeTagConsumerCounts = linkedMapOf<String, Int>()
+    val pairMismatches = mutableListOf<String>()
+    val missingItemTags = mutableListOf<String>()
+    val badReplaceModes = mutableListOf<String>()
+
+    for (tag in riskyPairs) {
+        val blockTag = loadOwnedTag("blocks", tag)
+        val itemTag = loadOwnedTag("items", tag)
+        val runtimeConsumers = Regex(""""tag"\s*:\s*"minecraft:${Regex.escape(tag)}"""").findAll(recipeGraph).count()
+        runtimeTagConsumerCounts[tag] = runtimeConsumers
+        if (runtimeConsumers <= 0) continue
+        if (blockTag == null) {
+            pairMismatches += "$tag missing owned block tag"
+            continue
+        }
+        if (itemTag == null) {
+            missingItemTags += "$tag -> missing ${rel(repo.resolve("kubejs/data/minecraft/tags/items/$tag.json"))} with $runtimeConsumers runtime consumers"
+            continue
+        }
+        if (blockTag.replace) badReplaceModes += "${rel(blockTag.path)} should use replace=false"
+        if (itemTag.replace) badReplaceModes += "${rel(itemTag.path)} should use replace=false"
+        val missingFromItem = blockTag.values.filterNot(itemTag.values::contains)
+        val extraInItem = itemTag.values.filterNot(blockTag.values::contains)
+        if (missingFromItem.isNotEmpty() || extraInItem.isNotEmpty()) {
+            pairMismatches += buildString {
+                append(tag)
+                if (missingFromItem.isNotEmpty()) append(" missing-from-item=${missingFromItem.take(8)}")
+                if (extraInItem.isNotEmpty()) append(" extra-in-item=${extraInItem.take(8)}")
+            }
+        }
+    }
+
+    metrics["runtimeCoreTagConsumers"] = runtimeTagConsumerCounts
+    if (missingItemTags.isEmpty()) ok("runtime risky core tags have item-tag counterparts", "${runtimeTagConsumerCounts.filterValues { it > 0 }.size} tags with runtime item-tag consumers")
+    else fail("runtime risky core tags have item-tag counterparts", missingItemTags.joinToString("\n"))
+    if (pairMismatches.isEmpty()) ok("runtime risky core tag block/item membership stays aligned")
+    else fail("runtime risky core tag block/item membership stays aligned", pairMismatches.joinToString("\n"))
+    if (badReplaceModes.isEmpty()) ok("owned risky core tags use delta ownership") else fail("owned risky core tags use delta ownership", badReplaceModes.joinToString("\n"))
+
+    val genericSourceChecks = listOf(
+        Triple(repo.resolve("kubejs/server_scripts/30_recipe_replace/135_recipe_graph_closure.js"), listOf("create:linked_controller", "#minecraft:wooden_buttons"), "linked_controller retains wooden button gate"),
+        Triple(repo.resolve("kubejs/server_scripts/30_recipe_replace/135_recipe_graph_closure.js"), listOf("create:cart_assembler", "#minecraft:logs"), "cart_assembler retains log gate"),
+        Triple(repo.resolve("kubejs/server_scripts/30_recipe_replace/150_integrated_deferred_mod_gates.js"), listOf("procedural_bouquets:bouquet_grid", "#minecraft:wooden_slabs"), "bouquet_grid retains wooden slab gate"),
+    )
+    val missingGenericSources = genericSourceChecks.filterNot { (path, needles, _) -> sourceContainsAll(path, needles) }
+    if (missingGenericSources.isEmpty()) ok("representative authored generic core-tag consumers remain in source")
+    else fail(
+        "representative authored generic core-tag consumers remain in source",
+        missingGenericSources.joinToString("\n") { (path, needles, label) -> "$label missing in ${rel(path)} -> ${needles.joinToString(", ")}" }
+    )
+
+    val genericRuntimeChecks = listOf(
+        Triple("minecraft:crafting_table", listOf(""""tag": "minecraft:planks""""), "crafting table still accepts #minecraft:planks"),
+        Triple("create:crafting/appliances/linked_controller", listOf(""""tag": "minecraft:wooden_buttons""""), "linked controller still consumes #minecraft:wooden_buttons"),
+        Triple("createbigcannons:log_cannon_end", listOf(""""tag": "minecraft:logs""""), "runtime generic log consumer still exists"),
+        Triple("procedural_bouquets:bouquet_grid", listOf(""""tag": "minecraft:wooden_slabs""""), "runtime generic slab consumer still exists"),
+    )
+    val missingGenericRuntime = genericRuntimeChecks.mapNotNull { (id, needles, label) ->
+        val window = recipeWindow(recipeGraph, id) ?: return@mapNotNull "$label missing recipe $id"
+        if (needles.all(window::contains)) null else "$label missing expected markers for $id"
+    }
+    if (missingGenericRuntime.isEmpty()) ok("representative runtime generic core-tag consumers remain present")
+    else fail("representative runtime generic core-tag consumers remain present", missingGenericRuntime.joinToString("\n"))
+
+    val techParentingText = read(techParentingPath)
+    val genericWoodStorageIds = listOf(
+        "machine_output:sophisticatedstorage:generic_wood_storage:sophisticatedstorage:barrel",
+        "machine_output:sophisticatedstorage:generic_wood_storage:sophisticatedstorage:chest",
+        "machine_output:sophisticatedstorage:generic_wood_storage:sophisticatedstorage:limited_barrel_1",
+    )
+    val missingGenericWoodStorage = genericWoodStorageIds.filterNot(techParentingText::contains)
+    if (missingGenericWoodStorage.isEmpty()) ok("generic wood storage fallback routes remain registered")
+    else fail("generic wood storage fallback routes remain registered", missingGenericWoodStorage.joinToString("\n"))
+
+    val woodSpecificChecks = listOf(
+        Triple("sophisticatedstorage:birch_barrel", listOf("minecraft:birch_planks", "minecraft:birch_slab", """{woodType:\"birch\"}"""), "birch barrel keeps birch inputs and birch woodType"),
+        Triple("sophisticatedstorage:birch_chest", listOf("minecraft:birch_planks", """{woodType:\"birch\"}"""), "birch chest keeps birch inputs and birch woodType"),
+        Triple("sophisticatedstorage:birch_limited_barrel_1", listOf("minecraft:birch_planks", "minecraft:birch_slab", """{woodType:\"birch\"}"""), "birch limited barrel keeps birch inputs and birch woodType"),
+        Triple("sophisticatedstorage:oak_barrel", listOf("minecraft:oak_planks", "minecraft:oak_slab", """{woodType:\"oak\"}"""), "oak barrel keeps oak inputs and oak woodType"),
+        Triple("sophisticatedstorage:cherry_chest", listOf("minecraft:cherry_planks", """{woodType:\"cherry\"}"""), "cherry chest keeps cherry inputs and cherry woodType"),
+        Triple("sophisticatedstorage:mangrove_barrel", listOf("minecraft:mangrove_planks", "minecraft:mangrove_slab", """{woodType:\"mangrove\"}"""), "mangrove barrel keeps mangrove inputs and mangrove woodType"),
+        Triple("create:oak_window", listOf("minecraft:oak_planks"), "oak window remains wood-specific"),
+        Triple("create:cherry_window", listOf("minecraft:cherry_planks"), "cherry window remains wood-specific"),
+        Triple("minecraft:mangrove_chest_boat", listOf("minecraft:mangrove_boat"), "mangrove chest boat remains wood-specific"),
+    )
+    val missingWoodSpecific = woodSpecificChecks.mapNotNull { (id, needles, label) ->
+        val window = recipeWindow(recipeGraph, id) ?: return@mapNotNull "$label missing recipe $id"
+        if (needles.all(window::contains)) null else "$label missing expected markers for $id"
+    }
+    if (missingWoodSpecific.isEmpty()) ok("representative wood-specific recipes remain specialized")
+    else fail("representative wood-specific recipes remain specialized", missingWoodSpecific.joinToString("\n"))
 }
 
 fun testGeneratedRecipeGraph() {
@@ -1011,6 +1158,7 @@ if (runtimeOnly) {
     runMeasured("quest book validation", ::testQuestBook)
     runMeasured("Wares and villager trade validation", ::testWaresAndTrades)
     runMeasured("repo loot data validation", ::testLootData)
+    runMeasured("runtime core tag regression validation", ::testRuntimeCoreTagRegressions)
     runMeasured("generated recipe graph validation", ::testGeneratedRecipeGraph)
     runMeasured("generated loot dump validation", ::testGeneratedDumpLoot)
 }

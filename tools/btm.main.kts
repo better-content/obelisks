@@ -2692,6 +2692,10 @@ fun promoteRuntimeDumpArtifacts(serverDir: Path): ProcessRun {
         output += "copied ${serverDir.relativize(source)} -> ${root.relativize(target)}"
     }
 
+    val retainedRefresh = runRetainedRuntimeDumpRefresh()
+    output += retainedRefresh.output.trim()
+    if (retainedRefresh.exitCode != 0) return ProcessRun(retainedRefresh.exitCode, output.filter { it.isNotBlank() }.joinToString("\n"))
+
     Files.deleteIfExists(root.resolve("generated/runtime-dumps/realistic_hands_audit.json"))
 
     val realisticAudit = runKotlinScript(root.resolve("tools/kotlin/audit_realistic_hands.main.kts"))
@@ -2840,6 +2844,9 @@ fun runRealisticHandsValidation(): ProcessRun =
 
 fun runCompletionistQuestGeneration(): ProcessRun =
     runKotlinScript(root.resolve("tools/kotlin/generate_completionist_quests.main.kts"))
+
+fun runRetainedRuntimeDumpRefresh(): ProcessRun =
+    runKotlinScript(root.resolve("tools/kotlin/refresh_retained_runtime_dumps.main.kts"))
 
 fun runJsSyntaxCheck(): ProcessRun =
     runKotlinScript(root.resolve("tools/kotlin/check_js_syntax.main.kts"))

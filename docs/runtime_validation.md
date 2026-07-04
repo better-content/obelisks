@@ -33,7 +33,7 @@ tools/btm doctor runtime --instance /path/to/fresh/runtime
 - `--runtime`: strict validation of an existing fresh runtime's logs and KubeJS audit dumps.
 - `--strict-data-dumps`: additionally requires vanilla `/dump` output such as `dump/data_raw/loot_tables`; this is separate from KubeJS audit dumps under `kubejs/config`.
 - `--smoke`: fresh disposable server bootstrap, boot, hard-log scan, and strict runtime suite.
-- `build dumps`: fresh disposable server bootstrap plus retained dump refresh into `generated/runtime-dumps/` and `generated/runtime-dumps/kubejs-config/`.
+- `build dumps`: fresh disposable server bootstrap plus refresh of the full retained runtime-dump surface, including direct runtime JSON, retained Burnt coverage tables, functional-block audits, and KubeJS config dumps.
 - `tools/btm test scenario` is the supported front door for harness-backed runtime scenarios.
 - `worldgen_sampling` and `client_smoke` are versioned scenario lanes with checked-in contracts at `tools/worldgen_sampling_contract.json` and `tools/client_smoke_contract.json`.
 - `tools/btm doctor ...` is the supported front door for prerequisite, repo-surface, and runtime-shape checks.
@@ -78,7 +78,7 @@ tools/btm build dumps --server-dir /tmp/btm-dump-refresh --port 25565 --reset-ru
 tools/btm test static
 ```
 
-`tools/btm build dumps` is the supported front door for rebuilding the repo-carried runtime dump set. It boots a fresh disposable server runtime, waits for the KubeJS dump passes, promotes the runtime outputs back into `generated/runtime-dumps/`, and refreshes the retained Realistic Hands audit from the new block-hardness probe.
+`tools/btm build dumps` is the supported front door for rebuilding the repo-carried runtime dump set. It boots a fresh disposable server runtime, waits for the KubeJS dump passes, promotes the runtime outputs back into `generated/runtime-dumps/`, regenerates the retained Burnt coverage and functional-block audit surfaces, and refreshes the retained Realistic Hands audit from the new block-hardness probe.
 
 For toolchain/build changes:
 

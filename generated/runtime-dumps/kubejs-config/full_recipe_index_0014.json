@@ -1,7 +1,7 @@
 {
 	"schema": "btm.recipe_audit.v2",
 	"generatedBy": "kubejs/server_scripts/90_dev_debug/10_recipe_audit_dumps.js",
-	"generatedAt": "2026-07-04T04:53:26.118Z",
+	"generatedAt": "2026-07-04T05:13:03.691Z",
 	"recipeEventStage": "pre_mutation_recipe_event",
 	"chunk": 14,
 	"start": 14000,
@@ -4332,7 +4332,7 @@
 			"id": "realisticores:compat/create/crushing/deepslate_tin_tungsten_greisen",
 			"type": "create:crushing",
 			"namespace": "realisticores",
-			"json": "{\"type\":\"create:crushing\",\"conditions\":[{\"type\":\"forge:mod_loaded\",\"modid\":\"create\"}],\"ingredients\":[{\"tag\":\"forge:ores/tungsten\"}],\"processingTime\":250,\"results\":[{\"item\":\"realisticores:crushed_tin_tungsten_greisen\"}]}"
+			"json": "{\"type\":\"create:crushing\",\"conditions\":[{\"type\":\"forge:mod_loaded\",\"modid\":\"create\"}],\"ingredients\":[{\"tag\":\"forge:ores/tin\"}],\"processingTime\":250,\"results\":[{\"item\":\"realisticores:crushed_tin_tungsten_greisen\"}]}"
 		},
 		{
 			"id": "goety:steep/steep_planks",

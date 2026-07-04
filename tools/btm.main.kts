@@ -1861,11 +1861,11 @@ fun runPackFastLane(): ProcessRun = runStepSequence(
 fun runPackFullLane(): ProcessRun = runStepSequence(
     listOf(
         "pack fast" to { runPackFastLane() },
-        "runtime smoke" to { runSmokeValidation(resolveUserPath("/tmp/btm-pack-full-smoke"), defaultServerPort, reset = true, bootstrapMode = "always") },
+        "runtime smoke" to { runSmokeValidation(resolveUserPath("/tmp/btm-pack-full-smoke"), 25570, reset = true, bootstrapMode = "always") },
         "opening progression scenario" to {
             runKotlinScript(
                 root.resolve("tools/kotlin/opening_progression_runtime_validation.main.kts"),
-                scriptArgs = listOf("--cycles", "1", "--bootstrap-mode", "once"),
+                scriptArgs = listOf("--cycles", "1", "--port", "25568", "--bootstrap-mode", "once"),
             )
         },
         "worldgen sampling scenario" to {
@@ -1878,7 +1878,7 @@ fun runPackFullLane(): ProcessRun = runStepSequence(
             if (!canRunHeadfulScenario()) return@to ProcessRun(3, "DISPLAY or xvfb-run is required")
             runKotlinScript(
                 root.resolve("tools/kotlin/lc_tfth_c2me_dh_stability.main.kts"),
-                scriptArgs = listOf("--cycles", "1", "--idle-seconds", "30", "--tfth-seconds", "30", "--bootstrap-mode", "once"),
+                scriptArgs = listOf("--cycles", "1", "--idle-seconds", "30", "--tfth-seconds", "30", "--port", "25569", "--bootstrap-mode", "once"),
             )
         },
         "client smoke scenario" to {

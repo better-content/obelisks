@@ -9,99 +9,251 @@
 	quest_links: [ ]
 	quests: [
 		{
-			id: "8B5A10C3F1E7F1CB"
+			id: "2DF95D9A30A46A2B"
 			title: "Spawn"
 			icon: "minecraft:red_bed"
 			shape: "hexagon"
-			size: 1.35d
+			size: 1.3d
 			tasks: [{
-				id: "8A2C5A396E667318"
-				title: "Read the spawn rule"
+				id: "AF1EB2BBC3B0EE70"
+				title: "Read the locked-spawn rule"
 				type: "checkmark"
 			}]
-			x: -12.0d
+			x: -11.52d
 			y: 0.0d
-			description: ["Death sends you back to the locked start. Plan routes, beds, camps, and caches around recovery instead of assuming a bed will move the anchor."]
+			description: ["Death snaps back to the locked start. Treat beds as camps, not anchor changes."]
 		}
 		{
-			dependencies: ["8B5A10C3F1E7F1CB"]
-			id: "529DBD41E8ABD6D2"
-			title: "Return"
-			icon: "minecraft:torch"
+			dependencies: ["2DF95D9A30A46A2B"]
+			id: "2C8F9611F5D5DD16"
+			title: "Route"
+			icon: "minecraft:compass"
 			shape: "rsquare"
-			size: 0.95d
 			tasks: [{
-				id: "D4144F6BD4F9DD15"
-				title: "Pack light, food, and route markers"
+				id: "4C498E04BC93E9AE"
+				title: "Mark the road back"
 				type: "checkmark"
 			}]
-			x: -8.0d
-			y: -2.0d
-			description: ["Your first logistics problem is the walk back. Keep cheap supplies staged so a death does not strand the next attempt."]
+			x: -8.64d
+			y: -3.0d
+			description: ["Use markers, roads, and sightlines so corpse recovery is a planned route, not a panic run."]
 		}
 		{
-			dependencies: ["529DBD41E8ABD6D2"]
-			id: "D36A4B32695660BA"
+			dependencies: ["2C8F9611F5D5DD16"]
+			id: "999F66BDD3EBF54E"
+			title: "Caches"
+			icon: "minecraft:barrel"
+			shape: "rsquare"
+			tasks: [{
+				id: "198C7A2CCC83CD89"
+				title: "Stage cheap recovery kits"
+				type: "checkmark"
+			}]
+			x: -5.76d
+			y: -3.0d
+			description: ["Put food, blocks, torches, and spare tools along expedition routes."]
+		}
+		{
+			dependencies: ["999F66BDD3EBF54E"]
+			id: "E454A578105E3C5D"
 			title: "Food"
 			icon: "minecraft:bread"
 			shape: "square"
 			size: 1.05d
 			tasks: [{
-				id: "E2C9D7A01E8D41C5"
+				id: "1828F774E551D0FE"
 				item: "minecraft:bread"
 				type: "item"
 			}]
-			x: -4.0d
-			y: -2.0d
-			rewards: [
-				{
-					id: "5FE6D0E5D1BEED1E"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
-			description: ["Food variety, water quality, and climate supplies are progression pressure. They buy distance and time, not just hunger bars."]
+			x: -2.88d
+			y: -3.0d
+			rewards: [{ id: "6014B500804B358D" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
+			description: ["Food variety buys working time and distance; it belongs in the same survival loop as water and climate."]
 		}
 		{
-			dependencies: ["8B5A10C3F1E7F1CB"]
-			id: "F378703CC790BFFA"
+			dependencies: ["999F66BDD3EBF54E"]
+			id: "0CC3D3A3FF0F586A"
+			title: "Water"
+			icon: "minecraft:water_bucket"
+			shape: "rsquare"
+			tasks: [{
+				id: "DE766C5615E28338"
+				title: "Secure drinkable water"
+				type: "checkmark"
+			}]
+			x: -2.88d
+			y: -1.5d
+			description: ["Bad water turns travel into attrition. Carry clean water or plan around purification."]
+		}
+		{
+			dependencies: ["E454A578105E3C5D" "0CC3D3A3FF0F586A"]
+			id: "50B2F24168118EF2"
+			title: "Climate"
+			icon: "cold_sweat:thermometer"
+			shape: "rsquare"
+			tasks: [{
+				id: "D79650BBE69F02C3"
+				title: "Read heat and cold before travel"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: -2.25d
+			description: ["Cold Sweat turns biome choice, lava-depth work, and dimension travel into loadout questions."]
+		}
+		{
+			dependencies: ["50B2F24168118EF2"]
+			id: "9DCD541E1DBF398C"
+			title: "Pack"
+			icon: "minecraft:bundle"
+			shape: "rsquare"
+			tasks: [{
+				id: "8826D79E7E8200A5"
+				title: "Pack for the return trip"
+				type: "checkmark"
+			}]
+			x: 2.88d
+			y: -2.25d
+			description: ["The correct expedition inventory includes the walk back after failure, not just the first arrival."]
+		}
+		{
+			dependencies: ["9DCD541E1DBF398C"]
+			id: "0379349149C465BF"
+			title: "Mounts"
+			icon: "minecraft:saddle"
+			shape: "rsquare"
+			tasks: [{
+				id: "DB8D24F1FB3B2249"
+				title: "Use animals as logistics, not decoration"
+				type: "checkmark"
+			}]
+			x: 5.76d
+			y: -2.25d
+			description: ["SWEM-style travel support is valuable because local logistics remain physical for most of the pack."]
+		}
+		{
+			dependencies: ["2DF95D9A30A46A2B"]
+			id: "66A303C7B87687A4"
 			title: "Heart"
 			icon: "rpgstats:still_beating_heart"
 			shape: "diamond"
-			size: 1.1d
+			size: 1.15d
 			tasks: [{
-				id: "2678BF76CF7691F7"
+				id: "10E05DAF832FB9AF"
 				item: "rpgstats:still_beating_heart"
 				type: "item"
 			}]
-			x: -8.0d
-			y: 2.0d
-			rewards: [
-				{
-					id: "14DD8EE8945B017D"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
-			description: ["A heart records how far that life got. It is a milestone token for Blood Magic, not a bulk fuel or throwaway currency."]
+			x: -8.64d
+			y: 3.0d
+			rewards: [{ id: "9D225354E0351222" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
+			description: ["A heart records a meaningful life and opens the Blood Magic bridge. It is not a bulk currency."]
 		}
 		{
-			dependencies: ["F378703CC790BFFA"]
-			id: "C8905FE33912AE49"
-			title: "Blood"
-			icon: "bloodmagic:weakbloodorb"
-			shape: "hexagon"
-			size: 1.15d
+			dependencies: ["66A303C7B87687A4"]
+			id: "A90EEABE0BB97F1B"
+			title: "Knife"
+			icon: "additionalweaponry:butcher_knife"
+			shape: "rsquare"
 			tasks: [{
-				id: "FD824F4CFBD81BCF"
-				title: "Use the heart to open Blood Magic"
+				id: "E0DB2838C2BC75DB"
+				item: "additionalweaponry:butcher_knife"
+				type: "item"
+			}]
+			x: -5.76d
+			y: 3.0d
+			description: ["Primitive knife work connects food, plant cutting, and the body loop before machines take over."]
+		}
+		{
+			dependencies: ["A90EEABE0BB97F1B"]
+			id: "9BC440056C693801"
+			title: "Stats"
+			icon: "rpgstats:myofibra_catalyst"
+			shape: "rsquare"
+			tasks: [{
+				id: "B7E04365A6133A40"
+				title: "Respect body progression"
 				type: "checkmark"
 			}]
-			x: -4.0d
-			y: 2.0d
-			description: ["The first Blood Magic loop is heart-bound so the body system matters. Later escalation costs slates, infrastructure, and LP."]
+			x: -2.88d
+			y: 3.0d
+			description: ["RPG Stats resets and body progression make death a strategic cost, not a free teleport."]
+		}
+		{
+			dependencies: ["66A303C7B87687A4"]
+			id: "56D43612CD94F3C2"
+			title: "Orb"
+			icon: "bloodmagic:weakbloodorb"
+			shape: "hexagon"
+			size: 1.1d
+			tasks: [{
+				id: "585157E603F1D3FF"
+				item: "bloodmagic:weakbloodorb"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 3.0d
+			rewards: [{ id: "F0B9E4D60479AF25" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
+			description: ["The weak orb is the first controlled LP object after the heart proves risk."]
+		}
+		{
+			dependencies: ["56D43612CD94F3C2"]
+			id: "11B6803A865589C5"
+			title: "Altar"
+			icon: "bloodmagic:altar"
+			shape: "rsquare"
+			tasks: [{
+				id: "384F56891A50AC3D"
+				title: "Build the altar as a recovery consequence"
+				type: "checkmark"
+			}]
+			x: 2.88d
+			y: 3.0d
+			description: ["Blood Magic starts as a response to bodies, hearts, and risk rather than a generic magic bench."]
+		}
+		{
+			dependencies: ["9DCD541E1DBF398C"]
+			id: "DC0BBF7695937B20"
+			title: "Villages"
+			icon: "minecraft:bell"
+			shape: "rsquare"
+			tasks: [{
+				id: "FC3F161C5A9EC298"
+				title: "Use settlements as recovery infrastructure"
+				type: "checkmark"
+			}]
+			x: 5.76d
+			y: 1.5d
+			description: ["Villages, walls, roads, and wares help you survive repeated expeditions."]
+		}
+		{
+			dependencies: ["DC0BBF7695937B20"]
+			id: "E3A44470D379F056"
+			title: "Patrols"
+			icon: "minecraft:crossbow"
+			shape: "rsquare"
+			tasks: [{
+				id: "1807653D3991443F"
+				title: "Expect surface pressure"
+				type: "checkmark"
+			}]
+			x: 8.64d
+			y: 1.5d
+			description: ["Pillager pressure makes route defense part of survival progression."]
+		}
+		{
+			dependencies: ["11B6803A865589C5" "E3A44470D379F056"]
+			id: "40B21AD1972A4A62"
+			title: "Blood"
+			icon: "bloodmagic:weakbloodorb"
+			shape: "octagon"
+			size: 1.2d
+			tasks: [{
+				id: "73093C5C7D7FF088"
+				title: "Bridge survival into Blood Magic"
+				type: "checkmark"
+			}]
+			x: 11.52d
+			y: 1.5d
+			description: ["This chapter should make the body loop feel like the root of the magic spine."]
 		}
 	]
 	title: "Body, Spawn, and Recovery"

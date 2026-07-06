@@ -9,107 +9,310 @@
 	quest_links: [ ]
 	quests: [
 		{
-			id: "4243E614A1329CE6"
+			id: "A3BD0DDEF6ED0325"
 			title: "Routes"
 			icon: "minecraft:firework_rocket"
 			shape: "hexagon"
 			size: 1.15d
 			tasks: [{
-				id: "B415AA0A82AF5031"
+				id: "D54E206C39B3BB42"
 				title: "Use rockets for late dimension access"
 				type: "checkmark"
 			}]
-			x: -12.0d
+			x: -11.52d
 			y: 0.0d
 			description: ["Lost Cities, Twilight Forest, Fallout Wastelands, Finley, and Call From The Depths are routed through Creating Space."]
 		}
 		{
-			dependencies: ["4243E614A1329CE6"]
-			id: "F9DD8483B9E0C5F2"
+			dependencies: ["A3BD0DDEF6ED0325"]
+			id: "E38BFCA4E9BA3B4F"
+			title: "Recorder"
+			icon: "creatingspace:flight_recorder"
+			shape: "rsquare"
+			tasks: [{
+				id: "38481E8A4EABD57A"
+				item: "creatingspace:flight_recorder"
+				type: "item"
+			}]
+			x: -8.64d
+			y: -3.0d
+			description: ["Brass-casing flight hardware ties space access back to Create progression."]
+		}
+		{
+			dependencies: ["E38BFCA4E9BA3B4F"]
+			id: "D75B1E9CD31BC40F"
+			title: "Air"
+			icon: "creatingspace:air_liquefier"
+			shape: "rsquare"
+			tasks: [{
+				id: "B3197A80C0B0C37D"
+				item: "creatingspace:air_liquefier"
+				type: "item"
+			}]
+			x: -5.76d
+			y: -3.0d
+			description: ["Air liquefaction makes space prep an industrial process, not just a rocket icon."]
+		}
+		{
+			dependencies: ["D75B1E9CD31BC40F"]
+			id: "9A5C64EB7037230A"
 			title: "Casing"
 			icon: "kubejs:space_machine_casing"
 			shape: "square"
 			size: 1.05d
 			tasks: [{
-				id: "E65C30E7018F714D"
-				title: "Reach the space casing tier"
-				type: "checkmark"
+				id: "E008E72E7C979292"
+				item: "kubejs:space_machine_casing"
+				type: "item"
 			}]
-			x: -8.0d
-			y: -1.0d
-			description: ["The Casings chapter tracks the item. Here it marks the route where distance becomes a manufacturing requirement."]
+			x: -2.88d
+			y: -3.0d
+			description: ["Space casing marks distance as a manufacturing requirement."]
 		}
 		{
-			dependencies: ["F9DD8483B9E0C5F2"]
-			id: "1CC01D0695499EAD"
+			dependencies: ["9A5C64EB7037230A"]
+			id: "DE4D524CF80272D1"
+			title: "Moon"
+			icon: "minecraft:firework_rocket"
+			shape: "rsquare"
+			tasks: [{
+				id: "9502424AE961E6FB"
+				title: "Treat orbital routes as logistics"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: -4.0d
+			description: ["Space routes should extend supply chains, not skip them."]
+		}
+		{
+			dependencies: ["9A5C64EB7037230A"]
+			id: "990FBC2BE4DD42E2"
+			title: "Mars"
+			icon: "kubejs:space_machine_casing"
+			shape: "rsquare"
+			tasks: [{
+				id: "F5AED06C3988CC4C"
+				title: "Prepare for hostile distance"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: -2.5d
+			description: ["Later planets should demand better logistics, heat planning, and return planning."]
+		}
+		{
+			dependencies: ["DE4D524CF80272D1" "990FBC2BE4DD42E2"]
+			id: "12925948A84BF40B"
+			title: "Sky Stone"
+			icon: "ae2:sky_stone_block"
+			shape: "rsquare"
+			tasks: [{
+				id: "8D5B6859916F58EA"
+				item: "ae2:sky_stone_block"
+				type: "item"
+			}]
+			x: 2.88d
+			y: -3.0d
+			description: ["AE2 starts from meteor material, not abstract storage magic."]
+		}
+		{
+			dependencies: ["12925948A84BF40B"]
+			id: "18BB5327624EDB2D"
+			title: "Fluix"
+			icon: "ae2:fluix_crystal"
+			shape: "rsquare"
+			tasks: [{
+				id: "BAEEA9C74836713E"
+				item: "ae2:fluix_crystal"
+				type: "item"
+			}]
+			x: 5.76d
+			y: -4.0d
+			description: ["Fluix is the first AE2 identity material and should arrive late enough to matter."]
+		}
+		{
+			dependencies: ["12925948A84BF40B"]
+			id: "8E617A54B89E2EB3"
+			title: "Inscriber"
+			icon: "ae2:inscriber"
+			shape: "rsquare"
+			tasks: [{
+				id: "CCB65B28533D477A"
+				item: "ae2:inscriber"
+				type: "item"
+			}]
+			x: 5.76d
+			y: -2.5d
+			description: ["Inscribers make processors a manufacturing chain, not a shapeless shortcut."]
+		}
+		{
+			dependencies: ["8E617A54B89E2EB3"]
+			id: "B2C2EB0D25A694E4"
+			title: "Logic"
+			icon: "ae2:logic_processor"
+			shape: "rsquare"
+			tasks: [{
+				id: "ACE1EB4B422656A4"
+				item: "ae2:logic_processor"
+				type: "item"
+			}]
+			x: 8.64d
+			y: -4.0d
+			description: ["Logic processors bridge silicon and network control."]
+		}
+		{
+			dependencies: ["8E617A54B89E2EB3"]
+			id: "7A15771CDACE42EC"
+			title: "Engineer"
+			icon: "ae2:engineering_processor"
+			shape: "rsquare"
+			tasks: [{
+				id: "7FD20DA075D8AB5E"
+				item: "ae2:engineering_processor"
+				type: "item"
+			}]
+			x: 8.64d
+			y: -2.5d
+			description: ["Engineering processors carry machine authority into AE2 systems."]
+		}
+		{
+			dependencies: ["18BB5327624EDB2D" "B2C2EB0D25A694E4" "7A15771CDACE42EC"]
+			id: "86339E21F9017663"
 			title: "AE2"
 			icon: "ae2:controller"
 			shape: "rsquare"
 			size: 1.05d
 			tasks: [{
-				id: "C36A7E2114296EF9"
+				id: "7010EEC27F99411E"
 				item: "ae2:controller"
 				type: "item"
 			}]
-			x: -4.0d
-			y: -1.0d
-			rewards: [
-				{
-					id: "E6269BF956DE9B84"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
-			description: ["AE2 is late local intelligence. It should not erase the need for trains, routes, and intersite control."]
+			x: 11.52d
+			y: -3.25d
+			rewards: [{ id: "664D13F351314EE0" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
+			description: ["The recipe explorer shows the controller needs smooth sky stone, fluix, and an engineering processor."]
 		}
 		{
-			dependencies: ["1CC01D0695499EAD"]
-			id: "4533DAA5D28E7E14"
+			dependencies: ["86339E21F9017663"]
+			id: "552246EFD8BF3F2C"
 			title: "Raw"
 			icon: "kubejs:raw_impossible_casing"
 			shape: "diamond"
 			size: 1.05d
 			tasks: [{
-				id: "CA4349C91C6DD3A4"
-				title: "Stabilize unfinished impossible matter"
-				type: "checkmark"
+				id: "77D4113C27078A95"
+				item: "kubejs:raw_impossible_casing"
+				type: "item"
 			}]
-			x: 0.0d
-			y: -1.0d
-			description: ["Raw impossible work is an unfinished AE2 body. It should still require real pressure, processors, and material proof."]
+			x: 14.4d
+			y: -3.25d
+			description: ["Raw impossible work is an unfinished AE2 body requiring processors, pressure, and material proof."]
 		}
 		{
-			dependencies: ["4533DAA5D28E7E14"]
-			id: "F786934B03C31502"
+			dependencies: ["552246EFD8BF3F2C"]
+			id: "2BBA260233DB42E2"
+			title: "Cell"
+			icon: "ae2:item_cell_housing"
+			shape: "rsquare"
+			tasks: [{
+				id: "F61BF6A5C8BD728C"
+				item: "ae2:item_cell_housing"
+				type: "item"
+			}]
+			x: 17.28d
+			y: -5.0d
+			description: ["Cell housings mark storage as manufactured infrastructure."]
+		}
+		{
+			dependencies: ["2BBA260233DB42E2"]
+			id: "601091B3080FCF00"
+			title: "Drive"
+			icon: "ae2:drive"
+			shape: "rsquare"
+			tasks: [{
+				id: "B6F4D3A365D5974E"
+				item: "ae2:drive"
+				type: "item"
+			}]
+			x: 20.16d
+			y: -5.0d
+			description: ["Drives should not erase trains and routes; they consolidate local intelligence."]
+		}
+		{
+			dependencies: ["552246EFD8BF3F2C"]
+			id: "B9903B9513ACD50E"
 			title: "Final"
 			icon: "kubejs:impossible_machine_casing"
 			shape: "octagon"
 			size: 1.2d
 			tasks: [{
-				id: "6936211D0836057D"
-				title: "Reach the final machine-frame tier"
-				type: "checkmark"
+				id: "194156D016E3D2D0"
+				item: "kubejs:impossible_machine_casing"
+				type: "item"
 			}]
-			x: 4.0d
-			y: -1.0d
-			description: ["The final casing tier belongs to AE2-scale systems, high utility, and late Blood Magic hybrids."]
+			x: 17.28d
+			y: -2.0d
+			description: ["Impossible casing belongs to AE2-scale systems, high utility, and late Blood Magic hybrids."]
 		}
 		{
-			dependencies: ["F786934B03C31502"]
-			id: "2398CF84CF7B4F53"
+			dependencies: ["B9903B9513ACD50E"]
+			id: "E553185539A744D4"
 			title: "Depths"
 			icon: "minecraft:lava_bucket"
+			shape: "rsquare"
+			tasks: [{
+				id: "3A39936C41782005"
+				item: "minecraft:lava_bucket"
+				type: "item"
+			}]
+			x: 20.16d
+			y: -2.0d
+			description: ["Lava-depth osmiridium, uranium, and thorium require heat, mobs, gear, and return logistics."]
+		}
+		{
+			dependencies: ["E553185539A744D4"]
+			id: "76FB4905EE8E60D7"
+			title: "Uranium"
+			icon: "chemlib:uranium_ingot"
+			shape: "rsquare"
+			tasks: [{
+				id: "0BD877846A828551"
+				item: "chemlib:uranium_ingot"
+				type: "item"
+			}]
+			x: 23.04d
+			y: -3.5d
+			description: ["Uranium is not normal mining filler; it belongs to dangerous late geology."]
+		}
+		{
+			dependencies: ["E553185539A744D4"]
+			id: "60522A1EBE177440"
+			title: "Thorium"
+			icon: "chemlib:thorium_ingot"
+			shape: "rsquare"
+			tasks: [{
+				id: "216F635C933EABCB"
+				item: "chemlib:thorium_ingot"
+				type: "item"
+			}]
+			x: 23.04d
+			y: -2.0d
+			description: ["Thorium belongs beside nuclear chemistry and lava-depth expedition work."]
+		}
+		{
+			dependencies: ["601091B3080FCF00" "76FB4905EE8E60D7" "60522A1EBE177440"]
+			id: "920AFBA12E4C0196"
+			title: "Return"
+			icon: "minecraft:ender_chest"
 			shape: "hexagon"
 			size: 1.15d
 			tasks: [{
-				id: "264562868205E14C"
-				title: "Gear up before diving below Y 0"
+				id: "3259022529DD6234"
+				title: "Bring the expedition home"
 				type: "checkmark"
 			}]
-			x: 8.0d
-			y: -1.0d
-			description: ["Lava-depth osmiridium, uranium, and thorium are expedition materials. Prepare for heat, mobs, and return logistics."]
+			x: 25.92d
+			y: -2.75d
+			description: ["The endgame still respects the pack thesis: distance, logistics, bodies, and infrastructure matter."]
 		}
 	]
 	title: "Space, AE2, and Lava Depths"

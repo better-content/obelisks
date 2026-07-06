@@ -9,125 +9,294 @@
 	quest_links: [ ]
 	quests: [
 		{
-			id: "9251BAE20380A16B"
+			id: "CCE823C794059335"
 			title: "Fonts"
 			icon: "minecraft:book"
 			shape: "hexagon"
 			size: 1.15d
 			tasks: [{
-				id: "41A0480CF04DA980"
-				title: "Treat dimension fonts as the first dirty-magic surface"
+				id: "C1852B81147A544A"
+				title: "Treat dimension fonts as route surfaces"
 				type: "checkmark"
 			}]
-			x: -12.0d
-			y: -3.0d
-			description: ["Fonts lead into Hexerei and folk-alchemical setup. This spine starts with place, ritual, and route pressure."]
+			x: -11.52d
+			y: 0.0d
+			description: ["Dimension fonts begin dirty magic as place, route, ritual, and pressure."]
 		}
 		{
-			dependencies: ["9251BAE20380A16B"]
-			id: "2C5AFF7708D3181A"
+			dependencies: ["CCE823C794059335"]
+			id: "4F6E07C014B384B6"
+			title: "Hexerei"
+			icon: "hexerei:mixing_cauldron"
+			shape: "rsquare"
+			tasks: [{
+				id: "A8FBEB192C3D9B83"
+				item: "hexerei:mixing_cauldron"
+				type: "item"
+			}]
+			x: -8.64d
+			y: -4.0d
+			description: ["Hexerei cauldron work is folk alchemy: place-bound, material, and atmospheric."]
+		}
+		{
+			dependencies: ["4F6E07C014B384B6"]
+			id: "89BF23FEC51643A5"
+			title: "Mahogany"
+			icon: "hexerei:mahogany_sapling"
+			shape: "rsquare"
+			tasks: [{
+				id: "C9CF179A7B73EB7D"
+				item: "hexerei:mahogany_sapling"
+				type: "item"
+			}]
+			x: -5.76d
+			y: -4.0d
+			description: ["Mahogany routes matter because wood identity feeds magic infrastructure."]
+		}
+		{
+			dependencies: ["89BF23FEC51643A5"]
+			id: "F58727CBAA57D84C"
+			title: "Broom"
+			icon: "hexerei:mahogany_broom"
+			shape: "rsquare"
+			tasks: [{
+				id: "2C0D0D914F054EFA"
+				item: "hexerei:mahogany_broom"
+				type: "item"
+			}]
+			x: -2.88d
+			y: -4.0d
+			description: ["Brooms are mobility with ritual flavor, not generic flight before the pack earns it."]
+		}
+		{
+			dependencies: ["CCE823C794059335"]
+			id: "3A14D437A1D38C02"
 			title: "Pact"
 			icon: "occultism:dictionary_of_spirits"
 			shape: "rsquare"
-			size: 1.0d
 			tasks: [{
-				id: "D7CA061C576E50D2"
-				title: "Use Occultism for attunement and entity work"
-				type: "checkmark"
+				id: "9D73D883C258D646"
+				item: "occultism:dictionary_of_spirits"
+				type: "item"
 			}]
-			x: -8.0d
-			y: -3.0d
-			description: ["Occultism is not a passive miner shortcut. It is a dirty-magic branch for attunement, bindings, and risk."]
+			x: -8.64d
+			y: -1.5d
+			description: ["Occultism is attunement and entity work, not a passive miner bypass."]
 		}
 		{
-			id: "252D77510D44A4C7"
+			dependencies: ["3A14D437A1D38C02"]
+			id: "ED595E4C505AB4C5"
+			title: "Chalk"
+			icon: "occultism:chalk_white"
+			shape: "rsquare"
+			tasks: [{
+				id: "4DE7C6962C8FDBDE"
+				item: "occultism:chalk_white"
+				type: "item"
+			}]
+			x: -5.76d
+			y: -1.5d
+			description: ["Chalk makes rituals spatial and intentional."]
+		}
+		{
+			dependencies: ["ED595E4C505AB4C5"]
+			id: "7EE05287206646BF"
+			title: "Bowl"
+			icon: "occultism:golden_sacrificial_bowl"
+			shape: "rsquare"
+			tasks: [{
+				id: "50600F1422B5BA9C"
+				item: "occultism:golden_sacrificial_bowl"
+				type: "item"
+			}]
+			x: -2.88d
+			y: -1.5d
+			description: ["Sacrificial bowls emphasize risk and preparation before spirit binding."]
+		}
+		{
+			dependencies: ["CCE823C794059335"]
+			id: "711805EB7FB3B97D"
 			title: "Malum"
 			icon: "malum:spirit_altar"
-			shape: "hexagon"
-			size: 1.15d
+			shape: "rsquare"
 			tasks: [{
-				id: "84A296F542EBBFAE"
-				title: "Treat Malum as the Blood-side spirit branch"
-				type: "checkmark"
+				id: "CE33DB867C858C81"
+				item: "malum:spirit_altar"
+				type: "item"
 			}]
-			x: -12.0d
-			y: 3.0d
-			description: ["Blood Magic leads toward Malum's spirit work. Slates are proof, not interchangeable generic magic plates."]
+			x: -8.64d
+			y: 2.0d
+			description: ["Malum is the Blood-side spirit branch: slates and souls are proof, not interchangeable plates."]
 		}
 		{
-			dependencies: ["252D77510D44A4C7"]
-			id: "9DA64216FD6DD0EB"
+			dependencies: ["711805EB7FB3B97D"]
+			id: "C651E31C8857F83A"
+			title: "Spirit"
+			icon: "malum:spirit_jar"
+			shape: "rsquare"
+			tasks: [{
+				id: "E8D2A592CD8F308A"
+				item: "malum:spirit_jar"
+				type: "item"
+			}]
+			x: -5.76d
+			y: 2.0d
+			description: ["Spirit jars make captured essence into a handled resource."]
+		}
+		{
+			dependencies: ["C651E31C8857F83A"]
+			id: "095D6A4C4C57ABA5"
+			title: "Scythe"
+			icon: "malum:soul_stained_steel_scythe"
+			shape: "rsquare"
+			tasks: [{
+				id: "5F9326EE350FFC2F"
+				item: "malum:soul_stained_steel_scythe"
+				type: "item"
+			}]
+			x: -2.88d
+			y: 2.0d
+			description: ["Soul-stained tools should feel like a dark-material milestone."]
+		}
+		{
+			dependencies: ["711805EB7FB3B97D"]
+			id: "42C10D6629B6D28A"
 			title: "Goety"
 			icon: "goety:dark_altar"
 			shape: "rsquare"
-			size: 1.0d
 			tasks: [{
-				id: "DC14153D11D6D072"
-				title: "Escalate through dangerous command magic"
-				type: "checkmark"
+				id: "D561AED3E4C2EC84"
+				item: "goety:dark_altar"
+				type: "item"
 			}]
-			x: -8.0d
-			y: 3.0d
-			description: ["Goety belongs to high-danger command work, not early convenience crafting."]
+			x: -8.64d
+			y: 5.0d
+			description: ["Goety is high-danger command magic, not early convenience crafting."]
 		}
 		{
-			id: "600B0B09D437A0AA"
+			dependencies: ["42C10D6629B6D28A"]
+			id: "CB17C8EE341E7C49"
+			title: "Focus"
+			icon: "goety:empty_focus"
+			shape: "rsquare"
+			tasks: [{
+				id: "B99D07410BB61C89"
+				item: "goety:empty_focus"
+				type: "item"
+			}]
+			x: -5.76d
+			y: 5.0d
+			description: ["Foci turn command magic into specific dangerous capabilities."]
+		}
+		{
+			dependencies: ["CCE823C794059335"]
+			id: "61DF7A5803F5A8CF"
 			title: "Ars"
 			icon: "ars_nouveau:worn_notebook"
 			shape: "diamond"
 			size: 1.05d
 			tasks: [{
-				id: "C641B4DFD4150037"
+				id: "E0918E0D2D817441"
 				item: "ars_nouveau:worn_notebook"
 				type: "item"
 			}]
-			x: -12.0d
+			x: 0.0d
 			y: 0.0d
-			rewards: [
-				{
-					id: "D804F970BE896E13"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
-			description: ["The notebook can appear early, but meaningful glyph access is authored through manuscripts and cross-spine proofs."]
+			rewards: [{ id: "1B0AF4A9C4C0114C" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
+			description: ["The notebook can appear early, but meaningful glyph access is authored through manuscripts and cross-spine proof."]
 		}
 		{
-			dependencies: [
-				"9251BAE20380A16B"
-				"252D77510D44A4C7"
-				"600B0B09D437A0AA"
-			]
-			id: "E59751E81AA2BB0A"
+			dependencies: ["61DF7A5803F5A8CF"]
+			id: "C43AA03C2209FA3E"
+			title: "Source"
+			icon: "ars_nouveau:source_jar"
+			shape: "rsquare"
+			tasks: [{
+				id: "B31BFFAD46FE8504"
+				item: "ars_nouveau:source_jar"
+				type: "item"
+			}]
+			x: 2.88d
+			y: 0.0d
+			description: ["Source jars make Ars infrastructure physical and locatable."]
+		}
+		{
+			dependencies: ["F58727CBAA57D84C" "7EE05287206646BF" "095D6A4C4C57ABA5" "CB17C8EE341E7C49" "C43AA03C2209FA3E"]
+			id: "EF3FCCBEA1B19672"
 			title: "Script"
 			icon: "minecraft:paper"
 			shape: "octagon"
 			size: 1.2d
 			tasks: [{
-				id: "908444F6C67BCF8A"
+				id: "AF15C0574177CFC8"
 				title: "Craft glyph access from both dirty spines"
 				type: "checkmark"
 			}]
-			x: -3.0d
+			x: 5.76d
 			y: 0.0d
-			description: ["Ars becomes formal magic by spending authored manuscripts, slates, ritual materials, and precision control."]
+			description: ["Manuscripts are the merge: Ars becomes formal magic by spending ritual and slate proof."]
 		}
 		{
-			dependencies: ["E59751E81AA2BB0A"]
-			id: "6E22489F5EE3161A"
+			dependencies: ["EF3FCCBEA1B19672"]
+			id: "65BF28B6840B359C"
 			title: "Spell"
-			icon: "minecraft:enchanted_book"
+			icon: "irons_spellbooks:iron_spell_book"
 			shape: "hexagon"
 			size: 1.15d
 			tasks: [{
-				id: "5DAB50EE2EF2AB43"
-				title: "Combine slates, source, cauldrons, spirits, and rituals"
+				id: "0F7CE4DA079111A5"
+				item: "irons_spellbooks:iron_spell_book"
+				type: "item"
+			}]
+			x: 8.64d
+			y: 0.0d
+			description: ["Iron's spellbooks are the cross-magic outlet for slates, source, cauldrons, spirits, and rituals."]
+		}
+		{
+			dependencies: ["65BF28B6840B359C"]
+			id: "885E88450D25E2DC"
+			title: "Ink"
+			icon: "irons_spellbooks:common_ink"
+			shape: "rsquare"
+			tasks: [{
+				id: "1E771BF735D4FA0C"
+				item: "irons_spellbooks:common_ink"
+				type: "item"
+			}]
+			x: 11.52d
+			y: -2.0d
+			description: ["Ink and scroll materials give spell progression a material cadence."]
+		}
+		{
+			dependencies: ["65BF28B6840B359C"]
+			id: "04D31A9636DC517C"
+			title: "Scroll"
+			icon: "irons_spellbooks:scroll"
+			shape: "rsquare"
+			tasks: [{
+				id: "5E1829691AE5DFC8"
+				item: "irons_spellbooks:scroll"
+				type: "item"
+			}]
+			x: 11.52d
+			y: 2.0d
+			description: ["Scrolls are portable spell knowledge; they belong after manuscript gating."]
+		}
+		{
+			dependencies: ["885E88450D25E2DC" "04D31A9636DC517C"]
+			id: "549CB984F5C3F088"
+			title: "Hybrid"
+			icon: "minecraft:enchanted_book"
+			shape: "octagon"
+			size: 1.15d
+			tasks: [{
+				id: "886519E54EEB38BD"
+				title: "Keep magic branches cross-fed"
 				type: "checkmark"
 			}]
-			x: 1.0d
+			x: 14.4d
 			y: 0.0d
-			description: ["Iron's spellcraft is the cross-magic branch: Blood Magic tier proof plus Ars, Hexerei, Malum, Goety, and related reagents."]
+			description: ["The goal is not five isolated magic mods; it is a web where each branch pays into the others."]
 		}
 	]
 	title: "Fonts and Dirty Magic"

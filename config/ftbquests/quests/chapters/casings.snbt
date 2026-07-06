@@ -3,161 +3,356 @@
 	default_quest_shape: ""
 	filename: "casings"
 	group: "2DFE3653F3B634B9"
+	icon: "kubejs:seared_machine_casing"
 	id: "2F2A6A4D994908A4"
 	order_index: 0
 	quest_links: [ ]
 	quests: [
 		{
-			id: "49B82DA1BC9F5AB7"
-			size: 2.0d
+			id: "FF2CD75C29493AC2"
+			title: "Seared"
+			icon: "kubejs:seared_machine_casing"
+			shape: "hexagon"
+			size: 1.3d
 			tasks: [{
-				id: "77E56F3A084FA169"
+				id: "AF497812E8C76BF0"
 				item: "kubejs:seared_machine_casing"
 				type: "item"
 			}]
-			x: -12.0d
-			y: -1.0d
-			rewards: [
-				{
-					id: "EC1D8804193AFF12"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
+			x: -12.96d
+			y: 0.0d
+			rewards: [{ id: "62FFE5840CE0E513" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
+			description: ["Tier 1: TCon molten work. This is the first machine body tier."]
 		}
 		{
-			id: "2BCF124AA82C8524"
-			size: 2.0d
+			dependencies: ["FF2CD75C29493AC2"]
+			id: "F869224DD9645047"
+			title: "Melter"
+			icon: "tconstruct:seared_melter"
+			shape: "rsquare"
 			tasks: [{
-				id: "06B3C4E255C589AE"
+				id: "D37A2AC4CDF7E428"
+				item: "tconstruct:seared_melter"
+				type: "item"
+			}]
+			x: -10.08d
+			y: -3.5d
+			description: ["Seared melters prove controlled heat before broad automation."]
+		}
+		{
+			dependencies: ["F869224DD9645047"]
+			id: "0BE569D61AC4897C"
+			title: "Casting"
+			icon: "tconstruct:seared_casting_tank"
+			shape: "rsquare"
+			tasks: [{
+				id: "6A24E1CFE018278B"
+				item: "tconstruct:seared_casting_tank"
+				type: "item"
+			}]
+			x: -7.2d
+			y: -3.5d
+			description: ["Casting tables and basins make parts physical and reusable."]
+		}
+		{
+			dependencies: ["FF2CD75C29493AC2"]
+			id: "F5F62E013FC2AC80"
+			title: "Andesite"
+			icon: "kubejs:andesite_machine_casing"
+			shape: "hexagon"
+			size: 1.25d
+			tasks: [{
+				id: "BF3D2010E14EAF00"
 				item: "kubejs:andesite_machine_casing"
 				type: "item"
 			}]
-			x: -8.0d
-			y: -1.0d
-			rewards: [
-				{
-					id: "8E6AB7EF0D892081"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
+			x: -10.08d
+			y: 0.0d
+			rewards: [{ id: "8AF3C5A2BAAE4A8C" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
+			description: ["Tier 2: Create andesite. Rotation becomes the pack's first automation language."]
 		}
 		{
-			id: "0E94611AC5C8695D"
-			size: 2.0d
+			dependencies: ["F5F62E013FC2AC80"]
+			id: "A0F2ED2051CC1F98"
+			title: "Create Case"
+			icon: "create:andesite_casing"
+			shape: "rsquare"
 			tasks: [{
-				id: "06AC0C6C573D2851"
+				id: "C65961A6A91692FB"
+				item: "create:andesite_casing"
+				type: "item"
+			}]
+			x: -7.2d
+			y: 0.0d
+			description: ["Recipe explorer shows andesite casing unlocks presses, mixers, fans, drills, saws, controls, and Power Grid support."]
+		}
+		{
+			dependencies: ["A0F2ED2051CC1F98"]
+			id: "C341771CF4337951"
+			title: "Press"
+			icon: "create:mechanical_press"
+			shape: "rsquare"
+			tasks: [{
+				id: "094C78AF061A7D11"
+				item: "create:mechanical_press"
+				type: "item"
+			}]
+			x: -4.32d
+			y: -1.5d
+			description: ["Pressing is the first serious manufactured-part surface."]
+		}
+		{
+			dependencies: ["A0F2ED2051CC1F98"]
+			id: "A23D8E6A5823FD6E"
+			title: "Brass"
+			icon: "kubejs:brass_machine_casing"
+			shape: "hexagon"
+			size: 1.25d
+			tasks: [{
+				id: "0D3FFBFEC62AEAFC"
 				item: "kubejs:brass_machine_casing"
 				type: "item"
 			}]
-			x: -6.0d
-			y: -1.0d
-			rewards: [
-				{
-					id: "AB31C4BF606DCCF8"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
+			x: -4.32d
+			y: 1.5d
+			rewards: [{ id: "E3CF9AD4A78AF936" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
+			description: ["Tier 3: Create brass. Precision and logistics become controlled systems."]
 		}
 		{
-			id: "125B604E03729DF1"
-			size: 2.0d
+			dependencies: ["A23D8E6A5823FD6E"]
+			id: "8369DE2CC1CAF0B6"
+			title: "Brass Case"
+			icon: "create:brass_casing"
+			shape: "rsquare"
 			tasks: [{
-				id: "3275D75E3102D92B"
+				id: "934A9B94A6E6B3CD"
+				item: "create:brass_casing"
+				type: "item"
+			}]
+			x: -1.44d
+			y: 1.5d
+			description: ["Recipe explorer shows brass casing feeds mechanical arms, display links, railway casing, and Creating Space parts."]
+		}
+		{
+			dependencies: ["8369DE2CC1CAF0B6"]
+			id: "0ECB096D79FEF79D"
+			title: "Precision"
+			icon: "create:precision_mechanism"
+			shape: "rsquare"
+			tasks: [{
+				id: "ADD4E6EBA6A0B986"
+				item: "create:precision_mechanism"
+				type: "item"
+			}]
+			x: 1.44d
+			y: 1.5d
+			description: ["Precision mechanisms turn Create from rotation into repeatable assembly."]
+		}
+		{
+			dependencies: ["C341771CF4337951" "0ECB096D79FEF79D"]
+			id: "E767D2D9AD86FB78"
+			title: "Airtight"
+			icon: "kubejs:airtight_machine_casing"
+			shape: "hexagon"
+			size: 1.25d
+			tasks: [{
+				id: "9998F4084D486F66"
 				item: "kubejs:airtight_machine_casing"
 				type: "item"
 			}]
-			x: -4.0d
-			y: -1.0d
-			rewards: [
-				{
-					id: "B7FEC5EBA6D73854"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
+			x: 1.44d
+			y: -1.5d
+			rewards: [{ id: "BD5F1459FB2244AB" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
+			description: ["Tier 4: PneumaticCraft pressure. Sealed work, gas, and plastics become authoritative."]
 		}
 		{
-			id: "6F7D87B352B48873"
-			size: 2.0d
+			dependencies: ["E767D2D9AD86FB78"]
+			id: "E2755613741D999E"
+			title: "Chamber"
+			icon: "pneumaticcraft:pressure_chamber_valve"
+			shape: "rsquare"
 			tasks: [{
-				id: "3080A7F732D27D65"
+				id: "13BCF4A1F4703D8B"
+				item: "pneumaticcraft:pressure_chamber_valve"
+				type: "item"
+			}]
+			x: 4.32d
+			y: -2.5d
+			description: ["Pressure chambers gate sealed chemistry, plastics, and circuit precursors."]
+		}
+		{
+			dependencies: ["E2755613741D999E"]
+			id: "4350E20F074AF6C8"
+			title: "PCB"
+			icon: "pneumaticcraft:printed_circuit_board"
+			shape: "rsquare"
+			tasks: [{
+				id: "C78F454242423F96"
+				item: "pneumaticcraft:printed_circuit_board"
+				type: "item"
+			}]
+			x: 7.2d
+			y: -2.5d
+			description: ["Printed boards fan out into PNCR assembly, drones, security, armor, and compressors."]
+		}
+		{
+			dependencies: ["4350E20F074AF6C8"]
+			id: "758F565471A67CA4"
+			title: "Electrical"
+			icon: "kubejs:electrical_machine_casing"
+			shape: "hexagon"
+			size: 1.25d
+			tasks: [{
+				id: "7FB8DEAE30813973"
 				item: "kubejs:electrical_machine_casing"
 				type: "item"
 			}]
-			x: -2.0d
-			y: -1.0d
-			rewards: [
-				{
-					id: "CAD82216F7112DD6"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
+			x: 7.2d
+			y: 0.5d
+			rewards: [{ id: "51263BF43F447403" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
+			description: ["Tier 5: Power Grid, PNCR assembly, and OC2R merge into electrical control."]
 		}
 		{
-			id: "14B319B38697869E"
-			size: 2.0d
+			dependencies: ["758F565471A67CA4"]
+			id: "7EE29CEBA05BCDB6"
+			title: "Battery"
+			icon: "powergrid:battery"
+			shape: "rsquare"
 			tasks: [{
-				id: "5BE8C4E1722274E6"
+				id: "59CFD2D635A6CD81"
+				item: "powergrid:battery"
+				type: "item"
+			}]
+			x: 10.08d
+			y: 0.5d
+			description: ["Power storage turns pressure-era parts into an electrical control lane."]
+		}
+		{
+			dependencies: ["7EE29CEBA05BCDB6"]
+			id: "ABE28E6F91BCE9AB"
+			title: "OC2R"
+			icon: "oc2r:computer"
+			shape: "rsquare"
+			tasks: [{
+				id: "9AD19C91EAFE821B"
+				item: "oc2r:computer"
+				type: "item"
+			}]
+			x: 12.96d
+			y: 0.5d
+			description: ["OC2R gives intersite information without deleting physical logistics."]
+		}
+		{
+			dependencies: ["ABE28E6F91BCE9AB"]
+			id: "71781B17892A20AF"
+			title: "Space"
+			icon: "kubejs:space_machine_casing"
+			shape: "hexagon"
+			size: 1.25d
+			tasks: [{
+				id: "281B749D7CFF7174"
 				item: "kubejs:space_machine_casing"
 				type: "item"
 			}]
-			x: 2.0d
-			y: -1.0d
-			rewards: [
-				{
-					id: "B116BC162332233B"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
+			x: 12.96d
+			y: -2.5d
+			rewards: [{ id: "1A01B4E56ED62278" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
+			description: ["Tier 6: Creating Space. Distance becomes a manufacturing requirement."]
 		}
 		{
-			id: "5E92218594EE6350"
-			size: 2.0d
+			dependencies: ["71781B17892A20AF"]
+			id: "4783965745122BF0"
+			title: "Rocket"
+			icon: "minecraft:firework_rocket"
+			shape: "rsquare"
 			tasks: [{
-				id: "4ACA627BCD9E4ECC"
+				id: "DB5DDA5A16AC970C"
+				item: "minecraft:firework_rocket"
+				type: "item"
+			}]
+			x: 15.84d
+			y: -3.5d
+			description: ["Rockets are route gates into late dimensions and expedition logistics."]
+		}
+		{
+			dependencies: ["71781B17892A20AF"]
+			id: "79111EEB3696ADBC"
+			title: "AE2"
+			icon: "ae2:controller"
+			shape: "rsquare"
+			tasks: [{
+				id: "EAD07213BBDBC435"
+				item: "ae2:controller"
+				type: "item"
+			}]
+			x: 15.84d
+			y: 0.0d
+			description: ["AE2 is late local intelligence after space, pressure, and processors prove readiness."]
+		}
+		{
+			dependencies: ["79111EEB3696ADBC"]
+			id: "28AB7A8097E6F946"
+			title: "Raw"
+			icon: "kubejs:raw_impossible_casing"
+			shape: "diamond"
+			size: 1.1d
+			tasks: [{
+				id: "D7FCAC9E72B95C98"
 				item: "kubejs:raw_impossible_casing"
 				type: "item"
 			}]
-			x: 4.0d
-			y: -1.0d
-			rewards: [
-				{
-					id: "FB378420314BC6F5"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
+			x: 18.72d
+			y: 0.0d
+			rewards: [{ id: "1B3F5F6EDE3882AF" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
+			description: ["Tier 7: raw impossible. AE2 body plus unstable high-tier material proof."]
 		}
 		{
-			id: "7BC901BE89CC089B"
-			size: 2.0d
+			dependencies: ["28AB7A8097E6F946"]
+			id: "75F5E8AAF6EEE1F1"
+			title: "Impossible"
+			icon: "kubejs:impossible_machine_casing"
+			shape: "octagon"
+			size: 1.3d
 			tasks: [{
-				id: "1BA421DCB34F289F"
+				id: "D249F59E9F7BDB3F"
 				item: "kubejs:impossible_machine_casing"
 				type: "item"
 			}]
-			x: 6.0d
-			y: -1.0d
-			rewards: [
-				{
-					id: "DE6CA41B2C69AD3E"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
+			x: 21.6d
+			y: 0.0d
+			rewards: [{ id: "637ACC905A9EB445" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
+			description: ["Tier 8: final machine frame for AE2-scale systems, high utility, and late Blood Magic hybrids."]
+		}
+		{
+			dependencies: ["75F5E8AAF6EEE1F1"]
+			id: "607B4349D7820175"
+			title: "Support"
+			icon: "kubejs:impossible_support_matrix"
+			shape: "rsquare"
+			tasks: [{
+				id: "D9792ACC206644AB"
+				item: "kubejs:impossible_support_matrix"
+				type: "item"
+			}]
+			x: 24.48d
+			y: -1.5d
+			description: ["Support matrices keep late utility attached to the casing economy rather than direct bypasses."]
+		}
+		{
+			dependencies: ["607B4349D7820175"]
+			id: "3CC0674AF719C010"
+			title: "Thesis"
+			icon: "minecraft:nether_star"
+			shape: "hexagon"
+			size: 1.15d
+			tasks: [{
+				id: "17BB5098BA682EB2"
+				title: "Read the casing thesis"
+				type: "checkmark"
+			}]
+			x: 27.36d
+			y: -1.5d
+			description: ["Every tier should add a real manufacturing surface and pull earlier systems forward."]
 		}
 	]
 	title: "Casings"

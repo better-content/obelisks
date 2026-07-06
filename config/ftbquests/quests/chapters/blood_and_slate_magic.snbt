@@ -9,171 +9,310 @@
 	quest_links: [ ]
 	quests: [
 		{
-			id: "848241D2FEE82D2A"
+			id: "5E8C58F53FE60C34"
 			title: "Life"
 			icon: "rpgstats:still_beating_heart"
 			shape: "diamond"
-			size: 1.25d
+			size: 1.2d
 			tasks: [{
-				id: "F1F360ADC9C5E105"
+				id: "140A4CB41E295769"
 				item: "rpgstats:still_beating_heart"
 				type: "item"
 			}]
-			x: -12.0d
+			x: -11.52d
 			y: 0.0d
-			rewards: [
-				{
-					id: "30AC09164CDFE3C1"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
-			description: ["Blood Magic starts from a lived run, not a cheap grid recipe. The first heart proves distance and risk."]
+			rewards: [{ id: "52A61DDCDA53ABB6" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
+			description: ["Blood Magic starts from a lived run and a still-beating heart."]
 		}
 		{
-			dependencies: ["848241D2FEE82D2A"]
-			id: "CE10C1DE644DB579"
+			dependencies: ["5E8C58F53FE60C34"]
+			id: "58A2AE3B417830D2"
+			title: "Altar"
+			icon: "bloodmagic:altar"
+			shape: "rsquare"
+			tasks: [{
+				id: "699C640AB41619E5"
+				item: "bloodmagic:altar"
+				type: "item"
+			}]
+			x: -8.64d
+			y: 0.0d
+			description: ["The altar is infrastructure, not a cheap grid recipe."]
+		}
+		{
+			dependencies: ["58A2AE3B417830D2"]
+			id: "D513EA0E9E295123"
 			title: "Orb"
 			icon: "bloodmagic:weakbloodorb"
 			shape: "hexagon"
 			size: 1.1d
 			tasks: [{
-				id: "BD8549B6EF46DC6F"
+				id: "8728026E96715F0B"
 				item: "bloodmagic:weakbloodorb"
 				type: "item"
 			}]
-			x: -8.0d
+			x: -5.76d
 			y: 0.0d
-			rewards: [
-				{
-					id: "831A726EE0A0112E"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
-			description: ["The weak orb opens LP work. It does not make hearts a spam ingredient; it starts the altar loop."]
+			rewards: [{ id: "5295F392881D61A8" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
+			description: ["The weak orb opens LP control and starts the altar loop."]
 		}
 		{
-			dependencies: ["CE10C1DE644DB579"]
-			id: "2BD70F2DF5E45E4A"
+			dependencies: ["D513EA0E9E295123"]
+			id: "60F64C34880C7515"
+			title: "Knife"
+			icon: "bloodmagic:sacrificialdagger"
+			shape: "rsquare"
+			tasks: [{
+				id: "C41643613E27056D"
+				item: "bloodmagic:sacrificialdagger"
+				type: "item"
+			}]
+			x: -2.88d
+			y: -3.0d
+			description: ["Sacrifice converts the body loop into controlled resource pressure."]
+		}
+		{
+			dependencies: ["D513EA0E9E295123"]
+			id: "830ECC6DF2B4B54E"
 			title: "Blank"
 			icon: "bloodmagic:blankslate"
 			shape: "rsquare"
-			size: 1.0d
 			tasks: [{
-				id: "03FE7E42A93A8984"
+				id: "B9EEFA3C81651012"
 				item: "bloodmagic:blankslate"
 				type: "item"
 			}]
-			x: -4.0d
-			y: -2.0d
-			rewards: [
-				{
-					id: "85708959A3073340"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
-			description: ["Blank slates are early life-force proof for simple magic, runes, and manual yield routes."]
+			x: -2.88d
+			y: 0.0d
+			description: ["Blank slates are the first durable proof of LP work."]
 		}
 		{
-			dependencies: ["2BD70F2DF5E45E4A"]
-			id: "66157F64A76E144A"
-			title: "Reinforce"
-			icon: "bloodmagic:reinforcedslate"
+			dependencies: ["830ECC6DF2B4B54E"]
+			id: "6872D96759A68336"
+			title: "Rune"
+			icon: "bloodmagic:blankrune"
 			shape: "rsquare"
-			size: 1.0d
 			tasks: [{
-				id: "5374AE5195F2BD19"
-				item: "bloodmagic:reinforcedslate"
+				id: "C02845A11E862738"
+				item: "bloodmagic:blankrune"
 				type: "item"
 			}]
 			x: 0.0d
-			y: -1.0d
-			rewards: [
-				{
-					id: "BA3C13D8F2E97BAF"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
-			description: ["Reinforced slates start stronger apparatus, cross-magic runes, and more deliberate altar investment."]
+			y: 0.0d
+			description: ["Runes turn the altar from a block into a built system."]
 		}
 		{
-			dependencies: ["66157F64A76E144A"]
-			id: "1FC1AEBCAAEC1D27"
+			dependencies: ["830ECC6DF2B4B54E"]
+			id: "40943AEFED5981B5"
+			title: "Divination"
+			icon: "bloodmagic:divinationsigil"
+			shape: "rsquare"
+			tasks: [{
+				id: "334E1EDC5E330D32"
+				item: "bloodmagic:divinationsigil"
+				type: "item"
+			}]
+			x: 0.0d
+			y: -3.0d
+			description: ["Sigils make invisible LP state readable, which is crucial for deliberate altar play."]
+		}
+		{
+			dependencies: ["6872D96759A68336"]
+			id: "EDFF6FCCAC8EF9E5"
+			title: "Reinforce"
+			icon: "bloodmagic:reinforcedslate"
+			shape: "rsquare"
+			tasks: [{
+				id: "73F4BA905253CC2B"
+				item: "bloodmagic:reinforcedslate"
+				type: "item"
+			}]
+			x: 2.88d
+			y: 0.0d
+			rewards: [{ id: "B68214BF84F45752" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
+			description: ["Reinforced slates start stronger apparatus and cross-magic recipes."]
+		}
+		{
+			dependencies: ["EDFF6FCCAC8EF9E5"]
+			id: "DD5360E63AA1F7A3"
+			title: "Alchemy"
+			icon: "bloodmagic:alchemytable"
+			shape: "rsquare"
+			tasks: [{
+				id: "B02E4404DD13F0F1"
+				item: "bloodmagic:alchemytable"
+				type: "item"
+			}]
+			x: 2.88d
+			y: -3.0d
+			description: ["Blood alchemy provides manual high-yield alternatives without becoming passive throughput."]
+		}
+		{
+			dependencies: ["EDFF6FCCAC8EF9E5" "DD5360E63AA1F7A3"]
+			id: "11A8E946F5842F9D"
+			title: "Apprentice"
+			icon: "bloodmagic:apprenticebloodorb"
+			shape: "rsquare"
+			tasks: [{
+				id: "19799AAE5BB0AF05"
+				item: "bloodmagic:apprenticebloodorb"
+				type: "item"
+			}]
+			x: 5.76d
+			y: -1.5d
+			description: ["Orb tiers should feel like altar commitment, not simple item upgrades."]
+		}
+		{
+			dependencies: ["11A8E946F5842F9D"]
+			id: "9A82772C59AEEF55"
 			title: "Infuse"
 			icon: "bloodmagic:infusedslate"
-			shape: "square"
-			size: 1.05d
+			shape: "rsquare"
 			tasks: [{
-				id: "130FDD32D2C189EC"
+				id: "DC080287212B09EB"
 				item: "bloodmagic:infusedslate"
 				type: "item"
 			}]
-			x: 4.0d
-			y: 0.0d
-			rewards: [
-				{
-					id: "9C5991B07860C04E"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
-			description: ["Infused slates carry higher Blood Magic, chemistry alternatives, and mid-tier cross-magic work."]
+			x: 8.64d
+			y: -1.5d
+			description: ["Infused slates connect Blood Magic to chemistry and mid-tier cross-magic."]
 		}
 		{
-			dependencies: ["1FC1AEBCAAEC1D27"]
-			id: "64B31AE5BADE3815"
+			dependencies: ["9A82772C59AEEF55"]
+			id: "B0B81738655E1CBB"
+			title: "Ritual"
+			icon: "bloodmagic:masterritualstone"
+			shape: "rsquare"
+			tasks: [{
+				id: "0ABB72296ADEC6AE"
+				item: "bloodmagic:masterritualstone"
+				type: "item"
+			}]
+			x: 8.64d
+			y: -4.0d
+			description: ["Rituals are built commitments with space, structure, and maintenance cost."]
+		}
+		{
+			dependencies: ["9A82772C59AEEF55"]
+			id: "804201B62AF34667"
+			title: "Magician"
+			icon: "bloodmagic:magicianbloodorb"
+			shape: "rsquare"
+			tasks: [{
+				id: "50FD53E773FB9A99"
+				item: "bloodmagic:magicianbloodorb"
+				type: "item"
+			}]
+			x: 11.52d
+			y: -1.5d
+			description: ["The magician orb marks reliable midgame LP authority."]
+		}
+		{
+			dependencies: ["804201B62AF34667"]
+			id: "64EE84D0DB9C887D"
 			title: "Demon"
 			icon: "bloodmagic:demonslate"
 			shape: "hexagon"
 			size: 1.1d
 			tasks: [{
-				id: "32EFEDF55B775924"
+				id: "CA53C5147952A94B"
 				item: "bloodmagic:demonslate"
 				type: "item"
 			}]
-			x: 8.0d
-			y: 1.0d
-			rewards: [
-				{
-					id: "9638A0172857D677"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
-			description: ["Demon slates prove dangerous command work and late dirty-magic authority."]
+			x: 14.4d
+			y: -1.5d
+			description: ["Demon slates prove dangerous command work and dirty-magic authority."]
 		}
 		{
-			dependencies: ["64B31AE5BADE3815"]
-			id: "1EC17FEEB640FB4B"
+			dependencies: ["64EE84D0DB9C887D"]
+			id: "7537B1C6F801B0BA"
 			title: "Ethereal"
 			icon: "bloodmagic:etherealslate"
 			shape: "octagon"
 			size: 1.2d
 			tasks: [{
-				id: "0FA1F4F783AD1F3E"
+				id: "CBAADCE38983691C"
 				item: "bloodmagic:etherealslate"
 				type: "item"
 			}]
-			x: 12.0d
-			y: 1.0d
-			rewards: [
-				{
-					id: "11667930807B2183"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
+			x: 17.28d
+			y: -1.5d
 			description: ["Ethereal slate belongs with programmable, networked, or post-AE2 hybrid magic."]
+		}
+		{
+			dependencies: ["7537B1C6F801B0BA"]
+			id: "498AA8DA50E8CA57"
+			title: "Archmage"
+			icon: "bloodmagic:archmagebloodorb"
+			shape: "rsquare"
+			tasks: [{
+				id: "4E6EDAFDB7EF1CCE"
+				item: "bloodmagic:archmagebloodorb"
+				type: "item"
+			}]
+			x: 20.16d
+			y: -1.5d
+			description: ["The archmage orb is a late Blood Magic finisher tied to the pack's high-tier proof graph."]
+		}
+		{
+			dependencies: ["11A8E946F5842F9D"]
+			id: "8D256F0B203C6C80"
+			title: "Tome"
+			icon: "tomeofblood:novice_tome_of_blood"
+			shape: "rsquare"
+			tasks: [{
+				id: "6487A795E31495B6"
+				item: "tomeofblood:novice_tome_of_blood"
+				type: "item"
+			}]
+			x: 11.52d
+			y: 2.0d
+			description: ["Tome of Blood is the hybrid line where Ars spellbooks meet Blood Magic authority."]
+		}
+		{
+			dependencies: ["8D256F0B203C6C80"]
+			id: "79D168E33055BB18"
+			title: "Source"
+			icon: "ars_nouveau:source_gem"
+			shape: "rsquare"
+			tasks: [{
+				id: "C889E18E86143C72"
+				item: "ars_nouveau:source_gem"
+				type: "item"
+			}]
+			x: 14.4d
+			y: 2.0d
+			description: ["Source work should connect to Blood proof rather than becoming a separate free magic lane."]
+		}
+		{
+			dependencies: ["79D168E33055BB18"]
+			id: "828C1B8953E26A0B"
+			title: "Binding"
+			icon: "bloodmagic:soulsnare"
+			shape: "rsquare"
+			tasks: [{
+				id: "164BC61C3EF282B4"
+				item: "bloodmagic:soulsnare"
+				type: "item"
+			}]
+			x: 17.28d
+			y: 2.0d
+			description: ["Binding and snares make entity risk part of late magic, not just crafting tax."]
+		}
+		{
+			dependencies: ["828C1B8953E26A0B" "498AA8DA50E8CA57"]
+			id: "AD63D83FF48B29EB"
+			title: "Sigil"
+			icon: "bloodmagic:sigilofholding"
+			shape: "rsquare"
+			tasks: [{
+				id: "D4ADCE410A0B12AC"
+				item: "bloodmagic:sigilofholding"
+				type: "item"
+			}]
+			x: 20.16d
+			y: 2.0d
+			description: ["Sigil utility should arrive after the player understands LP as infrastructure."]
 		}
 	]
 	title: "Blood and Slate Magic"

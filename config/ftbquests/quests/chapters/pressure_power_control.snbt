@@ -9,139 +9,312 @@
 	quest_links: [ ]
 	quests: [
 		{
-			id: "B9B81CA3194F7EFC"
+			id: "7BA3BC1109BE6EFA"
 			title: "Iron"
 			icon: "pneumaticcraft:ingot_iron_compressed"
 			shape: "hexagon"
 			size: 1.15d
 			tasks: [{
-				id: "C1D672C1059BA038"
+				id: "EB232C5CDC56F4A3"
 				item: "pneumaticcraft:ingot_iron_compressed"
 				type: "item"
 			}]
-			x: -12.0d
+			x: -11.52d
 			y: 0.0d
-			rewards: [
-				{
-					id: "09235B35869185B8"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
-			description: ["Compressed iron marks the pressure era. The pack routes it through authored manufacturing instead of shortcuts."]
+			rewards: [{ id: "F4628718B1745B37" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
+			description: ["Compressed iron marks the pressure era and should come from authored manufacturing."]
 		}
 		{
-			dependencies: ["B9B81CA3194F7EFC"]
-			id: "88EFC171EF15E8AC"
+			dependencies: ["7BA3BC1109BE6EFA"]
+			id: "064CFC665D86BAD3"
+			title: "Tube"
+			icon: "pneumaticcraft:pressure_tube"
+			shape: "rsquare"
+			tasks: [{
+				id: "E023DFFBA0CA3745"
+				item: "pneumaticcraft:pressure_tube"
+				type: "item"
+			}]
+			x: -8.64d
+			y: -3.0d
+			description: ["Pressure tubes make air a routed local system."]
+		}
+		{
+			dependencies: ["7BA3BC1109BE6EFA"]
+			id: "0937583E1460B930"
+			title: "Gauge"
+			icon: "pneumaticcraft:pressure_gauge"
+			shape: "rsquare"
+			tasks: [{
+				id: "2CE905436E4F8D64"
+				item: "pneumaticcraft:pressure_gauge"
+				type: "item"
+			}]
+			x: -8.64d
+			y: -1.5d
+			description: ["Pressure must be visible before it can be trusted."]
+		}
+		{
+			dependencies: ["064CFC665D86BAD3" "0937583E1460B930"]
+			id: "5DCC13C74FA59703"
 			title: "Chamber"
 			icon: "pneumaticcraft:pressure_chamber_valve"
 			shape: "square"
 			size: 1.05d
 			tasks: [{
-				id: "C876E224E5520759"
+				id: "6B6AE80D8193BF61"
 				item: "pneumaticcraft:pressure_chamber_valve"
 				type: "item"
 			}]
-			x: -8.0d
-			y: 0.0d
-			rewards: [
-				{
-					id: "6AA46045F68A5E4D"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
-			description: ["Pressure unlocks sealed processing, airtight machine bodies, and the path toward reliable electronics."]
+			x: -5.76d
+			y: -2.25d
+			rewards: [{ id: "E5ED86A3AA7098D9" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
+			description: ["The chamber unlocks sealed processing, airtight bodies, plastics, and board preparation."]
 		}
 		{
-			dependencies: ["88EFC171EF15E8AC"]
-			id: "55B633745D3D7895"
+			dependencies: ["5DCC13C74FA59703"]
+			id: "EB8D4711E0C2A4FF"
+			title: "Compressor"
+			icon: "compressedcreativity:rotational_compressor"
+			shape: "rsquare"
+			tasks: [{
+				id: "E001C8EBC00A5B50"
+				item: "compressedcreativity:rotational_compressor"
+				type: "item"
+			}]
+			x: -2.88d
+			y: -4.0d
+			description: ["Compressed Creativity ties Create rotation to PNCR pressure instead of inventing isolated power."]
+		}
+		{
+			dependencies: ["5DCC13C74FA59703"]
+			id: "27761A19A3827951"
+			title: "Rotor"
+			icon: "pneumaticcraft:turbine_rotor"
+			shape: "rsquare"
+			tasks: [{
+				id: "7A3A0BC3BE6BE82B"
+				item: "pneumaticcraft:turbine_rotor"
+				type: "item"
+			}]
+			x: -2.88d
+			y: -2.5d
+			description: ["Turbine rotors connect pressure to generation and advanced pneumatic machinery."]
+		}
+		{
+			dependencies: ["5DCC13C74FA59703"]
+			id: "E9C1DC5036632296"
+			title: "Plastic"
+			icon: "pneumaticcraft:plastic"
+			shape: "rsquare"
+			tasks: [{
+				id: "72CB192431F55F70"
+				item: "pneumaticcraft:plastic"
+				type: "item"
+			}]
+			x: -2.88d
+			y: -1.0d
+			description: ["Plastic is the material bridge from pressure processing to electronics."]
+		}
+		{
+			dependencies: ["E9C1DC5036632296"]
+			id: "D7A56007EC9F328E"
 			title: "Battery"
 			icon: "powergrid:battery"
 			shape: "rsquare"
-			size: 1.0d
 			tasks: [{
-				id: "84AA8FDCB18F09E1"
+				id: "FB33F7C901EAB752"
 				item: "powergrid:battery"
 				type: "item"
 			}]
-			x: -4.0d
-			y: -1.0d
-			rewards: [
-				{
-					id: "D711A25E6811064E"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
-			description: ["Power Grid starts the electrical control era. It belongs after pressure, not as a survival shortcut."]
+			x: 0.0d
+			y: -3.0d
+			description: ["Power Grid starts electrical control after pressure, not as a survival shortcut."]
 		}
 		{
-			dependencies: ["55B633745D3D7895"]
-			id: "5D1FB39DA1358B02"
+			dependencies: ["D7A56007EC9F328E"]
+			id: "C6D58E68605E0DE0"
 			title: "Design"
 			icon: "powergrid:circuit_design_table"
 			shape: "diamond"
 			size: 1.05d
 			tasks: [{
-				id: "B5C1F34318F9E984"
+				id: "1ECD044F919F3192"
 				item: "powergrid:circuit_design_table"
 				type: "item"
 			}]
-			x: 0.0d
-			y: -1.0d
-			rewards: [
-				{
-					id: "62C879050D858B13"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
-			description: ["Design prepares circuits. Completion still escalates through the PNCR assembly authority."]
+			x: 2.88d
+			y: -3.0d
+			description: ["Design prepares circuits; PNCR still owns final board authority."]
 		}
 		{
-			dependencies: ["5D1FB39DA1358B02"]
-			id: "FF76804CF385A71B"
+			dependencies: ["C6D58E68605E0DE0"]
+			id: "15AA1D081CD6B3B2"
+			title: "Blank PCB"
+			icon: "pneumaticcraft:unassembled_pcb"
+			shape: "rsquare"
+			tasks: [{
+				id: "0178CD5C68DA5E4D"
+				item: "pneumaticcraft:unassembled_pcb"
+				type: "item"
+			}]
+			x: 5.76d
+			y: -3.0d
+			description: ["Unassembled boards are chemistry plus design waiting for assembly authority."]
+		}
+		{
+			dependencies: ["15AA1D081CD6B3B2"]
+			id: "E7B001B84823265B"
+			title: "PCB"
+			icon: "pneumaticcraft:printed_circuit_board"
+			shape: "rsquare"
+			tasks: [{
+				id: "17F16F5150B4C6C2"
+				item: "pneumaticcraft:printed_circuit_board"
+				type: "item"
+			}]
+			x: 8.64d
+			y: -3.0d
+			rewards: [{ id: "735CA19B9D593426" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
+			description: ["Printed circuit boards are the key fan-out into PNCR machines, drones, armor, and control."]
+		}
+		{
+			dependencies: ["E7B001B84823265B"]
+			id: "82F2BACA61C5F8E1"
 			title: "Assembly"
 			icon: "pneumaticcraft:assembly_controller"
 			shape: "hexagon"
 			size: 1.15d
 			tasks: [{
-				id: "1953BAD50853C3A6"
-				title: "Finish circuits with pressure assembly"
-				type: "checkmark"
+				id: "6D7CCEB7977F1BEB"
+				item: "pneumaticcraft:assembly_controller"
+				type: "item"
 			}]
-			x: 4.0d
-			y: -1.0d
-			description: ["Boards, traces, and wafers can be prepared upstream. Finished PCBs and advanced circuits come from PNCR assembly."]
+			x: 11.52d
+			y: -3.0d
+			description: ["Assembly machines turn board authority into real manufacturing."]
 		}
 		{
-			dependencies: ["FF76804CF385A71B"]
-			id: "07EFCE2A253C35EA"
+			dependencies: ["82F2BACA61C5F8E1"]
+			id: "29F946BFE1267DF0"
+			title: "Laser"
+			icon: "pneumaticcraft:assembly_laser"
+			shape: "rsquare"
+			tasks: [{
+				id: "ACA5B56107838856"
+				item: "pneumaticcraft:assembly_laser"
+				type: "item"
+			}]
+			x: 14.4d
+			y: -4.0d
+			description: ["The laser is precision pressure manufacturing, not a crafting-table upgrade."]
+		}
+		{
+			dependencies: ["82F2BACA61C5F8E1"]
+			id: "B1A2D3DF07B2C5A0"
+			title: "Drill"
+			icon: "pneumaticcraft:assembly_drill"
+			shape: "rsquare"
+			tasks: [{
+				id: "565D6B6C6F2C5165"
+				item: "pneumaticcraft:assembly_drill"
+				type: "item"
+			}]
+			x: 14.4d
+			y: -2.5d
+			description: ["Assembly drills make parts that should feel machined."]
+		}
+		{
+			dependencies: ["E7B001B84823265B"]
+			id: "23B1CD2A1143A540"
+			title: "Drone"
+			icon: "pneumaticcraft:drone"
+			shape: "rsquare"
+			tasks: [{
+				id: "5F60DDEE15470870"
+				item: "pneumaticcraft:drone"
+				type: "item"
+			}]
+			x: 11.52d
+			y: 0.5d
+			description: ["Drones are programmable labor and should arrive after board authority."]
+		}
+		{
+			dependencies: ["23B1CD2A1143A540"]
+			id: "9E0BDE917DFAE8ED"
+			title: "Programmer"
+			icon: "pneumaticcraft:programmer"
+			shape: "rsquare"
+			tasks: [{
+				id: "1D2DA74F2AEAE0C8"
+				item: "pneumaticcraft:programmer"
+				type: "item"
+			}]
+			x: 14.4d
+			y: 0.5d
+			description: ["Programming turns pressure into automation logic."]
+		}
+		{
+			dependencies: ["9E0BDE917DFAE8ED"]
+			id: "E34FCC9DF23493F5"
+			title: "Security"
+			icon: "pneumaticcraft:security_station"
+			shape: "rsquare"
+			tasks: [{
+				id: "B5FB67F66337F61B"
+				item: "pneumaticcraft:security_station"
+				type: "item"
+			}]
+			x: 17.28d
+			y: 0.5d
+			description: ["Security stations make control infrastructure explicit."]
+		}
+		{
+			dependencies: ["29F946BFE1267DF0" "B1A2D3DF07B2C5A0"]
+			id: "C1D0BE5D13A824EB"
 			title: "OC2R"
 			icon: "oc2r:computer"
 			shape: "octagon"
 			size: 1.15d
 			tasks: [{
-				id: "B8B6A7A17C584EA6"
+				id: "627AEA9B1C32EF97"
 				item: "oc2r:computer"
 				type: "item"
 			}]
-			x: 8.0d
-			y: -1.0d
-			rewards: [
-				{
-					id: "09373A18EF7F6687"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
-			description: ["OC2R is the intersite information bridge. Physical logistics still matter before storage networks dominate."]
+			x: 17.28d
+			y: -3.25d
+			description: ["OC2R is the intersite information bridge; physical logistics still matter before AE2 dominates."]
+		}
+		{
+			dependencies: ["C1D0BE5D13A824EB"]
+			id: "FBDA0C0DE35723D0"
+			title: "Wireless"
+			icon: "oc2rwireless:wireless_card"
+			shape: "rsquare"
+			tasks: [{
+				id: "DFF866CD3D59774E"
+				item: "oc2rwireless:wireless_card"
+				type: "item"
+			}]
+			x: 20.16d
+			y: -3.25d
+			description: ["Wireless control should extend built infrastructure, not replace local work."]
+		}
+		{
+			dependencies: ["E34FCC9DF23493F5" "FBDA0C0DE35723D0"]
+			id: "C6D673C304DD18FA"
+			title: "Control"
+			icon: "minecraft:redstone"
+			shape: "hexagon"
+			size: 1.15d
+			tasks: [{
+				id: "8A5676E0C3DFB6A9"
+				title: "Separate power, logic, and logistics"
+				type: "checkmark"
+			}]
+			x: 23.04d
+			y: -1.5d
+			description: ["The chapter is about controllable systems: pressure, electricity, boards, programming, and intersite signals."]
 		}
 	]
 	title: "Pressure, Power, and Control"

@@ -9,171 +9,312 @@
 	quest_links: [ ]
 	quests: [
 		{
-			id: "1AE7E9C6A07B1C13"
+			id: "1C422F3D6A28E9E7"
 			title: "Andesite"
 			icon: "create:andesite_alloy"
 			shape: "hexagon"
-			size: 1.25d
+			size: 1.2d
 			tasks: [{
-				id: "A168ACC3AC6FBA89"
+				id: "C70F656175963B76"
 				item: "create:andesite_alloy"
 				type: "item"
 			}]
-			x: -12.0d
+			x: -11.52d
 			y: 0.0d
-			rewards: [
-				{
-					id: "C83127B117A7D183"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
-			description: ["This is the first Create engineering language. It should follow seared metallurgy, not replace it."]
+			rewards: [{ id: "EFF046DF7400D0EF" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
+			description: ["Andesite alloy is the first Create engineering language after seared metallurgy."]
 		}
 		{
-			dependencies: ["1AE7E9C6A07B1C13"]
-			id: "45A1EC3F2775004E"
-			title: "Deployer"
-			icon: "create:deployer"
+			dependencies: ["1C422F3D6A28E9E7"]
+			id: "AC5E74E8D1FB556B"
+			title: "Shaft"
+			icon: "create:shaft"
 			shape: "rsquare"
-			size: 1.0d
 			tasks: [{
-				id: "1FDE5054596546A3"
-				item: "create:deployer"
+				id: "AC1DE1EF70622C00"
+				item: "create:shaft"
 				type: "item"
 			}]
-			x: -8.0d
-			y: -2.0d
-			rewards: [
-				{
-					id: "8D24AE782FA176A6"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
-			description: ["The deployer is an early automation proof. Do not assume every Create body is unlocked just because rotation exists."]
+			x: -8.64d
+			y: -4.0d
+			description: ["Shafts make rotation tangible: every machine starts as a physical power problem."]
 		}
 		{
-			dependencies: ["45A1EC3F2775004E"]
-			id: "7B2A4CB05D63FA3A"
+			dependencies: ["1C422F3D6A28E9E7"]
+			id: "F86B90EFCD2DC382"
+			title: "Cogs"
+			icon: "create:cogwheel"
+			shape: "rsquare"
+			tasks: [{
+				id: "34196EFB2F3CAD7A"
+				item: "create:cogwheel"
+				type: "item"
+			}]
+			x: -8.64d
+			y: -2.5d
+			description: ["Cogs and gearboxes teach local transmission before abstract power networks."]
+		}
+		{
+			dependencies: ["1C422F3D6A28E9E7"]
+			id: "4145E9AE6FCF2471"
 			title: "Casing"
 			icon: "create:andesite_casing"
 			shape: "square"
 			size: 1.05d
 			tasks: [{
-				id: "41955E9ED1C14E9B"
+				id: "F6AE1446A26AF7B5"
 				item: "create:andesite_casing"
 				type: "item"
 			}]
-			x: -4.0d
-			y: -2.0d
-			rewards: [
-				{
-					id: "ECD3524247E8F8F7"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
-			description: ["This is the Create block casing, not the pack-wide machine casing ladder. The Casings chapter tracks machine-frame tiers."]
+			x: -8.64d
+			y: 0.0d
+			rewards: [{ id: "1F616987450FC867" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
+			description: ["Recipe explorer shows andesite casing fans out into deployers, presses, mixers, drills, saws, fans, links, and Power Grid surfaces."]
 		}
 		{
-			dependencies: ["1AE7E9C6A07B1C13"]
-			id: "FFE91CBDB297C8A8"
+			dependencies: ["4145E9AE6FCF2471"]
+			id: "745F897829E7FFB9"
+			title: "Press"
+			icon: "create:mechanical_press"
+			shape: "rsquare"
+			tasks: [{
+				id: "49D61EE933B15394"
+				item: "create:mechanical_press"
+				type: "item"
+			}]
+			x: -5.76d
+			y: -4.0d
+			description: ["Pressing creates plates and mechanical parts, including routes later used by casing and electronics."]
+		}
+		{
+			dependencies: ["4145E9AE6FCF2471"]
+			id: "E7C60362B9AC8F83"
+			title: "Mixer"
+			icon: "create:mechanical_mixer"
+			shape: "rsquare"
+			tasks: [{
+				id: "4E26BECB9AB7E6C2"
+				item: "create:mechanical_mixer"
+				type: "item"
+			}]
+			x: -5.76d
+			y: -2.5d
+			description: ["Open mixing is the first bulk chemistry and alloying surface before pressure containment."]
+		}
+		{
+			dependencies: ["4145E9AE6FCF2471"]
+			id: "D2D49E52D48854FE"
+			title: "Fan"
+			icon: "create:encased_fan"
+			shape: "rsquare"
+			tasks: [{
+				id: "954734005FD27C7D"
+				item: "create:encased_fan"
+				type: "item"
+			}]
+			x: -5.76d
+			y: -1.0d
+			description: ["Fans connect washing, blasting, haunting, cooling, and air handling."]
+		}
+		{
+			dependencies: ["4145E9AE6FCF2471"]
+			id: "AAB85935EE144DFE"
+			title: "Drill"
+			icon: "create:mechanical_drill"
+			shape: "rsquare"
+			tasks: [{
+				id: "FBF6A79A4B20DA6B"
+				item: "create:mechanical_drill"
+				type: "item"
+			}]
+			x: -5.76d
+			y: 0.5d
+			description: ["The drill is movement plus extraction, not a magic miner."]
+		}
+		{
+			dependencies: ["4145E9AE6FCF2471"]
+			id: "2EC964E3473CF2B9"
+			title: "Saw"
+			icon: "create:mechanical_saw"
+			shape: "rsquare"
+			tasks: [{
+				id: "FC9C050924F762A9"
+				item: "create:mechanical_saw"
+				type: "item"
+			}]
+			x: -5.76d
+			y: 2.0d
+			description: ["Sawing belongs in logistics and tree processing before late auto-crafting."]
+		}
+		{
+			dependencies: ["745F897829E7FFB9" "E7C60362B9AC8F83"]
+			id: "A78DB795C876699D"
+			title: "Deployer"
+			icon: "create:deployer"
+			shape: "rsquare"
+			tasks: [{
+				id: "709DEF01F7777A99"
+				item: "create:deployer"
+				type: "item"
+			}]
+			x: -2.88d
+			y: -3.0d
+			rewards: [{ id: "A26FAA5C60755673" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
+			description: ["The deployer is the first automation proof: a hand made into a machine."]
+		}
+		{
+			dependencies: ["A78DB795C876699D"]
+			id: "447A586BFE2667F3"
+			title: "Tube"
+			icon: "create:electron_tube"
+			shape: "rsquare"
+			tasks: [{
+				id: "7755B15E28E0B4AB"
+				item: "create:electron_tube"
+				type: "item"
+			}]
+			x: -2.88d
+			y: -1.0d
+			description: ["Electron tubes are the visible primitive-electronics bridge into smarter Create blocks."]
+		}
+		{
+			dependencies: ["D2D49E52D48854FE"]
+			id: "5C37980430C2D51F"
 			title: "Alloy"
 			icon: "morered:red_alloy_ingot"
 			shape: "rsquare"
-			size: 1.0d
 			tasks: [{
-				id: "DACD4B25426E3E8D"
+				id: "BEB3A63E54A35CBF"
 				item: "morered:red_alloy_ingot"
 				type: "item"
 			}]
-			x: -8.0d
-			y: 2.0d
-			rewards: [
-				{
-					id: "5191B7538AD3D228"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
-			description: ["More Red starts primitive circuitry on terrestrial Create processing, not Nether shortcuts."]
+			x: -2.88d
+			y: 1.0d
+			description: ["More Red starts primitive circuitry on terrestrial processing, not Nether shortcuts."]
 		}
 		{
-			dependencies: ["FFE91CBDB297C8A8"]
-			id: "F732F085C9C44FA6"
+			dependencies: ["5C37980430C2D51F"]
+			id: "654CC900134B8FBD"
 			title: "Wire"
 			icon: "morered:red_alloy_wire"
-			shape: "square"
-			size: 1.0d
+			shape: "rsquare"
 			tasks: [{
-				id: "7D013F5F7238D55F"
+				id: "EBF8A57DA3A2EE56"
 				item: "morered:red_alloy_wire"
 				type: "item"
 			}]
-			x: -4.0d
-			y: 2.0d
-			rewards: [
-				{
-					id: "EC837361E0482209"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
-			description: ["Wire is the bridge from bulk redstone to circuit work. Later machines consume this before finished PCB authority appears."]
+			x: 0.0d
+			y: 1.0d
+			description: ["Wire turns bulk redstone into routable circuit material."]
 		}
 		{
-			dependencies: ["F732F085C9C44FA6"]
-			id: "80C6CAE2CBAA2FFD"
+			dependencies: ["654CC900134B8FBD"]
+			id: "8F728191626B1BED"
 			title: "Solder"
 			icon: "morered:soldering_table"
 			shape: "diamond"
 			size: 1.05d
 			tasks: [{
-				id: "26A447699F43717D"
+				id: "FFE80C5D1169CB7B"
 				item: "morered:soldering_table"
 				type: "item"
 			}]
-			x: 0.0d
-			y: 2.0d
-			rewards: [
-				{
-					id: "C81CAE75479F9261"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
-			description: ["The table belongs to the andesite-era circuit lane. It should not demand blaze materials before the pack can justify them."]
+			x: 2.88d
+			y: 1.0d
+			rewards: [{ id: "A82440FC29C3FC2F" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
+			description: ["The soldering table belongs in the andesite circuit lane before PNCR final authority."]
 		}
 		{
-			dependencies: ["80C6CAE2CBAA2FFD"]
-			id: "A629F226FFAF738C"
+			dependencies: ["8F728191626B1BED"]
+			id: "E418DB64F7C96E19"
 			title: "Diode"
 			icon: "morered:diode"
-			shape: "octagon"
-			size: 1.15d
+			shape: "rsquare"
 			tasks: [{
-				id: "969EF992FB362640"
+				id: "53784DA293B24700"
 				item: "morered:diode"
 				type: "item"
 			}]
-			x: 4.0d
-			y: 2.0d
-			rewards: [
-				{
-					id: "CFC55BA28C223DD6"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
-			description: ["Diodes and gates are primitive logic proof. Finished circuits still escalate to Power Grid and PNCR assembly."]
+			x: 5.76d
+			y: 1.0d
+			description: ["Diodes and gates are primitive logic proof before finished circuit boards."]
+		}
+		{
+			dependencies: ["447A586BFE2667F3"]
+			id: "B1D2E9D9D4F77E0C"
+			title: "Brass"
+			icon: "create:brass_casing"
+			shape: "square"
+			size: 1.05d
+			tasks: [{
+				id: "9B5A252364B09259"
+				item: "create:brass_casing"
+				type: "item"
+			}]
+			x: 0.0d
+			y: -3.0d
+			description: ["Recipe explorer shows brass casing unlocks mechanical arms, display links, stockpile switches, railway casing, and Creating Space pieces."]
+		}
+		{
+			dependencies: ["B1D2E9D9D4F77E0C"]
+			id: "E52BDE1C2071533D"
+			title: "Precision"
+			icon: "create:precision_mechanism"
+			shape: "rsquare"
+			tasks: [{
+				id: "5DF243BD0694ECA4"
+				item: "create:precision_mechanism"
+				type: "item"
+			}]
+			x: 2.88d
+			y: -3.0d
+			description: ["Precision mechanisms mark the move from rotation to controlled assembly."]
+		}
+		{
+			dependencies: ["E52BDE1C2071533D"]
+			id: "60974CBBB7171B20"
+			title: "Arm"
+			icon: "create:mechanical_arm"
+			shape: "rsquare"
+			tasks: [{
+				id: "FCF188F814E10B25"
+				item: "create:mechanical_arm"
+				type: "item"
+			}]
+			x: 5.76d
+			y: -3.0d
+			description: ["The mechanical arm is logistics with intent: selective, visible, and local."]
+		}
+		{
+			dependencies: ["B1D2E9D9D4F77E0C"]
+			id: "FE246240BF196C7B"
+			title: "Display"
+			icon: "create:display_link"
+			shape: "rsquare"
+			tasks: [{
+				id: "FF0EED79F02DA1E4"
+				item: "create:display_link"
+				type: "item"
+			}]
+			x: 8.64d
+			y: -3.0d
+			description: ["Display links make factories legible without replacing physical control."]
+		}
+		{
+			dependencies: ["FE246240BF196C7B" "60974CBBB7171B20"]
+			id: "43E30496929C8519"
+			title: "Railway"
+			icon: "create:railway_casing"
+			shape: "octagon"
+			size: 1.15d
+			tasks: [{
+				id: "6792225330DAAF88"
+				item: "create:railway_casing"
+				type: "item"
+			}]
+			x: 11.52d
+			y: -3.0d
+			description: ["Railway casing points toward trains as intersite logistics before AE2 dominance."]
 		}
 	]
 	title: "Create and Primitive Circuits"

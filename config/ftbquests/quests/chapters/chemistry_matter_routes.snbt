@@ -9,118 +9,311 @@
 	quest_links: [ ]
 	quests: [
 		{
-			id: "ADF5B3000926A300"
+			id: "3A2B0FA3A95CE344"
 			title: "Farms"
 			icon: "minecraft:wheat"
 			shape: "hexagon"
-			size: 1.15d
+			size: 1.1d
 			tasks: [{
-				id: "8B5DD2FE18619FB6"
+				id: "BADBD7B1CF05CF94"
 				title: "Use farms as chemistry inputs, not free matter"
 				type: "checkmark"
 			}]
-			x: -12.0d
+			x: -11.52d
 			y: 0.0d
-			description: ["Plants, animals, honeycomb, bone, hide, feathers, and venom can feed chemical side streams after infrastructure exists."]
+			description: ["Growables feed side streams after infrastructure exists."]
 		}
 		{
-			dependencies: ["ADF5B3000926A300"]
-			id: "BC47E926A63D173D"
-			title: "Solvents"
+			dependencies: ["3A2B0FA3A95CE344"]
+			id: "E4543FAFCE29ED66"
+			title: "Honey"
+			icon: "minecraft:honeycomb"
+			shape: "rsquare"
+			tasks: [{
+				id: "EA551089F33CE426"
+				item: "minecraft:honeycomb"
+				type: "item"
+			}]
+			x: -8.64d
+			y: -4.0d
+			description: ["Honeycomb and wax become material inputs without turning farms into infinite ore."]
+		}
+		{
+			dependencies: ["3A2B0FA3A95CE344"]
+			id: "B11B71E50AE93AE9"
+			title: "Bone"
+			icon: "minecraft:bone_meal"
+			shape: "rsquare"
+			tasks: [{
+				id: "4146AB0E66D1067C"
+				item: "minecraft:bone_meal"
+				type: "item"
+			}]
+			x: -8.64d
+			y: -2.5d
+			description: ["Bone, hide, feathers, venom, and food waste become chemical side streams."]
+		}
+		{
+			dependencies: ["3A2B0FA3A95CE344"]
+			id: "4369F36F1439BE66"
+			title: "Bottle"
 			icon: "minecraft:glass_bottle"
 			shape: "rsquare"
-			size: 1.0d
 			tasks: [{
-				id: "4C6C7FB90CEB1FEA"
+				id: "FAB7A09CC81176B8"
 				item: "minecraft:glass_bottle"
 				type: "item"
 			}]
-			x: -8.0d
-			y: -2.0d
-			rewards: [
-				{
-					id: "88497B62747B8BDC"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
-			description: ["Acids, bottles, grinding media, and reagents preserve source identity. They are the cost of controlled transformation."]
+			x: -8.64d
+			y: -1.0d
+			rewards: [{ id: "694E5BA7D2B0572D" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
+			description: ["Bottles are cheap but not free: glass logistics gate controlled chemistry."]
 		}
 		{
-			dependencies: ["BC47E926A63D173D"]
-			id: "529573E3293E843D"
+			dependencies: ["4369F36F1439BE66"]
+			id: "9C8D956D9D41353C"
+			title: "Acid"
+			icon: "chemlib:hydrochloric_acid"
+			shape: "rsquare"
+			tasks: [{
+				id: "944EAE3395F43D27"
+				item: "chemlib:hydrochloric_acid"
+				type: "item"
+			}]
+			x: -5.76d
+			y: -3.0d
+			description: ["Acids preserve source identity by making transformation explicit."]
+		}
+		{
+			dependencies: ["4369F36F1439BE66"]
+			id: "9C4806BE96C165D3"
+			title: "Media"
+			icon: "minecraft:gravel"
+			shape: "rsquare"
+			tasks: [{
+				id: "BBAB0B431589C6D8"
+				title: "Prepare grinding media and salts"
+				type: "checkmark"
+			}]
+			x: -5.76d
+			y: -1.0d
+			description: ["Grinding media, salts, and reagents are the cost of controlled transformation."]
+		}
+		{
+			dependencies: ["9C8D956D9D41353C" "9C4806BE96C165D3"]
+			id: "E73E988D633633C2"
 			title: "Open Chem"
 			icon: "create:mechanical_mixer"
 			shape: "square"
 			size: 1.05d
 			tasks: [{
-				id: "47DF2CE857A36425"
-				title: "Run bulk chemistry in open Create machinery"
-				type: "checkmark"
+				id: "8A6E27203E2BAF86"
+				item: "create:mechanical_mixer"
+				type: "item"
 			}]
-			x: -4.0d
-			y: -2.0d
-			description: ["Create handles open mixing, washing, precipitation, reduction, and bulk transformation routes."]
+			x: -2.88d
+			y: -3.0d
+			description: ["Create handles open mixing, washing, precipitation, reduction, and bulk transformations."]
 		}
 		{
-			dependencies: ["529573E3293E843D"]
-			id: "B140280510C94C9F"
-			title: "Sealed"
+			dependencies: ["E73E988D633633C2"]
+			id: "6ED592E593A00B56"
+			title: "Wash"
+			icon: "create:encased_fan"
+			shape: "rsquare"
+			tasks: [{
+				id: "B831B2D0AE7B3293"
+				item: "create:encased_fan"
+				type: "item"
+			}]
+			x: -2.88d
+			y: -1.0d
+			description: ["Washing and blasting make chemistry visible before sealed machines appear."]
+		}
+		{
+			dependencies: ["E73E988D633633C2"]
+			id: "15E8F973446C60BC"
+			title: "Cell"
+			icon: "latent_chemlib:sealed_chemical_cell"
+			shape: "rsquare"
+			tasks: [{
+				id: "23AA18BA366029EF"
+				item: "latent_chemlib:sealed_chemical_cell"
+				type: "item"
+			}]
+			x: 0.0d
+			y: -3.0d
+			description: ["Sealed cells mark the move from open vats to controlled pressure chemistry."]
+		}
+		{
+			dependencies: ["15E8F973446C60BC"]
+			id: "E6E4C0B35936EA81"
+			title: "Gas"
+			icon: "latent_chemlib:gas_reaction_chamber"
+			shape: "rsquare"
+			tasks: [{
+				id: "F0F3CEF3202C4D1C"
+				item: "latent_chemlib:gas_reaction_chamber"
+				type: "item"
+			}]
+			x: 2.88d
+			y: -3.0d
+			description: ["Gas reaction chambers own dangerous sealed reactions rather than pretending bottles are enough."]
+		}
+		{
+			dependencies: ["6ED592E593A00B56"]
+			id: "89BBEA358AA36261"
+			title: "Pressure"
 			icon: "pneumaticcraft:pressure_chamber_valve"
 			shape: "square"
 			size: 1.05d
 			tasks: [{
-				id: "BE7A0826EF43FEC8"
+				id: "2524FF0D677AC712"
 				item: "pneumaticcraft:pressure_chamber_valve"
 				type: "item"
 			}]
 			x: 0.0d
-			y: -2.0d
-			rewards: [
-				{
-					id: "577D726B7EA647BF"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
-			description: ["PNCR owns sealed pressure, gas handling, thermal control, plastics, and etching authority."]
+			y: -1.0d
+			rewards: [{ id: "66A3FC6348F1DF84" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
+			description: ["PNCR owns pressure, gas handling, thermal control, plastics, and etching authority."]
 		}
 		{
-			dependencies: ["BC47E926A63D173D"]
-			id: "B7B64D8AF271F362"
+			dependencies: ["89BBEA358AA36261"]
+			id: "ED4C9825703E8F60"
+			title: "Plastic"
+			icon: "pneumaticcraft:plastic"
+			shape: "rsquare"
+			tasks: [{
+				id: "D1B7DC69C1AD595E"
+				item: "pneumaticcraft:plastic"
+				type: "item"
+			}]
+			x: 2.88d
+			y: -1.0d
+			description: ["Plastic moves chemistry into durable components and circuit infrastructure."]
+		}
+		{
+			dependencies: ["ED4C9825703E8F60" "E6E4C0B35936EA81"]
+			id: "441F01E0A65494F5"
+			title: "Wafer"
+			icon: "pneumaticcraft:solar_wafer"
+			shape: "rsquare"
+			tasks: [{
+				id: "A101DE8367608811"
+				item: "pneumaticcraft:solar_wafer"
+				type: "item"
+			}]
+			x: 5.76d
+			y: -2.0d
+			description: ["Wafers are precursor work, not finished circuit authority."]
+		}
+		{
+			dependencies: ["ED4C9825703E8F60"]
+			id: "1CB99ED728C9C647"
+			title: "Transistor"
+			icon: "pneumaticcraft:transistor"
+			shape: "rsquare"
+			tasks: [{
+				id: "192DF7D095CF66D7"
+				item: "pneumaticcraft:transistor"
+				type: "item"
+			}]
+			x: 5.76d
+			y: 0.0d
+			description: ["Transistors sit between chemical preparation and PNCR assembly."]
+		}
+		{
+			dependencies: ["ED4C9825703E8F60"]
+			id: "75FD1D48EC2FB5C4"
+			title: "Capacitor"
+			icon: "pneumaticcraft:capacitor"
+			shape: "rsquare"
+			tasks: [{
+				id: "29CE8E89AEE90BC9"
+				item: "pneumaticcraft:capacitor"
+				type: "item"
+			}]
+			x: 5.76d
+			y: 2.0d
+			description: ["Capacitors make circuit progression depend on materials, not just redstone dust."]
+		}
+		{
+			dependencies: ["9C8D956D9D41353C"]
+			id: "2D93F328B5631FF3"
 			title: "LP Yield"
 			icon: "bloodmagic:blankslate"
 			shape: "diamond"
 			size: 1.05d
 			tasks: [{
-				id: "4326BADFB0EC2AA7"
+				id: "5336DC805D2E0D9A"
 				title: "Spend LP and slates for deliberate batches"
 				type: "checkmark"
 			}]
-			x: -4.0d
-			y: 2.0d
-			description: ["Blood Magic can pay LP for high-yield manual chemistry. It should not become passive unattended throughput."]
+			x: -2.88d
+			y: 3.0d
+			description: ["Blood Magic can pay LP for high-yield manual chemistry without becoming unattended throughput."]
 		}
 		{
-			dependencies: [
-				"B140280510C94C9F"
-				"B7B64D8AF271F362"
-			]
-			id: "A46D0309DEA75C77"
+			dependencies: ["2D93F328B5631FF3"]
+			id: "ADF2D921D8BD58D9"
+			title: "Slate"
+			icon: "bloodmagic:infusedslate"
+			shape: "rsquare"
+			tasks: [{
+				id: "ADAC141280B1BD1F"
+				item: "bloodmagic:infusedslate"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 3.0d
+			description: ["Higher slates justify higher-yield, higher-intent chemistry routes."]
+		}
+		{
+			dependencies: ["441F01E0A65494F5" "1CB99ED728C9C647" "75FD1D48EC2FB5C4" "ADF2D921D8BD58D9"]
+			id: "6863547474BA90DE"
 			title: "Precursors"
-			icon: "minecraft:redstone"
+			icon: "pneumaticcraft:empty_pcb"
 			shape: "octagon"
 			size: 1.15d
 			tasks: [{
-				id: "E510814EA9E1F919"
+				id: "B4A65539E724FD05"
 				title: "Prepare boards and wafers, not finished circuits"
 				type: "checkmark"
 			}]
-			x: 4.0d
+			x: 8.64d
 			y: 0.0d
-			description: ["Chemistry can make etchants, capacitors, wafers, substrates, and traces. Finished circuits remain PNCR assembly authority."]
+			description: ["Chemistry makes etchants, wafers, substrates, and traces; PNCR assembly finishes boards."]
+		}
+		{
+			dependencies: ["6863547474BA90DE"]
+			id: "7E22E89C8E8982E6"
+			title: "PCB"
+			icon: "pneumaticcraft:printed_circuit_board"
+			shape: "rsquare"
+			tasks: [{
+				id: "806EC42BBD93200A"
+				item: "pneumaticcraft:printed_circuit_board"
+				type: "item"
+			}]
+			x: 11.52d
+			y: 0.0d
+			description: ["The recipe explorer shows printed boards fan out into drones, assembly, pneumatic armor, security, compressors, and programming."]
+		}
+		{
+			dependencies: ["7E22E89C8E8982E6"]
+			id: "F7A4B2C41B81DED6"
+			title: "Identity"
+			icon: "minecraft:spyglass"
+			shape: "hexagon"
+			size: 1.15d
+			tasks: [{
+				id: "5C04B8138D7CF455"
+				title: "Do not erase geology"
+				type: "checkmark"
+			}]
+			x: 14.4d
+			y: 0.0d
+			description: ["Chemistry refines source identity through costs and surfaces; it should not flatten the matter economy."]
 		}
 	]
 	title: "Chemistry and Matter Routes"

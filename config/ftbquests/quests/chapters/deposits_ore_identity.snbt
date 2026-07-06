@@ -9,115 +9,248 @@
 	quest_links: [ ]
 	quests: [
 		{
-			id: "B02B11104EF540FF"
+			id: "AD6076BBBC63B6E7"
 			title: "Survey"
 			icon: "minecraft:spyglass"
 			shape: "hexagon"
-			size: 1.3d
+			size: 1.25d
 			tasks: [{
-				id: "0E758C6B3D65C5A8"
+				id: "8930699F8A18EB8A"
 				title: "Read terrain before mining"
 				type: "checkmark"
 			}]
-			x: -12.0d
+			x: -11.52d
 			y: 0.0d
-			description: ["Ore is local. Deposits, stone types, and Y bands matter more than strip-mining a flat vanilla distribution."]
+			description: ["Ore is local. Deposits, stone type, and Y bands matter more than flat strip-mining."]
 		}
 		{
-			dependencies: ["B02B11104EF540FF"]
-			id: "80B32871689F147A"
-			title: "Starters"
-			icon: "minecraft:raw_iron"
+			dependencies: ["AD6076BBBC63B6E7"]
+			id: "88AB3FECBB5A97EC"
+			title: "Samples"
+			icon: "minecraft:raw_copper"
 			shape: "rsquare"
-			size: 1.0d
 			tasks: [{
-				id: "3AD4834F9BF4B652"
-				title: "Find a starter deposit"
+				id: "EC2218D222B150F5"
+				title: "Collect surface evidence"
 				type: "checkmark"
 			}]
-			x: -8.0d
-			y: 0.0d
-			description: ["Coal measures, ironstone, copper sulfide, tin, zinc, lead-zinc, quartz, and bauxite are the intended early catalogue."]
+			x: -8.64d
+			y: -3.0d
+			description: ["Samples and exposed geology teach where the ore body lives before committing labor."]
 		}
 		{
-			dependencies: ["80B32871689F147A"]
-			id: "3C32AEACBC5C0740"
-			title: "Furnace"
-			icon: "minecraft:iron_ingot"
-			shape: "square"
-			size: 0.95d
+			dependencies: ["88AB3FECBB5A97EC"]
+			id: "D1B0284719CE935D"
+			title: "Coal"
+			icon: "minecraft:coal"
+			shape: "rsquare"
 			tasks: [{
-				id: "206251915E8C8CA4"
-				item: "minecraft:iron_ingot"
+				id: "A864A30C2D39CB5D"
+				title: "Find coal measures"
+				type: "checkmark"
+			}]
+			x: -5.76d
+			y: -4.0d
+			description: ["Coal is fuel, chemistry input, and route planning pressure."]
+		}
+		{
+			dependencies: ["88AB3FECBB5A97EC"]
+			id: "F3267A0525F8E508"
+			title: "Ironstone"
+			icon: "minecraft:raw_iron"
+			shape: "rsquare"
+			tasks: [{
+				id: "2E8CAACCD83EBB91"
+				item: "minecraft:raw_iron"
 				type: "item"
 			}]
-			x: -4.0d
-			y: -2.0d
-			rewards: [
-				{
-					id: "B7CF1F0142B3C164"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
-			description: ["A furnace can save a run, but it is the poor route. Better interpretation comes from Tinkers, Create, and chemistry."]
+			x: -5.76d
+			y: -2.5d
+			rewards: [{ id: "D735DD89D7E2A8EC" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
+			description: ["Ironstone starts the metal story without pretending every ore appears everywhere."]
 		}
 		{
-			dependencies: ["80B32871689F147A"]
-			id: "42A5F3317913C76C"
-			title: "Tinkers"
+			dependencies: ["88AB3FECBB5A97EC"]
+			id: "9FB7FAC134090CFF"
+			title: "Copper"
+			icon: "minecraft:raw_copper"
+			shape: "rsquare"
+			tasks: [{
+				id: "C77B3A8CAAE1FFC4"
+				item: "minecraft:raw_copper"
+				type: "item"
+			}]
+			x: -5.76d
+			y: -1.0d
+			description: ["Copper sulfide and copper routes connect geology to coins, Create, and early power."]
+		}
+		{
+			dependencies: ["D1B0284719CE935D"]
+			id: "0976FB57A47DF8D4"
+			title: "Tin"
+			icon: "chemlib:tin_ingot"
+			shape: "rsquare"
+			tasks: [{
+				id: "97DB9A5868C2D8CF"
+				item: "chemlib:tin_ingot"
+				type: "item"
+			}]
+			x: -2.88d
+			y: -4.0d
+			description: ["Tin belongs in the early deposit catalogue because alloys and electronics need distinct source identity."]
+		}
+		{
+			dependencies: ["F3267A0525F8E508"]
+			id: "FF9487345EDB59C6"
+			title: "Zinc"
+			icon: "create:zinc_ingot"
+			shape: "rsquare"
+			tasks: [{
+				id: "3788FD235E97926A"
+				item: "create:zinc_ingot"
+				type: "item"
+			}]
+			x: -2.88d
+			y: -2.5d
+			description: ["Zinc is the Create-era bridge toward brass and more deliberate mechanical systems."]
+		}
+		{
+			dependencies: ["9FB7FAC134090CFF"]
+			id: "992544F772FA5B9B"
+			title: "Lead"
+			icon: "chemlib:lead_ingot"
+			shape: "rsquare"
+			tasks: [{
+				id: "D69305C534478ADE"
+				item: "chemlib:lead_ingot"
+				type: "item"
+			}]
+			x: -2.88d
+			y: -1.0d
+			description: ["Lead-zinc deposits feed chemistry and shielding-style material identity later."]
+		}
+		{
+			dependencies: ["0976FB57A47DF8D4" "FF9487345EDB59C6"]
+			id: "5F857A4BFE9337E7"
+			title: "Bauxite"
+			icon: "chemlib:aluminum_ingot"
+			shape: "rsquare"
+			tasks: [{
+				id: "C6439B1AAC57F1A9"
+				item: "chemlib:aluminum_ingot"
+				type: "item"
+			}]
+			x: 0.0d
+			y: -3.25d
+			description: ["Bauxite and aluminum should feel like named geology, not a generic dust conversion."]
+		}
+		{
+			dependencies: ["F3267A0525F8E508"]
+			id: "B346673EAE19FC65"
+			title: "Furnace"
+			icon: "minecraft:furnace"
+			shape: "rsquare"
+			tasks: [{
+				id: "5065A6514080CEDD"
+				item: "minecraft:furnace"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 1.5d
+			description: ["A furnace can save a run, but it is the poor route for serious yield."]
+		}
+		{
+			dependencies: ["B346673EAE19FC65"]
+			id: "611CC642195B7D66"
+			title: "Melter"
 			icon: "tconstruct:seared_melter"
 			shape: "square"
 			size: 1.05d
 			tasks: [{
-				id: "1CC72C581BEF9939"
-				title: "Use molten processing for first primary yield"
-				type: "checkmark"
+				id: "A80B8F83E75B984B"
+				item: "tconstruct:seared_melter"
+				type: "item"
 			}]
-			x: -4.0d
-			y: 2.0d
-			description: ["Seared and scorched work turn deposits into a stronger material story without duplicating the Metals chapter."]
+			x: 2.88d
+			y: 1.5d
+			rewards: [{ id: "71DCAF5A5651586C" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
+			description: ["Tinkers makes the first strong material interpretation layer: melting, casting, and alloy proof."]
 		}
 		{
-			dependencies: ["42A5F3317913C76C"]
-			id: "DFFB4840A4A02239"
-			title: "Crush"
+			dependencies: ["611CC642195B7D66"]
+			id: "8B2C868F1240B6EC"
+			title: "Smeltery"
+			icon: "tconstruct:smeltery_controller"
+			shape: "rsquare"
+			tasks: [{
+				id: "69393339BCDCC382"
+				item: "tconstruct:smeltery_controller"
+				type: "item"
+			}]
+			x: 5.76d
+			y: 1.5d
+			description: ["The smeltery turns deposit identity into scalable molten logistics."]
+		}
+		{
+			dependencies: ["5F857A4BFE9337E7"]
+			id: "A67CDD2A30C926B0"
+			title: "Crusher"
 			icon: "create:crushing_wheel"
 			shape: "rsquare"
-			size: 1.0d
 			tasks: [{
-				id: "BBDD361C3814F301"
-				title: "Crush, wash, and prepare feedstock"
-				type: "checkmark"
+				id: "09E6C971DE67AEBB"
+				item: "create:crushing_wheel"
+				type: "item"
 			}]
-			x: 0.0d
-			y: 2.0d
-			description: ["Create handles open bulk preparation. It improves identity and byproducts before sealed chemistry takes over."]
+			x: 2.88d
+			y: -2.5d
+			description: ["Create crushing and washing improve bulk feedstock before sealed chemistry appears."]
 		}
 		{
-			dependencies: ["DFFB4840A4A02239"]
-			id: "BFD8A18FA36D5518"
-			title: "Chem"
+			dependencies: ["A67CDD2A30C926B0"]
+			id: "D56BD0037669EF02"
+			title: "Washer"
+			icon: "create:encased_fan"
+			shape: "rsquare"
+			tasks: [{
+				id: "9E9A10CE38C20C02"
+				item: "create:encased_fan"
+				type: "item"
+			}]
+			x: 5.76d
+			y: -2.5d
+			description: ["Fans and washing routes make byproducts visible instead of hidden in a single furnace output."]
+		}
+		{
+			dependencies: ["D56BD0037669EF02" "8B2C868F1240B6EC"]
+			id: "7361C081C9473BE7"
+			title: "Solvents"
 			icon: "minecraft:glass_bottle"
+			shape: "rsquare"
+			tasks: [{
+				id: "9C6164F2ADB6D4CF"
+				title: "Preserve source identity through chemistry"
+				type: "checkmark"
+			}]
+			x: 8.64d
+			y: -0.5d
+			description: ["Acids, salts, gases, and media should refine geology, not erase it."]
+		}
+		{
+			dependencies: ["7361C081C9473BE7"]
+			id: "2A4B33F864785BB8"
+			title: "Depths"
+			icon: "minecraft:lava_bucket"
 			shape: "octagon"
 			size: 1.15d
 			tasks: [{
-				id: "4EEAE8BD25807272"
-				item: "minecraft:glass_bottle"
-				type: "item"
+				id: "02B1722D972FCE32"
+				title: "Respect lava-depth materials"
+				type: "checkmark"
 			}]
-			x: 4.0d
-			y: 2.0d
-			rewards: [
-				{
-					id: "7326FF71313007E4"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
-			description: ["Chemistry does not erase geology. It preserves source identity through solvents, media, gases, salts, and late specialty outputs."]
+			x: 11.52d
+			y: -0.5d
+			description: ["Osmiridium, uranium, and thorium are expedition materials that demand heat, gear, and return logistics."]
 		}
 	]
 	title: "Deposits and Ore Identity"

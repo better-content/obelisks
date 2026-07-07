@@ -236,7 +236,7 @@ var BTM_SUPPRESSED_NATIVE_ORES = [
 
 var BTM_METEOR_ORE_ORIGINS = [
     {
-        ores: ['arcane_crystal_ore', 'runic_stone', 'stella_arcanum', 'mithril_ore', 'cantazarite_ore'],
+        ores: ['arcane_crystal_ore', 'runic_stone', 'stella_arcanum', 'mithril_ore'],
         items: [
             'forbidden_arcanus:arcane_crystal_ore',
             'forbidden_arcanus:deepslate_arcane_crystal_ore',
@@ -247,9 +247,7 @@ var BTM_METEOR_ORE_ORIGINS = [
             'forbidden_arcanus:stellarite_piece',
             'irons_spellbooks:mithril_ore',
             'irons_spellbooks:deepslate_mithril_ore',
-            'irons_spellbooks:raw_mithril',
-            'swem:cantazarite_ore',
-            'swem:cantazarite'
+            'irons_spellbooks:raw_mithril'
         ],
         lines: btmOreOriginLines('Meteor sky dimensions', 'Natural generation is in Aether meteor target biomes.', 'The original Overworld generators are disabled.')
     },

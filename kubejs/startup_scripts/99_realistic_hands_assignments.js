@@ -497,7 +497,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "supplementaries:gravel_bricks",
       "supplementaries:raked_gravel",
       "supplementaries:suspicious_gravel_bricks",
-      "swem:soiled_shavings",
       "tconstruct:earth_slime_dirt",
       "tconstruct:ender_slime_dirt",
       "tconstruct:ichor_slime_dirt",
@@ -1820,25 +1819,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "sushigocrafting:sesame_crop",
       "sushigocrafting:soy_crop",
       "sushigocrafting:wasabi_crop",
-      "swem:alfalfa_plant",
-      "swem:jump_flower_box_black",
-      "swem:jump_flower_box_blue",
-      "swem:jump_flower_box_brown",
-      "swem:jump_flower_box_cyan",
-      "swem:jump_flower_box_gray",
-      "swem:jump_flower_box_green",
-      "swem:jump_flower_box_light_blue",
-      "swem:jump_flower_box_light_gray",
-      "swem:jump_flower_box_lime",
-      "swem:jump_flower_box_magenta",
-      "swem:jump_flower_box_orange",
-      "swem:jump_flower_box_pink",
-      "swem:jump_flower_box_purple",
-      "swem:jump_flower_box_red",
-      "swem:jump_flower_box_white",
-      "swem:jump_flower_box_yellow",
-      "swem:oat_plant",
-      "swem:timothy_plant",
       "tconstruct:beetroot_soup_fluid",
       "tconstruct:blood_earth_slime_grass",
       "tconstruct:blood_ender_slime_grass",
@@ -4538,110 +4518,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "sushigocrafting:avocado_leaves_logged",
       "sushigocrafting:avocado_log",
       "sushigocrafting:fermentation_barrel",
-      "swem:alaharran_banner",
-      "swem:alaharran_wall_banner",
-      "swem:compost",
-      "swem:english_fence",
-      "swem:english_hitching_post",
-      "swem:english_hitching_post_mini",
-      "swem:half_barrel_black",
-      "swem:half_barrel_blue",
-      "swem:half_barrel_brown",
-      "swem:half_barrel_cyan",
-      "swem:half_barrel_gray",
-      "swem:half_barrel_green",
-      "swem:half_barrel_light_blue",
-      "swem:half_barrel_light_gray",
-      "swem:half_barrel_lime",
-      "swem:half_barrel_magenta",
-      "swem:half_barrel_orange",
-      "swem:half_barrel_pink",
-      "swem:half_barrel_purple",
-      "swem:half_barrel_red",
-      "swem:half_barrel_white",
-      "swem:half_barrel_yellow",
-      "swem:jump_log",
-      "swem:jump_plank_black",
-      "swem:jump_plank_blue",
-      "swem:jump_plank_brown",
-      "swem:jump_plank_cyan",
-      "swem:jump_plank_fancy_black",
-      "swem:jump_plank_fancy_blue",
-      "swem:jump_plank_fancy_brown",
-      "swem:jump_plank_fancy_cyan",
-      "swem:jump_plank_fancy_gray",
-      "swem:jump_plank_fancy_green",
-      "swem:jump_plank_fancy_light_blue",
-      "swem:jump_plank_fancy_light_gray",
-      "swem:jump_plank_fancy_lime",
-      "swem:jump_plank_fancy_magenta",
-      "swem:jump_plank_fancy_orange",
-      "swem:jump_plank_fancy_pink",
-      "swem:jump_plank_fancy_purple",
-      "swem:jump_plank_fancy_red",
-      "swem:jump_plank_fancy_white",
-      "swem:jump_plank_fancy_yellow",
-      "swem:jump_plank_gray",
-      "swem:jump_plank_green",
-      "swem:jump_plank_light_blue",
-      "swem:jump_plank_light_gray",
-      "swem:jump_plank_lime",
-      "swem:jump_plank_magenta",
-      "swem:jump_plank_orange",
-      "swem:jump_plank_pink",
-      "swem:jump_plank_purple",
-      "swem:jump_plank_red",
-      "swem:jump_plank_white",
-      "swem:jump_plank_yellow",
-      "swem:paddock_feeder",
-      "swem:pasture_fence_acacia",
-      "swem:pasture_fence_birch",
-      "swem:pasture_fence_dark_oak",
-      "swem:pasture_fence_jungle",
-      "swem:pasture_fence_oak",
-      "swem:pasture_fence_spruce",
-      "swem:pasture_fence_whitewash",
-      "swem:pasture_hitching_post",
-      "swem:pasture_hitching_post_mini",
-      "swem:plaque_bronze",
-      "swem:plaque_gold",
-      "swem:plaque_silver",
-      "swem:tack_box_black",
-      "swem:tack_box_blue",
-      "swem:tack_box_brown",
-      "swem:tack_box_cyan",
-      "swem:tack_box_gray",
-      "swem:tack_box_green",
-      "swem:tack_box_light_blue",
-      "swem:tack_box_light_gray",
-      "swem:tack_box_lime",
-      "swem:tack_box_magenta",
-      "swem:tack_box_orange",
-      "swem:tack_box_pink",
-      "swem:tack_box_purple",
-      "swem:tack_box_red",
-      "swem:tack_box_white",
-      "swem:tack_box_yellow",
-      "swem:western_barrel",
-      "swem:western_fence_acacia",
-      "swem:western_fence_birch",
-      "swem:western_fence_dark_oak",
-      "swem:western_fence_jungle",
-      "swem:western_fence_oak",
-      "swem:western_fence_spruce",
-      "swem:western_fence_whitewash",
-      "swem:western_hitching_post",
-      "swem:western_hitching_post_mini",
-      "swem:wet_compost",
-      "swem:whitewash_button",
-      "swem:whitewash_door",
-      "swem:whitewash_fence",
-      "swem:whitewash_fence_gate",
-      "swem:whitewash_log",
-      "swem:whitewash_planks",
-      "swem:whitewash_sign",
-      "swem:whitewash_trapdoor",
-      "swem:whitewash_wall_sign",
       "tconstruct:blazewood",
       "tconstruct:blazewood_fence",
       "tconstruct:blazewood_slab",
@@ -11615,466 +11491,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "sushigocrafting:cutting_board",
       "sushigocrafting:rice_cooker",
       "sushigocrafting:roller",
-      "swem:acacia_stall_care",
-      "swem:acacia_stall_horse",
-      "swem:alfalfa_bale",
-      "swem:alfalfa_bale_slab",
-      "swem:bin_grain_acacia",
-      "swem:bin_grain_birch",
-      "swem:bin_grain_black",
-      "swem:bin_grain_blue",
-      "swem:bin_grain_brown",
-      "swem:bin_grain_crimson",
-      "swem:bin_grain_cyan",
-      "swem:bin_grain_dark_oak",
-      "swem:bin_grain_gray",
-      "swem:bin_grain_green",
-      "swem:bin_grain_jungle",
-      "swem:bin_grain_light_blue",
-      "swem:bin_grain_light_gray",
-      "swem:bin_grain_lime",
-      "swem:bin_grain_magenta",
-      "swem:bin_grain_oak",
-      "swem:bin_grain_orange",
-      "swem:bin_grain_pink",
-      "swem:bin_grain_purple",
-      "swem:bin_grain_red",
-      "swem:bin_grain_spruce",
-      "swem:bin_grain_warped",
-      "swem:bin_grain_white",
-      "swem:bin_grain_yellow",
-      "swem:birch_stall_care",
-      "swem:birch_stall_horse",
-      "swem:black_cone",
-      "swem:bleacher",
-      "swem:bleacher_wireframe",
-      "swem:block_o_water",
-      "swem:blue_cone",
-      "swem:bridle_rack",
-      "swem:brown_cone",
-      "swem:cantazarite_anvil",
-      "swem:cantazarite_block",
-      "swem:cantazarite_ore",
-      "swem:cyan_cone",
-      "swem:dark_friendly_bars",
-      "swem:dark_oak_stall_care",
-      "swem:dark_oak_stall_horse",
-      "swem:dark_rubber_mat",
-      "swem:dark_shavings",
-      "swem:grain_feeder_black",
-      "swem:grain_feeder_blue",
-      "swem:grain_feeder_brown",
-      "swem:grain_feeder_cyan",
-      "swem:grain_feeder_gray",
-      "swem:grain_feeder_green",
-      "swem:grain_feeder_light_blue",
-      "swem:grain_feeder_light_gray",
-      "swem:grain_feeder_lime",
-      "swem:grain_feeder_magenta",
-      "swem:grain_feeder_orange",
-      "swem:grain_feeder_pink",
-      "swem:grain_feeder_purple",
-      "swem:grain_feeder_red",
-      "swem:grain_feeder_white",
-      "swem:grain_feeder_yellow",
-      "swem:gray_cone",
-      "swem:green_cone",
-      "swem:hat_cowboy",
-      "swem:helmet_riding",
-      "swem:hitching_ring",
-      "swem:horse_armor_rack",
-      "swem:horse_pee",
-      "swem:invisible_glow_block",
-      "swem:jump_brush_box",
-      "swem:jump_cavaletti_black",
-      "swem:jump_cavaletti_blue",
-      "swem:jump_cavaletti_brown",
-      "swem:jump_cavaletti_cyan",
-      "swem:jump_cavaletti_gray",
-      "swem:jump_cavaletti_green",
-      "swem:jump_cavaletti_light_blue",
-      "swem:jump_cavaletti_light_gray",
-      "swem:jump_cavaletti_lime",
-      "swem:jump_cavaletti_magenta",
-      "swem:jump_cavaletti_orange",
-      "swem:jump_cavaletti_pink",
-      "swem:jump_cavaletti_purple",
-      "swem:jump_cavaletti_red",
-      "swem:jump_cavaletti_white",
-      "swem:jump_cavaletti_yellow",
-      "swem:jump_controller",
-      "swem:jump_coop",
-      "swem:jump_ground_pole_black",
-      "swem:jump_ground_pole_blue",
-      "swem:jump_ground_pole_brown",
-      "swem:jump_ground_pole_cyan",
-      "swem:jump_ground_pole_gray",
-      "swem:jump_ground_pole_green",
-      "swem:jump_ground_pole_light_blue",
-      "swem:jump_ground_pole_light_gray",
-      "swem:jump_ground_pole_lime",
-      "swem:jump_ground_pole_magenta",
-      "swem:jump_ground_pole_orange",
-      "swem:jump_ground_pole_pink",
-      "swem:jump_ground_pole_purple",
-      "swem:jump_ground_pole_red",
-      "swem:jump_ground_pole_white",
-      "swem:jump_ground_pole_yellow",
-      "swem:jump_hedge",
-      "swem:jump_none",
-      "swem:jump_panel_arrow_black",
-      "swem:jump_panel_arrow_blue",
-      "swem:jump_panel_arrow_brown",
-      "swem:jump_panel_arrow_cyan",
-      "swem:jump_panel_arrow_gray",
-      "swem:jump_panel_arrow_green",
-      "swem:jump_panel_arrow_light_blue",
-      "swem:jump_panel_arrow_light_gray",
-      "swem:jump_panel_arrow_lime",
-      "swem:jump_panel_arrow_magenta",
-      "swem:jump_panel_arrow_orange",
-      "swem:jump_panel_arrow_pink",
-      "swem:jump_panel_arrow_purple",
-      "swem:jump_panel_arrow_red",
-      "swem:jump_panel_arrow_white",
-      "swem:jump_panel_arrow_yellow",
-      "swem:jump_panel_stripe_black",
-      "swem:jump_panel_stripe_blue",
-      "swem:jump_panel_stripe_brown",
-      "swem:jump_panel_stripe_cyan",
-      "swem:jump_panel_stripe_gray",
-      "swem:jump_panel_stripe_green",
-      "swem:jump_panel_stripe_light_blue",
-      "swem:jump_panel_stripe_light_gray",
-      "swem:jump_panel_stripe_lime",
-      "swem:jump_panel_stripe_magenta",
-      "swem:jump_panel_stripe_orange",
-      "swem:jump_panel_stripe_pink",
-      "swem:jump_panel_stripe_purple",
-      "swem:jump_panel_stripe_red",
-      "swem:jump_panel_stripe_white",
-      "swem:jump_panel_stripe_yellow",
-      "swem:jump_panel_wave_black",
-      "swem:jump_panel_wave_blue",
-      "swem:jump_panel_wave_brown",
-      "swem:jump_panel_wave_cyan",
-      "swem:jump_panel_wave_gray",
-      "swem:jump_panel_wave_green",
-      "swem:jump_panel_wave_light_blue",
-      "swem:jump_panel_wave_light_gray",
-      "swem:jump_panel_wave_lime",
-      "swem:jump_panel_wave_magenta",
-      "swem:jump_panel_wave_orange",
-      "swem:jump_panel_wave_pink",
-      "swem:jump_panel_wave_purple",
-      "swem:jump_panel_wave_red",
-      "swem:jump_panel_wave_white",
-      "swem:jump_panel_wave_yellow",
-      "swem:jump_pole_on_box_large_black",
-      "swem:jump_pole_on_box_large_blue",
-      "swem:jump_pole_on_box_large_brown",
-      "swem:jump_pole_on_box_large_cyan",
-      "swem:jump_pole_on_box_large_gray",
-      "swem:jump_pole_on_box_large_green",
-      "swem:jump_pole_on_box_large_light_blue",
-      "swem:jump_pole_on_box_large_light_gray",
-      "swem:jump_pole_on_box_large_lime",
-      "swem:jump_pole_on_box_large_magenta",
-      "swem:jump_pole_on_box_large_orange",
-      "swem:jump_pole_on_box_large_pink",
-      "swem:jump_pole_on_box_large_purple",
-      "swem:jump_pole_on_box_large_red",
-      "swem:jump_pole_on_box_large_white",
-      "swem:jump_pole_on_box_large_yellow",
-      "swem:jump_pole_on_box_small_black",
-      "swem:jump_pole_on_box_small_blue",
-      "swem:jump_pole_on_box_small_brown",
-      "swem:jump_pole_on_box_small_cyan",
-      "swem:jump_pole_on_box_small_gray",
-      "swem:jump_pole_on_box_small_green",
-      "swem:jump_pole_on_box_small_light_blue",
-      "swem:jump_pole_on_box_small_light_gray",
-      "swem:jump_pole_on_box_small_lime",
-      "swem:jump_pole_on_box_small_magenta",
-      "swem:jump_pole_on_box_small_orange",
-      "swem:jump_pole_on_box_small_pink",
-      "swem:jump_pole_on_box_small_purple",
-      "swem:jump_pole_on_box_small_red",
-      "swem:jump_pole_on_box_small_white",
-      "swem:jump_pole_on_box_small_yellow",
-      "swem:jump_rail_black",
-      "swem:jump_rail_blue",
-      "swem:jump_rail_brown",
-      "swem:jump_rail_cyan",
-      "swem:jump_rail_gray",
-      "swem:jump_rail_green",
-      "swem:jump_rail_light_blue",
-      "swem:jump_rail_light_gray",
-      "swem:jump_rail_lime",
-      "swem:jump_rail_magenta",
-      "swem:jump_rail_orange",
-      "swem:jump_rail_pink",
-      "swem:jump_rail_purple",
-      "swem:jump_rail_red",
-      "swem:jump_rail_white",
-      "swem:jump_rail_yellow",
-      "swem:jump_roll_top_black",
-      "swem:jump_roll_top_blue",
-      "swem:jump_roll_top_brown",
-      "swem:jump_roll_top_cyan",
-      "swem:jump_roll_top_gray",
-      "swem:jump_roll_top_green",
-      "swem:jump_roll_top_light_blue",
-      "swem:jump_roll_top_light_gray",
-      "swem:jump_roll_top_lime",
-      "swem:jump_roll_top_magenta",
-      "swem:jump_roll_top_orange",
-      "swem:jump_roll_top_pink",
-      "swem:jump_roll_top_purple",
-      "swem:jump_roll_top_red",
-      "swem:jump_roll_top_white",
-      "swem:jump_roll_top_yellow",
-      "swem:jump_stair_drop",
-      "swem:jump_standard_none",
-      "swem:jump_standard_radial",
-      "swem:jump_standard_schooling",
-      "swem:jump_standard_vertical_slat",
-      "swem:jump_wall",
-      "swem:jump_wall_mini",
-      "swem:jungle_stall_care",
-      "swem:jungle_stall_horse",
-      "swem:lead_anchor",
-      "swem:light_blue_cone",
-      "swem:light_friendly_bars",
-      "swem:light_gray_cone",
-      "swem:light_rubber_mat",
-      "swem:light_shavings",
-      "swem:lime_cone",
-      "swem:locker",
-      "swem:magenta_cone",
-      "swem:medium_friendly_bars",
-      "swem:medium_rubber_mat",
-      "swem:medium_shavings",
-      "swem:metal_grate",
-      "swem:meter_point",
-      "swem:oak_stall_care",
-      "swem:oak_stall_horse",
-      "swem:oat_bale",
-      "swem:oat_bale_slab",
-      "swem:orange_cone",
-      "swem:pasture_black_care",
-      "swem:pasture_black_horse",
-      "swem:pasture_blue_care",
-      "swem:pasture_blue_horse",
-      "swem:pasture_brown_care",
-      "swem:pasture_brown_horse",
-      "swem:pasture_cyan_care",
-      "swem:pasture_cyan_horse",
-      "swem:pasture_gray_care",
-      "swem:pasture_gray_horse",
-      "swem:pasture_green_care",
-      "swem:pasture_green_horse",
-      "swem:pasture_light_blue_care",
-      "swem:pasture_light_blue_horse",
-      "swem:pasture_light_gray_care",
-      "swem:pasture_light_gray_horse",
-      "swem:pasture_lime_care",
-      "swem:pasture_lime_horse",
-      "swem:pasture_magenta_care",
-      "swem:pasture_magenta_horse",
-      "swem:pasture_orange_care",
-      "swem:pasture_orange_horse",
-      "swem:pasture_pink_care",
-      "swem:pasture_pink_horse",
-      "swem:pasture_purple_care",
-      "swem:pasture_purple_horse",
-      "swem:pasture_red_care",
-      "swem:pasture_red_horse",
-      "swem:pasture_white_care",
-      "swem:pasture_white_horse",
-      "swem:pasture_yellow_care",
-      "swem:pasture_yellow_horse",
-      "swem:pink_cone",
-      "swem:purple_cone",
-      "swem:quality_bale",
-      "swem:quality_bale_slab",
-      "swem:rack_blanket_5",
-      "swem:rack_halter_lead",
-      "swem:rack_lead_3",
-      "swem:rack_pasture_blanket_3_short",
-      "swem:rack_pasture_blanket_5_long",
-      "swem:red_cone",
-      "swem:ribbon_champion",
-      "swem:ribbon_rchampion",
-      "swem:ribbon_three_black",
-      "swem:ribbon_three_blue",
-      "swem:ribbon_three_brown",
-      "swem:ribbon_three_cyan",
-      "swem:ribbon_three_gray",
-      "swem:ribbon_three_green",
-      "swem:ribbon_three_light_blue",
-      "swem:ribbon_three_light_gray",
-      "swem:ribbon_three_lime",
-      "swem:ribbon_three_magenta",
-      "swem:ribbon_three_orange",
-      "swem:ribbon_three_pink",
-      "swem:ribbon_three_purple",
-      "swem:ribbon_three_red",
-      "swem:ribbon_three_white",
-      "swem:ribbon_three_yellow",
-      "swem:ribbon_two_black",
-      "swem:ribbon_two_blue",
-      "swem:ribbon_two_brown",
-      "swem:ribbon_two_cyan",
-      "swem:ribbon_two_gray",
-      "swem:ribbon_two_green",
-      "swem:ribbon_two_light_blue",
-      "swem:ribbon_two_light_gray",
-      "swem:ribbon_two_lime",
-      "swem:ribbon_two_magenta",
-      "swem:ribbon_two_orange",
-      "swem:ribbon_two_pink",
-      "swem:ribbon_two_purple",
-      "swem:ribbon_two_red",
-      "swem:ribbon_two_white",
-      "swem:ribbon_two_yellow",
-      "swem:rosette_black",
-      "swem:rosette_blue",
-      "swem:rosette_brown",
-      "swem:rosette_cyan",
-      "swem:rosette_gray",
-      "swem:rosette_green",
-      "swem:rosette_light_blue",
-      "swem:rosette_light_gray",
-      "swem:rosette_lime",
-      "swem:rosette_magenta",
-      "swem:rosette_orange",
-      "swem:rosette_pink",
-      "swem:rosette_purple",
-      "swem:rosette_red",
-      "swem:rosette_white",
-      "swem:rosette_yellow",
-      "swem:saddle_rack",
-      "swem:separator_black",
-      "swem:separator_blue",
-      "swem:separator_brown",
-      "swem:separator_cyan",
-      "swem:separator_gray",
-      "swem:separator_green",
-      "swem:separator_light_blue",
-      "swem:separator_light_gray",
-      "swem:separator_lime",
-      "swem:separator_magenta",
-      "swem:separator_orange",
-      "swem:separator_pink",
-      "swem:separator_purple",
-      "swem:separator_red",
-      "swem:separator_white",
-      "swem:separator_yellow",
-      "swem:shining_amethyst_cluster",
-      "swem:shop",
-      "swem:slow_feeder_black",
-      "swem:slow_feeder_blue",
-      "swem:slow_feeder_brown",
-      "swem:slow_feeder_cyan",
-      "swem:slow_feeder_gray",
-      "swem:slow_feeder_green",
-      "swem:slow_feeder_light_blue",
-      "swem:slow_feeder_light_gray",
-      "swem:slow_feeder_lime",
-      "swem:slow_feeder_magenta",
-      "swem:slow_feeder_orange",
-      "swem:slow_feeder_pink",
-      "swem:slow_feeder_purple",
-      "swem:slow_feeder_red",
-      "swem:slow_feeder_white",
-      "swem:slow_feeder_yellow",
-      "swem:spigot",
-      "swem:spruce_stall_care",
-      "swem:spruce_stall_horse",
-      "swem:star_worm_cobble",
-      "swem:tearing_magma",
-      "swem:timothy_bale",
-      "swem:timothy_bale_slab",
-      "swem:toy_ball_slow_feed_hay",
-      "swem:toy_jolly_apple_snack",
-      "swem:toy_jolly_ball",
-      "swem:toy_jolly_ball_hay",
-      "swem:toy_lick_salt",
-      "swem:toy_scratchy_pole",
-      "swem:toy_string_treats",
-      "swem:trophy_bronze",
-      "swem:trophy_gold",
-      "swem:trophy_silver",
-      "swem:wall_spigot",
-      "swem:water_trough",
-      "swem:web_guard_black_care",
-      "swem:web_guard_black_horse",
-      "swem:web_guard_black_rider",
-      "swem:web_guard_blue_care",
-      "swem:web_guard_blue_horse",
-      "swem:web_guard_blue_rider",
-      "swem:web_guard_brown_care",
-      "swem:web_guard_brown_horse",
-      "swem:web_guard_brown_rider",
-      "swem:web_guard_cyan_care",
-      "swem:web_guard_cyan_horse",
-      "swem:web_guard_cyan_rider",
-      "swem:web_guard_gray_care",
-      "swem:web_guard_gray_horse",
-      "swem:web_guard_gray_rider",
-      "swem:web_guard_green_care",
-      "swem:web_guard_green_horse",
-      "swem:web_guard_green_rider",
-      "swem:web_guard_light_blue_care",
-      "swem:web_guard_light_blue_horse",
-      "swem:web_guard_light_blue_rider",
-      "swem:web_guard_light_gray_care",
-      "swem:web_guard_light_gray_horse",
-      "swem:web_guard_light_gray_rider",
-      "swem:web_guard_lime_care",
-      "swem:web_guard_lime_horse",
-      "swem:web_guard_lime_rider",
-      "swem:web_guard_magenta_care",
-      "swem:web_guard_magenta_horse",
-      "swem:web_guard_magenta_rider",
-      "swem:web_guard_orange_care",
-      "swem:web_guard_orange_horse",
-      "swem:web_guard_orange_rider",
-      "swem:web_guard_pink_care",
-      "swem:web_guard_pink_horse",
-      "swem:web_guard_pink_rider",
-      "swem:web_guard_purple_care",
-      "swem:web_guard_purple_horse",
-      "swem:web_guard_purple_rider",
-      "swem:web_guard_red_care",
-      "swem:web_guard_red_horse",
-      "swem:web_guard_red_rider",
-      "swem:web_guard_white_care",
-      "swem:web_guard_white_horse",
-      "swem:web_guard_white_rider",
-      "swem:web_guard_yellow_care",
-      "swem:web_guard_yellow_horse",
-      "swem:web_guard_yellow_rider",
-      "swem:western_pole",
-      "swem:wheel_barrow_black",
-      "swem:wheel_barrow_blue",
-      "swem:wheel_barrow_brown",
-      "swem:wheel_barrow_cyan",
-      "swem:wheel_barrow_gray",
-      "swem:wheel_barrow_green",
-      "swem:wheel_barrow_light_blue",
-      "swem:wheel_barrow_light_gray",
-      "swem:wheel_barrow_lime",
-      "swem:wheel_barrow_magenta",
-      "swem:wheel_barrow_orange",
-      "swem:wheel_barrow_pink",
-      "swem:wheel_barrow_purple",
-      "swem:wheel_barrow_red",
-      "swem:wheel_barrow_white",
-      "swem:wheel_barrow_yellow",
-      "swem:white_cone",
-      "swem:yellow_cone",
       "tconstruct:amethyst_bronze_block",
       "tconstruct:black_clear_stained_glass",
       "tconstruct:black_clear_stained_glass_pane",
@@ -13119,12 +12535,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "supplementaries:ash_bricks_wall",
       "supplementaries:ashen_basalt",
       "supplementaries:gunpowder",
-      "swem:whitewash_slab",
-      "swem:whitewash_stairs",
-      "swem:whitewash_stall_care",
-      "swem:whitewash_stall_horse",
-      "swem:yellow_snow",
-      "swem:yellow_snow_block",
       "tconstruct:cheese_block",
       "tconstruct:earth_congealed_slime",
       "tconstruct:ender_congealed_slime",
@@ -13246,12 +12656,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "minecraft:shears",
       "reliquary:shears_of_winter",
       "sushigocrafting:cleaver_knife",
-      "swem:scythe_copper",
-      "swem:scythe_diamond",
-      "swem:scythe_gold",
-      "swem:scythe_iron",
-      "swem:scythe_leather",
-      "swem:scythe_netherite",
       "tconstruct:kama",
       "tconstruct:scythe"
     ],
@@ -13479,13 +12883,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "quark:waxed_weathered_cut_copper_vertical_slab",
       "quark:waxed_white_corundum",
       "quark:waxed_yellow_corundum",
-      "swem:axe_amethyst",
-      "swem:axe_copper",
-      "swem:axe_diamond",
-      "swem:axe_gold",
-      "swem:axe_iron",
-      "swem:axe_leather",
-      "swem:axe_netherite",
       "tconstruct:adze_head",
       "tconstruct:adze_head_cast",
       "tconstruct:adze_head_red_sand_cast",
@@ -13569,13 +12966,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "occultism:infused_pickaxe",
       "occultism:ritual_dummy/craft_infused_pickaxe",
       "occultism:spirit_attuned_pickaxe_head",
-      "swem:pickaxe_amethyst",
-      "swem:pickaxe_copper",
-      "swem:pickaxe_diamond",
-      "swem:pickaxe_gold",
-      "swem:pickaxe_iron",
-      "swem:pickaxe_leather",
-      "swem:pickaxe_netherite",
       "tconstruct:pickaxe",
       "tconstruct:sledge_hammer",
       "tconstruct:vein_hammer",
@@ -13626,13 +13016,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "minecraft:netherite_shovel",
       "minecraft:stone_shovel",
       "minecraft:wooden_shovel",
-      "swem:shovel_amethyst",
-      "swem:shovel_copper",
-      "swem:shovel_diamond",
-      "swem:shovel_gold",
-      "swem:shovel_iron",
-      "swem:shovel_leather",
-      "swem:shovel_netherite",
       "tconstruct:excavator",
       "the_finley_dimension_remastered:forglite_shovel",
       "tinkers_battle_spades:battle_spade",
@@ -13685,7 +13068,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "minecraft:stone_hoe",
       "minecraft:wooden_hoe",
       "reliquary:phoenix_down",
-      "swem:scythe_amethyst",
       "the_finley_dimension_remastered:forglite_hoe",
       "twilightforest:ironwood_hoe",
       "twilightforest:steeleaf_hoe",
@@ -13880,13 +13262,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "powergrid:electrobaton",
       "reliquary:magicbane",
       "reliquary:mercy_cross",
-      "swem:sword_amethyst",
-      "swem:sword_copper",
-      "swem:sword_diamond",
-      "swem:sword_gold",
-      "swem:sword_iron",
-      "swem:sword_leather",
-      "swem:sword_netherite",
       "tconstruct:broad_blade",
       "tconstruct:broad_blade_cast",
       "tconstruct:broad_blade_red_sand_cast",
@@ -102162,7 +101537,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
-    "swem:acacia_stall_care": {
       "tools": [
         "pickaxe"
       ],
@@ -102170,7 +101544,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:acacia_stall_horse": {
       "tools": [
         "pickaxe"
       ],
@@ -102178,7 +101551,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:alaharran_banner": {
       "tools": [
         "axe"
       ],
@@ -102186,7 +101558,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:alaharran_wall_banner": {
       "tools": [
         "axe"
       ],
@@ -102194,7 +101565,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:alfalfa_bale": {
       "tools": [
         "pickaxe"
       ],
@@ -102202,7 +101572,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:alfalfa_bale_slab": {
       "tools": [
         "pickaxe"
       ],
@@ -102210,7 +101579,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:alfalfa_plant": {
       "tools": [
         "knife"
       ],
@@ -102218,7 +101586,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
-    "swem:bin_grain_acacia": {
       "tools": [
         "pickaxe"
       ],
@@ -102226,7 +101593,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:bin_grain_birch": {
       "tools": [
         "pickaxe"
       ],
@@ -102234,7 +101600,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:bin_grain_black": {
       "tools": [
         "pickaxe"
       ],
@@ -102242,7 +101607,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:bin_grain_blue": {
       "tools": [
         "pickaxe"
       ],
@@ -102250,7 +101614,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:bin_grain_brown": {
       "tools": [
         "pickaxe"
       ],
@@ -102258,7 +101621,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:bin_grain_crimson": {
       "tools": [
         "pickaxe"
       ],
@@ -102266,7 +101628,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:bin_grain_cyan": {
       "tools": [
         "pickaxe"
       ],
@@ -102274,7 +101635,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:bin_grain_dark_oak": {
       "tools": [
         "pickaxe"
       ],
@@ -102282,7 +101642,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:bin_grain_gray": {
       "tools": [
         "pickaxe"
       ],
@@ -102290,7 +101649,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:bin_grain_green": {
       "tools": [
         "pickaxe"
       ],
@@ -102298,7 +101656,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:bin_grain_jungle": {
       "tools": [
         "pickaxe"
       ],
@@ -102306,7 +101663,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:bin_grain_light_blue": {
       "tools": [
         "pickaxe"
       ],
@@ -102314,7 +101670,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:bin_grain_light_gray": {
       "tools": [
         "pickaxe"
       ],
@@ -102322,7 +101677,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:bin_grain_lime": {
       "tools": [
         "pickaxe"
       ],
@@ -102330,7 +101684,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:bin_grain_magenta": {
       "tools": [
         "pickaxe"
       ],
@@ -102338,7 +101691,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:bin_grain_oak": {
       "tools": [
         "pickaxe"
       ],
@@ -102346,7 +101698,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:bin_grain_orange": {
       "tools": [
         "pickaxe"
       ],
@@ -102354,7 +101705,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:bin_grain_pink": {
       "tools": [
         "pickaxe"
       ],
@@ -102362,7 +101712,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:bin_grain_purple": {
       "tools": [
         "pickaxe"
       ],
@@ -102370,7 +101719,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:bin_grain_red": {
       "tools": [
         "pickaxe"
       ],
@@ -102378,7 +101726,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:bin_grain_spruce": {
       "tools": [
         "pickaxe"
       ],
@@ -102386,7 +101733,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:bin_grain_warped": {
       "tools": [
         "pickaxe"
       ],
@@ -102394,7 +101740,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:bin_grain_white": {
       "tools": [
         "pickaxe"
       ],
@@ -102402,7 +101747,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:bin_grain_yellow": {
       "tools": [
         "pickaxe"
       ],
@@ -102410,7 +101754,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:birch_stall_care": {
       "tools": [
         "pickaxe"
       ],
@@ -102418,7 +101761,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:birch_stall_horse": {
       "tools": [
         "pickaxe"
       ],
@@ -102426,7 +101768,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:black_cone": {
       "tools": [
         "pickaxe"
       ],
@@ -102434,7 +101775,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:bleacher": {
       "tools": [
         "pickaxe"
       ],
@@ -102442,7 +101782,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:bleacher_wireframe": {
       "tools": [
         "pickaxe"
       ],
@@ -102450,7 +101789,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:block_o_water": {
       "tools": [
         "pickaxe"
       ],
@@ -102458,7 +101796,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:blue_cone": {
       "tools": [
         "pickaxe"
       ],
@@ -102466,7 +101803,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:bridle_rack": {
       "tools": [
         "pickaxe"
       ],
@@ -102474,7 +101810,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:brown_cone": {
       "tools": [
         "pickaxe"
       ],
@@ -102482,7 +101817,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:cantazarite_anvil": {
       "tools": [
         "pickaxe"
       ],
@@ -102490,7 +101824,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:cantazarite_block": {
       "tools": [
         "pickaxe"
       ],
@@ -102498,7 +101831,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:cantazarite_ore": {
       "tools": [
         "pickaxe"
       ],
@@ -102506,7 +101838,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:compost": {
       "tools": [
         "axe"
       ],
@@ -102514,7 +101845,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:cyan_cone": {
       "tools": [
         "pickaxe"
       ],
@@ -102522,7 +101852,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:dark_friendly_bars": {
       "tools": [
         "pickaxe"
       ],
@@ -102530,7 +101859,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:dark_oak_stall_care": {
       "tools": [
         "pickaxe"
       ],
@@ -102538,7 +101866,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:dark_oak_stall_horse": {
       "tools": [
         "pickaxe"
       ],
@@ -102546,7 +101873,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:dark_rubber_mat": {
       "tools": [
         "pickaxe"
       ],
@@ -102554,7 +101880,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:dark_shavings": {
       "tools": [
         "pickaxe"
       ],
@@ -102562,7 +101887,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:english_fence": {
       "tools": [
         "axe"
       ],
@@ -102570,7 +101894,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:english_hitching_post": {
       "tools": [
         "axe"
       ],
@@ -102578,7 +101901,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:english_hitching_post_mini": {
       "tools": [
         "axe"
       ],
@@ -102586,7 +101908,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:grain_feeder_black": {
       "tools": [
         "pickaxe"
       ],
@@ -102594,7 +101915,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:grain_feeder_blue": {
       "tools": [
         "pickaxe"
       ],
@@ -102602,7 +101922,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:grain_feeder_brown": {
       "tools": [
         "pickaxe"
       ],
@@ -102610,7 +101929,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:grain_feeder_cyan": {
       "tools": [
         "pickaxe"
       ],
@@ -102618,7 +101936,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:grain_feeder_gray": {
       "tools": [
         "pickaxe"
       ],
@@ -102626,7 +101943,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:grain_feeder_green": {
       "tools": [
         "pickaxe"
       ],
@@ -102634,7 +101950,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:grain_feeder_light_blue": {
       "tools": [
         "pickaxe"
       ],
@@ -102642,7 +101957,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:grain_feeder_light_gray": {
       "tools": [
         "pickaxe"
       ],
@@ -102650,7 +101964,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:grain_feeder_lime": {
       "tools": [
         "pickaxe"
       ],
@@ -102658,7 +101971,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:grain_feeder_magenta": {
       "tools": [
         "pickaxe"
       ],
@@ -102666,7 +101978,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:grain_feeder_orange": {
       "tools": [
         "pickaxe"
       ],
@@ -102674,7 +101985,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:grain_feeder_pink": {
       "tools": [
         "pickaxe"
       ],
@@ -102682,7 +101992,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:grain_feeder_purple": {
       "tools": [
         "pickaxe"
       ],
@@ -102690,7 +101999,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:grain_feeder_red": {
       "tools": [
         "pickaxe"
       ],
@@ -102698,7 +102006,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:grain_feeder_white": {
       "tools": [
         "pickaxe"
       ],
@@ -102706,7 +102013,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:grain_feeder_yellow": {
       "tools": [
         "pickaxe"
       ],
@@ -102714,7 +102020,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:gray_cone": {
       "tools": [
         "pickaxe"
       ],
@@ -102722,7 +102027,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:green_cone": {
       "tools": [
         "pickaxe"
       ],
@@ -102730,7 +102034,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:half_barrel_black": {
       "tools": [
         "axe"
       ],
@@ -102738,7 +102041,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:half_barrel_blue": {
       "tools": [
         "axe"
       ],
@@ -102746,7 +102048,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:half_barrel_brown": {
       "tools": [
         "axe"
       ],
@@ -102754,7 +102055,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:half_barrel_cyan": {
       "tools": [
         "axe"
       ],
@@ -102762,7 +102062,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:half_barrel_gray": {
       "tools": [
         "axe"
       ],
@@ -102770,7 +102069,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:half_barrel_green": {
       "tools": [
         "axe"
       ],
@@ -102778,7 +102076,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:half_barrel_light_blue": {
       "tools": [
         "axe"
       ],
@@ -102786,7 +102083,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:half_barrel_light_gray": {
       "tools": [
         "axe"
       ],
@@ -102794,7 +102090,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:half_barrel_lime": {
       "tools": [
         "axe"
       ],
@@ -102802,7 +102097,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:half_barrel_magenta": {
       "tools": [
         "axe"
       ],
@@ -102810,7 +102104,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:half_barrel_orange": {
       "tools": [
         "axe"
       ],
@@ -102818,7 +102111,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:half_barrel_pink": {
       "tools": [
         "axe"
       ],
@@ -102826,7 +102118,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:half_barrel_purple": {
       "tools": [
         "axe"
       ],
@@ -102834,7 +102125,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:half_barrel_red": {
       "tools": [
         "axe"
       ],
@@ -102842,7 +102132,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:half_barrel_white": {
       "tools": [
         "axe"
       ],
@@ -102850,7 +102139,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:half_barrel_yellow": {
       "tools": [
         "axe"
       ],
@@ -102858,7 +102146,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:hat_cowboy": {
       "tools": [
         "pickaxe"
       ],
@@ -102866,7 +102153,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:helmet_riding": {
       "tools": [
         "pickaxe"
       ],
@@ -102874,7 +102160,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:hitching_ring": {
       "tools": [
         "pickaxe"
       ],
@@ -102882,7 +102167,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:horse_armor_rack": {
       "tools": [
         "pickaxe"
       ],
@@ -102890,7 +102174,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:horse_pee": {
       "tools": [
         "pickaxe"
       ],
@@ -102898,7 +102181,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:invisible_glow_block": {
       "tools": [
         "pickaxe"
       ],
@@ -102906,7 +102188,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_brush_box": {
       "tools": [
         "pickaxe"
       ],
@@ -102914,7 +102195,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_cavaletti_black": {
       "tools": [
         "pickaxe"
       ],
@@ -102922,7 +102202,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_cavaletti_blue": {
       "tools": [
         "pickaxe"
       ],
@@ -102930,7 +102209,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_cavaletti_brown": {
       "tools": [
         "pickaxe"
       ],
@@ -102938,7 +102216,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_cavaletti_cyan": {
       "tools": [
         "pickaxe"
       ],
@@ -102946,7 +102223,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_cavaletti_gray": {
       "tools": [
         "pickaxe"
       ],
@@ -102954,7 +102230,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_cavaletti_green": {
       "tools": [
         "pickaxe"
       ],
@@ -102962,7 +102237,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_cavaletti_light_blue": {
       "tools": [
         "pickaxe"
       ],
@@ -102970,7 +102244,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_cavaletti_light_gray": {
       "tools": [
         "pickaxe"
       ],
@@ -102978,7 +102251,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_cavaletti_lime": {
       "tools": [
         "pickaxe"
       ],
@@ -102986,7 +102258,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_cavaletti_magenta": {
       "tools": [
         "pickaxe"
       ],
@@ -102994,7 +102265,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_cavaletti_orange": {
       "tools": [
         "pickaxe"
       ],
@@ -103002,7 +102272,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_cavaletti_pink": {
       "tools": [
         "pickaxe"
       ],
@@ -103010,7 +102279,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_cavaletti_purple": {
       "tools": [
         "pickaxe"
       ],
@@ -103018,7 +102286,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_cavaletti_red": {
       "tools": [
         "pickaxe"
       ],
@@ -103026,7 +102293,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_cavaletti_white": {
       "tools": [
         "pickaxe"
       ],
@@ -103034,7 +102300,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_cavaletti_yellow": {
       "tools": [
         "pickaxe"
       ],
@@ -103042,7 +102307,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_controller": {
       "tools": [
         "pickaxe"
       ],
@@ -103050,7 +102314,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_coop": {
       "tools": [
         "pickaxe"
       ],
@@ -103058,7 +102321,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_flower_box_black": {
       "tools": [
         "knife"
       ],
@@ -103066,7 +102328,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
-    "swem:jump_flower_box_blue": {
       "tools": [
         "knife"
       ],
@@ -103074,7 +102335,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
-    "swem:jump_flower_box_brown": {
       "tools": [
         "knife"
       ],
@@ -103082,7 +102342,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
-    "swem:jump_flower_box_cyan": {
       "tools": [
         "knife"
       ],
@@ -103090,7 +102349,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
-    "swem:jump_flower_box_gray": {
       "tools": [
         "knife"
       ],
@@ -103098,7 +102356,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
-    "swem:jump_flower_box_green": {
       "tools": [
         "knife"
       ],
@@ -103106,7 +102363,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
-    "swem:jump_flower_box_light_blue": {
       "tools": [
         "knife"
       ],
@@ -103114,7 +102370,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
-    "swem:jump_flower_box_light_gray": {
       "tools": [
         "knife"
       ],
@@ -103122,7 +102377,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
-    "swem:jump_flower_box_lime": {
       "tools": [
         "knife"
       ],
@@ -103130,7 +102384,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
-    "swem:jump_flower_box_magenta": {
       "tools": [
         "knife"
       ],
@@ -103138,7 +102391,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
-    "swem:jump_flower_box_orange": {
       "tools": [
         "knife"
       ],
@@ -103146,7 +102398,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
-    "swem:jump_flower_box_pink": {
       "tools": [
         "knife"
       ],
@@ -103154,7 +102405,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
-    "swem:jump_flower_box_purple": {
       "tools": [
         "knife"
       ],
@@ -103162,7 +102412,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
-    "swem:jump_flower_box_red": {
       "tools": [
         "knife"
       ],
@@ -103170,7 +102419,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
-    "swem:jump_flower_box_white": {
       "tools": [
         "knife"
       ],
@@ -103178,7 +102426,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
-    "swem:jump_flower_box_yellow": {
       "tools": [
         "knife"
       ],
@@ -103186,7 +102433,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
-    "swem:jump_ground_pole_black": {
       "tools": [
         "pickaxe"
       ],
@@ -103194,7 +102440,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_ground_pole_blue": {
       "tools": [
         "pickaxe"
       ],
@@ -103202,7 +102447,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_ground_pole_brown": {
       "tools": [
         "pickaxe"
       ],
@@ -103210,7 +102454,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_ground_pole_cyan": {
       "tools": [
         "pickaxe"
       ],
@@ -103218,7 +102461,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_ground_pole_gray": {
       "tools": [
         "pickaxe"
       ],
@@ -103226,7 +102468,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_ground_pole_green": {
       "tools": [
         "pickaxe"
       ],
@@ -103234,7 +102475,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_ground_pole_light_blue": {
       "tools": [
         "pickaxe"
       ],
@@ -103242,7 +102482,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_ground_pole_light_gray": {
       "tools": [
         "pickaxe"
       ],
@@ -103250,7 +102489,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_ground_pole_lime": {
       "tools": [
         "pickaxe"
       ],
@@ -103258,7 +102496,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_ground_pole_magenta": {
       "tools": [
         "pickaxe"
       ],
@@ -103266,7 +102503,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_ground_pole_orange": {
       "tools": [
         "pickaxe"
       ],
@@ -103274,7 +102510,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_ground_pole_pink": {
       "tools": [
         "pickaxe"
       ],
@@ -103282,7 +102517,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_ground_pole_purple": {
       "tools": [
         "pickaxe"
       ],
@@ -103290,7 +102524,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_ground_pole_red": {
       "tools": [
         "pickaxe"
       ],
@@ -103298,7 +102531,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_ground_pole_white": {
       "tools": [
         "pickaxe"
       ],
@@ -103306,7 +102538,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_ground_pole_yellow": {
       "tools": [
         "pickaxe"
       ],
@@ -103314,7 +102545,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_hedge": {
       "tools": [
         "pickaxe"
       ],
@@ -103322,7 +102552,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_log": {
       "tools": [
         "axe"
       ],
@@ -103330,7 +102559,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:jump_none": {
       "tools": [
         "pickaxe"
       ],
@@ -103338,7 +102566,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_arrow_black": {
       "tools": [
         "pickaxe"
       ],
@@ -103346,7 +102573,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_arrow_blue": {
       "tools": [
         "pickaxe"
       ],
@@ -103354,7 +102580,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_arrow_brown": {
       "tools": [
         "pickaxe"
       ],
@@ -103362,7 +102587,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_arrow_cyan": {
       "tools": [
         "pickaxe"
       ],
@@ -103370,7 +102594,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_arrow_gray": {
       "tools": [
         "pickaxe"
       ],
@@ -103378,7 +102601,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_arrow_green": {
       "tools": [
         "pickaxe"
       ],
@@ -103386,7 +102608,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_arrow_light_blue": {
       "tools": [
         "pickaxe"
       ],
@@ -103394,7 +102615,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_arrow_light_gray": {
       "tools": [
         "pickaxe"
       ],
@@ -103402,7 +102622,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_arrow_lime": {
       "tools": [
         "pickaxe"
       ],
@@ -103410,7 +102629,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_arrow_magenta": {
       "tools": [
         "pickaxe"
       ],
@@ -103418,7 +102636,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_arrow_orange": {
       "tools": [
         "pickaxe"
       ],
@@ -103426,7 +102643,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_arrow_pink": {
       "tools": [
         "pickaxe"
       ],
@@ -103434,7 +102650,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_arrow_purple": {
       "tools": [
         "pickaxe"
       ],
@@ -103442,7 +102657,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_arrow_red": {
       "tools": [
         "pickaxe"
       ],
@@ -103450,7 +102664,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_arrow_white": {
       "tools": [
         "pickaxe"
       ],
@@ -103458,7 +102671,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_arrow_yellow": {
       "tools": [
         "pickaxe"
       ],
@@ -103466,7 +102678,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_stripe_black": {
       "tools": [
         "pickaxe"
       ],
@@ -103474,7 +102685,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_stripe_blue": {
       "tools": [
         "pickaxe"
       ],
@@ -103482,7 +102692,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_stripe_brown": {
       "tools": [
         "pickaxe"
       ],
@@ -103490,7 +102699,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_stripe_cyan": {
       "tools": [
         "pickaxe"
       ],
@@ -103498,7 +102706,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_stripe_gray": {
       "tools": [
         "pickaxe"
       ],
@@ -103506,7 +102713,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_stripe_green": {
       "tools": [
         "pickaxe"
       ],
@@ -103514,7 +102720,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_stripe_light_blue": {
       "tools": [
         "pickaxe"
       ],
@@ -103522,7 +102727,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_stripe_light_gray": {
       "tools": [
         "pickaxe"
       ],
@@ -103530,7 +102734,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_stripe_lime": {
       "tools": [
         "pickaxe"
       ],
@@ -103538,7 +102741,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_stripe_magenta": {
       "tools": [
         "pickaxe"
       ],
@@ -103546,7 +102748,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_stripe_orange": {
       "tools": [
         "pickaxe"
       ],
@@ -103554,7 +102755,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_stripe_pink": {
       "tools": [
         "pickaxe"
       ],
@@ -103562,7 +102762,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_stripe_purple": {
       "tools": [
         "pickaxe"
       ],
@@ -103570,7 +102769,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_stripe_red": {
       "tools": [
         "pickaxe"
       ],
@@ -103578,7 +102776,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_stripe_white": {
       "tools": [
         "pickaxe"
       ],
@@ -103586,7 +102783,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_stripe_yellow": {
       "tools": [
         "pickaxe"
       ],
@@ -103594,7 +102790,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_wave_black": {
       "tools": [
         "pickaxe"
       ],
@@ -103602,7 +102797,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_wave_blue": {
       "tools": [
         "pickaxe"
       ],
@@ -103610,7 +102804,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_wave_brown": {
       "tools": [
         "pickaxe"
       ],
@@ -103618,7 +102811,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_wave_cyan": {
       "tools": [
         "pickaxe"
       ],
@@ -103626,7 +102818,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_wave_gray": {
       "tools": [
         "pickaxe"
       ],
@@ -103634,7 +102825,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_wave_green": {
       "tools": [
         "pickaxe"
       ],
@@ -103642,7 +102832,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_wave_light_blue": {
       "tools": [
         "pickaxe"
       ],
@@ -103650,7 +102839,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_wave_light_gray": {
       "tools": [
         "pickaxe"
       ],
@@ -103658,7 +102846,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_wave_lime": {
       "tools": [
         "pickaxe"
       ],
@@ -103666,7 +102853,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_wave_magenta": {
       "tools": [
         "pickaxe"
       ],
@@ -103674,7 +102860,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_wave_orange": {
       "tools": [
         "pickaxe"
       ],
@@ -103682,7 +102867,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_wave_pink": {
       "tools": [
         "pickaxe"
       ],
@@ -103690,7 +102874,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_wave_purple": {
       "tools": [
         "pickaxe"
       ],
@@ -103698,7 +102881,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_wave_red": {
       "tools": [
         "pickaxe"
       ],
@@ -103706,7 +102888,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_wave_white": {
       "tools": [
         "pickaxe"
       ],
@@ -103714,7 +102895,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_panel_wave_yellow": {
       "tools": [
         "pickaxe"
       ],
@@ -103722,7 +102902,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_plank_black": {
       "tools": [
         "axe"
       ],
@@ -103730,7 +102909,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:jump_plank_blue": {
       "tools": [
         "axe"
       ],
@@ -103738,7 +102916,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:jump_plank_brown": {
       "tools": [
         "axe"
       ],
@@ -103746,7 +102923,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:jump_plank_cyan": {
       "tools": [
         "axe"
       ],
@@ -103754,7 +102930,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:jump_plank_fancy_black": {
       "tools": [
         "axe"
       ],
@@ -103762,7 +102937,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:jump_plank_fancy_blue": {
       "tools": [
         "axe"
       ],
@@ -103770,7 +102944,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:jump_plank_fancy_brown": {
       "tools": [
         "axe"
       ],
@@ -103778,7 +102951,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:jump_plank_fancy_cyan": {
       "tools": [
         "axe"
       ],
@@ -103786,7 +102958,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:jump_plank_fancy_gray": {
       "tools": [
         "axe"
       ],
@@ -103794,7 +102965,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:jump_plank_fancy_green": {
       "tools": [
         "axe"
       ],
@@ -103802,7 +102972,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:jump_plank_fancy_light_blue": {
       "tools": [
         "axe"
       ],
@@ -103810,7 +102979,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:jump_plank_fancy_light_gray": {
       "tools": [
         "axe"
       ],
@@ -103818,7 +102986,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:jump_plank_fancy_lime": {
       "tools": [
         "axe"
       ],
@@ -103826,7 +102993,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:jump_plank_fancy_magenta": {
       "tools": [
         "axe"
       ],
@@ -103834,7 +103000,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:jump_plank_fancy_orange": {
       "tools": [
         "axe"
       ],
@@ -103842,7 +103007,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:jump_plank_fancy_pink": {
       "tools": [
         "axe"
       ],
@@ -103850,7 +103014,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:jump_plank_fancy_purple": {
       "tools": [
         "axe"
       ],
@@ -103858,7 +103021,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:jump_plank_fancy_red": {
       "tools": [
         "axe"
       ],
@@ -103866,7 +103028,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:jump_plank_fancy_white": {
       "tools": [
         "axe"
       ],
@@ -103874,7 +103035,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:jump_plank_fancy_yellow": {
       "tools": [
         "axe"
       ],
@@ -103882,7 +103042,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:jump_plank_gray": {
       "tools": [
         "axe"
       ],
@@ -103890,7 +103049,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:jump_plank_green": {
       "tools": [
         "axe"
       ],
@@ -103898,7 +103056,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:jump_plank_light_blue": {
       "tools": [
         "axe"
       ],
@@ -103906,7 +103063,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:jump_plank_light_gray": {
       "tools": [
         "axe"
       ],
@@ -103914,7 +103070,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:jump_plank_lime": {
       "tools": [
         "axe"
       ],
@@ -103922,7 +103077,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:jump_plank_magenta": {
       "tools": [
         "axe"
       ],
@@ -103930,7 +103084,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:jump_plank_orange": {
       "tools": [
         "axe"
       ],
@@ -103938,7 +103091,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:jump_plank_pink": {
       "tools": [
         "axe"
       ],
@@ -103946,7 +103098,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:jump_plank_purple": {
       "tools": [
         "axe"
       ],
@@ -103954,7 +103105,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:jump_plank_red": {
       "tools": [
         "axe"
       ],
@@ -103962,7 +103112,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:jump_plank_white": {
       "tools": [
         "axe"
       ],
@@ -103970,7 +103119,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:jump_plank_yellow": {
       "tools": [
         "axe"
       ],
@@ -103978,7 +103126,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:jump_pole_on_box_large_black": {
       "tools": [
         "pickaxe"
       ],
@@ -103986,7 +103133,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_pole_on_box_large_blue": {
       "tools": [
         "pickaxe"
       ],
@@ -103994,7 +103140,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_pole_on_box_large_brown": {
       "tools": [
         "pickaxe"
       ],
@@ -104002,7 +103147,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_pole_on_box_large_cyan": {
       "tools": [
         "pickaxe"
       ],
@@ -104010,7 +103154,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_pole_on_box_large_gray": {
       "tools": [
         "pickaxe"
       ],
@@ -104018,7 +103161,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_pole_on_box_large_green": {
       "tools": [
         "pickaxe"
       ],
@@ -104026,7 +103168,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_pole_on_box_large_light_blue": {
       "tools": [
         "pickaxe"
       ],
@@ -104034,7 +103175,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_pole_on_box_large_light_gray": {
       "tools": [
         "pickaxe"
       ],
@@ -104042,7 +103182,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_pole_on_box_large_lime": {
       "tools": [
         "pickaxe"
       ],
@@ -104050,7 +103189,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_pole_on_box_large_magenta": {
       "tools": [
         "pickaxe"
       ],
@@ -104058,7 +103196,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_pole_on_box_large_orange": {
       "tools": [
         "pickaxe"
       ],
@@ -104066,7 +103203,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_pole_on_box_large_pink": {
       "tools": [
         "pickaxe"
       ],
@@ -104074,7 +103210,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_pole_on_box_large_purple": {
       "tools": [
         "pickaxe"
       ],
@@ -104082,7 +103217,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_pole_on_box_large_red": {
       "tools": [
         "pickaxe"
       ],
@@ -104090,7 +103224,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_pole_on_box_large_white": {
       "tools": [
         "pickaxe"
       ],
@@ -104098,7 +103231,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_pole_on_box_large_yellow": {
       "tools": [
         "pickaxe"
       ],
@@ -104106,7 +103238,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_pole_on_box_small_black": {
       "tools": [
         "pickaxe"
       ],
@@ -104114,7 +103245,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_pole_on_box_small_blue": {
       "tools": [
         "pickaxe"
       ],
@@ -104122,7 +103252,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_pole_on_box_small_brown": {
       "tools": [
         "pickaxe"
       ],
@@ -104130,7 +103259,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_pole_on_box_small_cyan": {
       "tools": [
         "pickaxe"
       ],
@@ -104138,7 +103266,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_pole_on_box_small_gray": {
       "tools": [
         "pickaxe"
       ],
@@ -104146,7 +103273,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_pole_on_box_small_green": {
       "tools": [
         "pickaxe"
       ],
@@ -104154,7 +103280,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_pole_on_box_small_light_blue": {
       "tools": [
         "pickaxe"
       ],
@@ -104162,7 +103287,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_pole_on_box_small_light_gray": {
       "tools": [
         "pickaxe"
       ],
@@ -104170,7 +103294,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_pole_on_box_small_lime": {
       "tools": [
         "pickaxe"
       ],
@@ -104178,7 +103301,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_pole_on_box_small_magenta": {
       "tools": [
         "pickaxe"
       ],
@@ -104186,7 +103308,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_pole_on_box_small_orange": {
       "tools": [
         "pickaxe"
       ],
@@ -104194,7 +103315,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_pole_on_box_small_pink": {
       "tools": [
         "pickaxe"
       ],
@@ -104202,7 +103322,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_pole_on_box_small_purple": {
       "tools": [
         "pickaxe"
       ],
@@ -104210,7 +103329,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_pole_on_box_small_red": {
       "tools": [
         "pickaxe"
       ],
@@ -104218,7 +103336,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_pole_on_box_small_white": {
       "tools": [
         "pickaxe"
       ],
@@ -104226,7 +103343,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_pole_on_box_small_yellow": {
       "tools": [
         "pickaxe"
       ],
@@ -104234,7 +103350,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_rail_black": {
       "tools": [
         "pickaxe"
       ],
@@ -104242,7 +103357,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_rail_blue": {
       "tools": [
         "pickaxe"
       ],
@@ -104250,7 +103364,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_rail_brown": {
       "tools": [
         "pickaxe"
       ],
@@ -104258,7 +103371,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_rail_cyan": {
       "tools": [
         "pickaxe"
       ],
@@ -104266,7 +103378,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_rail_gray": {
       "tools": [
         "pickaxe"
       ],
@@ -104274,7 +103385,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_rail_green": {
       "tools": [
         "pickaxe"
       ],
@@ -104282,7 +103392,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_rail_light_blue": {
       "tools": [
         "pickaxe"
       ],
@@ -104290,7 +103399,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_rail_light_gray": {
       "tools": [
         "pickaxe"
       ],
@@ -104298,7 +103406,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_rail_lime": {
       "tools": [
         "pickaxe"
       ],
@@ -104306,7 +103413,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_rail_magenta": {
       "tools": [
         "pickaxe"
       ],
@@ -104314,7 +103420,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_rail_orange": {
       "tools": [
         "pickaxe"
       ],
@@ -104322,7 +103427,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_rail_pink": {
       "tools": [
         "pickaxe"
       ],
@@ -104330,7 +103434,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_rail_purple": {
       "tools": [
         "pickaxe"
       ],
@@ -104338,7 +103441,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_rail_red": {
       "tools": [
         "pickaxe"
       ],
@@ -104346,7 +103448,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_rail_white": {
       "tools": [
         "pickaxe"
       ],
@@ -104354,7 +103455,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_rail_yellow": {
       "tools": [
         "pickaxe"
       ],
@@ -104362,7 +103462,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_roll_top_black": {
       "tools": [
         "pickaxe"
       ],
@@ -104370,7 +103469,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_roll_top_blue": {
       "tools": [
         "pickaxe"
       ],
@@ -104378,7 +103476,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_roll_top_brown": {
       "tools": [
         "pickaxe"
       ],
@@ -104386,7 +103483,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_roll_top_cyan": {
       "tools": [
         "pickaxe"
       ],
@@ -104394,7 +103490,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_roll_top_gray": {
       "tools": [
         "pickaxe"
       ],
@@ -104402,7 +103497,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_roll_top_green": {
       "tools": [
         "pickaxe"
       ],
@@ -104410,7 +103504,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_roll_top_light_blue": {
       "tools": [
         "pickaxe"
       ],
@@ -104418,7 +103511,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_roll_top_light_gray": {
       "tools": [
         "pickaxe"
       ],
@@ -104426,7 +103518,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_roll_top_lime": {
       "tools": [
         "pickaxe"
       ],
@@ -104434,7 +103525,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_roll_top_magenta": {
       "tools": [
         "pickaxe"
       ],
@@ -104442,7 +103532,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_roll_top_orange": {
       "tools": [
         "pickaxe"
       ],
@@ -104450,7 +103539,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_roll_top_pink": {
       "tools": [
         "pickaxe"
       ],
@@ -104458,7 +103546,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_roll_top_purple": {
       "tools": [
         "pickaxe"
       ],
@@ -104466,7 +103553,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_roll_top_red": {
       "tools": [
         "pickaxe"
       ],
@@ -104474,7 +103560,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_roll_top_white": {
       "tools": [
         "pickaxe"
       ],
@@ -104482,7 +103567,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_roll_top_yellow": {
       "tools": [
         "pickaxe"
       ],
@@ -104490,7 +103574,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_stair_drop": {
       "tools": [
         "pickaxe"
       ],
@@ -104498,7 +103581,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_standard_none": {
       "tools": [
         "pickaxe"
       ],
@@ -104506,7 +103588,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_standard_radial": {
       "tools": [
         "pickaxe"
       ],
@@ -104514,7 +103595,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_standard_schooling": {
       "tools": [
         "pickaxe"
       ],
@@ -104522,7 +103602,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_standard_vertical_slat": {
       "tools": [
         "pickaxe"
       ],
@@ -104530,7 +103609,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_wall": {
       "tools": [
         "pickaxe"
       ],
@@ -104538,7 +103616,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jump_wall_mini": {
       "tools": [
         "pickaxe"
       ],
@@ -104546,7 +103623,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jungle_stall_care": {
       "tools": [
         "pickaxe"
       ],
@@ -104554,7 +103630,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:jungle_stall_horse": {
       "tools": [
         "pickaxe"
       ],
@@ -104562,7 +103637,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:lead_anchor": {
       "tools": [
         "pickaxe"
       ],
@@ -104570,7 +103644,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:light_blue_cone": {
       "tools": [
         "pickaxe"
       ],
@@ -104578,7 +103651,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:light_friendly_bars": {
       "tools": [
         "pickaxe"
       ],
@@ -104586,7 +103658,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:light_gray_cone": {
       "tools": [
         "pickaxe"
       ],
@@ -104594,7 +103665,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:light_rubber_mat": {
       "tools": [
         "pickaxe"
       ],
@@ -104602,7 +103672,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:light_shavings": {
       "tools": [
         "pickaxe"
       ],
@@ -104610,7 +103679,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:lime_cone": {
       "tools": [
         "pickaxe"
       ],
@@ -104618,7 +103686,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:locker": {
       "tools": [
         "pickaxe"
       ],
@@ -104626,7 +103693,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:magenta_cone": {
       "tools": [
         "pickaxe"
       ],
@@ -104634,7 +103700,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:medium_friendly_bars": {
       "tools": [
         "pickaxe"
       ],
@@ -104642,7 +103707,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:medium_rubber_mat": {
       "tools": [
         "pickaxe"
       ],
@@ -104650,7 +103714,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:medium_shavings": {
       "tools": [
         "pickaxe"
       ],
@@ -104658,7 +103721,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:metal_grate": {
       "tools": [
         "pickaxe"
       ],
@@ -104666,7 +103728,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:meter_point": {
       "tools": [
         "pickaxe"
       ],
@@ -104674,7 +103735,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:oak_stall_care": {
       "tools": [
         "pickaxe"
       ],
@@ -104682,7 +103742,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:oak_stall_horse": {
       "tools": [
         "pickaxe"
       ],
@@ -104690,7 +103749,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:oat_bale": {
       "tools": [
         "pickaxe"
       ],
@@ -104698,7 +103756,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:oat_bale_slab": {
       "tools": [
         "pickaxe"
       ],
@@ -104706,7 +103763,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:oat_plant": {
       "tools": [
         "knife"
       ],
@@ -104714,7 +103770,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
-    "swem:orange_cone": {
       "tools": [
         "pickaxe"
       ],
@@ -104722,7 +103777,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:paddock_feeder": {
       "tools": [
         "axe"
       ],
@@ -104730,7 +103784,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:pasture_black_care": {
       "tools": [
         "pickaxe"
       ],
@@ -104738,7 +103791,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:pasture_black_horse": {
       "tools": [
         "pickaxe"
       ],
@@ -104746,7 +103798,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:pasture_blue_care": {
       "tools": [
         "pickaxe"
       ],
@@ -104754,7 +103805,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:pasture_blue_horse": {
       "tools": [
         "pickaxe"
       ],
@@ -104762,7 +103812,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:pasture_brown_care": {
       "tools": [
         "pickaxe"
       ],
@@ -104770,7 +103819,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:pasture_brown_horse": {
       "tools": [
         "pickaxe"
       ],
@@ -104778,7 +103826,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:pasture_cyan_care": {
       "tools": [
         "pickaxe"
       ],
@@ -104786,7 +103833,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:pasture_cyan_horse": {
       "tools": [
         "pickaxe"
       ],
@@ -104794,7 +103840,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:pasture_fence_acacia": {
       "tools": [
         "axe"
       ],
@@ -104802,7 +103847,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:pasture_fence_birch": {
       "tools": [
         "axe"
       ],
@@ -104810,7 +103854,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:pasture_fence_dark_oak": {
       "tools": [
         "axe"
       ],
@@ -104818,7 +103861,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:pasture_fence_jungle": {
       "tools": [
         "axe"
       ],
@@ -104826,7 +103868,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:pasture_fence_oak": {
       "tools": [
         "axe"
       ],
@@ -104834,7 +103875,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:pasture_fence_spruce": {
       "tools": [
         "axe"
       ],
@@ -104842,7 +103882,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:pasture_fence_whitewash": {
       "tools": [
         "axe"
       ],
@@ -104850,7 +103889,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:pasture_gray_care": {
       "tools": [
         "pickaxe"
       ],
@@ -104858,7 +103896,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:pasture_gray_horse": {
       "tools": [
         "pickaxe"
       ],
@@ -104866,7 +103903,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:pasture_green_care": {
       "tools": [
         "pickaxe"
       ],
@@ -104874,7 +103910,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:pasture_green_horse": {
       "tools": [
         "pickaxe"
       ],
@@ -104882,7 +103917,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:pasture_hitching_post": {
       "tools": [
         "axe"
       ],
@@ -104890,7 +103924,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:pasture_hitching_post_mini": {
       "tools": [
         "axe"
       ],
@@ -104898,7 +103931,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:pasture_light_blue_care": {
       "tools": [
         "pickaxe"
       ],
@@ -104906,7 +103938,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:pasture_light_blue_horse": {
       "tools": [
         "pickaxe"
       ],
@@ -104914,7 +103945,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:pasture_light_gray_care": {
       "tools": [
         "pickaxe"
       ],
@@ -104922,7 +103952,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:pasture_light_gray_horse": {
       "tools": [
         "pickaxe"
       ],
@@ -104930,7 +103959,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:pasture_lime_care": {
       "tools": [
         "pickaxe"
       ],
@@ -104938,7 +103966,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:pasture_lime_horse": {
       "tools": [
         "pickaxe"
       ],
@@ -104946,7 +103973,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:pasture_magenta_care": {
       "tools": [
         "pickaxe"
       ],
@@ -104954,7 +103980,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:pasture_magenta_horse": {
       "tools": [
         "pickaxe"
       ],
@@ -104962,7 +103987,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:pasture_orange_care": {
       "tools": [
         "pickaxe"
       ],
@@ -104970,7 +103994,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:pasture_orange_horse": {
       "tools": [
         "pickaxe"
       ],
@@ -104978,7 +104001,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:pasture_pink_care": {
       "tools": [
         "pickaxe"
       ],
@@ -104986,7 +104008,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:pasture_pink_horse": {
       "tools": [
         "pickaxe"
       ],
@@ -104994,7 +104015,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:pasture_purple_care": {
       "tools": [
         "pickaxe"
       ],
@@ -105002,7 +104022,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:pasture_purple_horse": {
       "tools": [
         "pickaxe"
       ],
@@ -105010,7 +104029,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:pasture_red_care": {
       "tools": [
         "pickaxe"
       ],
@@ -105018,7 +104036,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:pasture_red_horse": {
       "tools": [
         "pickaxe"
       ],
@@ -105026,7 +104043,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:pasture_white_care": {
       "tools": [
         "pickaxe"
       ],
@@ -105034,7 +104050,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:pasture_white_horse": {
       "tools": [
         "pickaxe"
       ],
@@ -105042,7 +104057,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:pasture_yellow_care": {
       "tools": [
         "pickaxe"
       ],
@@ -105050,7 +104064,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:pasture_yellow_horse": {
       "tools": [
         "pickaxe"
       ],
@@ -105058,7 +104071,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:pink_cone": {
       "tools": [
         "pickaxe"
       ],
@@ -105066,7 +104078,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:plaque_bronze": {
       "tools": [
         "axe"
       ],
@@ -105074,7 +104085,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:plaque_gold": {
       "tools": [
         "axe"
       ],
@@ -105082,7 +104092,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:plaque_silver": {
       "tools": [
         "axe"
       ],
@@ -105090,7 +104099,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:purple_cone": {
       "tools": [
         "pickaxe"
       ],
@@ -105098,7 +104106,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:quality_bale": {
       "tools": [
         "pickaxe"
       ],
@@ -105106,7 +104113,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:quality_bale_slab": {
       "tools": [
         "pickaxe"
       ],
@@ -105114,7 +104120,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:rack_blanket_5": {
       "tools": [
         "pickaxe"
       ],
@@ -105122,7 +104127,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:rack_halter_lead": {
       "tools": [
         "pickaxe"
       ],
@@ -105130,7 +104134,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:rack_lead_3": {
       "tools": [
         "pickaxe"
       ],
@@ -105138,7 +104141,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:rack_pasture_blanket_3_short": {
       "tools": [
         "pickaxe"
       ],
@@ -105146,7 +104148,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:rack_pasture_blanket_5_long": {
       "tools": [
         "pickaxe"
       ],
@@ -105154,7 +104155,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:red_cone": {
       "tools": [
         "pickaxe"
       ],
@@ -105162,7 +104162,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:ribbon_champion": {
       "tools": [
         "pickaxe"
       ],
@@ -105170,7 +104169,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:ribbon_rchampion": {
       "tools": [
         "pickaxe"
       ],
@@ -105178,7 +104176,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:ribbon_three_black": {
       "tools": [
         "pickaxe"
       ],
@@ -105186,7 +104183,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:ribbon_three_blue": {
       "tools": [
         "pickaxe"
       ],
@@ -105194,7 +104190,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:ribbon_three_brown": {
       "tools": [
         "pickaxe"
       ],
@@ -105202,7 +104197,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:ribbon_three_cyan": {
       "tools": [
         "pickaxe"
       ],
@@ -105210,7 +104204,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:ribbon_three_gray": {
       "tools": [
         "pickaxe"
       ],
@@ -105218,7 +104211,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:ribbon_three_green": {
       "tools": [
         "pickaxe"
       ],
@@ -105226,7 +104218,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:ribbon_three_light_blue": {
       "tools": [
         "pickaxe"
       ],
@@ -105234,7 +104225,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:ribbon_three_light_gray": {
       "tools": [
         "pickaxe"
       ],
@@ -105242,7 +104232,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:ribbon_three_lime": {
       "tools": [
         "pickaxe"
       ],
@@ -105250,7 +104239,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:ribbon_three_magenta": {
       "tools": [
         "pickaxe"
       ],
@@ -105258,7 +104246,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:ribbon_three_orange": {
       "tools": [
         "pickaxe"
       ],
@@ -105266,7 +104253,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:ribbon_three_pink": {
       "tools": [
         "pickaxe"
       ],
@@ -105274,7 +104260,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:ribbon_three_purple": {
       "tools": [
         "pickaxe"
       ],
@@ -105282,7 +104267,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:ribbon_three_red": {
       "tools": [
         "pickaxe"
       ],
@@ -105290,7 +104274,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:ribbon_three_white": {
       "tools": [
         "pickaxe"
       ],
@@ -105298,7 +104281,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:ribbon_three_yellow": {
       "tools": [
         "pickaxe"
       ],
@@ -105306,7 +104288,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:ribbon_two_black": {
       "tools": [
         "pickaxe"
       ],
@@ -105314,7 +104295,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:ribbon_two_blue": {
       "tools": [
         "pickaxe"
       ],
@@ -105322,7 +104302,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:ribbon_two_brown": {
       "tools": [
         "pickaxe"
       ],
@@ -105330,7 +104309,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:ribbon_two_cyan": {
       "tools": [
         "pickaxe"
       ],
@@ -105338,7 +104316,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:ribbon_two_gray": {
       "tools": [
         "pickaxe"
       ],
@@ -105346,7 +104323,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:ribbon_two_green": {
       "tools": [
         "pickaxe"
       ],
@@ -105354,7 +104330,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:ribbon_two_light_blue": {
       "tools": [
         "pickaxe"
       ],
@@ -105362,7 +104337,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:ribbon_two_light_gray": {
       "tools": [
         "pickaxe"
       ],
@@ -105370,7 +104344,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:ribbon_two_lime": {
       "tools": [
         "pickaxe"
       ],
@@ -105378,7 +104351,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:ribbon_two_magenta": {
       "tools": [
         "pickaxe"
       ],
@@ -105386,7 +104358,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:ribbon_two_orange": {
       "tools": [
         "pickaxe"
       ],
@@ -105394,7 +104365,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:ribbon_two_pink": {
       "tools": [
         "pickaxe"
       ],
@@ -105402,7 +104372,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:ribbon_two_purple": {
       "tools": [
         "pickaxe"
       ],
@@ -105410,7 +104379,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:ribbon_two_red": {
       "tools": [
         "pickaxe"
       ],
@@ -105418,7 +104386,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:ribbon_two_white": {
       "tools": [
         "pickaxe"
       ],
@@ -105426,7 +104393,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:ribbon_two_yellow": {
       "tools": [
         "pickaxe"
       ],
@@ -105434,7 +104400,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:rosette_black": {
       "tools": [
         "pickaxe"
       ],
@@ -105442,7 +104407,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:rosette_blue": {
       "tools": [
         "pickaxe"
       ],
@@ -105450,7 +104414,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:rosette_brown": {
       "tools": [
         "pickaxe"
       ],
@@ -105458,7 +104421,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:rosette_cyan": {
       "tools": [
         "pickaxe"
       ],
@@ -105466,7 +104428,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:rosette_gray": {
       "tools": [
         "pickaxe"
       ],
@@ -105474,7 +104435,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:rosette_green": {
       "tools": [
         "pickaxe"
       ],
@@ -105482,7 +104442,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:rosette_light_blue": {
       "tools": [
         "pickaxe"
       ],
@@ -105490,7 +104449,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:rosette_light_gray": {
       "tools": [
         "pickaxe"
       ],
@@ -105498,7 +104456,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:rosette_lime": {
       "tools": [
         "pickaxe"
       ],
@@ -105506,7 +104463,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:rosette_magenta": {
       "tools": [
         "pickaxe"
       ],
@@ -105514,7 +104470,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:rosette_orange": {
       "tools": [
         "pickaxe"
       ],
@@ -105522,7 +104477,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:rosette_pink": {
       "tools": [
         "pickaxe"
       ],
@@ -105530,7 +104484,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:rosette_purple": {
       "tools": [
         "pickaxe"
       ],
@@ -105538,7 +104491,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:rosette_red": {
       "tools": [
         "pickaxe"
       ],
@@ -105546,7 +104498,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:rosette_white": {
       "tools": [
         "pickaxe"
       ],
@@ -105554,7 +104505,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:rosette_yellow": {
       "tools": [
         "pickaxe"
       ],
@@ -105562,7 +104512,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:saddle_rack": {
       "tools": [
         "pickaxe"
       ],
@@ -105570,7 +104519,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:separator_black": {
       "tools": [
         "pickaxe"
       ],
@@ -105578,7 +104526,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:separator_blue": {
       "tools": [
         "pickaxe"
       ],
@@ -105586,7 +104533,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:separator_brown": {
       "tools": [
         "pickaxe"
       ],
@@ -105594,7 +104540,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:separator_cyan": {
       "tools": [
         "pickaxe"
       ],
@@ -105602,7 +104547,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:separator_gray": {
       "tools": [
         "pickaxe"
       ],
@@ -105610,7 +104554,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:separator_green": {
       "tools": [
         "pickaxe"
       ],
@@ -105618,7 +104561,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:separator_light_blue": {
       "tools": [
         "pickaxe"
       ],
@@ -105626,7 +104568,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:separator_light_gray": {
       "tools": [
         "pickaxe"
       ],
@@ -105634,7 +104575,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:separator_lime": {
       "tools": [
         "pickaxe"
       ],
@@ -105642,7 +104582,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:separator_magenta": {
       "tools": [
         "pickaxe"
       ],
@@ -105650,7 +104589,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:separator_orange": {
       "tools": [
         "pickaxe"
       ],
@@ -105658,7 +104596,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:separator_pink": {
       "tools": [
         "pickaxe"
       ],
@@ -105666,7 +104603,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:separator_purple": {
       "tools": [
         "pickaxe"
       ],
@@ -105674,7 +104610,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:separator_red": {
       "tools": [
         "pickaxe"
       ],
@@ -105682,7 +104617,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:separator_white": {
       "tools": [
         "pickaxe"
       ],
@@ -105690,7 +104624,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:separator_yellow": {
       "tools": [
         "pickaxe"
       ],
@@ -105698,7 +104631,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:shining_amethyst_cluster": {
       "tools": [
         "pickaxe"
       ],
@@ -105706,7 +104638,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:shop": {
       "tools": [
         "pickaxe"
       ],
@@ -105714,7 +104645,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "explicit non-loose utility block",
       "outcome": "default"
     },
-    "swem:slow_feeder_black": {
       "tools": [
         "pickaxe"
       ],
@@ -105722,7 +104652,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:slow_feeder_blue": {
       "tools": [
         "pickaxe"
       ],
@@ -105730,7 +104659,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:slow_feeder_brown": {
       "tools": [
         "pickaxe"
       ],
@@ -105738,7 +104666,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:slow_feeder_cyan": {
       "tools": [
         "pickaxe"
       ],
@@ -105746,7 +104673,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:slow_feeder_gray": {
       "tools": [
         "pickaxe"
       ],
@@ -105754,7 +104680,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:slow_feeder_green": {
       "tools": [
         "pickaxe"
       ],
@@ -105762,7 +104687,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:slow_feeder_light_blue": {
       "tools": [
         "pickaxe"
       ],
@@ -105770,7 +104694,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:slow_feeder_light_gray": {
       "tools": [
         "pickaxe"
       ],
@@ -105778,7 +104701,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:slow_feeder_lime": {
       "tools": [
         "pickaxe"
       ],
@@ -105786,7 +104708,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:slow_feeder_magenta": {
       "tools": [
         "pickaxe"
       ],
@@ -105794,7 +104715,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:slow_feeder_orange": {
       "tools": [
         "pickaxe"
       ],
@@ -105802,7 +104722,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:slow_feeder_pink": {
       "tools": [
         "pickaxe"
       ],
@@ -105810,7 +104729,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:slow_feeder_purple": {
       "tools": [
         "pickaxe"
       ],
@@ -105818,7 +104736,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:slow_feeder_red": {
       "tools": [
         "pickaxe"
       ],
@@ -105826,7 +104743,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:slow_feeder_white": {
       "tools": [
         "pickaxe"
       ],
@@ -105834,7 +104750,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:slow_feeder_yellow": {
       "tools": [
         "pickaxe"
       ],
@@ -105842,7 +104757,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:soiled_shavings": {
       "tools": [
         "hand"
       ],
@@ -105850,7 +104764,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "sand, gravel, dirt, mud, regolith, or similar loose earth",
       "outcome": "default"
     },
-    "swem:spigot": {
       "tools": [
         "pickaxe"
       ],
@@ -105858,7 +104771,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:spruce_stall_care": {
       "tools": [
         "pickaxe"
       ],
@@ -105866,7 +104778,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:spruce_stall_horse": {
       "tools": [
         "pickaxe"
       ],
@@ -105874,7 +104785,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:star_worm_cobble": {
       "tools": [
         "pickaxe"
       ],
@@ -105882,7 +104792,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:tack_box_black": {
       "tools": [
         "axe"
       ],
@@ -105890,7 +104799,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:tack_box_blue": {
       "tools": [
         "axe"
       ],
@@ -105898,7 +104806,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:tack_box_brown": {
       "tools": [
         "axe"
       ],
@@ -105906,7 +104813,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:tack_box_cyan": {
       "tools": [
         "axe"
       ],
@@ -105914,7 +104820,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:tack_box_gray": {
       "tools": [
         "axe"
       ],
@@ -105922,7 +104827,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:tack_box_green": {
       "tools": [
         "axe"
       ],
@@ -105930,7 +104834,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:tack_box_light_blue": {
       "tools": [
         "axe"
       ],
@@ -105938,7 +104841,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:tack_box_light_gray": {
       "tools": [
         "axe"
       ],
@@ -105946,7 +104848,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:tack_box_lime": {
       "tools": [
         "axe"
       ],
@@ -105954,7 +104855,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:tack_box_magenta": {
       "tools": [
         "axe"
       ],
@@ -105962,7 +104862,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:tack_box_orange": {
       "tools": [
         "axe"
       ],
@@ -105970,7 +104869,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:tack_box_pink": {
       "tools": [
         "axe"
       ],
@@ -105978,7 +104876,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:tack_box_purple": {
       "tools": [
         "axe"
       ],
@@ -105986,7 +104883,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:tack_box_red": {
       "tools": [
         "axe"
       ],
@@ -105994,7 +104890,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:tack_box_white": {
       "tools": [
         "axe"
       ],
@@ -106002,7 +104897,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:tack_box_yellow": {
       "tools": [
         "axe"
       ],
@@ -106010,7 +104904,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:tearing_magma": {
       "tools": [
         "pickaxe"
       ],
@@ -106018,7 +104911,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:timothy_bale": {
       "tools": [
         "pickaxe"
       ],
@@ -106026,7 +104918,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:timothy_bale_slab": {
       "tools": [
         "pickaxe"
       ],
@@ -106034,7 +104925,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:timothy_plant": {
       "tools": [
         "knife"
       ],
@@ -106042,7 +104932,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
-    "swem:toy_ball_slow_feed_hay": {
       "tools": [
         "pickaxe"
       ],
@@ -106050,7 +104939,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:toy_jolly_apple_snack": {
       "tools": [
         "pickaxe"
       ],
@@ -106058,7 +104946,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:toy_jolly_ball": {
       "tools": [
         "pickaxe"
       ],
@@ -106066,7 +104953,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:toy_jolly_ball_hay": {
       "tools": [
         "pickaxe"
       ],
@@ -106074,7 +104960,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:toy_lick_salt": {
       "tools": [
         "pickaxe"
       ],
@@ -106082,7 +104967,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:toy_scratchy_pole": {
       "tools": [
         "pickaxe"
       ],
@@ -106090,7 +104974,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:toy_string_treats": {
       "tools": [
         "pickaxe"
       ],
@@ -106098,7 +104981,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:trophy_bronze": {
       "tools": [
         "pickaxe"
       ],
@@ -106106,7 +104988,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:trophy_gold": {
       "tools": [
         "pickaxe"
       ],
@@ -106114,7 +104995,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:trophy_silver": {
       "tools": [
         "pickaxe"
       ],
@@ -106122,7 +105002,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:wall_spigot": {
       "tools": [
         "pickaxe"
       ],
@@ -106130,7 +105009,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:water_trough": {
       "tools": [
         "pickaxe"
       ],
@@ -106138,7 +105016,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_black_care": {
       "tools": [
         "pickaxe"
       ],
@@ -106146,7 +105023,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_black_horse": {
       "tools": [
         "pickaxe"
       ],
@@ -106154,7 +105030,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_black_rider": {
       "tools": [
         "pickaxe"
       ],
@@ -106162,7 +105037,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_blue_care": {
       "tools": [
         "pickaxe"
       ],
@@ -106170,7 +105044,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_blue_horse": {
       "tools": [
         "pickaxe"
       ],
@@ -106178,7 +105051,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_blue_rider": {
       "tools": [
         "pickaxe"
       ],
@@ -106186,7 +105058,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_brown_care": {
       "tools": [
         "pickaxe"
       ],
@@ -106194,7 +105065,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_brown_horse": {
       "tools": [
         "pickaxe"
       ],
@@ -106202,7 +105072,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_brown_rider": {
       "tools": [
         "pickaxe"
       ],
@@ -106210,7 +105079,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_cyan_care": {
       "tools": [
         "pickaxe"
       ],
@@ -106218,7 +105086,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_cyan_horse": {
       "tools": [
         "pickaxe"
       ],
@@ -106226,7 +105093,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_cyan_rider": {
       "tools": [
         "pickaxe"
       ],
@@ -106234,7 +105100,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_gray_care": {
       "tools": [
         "pickaxe"
       ],
@@ -106242,7 +105107,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_gray_horse": {
       "tools": [
         "pickaxe"
       ],
@@ -106250,7 +105114,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_gray_rider": {
       "tools": [
         "pickaxe"
       ],
@@ -106258,7 +105121,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_green_care": {
       "tools": [
         "pickaxe"
       ],
@@ -106266,7 +105128,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_green_horse": {
       "tools": [
         "pickaxe"
       ],
@@ -106274,7 +105135,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_green_rider": {
       "tools": [
         "pickaxe"
       ],
@@ -106282,7 +105142,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_light_blue_care": {
       "tools": [
         "pickaxe"
       ],
@@ -106290,7 +105149,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_light_blue_horse": {
       "tools": [
         "pickaxe"
       ],
@@ -106298,7 +105156,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_light_blue_rider": {
       "tools": [
         "pickaxe"
       ],
@@ -106306,7 +105163,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_light_gray_care": {
       "tools": [
         "pickaxe"
       ],
@@ -106314,7 +105170,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_light_gray_horse": {
       "tools": [
         "pickaxe"
       ],
@@ -106322,7 +105177,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_light_gray_rider": {
       "tools": [
         "pickaxe"
       ],
@@ -106330,7 +105184,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_lime_care": {
       "tools": [
         "pickaxe"
       ],
@@ -106338,7 +105191,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_lime_horse": {
       "tools": [
         "pickaxe"
       ],
@@ -106346,7 +105198,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_lime_rider": {
       "tools": [
         "pickaxe"
       ],
@@ -106354,7 +105205,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_magenta_care": {
       "tools": [
         "pickaxe"
       ],
@@ -106362,7 +105212,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_magenta_horse": {
       "tools": [
         "pickaxe"
       ],
@@ -106370,7 +105219,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_magenta_rider": {
       "tools": [
         "pickaxe"
       ],
@@ -106378,7 +105226,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_orange_care": {
       "tools": [
         "pickaxe"
       ],
@@ -106386,7 +105233,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_orange_horse": {
       "tools": [
         "pickaxe"
       ],
@@ -106394,7 +105240,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_orange_rider": {
       "tools": [
         "pickaxe"
       ],
@@ -106402,7 +105247,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_pink_care": {
       "tools": [
         "pickaxe"
       ],
@@ -106410,7 +105254,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_pink_horse": {
       "tools": [
         "pickaxe"
       ],
@@ -106418,7 +105261,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_pink_rider": {
       "tools": [
         "pickaxe"
       ],
@@ -106426,7 +105268,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_purple_care": {
       "tools": [
         "pickaxe"
       ],
@@ -106434,7 +105275,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_purple_horse": {
       "tools": [
         "pickaxe"
       ],
@@ -106442,7 +105282,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_purple_rider": {
       "tools": [
         "pickaxe"
       ],
@@ -106450,7 +105289,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_red_care": {
       "tools": [
         "pickaxe"
       ],
@@ -106458,7 +105296,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_red_horse": {
       "tools": [
         "pickaxe"
       ],
@@ -106466,7 +105303,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_red_rider": {
       "tools": [
         "pickaxe"
       ],
@@ -106474,7 +105310,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_white_care": {
       "tools": [
         "pickaxe"
       ],
@@ -106482,7 +105317,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_white_horse": {
       "tools": [
         "pickaxe"
       ],
@@ -106490,7 +105324,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_white_rider": {
       "tools": [
         "pickaxe"
       ],
@@ -106498,7 +105331,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_yellow_care": {
       "tools": [
         "pickaxe"
       ],
@@ -106506,7 +105338,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_yellow_horse": {
       "tools": [
         "pickaxe"
       ],
@@ -106514,7 +105345,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:web_guard_yellow_rider": {
       "tools": [
         "pickaxe"
       ],
@@ -106522,7 +105352,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:western_barrel": {
       "tools": [
         "axe"
       ],
@@ -106530,7 +105359,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:western_fence_acacia": {
       "tools": [
         "axe"
       ],
@@ -106538,7 +105366,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:western_fence_birch": {
       "tools": [
         "axe"
       ],
@@ -106546,7 +105373,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:western_fence_dark_oak": {
       "tools": [
         "axe"
       ],
@@ -106554,7 +105380,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:western_fence_jungle": {
       "tools": [
         "axe"
       ],
@@ -106562,7 +105387,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:western_fence_oak": {
       "tools": [
         "axe"
       ],
@@ -106570,7 +105394,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:western_fence_spruce": {
       "tools": [
         "axe"
       ],
@@ -106578,7 +105401,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:western_fence_whitewash": {
       "tools": [
         "axe"
       ],
@@ -106586,7 +105408,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:western_hitching_post": {
       "tools": [
         "axe"
       ],
@@ -106594,7 +105415,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:western_hitching_post_mini": {
       "tools": [
         "axe"
       ],
@@ -106602,7 +105422,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:western_pole": {
       "tools": [
         "pickaxe"
       ],
@@ -106610,7 +105429,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:wet_compost": {
       "tools": [
         "axe"
       ],
@@ -106618,7 +105436,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:wheel_barrow_black": {
       "tools": [
         "pickaxe"
       ],
@@ -106626,7 +105443,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:wheel_barrow_blue": {
       "tools": [
         "pickaxe"
       ],
@@ -106634,7 +105450,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:wheel_barrow_brown": {
       "tools": [
         "pickaxe"
       ],
@@ -106642,7 +105457,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:wheel_barrow_cyan": {
       "tools": [
         "pickaxe"
       ],
@@ -106650,7 +105464,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:wheel_barrow_gray": {
       "tools": [
         "pickaxe"
       ],
@@ -106658,7 +105471,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:wheel_barrow_green": {
       "tools": [
         "pickaxe"
       ],
@@ -106666,7 +105478,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:wheel_barrow_light_blue": {
       "tools": [
         "pickaxe"
       ],
@@ -106674,7 +105485,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:wheel_barrow_light_gray": {
       "tools": [
         "pickaxe"
       ],
@@ -106682,7 +105492,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:wheel_barrow_lime": {
       "tools": [
         "pickaxe"
       ],
@@ -106690,7 +105499,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:wheel_barrow_magenta": {
       "tools": [
         "pickaxe"
       ],
@@ -106698,7 +105506,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:wheel_barrow_orange": {
       "tools": [
         "pickaxe"
       ],
@@ -106706,7 +105513,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:wheel_barrow_pink": {
       "tools": [
         "pickaxe"
       ],
@@ -106714,7 +105520,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:wheel_barrow_purple": {
       "tools": [
         "pickaxe"
       ],
@@ -106722,7 +105527,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:wheel_barrow_red": {
       "tools": [
         "pickaxe"
       ],
@@ -106730,7 +105534,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:wheel_barrow_white": {
       "tools": [
         "pickaxe"
       ],
@@ -106738,7 +105541,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:wheel_barrow_yellow": {
       "tools": [
         "pickaxe"
       ],
@@ -106746,7 +105548,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:white_cone": {
       "tools": [
         "pickaxe"
       ],
@@ -106754,7 +105555,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:whitewash_button": {
       "tools": [
         "axe"
       ],
@@ -106762,7 +105562,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:whitewash_door": {
       "tools": [
         "axe"
       ],
@@ -106770,7 +105569,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:whitewash_fence": {
       "tools": [
         "axe"
       ],
@@ -106778,7 +105576,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:whitewash_fence_gate": {
       "tools": [
         "axe"
       ],
@@ -106786,7 +105583,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:whitewash_log": {
       "tools": [
         "axe"
       ],
@@ -106794,7 +105590,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:whitewash_planks": {
       "tools": [
         "axe"
       ],
@@ -106802,7 +105597,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:whitewash_sign": {
       "tools": [
         "axe"
       ],
@@ -106810,7 +105604,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:whitewash_slab": {
       "tools": [
         "shovel"
       ],
@@ -106818,7 +105611,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "loose non-hand earth surface",
       "outcome": "default"
     },
-    "swem:whitewash_stairs": {
       "tools": [
         "shovel"
       ],
@@ -106826,7 +105618,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "loose non-hand earth surface",
       "outcome": "default"
     },
-    "swem:whitewash_stall_care": {
       "tools": [
         "shovel"
       ],
@@ -106834,7 +105625,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "loose non-hand earth surface",
       "outcome": "default"
     },
-    "swem:whitewash_stall_horse": {
       "tools": [
         "shovel"
       ],
@@ -106842,7 +105632,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "loose non-hand earth surface",
       "outcome": "default"
     },
-    "swem:whitewash_trapdoor": {
       "tools": [
         "axe"
       ],
@@ -106850,7 +105639,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:whitewash_wall_sign": {
       "tools": [
         "axe"
       ],
@@ -106858,7 +105646,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-    "swem:yellow_cone": {
       "tools": [
         "pickaxe"
       ],
@@ -106866,7 +105653,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "legacy assignment carried forward",
       "outcome": "default"
     },
-    "swem:yellow_snow": {
       "tools": [
         "shovel"
       ],
@@ -106874,7 +105660,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "loose non-hand earth surface",
       "outcome": "default"
     },
-    "swem:yellow_snow_block": {
       "tools": [
         "shovel"
       ],
@@ -123924,7 +122709,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "knife-equivalent cutter family",
       "outcome": "default"
     },
-    "swem:axe_amethyst": {
       "tools": [
         "axe"
       ],
@@ -123932,7 +122716,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "runtime tool action evidence",
       "outcome": "default"
     },
-    "swem:axe_copper": {
       "tools": [
         "axe"
       ],
@@ -123940,7 +122723,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "axe name heuristic",
       "outcome": "default"
     },
-    "swem:axe_diamond": {
       "tools": [
         "axe"
       ],
@@ -123948,7 +122730,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "axe name heuristic",
       "outcome": "default"
     },
-    "swem:axe_gold": {
       "tools": [
         "axe"
       ],
@@ -123956,7 +122737,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "axe name heuristic",
       "outcome": "default"
     },
-    "swem:axe_iron": {
       "tools": [
         "axe"
       ],
@@ -123964,7 +122744,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "axe name heuristic",
       "outcome": "default"
     },
-    "swem:axe_leather": {
       "tools": [
         "axe"
       ],
@@ -123972,7 +122751,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "axe name heuristic",
       "outcome": "default"
     },
-    "swem:axe_netherite": {
       "tools": [
         "axe"
       ],
@@ -123980,7 +122758,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "axe name heuristic",
       "outcome": "default"
     },
-    "swem:pickaxe_amethyst": {
       "tools": [
         "pickaxe"
       ],
@@ -123988,7 +122765,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "runtime tool action evidence",
       "outcome": "default"
     },
-    "swem:pickaxe_copper": {
       "tools": [
         "pickaxe"
       ],
@@ -123996,7 +122772,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "pickaxe name heuristic",
       "outcome": "default"
     },
-    "swem:pickaxe_diamond": {
       "tools": [
         "pickaxe"
       ],
@@ -124004,7 +122779,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "pickaxe name heuristic",
       "outcome": "default"
     },
-    "swem:pickaxe_gold": {
       "tools": [
         "pickaxe"
       ],
@@ -124012,7 +122786,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "pickaxe name heuristic",
       "outcome": "default"
     },
-    "swem:pickaxe_iron": {
       "tools": [
         "pickaxe"
       ],
@@ -124020,7 +122793,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "pickaxe name heuristic",
       "outcome": "default"
     },
-    "swem:pickaxe_leather": {
       "tools": [
         "pickaxe"
       ],
@@ -124028,7 +122800,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "pickaxe name heuristic",
       "outcome": "default"
     },
-    "swem:pickaxe_netherite": {
       "tools": [
         "pickaxe"
       ],
@@ -124036,7 +122807,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "pickaxe name heuristic",
       "outcome": "default"
     },
-    "swem:scythe_amethyst": {
       "tools": [
         "hoe"
       ],
@@ -124044,7 +122814,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "runtime tool action evidence",
       "outcome": "default"
     },
-    "swem:scythe_copper": {
       "tools": [
         "knife"
       ],
@@ -124052,7 +122821,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "knife-equivalent cutter family",
       "outcome": "default"
     },
-    "swem:scythe_diamond": {
       "tools": [
         "knife"
       ],
@@ -124060,7 +122828,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "knife-equivalent cutter family",
       "outcome": "default"
     },
-    "swem:scythe_gold": {
       "tools": [
         "knife"
       ],
@@ -124068,7 +122835,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "knife-equivalent cutter family",
       "outcome": "default"
     },
-    "swem:scythe_iron": {
       "tools": [
         "knife"
       ],
@@ -124076,7 +122842,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "knife-equivalent cutter family",
       "outcome": "default"
     },
-    "swem:scythe_leather": {
       "tools": [
         "knife"
       ],
@@ -124084,7 +122849,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "knife-equivalent cutter family",
       "outcome": "default"
     },
-    "swem:scythe_netherite": {
       "tools": [
         "knife"
       ],
@@ -124092,7 +122856,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "knife-equivalent cutter family",
       "outcome": "default"
     },
-    "swem:shovel_amethyst": {
       "tools": [
         "shovel"
       ],
@@ -124100,7 +122863,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "runtime tool action evidence",
       "outcome": "default"
     },
-    "swem:shovel_copper": {
       "tools": [
         "shovel"
       ],
@@ -124108,7 +122870,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "shovel name heuristic",
       "outcome": "default"
     },
-    "swem:shovel_diamond": {
       "tools": [
         "shovel"
       ],
@@ -124116,7 +122877,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "shovel name heuristic",
       "outcome": "default"
     },
-    "swem:shovel_gold": {
       "tools": [
         "shovel"
       ],
@@ -124124,7 +122884,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "shovel name heuristic",
       "outcome": "default"
     },
-    "swem:shovel_iron": {
       "tools": [
         "shovel"
       ],
@@ -124132,7 +122891,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "shovel name heuristic",
       "outcome": "default"
     },
-    "swem:shovel_leather": {
       "tools": [
         "shovel"
       ],
@@ -124140,7 +122898,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "shovel name heuristic",
       "outcome": "default"
     },
-    "swem:shovel_netherite": {
       "tools": [
         "shovel"
       ],
@@ -124148,7 +122905,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "shovel name heuristic",
       "outcome": "default"
     },
-    "swem:sword_amethyst": {
       "tools": [
         "sword"
       ],
@@ -124156,7 +122912,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "runtime tool action evidence",
       "outcome": "default"
     },
-    "swem:sword_copper": {
       "tools": [
         "sword"
       ],
@@ -124164,7 +122919,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "sword name heuristic",
       "outcome": "default"
     },
-    "swem:sword_diamond": {
       "tools": [
         "sword"
       ],
@@ -124172,7 +122926,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "sword name heuristic",
       "outcome": "default"
     },
-    "swem:sword_gold": {
       "tools": [
         "sword"
       ],
@@ -124180,7 +122933,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "sword name heuristic",
       "outcome": "default"
     },
-    "swem:sword_iron": {
       "tools": [
         "sword"
       ],
@@ -124188,7 +122940,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "sword name heuristic",
       "outcome": "default"
     },
-    "swem:sword_leather": {
       "tools": [
         "sword"
       ],
@@ -124196,7 +122947,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "sword name heuristic",
       "outcome": "default"
     },
-    "swem:sword_netherite": {
       "tools": [
         "sword"
       ],
@@ -126257,25 +125007,6 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "sushigocrafting:sesame_crop",
       "sushigocrafting:soy_crop",
       "sushigocrafting:wasabi_crop",
-      "swem:alfalfa_plant",
-      "swem:jump_flower_box_black",
-      "swem:jump_flower_box_blue",
-      "swem:jump_flower_box_brown",
-      "swem:jump_flower_box_cyan",
-      "swem:jump_flower_box_gray",
-      "swem:jump_flower_box_green",
-      "swem:jump_flower_box_light_blue",
-      "swem:jump_flower_box_light_gray",
-      "swem:jump_flower_box_lime",
-      "swem:jump_flower_box_magenta",
-      "swem:jump_flower_box_orange",
-      "swem:jump_flower_box_pink",
-      "swem:jump_flower_box_purple",
-      "swem:jump_flower_box_red",
-      "swem:jump_flower_box_white",
-      "swem:jump_flower_box_yellow",
-      "swem:oat_plant",
-      "swem:timothy_plant",
       "tconstruct:beetroot_soup_fluid",
       "tconstruct:blood_slime_fern",
       "tconstruct:blood_slime_leaves",

@@ -18,10 +18,7 @@ function btmRealisticHandsKnifePredicate(player) {
 
 LootJS.modifiers(function (event) {
     var grassSeedDrops = [
-        'swem:alfalfa_seeds',
-        'minecraft:wheat_seeds',
-        'swem:oat_seeds',
-        'swem:timothy_seeds'
+        'minecraft:wheat_seeds'
     ]
     var knifeFiber = event.addBlockLootModifier(/^(minecraft:grass|minecraft:tall_grass|projectvibrantjourneys:short_grass)$/)
     knifeFiber.playerPredicate(btmRealisticHandsKnifePredicate)

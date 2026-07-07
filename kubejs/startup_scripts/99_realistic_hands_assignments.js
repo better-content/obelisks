@@ -5,8 +5,8 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
   "generatedBy": "tools/kotlin/audit_realistic_hands.main.kts",
   "input": "generated/runtime-dumps/block_hardness_probe.json",
   "runtimeProbeSchema": "obelisks.block_hardness_probe.v3",
-  "blockCount": 13208,
-  "itemCount": 684,
+  "blockCount": 13942,
+  "itemCount": 20738,
   "blocks": {
     "hand": [
       "aether:aether_dirt",
@@ -17,6 +17,39 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "aether:quicksoil_glass",
       "aether:quicksoil_glass_pane",
       "bloodmagic:nether_soil",
+      "blue_skies:chiseled_crystal_sandstone",
+      "blue_skies:chiseled_midnight_sandstone",
+      "blue_skies:coarse_lunar_dirt",
+      "blue_skies:coarse_turquoise_dirt",
+      "blue_skies:crystal_sand",
+      "blue_skies:crystal_sandstone",
+      "blue_skies:crystal_sandstone_pillar",
+      "blue_skies:crystal_sandstone_slab",
+      "blue_skies:crystal_sandstone_stairs",
+      "blue_skies:crystal_sandstone_wall",
+      "blue_skies:cut_crystal_sandstone",
+      "blue_skies:cut_crystal_sandstone_slab",
+      "blue_skies:cut_midnight_sandstone",
+      "blue_skies:cut_midnight_sandstone_slab",
+      "blue_skies:lunar_comet_grass_block",
+      "blue_skies:lunar_dirt",
+      "blue_skies:lunar_grass_block",
+      "blue_skies:lunar_mud",
+      "blue_skies:midnight_sand",
+      "blue_skies:midnight_sandstone",
+      "blue_skies:midnight_sandstone_pillar",
+      "blue_skies:midnight_sandstone_slab",
+      "blue_skies:midnight_sandstone_stairs",
+      "blue_skies:midnight_sandstone_wall",
+      "blue_skies:smooth_crystal_sandstone",
+      "blue_skies:smooth_crystal_sandstone_slab",
+      "blue_skies:smooth_crystal_sandstone_stairs",
+      "blue_skies:smooth_midnight_sandstone",
+      "blue_skies:smooth_midnight_sandstone_slab",
+      "blue_skies:smooth_midnight_sandstone_stairs",
+      "blue_skies:turquoise_comet_grass_block",
+      "blue_skies:turquoise_dirt",
+      "blue_skies:turquoise_grass_block",
       "btmfixes:burnt_aether_grass_block",
       "btmfixes:burnt_beige_limestone_grassy_regolith",
       "btmfixes:burnt_chorus_grass_block",
@@ -497,6 +530,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "supplementaries:gravel_bricks",
       "supplementaries:raked_gravel",
       "supplementaries:suspicious_gravel_bricks",
+      "swem:soiled_shavings",
       "tconstruct:earth_slime_dirt",
       "tconstruct:ender_slime_dirt",
       "tconstruct:ichor_slime_dirt",
@@ -604,6 +638,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "aether:skyroot_slab",
       "aether:skyroot_stairs",
       "aether:white_flower",
+      "amendments:blue_skies/double_comet_berry_pie",
       "amendments:hanging_flower_pot",
       "ars_nouveau:arcane_core",
       "ars_nouveau:arcane_pedestal",
@@ -622,6 +657,101 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "ars_nouveau:sourceberry_bush",
       "ars_nouveau:sourceberry_sack",
       "ars_nouveau:whirlisprig_flower",
+      "blue_skies:baneful_mushroom",
+      "blue_skies:bluebright_leaves",
+      "blue_skies:bluebright_sapling",
+      "blue_skies:bluebright_vine",
+      "blue_skies:blush_blossom",
+      "blue_skies:brewberry_bush",
+      "blue_skies:briskbloom",
+      "blue_skies:brittlebush",
+      "blue_skies:brumble_vine",
+      "blue_skies:brumble_vine_top",
+      "blue_skies:chillweed",
+      "blue_skies:comet_berry_pie",
+      "blue_skies:comet_grass",
+      "blue_skies:comet_leaves",
+      "blue_skies:comet_sapling",
+      "blue_skies:crescent_fruit_leaves",
+      "blue_skies:crescent_fruit_sapling",
+      "blue_skies:cryo_roots",
+      "blue_skies:crystal_flower",
+      "blue_skies:crystallized_grass",
+      "blue_skies:crystallized_leaves",
+      "blue_skies:dusk_leaves",
+      "blue_skies:dusk_sapling",
+      "blue_skies:dusk_vine",
+      "blue_skies:frostbright_leaves",
+      "blue_skies:frostbright_sapling",
+      "blue_skies:frostbright_vine",
+      "blue_skies:glimmer_reed",
+      "blue_skies:lucentroot",
+      "blue_skies:lunar_grass",
+      "blue_skies:lunar_leaves",
+      "blue_skies:lunar_sapling",
+      "blue_skies:lunar_vine",
+      "blue_skies:maple_leaves",
+      "blue_skies:maple_sapling",
+      "blue_skies:maple_vine",
+      "blue_skies:moonlit_bloom",
+      "blue_skies:mossy_lunar_cobblestone",
+      "blue_skies:mossy_lunar_cobblestone_slab",
+      "blue_skies:mossy_lunar_cobblestone_stairs",
+      "blue_skies:mossy_lunar_cobblestone_wall",
+      "blue_skies:mossy_lunar_stonebrick",
+      "blue_skies:mossy_lunar_stonebrick_slab",
+      "blue_skies:mossy_lunar_stonebrick_stairs",
+      "blue_skies:mossy_lunar_stonebrick_wall",
+      "blue_skies:mossy_turquoise_cobblestone",
+      "blue_skies:mossy_turquoise_cobblestone_slab",
+      "blue_skies:mossy_turquoise_cobblestone_stairs",
+      "blue_skies:mossy_turquoise_cobblestone_wall",
+      "blue_skies:mossy_turquoise_stonebrick",
+      "blue_skies:mossy_turquoise_stonebrick_slab",
+      "blue_skies:mossy_turquoise_stonebrick_stairs",
+      "blue_skies:mossy_turquoise_stonebrick_wall",
+      "blue_skies:muckweed",
+      "blue_skies:potted_baneful_mushroom",
+      "blue_skies:potted_blaze_bud",
+      "blue_skies:potted_bluebright_sapling",
+      "blue_skies:potted_blush_blossom",
+      "blue_skies:potted_brewberry_bush",
+      "blue_skies:potted_briskbloom",
+      "blue_skies:potted_brittlebush",
+      "blue_skies:potted_camellia",
+      "blue_skies:potted_chillweed",
+      "blue_skies:potted_comet_sapling",
+      "blue_skies:potted_crescent_fruit_sapling",
+      "blue_skies:potted_crystal_flower",
+      "blue_skies:potted_dusk_sapling",
+      "blue_skies:potted_flare_floret",
+      "blue_skies:potted_frose",
+      "blue_skies:potted_frostbright_sapling",
+      "blue_skies:potted_lucentroot",
+      "blue_skies:potted_lunar_sapling",
+      "blue_skies:potted_maple_sapling",
+      "blue_skies:potted_midday_bayhop",
+      "blue_skies:potted_moonlit_bloom",
+      "blue_skies:potted_muckweed",
+      "blue_skies:potted_nightcress",
+      "blue_skies:potted_polar_posy",
+      "blue_skies:potted_snowbloom",
+      "blue_skies:potted_snowcap_mushroom",
+      "blue_skies:potted_starlit_sapling",
+      "blue_skies:sea_moss",
+      "blue_skies:sea_moss_block",
+      "blue_skies:sea_moss_carpet",
+      "blue_skies:snowbloom",
+      "blue_skies:snowcap_mushroom",
+      "blue_skies:snowcap_mushroom_block",
+      "blue_skies:snowcap_mushroom_stem",
+      "blue_skies:starlit_leaves",
+      "blue_skies:starlit_sapling",
+      "blue_skies:starlit_vine",
+      "blue_skies:tall_lunar_grass",
+      "blue_skies:tall_turquoise_grass",
+      "blue_skies:turquoise_grass",
+      "blue_skies:winter_leaves",
       "btmfixes:burnt_chared_grass",
       "btmfixes:burnt_crackled_grass",
       "btmfixes:burnt_deepgrass",
@@ -999,6 +1129,12 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "excavated_variants:aether_mossy_holystone_zinc",
       "excavated_variants:aether_mossy_holystone_zinc_ore",
       "excavated_variants:andesite_arcane_crystal_ore",
+      "excavated_variants:blue_skies_cinderstone_arcane_crystal_ore",
+      "excavated_variants:blue_skies_lunar_stone_arcane_crystal_ore",
+      "excavated_variants:blue_skies_rimestone_arcane_crystal_ore",
+      "excavated_variants:blue_skies_taratite_arcane_crystal_ore",
+      "excavated_variants:blue_skies_turquoise_stone_arcane_crystal_ore",
+      "excavated_variants:blue_skies_umber_arcane_crystal_ore",
       "excavated_variants:calcite_arcane_crystal_ore",
       "excavated_variants:create_asurine_arcane_crystal_ore",
       "excavated_variants:create_crimsite_arcane_crystal_ore",
@@ -1243,6 +1379,15 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "immersive_weathering:azalea_flower_pile",
       "immersive_weathering:azalea_leaf_pile",
       "immersive_weathering:birch_leaf_pile",
+      "immersive_weathering:blue_skies/bluebright_leaf_pile",
+      "immersive_weathering:blue_skies/comet_leaf_pile",
+      "immersive_weathering:blue_skies/crescent_fruit_leaf_pile",
+      "immersive_weathering:blue_skies/crystallized_leaf_pile",
+      "immersive_weathering:blue_skies/dusk_leaf_pile",
+      "immersive_weathering:blue_skies/frostbright_leaf_pile",
+      "immersive_weathering:blue_skies/lunar_leaf_pile",
+      "immersive_weathering:blue_skies/maple_leaf_pile",
+      "immersive_weathering:blue_skies/starlit_leaf_pile",
       "immersive_weathering:burnt/blast_leaf_pile",
       "immersive_weathering:burnt/burnt_leaf_pile",
       "immersive_weathering:burnt/smoldering_acacia_leaf_pile",
@@ -1820,6 +1965,25 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "sushigocrafting:sesame_crop",
       "sushigocrafting:soy_crop",
       "sushigocrafting:wasabi_crop",
+      "swem:alfalfa_plant",
+      "swem:jump_flower_box_black",
+      "swem:jump_flower_box_blue",
+      "swem:jump_flower_box_brown",
+      "swem:jump_flower_box_cyan",
+      "swem:jump_flower_box_gray",
+      "swem:jump_flower_box_green",
+      "swem:jump_flower_box_light_blue",
+      "swem:jump_flower_box_light_gray",
+      "swem:jump_flower_box_lime",
+      "swem:jump_flower_box_magenta",
+      "swem:jump_flower_box_orange",
+      "swem:jump_flower_box_pink",
+      "swem:jump_flower_box_purple",
+      "swem:jump_flower_box_red",
+      "swem:jump_flower_box_white",
+      "swem:jump_flower_box_yellow",
+      "swem:oat_plant",
+      "swem:timothy_plant",
       "tconstruct:beetroot_soup_fluid",
       "tconstruct:blood_earth_slime_grass",
       "tconstruct:blood_ender_slime_grass",
@@ -2149,6 +2313,140 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "ars_nouveau:stripped_red_archwood_wood",
       "bloodmagic:woodbrickpath",
       "bloodmagic:woodtilepath",
+      "blue_skies:bluebright_bookshelf",
+      "blue_skies:bluebright_button",
+      "blue_skies:bluebright_chest",
+      "blue_skies:bluebright_crafting_table",
+      "blue_skies:bluebright_door",
+      "blue_skies:bluebright_fence",
+      "blue_skies:bluebright_fence_gate",
+      "blue_skies:bluebright_hanging_sign",
+      "blue_skies:bluebright_ladder",
+      "blue_skies:bluebright_log",
+      "blue_skies:bluebright_planks",
+      "blue_skies:bluebright_sign",
+      "blue_skies:bluebright_trapdoor",
+      "blue_skies:bluebright_wall_hanging_sign",
+      "blue_skies:bluebright_wall_sign",
+      "blue_skies:bluebright_wood",
+      "blue_skies:comet_bookshelf",
+      "blue_skies:comet_button",
+      "blue_skies:comet_chest",
+      "blue_skies:comet_crafting_table",
+      "blue_skies:comet_door",
+      "blue_skies:comet_fence",
+      "blue_skies:comet_fence_gate",
+      "blue_skies:comet_hanging_sign",
+      "blue_skies:comet_ladder",
+      "blue_skies:comet_log",
+      "blue_skies:comet_planks",
+      "blue_skies:comet_sign",
+      "blue_skies:comet_trapdoor",
+      "blue_skies:comet_wall_hanging_sign",
+      "blue_skies:comet_wall_sign",
+      "blue_skies:comet_wood",
+      "blue_skies:crystallized_button",
+      "blue_skies:crystallized_door",
+      "blue_skies:crystallized_log",
+      "blue_skies:crystallized_planks",
+      "blue_skies:crystallized_trapdoor",
+      "blue_skies:crystallized_wood",
+      "blue_skies:dusk_bookshelf",
+      "blue_skies:dusk_button",
+      "blue_skies:dusk_chest",
+      "blue_skies:dusk_crafting_table",
+      "blue_skies:dusk_door",
+      "blue_skies:dusk_fence",
+      "blue_skies:dusk_fence_gate",
+      "blue_skies:dusk_hanging_sign",
+      "blue_skies:dusk_ladder",
+      "blue_skies:dusk_log",
+      "blue_skies:dusk_planks",
+      "blue_skies:dusk_sign",
+      "blue_skies:dusk_trapdoor",
+      "blue_skies:dusk_wall_hanging_sign",
+      "blue_skies:dusk_wall_sign",
+      "blue_skies:dusk_wood",
+      "blue_skies:frostbright_bookshelf",
+      "blue_skies:frostbright_button",
+      "blue_skies:frostbright_chest",
+      "blue_skies:frostbright_crafting_table",
+      "blue_skies:frostbright_door",
+      "blue_skies:frostbright_fence",
+      "blue_skies:frostbright_fence_gate",
+      "blue_skies:frostbright_hanging_sign",
+      "blue_skies:frostbright_ladder",
+      "blue_skies:frostbright_log",
+      "blue_skies:frostbright_planks",
+      "blue_skies:frostbright_sign",
+      "blue_skies:frostbright_trapdoor",
+      "blue_skies:frostbright_wall_hanging_sign",
+      "blue_skies:frostbright_wall_sign",
+      "blue_skies:frostbright_wood",
+      "blue_skies:lunar_bookshelf",
+      "blue_skies:lunar_button",
+      "blue_skies:lunar_chest",
+      "blue_skies:lunar_crafting_table",
+      "blue_skies:lunar_door",
+      "blue_skies:lunar_fence",
+      "blue_skies:lunar_fence_gate",
+      "blue_skies:lunar_hanging_sign",
+      "blue_skies:lunar_ladder",
+      "blue_skies:lunar_log",
+      "blue_skies:lunar_planks",
+      "blue_skies:lunar_sign",
+      "blue_skies:lunar_stone_button",
+      "blue_skies:lunar_trapdoor",
+      "blue_skies:lunar_wall_hanging_sign",
+      "blue_skies:lunar_wall_sign",
+      "blue_skies:lunar_wood",
+      "blue_skies:maple_bookshelf",
+      "blue_skies:maple_button",
+      "blue_skies:maple_chest",
+      "blue_skies:maple_crafting_table",
+      "blue_skies:maple_door",
+      "blue_skies:maple_fence",
+      "blue_skies:maple_fence_gate",
+      "blue_skies:maple_hanging_sign",
+      "blue_skies:maple_ladder",
+      "blue_skies:maple_log",
+      "blue_skies:maple_planks",
+      "blue_skies:maple_sign",
+      "blue_skies:maple_trapdoor",
+      "blue_skies:maple_wall_hanging_sign",
+      "blue_skies:maple_wall_sign",
+      "blue_skies:maple_wood",
+      "blue_skies:starlit_bookshelf",
+      "blue_skies:starlit_button",
+      "blue_skies:starlit_chest",
+      "blue_skies:starlit_crafting_table",
+      "blue_skies:starlit_door",
+      "blue_skies:starlit_fence",
+      "blue_skies:starlit_fence_gate",
+      "blue_skies:starlit_hanging_sign",
+      "blue_skies:starlit_ladder",
+      "blue_skies:starlit_log",
+      "blue_skies:starlit_planks",
+      "blue_skies:starlit_sign",
+      "blue_skies:starlit_trapdoor",
+      "blue_skies:starlit_wall_hanging_sign",
+      "blue_skies:starlit_wall_sign",
+      "blue_skies:starlit_wood",
+      "blue_skies:stripped_bluebright_log",
+      "blue_skies:stripped_bluebright_wood",
+      "blue_skies:stripped_comet_log",
+      "blue_skies:stripped_comet_wood",
+      "blue_skies:stripped_dusk_log",
+      "blue_skies:stripped_dusk_wood",
+      "blue_skies:stripped_frostbright_log",
+      "blue_skies:stripped_frostbright_wood",
+      "blue_skies:stripped_lunar_log",
+      "blue_skies:stripped_lunar_wood",
+      "blue_skies:stripped_maple_log",
+      "blue_skies:stripped_maple_wood",
+      "blue_skies:stripped_starlit_log",
+      "blue_skies:stripped_starlit_wood",
+      "blue_skies:turquoise_stone_button",
       "brewinandchewin:coaster",
       "brewinandchewin:heating_cask",
       "brewinandchewin:ice_crate",
@@ -4519,6 +4817,88 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "sushigocrafting:avocado_leaves_logged",
       "sushigocrafting:avocado_log",
       "sushigocrafting:fermentation_barrel",
+      "swem:compost",
+      "swem:english_fence",
+      "swem:english_hitching_post",
+      "swem:english_hitching_post_mini",
+      "swem:half_barrel_black",
+      "swem:half_barrel_blue",
+      "swem:half_barrel_brown",
+      "swem:half_barrel_cyan",
+      "swem:half_barrel_gray",
+      "swem:half_barrel_green",
+      "swem:half_barrel_light_blue",
+      "swem:half_barrel_light_gray",
+      "swem:half_barrel_lime",
+      "swem:half_barrel_magenta",
+      "swem:half_barrel_orange",
+      "swem:half_barrel_pink",
+      "swem:half_barrel_purple",
+      "swem:half_barrel_red",
+      "swem:half_barrel_white",
+      "swem:half_barrel_yellow",
+      "swem:jump_log",
+      "swem:jump_plank_black",
+      "swem:jump_plank_blue",
+      "swem:jump_plank_brown",
+      "swem:jump_plank_cyan",
+      "swem:jump_plank_fancy_black",
+      "swem:jump_plank_fancy_blue",
+      "swem:jump_plank_fancy_brown",
+      "swem:jump_plank_fancy_cyan",
+      "swem:jump_plank_fancy_gray",
+      "swem:jump_plank_fancy_green",
+      "swem:jump_plank_fancy_light_blue",
+      "swem:jump_plank_fancy_light_gray",
+      "swem:jump_plank_fancy_lime",
+      "swem:jump_plank_fancy_magenta",
+      "swem:jump_plank_fancy_orange",
+      "swem:jump_plank_fancy_pink",
+      "swem:jump_plank_fancy_purple",
+      "swem:jump_plank_fancy_red",
+      "swem:jump_plank_fancy_white",
+      "swem:jump_plank_fancy_yellow",
+      "swem:jump_plank_gray",
+      "swem:jump_plank_green",
+      "swem:jump_plank_light_blue",
+      "swem:jump_plank_light_gray",
+      "swem:jump_plank_lime",
+      "swem:jump_plank_magenta",
+      "swem:jump_plank_orange",
+      "swem:jump_plank_pink",
+      "swem:jump_plank_purple",
+      "swem:jump_plank_red",
+      "swem:jump_plank_white",
+      "swem:jump_plank_yellow",
+      "swem:pasture_fence_acacia",
+      "swem:pasture_fence_birch",
+      "swem:pasture_fence_dark_oak",
+      "swem:pasture_fence_jungle",
+      "swem:pasture_fence_oak",
+      "swem:pasture_fence_spruce",
+      "swem:pasture_fence_whitewash",
+      "swem:pasture_hitching_post",
+      "swem:pasture_hitching_post_mini",
+      "swem:western_barrel",
+      "swem:western_fence_acacia",
+      "swem:western_fence_birch",
+      "swem:western_fence_dark_oak",
+      "swem:western_fence_jungle",
+      "swem:western_fence_oak",
+      "swem:western_fence_spruce",
+      "swem:western_fence_whitewash",
+      "swem:western_hitching_post",
+      "swem:western_hitching_post_mini",
+      "swem:wet_compost",
+      "swem:whitewash_button",
+      "swem:whitewash_door",
+      "swem:whitewash_fence",
+      "swem:whitewash_fence_gate",
+      "swem:whitewash_log",
+      "swem:whitewash_planks",
+      "swem:whitewash_sign",
+      "swem:whitewash_trapdoor",
+      "swem:whitewash_wall_sign",
       "tconstruct:blazewood",
       "tconstruct:blazewood_fence",
       "tconstruct:blazewood_slab",
@@ -5498,6 +5878,247 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "bloodmagic:vengefuldemoncrystal",
       "bloodmagic:waterritualstone",
       "bloodmagic:weak_tau",
+      "blue_skies:alchemist_trophy",
+      "blue_skies:alchemy_table",
+      "blue_skies:aquatic_slab",
+      "blue_skies:aquatic_stairs",
+      "blue_skies:aquatic_stone",
+      "blue_skies:aquatic_wall",
+      "blue_skies:aquite_block",
+      "blue_skies:arachnarch_trophy",
+      "blue_skies:bag_of_spoils",
+      "blue_skies:black_fire",
+      "blue_skies:blaze_bud",
+      "blue_skies:blinding_slab",
+      "blue_skies:blinding_stairs",
+      "blue_skies:blinding_stone",
+      "blue_skies:blinding_stone_pillar",
+      "blue_skies:blinding_wall",
+      "blue_skies:blue_fire",
+      "blue_skies:bluebright_pressure_plate",
+      "blue_skies:bluebright_slab",
+      "blue_skies:bluebright_stairs",
+      "blue_skies:brumble",
+      "blue_skies:brumble_block",
+      "blue_skies:brumble_lantern",
+      "blue_skies:brumble_slab",
+      "blue_skies:brumble_stairs",
+      "blue_skies:brumble_wall",
+      "blue_skies:camellia",
+      "blue_skies:carved_blinding_stone",
+      "blue_skies:carved_nature_stonebrick",
+      "blue_skies:carved_poison_stonebrick",
+      "blue_skies:charoite_block",
+      "blue_skies:chilled_lily_pad",
+      "blue_skies:chiseled_lunar_stonebrick",
+      "blue_skies:chiseled_polished_brumble",
+      "blue_skies:chiseled_turquoise_stonebrick",
+      "blue_skies:cinderstone",
+      "blue_skies:cinderstone_slab",
+      "blue_skies:cinderstone_stairs",
+      "blue_skies:cinderstone_wall",
+      "blue_skies:comet_pressure_plate",
+      "blue_skies:comet_slab",
+      "blue_skies:comet_stairs",
+      "blue_skies:cracked_lunar_stonebrick",
+      "blue_skies:cracked_lunar_stonebrick_slab",
+      "blue_skies:cracked_lunar_stonebrick_stairs",
+      "blue_skies:cracked_lunar_stonebrick_wall",
+      "blue_skies:cracked_turquoise_stonebrick",
+      "blue_skies:cracked_turquoise_stonebrick_slab",
+      "blue_skies:cracked_turquoise_stonebrick_stairs",
+      "blue_skies:cracked_turquoise_stonebrick_wall",
+      "blue_skies:crescent_fruit",
+      "blue_skies:crystal_glass",
+      "blue_skies:crystal_glass_pane",
+      "blue_skies:crystallized_pressure_plate",
+      "blue_skies:crystallized_slab",
+      "blue_skies:crystallized_stairs",
+      "blue_skies:crystallized_wall",
+      "blue_skies:decaying_spike",
+      "blue_skies:diopside_block",
+      "blue_skies:dusk_pressure_plate",
+      "blue_skies:dusk_slab",
+      "blue_skies:dusk_stairs",
+      "blue_skies:everbright_aquite_ore",
+      "blue_skies:everbright_charoite_ore",
+      "blue_skies:everbright_diopside_ore",
+      "blue_skies:everbright_emerald_ore",
+      "blue_skies:everbright_moonstone_ore",
+      "blue_skies:everbright_pyrope_ore",
+      "blue_skies:everdawn_aquite_ore",
+      "blue_skies:everdawn_charoite_ore",
+      "blue_skies:everdawn_diopside_ore",
+      "blue_skies:everdawn_emerald_ore",
+      "blue_skies:everdawn_moonstone_ore",
+      "blue_skies:everdawn_pyrope_ore",
+      "blue_skies:falsite_block",
+      "blue_skies:falsite_ore",
+      "blue_skies:fiery_beans",
+      "blue_skies:flare_floret",
+      "blue_skies:food_prep_table",
+      "blue_skies:frose",
+      "blue_skies:frostbright_pressure_plate",
+      "blue_skies:frostbright_slab",
+      "blue_skies:frostbright_stairs",
+      "blue_skies:glowing_aquatic_slab",
+      "blue_skies:glowing_aquatic_stairs",
+      "blue_skies:glowing_aquatic_stone",
+      "blue_skies:glowing_aquatic_wall",
+      "blue_skies:glowing_blinding_slab",
+      "blue_skies:glowing_blinding_stairs",
+      "blue_skies:glowing_blinding_stone",
+      "blue_skies:glowing_blinding_wall",
+      "blue_skies:glowing_life_slab",
+      "blue_skies:glowing_life_stairs",
+      "blue_skies:glowing_life_stone",
+      "blue_skies:glowing_life_wall",
+      "blue_skies:glowing_nature_stone",
+      "blue_skies:glowing_nature_stone_slab",
+      "blue_skies:glowing_nature_stone_stairs",
+      "blue_skies:glowing_nature_stonebrick",
+      "blue_skies:glowing_nature_stonebrick_slab",
+      "blue_skies:glowing_nature_stonebrick_stairs",
+      "blue_skies:glowing_nature_stonebrick_wall",
+      "blue_skies:glowing_poison_stone",
+      "blue_skies:glowing_poison_stone_slab",
+      "blue_skies:glowing_poison_stone_stairs",
+      "blue_skies:horizonite_block",
+      "blue_skies:horizonite_forge",
+      "blue_skies:horizonite_ore",
+      "blue_skies:life_slab",
+      "blue_skies:life_stairs",
+      "blue_skies:life_stone",
+      "blue_skies:life_wall",
+      "blue_skies:lunar_cobblestone",
+      "blue_skies:lunar_cobblestone_slab",
+      "blue_skies:lunar_cobblestone_stairs",
+      "blue_skies:lunar_cobblestone_wall",
+      "blue_skies:lunar_dripstone",
+      "blue_skies:lunar_lever",
+      "blue_skies:lunar_pressure_plate",
+      "blue_skies:lunar_slab",
+      "blue_skies:lunar_stairs",
+      "blue_skies:lunar_stone",
+      "blue_skies:lunar_stone_pressure_plate",
+      "blue_skies:lunar_stone_slab",
+      "blue_skies:lunar_stone_stairs",
+      "blue_skies:lunar_stonebrick",
+      "blue_skies:lunar_stonebrick_slab",
+      "blue_skies:lunar_stonebrick_stairs",
+      "blue_skies:lunar_stonebrick_wall",
+      "blue_skies:maple_pressure_plate",
+      "blue_skies:maple_slab",
+      "blue_skies:maple_stairs",
+      "blue_skies:midday_bayhop",
+      "blue_skies:midnight_glass",
+      "blue_skies:midnight_glass_pane",
+      "blue_skies:moonlit_water_lily",
+      "blue_skies:moonstone",
+      "blue_skies:moonstone_block",
+      "blue_skies:moonstone_crystal",
+      "blue_skies:moonstone_lantern",
+      "blue_skies:moonstone_pressure_plate",
+      "blue_skies:nature_stone",
+      "blue_skies:nature_stone_pillar",
+      "blue_skies:nature_stone_slab",
+      "blue_skies:nature_stone_stairs",
+      "blue_skies:nature_stonebrick",
+      "blue_skies:nature_stonebrick_slab",
+      "blue_skies:nature_stonebrick_stairs",
+      "blue_skies:nature_stonebrick_wall",
+      "blue_skies:nightcress",
+      "blue_skies:pine_fruits",
+      "blue_skies:poison_stone",
+      "blue_skies:poison_stone_pillar",
+      "blue_skies:poison_stone_slab",
+      "blue_skies:poison_stone_stairs",
+      "blue_skies:poison_stonebrick",
+      "blue_skies:poison_stonebrick_slab",
+      "blue_skies:poison_stonebrick_stairs",
+      "blue_skies:poison_stonebrick_wall",
+      "blue_skies:polar_posy",
+      "blue_skies:polished_brumble",
+      "blue_skies:polished_brumble_brick_slab",
+      "blue_skies:polished_brumble_brick_stairs",
+      "blue_skies:polished_brumble_brick_wall",
+      "blue_skies:polished_brumble_bricks",
+      "blue_skies:polished_brumble_slab",
+      "blue_skies:polished_brumble_stairs",
+      "blue_skies:polished_brumble_wall",
+      "blue_skies:polished_cinderstone",
+      "blue_skies:polished_cinderstone_slab",
+      "blue_skies:polished_cinderstone_stairs",
+      "blue_skies:polished_cinderstone_wall",
+      "blue_skies:polished_rimestone",
+      "blue_skies:polished_rimestone_slab",
+      "blue_skies:polished_rimestone_stairs",
+      "blue_skies:polished_rimestone_wall",
+      "blue_skies:polished_taratite",
+      "blue_skies:polished_taratite_slab",
+      "blue_skies:polished_taratite_stairs",
+      "blue_skies:polished_taratite_wall",
+      "blue_skies:polished_umber",
+      "blue_skies:polished_umber_slab",
+      "blue_skies:polished_umber_stairs",
+      "blue_skies:polished_umber_wall",
+      "blue_skies:pyrope_block",
+      "blue_skies:raw_aquite_block",
+      "blue_skies:raw_charoite_block",
+      "blue_skies:raw_falsite_block",
+      "blue_skies:raw_horizonite_block",
+      "blue_skies:raw_ventium_block",
+      "blue_skies:rimestone",
+      "blue_skies:rimestone_slab",
+      "blue_skies:rimestone_stairs",
+      "blue_skies:rimestone_wall",
+      "blue_skies:rough_poison_stonebrick",
+      "blue_skies:rough_poison_stonebrick_slab",
+      "blue_skies:rough_poison_stonebrick_stairs",
+      "blue_skies:scalefruits",
+      "blue_skies:solnuts",
+      "blue_skies:spider_nest",
+      "blue_skies:star_emitter",
+      "blue_skies:star_flare",
+      "blue_skies:starlit_crusher_trophy",
+      "blue_skies:starlit_pressure_plate",
+      "blue_skies:starlit_slab",
+      "blue_skies:starlit_stairs",
+      "blue_skies:summoner_trophy",
+      "blue_skies:summoning_table",
+      "blue_skies:sunstone_block",
+      "blue_skies:sunstone_crystal",
+      "blue_skies:taratite",
+      "blue_skies:taratite_slab",
+      "blue_skies:taratite_stairs",
+      "blue_skies:taratite_wall",
+      "blue_skies:tool_box",
+      "blue_skies:trough",
+      "blue_skies:turquoise_cobblestone",
+      "blue_skies:turquoise_cobblestone_slab",
+      "blue_skies:turquoise_cobblestone_stairs",
+      "blue_skies:turquoise_cobblestone_wall",
+      "blue_skies:turquoise_dripstone",
+      "blue_skies:turquoise_lever",
+      "blue_skies:turquoise_stone",
+      "blue_skies:turquoise_stone_pressure_plate",
+      "blue_skies:turquoise_stone_slab",
+      "blue_skies:turquoise_stone_stairs",
+      "blue_skies:turquoise_stonebrick",
+      "blue_skies:turquoise_stonebrick_slab",
+      "blue_skies:turquoise_stonebrick_stairs",
+      "blue_skies:turquoise_stonebrick_wall",
+      "blue_skies:umber",
+      "blue_skies:umber_slab",
+      "blue_skies:umber_stairs",
+      "blue_skies:umber_wall",
+      "blue_skies:upsidedown_black_fire",
+      "blue_skies:upsidedown_blue_fire",
+      "blue_skies:ventium_block",
+      "blue_skies:ventium_ore",
+      "blue_skies:vitreous_moonstone",
+      "blue_skies:wall_warding_pearl",
+      "blue_skies:warding_pearl",
       "brewinandchewin:fiery_fondue_pot",
       "brewinandchewin:flaxen_cheese_wheel",
       "brewinandchewin:pizza",
@@ -7124,6 +7745,216 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "excavated_variants:basalt_iesnium_ore",
       "excavated_variants:blackstone_blazing_quartz_ore",
       "excavated_variants:blackstone_iesnium_ore",
+      "excavated_variants:blue_skies_cinderstone_bauxite_laterite",
+      "excavated_variants:blue_skies_cinderstone_brilliant_stone",
+      "excavated_variants:blue_skies_cinderstone_cantazarite_ore",
+      "excavated_variants:blue_skies_cinderstone_coal_measures",
+      "excavated_variants:blue_skies_cinderstone_copper_sulfide",
+      "excavated_variants:blue_skies_cinderstone_corundum_beryl_gem_vein",
+      "excavated_variants:blue_skies_cinderstone_cthonic_gold_ore",
+      "excavated_variants:blue_skies_cinderstone_cupriferous_redbed_redstone_vein",
+      "excavated_variants:blue_skies_cinderstone_darkstone",
+      "excavated_variants:blue_skies_cinderstone_emerald_schist_beryl_vein",
+      "excavated_variants:blue_skies_cinderstone_gilded_darkstone",
+      "excavated_variants:blue_skies_cinderstone_ironstone",
+      "excavated_variants:blue_skies_cinderstone_jade_ore",
+      "excavated_variants:blue_skies_cinderstone_kimberlite_pipe",
+      "excavated_variants:blue_skies_cinderstone_lazurite_vein",
+      "excavated_variants:blue_skies_cinderstone_lead_zinc_vein",
+      "excavated_variants:blue_skies_cinderstone_mithril_ore",
+      "excavated_variants:blue_skies_cinderstone_natural_quartz_ore",
+      "excavated_variants:blue_skies_cinderstone_nickel_sulfide",
+      "excavated_variants:blue_skies_cinderstone_osmiridium_lava_sulfide",
+      "excavated_variants:blue_skies_cinderstone_phosphate_rock",
+      "excavated_variants:blue_skies_cinderstone_quartz_vein",
+      "excavated_variants:blue_skies_cinderstone_runic_stone",
+      "excavated_variants:blue_skies_cinderstone_soul_bearing_black_shale_soulstone_vein",
+      "excavated_variants:blue_skies_cinderstone_soulstone_ore",
+      "excavated_variants:blue_skies_cinderstone_stella_arcanum",
+      "excavated_variants:blue_skies_cinderstone_sulfur_bearing_pyrite",
+      "excavated_variants:blue_skies_cinderstone_thorium",
+      "excavated_variants:blue_skies_cinderstone_tin",
+      "excavated_variants:blue_skies_cinderstone_tin_tungsten_greisen",
+      "excavated_variants:blue_skies_cinderstone_titanium_iron_oxide",
+      "excavated_variants:blue_skies_cinderstone_uranium",
+      "excavated_variants:blue_skies_cinderstone_xpetrified_ore",
+      "excavated_variants:blue_skies_cinderstone_zinc",
+      "excavated_variants:blue_skies_cinderstone_zinc_ore",
+      "excavated_variants:blue_skies_lunar_stone_bauxite_laterite",
+      "excavated_variants:blue_skies_lunar_stone_brilliant_stone",
+      "excavated_variants:blue_skies_lunar_stone_cantazarite_ore",
+      "excavated_variants:blue_skies_lunar_stone_coal_measures",
+      "excavated_variants:blue_skies_lunar_stone_copper_sulfide",
+      "excavated_variants:blue_skies_lunar_stone_corundum_beryl_gem_vein",
+      "excavated_variants:blue_skies_lunar_stone_cthonic_gold_ore",
+      "excavated_variants:blue_skies_lunar_stone_cupriferous_redbed_redstone_vein",
+      "excavated_variants:blue_skies_lunar_stone_darkstone",
+      "excavated_variants:blue_skies_lunar_stone_emerald_schist_beryl_vein",
+      "excavated_variants:blue_skies_lunar_stone_gilded_darkstone",
+      "excavated_variants:blue_skies_lunar_stone_ironstone",
+      "excavated_variants:blue_skies_lunar_stone_jade_ore",
+      "excavated_variants:blue_skies_lunar_stone_kimberlite_pipe",
+      "excavated_variants:blue_skies_lunar_stone_lazurite_vein",
+      "excavated_variants:blue_skies_lunar_stone_lead_zinc_vein",
+      "excavated_variants:blue_skies_lunar_stone_mithril_ore",
+      "excavated_variants:blue_skies_lunar_stone_natural_quartz_ore",
+      "excavated_variants:blue_skies_lunar_stone_nickel_sulfide",
+      "excavated_variants:blue_skies_lunar_stone_osmiridium_lava_sulfide",
+      "excavated_variants:blue_skies_lunar_stone_phosphate_rock",
+      "excavated_variants:blue_skies_lunar_stone_quartz_vein",
+      "excavated_variants:blue_skies_lunar_stone_runic_stone",
+      "excavated_variants:blue_skies_lunar_stone_soul_bearing_black_shale_soulstone_vein",
+      "excavated_variants:blue_skies_lunar_stone_soulstone_ore",
+      "excavated_variants:blue_skies_lunar_stone_stella_arcanum",
+      "excavated_variants:blue_skies_lunar_stone_sulfur_bearing_pyrite",
+      "excavated_variants:blue_skies_lunar_stone_thorium",
+      "excavated_variants:blue_skies_lunar_stone_tin",
+      "excavated_variants:blue_skies_lunar_stone_tin_tungsten_greisen",
+      "excavated_variants:blue_skies_lunar_stone_titanium_iron_oxide",
+      "excavated_variants:blue_skies_lunar_stone_uranium",
+      "excavated_variants:blue_skies_lunar_stone_xpetrified_ore",
+      "excavated_variants:blue_skies_lunar_stone_zinc",
+      "excavated_variants:blue_skies_lunar_stone_zinc_ore",
+      "excavated_variants:blue_skies_rimestone_bauxite_laterite",
+      "excavated_variants:blue_skies_rimestone_brilliant_stone",
+      "excavated_variants:blue_skies_rimestone_cantazarite_ore",
+      "excavated_variants:blue_skies_rimestone_coal_measures",
+      "excavated_variants:blue_skies_rimestone_copper_sulfide",
+      "excavated_variants:blue_skies_rimestone_corundum_beryl_gem_vein",
+      "excavated_variants:blue_skies_rimestone_cthonic_gold_ore",
+      "excavated_variants:blue_skies_rimestone_cupriferous_redbed_redstone_vein",
+      "excavated_variants:blue_skies_rimestone_darkstone",
+      "excavated_variants:blue_skies_rimestone_emerald_schist_beryl_vein",
+      "excavated_variants:blue_skies_rimestone_gilded_darkstone",
+      "excavated_variants:blue_skies_rimestone_ironstone",
+      "excavated_variants:blue_skies_rimestone_jade_ore",
+      "excavated_variants:blue_skies_rimestone_kimberlite_pipe",
+      "excavated_variants:blue_skies_rimestone_lazurite_vein",
+      "excavated_variants:blue_skies_rimestone_lead_zinc_vein",
+      "excavated_variants:blue_skies_rimestone_mithril_ore",
+      "excavated_variants:blue_skies_rimestone_natural_quartz_ore",
+      "excavated_variants:blue_skies_rimestone_nickel_sulfide",
+      "excavated_variants:blue_skies_rimestone_osmiridium_lava_sulfide",
+      "excavated_variants:blue_skies_rimestone_phosphate_rock",
+      "excavated_variants:blue_skies_rimestone_quartz_vein",
+      "excavated_variants:blue_skies_rimestone_runic_stone",
+      "excavated_variants:blue_skies_rimestone_soul_bearing_black_shale_soulstone_vein",
+      "excavated_variants:blue_skies_rimestone_soulstone_ore",
+      "excavated_variants:blue_skies_rimestone_stella_arcanum",
+      "excavated_variants:blue_skies_rimestone_sulfur_bearing_pyrite",
+      "excavated_variants:blue_skies_rimestone_thorium",
+      "excavated_variants:blue_skies_rimestone_tin",
+      "excavated_variants:blue_skies_rimestone_tin_tungsten_greisen",
+      "excavated_variants:blue_skies_rimestone_titanium_iron_oxide",
+      "excavated_variants:blue_skies_rimestone_uranium",
+      "excavated_variants:blue_skies_rimestone_xpetrified_ore",
+      "excavated_variants:blue_skies_rimestone_zinc",
+      "excavated_variants:blue_skies_rimestone_zinc_ore",
+      "excavated_variants:blue_skies_taratite_bauxite_laterite",
+      "excavated_variants:blue_skies_taratite_brilliant_stone",
+      "excavated_variants:blue_skies_taratite_cantazarite_ore",
+      "excavated_variants:blue_skies_taratite_coal_measures",
+      "excavated_variants:blue_skies_taratite_copper_sulfide",
+      "excavated_variants:blue_skies_taratite_corundum_beryl_gem_vein",
+      "excavated_variants:blue_skies_taratite_cthonic_gold_ore",
+      "excavated_variants:blue_skies_taratite_cupriferous_redbed_redstone_vein",
+      "excavated_variants:blue_skies_taratite_darkstone",
+      "excavated_variants:blue_skies_taratite_emerald_schist_beryl_vein",
+      "excavated_variants:blue_skies_taratite_gilded_darkstone",
+      "excavated_variants:blue_skies_taratite_ironstone",
+      "excavated_variants:blue_skies_taratite_jade_ore",
+      "excavated_variants:blue_skies_taratite_kimberlite_pipe",
+      "excavated_variants:blue_skies_taratite_lazurite_vein",
+      "excavated_variants:blue_skies_taratite_lead_zinc_vein",
+      "excavated_variants:blue_skies_taratite_mithril_ore",
+      "excavated_variants:blue_skies_taratite_natural_quartz_ore",
+      "excavated_variants:blue_skies_taratite_nickel_sulfide",
+      "excavated_variants:blue_skies_taratite_osmiridium_lava_sulfide",
+      "excavated_variants:blue_skies_taratite_phosphate_rock",
+      "excavated_variants:blue_skies_taratite_quartz_vein",
+      "excavated_variants:blue_skies_taratite_runic_stone",
+      "excavated_variants:blue_skies_taratite_soul_bearing_black_shale_soulstone_vein",
+      "excavated_variants:blue_skies_taratite_soulstone_ore",
+      "excavated_variants:blue_skies_taratite_stella_arcanum",
+      "excavated_variants:blue_skies_taratite_sulfur_bearing_pyrite",
+      "excavated_variants:blue_skies_taratite_thorium",
+      "excavated_variants:blue_skies_taratite_tin",
+      "excavated_variants:blue_skies_taratite_tin_tungsten_greisen",
+      "excavated_variants:blue_skies_taratite_titanium_iron_oxide",
+      "excavated_variants:blue_skies_taratite_uranium",
+      "excavated_variants:blue_skies_taratite_xpetrified_ore",
+      "excavated_variants:blue_skies_taratite_zinc",
+      "excavated_variants:blue_skies_taratite_zinc_ore",
+      "excavated_variants:blue_skies_turquoise_stone_bauxite_laterite",
+      "excavated_variants:blue_skies_turquoise_stone_brilliant_stone",
+      "excavated_variants:blue_skies_turquoise_stone_cantazarite_ore",
+      "excavated_variants:blue_skies_turquoise_stone_coal_measures",
+      "excavated_variants:blue_skies_turquoise_stone_copper_sulfide",
+      "excavated_variants:blue_skies_turquoise_stone_corundum_beryl_gem_vein",
+      "excavated_variants:blue_skies_turquoise_stone_cthonic_gold_ore",
+      "excavated_variants:blue_skies_turquoise_stone_cupriferous_redbed_redstone_vein",
+      "excavated_variants:blue_skies_turquoise_stone_darkstone",
+      "excavated_variants:blue_skies_turquoise_stone_emerald_schist_beryl_vein",
+      "excavated_variants:blue_skies_turquoise_stone_gilded_darkstone",
+      "excavated_variants:blue_skies_turquoise_stone_ironstone",
+      "excavated_variants:blue_skies_turquoise_stone_jade_ore",
+      "excavated_variants:blue_skies_turquoise_stone_kimberlite_pipe",
+      "excavated_variants:blue_skies_turquoise_stone_lazurite_vein",
+      "excavated_variants:blue_skies_turquoise_stone_lead_zinc_vein",
+      "excavated_variants:blue_skies_turquoise_stone_mithril_ore",
+      "excavated_variants:blue_skies_turquoise_stone_natural_quartz_ore",
+      "excavated_variants:blue_skies_turquoise_stone_nickel_sulfide",
+      "excavated_variants:blue_skies_turquoise_stone_osmiridium_lava_sulfide",
+      "excavated_variants:blue_skies_turquoise_stone_phosphate_rock",
+      "excavated_variants:blue_skies_turquoise_stone_quartz_vein",
+      "excavated_variants:blue_skies_turquoise_stone_runic_stone",
+      "excavated_variants:blue_skies_turquoise_stone_soul_bearing_black_shale_soulstone_vein",
+      "excavated_variants:blue_skies_turquoise_stone_soulstone_ore",
+      "excavated_variants:blue_skies_turquoise_stone_stella_arcanum",
+      "excavated_variants:blue_skies_turquoise_stone_sulfur_bearing_pyrite",
+      "excavated_variants:blue_skies_turquoise_stone_thorium",
+      "excavated_variants:blue_skies_turquoise_stone_tin",
+      "excavated_variants:blue_skies_turquoise_stone_tin_tungsten_greisen",
+      "excavated_variants:blue_skies_turquoise_stone_titanium_iron_oxide",
+      "excavated_variants:blue_skies_turquoise_stone_uranium",
+      "excavated_variants:blue_skies_turquoise_stone_xpetrified_ore",
+      "excavated_variants:blue_skies_turquoise_stone_zinc",
+      "excavated_variants:blue_skies_turquoise_stone_zinc_ore",
+      "excavated_variants:blue_skies_umber_bauxite_laterite",
+      "excavated_variants:blue_skies_umber_brilliant_stone",
+      "excavated_variants:blue_skies_umber_cantazarite_ore",
+      "excavated_variants:blue_skies_umber_coal_measures",
+      "excavated_variants:blue_skies_umber_copper_sulfide",
+      "excavated_variants:blue_skies_umber_corundum_beryl_gem_vein",
+      "excavated_variants:blue_skies_umber_cthonic_gold_ore",
+      "excavated_variants:blue_skies_umber_cupriferous_redbed_redstone_vein",
+      "excavated_variants:blue_skies_umber_darkstone",
+      "excavated_variants:blue_skies_umber_emerald_schist_beryl_vein",
+      "excavated_variants:blue_skies_umber_gilded_darkstone",
+      "excavated_variants:blue_skies_umber_ironstone",
+      "excavated_variants:blue_skies_umber_jade_ore",
+      "excavated_variants:blue_skies_umber_kimberlite_pipe",
+      "excavated_variants:blue_skies_umber_lazurite_vein",
+      "excavated_variants:blue_skies_umber_lead_zinc_vein",
+      "excavated_variants:blue_skies_umber_mithril_ore",
+      "excavated_variants:blue_skies_umber_natural_quartz_ore",
+      "excavated_variants:blue_skies_umber_nickel_sulfide",
+      "excavated_variants:blue_skies_umber_osmiridium_lava_sulfide",
+      "excavated_variants:blue_skies_umber_phosphate_rock",
+      "excavated_variants:blue_skies_umber_quartz_vein",
+      "excavated_variants:blue_skies_umber_runic_stone",
+      "excavated_variants:blue_skies_umber_soul_bearing_black_shale_soulstone_vein",
+      "excavated_variants:blue_skies_umber_soulstone_ore",
+      "excavated_variants:blue_skies_umber_stella_arcanum",
+      "excavated_variants:blue_skies_umber_sulfur_bearing_pyrite",
+      "excavated_variants:blue_skies_umber_thorium",
+      "excavated_variants:blue_skies_umber_tin",
+      "excavated_variants:blue_skies_umber_tin_tungsten_greisen",
+      "excavated_variants:blue_skies_umber_titanium_iron_oxide",
+      "excavated_variants:blue_skies_umber_uranium",
+      "excavated_variants:blue_skies_umber_xpetrified_ore",
+      "excavated_variants:blue_skies_umber_zinc",
+      "excavated_variants:blue_skies_umber_zinc_ore",
       "excavated_variants:calcite_bauxite_laterite",
       "excavated_variants:calcite_brilliant_stone",
       "excavated_variants:calcite_cantazarite_ore",
@@ -11492,6 +12323,488 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "sushigocrafting:cutting_board",
       "sushigocrafting:rice_cooker",
       "sushigocrafting:roller",
+      "swem:acacia_stall_care",
+      "swem:acacia_stall_horse",
+      "swem:alaharran_banner",
+      "swem:alaharran_wall_banner",
+      "swem:alfalfa_bale",
+      "swem:alfalfa_bale_slab",
+      "swem:bin_grain_acacia",
+      "swem:bin_grain_birch",
+      "swem:bin_grain_black",
+      "swem:bin_grain_blue",
+      "swem:bin_grain_brown",
+      "swem:bin_grain_crimson",
+      "swem:bin_grain_cyan",
+      "swem:bin_grain_dark_oak",
+      "swem:bin_grain_gray",
+      "swem:bin_grain_green",
+      "swem:bin_grain_jungle",
+      "swem:bin_grain_light_blue",
+      "swem:bin_grain_light_gray",
+      "swem:bin_grain_lime",
+      "swem:bin_grain_magenta",
+      "swem:bin_grain_oak",
+      "swem:bin_grain_orange",
+      "swem:bin_grain_pink",
+      "swem:bin_grain_purple",
+      "swem:bin_grain_red",
+      "swem:bin_grain_spruce",
+      "swem:bin_grain_warped",
+      "swem:bin_grain_white",
+      "swem:bin_grain_yellow",
+      "swem:birch_stall_care",
+      "swem:birch_stall_horse",
+      "swem:black_cone",
+      "swem:bleacher",
+      "swem:bleacher_wireframe",
+      "swem:block_o_water",
+      "swem:blue_cone",
+      "swem:bridle_rack",
+      "swem:brown_cone",
+      "swem:cantazarite_anvil",
+      "swem:cantazarite_block",
+      "swem:cantazarite_ore",
+      "swem:cyan_cone",
+      "swem:dark_friendly_bars",
+      "swem:dark_oak_stall_care",
+      "swem:dark_oak_stall_horse",
+      "swem:dark_rubber_mat",
+      "swem:dark_shavings",
+      "swem:grain_feeder_black",
+      "swem:grain_feeder_blue",
+      "swem:grain_feeder_brown",
+      "swem:grain_feeder_cyan",
+      "swem:grain_feeder_gray",
+      "swem:grain_feeder_green",
+      "swem:grain_feeder_light_blue",
+      "swem:grain_feeder_light_gray",
+      "swem:grain_feeder_lime",
+      "swem:grain_feeder_magenta",
+      "swem:grain_feeder_orange",
+      "swem:grain_feeder_pink",
+      "swem:grain_feeder_purple",
+      "swem:grain_feeder_red",
+      "swem:grain_feeder_white",
+      "swem:grain_feeder_yellow",
+      "swem:gray_cone",
+      "swem:green_cone",
+      "swem:hat_cowboy",
+      "swem:helmet_riding",
+      "swem:hitching_ring",
+      "swem:horse_armor_rack",
+      "swem:horse_pee",
+      "swem:invisible_glow_block",
+      "swem:jump_brush_box",
+      "swem:jump_cavaletti_black",
+      "swem:jump_cavaletti_blue",
+      "swem:jump_cavaletti_brown",
+      "swem:jump_cavaletti_cyan",
+      "swem:jump_cavaletti_gray",
+      "swem:jump_cavaletti_green",
+      "swem:jump_cavaletti_light_blue",
+      "swem:jump_cavaletti_light_gray",
+      "swem:jump_cavaletti_lime",
+      "swem:jump_cavaletti_magenta",
+      "swem:jump_cavaletti_orange",
+      "swem:jump_cavaletti_pink",
+      "swem:jump_cavaletti_purple",
+      "swem:jump_cavaletti_red",
+      "swem:jump_cavaletti_white",
+      "swem:jump_cavaletti_yellow",
+      "swem:jump_controller",
+      "swem:jump_coop",
+      "swem:jump_ground_pole_black",
+      "swem:jump_ground_pole_blue",
+      "swem:jump_ground_pole_brown",
+      "swem:jump_ground_pole_cyan",
+      "swem:jump_ground_pole_gray",
+      "swem:jump_ground_pole_green",
+      "swem:jump_ground_pole_light_blue",
+      "swem:jump_ground_pole_light_gray",
+      "swem:jump_ground_pole_lime",
+      "swem:jump_ground_pole_magenta",
+      "swem:jump_ground_pole_orange",
+      "swem:jump_ground_pole_pink",
+      "swem:jump_ground_pole_purple",
+      "swem:jump_ground_pole_red",
+      "swem:jump_ground_pole_white",
+      "swem:jump_ground_pole_yellow",
+      "swem:jump_hedge",
+      "swem:jump_none",
+      "swem:jump_panel_arrow_black",
+      "swem:jump_panel_arrow_blue",
+      "swem:jump_panel_arrow_brown",
+      "swem:jump_panel_arrow_cyan",
+      "swem:jump_panel_arrow_gray",
+      "swem:jump_panel_arrow_green",
+      "swem:jump_panel_arrow_light_blue",
+      "swem:jump_panel_arrow_light_gray",
+      "swem:jump_panel_arrow_lime",
+      "swem:jump_panel_arrow_magenta",
+      "swem:jump_panel_arrow_orange",
+      "swem:jump_panel_arrow_pink",
+      "swem:jump_panel_arrow_purple",
+      "swem:jump_panel_arrow_red",
+      "swem:jump_panel_arrow_white",
+      "swem:jump_panel_arrow_yellow",
+      "swem:jump_panel_stripe_black",
+      "swem:jump_panel_stripe_blue",
+      "swem:jump_panel_stripe_brown",
+      "swem:jump_panel_stripe_cyan",
+      "swem:jump_panel_stripe_gray",
+      "swem:jump_panel_stripe_green",
+      "swem:jump_panel_stripe_light_blue",
+      "swem:jump_panel_stripe_light_gray",
+      "swem:jump_panel_stripe_lime",
+      "swem:jump_panel_stripe_magenta",
+      "swem:jump_panel_stripe_orange",
+      "swem:jump_panel_stripe_pink",
+      "swem:jump_panel_stripe_purple",
+      "swem:jump_panel_stripe_red",
+      "swem:jump_panel_stripe_white",
+      "swem:jump_panel_stripe_yellow",
+      "swem:jump_panel_wave_black",
+      "swem:jump_panel_wave_blue",
+      "swem:jump_panel_wave_brown",
+      "swem:jump_panel_wave_cyan",
+      "swem:jump_panel_wave_gray",
+      "swem:jump_panel_wave_green",
+      "swem:jump_panel_wave_light_blue",
+      "swem:jump_panel_wave_light_gray",
+      "swem:jump_panel_wave_lime",
+      "swem:jump_panel_wave_magenta",
+      "swem:jump_panel_wave_orange",
+      "swem:jump_panel_wave_pink",
+      "swem:jump_panel_wave_purple",
+      "swem:jump_panel_wave_red",
+      "swem:jump_panel_wave_white",
+      "swem:jump_panel_wave_yellow",
+      "swem:jump_pole_on_box_large_black",
+      "swem:jump_pole_on_box_large_blue",
+      "swem:jump_pole_on_box_large_brown",
+      "swem:jump_pole_on_box_large_cyan",
+      "swem:jump_pole_on_box_large_gray",
+      "swem:jump_pole_on_box_large_green",
+      "swem:jump_pole_on_box_large_light_blue",
+      "swem:jump_pole_on_box_large_light_gray",
+      "swem:jump_pole_on_box_large_lime",
+      "swem:jump_pole_on_box_large_magenta",
+      "swem:jump_pole_on_box_large_orange",
+      "swem:jump_pole_on_box_large_pink",
+      "swem:jump_pole_on_box_large_purple",
+      "swem:jump_pole_on_box_large_red",
+      "swem:jump_pole_on_box_large_white",
+      "swem:jump_pole_on_box_large_yellow",
+      "swem:jump_pole_on_box_small_black",
+      "swem:jump_pole_on_box_small_blue",
+      "swem:jump_pole_on_box_small_brown",
+      "swem:jump_pole_on_box_small_cyan",
+      "swem:jump_pole_on_box_small_gray",
+      "swem:jump_pole_on_box_small_green",
+      "swem:jump_pole_on_box_small_light_blue",
+      "swem:jump_pole_on_box_small_light_gray",
+      "swem:jump_pole_on_box_small_lime",
+      "swem:jump_pole_on_box_small_magenta",
+      "swem:jump_pole_on_box_small_orange",
+      "swem:jump_pole_on_box_small_pink",
+      "swem:jump_pole_on_box_small_purple",
+      "swem:jump_pole_on_box_small_red",
+      "swem:jump_pole_on_box_small_white",
+      "swem:jump_pole_on_box_small_yellow",
+      "swem:jump_rail_black",
+      "swem:jump_rail_blue",
+      "swem:jump_rail_brown",
+      "swem:jump_rail_cyan",
+      "swem:jump_rail_gray",
+      "swem:jump_rail_green",
+      "swem:jump_rail_light_blue",
+      "swem:jump_rail_light_gray",
+      "swem:jump_rail_lime",
+      "swem:jump_rail_magenta",
+      "swem:jump_rail_orange",
+      "swem:jump_rail_pink",
+      "swem:jump_rail_purple",
+      "swem:jump_rail_red",
+      "swem:jump_rail_white",
+      "swem:jump_rail_yellow",
+      "swem:jump_roll_top_black",
+      "swem:jump_roll_top_blue",
+      "swem:jump_roll_top_brown",
+      "swem:jump_roll_top_cyan",
+      "swem:jump_roll_top_gray",
+      "swem:jump_roll_top_green",
+      "swem:jump_roll_top_light_blue",
+      "swem:jump_roll_top_light_gray",
+      "swem:jump_roll_top_lime",
+      "swem:jump_roll_top_magenta",
+      "swem:jump_roll_top_orange",
+      "swem:jump_roll_top_pink",
+      "swem:jump_roll_top_purple",
+      "swem:jump_roll_top_red",
+      "swem:jump_roll_top_white",
+      "swem:jump_roll_top_yellow",
+      "swem:jump_stair_drop",
+      "swem:jump_standard_none",
+      "swem:jump_standard_radial",
+      "swem:jump_standard_schooling",
+      "swem:jump_standard_vertical_slat",
+      "swem:jump_wall",
+      "swem:jump_wall_mini",
+      "swem:jungle_stall_care",
+      "swem:jungle_stall_horse",
+      "swem:lead_anchor",
+      "swem:light_blue_cone",
+      "swem:light_friendly_bars",
+      "swem:light_gray_cone",
+      "swem:light_rubber_mat",
+      "swem:light_shavings",
+      "swem:lime_cone",
+      "swem:locker",
+      "swem:magenta_cone",
+      "swem:medium_friendly_bars",
+      "swem:medium_rubber_mat",
+      "swem:medium_shavings",
+      "swem:metal_grate",
+      "swem:meter_point",
+      "swem:oak_stall_care",
+      "swem:oak_stall_horse",
+      "swem:oat_bale",
+      "swem:oat_bale_slab",
+      "swem:orange_cone",
+      "swem:paddock_feeder",
+      "swem:pasture_black_care",
+      "swem:pasture_black_horse",
+      "swem:pasture_blue_care",
+      "swem:pasture_blue_horse",
+      "swem:pasture_brown_care",
+      "swem:pasture_brown_horse",
+      "swem:pasture_cyan_care",
+      "swem:pasture_cyan_horse",
+      "swem:pasture_gray_care",
+      "swem:pasture_gray_horse",
+      "swem:pasture_green_care",
+      "swem:pasture_green_horse",
+      "swem:pasture_light_blue_care",
+      "swem:pasture_light_blue_horse",
+      "swem:pasture_light_gray_care",
+      "swem:pasture_light_gray_horse",
+      "swem:pasture_lime_care",
+      "swem:pasture_lime_horse",
+      "swem:pasture_magenta_care",
+      "swem:pasture_magenta_horse",
+      "swem:pasture_orange_care",
+      "swem:pasture_orange_horse",
+      "swem:pasture_pink_care",
+      "swem:pasture_pink_horse",
+      "swem:pasture_purple_care",
+      "swem:pasture_purple_horse",
+      "swem:pasture_red_care",
+      "swem:pasture_red_horse",
+      "swem:pasture_white_care",
+      "swem:pasture_white_horse",
+      "swem:pasture_yellow_care",
+      "swem:pasture_yellow_horse",
+      "swem:pink_cone",
+      "swem:plaque_bronze",
+      "swem:plaque_gold",
+      "swem:plaque_silver",
+      "swem:purple_cone",
+      "swem:quality_bale",
+      "swem:quality_bale_slab",
+      "swem:rack_blanket_5",
+      "swem:rack_halter_lead",
+      "swem:rack_lead_3",
+      "swem:rack_pasture_blanket_3_short",
+      "swem:rack_pasture_blanket_5_long",
+      "swem:red_cone",
+      "swem:ribbon_champion",
+      "swem:ribbon_rchampion",
+      "swem:ribbon_three_black",
+      "swem:ribbon_three_blue",
+      "swem:ribbon_three_brown",
+      "swem:ribbon_three_cyan",
+      "swem:ribbon_three_gray",
+      "swem:ribbon_three_green",
+      "swem:ribbon_three_light_blue",
+      "swem:ribbon_three_light_gray",
+      "swem:ribbon_three_lime",
+      "swem:ribbon_three_magenta",
+      "swem:ribbon_three_orange",
+      "swem:ribbon_three_pink",
+      "swem:ribbon_three_purple",
+      "swem:ribbon_three_red",
+      "swem:ribbon_three_white",
+      "swem:ribbon_three_yellow",
+      "swem:ribbon_two_black",
+      "swem:ribbon_two_blue",
+      "swem:ribbon_two_brown",
+      "swem:ribbon_two_cyan",
+      "swem:ribbon_two_gray",
+      "swem:ribbon_two_green",
+      "swem:ribbon_two_light_blue",
+      "swem:ribbon_two_light_gray",
+      "swem:ribbon_two_lime",
+      "swem:ribbon_two_magenta",
+      "swem:ribbon_two_orange",
+      "swem:ribbon_two_pink",
+      "swem:ribbon_two_purple",
+      "swem:ribbon_two_red",
+      "swem:ribbon_two_white",
+      "swem:ribbon_two_yellow",
+      "swem:rosette_black",
+      "swem:rosette_blue",
+      "swem:rosette_brown",
+      "swem:rosette_cyan",
+      "swem:rosette_gray",
+      "swem:rosette_green",
+      "swem:rosette_light_blue",
+      "swem:rosette_light_gray",
+      "swem:rosette_lime",
+      "swem:rosette_magenta",
+      "swem:rosette_orange",
+      "swem:rosette_pink",
+      "swem:rosette_purple",
+      "swem:rosette_red",
+      "swem:rosette_white",
+      "swem:rosette_yellow",
+      "swem:saddle_rack",
+      "swem:separator_black",
+      "swem:separator_blue",
+      "swem:separator_brown",
+      "swem:separator_cyan",
+      "swem:separator_gray",
+      "swem:separator_green",
+      "swem:separator_light_blue",
+      "swem:separator_light_gray",
+      "swem:separator_lime",
+      "swem:separator_magenta",
+      "swem:separator_orange",
+      "swem:separator_pink",
+      "swem:separator_purple",
+      "swem:separator_red",
+      "swem:separator_white",
+      "swem:separator_yellow",
+      "swem:shining_amethyst_cluster",
+      "swem:shop",
+      "swem:slow_feeder_black",
+      "swem:slow_feeder_blue",
+      "swem:slow_feeder_brown",
+      "swem:slow_feeder_cyan",
+      "swem:slow_feeder_gray",
+      "swem:slow_feeder_green",
+      "swem:slow_feeder_light_blue",
+      "swem:slow_feeder_light_gray",
+      "swem:slow_feeder_lime",
+      "swem:slow_feeder_magenta",
+      "swem:slow_feeder_orange",
+      "swem:slow_feeder_pink",
+      "swem:slow_feeder_purple",
+      "swem:slow_feeder_red",
+      "swem:slow_feeder_white",
+      "swem:slow_feeder_yellow",
+      "swem:spigot",
+      "swem:spruce_stall_care",
+      "swem:spruce_stall_horse",
+      "swem:star_worm_cobble",
+      "swem:tack_box_black",
+      "swem:tack_box_blue",
+      "swem:tack_box_brown",
+      "swem:tack_box_cyan",
+      "swem:tack_box_gray",
+      "swem:tack_box_green",
+      "swem:tack_box_light_blue",
+      "swem:tack_box_light_gray",
+      "swem:tack_box_lime",
+      "swem:tack_box_magenta",
+      "swem:tack_box_orange",
+      "swem:tack_box_pink",
+      "swem:tack_box_purple",
+      "swem:tack_box_red",
+      "swem:tack_box_white",
+      "swem:tack_box_yellow",
+      "swem:tearing_magma",
+      "swem:timothy_bale",
+      "swem:timothy_bale_slab",
+      "swem:toy_ball_slow_feed_hay",
+      "swem:toy_jolly_apple_snack",
+      "swem:toy_jolly_ball",
+      "swem:toy_jolly_ball_hay",
+      "swem:toy_lick_salt",
+      "swem:toy_scratchy_pole",
+      "swem:toy_string_treats",
+      "swem:trophy_bronze",
+      "swem:trophy_gold",
+      "swem:trophy_silver",
+      "swem:wall_spigot",
+      "swem:water_trough",
+      "swem:web_guard_black_care",
+      "swem:web_guard_black_horse",
+      "swem:web_guard_black_rider",
+      "swem:web_guard_blue_care",
+      "swem:web_guard_blue_horse",
+      "swem:web_guard_blue_rider",
+      "swem:web_guard_brown_care",
+      "swem:web_guard_brown_horse",
+      "swem:web_guard_brown_rider",
+      "swem:web_guard_cyan_care",
+      "swem:web_guard_cyan_horse",
+      "swem:web_guard_cyan_rider",
+      "swem:web_guard_gray_care",
+      "swem:web_guard_gray_horse",
+      "swem:web_guard_gray_rider",
+      "swem:web_guard_green_care",
+      "swem:web_guard_green_horse",
+      "swem:web_guard_green_rider",
+      "swem:web_guard_light_blue_care",
+      "swem:web_guard_light_blue_horse",
+      "swem:web_guard_light_blue_rider",
+      "swem:web_guard_light_gray_care",
+      "swem:web_guard_light_gray_horse",
+      "swem:web_guard_light_gray_rider",
+      "swem:web_guard_lime_care",
+      "swem:web_guard_lime_horse",
+      "swem:web_guard_lime_rider",
+      "swem:web_guard_magenta_care",
+      "swem:web_guard_magenta_horse",
+      "swem:web_guard_magenta_rider",
+      "swem:web_guard_orange_care",
+      "swem:web_guard_orange_horse",
+      "swem:web_guard_orange_rider",
+      "swem:web_guard_pink_care",
+      "swem:web_guard_pink_horse",
+      "swem:web_guard_pink_rider",
+      "swem:web_guard_purple_care",
+      "swem:web_guard_purple_horse",
+      "swem:web_guard_purple_rider",
+      "swem:web_guard_red_care",
+      "swem:web_guard_red_horse",
+      "swem:web_guard_red_rider",
+      "swem:web_guard_white_care",
+      "swem:web_guard_white_horse",
+      "swem:web_guard_white_rider",
+      "swem:web_guard_yellow_care",
+      "swem:web_guard_yellow_horse",
+      "swem:web_guard_yellow_rider",
+      "swem:western_pole",
+      "swem:wheel_barrow_black",
+      "swem:wheel_barrow_blue",
+      "swem:wheel_barrow_brown",
+      "swem:wheel_barrow_cyan",
+      "swem:wheel_barrow_gray",
+      "swem:wheel_barrow_green",
+      "swem:wheel_barrow_light_blue",
+      "swem:wheel_barrow_light_gray",
+      "swem:wheel_barrow_lime",
+      "swem:wheel_barrow_magenta",
+      "swem:wheel_barrow_orange",
+      "swem:wheel_barrow_pink",
+      "swem:wheel_barrow_purple",
+      "swem:wheel_barrow_red",
+      "swem:wheel_barrow_white",
+      "swem:wheel_barrow_yellow",
+      "swem:white_cone",
+      "swem:yellow_cone",
       "tconstruct:amethyst_bronze_block",
       "tconstruct:black_clear_stained_glass",
       "tconstruct:black_clear_stained_glass_pane",
@@ -12294,6 +13607,8 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "bloodmagic:stonetilepath",
       "bloodmagic:wornstonebrickpath",
       "bloodmagic:wornstonetilepath",
+      "blue_skies:snowcap_oven",
+      "blue_skies:snowcap_pinhead",
       "burnt:burnt_path",
       "burnt:soot_block",
       "burnt:sooty_acacia_slab",
@@ -12535,6 +13850,12 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "supplementaries:ash_bricks_wall",
       "supplementaries:ashen_basalt",
       "supplementaries:gunpowder",
+      "swem:whitewash_slab",
+      "swem:whitewash_stairs",
+      "swem:whitewash_stall_care",
+      "swem:whitewash_stall_horse",
+      "swem:yellow_snow",
+      "swem:yellow_snow_block",
       "tconstruct:cheese_block",
       "tconstruct:earth_congealed_slime",
       "tconstruct:ender_congealed_slime",
@@ -12563,6 +13884,8 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "aether:blue_aercloud",
       "aether:cold_aercloud",
       "aether:golden_aercloud",
+      "blue_skies:lunar_farmland",
+      "blue_skies:turquoise_farmland",
       "burnt:burnt_farmland",
       "burnt:burnt_farmland_moist",
       "burnt:burnt_hay",
@@ -12630,6 +13953,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "undergarden:deepsoil_farmland"
     ],
     "sword": [
+      "blue_skies:spider_webbing",
       "burnt:smoldering_cobweb",
       "minecraft:cobweb",
       "minecraft:tripwire",
@@ -12648,6 +13972,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "ae2:nether_quartz_cutting_knife",
       "aether:lightning_knife",
       "ars_nouveau:glyph_wind_shear",
+      "blue_skies:ventium_shears",
       "everythingcopper:copper_shears",
       "goety:dark_metal_scythe",
       "goety:dark_scythe",
@@ -12656,6 +13981,12 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "minecraft:shears",
       "reliquary:shears_of_winter",
       "sushigocrafting:cleaver_knife",
+      "swem:scythe_copper",
+      "swem:scythe_diamond",
+      "swem:scythe_gold",
+      "swem:scythe_iron",
+      "swem:scythe_leather",
+      "swem:scythe_netherite",
       "tconstruct:kama",
       "tconstruct:scythe"
     ],
@@ -12669,6 +14000,20 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "aether:valkyrie_axe",
       "aether:zanite_axe",
       "bloodmagic:soulaxe",
+      "blue_skies:aquite_axe",
+      "blue_skies:bluebright_axe",
+      "blue_skies:charoite_axe",
+      "blue_skies:comet_axe",
+      "blue_skies:diopside_axe",
+      "blue_skies:dusk_axe",
+      "blue_skies:frostbright_axe",
+      "blue_skies:horizonite_axe",
+      "blue_skies:lunar_axe",
+      "blue_skies:lunar_stone_axe",
+      "blue_skies:maple_axe",
+      "blue_skies:pyrope_axe",
+      "blue_skies:starlit_axe",
+      "blue_skies:turquoise_stone_axe",
       "brewinandchewin:flaxen_cheese_wedge",
       "brewinandchewin:flaxen_cheese_wheel",
       "brewinandchewin:unripe_flaxen_cheese_wheel",
@@ -12883,6 +14228,13 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "quark:waxed_weathered_cut_copper_vertical_slab",
       "quark:waxed_white_corundum",
       "quark:waxed_yellow_corundum",
+      "swem:axe_amethyst",
+      "swem:axe_copper",
+      "swem:axe_diamond",
+      "swem:axe_gold",
+      "swem:axe_iron",
+      "swem:axe_leather",
+      "swem:axe_netherite",
       "tconstruct:adze_head",
       "tconstruct:adze_head_cast",
       "tconstruct:adze_head_red_sand_cast",
@@ -12928,6 +14280,20 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "aether:zanite_pickaxe",
       "artifacts:pickaxe_heater",
       "bloodmagic:soulpickaxe",
+      "blue_skies:aquite_pickaxe",
+      "blue_skies:bluebright_pickaxe",
+      "blue_skies:charoite_pickaxe",
+      "blue_skies:comet_pickaxe",
+      "blue_skies:diopside_pickaxe",
+      "blue_skies:dusk_pickaxe",
+      "blue_skies:frostbright_pickaxe",
+      "blue_skies:horizonite_pickaxe",
+      "blue_skies:lunar_pickaxe",
+      "blue_skies:lunar_stone_pickaxe",
+      "blue_skies:maple_pickaxe",
+      "blue_skies:pyrope_pickaxe",
+      "blue_skies:starlit_pickaxe",
+      "blue_skies:turquoise_stone_pickaxe",
       "callfromthedepth_:immemorialpickaxe",
       "deeperdarker:resonarium_pickaxe",
       "deeperdarker:warden_pickaxe",
@@ -12966,6 +14332,13 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "occultism:infused_pickaxe",
       "occultism:ritual_dummy/craft_infused_pickaxe",
       "occultism:spirit_attuned_pickaxe_head",
+      "swem:pickaxe_amethyst",
+      "swem:pickaxe_copper",
+      "swem:pickaxe_diamond",
+      "swem:pickaxe_gold",
+      "swem:pickaxe_iron",
+      "swem:pickaxe_leather",
+      "swem:pickaxe_netherite",
       "tconstruct:pickaxe",
       "tconstruct:sledge_hammer",
       "tconstruct:vein_hammer",
@@ -12993,6 +14366,20 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "aether:valkyrie_shovel",
       "aether:zanite_shovel",
       "bloodmagic:soulshovel",
+      "blue_skies:aquite_shovel",
+      "blue_skies:bluebright_shovel",
+      "blue_skies:charoite_shovel",
+      "blue_skies:comet_shovel",
+      "blue_skies:diopside_shovel",
+      "blue_skies:dusk_shovel",
+      "blue_skies:frostbright_shovel",
+      "blue_skies:horizonite_shovel",
+      "blue_skies:lunar_shovel",
+      "blue_skies:lunar_stone_shovel",
+      "blue_skies:maple_shovel",
+      "blue_skies:pyrope_shovel",
+      "blue_skies:starlit_shovel",
+      "blue_skies:turquoise_stone_shovel",
       "callfromthedepth_:immemorialshovel",
       "deeperdarker:resonarium_shovel",
       "deeperdarker:warden_shovel",
@@ -13016,6 +14403,13 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "minecraft:netherite_shovel",
       "minecraft:stone_shovel",
       "minecraft:wooden_shovel",
+      "swem:shovel_amethyst",
+      "swem:shovel_copper",
+      "swem:shovel_diamond",
+      "swem:shovel_gold",
+      "swem:shovel_iron",
+      "swem:shovel_leather",
+      "swem:shovel_netherite",
       "tconstruct:excavator",
       "the_finley_dimension_remastered:forglite_shovel",
       "tinkers_battle_spades:battle_spade",
@@ -13045,6 +14439,20 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "artifacts:running_shoes",
       "artifacts:snowshoes",
       "bloodmagic:soulscythe",
+      "blue_skies:aquite_hoe",
+      "blue_skies:bluebright_hoe",
+      "blue_skies:charoite_hoe",
+      "blue_skies:comet_hoe",
+      "blue_skies:diopside_hoe",
+      "blue_skies:dusk_hoe",
+      "blue_skies:frostbright_hoe",
+      "blue_skies:horizonite_hoe",
+      "blue_skies:lunar_hoe",
+      "blue_skies:lunar_stone_hoe",
+      "blue_skies:maple_hoe",
+      "blue_skies:pyrope_hoe",
+      "blue_skies:starlit_hoe",
+      "blue_skies:turquoise_stone_hoe",
       "callfromthedepth_:immemorialhoe",
       "deeperdarker:resonarium_hoe",
       "deeperdarker:warden_hoe",
@@ -13068,6 +14476,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "minecraft:stone_hoe",
       "minecraft:wooden_hoe",
       "reliquary:phoenix_down",
+      "swem:scythe_amethyst",
       "the_finley_dimension_remastered:forglite_hoe",
       "twilightforest:ironwood_hoe",
       "twilightforest:steeleaf_hoe",
@@ -13095,6 +14504,23 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "aether:zanite_sword",
       "ars_nouveau:enchanters_sword",
       "bloodmagic:soulsword",
+      "blue_skies:aquite_sword",
+      "blue_skies:bluebright_sword",
+      "blue_skies:charoite_sword",
+      "blue_skies:comet_sword",
+      "blue_skies:debug_sword",
+      "blue_skies:different_sword",
+      "blue_skies:diopside_sword",
+      "blue_skies:dusk_sword",
+      "blue_skies:frostbright_sword",
+      "blue_skies:horizonite_sword",
+      "blue_skies:infused_arc_sword",
+      "blue_skies:lunar_stone_sword",
+      "blue_skies:lunar_sword",
+      "blue_skies:maple_sword",
+      "blue_skies:pyrope_sword",
+      "blue_skies:starlit_sword",
+      "blue_skies:turquoise_stone_sword",
       "callfromthedepth_:dark_abyssscythe",
       "callfromthedepth_:immemorialsword",
       "callfromthedepth_:soulclaymore",
@@ -13262,6 +14688,13 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "powergrid:electrobaton",
       "reliquary:magicbane",
       "reliquary:mercy_cross",
+      "swem:sword_amethyst",
+      "swem:sword_copper",
+      "swem:sword_diamond",
+      "swem:sword_gold",
+      "swem:sword_iron",
+      "swem:sword_leather",
+      "swem:sword_netherite",
       "tconstruct:broad_blade",
       "tconstruct:broad_blade_cast",
       "tconstruct:broad_blade_red_sand_cast",
@@ -15240,6 +16673,14 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "origin": "delegation:wood-products",
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
+    },
+    "amendments:blue_skies/double_comet_berry_pie": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
     },
     "amendments:carpet_slab": {
       "tools": [
@@ -18704,6 +20145,4070 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "origin": "delegation:loose-worked-earth",
       "detail": "loose non-hand earth surface",
       "outcome": "default"
+    },
+    "blue_skies:alchemist_trophy": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:alchemy_table": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:aquatic_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:aquatic_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:aquatic_stone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:aquatic_wall": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:aquite_block": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:arachnarch_trophy": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:bag_of_spoils": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:baneful_mushroom": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:black_fire": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:blaze_bud": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:blinding_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:blinding_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:blinding_stone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:blinding_stone_pillar": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:blinding_wall": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:blue_fire": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:bluebright_bookshelf": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:bluebright_button": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:bluebright_chest": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:bluebright_crafting_table": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:bluebright_door": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:bluebright_fence": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:bluebright_fence_gate": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:bluebright_hanging_sign": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:bluebright_ladder": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:bluebright_leaves": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:bluebright_log": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:bluebright_planks": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:bluebright_pressure_plate": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:bluebright_sapling": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:bluebright_sign": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:bluebright_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:bluebright_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:bluebright_trapdoor": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:bluebright_vine": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:bluebright_wall_hanging_sign": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:bluebright_wall_sign": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:bluebright_wood": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:blush_blossom": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:brewberry_bush": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:briskbloom": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:brittlebush": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:brumble": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:brumble_block": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:brumble_lantern": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:brumble_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:brumble_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:brumble_vine": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:brumble_vine_top": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:brumble_wall": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:camellia": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:carved_blinding_stone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:carved_nature_stonebrick": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:carved_poison_stonebrick": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:charoite_block": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:chilled_lily_pad": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:chillweed": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:chiseled_crystal_sandstone": {
+      "tools": [
+        "hand"
+      ],
+      "origin": "delegation:loose-earth",
+      "detail": "sand, gravel, dirt, mud, regolith, or similar loose earth",
+      "outcome": "default"
+    },
+    "blue_skies:chiseled_lunar_stonebrick": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:chiseled_midnight_sandstone": {
+      "tools": [
+        "hand"
+      ],
+      "origin": "delegation:loose-earth",
+      "detail": "sand, gravel, dirt, mud, regolith, or similar loose earth",
+      "outcome": "default"
+    },
+    "blue_skies:chiseled_polished_brumble": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:chiseled_turquoise_stonebrick": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:cinderstone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:cinderstone_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:cinderstone_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:cinderstone_wall": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:coarse_lunar_dirt": {
+      "tools": [
+        "hand"
+      ],
+      "origin": "delegation:loose-earth",
+      "detail": "sand, gravel, dirt, mud, regolith, or similar loose earth",
+      "outcome": "default"
+    },
+    "blue_skies:coarse_turquoise_dirt": {
+      "tools": [
+        "hand"
+      ],
+      "origin": "delegation:loose-earth",
+      "detail": "sand, gravel, dirt, mud, regolith, or similar loose earth",
+      "outcome": "default"
+    },
+    "blue_skies:comet_berry_pie": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:comet_bookshelf": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:comet_button": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:comet_chest": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:comet_crafting_table": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:comet_door": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:comet_fence": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:comet_fence_gate": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:comet_grass": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_fiber"
+    },
+    "blue_skies:comet_hanging_sign": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:comet_ladder": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:comet_leaves": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:comet_log": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:comet_planks": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:comet_pressure_plate": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:comet_sapling": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:comet_sign": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:comet_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:comet_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:comet_trapdoor": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:comet_wall_hanging_sign": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:comet_wall_sign": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:comet_wood": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:cracked_lunar_stonebrick": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:cracked_lunar_stonebrick_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:cracked_lunar_stonebrick_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:cracked_lunar_stonebrick_wall": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:cracked_turquoise_stonebrick": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:cracked_turquoise_stonebrick_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:cracked_turquoise_stonebrick_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:cracked_turquoise_stonebrick_wall": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:crescent_fruit": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:crescent_fruit_leaves": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:crescent_fruit_sapling": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:cryo_roots": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:crystal_flower": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:crystal_glass": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:crystal_glass_pane": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:crystal_sand": {
+      "tools": [
+        "hand"
+      ],
+      "origin": "delegation:loose-earth",
+      "detail": "sand, gravel, dirt, mud, regolith, or similar loose earth",
+      "outcome": "default"
+    },
+    "blue_skies:crystal_sandstone": {
+      "tools": [
+        "hand"
+      ],
+      "origin": "delegation:loose-earth",
+      "detail": "sand, gravel, dirt, mud, regolith, or similar loose earth",
+      "outcome": "default"
+    },
+    "blue_skies:crystal_sandstone_pillar": {
+      "tools": [
+        "hand"
+      ],
+      "origin": "delegation:loose-earth",
+      "detail": "sand, gravel, dirt, mud, regolith, or similar loose earth",
+      "outcome": "default"
+    },
+    "blue_skies:crystal_sandstone_slab": {
+      "tools": [
+        "hand"
+      ],
+      "origin": "delegation:loose-earth",
+      "detail": "sand, gravel, dirt, mud, regolith, or similar loose earth",
+      "outcome": "default"
+    },
+    "blue_skies:crystal_sandstone_stairs": {
+      "tools": [
+        "hand"
+      ],
+      "origin": "delegation:loose-earth",
+      "detail": "sand, gravel, dirt, mud, regolith, or similar loose earth",
+      "outcome": "default"
+    },
+    "blue_skies:crystal_sandstone_wall": {
+      "tools": [
+        "hand"
+      ],
+      "origin": "delegation:loose-earth",
+      "detail": "sand, gravel, dirt, mud, regolith, or similar loose earth",
+      "outcome": "default"
+    },
+    "blue_skies:crystallized_button": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:crystallized_door": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:crystallized_grass": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_fiber"
+    },
+    "blue_skies:crystallized_leaves": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:crystallized_log": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:crystallized_planks": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:crystallized_pressure_plate": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:crystallized_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:crystallized_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:crystallized_trapdoor": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:crystallized_wall": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:crystallized_wood": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:cut_crystal_sandstone": {
+      "tools": [
+        "hand"
+      ],
+      "origin": "delegation:loose-earth",
+      "detail": "sand, gravel, dirt, mud, regolith, or similar loose earth",
+      "outcome": "default"
+    },
+    "blue_skies:cut_crystal_sandstone_slab": {
+      "tools": [
+        "hand"
+      ],
+      "origin": "delegation:loose-earth",
+      "detail": "sand, gravel, dirt, mud, regolith, or similar loose earth",
+      "outcome": "default"
+    },
+    "blue_skies:cut_midnight_sandstone": {
+      "tools": [
+        "hand"
+      ],
+      "origin": "delegation:loose-earth",
+      "detail": "sand, gravel, dirt, mud, regolith, or similar loose earth",
+      "outcome": "default"
+    },
+    "blue_skies:cut_midnight_sandstone_slab": {
+      "tools": [
+        "hand"
+      ],
+      "origin": "delegation:loose-earth",
+      "detail": "sand, gravel, dirt, mud, regolith, or similar loose earth",
+      "outcome": "default"
+    },
+    "blue_skies:decaying_spike": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:diopside_block": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:dusk_bookshelf": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:dusk_button": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:dusk_chest": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:dusk_crafting_table": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:dusk_door": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:dusk_fence": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:dusk_fence_gate": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:dusk_hanging_sign": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:dusk_ladder": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:dusk_leaves": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:dusk_log": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:dusk_planks": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:dusk_pressure_plate": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:dusk_sapling": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:dusk_sign": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:dusk_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:dusk_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:dusk_trapdoor": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:dusk_vine": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:dusk_wall_hanging_sign": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:dusk_wall_sign": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:dusk_wood": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:everbright_aquite_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:everbright_charoite_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:everbright_diopside_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:everbright_emerald_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:everbright_moonstone_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:everbright_pyrope_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:everdawn_aquite_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:everdawn_charoite_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:everdawn_diopside_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:everdawn_emerald_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:everdawn_moonstone_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:everdawn_pyrope_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:falsite_block": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:falsite_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:fiery_beans": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:flare_floret": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:food_prep_table": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:frose": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:frostbright_bookshelf": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:frostbright_button": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:frostbright_chest": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:frostbright_crafting_table": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:frostbright_door": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:frostbright_fence": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:frostbright_fence_gate": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:frostbright_hanging_sign": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:frostbright_ladder": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:frostbright_leaves": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:frostbright_log": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:frostbright_planks": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:frostbright_pressure_plate": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:frostbright_sapling": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:frostbright_sign": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:frostbright_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:frostbright_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:frostbright_trapdoor": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:frostbright_vine": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:frostbright_wall_hanging_sign": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:frostbright_wall_sign": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:frostbright_wood": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:glimmer_reed": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_fiber"
+    },
+    "blue_skies:glowing_aquatic_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:glowing_aquatic_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:glowing_aquatic_stone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:glowing_aquatic_wall": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:glowing_blinding_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:glowing_blinding_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:glowing_blinding_stone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:glowing_blinding_wall": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:glowing_life_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:glowing_life_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:glowing_life_stone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:glowing_life_wall": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:glowing_nature_stone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:glowing_nature_stone_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:glowing_nature_stone_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:glowing_nature_stonebrick": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:glowing_nature_stonebrick_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:glowing_nature_stonebrick_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:glowing_nature_stonebrick_wall": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:glowing_poison_stone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:glowing_poison_stone_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:glowing_poison_stone_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:horizonite_block": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:horizonite_forge": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:horizonite_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:life_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:life_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:life_stone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:life_wall": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:lucentroot": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:lunar_bookshelf": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_button": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_chest": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_cobblestone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_cobblestone_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_cobblestone_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_cobblestone_wall": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_comet_grass_block": {
+      "tools": [
+        "hand"
+      ],
+      "origin": "delegation:loose-earth",
+      "detail": "sand, gravel, dirt, mud, regolith, or similar loose earth",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_crafting_table": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_dirt": {
+      "tools": [
+        "hand"
+      ],
+      "origin": "delegation:loose-earth",
+      "detail": "sand, gravel, dirt, mud, regolith, or similar loose earth",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_door": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_dripstone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_farmland": {
+      "tools": [
+        "hoe"
+      ],
+      "origin": "delegation:cultivated-soil",
+      "detail": "cultivated or farm-worked surface",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_fence": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_fence_gate": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_grass": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_fiber"
+    },
+    "blue_skies:lunar_grass_block": {
+      "tools": [
+        "hand"
+      ],
+      "origin": "delegation:loose-earth",
+      "detail": "sand, gravel, dirt, mud, regolith, or similar loose earth",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_hanging_sign": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_ladder": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_leaves": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:lunar_lever": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_log": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_mud": {
+      "tools": [
+        "hand"
+      ],
+      "origin": "delegation:loose-earth",
+      "detail": "sand, gravel, dirt, mud, regolith, or similar loose earth",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_planks": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_pressure_plate": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_sapling": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:lunar_sign": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_stone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_stone_button": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_stone_pressure_plate": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_stone_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_stone_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_stonebrick": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_stonebrick_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_stonebrick_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_stonebrick_wall": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_trapdoor": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_vine": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:lunar_wall_hanging_sign": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_wall_sign": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_wood": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:maple_bookshelf": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:maple_button": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:maple_chest": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:maple_crafting_table": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:maple_door": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:maple_fence": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:maple_fence_gate": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:maple_hanging_sign": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:maple_ladder": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:maple_leaves": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:maple_log": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:maple_planks": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:maple_pressure_plate": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:maple_sapling": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:maple_sign": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:maple_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:maple_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:maple_trapdoor": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:maple_vine": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:maple_wall_hanging_sign": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:maple_wall_sign": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:maple_wood": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:midday_bayhop": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:midnight_glass": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:midnight_glass_pane": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:midnight_sand": {
+      "tools": [
+        "hand"
+      ],
+      "origin": "delegation:loose-earth",
+      "detail": "sand, gravel, dirt, mud, regolith, or similar loose earth",
+      "outcome": "default"
+    },
+    "blue_skies:midnight_sandstone": {
+      "tools": [
+        "hand"
+      ],
+      "origin": "delegation:loose-earth",
+      "detail": "sand, gravel, dirt, mud, regolith, or similar loose earth",
+      "outcome": "default"
+    },
+    "blue_skies:midnight_sandstone_pillar": {
+      "tools": [
+        "hand"
+      ],
+      "origin": "delegation:loose-earth",
+      "detail": "sand, gravel, dirt, mud, regolith, or similar loose earth",
+      "outcome": "default"
+    },
+    "blue_skies:midnight_sandstone_slab": {
+      "tools": [
+        "hand"
+      ],
+      "origin": "delegation:loose-earth",
+      "detail": "sand, gravel, dirt, mud, regolith, or similar loose earth",
+      "outcome": "default"
+    },
+    "blue_skies:midnight_sandstone_stairs": {
+      "tools": [
+        "hand"
+      ],
+      "origin": "delegation:loose-earth",
+      "detail": "sand, gravel, dirt, mud, regolith, or similar loose earth",
+      "outcome": "default"
+    },
+    "blue_skies:midnight_sandstone_wall": {
+      "tools": [
+        "hand"
+      ],
+      "origin": "delegation:loose-earth",
+      "detail": "sand, gravel, dirt, mud, regolith, or similar loose earth",
+      "outcome": "default"
+    },
+    "blue_skies:moonlit_bloom": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:moonlit_water_lily": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:moonstone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:moonstone_block": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:moonstone_crystal": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:moonstone_lantern": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:moonstone_pressure_plate": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:mossy_lunar_cobblestone": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:mossy_lunar_cobblestone_slab": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:mossy_lunar_cobblestone_stairs": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:mossy_lunar_cobblestone_wall": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:mossy_lunar_stonebrick": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:mossy_lunar_stonebrick_slab": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:mossy_lunar_stonebrick_stairs": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:mossy_lunar_stonebrick_wall": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:mossy_turquoise_cobblestone": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:mossy_turquoise_cobblestone_slab": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:mossy_turquoise_cobblestone_stairs": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:mossy_turquoise_cobblestone_wall": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:mossy_turquoise_stonebrick": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:mossy_turquoise_stonebrick_slab": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:mossy_turquoise_stonebrick_stairs": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:mossy_turquoise_stonebrick_wall": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:muckweed": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:nature_stone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:nature_stone_pillar": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:nature_stone_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:nature_stone_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:nature_stonebrick": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:nature_stonebrick_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:nature_stonebrick_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:nature_stonebrick_wall": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:nightcress": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:pine_fruits": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:poison_stone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:poison_stone_pillar": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:poison_stone_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:poison_stone_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:poison_stonebrick": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:poison_stonebrick_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:poison_stonebrick_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:poison_stonebrick_wall": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:polar_posy": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:polished_brumble": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:polished_brumble_brick_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:polished_brumble_brick_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:polished_brumble_brick_wall": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:polished_brumble_bricks": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:polished_brumble_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:polished_brumble_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:polished_brumble_wall": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:polished_cinderstone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:polished_cinderstone_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:polished_cinderstone_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:polished_cinderstone_wall": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:polished_rimestone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:polished_rimestone_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:polished_rimestone_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:polished_rimestone_wall": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:polished_taratite": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:polished_taratite_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:polished_taratite_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:polished_taratite_wall": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:polished_umber": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:polished_umber_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:polished_umber_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:polished_umber_wall": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:potted_baneful_mushroom": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:potted-plants",
+      "detail": "potted plant family",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:potted_blaze_bud": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:potted-plants",
+      "detail": "potted plant family",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:potted_bluebright_sapling": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:potted-plants",
+      "detail": "potted plant family",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:potted_blush_blossom": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:potted-plants",
+      "detail": "potted plant family",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:potted_brewberry_bush": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:potted-plants",
+      "detail": "potted plant family",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:potted_briskbloom": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:potted-plants",
+      "detail": "potted plant family",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:potted_brittlebush": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:potted-plants",
+      "detail": "potted plant family",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:potted_camellia": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:potted-plants",
+      "detail": "potted plant family",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:potted_chillweed": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:potted-plants",
+      "detail": "potted plant family",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:potted_comet_sapling": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:potted-plants",
+      "detail": "potted plant family",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:potted_crescent_fruit_sapling": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:potted-plants",
+      "detail": "potted plant family",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:potted_crystal_flower": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:potted-plants",
+      "detail": "potted plant family",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:potted_dusk_sapling": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:potted-plants",
+      "detail": "potted plant family",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:potted_flare_floret": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:potted-plants",
+      "detail": "potted plant family",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:potted_frose": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:potted-plants",
+      "detail": "potted plant family",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:potted_frostbright_sapling": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:potted-plants",
+      "detail": "potted plant family",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:potted_lucentroot": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:potted-plants",
+      "detail": "potted plant family",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:potted_lunar_sapling": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:potted-plants",
+      "detail": "potted plant family",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:potted_maple_sapling": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:potted-plants",
+      "detail": "potted plant family",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:potted_midday_bayhop": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:potted-plants",
+      "detail": "potted plant family",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:potted_moonlit_bloom": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:potted-plants",
+      "detail": "potted plant family",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:potted_muckweed": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:potted-plants",
+      "detail": "potted plant family",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:potted_nightcress": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:potted-plants",
+      "detail": "potted plant family",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:potted_polar_posy": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:potted-plants",
+      "detail": "potted plant family",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:potted_snowbloom": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:potted-plants",
+      "detail": "potted plant family",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:potted_snowcap_mushroom": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:potted-plants",
+      "detail": "potted plant family",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:potted_starlit_sapling": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:potted-plants",
+      "detail": "potted plant family",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:pyrope_block": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:raw_aquite_block": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:raw_charoite_block": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:raw_falsite_block": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:raw_horizonite_block": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:raw_ventium_block": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:rimestone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:rimestone_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:rimestone_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:rimestone_wall": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:rough_poison_stonebrick": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:rough_poison_stonebrick_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:rough_poison_stonebrick_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:scalefruits": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:sea_moss": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:sea_moss_block": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:sea_moss_carpet": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:smooth_crystal_sandstone": {
+      "tools": [
+        "hand"
+      ],
+      "origin": "delegation:loose-earth",
+      "detail": "sand, gravel, dirt, mud, regolith, or similar loose earth",
+      "outcome": "default"
+    },
+    "blue_skies:smooth_crystal_sandstone_slab": {
+      "tools": [
+        "hand"
+      ],
+      "origin": "delegation:loose-earth",
+      "detail": "sand, gravel, dirt, mud, regolith, or similar loose earth",
+      "outcome": "default"
+    },
+    "blue_skies:smooth_crystal_sandstone_stairs": {
+      "tools": [
+        "hand"
+      ],
+      "origin": "delegation:loose-earth",
+      "detail": "sand, gravel, dirt, mud, regolith, or similar loose earth",
+      "outcome": "default"
+    },
+    "blue_skies:smooth_midnight_sandstone": {
+      "tools": [
+        "hand"
+      ],
+      "origin": "delegation:loose-earth",
+      "detail": "sand, gravel, dirt, mud, regolith, or similar loose earth",
+      "outcome": "default"
+    },
+    "blue_skies:smooth_midnight_sandstone_slab": {
+      "tools": [
+        "hand"
+      ],
+      "origin": "delegation:loose-earth",
+      "detail": "sand, gravel, dirt, mud, regolith, or similar loose earth",
+      "outcome": "default"
+    },
+    "blue_skies:smooth_midnight_sandstone_stairs": {
+      "tools": [
+        "hand"
+      ],
+      "origin": "delegation:loose-earth",
+      "detail": "sand, gravel, dirt, mud, regolith, or similar loose earth",
+      "outcome": "default"
+    },
+    "blue_skies:snowbloom": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:snowcap_mushroom": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:snowcap_mushroom_block": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:snowcap_mushroom_stem": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:snowcap_oven": {
+      "tools": [
+        "shovel"
+      ],
+      "origin": "delegation:loose-worked-earth",
+      "detail": "loose non-hand earth surface",
+      "outcome": "default"
+    },
+    "blue_skies:snowcap_pinhead": {
+      "tools": [
+        "shovel"
+      ],
+      "origin": "delegation:loose-worked-earth",
+      "detail": "loose non-hand earth surface",
+      "outcome": "default"
+    },
+    "blue_skies:solnuts": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:spider_nest": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:spider_webbing": {
+      "tools": [
+        "sword"
+      ],
+      "origin": "override:web-family",
+      "detail": "preserve-cut soft surface",
+      "outcome": "sword_preserve_web"
+    },
+    "blue_skies:star_emitter": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:star_flare": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:starlit_bookshelf": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:starlit_button": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:starlit_chest": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:starlit_crafting_table": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:starlit_crusher_trophy": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:starlit_door": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:starlit_fence": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:starlit_fence_gate": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:starlit_hanging_sign": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:starlit_ladder": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:starlit_leaves": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:starlit_log": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:starlit_planks": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:starlit_pressure_plate": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:starlit_sapling": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:starlit_sign": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:starlit_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:starlit_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:starlit_trapdoor": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:starlit_vine": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "blue_skies:starlit_wall_hanging_sign": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:starlit_wall_sign": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:starlit_wood": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:stripped_bluebright_log": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:stripped_bluebright_wood": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:stripped_comet_log": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:stripped_comet_wood": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:stripped_dusk_log": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:stripped_dusk_wood": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:stripped_frostbright_log": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:stripped_frostbright_wood": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:stripped_lunar_log": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:stripped_lunar_wood": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:stripped_maple_log": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:stripped_maple_wood": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:stripped_starlit_log": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:stripped_starlit_wood": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:summoner_trophy": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:summoning_table": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:sunstone_block": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:sunstone_crystal": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:tall_lunar_grass": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_fiber"
+    },
+    "blue_skies:tall_turquoise_grass": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_fiber"
+    },
+    "blue_skies:taratite": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:taratite_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:taratite_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:taratite_wall": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:tool_box": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:trough": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:turquoise_cobblestone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:turquoise_cobblestone_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:turquoise_cobblestone_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:turquoise_cobblestone_wall": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:turquoise_comet_grass_block": {
+      "tools": [
+        "hand"
+      ],
+      "origin": "delegation:loose-earth",
+      "detail": "sand, gravel, dirt, mud, regolith, or similar loose earth",
+      "outcome": "default"
+    },
+    "blue_skies:turquoise_dirt": {
+      "tools": [
+        "hand"
+      ],
+      "origin": "delegation:loose-earth",
+      "detail": "sand, gravel, dirt, mud, regolith, or similar loose earth",
+      "outcome": "default"
+    },
+    "blue_skies:turquoise_dripstone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:turquoise_farmland": {
+      "tools": [
+        "hoe"
+      ],
+      "origin": "delegation:cultivated-soil",
+      "detail": "cultivated or farm-worked surface",
+      "outcome": "default"
+    },
+    "blue_skies:turquoise_grass": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_fiber"
+    },
+    "blue_skies:turquoise_grass_block": {
+      "tools": [
+        "hand"
+      ],
+      "origin": "delegation:loose-earth",
+      "detail": "sand, gravel, dirt, mud, regolith, or similar loose earth",
+      "outcome": "default"
+    },
+    "blue_skies:turquoise_lever": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:turquoise_stone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:turquoise_stone_button": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "blue_skies:turquoise_stone_pressure_plate": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:turquoise_stone_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:turquoise_stone_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:turquoise_stonebrick": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:turquoise_stonebrick_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:turquoise_stonebrick_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:turquoise_stonebrick_wall": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:umber": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:umber_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:umber_stairs": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:umber_wall": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:upsidedown_black_fire": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:upsidedown_blue_fire": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:ventium_block": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:ventium_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:vitreous_moonstone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "blue_skies:wall_warding_pearl": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:warding_pearl": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "blue_skies:winter_leaves": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
     },
     "brewinandchewin:coaster": {
       "tools": [
@@ -40359,6 +45864,1734 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       ],
       "origin": "inference:legacy:pickaxe",
       "detail": "legacy assignment carried forward",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_cinderstone_arcane_crystal_ore": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_fiber"
+    },
+    "excavated_variants:blue_skies_cinderstone_bauxite_laterite": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_cinderstone_brilliant_stone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_cinderstone_cantazarite_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_cinderstone_coal_measures": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_cinderstone_copper_sulfide": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_cinderstone_corundum_beryl_gem_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_cinderstone_cthonic_gold_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_cinderstone_cupriferous_redbed_redstone_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_cinderstone_darkstone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_cinderstone_emerald_schist_beryl_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_cinderstone_gilded_darkstone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_cinderstone_ironstone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_cinderstone_jade_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_cinderstone_kimberlite_pipe": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_cinderstone_lazurite_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_cinderstone_lead_zinc_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_cinderstone_mithril_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_cinderstone_natural_quartz_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_cinderstone_nickel_sulfide": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_cinderstone_osmiridium_lava_sulfide": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_cinderstone_phosphate_rock": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_cinderstone_quartz_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_cinderstone_runic_stone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_cinderstone_soul_bearing_black_shale_soulstone_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_cinderstone_soulstone_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_cinderstone_stella_arcanum": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_cinderstone_sulfur_bearing_pyrite": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_cinderstone_thorium": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_cinderstone_tin": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_cinderstone_tin_tungsten_greisen": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_cinderstone_titanium_iron_oxide": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_cinderstone_uranium": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_cinderstone_xpetrified_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_cinderstone_zinc": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_cinderstone_zinc_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_lunar_stone_arcane_crystal_ore": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_fiber"
+    },
+    "excavated_variants:blue_skies_lunar_stone_bauxite_laterite": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_lunar_stone_brilliant_stone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_lunar_stone_cantazarite_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_lunar_stone_coal_measures": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_lunar_stone_copper_sulfide": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_lunar_stone_corundum_beryl_gem_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_lunar_stone_cthonic_gold_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_lunar_stone_cupriferous_redbed_redstone_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_lunar_stone_darkstone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_lunar_stone_emerald_schist_beryl_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_lunar_stone_gilded_darkstone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_lunar_stone_ironstone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_lunar_stone_jade_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_lunar_stone_kimberlite_pipe": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_lunar_stone_lazurite_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_lunar_stone_lead_zinc_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_lunar_stone_mithril_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_lunar_stone_natural_quartz_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_lunar_stone_nickel_sulfide": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_lunar_stone_osmiridium_lava_sulfide": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_lunar_stone_phosphate_rock": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_lunar_stone_quartz_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_lunar_stone_runic_stone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_lunar_stone_soul_bearing_black_shale_soulstone_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_lunar_stone_soulstone_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_lunar_stone_stella_arcanum": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_lunar_stone_sulfur_bearing_pyrite": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_lunar_stone_thorium": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_lunar_stone_tin": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_lunar_stone_tin_tungsten_greisen": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_lunar_stone_titanium_iron_oxide": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_lunar_stone_uranium": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_lunar_stone_xpetrified_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_lunar_stone_zinc": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_lunar_stone_zinc_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_rimestone_arcane_crystal_ore": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_fiber"
+    },
+    "excavated_variants:blue_skies_rimestone_bauxite_laterite": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_rimestone_brilliant_stone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_rimestone_cantazarite_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_rimestone_coal_measures": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_rimestone_copper_sulfide": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_rimestone_corundum_beryl_gem_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_rimestone_cthonic_gold_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_rimestone_cupriferous_redbed_redstone_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_rimestone_darkstone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_rimestone_emerald_schist_beryl_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_rimestone_gilded_darkstone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_rimestone_ironstone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_rimestone_jade_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_rimestone_kimberlite_pipe": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_rimestone_lazurite_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_rimestone_lead_zinc_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_rimestone_mithril_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_rimestone_natural_quartz_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_rimestone_nickel_sulfide": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_rimestone_osmiridium_lava_sulfide": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_rimestone_phosphate_rock": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_rimestone_quartz_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_rimestone_runic_stone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_rimestone_soul_bearing_black_shale_soulstone_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_rimestone_soulstone_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_rimestone_stella_arcanum": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_rimestone_sulfur_bearing_pyrite": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_rimestone_thorium": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_rimestone_tin": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_rimestone_tin_tungsten_greisen": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_rimestone_titanium_iron_oxide": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_rimestone_uranium": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_rimestone_xpetrified_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_rimestone_zinc": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_rimestone_zinc_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_taratite_arcane_crystal_ore": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_fiber"
+    },
+    "excavated_variants:blue_skies_taratite_bauxite_laterite": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_taratite_brilliant_stone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_taratite_cantazarite_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_taratite_coal_measures": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_taratite_copper_sulfide": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_taratite_corundum_beryl_gem_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_taratite_cthonic_gold_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_taratite_cupriferous_redbed_redstone_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_taratite_darkstone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_taratite_emerald_schist_beryl_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_taratite_gilded_darkstone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_taratite_ironstone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_taratite_jade_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_taratite_kimberlite_pipe": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_taratite_lazurite_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_taratite_lead_zinc_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_taratite_mithril_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_taratite_natural_quartz_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_taratite_nickel_sulfide": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_taratite_osmiridium_lava_sulfide": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_taratite_phosphate_rock": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_taratite_quartz_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_taratite_runic_stone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_taratite_soul_bearing_black_shale_soulstone_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_taratite_soulstone_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_taratite_stella_arcanum": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_taratite_sulfur_bearing_pyrite": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_taratite_thorium": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_taratite_tin": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_taratite_tin_tungsten_greisen": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_taratite_titanium_iron_oxide": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_taratite_uranium": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_taratite_xpetrified_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_taratite_zinc": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_taratite_zinc_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_turquoise_stone_arcane_crystal_ore": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_fiber"
+    },
+    "excavated_variants:blue_skies_turquoise_stone_bauxite_laterite": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_turquoise_stone_brilliant_stone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_turquoise_stone_cantazarite_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_turquoise_stone_coal_measures": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_turquoise_stone_copper_sulfide": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_turquoise_stone_corundum_beryl_gem_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_turquoise_stone_cthonic_gold_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_turquoise_stone_cupriferous_redbed_redstone_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_turquoise_stone_darkstone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_turquoise_stone_emerald_schist_beryl_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_turquoise_stone_gilded_darkstone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_turquoise_stone_ironstone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_turquoise_stone_jade_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_turquoise_stone_kimberlite_pipe": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_turquoise_stone_lazurite_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_turquoise_stone_lead_zinc_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_turquoise_stone_mithril_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_turquoise_stone_natural_quartz_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_turquoise_stone_nickel_sulfide": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_turquoise_stone_osmiridium_lava_sulfide": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_turquoise_stone_phosphate_rock": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_turquoise_stone_quartz_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_turquoise_stone_runic_stone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_turquoise_stone_soul_bearing_black_shale_soulstone_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_turquoise_stone_soulstone_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_turquoise_stone_stella_arcanum": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_turquoise_stone_sulfur_bearing_pyrite": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_turquoise_stone_thorium": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_turquoise_stone_tin": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_turquoise_stone_tin_tungsten_greisen": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_turquoise_stone_titanium_iron_oxide": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_turquoise_stone_uranium": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_turquoise_stone_xpetrified_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_turquoise_stone_zinc": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_turquoise_stone_zinc_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_umber_arcane_crystal_ore": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_fiber"
+    },
+    "excavated_variants:blue_skies_umber_bauxite_laterite": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_umber_brilliant_stone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_umber_cantazarite_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_umber_coal_measures": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_umber_copper_sulfide": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_umber_corundum_beryl_gem_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_umber_cthonic_gold_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_umber_cupriferous_redbed_redstone_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_umber_darkstone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_umber_emerald_schist_beryl_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_umber_gilded_darkstone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_umber_ironstone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_umber_jade_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_umber_kimberlite_pipe": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_umber_lazurite_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_umber_lead_zinc_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_umber_mithril_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_umber_natural_quartz_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_umber_nickel_sulfide": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_umber_osmiridium_lava_sulfide": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_umber_phosphate_rock": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_umber_quartz_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_umber_runic_stone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_umber_soul_bearing_black_shale_soulstone_vein": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_umber_soulstone_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_umber_stella_arcanum": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_umber_sulfur_bearing_pyrite": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_umber_thorium": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_umber_tin": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_umber_tin_tungsten_greisen": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_umber_titanium_iron_oxide": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_umber_uranium": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_umber_xpetrified_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_umber_zinc": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "excavated_variants:blue_skies_umber_zinc_ore": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
     "excavated_variants:calcite_arcane_crystal_ore": {
@@ -68474,6 +75707,78 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "outcome": "knife_transform_organics"
     },
     "immersive_weathering:birch_leaf_pile": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "immersive_weathering:blue_skies/bluebright_leaf_pile": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "immersive_weathering:blue_skies/comet_leaf_pile": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "immersive_weathering:blue_skies/crescent_fruit_leaf_pile": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "immersive_weathering:blue_skies/crystallized_leaf_pile": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "immersive_weathering:blue_skies/dusk_leaf_pile": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "immersive_weathering:blue_skies/frostbright_leaf_pile": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "immersive_weathering:blue_skies/lunar_leaf_pile": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "immersive_weathering:blue_skies/maple_leaf_pile": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "delegation:organics",
+      "detail": "plants, leaves, vines, crops, pods, or small organics",
+      "outcome": "knife_transform_organics"
+    },
+    "immersive_weathering:blue_skies/starlit_leaf_pile": {
       "tools": [
         "knife"
       ],
@@ -101537,48 +108842,55 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
+    "swem:acacia_stall_care": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:acacia_stall_horse": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
-      "tools": [
-        "axe"
-      ],
-      "origin": "inference:legacy:axe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "axe"
-      ],
-      "origin": "inference:legacy:axe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
+    "swem:alaharran_banner": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:alaharran_wall_banner": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:alfalfa_bale": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:alfalfa_bale_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:alfalfa_plant": {
       "tools": [
         "knife"
       ],
@@ -101586,307 +108898,295 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
+    "swem:bin_grain_acacia": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:bin_grain_birch": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:bin_grain_black": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:bin_grain_blue": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:bin_grain_brown": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:bin_grain_crimson": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:bin_grain_cyan": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:bin_grain_dark_oak": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:bin_grain_gray": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:bin_grain_green": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:bin_grain_jungle": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:bin_grain_light_blue": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:bin_grain_light_gray": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:bin_grain_lime": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:bin_grain_magenta": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:bin_grain_oak": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:bin_grain_orange": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:bin_grain_pink": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:bin_grain_purple": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:bin_grain_red": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:bin_grain_spruce": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:bin_grain_warped": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:bin_grain_white": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:bin_grain_yellow": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:birch_stall_care": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:birch_stall_horse": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:black_cone": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:bleacher": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:bleacher_wireframe": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:block_o_water": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:blue_cone": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:bridle_rack": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:brown_cone": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:cantazarite_anvil": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:cantazarite_block": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:cantazarite_ore": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
-      "tools": [
-        "axe"
-      ],
-      "origin": "delegation:wood-products",
-      "detail": "logs, branches, planks, or wood products",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
+    "swem:compost": {
       "tools": [
         "axe"
       ],
@@ -101894,6 +109194,55 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:cyan_cone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:dark_friendly_bars": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:dark_oak_stall_care": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:dark_oak_stall_horse": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:dark_rubber_mat": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:dark_shavings": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:english_fence": {
       "tools": [
         "axe"
       ],
@@ -101901,6 +109250,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:english_hitching_post": {
       "tools": [
         "axe"
       ],
@@ -101908,132 +109258,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
+    "swem:english_hitching_post_mini": {
       "tools": [
         "axe"
       ],
@@ -102041,6 +109266,151 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:grain_feeder_black": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:grain_feeder_blue": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:grain_feeder_brown": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:grain_feeder_cyan": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:grain_feeder_gray": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:grain_feeder_green": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:grain_feeder_light_blue": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:grain_feeder_light_gray": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:grain_feeder_lime": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:grain_feeder_magenta": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:grain_feeder_orange": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:grain_feeder_pink": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:grain_feeder_purple": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:grain_feeder_red": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:grain_feeder_white": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:grain_feeder_yellow": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:gray_cone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:green_cone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:half_barrel_black": {
       "tools": [
         "axe"
       ],
@@ -102048,6 +109418,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:half_barrel_blue": {
       "tools": [
         "axe"
       ],
@@ -102055,6 +109426,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:half_barrel_brown": {
       "tools": [
         "axe"
       ],
@@ -102062,6 +109434,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:half_barrel_cyan": {
       "tools": [
         "axe"
       ],
@@ -102069,6 +109442,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:half_barrel_gray": {
       "tools": [
         "axe"
       ],
@@ -102076,6 +109450,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:half_barrel_green": {
       "tools": [
         "axe"
       ],
@@ -102083,6 +109458,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:half_barrel_light_blue": {
       "tools": [
         "axe"
       ],
@@ -102090,6 +109466,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:half_barrel_light_gray": {
       "tools": [
         "axe"
       ],
@@ -102097,6 +109474,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:half_barrel_lime": {
       "tools": [
         "axe"
       ],
@@ -102104,6 +109482,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:half_barrel_magenta": {
       "tools": [
         "axe"
       ],
@@ -102111,6 +109490,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:half_barrel_orange": {
       "tools": [
         "axe"
       ],
@@ -102118,6 +109498,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:half_barrel_pink": {
       "tools": [
         "axe"
       ],
@@ -102125,6 +109506,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:half_barrel_purple": {
       "tools": [
         "axe"
       ],
@@ -102132,6 +109514,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:half_barrel_red": {
       "tools": [
         "axe"
       ],
@@ -102139,6 +109522,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:half_barrel_white": {
       "tools": [
         "axe"
       ],
@@ -102146,181 +109530,215 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:half_barrel_yellow": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "swem:hat_cowboy": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:helmet_riding": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:hitching_ring": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:horse_armor_rack": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:horse_pee": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:invisible_glow_block": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_brush_box": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_cavaletti_black": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_cavaletti_blue": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_cavaletti_brown": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_cavaletti_cyan": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_cavaletti_gray": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_cavaletti_green": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_cavaletti_light_blue": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_cavaletti_light_gray": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_cavaletti_lime": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_cavaletti_magenta": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_cavaletti_orange": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_cavaletti_pink": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_cavaletti_purple": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_cavaletti_red": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_cavaletti_white": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_cavaletti_yellow": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_controller": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_coop": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_flower_box_black": {
       "tools": [
         "knife"
       ],
@@ -102328,6 +109746,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
+    "swem:jump_flower_box_blue": {
       "tools": [
         "knife"
       ],
@@ -102335,6 +109754,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
+    "swem:jump_flower_box_brown": {
       "tools": [
         "knife"
       ],
@@ -102342,6 +109762,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
+    "swem:jump_flower_box_cyan": {
       "tools": [
         "knife"
       ],
@@ -102349,6 +109770,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
+    "swem:jump_flower_box_gray": {
       "tools": [
         "knife"
       ],
@@ -102356,6 +109778,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
+    "swem:jump_flower_box_green": {
       "tools": [
         "knife"
       ],
@@ -102363,6 +109786,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
+    "swem:jump_flower_box_light_blue": {
       "tools": [
         "knife"
       ],
@@ -102370,6 +109794,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
+    "swem:jump_flower_box_light_gray": {
       "tools": [
         "knife"
       ],
@@ -102377,6 +109802,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
+    "swem:jump_flower_box_lime": {
       "tools": [
         "knife"
       ],
@@ -102384,6 +109810,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
+    "swem:jump_flower_box_magenta": {
       "tools": [
         "knife"
       ],
@@ -102391,6 +109818,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
+    "swem:jump_flower_box_orange": {
       "tools": [
         "knife"
       ],
@@ -102398,6 +109826,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
+    "swem:jump_flower_box_pink": {
       "tools": [
         "knife"
       ],
@@ -102405,6 +109834,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
+    "swem:jump_flower_box_purple": {
       "tools": [
         "knife"
       ],
@@ -102412,6 +109842,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
+    "swem:jump_flower_box_red": {
       "tools": [
         "knife"
       ],
@@ -102419,6 +109850,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
+    "swem:jump_flower_box_white": {
       "tools": [
         "knife"
       ],
@@ -102426,6 +109858,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
+    "swem:jump_flower_box_yellow": {
       "tools": [
         "knife"
       ],
@@ -102433,125 +109866,143 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
+    "swem:jump_ground_pole_black": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_ground_pole_blue": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_ground_pole_brown": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_ground_pole_cyan": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_ground_pole_gray": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_ground_pole_green": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_ground_pole_light_blue": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_ground_pole_light_gray": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_ground_pole_lime": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_ground_pole_magenta": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_ground_pole_orange": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_ground_pole_pink": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_ground_pole_purple": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_ground_pole_red": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_ground_pole_white": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_ground_pole_yellow": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_hedge": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_log": {
       "tools": [
         "axe"
       ],
@@ -102559,405 +110010,399 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:jump_none": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_panel_arrow_black": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_arrow_blue": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_arrow_brown": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_arrow_cyan": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_arrow_gray": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_arrow_green": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_arrow_light_blue": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_arrow_light_gray": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_arrow_lime": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_arrow_magenta": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_arrow_orange": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_arrow_pink": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_arrow_purple": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_arrow_red": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_arrow_white": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_arrow_yellow": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_stripe_black": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_stripe_blue": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_stripe_brown": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_stripe_cyan": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_stripe_gray": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_stripe_green": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_stripe_light_blue": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_stripe_light_gray": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_stripe_lime": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_stripe_magenta": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_stripe_orange": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_stripe_pink": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_stripe_purple": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_stripe_red": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_stripe_white": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_stripe_yellow": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_wave_black": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_wave_blue": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_wave_brown": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_wave_cyan": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_wave_gray": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_wave_green": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_wave_light_blue": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_wave_light_gray": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_wave_lime": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_wave_magenta": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_wave_orange": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_wave_pink": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_wave_purple": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_wave_red": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_wave_white": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:jump_panel_wave_yellow": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
-      "tools": [
-        "axe"
-      ],
-      "origin": "delegation:wood-products",
-      "detail": "logs, branches, planks, or wood products",
-      "outcome": "default"
-    },
-      "tools": [
-        "axe"
-      ],
-      "origin": "delegation:wood-products",
-      "detail": "logs, branches, planks, or wood products",
-      "outcome": "default"
-    },
-      "tools": [
-        "axe"
-      ],
-      "origin": "delegation:wood-products",
-      "detail": "logs, branches, planks, or wood products",
-      "outcome": "default"
-    },
-      "tools": [
-        "axe"
-      ],
-      "origin": "delegation:wood-products",
-      "detail": "logs, branches, planks, or wood products",
-      "outcome": "default"
-    },
-      "tools": [
-        "axe"
-      ],
-      "origin": "delegation:wood-products",
-      "detail": "logs, branches, planks, or wood products",
-      "outcome": "default"
-    },
-      "tools": [
-        "axe"
-      ],
-      "origin": "delegation:wood-products",
-      "detail": "logs, branches, planks, or wood products",
-      "outcome": "default"
-    },
-      "tools": [
-        "axe"
-      ],
-      "origin": "delegation:wood-products",
-      "detail": "logs, branches, planks, or wood products",
-      "outcome": "default"
-    },
-      "tools": [
-        "axe"
-      ],
-      "origin": "delegation:wood-products",
-      "detail": "logs, branches, planks, or wood products",
-      "outcome": "default"
-    },
+    "swem:jump_plank_black": {
       "tools": [
         "axe"
       ],
@@ -102965,6 +110410,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:jump_plank_blue": {
       "tools": [
         "axe"
       ],
@@ -102972,6 +110418,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:jump_plank_brown": {
       "tools": [
         "axe"
       ],
@@ -102979,6 +110426,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:jump_plank_cyan": {
       "tools": [
         "axe"
       ],
@@ -102986,6 +110434,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:jump_plank_fancy_black": {
       "tools": [
         "axe"
       ],
@@ -102993,6 +110442,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:jump_plank_fancy_blue": {
       "tools": [
         "axe"
       ],
@@ -103000,6 +110450,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:jump_plank_fancy_brown": {
       "tools": [
         "axe"
       ],
@@ -103007,6 +110458,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:jump_plank_fancy_cyan": {
       "tools": [
         "axe"
       ],
@@ -103014,6 +110466,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:jump_plank_fancy_gray": {
       "tools": [
         "axe"
       ],
@@ -103021,6 +110474,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:jump_plank_fancy_green": {
       "tools": [
         "axe"
       ],
@@ -103028,6 +110482,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:jump_plank_fancy_light_blue": {
       "tools": [
         "axe"
       ],
@@ -103035,6 +110490,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:jump_plank_fancy_light_gray": {
       "tools": [
         "axe"
       ],
@@ -103042,6 +110498,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:jump_plank_fancy_lime": {
       "tools": [
         "axe"
       ],
@@ -103049,6 +110506,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:jump_plank_fancy_magenta": {
       "tools": [
         "axe"
       ],
@@ -103056,6 +110514,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:jump_plank_fancy_orange": {
       "tools": [
         "axe"
       ],
@@ -103063,6 +110522,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:jump_plank_fancy_pink": {
       "tools": [
         "axe"
       ],
@@ -103070,6 +110530,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:jump_plank_fancy_purple": {
       "tools": [
         "axe"
       ],
@@ -103077,6 +110538,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:jump_plank_fancy_red": {
       "tools": [
         "axe"
       ],
@@ -103084,6 +110546,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:jump_plank_fancy_white": {
       "tools": [
         "axe"
       ],
@@ -103091,6 +110554,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:jump_plank_fancy_yellow": {
       "tools": [
         "axe"
       ],
@@ -103098,6 +110562,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:jump_plank_gray": {
       "tools": [
         "axe"
       ],
@@ -103105,6 +110570,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:jump_plank_green": {
       "tools": [
         "axe"
       ],
@@ -103112,6 +110578,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:jump_plank_light_blue": {
       "tools": [
         "axe"
       ],
@@ -103119,6 +110586,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:jump_plank_light_gray": {
       "tools": [
         "axe"
       ],
@@ -103126,643 +110594,799 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:jump_plank_lime": {
       "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "swem:jump_plank_magenta": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "swem:jump_plank_orange": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "swem:jump_plank_pink": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "swem:jump_plank_purple": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "swem:jump_plank_red": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "swem:jump_plank_white": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "swem:jump_plank_yellow": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
+      "outcome": "default"
+    },
+    "swem:jump_pole_on_box_large_black": {
+      "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_pole_on_box_large_blue": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_pole_on_box_large_brown": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_pole_on_box_large_cyan": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_pole_on_box_large_gray": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_pole_on_box_large_green": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_pole_on_box_large_light_blue": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_pole_on_box_large_light_gray": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_pole_on_box_large_lime": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_pole_on_box_large_magenta": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_pole_on_box_large_orange": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_pole_on_box_large_pink": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_pole_on_box_large_purple": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_pole_on_box_large_red": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_pole_on_box_large_white": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_pole_on_box_large_yellow": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_pole_on_box_small_black": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_pole_on_box_small_blue": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_pole_on_box_small_brown": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_pole_on_box_small_cyan": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_pole_on_box_small_gray": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_pole_on_box_small_green": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_pole_on_box_small_light_blue": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_pole_on_box_small_light_gray": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_pole_on_box_small_lime": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_pole_on_box_small_magenta": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_pole_on_box_small_orange": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_pole_on_box_small_pink": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_pole_on_box_small_purple": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_pole_on_box_small_red": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_pole_on_box_small_white": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_pole_on_box_small_yellow": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_rail_black": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_rail_blue": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_rail_brown": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_rail_cyan": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_rail_gray": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_rail_green": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_rail_light_blue": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_rail_light_gray": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_rail_lime": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_rail_magenta": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_rail_orange": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_rail_pink": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_rail_purple": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_rail_red": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_rail_white": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_rail_yellow": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_roll_top_black": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_roll_top_blue": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_roll_top_brown": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_roll_top_cyan": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_roll_top_gray": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_roll_top_green": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_roll_top_light_blue": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_roll_top_light_gray": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_roll_top_lime": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_roll_top_magenta": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_roll_top_orange": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_roll_top_pink": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_roll_top_purple": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_roll_top_red": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_roll_top_white": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_roll_top_yellow": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_stair_drop": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_standard_none": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_standard_radial": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_standard_schooling": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_standard_vertical_slat": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_wall": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jump_wall_mini": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jungle_stall_care": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:jungle_stall_horse": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:lead_anchor": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:light_blue_cone": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:light_friendly_bars": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:light_gray_cone": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:light_rubber_mat": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:light_shavings": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:lime_cone": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:locker": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:magenta_cone": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:medium_friendly_bars": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:medium_rubber_mat": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:medium_shavings": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:metal_grate": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:meter_point": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:oak_stall_care": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:oak_stall_horse": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:oat_bale": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:oat_bale_slab": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:oat_plant": {
       "tools": [
         "knife"
       ],
@@ -103770,90 +111394,87 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
+    "swem:orange_cone": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
-      "tools": [
-        "axe"
-      ],
-      "origin": "inference:legacy:axe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
+    "swem:paddock_feeder": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:pasture_black_care": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:pasture_black_horse": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:pasture_blue_care": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:pasture_blue_horse": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:pasture_brown_care": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:pasture_brown_horse": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:pasture_cyan_care": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:pasture_cyan_horse": {
       "tools": [
-        "axe"
+        "pickaxe"
       ],
-      "origin": "delegation:wood-products",
-      "detail": "logs, branches, planks, or wood products",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
-      "tools": [
-        "axe"
-      ],
-      "origin": "delegation:wood-products",
-      "detail": "logs, branches, planks, or wood products",
-      "outcome": "default"
-    },
+    "swem:pasture_fence_acacia": {
       "tools": [
         "axe"
       ],
@@ -103861,6 +111482,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:pasture_fence_birch": {
       "tools": [
         "axe"
       ],
@@ -103868,6 +111490,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:pasture_fence_dark_oak": {
       "tools": [
         "axe"
       ],
@@ -103875,6 +111498,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:pasture_fence_jungle": {
       "tools": [
         "axe"
       ],
@@ -103882,6 +111506,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:pasture_fence_oak": {
       "tools": [
         "axe"
       ],
@@ -103889,34 +111514,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
+    "swem:pasture_fence_spruce": {
       "tools": [
         "axe"
       ],
@@ -103924,6 +111522,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:pasture_fence_whitewash": {
       "tools": [
         "axe"
       ],
@@ -103931,832 +111530,999 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:pasture_gray_care": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:pasture_gray_horse": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:pasture_green_care": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:pasture_green_horse": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
+    "swem:pasture_hitching_post": {
       "tools": [
         "axe"
       ],
-      "origin": "inference:legacy:axe",
-      "detail": "legacy assignment carried forward",
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:pasture_hitching_post_mini": {
       "tools": [
         "axe"
       ],
-      "origin": "inference:legacy:axe",
-      "detail": "legacy assignment carried forward",
+      "origin": "delegation:wood-products",
+      "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:pasture_light_blue_care": {
       "tools": [
-        "axe"
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:pasture_light_blue_horse": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:pasture_light_gray_care": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:pasture_light_gray_horse": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:pasture_lime_care": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:pasture_lime_horse": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:pasture_magenta_care": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:pasture_magenta_horse": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:pasture_orange_care": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:pasture_orange_horse": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:pasture_pink_care": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:pasture_pink_horse": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:pasture_purple_care": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:pasture_purple_horse": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:pasture_red_care": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:pasture_red_horse": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:pasture_white_care": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:pasture_white_horse": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:pasture_yellow_care": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:pasture_yellow_horse": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:pink_cone": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:plaque_bronze": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "swem:plaque_gold": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
+      "outcome": "default"
+    },
+    "swem:plaque_silver": {
+      "tools": [
+        "pickaxe"
       ],
-      "origin": "inference:legacy:axe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:purple_cone": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:quality_bale": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:quality_bale_slab": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:rack_blanket_5": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:rack_halter_lead": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:rack_lead_3": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:rack_pasture_blanket_3_short": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:rack_pasture_blanket_5_long": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:red_cone": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:ribbon_champion": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:ribbon_rchampion": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:ribbon_three_black": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:ribbon_three_blue": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:ribbon_three_brown": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:ribbon_three_cyan": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:ribbon_three_gray": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:ribbon_three_green": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:ribbon_three_light_blue": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:ribbon_three_light_gray": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:ribbon_three_lime": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:ribbon_three_magenta": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:ribbon_three_orange": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:ribbon_three_pink": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:ribbon_three_purple": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:ribbon_three_red": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:ribbon_three_white": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:ribbon_three_yellow": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:ribbon_two_black": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:ribbon_two_blue": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:ribbon_two_brown": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:ribbon_two_cyan": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:ribbon_two_gray": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:ribbon_two_green": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:ribbon_two_light_blue": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:ribbon_two_light_gray": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:ribbon_two_lime": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:ribbon_two_magenta": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:ribbon_two_orange": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:ribbon_two_pink": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:ribbon_two_purple": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:ribbon_two_red": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:ribbon_two_white": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:ribbon_two_yellow": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:rosette_black": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:rosette_blue": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:rosette_brown": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:rosette_cyan": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:rosette_gray": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:rosette_green": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:rosette_light_blue": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:rosette_light_gray": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:rosette_lime": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:rosette_magenta": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:rosette_orange": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:rosette_pink": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:rosette_purple": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:rosette_red": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:rosette_white": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:rosette_yellow": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:saddle_rack": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:separator_black": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:separator_blue": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:separator_brown": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:separator_cyan": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:separator_gray": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:separator_green": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:separator_light_blue": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:separator_light_gray": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:separator_lime": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:separator_magenta": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:separator_orange": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:separator_pink": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:separator_purple": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:separator_red": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:separator_white": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:separator_yellow": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:shining_amethyst_cluster": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:shop": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "override:exact",
-      "detail": "explicit non-loose utility block",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:slow_feeder_black": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:slow_feeder_blue": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:slow_feeder_brown": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:slow_feeder_cyan": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:slow_feeder_gray": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:slow_feeder_green": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:slow_feeder_light_blue": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:slow_feeder_light_gray": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:slow_feeder_lime": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:slow_feeder_magenta": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:slow_feeder_orange": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:slow_feeder_pink": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:slow_feeder_purple": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:slow_feeder_red": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:slow_feeder_white": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:slow_feeder_yellow": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:soiled_shavings": {
       "tools": [
         "hand"
       ],
@@ -104764,167 +112530,191 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "sand, gravel, dirt, mud, regolith, or similar loose earth",
       "outcome": "default"
     },
+    "swem:spigot": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:spruce_stall_care": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:spruce_stall_horse": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:star_worm_cobble": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
-      "tools": [
-        "axe"
-      ],
-      "origin": "inference:legacy:axe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "axe"
-      ],
-      "origin": "inference:legacy:axe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "axe"
-      ],
-      "origin": "inference:legacy:axe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "axe"
-      ],
-      "origin": "inference:legacy:axe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "axe"
-      ],
-      "origin": "inference:legacy:axe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "axe"
-      ],
-      "origin": "inference:legacy:axe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "axe"
-      ],
-      "origin": "inference:legacy:axe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "axe"
-      ],
-      "origin": "inference:legacy:axe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "axe"
-      ],
-      "origin": "inference:legacy:axe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "axe"
-      ],
-      "origin": "inference:legacy:axe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "axe"
-      ],
-      "origin": "inference:legacy:axe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "axe"
-      ],
-      "origin": "inference:legacy:axe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "axe"
-      ],
-      "origin": "inference:legacy:axe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "axe"
-      ],
-      "origin": "inference:legacy:axe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "axe"
-      ],
-      "origin": "inference:legacy:axe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
-      "tools": [
-        "axe"
-      ],
-      "origin": "inference:legacy:axe",
-      "detail": "legacy assignment carried forward",
-      "outcome": "default"
-    },
+    "swem:tack_box_black": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:tack_box_blue": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:tack_box_brown": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:tack_box_cyan": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:tack_box_gray": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:tack_box_green": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:tack_box_light_blue": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:tack_box_light_gray": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:tack_box_lime": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:tack_box_magenta": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:tack_box_orange": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:tack_box_pink": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:tack_box_purple": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:tack_box_red": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:tack_box_white": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:tack_box_yellow": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:tearing_magma": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:timothy_bale": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:timothy_bale_slab": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
+      "outcome": "default"
+    },
+    "swem:timothy_plant": {
       "tools": [
         "knife"
       ],
@@ -104932,426 +112722,487 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "plants, leaves, vines, crops, pods, or small organics",
       "outcome": "knife_transform_organics"
     },
+    "swem:toy_ball_slow_feed_hay": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:toy_jolly_apple_snack": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:toy_jolly_ball": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:toy_jolly_ball_hay": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:toy_lick_salt": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:toy_scratchy_pole": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:toy_string_treats": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:trophy_bronze": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:trophy_gold": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:trophy_silver": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:solid-default",
+      "detail": "stone, glass, metal, machine, or solid utility keyword",
       "outcome": "default"
     },
+    "swem:wall_spigot": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:water_trough": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_black_care": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_black_horse": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_black_rider": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_blue_care": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_blue_horse": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_blue_rider": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_brown_care": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_brown_horse": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_brown_rider": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_cyan_care": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_cyan_horse": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_cyan_rider": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_gray_care": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_gray_horse": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_gray_rider": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_green_care": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_green_horse": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_green_rider": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_light_blue_care": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_light_blue_horse": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_light_blue_rider": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_light_gray_care": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_light_gray_horse": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_light_gray_rider": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_lime_care": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_lime_horse": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_lime_rider": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_magenta_care": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_magenta_horse": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_magenta_rider": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_orange_care": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_orange_horse": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_orange_rider": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_pink_care": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_pink_horse": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_pink_rider": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_purple_care": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_purple_horse": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_purple_rider": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_red_care": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_red_horse": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_red_rider": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_white_care": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_white_horse": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_white_rider": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_yellow_care": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_yellow_horse": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:web_guard_yellow_rider": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:western_barrel": {
       "tools": [
         "axe"
       ],
@@ -105359,6 +113210,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:western_fence_acacia": {
       "tools": [
         "axe"
       ],
@@ -105366,6 +113218,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:western_fence_birch": {
       "tools": [
         "axe"
       ],
@@ -105373,6 +113226,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:western_fence_dark_oak": {
       "tools": [
         "axe"
       ],
@@ -105380,6 +113234,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:western_fence_jungle": {
       "tools": [
         "axe"
       ],
@@ -105387,6 +113242,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:western_fence_oak": {
       "tools": [
         "axe"
       ],
@@ -105394,6 +113250,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:western_fence_spruce": {
       "tools": [
         "axe"
       ],
@@ -105401,6 +113258,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:western_fence_whitewash": {
       "tools": [
         "axe"
       ],
@@ -105408,6 +113266,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:western_hitching_post": {
       "tools": [
         "axe"
       ],
@@ -105415,6 +113274,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:western_hitching_post_mini": {
       "tools": [
         "axe"
       ],
@@ -105422,13 +113282,15 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:western_pole": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:wet_compost": {
       "tools": [
         "axe"
       ],
@@ -105436,125 +113298,143 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:wheel_barrow_black": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:wheel_barrow_blue": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:wheel_barrow_brown": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:wheel_barrow_cyan": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:wheel_barrow_gray": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:wheel_barrow_green": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:wheel_barrow_light_blue": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:wheel_barrow_light_gray": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:wheel_barrow_lime": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:wheel_barrow_magenta": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:wheel_barrow_orange": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:wheel_barrow_pink": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:wheel_barrow_purple": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:wheel_barrow_red": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:wheel_barrow_white": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:wheel_barrow_yellow": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:white_cone": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:whitewash_button": {
       "tools": [
         "axe"
       ],
@@ -105562,6 +113442,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:whitewash_door": {
       "tools": [
         "axe"
       ],
@@ -105569,6 +113450,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:whitewash_fence": {
       "tools": [
         "axe"
       ],
@@ -105576,6 +113458,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:whitewash_fence_gate": {
       "tools": [
         "axe"
       ],
@@ -105583,6 +113466,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:whitewash_log": {
       "tools": [
         "axe"
       ],
@@ -105590,6 +113474,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:whitewash_planks": {
       "tools": [
         "axe"
       ],
@@ -105597,6 +113482,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:whitewash_sign": {
       "tools": [
         "axe"
       ],
@@ -105604,6 +113490,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:whitewash_slab": {
       "tools": [
         "shovel"
       ],
@@ -105611,6 +113498,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "loose non-hand earth surface",
       "outcome": "default"
     },
+    "swem:whitewash_stairs": {
       "tools": [
         "shovel"
       ],
@@ -105618,6 +113506,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "loose non-hand earth surface",
       "outcome": "default"
     },
+    "swem:whitewash_stall_care": {
       "tools": [
         "shovel"
       ],
@@ -105625,6 +113514,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "loose non-hand earth surface",
       "outcome": "default"
     },
+    "swem:whitewash_stall_horse": {
       "tools": [
         "shovel"
       ],
@@ -105632,6 +113522,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "loose non-hand earth surface",
       "outcome": "default"
     },
+    "swem:whitewash_trapdoor": {
       "tools": [
         "axe"
       ],
@@ -105639,6 +113530,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:whitewash_wall_sign": {
       "tools": [
         "axe"
       ],
@@ -105646,13 +113538,15 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "logs, branches, planks, or wood products",
       "outcome": "default"
     },
+    "swem:yellow_cone": {
       "tools": [
         "pickaxe"
       ],
-      "origin": "inference:legacy:pickaxe",
-      "detail": "legacy assignment carried forward",
+      "origin": "heuristic:catchall-solid",
+      "detail": "residual solid/default classification",
       "outcome": "default"
     },
+    "swem:yellow_snow": {
       "tools": [
         "shovel"
       ],
@@ -105660,6 +113554,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "loose non-hand earth surface",
       "outcome": "default"
     },
+    "swem:yellow_snow_block": {
       "tools": [
         "shovel"
       ],
@@ -118925,6 +126820,598 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "runtime tool action evidence",
       "outcome": "default"
     },
+    "blue_skies:aquite_axe": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "inference:tool-action:axe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:aquite_hoe": {
+      "tools": [
+        "hoe"
+      ],
+      "origin": "inference:tool-action:hoe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:aquite_pickaxe": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "inference:tool-action:pickaxe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:aquite_shovel": {
+      "tools": [
+        "shovel"
+      ],
+      "origin": "inference:tool-action:shovel",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:aquite_sword": {
+      "tools": [
+        "sword"
+      ],
+      "origin": "inference:tool-action:sword",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:bluebright_axe": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "inference:tool-action:axe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:bluebright_hoe": {
+      "tools": [
+        "hoe"
+      ],
+      "origin": "inference:tool-action:hoe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:bluebright_pickaxe": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "inference:tool-action:pickaxe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:bluebright_shovel": {
+      "tools": [
+        "shovel"
+      ],
+      "origin": "inference:tool-action:shovel",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:bluebright_sword": {
+      "tools": [
+        "sword"
+      ],
+      "origin": "inference:tool-action:sword",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:charoite_axe": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "inference:tool-action:axe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:charoite_hoe": {
+      "tools": [
+        "hoe"
+      ],
+      "origin": "inference:tool-action:hoe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:charoite_pickaxe": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "inference:tool-action:pickaxe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:charoite_shovel": {
+      "tools": [
+        "shovel"
+      ],
+      "origin": "inference:tool-action:shovel",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:charoite_sword": {
+      "tools": [
+        "sword"
+      ],
+      "origin": "inference:tool-action:sword",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:comet_axe": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "inference:tool-action:axe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:comet_hoe": {
+      "tools": [
+        "hoe"
+      ],
+      "origin": "inference:tool-action:hoe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:comet_pickaxe": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "inference:tool-action:pickaxe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:comet_shovel": {
+      "tools": [
+        "shovel"
+      ],
+      "origin": "inference:tool-action:shovel",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:comet_sword": {
+      "tools": [
+        "sword"
+      ],
+      "origin": "inference:tool-action:sword",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:debug_sword": {
+      "tools": [
+        "sword"
+      ],
+      "origin": "inference:tool-action:sword",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:different_sword": {
+      "tools": [
+        "sword"
+      ],
+      "origin": "inference:tool-action:sword",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:diopside_axe": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "inference:tool-action:axe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:diopside_hoe": {
+      "tools": [
+        "hoe"
+      ],
+      "origin": "inference:tool-action:hoe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:diopside_pickaxe": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "inference:tool-action:pickaxe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:diopside_shovel": {
+      "tools": [
+        "shovel"
+      ],
+      "origin": "inference:tool-action:shovel",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:diopside_sword": {
+      "tools": [
+        "sword"
+      ],
+      "origin": "inference:tool-action:sword",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:dusk_axe": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "inference:tool-action:axe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:dusk_hoe": {
+      "tools": [
+        "hoe"
+      ],
+      "origin": "inference:tool-action:hoe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:dusk_pickaxe": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "inference:tool-action:pickaxe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:dusk_shovel": {
+      "tools": [
+        "shovel"
+      ],
+      "origin": "inference:tool-action:shovel",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:dusk_sword": {
+      "tools": [
+        "sword"
+      ],
+      "origin": "inference:tool-action:sword",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:frostbright_axe": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "inference:tool-action:axe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:frostbright_hoe": {
+      "tools": [
+        "hoe"
+      ],
+      "origin": "inference:tool-action:hoe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:frostbright_pickaxe": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "inference:tool-action:pickaxe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:frostbright_shovel": {
+      "tools": [
+        "shovel"
+      ],
+      "origin": "inference:tool-action:shovel",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:frostbright_sword": {
+      "tools": [
+        "sword"
+      ],
+      "origin": "inference:tool-action:sword",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:horizonite_axe": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "inference:tool-action:axe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:horizonite_hoe": {
+      "tools": [
+        "hoe"
+      ],
+      "origin": "inference:tool-action:hoe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:horizonite_pickaxe": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "inference:tool-action:pickaxe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:horizonite_shovel": {
+      "tools": [
+        "shovel"
+      ],
+      "origin": "inference:tool-action:shovel",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:horizonite_sword": {
+      "tools": [
+        "sword"
+      ],
+      "origin": "inference:tool-action:sword",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:infused_arc_sword": {
+      "tools": [
+        "sword"
+      ],
+      "origin": "inference:tool-action:sword",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_axe": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "inference:tool-action:axe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_hoe": {
+      "tools": [
+        "hoe"
+      ],
+      "origin": "inference:tool-action:hoe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_pickaxe": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "inference:tool-action:pickaxe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_shovel": {
+      "tools": [
+        "shovel"
+      ],
+      "origin": "inference:tool-action:shovel",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_stone_axe": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "inference:tool-action:axe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_stone_hoe": {
+      "tools": [
+        "hoe"
+      ],
+      "origin": "inference:tool-action:hoe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_stone_pickaxe": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "inference:tool-action:pickaxe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_stone_shovel": {
+      "tools": [
+        "shovel"
+      ],
+      "origin": "inference:tool-action:shovel",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_stone_sword": {
+      "tools": [
+        "sword"
+      ],
+      "origin": "inference:tool-action:sword",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:lunar_sword": {
+      "tools": [
+        "sword"
+      ],
+      "origin": "inference:tool-action:sword",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:maple_axe": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "inference:tool-action:axe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:maple_hoe": {
+      "tools": [
+        "hoe"
+      ],
+      "origin": "inference:tool-action:hoe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:maple_pickaxe": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "inference:tool-action:pickaxe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:maple_shovel": {
+      "tools": [
+        "shovel"
+      ],
+      "origin": "inference:tool-action:shovel",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:maple_sword": {
+      "tools": [
+        "sword"
+      ],
+      "origin": "inference:tool-action:sword",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:pyrope_axe": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "inference:tool-action:axe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:pyrope_hoe": {
+      "tools": [
+        "hoe"
+      ],
+      "origin": "inference:tool-action:hoe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:pyrope_pickaxe": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "inference:tool-action:pickaxe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:pyrope_shovel": {
+      "tools": [
+        "shovel"
+      ],
+      "origin": "inference:tool-action:shovel",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:pyrope_sword": {
+      "tools": [
+        "sword"
+      ],
+      "origin": "inference:tool-action:sword",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:starlit_axe": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "inference:tool-action:axe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:starlit_hoe": {
+      "tools": [
+        "hoe"
+      ],
+      "origin": "inference:tool-action:hoe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:starlit_pickaxe": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "inference:tool-action:pickaxe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:starlit_shovel": {
+      "tools": [
+        "shovel"
+      ],
+      "origin": "inference:tool-action:shovel",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:starlit_sword": {
+      "tools": [
+        "sword"
+      ],
+      "origin": "inference:tool-action:sword",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:turquoise_stone_axe": {
+      "tools": [
+        "axe"
+      ],
+      "origin": "inference:tool-action:axe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:turquoise_stone_hoe": {
+      "tools": [
+        "hoe"
+      ],
+      "origin": "inference:tool-action:hoe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:turquoise_stone_pickaxe": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "inference:tool-action:pickaxe",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:turquoise_stone_shovel": {
+      "tools": [
+        "shovel"
+      ],
+      "origin": "inference:tool-action:shovel",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:turquoise_stone_sword": {
+      "tools": [
+        "sword"
+      ],
+      "origin": "inference:tool-action:sword",
+      "detail": "runtime tool action evidence",
+      "outcome": "default"
+    },
+    "blue_skies:ventium_shears": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "heuristic:blade-cutters",
+      "detail": "knife-equivalent cutter family",
+      "outcome": "default"
+    },
     "brewinandchewin:flaxen_cheese_wedge": {
       "tools": [
         "axe"
@@ -122709,6 +131196,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "knife-equivalent cutter family",
       "outcome": "default"
     },
+    "swem:axe_amethyst": {
       "tools": [
         "axe"
       ],
@@ -122716,6 +131204,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "runtime tool action evidence",
       "outcome": "default"
     },
+    "swem:axe_copper": {
       "tools": [
         "axe"
       ],
@@ -122723,6 +131212,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "axe name heuristic",
       "outcome": "default"
     },
+    "swem:axe_diamond": {
       "tools": [
         "axe"
       ],
@@ -122730,6 +131220,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "axe name heuristic",
       "outcome": "default"
     },
+    "swem:axe_gold": {
       "tools": [
         "axe"
       ],
@@ -122737,6 +131228,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "axe name heuristic",
       "outcome": "default"
     },
+    "swem:axe_iron": {
       "tools": [
         "axe"
       ],
@@ -122744,6 +131236,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "axe name heuristic",
       "outcome": "default"
     },
+    "swem:axe_leather": {
       "tools": [
         "axe"
       ],
@@ -122751,6 +131244,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "axe name heuristic",
       "outcome": "default"
     },
+    "swem:axe_netherite": {
       "tools": [
         "axe"
       ],
@@ -122758,6 +131252,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "axe name heuristic",
       "outcome": "default"
     },
+    "swem:pickaxe_amethyst": {
       "tools": [
         "pickaxe"
       ],
@@ -122765,6 +131260,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "runtime tool action evidence",
       "outcome": "default"
     },
+    "swem:pickaxe_copper": {
       "tools": [
         "pickaxe"
       ],
@@ -122772,6 +131268,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "pickaxe name heuristic",
       "outcome": "default"
     },
+    "swem:pickaxe_diamond": {
       "tools": [
         "pickaxe"
       ],
@@ -122779,6 +131276,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "pickaxe name heuristic",
       "outcome": "default"
     },
+    "swem:pickaxe_gold": {
       "tools": [
         "pickaxe"
       ],
@@ -122786,6 +131284,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "pickaxe name heuristic",
       "outcome": "default"
     },
+    "swem:pickaxe_iron": {
       "tools": [
         "pickaxe"
       ],
@@ -122793,6 +131292,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "pickaxe name heuristic",
       "outcome": "default"
     },
+    "swem:pickaxe_leather": {
       "tools": [
         "pickaxe"
       ],
@@ -122800,6 +131300,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "pickaxe name heuristic",
       "outcome": "default"
     },
+    "swem:pickaxe_netherite": {
       "tools": [
         "pickaxe"
       ],
@@ -122807,6 +131308,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "pickaxe name heuristic",
       "outcome": "default"
     },
+    "swem:scythe_amethyst": {
       "tools": [
         "hoe"
       ],
@@ -122814,6 +131316,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "runtime tool action evidence",
       "outcome": "default"
     },
+    "swem:scythe_copper": {
       "tools": [
         "knife"
       ],
@@ -122821,6 +131324,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "knife-equivalent cutter family",
       "outcome": "default"
     },
+    "swem:scythe_diamond": {
       "tools": [
         "knife"
       ],
@@ -122828,6 +131332,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "knife-equivalent cutter family",
       "outcome": "default"
     },
+    "swem:scythe_gold": {
       "tools": [
         "knife"
       ],
@@ -122835,6 +131340,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "knife-equivalent cutter family",
       "outcome": "default"
     },
+    "swem:scythe_iron": {
       "tools": [
         "knife"
       ],
@@ -122842,6 +131348,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "knife-equivalent cutter family",
       "outcome": "default"
     },
+    "swem:scythe_leather": {
       "tools": [
         "knife"
       ],
@@ -122849,6 +131356,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "knife-equivalent cutter family",
       "outcome": "default"
     },
+    "swem:scythe_netherite": {
       "tools": [
         "knife"
       ],
@@ -122856,6 +131364,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "knife-equivalent cutter family",
       "outcome": "default"
     },
+    "swem:shovel_amethyst": {
       "tools": [
         "shovel"
       ],
@@ -122863,6 +131372,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "runtime tool action evidence",
       "outcome": "default"
     },
+    "swem:shovel_copper": {
       "tools": [
         "shovel"
       ],
@@ -122870,6 +131380,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "shovel name heuristic",
       "outcome": "default"
     },
+    "swem:shovel_diamond": {
       "tools": [
         "shovel"
       ],
@@ -122877,6 +131388,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "shovel name heuristic",
       "outcome": "default"
     },
+    "swem:shovel_gold": {
       "tools": [
         "shovel"
       ],
@@ -122884,6 +131396,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "shovel name heuristic",
       "outcome": "default"
     },
+    "swem:shovel_iron": {
       "tools": [
         "shovel"
       ],
@@ -122891,6 +131404,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "shovel name heuristic",
       "outcome": "default"
     },
+    "swem:shovel_leather": {
       "tools": [
         "shovel"
       ],
@@ -122898,6 +131412,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "shovel name heuristic",
       "outcome": "default"
     },
+    "swem:shovel_netherite": {
       "tools": [
         "shovel"
       ],
@@ -122905,6 +131420,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "shovel name heuristic",
       "outcome": "default"
     },
+    "swem:sword_amethyst": {
       "tools": [
         "sword"
       ],
@@ -122912,6 +131428,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "runtime tool action evidence",
       "outcome": "default"
     },
+    "swem:sword_copper": {
       "tools": [
         "sword"
       ],
@@ -122919,6 +131436,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "sword name heuristic",
       "outcome": "default"
     },
+    "swem:sword_diamond": {
       "tools": [
         "sword"
       ],
@@ -122926,6 +131444,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "sword name heuristic",
       "outcome": "default"
     },
+    "swem:sword_gold": {
       "tools": [
         "sword"
       ],
@@ -122933,6 +131452,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "sword name heuristic",
       "outcome": "default"
     },
+    "swem:sword_iron": {
       "tools": [
         "sword"
       ],
@@ -122940,6 +131460,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "sword name heuristic",
       "outcome": "default"
     },
+    "swem:sword_leather": {
       "tools": [
         "sword"
       ],
@@ -122947,6 +131468,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "detail": "sword name heuristic",
       "outcome": "default"
     },
+    "swem:sword_netherite": {
       "tools": [
         "sword"
       ],
@@ -123824,6 +132346,13 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "ars_nouveau:arcane_core",
       "ars_nouveau:arcane_pedestal",
       "ars_nouveau:arcane_platform",
+      "blue_skies:comet_grass",
+      "blue_skies:crystallized_grass",
+      "blue_skies:glimmer_reed",
+      "blue_skies:lunar_grass",
+      "blue_skies:tall_lunar_grass",
+      "blue_skies:tall_turquoise_grass",
+      "blue_skies:turquoise_grass",
       "btmfixes:burnt_chared_grass",
       "btmfixes:burnt_crackled_grass",
       "btmfixes:burnt_deepgrass",
@@ -123850,6 +132379,12 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "excavated_variants:aether_holystone_arcane_crystal_ore",
       "excavated_variants:aether_mossy_holystone_arcane_crystal_ore",
       "excavated_variants:andesite_arcane_crystal_ore",
+      "excavated_variants:blue_skies_cinderstone_arcane_crystal_ore",
+      "excavated_variants:blue_skies_lunar_stone_arcane_crystal_ore",
+      "excavated_variants:blue_skies_rimestone_arcane_crystal_ore",
+      "excavated_variants:blue_skies_taratite_arcane_crystal_ore",
+      "excavated_variants:blue_skies_turquoise_stone_arcane_crystal_ore",
+      "excavated_variants:blue_skies_umber_arcane_crystal_ore",
       "excavated_variants:calcite_arcane_crystal_ore",
       "excavated_variants:create_asurine_arcane_crystal_ore",
       "excavated_variants:create_crimsite_arcane_crystal_ore",
@@ -124020,6 +132555,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "aether:skyroot_slab",
       "aether:skyroot_stairs",
       "aether:white_flower",
+      "amendments:blue_skies/double_comet_berry_pie",
       "amendments:hanging_flower_pot",
       "ars_nouveau:bastion_pod",
       "ars_nouveau:bombegranate_pod",
@@ -124035,6 +132571,94 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "ars_nouveau:sourceberry_bush",
       "ars_nouveau:sourceberry_sack",
       "ars_nouveau:whirlisprig_flower",
+      "blue_skies:baneful_mushroom",
+      "blue_skies:bluebright_leaves",
+      "blue_skies:bluebright_sapling",
+      "blue_skies:bluebright_vine",
+      "blue_skies:blush_blossom",
+      "blue_skies:brewberry_bush",
+      "blue_skies:briskbloom",
+      "blue_skies:brittlebush",
+      "blue_skies:brumble_vine",
+      "blue_skies:brumble_vine_top",
+      "blue_skies:chillweed",
+      "blue_skies:comet_berry_pie",
+      "blue_skies:comet_leaves",
+      "blue_skies:comet_sapling",
+      "blue_skies:crescent_fruit_leaves",
+      "blue_skies:crescent_fruit_sapling",
+      "blue_skies:cryo_roots",
+      "blue_skies:crystal_flower",
+      "blue_skies:crystallized_leaves",
+      "blue_skies:dusk_leaves",
+      "blue_skies:dusk_sapling",
+      "blue_skies:dusk_vine",
+      "blue_skies:frostbright_leaves",
+      "blue_skies:frostbright_sapling",
+      "blue_skies:frostbright_vine",
+      "blue_skies:lucentroot",
+      "blue_skies:lunar_leaves",
+      "blue_skies:lunar_sapling",
+      "blue_skies:lunar_vine",
+      "blue_skies:maple_leaves",
+      "blue_skies:maple_sapling",
+      "blue_skies:maple_vine",
+      "blue_skies:moonlit_bloom",
+      "blue_skies:mossy_lunar_cobblestone",
+      "blue_skies:mossy_lunar_cobblestone_slab",
+      "blue_skies:mossy_lunar_cobblestone_stairs",
+      "blue_skies:mossy_lunar_cobblestone_wall",
+      "blue_skies:mossy_lunar_stonebrick",
+      "blue_skies:mossy_lunar_stonebrick_slab",
+      "blue_skies:mossy_lunar_stonebrick_stairs",
+      "blue_skies:mossy_lunar_stonebrick_wall",
+      "blue_skies:mossy_turquoise_cobblestone",
+      "blue_skies:mossy_turquoise_cobblestone_slab",
+      "blue_skies:mossy_turquoise_cobblestone_stairs",
+      "blue_skies:mossy_turquoise_cobblestone_wall",
+      "blue_skies:mossy_turquoise_stonebrick",
+      "blue_skies:mossy_turquoise_stonebrick_slab",
+      "blue_skies:mossy_turquoise_stonebrick_stairs",
+      "blue_skies:mossy_turquoise_stonebrick_wall",
+      "blue_skies:muckweed",
+      "blue_skies:potted_baneful_mushroom",
+      "blue_skies:potted_blaze_bud",
+      "blue_skies:potted_bluebright_sapling",
+      "blue_skies:potted_blush_blossom",
+      "blue_skies:potted_brewberry_bush",
+      "blue_skies:potted_briskbloom",
+      "blue_skies:potted_brittlebush",
+      "blue_skies:potted_camellia",
+      "blue_skies:potted_chillweed",
+      "blue_skies:potted_comet_sapling",
+      "blue_skies:potted_crescent_fruit_sapling",
+      "blue_skies:potted_crystal_flower",
+      "blue_skies:potted_dusk_sapling",
+      "blue_skies:potted_flare_floret",
+      "blue_skies:potted_frose",
+      "blue_skies:potted_frostbright_sapling",
+      "blue_skies:potted_lucentroot",
+      "blue_skies:potted_lunar_sapling",
+      "blue_skies:potted_maple_sapling",
+      "blue_skies:potted_midday_bayhop",
+      "blue_skies:potted_moonlit_bloom",
+      "blue_skies:potted_muckweed",
+      "blue_skies:potted_nightcress",
+      "blue_skies:potted_polar_posy",
+      "blue_skies:potted_snowbloom",
+      "blue_skies:potted_snowcap_mushroom",
+      "blue_skies:potted_starlit_sapling",
+      "blue_skies:sea_moss",
+      "blue_skies:sea_moss_block",
+      "blue_skies:sea_moss_carpet",
+      "blue_skies:snowbloom",
+      "blue_skies:snowcap_mushroom",
+      "blue_skies:snowcap_mushroom_block",
+      "blue_skies:snowcap_mushroom_stem",
+      "blue_skies:starlit_leaves",
+      "blue_skies:starlit_sapling",
+      "blue_skies:starlit_vine",
+      "blue_skies:winter_leaves",
       "burnt:blast_leaves",
       "burnt:burning_cave_vines_plant",
       "burnt:burnt_cave_vines",
@@ -124524,6 +133148,15 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "immersive_weathering:azalea_flower_pile",
       "immersive_weathering:azalea_leaf_pile",
       "immersive_weathering:birch_leaf_pile",
+      "immersive_weathering:blue_skies/bluebright_leaf_pile",
+      "immersive_weathering:blue_skies/comet_leaf_pile",
+      "immersive_weathering:blue_skies/crescent_fruit_leaf_pile",
+      "immersive_weathering:blue_skies/crystallized_leaf_pile",
+      "immersive_weathering:blue_skies/dusk_leaf_pile",
+      "immersive_weathering:blue_skies/frostbright_leaf_pile",
+      "immersive_weathering:blue_skies/lunar_leaf_pile",
+      "immersive_weathering:blue_skies/maple_leaf_pile",
+      "immersive_weathering:blue_skies/starlit_leaf_pile",
       "immersive_weathering:burnt/blast_leaf_pile",
       "immersive_weathering:burnt/burnt_leaf_pile",
       "immersive_weathering:burnt/smoldering_acacia_leaf_pile",
@@ -125007,6 +133640,25 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "sushigocrafting:sesame_crop",
       "sushigocrafting:soy_crop",
       "sushigocrafting:wasabi_crop",
+      "swem:alfalfa_plant",
+      "swem:jump_flower_box_black",
+      "swem:jump_flower_box_blue",
+      "swem:jump_flower_box_brown",
+      "swem:jump_flower_box_cyan",
+      "swem:jump_flower_box_gray",
+      "swem:jump_flower_box_green",
+      "swem:jump_flower_box_light_blue",
+      "swem:jump_flower_box_light_gray",
+      "swem:jump_flower_box_lime",
+      "swem:jump_flower_box_magenta",
+      "swem:jump_flower_box_orange",
+      "swem:jump_flower_box_pink",
+      "swem:jump_flower_box_purple",
+      "swem:jump_flower_box_red",
+      "swem:jump_flower_box_white",
+      "swem:jump_flower_box_yellow",
+      "swem:oat_plant",
+      "swem:timothy_plant",
       "tconstruct:beetroot_soup_fluid",
       "tconstruct:blood_slime_fern",
       "tconstruct:blood_slime_leaves",
@@ -125187,6 +133839,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
       "the_flesh_that_hates:flesh_foliage"
     ],
     "sword_preserve_web": [
+      "blue_skies:spider_webbing",
       "burnt:smoldering_cobweb",
       "minecraft:cobweb",
       "minecraft:tripwire",
@@ -125194,18 +133847,20 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
     ]
   },
   "originCounts": {
-    "inference:legacy:pickaxe": 8075,
+    "inference:legacy:pickaxe": 7211,
     "delegation:loose-worked-earth": 257,
     "delegation:wood-products": 2405,
     "delegation:loose-earth": 588,
     "delegation:cultivated-soil": 15,
     "delegation:organics": 1241,
-    "inference:legacy:hoe": 57,
+    "inference:legacy:hoe": 56,
     "delegation:potted-plants": 241,
-    "inference:legacy:axe": 785,
-    "override:exact": 50,
-    "inference:legacy:knife": 127,
+    "inference:legacy:axe": 734,
+    "override:exact": 49,
+    "heuristic:catchall-solid": 564,
+    "heuristic:solid-default": 369,
     "override:web-family": 5,
+    "inference:legacy:knife": 111,
     "inference:legacy:shovel": 21,
     "inference:block-tag:minecraft:crops": 7,
     "inference:block-tag:minecraft:mineable/pickaxe": 57,
@@ -125213,5 +133868,7 @@ global.BTM_REALISTIC_HANDS_ASSIGNMENTS = {
     "inference:legacy:sword": 5,
     "inference:block-tag:minecraft:leaves": 1
   },
-  "unassignedBreakableBlocks": []
+  "unassignedBreakableBlocks": [
+
+  ]
 }

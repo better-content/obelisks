@@ -293,10 +293,29 @@ Public commands:
   tools/btm build dumps [--server-dir PATH] [--port N] [--reset-runtime]
   tools/btm build bundle curseforge [--exports-dir PATH]
   tools/btm build bundle server [--exports-dir PATH] [--server-tree-dir PATH] [--server-zip PATH] [--clean]
+  tools/btm graph item ITEM_ID [--producers|--consumers|--all] [--limit N] [--type RECIPE_TYPE] [--graph PATH]
+  tools/btm graph route ITEM_ID [--graph PATH] [--sources PATH] [--spine PATH]
+  tools/btm graph blockers ITEM_ID [--graph PATH] [--sources PATH] [--spine PATH] [--limit N]
   tools/btm inspect item ITEM_ID [--recipes|--uses|--all] [--limit N] [--type RECIPE_TYPE] [--graph PATH]
   tools/btm doctor env
   tools/btm doctor repo
   tools/btm doctor runtime --instance PATH
+""".trimIndent()
+
+fun graphHelp(): String = """
+Usage: tools/btm graph <item|route|blockers> ...
+
+Commands:
+  item ITEM_ID [--producers|--consumers|--all] [--limit N] [--type RECIPE_TYPE] [--graph PATH]
+  route ITEM_ID [--graph PATH] [--sources PATH] [--spine PATH]
+  blockers ITEM_ID [--graph PATH] [--sources PATH] [--spine PATH] [--limit N]
+
+Queries retained runtime recipe evidence from generated/runtime-dumps/recipes.json and progression inputs from kubejs/config/progression_reachability_sources.json plus kubejs/config/player_progression_regression.json.
+
+Examples:
+  tools/btm graph item minecraft:glass
+  tools/btm graph route kubejs:seared_machine_casing
+  tools/btm graph blockers minecraft:bedrock --limit 10
 """.trimIndent()
 
 fun inspectHelp(): String = """
@@ -1319,6 +1338,259 @@ fun loadRecipeGraph(path: Path): Pair<Map<String, Any?>, List<RecipeGraphHit>> {
     return graph to recipes
 }
 
+fun queryRecipeGraphItem(
+    itemId: String,
+    graphPath: Path,
+    typeFilter: String?,
+): Triple<Map<String, Any?>, List<RecipeGraphHit>, Pair<List<RecipeGraphHit>, List<RecipeGraphHit>>> {
+    val (graph, recipes) = loadRecipeGraph(graphPath)
+    val filtered = typeFilter?.let { type -> recipes.filter { it.type == type || it.type.contains(type, ignoreCase = true) } } ?: recipes
+    val producers = filtered.filter { hit -> (hit.outputs + hit.fluidsOut).any { stackMatches(it, itemId) } }
+    val consumers = filtered.filter { hit -> (hit.inputs + hit.fluidsIn + hit.catalysts).any { stackMatches(it, itemId) } }
+    return Triple(graph, recipes, producers to consumers)
+}
+
+fun handleGraph(subArgs: List<String>): CommandResult {
+    if (subArgs.isEmpty() || subArgs == listOf("--help")) {
+        return success("graph", graphHelp(), evidenceLevel = "retained-runtime")
+    }
+    val command = subArgs.first()
+    return when (command) {
+        "item" -> {
+            val itemId = subArgs.getOrNull(1) ?: return usageError("graph item requires ITEM_ID", graphHelp())
+            var mode = "all"
+            var limit = 25
+            var typeFilter: String? = null
+            var graphPath = root.resolve("generated/runtime-dumps/recipes.json")
+            val rest = subArgs.drop(2)
+            var index = 0
+            while (index < rest.size) {
+                when (rest[index]) {
+                    "--producers" -> {
+                        mode = "producers"
+                        index += 1
+                    }
+                    "--consumers" -> {
+                        mode = "consumers"
+                        index += 1
+                    }
+                    "--all" -> {
+                        mode = "all"
+                        index += 1
+                    }
+                    "--limit" -> {
+                        val raw = rest.getOrNull(index + 1) ?: return usageError("--limit needs a number", graphHelp())
+                        limit = raw.toIntOrNull() ?: return usageError("--limit needs a number", graphHelp())
+                        if (limit <= 0) return usageError("--limit must be positive", graphHelp())
+                        index += 2
+                    }
+                    "--type" -> {
+                        typeFilter = rest.getOrNull(index + 1) ?: return usageError("--type needs a recipe type", graphHelp())
+                        index += 2
+                    }
+                    "--graph" -> {
+                        graphPath = resolveUserPath(rest.getOrNull(index + 1) ?: return usageError("--graph needs a path", graphHelp()))
+                        index += 2
+                    }
+                    "--help" -> return success("graph item", graphHelp(), evidenceLevel = "retained-runtime")
+                    else -> return usageError("unknown argument: ${rest[index]}", graphHelp())
+                }
+            }
+            val (graph, recipes, pair) = queryRecipeGraphItem(itemId, graphPath, typeFilter)
+            val (producers, consumers) = pair
+            val shownProducers = producers.take(limit)
+            val shownConsumers = consumers.take(limit)
+            val generatedAt = jsonString(graph["generated_at"]) ?: jsonString(graph["generatedAt"]) ?: "UNKNOWN"
+            val producerSection = if (mode in setOf("producers", "all")) {
+                buildString {
+                    appendLine("Producers for $itemId: ${producers.size}${if (producers.size > shownProducers.size) " (showing ${shownProducers.size})" else ""}")
+                    if (shownProducers.isEmpty()) appendLine("- none")
+                    else appendLine(shownProducers.joinToString("\n") { formatRecipeHit(it) })
+                }
+            } else ""
+            val consumerSection = if (mode in setOf("consumers", "all")) {
+                buildString {
+                    appendLine("Consumers for $itemId: ${consumers.size}${if (consumers.size > shownConsumers.size) " (showing ${shownConsumers.size})" else ""}")
+                    if (shownConsumers.isEmpty()) appendLine("- none")
+                    else appendLine(shownConsumers.joinToString("\n") { formatRecipeHit(it) })
+                }
+            } else ""
+            success(
+                command = "graph item",
+                summary = listOf(
+                    "Recipe graph: ${displayPath(graphPath)} ($generatedAt, ${recipes.size} recipes)",
+                    producerSection.trimEnd(),
+                    consumerSection.trimEnd(),
+                ).filter { it.isNotBlank() }.joinToString("\n\n"),
+                details = mapOf(
+                    "item" to itemId,
+                    "mode" to mode,
+                    "limit" to limit,
+                    "typeFilter" to typeFilter,
+                    "graph" to graphPath.toString(),
+                    "generatedAt" to generatedAt,
+                    "recipeCount" to recipes.size,
+                    "producerCount" to producers.size,
+                    "consumerCount" to consumers.size,
+                    "producers" to shownProducers.map(::hitDetails),
+                    "consumers" to shownConsumers.map(::hitDetails),
+                ),
+                evidenceLevel = "retained-runtime",
+            )
+        }
+        "route" -> {
+            val itemId = subArgs.getOrNull(1) ?: return usageError("graph route requires ITEM_ID", graphHelp())
+            var graphPath = root.resolve("generated/runtime-dumps/recipes.json")
+            var sourcesPath = root.resolve("kubejs/config/progression_reachability_sources.json")
+            var spinePath = root.resolve("kubejs/config/player_progression_regression.json")
+            val rest = subArgs.drop(2)
+            var index = 0
+            while (index < rest.size) {
+                when (rest[index]) {
+                    "--graph" -> {
+                        graphPath = resolveUserPath(rest.getOrNull(index + 1) ?: return usageError("--graph needs a path", graphHelp()))
+                        index += 2
+                    }
+                    "--sources" -> {
+                        sourcesPath = resolveUserPath(rest.getOrNull(index + 1) ?: return usageError("--sources needs a path", graphHelp()))
+                        index += 2
+                    }
+                    "--spine" -> {
+                        spinePath = resolveUserPath(rest.getOrNull(index + 1) ?: return usageError("--spine needs a path", graphHelp()))
+                        index += 2
+                    }
+                    "--help" -> return success("graph route", graphHelp(), evidenceLevel = "retained-runtime")
+                    else -> return usageError("unknown argument: ${rest[index]}", graphHelp())
+                }
+            }
+            val context = loadReachabilityContext(graphPath, sourcesPath, spinePath)
+            val (reachable, reason, iterations) = solveReachability(context.recipes, context.source)
+            if (itemId !in reachable) {
+                return CommandResult(
+                    command = "graph route",
+                    status = "failure",
+                    summary = "$itemId is not reachable from accepted retained-runtime seeds; run tools/btm graph blockers $itemId for blocker details",
+                    details = mapOf(
+                        "item" to itemId,
+                        "reachable" to false,
+                        "graph" to graphPath.toString(),
+                        "sources" to sourcesPath.toString(),
+                        "spine" to spinePath.toString(),
+                        "iterations" to iterations,
+                        "route" to emptyList<Any>(),
+                    ),
+                    findings = listOf(ValidationFinding("error", "$itemId is not reachable from accepted retained-runtime seeds")),
+                    evidenceLevel = "retained-runtime",
+                    exitCode = 1,
+                )
+            }
+            val route = buildReachabilityRoute(itemId, reason)
+            success(
+                command = "graph route",
+                summary = buildString {
+                    appendLine("$itemId is reachable from accepted retained-runtime seeds in $iterations iteration(s)")
+                    append(route.joinToString("\n") { step ->
+                        val recipe = (step["recipe"] as? String)?.let { " <= $it" }.orEmpty()
+                        "${step["item"]} [${step["kind"]}]$recipe"
+                    })
+                }.trim(),
+                details = mapOf(
+                    "item" to itemId,
+                    "reachable" to true,
+                    "graph" to graphPath.toString(),
+                    "sources" to sourcesPath.toString(),
+                    "spine" to spinePath.toString(),
+                    "iterations" to iterations,
+                    "route" to route,
+                ),
+                evidenceLevel = "retained-runtime",
+            )
+        }
+        "blockers" -> {
+            val itemId = subArgs.getOrNull(1) ?: return usageError("graph blockers requires ITEM_ID", graphHelp())
+            var graphPath = root.resolve("generated/runtime-dumps/recipes.json")
+            var sourcesPath = root.resolve("kubejs/config/progression_reachability_sources.json")
+            var spinePath = root.resolve("kubejs/config/player_progression_regression.json")
+            var limit = 5
+            val rest = subArgs.drop(2)
+            var index = 0
+            while (index < rest.size) {
+                when (rest[index]) {
+                    "--graph" -> {
+                        graphPath = resolveUserPath(rest.getOrNull(index + 1) ?: return usageError("--graph needs a path", graphHelp()))
+                        index += 2
+                    }
+                    "--sources" -> {
+                        sourcesPath = resolveUserPath(rest.getOrNull(index + 1) ?: return usageError("--sources needs a path", graphHelp()))
+                        index += 2
+                    }
+                    "--spine" -> {
+                        spinePath = resolveUserPath(rest.getOrNull(index + 1) ?: return usageError("--spine needs a path", graphHelp()))
+                        index += 2
+                    }
+                    "--limit" -> {
+                        val raw = rest.getOrNull(index + 1) ?: return usageError("--limit needs a number", graphHelp())
+                        limit = raw.toIntOrNull() ?: return usageError("--limit needs a number", graphHelp())
+                        if (limit <= 0) return usageError("--limit must be positive", graphHelp())
+                        index += 2
+                    }
+                    "--help" -> return success("graph blockers", graphHelp(), evidenceLevel = "retained-runtime")
+                    else -> return usageError("unknown argument: ${rest[index]}", graphHelp())
+                }
+            }
+            val context = loadReachabilityContext(graphPath, sourcesPath, spinePath)
+            val (reachable, reason, iterations) = solveReachability(context.recipes, context.source)
+            val blockers = blockedRecipeEntries(itemId, context.recipes, context.source, reachable, limit)
+            if (itemId in reachable) {
+                return success(
+                    command = "graph blockers",
+                    summary = "$itemId is already reachable from accepted retained-runtime seeds; run tools/btm graph route $itemId for one deterministic route",
+                    details = mapOf(
+                        "item" to itemId,
+                        "reachable" to true,
+                        "graph" to graphPath.toString(),
+                        "sources" to sourcesPath.toString(),
+                        "spine" to spinePath.toString(),
+                        "iterations" to iterations,
+                        "blockers" to emptyList<Any>(),
+                    ),
+                    evidenceLevel = "retained-runtime",
+                )
+            }
+            success(
+                command = "graph blockers",
+                summary = buildString {
+                    appendLine("$itemId is not reachable from accepted retained-runtime seeds after $iterations iteration(s)")
+                    append(
+                        blockers.joinToString("\n") { blocker ->
+                            when (blocker["kind"]) {
+                                "no-producer" -> "- ${blocker["message"]}"
+                                else -> "- ${blocker["recipe"]} [${blocker["type"]}] missing " + listOf(
+                                    "items=${(blocker["missingItems"] as List<*>).joinToString(", ")}",
+                                    "tags=${(blocker["missingTags"] as List<*>).joinToString(", ")}",
+                                    "machines=${(blocker["missingMachines"] as List<*>).joinToString(", ")}",
+                                    "fluids=${(blocker["missingFluids"] as List<*>).joinToString(", ")}",
+                                ).filterNot { it.endsWith("=") }.joinToString("; ")
+                            }
+                        },
+                    )
+                }.trim(),
+                details = mapOf(
+                    "item" to itemId,
+                    "reachable" to false,
+                    "graph" to graphPath.toString(),
+                    "sources" to sourcesPath.toString(),
+                    "spine" to spinePath.toString(),
+                    "iterations" to iterations,
+                    "blockers" to blockers,
+                ),
+                evidenceLevel = "retained-runtime",
+            )
+        }
+        else -> usageError("unknown graph command: $command", graphHelp())
+    }
+}
+
 fun handleInspect(subArgs: List<String>): CommandResult {
     if (subArgs.isEmpty() || subArgs == listOf("--help")) {
         return success("inspect", inspectHelp(), evidenceLevel = "retained-runtime")
@@ -1363,10 +1635,8 @@ fun handleInspect(subArgs: List<String>): CommandResult {
             else -> return usageError("unknown argument: ${rest[index]}", inspectHelp())
         }
     }
-    val (graph, recipes) = loadRecipeGraph(graphPath)
-    val filtered = typeFilter?.let { type -> recipes.filter { it.type == type || it.type.contains(type, ignoreCase = true) } } ?: recipes
-    val recipeHits = filtered.filter { hit -> (hit.outputs + hit.fluidsOut).any { stackMatches(it, itemId) } }
-    val useHits = filtered.filter { hit -> (hit.inputs + hit.fluidsIn + hit.catalysts).any { stackMatches(it, itemId) } }
+    val (graph, recipes, pair) = queryRecipeGraphItem(itemId, graphPath, typeFilter)
+    val (recipeHits, useHits) = pair
     val shownRecipes = recipeHits.take(limit)
     val shownUses = useHits.take(limit)
     val generatedAt = jsonString(graph["generated_at"]) ?: jsonString(graph["generatedAt"]) ?: "UNKNOWN"
@@ -2654,6 +2924,213 @@ data class ReachabilityRecipe(
     val manual: Boolean = false,
 )
 
+data class ReachabilityContext(
+    val source: Map<String, Any?>,
+    val spine: Map<String, Any?>,
+    val runtimeRecipes: List<ReachabilityRecipe>,
+    val manualRecipes: List<ReachabilityRecipe>,
+    val recipes: List<ReachabilityRecipe>,
+)
+
+fun uniqueNonBlank(values: List<String>): List<String> = values.filter { it.isNotBlank() }.distinct()
+
+fun reachabilityItemEntry(id: String): Map<String, Any?> = mapOf("kind" to "item", "id" to id, "count" to 1)
+
+fun loadReachabilitySource(path: Path): Map<String, Any?> {
+    val source = jsonObject(parseJson(Files.readString(path)))
+    if (jsonString(source["schema"]) != "btm.progression_reachability_sources.v1") {
+        error("unsupported progression reachability source schema in $path: ${jsonString(source["schema"]) ?: "<missing>"}")
+    }
+    return source
+}
+
+fun loadProgressionSpine(path: Path): Map<String, Any?> {
+    val spine = jsonObject(parseJson(Files.readString(path)))
+    if (jsonString(spine["schema"]) != "btm.player_progression_regression.v1") {
+        error("unsupported player progression spine schema in $path: ${jsonString(spine["schema"]) ?: "<missing>"}")
+    }
+    return spine
+}
+
+fun loadReachabilityRuntimeRecipes(path: Path): List<ReachabilityRecipe> {
+    val (_, recipes) = loadRecipeGraph(path)
+    return recipes.map {
+        ReachabilityRecipe(
+            id = it.id,
+            type = it.type,
+            inputs = it.inputs.map { stack -> mapOf("kind" to stack.kind, "id" to stack.id, "count" to stack.count, "chance" to stack.chance) },
+            outputs = it.outputs.map { stack -> mapOf("kind" to stack.kind, "id" to stack.id, "count" to stack.count, "chance" to stack.chance) },
+            fluidsIn = it.fluidsIn.map { stack -> mapOf("kind" to stack.kind, "id" to stack.id, "amount" to stack.count, "chance" to stack.chance) },
+            manual = false,
+        )
+    }
+}
+
+fun normalizeManualEdges(edges: List<Any?>): List<ReachabilityRecipe> =
+    edges.map(::jsonObject).map {
+        ReachabilityRecipe(
+            id = jsonString(it["id"]) ?: "UNKNOWN",
+            type = "btm:manual_progression_edge",
+            inputs = jsonArray(it["inputs"]).mapNotNull(::jsonString).map(::reachabilityItemEntry),
+            outputs = jsonArray(it["outputs"]).mapNotNull(::jsonString).map(::reachabilityItemEntry),
+            fluidsIn = jsonArray(it["fluidsIn"]).mapNotNull(::jsonString).map { fluid -> mapOf("kind" to "fluid", "id" to fluid, "amount" to 1000) },
+            manual = true,
+        )
+    }
+
+fun outputItems(recipe: ReachabilityRecipe): List<String> =
+    uniqueNonBlank(recipe.outputs.filter { jsonString(it["kind"]) == "item" }.mapNotNull { jsonString(it["id"]) })
+
+fun reachabilityTagProviders(source: Map<String, Any?>): Map<String, List<String>> =
+    jsonObject(source["tagProviders"]).mapValues { jsonArray(it.value).mapNotNull(::jsonString) }
+
+fun expandTagInputs(recipe: ReachabilityRecipe, tagProviders: Map<String, List<String>>): Pair<List<List<String>>, List<String>> {
+    val missingTags = mutableListOf<String>()
+    val alternatives = mutableListOf<List<String>>()
+    for (input in recipe.inputs) {
+        when (jsonString(input["kind"])) {
+            "item" -> jsonString(input["id"])?.let { alternatives += listOf(it) }
+            "tag" -> {
+                val tagId = jsonString(input["id"]) ?: continue
+                val providers = tagProviders[tagId].orEmpty()
+                if (providers.isEmpty()) missingTags += tagId else alternatives += providers
+            }
+        }
+    }
+    return alternatives to missingTags
+}
+
+fun canSatisfyAlternatives(alternatives: List<List<String>>, reachable: Set<String>): List<String>? {
+    val chosen = mutableListOf<String>()
+    for (options in alternatives) {
+        val item = options.firstOrNull { it in reachable } ?: return null
+        chosen += item
+    }
+    return chosen
+}
+
+fun recipeMachineRequirement(recipe: ReachabilityRecipe, source: Map<String, Any?>): String? {
+    val freeRecipeTypes = jsonArray(source["freeRecipeTypes"]).mapNotNull(::jsonString)
+    if (recipe.type in freeRecipeTypes) return null
+    return jsonString(jsonObject(source["machineUnlocks"])[recipe.type])
+}
+
+fun loadReachabilityContext(
+    graphPath: Path = root.resolve("generated/runtime-dumps/recipes.json"),
+    sourcesPath: Path = root.resolve("kubejs/config/progression_reachability_sources.json"),
+    spinePath: Path = root.resolve("kubejs/config/player_progression_regression.json"),
+): ReachabilityContext {
+    val source = loadReachabilitySource(sourcesPath)
+    val spine = loadProgressionSpine(spinePath)
+    val runtimeRecipes = loadReachabilityRuntimeRecipes(graphPath)
+    val manualRecipes = normalizeManualEdges(jsonArray(source["manualEdges"]))
+    return ReachabilityContext(
+        source = source,
+        spine = spine,
+        runtimeRecipes = runtimeRecipes,
+        manualRecipes = manualRecipes,
+        recipes = runtimeRecipes + manualRecipes,
+    )
+}
+
+fun solveReachability(recipes: List<ReachabilityRecipe>, source: Map<String, Any?>): Triple<Set<String>, Map<String, Map<String, Any?>>, Int> {
+    val reachable = jsonArray(source["seedItems"]).mapNotNull(::jsonString).toMutableSet()
+    val reachableFluids = jsonArray(source["seedFluids"]).mapNotNull(::jsonString).toMutableSet()
+    val reason = mutableMapOf<String, Map<String, Any?>>()
+    reachable.forEach { reason[it] = mapOf("kind" to "seed") }
+    reachableFluids.forEach { reason["fluid:$it"] = mapOf("kind" to "seed") }
+    val tagProviders = reachabilityTagProviders(source)
+    var changed = true
+    var iterations = 0
+    while (changed && iterations < 500) {
+        changed = false
+        iterations += 1
+        for (recipe in recipes) {
+            val outputs = outputItems(recipe)
+            if (outputs.isEmpty() || outputs.all { it in reachable }) continue
+            val (alternatives, missingTags) = expandTagInputs(recipe, tagProviders)
+            if (missingTags.isNotEmpty()) continue
+            val chosenInputs = canSatisfyAlternatives(alternatives, reachable) ?: continue
+            val missingFluid = recipe.fluidsIn.firstOrNull { jsonString(it["kind"]) == "fluid" && jsonString(it["id"]) !in reachableFluids }
+            if (missingFluid != null) continue
+            val machine = recipeMachineRequirement(recipe, source)
+            if (machine != null && machine !in reachable) continue
+            for (item in outputs) {
+                if (item in reachable) continue
+                reachable += item
+                changed = true
+                reason[item] = mapOf(
+                    "kind" to if (recipe.manual) "manual" else "recipe",
+                    "recipe" to recipe.id,
+                    "type" to recipe.type,
+                    "inputs" to uniqueNonBlank(chosenInputs + listOfNotNull(machine)),
+                    "fluids" to uniqueNonBlank(recipe.fluidsIn.mapNotNull { jsonString(it["id"]) }),
+                )
+            }
+        }
+    }
+    return Triple(reachable, reason, iterations)
+}
+
+fun explainReachability(item: String, reason: Map<String, Map<String, Any?>>, depth: Int = 0, seen: MutableSet<String> = mutableSetOf()): List<String> {
+    if (!seen.add(item)) return listOf("${"  ".repeat(depth)}$item (cycle)")
+    val r = reason[item] ?: return listOf("${"  ".repeat(depth)}$item (unreached)")
+    if (jsonString(r["kind"]) == "seed") return listOf("${"  ".repeat(depth)}$item <= source")
+    val lines = mutableListOf("${"  ".repeat(depth)}$item <= ${jsonString(r["recipe"]) ?: "UNKNOWN"} [${jsonString(r["type"]) ?: "UNKNOWN"}]")
+    for (dep in jsonArray(r["inputs"]).mapNotNull(::jsonString)) lines += explainReachability(dep, reason, depth + 1, seen)
+    return lines
+}
+
+fun blockedRecipeEntries(target: String, recipes: List<ReachabilityRecipe>, source: Map<String, Any?>, reachable: Set<String>, limit: Int = 5): List<Map<String, Any?>> {
+    val producing = recipes.filter { target in outputItems(it) }
+    if (producing.isEmpty()) {
+        return listOf(mapOf("kind" to "no-producer", "message" to "no recipe or manual edge produces target"))
+    }
+    val tagProviders = reachabilityTagProviders(source)
+    return producing.take(limit).map { recipe ->
+        val (alternatives, missingTags) = expandTagInputs(recipe, tagProviders)
+        val missingItems = mutableListOf<String>()
+        for (options in alternatives) if (options.none { it in reachable }) missingItems += options.joinToString("|")
+        val missingFluids = recipe.fluidsIn.mapNotNull { jsonString(it["id"]) }.filterNot(reachable::contains)
+        val machine = recipeMachineRequirement(recipe, source)?.takeIf { it !in reachable }
+        mapOf(
+            "kind" to "candidate",
+            "recipe" to recipe.id,
+            "type" to recipe.type,
+            "missingItems" to uniqueNonBlank(missingItems),
+            "missingTags" to uniqueNonBlank(missingTags),
+            "missingMachines" to listOfNotNull(machine),
+            "missingFluids" to uniqueNonBlank(missingFluids),
+            "manual" to recipe.manual,
+        )
+    }
+}
+
+fun reachabilityTargets(source: Map<String, Any?>, spine: Map<String, Any?>): List<String> = uniqueNonBlank(
+    jsonArray(source["targets"]).mapNotNull(::jsonString) +
+        jsonArray(spine["milestones"]).flatMap { jsonArray(jsonObject(it)["outputs"]).mapNotNull(::jsonString) } +
+        jsonArray(jsonObject(spine["primaryCraftingSpine"])["runtimeProducedMachineOutputs"]).mapNotNull(::jsonString),
+)
+
+fun buildReachabilityRoute(item: String, reason: Map<String, Map<String, Any?>>): List<Map<String, Any?>> {
+    val ordered = linkedMapOf<String, Map<String, Any?>>()
+    fun visit(current: String, seen: MutableSet<String>) {
+        if (!seen.add(current) || current in ordered) return
+        val step = reason[current] ?: return
+        for (dep in jsonArray(step["inputs"]).mapNotNull(::jsonString)) visit(dep, seen)
+        ordered[current] = mapOf(
+            "item" to current,
+            "kind" to (jsonString(step["kind"]) ?: "UNKNOWN"),
+            "recipe" to jsonString(step["recipe"]),
+            "type" to jsonString(step["type"]),
+            "inputs" to jsonArray(step["inputs"]).mapNotNull(::jsonString),
+            "fluids" to jsonArray(step["fluids"]).mapNotNull(::jsonString),
+        )
+    }
+    visit(item, mutableSetOf())
+    return ordered.values.toList()
+}
+
 fun runProgressionReachabilityValidation(): ProcessRun {
     val failures = mutableListOf<String>()
     val passes = mutableListOf<String>()
@@ -2665,157 +3142,35 @@ fun runProgressionReachabilityValidation(): ProcessRun {
         failures += name
         System.err.println("FAIL - $name: $detail")
     }
-    fun unique(values: List<String>): List<String> = values.filter { it.isNotBlank() }.distinct()
-
-    fun itemEntry(id: String): Map<String, Any?> = mapOf("kind" to "item", "id" to id, "count" to 1)
-    fun loadRuntimeRecipes(): List<ReachabilityRecipe> {
-        val runtimePath = "generated/runtime-dumps/recipes.json"
-        if (!repoExists(runtimePath)) return emptyList()
-        val dump = jsonObject(repoReadJson(runtimePath))
-        if (jsonString(dump["schema"]) != "obelisks.recipe_graph.v1") {
-            fail("runtime recipe graph schema is current", jsonString(dump["schema"]) ?: "<missing>")
-            return emptyList()
-        }
-        val recipes = jsonArray(dump["recipes"]).map(::jsonObject).map {
-            ReachabilityRecipe(
-                id = jsonString(it["id"]) ?: "UNKNOWN",
-                type = jsonString(it["type"]) ?: "UNKNOWN",
-                inputs = jsonArray(it["inputs"]).map(::jsonObject),
-                outputs = jsonArray(it["outputs"]).map(::jsonObject),
-                fluidsIn = jsonArray(it["fluids_in"]).map(::jsonObject),
-                manual = false,
-            )
-        }
-        ok("runtime recipe graph loaded for reachability", "${recipes.size} recipes")
-        return recipes
-    }
-    fun normalizeManualEdges(edges: List<Any?>): List<ReachabilityRecipe> =
-        edges.map(::jsonObject).map {
-            ReachabilityRecipe(
-                id = jsonString(it["id"]) ?: "UNKNOWN",
-                type = "btm:manual_progression_edge",
-                inputs = jsonArray(it["inputs"]).mapNotNull(::jsonString).map(::itemEntry),
-                outputs = jsonArray(it["outputs"]).mapNotNull(::jsonString).map(::itemEntry),
-                fluidsIn = jsonArray(it["fluidsIn"]).mapNotNull(::jsonString).map { fluid -> mapOf("kind" to "fluid", "id" to fluid, "amount" to 1000) },
-                manual = true,
-            )
-        }
-    fun outputItems(recipe: ReachabilityRecipe): List<String> = unique(recipe.outputs.filter { jsonString(it["kind"]) == "item" }.mapNotNull { jsonString(it["id"]) })
-    fun expandTagInputs(recipe: ReachabilityRecipe, tagProviders: Map<String, List<String>>): Pair<List<List<String>>, List<String>> {
-        val missingTags = mutableListOf<String>()
-        val alternatives = mutableListOf<List<String>>()
-        for (input in recipe.inputs) {
-            when (jsonString(input["kind"])) {
-                "item" -> jsonString(input["id"])?.let { alternatives += listOf(it) }
-                "tag" -> {
-                    val tagId = jsonString(input["id"]) ?: continue
-                    val providers = tagProviders[tagId].orEmpty()
-                    if (providers.isEmpty()) missingTags += tagId else alternatives += providers
-                }
-            }
-        }
-        return alternatives to missingTags
-    }
-    fun canSatisfyAlternatives(alternatives: List<List<String>>, reachable: Set<String>): List<String>? {
-        val chosen = mutableListOf<String>()
-        for (options in alternatives) {
-            val item = options.firstOrNull { it in reachable } ?: return null
-            chosen += item
-        }
-        return chosen
-    }
-    fun recipeMachineRequirement(recipe: ReachabilityRecipe, source: Map<String, Any?>): String? {
-        val freeRecipeTypes = jsonArray(source["freeRecipeTypes"]).mapNotNull(::jsonString)
-        if (recipe.type in freeRecipeTypes) return null
-        return jsonString(jsonObject(source["machineUnlocks"])[recipe.type])
-    }
-    fun solveReachability(recipes: List<ReachabilityRecipe>, source: Map<String, Any?>): Triple<Set<String>, Map<String, Map<String, Any?>>, Int> {
-        val reachable = jsonArray(source["seedItems"]).mapNotNull(::jsonString).toMutableSet()
-        val reachableFluids = jsonArray(source["seedFluids"]).mapNotNull(::jsonString).toMutableSet()
-        val reason = mutableMapOf<String, Map<String, Any?>>()
-        reachable.forEach { reason[it] = mapOf("kind" to "seed") }
-        reachableFluids.forEach { reason["fluid:$it"] = mapOf("kind" to "seed") }
-        val tagProviders = jsonObject(source["tagProviders"]).mapValues { jsonArray(it.value).mapNotNull(::jsonString) }
-        var changed = true
-        var iterations = 0
-        while (changed && iterations < 500) {
-            changed = false
-            iterations += 1
-            for (recipe in recipes) {
-                val outputs = outputItems(recipe)
-                if (outputs.isEmpty() || outputs.all { it in reachable }) continue
-                val (alternatives, missingTags) = expandTagInputs(recipe, tagProviders)
-                if (missingTags.isNotEmpty()) continue
-                val chosenInputs = canSatisfyAlternatives(alternatives, reachable) ?: continue
-                val missingFluid = recipe.fluidsIn.firstOrNull { jsonString(it["kind"]) == "fluid" && jsonString(it["id"]) !in reachableFluids }
-                if (missingFluid != null) continue
-                val machine = recipeMachineRequirement(recipe, source)
-                if (machine != null && machine !in reachable) continue
-                for (item in outputs) {
-                    if (item in reachable) continue
-                    reachable += item
-                    changed = true
-                    reason[item] = mapOf(
-                        "kind" to if (recipe.manual) "manual" else "recipe",
-                        "recipe" to recipe.id,
-                        "type" to recipe.type,
-                        "inputs" to unique(chosenInputs + listOfNotNull(machine)),
-                        "fluids" to unique(recipe.fluidsIn.mapNotNull { jsonString(it["id"]) }),
-                    )
-                }
-            }
-        }
-        return Triple(reachable, reason, iterations)
-    }
-    fun explain(item: String, reason: Map<String, Map<String, Any?>>, depth: Int = 0, seen: MutableSet<String> = mutableSetOf()): List<String> {
-        if (!seen.add(item)) return listOf("${"  ".repeat(depth)}$item (cycle)")
-        val r = reason[item] ?: return listOf("${"  ".repeat(depth)}$item (unreached)")
-        if (jsonString(r["kind"]) == "seed") return listOf("${"  ".repeat(depth)}$item <= source")
-        val lines = mutableListOf("${"  ".repeat(depth)}$item <= ${jsonString(r["recipe"]) ?: "UNKNOWN"} [${jsonString(r["type"]) ?: "UNKNOWN"}]")
-        for (dep in jsonArray(r["inputs"]).mapNotNull(::jsonString)) lines += explain(dep, reason, depth + 1, seen)
-        return lines
-    }
-    fun blockedRecipeHints(target: String, recipes: List<ReachabilityRecipe>, source: Map<String, Any?>, reachable: Set<String>): List<String> {
-        val producing = recipes.filter { target in outputItems(it) }
-        if (producing.isEmpty()) return listOf("no recipe or manual edge produces target")
-        val tagProviders = jsonObject(source["tagProviders"]).mapValues { jsonArray(it.value).mapNotNull(::jsonString) }
-        return producing.take(5).map { recipe ->
-            val (alternatives, missingTags) = expandTagInputs(recipe, tagProviders)
-            val missingInputs = mutableListOf<String>()
-            for (options in alternatives) if (options.none { it in reachable }) missingInputs += options.joinToString("|")
-            val machine = recipeMachineRequirement(recipe, source)
-            if (machine != null && machine !in reachable) missingInputs += "machine:$machine"
-            for (fluid in recipe.fluidsIn.mapNotNull { jsonString(it["id"]) }) if (fluid !in jsonArray(source["seedFluids"]).mapNotNull(::jsonString)) missingInputs += "fluid:$fluid"
-            missingInputs += missingTags.map { "tag:$it" }
-            "${recipe.id} [${recipe.type}] missing ${missingInputs.joinToString(", ").ifBlank { "<none>" }}"
-        }
-    }
-
     val source = try {
-        jsonObject(repoReadJson("kubejs/config/progression_reachability_sources.json")).also {
-            if (jsonString(it["schema"]) == "btm.progression_reachability_sources.v1") ok("progression reachability source manifest parses", jsonString(it["schema"]) ?: "") else fail("progression reachability source manifest schema is current", jsonString(it["schema"]) ?: "<missing>")
+        loadReachabilitySource(root.resolve("kubejs/config/progression_reachability_sources.json")).also {
+            ok("progression reachability source manifest parses", jsonString(it["schema"]) ?: "")
         }
     } catch (error: Exception) {
         fail("progression reachability source manifest parses", error.message ?: error.javaClass.simpleName)
         emptyMap()
     }
     val spine = try {
-        jsonObject(repoReadJson("kubejs/config/player_progression_regression.json")).also {
+        loadProgressionSpine(root.resolve("kubejs/config/player_progression_regression.json")).also {
             ok("player progression manifest loaded for reachability targets", "${jsonArray(it["milestones"]).size} milestones")
         }
     } catch (error: Exception) {
         fail("player progression manifest loaded for reachability targets", error.message ?: error.javaClass.simpleName)
         emptyMap()
     }
-    val runtimeRecipes = loadRuntimeRecipes()
+    val runtimeRecipes = try {
+        if (!repoExists("generated/runtime-dumps/recipes.json")) emptyList()
+        else loadReachabilityRuntimeRecipes(root.resolve("generated/runtime-dumps/recipes.json")).also {
+            ok("runtime recipe graph loaded for reachability", "${it.size} recipes")
+        }
+    } catch (error: Exception) {
+        fail("runtime recipe graph schema is current", error.message ?: error.javaClass.simpleName)
+        emptyList()
+    }
     val manualRecipes = normalizeManualEdges(jsonArray(source["manualEdges"]))
     val recipes = runtimeRecipes + manualRecipes
     ok("progression solver recipe corpus assembled", "${runtimeRecipes.size} runtime, ${manualRecipes.size} manual")
-    val targets = unique(
-        jsonArray(source["targets"]).mapNotNull(::jsonString) +
-            jsonArray(spine["milestones"]).flatMap { jsonArray(jsonObject(it)["outputs"]).mapNotNull(::jsonString) } +
-            jsonArray(jsonObject(spine["primaryCraftingSpine"])["runtimeProducedMachineOutputs"]).mapNotNull(::jsonString),
-    )
+    val targets = reachabilityTargets(source, spine)
     ok("progression reachability target set assembled", "${targets.size} targets")
     val (reachable, reason, iterations) = solveReachability(recipes, source)
     ok("progression reachability fixed point computed", "${reachable.size} items in $iterations iteration(s)")
@@ -2823,7 +3178,20 @@ fun runProgressionReachabilityValidation(): ProcessRun {
     if (missingTargets.isEmpty()) ok("primary progression targets are recursively reachable from accepted sources", "${targets.size} targets")
     else {
         val details = missingTargets.take(40).joinToString("\n") { item ->
-            "$item\n  ${blockedRecipeHints(item, recipes, source, reachable).joinToString("\n  ")}"
+            "$item\n  ${blockedRecipeEntries(item, recipes, source, reachable).joinToString("\n  ") { blocker ->
+                when (blocker["kind"]) {
+                    "no-producer" -> blocker["message"].toString()
+                    else -> {
+                        val missing = buildList {
+                            addAll((blocker["missingItems"] as List<*>).map { it.toString() })
+                            addAll((blocker["missingTags"] as List<*>).map { "tag:$it" })
+                            addAll((blocker["missingMachines"] as List<*>).map { "machine:$it" })
+                            addAll((blocker["missingFluids"] as List<*>).map { "fluid:$it" })
+                        }
+                        "${blocker["recipe"]} [${blocker["type"]}] missing ${missing.joinToString(", ").ifBlank { "<none>" }}"
+                    }
+                }
+            }}"
         }
         fail("primary progression targets are recursively reachable from accepted sources", details)
     }
@@ -2832,7 +3200,7 @@ fun runProgressionReachabilityValidation(): ProcessRun {
         for (item in traceTargets) {
             appendLine()
             appendLine("route - $item")
-            appendLine(explain(item, reason).take(60).joinToString("\n"))
+            appendLine(explainReachability(item, reason).take(60).joinToString("\n"))
         }
         appendLine()
         append("progression reachability validators: ${passes.size} pass(es), ${failures.size} hard failure(s)")
@@ -4364,6 +4732,7 @@ val result = try {
         filteredArgs.isEmpty() || filteredArgs == listOf("--help") -> success("help", mainHelp(), evidenceLevel = "source")
         filteredArgs.first() == "test" -> handleTest(filteredArgs.drop(1))
         filteredArgs.first() == "build" -> handleBuild(filteredArgs.drop(1))
+        filteredArgs.first() == "graph" -> handleGraph(filteredArgs.drop(1))
         filteredArgs.first() == "inspect" -> handleInspect(filteredArgs.drop(1))
         filteredArgs.first() == "doctor" -> handleDoctor(filteredArgs.drop(1))
         filteredArgs.first() == "internal" -> handleInternal(filteredArgs.drop(1))

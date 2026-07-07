@@ -79,7 +79,60 @@ test("help shows public commands") {
     assertContains(output, "tools/btm test full", "help should list full test")
     assertContains(output, "tools/btm test static", "help should list static test")
     assertContains(output, "tools/btm build sync server", "help should list build sync server")
+    assertContains(output, "tools/btm graph item ITEM_ID", "help should list graph item")
+    assertContains(output, "tools/btm graph route ITEM_ID", "help should list graph route")
     assertContains(output, "tools/btm doctor env", "help should list doctor env")
+}
+
+test("graph help shows subcommands") {
+    val (exit, output) = runCommand("tools/btm", "graph", "--help")
+    assertTrue(exit == 0, "graph help should exit 0, got $exit")
+    assertContains(output, "Usage: tools/btm graph <item|route|blockers>", "graph help should show graph usage")
+    assertContains(output, "item ITEM_ID", "graph help should show item subcommand")
+    assertContains(output, "route ITEM_ID", "graph help should show route subcommand")
+    assertContains(output, "blockers ITEM_ID", "graph help should show blockers subcommand")
+}
+
+test("graph item without id is usage error") {
+    val (exit, output) = runCommand("tools/btm", "graph", "item")
+    assertTrue(exit == 2, "graph item without id should exit 2, got $exit")
+    assertContains(output, "graph item requires ITEM_ID", "graph item usage error should be specific")
+}
+
+test("graph item json returns producer and consumer counts") {
+    val (exit, output) = runCommand("tools/btm", "--json", "graph", "item", "minecraft:glass")
+    assertTrue(exit == 0, "graph item json should exit 0, got $exit")
+    assertContains(output, "\"command\":\"graph item\"", "graph item json should identify its command")
+    assertContains(output, "\"status\":\"success\"", "graph item json should report success")
+    assertContains(output, "\"item\":\"minecraft:glass\"", "graph item json should report the item")
+    assertContains(output, "\"producerCount\":", "graph item json should report producerCount")
+    assertContains(output, "\"consumerCount\":", "graph item json should report consumerCount")
+}
+
+test("graph route json returns a structured route") {
+    val (exit, output) = runCommand("tools/btm", "--json", "graph", "route", "kubejs:seared_machine_casing")
+    assertTrue(exit == 0, "graph route json should exit 0, got $exit")
+    assertContains(output, "\"command\":\"graph route\"", "graph route json should identify its command")
+    assertContains(output, "\"reachable\":true", "graph route json should report reachability")
+    assertContains(output, "\"route\":[", "graph route json should include a route array")
+    assertContains(output, "\"item\":\"kubejs:seared_machine_casing\"", "graph route json should include the target route step")
+}
+
+test("graph blockers json returns explicit blocker data") {
+    val (exit, output) = runCommand("tools/btm", "--json", "graph", "blockers", "minecraft:bedrock")
+    assertTrue(exit == 0, "graph blockers json should exit 0, got $exit")
+    assertContains(output, "\"command\":\"graph blockers\"", "graph blockers json should identify its command")
+    assertContains(output, "\"item\":\"minecraft:bedrock\"", "graph blockers json should report the item")
+    assertTrue(
+        output.contains("\"reachable\":true") || output.contains("\"blockers\":["),
+        "graph blockers json should include either an explicit reachable response or a blockers array\nOutput:\n$output",
+    )
+    if (output.contains("\"reachable\":false")) {
+        assertTrue(
+            output.contains("\"kind\":\"no-producer\"") || output.contains("\"kind\":\"candidate\""),
+            "graph blockers json should include either no-producer or candidate blockers when unreachable\nOutput:\n$output",
+        )
+    }
 }
 
 test("runtime without instance is usage error") {

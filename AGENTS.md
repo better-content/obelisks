@@ -58,6 +58,9 @@ Do not sync or delete player/runtime state by default. Use explicit reset flags 
 - Headless scenario validation: `tools/btm test scenario opening_progression --cycles 1`
 - Headful scenario validation: `tools/btm test scenario-headful lc_tfth_c2me_dh --cycles 1 --idle-seconds 30 --tfth-seconds 30`
 - Kotlin test runner: `tools/btm test kotlin`
+- Graph adjacency query: `tools/btm graph item ITEM_ID [--producers|--consumers|--all] [--limit N] [--type RECIPE_TYPE] [--graph PATH]`
+- Graph route query: `tools/btm graph route ITEM_ID [--graph PATH] [--sources PATH] [--spine PATH]`
+- Graph blocker query: `tools/btm graph blockers ITEM_ID [--graph PATH] [--sources PATH] [--spine PATH] [--limit N]`
 - Runtime dump refresh: `tools/btm build dumps --server-dir /tmp/btm-dump-refresh --port 25565 --reset-runtime`
 - Server sync dry run: `tools/btm build sync server --dir server-instance --dry-run`
 - Server sync apply: `tools/btm build sync server --dir server-instance --apply`
@@ -70,6 +73,7 @@ Do not sync or delete player/runtime state by default. Use explicit reset flags 
 - Runtime inspection: `tools/btm doctor runtime --instance /path/to/fresh/runtime`
 
 The supported public contract is the `btm` tree only. Legacy shell, Python, and Node entrypoints remain as internal implementation detail until their Kotlin replacements land; do not teach or depend on them as the front door.
+`tools/btm graph ...` is the supported agent-facing graph navigation API. It is Kotlin-backed, JSON-first through the global `--json` envelope, and depends on retained runtime evidence in `generated/runtime-dumps/recipes.json` plus the progression inputs under `kubejs/config/`.
 Outside `kubejs/`, JavaScript is transitional only where an existing pack/runtime integration requires it. Do not add new `.js` or `.mjs` entrypoints under `tools/`. New non-KubeJS automation should default to Kotlin under the `btm` surface or to internal Kotlin support scripts it calls.
 The active tooling surface is Kotlin-first. If you find legacy Node-era instructions or generated metadata, treat them as cleanup debt and port them to Kotlin instead of extending them.
 Original shell/Python tools are quarantined under `tools/quarantine/original-tools/` for archival reference. Do not move them back into the active `tools/` root.

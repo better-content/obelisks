@@ -18,6 +18,9 @@ tools/btm test static
 tools/btm test runtime --instance /path/to/fresh/runtime
 tools/btm test runtime --instance /path/to/fresh/runtime --strict-data-dumps
 tools/btm test smoke --server-dir /tmp/btm-agent-validate-smoke --port 25565 --reset-runtime
+tools/btm graph item minecraft:glass
+tools/btm graph route kubejs:seared_machine_casing
+tools/btm graph blockers minecraft:bedrock
 tools/btm build dumps --server-dir /tmp/btm-dump-refresh --port 25565 --reset-runtime
 tools/btm test scenario-headful dimension_worldgen --cycles 1 --radius 1 --samples 1 --bootstrap-mode once
 tools/btm test scenario-headful lc_tfth_c2me_dh --cycles 1 --idle-seconds 30 --tfth-seconds 30 --bootstrap-mode once
@@ -40,6 +43,7 @@ tools/btm doctor runtime --instance /path/to/fresh/runtime
 - `--runtime`: strict validation of an existing fresh runtime's logs and KubeJS audit dumps.
 - `--strict-data-dumps`: additionally requires vanilla `/dump` output such as `dump/data_raw/loot_tables`; this is separate from KubeJS audit dumps under `kubejs/config`.
 - `--smoke`: fresh disposable server bootstrap, boot, hard-log scan, and strict runtime suite.
+- `tools/btm graph ...`: supported retained-runtime graph API for item adjacency, one deterministic progression route, and blocker hints. It requires a current retained `generated/runtime-dumps/recipes.json` and reads progression manifests from `kubejs/config/`.
 - `build dumps`: fresh disposable server bootstrap plus refresh of the full retained runtime-dump surface, including direct runtime JSON, retained Burnt coverage tables, functional-block audits, and KubeJS config dumps.
 - `tools/btm test scenario` is the supported front door for headless-safe harness-backed runtime scenarios.
 - `tools/btm test scenario-headful` is the supported front door for headful harness-backed runtime scenarios.

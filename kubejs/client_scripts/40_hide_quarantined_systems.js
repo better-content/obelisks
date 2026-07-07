@@ -73,10 +73,6 @@ var BTM_HIDDEN_DIRECT_DIMENSION_TRAVEL_ITEMS = [
     'irons_spellbooks:pocket_dimension_portal_frame',
     'irons_spellbooks:wayward_compass',
     'aether:aether_portal_frame',
-    'blue_skies:everbright_portal',
-    'blue_skies:everdawn_portal',
-    'blue_skies:multi_portal_item',
-    'blue_skies:portal_activator',
     'deeperdarker:otherside_portal'
 ]
 

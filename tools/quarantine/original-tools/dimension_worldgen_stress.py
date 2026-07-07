@@ -14,8 +14,6 @@ DIMENSIONS = [
     "minecraft:the_nether",
     "minecraft:the_end",
     "aether:the_aether",
-    "blue_skies:everbright",
-    "blue_skies:everdawn",
     "undergarden:undergarden",
     "twilightforest:twilight_forest",
     "deeperdarker:otherside",

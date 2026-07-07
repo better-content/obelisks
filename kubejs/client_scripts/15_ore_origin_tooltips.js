@@ -251,7 +251,7 @@ var BTM_METEOR_ORE_ORIGINS = [
             'swem:cantazarite_ore',
             'swem:cantazarite'
         ],
-        lines: btmOreOriginLines('Meteor sky dimensions', 'Natural generation is in Aether, Everbright, and Everdawn meteor target biomes.', 'The original Overworld generators are disabled.')
+        lines: btmOreOriginLines('Meteor sky dimensions', 'Natural generation is in Aether meteor target biomes.', 'The original Overworld generators are disabled.')
     },
     {
         ores: ['darkstone', 'gilded_darkstone', 'jade_ore', 'cthonic_gold_ore', 'soulstone_ore', 'brilliant_stone', 'xpetrified_ore'],
@@ -280,7 +280,7 @@ var BTM_METEOR_ORE_ORIGINS = [
             'malum:deepslate_quartz_ore',
             'malum:natural_quartz'
         ],
-        lines: btmOreOriginLines('Meteor sky and deep dimensions', 'Natural quartz appears in Aether, Everbright, Everdawn, Undergarden, and Otherside meteor targets.', 'Malum quartz geodes are relocated with the ore.')
+        lines: btmOreOriginLines('Meteor sky and deep dimensions', 'Natural quartz appears in Aether, Undergarden, and Otherside meteor targets.', 'Malum quartz geodes are relocated with the ore.')
     },
     {
         ores: [],
@@ -303,7 +303,7 @@ var BTM_METEOR_ORE_ORIGINS = [
             'hexerei:selenite_cluster',
             'hexerei:selenite_shard'
         ],
-        lines: btmOreOriginLines('Meteor sky dimensions', 'Selenite geodes generate in Aether, Everbright, and Everdawn meteor target biomes.', 'The original Overworld geode modifier is disabled.')
+        lines: btmOreOriginLines('Meteor sky dimensions', 'Selenite geodes generate in Aether meteor target biomes.', 'The original Overworld geode modifier is disabled.')
     },
     {
         ores: [],
@@ -329,7 +329,7 @@ var BTM_METEOR_ORE_ORIGINS = [
             'tconstruct:large_sky_slime_crystal_bud',
             'tconstruct:sky_slime_crystal_cluster'
         ],
-        lines: btmOreOriginLines('Meteor sky dimensions', 'Sky slime crystal geodes generate in Aether, Everbright, and Everdawn meteor target biomes.', 'The original TConstruct geode modifier is disabled.')
+        lines: btmOreOriginLines('Meteor sky dimensions', 'Sky slime crystal geodes generate in Aether meteor target biomes.', 'The original TConstruct geode modifier is disabled.')
     },
     {
         ores: [],
@@ -350,12 +350,6 @@ var BTM_METEOR_EV_STONES = [
     'gravel',
     'aether_holystone',
     'aether_mossy_holystone',
-    'blue_skies_turquoise_stone',
-    'blue_skies_lunar_stone',
-    'blue_skies_rimestone',
-    'blue_skies_taratite',
-    'blue_skies_umber',
-    'blue_skies_cinderstone',
     'undergarden_depthrock',
     'undergarden_shiverstone',
     'undergarden_tremblecrust',

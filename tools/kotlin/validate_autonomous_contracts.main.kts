@@ -577,6 +577,7 @@ fun validateMagicBody() {
         sourceRoot.resolve("rpg-stats/src/main/kotlin/com/example/rpgstats/common/event/CommonForgeEvents.kt"),
         sourceRoot.resolve("rpg-stats/src/main/kotlin/com/example/rpgstats/common/points/PointAwarder.kt"),
         sourceRoot.resolve("rpg-stats/src/main/kotlin/com/example/rpgstats/common/item/StillBeatingHeartData.kt"),
+        sourceRoot.resolve("class-selector/src/main/kotlin/com/example/classselector/respawn/PersonalRespawnEvents.kt"),
         sourceRoot.resolve("class-selector/src/main/kotlin/com/example/classselector/respawn/PersonalRespawnSystem.kt"),
     ).joinToString("\n") { if (it is String) it else if ((it as Path).exists()) readAbs(it) else "" }
     val deathSourceMarkers = listOf(
@@ -635,7 +636,7 @@ fun validateClientQuestIntent() {
 fun validateVanillaStyleToolSuppression() {
     val server = read("kubejs/server_scripts/30_recipe_replace/60_vanilla_tools_to_tcon_heads.js")
     val client = read("kubejs/client_scripts/20_hide_vanilla_tools.js")
-    val requiredToolMarkers = listOf("minecraft:", "ae2", "aether", "blue_skies", "deeperdarker", "everythingcopper", "forbidden_arcanus", "goety", "iceandfire", "malum", "occultism:iesnium_pickaxe", "the_finley_dimension_remastered", "undergarden", "twilightforest:ironwood_pickaxe", "ars_nouveau:enchanters_sword", "blue_skies:maple_spear", "create:cardboard_sword", "farmersdelight:flint_knife", "notreepunching:flint_pickaxe", "notreepunching:iron_saw", "rpgstats:iron_ritual_dagger", "undergarden:forgotten_battleaxe")
+    val requiredToolMarkers = listOf("minecraft:", "ae2", "aether", "deeperdarker", "everythingcopper", "forbidden_arcanus", "goety", "iceandfire", "malum", "occultism:iesnium_pickaxe", "the_finley_dimension_remastered", "undergarden", "twilightforest:ironwood_pickaxe", "ars_nouveau:enchanters_sword", "create:cardboard_sword", "farmersdelight:flint_knife", "notreepunching:flint_pickaxe", "notreepunching:iron_saw", "rpgstats:iron_ritual_dagger", "undergarden:forgotten_battleaxe")
     val missingToolMarkers = requiredToolMarkers.filter { it !in server || it !in client }
     if (missingToolMarkers.isEmpty()) ok("vanilla-style tool suppression covers audited mod families", "${requiredToolMarkers.size} markers")
     else fail("vanilla-style tool suppression covers audited mod families", missingToolMarkers.joinToString(", "))
@@ -1034,17 +1035,17 @@ fun validateDimensionProofGraphStartsImpl() {
     val progression = read("docs/progression.md")
     val obeliskSection = Regex("""## Obelisk Dimension Graph Starts\n([\s\S]*?)(?=\n## )""").find(progression)?.groupValues?.getOrNull(1).orEmpty()
     val dimensionIds = Regex("""['"]kubejs:dimension_graph/([^/'"]+)/""").findAll(recipeText).map { it.groupValues[1] }.toSet()
-    val missingDimensions = listOf("aether", "everdawn", "everbright").filterNot(dimensionIds::contains)
-    if (missingDimensions.isEmpty()) ok("dimension proof graph-start recipe ids cover mapped route dimensions", "aether, everdawn, everbright") else fail("dimension proof graph-start recipe ids cover mapped route dimensions", missingDimensions.joinToString(", "))
+    val missingDimensions = listOf("aether").filterNot(dimensionIds::contains)
+    if (missingDimensions.isEmpty()) ok("dimension proof graph-start recipe ids cover mapped route dimensions", "aether") else fail("dimension proof graph-start recipe ids cover mapped route dimensions", missingDimensions.joinToString(", "))
     if ("BTM_DIM_PROOF_ADDED" in recipeText && "btmDimProofShaped" in recipeText) ok("dimension proof graph-start pass uses explicit helper and recipe counter") else fail("dimension proof graph-start pass uses explicit helper and recipe counter", "missing BTM_DIM_PROOF_ADDED or btmDimProofShaped")
-    val requiredRecipeMarkers = listOf("hangglider:glider_wing", "immersive_aircraft:hull", "cold_sweat:waterskin", "brewinandchewin:keg", "minecraft:soul_torch", "minecraft:fermented_spider_eye").filterNot(recipeText::contains)
-    if (requiredRecipeMarkers.isEmpty()) ok("dimension proof graph-start outputs stay on route-tool surfaces", "6 outputs") else fail("dimension proof graph-start outputs stay on route-tool surfaces", requiredRecipeMarkers.joinToString(", "))
-    val forbiddenOutputPrefixes = listOf("create:","ae2:","advanced_ae:","pneumaticcraft:","computerbridge:","oc2r:","bloodmagic:","ars_nouveau:","hexerei:","malum:","goety:","irons_spellbooks:","aether:","blue_skies:","deeperdarker:","thirst:")
+    val requiredRecipeMarkers = listOf("hangglider:glider_wing", "hangglider:glider_framework", "immersive_aircraft:hull", "immersive_aircraft:propeller").filterNot(recipeText::contains)
+    if (requiredRecipeMarkers.isEmpty()) ok("dimension proof graph-start outputs stay on route-tool surfaces", "4 outputs") else fail("dimension proof graph-start outputs stay on route-tool surfaces", requiredRecipeMarkers.joinToString(", "))
+    val forbiddenOutputPrefixes = listOf("create:","ae2:","advanced_ae:","pneumaticcraft:","computerbridge:","oc2r:","bloodmagic:","ars_nouveau:","hexerei:","malum:","goety:","irons_spellbooks:","aether:","deeperdarker:","thirst:")
     val authoredOutputs = Regex("""btmDimProofShaped\(event, '([^']+)'""").findAll(recipeText).map { it.groupValues[1] }.toList()
     val forbiddenOutputs = authoredOutputs.filter { output -> forbiddenOutputPrefixes.any(output::startsWith) }
     if (forbiddenOutputs.isEmpty()) ok("dimension proof graph-start recipes avoid self-label and spine reassignment outputs", "${authoredOutputs.size} authored outputs") else fail("dimension proof graph-start recipes avoid self-label and spine reassignment outputs", forbiddenOutputs.joinToString(", "))
     val tableRows = obeliskSection.lines().filter { it.startsWith('|') && !it.contains("---") }
-    val forbiddenPositiveMappings = listOf("Aether" to Regex("""^Aether$""", RegexOption.IGNORE_CASE), "Everbright" to Regex("""Blue Skies"""), "Everdawn" to Regex("""Blue Skies"""), "Otherside" to Regex("""DeeperDarker"""))
+    val forbiddenPositiveMappings = listOf("Aether" to Regex("""^Aether$""", RegexOption.IGNORE_CASE), "Otherside" to Regex("""DeeperDarker"""))
         .flatMap { (dimension, pattern) ->
             val row = tableRows.find { "| $dimension |" in it }.orEmpty()
             val graphStart = row.split('|').getOrNull(2)?.trim().orEmpty()
@@ -1054,21 +1055,16 @@ fun validateDimensionProofGraphStartsImpl() {
     val spineTerms = listOf("Create", "AE2", "PneumaticCraft", "OC2R", "Ars", "Hexerei", "Malum", "Goety", "Iron's Spells")
     val positiveTableSpineClaims = tableRows.filter { "| Nether |" !in it && "| Undergarden |" !in it }.filter { row -> spineTerms.any { term -> (row.split('|').getOrNull(2)?.trim().orEmpty()).contains(term) } }
     if (positiveTableSpineClaims.isEmpty()) ok("obelisk graph-start table does not reassign tech or magic spines") else fail("obelisk graph-start table does not reassign tech or magic spines", positiveTableSpineClaims.joinToString("\n"))
-    val everdawnRow = tableRows.find { "| Everdawn |" in it }.orEmpty()
-    val everbrightRow = tableRows.find { "| Everbright |" in it }.orEmpty()
     val basicWaterOutputs = authoredOutputs.filter { it == "minecraft:water_bucket" || it == "minecraft:potion" || it.startsWith("thirst:") }
-    if (Regex("""basic water[^.]{0,80}(gate|gated|open|opens|require|requires)""", RegexOption.IGNORE_CASE).containsMatchIn(everdawnRow) && !Regex("""ungated|remain outside|outside this gate""", RegexOption.IGNORE_CASE).containsMatchIn(everdawnRow)) fail("Everdawn route does not claim to gate basic water", everdawnRow)
-    else if (basicWaterOutputs.isNotEmpty()) fail("Everdawn route recipes do not gate basic water outputs", basicWaterOutputs.joinToString(", "))
-    else ok("Everdawn route leaves basic water ungated")
-    if (Regex("""Hexerei|Occultism|Malum|Goety""", RegexOption.IGNORE_CASE).containsMatchIn(everbrightRow) && !Regex("""without taking ownership|does not own|doesn't own|without owning""", RegexOption.IGNORE_CASE).containsMatchIn(everbrightRow)) fail("Everbright route does not claim ownership of the dark magic spine", everbrightRow)
-    else ok("Everbright route stays on dark-side expedition support")
+    if (basicWaterOutputs.isEmpty()) ok("dimension proof routes leave basic water ungated")
+    else fail("dimension proof routes do not gate basic water outputs", basicWaterOutputs.joinToString(", "))
 }
 
 fun validateDimensionTravelRoutesImpl() {
     val routeText = read("kubejs/server_scripts/30_recipe_replace/170_space_dimension_access_gates.js")
     val hiddenText = read("kubejs/client_scripts/40_hide_quarantined_systems.js")
     val removeText = read("kubejs/server_scripts/20_recipe_remove/30_remove_items.js")
-    val directRouteItems = listOf("fallout_wastelands_:portal_frame","fallout_wastelands_:wastelands","the_finley_dimension_remastered:finley_dimension","undergarden:catalyst","callfromthedepth_:depth","bloodmagic:simplekey","bloodmagic:minekey","bloodmagic:mineentrancekey","bloodmagic:teleposer","bloodmagic:telepositionsigil","bloodmagic:reagentteleposition","bloodmagic:teleposerfocus","bloodmagic:reinforcedteleposerfocus","bloodmagic:enhancedteleposerfocus","aether:aether_portal_frame","blue_skies:everbright_portal","blue_skies:everdawn_portal","blue_skies:multi_portal_item","blue_skies:portal_activator","deeperdarker:otherside_portal")
+    val directRouteItems = listOf("fallout_wastelands_:portal_frame","fallout_wastelands_:wastelands","the_finley_dimension_remastered:finley_dimension","undergarden:catalyst","callfromthedepth_:depth","bloodmagic:simplekey","bloodmagic:minekey","bloodmagic:mineentrancekey","bloodmagic:teleposer","bloodmagic:telepositionsigil","bloodmagic:reagentteleposition","bloodmagic:teleposerfocus","bloodmagic:reinforcedteleposerfocus","bloodmagic:enhancedteleposerfocus","aether:aether_portal_frame","deeperdarker:otherside_portal")
     val missingDirectSuppression = directRouteItems.filter { it !in routeText || it !in hiddenText || it !in removeText }
     val directRecipeConstructors = Regex("""event\.(shaped|shapeless)\s*\(""").containsMatchIn(routeText)
     if (missingDirectSuppression.isEmpty() && !directRecipeConstructors) ok("direct dimension portal/key routes are suppressed and not re-authored", "${directRouteItems.size} route items")
@@ -1092,7 +1088,7 @@ fun validateDimensionTravelRoutesImpl() {
     }
     if (routeProblems.isEmpty()) ok("Creating Space rocket graph owns non-meteor adventure dimensions", "${spaceRoutes.size} dimensions") else fail("Creating Space rocket graph owns non-meteor adventure dimensions", routeProblems.joinToString(", "))
     val disabledStructures = jsonArray(readJson("config/structurify.json")["structures"]).map(::jsonObject).filter { bool(it["is_disabled"]) == true }.mapNotNull { jsonString(it["name"]) }.toSet()
-    val directPortalStructures = listOf("minecraft:ruined_portal","minecraft:ruined_portal_desert","minecraft:ruined_portal_jungle","minecraft:ruined_portal_mountain","minecraft:ruined_portal_nether","minecraft:ruined_portal_ocean","minecraft:ruined_portal_swamp","minecraft:stronghold","minecraft:ancient_city","ars_additions:ruined_portal","aether:ruined_portal","aether:ruined_portal_aether","aether:ruined_portal_desert","aether:ruined_portal_jungle","aether:ruined_portal_mountain","aether:ruined_portal_swamp","blue_skies:gatekeeper_house_mountain","blue_skies:gatekeeper_house_plains","blue_skies:gatekeeper_house_snowy","callfromthedepth_:ancientportal","deeperdarker:ancient_temple","the_finley_dimension_remastered:constructed_finley_portal_living","the_finley_dimension_remastered:constructed_finley_portal_plains","the_finley_dimension_remastered:constructed_finley_portal_wastes","the_finley_dimension_remastered:ruined_finley_portal")
+    val directPortalStructures = listOf("minecraft:ruined_portal","minecraft:ruined_portal_desert","minecraft:ruined_portal_jungle","minecraft:ruined_portal_mountain","minecraft:ruined_portal_nether","minecraft:ruined_portal_ocean","minecraft:ruined_portal_swamp","minecraft:stronghold","minecraft:ancient_city","ars_additions:ruined_portal","aether:ruined_portal","aether:ruined_portal_aether","aether:ruined_portal_desert","aether:ruined_portal_jungle","aether:ruined_portal_mountain","aether:ruined_portal_swamp","callfromthedepth_:ancientportal","deeperdarker:ancient_temple","the_finley_dimension_remastered:constructed_finley_portal_living","the_finley_dimension_remastered:constructed_finley_portal_plains","the_finley_dimension_remastered:constructed_finley_portal_wastes","the_finley_dimension_remastered:ruined_finley_portal")
     val missingDisabledStructures = directPortalStructures.filterNot(disabledStructures::contains)
     if (missingDisabledStructures.isEmpty()) ok("portal-bearing structures are disabled", "${directPortalStructures.size} structures") else fail("portal-bearing structures are disabled", missingDisabledStructures.joinToString(", "))
     val aetherObelisk = readJson("config/obelisks/obelisks/aether.json")

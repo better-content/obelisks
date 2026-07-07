@@ -79,10 +79,10 @@ ServerEvents.recipes(event => {
             { item: 'undergarden:deepsoil' },
             { item: 'undergarden:deepsoil' },
             { item: 'undergarden:deepsoil' },
-            { item: 'blue_skies:crystal_sand' },
-            { item: 'blue_skies:crystal_sand' },
-            { item: 'blue_skies:crystal_sand' },
-            { item: 'blue_skies:crystal_sand' }
+            { item: 'minecraft:netherrack' },
+            { item: 'minecraft:netherrack' },
+            { item: 'minecraft:netherrack' },
+            { item: 'minecraft:netherrack' }
         ],
         results: [{ item: 'tconstruct:nether_grout', count: 12 }]
     }).id('kubejs:create/mixing/nether_grout')

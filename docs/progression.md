@@ -35,21 +35,20 @@ Starting identities should read like jobs with partial truths, not solved classe
 
 Meteor/obelisk dimensions are origin proofs for outside reward systems. A valid edge needs native dimensional resources, hazards or structures, a first meaningful proof item, and a system whose entry feels earned there. The dimension is not a self-label and does not take ownership of the main tech or magic spine.
 
-Current graph-start recipe gates are in `kubejs/server_scripts/30_recipe_replace/155_dimension_proof_graph_starts.js`. Existing Nether proof lives in the TCon grout pass; Undergarden now remains a later deep-survival material route rather than the first Blood Altar body.
+Current graph-start recipe gates are in `kubejs/server_scripts/30_recipe_replace/155_dimension_proof_graph_starts.js`. Existing Nether proof lives in the TCon grout pass, Aether owns early air mobility, Undergarden owns food/forage/body-survival pressure, and Otherside is the origin for sculk, echo, soul, and resonance matter refined by Blood Magic.
 
-Dimension travel has two authored surfaces only: Dimensional Fonts from `dimensionalfonts-1.0.0.jar` plus `config/obelisks/`, and Creating Space rocket graph entries under `kubejs/data/*/creatingspace/rocket_accessible_dimension/`. Direct portal/key routes are removed or hidden by `170_space_dimension_access_gates.js`, `40_hide_quarantined_systems.js`, `config/twilightforest-common.toml`, and `config/structurify.json`. Lost Cities, Twilight Forest, Fallout Wastelands, Finley, and Call From The Depths are space-routed adventure dimensions.
+Dimension travel has two authored surfaces only: Dimensional Fonts from `dimensionalfonts-1.0.0.jar` plus `config/obelisks/`, and Creating Space rocket graph entries under `kubejs/data/*/creatingspace/rocket_accessible_dimension/`. Direct portal/key routes are removed or hidden by `170_space_dimension_access_gates.js`, `40_hide_quarantined_systems.js`, `config/twilightforest-common.toml`, and `config/structurify.json`. The authored early font set is Nether, Aether, Undergarden, and Otherside; End font access is removed while strongholds remain disabled. Font shrine structure-set spacing is now 30 with separation 9, making shrines roughly twice as common as the earlier 42/12 spread. Lost Cities, Twilight Forest, Fallout Wastelands, Finley, and Call From The Depths are space-routed adventure dimensions.
 
 | Dimension | Graph Start Opened | Proof Route |
 | --- | --- | --- |
 | Nether | TConstruct metallurgy proof edge | Netherrack grout and Nether heat/material recipes prove the first serious molten-material route. This keeps TCon rooted in the tech spine while letting Nether travel supply its first hard proof. |
-| Undergarden | Deep survival and later magic materials | Shiverstone, depthrock, cloggrum, regalium, and blood globules remain deep-route materials for later magic and survival escalation after the first heart-bound Blood Altar is online. |
+| Undergarden | Food, forage, pantry, and body survival | Shiverstone, depthrock, cloggrum, regalium, blood globules, and Undergarden forage support the survival pantry and body-system loop without owning Blood Magic entry. |
 | Aether | Air travel and expedition mobility | `aether:blue_aercloud`, `aether:skyroot_stick`, `aether:zanite_gemstone`, `aether:aerogel`, `aether:quicksoil_glass`, and `aether:ambrosium_shard` enter Hang Glider wings/frameworks and Immersive Aircraft sail/hull/propeller components. |
-| Everdawn | Light-side expedition support | `blue_skies:brewberry`, `blue_skies:pyrope_gem`, `blue_skies:lunar_planks`, and `blue_skies:polished_umber` open Cold Sweat waterskins and Brewin kegs. Thirst bowls, bottles, buckets, and basic water purification remain ungated by dimensions. |
-| Everbright | Dark-side expedition support | `blue_skies:moonstone`, `blue_skies:aquite`, and Everbright woodcraft open soul-torch fieldcraft and fermented-spider-eye scouting supplies. The dimension feeds dark-route exploration pressure without taking ownership of Hexerei, Occultism, Malum, or Goety workstations. |
+| Otherside | Magic material origin | `deeperdarker:cobbled_sculk_stone`, gloomslate, echo wood/shards, soul dust, sculk bone, soul crystal, resonarium, and reinforced echo shards become the common substrate for Blood-refined non-Hexerei magic materials. |
 
-Otherside and End have no active graph-start mapping until their material identities are redesigned.
+The removed sky-dimension mod is no longer active pack content. End has no authored Dimensional Font access.
 
-Mod-specific natural ore and geode origins that are not part of the Realistic Ores deposit pass are meteor-dimension content. Their Overworld and ordinary Nether biome modifiers are suppressed by `datapacks/meteor_ore_relocation`, then reintroduced in Aether, Blue Skies, Undergarden, Otherside, or Nether-obelisk target tags with Excavated Variants support for the local stone skins. Gravel is registered as a gravel Excavated Variants substrate, so gravel-specific meteor ores resolve to `excavated_variants:gravel_*` blocks and remain shovel-gated. This relocates raw worldgen origins only; workstation and recipe entry still follows the authored two-spine magic graph plus the independent Ars manuscript lane. JEI/EMI-facing ore origin tooltips live in `kubejs/client_scripts/15_ore_origin_tooltips.js` and should be updated with any future ore source move.
+Mod-specific natural ore and geode origins that are not part of the Realistic Ores deposit pass are meteor-dimension content. Their Overworld and ordinary Nether biome modifiers are suppressed by `datapacks/meteor_ore_relocation`, then reintroduced in Aether, Undergarden, Otherside, or Nether-obelisk target tags with Excavated Variants support for the local stone skins. Gravel is registered as a gravel Excavated Variants substrate, so gravel-specific meteor ores resolve to `excavated_variants:gravel_*` blocks and remain shovel-gated. This relocates raw worldgen origins only; workstation and recipe entry still follows the authored two-spine magic graph plus the independent Ars manuscript lane. JEI/EMI-facing ore origin tooltips live in `kubejs/client_scripts/15_ore_origin_tooltips.js` and should be updated with any future ore source move.
 
 ## Machine Casing Ladder
 
@@ -106,7 +105,7 @@ All non-grown renewable resource sources should be absent or quarantined. Geolog
 
 ## Magic Gates
 
-Still-Beating Hearts bridge the death loop and body systems into Blood Magic. `rpgstats:still_beating_heart` is a milestone item, not bulk fuel. Current KubeJS adds pack-owned heart keys and Blood Orb altar recipes in `40_blood_orbs_from_still_beating_hearts.js`; the weak orb also has a direct still-beating-heart altar fallback so the first Blood Magic loop is not bricked by its own catalyst chain. `82_blood_magic_lifeforce_rework.js` makes the Blood Altar consume the heart directly, while later altar/rune escalation remains costly.
+Still-Beating Hearts bridge the death loop and body systems into Blood Magic. `rpgstats:still_beating_heart` is a milestone item, not bulk fuel. Current KubeJS adds pack-owned heart keys and Blood Orb altar recipes in `40_blood_orbs_from_still_beating_hearts.js`; the weak orb also has a direct still-beating-heart altar fallback so the first Blood Magic loop is not bricked by its own catalyst chain. `82_blood_magic_lifeforce_rework.js` makes the first Blood Altar consume the heart plus common Otherside proof from `deeperdarker:cobbled_sculk_stone`, while later altar/rune escalation remains costly.
 
 Growables now feed chemistry through `57_grown_material_acid_ball_processing.js`. Plants, fungi, honeycomb, meat, fish, hide, bone, feather, and venomous tissue use the same solvent/grinding-ball language as Realistic Ores, so farm and animal loops produce differentiated chemical side streams rather than one generic biomass output.
 
@@ -114,20 +113,20 @@ The downstream chemistry pass makes those side streams matter without turning th
 
 Chemical alternatives can offer higher yield, earlier access with more setup, or byproduct-consuming substitutions depending on the target. Finished circuits remain PNCR assembly authority; chemistry prepares wafers, boards, printed processors, etchants, capacitors, and transistors rather than bypassing that completion step. Create recipes represent open bulk processing, grinding media, acids, precipitation, and reduction; PNCR recipes represent sealed pressure, gas handling, thermal control, polymers, and etching; Blood Magic recipes are deliberately manual LP/slate routes with better yield instead of unattended throughput.
 
-Blood Magic slates are the side-magic authority where a recipe needs hard proof, but the authored graph is no longer a light-versus-dark split:
+Blood Magic slates are the side-magic authority where a recipe needs hard proof, and Otherside matter is now the shared raw substrate for non-Hexerei magic infrastructure:
 
-- Blank Slate: first Blood work, Malum, and the earliest Ars teaser/manuscript proofs.
-- Reinforced Slate: Hexerei and low-tier cross-magic utility.
-- Infused Slate: Occultism bridge content, Ars source handling, and stronger manuscript conversion.
-- Demonic Slate: Goety operations, heavier Ars apparatus/glyph manuscripts, Forbidden and Arcanus, and stronger hybrid schools.
-- Ethereal Slate: late programmable or endgame magic where installed and confirmed.
+- Blank Slate: first Blood work, Malum, common cobbled sculk stone, and the earliest Ars teaser/manuscript proofs.
+- Reinforced Slate: Hexerei and low-tier cross-magic utility, usually paired with gloomslate or echo wood outside Hexerei's core folk identity.
+- Infused Slate: Occultism bridge content, Ars source handling, stronger manuscript conversion, and sculk sensor/catalyst/shrieker or echo-shard matter.
+- Demonic Slate: Goety operations, heavier Ars apparatus/glyph manuscripts, Forbidden and Arcanus, and soul dust or sculk bone matter.
+- Ethereal Slate: late programmable or endgame magic using soul crystal, resonarium, or reinforced echo shard matter where installed and confirmed.
 
 This keeps the agreed graph explicit:
 
 - Fonts spine: Dimensional Fonts -> Hexerei -> Occultism
 - Blood spine: Blood Magic -> Malum -> Goety
 - Ars lane: early novice book, then manuscript-authored glyph unlocks fed by both dirty spines plus Create/control precision
-- Blue Skies: Everdawn and Everbright remain expedition lanes rather than owners of a magic spine.
+- Otherside: common origin for Blood-refined magic matter, not a standalone magic workstation spine.
 
 Cross-mod material standardization stays moderate:
 

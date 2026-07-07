@@ -6,7 +6,6 @@ var BTM_VANILLA_TOOL_KINDS = ['pickaxe', 'axe', 'shovel', 'sword', 'hoe']
 var BTM_VANILLA_STYLE_TOOL_FAMILIES = [
     ['ae2', ['certus_quartz', 'fluix', 'nether_quartz']],
     ['aether', ['gravitite', 'holystone', 'skyroot', 'zanite']],
-    ['blue_skies', ['aquite', 'bluebright', 'charoite', 'comet', 'diopside', 'dusk', 'frostbright', 'horizonite', 'lunar', 'lunar_stone', 'maple', 'pyrope', 'starlit', 'turquoise_stone']],
     ['deeperdarker', ['resonarium', 'warden']],
     ['everythingcopper', ['copper']],
     ['forbidden_arcanus', ['draco_arcanus']],
@@ -19,13 +18,6 @@ var BTM_VANILLA_STYLE_TOOL_FAMILIES = [
 
 var BTM_VANILLA_STYLE_TOOL_EXTRAS = [
     'ars_nouveau:enchanters_sword',
-    'blue_skies:bluebright_spear',
-    'blue_skies:comet_spear',
-    'blue_skies:dusk_spear',
-    'blue_skies:frostbright_spear',
-    'blue_skies:lunar_spear',
-    'blue_skies:maple_spear',
-    'blue_skies:starlit_spear',
     'create:cardboard_sword',
     'farmersdelight:diamond_knife',
     'farmersdelight:flint_knife',

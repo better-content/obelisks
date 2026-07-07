@@ -10,6 +10,11 @@ var BTM_IRONS_T2 = 'bloodmagic:reinforcedslate'
 var BTM_IRONS_T3 = 'bloodmagic:infusedslate'
 var BTM_IRONS_T4 = 'bloodmagic:demonslate'
 var BTM_IRONS_T5 = 'bloodmagic:etherealslate'
+var BTM_IRONS_OS_T1 = 'deeperdarker:cobbled_sculk_stone'
+var BTM_IRONS_OS_T2 = 'deeperdarker:gloomslate'
+var BTM_IRONS_OS_T3 = 'minecraft:sculk_catalyst'
+var BTM_IRONS_OS_T4 = 'deeperdarker:sculk_bone'
+var BTM_IRONS_OS_T5 = 'deeperdarker:resonarium'
 
 function btmIronsExists(id) {
     try { return Item.exists(id) } catch (e) { return false }
@@ -191,6 +196,7 @@ function btmIronsRuneRecipes(event) {
         btmIronsMalumInfusion(event, rune.id + '_rune', rune.output, 1, 'irons_spellbooks:blank_rune', 1, [
             rune.focus,
             rune.reagent,
+            BTM_IRONS_OS_T3,
             BTM_IRONS_T3
         ], [
             btmIronsSpirit(rune.spirit, 6),
@@ -200,6 +206,7 @@ function btmIronsRuneRecipes(event) {
             'irons_spellbooks:blank_rune',
             rune.focus,
             rune.reagent,
+            BTM_IRONS_OS_T3,
             BTM_IRONS_T3
         ], 4500)
     }
@@ -217,9 +224,9 @@ ServerEvents.recipes(function (event) {
         'hexerei:tallow_bottle',
         'malum:spirit_fabric',
         'malum:arcane_spirit',
+        BTM_IRONS_OS_T1,
         BTM_IRONS_T1,
         'minecraft:white_wool',
-        'minecraft:string',
         'minecraft:string'
     ], 'minecraft:water', 'heated')
 
@@ -227,6 +234,7 @@ ServerEvents.recipes(function (event) {
         'malum:hallowed_gold_ingot',
         'malum:arcane_spirit',
         'occultism:spirit_attuned_gem',
+        BTM_IRONS_OS_T2,
         BTM_IRONS_T2
     ], [btmIronsSpirit('arcane', 6), btmIronsSpirit('sacred', 2)])
 
@@ -234,6 +242,7 @@ ServerEvents.recipes(function (event) {
         'irons_spellbooks:arcane_ingot',
         'malum:spirit_fabric',
         'forbidden_arcanus:deorum_ingot',
+        BTM_IRONS_OS_T4,
         BTM_IRONS_T4
     ], [btmIronsSpirit('arcane', 8), btmIronsSpirit('aerial', 4)])
 
@@ -241,6 +250,7 @@ ServerEvents.recipes(function (event) {
         'ars_nouveau:source_gem',
         'malum:arcane_spirit',
         'occultism:otherworld_essence',
+        BTM_IRONS_OS_T2,
         BTM_IRONS_T2
     ], 2500)
 
@@ -248,6 +258,7 @@ ServerEvents.recipes(function (event) {
         'ars_nouveau:source_gem',
         'malum:arcane_spirit',
         'forbidden_arcanus:arcane_crystal',
+        BTM_IRONS_OS_T3,
         BTM_IRONS_T3
     ], 3500)
 
@@ -255,6 +266,7 @@ ServerEvents.recipes(function (event) {
         'malum:processed_soulstone',
         'occultism:spirit_attuned_gem',
         'ars_nouveau:source_gem',
+        BTM_IRONS_OS_T3,
         BTM_IRONS_T3
     ], [btmIronsSpirit('arcane', 8), btmIronsSpirit('eldritch', 2)])
 
@@ -262,6 +274,7 @@ ServerEvents.recipes(function (event) {
         'irons_spellbooks:arcane_ingot',
         'ars_nouveau:source_gem',
         'hexerei:blood_bottle',
+        BTM_IRONS_OS_T2,
         BTM_IRONS_T2
     ], 3000)
 
@@ -269,6 +282,7 @@ ServerEvents.recipes(function (event) {
         'irons_spellbooks:arcane_ingot',
         'malum:runewood_tablet',
         'forbidden_arcanus:arcane_crystal',
+        BTM_IRONS_OS_T3,
         BTM_IRONS_T3
     ], 4500)
 
@@ -277,6 +291,7 @@ ServerEvents.recipes(function (event) {
         'goety:magic_emerald',
         'irons_spellbooks:arcane_ingot',
         'malum:processed_soulstone',
+        BTM_IRONS_OS_T3,
         BTM_IRONS_T3
     ], 'forge', 300, 120)
 
@@ -286,6 +301,7 @@ ServerEvents.recipes(function (event) {
         'hexerei:mandrake_root',
         'reliquary:catalyzing_gland',
         'malum:aqueous_spirit',
+        BTM_IRONS_OS_T2,
         BTM_IRONS_T2
     ], 'minecraft:water', 'heated')
 
@@ -294,6 +310,7 @@ ServerEvents.recipes(function (event) {
         btmIronsIngredient('irons_spellbooks:magic_cloth'),
         btmIronsIngredient('ars_nouveau:source_gem'),
         btmIronsIngredient('malum:arcane_spirit'),
+        btmIronsIngredient(BTM_IRONS_OS_T3),
         btmIronsIngredient(BTM_IRONS_T3)
     ], 12000, 220, 3)
 
@@ -301,6 +318,7 @@ ServerEvents.recipes(function (event) {
         btmIronsIngredient('ars_nouveau:source_gem'),
         btmIronsIngredient('reliquary:angelic_feather'),
         btmIronsIngredient('malum:sacred_spirit'),
+        btmIronsIngredient(BTM_IRONS_OS_T4),
         btmIronsIngredient(BTM_IRONS_T4)
     ], 18000, 260, 4)
 
@@ -308,6 +326,7 @@ ServerEvents.recipes(function (event) {
         'ars_nouveau:air_essence',
         'ars_nouveau:source_gem',
         'malum:aerial_spirit',
+        BTM_IRONS_OS_T4,
         BTM_IRONS_T4
     ], [btmIronsSpirit('aerial', 8), btmIronsSpirit('arcane', 6)])
 
@@ -316,6 +335,7 @@ ServerEvents.recipes(function (event) {
         'goety:dark_scroll',
         'malum:eldritch_spirit',
         'reliquary:nebulous_heart',
+        BTM_IRONS_OS_T5,
         BTM_IRONS_T5
     ], 'sabbath', 800, 240)
 
@@ -323,6 +343,7 @@ ServerEvents.recipes(function (event) {
         btmIronsIngredient('forbidden_arcanus:arcane_crystal'),
         btmIronsIngredient('malum:sacred_spirit'),
         btmIronsIngredient('occultism:spirit_attuned_gem'),
+        btmIronsIngredient(BTM_IRONS_OS_T3),
         btmIronsIngredient(BTM_IRONS_T3)
     ], 9000, 180, 3)
 

@@ -12,20 +12,6 @@
       "apotheotic_additions:commonapple",
       "artifacts:everlasting_beef",
       "artifacts:onion_ring",
-      "blue_skies:black_brewberry",
-      "blue_skies:brewberry",
-      "blue_skies:carabeef",
-      "blue_skies:charscale_moki",
-      "blue_skies:comet_berries",
-      "blue_skies:cooked_charscale_moki",
-      "blue_skies:cooked_horizofin_tunid",
-      "blue_skies:cooked_municipal_monkfish",
-      "blue_skies:grittle_flatfish",
-      "blue_skies:horizofin_tunid",
-      "blue_skies:monitor_tail",
-      "blue_skies:municipal_monkfish",
-      "blue_skies:solnut",
-      "blue_skies:venison",
       "brewinandchewin:glow_berry_marmalade",
       "brewinandchewin:jerky",
       "brewinandchewin:kimchi",
@@ -364,15 +350,6 @@
       "apotheotic_additions:rareapple",
       "apotheotic_additions:uncommonapple",
       "artifacts:eternal_steak",
-      "blue_skies:cooked_carabeef",
-      "blue_skies:cooked_grittle_flatfish",
-      "blue_skies:cooked_monitor_tail",
-      "blue_skies:cooked_venison",
-      "blue_skies:crescent_fruit",
-      "blue_skies:fiery_beans",
-      "blue_skies:pine_fruit",
-      "blue_skies:scalefruit",
-      "blue_skies:winter_leaves",
       "brewinandchewin:apple_jelly",
       "brewinandchewin:flaxen_cheese_wedge",
       "brewinandchewin:ham_and_cheese_sandwich",
@@ -521,7 +498,6 @@
     ],
     "combat_supply": [
       "aether:healing_stone",
-      "blue_skies:pink_brewberry",
       "brewinandchewin:egg_grog",
       "brewinandchewin:steel_toe_stout",
       "brewinandchewin:strongroot_ale",
@@ -872,7 +848,6 @@
       "veggiesdelight:turnip_cake"
     ],
     "hazard_or_joke": [
-      "blue_skies:cryo_root",
       "brewinandchewin:dread_nog",
       "brewinandchewin:withering_dross",
       "collectorsreap:adzuki_gummy",
@@ -1061,7 +1036,6 @@
   "byEffect": {
     "minecraft:regeneration": [
       "aether:healing_stone",
-      "blue_skies:pink_brewberry",
       "collectorsreap:land_and_sea_burger",
       "collectorsreap:prickly_pear_gummy",
       "collectorsreap:reanimators_garden",
@@ -1141,7 +1115,6 @@
       "delightful:source_berry_pie_slice"
     ],
     "minecraft:slowness": [
-      "blue_skies:cryo_root",
       "brewinandchewin:withering_dross",
       "collectorsreap:stygian_pomegranate",
       "collectorsreap:tropical_shaved_ice",
@@ -9968,48 +9941,6 @@
       "effects": []
     },
     {
-      "id": "blue_skies:cooked_carabeef",
-      "score": 42,
-      "category": "high_calorie_stock",
-      "suggestedStage": "established_kitchen",
-      "dietGroups": [],
-      "dietGroupCount": 0,
-      "dietGroupValues": {},
-      "dietSource": null,
-      "nutritionScore": 0,
-      "nutrition": 8,
-      "saturationModifier": 0.800000011920929,
-      "effects": []
-    },
-    {
-      "id": "blue_skies:cooked_monitor_tail",
-      "score": 42,
-      "category": "high_calorie_stock",
-      "suggestedStage": "established_kitchen",
-      "dietGroups": [],
-      "dietGroupCount": 0,
-      "dietGroupValues": {},
-      "dietSource": null,
-      "nutritionScore": 0,
-      "nutrition": 8,
-      "saturationModifier": 0.800000011920929,
-      "effects": []
-    },
-    {
-      "id": "blue_skies:cooked_venison",
-      "score": 42,
-      "category": "high_calorie_stock",
-      "suggestedStage": "established_kitchen",
-      "dietGroups": [],
-      "dietGroupCount": 0,
-      "dietGroupValues": {},
-      "dietSource": null,
-      "nutritionScore": 0,
-      "nutrition": 8,
-      "saturationModifier": 0.800000011920929,
-      "effects": []
-    },
-    {
       "id": "brewinandchewin:kombucha",
       "score": 42,
       "category": "utility_supply",
@@ -10706,32 +10637,6 @@
       "nutrition": 10,
       "saturationModifier": 0.5,
       "effects": []
-    },
-    {
-      "id": "blue_skies:pink_brewberry",
-      "score": 39,
-      "category": "combat_supply",
-      "suggestedStage": "established_kitchen",
-      "dietGroups": [
-        "fruits"
-      ],
-      "dietGroupCount": 1,
-      "dietGroupValues": {},
-      "dietSource": null,
-      "nutritionScore": 10,
-      "nutrition": 2,
-      "saturationModifier": 0.10000000149011612,
-      "effects": [
-        {
-          "effect": "minecraft:regeneration",
-          "amplifier": 2,
-          "durationTicks": 40,
-          "probability": 100,
-          "ambient": false,
-          "visible": true,
-          "showIcon": true
-        }
-      ]
     },
     {
       "id": "ends_delight:chorus_flower_tea",
@@ -12106,22 +12011,6 @@
       "effects": []
     },
     {
-      "id": "blue_skies:crescent_fruit",
-      "score": 32,
-      "category": "high_calorie_stock",
-      "suggestedStage": "early_kitchen_or_showcase",
-      "dietGroups": [
-        "fruits"
-      ],
-      "dietGroupCount": 1,
-      "dietGroupValues": {},
-      "dietSource": null,
-      "nutritionScore": 16,
-      "nutrition": 5,
-      "saturationModifier": 0.30000001192092896,
-      "effects": []
-    },
-    {
       "id": "collectorsreap:dragon_stew_cup",
       "score": 32,
       "category": "special_supply",
@@ -12476,20 +12365,6 @@
       "nutritionScore": 0,
       "nutrition": 6,
       "saturationModifier": 0.800000011920929,
-      "effects": []
-    },
-    {
-      "id": "blue_skies:cooked_grittle_flatfish",
-      "score": 31,
-      "category": "high_calorie_stock",
-      "suggestedStage": "early_kitchen_or_showcase",
-      "dietGroups": [],
-      "dietGroupCount": 0,
-      "dietGroupValues": {},
-      "dietSource": null,
-      "nutritionScore": 0,
-      "nutrition": 7,
-      "saturationModifier": 0.6000000238418579,
       "effects": []
     },
     {
@@ -14339,32 +14214,6 @@
           "amplifier": 0,
           "durationTicks": 600,
           "probability": 1,
-          "ambient": false,
-          "visible": true,
-          "showIcon": true
-        }
-      ]
-    },
-    {
-      "id": "blue_skies:cryo_root",
-      "score": 22,
-      "category": "hazard_or_joke",
-      "suggestedStage": "early_kitchen_or_showcase",
-      "dietGroups": [
-        "vegetables"
-      ],
-      "dietGroupCount": 1,
-      "dietGroupValues": {},
-      "dietSource": null,
-      "nutritionScore": 13,
-      "nutrition": 3,
-      "saturationModifier": 0.30000001192092896,
-      "effects": [
-        {
-          "effect": "minecraft:slowness",
-          "amplifier": 0,
-          "durationTicks": 40,
-          "probability": 0.05000000074505806,
           "ambient": false,
           "visible": true,
           "showIcon": true

@@ -75,7 +75,6 @@ SURVIVAL_NAMESPACES = {
 
 DIMENSION_NAMESPACES = {
     "aether",
-    "blue_skies",
     "undergarden",
     "twilightforest",
     "lostcities",

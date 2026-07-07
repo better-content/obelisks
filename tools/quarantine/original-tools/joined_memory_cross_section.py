@@ -157,7 +157,6 @@ DEFAULT_PHASES: list[Phase] = [
         [
             r"^\[forge\]ctov-.*\.jar$",
             r"^aether-.*\.jar$",
-            r"^blue_skies-.*\.jar$",
             r"^deeperdarker-.*\.jar$",
             r"^DynamicTrees.*\.jar$",
             r"^dtmalum-.*\.jar$",

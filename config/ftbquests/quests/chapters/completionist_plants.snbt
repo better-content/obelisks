@@ -8,110 +8,10 @@
 	order_index: 14
 	quest_links: [ ]
 	quests: [
-		{
-			id: "E167543751BC5009"
-			title: "Seeds"
-			icon: "blue_skies:fiery_bean_seeds"
-			shape: "square"
-			size: 0.8d
-			x: 0.0d
-			y: 0.0d
-			tasks: [
-				{
-					id: "E1EB22AAAE085748"
-					type: "checkmark"
-					title: "Seeds"
-				}
-			]
-			rewards: [
-				{
-					id: "44C2F192F419F5AC"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
 
-			description: ["10 starter stubs."]
-		}
-		{
-			id: "0EA2D6BF54696993"
-			title: "All Plants: Fiery Bean Seeds"
-			icon: "blue_skies:fiery_bean_seeds"
-			shape: "rsquare"
-			size: 1.0d
-			x: 1.5d
-			y: 0.0d
-			tasks: [
-				{
-					id: "B1DA109B76E15807"
-					type: "item"
-					item: "blue_skies:fiery_bean_seeds"
-					count: 1
-				}
-			]
-			rewards: [
-				{
-					id: "AB07731AF1CCCC36"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
 
-		}
-		{
-			id: "3520B701993A5EE0"
-			title: "All Plants: Pine Fruit Seeds"
-			icon: "blue_skies:pine_fruit_seeds"
-			shape: "rsquare"
-			size: 1.0d
-			x: 2.75d
-			y: 0.0d
-			tasks: [
-				{
-					id: "A095669ABCAF5EAA"
-					type: "item"
-					item: "blue_skies:pine_fruit_seeds"
-					count: 1
-				}
-			]
-			rewards: [
-				{
-					id: "908512A43C9FFB45"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
 
-		}
-		{
-			id: "9480D2ACB54E52FB"
-			title: "All Plants: Winter Leaf Seeds"
-			icon: "blue_skies:winter_leaf_seeds"
-			shape: "rsquare"
-			size: 1.0d
-			x: 4.0d
-			y: 0.0d
-			tasks: [
-				{
-					id: "C377E42A430922E8"
-					type: "item"
-					item: "blue_skies:winter_leaf_seeds"
-					count: 1
-				}
-			]
-			rewards: [
-				{
-					id: "3125770910EBF75E"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
 
-		}
 		{
 			id: "FEF8CACDE404485A"
 			title: "All Plants: Cabbage Seeds"
@@ -1100,32 +1000,7 @@
 			]
 
 		}
-		{
-			id: "D372A92BDB0EDDBA"
-			title: "Fungi"
-			icon: "blue_skies:snowcap_mushroom_block"
-			shape: "square"
-			size: 0.8d
-			x: 0.0d
-			y: 12.25d
-			tasks: [
-				{
-					id: "444C84CD66326BEA"
-					type: "checkmark"
-					title: "Fungi"
-				}
-			]
-			rewards: [
-				{
-					id: "76D70C8E7EAB781F"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
 
-			description: ["8 starter stubs."]
-		}
 		{
 			id: "F09AD9E657CE42C6"
 			title: "All Plants: Mushroom Rice"
@@ -1646,32 +1521,7 @@
 			]
 
 		}
-		{
-			id: "C67F240ED9A11FDD"
-			title: "All Plants: Blue Skies/crescent Fruit Leaf Pile"
-			icon: "immersive_weathering:blue_skies/crescent_fruit_leaf_pile"
-			shape: "rsquare"
-			size: 1.0d
-			x: 15.25d
-			y: 15.5d
-			tasks: [
-				{
-					id: "8C7CF5C5B496DC6C"
-					type: "item"
-					item: "immersive_weathering:blue_skies/crescent_fruit_leaf_pile"
-					count: 1
-				}
-			]
-			rewards: [
-				{
-					id: "63DA81AB7C04BA78"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
 
-		}
 		{
 			id: "1FC30B9665933F01"
 			title: "All Plants: Golden Moss Clump"
@@ -2348,84 +2198,9 @@
 			]
 
 		}
-		{
-			id: "A84A0AC369E8F83A"
-			title: "All Plants: Comet Berries"
-			icon: "blue_skies:comet_berries"
-			shape: "rsquare"
-			size: 1.0d
-			x: 6.5d
-			y: 21.25d
-			tasks: [
-				{
-					id: "6F50014B2B3C5613"
-					type: "item"
-					item: "blue_skies:comet_berries"
-					count: 1
-				}
-			]
-			rewards: [
-				{
-					id: "0DEFAF66CC4D5D9F"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
 
-		}
-		{
-			id: "FF09B3C0E835009A"
-			title: "All Plants: Fiery Beans"
-			icon: "blue_skies:fiery_beans"
-			shape: "rsquare"
-			size: 1.0d
-			x: 7.75d
-			y: 21.25d
-			tasks: [
-				{
-					id: "2ACB13CA6697E3B7"
-					type: "item"
-					item: "blue_skies:fiery_beans"
-					count: 1
-				}
-			]
-			rewards: [
-				{
-					id: "5AAC16654D90A53F"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
 
-		}
-		{
-			id: "0699476B56B4A20C"
-			title: "All Plants: Pine Fruit"
-			icon: "blue_skies:pine_fruit"
-			shape: "rsquare"
-			size: 1.0d
-			x: 9.0d
-			y: 21.25d
-			tasks: [
-				{
-					id: "FD495DA06EE7E756"
-					type: "item"
-					item: "blue_skies:pine_fruit"
-					count: 1
-				}
-			]
-			rewards: [
-				{
-					id: "A33CE2CEF31107A9"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
 
-		}
 		{
 			id: "0B4B84AC9310BBEB"
 			title: "All Plants: Glow Berry Marmalade"

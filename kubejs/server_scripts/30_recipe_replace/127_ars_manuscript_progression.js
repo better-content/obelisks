@@ -5,6 +5,11 @@ function btmArsExists(id) {
     try { return Item.exists(id) } catch (e) { return false }
 }
 
+var BTM_ARS_OS_T1 = 'deeperdarker:cobbled_sculk_stone'
+var BTM_ARS_OS_T2 = 'deeperdarker:gloomslate'
+var BTM_ARS_OS_T3 = 'minecraft:echo_shard'
+var BTM_ARS_OS_T4 = 'deeperdarker:sculk_bone'
+
 function btmArsIngredient(input) {
     if (typeof input !== 'string') return input
     if (input.charAt(0) === '#') return { tag: input.substring(1) }
@@ -131,6 +136,7 @@ ServerEvents.recipes(function (event) {
         'minecraft:book',
         'create:andesite_alloy',
         'hexerei:blood_bottle',
+        BTM_ARS_OS_T1,
         'bloodmagic:blankslate'
     ], 3000, 80, 1)
 
@@ -138,124 +144,146 @@ ServerEvents.recipes(function (event) {
         'minecraft:paper',
         'minecraft:arrow',
         'create:andesite_alloy',
+        BTM_ARS_OS_T1,
         'bloodmagic:blankslate'
     ], 'heated')
     btmArsCreateMix(event, 'manuscript_touch', 'kubejs:manuscript_touch', 1, [
         'minecraft:paper',
         'minecraft:slime_ball',
         'hexerei:tallow_bottle',
+        BTM_ARS_OS_T1,
         'bloodmagic:blankslate'
     ], 'heated')
     btmArsAlchemy(event, 'manuscript_self', 'kubejs:manuscript_self', 1, [
         'minecraft:paper',
         'minecraft:glass_bottle',
         'hexerei:moon_dust',
+        BTM_ARS_OS_T1,
         'bloodmagic:blankslate'
     ], 2500, 90, 1)
     btmArsCreateMix(event, 'manuscript_break', 'kubejs:manuscript_break', 1, [
         'minecraft:paper',
         'minecraft:iron_pickaxe',
         'create:cogwheel',
+        BTM_ARS_OS_T1,
         'bloodmagic:blankslate'
     ], 'heated')
     btmArsAlchemy(event, 'manuscript_harm', 'kubejs:manuscript_harm', 1, [
         'minecraft:paper',
         'hexerei:blood_bottle',
         'minecraft:iron_sword',
+        BTM_ARS_OS_T2,
         'bloodmagic:reinforcedslate'
     ], 5000, 120, 2)
     btmArsHexerei(event, 'manuscript_light', 'kubejs:manuscript_light', 1, [
         'minecraft:paper',
         'minecraft:glowstone_dust',
         'ars_nouveau:sourceberry',
+        BTM_ARS_OS_T1,
         'bloodmagic:blankslate'
     ], 'minecraft:water', 'heated')
     btmArsHexerei(event, 'manuscript_interact', 'kubejs:manuscript_interact', 1, [
         'minecraft:paper',
         'minecraft:lever',
         'ars_nouveau:magebloom_fiber',
+        BTM_ARS_OS_T2,
         'bloodmagic:reinforcedslate'
     ], 'minecraft:water', 'heated')
     btmArsHexerei(event, 'manuscript_ignite', 'kubejs:manuscript_ignite', 1, [
         'minecraft:paper',
         'minecraft:flint_and_steel',
         'minecraft:blaze_powder',
+        BTM_ARS_OS_T2,
         'bloodmagic:reinforcedslate'
     ], 'minecraft:water', 'heated')
     btmArsCreateMix(event, 'manuscript_launch', 'kubejs:manuscript_launch', 1, [
         'minecraft:paper',
         'minecraft:feather',
         'create:windmill_bearing',
+        BTM_ARS_OS_T2,
         'bloodmagic:reinforcedslate'
     ], 'superheated')
     btmArsHexerei(event, 'manuscript_harvest', 'kubejs:manuscript_harvest', 1, [
         'minecraft:paper',
         'farmersdelight:flint_knife',
         'ars_nouveau:sourceberry',
+        BTM_ARS_OS_T2,
         'bloodmagic:reinforcedslate'
     ], 'minecraft:water', 'heated')
     btmArsCreateMix(event, 'manuscript_leap', 'kubejs:manuscript_leap', 1, [
         'minecraft:paper',
         'minecraft:rabbit_foot',
         'create:windmill_bearing',
+        BTM_ARS_OS_T2,
         'bloodmagic:reinforcedslate'
     ], 'heated')
     btmArsHexerei(event, 'manuscript_freeze', 'kubejs:manuscript_freeze', 1, [
         'minecraft:paper',
         'minecraft:packed_ice',
         'malum:aqueous_spirit',
+        BTM_ARS_OS_T3,
         'bloodmagic:infusedslate'
     ], 'minecraft:water', 'heated')
     btmArsMalum(event, 'manuscript_glide', 'kubejs:manuscript_glide', 'minecraft:paper', [
         'minecraft:phantom_membrane',
         'malum:aerial_spirit',
+        BTM_ARS_OS_T3,
         'bloodmagic:infusedslate'
     ], [{ type: 'aerial', count: 8 }, { type: 'arcane', count: 2 }])
     btmArsMalum(event, 'manuscript_blink', 'kubejs:manuscript_blink', 'minecraft:paper', [
         'occultism:otherworld_essence',
         'minecraft:ender_pearl',
+        BTM_ARS_OS_T3,
         'bloodmagic:infusedslate'
     ], [{ type: 'eldritch', count: 8 }, { type: 'arcane', count: 4 }])
     btmArsMalum(event, 'manuscript_extract', 'kubejs:manuscript_extract', 'minecraft:paper', [
         'occultism:spirit_attuned_gem',
         'ars_nouveau:manipulation_essence',
+        BTM_ARS_OS_T3,
         'bloodmagic:infusedslate'
     ], [{ type: 'arcane', count: 10 }, { type: 'earthen', count: 4 }])
     btmArsMalum(event, 'manuscript_exchange', 'kubejs:manuscript_exchange', 'minecraft:paper', [
         'occultism:spirit_attuned_gem',
         'forbidden_arcanus:arcane_crystal',
+        BTM_ARS_OS_T3,
         'bloodmagic:infusedslate'
     ], [{ type: 'arcane', count: 10 }, { type: 'eldritch', count: 4 }])
     btmArsCreateMix(event, 'manuscript_redstone_signal', 'kubejs:manuscript_redstone_signal', 1, [
         'minecraft:paper',
         'powergrid:redstone_relay',
         'minecraft:comparator',
+        BTM_ARS_OS_T3,
         'bloodmagic:infusedslate'
     ], 'heated')
     btmArsCreateMix(event, 'manuscript_extend_time', 'kubejs:manuscript_extend_time', 1, [
         'minecraft:paper',
         'minecraft:clock',
         'powergrid:redstone_relay',
+        BTM_ARS_OS_T3,
         'bloodmagic:infusedslate'
     ], 'heated')
     btmArsGoety(event, 'manuscript_wall', 'kubejs:manuscript_wall', 'minecraft:paper', [
         'goety:cursed_bars',
         'malum:earthen_spirit',
+        BTM_ARS_OS_T4,
         'bloodmagic:demonslate'
     ], 'forge', 250, 120)
     btmArsGoety(event, 'manuscript_linger', 'kubejs:manuscript_linger', 'minecraft:paper', [
         'goety:dark_scroll',
         'malum:eldritch_spirit',
+        BTM_ARS_OS_T4,
         'bloodmagic:demonslate'
     ], 'sabbath', 350, 160)
     btmArsGoety(event, 'manuscript_lightning', 'kubejs:manuscript_lightning', 'minecraft:paper', [
         'forbidden_arcanus:deorum_ingot',
         'malum:aerial_spirit',
+        BTM_ARS_OS_T4,
         'bloodmagic:demonslate'
     ], 'forge', 400, 180)
     btmArsGoety(event, 'manuscript_wither', 'kubejs:manuscript_wither', 'minecraft:paper', [
         'minecraft:wither_rose',
         'malum:wicked_spirit',
+        BTM_ARS_OS_T4,
         'bloodmagic:demonslate'
     ], 'sabbath', 500, 220)
 

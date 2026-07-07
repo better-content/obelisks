@@ -7,13 +7,13 @@ ServerEvents.recipes(function (event) {
     event.shaped('bloodmagic:altar', [
         'OGO',
         'BFB',
-        'CSC'
+        'DSD'
     ], {
         O: 'minecraft:obsidian',
         G: 'minecraft:gold_block',
         B: 'minecraft:bone_block',
         F: 'minecraft:furnace',
-        C: 'minecraft:copper_block',
+        D: 'deeperdarker:cobbled_sculk_stone',
         S: 'rpgstats:still_beating_heart'
     }).id('kubejs:bloodmagic/heart_bound_blood_altar')
 

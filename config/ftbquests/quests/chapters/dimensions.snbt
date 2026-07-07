@@ -8,86 +8,16 @@
 	quest_links: [ ]
 	quests: [
 		{
-			id: "09048D42BC60FB02"
-			tasks: [{
-				dimension: "blue_skies:everbright"
-				id: "09044EA0DAE279AD"
-				type: "dimension"
-			}]
-			x: -5.5d
-			y: -3.0d
-			rewards: [
-				{
-					id: "ACA128E719C55EA7"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
-		}
-		{
-			id: "1AF1E257059105E2"
-			tasks: [{
-				dimension: "blue_skies:everdawn"
-				id: "44E8E41D0904227E"
-				type: "dimension"
-			}]
-			x: -5.5d
-			y: -2.0d
-			rewards: [
-				{
-					id: "BF5447F2A034A047"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
-		}
-		{
-			id: "41E455CD4D16FB44"
-			tasks: [{
-				dimension: "deeperdarker:otherside"
-				id: "0CE308F73007DB38"
-				type: "dimension"
-			}]
-			x: -5.5d
-			y: -1.0d
-			rewards: [
-				{
-					id: "E441F068E8B35EE1"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
-		}
-		{
-			id: "14F60973DD91B6F2"
-			tasks: [{
-				dimension: "aether:the_aether"
-				id: "039C102255C92191"
-				type: "dimension"
-			}]
-			x: -5.5d
-			y: 0.0d
-			rewards: [
-				{
-					id: "B153ACD678341357"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
-		}
-		{
 			id: "632A0926919CA7AB"
+			title: "Nether: Heat and Metallurgy"
+			subtitle: "Prove heat, netherrack grout, and hard material processing."
 			tasks: [{
 				dimension: "minecraft:the_nether"
 				id: "758B82ADE9D02306"
 				type: "dimension"
 			}]
 			x: -5.5d
-			y: 1.0d
+			y: -1.5d
 			rewards: [
 				{
 					id: "C68FAC833439020E"
@@ -98,17 +28,19 @@
 			]
 		}
 		{
-			id: "6D3B361F4618FB3F"
+			id: "14F60973DD91B6F2"
+			title: "Aether: Mobility"
+			subtitle: "Air travel and expedition range begin here."
 			tasks: [{
-				dimension: "minecraft:the_end"
-				id: "5373A09895FBFB22"
+				dimension: "aether:the_aether"
+				id: "039C102255C92191"
 				type: "dimension"
 			}]
 			x: -5.5d
-			y: 2.0d
+			y: -0.5d
 			rewards: [
 				{
-					id: "C89E93BAE3BD5E9A"
+					id: "B153ACD678341357"
 					type: "ftbquests:item"
 					item: "createdeco:copper_coin"
 					count: 4
@@ -117,16 +49,38 @@
 		}
 		{
 			id: "29DD7BCEDC44AEF3"
+			title: "Undergarden: Pantry"
+			subtitle: "Food, forage, and body-survival materials live below."
 			tasks: [{
 				dimension: "undergarden:undergarden"
 				id: "44FAC15DEB384B1C"
 				type: "dimension"
 			}]
 			x: -5.5d
-			y: 3.0d
+			y: 0.5d
 			rewards: [
 				{
 					id: "8C78DE6B79E10B56"
+					type: "ftbquests:item"
+					item: "createdeco:copper_coin"
+					count: 4
+				}
+			]
+		}
+		{
+			id: "41E455CD4D16FB44"
+			title: "Otherside: Magic Matter"
+			subtitle: "Sculk, echo, soul, and resonance feed Blood-refined magic."
+			tasks: [{
+				dimension: "deeperdarker:otherside"
+				id: "0CE308F73007DB38"
+				type: "dimension"
+			}]
+			x: -5.5d
+			y: 1.5d
+			rewards: [
+				{
+					id: "E441F068E8B35EE1"
 					type: "ftbquests:item"
 					item: "createdeco:copper_coin"
 					count: 4

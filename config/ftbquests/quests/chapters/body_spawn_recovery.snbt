@@ -113,7 +113,7 @@
 			}]
 			x: 1.58d
 			y: -2.25d
-			description: ["Pack for the return trip, not only for arrival. Leave room for proof items, recovery supplies, and whatever you will need if the trip goes wrong."]
+			description: ["Pack for the return trip, not only for arrival. Leave room for target items, recovery supplies, and whatever you will need if the trip goes wrong."]
 		}
 		{
 			dependencies: ["9DCD541E1DBF398C"]
@@ -192,7 +192,7 @@
 			x: 0.0d
 			y: 3.0d
 			rewards: [{ id: "F0B9E4D60479AF25" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["The weak orb is your first stable Blood Magic tool. It matters because it turns one dangerous proof item into a repeatable LP route."]
+			description: ["The weak orb is your first stable Blood Magic tool. It turns the heart step into repeatable LP storage and altar work."]
 		}
 		{
 			dependencies: ["56D43612CD94F3C2"]
@@ -217,12 +217,12 @@
 			shape: "rsquare"
 			tasks: [{
 				id: "FC3F161C5A9EC298"
-				title: "Use settlements as recovery infrastructure"
+				title: "Use settlements for recovery"
 				type: "checkmark"
 			}]
 			x: 3.17d
 			y: 1.5d
-			description: ["Settlements are survival infrastructure. Villages, walls, and wares help you recover, restock, and survive repeated trips through dangerous terrain."]
+			description: ["Use settlements to recover, restock, and survive repeated trips through dangerous terrain. Villages, walls, and wares are worth protecting."]
 		}
 		{
 			dependencies: ["DC0BBF7695937B20"]
@@ -366,7 +366,7 @@
 			size: 0.9d
 			tasks: [{
 				id: "2DF324EA40753D0E"
-				title: "Treat the heart as a story object, not currency"
+				title: "Save the heart for Blood Magic"
 				type: "checkmark"
 			}]
 			x: -4.75d
@@ -400,7 +400,7 @@
 			size: 0.9d
 			tasks: [{
 				id: "2926F0B99687ED0B"
-				title: "Convert settlements into route infrastructure"
+				title: "Connect settlements to your routes"
 				type: "checkmark"
 			}]
 			x: 3.17d

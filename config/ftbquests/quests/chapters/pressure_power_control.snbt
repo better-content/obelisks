@@ -84,7 +84,7 @@
 			}]
 			x: -1.58d
 			y: -4.0d
-			description: ["Use the rotational compressor to feed pressure from your existing Create power. That keeps the tech spine connected instead of spawning a separate power island."]
+			description: ["Use the rotational compressor to feed pressure from your existing Create power. This lets one power room support both Create machines and pressure work."]
 		}
 		{
 			dependencies: ["5DCC13C74FA59703"]
@@ -129,7 +129,7 @@
 			}]
 			x: 0.0d
 			y: -3.0d
-			description: ["Power Grid belongs here because control comes after pressure, not before it. Bring it online when you are ready to separate generation, storage, and logic."]
+			description: ["Bring Power Grid online after basic pressure work. Use it to separate generation, storage, and logic instead of running every machine from one messy setup."]
 		}
 		{
 			dependencies: ["D7A56007EC9F328E"]
@@ -145,7 +145,7 @@
 			}]
 			x: 1.58d
 			y: -3.0d
-			description: ["Use the design table to plan circuits, not to skip the board route. PNCR still owns the final assembly step, and that division is intentional."]
+			description: ["Use the design table to plan circuits, not to skip board assembly. PNCR machines still handle the finished PCB work."]
 		}
 		{
 			dependencies: ["C6D58E68605E0DE0"]
@@ -176,7 +176,7 @@
 			x: 4.75d
 			y: -3.0d
 			rewards: [{ id: "735CA19B9D593426" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Printed circuit boards are one of the biggest fanout items in the pack. Once you can make them reliably, a lot of control hardware opens at once."]
+			description: ["Printed circuit boards unlock many control machines at once. Once you can make them reliably, check EMI for drones, assembly parts, and security hardware."]
 		}
 		{
 			dependencies: ["E7B001B84823265B"]
@@ -192,7 +192,7 @@
 			}]
 			x: 6.34d
 			y: -3.0d
-			description: ["Assembly machines are where control hardware becomes serious industry. Build them when you are ready to stop crafting boards one careful step at a time."]
+			description: ["Build assembly machines when hand-crafted boards start slowing you down. Group the controller, platform, laser, drill, and import/export parts together."]
 		}
 		{
 			dependencies: ["82F2BACA61C5F8E1"]
@@ -237,7 +237,7 @@
 			}]
 			x: 6.34d
 			y: 0.5d
-			description: ["Drones arrive after the board route for a reason: they are programmable labor, not an early convenience pet. Build them when your control infrastructure is already stable."]
+			description: ["Build drones after PCBs and programming are repeatable. They need a base with clear routes, power, and jobs before they are useful."]
 		}
 		{
 			dependencies: ["23B1CD2A1143A540"]
@@ -314,7 +314,7 @@
 			}]
 			x: 12.67d
 			y: -1.5d
-			description: ["Read this node as the chapter rule: pressure, boards, electricity, and programming all need to stay legible as one control stack."]
+			description: ["Keep pressure, boards, electricity, and programming close enough that you can trace a machine from air supply to final control signal."]
 		},
 		{
 			dependencies: ["7BA3BC1109BE6EFA"]
@@ -330,7 +330,7 @@
 			}]
 			x: -6.34d
 			y: -2.1d
-			description: ["Compressed iron should read as a manufacturing threshold."]
+			description: ["Make compressed iron through the pressure route and keep a small stock. It is the first sign that air pressure is now part of manufacturing."]
 		}
 ,
 		{
@@ -347,7 +347,7 @@
 			}]
 			x: -3.17d
 			y: -0.25d
-			description: ["Pressure systems need safety details."]
+			description: ["Add gauges and relief paths before expanding a chamber. If pressure rises too far, you should be able to see the problem and vent it safely."]
 		}
 ,
 		{
@@ -364,7 +364,7 @@
 			}]
 			x: -1.58d
 			y: -6.0d
-			description: ["This reinforces the dual tech spine."]
+			description: ["Power the compressor from your local Create setup so pressure work grows out of the machines you already understand."]
 		}
 ,
 		{
@@ -381,7 +381,7 @@
 			}]
 			x: -1.58d
 			y: 1.0d
-			description: ["Use this node to tie plastic directly into board preparation. That link matters because pressure chemistry is what makes later control hardware possible."]
+			description: ["Make plastic and substrate before you chase finished boards. Keeping those parts together makes the PCB chain easier to repeat."]
 		}
 ,
 		{
@@ -398,7 +398,7 @@
 			}]
 			x: 1.58d
 			y: -1.0d
-			description: ["Power Grid contributes planning/control before PNCR finalizes boards."]
+			description: ["Use the design table to plan circuits, then send the board work through PNCR machines for final assembly."]
 		}
 ,
 		{
@@ -410,7 +410,7 @@
 			size: 0.9d
 			tasks: [{
 				id: "2E6EB0370E1E09D5"
-				title: "Use PCB fanout to unlock real control"
+				title: "Use PCBs to unlock real control"
 				type: "checkmark"
 			}]
 			x: 4.75d
@@ -449,7 +449,7 @@
 			}]
 			x: 6.34d
 			y: 2.5d
-			description: ["Keep drones tied to the board route on purpose. They are much easier to understand when they clearly grow out of the same control infrastructure."]
+			description: ["Keep drone programming near the PCB and control machines. It is easier to debug drones when their parts, programs, and charging live together."]
 		}
 ,
 		{
@@ -466,7 +466,7 @@
 			}]
 			x: 9.5d
 			y: -1.5d
-			description: ["Security and automation should converge."]
+			description: ["Use security hardware beside your automation controls so doors, routes, and machines respond to the same base plan."]
 		}
 ,
 		{
@@ -483,7 +483,7 @@
 			}]
 			x: 12.67d
 			y: 0.6d
-			description: ["The final node should summarize the chapter visually."]
+			description: ["End this chapter with a readable control area: pressure gauges visible, power storage labeled, board machines grouped, and programmed devices easy to inspect."]
 		}
 	]
 	title: "Pressure, Power, and Control"

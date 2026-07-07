@@ -126,7 +126,7 @@
 			}]
 			x: -4.75d
 			y: 2.0d
-			description: ["Malum is the spirit-heavy branch on the Blood side. Expect soul materials and slates to matter here as proof items, not as generic filler."]
+			description: ["Malum is the spirit-heavy branch on the Blood side. Expect soul materials and slates to become required ingredients, not generic filler."]
 		}
 		{
 			dependencies: ["711805EB7FB3B97D"]
@@ -218,7 +218,7 @@
 			}]
 			x: 1.58d
 			y: 0.0d
-			description: ["Source jars turn Ars into visible infrastructure. Build them when you are ready to store and route source on purpose instead of treating it as ambience."]
+			description: ["Build source jars once Ars recipes start asking for stored source. Keep them near the notebook and glyph work so source is easy to refill."]
 		}
 		{
 			dependencies: ["F58727CBAA57D84C" "7EE05287206646BF" "095D6A4C4C57ABA5" "CB17C8EE341E7C49" "C43AA03C2209FA3E"]
@@ -229,12 +229,12 @@
 			size: 1.2d
 			tasks: [{
 				id: "AF15C0574177CFC8"
-				title: "Craft glyph access from both dirty spines"
+				title: "Craft glyph access from mixed magic"
 				type: "checkmark"
 			}]
 			x: 3.17d
 			y: 0.0d
-			description: ["Treat manuscripts as the merge point between Ars and the dirty branches. They are how spell knowledge becomes earned instead of simply unlocked."]
+			description: ["Use manuscripts to connect Ars with the other magic paths. Spell knowledge should come from crafted materials, not from opening a book once."]
 		}
 		{
 			dependencies: ["EF3FCCBEA1B19672"]
@@ -265,7 +265,7 @@
 			}]
 			x: 6.34d
 			y: -2.0d
-			description: ["Ink is the material cadence for the spell route. Keep a steady supply so spell progress feels planned instead of bursty and accidental."]
+			description: ["Keep common ink stocked near your spellbooks. Running out of ink is the usual sign that spell upgrades need a dedicated supply shelf."]
 		}
 		{
 			dependencies: ["65BF28B6840B359C"]
@@ -296,7 +296,7 @@
 			}]
 			x: 7.92d
 			y: 0.0d
-			description: ["Read this node as the chapter rule: the magic branches need to feed each other. If one branch solves everything alone, you are probably bypassing the design."]
+			description: ["Check the ingredients on mixed magic crafts before moving on. If one magic path seems to solve everything alone, look for the missing material from another branch."]
 		},
 		{
 			dependencies: ["CCE823C794059335"]
@@ -312,7 +312,7 @@
 			}]
 			x: -6.95d
 			y: -2.75d
-			description: ["Dirty magic looks better as a web around place identity."]
+			description: ["Mark where each font or ritual site belongs on your route. Place-bound magic is easier to use when you know which location each craft sends you back to."]
 		}
 ,
 		{
@@ -329,7 +329,7 @@
 			}]
 			x: -4.55d
 			y: -2.95d
-			description: ["Hexerei needs atmospheric utility nodes."]
+			description: ["Keep herbs, bottles, candles, and mahogany near the cauldron. A prepared shelf makes Hexerei crafts easier to repeat without searching through storage."]
 		}
 ,
 		{
@@ -363,7 +363,7 @@
 			}]
 			x: -5.55d
 			y: 0.95d
-			description: ["Keep spirit work risky and visible so Occultism does not collapse into a passive miner branch."]
+			description: ["Build spirit work in a visible ritual area with room for circles and mistakes. Do not hide summons inside your main storage room."]
 		}
 ,
 		{
@@ -380,7 +380,7 @@
 			}]
 			x: -2.35d
 			y: -2.85d
-			description: ["Spatial ritual preparation adds density and clarity."]
+			description: ["Draw and check the circle before you begin a binding. Fix missing chalk, bowls, and space problems before the summon starts."]
 		}
 ,
 		{
@@ -414,7 +414,7 @@
 			}]
 			x: -4.75d
 			y: 3.0d
-			description: ["Goety needs containment/risk nodes."]
+			description: ["Prepare cages, walls, or a separate room before you lean on command magic. Treat hostile summons as a base hazard, not as ordinary crafting."]
 		}
 ,
 		{
@@ -426,7 +426,7 @@
 			size: 0.9d
 			tasks: [{
 				id: "B85FCC063AB96372"
-				title: "Treat glyphs as authored knowledge"
+				title: "Earn glyphs through manuscripts"
 				type: "checkmark"
 			}]
 			x: 0.0d
@@ -448,7 +448,7 @@
 			}]
 			x: 5.55d
 			y: -3.15d
-			description: ["Spellbooks need a visible material cadence."]
+			description: ["Store ink, scrolls, and arcane essence together. Spell upgrades are easier to plan when the writing materials live beside the spellbook work area."]
 		}
 ,
 		{
@@ -465,7 +465,7 @@
 			}]
 			x: 7.92d
 			y: 3.15d
-			description: ["Use this final node to confirm the lesson: dirty magic works best when place, spirits, slates, and spellcraft all keep paying into each other."]
+			description: ["Before pushing deeper, check that your magic rooms are connected: fonts for travel, spirit tools for materials, slates for cost, and spellbooks for use."]
 		}
 	]
 	title: "Fonts and Dirty Magic"

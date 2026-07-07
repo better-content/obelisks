@@ -21,7 +21,7 @@
 			}]
 			x: -6.34d
 			y: 0.0d
-			description: ["Growables feed side streams after infrastructure exists."]
+			description: ["Use growable resources after the main machines are running. They should support side recipes, not replace ore and chemistry work."]
 		}
 		{
 			dependencies: ["3A2B0FA3A95CE344"]
@@ -82,7 +82,7 @@
 			}]
 			x: -3.17d
 			y: -3.0d
-			description: ["Acids preserve source identity by making transformation explicit."]
+			description: ["Use acids when a material needs a clear chemical step. Keep the input and output near the same work area so the transformation is easy to trace."]
 		}
 		{
 			dependencies: ["4369F36F1439BE66"]
@@ -175,7 +175,7 @@
 			x: 0.0d
 			y: -1.0d
 			rewards: [{ id: "66A3FC6348F1DF84" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["PNCR owns pressure, gas handling, thermal control, plastics, and etching authority."]
+			description: ["Use PNCR for pressure, gas handling, thermal control, plastics, and PCB etching."]
 		}
 		{
 			dependencies: ["89BBEA358AA36261"]
@@ -190,7 +190,7 @@
 			}]
 			x: 1.58d
 			y: -1.0d
-			description: ["Plastic moves chemistry into durable components and circuit infrastructure."]
+			description: ["Plastic moves chemistry into durable components and circuit parts. Keep plastic production close to the board materials that consume it."]
 		}
 		{
 			dependencies: ["ED4C9825703E8F60" "E6E4C0B35936EA81"]
@@ -205,7 +205,7 @@
 			}]
 			x: 3.17d
 			y: -2.0d
-			description: ["Wafers are precursor work, not finished circuit authority."]
+			description: ["Wafers are precursors for later circuits, not finished boards by themselves."]
 		}
 		{
 			dependencies: ["ED4C9825703E8F60"]
@@ -329,7 +329,7 @@
 			}]
 			x: -6.34d
 			y: -2.2d
-			description: ["This policy needs a visible node because it prevents bypass confusion."]
+			description: ["Use chemlib conversions only when they keep the original source understandable. If a conversion hides where the material came from, avoid relying on it."]
 		}
 ,
 		{
@@ -414,7 +414,7 @@
 			}]
 			x: 0.0d
 			y: 1.0d
-			description: ["PNCR is chemistry authority, not just machines."]
+			description: ["Use PNCR when recipes need pressure, heat, gas handling, or controlled reactions."]
 		}
 ,
 		{
@@ -465,7 +465,7 @@
 			}]
 			x: 4.75d
 			y: -2.0d
-			description: ["Use this node to gather wafers, substrates, capacitors, and transistors in one place. Seeing the precursors together makes the board route much easier to follow."]
+			description: ["Store wafers, substrates, capacitors, and transistors beside the board machines. Seeing the precursors together makes the PCB chain easier to repeat."]
 		}
 ,
 		{
@@ -482,7 +482,7 @@
 			}]
 			x: 7.92d
 			y: 2.0d
-			description: ["The matter economy depends on visible provenance."]
+			description: ["Trace important outputs back to their source ore, plant, gas, or reagent. If you know where a material came from, shortages are much easier to fix."]
 		}
 	]
 	title: "Chemistry and Matter Routes"

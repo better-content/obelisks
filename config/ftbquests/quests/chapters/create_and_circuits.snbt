@@ -69,7 +69,7 @@
 			x: -4.7d
 			y: 0.0d
 			rewards: [{ id: "1F616987450FC867" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Check andesite casing uses in EMI as soon as you craft it. It is a real fanout hub, and following those uses will tell you what Create can solve next."]
+			description: ["Check andesite casing uses in EMI as soon as you craft it. Its recipes point you toward the first useful Create machines."]
 		}
 		{
 			dependencies: ["4145E9AE6FCF2471"]
@@ -222,7 +222,7 @@
 			x: 1.58d
 			y: 1.0d
 			rewards: [{ id: "A82440FC29C3FC2F" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Use the soldering table for early bench logic work. It belongs here so primitive circuits make sense before PNCR takes over finished board authority."]
+			description: ["Use the soldering table for early bench logic work. It teaches primitive circuits before PNCR machines take over finished board assembly."]
 		}
 		{
 			dependencies: ["8F728191626B1BED"]
@@ -268,7 +268,7 @@
 			}]
 			x: 1.58d
 			y: -3.0d
-			description: ["Precision mechanisms are the signal that simple motion is no longer enough. Make them when you are ready to build repeatable assembly instead of clever contraptions."]
+			description: ["Make precision mechanisms once you can run deployers and supply gold sheets reliably. They are the step from basic motion into repeatable assembly."]
 		}
 		{
 			dependencies: ["E52BDE1C2071533D"]
@@ -330,7 +330,7 @@
 			}]
 			x: -0.4d
 			y: -1.95d
-			description: ["Create graphs look better when the power budget is explicit."]
+			description: ["Place a stressometer or speedometer where you can read it. Check the power budget before adding more machines to the same shaft line."]
 		}
 ,
 		{
@@ -342,12 +342,12 @@
 			size: 0.9d
 			tasks: [{
 				id: "96513A95ADFAFA82"
-				title: "Use casing as the machine fanout hub"
+				title: "Use casing to find machine recipes"
 				type: "checkmark"
 			}]
 			x: -4.25d
 			y: 2.7d
-			description: ["Use this node to thicken the andesite cluster into a real work area. Dense machine groups are easier to understand and easier to expand."]
+			description: ["Group the press, mixer, fan, saw, drill, and deployer around the andesite casing stage. A tight work area makes the next machine choice easier to see."]
 		}
 ,
 		{
@@ -381,7 +381,7 @@
 			}]
 			x: -2.25d
 			y: -1.8d
-			description: ["Mixing makes materials feel authored."]
+			description: ["Feed basin recipes with planned inputs instead of tossing materials in by guesswork. Use the mixer when alloys or open-vat recipes start repeating."]
 		}
 ,
 		{
@@ -398,7 +398,7 @@
 			}]
 			x: -1.5d
 			y: -6.7d
-			description: ["Fan processing is a multi-surface tool."]
+			description: ["Build separate washing, blasting, and haunting spots around fan processing. Label or space them clearly so recipes go to the right setup."]
 		}
 ,
 		{
@@ -415,7 +415,7 @@
 			}]
 			x: -0.7d
 			y: -4.25d
-			description: ["Use this node to build a simple deployer loop on purpose. Seeing one clean automation proof matters more than owning several half-finished machines."]
+			description: ["Build one deployer and depot loop that repeats a real craft. A single working loop teaches more than several loose machines with no item flow."]
 		}
 ,
 		{
@@ -449,7 +449,7 @@
 			}]
 			x: 0.0d
 			y: -5.2d
-			description: ["Brass deserves a denser control cluster."]
+			description: ["Use brass parts for selective movement and sensing. Keep arms, stockpile switches, and display links near the machines they control."]
 		}
 ,
 		{

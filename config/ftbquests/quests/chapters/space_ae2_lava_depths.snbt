@@ -112,7 +112,7 @@
 			}]
 			x: 1.25d
 			y: -2.85d
-			description: ["Sky Stone is meteor salvage, so go collect it as route proof instead of treating AE2 as a purely crafted storage mod."]
+			description: ["Sky Stone comes from meteor salvage. Bring some home before starting AE2 so storage work begins with exploration, not only bench crafting."]
 		}
 		{
 			dependencies: ["12925948A84BF40B"]
@@ -157,7 +157,7 @@
 			}]
 			x: 4.75d
 			y: -4.0d
-			description: ["Logic processors are the first sign AE2 control is becoming real. Make them once your inscriber work is stable and repeatable."]
+			description: ["Make logic processors after the inscriber is placed, powered, and stocked with the right presses. Keep enough ingredients nearby to make more than one."]
 		}
 		{
 			dependencies: ["8E617A54B89E2EB3"]
@@ -172,7 +172,7 @@
 			}]
 			x: 4.75d
 			y: -2.5d
-			description: ["Engineering processors are the heavier proof item in the same route. They matter because later AE2 bodies need to feel expensive and deliberate."]
+			description: ["Engineering processors are the heavier AE2 processor step. Make them before the larger AE2 bodies so storage machines cost real processor work."]
 		}
 		{
 			dependencies: ["18BB5327624EDB2D" "B2C2EB0D25A694E4" "7A15771CDACE42EC"]
@@ -189,7 +189,7 @@
 			x: 6.34d
 			y: -3.25d
 			rewards: [{ id: "664D13F351314EE0" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Check the controller recipe carefully before crafting it. AE2 only belongs here if the whole processor and meteor route already feels under control."]
+			description: ["Check the controller recipe before crafting it. Have Sky Stone, Fluix, and both processor types ready so AE2 starts from a prepared work area."]
 		}
 		{
 			dependencies: ["86339E21F9017663"]
@@ -220,7 +220,7 @@
 			}]
 			x: 9.5d
 			y: -5.0d
-			description: ["Cell housings are how storage becomes infrastructure instead of a magic convenience. Make them when local AE2 is worth the resource cost."]
+			description: ["Make cell housings when one base has enough clutter to justify AE2 storage. Start local before trying to connect distant sites."]
 		}
 		{
 			dependencies: ["2BBA260233DB42E2"]
@@ -251,7 +251,7 @@
 			}]
 			x: 9.5d
 			y: -2.0d
-			description: ["Impossible casing is reserved for truly late systems. If a machine does not feel AE2-scale or hybrid-tier, it probably does not deserve this frame."]
+			description: ["Save impossible casing for machines that depend on late AE2, space materials, or hybrid magic. Do not spend it on ordinary utility upgrades."]
 		}
 		{
 			dependencies: ["B9903B9513ACD50E"]
@@ -312,7 +312,7 @@
 			}]
 			x: 14.7d
 			y: -2.35d
-			description: ["Finish the expedition by bringing the proof items and yourself home. Endgame still rewards good logistics more than reckless reach."]
+			description: ["Finish the expedition by returning with uranium, thorium, storage parts, and your gear intact. A successful trip ends back at base, not at the ore vein."]
 		},
 		{
 			dependencies: ["DE4D524CF80272D1"]
@@ -323,7 +323,7 @@
 			size: 0.9d
 			tasks: [{
 				id: "032CE75F4E37198E"
-				title: "Check suit, fuel, oxygen, recovery, and proof item"
+				title: "Check suit, fuel, oxygen, recovery, and target item"
 				type: "checkmark"
 			}]
 			x: 0.0d
@@ -362,7 +362,7 @@
 			}]
 			x: -0.95d
 			y: -5.15d
-			description: ["Treat Mars like a costly route, not like a color swap on the Moon. If you cannot explain the extra logistics burden, you are not ready yet."]
+			description: ["Treat Mars as a longer expedition than the Moon. Bring extra fuel, oxygen, recovery supplies, and inventory space before committing to the trip."]
 		}
 ,
 		{
@@ -447,7 +447,7 @@
 			}]
 			x: 12.67d
 			y: -5.5d
-			description: ["Tie rare alloys back to lava-depth proof whenever possible. That keeps the late material route visible instead of letting it blur into generic metalwork."]
+			description: ["Keep rare alloy work near the lava-depth metals that feed it. When osmium or similar metals run short, you should know which dangerous trip restocks them."]
 		}
 ,
 		{
@@ -481,7 +481,7 @@
 			}]
 			x: 14.7d
 			y: -4.65d
-			description: ["Use this node as a late-game map: space access, local AE2, lava-depth ore, and intersite control now all need to feed each other."]
+			description: ["Check the late-game chain before expanding: rockets bring access, AE2 cleans up local storage, lava-depth ores feed rare materials, and OC2R coordinates distant sites."]
 		}
 	]
 	title: "Space, AE2, and Lava Depths"

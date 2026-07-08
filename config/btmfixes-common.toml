@@ -7,9 +7,6 @@
 	#Catches both immediate support loss from block updates and preexisting floating rooty soils when a chunk loads.
 	#Applies to base Dynamic Trees rooty blocks and extension species that anchor through the same rooty soil system.
 	destroyUnsupportedTrees = true
-	#When a Dynamic Trees falling tree lands, tries to reconstruct it as placed primitive logs instead of only dropping log items.
-	#Disabled for this pack because the reconstruction path is compatibility-sensitive and we want felled trees to stay item-drop only.
-	reconstructFallenLogs = false
 
 [hyle]
 	#Guards Hyle tertiary stone selection against invalid indices.

@@ -4,7 +4,6 @@
 
 Active downloaded mods are the current `mods/*.pw.toml` files. Active custom bundled jars in `mods/` include:
 
-- `btmfixes-0.1.0-all.jar`
 - `btmfixes-0.1.0.jar`
 - `classselector-1.0.0.jar`
 - `computerbridge-0.1.0.jar`

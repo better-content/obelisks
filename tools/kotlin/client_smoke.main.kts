@@ -20,6 +20,7 @@ fun usage(message: String? = null): Nothing {
 var profile: String? = null
 var bootstrapMode = "always"
 var keepRuns = false
+var port: String? = System.getenv("BTM_HARNESS_ACTUAL_PORT")?.takeIf { it.isNotBlank() }
 var index = 0
 while (index < args.size) {
     when (args[index]) {
@@ -35,6 +36,11 @@ while (index < args.size) {
         "--keep-runs" -> {
             keepRuns = true
             index += 1
+        }
+        "--port" -> {
+            port = args.getOrNull(index + 1) ?: usage("--port needs a number")
+            if (!port!!.all(Char::isDigit)) usage("--port needs a number")
+            index += 2
         }
         "--help" -> usage()
         else -> usage("unknown argument: ${args[index]}")
@@ -52,12 +58,12 @@ val contractExit = contract.waitFor()
 if (contractExit != 0) exitProcess(contractExit)
 
 val runtimeDir = Paths.get("/tmp", if (selected == "quick") "btm-client-smoke-quick" else "btm-client-smoke-release")
-val smokePort = if (selected == "quick") "25567" else "25568"
+val smokePort = port ?: if (selected == "quick") "25567" else "25568"
 if (!keepRuns && bootstrapMode != "never" && Files.exists(runtimeDir)) {
     deleteTree(runtimeDir)
 }
 
-val smoke = ProcessBuilder(
+val smokeBuilder = ProcessBuilder(
     "tools/btm",
     "test",
     "smoke",
@@ -70,6 +76,18 @@ val smoke = ProcessBuilder(
     *if (bootstrapMode == "always" || bootstrapMode == "once") arrayOf("--reset-runtime") else emptyArray(),
 )
     .directory(Paths.get("").toAbsolutePath().normalize().toFile())
-    .inheritIO()
-    .start()
+smokeBuilder.inheritIO()
+smokeBuilder.environment().putAll(
+    listOf(
+        "BTM_HARNESS_STATUS_PATH",
+        "BTM_HARNESS_SUMMARY_PATH",
+        "BTM_HARNESS_PIDS_PATH",
+        "BTM_HARNESS_LOCK_PATH",
+        "BTM_HARNESS_LATEST_STATUS_PATH",
+        "BTM_HARNESS_LATEST_SUMMARY_PATH",
+        "BTM_HARNESS_REQUESTED_PORT",
+        "BTM_HARNESS_ACTUAL_PORT",
+    ).mapNotNull { key -> System.getenv(key)?.let { key to it } }.toMap(),
+)
+val smoke = smokeBuilder.start()
 exitProcess(smoke.waitFor())

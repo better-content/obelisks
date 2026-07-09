@@ -4,10 +4,12 @@ import java.io.ByteArrayOutputStream
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.Paths
+import java.nio.file.StandardCopyOption
 import java.util.Comparator
 import java.util.concurrent.TimeUnit
 import kotlin.concurrent.thread
 import kotlin.io.path.createDirectories
+import kotlin.io.path.exists
 import kotlin.system.exitProcess
 
 data class TestCase(val name: String, val run: () -> Unit)
@@ -70,6 +72,194 @@ fun deleteTree(path: Path) {
     Files.walk(path).use { stream ->
         stream.sorted(Comparator.reverseOrder()).forEach { Files.deleteIfExists(it) }
     }
+}
+
+fun parseJson(text: String): Any? {
+    class JsonParser(private val raw: String) {
+        private var index = 0
+
+        fun parse(): Any? {
+            skipWhitespace()
+            val value = parseValue()
+            skipWhitespace()
+            return value
+        }
+
+        private fun parseValue(): Any? {
+            skipWhitespace()
+            if (index >= raw.length) error("unexpected end of JSON")
+            return when (val ch = raw[index]) {
+                '{' -> parseObject()
+                '[' -> parseArray()
+                '"' -> parseString()
+                't' -> parseLiteral("true", true)
+                'f' -> parseLiteral("false", false)
+                'n' -> parseLiteral("null", null)
+                '-', in '0'..'9' -> parseNumber()
+                else -> error("unexpected JSON character: $ch")
+            }
+        }
+
+        private fun parseObject(): Map<String, Any?> {
+            val result = linkedMapOf<String, Any?>()
+            expect('{')
+            skipWhitespace()
+            if (peek('}')) {
+                index += 1
+                return result
+            }
+            while (true) {
+                skipWhitespace()
+                val key = parseString()
+                skipWhitespace()
+                expect(':')
+                result[key] = parseValue()
+                skipWhitespace()
+                when {
+                    peek('}') -> {
+                        index += 1
+                        return result
+                    }
+                    peek(',') -> index += 1
+                    else -> error("expected , or }")
+                }
+            }
+        }
+
+        private fun parseArray(): List<Any?> {
+            val result = mutableListOf<Any?>()
+            expect('[')
+            skipWhitespace()
+            if (peek(']')) {
+                index += 1
+                return result
+            }
+            while (true) {
+                result += parseValue()
+                skipWhitespace()
+                when {
+                    peek(']') -> {
+                        index += 1
+                        return result
+                    }
+                    peek(',') -> index += 1
+                    else -> error("expected , or ]")
+                }
+            }
+        }
+
+        private fun parseString(): String {
+            expect('"')
+            val out = StringBuilder()
+            while (index < raw.length) {
+                val ch = raw[index++]
+                when (ch) {
+                    '"' -> return out.toString()
+                    '\\' -> {
+                        val esc = raw[index++]
+                        out.append(
+                            when (esc) {
+                                '"', '\\', '/' -> esc
+                                'b' -> '\b'
+                                'f' -> '\u000C'
+                                'n' -> '\n'
+                                'r' -> '\r'
+                                't' -> '\t'
+                                'u' -> {
+                                    val hex = raw.substring(index, index + 4)
+                                    index += 4
+                                    hex.toInt(16).toChar()
+                                }
+                                else -> error("bad escape: $esc")
+                            },
+                        )
+                    }
+                    else -> out.append(ch)
+                }
+            }
+            error("unterminated string")
+        }
+
+        private fun parseNumber(): Number {
+            val start = index
+            if (raw[index] == '-') index += 1
+            while (index < raw.length && raw[index].isDigit()) index += 1
+            if (index < raw.length && raw[index] == '.') {
+                index += 1
+                while (index < raw.length && raw[index].isDigit()) index += 1
+            }
+            val value = raw.substring(start, index)
+            return if (value.contains('.')) value.toDouble() else value.toLong()
+        }
+
+        private fun parseLiteral(token: String, value: Any?): Any? {
+            if (!raw.startsWith(token, index)) error("expected $token")
+            index += token.length
+            return value
+        }
+
+        private fun skipWhitespace() {
+            while (index < raw.length && raw[index].isWhitespace()) index += 1
+        }
+
+        private fun expect(ch: Char) {
+            if (index >= raw.length || raw[index] != ch) error("expected $ch")
+            index += 1
+        }
+
+        private fun peek(ch: Char): Boolean = index < raw.length && raw[index] == ch
+    }
+
+    return JsonParser(text).parse()
+}
+
+fun jsonObject(value: Any?): Map<String, Any?> = value as? Map<String, Any?> ?: emptyMap()
+fun jsonString(value: Any?): String? = value as? String
+fun jsonNumber(value: Any?): Number? = value as? Number
+fun jsonArray(value: Any?): List<Any?> = value as? List<Any?> ?: emptyList()
+
+fun readJson(path: Path): Map<String, Any?> = jsonObject(parseJson(Files.readString(path)))
+
+fun copyTree(source: Path, target: Path) {
+    Files.walk(source).use { stream ->
+        stream.forEach { current ->
+            val relative = source.relativize(current)
+            val destination = if (relative.toString().isEmpty()) target else target.resolve(relative.toString())
+            if (Files.isDirectory(current)) {
+                destination.createDirectories()
+            } else {
+                destination.parent?.createDirectories()
+                Files.copy(current, destination, StandardCopyOption.REPLACE_EXISTING)
+            }
+        }
+    }
+}
+
+fun startBackground(
+    args: List<String>,
+    workdir: Path = root,
+    extraEnv: Map<String, String> = emptyMap(),
+): Process {
+    return ProcessBuilder(args)
+        .directory(workdir.toFile())
+        .redirectErrorStream(true)
+        .apply { environment().putAll(extraEnv) }
+        .start()
+}
+
+fun ephemeralPort(): Int = java.net.ServerSocket(0).use { it.localPort }
+
+fun firstHarnessRunDir(harnessRoot: Path): Path = Files.list(harnessRoot).use { it.findFirst().orElseThrow() }
+
+fun harnessOwnerPid(harnessRoot: Path): Long =
+    jsonNumber(readJson(firstHarnessRunDir(harnessRoot).resolve("lock.json"))["pid"])?.toLong()
+        ?: error("missing harness owner pid under $harnessRoot")
+
+fun terminateHarnessOwner(harnessRoot: Path, force: Boolean) {
+    val pid = harnessOwnerPid(harnessRoot)
+    val handle = ProcessHandle.of(pid).orElse(null) ?: return
+    if (force) handle.destroyForcibly() else handle.destroy()
+    handle.onExit().get(10, TimeUnit.SECONDS)
 }
 
 test("help shows public commands") {
@@ -411,6 +601,257 @@ test("opening progression rejects invalid bootstrap mode with usage error") {
     val (exit, output) = runCommand("tools/btm", "test", "scenario", "opening_progression", "--bootstrap-mode", "bad")
     assertTrue(exit == 2, "opening_progression with invalid bootstrap mode should exit 2, got $exit")
     assertContains(output, "invalid bootstrap mode: bad", "opening_progression should reject invalid bootstrap mode")
+}
+
+test("fast duplicate invocation fails immediately with harness diagnostics") {
+    val harnessRoot = Files.createTempDirectory("btm-kotlin-test-harness-fast-dup")
+    val process = startBackground(
+        listOf("tools/btm", "test", "fast", "--repo", "pack"),
+        extraEnv = mapOf(
+            "BTM_HARNESS_ROOT" to harnessRoot.toString(),
+            "BTM_TEST_WORKSPACE_STUB_MODE" to "pass",
+            "BTM_TEST_WORKSPACE_STUB_SLEEP_MS" to "4000",
+        ),
+    )
+    try {
+        val deadline = System.currentTimeMillis() + 10_000
+        while (System.currentTimeMillis() < deadline && Files.list(harnessRoot).use { !it.findAny().isPresent }) {
+            Thread.sleep(100)
+        }
+        val (exit, output) = runCommand(
+            "tools/btm",
+            "test",
+            "fast",
+            "--repo",
+            "pack",
+            extraEnv = mapOf(
+                "BTM_HARNESS_ROOT" to harnessRoot.toString(),
+                "BTM_TEST_WORKSPACE_STUB_MODE" to "pass",
+                "BTM_TEST_WORKSPACE_STUB_SLEEP_MS" to "4000",
+            ),
+        )
+        assertTrue(exit == 1, "second fast invocation should fail with active lock, got $exit")
+        assertContains(output, "active run already holds this harness lock", "duplicate fast run should report harness lock")
+        assertContains(output, "status=", "duplicate fast run should include status path diagnostics")
+    } finally {
+        if (Files.exists(harnessRoot) && Files.list(harnessRoot).use { it.findAny().isPresent }) {
+            runCatching { terminateHarnessOwner(harnessRoot, force = true) }
+        }
+        process.destroyForcibly()
+        process.waitFor(10, TimeUnit.SECONDS)
+        deleteTree(harnessRoot)
+    }
+}
+
+test("full workspace writes repo progress into status and summary") {
+    val harnessRoot = Files.createTempDirectory("btm-kotlin-test-harness-full-progress")
+    try {
+        val (exit, output) = runCommand(
+            "tools/btm",
+            "test",
+            "full",
+            "--workspace",
+            "--repo",
+            "pack",
+            extraEnv = mapOf(
+                "BTM_HARNESS_ROOT" to harnessRoot.toString(),
+                "BTM_TEST_WORKSPACE_STUB_MODE" to "pass",
+                "BTM_TEST_WORKSPACE_STUB_SLEEP_MS" to "50",
+            ),
+        )
+        assertTrue(exit == 0, "workspace full should succeed under stub mode, got $exit")
+        assertContains(output, "==> [1/1] pack", "workspace full should report repo progress")
+        assertContains(output, "PASS pack", "workspace full should report repo success")
+        val statusPath = Files.list(harnessRoot).use { it.findFirst().orElseThrow() }.resolve("status.json")
+        val summaryPath = statusPath.parent.resolve("summary.json")
+        val status = readJson(statusPath)
+        val summary = readJson(summaryPath)
+        assertTrue(jsonString(status["status"]) == "passed", "workspace full status should finish passed: $status")
+        assertTrue(jsonString(summary["status"]) == "passed", "workspace full summary should finish passed: $summary")
+        assertTrue(jsonArray(summary["repo_runs"]).isNotEmpty(), "workspace full summary should record repo runs")
+    } finally {
+        deleteTree(harnessRoot)
+    }
+}
+
+test("smoke auto-remaps occupied ports and records requested and actual port") {
+    val harnessRoot = Files.createTempDirectory("btm-kotlin-test-harness-smoke-port")
+    val runtimeDir = Files.createTempDirectory("btm-kotlin-test-smoke-runtime")
+    val requestedPort = ephemeralPort()
+    java.net.ServerSocket(requestedPort).use { _ ->
+        val (exit, output) = runCommand(
+            "tools/btm",
+            "test",
+            "smoke",
+            "--server-dir",
+            runtimeDir.toString(),
+            "--port",
+            requestedPort.toString(),
+            extraEnv = mapOf(
+                "BTM_HARNESS_ROOT" to harnessRoot.toString(),
+                "BTM_TEST_FAKE_SMOKE" to "1",
+            ),
+        )
+        assertTrue(exit == 0, "smoke should auto-remap occupied port, got $exit")
+        assertContains(output, "using ${requestedPort + 1}", "smoke should report remapped port")
+    }
+    try {
+        val statusPath = Files.list(harnessRoot).use { it.findFirst().orElseThrow() }.resolve("status.json")
+        val summaryPath = statusPath.parent.resolve("summary.json")
+        val status = readJson(statusPath)
+        val summary = readJson(summaryPath)
+        assertTrue(jsonNumber(status["requested_port"])?.toInt() == requestedPort, "smoke status should record requested port: $status")
+        assertTrue(jsonNumber(status["actual_port"])?.toInt() == requestedPort + 1, "smoke status should record remapped actual port: $status")
+        assertTrue(jsonNumber(summary["actual_port"])?.toInt() == requestedPort + 1, "smoke summary should record remapped actual port: $summary")
+    } finally {
+        deleteTree(harnessRoot)
+        deleteTree(runtimeDir)
+    }
+}
+
+test("opening progression remaps occupied ports and refreshes latest status artifacts") {
+    val harnessRoot = Files.createTempDirectory("btm-kotlin-test-harness-opening-pass")
+    val runRoot = Files.createTempDirectory("btm-kotlin-test-opening-pass")
+    val requestedPort = ephemeralPort()
+    java.net.ServerSocket(requestedPort).use { _ ->
+        val (exit, output) = runCommand(
+            "tools/btm",
+            "test",
+            "scenario",
+            "opening_progression",
+            "--cycles",
+            "1",
+            "--port",
+            requestedPort.toString(),
+            "--run-root",
+            runRoot.toString(),
+            extraEnv = mapOf(
+                "BTM_HARNESS_ROOT" to harnessRoot.toString(),
+                "BTM_TEST_OPENING_PROGRESS_FAKE" to "pass",
+            ),
+        )
+        assertTrue(exit == 0, "opening_progression should succeed under fake mode, got $exit")
+        assertContains(output, "using ${requestedPort + 1}", "opening_progression should report remapped port")
+    }
+    try {
+        val latestStatus = runRoot.resolve("latest-status.json")
+        val latestSummary = runRoot.resolve("latest-summary.json")
+        assertTrue(latestStatus.exists(), "opening_progression should refresh latest-status.json")
+        assertTrue(latestSummary.exists(), "opening_progression should refresh latest-summary.json")
+        val summary = readJson(latestSummary)
+        val cycles = jsonArray(summary["cycles"])
+        assertTrue(jsonString(summary["status"]) == "passed", "opening_progression summary should pass: $summary")
+        assertTrue(jsonNumber(summary["actual_port"])?.toInt() == requestedPort + 1, "opening_progression summary should record remapped port: $summary")
+        assertTrue(cycles.isNotEmpty(), "opening_progression summary should include cycle results")
+    } finally {
+        deleteTree(harnessRoot)
+        deleteTree(runRoot)
+    }
+}
+
+test("stale lock with dead pid is reclaimed automatically") {
+    val harnessRoot = Files.createTempDirectory("btm-kotlin-test-harness-stale-lock")
+    val process = startBackground(
+        listOf("tools/btm", "test", "fast", "--repo", "pack"),
+        extraEnv = mapOf(
+            "BTM_HARNESS_ROOT" to harnessRoot.toString(),
+            "BTM_TEST_WORKSPACE_STUB_MODE" to "pass",
+            "BTM_TEST_WORKSPACE_STUB_SLEEP_MS" to "15000",
+        ),
+    )
+    try {
+        val deadline = System.currentTimeMillis() + 10_000
+        while (System.currentTimeMillis() < deadline && Files.list(harnessRoot).use { !it.findAny().isPresent }) {
+            Thread.sleep(100)
+        }
+        terminateHarnessOwner(harnessRoot, force = true)
+        process.destroyForcibly()
+        process.waitFor(10, TimeUnit.SECONDS)
+        val (exit, output) = runCommand(
+            "tools/btm",
+            "test",
+            "fast",
+            "--repo",
+            "pack",
+            extraEnv = mapOf(
+                "BTM_HARNESS_ROOT" to harnessRoot.toString(),
+                "BTM_TEST_WORKSPACE_STUB_MODE" to "pass",
+                "BTM_TEST_WORKSPACE_STUB_SLEEP_MS" to "10",
+            ),
+        )
+        assertTrue(exit == 0, "fast run should reclaim stale lock, got $exit")
+        assertContains(output, "workspace fast passed for 1 repo(s)", "fast run should continue after stale lock reclaim")
+    } finally {
+        deleteTree(harnessRoot)
+    }
+}
+
+test("opening progression failure writes final summary with phase reason and evidence path") {
+    val harnessRoot = Files.createTempDirectory("btm-kotlin-test-harness-opening-fail")
+    val runRoot = Files.createTempDirectory("btm-kotlin-test-opening-fail")
+    try {
+        val (exit, _) = runCommand(
+            "tools/btm",
+            "test",
+            "scenario",
+            "opening_progression",
+            "--cycles",
+            "1",
+            "--run-root",
+            runRoot.toString(),
+            extraEnv = mapOf(
+                "BTM_HARNESS_ROOT" to harnessRoot.toString(),
+                "BTM_TEST_OPENING_PROGRESS_FAKE" to "fail",
+            ),
+        )
+        assertTrue(exit == 1, "opening_progression fake failure should exit 1, got $exit")
+        val summary = readJson(runRoot.resolve("latest-summary.json"))
+        val cycles = jsonArray(summary["cycles"]).map(::jsonObject)
+        assertTrue(jsonString(summary["status"]) == "failed", "opening_progression summary should fail: $summary")
+        assertTrue(cycles.isNotEmpty(), "opening_progression failure should record cycles")
+        val cycle = cycles.first()
+        assertTrue(jsonString(cycle["status"]) == "failed", "cycle should record failure: $cycle")
+        assertTrue(!jsonString(cycle["failure_reason"]).isNullOrBlank(), "cycle failure should include reason: $cycle")
+        assertTrue(!jsonString(cycle["evidence_dir"]).isNullOrBlank(), "cycle failure should include evidence dir: $cycle")
+    } finally {
+        deleteTree(harnessRoot)
+        deleteTree(runRoot)
+    }
+}
+
+test("interrupt clears lock ownership and leaves final aborted status") {
+    val harnessRoot = Files.createTempDirectory("btm-kotlin-test-harness-interrupt")
+    val process = startBackground(
+        listOf("tools/btm", "test", "fast", "--repo", "pack"),
+        extraEnv = mapOf(
+            "BTM_HARNESS_ROOT" to harnessRoot.toString(),
+            "BTM_TEST_WORKSPACE_STUB_MODE" to "pass",
+            "BTM_TEST_WORKSPACE_STUB_SLEEP_MS" to "15000",
+        ),
+    )
+    try {
+        val deadline = System.currentTimeMillis() + 10_000
+        while (System.currentTimeMillis() < deadline && Files.list(harnessRoot).use { !it.findAny().isPresent }) {
+            Thread.sleep(100)
+        }
+        terminateHarnessOwner(harnessRoot, force = false)
+        process.destroy()
+        process.waitFor(10, TimeUnit.SECONDS)
+        val runDir = firstHarnessRunDir(harnessRoot)
+        val lockPath = runDir.resolve("lock.json")
+        val lockDeadline = System.currentTimeMillis() + 10_000
+        while (System.currentTimeMillis() < lockDeadline && lockPath.exists()) {
+            Thread.sleep(100)
+        }
+        val status = readJson(runDir.resolve("status.json"))
+        assertTrue(jsonString(status["status"]) == "aborted", "interrupted fast run should leave aborted status: $status")
+        assertTrue(!lockPath.exists(), "interrupted fast run should clear lock ownership")
+    } finally {
+        runCatching { if (Files.exists(harnessRoot) && Files.list(harnessRoot).use { it.findAny().isPresent }) terminateHarnessOwner(harnessRoot, force = true) }
+        process.destroyForcibly()
+        process.waitFor(5, TimeUnit.SECONDS)
+        deleteTree(harnessRoot)
+    }
 }
 
 test("worldgen sampling rejects invalid bootstrap mode with usage error") {

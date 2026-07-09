@@ -11,6 +11,7 @@ fun usage(message: String? = null): Nothing {
 
 var profile: String? = null
 var bootstrapMode = "always"
+var port: String? = System.getenv("BTM_HARNESS_ACTUAL_PORT")?.takeIf { it.isNotBlank() }
 val passthrough = mutableListOf<String>()
 var index = 0
 while (index < args.size) {
@@ -22,6 +23,11 @@ while (index < args.size) {
         "--bootstrap-mode" -> {
             bootstrapMode = args.getOrNull(index + 1) ?: usage("--bootstrap-mode needs always, once, or never")
             if (bootstrapMode !in setOf("always", "once", "never")) usage("invalid bootstrap mode: $bootstrapMode")
+            index += 2
+        }
+        "--port" -> {
+            port = args.getOrNull(index + 1) ?: usage("--port needs a number")
+            if (!port!!.all(Char::isDigit)) usage("--port needs a number")
             index += 2
         }
         "--help" -> usage()
@@ -49,8 +55,25 @@ val contractExit = contract.waitFor()
 if (contractExit != 0) exitProcess(contractExit)
 
 val backend = root.resolve("tools/kotlin/dimension_worldgen_stress.main.kts")
-val process = ProcessBuilder(listOf("kotlin", backend.toString()) + mappedArgs + listOf("--bootstrap-mode", bootstrapMode) + passthrough)
-    .directory(root.toFile())
-    .inheritIO()
-    .start()
+val command = mutableListOf<String>()
+command += listOf("kotlin", backend.toString())
+command += mappedArgs
+command += listOf("--bootstrap-mode", bootstrapMode)
+if (port != null) command += listOf("--port", port!!)
+command += passthrough
+val builder = ProcessBuilder(command).directory(root.toFile())
+builder.inheritIO()
+builder.environment().putAll(
+    listOf(
+        "BTM_HARNESS_STATUS_PATH",
+        "BTM_HARNESS_SUMMARY_PATH",
+        "BTM_HARNESS_PIDS_PATH",
+        "BTM_HARNESS_LOCK_PATH",
+        "BTM_HARNESS_LATEST_STATUS_PATH",
+        "BTM_HARNESS_LATEST_SUMMARY_PATH",
+        "BTM_HARNESS_REQUESTED_PORT",
+        "BTM_HARNESS_ACTUAL_PORT",
+    ).mapNotNull { key -> System.getenv(key)?.let { key to it } }.toMap(),
+)
+val process = builder.start()
 exitProcess(process.waitFor())

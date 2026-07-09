@@ -12,6 +12,7 @@ import java.nio.file.Path
 import java.nio.file.Paths
 import java.nio.file.StandardCopyOption
 import java.security.MessageDigest
+import java.time.Instant
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.util.UUID
@@ -103,6 +104,30 @@ data class WorkspaceRepoDefinition(
     val fullCommand: List<String>,
     val fullMeaningful: Boolean,
 )
+data class HarnessPaths(
+    val dir: Path,
+    val lock: Path,
+    val status: Path,
+    val summary: Path,
+    val pids: Path,
+)
+data class HarnessLockConflict(
+    val message: String,
+    val details: Map<String, Any?>,
+)
+data class HarnessSpec(
+    val keySeed: String,
+    val runKind: String,
+    val command: String,
+    val repoOrScenario: String,
+    val workDirOrRunRoot: String,
+    val requestedPort: Int? = null,
+    val actualPort: Int? = null,
+    val phase: String = "starting",
+    val evidencePaths: List<String> = emptyList(),
+    val latestStatusPath: Path? = null,
+    val latestSummaryPath: Path? = null,
+)
 data class CycleResult(
     val index: Int,
     var status: String = "FAIL",
@@ -146,6 +171,7 @@ val mcVersion = "1.20.1"
 val forgeVersion = "47.4.13"
 val forgeCoord = "$mcVersion-$forgeVersion"
 val defaultServerPort = 25565
+val harnessRoot: Path = Paths.get(System.getenv("BTM_HARNESS_ROOT") ?: "/tmp/btm-harness")
 
 val managedPaths = listOf(
     "LICENSE",
@@ -540,6 +566,226 @@ fun toJson(value: Any?): String = when (value) {
     is Iterable<*> -> value.joinToString(prefix = "[", postfix = "]") { toJson(it) }
     is Array<*> -> value.joinToString(prefix = "[", postfix = "]") { toJson(it) }
     else -> "\"${jsonEscape(value.toString())}\""
+}
+
+fun writeJsonFile(path: Path, value: Any?) {
+    path.parent?.createDirectories()
+    Files.writeString(path, toJson(value) + "\n")
+}
+
+fun readJsonFile(path: Path): Map<String, Any?> =
+    if (!path.exists()) emptyMap() else runCatching { jsonObject(parseJson(Files.readString(path))) }.getOrElse { emptyMap() }
+
+fun isoTimestamp(): String = Instant.now().toString()
+
+fun currentPid(): Long = ProcessHandle.current().pid()
+
+fun isPidAlive(pid: Long?): Boolean =
+    pid != null && pid > 0 && ProcessHandle.of(pid).map { it.isAlive }.orElse(false)
+
+fun stableHash(text: String): String {
+    val digest = MessageDigest.getInstance("SHA-256")
+    val encoded = digest.digest(text.toByteArray(Charsets.UTF_8))
+    return encoded.joinToString("") { "%02x".format(it) }
+}
+
+fun harnessKey(seed: String): String {
+    val slug = seed.lowercase().replace(Regex("[^a-z0-9]+"), "-").trim('-').take(72).ifBlank { "run" }
+    return "$slug-${stableHash(seed).take(12)}"
+}
+
+fun resolveHarnessPaths(seed: String): HarnessPaths {
+    val dir = harnessRoot.resolve(harnessKey(seed))
+    return HarnessPaths(
+        dir = dir,
+        lock = dir.resolve("lock.json"),
+        status = dir.resolve("status.json"),
+        summary = dir.resolve("summary.json"),
+        pids = dir.resolve("pids.json"),
+    )
+}
+
+fun syncLatestPointer(target: Path?, source: Path) {
+    if (target == null) return
+    target.parent?.createDirectories()
+    Files.copy(source, target, StandardCopyOption.REPLACE_EXISTING)
+}
+
+fun resolveAvailablePort(requestedPort: Int, maxOffset: Int = 50): Int? {
+    for (candidate in requestedPort..(requestedPort + maxOffset)) {
+        try {
+            ServerSocket(candidate).use { return candidate }
+        } catch (_: Exception) {
+        }
+    }
+    return null
+}
+
+class HarnessRun(
+    val spec: HarnessSpec,
+    val paths: HarnessPaths,
+) {
+    private val ownerPid = currentPid()
+    private var finished = false
+    private var lastStatus = linkedMapOf<String, Any?>(
+        "status" to "starting",
+        "command" to spec.command,
+        "pid" to ownerPid,
+        "started_at" to isoTimestamp(),
+        "updated_at" to isoTimestamp(),
+        "repo_or_scenario" to spec.repoOrScenario,
+        "work_dir_or_run_root" to spec.workDirOrRunRoot,
+        "requested_port" to spec.requestedPort,
+        "actual_port" to spec.actualPort,
+        "phase" to spec.phase,
+        "evidence_paths" to spec.evidencePaths,
+        "last_error" to null,
+        "child_pids" to emptyList<Long>(),
+    )
+    private val shutdownHook = Thread {
+        if (!finished) {
+            finalizeState("aborted", lastError = "harness interrupted", preserveSummary = true)
+        }
+    }
+
+    init {
+        paths.dir.createDirectories()
+        writeJsonFile(paths.lock, mapOf(
+            "key" to paths.dir.fileName.toString(),
+            "command" to spec.command,
+            "run_kind" to spec.runKind,
+            "pid" to ownerPid,
+            "started_at" to lastStatus["started_at"],
+            "status_path" to paths.status.toString(),
+            "summary_path" to paths.summary.toString(),
+            "work_dir_or_run_root" to spec.workDirOrRunRoot,
+            "requested_port" to spec.requestedPort,
+            "actual_port" to spec.actualPort,
+            "evidence_paths" to spec.evidencePaths,
+        ))
+        writeJsonFile(paths.pids, mapOf("owner_pid" to ownerPid, "child_pids" to emptyList<Long>()))
+        flushStatus()
+        writeJsonFile(paths.summary, mapOf(
+            "status" to "starting",
+            "command" to spec.command,
+            "started_at" to lastStatus["started_at"],
+            "repo_or_scenario" to spec.repoOrScenario,
+            "work_dir_or_run_root" to spec.workDirOrRunRoot,
+            "requested_port" to spec.requestedPort,
+            "actual_port" to spec.actualPort,
+        ))
+        syncPointers()
+        Runtime.getRuntime().addShutdownHook(shutdownHook)
+    }
+
+    private fun flushStatus() {
+        lastStatus["updated_at"] = isoTimestamp()
+        writeJsonFile(paths.status, lastStatus)
+        syncLatestPointer(spec.latestStatusPath, paths.status)
+    }
+
+    private fun syncPointers() {
+        syncLatestPointer(spec.latestStatusPath, paths.status)
+        syncLatestPointer(spec.latestSummaryPath, paths.summary)
+    }
+
+    fun announce(remapped: Boolean = false) {
+        if (jsonOutput || quiet) return
+        val portText = spec.actualPort?.let {
+            if (remapped && spec.requestedPort != null && spec.requestedPort != spec.actualPort) {
+                " port ${spec.requestedPort}->$it"
+            } else {
+                " port $it"
+            }
+        }.orEmpty()
+        println("==> ${spec.runKind} ${paths.status}$portText")
+    }
+
+    fun updateStatus(
+        status: String? = null,
+        phase: String? = null,
+        evidencePaths: List<String>? = null,
+        lastError: String? = null,
+        childPids: List<Long>? = null,
+        extra: Map<String, Any?> = emptyMap(),
+    ) {
+        status?.let { lastStatus["status"] = it }
+        phase?.let { lastStatus["phase"] = it }
+        if (evidencePaths != null) lastStatus["evidence_paths"] = evidencePaths
+        if (lastError != null || extra.containsKey("last_error")) lastStatus["last_error"] = lastError
+        if (childPids != null) {
+            lastStatus["child_pids"] = childPids
+            writeJsonFile(paths.pids, mapOf("owner_pid" to ownerPid, "child_pids" to childPids))
+        }
+        for ((key, value) in extra) lastStatus[key] = value
+        flushStatus()
+    }
+
+    fun finalizeState(
+        status: String,
+        lastError: String? = null,
+        summaryExtra: Map<String, Any?> = emptyMap(),
+        preserveSummary: Boolean = false,
+    ) {
+        if (finished) return
+        finished = true
+        updateStatus(status = status, lastError = lastError)
+        val baseSummary = if (preserveSummary) readJsonFile(paths.summary).toMutableMap() else linkedMapOf()
+        baseSummary["status"] = status
+        baseSummary["command"] = spec.command
+        baseSummary["repo_or_scenario"] = spec.repoOrScenario
+        baseSummary["work_dir_or_run_root"] = spec.workDirOrRunRoot
+        baseSummary["requested_port"] = spec.requestedPort
+        baseSummary["actual_port"] = spec.actualPort
+        baseSummary["started_at"] = lastStatus["started_at"]
+        baseSummary["updated_at"] = isoTimestamp()
+        if (lastError != null) baseSummary["last_error"] = lastError
+        for ((key, value) in summaryExtra) baseSummary[key] = value
+        writeJsonFile(paths.summary, baseSummary)
+        syncPointers()
+        clearLock()
+        runCatching { Runtime.getRuntime().removeShutdownHook(shutdownHook) }
+    }
+
+    private fun clearLock() {
+        val lock = readJsonFile(paths.lock)
+        val lockPid = jsonNumber(lock["pid"])?.toLong()
+        if (lockPid == null || lockPid == ownerPid) {
+            Files.deleteIfExists(paths.lock)
+        }
+    }
+}
+
+fun startHarnessRun(spec: HarnessSpec): Pair<HarnessRun?, HarnessLockConflict?> {
+    val paths = resolveHarnessPaths(spec.keySeed)
+    paths.dir.createDirectories()
+    if (paths.lock.exists()) {
+        val lock = readJsonFile(paths.lock)
+        val lockPid = jsonNumber(lock["pid"])?.toLong()
+        if (isPidAlive(lockPid)) {
+            val statusPath = jsonString(lock["status_path"]) ?: paths.status.toString()
+            val evidence = jsonStringList(lock["evidence_paths"])
+            val message = buildString {
+                append("active run already holds this harness lock")
+                append(" (pid=${lockPid ?: "UNKNOWN"})")
+                lock["command"]?.let { append(", command=$it") }
+                append(", status=$statusPath")
+                if (evidence.isNotEmpty()) append(", evidence=${evidence.joinToString(",")}")
+            }
+            return null to HarnessLockConflict(
+                message,
+                mapOf(
+                    "activePid" to lockPid,
+                    "activeCommand" to jsonString(lock["command"]),
+                    "statusPath" to statusPath,
+                    "evidencePaths" to evidence,
+                    "lockPath" to paths.lock.toString(),
+                ),
+            )
+        }
+        Files.deleteIfExists(paths.lock)
+    }
+    return HarnessRun(spec, paths) to null
 }
 
 fun printResult(result: CommandResult) {
@@ -3588,10 +3834,33 @@ fun runToolDocSurfaceValidation(): ProcessRun {
     else ProcessRun(1, failures.joinToString("\n") { "FAIL - $it" })
 }
 
-fun runSmokeValidation(serverDir: Path, port: Int, reset: Boolean, bootstrapMode: String = "always"): ProcessRun {
+fun runSmokeValidation(serverDir: Path, port: Int, reset: Boolean, bootstrapMode: String = "always", harness: HarnessRun? = null): ProcessRun {
     val stamp = timestamp()
+    val fakeMode = System.getenv("BTM_TEST_FAKE_SMOKE")
+    if (fakeMode == "1") {
+        val evidenceDir = serverDir.resolve("validation-evidence/$stamp")
+        evidenceDir.createDirectories()
+        harness?.updateStatus(
+            status = "running",
+            phase = "runtime_validation",
+            evidencePaths = listOf(evidenceDir.toString()),
+            extra = mapOf("server_dir" to serverDir.toString()),
+        )
+        writeJsonFile(
+            harness?.paths?.summary ?: evidenceDir.resolve("summary.json"),
+            mapOf(
+                "status" to "passed",
+                "server_dir" to serverDir.toString(),
+                "requested_port" to harness?.spec?.requestedPort,
+                "actual_port" to port,
+                "evidence_paths" to listOf(evidenceDir.toString()),
+            ),
+        )
+        return ProcessRun(0, "fake smoke passed")
+    }
     when (bootstrapMode) {
         "always", "once" -> {
+            harness?.updateStatus(status = "running", phase = "bootstrap")
             val bootstrap = bootstrapServerRuntime(serverDir, port, reset)
             if (bootstrap.exitCode != 0) return bootstrap
         }
@@ -3605,14 +3874,22 @@ fun runSmokeValidation(serverDir: Path, port: Int, reset: Boolean, bootstrapMode
     if (prune.exitCode != 0) return prune
     val evidenceDir = serverDir.resolve("validation-evidence/$stamp")
     evidenceDir.createDirectories()
+    harness?.updateStatus(
+        status = "running",
+        phase = "start_server",
+        evidencePaths = listOf(evidenceDir.toString(), serverDir.resolve("logs/latest.log").toString()),
+        extra = mapOf("server_dir" to serverDir.toString()),
+    )
     val serverLog = evidenceDir.resolve("server-console.log")
     val latestLog = serverDir.resolve("logs/latest.log")
     val running = startServerProcess(serverDir, port, listOf("nogui"), serverLog)
+    harness?.updateStatus(childPids = listOf(running.process.pid()))
     try {
         val donePattern = Regex("""Done \([\d.]+s\)! For help, type "help"""")
         val fatalPattern = Regex("""Missing or unsupported mandatory dependencies|Mod Loading has failed|Failed to start the minecraft server|Encountered an unexpected exception|Preparing crash report|This crash report has been saved|\[main/FATAL\]""")
         val deadline = System.currentTimeMillis() + 900_000L
         var reachedDone = false
+        harness?.updateStatus(status = "running", phase = "wait_ready")
         while (System.currentTimeMillis() < deadline) {
             if (!running.process.isAlive) {
                 return ProcessRun(1, "server exited before Done marker")
@@ -3630,8 +3907,10 @@ fun runSmokeValidation(serverDir: Path, port: Int, reset: Boolean, bootstrapMode
         if (!reachedDone) {
             return ProcessRun(1, "server startup timed out before Done marker")
         }
+        harness?.updateStatus(status = "running", phase = "runtime_validation")
         stopProcess(running, "stop")
     } finally {
+        harness?.updateStatus(status = "running", phase = "shutdown")
         stopProcess(running)
     }
     val scan = scanHardFailures(latestLog, serverDir)
@@ -3648,7 +3927,20 @@ fun runSmokeValidation(serverDir: Path, port: Int, reset: Boolean, bootstrapMode
         }.trim()
         return ProcessRun(1, output)
     }
-    return runPackSuite(serverDir, strictDataDumps = false, runtimeOnly = true)
+    val suite = runPackSuite(serverDir, strictDataDumps = false, runtimeOnly = true)
+    if (suite.exitCode == 0) {
+        writeJsonFile(
+            harness?.paths?.summary ?: evidenceDir.resolve("summary.json"),
+            mapOf(
+                "status" to "passed",
+                "server_dir" to serverDir.toString(),
+                "requested_port" to harness?.spec?.requestedPort,
+                "actual_port" to port,
+                "evidence_paths" to listOf(evidenceDir.toString(), latestLog.toString()),
+            ),
+        )
+    }
+    return suite
 }
 
 fun runKotlinTests(filter: String?): ProcessRun {
@@ -4248,67 +4540,189 @@ fun runWorkspaceVerification(mode: String, rawArgs: List<String>): CommandResult
         )
     }
 
-    val repoRuns = mutableListOf<Map<String, Any?>>()
-    for (repo in selectedRepos) {
-        val command = if (mode == "full") repo.fullCommand else repo.fastCommand
-        val workDir = if (repo.path == ".") root else root.resolve(repo.path)
-        if (!workDir.exists() || !workDir.isDirectory()) {
-            return CommandResult(
-                command = "test $mode",
-                status = "failure",
-                summary = "workspace repo path missing for ${repo.id}",
-                findings = listOf(ValidationFinding("error", "workspace repo path missing for ${repo.id}: ${repo.path}")),
-                details = mapOf("mode" to mode, "repo" to repo.id, "path" to repo.path),
-                artifacts = listOf(ArtifactRef(workspaceInventoryPath.toString())),
-                exitCode = 1,
-                evidenceLevel = "source",
-            )
-        }
-        val run = runProcess(command, stream = false, workDir = workDir)
-        repoRuns += mapOf(
-            "id" to repo.id,
-            "path" to repo.path,
-            "command" to command,
-            "exitCode" to run.exitCode,
-            "outputSnippet" to outputSnippet(run.output),
+    val scope = if (filters.isEmpty()) "all" else filters.sorted().joinToString(",")
+    val (harness, conflict) = startHarnessRun(
+        HarnessSpec(
+            keySeed = "test-$mode:$scope",
+            runKind = "test $mode",
+            command = "test $mode",
+            repoOrScenario = "workspace",
+            workDirOrRunRoot = root.toString(),
+        ),
+    )
+    if (conflict != null) {
+        return CommandResult(
+            command = "test $mode",
+            status = "failure",
+            summary = conflict.message,
+            findings = listOf(ValidationFinding("error", conflict.message)),
+            details = conflict.details,
+            artifacts = listOf(ArtifactRef(workspaceInventoryPath.toString()), ArtifactRef(resolveHarnessPaths("test-$mode:$scope").status.toString())),
+            exitCode = 1,
+            evidenceLevel = "source",
         )
-        if (run.exitCode != 0) {
-            return CommandResult(
-                command = "test $mode",
-                status = "failure",
-                summary = "workspace $mode failed in ${repo.id}",
-                findings = listOf(ValidationFinding("error", "${repo.id} ${mode} lane failed with exit ${run.exitCode}")),
-                details = mapOf("mode" to mode, "failedRepo" to repo.id, "repoRuns" to repoRuns),
-                artifacts = listOf(ArtifactRef(workspaceInventoryPath.toString())),
-                exitCode = classifyBuildExit(run.exitCode, run.output),
-                evidenceLevel = "source",
+    }
+    harness!!
+    harness.announce()
+
+    val repoRuns = mutableListOf<Map<String, Any?>>()
+    val stubMode = System.getenv("BTM_TEST_WORKSPACE_STUB_MODE")
+    val stubSleepMs = System.getenv("BTM_TEST_WORKSPACE_STUB_SLEEP_MS")?.toLongOrNull() ?: 0L
+    try {
+        for ((repoIndex, repo) in selectedRepos.withIndex()) {
+            val command = if (mode == "full") repo.fullCommand else repo.fastCommand
+            val workDir = if (repo.path == ".") root else root.resolve(repo.path)
+            harness.updateStatus(
+                status = "running",
+                phase = "repo",
+                extra = mapOf(
+                    "current_repo" to repo.id,
+                    "current_command" to command.joinToString(" "),
+                    "repo_index" to repoIndex + 1,
+                    "repo_total" to selectedRepos.size,
+                ),
             )
+            if (!jsonOutput && !quiet) println("==> [${repoIndex + 1}/${selectedRepos.size}] ${repo.id}")
+            if (!workDir.exists() || !workDir.isDirectory()) {
+                harness.finalizeState(
+                    "failed",
+                    lastError = "workspace repo path missing for ${repo.id}",
+                    summaryExtra = mapOf("failed_repo" to repo.id, "repo_runs" to repoRuns),
+                )
+                return CommandResult(
+                    command = "test $mode",
+                    status = "failure",
+                    summary = "workspace repo path missing for ${repo.id}",
+                    findings = listOf(ValidationFinding("error", "workspace repo path missing for ${repo.id}: ${repo.path}")),
+                    details = mapOf("mode" to mode, "repo" to repo.id, "path" to repo.path),
+                    artifacts = listOf(ArtifactRef(workspaceInventoryPath.toString()), ArtifactRef(harness.paths.status.toString()), ArtifactRef(harness.paths.summary.toString())),
+                    exitCode = 1,
+                    evidenceLevel = "source",
+                )
+            }
+            val run = when {
+                stubMode == "pass" || stubMode == "fail" -> {
+                    if (stubSleepMs > 0) Thread.sleep(stubSleepMs)
+                    val exit = if (stubMode == "fail" && repoIndex == selectedRepos.lastIndex) 1 else 0
+                    ProcessRun(exit, "stubbed $mode for ${repo.id}")
+                }
+                else -> runProcess(command, stream = false, workDir = workDir)
+            }
+            val repoEntry = mapOf(
+                "id" to repo.id,
+                "path" to repo.path,
+                "command" to command,
+                "exitCode" to run.exitCode,
+                "outputSnippet" to outputSnippet(run.output),
+            )
+            repoRuns += repoEntry
+            writeJsonFile(
+                harness.paths.summary,
+                mapOf(
+                    "status" to "running",
+                    "command" to "test $mode",
+                    "repo_or_scenario" to "workspace",
+                    "work_dir_or_run_root" to root.toString(),
+                    "requested_port" to null,
+                    "actual_port" to null,
+                    "repo_runs" to repoRuns,
+                    "current_repo" to repo.id,
+                    "repo_index" to repoIndex + 1,
+                    "repo_total" to selectedRepos.size,
+                    "updated_at" to isoTimestamp(),
+                ),
+            )
+            if (run.exitCode == 0) {
+                if (!jsonOutput && !quiet) println("PASS ${repo.id}")
+            } else {
+                if (!jsonOutput && !quiet) println("FAIL ${repo.id}")
+                harness.finalizeState(
+                    "failed",
+                    lastError = "${repo.id} ${mode} lane failed with exit ${run.exitCode}",
+                    summaryExtra = mapOf("failed_repo" to repo.id, "repo_runs" to repoRuns),
+                    preserveSummary = true,
+                )
+                return CommandResult(
+                    command = "test $mode",
+                    status = "failure",
+                    summary = "workspace $mode failed in ${repo.id}",
+                    findings = listOf(ValidationFinding("error", "${repo.id} ${mode} lane failed with exit ${run.exitCode}")),
+                    details = mapOf("mode" to mode, "failedRepo" to repo.id, "repoRuns" to repoRuns),
+                    artifacts = listOf(ArtifactRef(workspaceInventoryPath.toString()), ArtifactRef(harness.paths.status.toString()), ArtifactRef(harness.paths.summary.toString())),
+                    exitCode = classifyBuildExit(run.exitCode, run.output),
+                    evidenceLevel = "source",
+                )
+            }
         }
+        harness.finalizeState("passed", summaryExtra = mapOf("repo_runs" to repoRuns), preserveSummary = true)
+    } catch (error: Throwable) {
+        harness.finalizeState("failed", lastError = error.message ?: error::class.java.simpleName, summaryExtra = mapOf("repo_runs" to repoRuns), preserveSummary = true)
+        throw error
     }
     return success(
         command = "test $mode",
         summary = "workspace $mode passed for ${selectedRepos.size} repo(s)",
         details = mapOf("mode" to mode, "repoRuns" to repoRuns),
-        artifacts = listOf(ArtifactRef(workspaceInventoryPath.toString())),
+        artifacts = listOf(ArtifactRef(workspaceInventoryPath.toString()), ArtifactRef(harness.paths.status.toString()), ArtifactRef(harness.paths.summary.toString())),
         evidenceLevel = "source",
     )
 }
 
 fun runFullCommand(rawArgs: List<String>): CommandResult {
     if (rawArgs.isEmpty()) {
-        val run = runPackFullLane()
-        return if (run.exitCode == 0) success(
-            command = "test full",
-            summary = "pack full passed",
-            evidenceLevel = "scenario-runtime",
-        ) else CommandResult(
-            command = "test full",
-            status = "failure",
-            summary = "pack full failed",
-            findings = listOf(ValidationFinding("error", "pack full lane failed with exit ${run.exitCode}")),
-            exitCode = classifyBuildExit(run.exitCode, run.output),
-            evidenceLevel = "scenario-runtime",
+        val keySeed = "test-full:pack"
+        val (harness, conflict) = startHarnessRun(
+            HarnessSpec(
+                keySeed = keySeed,
+                runKind = "test full",
+                command = "test full",
+                repoOrScenario = "pack",
+                workDirOrRunRoot = root.toString(),
+            ),
         )
+        if (conflict != null) {
+            return CommandResult(
+                command = "test full",
+                status = "failure",
+                summary = conflict.message,
+                findings = listOf(ValidationFinding("error", conflict.message)),
+                details = conflict.details,
+                artifacts = listOf(ArtifactRef(resolveHarnessPaths(keySeed).status.toString())),
+                exitCode = 1,
+                evidenceLevel = "scenario-runtime",
+            )
+        }
+        harness!!
+        harness.announce()
+        harness.updateStatus(status = "running", phase = "pack-full")
+        val run = try {
+            runPackFullLane()
+        } catch (error: Throwable) {
+            harness.finalizeState("failed", lastError = error.message ?: error::class.java.simpleName, preserveSummary = true)
+            throw error
+        }
+        return if (run.exitCode == 0) {
+            harness.finalizeState("passed", preserveSummary = true)
+            success(
+                command = "test full",
+                summary = "pack full passed",
+                artifacts = listOf(ArtifactRef(harness.paths.status.toString()), ArtifactRef(harness.paths.summary.toString())),
+                evidenceLevel = "scenario-runtime",
+            )
+        } else {
+            val mappedExit = classifyBuildExit(run.exitCode, run.output)
+            harness.finalizeState("failed", lastError = "pack full lane failed with exit $mappedExit", summaryExtra = listOfNotNull(outputSnippet(run.output)?.let { "capturedOutput" to it }).toMap(), preserveSummary = true)
+            CommandResult(
+                command = "test full",
+                status = "failure",
+                summary = "pack full failed",
+                findings = listOf(ValidationFinding("error", "pack full lane failed with exit ${run.exitCode}")),
+                details = listOfNotNull(outputSnippet(run.output)?.let { "capturedOutput" to it }).toMap(),
+                artifacts = listOf(ArtifactRef(harness.paths.status.toString()), ArtifactRef(harness.paths.summary.toString())),
+                exitCode = mappedExit,
+                evidenceLevel = "scenario-runtime",
+            )
+        }
     }
 
     if (rawArgs == listOf("--help")) {
@@ -4326,6 +4740,59 @@ fun runFullCommand(rawArgs: List<String>): CommandResult {
     val workspaceArgs = rawArgs.filterNot { it == "--workspace" }
     return runWorkspaceVerification("full", workspaceArgs)
 }
+
+fun argValue(args: List<String>, flag: String): String? {
+    val index = args.indexOf(flag)
+    return if (index >= 0) args.getOrNull(index + 1) else null
+}
+
+fun replaceFlagValue(args: List<String>, flag: String, value: String): List<String> {
+    val output = mutableListOf<String>()
+    var index = 0
+    var replaced = false
+    while (index < args.size) {
+        if (args[index] == flag) {
+            output += flag
+            output += value
+            index += 2
+            replaced = true
+        } else {
+            output += args[index]
+            index += 1
+        }
+    }
+    if (!replaced) {
+        output += flag
+        output += value
+    }
+    return output
+}
+
+fun scenarioDefaultRunRoot(name: String, args: List<String>): Path {
+    val explicit = argValue(args, "--run-root")
+    if (explicit != null) return resolveUserPath(explicit)
+    return when (name) {
+        "opening_progression" -> Paths.get("/tmp/btm-opening-progression")
+        "lc_tfth_c2me_dh" -> Paths.get("/tmp/btm-lc-c2me-dh-repro")
+        "dimension_worldgen", "worldgen_sampling" -> Paths.get("/tmp/btm-dimension-worldgen")
+        "pillager_campaigns" -> Paths.get("/tmp/btm-pillager-campaigns")
+        "client_smoke" -> {
+            val profile = argValue(args, "--profile") ?: "quick"
+            Paths.get("/tmp", if (profile == "release") "btm-client-smoke-release" else "btm-client-smoke-quick")
+        }
+        else -> Paths.get("/tmp/btm-$name")
+    }.toAbsolutePath().normalize()
+}
+
+fun scenarioRequestedPort(name: String, args: List<String>): Int? =
+    argValue(args, "--port")?.toIntOrNull() ?: when (name) {
+        "client_smoke" -> when (argValue(args, "--profile") ?: "quick") {
+            "release" -> 25568
+            else -> 25567
+        }
+        "pillager_campaigns" -> null
+        else -> defaultServerPort
+    }
 
 fun handleTest(subArgs: List<String>): CommandResult {
     if (subArgs.isEmpty() || subArgs == listOf("--help")) {
@@ -4438,25 +4905,80 @@ fun handleTest(subArgs: List<String>): CommandResult {
                 }
             }
             val serverPath = resolveUserPath(serverDir)
-            val run = runSmokeValidation(serverPath, port.toInt(), reset, bootstrapMode)
+            val requestedPort = port.toInt()
+            val actualPort = resolveAvailablePort(requestedPort)
+                ?: return CommandResult(
+                    command = "test smoke",
+                    status = "failure",
+                    summary = "no free port found in ${requestedPort}..${requestedPort + 50}",
+                    findings = listOf(ValidationFinding("error", "no free port found in ${requestedPort}..${requestedPort + 50}")),
+                    details = mapOf("serverDir" to serverPath.toString(), "requestedPort" to requestedPort),
+                    exitCode = 1,
+                    evidenceLevel = "fresh-runtime",
+                )
+            val (harness, conflict) = startHarnessRun(
+                HarnessSpec(
+                    keySeed = "test-smoke:${serverPath.toAbsolutePath().normalize()}",
+                    runKind = "test smoke",
+                    command = "test smoke",
+                    repoOrScenario = "smoke",
+                    workDirOrRunRoot = serverPath.toString(),
+                    requestedPort = requestedPort,
+                    actualPort = actualPort,
+                ),
+            )
+            if (conflict != null) {
+                return CommandResult(
+                    command = "test smoke",
+                    status = "failure",
+                    summary = conflict.message,
+                    findings = listOf(ValidationFinding("error", conflict.message)),
+                    details = conflict.details,
+                    artifacts = listOf(ArtifactRef(resolveHarnessPaths("test-smoke:${serverPath.toAbsolutePath().normalize()}").status.toString())),
+                    exitCode = 1,
+                    evidenceLevel = "fresh-runtime",
+                )
+            }
+            harness!!
+            harness.announce(remapped = actualPort != requestedPort)
+            if (actualPort != requestedPort && !jsonOutput && !quiet) {
+                println("note: requested port $requestedPort was busy; using $actualPort")
+            }
+            harness.updateStatus(
+                status = "running",
+                phase = "bootstrap",
+                lastError = if (actualPort != requestedPort) "requested port $requestedPort remapped to $actualPort" else null,
+                extra = mapOf("port_note" to if (actualPort != requestedPort) "remapped" else "requested"),
+            )
+            val run = try {
+                runSmokeValidation(serverPath, actualPort, reset, bootstrapMode, harness)
+            } catch (error: Throwable) {
+                harness.finalizeState("failed", lastError = error.message ?: error::class.java.simpleName, preserveSummary = true)
+                throw error
+            }
             val exitCode = if (run.exitCode == 0) 0 else 1
             if (exitCode == 0) success(
                 command = "test smoke",
                 summary = "smoke validation passed",
-                artifacts = listOf(ArtifactRef(serverPath.toString(), "directory")),
-                details = mapOf("serverDir" to serverPath.toString(), "port" to port.toInt(), "resetRuntime" to reset, "bootstrapMode" to bootstrapMode),
+                artifacts = listOf(ArtifactRef(serverPath.toString(), "directory"), ArtifactRef(harness.paths.status.toString()), ArtifactRef(harness.paths.summary.toString())),
+                details = mapOf("serverDir" to serverPath.toString(), "requestedPort" to requestedPort, "actualPort" to actualPort, "resetRuntime" to reset, "bootstrapMode" to bootstrapMode),
                 mutated = true,
                 evidenceLevel = "fresh-runtime",
-            ) else CommandResult(
+            ).also {
+                harness.finalizeState("passed", preserveSummary = true)
+            } else CommandResult(
                 command = "test smoke",
                 status = "failure",
                 summary = "test smoke failed with exit $exitCode",
                 findings = listOf(ValidationFinding("error", "test smoke failed with exit $exitCode")),
-                details = mapOf("serverDir" to serverPath.toString(), "port" to port.toInt(), "resetRuntime" to reset, "bootstrapMode" to bootstrapMode) + listOfNotNull(outputSnippet(run.output)?.let { "capturedOutput" to it }).toMap(),
+                details = mapOf("serverDir" to serverPath.toString(), "requestedPort" to requestedPort, "actualPort" to actualPort, "resetRuntime" to reset, "bootstrapMode" to bootstrapMode) + listOfNotNull(outputSnippet(run.output)?.let { "capturedOutput" to it }).toMap(),
+                artifacts = listOf(ArtifactRef(harness.paths.status.toString()), ArtifactRef(harness.paths.summary.toString())),
                 exitCode = exitCode,
                 evidenceLevel = "fresh-runtime",
                 mutated = true,
-            )
+            ).also {
+                harness.finalizeState("failed", lastError = "test smoke failed with exit $exitCode", summaryExtra = listOfNotNull(outputSnippet(run.output)?.let { "capturedOutput" to it }).toMap(), preserveSummary = true)
+            }
         }
         "scenario", "scenario-headful" -> {
             val missing = ensureCommands("kotlin")
@@ -4477,16 +4999,98 @@ fun handleTest(subArgs: List<String>): CommandResult {
                     listOf(ValidationFinding("error", "DISPLAY or xvfb-run is required")),
                 )
             }
-            val passthroughArgs = subArgs.drop(2)
-            wrapProcessResult(
-                commandName = if (scenario.headful) "test scenario-headful $name" else "test scenario $name",
-                processCommand = listOf("kotlin", scenario.script) + passthroughArgs,
-                summaryOnSuccess = "scenario $name passed",
-                evidenceLevel = "scenario-runtime",
-                mutated = true,
-                exitMapper = { exitCode, _ -> when (exitCode) { 0 -> 0; 2 -> 2; else -> 1 } },
-                details = mapOf("scenario" to scenario.name, "script" to scenario.script, "args" to passthroughArgs, "headful" to scenario.headful),
+            var passthroughArgs = subArgs.drop(2)
+            val runRoot = scenarioDefaultRunRoot(name, passthroughArgs)
+            val requestedPort = scenarioRequestedPort(name, passthroughArgs)
+            val actualPort = requestedPort?.let {
+                resolveAvailablePort(it) ?: return CommandResult(
+                    command = if (scenario.headful) "test scenario-headful $name" else "test scenario $name",
+                    status = "failure",
+                    summary = "no free port found in ${it}..${it + 50}",
+                    findings = listOf(ValidationFinding("error", "no free port found in ${it}..${it + 50}")),
+                    details = mapOf("scenario" to name, "requestedPort" to it, "runRoot" to runRoot.toString()),
+                    exitCode = 1,
+                    evidenceLevel = "scenario-runtime",
+                )
+            }
+            if (actualPort != null) {
+                passthroughArgs = replaceFlagValue(passthroughArgs, "--port", actualPort.toString())
+            }
+            val latestStatus = runRoot.resolve("latest-status.json")
+            val latestSummary = runRoot.resolve("latest-summary.json")
+            val keySeed = "scenario:$name:${runRoot.toAbsolutePath().normalize()}"
+            val commandName = if (scenario.headful) "test scenario-headful $name" else "test scenario $name"
+            val (harness, conflict) = startHarnessRun(
+                HarnessSpec(
+                    keySeed = keySeed,
+                    runKind = commandName,
+                    command = commandName,
+                    repoOrScenario = scenario.name,
+                    workDirOrRunRoot = runRoot.toString(),
+                    requestedPort = requestedPort,
+                    actualPort = actualPort,
+                    latestStatusPath = latestStatus,
+                    latestSummaryPath = latestSummary,
+                ),
             )
+            if (conflict != null) {
+                return CommandResult(
+                    command = commandName,
+                    status = "failure",
+                    summary = conflict.message,
+                    findings = listOf(ValidationFinding("error", conflict.message)),
+                    details = conflict.details,
+                    artifacts = listOf(ArtifactRef(resolveHarnessPaths(keySeed).status.toString())),
+                    exitCode = 1,
+                    evidenceLevel = "scenario-runtime",
+                    mutated = true,
+                )
+            }
+            harness!!
+            harness.announce(remapped = requestedPort != null && actualPort != requestedPort)
+            if (requestedPort != null && actualPort != null && actualPort != requestedPort && !jsonOutput && !quiet) {
+                println("note: requested port $requestedPort was busy; using $actualPort")
+            }
+            harness.updateStatus(status = "running", phase = "bootstrap")
+            val processCommand = listOf("kotlin", scenario.script) + passthroughArgs
+            val processEnv = buildMap<String, String> {
+                put("BTM_HARNESS_STATUS_PATH", harness.paths.status.toString())
+                put("BTM_HARNESS_SUMMARY_PATH", harness.paths.summary.toString())
+                put("BTM_HARNESS_PIDS_PATH", harness.paths.pids.toString())
+                put("BTM_HARNESS_LOCK_PATH", harness.paths.lock.toString())
+                put("BTM_HARNESS_LATEST_STATUS_PATH", latestStatus.toString())
+                put("BTM_HARNESS_LATEST_SUMMARY_PATH", latestSummary.toString())
+                put("BTM_HARNESS_REQUESTED_PORT", requestedPort?.toString() ?: "")
+                put("BTM_HARNESS_ACTUAL_PORT", actualPort?.toString() ?: "")
+                put("BTM_HARNESS_RUN_ROOT", runRoot.toString())
+                put("BTM_HARNESS_SCENARIO", name)
+            }
+            val run = runProcess(processCommand, extraEnv = processEnv, stream = !jsonOutput && !quiet)
+            val mappedExit = when (run.exitCode) { 0 -> 0; 2 -> 2; else -> 1 }
+            return if (mappedExit == 0) {
+                harness.finalizeState("passed", preserveSummary = true)
+                success(
+                    command = commandName,
+                    summary = "scenario $name passed",
+                    details = mapOf("scenario" to scenario.name, "script" to scenario.script, "args" to passthroughArgs, "headful" to scenario.headful, "requestedPort" to requestedPort, "actualPort" to actualPort, "runRoot" to runRoot.toString()),
+                    artifacts = listOf(ArtifactRef(harness.paths.status.toString()), ArtifactRef(harness.paths.summary.toString()), ArtifactRef(latestStatus.toString()), ArtifactRef(latestSummary.toString())),
+                    evidenceLevel = "scenario-runtime",
+                    mutated = true,
+                )
+            } else {
+                harness.finalizeState("failed", lastError = "$commandName failed with exit $mappedExit", summaryExtra = listOfNotNull(outputSnippet(run.output)?.let { "capturedOutput" to it }).toMap(), preserveSummary = true)
+                CommandResult(
+                    command = commandName,
+                    status = "failure",
+                    summary = "$commandName failed with exit $mappedExit",
+                    details = mapOf("scenario" to scenario.name, "script" to scenario.script, "args" to passthroughArgs, "headful" to scenario.headful, "requestedPort" to requestedPort, "actualPort" to actualPort, "runRoot" to runRoot.toString()) + listOfNotNull(outputSnippet(run.output)?.let { "capturedOutput" to it }).toMap(),
+                    findings = listOf(ValidationFinding("error", "$commandName failed with exit $mappedExit")),
+                    artifacts = listOf(ArtifactRef(harness.paths.status.toString()), ArtifactRef(harness.paths.summary.toString()), ArtifactRef(latestStatus.toString()), ArtifactRef(latestSummary.toString())),
+                    exitCode = mappedExit,
+                    evidenceLevel = "scenario-runtime",
+                    mutated = true,
+                )
+            }
         }
         "kotlin" -> {
             var filter: String? = null

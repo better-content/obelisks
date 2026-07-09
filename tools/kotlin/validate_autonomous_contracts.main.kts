@@ -653,24 +653,26 @@ fun validateVanillaStyleToolSuppression() {
 }
 
 fun validateRealisticHands() {
-    val hook = read("kubejs/startup_scripts/20_blocks/20_realistic_hands.js")
-    val assignments = read("kubejs/startup_scripts/99_realistic_hands_assignments.js")
-    val handBreakableText = read("kubejs/data/kubejs/tags/blocks/hand_breakable.json")
-    if (Regex(""""hand"\s*:\s*\[[\s\S]*"minecraft:gravel"""").containsMatchIn(assignments)) ok("Realistic Hands assignments keep gravel hand-breakable")
-    else fail("Realistic Hands assignments keep gravel hand-breakable", "minecraft:gravel missing from blocks.hand")
-    if ("minecraft:gravel" in handBreakableText && "#forge:gravel" in handBreakableText) ok("Realistic Hands hand-breakable tag covers vanilla and forge gravel")
-    else fail("Realistic Hands hand-breakable tag covers vanilla and forge gravel", "missing minecraft:gravel or #forge:gravel")
-    if ("function btmRealisticHandsRefreshAssignments()" in hook && Regex("""function btmRealisticHandsShouldDeny[\s\S]*btmRealisticHandsRefreshAssignments\(\)""").containsMatchIn(hook)) ok("Realistic Hands hook refreshes audited assignments after startup load ordering")
-    else fail("Realistic Hands hook refreshes audited assignments after startup load ordering", "hook must not snapshot global.BTM_REALISTIC_HANDS_ASSIGNMENTS before 99_realistic_hands_assignments.js loads")
+    val audit = readJson("generated/runtime-dumps/realistic_hands_audit.json")
+    val blockTags = jsonObject(audit["blockTags"]).mapValues { (_, values) -> jsonArray(values).mapNotNull(::jsonString).toSet() }
+    if ("minecraft:gravel" in (blockTags["hand"] ?: emptySet())) ok("Realistic Hands explicit hand tag keeps gravel hand-breakable")
+    else fail("Realistic Hands explicit hand tag keeps gravel hand-breakable", "minecraft:gravel missing from btmfixes:realistic_hands/hand")
+    if ("unearthed:siltstone_regolith" in (blockTags["force_harvest"] ?: emptySet())) ok("Realistic Hands force-harvest tag covers siltstone regolith")
+    else fail("Realistic Hands force-harvest tag covers siltstone regolith", "unearthed:siltstone_regolith missing from btmfixes:realistic_hands/force_harvest")
+    val retiredHook = read("kubejs/startup_scripts/20_blocks/20_realistic_hands.js")
+    val retiredAssignments = read("kubejs/startup_scripts/99_realistic_hands_assignments.js")
+    val retiredLoot = read("kubejs/server_scripts/50_loot/11_realistic_hands_outcomes.js")
+    val retiredMarkers = listOf("global.BTM_REALISTIC_HANDS_ASSIGNMENTS", "ForgeEvents.onEvent(", "LootJS.modifiers(")
+    val leaked = retiredMarkers.filter { it in retiredHook || it in retiredAssignments || it in retiredLoot }
+    if (leaked.isEmpty()) ok("Realistic Hands KubeJS runtime ownership is retired")
+    else fail("Realistic Hands KubeJS runtime ownership is retired", leaked.joinToString(", "))
 }
 
 // Remaining sections are direct text/JSON audits translated from the JS validator.
 // They stay explicit rather than abstract so the contract remains easy to diff against the original source.
 fun validatePrimitiveMiningRegressionContracts() = validateByNodeParity("validatePrimitiveMiningRegressionContracts") {
-    val assignmentText = read("kubejs/startup_scripts/99_realistic_hands_assignments.js")
-    val assignmentMatch = Regex("""global\.BTM_REALISTIC_HANDS_ASSIGNMENTS\s*=\s*(\{[\s\S]*\})\s*$""").find(assignmentText)
-    val assignments = assignmentMatch?.groupValues?.getOrNull(1)?.let(::parseJson)?.let(::jsonObject) ?: emptyMap()
-    val blockSets = jsonObject(assignments["blocks"]).mapValues { (_, values) -> jsonArray(values).mapNotNull(::jsonString).toSet() }
+    val audit = readJson("generated/runtime-dumps/realistic_hands_audit.json")
+    val blockSets = jsonObject(audit["blockTags"]).mapValues { (_, values) -> jsonArray(values).mapNotNull(::jsonString).toSet() }
     fun blocksIn(group: String, ids: List<String>): List<String> = ids.filter { it !in (blockSets[group] ?: emptySet()) }
     fun ingredientCount(recipe: Map<String, Any?>, item: String): Int = jsonArray(recipe["ingredients"]).map(::jsonObject).count { jsonString(it["item"]) == item }
     val handSoftBlocks = listOf("minecraft:sand","minecraft:red_sand","minecraft:gravel","minecraft:dirt","minecraft:coarse_dirt","minecraft:rooted_dirt","minecraft:mud","minecraft:grass_block","immersive_weathering:loam","immersive_weathering:silt","dynamictrees:rooty_gravel")
@@ -711,8 +713,8 @@ fun validatePrimitiveMiningRegressionContracts() = validateByNodeParity("validat
     if ("additionalweaponry:butcher_knife" !in jsonArray(fdKnives["values"]).mapNotNull(::jsonString)) knifeTagProblems += "farmersdelight:tools/knives"
     if ("additionalweaponry:butcher_knife" !in jsonArray(fdStrawHarvesters["values"]).mapNotNull(::jsonString)) knifeTagProblems += "farmersdelight:straw_harvesters"
     if (knifeTagProblems.isEmpty()) ok("flint butcher knife remains a Farmer Delight straw harvester") else fail("flint butcher knife remains a Farmer Delight straw harvester", knifeTagProblems.joinToString(", "))
-    val ntprHook = read("kubejs/startup_scripts/20_blocks/20_realistic_hands.js")
-    val knifeDurabilityMarkers = listOf("function btmRealisticHandsDamageMainHandKnife","btmRealisticHandsBlockIn('knife', blockId)","btmRealisticHandsItemIn('knife', itemId)","['isDamageableItem', 'm_41763_']","['setDamageValue', 'm_41721_']","['shrink', 'm_41774_']","btmRealisticHandsDamageMainHandKnife(event.getPlayer(), event.getState())").filterNot(ntprHook::contains)
+    val forgeRhCompat = read("generated/custom-mod-sources/bound-to-matter-fixes/src/main/java/io/github/btmfixes/compat/RealisticHandsCompat.java")
+    val knifeDurabilityMarkers = listOf("damageKnife", "state.is(RealisticHandsTags.KNIFE)", "stack.is(RealisticHandsTags.KNIFE_TOOLS)", "stack.hurtAndBreak(1", "broadcastBreakEvent(InteractionHand.MAIN_HAND)").filterNot(forgeRhCompat::contains)
     if (knifeDurabilityMarkers.isEmpty()) ok("knife-gated plant cutting consumes knife durability") else fail("knife-gated plant cutting consumes knife durability", knifeDurabilityMarkers.joinToString(", "))
     val tconPatternRoutes = read("kubejs/server_scripts/30_recipe_replace/98_starting_progression_bypasses.js")
     val tconPatternMarkers = listOf("event.remove({ id: 'tconstruct:common/pattern' })","event.remove({ id: 'tconstruct:tables/pattern' })","event.remove({ id: 'tconstruct:pattern' })","event.remove({ type: 'minecraft:crafting_shaped', output: 'tconstruct:pattern' })","event.remove({ type: 'minecraft:crafting_shapeless', output: 'tconstruct:pattern' })","event.shaped(Item.of('tconstruct:pattern', 4)","C: 'farmersdelight:canvas'","type: 'create:pressing'","{ item: 'minecraft:paper' }","{ item: 'tconstruct:pattern' }").filterNot(tconPatternRoutes::contains)
@@ -836,9 +838,9 @@ fun validateWorldgenStaticContractsImpl() {
     val pvjDetailPackSolidIds = generatedPackSolidIds.filter { it in pvjDetailPackSolidBlocklist }
     if (pvjDetailPackSolidIds.isEmpty()) ok("RBP generated pack-solid definition excludes exact PVJ loose detail blocks")
     else fail("RBP generated pack-solid definition excludes exact PVJ loose detail blocks", pvjDetailPackSolidIds.joinToString(", "))
-    val looseEarthIds = jsonObject(readJson("generated/runtime-dumps/realistic_hands_audit.json")["blockAssignments"])
-        .filterValues { jsonString(jsonObject(it)["origin"]) == "delegation:loose-earth" }
-        .keys
+    val looseEarthIds = jsonArray(readJson("generated/runtime-dumps/realistic_hands_audit.json")["looseSurfaceIds"])
+        .mapNotNull(::jsonString)
+        .filterNot { it.startsWith("minecraft:") || it == "dynamictrees:rooty_gravel" }
     val generatedRbpWhitelistFiles = walk("config/rbp/block_definitions") { it.substringAfterLast('/').startsWith("generated_modded_") && it.endsWith(".toml") }
     val generatedRbpWhitelistText = generatedRbpWhitelistFiles.joinToString("\n") { read(it) }
     val generatedRbpWhitelistIds = generatedRbpWhitelistText.lineSequence().map(String::trim).filter { it.startsWith('"') }.map { it.replace(Regex("""^"([^"]+)".*$"""), "$1") }.toList()
@@ -846,8 +848,14 @@ fun validateWorldgenStaticContractsImpl() {
     else fail("RBP modded whitelist covers broad explicit block surface", "${generatedRbpWhitelistIds.size} ids in ${generatedRbpWhitelistFiles.size} files")
     val forbiddenPatterns = listOf(Regex("""(^|:)bedrock$"""), Regex("""sky_stone|skystone"""), *dynamicTreesManagedRbpPatterns.toTypedArray(), Regex("""^projectvibrantjourneys:"""), Regex("""(^|[_:/])seashell($|[_:/])"""), Regex("""(^|[_:/])shell($|[_:/])"""))
     val allowedRooty = listOf(Regex("""^dynamictrees:rooty_(coarse_dirt|crimson_nylium|dirt|grass_block|moss|moss_block|mud|mycelium|podzol|rooted_dirt|soul_soil|warped_nylium)$"""), Regex("""^dtaether:rooty_(aether_dirt|aether_grass_block|enchanted_aether_grass_block|frozen_aether_grass_block)$"""), Regex("""^dtnatures_spirit:rooty_(red_moss_block|sandy_soil)$"""))
+    val allowedLooseDecorIds = setOf(
+        "projectvibrantjourneys:muddy_bones",
+        "projectvibrantjourneys:red_sandstone_rocks",
+        "projectvibrantjourneys:sandstone_rocks"
+    )
     val forbiddenIds = generatedRbpWhitelistIds.filter { id ->
         allowedRooty.none { it.containsMatchIn(id) } &&
+            id !in allowedLooseDecorIds &&
             id !in looseEarthIds &&
             forbiddenPatterns.any { it.containsMatchIn(id) }
     }
@@ -918,8 +926,7 @@ fun validateWorldgenStaticContractsImpl() {
     if (gravelTargetProblems.isEmpty()) ok("stone-style meteor ores can replace gravel")
     else fail("stone-style meteor ores can replace gravel", gravelTargetProblems.joinToString(", "))
 
-    val ntpAssignmentText = read("kubejs/startup_scripts/99_realistic_hands_assignments.js")
-    val ntpAssignments = Regex("""global\.BTM_REALISTIC_HANDS_ASSIGNMENTS\s*=\s*(\{[\s\S]*\})\s*$""").find(ntpAssignmentText)?.groupValues?.getOrNull(1)?.let(::parseJson)?.let(::jsonObject) ?: emptyMap()
+    val ntpAudit = readJson("generated/runtime-dumps/realistic_hands_audit.json")
     val rbpGeneratedSolid = read("config/rbp/block_definitions/generated_pack_solid_blocks.toml")
     val rbpGeneratedModdedSand = read("config/rbp/block_definitions/generated_modded_sand.toml")
     val staleGravelEvOres = listOf(
@@ -931,7 +938,7 @@ fun validateWorldgenStaticContractsImpl() {
         "gravel_natural_quartz_ore",
         "gravel_zinc_ore"
     ).map { "excavated_variants:$it" }
-    val ntpBlocks = jsonObject(ntpAssignments["blocks"])
+    val ntpBlocks = jsonObject(ntpAudit["blockTags"])
     val shovelSet = jsonArray(ntpBlocks["shovel"]).mapNotNull(::jsonString).toSet()
     val pickaxeSet = jsonArray(ntpBlocks["pickaxe"]).mapNotNull(::jsonString).toSet()
     val staleGravelShovel = staleGravelEvOres.filter { it in shovelSet }

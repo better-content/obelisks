@@ -3,48 +3,39 @@
 Input: `generated/runtime-dumps/block_hardness_probe.json`
 Runtime probe schema: `obelisks.block_hardness_probe.v3`
 
-## Totals
+## Explicit Tag Counts
 
-- Breakable block records: 13942
-- Item records: 20738
-- Hand blocks: 619
-- Knife blocks: 1601
-- Axe blocks: 3144
-- Pickaxe blocks: 8219
-- Shovel blocks: 883
-- Hoe blocks: 71
-- Sword blocks: 10
-- Unassigned breakable blocks: 0
+- Block `hand`: 216
+- Block `knife`: 1601
+- Block `axe`: 3144
+- Block `pickaxe`: 8219
+- Block `shovel`: 202
+- Block `hoe`: 71
+- Block `sword`: 10
+- Block `force_harvest`: 59
+- Block `knife_straw`: 3
+- Block `knife_extra_sticks`: 318
+- Item `knife`: 22
+- Item `axe`: 277
+- Item `pickaxe`: 85
+- Item `shovel`: 63
+- Item `hoe`: 62
+- Item `sword`: 249
 
 ## Representative Separation
 
-- projectvibrantjourneys:short_grass knife: true
-- minecraft:oak_leaves knife: true
-- minecraft:cobweb sword: true
-- minecraft:tripwire sword: true
+- knifeGrass: true
+- knifeLeaves: true
+- swordCobweb: true
+- swordTripwire: true
+
+## Force Harvest Coverage
+
+- Required: 59
+- Missing: 0
 
 ## Outcome Families
 
-- knife transform fiber: 185
-- knife transform organics: 1304
-- knife extra sticks: 1
+- knife transform fiber: 3
+- knife extra sticks: 318
 - sword preserve web: 5
-
-## Largest Origins
-
-- inference:legacy:pickaxe: 8144
-- delegation:wood-products: 2405
-- delegation:organics: 1241
-- inference:legacy:axe: 734
-- delegation:loose-earth: 605
-- delegation:loose-worked-earth: 257
-- delegation:potted-plants: 241
-- inference:legacy:knife: 111
-- inference:block-tag:minecraft:mineable/pickaxe: 57
-- inference:legacy:hoe: 56
-- override:exact: 32
-- inference:legacy:shovel: 21
-
-## Unassigned Breakable Block Samples
-
-

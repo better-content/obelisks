@@ -99,6 +99,7 @@ Use the portable harness layer for repeatable runtime tests instead of hand-buil
   - `lc_tfth_c2me_dh`
   - `dimension_worldgen`
   - `opening_progression`
+  - `pillager_campaigns`
   - `worldgen_sampling`
   - `client_smoke`
 - Internal harness/scenario implementation should define only:

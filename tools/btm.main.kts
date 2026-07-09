@@ -250,6 +250,11 @@ val scenarios = linkedMapOf(
         "Opening progression runtime validation",
         "tools/kotlin/opening_progression_runtime_validation.main.kts",
     ),
+    "pillager_campaigns" to ScenarioDefinition(
+        "pillager_campaigns",
+        "Deterministic pillager campaigns captain/warlord regression lane",
+        "tools/kotlin/pillager_campaigns.main.kts",
+    ),
     "worldgen_sampling" to ScenarioDefinition(
         "worldgen_sampling",
         "Seeded worldgen sampling lane with local/quick/release profiles",

@@ -18,9 +18,9 @@
 	# • temperature: The temperature offset to apply to the dimension
 	# • *units: The units of the temperature ("f", "c", or "mc"). Defaults to Minecraft units (mc))
 	"Dimension Temperature Offsets" = [
-	    ["minecraft:the_nether", 32, "f"],
-	    ["minecraft:the_end", -5, "f"],
-	    ["aether:the_aether", 32, "f"]
+	    ["minecraft:the_nether", 18, "c"],
+	    ["minecraft:the_end", -3, "c"],
+	    ["aether:the_aether", 18, "c"]
 	]
 	#─────────────────────────────────────────────────────────────────────────//v
 	# Defines the temperature of a dimension, overriding biome and elevation temperature
@@ -52,88 +52,101 @@
 	# • *units: The units of the temperature ("f", "c", or "mc"). Defaults to Minecraft units (mc))
 	# • *waterTemp: The temperature of water in the biome
 	"Biome Temperatures" = [
-	    ["minecraft:plains", 59, 82, "F"],
-	    ["minecraft:soul_sand_valley", 53, 53, "F"],
-	    ["minecraft:old_growth_birch_forest", 58, 72, "F"],
-	    ["minecraft:river", 59, 82, "F"],
-	    ["minecraft:swamp", 72, 84, "F", -5],
-	    ["minecraft:savanna", 70, 95, "F"],
-	    ["minecraft:savanna_plateau", 76, 98, "F"],
-	    ["minecraft:windswept_savanna", 67, 90, "F"],
-	    ["minecraft:taiga", 44, 62, "F"],
-	    ["minecraft:snowy_taiga", 8, 38, "F", -15],
-	    ["minecraft:old_growth_pine_taiga", 48, 62, "F"],
-	    ["minecraft:old_growth_spruce_taiga", 48, 62, "F"],
-	    ["minecraft:desert", 48, 115, "F"],
-	    ["minecraft:stony_shore", 50, 64, "F"],
-	    ["minecraft:snowy_beach", 8, 38, "F", -15],
-	    ["minecraft:snowy_slopes", 24, 32, "F", -15],
-	    ["minecraft:windswept_forest", 48, 66, "F"],
-	    ["minecraft:frozen_peaks", 15, 31, "F", -18],
-	    ["minecraft:warm_ocean", 67, 76, "F", 5],
-	    ["minecraft:frozen_ocean", 20, 31, "F", -20],
-	    ["minecraft:deep_frozen_ocean", 20, 31, "F", -20],
-	    ["minecraft:jungle", 76, 87, "F"],
-	    ["minecraft:bamboo_jungle", 76, 87, "F"],
-	    ["minecraft:badlands", 84, 120, "F", -5],
-	    ["minecraft:wooded_badlands", 80, 108, "F", -5],
-	    ["minecraft:eroded_badlands", 88, 120, "F", -5],
-	    ["minecraft:deep_dark", 63, 63, "F"],
+	    ["minecraft:plains", 15, 28, "C"],
+	    ["minecraft:soul_sand_valley", 12, 12, "C"],
+	    ["minecraft:old_growth_birch_forest", 14, 22, "C"],
+	    ["minecraft:river", 15, 28, "C"],
+	    ["minecraft:swamp", 22, 29, "C", -3],
+	    ["minecraft:savanna", 21, 35, "C"],
+	    ["minecraft:savanna_plateau", 24, 37, "C"],
+	    ["minecraft:windswept_savanna", 19, 32, "C"],
+	    ["minecraft:taiga", 7, 17, "C"],
+	    ["minecraft:snowy_taiga", -1, 6, "C", -6],
+	    ["minecraft:old_growth_pine_taiga", 9, 17, "C"],
+	    ["minecraft:old_growth_spruce_taiga", 9, 17, "C"],
+	    ["minecraft:desert", 9, 46, "C"],
+	    ["minecraft:stony_shore", 10, 18, "C"],
+	    ["minecraft:snowy_beach", -1, 6, "C", -6],
+	    ["minecraft:snowy_slopes", -3, 3, "C", -6],
+	    ["minecraft:windswept_forest", 9, 19, "C"],
+	    ["minecraft:frozen_peaks", -4, 2, "C", -7],
+	    ["minecraft:jagged_peaks", -4, 2, "C", -7],
+	    ["minecraft:ice_spikes", -2, 4, "C", -6],
+	    ["minecraft:snowy_plains", -1, 6, "C", -6],
+	    ["minecraft:frozen_river", -1, 4, "C", -6],
+	    ["minecraft:grove", 1, 9, "C"],
+	    ["minecraft:stony_peaks", 9, 20, "C"],
+	    ["minecraft:cold_ocean", 6, 11, "C", -3],
+	    ["minecraft:deep_cold_ocean", 6, 11, "C", -3],
+	    ["minecraft:warm_ocean", 19, 24, "C", 3],
+	    ["minecraft:frozen_ocean", -1, 2, "C", -7],
+	    ["minecraft:deep_frozen_ocean", -1, 2, "C", -7],
+	    ["minecraft:jungle", 24, 31, "C"],
+	    ["minecraft:bamboo_jungle", 24, 31, "C"],
+	    ["minecraft:badlands", 29, 49, "C", -3],
+	    ["minecraft:wooded_badlands", 27, 42, "C", -3],
+	    ["minecraft:eroded_badlands", 31, 49, "C", -3],
+	    ["minecraft:deep_dark", 17, 17, "C"],
 	    ["minecraft:dripstone_caves", "disable"],
-	    ["natures_spirit:alpine_highlands", 46, 68, "F"],
-	    ["natures_spirit:aspen_forest", 52, 74, "F"],
-	    ["natures_spirit:bamboo_wetlands", 66, 82, "F"],
-	    ["natures_spirit:blooming_sugi_forest", 58, 78, "F"],
-	    ["natures_spirit:boreal_taiga", 36, 58, "F"],
-	    ["natures_spirit:cedar_thicket", 54, 76, "F"],
-	    ["natures_spirit:coniferous_covert", 50, 70, "F"],
-	    ["natures_spirit:fir_forest", 34, 56, "F"],
-	    ["natures_spirit:maple_woodlands", 52, 74, "F"],
-	    ["natures_spirit:redwood_forest", 48, 68, "F"],
-	    ["natures_spirit:snowy_fir_forest", 22, 42, "F", -12],
-	    ["natures_spirit:snowy_redwood_forest", 22, 42, "F", -12],
-	    ["natures_spirit:sparse_tropical_woods", 68, 84, "F"],
-	    ["natures_spirit:sugi_forest", 58, 78, "F"],
-	    ["natures_spirit:tropical_woods", 70, 86, "F"],
-	    ["natures_spirit:tundra", 26, 46, "F"],
-	    ["natures_spirit:windswept_sugi_forest", 50, 70, "F"],
-	    ["natures_spirit:wisteria_forest", 58, 78, "F"],
-	    ["natures_spirit:wooded_drylands", 60, 82, "F"],
-	    ["natures_spirit:woody_highlands", 56, 78, "F"],
-	    ["terralith:moonlight_valley", 57, 76, "F"],
-	    ["terralith:rocky_mountains", 45, 73, "F"],
-	    ["terralith:blooming_plateau", 49, 78, "F"],
-	    ["terralith:alpine_grove", 16, 53, "F"],
-	    ["terralith:yellowstone", 47, 68, "F"],
-	    ["terralith:forested_highlands", 43, 70, "F"],
-	    ["terralith:temperate_highlands", 54, 80, "F"],
-	    ["terralith:amethyst_rainforest", 69, 84, "F"],
-	    ["terralith:sandstone_valley", 78, 114, "F"],
-	    ["terralith:ancient_sands", 83, 130, "F"],
-	    ["terralith:arid_highlands", 74, 102, "F"],
-	    ["terralith:volcanic_crater", 96, 162, "F"],
-	    ["terralith:volcanic_peaks", 76, 122, "F"],
-	    ["terralith:basalt_cliffs", 76, 122, "F"],
-	    ["terralith:birch_taiga", 40, 62, "F"],
-	    ["terralith:brushland", 64, 89, "F"],
-	    ["terralith:bryce_canyon", 72, 110, "F"],
-	    ["terralith:caldera", 58, 71, "F"],
-	    ["terralith:cloud_forest", 38, 58, "F"],
-	    ["terralith:desert_canyon", 73, 121, "F"],
-	    ["terralith:desert_spires", 60, 121, "F"],
-	    ["terralith:orchid_swamp", 62, 81, "F"],
-	    ["terralith:fractured_savanna", 65, 92, "F"],
-	    ["terralith:savanna_badlands", 68, 99, "F"],
-	    ["terralith:granite_cliffs", 65, 85, "F"],
-	    ["terralith:haze_mountain", 62, 74, "F"],
-	    ["terralith:highlands", 62, 74, "F"],
-	    ["terralith:lavender_valley", 59, 76, "F"],
-	    ["terralith:lavender_forest", 56, 75, "F"],
-	    ["terralith:red_oasis", 58, 94, "F"],
-	    ["terralith:shield", 48, 68, "F"],
-	    ["terralith:shield_clearing", 28, 80, "F"],
-	    ["terralith:steppe", 44, 78, "F"],
-	    ["terralith:warped_mesa", 66, 84, "F", -5]
+	    ["natures_spirit:alpine_highlands", 8, 20, "C"],
+	    ["natures_spirit:aspen_forest", 11, 23, "C"],
+	    ["natures_spirit:bamboo_wetlands", 19, 28, "C"],
+	    ["natures_spirit:blooming_sugi_forest", 14, 26, "C"],
+	    ["natures_spirit:boreal_taiga", 4, 14, "C"],
+	    ["natures_spirit:cedar_thicket", 12, 24, "C"],
+	    ["natures_spirit:coniferous_covert", 10, 21, "C"],
+	    ["natures_spirit:fir_forest", 3, 13, "C"],
+	    ["natures_spirit:maple_woodlands", 11, 23, "C"],
+	    ["natures_spirit:redwood_forest", 9, 20, "C"],
+	    ["natures_spirit:snowy_fir_forest", -1, 7, "C", -6],
+	    ["natures_spirit:snowy_redwood_forest", -1, 7, "C", -6],
+	    ["natures_spirit:sparse_tropical_woods", 20, 29, "C"],
+	    ["natures_spirit:sugi_forest", 14, 26, "C"],
+	    ["natures_spirit:tropical_woods", 21, 30, "C"],
+	    ["natures_spirit:tundra", 1, 9, "C"],
+	    ["natures_spirit:windswept_sugi_forest", 10, 21, "C"],
+	    ["natures_spirit:wisteria_forest", 14, 26, "C"],
+	    ["natures_spirit:wooded_drylands", 16, 28, "C"],
+	    ["natures_spirit:woody_highlands", 13, 26, "C"],
+	    ["aether:skyroot_forest", 16, 24, "C"],
+	    ["aether:skyroot_grove", 15, 23, "C"],
+	    ["aether:skyroot_meadow", 17, 25, "C"],
+	    ["aether:skyroot_woodland", 15, 23, "C"],
+	    ["undergarden:ancient_sea", 8, 12, "C", -4],
+	    ["undergarden:barren_abyss", 3, 8, "C"],
+	    ["undergarden:blood_mushroom_bog", 12, 18, "C"],
+	    ["undergarden:dead_sea", 6, 10, "C", -4],
+	    ["undergarden:dense_forest", 10, 16, "C"],
+	    ["undergarden:forgotten_field", 9, 15, "C"],
+	    ["undergarden:frostfields", -4, 2, "C", -7],
+	    ["undergarden:frosty_smogstem_forest", -3, 3, "C", -6],
+	    ["undergarden:gronglegrowth", 10, 16, "C"],
+	    ["undergarden:icy_sea", -3, 2, "C", -7],
+	    ["undergarden:indigo_mushroom_bog", 10, 16, "C"],
+	    ["undergarden:ink_mushroom_bog", 9, 15, "C"],
+	    ["undergarden:smog_spires", 5, 11, "C"],
+	    ["undergarden:smogstem_forest", 8, 14, "C"],
+	    ["undergarden:veil_mushroom_bog", 10, 16, "C"],
+	    ["undergarden:wigglewood_forest", 10, 16, "C"],
+	    ["deeperdarker:blooming_caverns", 12, 16, "C"],
+	    ["deeperdarker:deeplands", 10, 14, "C"],
+	    ["deeperdarker:echoing_forest", 9, 14, "C"],
+	    ["deeperdarker:overcast_columns", 8, 12, "C"],
+	    ["fallout_wastelands_:wasteland_badlands", 26, 42, "C"],
+	    ["fallout_wastelands_:wasteland_city", 24, 38, "C"],
+	    ["fallout_wastelands_:wasteland_dryland", 24, 40, "C"],
+	    ["fallout_wastelands_:wasteland_plains", 20, 34, "C"],
+	    ["fallout_wastelands_:wasteland_sea", 18, 28, "C", -2],
+	    ["the_finley_dimension_remastered:finley_forest", 12, 20, "C"],
+	    ["the_finley_dimension_remastered:living_forest", 14, 22, "C"],
+	    ["callfromthedepth_:deepamethistforest", 10, 15, "C"],
+	    ["callfromthedepth_:deepdepth", 6, 10, "C"],
+	    ["callfromthedepth_:deepforest", 9, 14, "C"],
+	    ["callfromthedepth_:deepmagma", 28, 42, "C"],
+	    ["callfromthedepth_:deeprot", 12, 18, "C"],
+	    ["callfromthedepth_:forgottenforest", 8, 13, "C"],
+	    ["callfromthedepth_:lostsoulsbiome", 4, 9, "C"],
+	    ["callfromthedepth_:strongsculkswamp", 8, 14, "C"]
 	]
 
 [Blocks]
@@ -152,32 +165,32 @@
 	# • *tempLimit: The maximum world temperature at which this block temp will have any effect.
 	#   (Represents the minimum temp if the block temp is negative)
 "Block Temperatures" = [
-    ["cold_sweat:boiler", 12, 7, "f", 36, "lit=true", "", 212],
-    ["cold_sweat:icebox", -12, 7, "f", 36, "frosted=true", "", 32],
-    ["minecraft:lava", 20, 7, "f", 200, "", "", 1000, true],
-    ["#minecraft:fire", 15, 7, "f", 45, "", "", 400],
-    ["#minecraft:campfires", 15, 7, "f", 45, "lit=true", " ", 400],
-    ["minecraft:magma_block", 12, 3, "f", 48],
-    ["minecraft:lava_cauldron", 20, 7, "f", 200, "", "", 1000, true],
-    ["minecraft:ice", -6, 4, "f", 24, "", "", 33],
-    ["minecraft:packed_ice", -12, 4, "f", 48, "", "", 16],
-    ["minecraft:blue_ice", -16, 4, "f", 64, "", "", 0],
-    ["#minecraft:ice", -6, 4, "f", 27, "", "", 33],
+    ["cold_sweat:boiler", 7, 7, "c", 20, "lit=true", "", 100],
+    ["cold_sweat:icebox", -7, 7, "c", 20, "frosted=true", "", 0],
+    ["minecraft:lava", 11, 7, "c", 111, "", "", 538, true],
+    ["#minecraft:fire", 8, 7, "c", 25, "", "", 204],
+    ["#minecraft:campfires", 8, 7, "c", 25, "lit=true", " ", 204],
+    ["minecraft:magma_block", 7, 3, "c", 27],
+    ["minecraft:lava_cauldron", 11, 7, "c", 111, "", "", 538, true],
+    ["minecraft:ice", -3, 4, "c", 13, "", "", 1],
+    ["minecraft:packed_ice", -7, 4, "c", 27, "", "", -9],
+    ["minecraft:blue_ice", -9, 4, "c", 36, "", "", -18],
+    ["#minecraft:ice", -3, 4, "c", 15, "", "", 1],
 
-    ["create:blaze_burner", 5, 3, "f", 30, "blaze=smouldering", "", 400],
-    ["create:blaze_burner", 10, 4, "f", 30, "blaze=fading", "", 400],
-    ["create:blaze_burner", 15, 5, "f", 45, "blaze=kindled", "", 400],
-    ["create:blaze_burner", 20, 6, "f", 60, "blaze=seething", "", 400],
+    ["create:blaze_burner", 3, 3, "c", 17, "blaze=smouldering", "", 204],
+    ["create:blaze_burner", 6, 4, "c", 17, "blaze=fading", "", 204],
+    ["create:blaze_burner", 8, 5, "c", 25, "blaze=kindled", "", 204],
+    ["create:blaze_burner", 11, 6, "c", 33, "blaze=seething", "", 204],
 
     # --- NEW: Farmer's Delight ---
-    ["farmersdelight:stove", 12, 6, "f", 45, "lit=true", "", 400],
+    ["farmersdelight:stove", 7, 6, "c", 25, "lit=true", "", 204],
 
     # --- NEW: Tinkers' Construct (safe, “kitchen/foundry feels warm” defaults) ---
-    ["tconstruct:seared_heater", 15, 5, "f", 60, "", "", 400],
-    ["tconstruct:seared_melter", 10, 4, "f", 45, "", "", 400],
-    ["tconstruct:smeltery_controller", 8, 4, "f", 45, "", "", 400],
-    ["tconstruct:foundry_controller", 8, 4, "f", 45, "", "", 400],
-    ["tconstruct:scorched_alloyer", 12, 5, "f", 60, "", "", 400]
+    ["tconstruct:seared_heater", 8, 5, "c", 33, "", "", 204],
+    ["tconstruct:seared_melter", 6, 4, "c", 25, "", "", 204],
+    ["tconstruct:smeltery_controller", 4, 4, "c", 25, "", "", 204],
+    ["tconstruct:foundry_controller", 4, 4, "c", 25, "", "", 204],
+    ["tconstruct:scorched_alloyer", 7, 5, "c", 33, "", "", 204]
 ]
 	#─────────────────────────────────────────────────────────────────────────
 	# The maximum range of blocks' area of effect
@@ -206,7 +219,7 @@
 	#─────────────────────────────────────────────────────────────────────────
 	# The default temperature of water
 	# └── Format: [temperature, *units]
-	"Default Water Temperature" = [-10, "f"]
+	"Default Water Temperature" = [-6, "c"]
 	#─────────────────────────────────────────────────────────────────────────
 	# The maximum soak level a player can reach from rain alone (0.0 - 1.0)
 	#Range: 0.0 ~ Infinity
@@ -234,7 +247,7 @@
 	#─────────────────────────────────────────────────────────────────────────
 	# A temperature offset applied when in complete shade or when the sky is overcast
 	# └── Format: [offset, *units]
-	"Shade Temperature Offset" = [-9, "f"]
+	"Shade Temperature Offset" = [-2, "c"]
 	#─────────────────────────────────────────────────────────────────────────
 	# List of blocks that will allow the player to sleep on them, regardless of the "Prevent Sleep When in Danger" setting
 	# Use this list if the player is not getting the temperature effect from sleeping on particular blocks
@@ -365,7 +378,7 @@
 		# • seasonStart/Mid/End: The temperature offset at the start, middle, and end of the season
 		# • *units: The unit of temperature (C, F, or MC)
 		# ⌄ 
-		Summer = [0.1, 0.2, 0.1]
-		Autumn = [0.05, 0, -0.05]
-		Winter = [-0.8, -1.0, -0.8]
-		Spring = [-0.05, 0, 0.05]
+		Summer = [2, 4, 2, "C"]
+		Autumn = [1, 0, -1, "C"]
+		Winter = [-3, -6, -3, "C"]
+		Spring = [-1, 0, 1, "C"]

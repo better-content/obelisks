@@ -101,7 +101,7 @@ The starter catalogue in `global.BTM_STARTER_DEPOSITS` currently names coal meas
 
 The late lava-diving band is Overworld terrain below Y 0, enabled by Tectonic `min_y = -64` and lava tunnels. This lower band is an authored progression zone rather than ordinary branch mining: Born in Chaos monsters only spawn below Y 0, and the lava-depth ore set is meant to be recovered as a prepared expedition with real lava-survival gear. `datapacks/realistic_ores_lava_depths` adds lava-exposed Realistic Ores uranium, thorium, and osmiridium lava sulfide in Y -64 to 0 only; the custom `realisticores:lava_exposed_ore` feature only places ore blocks that touch lava. Magma cubes are the current lava-band hazard, and Protection Pixel Tosaki gear is the intended post-AE2 diving suit for this route.
 
-All non-grown renewable resource sources should be absent or quarantined. Geological, fluid, ore, and manufactured material growth comes from finite worldgen, authored dimension routes, lava-depth routes, loot, or processing of already-owned matter, not from passive ore rituals, bottomless pumps, conjured islands, fluid sigils/glyphs, lava fermentation, or restocking raw-material trades.
+All non-grown renewable resource sources should be absent or quarantined. Geological, fluid, ore, and manufactured material growth comes from finite worldgen, authored dimension routes, lava-depth routes, loot, or processing of already-owned matter, not from passive ore rituals, bottomless pumps, conjured islands, fluid sigils/glyphs, or lava fermentation. Villager buy restocks now only skip knowledge and deep-progression outputs such as experience bottles, echo shards, and sculk catalysts.
 
 ## Magic Gates
 

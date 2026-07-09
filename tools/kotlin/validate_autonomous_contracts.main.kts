@@ -787,9 +787,9 @@ fun validateNonGrownInfiniteResourceBoundaries() {
     }
     if (bool(finiteWater["create_infinitePipes"]) != false) finiteWaterProblems += "create_infinitePipes=${bool(finiteWater["create_infinitePipes"])}"
     if (finiteWaterProblems.isEmpty()) ok("Finite Water config has no infinite biome/refill pipe sources") else fail("Finite Water config has no infinite biome/refill pipe sources", finiteWaterProblems.joinToString(", "))
-    val tradeMarkers = listOf("BTM_NON_GROWN_TRADE_BUY_BLOCKLIST","btmIsNonGrownInfiniteBuyResult(resultItem)","'minecraft:cobblestone': true","'minecraft:redstone': true","'create:andesite_alloy': true","'bloodmagic:blankslate': true","'ae2:certus_quartz_crystal': true").filterNot(trades::contains)
-    if (tradeMarkers.isEmpty()) ok("restocking trades reject non-grown material buy results", "7 markers") else fail("restocking trades reject non-grown material buy results", tradeMarkers.joinToString(", "))
-    val docMarkers = listOf("Non-grown infinite matter is not an authored resource source","not from passive ore rituals, bottomless pumps, conjured islands, fluid sigils/glyphs, lava fermentation, or restocking raw-material trades").filterNot(docs::contains)
+    val tradeMarkers = listOf("BTM_NON_GROWN_TRADE_BUY_BLOCKLIST","btmIsNonGrownInfiniteBuyResult(resultItem)","'minecraft:experience_bottle': true","'minecraft:echo_shard': true","'minecraft:sculk_catalyst': true").filterNot(trades::contains)
+    if (tradeMarkers.isEmpty()) ok("restocking trades reject deep-progression buy results", "5 markers") else fail("restocking trades reject deep-progression buy results", tradeMarkers.joinToString(", "))
+    val docMarkers = listOf("Non-grown infinite matter is not an authored resource source","villager buy restocks only skip knowledge and deep-progression outputs such as experience bottles, echo shards, and sculk catalysts").filterNot(docs::contains)
     if (docMarkers.isEmpty()) ok("living docs cover non-grown infinite resource policy") else fail("living docs cover non-grown infinite resource policy", docMarkers.joinToString(", "))
 }
 

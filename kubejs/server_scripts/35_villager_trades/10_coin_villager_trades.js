@@ -545,7 +545,6 @@ if (typeof MoreJSEvents !== 'undefined') {
         btmAddTrades(event, 'minecraft:fisherman', [
             [1, 'copper', 2, 'minecraft:cod', 8, 16, 2],
             [1, 'copper', 3, 'minecraft:fishing_rod', 1, 8, 2],
-            [1, 'copper', 3, 'minecraft:dark_oak_boat', 1, 8, 2],
             [1, 'copper', 2, 'starcatcher:worm', 8, 12, 2],
             [1, 'copper', 3, 'starcatcher:starcatcher_twine', 2, 8, 2],
             [2, 'iron', 3, 'starcatcher:bobber', 1, 8, 6],

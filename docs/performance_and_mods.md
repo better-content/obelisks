@@ -4,12 +4,12 @@
 
 Active downloaded mods are the current `mods/*.pw.toml` files. Active custom bundled jars in `mods/` include:
 
-Pinned Valkyrien Skies diagnostic-family manifests are active and side `both`:
+Pinned Valkyrien Skies diagnostic manifests are active and side `both`:
 
 - Valkyrien Skies `valkyrienskies-120-2.4.11.jar`
 - Eureka `eureka-1201-1.6.3.jar`
-- VS: Clockwork `clockwork-0.5.6.jar`
-- Trackwork `trackwork-1.20.1-1.2.4.jar`
+
+VS: Clockwork and Trackwork are deferred until the core VS/Eureka client-render gate passes. Shoulder Surfing was removed because its own compatibility warning identifies Valkyrien Skies as incompatible.
 
 - `btmfixes-0.1.0.jar`
 - `classselector-1.0.0.jar`
@@ -67,7 +67,7 @@ Revalidate with the current harness after touching `config/c2me.toml`, `config/D
 
 ## Valkyrien Skies Family
 
-Valkyrien Skies, Eureka, VS: Clockwork, and Trackwork are active as pinned diagnostic surfaces, not integrated progression content. Current entry points:
+Valkyrien Skies and Eureka are active as pinned diagnostic surfaces, not integrated progression content. VS: Clockwork and Trackwork remain deferred. Current entry points:
 
 ```bash
 tools/btm test scenario vs_ships_stability --profile quick --cycles 1 --bootstrap-mode once
@@ -79,7 +79,7 @@ Use these to classify boot, dependency/mixin, ship assembly, movement/collision,
 
 Current evidence from 2026-07-10: `/tmp/btm-vs-stability-expanded-3cycle` passed three fresh DH-enabled quick lifecycle cycles, and `/tmp/btm-vs-matrix-expanded-direct` passed three paired current-config/DH-disabled boots cloned from identical disposable baselines. The old DH-disabled startup stall did not reproduce with the corrected matrix launcher, so it is not current evidence of a DH-off-only defect.
 
-`/tmp/btm-vs-client-expanded-fallback` is the current blocker. A real DH-enabled Forge client joined, rendered the fixture, and exposed Eureka's helm Assemble control, but GUI activation and the VS ship-assembler fallback both produced zero server-side ships, yielding `ship_assembly_failure`. The same run captured Shoulder Surfing's blocking incompatibility warning for Valkyrien Skies and recoverable DH block-color null-parent failures during world load. Movement, mount/camera, reconnect, persisted-ship reload, and observer sync remain unvalidated because assembly did not complete; do not claim playable VS-family stability yet.
+The source-guided Xvfb lane now drives Eureka's exact 176x166 helm menu and Assemble button, verifies its five-block BFS result, and requires exactly one registered VS ship. Both the current DH-enabled client and `/tmp/btm-vs-core-dh-off-scored` then render no geometry where that ship should be. The scored DH-off repro measured the visible fixture at `0.08176` and the assembled ship at `0.0`, classifying `assembled_render_failure`; this is not a DH-only defect. Movement, mount/camera, reconnect, persisted-ship reload, observer sync, Clockwork, and Trackwork remain gated behind this core render failure. Do not claim playable VS stability yet.
 
 ## Custom Mod Notes
 

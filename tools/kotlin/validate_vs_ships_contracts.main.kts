@@ -51,8 +51,6 @@ data class RequiredManifest(
 val manifests = listOf(
     RequiredManifest("Valkyrien Skies", "mods/valkyrien-skies.pw.toml", "valkyrienskies-120-2.4.11.jar", "258371", "7906689"),
     RequiredManifest("Eureka", "mods/eureka-ships.pw.toml", "eureka-1201-1.6.3.jar", "654384", "7979379"),
-    RequiredManifest("VS: Clockwork", "mods/create-clockwork.pw.toml", "clockwork-0.5.6.jar", "807792", "8017005"),
-    RequiredManifest("Trackwork", "mods/trackwork.pw.toml", "trackwork-1.20.1-1.2.4.jar", "1057662", "7760330"),
 )
 
 for (manifest in manifests) {
@@ -74,6 +72,34 @@ for (manifest in manifests) {
     if (values["update.curseforge.file-id"] != manifest.fileId) problems += "file-id=${values["update.curseforge.file-id"]}"
     if (problems.isEmpty()) ok("${manifest.label} manifest is pinned", manifest.filename)
     else fail("${manifest.label} manifest is pinned", problems.joinToString(", "))
+}
+
+for (path in listOf("mods/create-clockwork.pw.toml", "mods/trackwork.pw.toml", "mods/shoulder-surfing-reloaded.pw.toml", "config/shouldersurfing-client.toml")) {
+    if (!rel(path).isRegularFile()) ok("deferred or incompatible pack surface is absent", path)
+    else fail("deferred or incompatible pack surface is absent", path)
+}
+
+val clientContractPath = rel("tools/vs_ships_client_contract.properties")
+if (!clientContractPath.isRegularFile()) {
+    fail("VS client source contract is present", clientContractPath.toString())
+} else {
+    val properties = java.util.Properties().apply { Files.newBufferedReader(clientContractPath).use(::load) }
+    val expected = mapOf(
+        "schema" to "btm.vs_ships_client_contract.v1",
+        "eureka.sourceCommit" to "07cf4181d72590731d140d603bda5c9de23c5ae7",
+        "vs.sourceCommit" to "9a09dd2609d482948f261a02c8103c1ba44ba5c1",
+        "display.width" to "1280",
+        "display.height" to "720",
+        "display.guiScale" to "3",
+        "helm.assemble.x" to "10",
+        "helm.assemble.y" to "73",
+        "helm.assemble.width" to "156",
+        "helm.assemble.height" to "23",
+        "fixture.expectedBlocks" to "5",
+    )
+    val wrong = expected.filter { (key, value) -> properties.getProperty(key) != value }
+    if (wrong.isEmpty()) ok("VS client source contract is pinned", "${expected.size} fields")
+    else fail("VS client source contract is pinned", wrong.keys.joinToString())
 }
 
 val btmText = read("tools/btm.main.kts")
@@ -105,8 +131,7 @@ val scriptChecks = mapOf(
         "save-all flush",
         "status == \"passed\" && !keepRuns",
         "vs_eureka:oak_ship_helm",
-        "vs_clockwork:phys_bearing",
-        "trackwork:phys_track",
+        "vs_eureka:floater",
     ),
     "tools/kotlin/vs_ships_matrix.main.kts" to listOf(
         "current_config",
@@ -138,6 +163,10 @@ val scriptChecks = mapOf(
     ),
     "tools/kotlin/vs_ships_client.main.kts" to listOf(
         "client_render_failure",
+        "client_disconnect_failure",
+        "onboarding_failure",
+        "assembled_render_failure",
+        "assembledGeometryScore",
         "flywheel_visual_failure",
         "mount_camera_failure",
         "passenger_sync_failure",
@@ -148,6 +177,19 @@ val scriptChecks = mapOf(
         "prepare-client-runtime",
         "minecraft-client-argfile",
         "startClient",
+        "assertPlayerConnected",
+        "setworldspawn 0 \$y 4",
+        "vs_ships_client_contract.properties",
+        "fixture_connectivity_failure",
+        "menu_packet_failure",
+        "assembly_registration_failure",
+        "Assembled ship with ([0-9]+) blocks",
+        "screenshot-manifest.json",
+        "helm-button-pressed.png",
+        "--fixture",
+        "--variant",
+        "--stop-after",
+        "removed-mods.txt",
         "helm_assembly",
         "vs set-static @v[]",
         "mount_movement",

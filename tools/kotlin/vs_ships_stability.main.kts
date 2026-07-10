@@ -21,14 +21,11 @@ val requiredIds = listOf(
     "valkyrienskies:ship_assembler",
     "vs_eureka:oak_ship_helm",
     "vs_eureka:engine",
-    "vs_clockwork:phys_bearing",
-    "trackwork:phys_track",
 )
 val fixtureBlocks = listOf(
     Triple(0, 0, "vs_eureka:oak_ship_helm"),
     Triple(1, 0, "vs_eureka:engine"),
-    Triple(2, 0, "vs_clockwork:phys_bearing"),
-    Triple(3, 0, "trackwork:phys_track"),
+    Triple(2, 0, "vs_eureka:floater"),
 )
 
 fun usage(message: String? = null): Nothing {

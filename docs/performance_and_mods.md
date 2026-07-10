@@ -4,6 +4,13 @@
 
 Active downloaded mods are the current `mods/*.pw.toml` files. Active custom bundled jars in `mods/` include:
 
+Pinned Valkyrien Skies diagnostic-family manifests are active and side `both`:
+
+- Valkyrien Skies `valkyrienskies-120-2.4.11.jar`
+- Eureka `eureka-1201-1.6.3.jar`
+- VS: Clockwork `clockwork-0.5.6.jar`
+- Trackwork `trackwork-1.20.1-1.2.4.jar`
+
 - `btmfixes-0.1.0.jar`
 - `classselector-1.0.0.jar`
 - `computerbridge-0.1.0.jar`
@@ -57,6 +64,20 @@ Historical conclusions to preserve:
 - TFTH now has an active manifest/config state; any older claim that no TFTH mod was identified is stale.
 
 Revalidate with the current harness after touching `config/c2me.toml`, `config/DistantHorizons.toml`, `config/btmfixes-common.toml`, Creating Space dimension routes, Lost Cities worldgen, custom worldgen mods, or portable harness logic.
+
+## Valkyrien Skies Family
+
+Valkyrien Skies, Eureka, VS: Clockwork, and Trackwork are active as pinned diagnostic surfaces, not integrated progression content. Current entry points:
+
+```bash
+tools/btm test scenario vs_ships_stability --profile quick --cycles 1 --bootstrap-mode once
+tools/btm test scenario vs_ships_matrix --profile quick --bootstrap-mode once
+tools/btm test scenario-headful vs_ships_client --profile quick --bootstrap-mode once
+```
+
+Use these to classify boot, dependency/mixin, ship assembly, movement/collision, save/reload, dimension, C2ME/DH/threading, Flywheel/render, mount/camera, passenger sync, add-on removal, partial-save corruption, and suspected ship object leak failures. They write raw evidence under `/tmp/btm-vs-*`; keep durable conclusions here only after a fresh run. Do not add quests, balance hooks, or progression gates around this family until the stability failure surface is understood.
+
+Current evidence from 2026-07-10: `vs_ships_stability --profile quick --cycles 1 --bootstrap-mode never --keep-runs` passed with no classifier under `/tmp/btm-vs-ships-stability`. `vs_ships_matrix --profile quick --bootstrap-mode once --run-root /tmp/btm-vs-ships-matrix-timeout --timeout-seconds 180` passed as a diagnostic run: current config passed, while the DH-disabled copied runtime classified `vs_physics_startup_stall` from repeated Valkyrien Skies physics-frame queue warnings before the full matrix proceeded. Follow-up patching should target that isolation failure before any claim that the family is stable without DH or across all add-on combinations.
 
 ## Custom Mod Notes
 

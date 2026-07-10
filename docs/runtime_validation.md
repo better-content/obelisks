@@ -28,8 +28,11 @@ tools/btm test scenario opening_progression --cycles 1 --bootstrap-mode once
 tools/btm test scenario worldgen_sampling --profile local --bootstrap-mode once
 tools/btm test scenario worldgen_sampling --profile quick --bootstrap-mode once
 tools/btm test scenario worldgen_sampling --profile release --bootstrap-mode once
+tools/btm test scenario vs_ships_stability --profile quick --cycles 1 --bootstrap-mode once
+tools/btm test scenario vs_ships_matrix --profile quick --bootstrap-mode once
 tools/btm test scenario-headful client_smoke --profile quick --bootstrap-mode once
 tools/btm test scenario-headful client_smoke --profile release --bootstrap-mode once
+tools/btm test scenario-headful vs_ships_client --profile quick --bootstrap-mode once
 tools/btm test kotlin
 tools/btm doctor env
 tools/btm doctor repo
@@ -51,6 +54,7 @@ tools/btm doctor runtime --instance /path/to/fresh/runtime
 - `worldgen_sampling` is the normal worldgen confidence lane.
 - `dimension_worldgen` is the explicit all-dimension stress/debug lane.
 - `lc_tfth_c2me_dh` is a diagnostic-only regression repro, not part of `tools/btm test full`.
+- `vs_ships_stability`, `vs_ships_matrix`, and `vs_ships_client` are diagnostic-only Valkyrien Skies family failure-surface lanes, not progression or balance integration lanes.
 - `worldgen_sampling` and `client_smoke` are versioned scenario lanes with checked-in contracts at `tools/worldgen_sampling_contract.json` and `tools/client_smoke_contract.json`.
 - `tools/btm doctor ...` is the supported front door for prerequisite, repo-surface, and runtime-shape checks.
 - `tools/btm internal validate-kotlin-tool-surface` fails if active `tools/` contains `.py` or `.sh` files outside `tools/quarantine/`.
@@ -188,6 +192,20 @@ tools/btm test scenario-headful client_smoke --profile release --bootstrap-mode 
 ```
 
 `client_smoke` is a headful-only lane. Its checked-in contract lives at `tools/client_smoke_contract.json`; run it through `scenario-headful` only.
+
+VS ships diagnostics:
+
+```bash
+tools/btm test scenario vs_ships_stability --profile quick --cycles 1 --bootstrap-mode once
+tools/btm test scenario vs_ships_matrix --profile quick --bootstrap-mode once
+tools/btm test scenario-headful vs_ships_client --profile quick --bootstrap-mode once
+```
+
+These lanes cover Valkyrien Skies `valkyrienskies-120-2.4.11.jar`, Eureka `eureka-1201-1.6.3.jar`, VS: Clockwork `clockwork-0.5.6.jar`, and Trackwork `trackwork-1.20.1-1.2.4.jar` as stability-discovery surfaces only. Raw evidence stays under `/tmp/btm-vs-*` with `summary.json`, `summary.txt`, `metrics.json` where applicable, console logs, copied latest logs, `commands.log`, and registry snapshots. A classified failure is useful evidence for follow-up patching; an unclassified failure means the classifier surface or evidence capture must be improved before claiming a known failure mode.
+
+`vs_ships_matrix` mutates only copied disposable runtimes under `/tmp`, testing current config, DH disabled, C2ME disabled, DH+C2ME disabled, VS core only, VS+Eureka, VS+Clockwork, VS+Trackwork, full VS family without DH/C2ME, and full family with current DH/C2ME. Do not make these lanes pass by disabling the VS feature family in source.
+
+Current VS evidence: `/tmp/btm-vs-ships-stability` passed `tools/btm test scenario vs_ships_stability --profile quick --cycles 1 --bootstrap-mode never --keep-runs` on 2026-07-10 with `classifier=none` after the pinned VS family was added. `/tmp/btm-vs-ships-matrix-timeout` passed as a diagnostic matrix run on 2026-07-10: `current_config` passed, then `dh_disabled` stopped early with classified `vs_physics_startup_stall` evidence after repeated Valkyrien Skies physics-frame queue warnings during startup. Treat this as a follow-up target before claiming DH-disabled or add-on isolation stability.
 
 Current fresh smoke/runtime evidence: `/tmp/btm-content-smoke` passed `tools/btm test smoke --server-dir /tmp/btm-content-smoke --port 25565 --reset-runtime` and `tools/btm test runtime --instance /tmp/btm-content-smoke` on 2026-07-02 after removing unsupported KubeJS startup `.asset(...)` builder calls and restoring the missing `A` key in seven `171_k_turrets_electrical_gates.js` shaped recipes. The fresh runtime now loads all 10 startup scripts and 86 server scripts with 0 KubeJS errors/warnings, and the runtime recipe audit reports no failed recipes.
 

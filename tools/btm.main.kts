@@ -285,10 +285,26 @@ val scenarios = linkedMapOf(
         "Seeded worldgen sampling lane with local/quick/release profiles",
         "tools/kotlin/worldgen_sampling.main.kts",
     ),
+    "vs_ships_stability" to ScenarioDefinition(
+        "vs_ships_stability",
+        "Valkyrien Skies family headless server stability diagnostics",
+        "tools/kotlin/vs_ships_stability.main.kts",
+    ),
+    "vs_ships_matrix" to ScenarioDefinition(
+        "vs_ships_matrix",
+        "Valkyrien Skies family disposable runtime isolation matrix",
+        "tools/kotlin/vs_ships_matrix.main.kts",
+    ),
     "client_smoke" to ScenarioDefinition(
         "client_smoke",
         "Client-facing quick/release smoke lane",
         "tools/kotlin/client_smoke.main.kts",
+        headful = true,
+    ),
+    "vs_ships_client" to ScenarioDefinition(
+        "vs_ships_client",
+        "Valkyrien Skies family headful client/render/sync diagnostics",
+        "tools/kotlin/vs_ships_client.main.kts",
         headful = true,
     ),
 )
@@ -3790,8 +3806,11 @@ fun runToolDocSurfaceValidation(): ProcessRun {
         "tools/btm test scenario worldgen_sampling --profile local --bootstrap-mode once",
         "tools/btm test scenario worldgen_sampling --profile quick --bootstrap-mode once",
         "tools/btm test scenario worldgen_sampling --profile release --bootstrap-mode once",
+        "tools/btm test scenario vs_ships_stability --profile quick --cycles 1 --bootstrap-mode once",
+        "tools/btm test scenario vs_ships_matrix --profile quick --bootstrap-mode once",
         "tools/btm test scenario-headful client_smoke --profile quick --bootstrap-mode once",
         "tools/btm test scenario-headful client_smoke --profile release --bootstrap-mode once",
+        "tools/btm test scenario-headful vs_ships_client --profile quick --bootstrap-mode once",
     )
     for (command in requiredRuntimeCommands) {
         if (!runtimeText.contains(command)) fail("$runtimeValidationPath missing scenario command: `$command`")
@@ -4776,9 +4795,15 @@ fun scenarioDefaultRunRoot(name: String, args: List<String>): Path {
         "lc_tfth_c2me_dh" -> Paths.get("/tmp/btm-lc-c2me-dh-repro")
         "dimension_worldgen", "worldgen_sampling" -> Paths.get("/tmp/btm-dimension-worldgen")
         "pillager_campaigns" -> Paths.get("/tmp/btm-pillager-campaigns")
+        "vs_ships_stability" -> Paths.get("/tmp/btm-vs-ships-stability")
+        "vs_ships_matrix" -> Paths.get("/tmp/btm-vs-ships-matrix")
         "client_smoke" -> {
             val profile = argValue(args, "--profile") ?: "quick"
             Paths.get("/tmp", if (profile == "release") "btm-client-smoke-release" else "btm-client-smoke-quick")
+        }
+        "vs_ships_client" -> {
+            val profile = argValue(args, "--profile") ?: "quick"
+            Paths.get("/tmp", if (profile == "release") "btm-vs-ships-client-release" else "btm-vs-ships-client-quick")
         }
         else -> Paths.get("/tmp/btm-$name")
     }.toAbsolutePath().normalize()
@@ -4789,6 +4814,10 @@ fun scenarioRequestedPort(name: String, args: List<String>): Int? =
         "client_smoke" -> when (argValue(args, "--profile") ?: "quick") {
             "release" -> 25568
             else -> 25567
+        }
+        "vs_ships_client" -> when (argValue(args, "--profile") ?: "quick") {
+            "release" -> 25570
+            else -> 25569
         }
         "pillager_campaigns" -> null
         else -> defaultServerPort

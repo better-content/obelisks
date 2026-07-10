@@ -101,7 +101,10 @@ Use the portable harness layer for repeatable runtime tests instead of hand-buil
   - `opening_progression`
   - `pillager_campaigns`
   - `worldgen_sampling`
+  - `vs_ships_stability`
+  - `vs_ships_matrix`
   - `client_smoke`
+  - `vs_ships_client`
 - Internal harness/scenario implementation should define only:
   - scenario metadata and default run/docs paths
   - required mod jar patterns
@@ -121,6 +124,13 @@ Current LC/DH scenario:
 - Short smoke: `tools/btm test scenario lc_tfth_c2me_dh --samples 4 --settle-seconds 30 --bootstrap-mode once`
 - Full validation expectation: a guarded Lost Cities-only control runtime passes, an otherwise identical unguarded runtime fails with a targeted Lost Cities/C2ME/DH classifier, and the scenario fails as inconclusive if the unguarded repro does not trigger within its fixed workload budget.
 This scenario is diagnostic-only. Do not treat it as part of the normal `tools/btm test full` coverage.
+
+Current VS ships diagnostic scenarios:
+- Headless stability: `tools/btm test scenario vs_ships_stability --profile quick --cycles 1 --bootstrap-mode once`
+- Isolation matrix: `tools/btm test scenario vs_ships_matrix --profile quick --bootstrap-mode once`
+- Headful client/render lane: `tools/btm test scenario-headful vs_ships_client --profile quick --bootstrap-mode once`
+
+These scenarios are failure-surface discovery lanes for Valkyrien Skies, Eureka, VS: Clockwork, Trackwork, DH, and C2ME interactions. Keep them diagnostic-only: do not add progression integration, quests, balance hooks, or UX expansion as part of this lane.
 
 ## Core Rules
 - Prototype freeze policy: until the user explicitly says the freeze is released, do not add new features, new progression branches, new content systems, or broad UX/theme expansions. Balance tuning is allowed, but keep it scoped to the existing systems and avoid feature drift. Limit work to stabilization, crash fixes, progression deadlock fixes, balance changes, validation/tooling fixes, packaging, questbook authoring/revision, menu clarity, and other changes required to ship or playtest the frozen prototype.

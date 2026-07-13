@@ -619,6 +619,11 @@ fun candidatePoses(shot: Shot): List<Pair<String, CameraPose>> {
         pose("look-high", up = -4.0, targetLift = 18.0),
         pose("left-look-low", right = -24.0, forward = -8.0, up = 10.0, targetLift = -16.0),
         pose("right-look-low", right = 24.0, forward = -8.0, up = 10.0, targetLift = -16.0),
+        pose("canopy-forward", forward = 22.0, up = -42.0, targetLift = -26.0),
+        pose("canopy-left", right = -18.0, forward = 24.0, up = -40.0, targetLift = -24.0),
+        pose("canopy-right", right = 18.0, forward = 24.0, up = -40.0, targetLift = -24.0),
+        pose("valley-dive-right", right = 28.0, forward = 30.0, up = -50.0, targetLift = -28.0),
+        pose("valley-dive-left", right = -28.0, forward = 30.0, up = -50.0, targetLift = -28.0),
     )
 }
 fun assessFrame(image: BufferedImage): FrameAssessment {
@@ -746,6 +751,7 @@ fun scoreCandidateFrame(image: BufferedImage, frame: FrameAssessment): Compositi
         thirdsHorizontal.map { kotlin.math.abs((it / total) - (1.0 / 3.0)) }.sum()
     val rejectionReason = when {
         topBlankFraction > 0.92 && bottomBlankFraction > 0.72 -> "too little visible terrain"
+        topBlankFraction > 0.985 && bottomBlankFraction > 0.48 -> "too much blank sky or fog"
         bottomBlankFraction > 0.82 -> "too much flat foreground"
         depthLayerCount < 2 -> "insufficient foreground/midground/background layering"
         colorfulness < 0.045 -> "too little color separation"
@@ -757,7 +763,7 @@ fun scoreCandidateFrame(image: BufferedImage, frame: FrameAssessment): Compositi
         frame.luminanceRange * 0.18 +
         verticalCoverage * 8.0 +
         horizontalCoverage * 8.0 -
-        topBlankFraction * 18.0 -
+        topBlankFraction * 64.0 -
         bottomBlankFraction * 10.0 -
         centerFraction * 16.0 -
         bandBalancePenalty * 12.0 +

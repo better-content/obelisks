@@ -41,6 +41,10 @@ data class DhGateResult(
     val elapsedSeconds: Long,
     val dhLogObserved: Boolean,
     val stableSamples: Int,
+    val lowTailThresholdChunks: Int,
+    val lowTailSeconds: Int,
+    val tailChunksLeft: Int?,
+    val tailStableSeconds: Long,
 )
 
 val root = Paths.get("").toAbsolutePath().normalize()
@@ -53,7 +57,7 @@ val serverForceloadRadiusChunks = 7
 
 fun usage(message: String? = null): Nothing {
     if (message != null) System.err.println(message)
-    System.err.println("Usage: tools/btm test scenario-headful worldgen_marketing_screenshots [--bootstrap-mode always|once|never] [--port N] [--run-root PATH] [--output-dir PATH] [--keep-runs] [--dh-min-settle SECONDS] [--dh-quiet SECONDS] [--dh-timeout SECONDS]")
+    System.err.println("Usage: tools/btm test scenario-headful worldgen_marketing_screenshots [--bootstrap-mode always|once|never] [--port N] [--run-root PATH] [--output-dir PATH] [--keep-runs] [--dh-min-settle SECONDS] [--dh-quiet SECONDS] [--dh-timeout SECONDS] [--dh-low-tail-max CHUNKS] [--dh-low-tail-seconds SECONDS]")
     exitProcess(2)
 }
 
@@ -79,6 +83,8 @@ var outputDir = root.resolve("generated/cache/worldgen-marketing")
 var dhMinSettle = 120
 var dhQuiet = 30
 var dhTimeout = 420
+var dhLowTailMax = 32
+var dhLowTailSeconds = 60
 var index = 0
 while (index < args.size) {
     when (args[index]) {
@@ -115,6 +121,14 @@ while (index < args.size) {
             dhTimeout = args.getOrNull(index + 1)?.toIntOrNull() ?: usage("--dh-timeout needs seconds")
             index += 2
         }
+        "--dh-low-tail-max" -> {
+            dhLowTailMax = args.getOrNull(index + 1)?.toIntOrNull() ?: usage("--dh-low-tail-max needs chunks")
+            index += 2
+        }
+        "--dh-low-tail-seconds" -> {
+            dhLowTailSeconds = args.getOrNull(index + 1)?.toIntOrNull() ?: usage("--dh-low-tail-seconds needs seconds")
+            index += 2
+        }
         "--help" -> usage()
         else -> usage("unknown argument: ${args[index]}")
     }
@@ -148,6 +162,15 @@ fun tail(path: Path, limit: Long = 1_000_000): String {
     if (!path.exists()) return ""
     path.toFile().inputStream().use { input ->
         input.skip((path.toFile().length() - limit).coerceAtLeast(0))
+        return input.readBytes().toString(Charsets.UTF_8)
+    }
+}
+fun readFrom(path: Path, offset: Long, limit: Long = 2_000_000): String {
+    if (!path.exists()) return ""
+    path.toFile().inputStream().use { input ->
+        val size = path.toFile().length()
+        val start = offset.coerceAtMost(size).coerceAtLeast((size - limit).coerceAtLeast(0))
+        input.skip(start)
         return input.readBytes().toString(Charsets.UTF_8)
     }
 }
@@ -327,9 +350,14 @@ fun dhSignature(clientDir: Path): String {
 fun waitForDhStable(clientDir: Path): DhGateResult {
     val started = System.currentTimeMillis()
     val deadline = started + dhTimeout * 1000L
+    val log = clientDir.resolve("logs/latest.log")
+    val logStart = if (log.exists()) Files.size(log) else 0L
     var last = dhSignature(clientDir)
     var lastChange = System.currentTimeMillis()
     var stableSamples = 0
+    var tailChunksLeft: Int? = null
+    var tailSince: Long? = null
+    val progressPattern = Regex("""DH is generating chunks\. ([0-9]+) left""")
     Thread.sleep(dhMinSettle * 1000L)
     while (System.currentTimeMillis() < deadline) {
         val current = dhSignature(clientDir)
@@ -341,14 +369,29 @@ fun waitForDhStable(clientDir: Path): DhGateResult {
             stableSamples++
         }
         val quietFor = (System.currentTimeMillis() - lastChange) / 1000
+        val logTextSinceGateStart = readFrom(log, logStart)
+        val currentTail = progressPattern.findAll(logTextSinceGateStart).lastOrNull()?.groupValues?.getOrNull(1)?.toIntOrNull()
+        if (currentTail != null && currentTail <= dhLowTailMax) {
+            if (currentTail != tailChunksLeft) {
+                tailChunksLeft = currentTail
+                tailSince = System.currentTimeMillis()
+            }
+            val lowTailFor = (System.currentTimeMillis() - (tailSince ?: System.currentTimeMillis())) / 1000
+            if (lowTailFor >= dhLowTailSeconds) {
+                val logText = tail(log, 2_000_000)
+                return DhGateResult("low-tail-stable", dhMinSettle, dhQuiet, dhTimeout, (System.currentTimeMillis() - started) / 1000, Regex("Distant Horizons|DistantHorizons|world gen|generation", RegexOption.IGNORE_CASE).containsMatchIn(logText), stableSamples, dhLowTailMax, dhLowTailSeconds, tailChunksLeft, lowTailFor)
+            }
+        }
         if (quietFor >= dhQuiet) {
-            val logText = tail(clientDir.resolve("logs/latest.log"), 2_000_000)
-            return DhGateResult("stable", dhMinSettle, dhQuiet, dhTimeout, (System.currentTimeMillis() - started) / 1000, Regex("Distant Horizons|DistantHorizons|world gen|generation", RegexOption.IGNORE_CASE).containsMatchIn(logText), stableSamples)
+            val logText = tail(log, 2_000_000)
+            val tailStableSeconds = if (tailSince == null) 0 else (System.currentTimeMillis() - tailSince!!) / 1000
+            return DhGateResult("stable", dhMinSettle, dhQuiet, dhTimeout, (System.currentTimeMillis() - started) / 1000, Regex("Distant Horizons|DistantHorizons|world gen|generation", RegexOption.IGNORE_CASE).containsMatchIn(logText), stableSamples, dhLowTailMax, dhLowTailSeconds, tailChunksLeft, tailStableSeconds)
         }
         Thread.sleep(2_000)
     }
-    val logText = tail(clientDir.resolve("logs/latest.log"), 2_000_000)
-    return DhGateResult("timeout", dhMinSettle, dhQuiet, dhTimeout, (System.currentTimeMillis() - started) / 1000, Regex("Distant Horizons|DistantHorizons|world gen|generation", RegexOption.IGNORE_CASE).containsMatchIn(logText), stableSamples)
+    val logText = tail(log, 2_000_000)
+    val tailStableSeconds = if (tailSince == null) 0 else (System.currentTimeMillis() - tailSince!!) / 1000
+    return DhGateResult("timeout", dhMinSettle, dhQuiet, dhTimeout, (System.currentTimeMillis() - started) / 1000, Regex("Distant Horizons|DistantHorizons|world gen|generation", RegexOption.IGNORE_CASE).containsMatchIn(logText), stableSamples, dhLowTailMax, dhLowTailSeconds, tailChunksLeft, tailStableSeconds)
 }
 fun writeReview(path: Path, shot: Shot, dh: DhGateResult) {
     val review = """
@@ -374,7 +417,7 @@ fun writeReview(path: Path, shot: Shot, dh: DhGateResult) {
     "shaderPreset": ${q("shaderpacks/$shaderPack.txt")},
     "optionsSource": "options.txt",
     "dhCaptureRadiusChunks": $dhCaptureRadiusChunks,
-    "dhGate": {"status": ${q(dh.status)}, "elapsedSeconds": ${dh.elapsedSeconds}, "minSettleSeconds": ${dh.minSettleSeconds}, "quietSeconds": ${dh.quietSeconds}, "timeoutSeconds": ${dh.timeoutSeconds}, "dhLogObserved": ${dh.dhLogObserved}, "stableSamples": ${dh.stableSamples}}
+    "dhGate": {"status": ${q(dh.status)}, "elapsedSeconds": ${dh.elapsedSeconds}, "minSettleSeconds": ${dh.minSettleSeconds}, "quietSeconds": ${dh.quietSeconds}, "timeoutSeconds": ${dh.timeoutSeconds}, "dhLogObserved": ${dh.dhLogObserved}, "stableSamples": ${dh.stableSamples}, "lowTailThresholdChunks": ${dh.lowTailThresholdChunks}, "lowTailSeconds": ${dh.lowTailSeconds}, "tailChunksLeft": ${dh.tailChunksLeft ?: "null"}, "tailStableSeconds": ${dh.tailStableSeconds}}
   },
   "rubricVersion": "1",
   "reviewer": "pending vision review",
@@ -476,7 +519,7 @@ try {
             send(server!!, "forceload add $fromBlockX $fromBlockZ $toBlockX $toBlockZ", commands)
             Thread.sleep(8_000)
             val dh = waitForDhStable(clientDir)
-            if (dh.status != "stable") error("DH did not reach a stable quiet window for ${shot.id}")
+            if (dh.status !in setOf("stable", "low-tail-stable")) error("DH did not reach a stable quiet window or bounded low-tail state for ${shot.id}")
             Thread.sleep(15_000)
             val rawPath = raw.resolve(shot.file)
             val finalPath = final.resolve(shot.file)

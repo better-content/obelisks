@@ -86,13 +86,20 @@ works.
   disposable client must receive the intended `options.txt`, shader options file,
   current Oculus shader selection, and Distant Horizons config before launch; do
   not rely on launcher defaults or freshly generated options.
-- Distant Horizons must finish the shot's LOD work before capture. Enable DH
-  generation progress logging for screenshot runtimes, wait through a minimum
-  settle period, and require a quiet window where DH logs and DH LOD storage stop
-  changing. Record the settle duration, quiet-window duration, timeout, and
-  observed DH evidence in the sidecar.
-- If the DH quiet-window gate times out, reject the frame. A fixed sleep alone is
-  not enough for publishable marketing captures.
+- Distant Horizons must finish the shot's LOD work before capture when DH reports
+  a finite completion signal. Enable DH generation progress logging for
+  screenshot runtimes, wait through a minimum settle period, and prefer a quiet
+  window where DH logs and DH LOD storage stop changing. Record the settle
+  duration, quiet-window duration, timeout, and observed DH evidence in the
+  sidecar.
+- DH can pin a small nonzero tail such as `DH is generating chunks. 32 left`
+  indefinitely while still rendering a usable still frame. The screenshot lane may
+  accept this only as an explicit `low-tail-stable` DH gate: the repeated tail
+  count must be at or below the configured low-tail threshold for the configured
+  duration, and the sidecar must record the threshold, tail count, and stable-tail
+  duration. Do not collapse this into the normal `stable` status.
+- If the DH quiet-window and bounded low-tail gates both time out, reject the
+  frame. A fixed sleep alone is not enough for publishable marketing captures.
 - Keep the full-resolution clean master before cropping or color adjustment. Do
   not stretch, generatively extend, or materially repaint world geometry.
 - Store runtime captures under `generated/` or `/tmp`. Separate raw masters,

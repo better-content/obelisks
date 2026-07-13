@@ -19,14 +19,12 @@ import java.util.concurrent.TimeUnit
 import javax.imageio.ImageIO
 import kotlin.io.path.createDirectories
 import kotlin.io.path.exists
-import kotlin.math.PI
 import kotlin.math.atan2
 import kotlin.math.cos
 import kotlin.math.hypot
 import kotlin.math.ln
 import kotlin.math.max
 import kotlin.math.sin
-import kotlin.math.sqrt
 import kotlin.system.exitProcess
 
 data class RunningServer(val process: Process, val stdin: BufferedWriter, val log: Path)
@@ -117,7 +115,7 @@ val knownBadFrameMarkers = listOf(
 
 fun usage(message: String? = null): Nothing {
     if (message != null) System.err.println(message)
-    System.err.println("Usage: tools/btm test scenario-headful worldgen_marketing_screenshots [--bootstrap-mode always|once|never] [--port N] [--run-root PATH] [--output-dir PATH] [--keep-runs] [--batch-mode bounded|session] [--start-shot N|SHOT_ID] [--end-shot N|SHOT_ID] [--dh-min-settle SECONDS] [--dh-quiet SECONDS] [--dh-timeout SECONDS] [--dh-low-tail-max CHUNKS] [--dh-low-tail-seconds SECONDS]")
+    System.err.println("Usage: tools/btm test scenario-headful worldgen_marketing_screenshots [--bootstrap-mode always|once|never] [--port N] [--run-root PATH] [--output-dir PATH] [--keep-runs] [--batch-mode bounded|session] [--start-shot N|SHOT_ID] [--end-shot N|SHOT_ID] [--dh-min-settle SECONDS] [--dh-quiet SECONDS] [--dh-timeout SECONDS] [--dh-low-tail-max CHUNKS] [--dh-low-tail-seconds SECONDS] [--camera-search off|local-sweep]")
     exitProcess(2)
 }
 
@@ -152,6 +150,7 @@ var dhTimeout = 420
 var dhLowTailMax = 32
 var dhLowTailSeconds = 60
 var batchMode = "bounded"
+var cameraSearchMode = "local-sweep"
 var index = 0
 while (index < args.size) {
     when (args[index]) {
@@ -207,6 +206,11 @@ while (index < args.size) {
         }
         "--dh-low-tail-seconds" -> {
             dhLowTailSeconds = args.getOrNull(index + 1)?.toIntOrNull() ?: usage("--dh-low-tail-seconds needs seconds")
+            index += 2
+        }
+        "--camera-search" -> {
+            cameraSearchMode = args.getOrNull(index + 1) ?: usage("--camera-search needs off or local-sweep")
+            if (cameraSearchMode !in setOf("off", "local-sweep")) usage("invalid camera search mode: $cameraSearchMode")
             index += 2
         }
         "--help" -> usage()
@@ -266,6 +270,7 @@ if (batchMode == "bounded" && selectedShots.size > 1) {
             "--dh-timeout", dhTimeout.toString(),
             "--dh-low-tail-max", dhLowTailMax.toString(),
             "--dh-low-tail-seconds", dhLowTailSeconds.toString(),
+            "--camera-search", cameraSearchMode,
         ) + if (keepRuns) listOf("--keep-runs") else emptyList()
         val process = ProcessBuilder(command).directory(root.toFile()).inheritIO().start()
         if (process.waitFor() != 0) failedSegments++
@@ -813,6 +818,10 @@ fun teleportCamera(pose: CameraPose) {
     send(server!!, "tp AgentShot ${pose.asCommandArgs()}", commands)
 }
 fun chooseCameraCandidate(shot: Shot, previewRoot: Path): CandidateFrame {
+    if (cameraSearchMode == "off") {
+        val base = shot.basePose()
+        return CandidateFrame("base", base, previewRoot.resolve("00-base.png"), FrameAssessment(true), 0.0, "camera search disabled")
+    }
     previewRoot.createDirectories()
     var best: CandidateFrame? = null
     val rejected = mutableListOf<String>()

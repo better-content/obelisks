@@ -205,6 +205,8 @@ tools/btm test scenario-headful worldgen_marketing_screenshots --start-shot 02-o
 
 Fresh evidence from 2026-07-13: the jungle rerun produced an accepted current candidate at `generated/cache/worldgen-marketing-experiment/final-corrected/02-overworld-jungle.png` with prompt suppression clean, shader pack active, fixed FOV 80, low-tail-stable DH evidence (`tailChunksLeft=32` for 30 seconds after 90 seconds), and a passing visual sidecar. The lane now supports `--anchor-search locate-biome-sweep`, writes anchor-preview reports, rejects one-sided blank/fog and xray-like frames more aggressively, uses safe elevated anchor probe poses, carries DH/forceload radius through bounded runs, and patches Cold Sweat screenshot overrides idempotently. Earlier failed captures remain debugging evidence, including xray/translucent geometry from unsafe low valley-dive anchors.
 
+Fresh forest/redwood evidence from 2026-07-13: the old `01-overworld-forest` authored capture technically rendered cleanly but was rejected as a marketing candidate because it read as generic canopy/fog, had weak subject separation, and scored only `519.65`. The lane now refuses to promote camera candidates below the publishable score threshold. A redwood retarget (`natures_spirit:redwood_forest`) located deterministic centers at roughly `1472,-1362` and `1568,-1138`, but every safe elevated probe was rejected for low terrain visibility, flat/fog-heavy composition, or low entropy. The sweep now fails closed after bounded unique centers or on locate timeout instead of falling back to weak authored coordinates. This is intentional: current automated forest composition still needs a better target or lower-risk authored scout spot before publication.
+
 VS ships diagnostics:
 
 ```bash

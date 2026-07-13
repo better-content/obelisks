@@ -131,7 +131,9 @@ val screenshotClientDhThreads = max(3, availableProcessors - 2).coerceAtMost(8)
 val screenshotServerDhThreads = availableProcessors
 val cameraSweepFocusDistance = 48.0
 val maxFeatureAnchorDistanceBlocks = 768.0
+val minimumPublishableCandidateScore = 580.0
 val anchorSweepEarlyAcceptScore = 650.0
+val anchorSweepMaxUniqueCenters = 2
 val screenshotDisabledTemperatureModifiers = listOf("cold_sweat:biomes")
 val safeAnchorProbeLabels = setOf(
     "base",
@@ -301,7 +303,7 @@ while (index < args.size) {
 // deliberately above the local terrain so spectator mode never captures from
 // inside hillsides or dense canopy.
 val shots = listOf(
-    Shot("01-overworld-forest", "01-overworld-forest.png", "minecraft:forest", "forest canopy and escarpment", 0.5, 220.0, -49.5, 0.0, 10.0, listOf("minecraft:village_plains", "minecraft:pillager_outpost", "minecraft:trail_ruins")),
+    Shot("01-overworld-forest", "01-overworld-forest.png", "natures_spirit:redwood_forest", "redwood forest ridge", 0.5, 220.0, -49.5, 0.0, 10.0, listOf("dimensionalfonts:dimensional_font", "minecraft:pillager_outpost", "minecraft:trail_ruins")),
     Shot("02-overworld-jungle", "02-overworld-jungle.png", "minecraft:jungle", "jungle river valley", 704.5, 186.0, 608.5, 45.0, 28.0, listOf("minecraft:jungle_pyramid", "minecraft:trail_ruins", "minecraft:ruined_portal")),
     Shot("03-overworld-desert", "03-overworld-desert.png", "minecraft:desert", "desert plateau at a jungle boundary", 1152.5, 176.0, 1600.5, 45.0, 24.0, listOf("minecraft:desert_pyramid", "minecraft:village_desert", "minecraft:ruined_portal_desert")),
     Shot("04-overworld-badlands", "04-overworld-badlands.png", "minecraft:badlands", "badlands river basin", 96.5, 188.0, 1632.5, 45.0, 28.0, listOf("minecraft:mineshaft_mesa", "minecraft:ruined_portal", "minecraft:trail_ruins")),
@@ -1196,7 +1198,14 @@ fun chooseCameraCandidate(shot: Shot, previewRoot: Path): CandidateFrame {
         if (best == null || scored.score > best!!.score) best = scored
     }
     writeCandidateReport(previewRoot.resolve("candidate-report.json"), shot, reports, best)
-    return best ?: error("no acceptable camera candidates for ${shot.id}: ${rejected.joinToString("; ")}")
+    val selected = best ?: error("no acceptable camera candidates for ${shot.id}: ${rejected.joinToString("; ")}")
+    if (selected.score < minimumPublishableCandidateScore) {
+        error(
+            "best camera candidate for ${shot.id} scored ${"%.2f".format(java.util.Locale.US, selected.score)}, " +
+                "below publishable threshold ${minimumPublishableCandidateScore.format1()}: ${selected.label} ${selected.detail}"
+        )
+    }
+    return selected
 }
 fun badMarkersSince(clientDir: Path, offset: Long): List<String> {
     val text = readFrom(clientDir.resolve("logs/latest.log"), offset).lowercase()
@@ -1243,7 +1252,8 @@ fun chooseBiomeSweepAnchor(shot: Shot): LocatedAnchor {
         val located = locateFromCurrentPosition("biome", shot.biome, timeoutMillis = 20_000)
         if (located == null) {
             appendProgress("anchor_probe_failed", shot, "probe=${index} offset=${offset.first.format1()},${offset.second.format1()} locate timed out")
-            continue
+            writeAnchorSweepReport(previewRoot.resolve("anchor-sweep-report.json"), shot, reports, best)
+            error("anchor locate timed out for ${shot.id} at probe=$index; refusing further scout teleports")
         }
         if (!seen.add(located)) {
             appendProgress("anchor_probe_duplicate", shot, "probe=${index} located=${located.first},${located.second}")
@@ -1280,10 +1290,20 @@ fun chooseBiomeSweepAnchor(shot: Shot): LocatedAnchor {
             )
             break
         }
+        if (seen.size >= anchorSweepMaxUniqueCenters) {
+            appendProgress("anchor_probe_limit", shot, "uniqueCenters=${seen.size} max=$anchorSweepMaxUniqueCenters")
+            break
+        }
     }
     writeAnchorSweepReport(previewRoot.resolve("anchor-sweep-report.json"), shot, reports, best)
     val selected = best
-        ?: return LocatedAnchor(shot, "locate-biome-sweep-fallback", "no acceptable sweep anchors; using authored ${shot.x.format1()},${shot.z.format1()}")
+        ?: error("no acceptable sweep anchors for ${shot.id}; refusing authored fallback in locate-biome-sweep mode")
+    if ((selected.composition?.score ?: Double.NEGATIVE_INFINITY) < minimumPublishableCandidateScore) {
+        error(
+            "best anchor candidate for ${shot.id} scored ${"%.2f".format(java.util.Locale.US, selected.composition?.score ?: 0.0)}, " +
+                "below publishable threshold ${minimumPublishableCandidateScore.format1()}: ${selected.label}"
+        )
+    }
     val relocated = shot.copy(x = selected.pose.x, y = selected.pose.y, z = selected.pose.z, yaw = selected.pose.yaw, pitch = selected.pose.pitch)
     return LocatedAnchor(
         relocated,

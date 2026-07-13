@@ -19,8 +19,14 @@ import java.util.concurrent.TimeUnit
 import javax.imageio.ImageIO
 import kotlin.io.path.createDirectories
 import kotlin.io.path.exists
+import kotlin.math.PI
+import kotlin.math.atan2
+import kotlin.math.cos
+import kotlin.math.hypot
 import kotlin.math.ln
 import kotlin.math.max
+import kotlin.math.sin
+import kotlin.math.sqrt
 import kotlin.system.exitProcess
 
 data class RunningServer(val process: Process, val stdin: BufferedWriter, val log: Path)
@@ -56,6 +62,21 @@ data class FrameAssessment(
     val edgeDensity: Double = 0.0,
     val luminanceRange: Int = 0,
 )
+data class CameraPose(
+    val x: Double,
+    val y: Double,
+    val z: Double,
+    val yaw: Double,
+    val pitch: Double,
+)
+data class CandidateFrame(
+    val label: String,
+    val pose: CameraPose,
+    val path: Path,
+    val frame: FrameAssessment,
+    val score: Double,
+    val detail: String,
+)
 data class ShotResult(
     val shot: Shot,
     val status: String,
@@ -64,6 +85,9 @@ data class ShotResult(
     val failureReason: String? = null,
     val promptHandling: String = "not-run",
     val dh: DhGateResult? = null,
+    val selectedCamera: CameraPose? = null,
+    val candidateLabel: String? = null,
+    val candidateScore: Double? = null,
 )
 
 val root = Paths.get("").toAbsolutePath().normalize()
@@ -74,6 +98,10 @@ val seed = "btm-worldgen-marketing-v1"
 val dhCaptureRadiusChunks = 32
 val serverForceloadRadiusChunks = 7
 val captureFovDegrees = 80
+val availableProcessors = Runtime.getRuntime().availableProcessors()
+val screenshotClientDhThreads = max(3, availableProcessors - 2).coerceAtMost(8)
+val screenshotServerDhThreads = availableProcessors
+val cameraSweepFocusDistance = 48.0
 // Vanilla's FOV option is normalized across the 30-110 degree range.
 val captureFovOptionValue = (captureFovDegrees - 30.0) / 80.0
 val knownBadFrameMarkers = listOf(
@@ -437,7 +465,7 @@ enableShaders=true
     patchTomlValue(dh, "playerBandwidthLimit", "0")
     patchTomlValue(dh, "lodChunkRenderDistanceRadius", dhCaptureRadiusChunks.toString())
     patchTomlValue(dh, "threadRunTimeRatio", "\"1.0\"")
-    patchTomlValue(dh, "numberOfThreads", max(3, Runtime.getRuntime().availableProcessors() - 2).coerceAtMost(8).toString())
+    patchTomlValue(dh, "numberOfThreads", screenshotClientDhThreads.toString())
 }
 fun configureServer(serverDir: Path) {
     // Explosion Overhaul's scan-decision modal is initiated by the server, so
@@ -445,6 +473,9 @@ fun configureServer(serverDir: Path) {
     val explosionOverhaul = serverDir.resolve("config/explosionoverhaul/explosionoverhaul-common.toml")
     patchTomlValue(explosionOverhaul, "enableBlockIndexing", "false")
     patchTomlValue(explosionOverhaul, "showScanProgressHUD", "false")
+    val dh = serverDir.resolve("config/DistantHorizons.toml")
+    patchTomlValue(dh, "threadRunTimeRatio", "\"1.0\"")
+    patchTomlValue(dh, "numberOfThreads", screenshotServerDhThreads.toString())
 }
 fun prepareArgfile(clientDir: Path, username: String, out: Path, log: Path) {
     val command = listOf(root.resolve("tools/btm").toString(), "internal", "minecraft-client-argfile", "--client-dir", clientDir.toString(), "--version-id", "1.20.1-forge-47.4.13", "--username", username, "--server", "127.0.0.1:$port", "--out", out.toString())
@@ -467,6 +498,50 @@ fun screenshot(robot: Robot, out: Path): BufferedImage {
     val image = robot.createScreenCapture(Rectangle(Toolkit.getDefaultToolkit().screenSize))
     ImageIO.write(image, "png", out.toFile())
     return image
+}
+fun CameraPose.asCommandArgs() = "${x.format1()} ${y.format1()} ${z.format1()} ${yaw.format1()} ${pitch.format1()}"
+fun Double.format1() = String.format(java.util.Locale.US, "%.1f", this)
+fun Shot.basePose() = CameraPose(x, y, z, yaw, pitch)
+fun forwardVector(yaw: Double, pitch: Double): Triple<Double, Double, Double> {
+    val yawRad = Math.toRadians(yaw)
+    val pitchRad = Math.toRadians(pitch)
+    val horizontal = cos(pitchRad)
+    return Triple(-sin(yawRad) * horizontal, -sin(pitchRad), cos(yawRad) * horizontal)
+}
+fun rightVector(yaw: Double): Pair<Double, Double> {
+    val yawRad = Math.toRadians(yaw)
+    return Pair(cos(yawRad), sin(yawRad))
+}
+fun lookAt(fromX: Double, fromY: Double, fromZ: Double, targetX: Double, targetY: Double, targetZ: Double): CameraPose {
+    val dx = targetX - fromX
+    val dy = targetY - fromY
+    val dz = targetZ - fromZ
+    val yaw = Math.toDegrees(atan2(-dx, dz))
+    val pitch = -Math.toDegrees(atan2(dy, hypot(dx, dz)))
+    return CameraPose(fromX, fromY, fromZ, yaw, pitch)
+}
+fun candidatePoses(shot: Shot): List<Pair<String, CameraPose>> {
+    val base = shot.basePose()
+    val (fx, fy, fz) = forwardVector(base.yaw, base.pitch)
+    val targetX = base.x + fx * cameraSweepFocusDistance
+    val targetY = base.y + fy * cameraSweepFocusDistance
+    val targetZ = base.z + fz * cameraSweepFocusDistance
+    val (rx, rz) = rightVector(base.yaw)
+    fun pose(label: String, right: Double = 0.0, forward: Double = 0.0, up: Double = 0.0): Pair<String, CameraPose> {
+        val x = base.x + rx * right + fx * forward
+        val y = base.y + up
+        val z = base.z + rz * right + fz * forward
+        return label to lookAt(x, y, z, targetX, targetY, targetZ)
+    }
+    return listOf(
+        "base" to base,
+        pose("left-low", right = -12.0),
+        pose("right-low", right = 12.0),
+        pose("back-high", forward = -14.0, up = 8.0),
+        pose("left-back-high", right = -20.0, forward = -10.0, up = 10.0),
+        pose("right-back-high", right = 20.0, forward = -10.0, up = 10.0),
+        pose("high-pullback", forward = -24.0, up = 16.0),
+    )
 }
 fun assessFrame(image: BufferedImage): FrameAssessment {
     if (image.width != width || image.height != height) {
@@ -514,6 +589,50 @@ fun assessFrame(image: BufferedImage): FrameAssessment {
         return FrameAssessment(false, "xray-like geometry corruption signature", entropy, edgeDensity, luminanceRange)
     }
     return FrameAssessment(true, entropy = entropy, edgeDensity = edgeDensity, luminanceRange = luminanceRange)
+}
+fun scoreCandidateFrame(image: BufferedImage, frame: FrameAssessment): Pair<Double, String> {
+    val thirdsVertical = DoubleArray(3)
+    val thirdsHorizontal = DoubleArray(3)
+    var centerEdges = 0
+    var totalEdges = 0
+    var topBlank = 0
+    var topSamples = 0
+    for (y in 8 until image.height step 8) for (x in 8 until image.width step 8) {
+        val rgb = image.getRGB(x, y)
+        val previous = image.getRGB(x - 8, y)
+        val difference = kotlin.math.abs(((rgb shr 16) and 255) - ((previous shr 16) and 255)) +
+            kotlin.math.abs(((rgb shr 8) and 255) - ((previous shr 8) and 255)) +
+            kotlin.math.abs((rgb and 255) - (previous and 255))
+        if (difference > 60) {
+            val v = (y * 3) / image.height
+            val h = (x * 3) / image.width
+            thirdsVertical[v]++
+            thirdsHorizontal[h]++
+            totalEdges++
+            if (x in (image.width * 3 / 10)..(image.width * 7 / 10) && y in (image.height * 2 / 10)..(image.height * 8 / 10)) centerEdges++
+        }
+        if (y < image.height / 3) {
+            topSamples++
+            if (difference <= 12) topBlank++
+        }
+    }
+    val total = totalEdges.coerceAtLeast(1).toDouble()
+    val verticalCoverage = thirdsVertical.count { it / total > 0.12 }
+    val horizontalCoverage = thirdsHorizontal.count { it / total > 0.12 }
+    val centerFraction = centerEdges / total
+    val topBlankFraction = topBlank.toDouble() / topSamples.coerceAtLeast(1)
+    val bandBalancePenalty = thirdsVertical.map { kotlin.math.abs((it / total) - (1.0 / 3.0)) }.sum() +
+        thirdsHorizontal.map { kotlin.math.abs((it / total) - (1.0 / 3.0)) }.sum()
+    val score = frame.entropy * 18.0 +
+        frame.edgeDensity * 2400.0 +
+        frame.luminanceRange * 0.18 +
+        verticalCoverage * 8.0 +
+        horizontalCoverage * 8.0 -
+        centerFraction * 16.0 -
+        topBlankFraction * 10.0 -
+        bandBalancePenalty * 12.0
+    val detail = "entropy=${"%.2f".format(java.util.Locale.US, frame.entropy)} edge=${"%.4f".format(java.util.Locale.US, frame.edgeDensity)} range=${frame.luminanceRange} vcov=$verticalCoverage hcov=$horizontalCoverage center=${"%.2f".format(java.util.Locale.US, centerFraction)} topBlank=${"%.2f".format(java.util.Locale.US, topBlankFraction)}"
+    return score to detail
 }
 fun waitForPlayableFrame(robot: Robot, out: Path, timeoutSeconds: Long): Boolean {
     val deadline = System.currentTimeMillis() + timeoutSeconds * 1000
@@ -586,6 +705,9 @@ fun waitForDhStable(clientDir: Path): DhGateResult {
     return DhGateResult("timeout", dhMinSettle, dhQuiet, dhTimeout, (System.currentTimeMillis() - started) / 1000, Regex("Distant Horizons|DistantHorizons|world gen|generation", RegexOption.IGNORE_CASE).containsMatchIn(logText), stableSamples, dhLowTailMax, dhLowTailSeconds, tailChunksLeft, tailStableSeconds)
 }
 fun writeReview(path: Path, shot: Shot, dh: DhGateResult?, technicalStatus: String, failureReason: String?, promptHandling: String, frame: FrameAssessment?) {
+    writeReview(path, shot, shot.basePose(), dh, technicalStatus, failureReason, promptHandling, frame, null, null)
+}
+fun writeReview(path: Path, shot: Shot, camera: CameraPose, dh: DhGateResult?, technicalStatus: String, failureReason: String?, promptHandling: String, frame: FrameAssessment?, candidateLabel: String?, candidateScore: Double?) {
     val review = """
 {
   "schema": "btm.screenshot_review.v1",
@@ -599,7 +721,8 @@ fun writeReview(path: Path, shot: Shot, dh: DhGateResult?, technicalStatus: Stri
     "seed": ${q(seed)},
     "dimension": "minecraft:overworld",
     "biome": ${q(shot.biome)},
-    "camera": {"x": ${shot.x}, "y": ${shot.y}, "z": ${shot.z}, "yaw": ${shot.yaw}, "pitch": ${shot.pitch}},
+    "camera": {"x": ${camera.x}, "y": ${camera.y}, "z": ${camera.z}, "yaw": ${camera.yaw}, "pitch": ${camera.pitch}},
+    "baseCamera": {"x": ${shot.x}, "y": ${shot.y}, "z": ${shot.z}, "yaw": ${shot.yaw}, "pitch": ${shot.pitch}},
     "fov": $captureFovDegrees,
     "weather": "clear",
     "time": "morning",
@@ -608,6 +731,8 @@ fun writeReview(path: Path, shot: Shot, dh: DhGateResult?, technicalStatus: Stri
     "shaderPack": ${q(shaderPack)},
     "shaderPreset": ${q("shaderpacks/$shaderPack.txt")},
     "optionsSource": "options.txt",
+    "candidateLabel": ${q(candidateLabel)},
+    "candidateScore": ${candidateScore ?: "null"},
     "dhCaptureRadiusChunks": $dhCaptureRadiusChunks,
     "dhGate": ${if (dh == null) "null" else "{\"status\": ${q(dh.status)}, \"elapsedSeconds\": ${dh.elapsedSeconds}, \"minSettleSeconds\": ${dh.minSettleSeconds}, \"quietSeconds\": ${dh.quietSeconds}, \"timeoutSeconds\": ${dh.timeoutSeconds}, \"dhLogObserved\": ${dh.dhLogObserved}, \"stableSamples\": ${dh.stableSamples}, \"lowTailThresholdChunks\": ${dh.lowTailThresholdChunks}, \"lowTailSeconds\": ${dh.lowTailSeconds}, \"tailChunksLeft\": ${dh.tailChunksLeft ?: "null"}, \"tailStableSeconds\": ${dh.tailStableSeconds}}"},
     "technicalGate": {"status": ${q(technicalStatus)}, "failureReason": ${q(failureReason)}, "promptHandling": ${q(promptHandling)}, "frameEntropy": ${frame?.entropy ?: "null"}, "frameEdgeDensity": ${frame?.edgeDensity ?: "null"}, "frameLuminanceRange": ${frame?.luminanceRange ?: "null"}}
@@ -683,6 +808,32 @@ fun writeFailureTrace(error: Throwable) {
 fun pressKey(key: Int) {
     robot.keyPress(key)
     robot.keyRelease(key)
+}
+fun teleportCamera(pose: CameraPose) {
+    send(server!!, "tp AgentShot ${pose.asCommandArgs()}", commands)
+}
+fun chooseCameraCandidate(shot: Shot, previewRoot: Path): CandidateFrame {
+    previewRoot.createDirectories()
+    var best: CandidateFrame? = null
+    val rejected = mutableListOf<String>()
+    for ((index, candidate) in candidatePoses(shot).withIndex()) {
+        val (label, pose) = candidate
+        teleportCamera(pose)
+        Thread.sleep(1_500)
+        val previewPath = previewRoot.resolve("${index.toString().padStart(2, '0')}-$label.png")
+        val image = screenshot(robot, previewPath)
+        val frame = assessFrame(image)
+        if (!frame.accepted) {
+            rejected += "$label:${frame.reason}"
+            appendProgress("candidate_rejected", shot, "$label ${frame.reason}")
+            continue
+        }
+        val (score, detail) = scoreCandidateFrame(image, frame)
+        val scored = CandidateFrame(label, pose, previewPath, frame, score, detail)
+        appendProgress("candidate_scored", shot, "$label score=${"%.2f".format(java.util.Locale.US, score)} $detail")
+        if (best == null || scored.score > best!!.score) best = scored
+    }
+    return best ?: error("no acceptable camera candidates for ${shot.id}: ${rejected.joinToString("; ")}")
 }
 fun badMarkersSince(clientDir: Path, offset: Long): List<String> {
     val text = readFrom(clientDir.resolve("logs/latest.log"), offset).lowercase()
@@ -791,7 +942,7 @@ try {
             appendProgress("shot_begin", shot)
             send(server!!, "weather clear", commands)
             send(server!!, "time set 1000", commands)
-            send(server!!, "tp AgentShot ${shot.x} ${shot.y} ${shot.z} ${shot.yaw} ${shot.pitch}", commands)
+            teleportCamera(shot.basePose())
             val chunkX = Math.floor(shot.x / 16.0).toInt()
             val chunkZ = Math.floor(shot.z / 16.0).toInt()
             val fromBlockX = (chunkX - serverForceloadRadiusChunks) * 16
@@ -806,6 +957,10 @@ try {
             if (dh.status !in setOf("stable", "low-tail-stable")) error("DH did not reach a stable quiet window or bounded low-tail state for ${shot.id}")
             Thread.sleep(15_000)
             val promptHandling = prepareCleanFrame("shot:${shot.id}")
+            val bestCandidate = chooseCameraCandidate(shot, evidence.resolve("candidates").resolve(shot.id))
+            appendProgress("candidate_selected", shot, "${bestCandidate.label} score=${"%.2f".format(java.util.Locale.US, bestCandidate.score)} ${bestCandidate.detail}")
+            teleportCamera(bestCandidate.pose)
+            Thread.sleep(1_500)
             val log = clientDir.resolve("logs/latest.log")
             val logOffset = if (log.exists()) Files.size(log) else 0L
             val rawPath = raw.resolve(shot.file)
@@ -821,17 +976,17 @@ try {
             }
             if (failureReason != null) {
                 val rejectedReview = rawPath.resolveSibling(rawPath.fileName.toString().removeSuffix(".png") + ".review.json")
-                writeReview(rawPath, shot, dh, "failed", failureReason, promptHandling, frame)
-                shotResults += ShotResult(shot, "failed", rawPath, rejectedReview, failureReason, promptHandling, dh)
+                writeReview(rawPath, shot, bestCandidate.pose, dh, "failed", failureReason, promptHandling, frame, bestCandidate.label, bestCandidate.score)
+                shotResults += ShotResult(shot, "failed", rawPath, rejectedReview, failureReason, promptHandling, dh, bestCandidate.pose, bestCandidate.label, bestCandidate.score)
                 appendProgress("shot_rejected", shot, failureReason)
                 error("rejected ${shot.id}: $failureReason")
             }
             Files.copy(rawPath, finalPath, StandardCopyOption.REPLACE_EXISTING)
-            writeReview(finalPath, shot, dh, "passed", null, promptHandling, frame)
+            writeReview(finalPath, shot, bestCandidate.pose, dh, "passed", null, promptHandling, frame, bestCandidate.label, bestCandidate.score)
             captured += finalPath.toString()
-            shotResults += ShotResult(shot, "technical-pass-pending-ai-review", finalPath, finalPath.resolveSibling(finalPath.fileName.toString().removeSuffix(".png") + ".review.json"), promptHandling = promptHandling, dh = dh)
+            shotResults += ShotResult(shot, "technical-pass-pending-ai-review", finalPath, finalPath.resolveSibling(finalPath.fileName.toString().removeSuffix(".png") + ".review.json"), promptHandling = promptHandling, dh = dh, selectedCamera = bestCandidate.pose, candidateLabel = bestCandidate.label, candidateScore = bestCandidate.score)
             Files.writeString(capturedFilesLog, captured.joinToString("\n", postfix = "\n"))
-            appendProgress("shot_captured", shot, "path=$finalPath fov=$captureFovDegrees promptHandling=$promptHandling")
+            appendProgress("shot_captured", shot, "path=$finalPath fov=$captureFovDegrees promptHandling=$promptHandling candidate=${bestCandidate.label}")
         }
         activeShot = null
         appendProgress("capture_complete", detail = "captured ${captured.size} shot(s)")
@@ -842,7 +997,7 @@ try {
     if (activeShot != null && shotResults.none { it.shot.id == activeShot!!.id }) {
         val rejectedPath = raw.resolve(activeShot!!.file)
         val reviewPath = rejectedPath.resolveSibling(rejectedPath.fileName.toString().removeSuffix(".png") + ".review.json")
-        if (rejectedPath.exists()) writeReview(rejectedPath, activeShot!!, null, "failed", error.message, "failed-before-clean-frame", null)
+        if (rejectedPath.exists()) writeReview(rejectedPath, activeShot!!, activeShot!!.basePose(), null, "failed", error.message, "failed-before-clean-frame", null, null, null)
         shotResults += ShotResult(activeShot!!, "failed", rejectedPath, reviewPath, error.message, "failed-before-clean-frame")
     }
     appendProgress("capture_failed", activeShot, error.message)
@@ -873,7 +1028,8 @@ val manifest = buildString {
     appendLine("  \"shots\": [")
     appendLine(selectedShots.joinToString(",\n") { shot ->
         val result = shotResults.lastOrNull { it.shot.id == shot.id }
-        "    {\"id\":${q(shot.id)},\"status\":${q(result?.status ?: "not-run")},\"failureReason\":${q(result?.failureReason)},\"path\":${q((result?.path ?: final.resolve(shot.file)).toString())},\"review\":${q((result?.review ?: final.resolve(shot.file.removeSuffix(".png") + ".review.json")).toString())},\"promptHandling\":${q(result?.promptHandling)},\"biome\":${q(shot.biome)},\"subject\":${q(shot.subject)},\"camera\":{\"x\":${shot.x},\"y\":${shot.y},\"z\":${shot.z},\"yaw\":${shot.yaw},\"pitch\":${shot.pitch}}}"
+        val camera = result?.selectedCamera ?: shot.basePose()
+        "    {\"id\":${q(shot.id)},\"status\":${q(result?.status ?: "not-run")},\"failureReason\":${q(result?.failureReason)},\"path\":${q((result?.path ?: final.resolve(shot.file)).toString())},\"review\":${q((result?.review ?: final.resolve(shot.file.removeSuffix(".png") + ".review.json")).toString())},\"promptHandling\":${q(result?.promptHandling)},\"candidateLabel\":${q(result?.candidateLabel)},\"candidateScore\":${result?.candidateScore ?: "null"},\"biome\":${q(shot.biome)},\"subject\":${q(shot.subject)},\"camera\":{\"x\":${camera.x},\"y\":${camera.y},\"z\":${camera.z},\"yaw\":${camera.yaw},\"pitch\":${camera.pitch}},\"baseCamera\":{\"x\":${shot.x},\"y\":${shot.y},\"z\":${shot.z},\"yaw\":${shot.yaw},\"pitch\":${shot.pitch}}}"
     })
     appendLine("  ]")
     appendLine("}")

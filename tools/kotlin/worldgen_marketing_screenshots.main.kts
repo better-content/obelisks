@@ -67,6 +67,11 @@ data class CameraPose(
     val yaw: Double,
     val pitch: Double,
 )
+data class LocatedAnchor(
+    val shot: Shot,
+    val mode: String,
+    val detail: String,
+)
 data class CandidateFrame(
     val label: String,
     val pose: CameraPose,
@@ -74,6 +79,12 @@ data class CandidateFrame(
     val frame: FrameAssessment,
     val score: Double,
     val detail: String,
+)
+data class CompositionScore(
+    val accepted: Boolean,
+    val score: Double,
+    val detail: String,
+    val rejectionReason: String? = null,
 )
 data class ShotResult(
     val shot: Shot,
@@ -86,6 +97,8 @@ data class ShotResult(
     val selectedCamera: CameraPose? = null,
     val candidateLabel: String? = null,
     val candidateScore: Double? = null,
+    val anchorMode: String? = null,
+    val anchorDetail: String? = null,
 )
 
 val root = Paths.get("").toAbsolutePath().normalize()
@@ -115,7 +128,7 @@ val knownBadFrameMarkers = listOf(
 
 fun usage(message: String? = null): Nothing {
     if (message != null) System.err.println(message)
-    System.err.println("Usage: tools/btm test scenario-headful worldgen_marketing_screenshots [--bootstrap-mode always|once|never] [--port N] [--run-root PATH] [--output-dir PATH] [--keep-runs] [--batch-mode bounded|session] [--start-shot N|SHOT_ID] [--end-shot N|SHOT_ID] [--dh-min-settle SECONDS] [--dh-quiet SECONDS] [--dh-timeout SECONDS] [--dh-low-tail-max CHUNKS] [--dh-low-tail-seconds SECONDS] [--camera-search off|local-sweep]")
+    System.err.println("Usage: tools/btm test scenario-headful worldgen_marketing_screenshots [--bootstrap-mode always|once|never] [--port N] [--run-root PATH] [--output-dir PATH] [--keep-runs] [--batch-mode bounded|session] [--start-shot N|SHOT_ID] [--end-shot N|SHOT_ID] [--dh-min-settle SECONDS] [--dh-quiet SECONDS] [--dh-timeout SECONDS] [--dh-low-tail-max CHUNKS] [--dh-low-tail-seconds SECONDS] [--camera-search off|local-sweep] [--anchor-search off|locate-biome]")
     exitProcess(2)
 }
 
@@ -151,6 +164,7 @@ var dhLowTailMax = 32
 var dhLowTailSeconds = 60
 var batchMode = "bounded"
 var cameraSearchMode = "local-sweep"
+var anchorSearchMode = "locate-biome"
 var index = 0
 while (index < args.size) {
     when (args[index]) {
@@ -213,6 +227,11 @@ while (index < args.size) {
             if (cameraSearchMode !in setOf("off", "local-sweep")) usage("invalid camera search mode: $cameraSearchMode")
             index += 2
         }
+        "--anchor-search" -> {
+            anchorSearchMode = args.getOrNull(index + 1) ?: usage("--anchor-search needs off or locate-biome")
+            if (anchorSearchMode !in setOf("off", "locate-biome")) usage("invalid anchor search mode: $anchorSearchMode")
+            index += 2
+        }
         "--help" -> usage()
         else -> usage("unknown argument: ${args[index]}")
     }
@@ -271,6 +290,7 @@ if (batchMode == "bounded" && selectedShots.size > 1) {
             "--dh-low-tail-max", dhLowTailMax.toString(),
             "--dh-low-tail-seconds", dhLowTailSeconds.toString(),
             "--camera-search", cameraSearchMode,
+            "--anchor-search", anchorSearchMode,
         ) + if (keepRuns) listOf("--keep-runs") else emptyList()
         val process = ProcessBuilder(command).directory(root.toFile()).inheritIO().start()
         if (process.waitFor() != 0) failedSegments++
@@ -532,11 +552,11 @@ fun candidatePoses(shot: Shot): List<Pair<String, CameraPose>> {
     val targetY = base.y + fy * cameraSweepFocusDistance
     val targetZ = base.z + fz * cameraSweepFocusDistance
     val (rx, rz) = rightVector(base.yaw)
-    fun pose(label: String, right: Double = 0.0, forward: Double = 0.0, up: Double = 0.0): Pair<String, CameraPose> {
+    fun pose(label: String, right: Double = 0.0, forward: Double = 0.0, up: Double = 0.0, targetLift: Double = 0.0): Pair<String, CameraPose> {
         val x = base.x + rx * right + fx * forward
         val y = base.y + up
         val z = base.z + rz * right + fz * forward
-        return label to lookAt(x, y, z, targetX, targetY, targetZ)
+        return label to lookAt(x, y, z, targetX, targetY + targetLift, targetZ)
     }
     return listOf(
         "base" to base,
@@ -546,6 +566,17 @@ fun candidatePoses(shot: Shot): List<Pair<String, CameraPose>> {
         pose("left-back-high", right = -20.0, forward = -10.0, up = 10.0),
         pose("right-back-high", right = 20.0, forward = -10.0, up = 10.0),
         pose("high-pullback", forward = -24.0, up = 16.0),
+        pose("low-forward", forward = 10.0, up = -7.0),
+        pose("high-forward", forward = 8.0, up = 12.0),
+        pose("wide-left", right = -36.0, forward = -20.0, up = 14.0),
+        pose("wide-right", right = 36.0, forward = -20.0, up = 14.0),
+        pose("very-high-pullback", forward = -42.0, up = 28.0),
+        pose("left-compress", right = -18.0, forward = 12.0, up = 4.0),
+        pose("right-compress", right = 18.0, forward = 12.0, up = 4.0),
+        pose("look-low", up = 8.0, targetLift = -18.0),
+        pose("look-high", up = -4.0, targetLift = 18.0),
+        pose("left-look-low", right = -24.0, forward = -8.0, up = 10.0, targetLift = -16.0),
+        pose("right-look-low", right = 24.0, forward = -8.0, up = 10.0, targetLift = -16.0),
     )
 }
 fun assessFrame(image: BufferedImage): FrameAssessment {
@@ -595,49 +626,106 @@ fun assessFrame(image: BufferedImage): FrameAssessment {
     }
     return FrameAssessment(true, entropy = entropy, edgeDensity = edgeDensity, luminanceRange = luminanceRange)
 }
-fun scoreCandidateFrame(image: BufferedImage, frame: FrameAssessment): Pair<Double, String> {
+fun scoreCandidateFrame(image: BufferedImage, frame: FrameAssessment): CompositionScore {
     val thirdsVertical = DoubleArray(3)
     val thirdsHorizontal = DoubleArray(3)
+    val edgeBands = DoubleArray(6)
+    val saturationBands = DoubleArray(3)
     var centerEdges = 0
+    var thirdLineEdges = 0
     var totalEdges = 0
     var topBlank = 0
     var topSamples = 0
+    var bottomBlank = 0
+    var bottomSamples = 0
+    var colorfulnessTotal = 0.0
+    var luminanceTotal = 0.0
+    var luminanceSquaredTotal = 0.0
+    var samples = 0
     for (y in 8 until image.height step 8) for (x in 8 until image.width step 8) {
         val rgb = image.getRGB(x, y)
         val previous = image.getRGB(x - 8, y)
-        val difference = kotlin.math.abs(((rgb shr 16) and 255) - ((previous shr 16) and 255)) +
-            kotlin.math.abs(((rgb shr 8) and 255) - ((previous shr 8) and 255)) +
-            kotlin.math.abs((rgb and 255) - (previous and 255))
+        val red = (rgb shr 16) and 255
+        val green = (rgb shr 8) and 255
+        val blue = rgb and 255
+        val difference = kotlin.math.abs(red - ((previous shr 16) and 255)) +
+            kotlin.math.abs(green - ((previous shr 8) and 255)) +
+            kotlin.math.abs(blue - (previous and 255))
+        val maxChannel = maxOf(red, green, blue)
+        val minChannel = minOf(red, green, blue)
+        val saturation = if (maxChannel == 0) 0.0 else (maxChannel - minChannel).toDouble() / maxChannel
+        val luminance = (red * 54 + green * 183 + blue * 19) / 256.0
+        val rg = kotlin.math.abs(red - green)
+        val yb = kotlin.math.abs((red + green) / 2 - blue)
+        colorfulnessTotal += (rg + yb).toDouble() / 510.0
+        luminanceTotal += luminance
+        luminanceSquaredTotal += luminance * luminance
+        saturationBands[(y * 3) / image.height] += saturation
+        samples++
         if (difference > 60) {
             val v = (y * 3) / image.height
             val h = (x * 3) / image.width
             thirdsVertical[v]++
             thirdsHorizontal[h]++
+            edgeBands[(y * 6) / image.height]++
             totalEdges++
             if (x in (image.width * 3 / 10)..(image.width * 7 / 10) && y in (image.height * 2 / 10)..(image.height * 8 / 10)) centerEdges++
+            val nearVerticalThird = kotlin.math.min(kotlin.math.abs(x - image.width / 3), kotlin.math.abs(x - image.width * 2 / 3)) < image.width / 18
+            val nearHorizontalThird = kotlin.math.min(kotlin.math.abs(y - image.height / 3), kotlin.math.abs(y - image.height * 2 / 3)) < image.height / 18
+            if (nearVerticalThird || nearHorizontalThird) thirdLineEdges++
         }
         if (y < image.height / 3) {
             topSamples++
             if (difference <= 12) topBlank++
+        }
+        if (y > image.height * 2 / 3) {
+            bottomSamples++
+            if (difference <= 12) bottomBlank++
         }
     }
     val total = totalEdges.coerceAtLeast(1).toDouble()
     val verticalCoverage = thirdsVertical.count { it / total > 0.12 }
     val horizontalCoverage = thirdsHorizontal.count { it / total > 0.12 }
     val centerFraction = centerEdges / total
+    val thirdLineFraction = thirdLineEdges / total
     val topBlankFraction = topBlank.toDouble() / topSamples.coerceAtLeast(1)
+    val bottomBlankFraction = bottomBlank.toDouble() / bottomSamples.coerceAtLeast(1)
+    val colorfulness = colorfulnessTotal / samples.coerceAtLeast(1)
+    val meanLuminance = luminanceTotal / samples.coerceAtLeast(1)
+    val luminanceStdDev = kotlin.math.sqrt((luminanceSquaredTotal / samples.coerceAtLeast(1) - meanLuminance * meanLuminance).coerceAtLeast(0.0))
+    val foregroundEdgeFraction = (edgeBands[4] + edgeBands[5]) / total
+    val middleEdgeFraction = (edgeBands[2] + edgeBands[3]) / total
+    val backgroundEdgeFraction = (edgeBands[0] + edgeBands[1]) / total
+    val depthLayerCount = listOf(foregroundEdgeFraction, middleEdgeFraction, backgroundEdgeFraction).count { it > 0.16 }
+    val saturationBalance = saturationBands.map { it / (samples / 3.0).coerceAtLeast(1.0) }.let { bands ->
+        1.0 - (bands.maxOrNull()!! - bands.minOrNull()!!).coerceIn(0.0, 1.0)
+    }
     val bandBalancePenalty = thirdsVertical.map { kotlin.math.abs((it / total) - (1.0 / 3.0)) }.sum() +
         thirdsHorizontal.map { kotlin.math.abs((it / total) - (1.0 / 3.0)) }.sum()
+    val rejectionReason = when {
+        topBlankFraction > 0.78 -> "too much flat sky/top blankness"
+        bottomBlankFraction > 0.82 -> "too much flat foreground"
+        depthLayerCount < 2 -> "insufficient foreground/midground/background layering"
+        colorfulness < 0.045 -> "too little color separation"
+        luminanceStdDev < 18.0 -> "too little tonal structure"
+        else -> null
+    }
     val score = frame.entropy * 18.0 +
         frame.edgeDensity * 2400.0 +
         frame.luminanceRange * 0.18 +
         verticalCoverage * 8.0 +
         horizontalCoverage * 8.0 -
+        topBlankFraction * 18.0 -
+        bottomBlankFraction * 10.0 -
         centerFraction * 16.0 -
-        topBlankFraction * 10.0 -
-        bandBalancePenalty * 12.0
-    val detail = "entropy=${"%.2f".format(java.util.Locale.US, frame.entropy)} edge=${"%.4f".format(java.util.Locale.US, frame.edgeDensity)} range=${frame.luminanceRange} vcov=$verticalCoverage hcov=$horizontalCoverage center=${"%.2f".format(java.util.Locale.US, centerFraction)} topBlank=${"%.2f".format(java.util.Locale.US, topBlankFraction)}"
-    return score to detail
+        bandBalancePenalty * 12.0 +
+        thirdLineFraction * 24.0 +
+        depthLayerCount * 10.0 +
+        colorfulness * 70.0 +
+        saturationBalance * 8.0 +
+        luminanceStdDev * 0.22
+    val detail = "entropy=${"%.2f".format(java.util.Locale.US, frame.entropy)} edge=${"%.4f".format(java.util.Locale.US, frame.edgeDensity)} range=${frame.luminanceRange} vcov=$verticalCoverage hcov=$horizontalCoverage center=${"%.2f".format(java.util.Locale.US, centerFraction)} thirds=${"%.2f".format(java.util.Locale.US, thirdLineFraction)} topBlank=${"%.2f".format(java.util.Locale.US, topBlankFraction)} bottomBlank=${"%.2f".format(java.util.Locale.US, bottomBlankFraction)} layers=$depthLayerCount color=${"%.3f".format(java.util.Locale.US, colorfulness)} satBalance=${"%.2f".format(java.util.Locale.US, saturationBalance)} lumStd=${"%.1f".format(java.util.Locale.US, luminanceStdDev)}"
+    return CompositionScore(rejectionReason == null, score, detail, rejectionReason)
 }
 fun waitForPlayableFrame(robot: Robot, out: Path, timeoutSeconds: Long): Boolean {
     val deadline = System.currentTimeMillis() + timeoutSeconds * 1000
@@ -710,9 +798,9 @@ fun waitForDhStable(clientDir: Path): DhGateResult {
     return DhGateResult("timeout", dhMinSettle, dhQuiet, dhTimeout, (System.currentTimeMillis() - started) / 1000, Regex("Distant Horizons|DistantHorizons|world gen|generation", RegexOption.IGNORE_CASE).containsMatchIn(logText), stableSamples, dhLowTailMax, dhLowTailSeconds, tailChunksLeft, tailStableSeconds)
 }
 fun writeReview(path: Path, shot: Shot, dh: DhGateResult?, technicalStatus: String, failureReason: String?, promptHandling: String, frame: FrameAssessment?) {
-    writeReview(path, shot, shot.basePose(), dh, technicalStatus, failureReason, promptHandling, frame, null, null)
+    writeReview(path, shot, shot.basePose(), dh, technicalStatus, failureReason, promptHandling, frame, null, null, null, null)
 }
-fun writeReview(path: Path, shot: Shot, camera: CameraPose, dh: DhGateResult?, technicalStatus: String, failureReason: String?, promptHandling: String, frame: FrameAssessment?, candidateLabel: String?, candidateScore: Double?) {
+fun writeReview(path: Path, shot: Shot, camera: CameraPose, dh: DhGateResult?, technicalStatus: String, failureReason: String?, promptHandling: String, frame: FrameAssessment?, candidateLabel: String?, candidateScore: Double?, anchorMode: String?, anchorDetail: String?) {
     val review = """
 {
   "schema": "btm.screenshot_review.v1",
@@ -736,6 +824,8 @@ fun writeReview(path: Path, shot: Shot, camera: CameraPose, dh: DhGateResult?, t
     "shaderPack": ${q(shaderPack)},
     "shaderPreset": ${q("shaderpacks/$shaderPack.txt")},
     "optionsSource": "options.txt",
+    "anchorMode": ${q(anchorMode)},
+    "anchorDetail": ${q(anchorDetail)},
     "candidateLabel": ${q(candidateLabel)},
     "candidateScore": ${candidateScore ?: "null"},
     "dhCaptureRadiusChunks": $dhCaptureRadiusChunks,
@@ -837,9 +927,14 @@ fun chooseCameraCandidate(shot: Shot, previewRoot: Path): CandidateFrame {
             appendProgress("candidate_rejected", shot, "$label ${frame.reason}")
             continue
         }
-        val (score, detail) = scoreCandidateFrame(image, frame)
-        val scored = CandidateFrame(label, pose, previewPath, frame, score, detail)
-        appendProgress("candidate_scored", shot, "$label score=${"%.2f".format(java.util.Locale.US, score)} $detail")
+        val composition = scoreCandidateFrame(image, frame)
+        if (!composition.accepted) {
+            rejected += "$label:${composition.rejectionReason}"
+            appendProgress("candidate_rejected", shot, "$label ${composition.rejectionReason} ${composition.detail}")
+            continue
+        }
+        val scored = CandidateFrame(label, pose, previewPath, frame, composition.score, composition.detail)
+        appendProgress("candidate_scored", shot, "$label score=${"%.2f".format(java.util.Locale.US, composition.score)} ${composition.detail}")
         if (best == null || scored.score > best!!.score) best = scored
     }
     return best ?: error("no acceptable camera candidates for ${shot.id}: ${rejected.joinToString("; ")}")
@@ -847,6 +942,42 @@ fun chooseCameraCandidate(shot: Shot, previewRoot: Path): CandidateFrame {
 fun badMarkersSince(clientDir: Path, offset: Long): List<String> {
     val text = readFrom(clientDir.resolve("logs/latest.log"), offset).lowercase()
     return knownBadFrameMarkers.filter { it in text }
+}
+fun parseLocatedBlockPosition(text: String, targetId: String): Pair<Int, Int>? {
+    val target = targetId.lowercase()
+    val bracketPattern = Regex("""\[\s*(-?\d+)\s*,\s*(?:~|-?\d+)\s*,\s*(-?\d+)\s*]""")
+    return text.lineSequence()
+        .filter { target in it.lowercase() }
+        .mapNotNull { line ->
+            val match = bracketPattern.find(line) ?: return@mapNotNull null
+            match.groupValues[1].toIntOrNull()?.let { x ->
+                match.groupValues[2].toIntOrNull()?.let { z -> x to z }
+            }
+        }
+        .lastOrNull()
+}
+fun resolveShotAnchor(shot: Shot): LocatedAnchor {
+    if (anchorSearchMode == "off") return LocatedAnchor(shot, "authored", "anchor search disabled")
+    val log = server!!.log
+    val offset = if (log.exists()) Files.size(log) else 0L
+    teleportCamera(shot.basePose())
+    Thread.sleep(500)
+    send(server!!, "execute as AgentShot at @s run locate biome ${shot.biome}", commands)
+    val deadline = System.currentTimeMillis() + 30_000
+    while (System.currentTimeMillis() < deadline) {
+        val text = readFrom(log, offset)
+        if ("Could not find" in text || "An unexpected error occurred" in text) {
+            return LocatedAnchor(shot, "authored-fallback", "locate biome ${shot.biome} failed")
+        }
+        val located = parseLocatedBlockPosition(text, shot.biome)
+        if (located != null) {
+            val (x, z) = located
+            val relocated = shot.copy(x = x + 0.5, z = z + 0.5)
+            return LocatedAnchor(relocated, "locate-biome", "located ${shot.biome} at $x,$z from authored ${shot.x.format1()},${shot.z.format1()}")
+        }
+        Thread.sleep(250)
+    }
+    return LocatedAnchor(shot, "authored-fallback", "timed out locating biome ${shot.biome}")
 }
 fun verifyPlayerInWorld(): Boolean {
     val marker = "BTM_CAPTURE_IN_WORLD"
@@ -951,9 +1082,12 @@ try {
             appendProgress("shot_begin", shot)
             send(server!!, "weather clear", commands)
             send(server!!, "time set 1000", commands)
-            teleportCamera(shot.basePose())
-            val chunkX = Math.floor(shot.x / 16.0).toInt()
-            val chunkZ = Math.floor(shot.z / 16.0).toInt()
+            val locatedAnchor = resolveShotAnchor(shot)
+            val captureShot = locatedAnchor.shot
+            appendProgress("anchor_selected", shot, "mode=${locatedAnchor.mode} ${locatedAnchor.detail}")
+            teleportCamera(captureShot.basePose())
+            val chunkX = Math.floor(captureShot.x / 16.0).toInt()
+            val chunkZ = Math.floor(captureShot.z / 16.0).toInt()
             val fromBlockX = (chunkX - serverForceloadRadiusChunks) * 16
             val fromBlockZ = (chunkZ - serverForceloadRadiusChunks) * 16
             val toBlockX = (chunkX + serverForceloadRadiusChunks) * 16
@@ -966,7 +1100,7 @@ try {
             if (dh.status !in setOf("stable", "low-tail-stable")) error("DH did not reach a stable quiet window or bounded low-tail state for ${shot.id}")
             Thread.sleep(15_000)
             val promptHandling = prepareCleanFrame("shot:${shot.id}")
-            val bestCandidate = chooseCameraCandidate(shot, evidence.resolve("candidates").resolve(shot.id))
+            val bestCandidate = chooseCameraCandidate(captureShot, evidence.resolve("candidates").resolve(shot.id))
             appendProgress("candidate_selected", shot, "${bestCandidate.label} score=${"%.2f".format(java.util.Locale.US, bestCandidate.score)} ${bestCandidate.detail}")
             teleportCamera(bestCandidate.pose)
             Thread.sleep(1_500)
@@ -985,15 +1119,15 @@ try {
             }
             if (failureReason != null) {
                 val rejectedReview = rawPath.resolveSibling(rawPath.fileName.toString().removeSuffix(".png") + ".review.json")
-                writeReview(rawPath, shot, bestCandidate.pose, dh, "failed", failureReason, promptHandling, frame, bestCandidate.label, bestCandidate.score)
-                shotResults += ShotResult(shot, "failed", rawPath, rejectedReview, failureReason, promptHandling, dh, bestCandidate.pose, bestCandidate.label, bestCandidate.score)
+                writeReview(rawPath, captureShot, bestCandidate.pose, dh, "failed", failureReason, promptHandling, frame, bestCandidate.label, bestCandidate.score, locatedAnchor.mode, locatedAnchor.detail)
+                shotResults += ShotResult(shot, "failed", rawPath, rejectedReview, failureReason, promptHandling, dh, bestCandidate.pose, bestCandidate.label, bestCandidate.score, locatedAnchor.mode, locatedAnchor.detail)
                 appendProgress("shot_rejected", shot, failureReason)
                 error("rejected ${shot.id}: $failureReason")
             }
             Files.copy(rawPath, finalPath, StandardCopyOption.REPLACE_EXISTING)
-            writeReview(finalPath, shot, bestCandidate.pose, dh, "passed", null, promptHandling, frame, bestCandidate.label, bestCandidate.score)
+            writeReview(finalPath, captureShot, bestCandidate.pose, dh, "passed", null, promptHandling, frame, bestCandidate.label, bestCandidate.score, locatedAnchor.mode, locatedAnchor.detail)
             captured += finalPath.toString()
-            shotResults += ShotResult(shot, "technical-pass-pending-ai-review", finalPath, finalPath.resolveSibling(finalPath.fileName.toString().removeSuffix(".png") + ".review.json"), promptHandling = promptHandling, dh = dh, selectedCamera = bestCandidate.pose, candidateLabel = bestCandidate.label, candidateScore = bestCandidate.score)
+            shotResults += ShotResult(shot, "technical-pass-pending-ai-review", finalPath, finalPath.resolveSibling(finalPath.fileName.toString().removeSuffix(".png") + ".review.json"), promptHandling = promptHandling, dh = dh, selectedCamera = bestCandidate.pose, candidateLabel = bestCandidate.label, candidateScore = bestCandidate.score, anchorMode = locatedAnchor.mode, anchorDetail = locatedAnchor.detail)
             Files.writeString(capturedFilesLog, captured.joinToString("\n", postfix = "\n"))
             appendProgress("shot_captured", shot, "path=$finalPath fov=$captureFovDegrees promptHandling=$promptHandling candidate=${bestCandidate.label}")
         }
@@ -1006,7 +1140,7 @@ try {
     if (activeShot != null && shotResults.none { it.shot.id == activeShot!!.id }) {
         val rejectedPath = raw.resolve(activeShot!!.file)
         val reviewPath = rejectedPath.resolveSibling(rejectedPath.fileName.toString().removeSuffix(".png") + ".review.json")
-        if (rejectedPath.exists()) writeReview(rejectedPath, activeShot!!, activeShot!!.basePose(), null, "failed", error.message, "failed-before-clean-frame", null, null, null)
+        if (rejectedPath.exists()) writeReview(rejectedPath, activeShot!!, activeShot!!.basePose(), null, "failed", error.message, "failed-before-clean-frame", null, null, null, null, null)
         shotResults += ShotResult(activeShot!!, "failed", rejectedPath, reviewPath, error.message, "failed-before-clean-frame")
     }
     appendProgress("capture_failed", activeShot, error.message)
@@ -1038,7 +1172,7 @@ val manifest = buildString {
     appendLine(selectedShots.joinToString(",\n") { shot ->
         val result = shotResults.lastOrNull { it.shot.id == shot.id }
         val camera = result?.selectedCamera ?: shot.basePose()
-        "    {\"id\":${q(shot.id)},\"status\":${q(result?.status ?: "not-run")},\"failureReason\":${q(result?.failureReason)},\"path\":${q((result?.path ?: final.resolve(shot.file)).toString())},\"review\":${q((result?.review ?: final.resolve(shot.file.removeSuffix(".png") + ".review.json")).toString())},\"promptHandling\":${q(result?.promptHandling)},\"candidateLabel\":${q(result?.candidateLabel)},\"candidateScore\":${result?.candidateScore ?: "null"},\"biome\":${q(shot.biome)},\"subject\":${q(shot.subject)},\"camera\":{\"x\":${camera.x},\"y\":${camera.y},\"z\":${camera.z},\"yaw\":${camera.yaw},\"pitch\":${camera.pitch}},\"baseCamera\":{\"x\":${shot.x},\"y\":${shot.y},\"z\":${shot.z},\"yaw\":${shot.yaw},\"pitch\":${shot.pitch}}}"
+        "    {\"id\":${q(shot.id)},\"status\":${q(result?.status ?: "not-run")},\"failureReason\":${q(result?.failureReason)},\"path\":${q((result?.path ?: final.resolve(shot.file)).toString())},\"review\":${q((result?.review ?: final.resolve(shot.file.removeSuffix(".png") + ".review.json")).toString())},\"promptHandling\":${q(result?.promptHandling)},\"anchorMode\":${q(result?.anchorMode)},\"anchorDetail\":${q(result?.anchorDetail)},\"candidateLabel\":${q(result?.candidateLabel)},\"candidateScore\":${result?.candidateScore ?: "null"},\"biome\":${q(shot.biome)},\"subject\":${q(shot.subject)},\"camera\":{\"x\":${camera.x},\"y\":${camera.y},\"z\":${camera.z},\"yaw\":${camera.yaw},\"pitch\":${camera.pitch}},\"baseCamera\":{\"x\":${shot.x},\"y\":${shot.y},\"z\":${shot.z},\"yaw\":${shot.yaw},\"pitch\":${shot.pitch}}}"
     })
     appendLine("  ]")
     appendLine("}")

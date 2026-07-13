@@ -186,13 +186,16 @@ while (index < args.size) {
     }
 }
 
+// These marketing anchors remain deterministic, but the camera height stays
+// deliberately above the local terrain so spectator mode never captures from
+// inside hillsides or dense canopy.
 val shots = listOf(
-    Shot("01-overworld-forest", "01-overworld-forest.png", "minecraft:forest", "forest canopy and escarpment", 0.5, 95.0, -49.5, 0.0, 12.0),
-    Shot("02-overworld-jungle", "02-overworld-jungle.png", "minecraft:jungle", "jungle river valley", 704.5, 105.0, 608.5, 45.0, 20.0),
-    Shot("03-overworld-desert", "03-overworld-desert.png", "minecraft:desert", "desert plateau at a jungle boundary", 1152.5, 100.0, 1600.5, 45.0, 18.0),
-    Shot("04-overworld-badlands", "04-overworld-badlands.png", "minecraft:badlands", "badlands river basin", 96.5, 105.0, 1632.5, 45.0, 20.0),
-    Shot("05-overworld-snowy-plains", "05-overworld-snowy-plains.png", "minecraft:snowy_plains", "snowy plains and ice formations", 32.5, 100.0, -1535.5, 45.0, 18.0),
-    Shot("06-overworld-cherry-grove", "06-overworld-cherry-grove.png", "minecraft:cherry_grove", "cherry grove in a mountain amphitheater", 4384.5, 250.0, -543.5, 45.0, 35.0),
+    Shot("01-overworld-forest", "01-overworld-forest.png", "minecraft:forest", "forest canopy and escarpment", 0.5, 220.0, -49.5, 0.0, 10.0),
+    Shot("02-overworld-jungle", "02-overworld-jungle.png", "minecraft:jungle", "jungle river valley", 704.5, 186.0, 608.5, 45.0, 28.0),
+    Shot("03-overworld-desert", "03-overworld-desert.png", "minecraft:desert", "desert plateau at a jungle boundary", 1152.5, 176.0, 1600.5, 45.0, 24.0),
+    Shot("04-overworld-badlands", "04-overworld-badlands.png", "minecraft:badlands", "badlands river basin", 96.5, 188.0, 1632.5, 45.0, 28.0),
+    Shot("05-overworld-snowy-plains", "05-overworld-snowy-plains.png", "minecraft:snowy_plains", "snowy plains and ice formations", 32.5, 172.0, -1535.5, 45.0, 24.0),
+    Shot("06-overworld-cherry-grove", "06-overworld-cherry-grove.png", "minecraft:cherry_grove", "cherry grove in a mountain amphitheater", 4384.5, 320.0, -543.5, 45.0, 42.0),
 )
 fun resolveShotIndex(arg: String?, flag: String, defaultIndex: Int): Int = when (arg) {
     null -> defaultIndex

@@ -39,6 +39,7 @@ data class Shot(
     val z: Double,
     val yaw: Double,
     val pitch: Double,
+    val structures: List<String> = emptyList(),
 )
 data class DhGateResult(
     val status: String,
@@ -86,6 +87,13 @@ data class CompositionScore(
     val detail: String,
     val rejectionReason: String? = null,
 )
+data class CandidateReport(
+    val label: String,
+    val pose: CameraPose,
+    val path: Path,
+    val frame: FrameAssessment,
+    val composition: CompositionScore?,
+)
 data class ShotResult(
     val shot: Shot,
     val status: String,
@@ -113,6 +121,7 @@ val availableProcessors = Runtime.getRuntime().availableProcessors()
 val screenshotClientDhThreads = max(3, availableProcessors - 2).coerceAtMost(8)
 val screenshotServerDhThreads = availableProcessors
 val cameraSweepFocusDistance = 48.0
+val maxFeatureAnchorDistanceBlocks = 768.0
 // Vanilla's FOV option is normalized across the 30-110 degree range.
 val captureFovOptionValue = (captureFovDegrees - 30.0) / 80.0
 val knownBadFrameMarkers = listOf(
@@ -128,7 +137,7 @@ val knownBadFrameMarkers = listOf(
 
 fun usage(message: String? = null): Nothing {
     if (message != null) System.err.println(message)
-    System.err.println("Usage: tools/btm test scenario-headful worldgen_marketing_screenshots [--bootstrap-mode always|once|never] [--port N] [--run-root PATH] [--output-dir PATH] [--keep-runs] [--batch-mode bounded|session] [--start-shot N|SHOT_ID] [--end-shot N|SHOT_ID] [--dh-min-settle SECONDS] [--dh-quiet SECONDS] [--dh-timeout SECONDS] [--dh-low-tail-max CHUNKS] [--dh-low-tail-seconds SECONDS] [--camera-search off|local-sweep] [--anchor-search off|locate-biome]")
+    System.err.println("Usage: tools/btm test scenario-headful worldgen_marketing_screenshots [--bootstrap-mode always|once|never] [--port N] [--run-root PATH] [--output-dir PATH] [--keep-runs] [--batch-mode bounded|session] [--start-shot N|SHOT_ID] [--end-shot N|SHOT_ID] [--dh-min-settle SECONDS] [--dh-quiet SECONDS] [--dh-timeout SECONDS] [--dh-low-tail-max CHUNKS] [--dh-low-tail-seconds SECONDS] [--camera-search off|local-sweep] [--anchor-search off|locate-biome|locate-feature]")
     exitProcess(2)
 }
 
@@ -164,7 +173,7 @@ var dhLowTailMax = 32
 var dhLowTailSeconds = 60
 var batchMode = "bounded"
 var cameraSearchMode = "local-sweep"
-var anchorSearchMode = "locate-biome"
+var anchorSearchMode = "locate-feature"
 var index = 0
 while (index < args.size) {
     when (args[index]) {
@@ -228,8 +237,8 @@ while (index < args.size) {
             index += 2
         }
         "--anchor-search" -> {
-            anchorSearchMode = args.getOrNull(index + 1) ?: usage("--anchor-search needs off or locate-biome")
-            if (anchorSearchMode !in setOf("off", "locate-biome")) usage("invalid anchor search mode: $anchorSearchMode")
+            anchorSearchMode = args.getOrNull(index + 1) ?: usage("--anchor-search needs off, locate-biome, or locate-feature")
+            if (anchorSearchMode !in setOf("off", "locate-biome", "locate-feature")) usage("invalid anchor search mode: $anchorSearchMode")
             index += 2
         }
         "--help" -> usage()
@@ -241,12 +250,12 @@ while (index < args.size) {
 // deliberately above the local terrain so spectator mode never captures from
 // inside hillsides or dense canopy.
 val shots = listOf(
-    Shot("01-overworld-forest", "01-overworld-forest.png", "minecraft:forest", "forest canopy and escarpment", 0.5, 220.0, -49.5, 0.0, 10.0),
-    Shot("02-overworld-jungle", "02-overworld-jungle.png", "minecraft:jungle", "jungle river valley", 704.5, 186.0, 608.5, 45.0, 28.0),
-    Shot("03-overworld-desert", "03-overworld-desert.png", "minecraft:desert", "desert plateau at a jungle boundary", 1152.5, 176.0, 1600.5, 45.0, 24.0),
-    Shot("04-overworld-badlands", "04-overworld-badlands.png", "minecraft:badlands", "badlands river basin", 96.5, 188.0, 1632.5, 45.0, 28.0),
-    Shot("05-overworld-snowy-plains", "05-overworld-snowy-plains.png", "minecraft:snowy_plains", "snowy plains and ice formations", 32.5, 172.0, -1535.5, 45.0, 24.0),
-    Shot("06-overworld-cherry-grove", "06-overworld-cherry-grove.png", "minecraft:cherry_grove", "cherry grove in a mountain amphitheater", 4384.5, 320.0, -543.5, 45.0, 42.0),
+    Shot("01-overworld-forest", "01-overworld-forest.png", "minecraft:forest", "forest canopy and escarpment", 0.5, 220.0, -49.5, 0.0, 10.0, listOf("minecraft:village_plains", "minecraft:pillager_outpost", "minecraft:trail_ruins")),
+    Shot("02-overworld-jungle", "02-overworld-jungle.png", "minecraft:jungle", "jungle river valley", 704.5, 186.0, 608.5, 45.0, 28.0, listOf("minecraft:jungle_pyramid", "minecraft:trail_ruins", "minecraft:ruined_portal")),
+    Shot("03-overworld-desert", "03-overworld-desert.png", "minecraft:desert", "desert plateau at a jungle boundary", 1152.5, 176.0, 1600.5, 45.0, 24.0, listOf("minecraft:desert_pyramid", "minecraft:village_desert", "minecraft:ruined_portal_desert")),
+    Shot("04-overworld-badlands", "04-overworld-badlands.png", "minecraft:badlands", "badlands river basin", 96.5, 188.0, 1632.5, 45.0, 28.0, listOf("minecraft:mineshaft_mesa", "minecraft:ruined_portal", "minecraft:trail_ruins")),
+    Shot("05-overworld-snowy-plains", "05-overworld-snowy-plains.png", "minecraft:snowy_plains", "snowy plains and ice formations", 32.5, 172.0, -1535.5, 45.0, 24.0, listOf("minecraft:village_snowy", "minecraft:igloo", "minecraft:pillager_outpost")),
+    Shot("06-overworld-cherry-grove", "06-overworld-cherry-grove.png", "minecraft:cherry_grove", "cherry grove in a mountain amphitheater", 4384.5, 320.0, -543.5, 45.0, 42.0, listOf("minecraft:ancient_city", "minecraft:trail_ruins", "minecraft:ruined_portal_mountain")),
 )
 fun resolveShotIndex(arg: String?, flag: String, defaultIndex: Int): Int = when (arg) {
     null -> defaultIndex
@@ -907,6 +916,26 @@ fun pressKey(key: Int) {
 fun teleportCamera(pose: CameraPose) {
     send(server!!, "tp AgentShot ${pose.asCommandArgs()}", commands)
 }
+fun cameraJson(pose: CameraPose): String =
+    "{\"x\":${pose.x},\"y\":${pose.y},\"z\":${pose.z},\"yaw\":${pose.yaw},\"pitch\":${pose.pitch}}"
+fun writeCandidateReport(path: Path, shot: Shot, reports: List<CandidateReport>, selected: CandidateFrame?) {
+    val json = buildString {
+        appendLine("{")
+        appendLine("  \"schema\": \"btm.screenshot_candidate_report.v1\",")
+        appendLine("  \"shot\": ${q(shot.id)},")
+        appendLine("  \"biome\": ${q(shot.biome)},")
+        appendLine("  \"selected\": ${q(selected?.label)},")
+        appendLine("  \"selectedScore\": ${selected?.score ?: "null"},")
+        appendLine("  \"candidates\": [")
+        appendLine(reports.joinToString(",\n") { report ->
+            val composition = report.composition
+            "    {\"label\":${q(report.label)},\"path\":${q(report.path.toString())},\"camera\":${cameraJson(report.pose)},\"accepted\":${report.frame.accepted && composition?.accepted != false},\"frameAccepted\":${report.frame.accepted},\"frameReason\":${q(report.frame.reason)},\"entropy\":${report.frame.entropy},\"edgeDensity\":${report.frame.edgeDensity},\"luminanceRange\":${report.frame.luminanceRange},\"compositionAccepted\":${composition?.accepted ?: "null"},\"compositionReason\":${q(composition?.rejectionReason)},\"score\":${composition?.score ?: "null"},\"detail\":${q(composition?.detail)}}"
+        })
+        appendLine("  ]")
+        appendLine("}")
+    }
+    Files.writeString(path, json)
+}
 fun chooseCameraCandidate(shot: Shot, previewRoot: Path): CandidateFrame {
     if (cameraSearchMode == "off") {
         val base = shot.basePose()
@@ -915,6 +944,7 @@ fun chooseCameraCandidate(shot: Shot, previewRoot: Path): CandidateFrame {
     previewRoot.createDirectories()
     var best: CandidateFrame? = null
     val rejected = mutableListOf<String>()
+    val reports = mutableListOf<CandidateReport>()
     for ((index, candidate) in candidatePoses(shot).withIndex()) {
         val (label, pose) = candidate
         teleportCamera(pose)
@@ -924,10 +954,12 @@ fun chooseCameraCandidate(shot: Shot, previewRoot: Path): CandidateFrame {
         val frame = assessFrame(image)
         if (!frame.accepted) {
             rejected += "$label:${frame.reason}"
+            reports += CandidateReport(label, pose, previewPath, frame, null)
             appendProgress("candidate_rejected", shot, "$label ${frame.reason}")
             continue
         }
         val composition = scoreCandidateFrame(image, frame)
+        reports += CandidateReport(label, pose, previewPath, frame, composition)
         if (!composition.accepted) {
             rejected += "$label:${composition.rejectionReason}"
             appendProgress("candidate_rejected", shot, "$label ${composition.rejectionReason} ${composition.detail}")
@@ -937,6 +969,7 @@ fun chooseCameraCandidate(shot: Shot, previewRoot: Path): CandidateFrame {
         appendProgress("candidate_scored", shot, "$label score=${"%.2f".format(java.util.Locale.US, composition.score)} ${composition.detail}")
         if (best == null || scored.score > best!!.score) best = scored
     }
+    writeCandidateReport(previewRoot.resolve("candidate-report.json"), shot, reports, best)
     return best ?: error("no acceptable camera candidates for ${shot.id}: ${rejected.joinToString("; ")}")
 }
 fun badMarkersSince(clientDir: Path, offset: Long): List<String> {
@@ -947,7 +980,7 @@ fun parseLocatedBlockPosition(text: String, targetId: String): Pair<Int, Int>? {
     val target = targetId.lowercase()
     val bracketPattern = Regex("""\[\s*(-?\d+)\s*,\s*(?:~|-?\d+)\s*,\s*(-?\d+)\s*]""")
     return text.lineSequence()
-        .filter { target in it.lowercase() }
+        .filter { "[" in it && ("nearest" in it.lowercase() || "at" in it.lowercase() || target in it.lowercase()) }
         .mapNotNull { line ->
             val match = bracketPattern.find(line) ?: return@mapNotNull null
             match.groupValues[1].toIntOrNull()?.let { x ->
@@ -956,28 +989,58 @@ fun parseLocatedBlockPosition(text: String, targetId: String): Pair<Int, Int>? {
         }
         .lastOrNull()
 }
-fun resolveShotAnchor(shot: Shot): LocatedAnchor {
-    if (anchorSearchMode == "off") return LocatedAnchor(shot, "authored", "anchor search disabled")
+fun locateFromCurrentPosition(targetType: String, targetId: String, timeoutMillis: Long = 30_000): Pair<Int, Int>? {
     val log = server!!.log
     val offset = if (log.exists()) Files.size(log) else 0L
-    teleportCamera(shot.basePose())
-    Thread.sleep(500)
-    send(server!!, "execute as AgentShot at @s run locate biome ${shot.biome}", commands)
-    val deadline = System.currentTimeMillis() + 30_000
+    send(server!!, "execute as AgentShot at @s run locate $targetType $targetId", commands)
+    val deadline = System.currentTimeMillis() + timeoutMillis
     while (System.currentTimeMillis() < deadline) {
         val text = readFrom(log, offset)
-        if ("Could not find" in text || "An unexpected error occurred" in text) {
-            return LocatedAnchor(shot, "authored-fallback", "locate biome ${shot.biome} failed")
-        }
-        val located = parseLocatedBlockPosition(text, shot.biome)
-        if (located != null) {
-            val (x, z) = located
-            val relocated = shot.copy(x = x + 0.5, z = z + 0.5)
-            return LocatedAnchor(relocated, "locate-biome", "located ${shot.biome} at $x,$z from authored ${shot.x.format1()},${shot.z.format1()}")
-        }
+        if ("Could not find" in text || "An unexpected error occurred" in text || "Unknown or incomplete command" in text) return null
+        val located = parseLocatedBlockPosition(text, targetId)
+        if (located != null) return located
         Thread.sleep(250)
     }
-    return LocatedAnchor(shot, "authored-fallback", "timed out locating biome ${shot.biome}")
+    return null
+}
+fun distance2d(aX: Double, aZ: Double, bX: Double, bZ: Double): Double = hypot(aX - bX, aZ - bZ)
+fun resolveShotAnchor(shot: Shot): LocatedAnchor {
+    if (anchorSearchMode == "off") return LocatedAnchor(shot, "authored", "anchor search disabled")
+    teleportCamera(shot.basePose())
+    Thread.sleep(500)
+    val locatedBiome = locateFromCurrentPosition("biome", shot.biome)
+        ?: return LocatedAnchor(shot, "authored-fallback", "locate biome ${shot.biome} failed or timed out")
+    val (biomeX, biomeZ) = locatedBiome
+    val biomeShot = shot.copy(x = biomeX + 0.5, z = biomeZ + 0.5)
+    if (anchorSearchMode == "locate-biome" || shot.structures.isEmpty()) {
+        return LocatedAnchor(biomeShot, "locate-biome", "located ${shot.biome} at $biomeX,$biomeZ from authored ${shot.x.format1()},${shot.z.format1()}")
+    }
+    teleportCamera(biomeShot.basePose())
+    Thread.sleep(500)
+    val nearbyStructures = shot.structures.mapNotNull { structure ->
+        val located = locateFromCurrentPosition("structure", structure, timeoutMillis = 20_000) ?: return@mapNotNull null
+        val distance = distance2d(biomeX.toDouble(), biomeZ.toDouble(), located.first.toDouble(), located.second.toDouble())
+        if (distance <= maxFeatureAnchorDistanceBlocks) Triple(structure, located, distance) else null
+    }.sortedBy { it.third }
+    val feature = nearbyStructures.firstOrNull()
+    if (feature != null) {
+        val (structure, position, distance) = feature
+        val (featureX, featureZ) = position
+        val blendedX = biomeX * 0.65 + featureX * 0.35
+        val blendedZ = biomeZ * 0.65 + featureZ * 0.35
+        val yaw = Math.toDegrees(atan2(-(featureX - blendedX), featureZ - blendedZ))
+        val relocated = shot.copy(x = blendedX + 0.5, z = blendedZ + 0.5, yaw = yaw, pitch = shot.pitch.coerceIn(18.0, 36.0))
+        return LocatedAnchor(
+            relocated,
+            "locate-feature",
+            "located ${shot.biome} at $biomeX,$biomeZ and $structure at $featureX,$featureZ distance=${distance.format1()}",
+        )
+    }
+    return LocatedAnchor(
+        biomeShot,
+        "locate-biome-fallback",
+        "located ${shot.biome} at $biomeX,$biomeZ; no target structures within ${maxFeatureAnchorDistanceBlocks.format1()} blocks",
+    )
 }
 fun verifyPlayerInWorld(): Boolean {
     val marker = "BTM_CAPTURE_IN_WORLD"

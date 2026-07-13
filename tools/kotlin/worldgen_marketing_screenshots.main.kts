@@ -137,7 +137,7 @@ val knownBadFrameMarkers = listOf(
 
 fun usage(message: String? = null): Nothing {
     if (message != null) System.err.println(message)
-    System.err.println("Usage: tools/btm test scenario-headful worldgen_marketing_screenshots [--bootstrap-mode always|once|never] [--port N] [--run-root PATH] [--output-dir PATH] [--keep-runs] [--batch-mode bounded|session] [--start-shot N|SHOT_ID] [--end-shot N|SHOT_ID] [--dh-min-settle SECONDS] [--dh-quiet SECONDS] [--dh-timeout SECONDS] [--dh-low-tail-max CHUNKS] [--dh-low-tail-seconds SECONDS] [--camera-search off|local-sweep] [--anchor-search off|locate-biome|locate-feature]")
+    System.err.println("Usage: tools/btm test scenario-headful worldgen_marketing_screenshots [--bootstrap-mode always|once|never] [--port N] [--run-root PATH] [--output-dir PATH] [--keep-runs] [--batch-mode bounded|session] [--start-shot N|SHOT_ID] [--end-shot N|SHOT_ID] [--dh-min-settle SECONDS] [--dh-quiet SECONDS] [--dh-timeout SECONDS] [--dh-low-tail-max CHUNKS] [--dh-low-tail-seconds SECONDS] [--allow-low-tail-dh] [--camera-search off|local-sweep] [--anchor-search off|locate-biome|locate-feature]")
     exitProcess(2)
 }
 
@@ -173,7 +173,8 @@ var dhLowTailMax = 32
 var dhLowTailSeconds = 60
 var batchMode = "bounded"
 var cameraSearchMode = "local-sweep"
-var anchorSearchMode = "locate-feature"
+var anchorSearchMode = "locate-biome"
+var allowLowTailDh = false
 var index = 0
 while (index < args.size) {
     when (args[index]) {
@@ -184,6 +185,10 @@ while (index < args.size) {
         }
         "--keep-runs" -> {
             keepRuns = true
+            index += 1
+        }
+        "--allow-low-tail-dh" -> {
+            allowLowTailDh = true
             index += 1
         }
         "--batch-mode" -> {
@@ -300,7 +305,9 @@ if (batchMode == "bounded" && selectedShots.size > 1) {
             "--dh-low-tail-seconds", dhLowTailSeconds.toString(),
             "--camera-search", cameraSearchMode,
             "--anchor-search", anchorSearchMode,
-        ) + if (keepRuns) listOf("--keep-runs") else emptyList()
+        ) +
+            (if (keepRuns) listOf("--keep-runs") else emptyList()) +
+            (if (allowLowTailDh) listOf("--allow-low-tail-dh") else emptyList())
         val process = ProcessBuilder(command).directory(root.toFile()).inheritIO().start()
         if (process.waitFor() != 0) failedSegments++
         summaries += shot to segmentRoot.resolve("latest-summary.json")
@@ -360,6 +367,7 @@ fun readFrom(path: Path, offset: Long, limit: Long = 2_000_000): String {
         return input.readBytes().toString(Charsets.UTF_8)
     }
 }
+fun fileSize(path: Path): Long = if (path.exists()) path.toFile().length() else 0L
 fun waitFor(path: Path, pattern: Regex, timeoutSeconds: Long, process: Process? = null, minMatches: Int = 1) {
     val deadline = System.currentTimeMillis() + timeoutSeconds * 1000
     while (System.currentTimeMillis() < deadline) {
@@ -368,6 +376,15 @@ fun waitFor(path: Path, pattern: Regex, timeoutSeconds: Long, process: Process? 
         Thread.sleep(500)
     }
     error("timed out waiting for ${pattern.pattern}")
+}
+fun waitForLogAfter(path: Path, offset: Long, pattern: Regex, timeoutMillis: Long, process: Process? = null): Boolean {
+    val deadline = System.currentTimeMillis() + timeoutMillis
+    while (System.currentTimeMillis() < deadline) {
+        if (process != null && !process.isAlive) return false
+        if (pattern.containsMatchIn(readFrom(path, offset))) return true
+        Thread.sleep(250)
+    }
+    return false
 }
 fun setServerPort(properties: Path, port: Int) {
     val lines = if (properties.exists()) Files.readAllLines(properties).filterNot { it.startsWith("server-port=") || it.startsWith("level-seed=") }.toMutableList() else mutableListOf()
@@ -384,9 +401,14 @@ fun startServer(serverDir: Path, log: Path): RunningServer {
 }
 fun send(server: RunningServer, command: String, commands: StringBuilder) {
     commands.appendLine(command)
-    server.stdin.write(command)
-    server.stdin.newLine()
-    server.stdin.flush()
+    if (!server.process.isAlive) error("server is not running while sending command: $command")
+    try {
+        server.stdin.write(command)
+        server.stdin.newLine()
+        server.stdin.flush()
+    } catch (error: java.io.IOException) {
+        throw IllegalStateException("server command pipe closed while sending command: $command", error)
+    }
 }
 fun stopServer(server: RunningServer?, commands: StringBuilder) {
     if (server == null || !server.process.isAlive) return
@@ -459,6 +481,7 @@ fun configureClient(clientDir: Path) {
             "skipMultiplayerWarning" to "true",
             "joinedFirstServer" to "true",
             "onboardAccessibility" to "false",
+            "chatVisibility" to "2",
             "fov" to captureFovOptionValue.toString(),
         ),
     )
@@ -712,7 +735,7 @@ fun scoreCandidateFrame(image: BufferedImage, frame: FrameAssessment): Compositi
     val bandBalancePenalty = thirdsVertical.map { kotlin.math.abs((it / total) - (1.0 / 3.0)) }.sum() +
         thirdsHorizontal.map { kotlin.math.abs((it / total) - (1.0 / 3.0)) }.sum()
     val rejectionReason = when {
-        topBlankFraction > 0.78 -> "too much flat sky/top blankness"
+        topBlankFraction > 0.92 && bottomBlankFraction > 0.72 -> "too little visible terrain"
         bottomBlankFraction > 0.82 -> "too much flat foreground"
         depthLayerCount < 2 -> "insufficient foreground/midground/background layering"
         colorfulness < 0.045 -> "too little color separation"
@@ -759,6 +782,34 @@ fun dhSignature(clientDir: Path): String {
     val files = dhFiles(clientDir).sortedBy { it.toString() }.joinToString("|") { "${it.fileName}:${Files.size(it)}:${Files.getLastModifiedTime(it).toMillis()}" }
     return "$logSize|$files"
 }
+fun dhGateResult(status: String, started: Long, stableSamples: Int, tailChunksLeft: Int?, tailStableSeconds: Long): DhGateResult {
+    val logText = tail(clientDir.resolve("logs/latest.log"), 2_000_000)
+    return DhGateResult(
+        status,
+        dhMinSettle,
+        dhQuiet,
+        dhTimeout,
+        (System.currentTimeMillis() - started) / 1000,
+        Regex("Distant Horizons|DistantHorizons|world gen|generation", RegexOption.IGNORE_CASE).containsMatchIn(logText),
+        stableSamples,
+        dhLowTailMax,
+        dhLowTailSeconds,
+        tailChunksLeft,
+        tailStableSeconds,
+    )
+}
+fun dhRuntimeFailureStatus(log: Path, logStart: Long): String? {
+    if (server != null && !server!!.process.isAlive) return "server-stopped"
+    if (client != null && !client!!.isAlive) return "client-exited"
+    val text = readFrom(log, logStart).lowercase()
+    if (
+        "clientonly mode disconnecting" in text ||
+        "disconnecting from server" in text ||
+        "disconnected_screen" in text ||
+        "player logged out" in text
+    ) return "client-disconnected"
+    return null
+}
 fun waitForDhStable(clientDir: Path): DhGateResult {
     val started = System.currentTimeMillis()
     val deadline = started + dhTimeout * 1000L
@@ -770,8 +821,18 @@ fun waitForDhStable(clientDir: Path): DhGateResult {
     var tailChunksLeft: Int? = null
     var lowTailSince: Long? = null
     val progressPattern = Regex("""DH is generating chunks\. ([0-9]+) left""")
-    Thread.sleep(dhMinSettle * 1000L)
+    val minSettleDeadline = started + dhMinSettle * 1000L
+    while (System.currentTimeMillis() < minSettleDeadline) {
+        val failureStatus = dhRuntimeFailureStatus(log, logStart)
+        if (failureStatus != null) return dhGateResult(failureStatus, started, stableSamples, tailChunksLeft, 0)
+        Thread.sleep(1_000)
+    }
     while (System.currentTimeMillis() < deadline) {
+        val failureStatus = dhRuntimeFailureStatus(log, logStart)
+        if (failureStatus != null) {
+            val tailStableSeconds = if (lowTailSince == null) 0 else (System.currentTimeMillis() - lowTailSince!!) / 1000
+            return dhGateResult(failureStatus, started, stableSamples, tailChunksLeft, tailStableSeconds)
+        }
         val current = dhSignature(clientDir)
         if (current != last) {
             last = current
@@ -788,23 +849,20 @@ fun waitForDhStable(clientDir: Path): DhGateResult {
             if (lowTailSince == null) lowTailSince = System.currentTimeMillis()
             val lowTailFor = (System.currentTimeMillis() - lowTailSince!!) / 1000
             if (lowTailFor >= dhLowTailSeconds) {
-                val logText = tail(log, 2_000_000)
-                return DhGateResult("low-tail-stable", dhMinSettle, dhQuiet, dhTimeout, (System.currentTimeMillis() - started) / 1000, Regex("Distant Horizons|DistantHorizons|world gen|generation", RegexOption.IGNORE_CASE).containsMatchIn(logText), stableSamples, dhLowTailMax, dhLowTailSeconds, tailChunksLeft, lowTailFor)
+                return dhGateResult("low-tail-stable", started, stableSamples, tailChunksLeft, lowTailFor)
             }
         } else if (currentTail != null) {
             tailChunksLeft = currentTail
             lowTailSince = null
         }
         if (quietFor >= dhQuiet) {
-            val logText = tail(log, 2_000_000)
             val tailStableSeconds = if (lowTailSince == null) 0 else (System.currentTimeMillis() - lowTailSince!!) / 1000
-            return DhGateResult("stable", dhMinSettle, dhQuiet, dhTimeout, (System.currentTimeMillis() - started) / 1000, Regex("Distant Horizons|DistantHorizons|world gen|generation", RegexOption.IGNORE_CASE).containsMatchIn(logText), stableSamples, dhLowTailMax, dhLowTailSeconds, tailChunksLeft, tailStableSeconds)
+            return dhGateResult("stable", started, stableSamples, tailChunksLeft, tailStableSeconds)
         }
         Thread.sleep(2_000)
     }
-    val logText = tail(log, 2_000_000)
     val tailStableSeconds = if (lowTailSince == null) 0 else (System.currentTimeMillis() - lowTailSince!!) / 1000
-    return DhGateResult("timeout", dhMinSettle, dhQuiet, dhTimeout, (System.currentTimeMillis() - started) / 1000, Regex("Distant Horizons|DistantHorizons|world gen|generation", RegexOption.IGNORE_CASE).containsMatchIn(logText), stableSamples, dhLowTailMax, dhLowTailSeconds, tailChunksLeft, tailStableSeconds)
+    return dhGateResult("timeout", started, stableSamples, tailChunksLeft, tailStableSeconds)
 }
 fun writeReview(path: Path, shot: Shot, dh: DhGateResult?, technicalStatus: String, failureReason: String?, promptHandling: String, frame: FrameAssessment?) {
     writeReview(path, shot, shot.basePose(), dh, technicalStatus, failureReason, promptHandling, frame, null, null, null, null)
@@ -1043,20 +1101,32 @@ fun resolveShotAnchor(shot: Shot): LocatedAnchor {
     )
 }
 fun verifyPlayerInWorld(): Boolean {
-    val marker = "BTM_CAPTURE_IN_WORLD"
-    val before = Regex(marker).findAll(tail(server!!.log)).count()
-    send(server!!, "execute if entity @a[name=AgentShot] run say $marker", commands)
-    val deadline = System.currentTimeMillis() + 10_000
-    while (System.currentTimeMillis() < deadline) {
-        if (!server!!.process.isAlive) return false
-        if (Regex(marker).findAll(tail(server!!.log)).count() > before) return true
-        Thread.sleep(250)
-    }
-    return false
+    val log = server!!.log
+    val listOffset = fileSize(log)
+    send(server!!, "list", commands)
+    val listed = waitForLogAfter(
+        log,
+        listOffset,
+        Regex("""players online:\s*.*\bAgentShot\b"""),
+        5_000,
+        server!!.process,
+    )
+    if (listed) return true
+
+    val dataOffset = fileSize(log)
+    send(server!!, "data get entity AgentShot Pos", commands)
+    return waitForLogAfter(
+        log,
+        dataOffset,
+        Regex("""AgentShot has the following entity data:.*\["""),
+        5_000,
+        server!!.process,
+    )
 }
 fun verifyCaptureConfiguration() {
     val options = Files.readString(clientDir.resolve("options.txt"))
     check("fov:$captureFovOptionValue" in options) { "screenshot runtime did not retain fixed ${captureFovDegrees}-degree FOV" }
+    check("chatVisibility:2" in options) { "screenshot runtime did not retain hidden chat" }
     val oculus = Files.readString(clientDir.resolve("config/oculus.properties"))
     check("enableShaders=true" in oculus && "shaderPack=$shaderPack" in oculus) { "screenshot runtime shader configuration is not active" }
 }
@@ -1069,14 +1139,26 @@ fun prepareCleanFrame(stage: String): String {
         appendProgress("hud_hidden", detail = "stage=$stage")
     }
     // This disposable username begins in class-selector's spawn-only flow.
-    // Complete it once at join; later shots must not manufacture fresh UI input.
-    if (stage == "client_join") pressKey(KeyEvent.VK_K)
+    // Pressing the bound key is idempotent after completion and clears the prompt before captures.
+    pressKey(KeyEvent.VK_K)
+    send(server!!, "gamemode spectator AgentShot", commands)
+    send(server!!, "effect clear AgentShot", commands)
     Thread.sleep(2_000)
     val observed = badMarkersSince(clientDir, before)
     if (observed.isNotEmpty() && observed.any { it != "press k to set your starting spawn and begin" }) {
         error("known blocking prompt remained during $stage: ${observed.joinToString()}")
     }
-    if (!verifyPlayerInWorld()) error("client is no longer in-world during $stage")
+    val inWorldDeadline = System.currentTimeMillis() + if (stage == "client_join") 45_000 else 15_000
+    var inWorld = false
+    while (System.currentTimeMillis() < inWorldDeadline && !inWorld) {
+        inWorld = verifyPlayerInWorld()
+        if (!inWorld) Thread.sleep(1_000)
+    }
+    if (!inWorld) {
+        appendProgress("player_probe_failed", detail = "stage=$stage")
+        error("client is no longer in-world during $stage")
+    }
+    appendProgress("player_probe_ok", detail = "stage=$stage")
     val handling = if ("press k to set your starting spawn and begin" in observed) "fallback-dismissed-spawn-onboarding" else "suppression-clean"
     appendProgress("prompt_prepared", detail = "stage=$stage handling=$handling")
     return handling
@@ -1119,6 +1201,9 @@ try {
         server = startServer(serverDir, evidence.resolve("server-console.log"))
         waitFor(server!!.log, Regex("Done \\([0-9.]+s\\)!"), 900, server!!.process)
         send(server!!, "op AgentShot", commands)
+        send(server!!, "gamerule sendCommandFeedback false", commands)
+        send(server!!, "gamerule commandBlockOutput false", commands)
+        send(server!!, "gamerule logAdminCommands false", commands)
         send(server!!, "gamerule doDaylightCycle false", commands)
         send(server!!, "gamerule doWeatherCycle false", commands)
         send(server!!, "weather clear", commands)
@@ -1160,10 +1245,14 @@ try {
             appendProgress("shot_wait_dh", shot)
             val dh = waitForDhStable(clientDir)
             appendProgress("shot_dh_gate", shot, "status=${dh.status} elapsed=${dh.elapsedSeconds}s tail=${dh.tailChunksLeft ?: "none"} tailStable=${dh.tailStableSeconds}s")
-            if (dh.status !in setOf("stable", "low-tail-stable")) error("DH did not reach a stable quiet window or bounded low-tail state for ${shot.id}")
+            val dhAccepted = dh.status == "stable" || (allowLowTailDh && dh.status == "low-tail-stable")
+            if (!dhAccepted) {
+                val expectation = if (allowLowTailDh) "a stable quiet window or explicitly allowed bounded low-tail state" else "a stable quiet window"
+                error("DH did not reach $expectation for ${shot.id}; status=${dh.status} tail=${dh.tailChunksLeft ?: "none"} tailStable=${dh.tailStableSeconds}s")
+            }
             Thread.sleep(15_000)
             val promptHandling = prepareCleanFrame("shot:${shot.id}")
-            val bestCandidate = chooseCameraCandidate(captureShot, evidence.resolve("candidates").resolve(shot.id))
+            val bestCandidate = chooseCameraCandidate(captureShot, outputDir.resolve("candidate-previews").resolve(shot.id))
             appendProgress("candidate_selected", shot, "${bestCandidate.label} score=${"%.2f".format(java.util.Locale.US, bestCandidate.score)} ${bestCandidate.detail}")
             teleportCamera(bestCandidate.pose)
             Thread.sleep(1_500)

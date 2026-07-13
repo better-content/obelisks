@@ -115,7 +115,7 @@ val height = 1080
 val shaderPack = "ComplementaryReimagined_r5.8.1.zip"
 val seed = "btm-worldgen-marketing-v1"
 var dhCaptureRadiusChunks = 32
-val serverForceloadRadiusChunks = 7
+var serverForceloadRadiusChunks = 3
 val captureFovDegrees = 80
 val availableProcessors = Runtime.getRuntime().availableProcessors()
 val screenshotClientDhThreads = max(3, availableProcessors - 2).coerceAtMost(8)
@@ -137,7 +137,7 @@ val knownBadFrameMarkers = listOf(
 
 fun usage(message: String? = null): Nothing {
     if (message != null) System.err.println(message)
-    System.err.println("Usage: tools/btm test scenario-headful worldgen_marketing_screenshots [--bootstrap-mode always|once|never] [--port N] [--run-root PATH] [--output-dir PATH] [--keep-runs] [--batch-mode bounded|session] [--start-shot N|SHOT_ID] [--end-shot N|SHOT_ID] [--dh-capture-radius CHUNKS] [--dh-min-settle SECONDS] [--dh-quiet SECONDS] [--dh-timeout SECONDS] [--dh-low-tail-max CHUNKS] [--dh-low-tail-seconds SECONDS] [--allow-low-tail-dh] [--camera-search off|local-sweep] [--anchor-search off|locate-biome|locate-feature]")
+    System.err.println("Usage: tools/btm test scenario-headful worldgen_marketing_screenshots [--bootstrap-mode always|once|never] [--port N] [--run-root PATH] [--output-dir PATH] [--keep-runs] [--batch-mode bounded|session] [--start-shot N|SHOT_ID] [--end-shot N|SHOT_ID] [--dh-capture-radius CHUNKS] [--server-forceload-radius CHUNKS] [--dh-min-settle SECONDS] [--dh-quiet SECONDS] [--dh-timeout SECONDS] [--dh-low-tail-max CHUNKS] [--dh-low-tail-seconds SECONDS] [--allow-low-tail-dh] [--camera-search off|local-sweep] [--anchor-search off|locate-biome|locate-feature]")
     exitProcess(2)
 }
 
@@ -223,6 +223,11 @@ while (index < args.size) {
         "--dh-capture-radius" -> {
             dhCaptureRadiusChunks = args.getOrNull(index + 1)?.toIntOrNull() ?: usage("--dh-capture-radius needs chunks")
             if (dhCaptureRadiusChunks !in 8..256) usage("--dh-capture-radius must be between 8 and 256 chunks")
+            index += 2
+        }
+        "--server-forceload-radius" -> {
+            serverForceloadRadiusChunks = args.getOrNull(index + 1)?.toIntOrNull() ?: usage("--server-forceload-radius needs chunks")
+            if (serverForceloadRadiusChunks !in 0..8) usage("--server-forceload-radius must be between 0 and 8 chunks")
             index += 2
         }
         "--dh-quiet" -> {
@@ -803,7 +808,19 @@ fun dhGateResult(status: String, started: Long, stableSamples: Int, tailChunksLe
         tailStableSeconds,
     )
 }
-fun dhRuntimeFailureStatus(log: Path, logStart: Long): String? {
+fun latestServerCrashReportSince(started: Long): Path? {
+    val crashDir = serverDir.resolve("crash-reports")
+    if (!crashDir.exists()) return null
+    return Files.list(crashDir).use { stream ->
+        stream
+            .filter { Files.isRegularFile(it) }
+            .filter { Files.getLastModifiedTime(it).toMillis() >= started }
+            .max(Comparator.comparingLong<Path> { Files.getLastModifiedTime(it).toMillis() })
+            .orElse(null)
+    }
+}
+fun dhRuntimeFailureStatus(log: Path, logStart: Long, started: Long): String? {
+    latestServerCrashReportSince(started)?.let { return "server-crash-report:${it.fileName}" }
     if (server != null && !server!!.process.isAlive) return "server-stopped"
     if (client != null && !client!!.isAlive) return "client-exited"
     val text = readFrom(log, logStart).lowercase()
@@ -828,12 +845,12 @@ fun waitForDhStable(clientDir: Path): DhGateResult {
     val progressPattern = Regex("""DH is generating chunks\. ([0-9]+) left""")
     val minSettleDeadline = started + dhMinSettle * 1000L
     while (System.currentTimeMillis() < minSettleDeadline) {
-        val failureStatus = dhRuntimeFailureStatus(log, logStart)
+        val failureStatus = dhRuntimeFailureStatus(log, logStart, started)
         if (failureStatus != null) return dhGateResult(failureStatus, started, stableSamples, tailChunksLeft, 0)
         Thread.sleep(1_000)
     }
     while (System.currentTimeMillis() < deadline) {
-        val failureStatus = dhRuntimeFailureStatus(log, logStart)
+        val failureStatus = dhRuntimeFailureStatus(log, logStart, started)
         if (failureStatus != null) {
             val tailStableSeconds = if (lowTailSince == null) 0 else (System.currentTimeMillis() - lowTailSince!!) / 1000
             return dhGateResult(failureStatus, started, stableSamples, tailChunksLeft, tailStableSeconds)
@@ -901,6 +918,7 @@ fun writeReview(path: Path, shot: Shot, camera: CameraPose, dh: DhGateResult?, t
     "candidateLabel": ${q(candidateLabel)},
     "candidateScore": ${candidateScore ?: "null"},
     "dhCaptureRadiusChunks": $dhCaptureRadiusChunks,
+    "serverForceloadRadiusChunks": $serverForceloadRadiusChunks,
     "dhLowTailAllowed": $allowLowTailDh,
     "dhGate": ${if (dh == null) "null" else "{\"status\": ${q(dh.status)}, \"elapsedSeconds\": ${dh.elapsedSeconds}, \"minSettleSeconds\": ${dh.minSettleSeconds}, \"quietSeconds\": ${dh.quietSeconds}, \"timeoutSeconds\": ${dh.timeoutSeconds}, \"dhLogObserved\": ${dh.dhLogObserved}, \"stableSamples\": ${dh.stableSamples}, \"lowTailThresholdChunks\": ${dh.lowTailThresholdChunks}, \"lowTailSeconds\": ${dh.lowTailSeconds}, \"tailChunksLeft\": ${dh.tailChunksLeft ?: "null"}, \"tailStableSeconds\": ${dh.tailStableSeconds}}"},
     "technicalGate": {"status": ${q(technicalStatus)}, "failureReason": ${q(failureReason)}, "promptHandling": ${q(promptHandling)}, "frameEntropy": ${frame?.entropy ?: "null"}, "frameEdgeDensity": ${frame?.edgeDensity ?: "null"}, "frameLuminanceRange": ${frame?.luminanceRange ?: "null"}}
@@ -1247,6 +1265,7 @@ try {
             val toBlockX = (chunkX + serverForceloadRadiusChunks) * 16
             val toBlockZ = (chunkZ + serverForceloadRadiusChunks) * 16
             send(server!!, "forceload add $fromBlockX $fromBlockZ $toBlockX $toBlockZ", commands)
+            appendProgress("server_forceload", shot, "radius=$serverForceloadRadiusChunks from=$fromBlockX,$fromBlockZ to=$toBlockX,$toBlockZ")
             Thread.sleep(8_000)
             appendProgress("shot_wait_dh", shot)
             val dh = waitForDhStable(clientDir)
@@ -1318,6 +1337,8 @@ val manifest = buildString {
     appendLine("  \"seed\": ${q(seed)},")
     appendLine("  \"shaderPack\": ${q(shaderPack)},")
     appendLine("  \"fov\": $captureFovDegrees,")
+    appendLine("  \"dhCaptureRadiusChunks\": $dhCaptureRadiusChunks,")
+    appendLine("  \"serverForceloadRadiusChunks\": $serverForceloadRadiusChunks,")
     appendLine("  \"batchMode\": ${q(batchMode)},")
     appendLine("  \"resolution\": \"${width}x${height}\",")
     appendLine("  \"runRoot\": ${q(runRoot.toString())},")
@@ -1331,7 +1352,7 @@ val manifest = buildString {
     appendLine(selectedShots.joinToString(",\n") { shot ->
         val result = shotResults.lastOrNull { it.shot.id == shot.id }
         val camera = result?.selectedCamera ?: shot.basePose()
-        "    {\"id\":${q(shot.id)},\"status\":${q(result?.status ?: "not-run")},\"failureReason\":${q(result?.failureReason)},\"path\":${q((result?.path ?: final.resolve(shot.file)).toString())},\"review\":${q((result?.review ?: final.resolve(shot.file.removeSuffix(".png") + ".review.json")).toString())},\"promptHandling\":${q(result?.promptHandling)},\"anchorMode\":${q(result?.anchorMode)},\"anchorDetail\":${q(result?.anchorDetail)},\"candidateLabel\":${q(result?.candidateLabel)},\"candidateScore\":${result?.candidateScore ?: "null"},\"biome\":${q(shot.biome)},\"subject\":${q(shot.subject)},\"camera\":{\"x\":${camera.x},\"y\":${camera.y},\"z\":${camera.z},\"yaw\":${camera.yaw},\"pitch\":${camera.pitch}},\"baseCamera\":{\"x\":${shot.x},\"y\":${shot.y},\"z\":${shot.z},\"yaw\":${shot.yaw},\"pitch\":${shot.pitch}}}"
+        "    {\"id\":${q(shot.id)},\"status\":${q(result?.status ?: "not-run")},\"failureReason\":${q(result?.failureReason)},\"path\":${q((result?.path ?: final.resolve(shot.file)).toString())},\"review\":${q((result?.review ?: final.resolve(shot.file.removeSuffix(".png") + ".review.json")).toString())},\"promptHandling\":${q(result?.promptHandling)},\"anchorMode\":${q(result?.anchorMode)},\"anchorDetail\":${q(result?.anchorDetail)},\"candidateLabel\":${q(result?.candidateLabel)},\"candidateScore\":${result?.candidateScore ?: "null"},\"biome\":${q(shot.biome)},\"subject\":${q(shot.subject)},\"dhCaptureRadiusChunks\":$dhCaptureRadiusChunks,\"serverForceloadRadiusChunks\":$serverForceloadRadiusChunks,\"camera\":{\"x\":${camera.x},\"y\":${camera.y},\"z\":${camera.z},\"yaw\":${camera.yaw},\"pitch\":${camera.pitch}},\"baseCamera\":{\"x\":${shot.x},\"y\":${shot.y},\"z\":${shot.z},\"yaw\":${shot.yaw},\"pitch\":${shot.pitch}}}"
     })
     appendLine("  ]")
     appendLine("}")

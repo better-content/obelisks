@@ -114,7 +114,7 @@ val width = 1920
 val height = 1080
 val shaderPack = "ComplementaryReimagined_r5.8.1.zip"
 val seed = "btm-worldgen-marketing-v1"
-val dhCaptureRadiusChunks = 32
+var dhCaptureRadiusChunks = 32
 val serverForceloadRadiusChunks = 7
 val captureFovDegrees = 80
 val availableProcessors = Runtime.getRuntime().availableProcessors()
@@ -137,7 +137,7 @@ val knownBadFrameMarkers = listOf(
 
 fun usage(message: String? = null): Nothing {
     if (message != null) System.err.println(message)
-    System.err.println("Usage: tools/btm test scenario-headful worldgen_marketing_screenshots [--bootstrap-mode always|once|never] [--port N] [--run-root PATH] [--output-dir PATH] [--keep-runs] [--batch-mode bounded|session] [--start-shot N|SHOT_ID] [--end-shot N|SHOT_ID] [--dh-min-settle SECONDS] [--dh-quiet SECONDS] [--dh-timeout SECONDS] [--dh-low-tail-max CHUNKS] [--dh-low-tail-seconds SECONDS] [--allow-low-tail-dh] [--camera-search off|local-sweep] [--anchor-search off|locate-biome|locate-feature]")
+    System.err.println("Usage: tools/btm test scenario-headful worldgen_marketing_screenshots [--bootstrap-mode always|once|never] [--port N] [--run-root PATH] [--output-dir PATH] [--keep-runs] [--batch-mode bounded|session] [--start-shot N|SHOT_ID] [--end-shot N|SHOT_ID] [--dh-capture-radius CHUNKS] [--dh-min-settle SECONDS] [--dh-quiet SECONDS] [--dh-timeout SECONDS] [--dh-low-tail-max CHUNKS] [--dh-low-tail-seconds SECONDS] [--allow-low-tail-dh] [--camera-search off|local-sweep] [--anchor-search off|locate-biome|locate-feature]")
     exitProcess(2)
 }
 
@@ -218,6 +218,11 @@ while (index < args.size) {
         }
         "--dh-min-settle" -> {
             dhMinSettle = args.getOrNull(index + 1)?.toIntOrNull() ?: usage("--dh-min-settle needs seconds")
+            index += 2
+        }
+        "--dh-capture-radius" -> {
+            dhCaptureRadiusChunks = args.getOrNull(index + 1)?.toIntOrNull() ?: usage("--dh-capture-radius needs chunks")
+            if (dhCaptureRadiusChunks !in 8..256) usage("--dh-capture-radius must be between 8 and 256 chunks")
             index += 2
         }
         "--dh-quiet" -> {
@@ -515,10 +520,10 @@ enableShaders=true
     patchTomlValue(dh, "generationProgressDisableMessageDisplayTimeInSeconds", "0")
     patchTomlValue(dh, "generationProgressDisplayIntervalInSeconds", "2")
     patchTomlValue(dh, "generationProgressIncludeChunksPerSecond", "true")
-    patchTomlValue(dh, "maxGenerationRequestDistance", "16")
-    patchTomlValue(dh, "maxSyncOnLoadRequestDistance", "24")
-    patchTomlValue(dh, "generationRequestRateLimit", "200")
-    patchTomlValue(dh, "syncOnLoadRateLimit", "200")
+    patchTomlValue(dh, "maxGenerationRequestDistance", dhCaptureRadiusChunks.toString())
+    patchTomlValue(dh, "maxSyncOnLoadRequestDistance", dhCaptureRadiusChunks.toString())
+    patchTomlValue(dh, "generationRequestRateLimit", "500")
+    patchTomlValue(dh, "syncOnLoadRateLimit", "500")
     patchTomlValue(dh, "playerBandwidthLimit", "0")
     patchTomlValue(dh, "lodChunkRenderDistanceRadius", dhCaptureRadiusChunks.toString())
     patchTomlValue(dh, "threadRunTimeRatio", "\"1.0\"")
@@ -896,6 +901,7 @@ fun writeReview(path: Path, shot: Shot, camera: CameraPose, dh: DhGateResult?, t
     "candidateLabel": ${q(candidateLabel)},
     "candidateScore": ${candidateScore ?: "null"},
     "dhCaptureRadiusChunks": $dhCaptureRadiusChunks,
+    "dhLowTailAllowed": $allowLowTailDh,
     "dhGate": ${if (dh == null) "null" else "{\"status\": ${q(dh.status)}, \"elapsedSeconds\": ${dh.elapsedSeconds}, \"minSettleSeconds\": ${dh.minSettleSeconds}, \"quietSeconds\": ${dh.quietSeconds}, \"timeoutSeconds\": ${dh.timeoutSeconds}, \"dhLogObserved\": ${dh.dhLogObserved}, \"stableSamples\": ${dh.stableSamples}, \"lowTailThresholdChunks\": ${dh.lowTailThresholdChunks}, \"lowTailSeconds\": ${dh.lowTailSeconds}, \"tailChunksLeft\": ${dh.tailChunksLeft ?: "null"}, \"tailStableSeconds\": ${dh.tailStableSeconds}}"},
     "technicalGate": {"status": ${q(technicalStatus)}, "failureReason": ${q(failureReason)}, "promptHandling": ${q(promptHandling)}, "frameEntropy": ${frame?.entropy ?: "null"}, "frameEdgeDensity": ${frame?.edgeDensity ?: "null"}, "frameLuminanceRange": ${frame?.luminanceRange ?: "null"}}
   },
@@ -1267,6 +1273,7 @@ try {
                 !verifyPlayerInWorld() -> "client is no longer in-world at capture time"
                 markers.isNotEmpty() -> "known prompt/menu marker in capture evidence: ${markers.joinToString()}"
                 !frame.accepted -> frame.reason
+                dh.status == "low-tail-stable" && dh.lowTailSeconds <= 0 -> "low-tail DH gate was accepted with no stability dwell; keep as exploratory evidence only"
                 else -> null
             }
             if (failureReason != null) {

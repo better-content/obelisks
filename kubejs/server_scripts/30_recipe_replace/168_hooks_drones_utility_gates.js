@@ -2,20 +2,18 @@
 // Keep them off the hand grid; tier hooks and Create Stuff & Additions drones
 // through mechanical assembly.
 
-function btmMobilityExists(id) {
+function bcMobilityExists(id) {
     try { return Item.exists(id) } catch (e) { return false }
 }
 
-function btmMobilityMechanical(event, output, pattern, key, recipeId) {
-    if (!btmMobilityExists(output)) return
+function bcMobilityMechanical(event, output, pattern, key, recipeId) {
+    if (!bcMobilityExists(output)) return
     event.remove({ output: output })
-    global.btmFactoryCrafting(event, recipeId, output, 1, pattern, key, true)
+    global.bcFactoryCrafting(event, recipeId, output, 1, pattern, key, true)
 }
 
 ServerEvents.recipes(function (event) {
-    if (!btmMobilityExists('kubejs:sky_steel_sheet') || !btmMobilityExists('kubejs:ae_logic_package')) return
-
-    btmMobilityMechanical(event, 'rehooked:wood_chain', [
+    if (!bcMobilityExists('kubejs:sky_steel_sheet') || !bcMobilityExists('kubejs:ae_logic_package')) return bcMobilityMechanical(event, 'rehooked:wood_chain', [
         ' SS',
         'SCS',
         'SS '
@@ -24,7 +22,7 @@ ServerEvents.recipes(function (event) {
         C: 'kubejs:seared_machine_casing'
     }, 'kubejs:rehooked/wood_chain_post_seared')
 
-    btmMobilityMechanical(event, 'rehooked:wood_hook', [
+     bcMobilityMechanical(event, 'rehooked:wood_hook', [
         'RRC',
         ' WH',
         'W H'
@@ -35,7 +33,7 @@ ServerEvents.recipes(function (event) {
         H: '#forge:rods/wooden'
     }, 'kubejs:rehooked/wood_hook_post_seared')
 
-    btmMobilityMechanical(event, 'rehooked:iron_hook', [
+     bcMobilityMechanical(event, 'rehooked:iron_hook', [
         'IIC',
         ' HI',
         'L I'
@@ -46,7 +44,7 @@ ServerEvents.recipes(function (event) {
         L: 'minecraft:chain'
     }, 'kubejs:rehooked/iron_hook_post_create')
 
-    btmMobilityMechanical(event, 'rehooked:diamond_chain', [
+     bcMobilityMechanical(event, 'rehooked:diamond_chain', [
         ' DD',
         'DCD',
         'DD '
@@ -55,7 +53,7 @@ ServerEvents.recipes(function (event) {
         C: 'kubejs:brass_machine_casing'
     }, 'kubejs:rehooked/diamond_chain_post_brass')
 
-    btmMobilityMechanical(event, 'rehooked:diamond_hook', [
+     bcMobilityMechanical(event, 'rehooked:diamond_hook', [
         'DDC',
         ' HI',
         'L I'
@@ -67,7 +65,7 @@ ServerEvents.recipes(function (event) {
         L: 'rehooked:diamond_chain'
     }, 'kubejs:rehooked/diamond_hook_post_brass')
 
-    btmMobilityMechanical(event, 'rehooked:blaze_hook', [
+     bcMobilityMechanical(event, 'rehooked:blaze_hook', [
         ' H ',
         'BPC',
         ' H '
@@ -78,7 +76,7 @@ ServerEvents.recipes(function (event) {
         C: 'heatsync:heat_pipe'
     }, 'kubejs:rehooked/blaze_hook_post_electricity')
 
-    btmMobilityMechanical(event, 'rehooked:ender_hook', [
+     bcMobilityMechanical(event, 'rehooked:ender_hook', [
         ' E ',
         'HSH',
         ' E '
@@ -88,7 +86,7 @@ ServerEvents.recipes(function (event) {
         S: 'kubejs:space_machine_casing'
     }, 'kubejs:rehooked/ender_hook_post_space')
 
-    btmMobilityMechanical(event, 'rehooked:red_hook', [
+     bcMobilityMechanical(event, 'rehooked:red_hook', [
         'QAQ',
         'HRH',
         'QAQ'
@@ -99,7 +97,7 @@ ServerEvents.recipes(function (event) {
         R: 'kubejs:ae_logic_package'
     }, 'kubejs:rehooked/red_hook_post_ae2')
 
-    btmMobilityMechanical(event, 'create_sa:brass_drone', [
+     bcMobilityMechanical(event, 'create_sa:brass_drone', [
         'QPQ',
         'DAD',
         'QSQ'

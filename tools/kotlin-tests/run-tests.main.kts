@@ -16,7 +16,7 @@ data class TestCase(val name: String, val run: () -> Unit)
 
 val root = Paths.get("").toAbsolutePath().normalize()
 val tests = mutableListOf<TestCase>()
-val activeFilter = System.getenv("BTM_KOTLIN_TEST_FILTER")?.trim()?.takeIf { it.isNotEmpty() }
+val activeFilter = System.getenv("BC_KOTLIN_TEST_FILTER")?.trim()?.takeIf { it.isNotEmpty() }
 
 fun test(name: String, block: () -> Unit) {
     if (activeFilter != null && !name.contains(activeFilter, ignoreCase = true)) return
@@ -35,7 +35,7 @@ fun runCommand(
         .apply { environment().putAll(extraEnv) }
         .start()
     val buffer = ByteArrayOutputStream()
-    val reader = thread(start = true, isDaemon = true, name = "btm-kotlin-test-reader") {
+    val reader = thread(start = true, isDaemon = true, name = "bc-kotlin-test-reader") {
         process.inputStream.use { it.copyTo(buffer) }
     }
     if (!process.waitFor(timeoutSeconds, TimeUnit.SECONDS)) {
@@ -263,34 +263,34 @@ fun terminateHarnessOwner(harnessRoot: Path, force: Boolean) {
 }
 
 test("help shows public commands") {
-    val (exit, output) = runCommand("tools/btm", "--help")
+    val (exit, output) = runCommand("tools/bc", "--help")
     assertTrue(exit == 0, "help should exit 0, got $exit")
-    assertContains(output, "tools/btm test fast", "help should list fast test")
-    assertContains(output, "tools/btm test full", "help should list full test")
-    assertContains(output, "tools/btm test static", "help should list static test")
-    assertContains(output, "tools/btm build sync server", "help should list build sync server")
-    assertContains(output, "tools/btm graph item ITEM_ID", "help should list graph item")
-    assertContains(output, "tools/btm graph route ITEM_ID", "help should list graph route")
-    assertContains(output, "tools/btm doctor env", "help should list doctor env")
+    assertContains(output, "tools/bc test fast", "help should list fast test")
+    assertContains(output, "tools/bc test full", "help should list full test")
+    assertContains(output, "tools/bc test static", "help should list static test")
+    assertContains(output, "tools/bc build sync server", "help should list build sync server")
+    assertContains(output, "tools/bc graph item ITEM_ID", "help should list graph item")
+    assertContains(output, "tools/bc graph route ITEM_ID", "help should list graph route")
+    assertContains(output, "tools/bc doctor env", "help should list doctor env")
 }
 
 test("graph help shows subcommands") {
-    val (exit, output) = runCommand("tools/btm", "graph", "--help")
+    val (exit, output) = runCommand("tools/bc", "graph", "--help")
     assertTrue(exit == 0, "graph help should exit 0, got $exit")
-    assertContains(output, "Usage: tools/btm graph <item|route|blockers>", "graph help should show graph usage")
+    assertContains(output, "Usage: tools/bc graph <item|route|blockers>", "graph help should show graph usage")
     assertContains(output, "item ITEM_ID", "graph help should show item subcommand")
     assertContains(output, "route ITEM_ID", "graph help should show route subcommand")
     assertContains(output, "blockers ITEM_ID", "graph help should show blockers subcommand")
 }
 
 test("graph item without id is usage error") {
-    val (exit, output) = runCommand("tools/btm", "graph", "item")
+    val (exit, output) = runCommand("tools/bc", "graph", "item")
     assertTrue(exit == 2, "graph item without id should exit 2, got $exit")
     assertContains(output, "graph item requires ITEM_ID", "graph item usage error should be specific")
 }
 
 test("graph item json returns producer and consumer counts") {
-    val (exit, output) = runCommand("tools/btm", "--json", "graph", "item", "minecraft:glass")
+    val (exit, output) = runCommand("tools/bc", "--json", "graph", "item", "minecraft:glass")
     assertTrue(exit == 0, "graph item json should exit 0, got $exit")
     assertContains(output, "\"command\":\"graph item\"", "graph item json should identify its command")
     assertContains(output, "\"status\":\"success\"", "graph item json should report success")
@@ -300,7 +300,7 @@ test("graph item json returns producer and consumer counts") {
 }
 
 test("graph route json returns a structured route") {
-    val (exit, output) = runCommand("tools/btm", "--json", "graph", "route", "kubejs:seared_machine_casing")
+    val (exit, output) = runCommand("tools/bc", "--json", "graph", "route", "kubejs:seared_machine_casing")
     assertTrue(exit == 0, "graph route json should exit 0, got $exit")
     assertContains(output, "\"command\":\"graph route\"", "graph route json should identify its command")
     assertContains(output, "\"reachable\":true", "graph route json should report reachability")
@@ -309,7 +309,7 @@ test("graph route json returns a structured route") {
 }
 
 test("graph blockers json returns explicit blocker data") {
-    val (exit, output) = runCommand("tools/btm", "--json", "graph", "blockers", "minecraft:bedrock")
+    val (exit, output) = runCommand("tools/bc", "--json", "graph", "blockers", "minecraft:bedrock")
     assertTrue(exit == 0, "graph blockers json should exit 0, got $exit")
     assertContains(output, "\"command\":\"graph blockers\"", "graph blockers json should identify its command")
     assertContains(output, "\"item\":\"minecraft:bedrock\"", "graph blockers json should report the item")
@@ -326,13 +326,13 @@ test("graph blockers json returns explicit blocker data") {
 }
 
 test("runtime without instance is usage error") {
-    val (exit, output) = runCommand("tools/btm", "test", "runtime")
+    val (exit, output) = runCommand("tools/bc", "test", "runtime")
     assertTrue(exit == 2, "runtime without instance should exit 2, got $exit")
     assertContains(output, "test runtime requires --instance PATH", "runtime usage error should be specific")
 }
 
 test("scenario help shows scenarios") {
-    val (exit, output) = runCommand("tools/btm", "test", "scenario", "--help")
+    val (exit, output) = runCommand("tools/bc", "test", "scenario", "--help")
     assertTrue(exit == 0, "scenario help should exit 0, got $exit")
     assertContains(output, "fast [--repo ID|PATH] [--list-repos]", "scenario help should show fast usage")
     assertContains(output, "full [--workspace [--repo ID|PATH] [--list-repos]]", "scenario help should show full workspace usage")
@@ -345,15 +345,15 @@ test("scenario help shows scenarios") {
 }
 
 test("fast repo listing shows workspace inventory") {
-    val (exit, output) = runCommand("tools/btm", "test", "fast", "--list-repos")
+    val (exit, output) = runCommand("tools/bc", "test", "fast", "--list-repos")
     assertTrue(exit == 0, "test fast --list-repos should exit 0, got $exit")
     assertContains(output, "workspace fast repo selection:", "fast listing should show repo heading")
     assertContains(output, "pack", "fast listing should include pack")
-    assertContains(output, "bound-to-matter-fixes", "fast listing should include nested repos")
+    assertContains(output, "better-content-fixes", "fast listing should include nested repos")
 }
 
 test("full repo listing honors repo filters and meaningful full lanes") {
-    val (exit, output) = runCommand("tools/btm", "test", "full", "--workspace", "--list-repos", "--repo", "pack", "--repo", "class-selector")
+    val (exit, output) = runCommand("tools/bc", "test", "full", "--workspace", "--list-repos", "--repo", "pack", "--repo", "class-selector")
     assertTrue(exit == 0, "test full --workspace --list-repos with filters should exit 0, got $exit")
     assertContains(output, "pack", "filtered full listing should include pack")
     assertContains(output, "class-selector", "filtered full listing should include selected repo")
@@ -361,33 +361,33 @@ test("full repo listing honors repo filters and meaningful full lanes") {
 }
 
 test("full repo listing without workspace flag is a usage error") {
-    val (exit, output) = runCommand("tools/btm", "test", "full", "--list-repos")
+    val (exit, output) = runCommand("tools/bc", "test", "full", "--list-repos")
     assertTrue(exit == 2, "test full --list-repos without --workspace should exit 2, got $exit")
     assertContains(output, "test full workspace selection requires --workspace", "full listing without --workspace should explain the requirement")
 }
 
 test("unknown workspace repo filter is a usage error") {
-    val (exit, output) = runCommand("tools/btm", "test", "fast", "--list-repos", "--repo", "not-a-real-repo")
+    val (exit, output) = runCommand("tools/bc", "test", "fast", "--list-repos", "--repo", "not-a-real-repo")
     assertTrue(exit == 2, "unknown workspace repo filter should exit 2, got $exit")
     assertContains(output, "unknown repo filter(s): not-a-real-repo", "unknown repo filter error should be specific")
 }
 
 test("unknown scenario is a usage error") {
-    val (exit, output) = runCommand("tools/btm", "test", "scenario", "not_a_real_scenario")
+    val (exit, output) = runCommand("tools/bc", "test", "scenario", "not_a_real_scenario")
     assertTrue(exit == 2, "unknown scenario should exit 2, got $exit")
     assertContains(output, "unknown scenario: not_a_real_scenario", "unknown scenario error should be specific")
 }
 
 test("doctor repo succeeds") {
-    val (exit, output) = runCommand("tools/btm", "doctor", "repo")
+    val (exit, output) = runCommand("tools/bc", "doctor", "repo")
     assertTrue(exit == 0, "doctor repo should exit 0, got $exit")
     assertContains(output, "repo check passed", "doctor repo should pass")
 }
 
 test("build sync server dry-run works") {
-    val temp = Files.createTempDirectory("btm-kotlin-test-sync-server")
+    val temp = Files.createTempDirectory("bc-kotlin-test-sync-server")
     try {
-        val (exit, output) = runCommand("tools/btm", "--json", "build", "sync", "server", "--dir", temp.toString(), "--dry-run")
+        val (exit, output) = runCommand("tools/bc", "--json", "build", "sync", "server", "--dir", temp.toString(), "--dry-run")
         assertTrue(exit == 0, "server sync dry-run should exit 0, got $exit")
         assertContains(output, "\"status\":\"success\"", "server sync dry-run should report success JSON")
         assertContains(output, "\"command\":\"build sync server\"", "server sync dry-run should identify its command")
@@ -397,9 +397,9 @@ test("build sync server dry-run works") {
 }
 
 test("build sync client dry-run works") {
-    val temp = Files.createTempDirectory("btm-kotlin-test-sync-client")
+    val temp = Files.createTempDirectory("bc-kotlin-test-sync-client")
     try {
-        val (exit, output) = runCommand("tools/btm", "--json", "build", "sync", "client", "--dir", temp.toString(), "--dry-run")
+        val (exit, output) = runCommand("tools/bc", "--json", "build", "sync", "client", "--dir", temp.toString(), "--dry-run")
         assertTrue(exit == 0, "client sync dry-run should exit 0, got $exit")
         assertContains(output, "\"status\":\"success\"", "client sync dry-run should report success JSON")
         assertContains(output, "\"command\":\"build sync client\"", "client sync dry-run should identify its command")
@@ -409,7 +409,7 @@ test("build sync client dry-run works") {
 }
 
 test("public static lane passes") {
-    val (exit, output) = runCommand("tools/btm", "--json", "test", "static", timeoutSeconds = 900)
+    val (exit, output) = runCommand("tools/bc", "--json", "test", "static", timeoutSeconds = 900)
     assertTrue(exit == 0, "test static should exit 0, got $exit")
     assertContains(output, "\"status\":\"success\"", "test static should report success JSON")
     assertContains(output, "\"command\":\"test static\"", "test static should identify its command")
@@ -418,14 +418,14 @@ test("public static lane passes") {
 
 test("public fast lane passes when recursive kotlin step is disabled") {
     val (exit, output) = runCommand(
-        "tools/btm",
+        "tools/bc",
         "--json",
         "test",
         "fast",
         "--repo",
         "pack",
         timeoutSeconds = 900,
-        extraEnv = mapOf("BTM_SKIP_KOTLIN_TESTS" to "1"),
+        extraEnv = mapOf("BC_SKIP_KOTLIN_TESTS" to "1"),
     )
     assertTrue(exit == 0, "test fast --repo pack should exit 0 with kotlin recursion disabled, got $exit")
     assertContains(output, "\"status\":\"success\"", "test fast should report success JSON")
@@ -434,20 +434,20 @@ test("public fast lane passes when recursive kotlin step is disabled") {
 }
 
 test("doctor runtime without instance is usage error") {
-    val (exit, output) = runCommand("tools/btm", "doctor", "runtime")
+    val (exit, output) = runCommand("tools/bc", "doctor", "runtime")
     assertTrue(exit == 2, "doctor runtime without instance should exit 2, got $exit")
     assertContains(output, "doctor runtime requires --instance PATH", "doctor runtime usage error should be specific")
 }
 
 test("doctor runtime accepts a minimal runtime shape") {
-    val temp = Files.createTempDirectory("btm-kotlin-test-runtime-doctor")
+    val temp = Files.createTempDirectory("bc-kotlin-test-runtime-doctor")
     try {
         temp.resolve("mods").createDirectories()
         temp.resolve("logs").createDirectories()
         temp.resolve("kubejs/config").createDirectories()
         Files.writeString(temp.resolve("logs/latest.log"), "")
         Files.writeString(temp.resolve("run.sh"), "placeholder\n")
-        val (exit, output) = runCommand("tools/btm", "doctor", "runtime", "--instance", temp.toString())
+        val (exit, output) = runCommand("tools/bc", "doctor", "runtime", "--instance", temp.toString())
         assertTrue(exit == 0, "doctor runtime should exit 0 for a minimal runtime shape, got $exit")
         assertContains(output, "runtime check passed", "doctor runtime should report a passing summary")
     } finally {
@@ -456,18 +456,18 @@ test("doctor runtime accepts a minimal runtime shape") {
 }
 
 test("smoke rejects non-numeric port") {
-    val (exit, output) = runCommand("tools/btm", "test", "smoke", "--port", "abc")
+    val (exit, output) = runCommand("tools/bc", "test", "smoke", "--port", "abc")
     assertTrue(exit == 2, "smoke with non-numeric port should exit 2, got $exit")
     assertContains(output, "--port needs a number", "smoke should reject non-numeric ports")
 }
 
 test("runtime mod prune removes source jars") {
-    val temp = Files.createTempDirectory("btm-kotlin-test-prune-runtime-mods")
+    val temp = Files.createTempDirectory("bc-kotlin-test-prune-runtime-mods")
     val dest = temp.resolve("mods/synthetic-fixture-sources.jar")
     try {
         Files.createDirectories(dest.parent)
         Files.write(dest, byteArrayOf())
-        val (exit, output) = runCommand("tools/btm", "internal", "prune-runtime-mods", "--target-dir", temp.toString(), "--side", "server", "--apply")
+        val (exit, output) = runCommand("tools/bc", "internal", "prune-runtime-mods", "--target-dir", temp.toString(), "--side", "server", "--apply")
         assertTrue(exit == 1, "internal prune-runtime-mods should report missing expected runtime mods on an incomplete temp dir, got $exit")
         assertTrue(!Files.exists(dest), "prune-runtime-mods should remove source jars from runtime mods")
         assertContains(output, "runtime mod prune:", "prune-runtime-mods should report runtime mod summary")
@@ -476,87 +476,93 @@ test("runtime mod prune removes source jars") {
     }
 }
 
-test("internal kotlin tool surface validator runs through btm") {
-    val (exit, output) = runCommand("tools/btm", "internal", "validate-kotlin-tool-surface")
+test("internal kotlin tool surface validator runs through bc") {
+    val (exit, output) = runCommand("tools/bc", "internal", "validate-kotlin-tool-surface")
     assertTrue(exit == 0, "internal validate-kotlin-tool-surface should exit 0, got $exit")
     assertContains(output, "kotlin tool surface validates", "internal validate-kotlin-tool-surface should report validator summary")
 }
 
-test("internal worldgen sampling contract validator runs through btm") {
-    val (exit, output) = runCommand("tools/btm", "internal", "validate-worldgen-sampling-contracts")
+test("internal worldgen sampling contract validator runs through bc") {
+    val (exit, output) = runCommand("tools/bc", "internal", "validate-worldgen-sampling-contracts")
     assertTrue(exit == 0, "internal validate-worldgen-sampling-contracts should exit 0, got $exit")
     assertContains(output, "worldgen sampling contracts validate", "worldgen sampling contract validator should report success")
 }
 
-test("internal client smoke contract validator runs through btm") {
-    val (exit, output) = runCommand("tools/btm", "internal", "validate-client-smoke-contracts")
+test("internal client smoke contract validator runs through bc") {
+    val (exit, output) = runCommand("tools/bc", "internal", "validate-client-smoke-contracts")
     assertTrue(exit == 0, "internal validate-client-smoke-contracts should exit 0, got $exit")
     assertContains(output, "client smoke contracts validate", "client smoke contract validator should report success")
 }
 
-test("internal kubejs assets validator runs through btm") {
-    val (exit, output) = runCommand("tools/btm", "internal", "validate-kubejs-assets")
+test("internal kubejs assets validator runs through bc") {
+    val (exit, output) = runCommand("tools/bc", "internal", "validate-kubejs-assets")
     assertTrue(exit == 0, "internal validate-kubejs-assets should exit 0, got $exit")
     assertContains(output, "kubejs assets validate", "internal validate-kubejs-assets should report validator summary")
 }
 
-test("internal autonomous contracts validator runs through btm") {
-    val (exit, output) = runCommand("tools/btm", "internal", "validate-autonomous-contracts")
+test("internal autonomous contracts validator runs through bc") {
+    val (exit, output) = runCommand("tools/bc", "internal", "validate-autonomous-contracts")
     assertTrue(exit == 0, "internal validate-autonomous-contracts should exit 0, got $exit")
     assertContains(output, "autonomous contract validators:", "internal validate-autonomous-contracts should report validator summary")
     assertContains(output, "0 hard failure(s)", "internal validate-autonomous-contracts should report no hard failures")
 }
 
-test("internal pack contract validator runs through btm") {
-    val (exit, output) = runCommand("tools/btm", "internal", "validate-pack-contract")
+test("internal pack contract validator runs through bc") {
+    val (exit, output) = runCommand("tools/bc", "internal", "validate-pack-contract")
     assertTrue(exit in setOf(0, 1), "internal validate-pack-contract should exit 0 or 1, got $exit")
     assertContains(output, "pack contract audit:", "internal validate-pack-contract should report contract audit summary")
 }
 
-test("internal contract completeness report runs through btm") {
-    val (exit, output) = runCommand("tools/btm", "internal", "contract-completeness-report", "--check", "--no-write")
+test("internal contract completeness report runs through bc") {
+    val (exit, output) = runCommand("tools/bc", "internal", "contract-completeness-report", "--check", "--no-write")
     assertTrue(exit == 0, "internal contract-completeness-report --check --no-write should exit 0, got $exit")
     assertContains(output, "contract completeness:", "internal contract-completeness-report should report classification summary")
 }
 
-test("internal realistic hands validator runs through btm") {
-    val (exit, output) = runCommand("tools/btm", "internal", "validate-realistic-hands")
+test("internal realistic hands validator runs through bc") {
+    val (exit, output) = runCommand("tools/bc", "internal", "validate-realistic-hands")
     assertTrue(exit == 0, "internal validate-realistic-hands should exit 0, got $exit")
     assertContains(output, "Realistic Hands validates", "internal validate-realistic-hands should report validator summary")
 }
 
-test("internal js syntax check runs through btm") {
-    val (exit, output) = runCommand("tools/btm", "internal", "check-js-syntax")
+test("internal dynamic trees coverage validator runs through bc") {
+    val (exit, output) = runCommand("tools/bc", "internal", "validate-dynamic-trees-coverage")
+    assertTrue(exit == 0, "internal validate-dynamic-trees-coverage should exit 0, got $exit")
+    assertContains(output, "Dynamic Trees coverage validates", "internal validate-dynamic-trees-coverage should report validator summary")
+}
+
+test("internal js syntax check runs through bc") {
+    val (exit, output) = runCommand("tools/bc", "internal", "check-js-syntax")
     assertTrue(exit == 0, "internal check-js-syntax should exit 0, got $exit")
     assertContains(output, "Rhino", "internal check-js-syntax should report Rhino-based syntax validation")
 }
 
-test("internal json surface check runs through btm") {
-    val (exit, output) = runCommand("tools/btm", "internal", "check-json-surface")
+test("internal json surface check runs through bc") {
+    val (exit, output) = runCommand("tools/bc", "internal", "check-json-surface")
     assertTrue(exit == 0, "internal check-json-surface should exit 0, got $exit")
     assertContains(output, "all repo JSON parses", "internal check-json-surface should report JSON surface validation")
 }
 
-test("internal burnt sync check runs through btm") {
-    val (exit, output) = runCommand("tools/btm", "internal", "sync-burnt-coverage-tags", "--check")
+test("internal burnt sync check runs through bc") {
+    val (exit, output) = runCommand("tools/bc", "internal", "sync-burnt-coverage-tags", "--check")
     assertTrue(exit == 0, "internal sync-burnt-coverage-tags --check should exit 0, got $exit")
     assertContains(output, "missing_rows", "internal sync-burnt-coverage-tags should report missing_rows")
 }
 
-test("internal chemistry identity validator runs through btm") {
-    val (exit, output) = runCommand("tools/btm", "internal", "validate-chemistry-identity")
+test("internal chemistry identity validator runs through bc") {
+    val (exit, output) = runCommand("tools/bc", "internal", "validate-chemistry-identity")
     assertTrue(exit == 0, "internal validate-chemistry-identity should exit 0, got $exit")
     assertContains(output, "chemistry identity matrix validates", "internal validate-chemistry-identity should report validator summary")
 }
 
-test("internal player progression contracts validator runs through btm") {
-    val (exit, output) = runCommand("tools/btm", "internal", "validate-player-progression-contracts")
+test("internal player progression contracts validator runs through bc") {
+    val (exit, output) = runCommand("tools/bc", "internal", "validate-player-progression-contracts")
     assertTrue(exit == 0, "internal validate-player-progression-contracts should exit 0, got $exit")
     assertContains(output, "player progression contract validators:", "internal validate-player-progression-contracts should report validator summary")
 }
 
-test("internal LC TFTH DH contract validator runs through btm") {
-    val (exit, output) = runCommand("tools/btm", "internal", "validate-lc-tfth-dh-contracts")
+test("internal LC TFTH DH contract validator runs through bc") {
+    val (exit, output) = runCommand("tools/bc", "internal", "validate-lc-tfth-dh-contracts")
     assertTrue(exit == 0, "internal validate-lc-tfth-dh-contracts should exit 0, got $exit")
     assertContains(output, "LC/C2ME/DH contract validators:", "internal validate-lc-tfth-dh-contracts should report validator summary")
 }
@@ -574,43 +580,43 @@ test("no active python or shell source files remain under tools") {
 }
 
 test("headful scenario enforcement rejects client smoke on headless path") {
-    val (exit, output) = runCommand("tools/btm", "test", "scenario", "client_smoke", "--profile", "quick")
+    val (exit, output) = runCommand("tools/bc", "test", "scenario", "client_smoke", "--profile", "quick")
     assertTrue(exit == 2, "client_smoke on headless path should exit 2, got $exit")
     assertContains(output, "scenario 'client_smoke' is headful", "client_smoke should require scenario-headful")
 }
 
 test("headless scenario enforcement rejects lc repro on headful path") {
-    val (exit, output) = runCommand("tools/btm", "test", "scenario-headful", "lc_tfth_c2me_dh", "--samples", "1", "--settle-seconds", "1")
+    val (exit, output) = runCommand("tools/bc", "test", "scenario-headful", "lc_tfth_c2me_dh", "--samples", "1", "--settle-seconds", "1")
     assertTrue(exit == 2, "lc_tfth_c2me_dh on headful path should exit 2, got $exit")
     assertContains(output, "scenario 'lc_tfth_c2me_dh' is headless-safe", "lc_tfth_c2me_dh should require scenario")
 }
 
 test("worldgen sampling rejects invalid profile with usage error") {
-    val (exit, output) = runCommand("tools/btm", "test", "scenario", "worldgen_sampling", "--profile", "bad")
+    val (exit, output) = runCommand("tools/bc", "test", "scenario", "worldgen_sampling", "--profile", "bad")
     assertTrue(exit == 2, "worldgen_sampling with invalid profile should exit 2, got $exit")
     assertContains(output, "invalid profile: bad", "worldgen_sampling should reject invalid profile")
 }
 
 test("client smoke rejects invalid profile with usage error") {
-    val (exit, output) = runCommand("tools/btm", "test", "scenario-headful", "client_smoke", "--profile", "bad")
+    val (exit, output) = runCommand("tools/bc", "test", "scenario-headful", "client_smoke", "--profile", "bad")
     assertTrue(exit == 2, "client_smoke with invalid profile should exit 2, got $exit")
     assertContains(output, "invalid profile: bad", "client_smoke should reject invalid profile")
 }
 
 test("opening progression rejects invalid bootstrap mode with usage error") {
-    val (exit, output) = runCommand("tools/btm", "test", "scenario", "opening_progression", "--bootstrap-mode", "bad")
+    val (exit, output) = runCommand("tools/bc", "test", "scenario", "opening_progression", "--bootstrap-mode", "bad")
     assertTrue(exit == 2, "opening_progression with invalid bootstrap mode should exit 2, got $exit")
     assertContains(output, "invalid bootstrap mode: bad", "opening_progression should reject invalid bootstrap mode")
 }
 
 test("fast duplicate invocation fails immediately with harness diagnostics") {
-    val harnessRoot = Files.createTempDirectory("btm-kotlin-test-harness-fast-dup")
+    val harnessRoot = Files.createTempDirectory("bc-kotlin-test-harness-fast-dup")
     val process = startBackground(
-        listOf("tools/btm", "test", "fast", "--repo", "pack"),
+        listOf("tools/bc", "test", "fast", "--repo", "pack"),
         extraEnv = mapOf(
-            "BTM_HARNESS_ROOT" to harnessRoot.toString(),
-            "BTM_TEST_WORKSPACE_STUB_MODE" to "pass",
-            "BTM_TEST_WORKSPACE_STUB_SLEEP_MS" to "4000",
+            "BC_HARNESS_ROOT" to harnessRoot.toString(),
+            "BC_TEST_WORKSPACE_STUB_MODE" to "pass",
+            "BC_TEST_WORKSPACE_STUB_SLEEP_MS" to "4000",
         ),
     )
     try {
@@ -619,15 +625,15 @@ test("fast duplicate invocation fails immediately with harness diagnostics") {
             Thread.sleep(100)
         }
         val (exit, output) = runCommand(
-            "tools/btm",
+            "tools/bc",
             "test",
             "fast",
             "--repo",
             "pack",
             extraEnv = mapOf(
-                "BTM_HARNESS_ROOT" to harnessRoot.toString(),
-                "BTM_TEST_WORKSPACE_STUB_MODE" to "pass",
-                "BTM_TEST_WORKSPACE_STUB_SLEEP_MS" to "4000",
+                "BC_HARNESS_ROOT" to harnessRoot.toString(),
+                "BC_TEST_WORKSPACE_STUB_MODE" to "pass",
+                "BC_TEST_WORKSPACE_STUB_SLEEP_MS" to "4000",
             ),
         )
         assertTrue(exit == 1, "second fast invocation should fail with active lock, got $exit")
@@ -644,19 +650,19 @@ test("fast duplicate invocation fails immediately with harness diagnostics") {
 }
 
 test("full workspace writes repo progress into status and summary") {
-    val harnessRoot = Files.createTempDirectory("btm-kotlin-test-harness-full-progress")
+    val harnessRoot = Files.createTempDirectory("bc-kotlin-test-harness-full-progress")
     try {
         val (exit, output) = runCommand(
-            "tools/btm",
+            "tools/bc",
             "test",
             "full",
             "--workspace",
             "--repo",
             "pack",
             extraEnv = mapOf(
-                "BTM_HARNESS_ROOT" to harnessRoot.toString(),
-                "BTM_TEST_WORKSPACE_STUB_MODE" to "pass",
-                "BTM_TEST_WORKSPACE_STUB_SLEEP_MS" to "50",
+                "BC_HARNESS_ROOT" to harnessRoot.toString(),
+                "BC_TEST_WORKSPACE_STUB_MODE" to "pass",
+                "BC_TEST_WORKSPACE_STUB_SLEEP_MS" to "50",
             ),
         )
         assertTrue(exit == 0, "workspace full should succeed under stub mode, got $exit")
@@ -675,12 +681,12 @@ test("full workspace writes repo progress into status and summary") {
 }
 
 test("smoke auto-remaps occupied ports and records requested and actual port") {
-    val harnessRoot = Files.createTempDirectory("btm-kotlin-test-harness-smoke-port")
-    val runtimeDir = Files.createTempDirectory("btm-kotlin-test-smoke-runtime")
+    val harnessRoot = Files.createTempDirectory("bc-kotlin-test-harness-smoke-port")
+    val runtimeDir = Files.createTempDirectory("bc-kotlin-test-smoke-runtime")
     val requestedPort = ephemeralPort()
     java.net.ServerSocket(requestedPort).use { _ ->
         val (exit, output) = runCommand(
-            "tools/btm",
+            "tools/bc",
             "test",
             "smoke",
             "--server-dir",
@@ -688,8 +694,8 @@ test("smoke auto-remaps occupied ports and records requested and actual port") {
             "--port",
             requestedPort.toString(),
             extraEnv = mapOf(
-                "BTM_HARNESS_ROOT" to harnessRoot.toString(),
-                "BTM_TEST_FAKE_SMOKE" to "1",
+                "BC_HARNESS_ROOT" to harnessRoot.toString(),
+                "BC_TEST_FAKE_SMOKE" to "1",
             ),
         )
         assertTrue(exit == 0, "smoke should auto-remap occupied port, got $exit")
@@ -710,12 +716,12 @@ test("smoke auto-remaps occupied ports and records requested and actual port") {
 }
 
 test("opening progression remaps occupied ports and refreshes latest status artifacts") {
-    val harnessRoot = Files.createTempDirectory("btm-kotlin-test-harness-opening-pass")
-    val runRoot = Files.createTempDirectory("btm-kotlin-test-opening-pass")
+    val harnessRoot = Files.createTempDirectory("bc-kotlin-test-harness-opening-pass")
+    val runRoot = Files.createTempDirectory("bc-kotlin-test-opening-pass")
     val requestedPort = ephemeralPort()
     java.net.ServerSocket(requestedPort).use { _ ->
         val (exit, output) = runCommand(
-            "tools/btm",
+            "tools/bc",
             "test",
             "scenario",
             "opening_progression",
@@ -726,8 +732,8 @@ test("opening progression remaps occupied ports and refreshes latest status arti
             "--run-root",
             runRoot.toString(),
             extraEnv = mapOf(
-                "BTM_HARNESS_ROOT" to harnessRoot.toString(),
-                "BTM_TEST_OPENING_PROGRESS_FAKE" to "pass",
+                "BC_HARNESS_ROOT" to harnessRoot.toString(),
+                "BC_TEST_OPENING_PROGRESS_FAKE" to "pass",
             ),
         )
         assertTrue(exit == 0, "opening_progression should succeed under fake mode, got $exit")
@@ -750,13 +756,13 @@ test("opening progression remaps occupied ports and refreshes latest status arti
 }
 
 test("stale lock with dead pid is reclaimed automatically") {
-    val harnessRoot = Files.createTempDirectory("btm-kotlin-test-harness-stale-lock")
+    val harnessRoot = Files.createTempDirectory("bc-kotlin-test-harness-stale-lock")
     val process = startBackground(
-        listOf("tools/btm", "test", "fast", "--repo", "pack"),
+        listOf("tools/bc", "test", "fast", "--repo", "pack"),
         extraEnv = mapOf(
-            "BTM_HARNESS_ROOT" to harnessRoot.toString(),
-            "BTM_TEST_WORKSPACE_STUB_MODE" to "pass",
-            "BTM_TEST_WORKSPACE_STUB_SLEEP_MS" to "15000",
+            "BC_HARNESS_ROOT" to harnessRoot.toString(),
+            "BC_TEST_WORKSPACE_STUB_MODE" to "pass",
+            "BC_TEST_WORKSPACE_STUB_SLEEP_MS" to "15000",
         ),
     )
     try {
@@ -768,15 +774,15 @@ test("stale lock with dead pid is reclaimed automatically") {
         process.destroyForcibly()
         process.waitFor(10, TimeUnit.SECONDS)
         val (exit, output) = runCommand(
-            "tools/btm",
+            "tools/bc",
             "test",
             "fast",
             "--repo",
             "pack",
             extraEnv = mapOf(
-                "BTM_HARNESS_ROOT" to harnessRoot.toString(),
-                "BTM_TEST_WORKSPACE_STUB_MODE" to "pass",
-                "BTM_TEST_WORKSPACE_STUB_SLEEP_MS" to "10",
+                "BC_HARNESS_ROOT" to harnessRoot.toString(),
+                "BC_TEST_WORKSPACE_STUB_MODE" to "pass",
+                "BC_TEST_WORKSPACE_STUB_SLEEP_MS" to "10",
             ),
         )
         assertTrue(exit == 0, "fast run should reclaim stale lock, got $exit")
@@ -787,11 +793,11 @@ test("stale lock with dead pid is reclaimed automatically") {
 }
 
 test("opening progression failure writes final summary with phase reason and evidence path") {
-    val harnessRoot = Files.createTempDirectory("btm-kotlin-test-harness-opening-fail")
-    val runRoot = Files.createTempDirectory("btm-kotlin-test-opening-fail")
+    val harnessRoot = Files.createTempDirectory("bc-kotlin-test-harness-opening-fail")
+    val runRoot = Files.createTempDirectory("bc-kotlin-test-opening-fail")
     try {
         val (exit, _) = runCommand(
-            "tools/btm",
+            "tools/bc",
             "test",
             "scenario",
             "opening_progression",
@@ -800,8 +806,8 @@ test("opening progression failure writes final summary with phase reason and evi
             "--run-root",
             runRoot.toString(),
             extraEnv = mapOf(
-                "BTM_HARNESS_ROOT" to harnessRoot.toString(),
-                "BTM_TEST_OPENING_PROGRESS_FAKE" to "fail",
+                "BC_HARNESS_ROOT" to harnessRoot.toString(),
+                "BC_TEST_OPENING_PROGRESS_FAKE" to "fail",
             ),
         )
         assertTrue(exit == 1, "opening_progression fake failure should exit 1, got $exit")
@@ -820,13 +826,13 @@ test("opening progression failure writes final summary with phase reason and evi
 }
 
 test("interrupt clears lock ownership and leaves final aborted status") {
-    val harnessRoot = Files.createTempDirectory("btm-kotlin-test-harness-interrupt")
+    val harnessRoot = Files.createTempDirectory("bc-kotlin-test-harness-interrupt")
     val process = startBackground(
-        listOf("tools/btm", "test", "fast", "--repo", "pack"),
+        listOf("tools/bc", "test", "fast", "--repo", "pack"),
         extraEnv = mapOf(
-            "BTM_HARNESS_ROOT" to harnessRoot.toString(),
-            "BTM_TEST_WORKSPACE_STUB_MODE" to "pass",
-            "BTM_TEST_WORKSPACE_STUB_SLEEP_MS" to "15000",
+            "BC_HARNESS_ROOT" to harnessRoot.toString(),
+            "BC_TEST_WORKSPACE_STUB_MODE" to "pass",
+            "BC_TEST_WORKSPACE_STUB_SLEEP_MS" to "15000",
         ),
     )
     try {
@@ -855,19 +861,19 @@ test("interrupt clears lock ownership and leaves final aborted status") {
 }
 
 test("worldgen sampling rejects invalid bootstrap mode with usage error") {
-    val (exit, output) = runCommand("tools/btm", "test", "scenario", "worldgen_sampling", "--profile", "quick", "--bootstrap-mode", "bad")
+    val (exit, output) = runCommand("tools/bc", "test", "scenario", "worldgen_sampling", "--profile", "quick", "--bootstrap-mode", "bad")
     assertTrue(exit == 2, "worldgen_sampling with invalid bootstrap mode should exit 2, got $exit")
     assertContains(output, "invalid bootstrap mode: bad", "worldgen_sampling should reject invalid bootstrap mode")
 }
 
 test("client smoke rejects invalid bootstrap mode with usage error") {
-    val (exit, output) = runCommand("tools/btm", "test", "scenario-headful", "client_smoke", "--profile", "quick", "--bootstrap-mode", "bad")
+    val (exit, output) = runCommand("tools/bc", "test", "scenario-headful", "client_smoke", "--profile", "quick", "--bootstrap-mode", "bad")
     assertTrue(exit == 2, "client_smoke with invalid bootstrap mode should exit 2, got $exit")
     assertContains(output, "invalid bootstrap mode: bad", "client_smoke should reject invalid bootstrap mode")
 }
 
 test("kotlin test filter runs only matching cases") {
-    val (exit, output) = runCommand("tools/btm", "test", "kotlin", "--filter", "doctor repo succeeds")
+    val (exit, output) = runCommand("tools/bc", "test", "kotlin", "--filter", "doctor repo succeeds")
     assertTrue(exit == 0, "test kotlin --filter should exit 0, got $exit")
     assertContains(output, "ok - doctor repo succeeds", "filtered kotlin tests should include the requested case")
     assertContains(output, "tests: 1, failures: 0", "filtered kotlin tests should run exactly one case")

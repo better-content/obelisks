@@ -4,7 +4,7 @@
 // chains. Its own entry is reauthored away from nether/blaze materials, then
 // the primitive wire/logic parts become the reagents used by later electronics.
 
-var BTM_MORERED = {
+var BC_MORERED = {
     alloy: 'morered:red_alloy_ingot',
     wire: 'morered:red_alloy_wire',
     plate: 'morered:stone_plate',
@@ -12,38 +12,38 @@ var BTM_MORERED = {
     solderingTable: 'morered:soldering_table'
 }
 
-function btmMoreRedExists(id) {
+function bcMoreRedExists(id) {
     try { return Item.exists(id) } catch (e) { return false }
 }
 
-function btmMoreRedIngredient(id) {
+function bcMoreRedIngredient(id) {
     if (id.charAt(0) === '#') return { tag: id.substring(1) }
     return { item: id }
 }
 
-function btmMoreRedSolder(event, id, output, ingredients) {
-    if (!btmMoreRedExists(output)) return
+function bcMoreRedSolder(event, id, output, ingredients) {
+    if (!bcMoreRedExists(output)) return
     event.remove({ output: output })
     event.remove({ id: 'morered:' + id })
     event.remove({ id: 'morered:' + id + '_from_soldering' })
     event.custom({
         type: 'morered:soldering',
-        ingredients: ingredients.map(btmMoreRedIngredient),
+        ingredients: ingredients.map(bcMoreRedIngredient),
         result: { item: output }
     }).id('kubejs:morered/soldering/' + id)
 }
 
-function btmMoreRedReplace(event, outputs, oldInputs, newInput) {
+function bcMoreRedReplace(event, outputs, oldInputs, newInput) {
     for (var i = 0; i < outputs.length; i++) {
-        if (!btmMoreRedExists(outputs[i])) continue
+        if (!bcMoreRedExists(outputs[i])) continue
         for (var j = 0; j < oldInputs.length; j++) event.replaceInput({ output: outputs[i] }, oldInputs[j], newInput)
     }
 }
 
 ServerEvents.recipes(function (event) {
-    event.remove({ output: BTM_MORERED.alloy })
-    event.remove({ output: BTM_MORERED.wire })
-    event.remove({ output: BTM_MORERED.plate })
+    event.remove({ output: BC_MORERED.alloy })
+    event.remove({ output: BC_MORERED.wire })
+    event.remove({ output: BC_MORERED.plate })
     event.remove({ id: 'morered:soldering_table' })
 
     event.custom({
@@ -56,133 +56,133 @@ ServerEvents.recipes(function (event) {
             { item: 'minecraft:redstone' },
             { item: 'minecraft:redstone' }
         ],
-        results: [{ item: BTM_MORERED.alloy, count: 2 }],
+        results: [{ item: BC_MORERED.alloy, count: 2 }],
         processingTime: 160
     }).id('kubejs:morered/create_mixing/red_alloy_ingot')
 
     event.custom({
         type: 'create:pressing',
-        ingredients: [{ item: BTM_MORERED.alloy }],
-        results: [{ item: BTM_MORERED.wire, count: 2 }]
+        ingredients: [{ item: BC_MORERED.alloy }],
+        results: [{ item: BC_MORERED.wire, count: 2 }]
     }).id('kubejs:morered/create_pressing/red_alloy_wire')
 
-    global.btmFactoryCrafting(event, 'kubejs:morered/soldering_table_terrestrial_create', BTM_MORERED.solderingTable, 1, [
+    global.bcFactoryCrafting(event, 'kubejs:morered/soldering_table_terrestrial_create', BC_MORERED.solderingTable, 1, [
         'PPP',
         'WCW',
         ' A '
     ], {
-        P: BTM_MORERED.plate,
-        W: BTM_MORERED.wire,
+        P: BC_MORERED.plate,
+        W: BC_MORERED.wire,
         C: '#forge:plates/copper',
         A: 'kubejs:andesite_machine_casing'
     }, true)
 
-    btmMoreRedSolder(event, 'diode', 'morered:diode', [
-        BTM_MORERED.plate,
-        BTM_MORERED.wire,
-        BTM_MORERED.wire,
+     bcMoreRedSolder(event, 'diode', 'morered:diode', [
+        BC_MORERED.plate,
+        BC_MORERED.wire,
+        BC_MORERED.wire,
         'minecraft:redstone'
     ])
-    btmMoreRedSolder(event, 'not_gate', 'morered:not_gate', [
-        BTM_MORERED.plate,
-        BTM_MORERED.diode,
-        BTM_MORERED.wire,
+     bcMoreRedSolder(event, 'not_gate', 'morered:not_gate', [
+        BC_MORERED.plate,
+        BC_MORERED.diode,
+        BC_MORERED.wire,
         'minecraft:redstone_torch'
     ])
-    btmMoreRedSolder(event, 'and_gate', 'morered:and_gate', [
-        BTM_MORERED.plate,
-        BTM_MORERED.diode,
-        BTM_MORERED.diode,
-        BTM_MORERED.wire,
-        BTM_MORERED.wire
+     bcMoreRedSolder(event, 'and_gate', 'morered:and_gate', [
+        BC_MORERED.plate,
+        BC_MORERED.diode,
+        BC_MORERED.diode,
+        BC_MORERED.wire,
+        BC_MORERED.wire
     ])
-    btmMoreRedSolder(event, 'and_2_gate', 'morered:and_2_gate', [
-        BTM_MORERED.plate,
+     bcMoreRedSolder(event, 'and_2_gate', 'morered:and_2_gate', [
+        BC_MORERED.plate,
         'morered:and_gate',
-        BTM_MORERED.wire
+        BC_MORERED.wire
     ])
-    btmMoreRedSolder(event, 'or_gate', 'morered:or_gate', [
-        BTM_MORERED.plate,
-        BTM_MORERED.diode,
-        BTM_MORERED.wire,
-        BTM_MORERED.wire,
-        BTM_MORERED.wire
+     bcMoreRedSolder(event, 'or_gate', 'morered:or_gate', [
+        BC_MORERED.plate,
+        BC_MORERED.diode,
+        BC_MORERED.wire,
+        BC_MORERED.wire,
+        BC_MORERED.wire
     ])
-    btmMoreRedSolder(event, 'nand_gate', 'morered:nand_gate', [
-        BTM_MORERED.plate,
+     bcMoreRedSolder(event, 'nand_gate', 'morered:nand_gate', [
+        BC_MORERED.plate,
         'morered:and_gate',
         'morered:not_gate',
-        BTM_MORERED.wire
+        BC_MORERED.wire
     ])
-    btmMoreRedSolder(event, 'nand_2_gate', 'morered:nand_2_gate', [
-        BTM_MORERED.plate,
+     bcMoreRedSolder(event, 'nand_2_gate', 'morered:nand_2_gate', [
+        BC_MORERED.plate,
         'morered:and_2_gate',
         'morered:not_gate',
-        BTM_MORERED.wire
+        BC_MORERED.wire
     ])
-    btmMoreRedSolder(event, 'nor_gate', 'morered:nor_gate', [
-        BTM_MORERED.plate,
+     bcMoreRedSolder(event, 'nor_gate', 'morered:nor_gate', [
+        BC_MORERED.plate,
         'morered:or_gate',
         'morered:not_gate',
-        BTM_MORERED.wire
+        BC_MORERED.wire
     ])
-    btmMoreRedSolder(event, 'xor_gate', 'morered:xor_gate', [
-        BTM_MORERED.plate,
+     bcMoreRedSolder(event, 'xor_gate', 'morered:xor_gate', [
+        BC_MORERED.plate,
         'morered:and_gate',
         'morered:or_gate',
-        BTM_MORERED.wire,
-        BTM_MORERED.wire
+        BC_MORERED.wire,
+        BC_MORERED.wire
     ])
-    btmMoreRedSolder(event, 'xnor_gate', 'morered:xnor_gate', [
-        BTM_MORERED.plate,
+     bcMoreRedSolder(event, 'xnor_gate', 'morered:xnor_gate', [
+        BC_MORERED.plate,
         'morered:xor_gate',
         'morered:not_gate',
-        BTM_MORERED.wire
+        BC_MORERED.wire
     ])
-    btmMoreRedSolder(event, 'latch', 'morered:latch', [
-        BTM_MORERED.plate,
+     bcMoreRedSolder(event, 'latch', 'morered:latch', [
+        BC_MORERED.plate,
         'morered:nor_gate',
         'morered:nor_gate',
-        BTM_MORERED.wire
+        BC_MORERED.wire
     ])
-    btmMoreRedSolder(event, 'pulse_gate', 'morered:pulse_gate', [
-        BTM_MORERED.plate,
-        BTM_MORERED.diode,
+     bcMoreRedSolder(event, 'pulse_gate', 'morered:pulse_gate', [
+        BC_MORERED.plate,
+        BC_MORERED.diode,
         'morered:not_gate',
-        BTM_MORERED.wire
+        BC_MORERED.wire
     ])
-    btmMoreRedSolder(event, 'multiplexer', 'morered:multiplexer', [
-        BTM_MORERED.plate,
+     bcMoreRedSolder(event, 'multiplexer', 'morered:multiplexer', [
+        BC_MORERED.plate,
         'morered:and_gate',
         'morered:or_gate',
-        BTM_MORERED.diode,
-        BTM_MORERED.wire
+        BC_MORERED.diode,
+        BC_MORERED.wire
     ])
 
-    btmMoreRedSolder(event, 'redwire_post', 'morered:redwire_post', [
-        BTM_MORERED.wire,
-        BTM_MORERED.wire,
+     bcMoreRedSolder(event, 'redwire_post', 'morered:redwire_post', [
+        BC_MORERED.wire,
+        BC_MORERED.wire,
         '#forge:rods/wooden'
     ])
-    btmMoreRedSolder(event, 'redwire_post_plate', 'morered:redwire_post_plate', [
-        BTM_MORERED.plate,
-        BTM_MORERED.wire,
+     bcMoreRedSolder(event, 'redwire_post_plate', 'morered:redwire_post_plate', [
+        BC_MORERED.plate,
+        BC_MORERED.wire,
         '#forge:rods/wooden'
     ])
-    btmMoreRedSolder(event, 'redwire_post_relay_plate', 'morered:redwire_post_relay_plate', [
-        BTM_MORERED.plate,
-        BTM_MORERED.diode,
-        BTM_MORERED.wire,
+     bcMoreRedSolder(event, 'redwire_post_relay_plate', 'morered:redwire_post_relay_plate', [
+        BC_MORERED.plate,
+        BC_MORERED.diode,
+        BC_MORERED.wire,
         '#forge:rods/wooden'
     ])
-    btmMoreRedSolder(event, 'bundled_cable_relay_plate', 'morered:bundled_cable_relay_plate', [
-        BTM_MORERED.plate,
+     bcMoreRedSolder(event, 'bundled_cable_relay_plate', 'morered:bundled_cable_relay_plate', [
+        BC_MORERED.plate,
         'morered:bundled_network_cable',
-        BTM_MORERED.diode,
-        BTM_MORERED.wire
+        BC_MORERED.diode,
+        BC_MORERED.wire
     ])
 
-    btmMoreRedReplace(event, [
+     bcMoreRedReplace(event, [
         'morered:redwire_spool',
         'morered:bundled_cable_spool',
         'morered:bundled_network_cable',
@@ -202,7 +202,7 @@ ServerEvents.recipes(function (event) {
         'morered:green_network_cable',
         'morered:red_network_cable',
         'morered:black_network_cable'
-    ], ['minecraft:redstone', '#forge:dusts/redstone'], BTM_MORERED.wire)
+    ], ['minecraft:redstone', '#forge:dusts/redstone'], BC_MORERED.wire)
 
     var downstreamCircuits = [
         'powergrid:redstone_relay',
@@ -240,6 +240,6 @@ ServerEvents.recipes(function (event) {
         'ae2:annihilation_core',
         'ae2:formation_core'
     ]
-    btmMoreRedReplace(event, downstreamCircuits, ['minecraft:redstone', '#forge:dusts/redstone'], BTM_MORERED.wire)
-    btmMoreRedReplace(event, downstreamCircuits, ['minecraft:repeater', 'minecraft:comparator'], BTM_MORERED.diode)
+     bcMoreRedReplace(event, downstreamCircuits, ['minecraft:redstone', '#forge:dusts/redstone'], BC_MORERED.wire)
+     bcMoreRedReplace(event, downstreamCircuits, ['minecraft:repeater', 'minecraft:comparator'], BC_MORERED.diode)
 })

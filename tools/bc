@@ -1,0 +1,23 @@
+#!/usr/bin/env -S java --source 17
+
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+
+class bc {
+    public static void main(String[] args) throws Exception {
+        Path self = Paths.get(System.getProperty("jdk.launcher.sourcefile")).toAbsolutePath().normalize();
+        Path root = self.getParent().getParent();
+        List<String> command = new ArrayList<>();
+        command.add("kotlin");
+        command.add(root.resolve("tools/bc.main.kts").toString());
+        for (String arg : args) command.add(arg);
+
+        Process process = new ProcessBuilder(command)
+            .directory(root.toFile())
+            .inheritIO()
+            .start();
+        System.exit(process.waitFor());
+    }
+}

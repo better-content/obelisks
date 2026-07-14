@@ -3,7 +3,7 @@
 // vehicles, storage authority, electronics, and logistics should use plates/sheets that can
 // be made by Create pressing or TCon casting through forge:plates/*.
 
-var BTM_PLATE = {
+var BC_PLATE = {
     iron: '#forge:plates/iron',
     copper: '#forge:plates/copper',
     gold: '#forge:plates/gold',
@@ -17,7 +17,7 @@ var BTM_PLATE = {
     reinforcedCopperSheet: 'creatingspace:reinforced_copper_sheet'
 }
 
-function btmPlateReplace(event, outputs, oldInputs, newInput) {
+function bcPlateReplace(event, outputs, oldInputs, newInput) {
     for (var i = 0; i < outputs.length; i++) {
         for (var j = 0; j < oldInputs.length; j++) event.replaceInput({ output: outputs[i] }, oldInputs[j], newInput)
     }
@@ -34,7 +34,7 @@ ServerEvents.recipes(function (event) {
         'create:redstone_requester',
         'create:cart_assembler'
     ]
-    btmPlateReplace(event, createIronMachines, ['minecraft:iron_ingot', '#forge:ingots/iron'], BTM_PLATE.iron)
+     bcPlateReplace(event, createIronMachines, ['minecraft:iron_ingot', '#forge:ingots/iron'], BC_PLATE.iron)
 
     var createCopperMachines = [
         'create:fluid_pipe',
@@ -44,22 +44,22 @@ ServerEvents.recipes(function (event) {
         'create:copper_diving_boots',
         'create:potato_cannon'
     ]
-    btmPlateReplace(event, createCopperMachines, ['minecraft:copper_ingot', '#forge:ingots/copper'], BTM_PLATE.copper)
+     bcPlateReplace(event, createCopperMachines, ['minecraft:copper_ingot', '#forge:ingots/copper'], BC_PLATE.copper)
 
-    btmPlateReplace(event, [
+     bcPlateReplace(event, [
         'create:controller_rail',
         'create:stock_ticker'
-    ], ['minecraft:gold_ingot', '#forge:ingots/gold'], BTM_PLATE.gold)
+    ], ['minecraft:gold_ingot', '#forge:ingots/gold'], BC_PLATE.gold)
 
-    btmPlateReplace(event, [
+     bcPlateReplace(event, [
         'create:brass_funnel',
         'create:brass_tunnel',
         'create:extendo_grip',
         'create:flywheel',
         'create:wand_of_symmetry'
-    ], ['create:brass_ingot', '#forge:ingots/brass'], BTM_PLATE.brass)
+    ], ['create:brass_ingot', '#forge:ingots/brass'], BC_PLATE.brass)
 
-    btmPlateReplace(event, [
+     bcPlateReplace(event, [
         'create:cart_assembler',
         'create:clutch',
         'create:gearshift',
@@ -73,40 +73,40 @@ ServerEvents.recipes(function (event) {
         'create:rose_quartz_lamp',
         'create:sticker',
         'create:transmitter'
-    ], ['minecraft:redstone', '#forge:dusts/redstone'], BTM_PLATE.redstoneRelay)
+    ], ['minecraft:redstone', '#forge:dusts/redstone'], BC_PLATE.redstoneRelay)
 
     // Create Connected and diesel/acid logistics: brass-era parts should be fabricated sheets.
-    btmPlateReplace(event, [
+     bcPlateReplace(event, [
         'create_connected:empty_fan_catalyst',
         'createdieselgenerators:burner',
         'creatingspace:brass_blisk',
         'creatingspace:brass_rib',
         'creatingspace:brass_turbine_shaft'
-    ], ['create:brass_ingot', '#forge:ingots/brass'], BTM_PLATE.brass)
+    ], ['create:brass_ingot', '#forge:ingots/brass'], BC_PLATE.brass)
 
-    btmPlateReplace(event, [
+     bcPlateReplace(event, [
         'create_connected:brake',
         'create_connected:kinetic_battery',
         'railways:track_coupler'
-    ], ['minecraft:redstone', '#forge:dusts/redstone'], BTM_PLATE.redstoneRelay)
+    ], ['minecraft:redstone', '#forge:dusts/redstone'], BC_PLATE.redstoneRelay)
 
     // Power Grid: keep its own integrated circuit as the later electronic part,
     // but make More Red wire/gates the primitive circuitry predecessor.
-    btmPlateReplace(event, [
+     bcPlateReplace(event, [
         'powergrid:alarm_bell',
         'powergrid:contactor',
         'powergrid:hv_breaker',
         'powergrid:transformer_core'
-    ], ['minecraft:iron_ingot', '#forge:ingots/iron'], BTM_PLATE.iron)
+    ], ['minecraft:iron_ingot', '#forge:ingots/iron'], BC_PLATE.iron)
 
-    btmPlateReplace(event, [
+     bcPlateReplace(event, [
         'powergrid:grounding_rod'
-    ], ['minecraft:copper_ingot', '#forge:ingots/copper'], BTM_PLATE.copper)
+    ], ['minecraft:copper_ingot', '#forge:ingots/copper'], BC_PLATE.copper)
 
-    btmPlateReplace(event, [
+     bcPlateReplace(event, [
         'powergrid:redstone_relay',
         'powergrid:varistor'
-    ], ['minecraft:redstone', '#forge:dusts/redstone'], BTM_PLATE.redstoneRelay)
+    ], ['minecraft:redstone', '#forge:dusts/redstone'], BC_PLATE.redstoneRelay)
 
     // OC2R is intersite communication authority. Basic boards and cases use plates;
     // redstone-bearing electronics use Power Grid output.
@@ -135,14 +135,14 @@ ServerEvents.recipes(function (event) {
         'oc2r:transistor',
         'oc2r:wrench'
     ]
-    btmPlateReplace(event, oc2rIronHardware, ['minecraft:iron_ingot', '#forge:ingots/iron'], BTM_PLATE.iron)
+     bcPlateReplace(event, oc2rIronHardware, ['minecraft:iron_ingot', '#forge:ingots/iron'], BC_PLATE.iron)
 
-    btmPlateReplace(event, [
+     bcPlateReplace(event, [
         'oc2r:cpu_tier_1',
         'oc2r:cpu_tier_2'
-    ], ['minecraft:copper_ingot', '#forge:ingots/copper'], BTM_PLATE.copper)
+    ], ['minecraft:copper_ingot', '#forge:ingots/copper'], BC_PLATE.copper)
 
-    btmPlateReplace(event, [
+     bcPlateReplace(event, [
         'oc2r:block_operations_module',
         'oc2r:bus_cable',
         'oc2r:circuit_board',
@@ -154,27 +154,27 @@ ServerEvents.recipes(function (event) {
         'oc2r:memory_medium',
         'oc2r:network_tunnel_module',
         'oc2r:projector'
-    ], ['minecraft:gold_ingot', '#forge:ingots/gold'], BTM_PLATE.gold)
+    ], ['minecraft:gold_ingot', '#forge:ingots/gold'], BC_PLATE.gold)
 
-    btmPlateReplace(event, [
+     bcPlateReplace(event, [
         'oc2r:flash_memory',
         'oc2r:transistor'
-    ], ['minecraft:redstone', '#forge:dusts/redstone'], BTM_PLATE.powerCircuit)
+    ], ['minecraft:redstone', '#forge:dusts/redstone'], BC_PLATE.powerCircuit)
 
     // Creating Space rocket parts: blisks/ribs/shafts are formed metal, not raw ingot assemblies.
-    btmPlateReplace(event, [
+     bcPlateReplace(event, [
         'creatingspace:copper_blisk',
         'creatingspace:copper_coil',
         'creatingspace:copper_rib',
         'creatingspace:copper_turbine_shaft'
-    ], ['minecraft:copper_ingot', '#forge:ingots/copper'], BTM_PLATE.copper)
+    ], ['minecraft:copper_ingot', '#forge:ingots/copper'], BC_PLATE.copper)
 
-    btmPlateReplace(event, [
+     bcPlateReplace(event, [
         'creatingspace:iron_blisk',
         'creatingspace:iron_rib',
         'creatingspace:iron_turbine_shaft',
         'creatingspace:sturdy_propeller'
-    ], ['minecraft:iron_ingot', '#forge:ingots/iron'], BTM_PLATE.iron)
+    ], ['minecraft:iron_ingot', '#forge:ingots/iron'], BC_PLATE.iron)
 
     // Little Logistics is physical route infrastructure: hulls and docks consume manufactured plates.
     var littleIron = [
@@ -194,12 +194,12 @@ ServerEvents.recipes(function (event) {
         'littlelogistics:vacuum_barge',
         'littlelogistics:vessel_charger'
     ]
-    btmPlateReplace(event, littleIron, ['minecraft:iron_ingot', '#forge:ingots/iron'], BTM_PLATE.iron)
-    btmPlateReplace(event, ['littlelogistics:rapid_hopper', 'littlelogistics:vessel_charger'], ['minecraft:gold_ingot', '#forge:ingots/gold'], BTM_PLATE.gold)
-    btmPlateReplace(event, ['littlelogistics:locomotive_route', 'littlelogistics:receiver_component', 'littlelogistics:tug_route'], ['minecraft:redstone', '#forge:dusts/redstone'], BTM_PLATE.redstoneRelay)
+     bcPlateReplace(event, littleIron, ['minecraft:iron_ingot', '#forge:ingots/iron'], BC_PLATE.iron)
+     bcPlateReplace(event, ['littlelogistics:rapid_hopper', 'littlelogistics:vessel_charger'], ['minecraft:gold_ingot', '#forge:ingots/gold'], BC_PLATE.gold)
+     bcPlateReplace(event, ['littlelogistics:locomotive_route', 'littlelogistics:receiver_component', 'littlelogistics:tug_route'], ['minecraft:redstone', '#forge:dusts/redstone'], BC_PLATE.redstoneRelay)
 
     // AE2 and addons: fill gaps not covered by the earlier economy pass.
-    btmPlateReplace(event, [
+     bcPlateReplace(event, [
         'ae2:advanced_card',
         'ae2:annihilation_plane',
         'ae2:basic_card',
@@ -216,14 +216,14 @@ ServerEvents.recipes(function (event) {
         'ae2:semi_dark_monitor',
         'ae2:spatial_io_port',
         'ae2:toggle_bus'
-    ], ['minecraft:iron_ingot', '#forge:ingots/iron'], BTM_PLATE.skySteelSheet)
+    ], ['minecraft:iron_ingot', '#forge:ingots/iron'], BC_PLATE.skySteelSheet)
 
-    btmPlateReplace(event, [
+     bcPlateReplace(event, [
         'ae2:basic_card',
         'ae2:memory_card'
-    ], ['minecraft:gold_ingot', '#forge:ingots/gold'], BTM_PLATE.gold)
+    ], ['minecraft:gold_ingot', '#forge:ingots/gold'], BC_PLATE.gold)
 
-    btmPlateReplace(event, [
+     bcPlateReplace(event, [
         'ae2:advanced_card',
         'ae2:basic_card',
         'ae2:semi_dark_monitor',
@@ -242,46 +242,46 @@ ServerEvents.recipes(function (event) {
         'ae2additions:disk_item_4096k',
         'ae2additions:disk_item_16384k',
         'ae2additions:disk_item_65536k'
-    ], ['minecraft:redstone', '#forge:dusts/redstone'], BTM_PLATE.powerCircuit)
+    ], ['minecraft:redstone', '#forge:dusts/redstone'], BC_PLATE.powerCircuit)
 
-    btmPlateReplace(event, [
+     bcPlateReplace(event, [
         'ae2additions:fluid_storage_cell_1024',
         'ae2additions:fluid_storage_cell_4096',
         'ae2additions:fluid_storage_cell_16384'
-    ], ['minecraft:copper_ingot', '#forge:ingots/copper'], BTM_PLATE.reinforcedCopperSheet)
+    ], ['minecraft:copper_ingot', '#forge:ingots/copper'], BC_PLATE.reinforcedCopperSheet)
 
-    btmPlateReplace(event, [
+     bcPlateReplace(event, [
         'expatternprovider:assembler_matrix_frame',
         'expatternprovider:circuit_cutter',
         'expatternprovider:crystal_fixer',
         'expatternprovider:ingredient_buffer',
         'expatternprovider:me_packing_tape',
         'expatternprovider:wireless_tool'
-    ], ['minecraft:iron_ingot', '#forge:ingots/iron'], BTM_PLATE.skySteelSheet)
+    ], ['minecraft:iron_ingot', '#forge:ingots/iron'], BC_PLATE.skySteelSheet)
 
-    btmPlateReplace(event, [
+     bcPlateReplace(event, [
         'expatternprovider:mod_export_bus',
         'expatternprovider:mod_storage_bus',
         'expatternprovider:tag_export_bus',
         'expatternprovider:tag_storage_bus'
-    ], ['minecraft:redstone', '#forge:dusts/redstone'], BTM_PLATE.powerCircuit)
+    ], ['minecraft:redstone', '#forge:dusts/redstone'], BC_PLATE.powerCircuit)
 
     // Building and storage utility: upgrades with automation authority should be assembled from plates/circuits.
-    btmPlateReplace(event, [
+     bcPlateReplace(event, [
         'buildinggadgets2:gadget_building',
         'buildinggadgets2:gadget_copy_paste',
         'buildinggadgets2:gadget_cut_paste',
         'buildinggadgets2:gadget_exchanging',
         'buildinggadgets2:template_manager'
-    ], ['minecraft:iron_ingot', '#forge:ingots/iron'], BTM_PLATE.iron)
+    ], ['minecraft:iron_ingot', '#forge:ingots/iron'], BC_PLATE.iron)
 
-    btmPlateReplace(event, [
+     bcPlateReplace(event, [
         'buildinggadgets2:gadget_building',
         'buildinggadgets2:gadget_copy_paste',
         'buildinggadgets2:gadget_cut_paste',
         'buildinggadgets2:gadget_exchanging',
         'buildinggadgets2:template_manager'
-    ], ['minecraft:redstone', '#forge:dusts/redstone'], BTM_PLATE.powerCircuit)
+    ], ['minecraft:redstone', '#forge:dusts/redstone'], BC_PLATE.powerCircuit)
 
     var sophisticatedAutomation = [
         'sophisticatedbackpacks:alchemy_upgrade',
@@ -301,8 +301,8 @@ ServerEvents.recipes(function (event) {
         'sophisticatedstorage:crafting_upgrade',
         'sophisticatedstorage:deposit_upgrade'
     ]
-    btmPlateReplace(event, sophisticatedAutomation, ['minecraft:iron_ingot', '#forge:ingots/iron'], BTM_PLATE.iron)
-    btmPlateReplace(event, sophisticatedAutomation, ['minecraft:redstone', '#forge:dusts/redstone'], BTM_PLATE.redstoneRelay)
+     bcPlateReplace(event, sophisticatedAutomation, ['minecraft:iron_ingot', '#forge:ingots/iron'], BC_PLATE.iron)
+     bcPlateReplace(event, sophisticatedAutomation, ['minecraft:redstone', '#forge:dusts/redstone'], BC_PLATE.redstoneRelay)
 
     var sophisticatedAdvanced = [
         'sophisticatedbackpacks:advanced_alchemy_upgrade',
@@ -325,6 +325,6 @@ ServerEvents.recipes(function (event) {
         'sophisticatedstorage:advanced_restock_upgrade',
         'sophisticatedstorage:advanced_void_upgrade'
     ]
-    btmPlateReplace(event, sophisticatedAdvanced, ['minecraft:gold_ingot', '#forge:ingots/gold'], BTM_PLATE.gold)
-    btmPlateReplace(event, sophisticatedAdvanced, ['minecraft:redstone', '#forge:dusts/redstone'], BTM_PLATE.powerCircuit)
+     bcPlateReplace(event, sophisticatedAdvanced, ['minecraft:gold_ingot', '#forge:ingots/gold'], BC_PLATE.gold)
+     bcPlateReplace(event, sophisticatedAdvanced, ['minecraft:redstone', '#forge:dusts/redstone'], BC_PLATE.powerCircuit)
 })

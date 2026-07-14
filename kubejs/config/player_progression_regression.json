@@ -1,5 +1,5 @@
 {
-  "schema": "btm.player_progression_regression.v1",
+  "schema": "bc.player_progression_regression.v1",
   "expectedTierOrder": [
     "survival",
     "tcon_seared",
@@ -237,9 +237,7 @@
           "all": [
             "lostcities:lostcity",
             "twilightforest:twilight_forest",
-            "fallout_wastelands_:wastelands",
-            "the_finley_dimension_remastered:finley_dimension",
-            "callfromthedepth_:depth"
+            "fallout_wastelands_:wastelands"
           ]
         }
       ]
@@ -352,7 +350,7 @@
       ],
       "requiresPrevious": "space",
       "route": [
-        "Dimensional Fonts",
+        "Dimension Drink",
         "Creating Space rocket graph",
         "direct portal and key bypasses removed"
       ],
@@ -361,7 +359,7 @@
           "file": "docs/progression.md",
           "all": [
             "Dimension travel has two authored surfaces only",
-            "Lost Cities, Twilight Forest, Fallout Wastelands, Finley, and Call From The Depths are space-routed adventure dimensions"
+            "Lost Cities, Twilight Forest, and Fallout Wastelands are space-routed adventure dimensions"
           ]
         },
         {
@@ -369,9 +367,7 @@
           "all": [
             "twilightforest:twilight_forest",
             "lostcities:lostcity",
-            "fallout_wastelands_",
-            "the_finley_dimension_remastered",
-            "callfromthedepth_"
+            "fallout_wastelands_"
           ]
         },
         {

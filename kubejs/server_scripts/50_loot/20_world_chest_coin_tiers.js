@@ -1,7 +1,7 @@
 // World chest coin injections. Loot is part of the material economy: these coins
 // reward scouting and route risk without enabling direct coin conversion loops.
 
-var BTM_WORLD_CHEST_COIN_TABLES = [
+var BC_WORLD_CHEST_COIN_TABLES = [
     {
         tables: [
             'minecraft:chests/spawn_bonus_chest',
@@ -84,11 +84,11 @@ var BTM_WORLD_CHEST_COIN_TABLES = [
     }
 ]
 
-function btmKnownCoinLootTables() {
+function bcKnownCoinLootTables() {
     var seen = {}
     var tables = []
-    for (var i = 0; i < BTM_WORLD_CHEST_COIN_TABLES.length; i++) {
-        var row = BTM_WORLD_CHEST_COIN_TABLES[i]
+    for (var i = 0; i < BC_WORLD_CHEST_COIN_TABLES.length; i++) {
+        var row = BC_WORLD_CHEST_COIN_TABLES[i]
         for (var j = 0; j < row.tables.length; j++) {
             var table = row.tables[j]
             if (!seen[table]) {
@@ -100,7 +100,7 @@ function btmKnownCoinLootTables() {
     return tables
 }
 
-function btmAddCoinToLootTable(event, table, coin, count, chance) {
+function bcAddCoinToLootTable(event, table, coin, count, chance) {
     if (!Item.exists(coin)) {
         console.warn('[world-chest-coin-tiers] Missing coin item: ' + coin)
         return
@@ -112,17 +112,17 @@ function btmAddCoinToLootTable(event, table, coin, count, chance) {
 }
 
 LootJS.modifiers(function (event) {
-    var baselineTables = btmKnownCoinLootTables()
+    var baselineTables = bcKnownCoinLootTables()
     for (var b = 0; b < baselineTables.length; b++) {
-        btmAddCoinToLootTable(event, baselineTables[b], 'createdeco:copper_coin', 4, 1.0)
-        btmAddCoinToLootTable(event, baselineTables[b], 'createdeco:zinc_coin', 2, 0.9)
-        btmAddCoinToLootTable(event, baselineTables[b], 'createdeco:iron_coin', 2, 0.85)
+         bcAddCoinToLootTable(event, baselineTables[b], 'createdeco:copper_coin', 4, 1.0)
+         bcAddCoinToLootTable(event, baselineTables[b], 'createdeco:zinc_coin', 2, 0.9)
+         bcAddCoinToLootTable(event, baselineTables[b], 'createdeco:iron_coin', 2, 0.85)
     }
 
-    for (var i = 0; i < BTM_WORLD_CHEST_COIN_TABLES.length; i++) {
-        var row = BTM_WORLD_CHEST_COIN_TABLES[i]
+    for (var i = 0; i < BC_WORLD_CHEST_COIN_TABLES.length; i++) {
+        var row = BC_WORLD_CHEST_COIN_TABLES[i]
         for (var j = 0; j < row.tables.length; j++) {
-            btmAddCoinToLootTable(event, row.tables[j], row.coin, row.count, row.chance)
+             bcAddCoinToLootTable(event, row.tables[j], row.coin, row.count, row.chance)
         }
     }
 })

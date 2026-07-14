@@ -3,8 +3,6 @@
 #	Namespaces:   '<minecraft>'
 #	Tags:         '#forge:stone'
 #	IDs:          'minecraft:stone'
-# Generated from audited mod blockstate/model data. Keep fallback physics disabled;
-# add explicit IDs here only for blocks intended to receive this physics profile.
 Blocks = [
 	"aether:golden_oak_log",
 	"aether:golden_oak_wood",
@@ -13,28 +11,6 @@ Blocks = [
 	"aether:skyroot_wood",
 	"aether:stripped_skyroot_log",
 	"aether:stripped_skyroot_wood",
-	"alekiships:wood/watercraft_frame/angled/acacia",
-	"alekiships:wood/watercraft_frame/angled/bamboo",
-	"alekiships:wood/watercraft_frame/angled/birch",
-	"alekiships:wood/watercraft_frame/angled/cherry",
-	"alekiships:wood/watercraft_frame/angled/crimson",
-	"alekiships:wood/watercraft_frame/angled/dark_oak",
-	"alekiships:wood/watercraft_frame/angled/jungle",
-	"alekiships:wood/watercraft_frame/angled/mangrove",
-	"alekiships:wood/watercraft_frame/angled/oak",
-	"alekiships:wood/watercraft_frame/angled/spruce",
-	"alekiships:wood/watercraft_frame/angled/warped",
-	"alekiships:wood/watercraft_frame/flat/acacia",
-	"alekiships:wood/watercraft_frame/flat/bamboo",
-	"alekiships:wood/watercraft_frame/flat/birch",
-	"alekiships:wood/watercraft_frame/flat/cherry",
-	"alekiships:wood/watercraft_frame/flat/crimson",
-	"alekiships:wood/watercraft_frame/flat/dark_oak",
-	"alekiships:wood/watercraft_frame/flat/jungle",
-	"alekiships:wood/watercraft_frame/flat/mangrove",
-	"alekiships:wood/watercraft_frame/flat/oak",
-	"alekiships:wood/watercraft_frame/flat/spruce",
-	"alekiships:wood/watercraft_frame/flat/warped",
 	"ars_nouveau:archwood_planks",
 	"ars_nouveau:blue_archwood_log",
 	"ars_nouveau:blue_archwood_wood",
@@ -314,17 +290,6 @@ Blocks = [
 	"tconstruct:stripped_greenheart_wood",
 	"tconstruct:stripped_skyroot_log",
 	"tconstruct:stripped_skyroot_wood",
-	"the_finley_dimension_remastered:ashen_log",
-	"the_finley_dimension_remastered:ashen_planks",
-	"the_finley_dimension_remastered:ashen_wood",
-	"the_finley_dimension_remastered:finley_wood_log",
-	"the_finley_dimension_remastered:finley_wood_planks",
-	"the_finley_dimension_remastered:finley_wood_pressure_plate",
-	"the_finley_dimension_remastered:finley_wood_wood",
-	"the_finley_dimension_remastered:living_wood_log",
-	"the_finley_dimension_remastered:living_wood_planks",
-	"the_finley_dimension_remastered:living_wood_pressure_plate",
-	"the_finley_dimension_remastered:living_wood_wood",
 	"twilightforest:canopy_log",
 	"twilightforest:canopy_planks",
 	"twilightforest:canopy_wood",
@@ -509,4 +474,3 @@ Blocks = [
 [ChunkAnalysis]
 	#Whether the block(s) should be processed during chunk analysis updates.
 	Enabled = false
-

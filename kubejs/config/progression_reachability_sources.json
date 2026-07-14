@@ -1,5 +1,5 @@
 {
-  "schema": "btm.progression_reachability_sources.v1",
+  "schema": "bc.progression_reachability_sources.v1",
   "seedItems": [
     "minecraft:bone_block",
     "minecraft:andesite",
@@ -142,7 +142,7 @@
   },
   "manualEdges": [
     {
-      "id": "btm:source/oak_planks",
+      "id": "bc:source/oak_planks",
       "outputs": [
         "minecraft:oak_planks"
       ],
@@ -151,7 +151,7 @@
       ]
     },
     {
-      "id": "btm:primitive/butcher_knife",
+      "id": "bc:primitive/butcher_knife",
       "outputs": [
         "additionalweaponry:butcher_knife"
       ],
@@ -161,7 +161,7 @@
       ]
     },
     {
-      "id": "btm:primitive/hand_axe",
+      "id": "bc:primitive/hand_axe",
       "outputs": [
         "tconstruct:hand_axe"
       ],
@@ -173,7 +173,7 @@
       ]
     },
     {
-      "id": "btm:tcon/grout",
+      "id": "bc:tcon/grout",
       "outputs": [
         "tconstruct:grout"
       ],
@@ -185,7 +185,7 @@
       ]
     },
     {
-      "id": "btm:tcon/seared_brick",
+      "id": "bc:tcon/seared_brick",
       "outputs": [
         "tconstruct:seared_brick"
       ],
@@ -195,7 +195,7 @@
       ]
     },
     {
-      "id": "btm:tcon/seared_glass",
+      "id": "bc:tcon/seared_glass",
       "outputs": [
         "tconstruct:seared_glass"
       ],
@@ -205,7 +205,7 @@
       ]
     },
     {
-      "id": "btm:tcon/seared_casing",
+      "id": "bc:tcon/seared_casing",
       "outputs": [
         "kubejs:seared_machine_casing"
       ],
@@ -216,7 +216,7 @@
       ]
     },
     {
-      "id": "btm:tcon/seared_surfaces",
+      "id": "bc:tcon/seared_surfaces",
       "outputs": [
         "tconstruct:seared_melter",
         "tconstruct:seared_heater",
@@ -234,7 +234,7 @@
       ]
     },
     {
-      "id": "btm:tcon/nether_grout",
+      "id": "bc:tcon/nether_grout",
       "outputs": [
         "tconstruct:nether_grout"
       ],
@@ -245,7 +245,7 @@
       ]
     },
     {
-      "id": "btm:tcon/scorched_brick",
+      "id": "bc:tcon/scorched_brick",
       "outputs": [
         "tconstruct:scorched_brick"
       ],
@@ -255,7 +255,7 @@
       ]
     },
     {
-      "id": "btm:tcon/scorched_glass",
+      "id": "bc:tcon/scorched_glass",
       "outputs": [
         "tconstruct:scorched_glass"
       ],
@@ -265,7 +265,7 @@
       ]
     },
     {
-      "id": "btm:tcon/scorched_surfaces",
+      "id": "bc:tcon/scorched_surfaces",
       "outputs": [
         "tconstruct:foundry_controller",
         "tconstruct:scorched_alloyer",
@@ -283,7 +283,7 @@
       ]
     },
     {
-      "id": "btm:create/andesite_alloy",
+      "id": "bc:create/andesite_alloy",
       "outputs": [
         "create:andesite_alloy"
       ],
@@ -295,7 +295,7 @@
       ]
     },
     {
-      "id": "btm:create/andesite_components",
+      "id": "bc:create/andesite_components",
       "outputs": [
         "create:andesite_casing",
         "create:shaft",
@@ -309,7 +309,7 @@
       ]
     },
     {
-      "id": "btm:create/fluid_pipe",
+      "id": "bc:create/fluid_pipe",
       "outputs": [
         "create:fluid_pipe"
       ],
@@ -319,7 +319,7 @@
       ]
     },
     {
-      "id": "btm:create/andesite_casing",
+      "id": "bc:create/andesite_casing",
       "outputs": [
         "kubejs:andesite_machine_casing"
       ],
@@ -330,7 +330,7 @@
       ]
     },
     {
-      "id": "btm:create/andesite_machines",
+      "id": "bc:create/andesite_machines",
       "outputs": [
         "create:millstone",
         "create:encased_fan",
@@ -352,7 +352,7 @@
       ]
     },
     {
-      "id": "btm:create/brass_ingot",
+      "id": "bc:create/brass_ingot",
       "outputs": [
         "create:brass_ingot"
       ],
@@ -363,7 +363,7 @@
       ]
     },
     {
-      "id": "btm:create/brass_parts",
+      "id": "bc:create/brass_parts",
       "outputs": [
         "create:brass_sheet",
         "create:brass_casing",
@@ -377,7 +377,7 @@
       ]
     },
     {
-      "id": "btm:create/precision",
+      "id": "bc:create/precision",
       "outputs": [
         "create:precision_mechanism"
       ],
@@ -390,7 +390,7 @@
       ]
     },
     {
-      "id": "btm:create/brass_casing",
+      "id": "bc:create/brass_casing",
       "outputs": [
         "kubejs:brass_machine_casing"
       ],
@@ -401,7 +401,7 @@
       ]
     },
     {
-      "id": "btm:create/brass_machines",
+      "id": "bc:create/brass_machines",
       "outputs": [
         "create:rotation_speed_controller",
         "create:mechanical_arm",
@@ -421,7 +421,7 @@
       ]
     },
     {
-      "id": "btm:pncr/compressed_iron",
+      "id": "bc:pncr/compressed_iron",
       "outputs": [
         "pneumaticcraft:ingot_iron_compressed",
         "pneumaticcraft:compressed_stone"
@@ -433,7 +433,7 @@
       ]
     },
     {
-      "id": "btm:pncr/pressure_tube",
+      "id": "bc:pncr/pressure_tube",
       "outputs": [
         "pneumaticcraft:pressure_tube"
       ],
@@ -443,7 +443,7 @@
       ]
     },
     {
-      "id": "btm:pncr/pressure_seal",
+      "id": "bc:pncr/pressure_seal",
       "outputs": [
         "kubejs:pressure_seal"
       ],
@@ -454,7 +454,7 @@
       ]
     },
     {
-      "id": "btm:pncr/compressor_core",
+      "id": "bc:pncr/compressor_core",
       "outputs": [
         "kubejs:rotational_compressor_core"
       ],
@@ -467,7 +467,7 @@
       ]
     },
     {
-      "id": "btm:pncr/airtight_casing",
+      "id": "bc:pncr/airtight_casing",
       "outputs": [
         "kubejs:airtight_machine_casing"
       ],
@@ -481,7 +481,7 @@
       ]
     },
     {
-      "id": "btm:pncr/rotational_compressor",
+      "id": "bc:pncr/rotational_compressor",
       "outputs": [
         "compressedcreativity:rotational_compressor"
       ],
@@ -492,7 +492,7 @@
       ]
     },
     {
-      "id": "btm:pncr/pressure_chamber",
+      "id": "bc:pncr/pressure_chamber",
       "outputs": [
         "pneumaticcraft:pressure_chamber_wall",
         "pneumaticcraft:pressure_chamber_glass",
@@ -506,7 +506,7 @@
       ]
     },
     {
-      "id": "btm:pncr/reinforced_tubes",
+      "id": "bc:pncr/reinforced_tubes",
       "outputs": [
         "pneumaticcraft:reinforced_pressure_tube",
         "pneumaticcraft:advanced_pressure_tube"
@@ -518,7 +518,7 @@
       ]
     },
     {
-      "id": "btm:pncr/processing_machines",
+      "id": "bc:pncr/processing_machines",
       "outputs": [
         "pneumaticcraft:refinery",
         "pneumaticcraft:refinery_output",
@@ -534,7 +534,7 @@
       ]
     },
     {
-      "id": "btm:pncr/assembly_machines",
+      "id": "bc:pncr/assembly_machines",
       "outputs": [
         "pneumaticcraft:assembly_controller",
         "pneumaticcraft:assembly_platform",
@@ -549,7 +549,7 @@
       ]
     },
     {
-      "id": "btm:pncr/unassembled_pcb",
+      "id": "bc:pncr/unassembled_pcb",
       "outputs": [
         "pneumaticcraft:unassembled_pcb"
       ],
@@ -566,7 +566,7 @@
       ]
     },
     {
-      "id": "btm:pncr/printed_board",
+      "id": "bc:pncr/printed_board",
       "outputs": [
         "pneumaticcraft:printed_circuit_board"
       ],
@@ -577,7 +577,7 @@
       ]
     },
     {
-      "id": "btm:ae2/engineering_processor",
+      "id": "bc:ae2/engineering_processor",
       "outputs": [
         "ae2:engineering_processor"
       ],
@@ -587,7 +587,7 @@
       ]
     },
     {
-      "id": "btm:power/electrical_casing",
+      "id": "bc:power/electrical_casing",
       "outputs": [
         "kubejs:electrical_machine_casing"
       ],
@@ -605,7 +605,7 @@
       ]
     },
     {
-      "id": "btm:space/thermal_plate",
+      "id": "bc:space/thermal_plate",
       "outputs": [
         "kubejs:titanium_thermal_plate"
       ],
@@ -615,7 +615,7 @@
       ]
     },
     {
-      "id": "btm:space/space_casing",
+      "id": "bc:space/space_casing",
       "outputs": [
         "kubejs:space_machine_casing"
       ],
@@ -628,7 +628,7 @@
       ]
     },
     {
-      "id": "btm:space/rocket",
+      "id": "bc:space/rocket",
       "outputs": [
         "creatingspace:rocket"
       ],
@@ -639,7 +639,7 @@
       ]
     },
     {
-      "id": "btm:ae2/sky_steel",
+      "id": "bc:ae2/sky_steel",
       "outputs": [
         "kubejs:sky_steel_ingot",
         "kubejs:sky_steel_sheet"
@@ -653,7 +653,7 @@
       ]
     },
     {
-      "id": "btm:ae2/raw_impossible",
+      "id": "bc:ae2/raw_impossible",
       "outputs": [
         "kubejs:raw_impossible_casing"
       ],
@@ -668,7 +668,7 @@
       ]
     },
     {
-      "id": "btm:blood/altar",
+      "id": "bc:blood/altar",
       "outputs": [
         "bloodmagic:altar"
       ],
@@ -681,7 +681,7 @@
       ]
     },
     {
-      "id": "btm:blood/weak_heart",
+      "id": "bc:blood/weak_heart",
       "outputs": [
         "kubejs:weak_blood_heart"
       ],
@@ -690,7 +690,7 @@
       ]
     },
     {
-      "id": "btm:blood/weak_orb",
+      "id": "bc:blood/weak_orb",
       "outputs": [
         "bloodmagic:weakbloodorb"
       ],
@@ -700,7 +700,7 @@
       ]
     },
     {
-      "id": "btm:blood/apprentice_orb",
+      "id": "bc:blood/apprentice_orb",
       "outputs": [
         "bloodmagic:apprenticebloodorb"
       ],
@@ -710,7 +710,7 @@
       ]
     },
     {
-      "id": "btm:blood/magician_orb",
+      "id": "bc:blood/magician_orb",
       "outputs": [
         "bloodmagic:magicianbloodorb"
       ],
@@ -720,7 +720,7 @@
       ]
     },
     {
-      "id": "btm:blood/master_orb",
+      "id": "bc:blood/master_orb",
       "outputs": [
         "bloodmagic:masterbloodorb"
       ],
@@ -730,7 +730,7 @@
       ]
     },
     {
-      "id": "btm:blood/archmage_orb",
+      "id": "bc:blood/archmage_orb",
       "outputs": [
         "bloodmagic:archmagebloodorb"
       ],
@@ -740,7 +740,7 @@
       ]
     },
     {
-      "id": "btm:blood/slates",
+      "id": "bc:blood/slates",
       "outputs": [
         "bloodmagic:blankslate",
         "bloodmagic:reinforcedslate",
@@ -759,7 +759,7 @@
       ]
     },
     {
-      "id": "btm:blood/surfaces",
+      "id": "bc:blood/surfaces",
       "outputs": [
         "bloodmagic:alchemytable",
         "bloodmagic:alchemicalreactionchamber",
@@ -773,7 +773,7 @@
       ]
     },
     {
-      "id": "btm:blood/impossible_casing",
+      "id": "bc:blood/impossible_casing",
       "outputs": [
         "kubejs:impossible_machine_casing"
       ],

@@ -192,7 +192,7 @@ fun findJar(modsDir: Path, pattern: Regex): Path? =
     }
 
 val defaultModsDir = when {
-    Files.exists(Paths.get("/tmp/btm-magic-audit-mods/mods")) -> Paths.get("/tmp/btm-magic-audit-mods/mods")
+    Files.exists(Paths.get("/tmp/bc-magic-audit-mods/mods")) -> Paths.get("/tmp/bc-magic-audit-mods/mods")
     Files.exists(packRoot.resolve("server-template/mods")) -> packRoot.resolve("server-template/mods")
     Files.exists(packRoot.resolve("server-instance/mods")) -> packRoot.resolve("server-instance/mods")
     else -> packRoot.resolve("mods")

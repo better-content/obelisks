@@ -1,7 +1,7 @@
 // Global loot progression scrub. Loot is a crafting surface, so high-power materials
 // and creative/flight/global-bypass items must not enter through random tables.
 
-var BTM_LOOT_REMOVE_ITEMS = [
+var BC_LOOT_REMOVE_ITEMS = [
     // Generated from registry: all creative and netherite-named items are removed from generic loot.
     'ae2:creative_energy_cell',
     'ae2:creative_fluid_cell',
@@ -117,7 +117,7 @@ var BTM_LOOT_REMOVE_ITEMS = [
     'wands:netherite_wand'
 ]
 
-var BTM_LOOT_EMERALD_TABLES_TO_COIN = [
+var BC_LOOT_EMERALD_TABLES_TO_COIN = [
     'minecraft:chests/village/village_armorer',
     'minecraft:chests/village/village_butcher',
     'minecraft:chests/village/village_cartographer',
@@ -136,7 +136,7 @@ var BTM_LOOT_EMERALD_TABLES_TO_COIN = [
     'minecraft:chests/village/village_weaponsmith'
 ]
 
-var BTM_LOOT_HIGH_TIER_IRONS_SCROLL_TABLES = [
+var BC_LOOT_HIGH_TIER_IRONS_SCROLL_TABLES = [
     'irons_spellbooks:chests/additional_ancient_city_loot',
     'irons_spellbooks:chests/additional_end_city_loot',
     'irons_spellbooks:chests/additional_good_loot',
@@ -156,23 +156,23 @@ var BTM_LOOT_HIGH_TIER_IRONS_SCROLL_TABLES = [
     'irons_spellbooks:magic_items/reward_ink'
 ]
 
-function btmLootItemExists(id) {
+function bcLootItemExists(id) {
     try { return Item.exists(id) } catch (e) { return false }
 }
 
 LootJS.modifiers(function (event) {
     var allLoot = event.addLootTableModifier(/.*/)
-    for (var i = 0; i < BTM_LOOT_REMOVE_ITEMS.length; i++) {
-        if (btmLootItemExists(BTM_LOOT_REMOVE_ITEMS[i])) allLoot.removeLoot(BTM_LOOT_REMOVE_ITEMS[i])
+    for (var i = 0; i < BC_LOOT_REMOVE_ITEMS.length; i++) {
+        if (bcLootItemExists(BC_LOOT_REMOVE_ITEMS[i])) allLoot.removeLoot(BC_LOOT_REMOVE_ITEMS[i])
     }
 
-    for (var j = 0; j < BTM_LOOT_EMERALD_TABLES_TO_COIN.length; j++) {
-        event.addLootTableModifier(BTM_LOOT_EMERALD_TABLES_TO_COIN[j])
+    for (var j = 0; j < BC_LOOT_EMERALD_TABLES_TO_COIN.length; j++) {
+        event.addLootTableModifier(BC_LOOT_EMERALD_TABLES_TO_COIN[j])
             .replaceLoot('minecraft:emerald', Item.of('createdeco:copper_coin', 4), true)
     }
 
-    for (var k = 0; k < BTM_LOOT_HIGH_TIER_IRONS_SCROLL_TABLES.length; k++) {
-        event.addLootTableModifier(BTM_LOOT_HIGH_TIER_IRONS_SCROLL_TABLES[k])
+    for (var k = 0; k < BC_LOOT_HIGH_TIER_IRONS_SCROLL_TABLES.length; k++) {
+        event.addLootTableModifier(BC_LOOT_HIGH_TIER_IRONS_SCROLL_TABLES[k])
             .removeLoot('irons_spellbooks:scroll')
     }
 })

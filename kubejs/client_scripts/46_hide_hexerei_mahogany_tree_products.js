@@ -1,4 +1,4 @@
-var BTM_HEXEREI_MAHOGANY_TREE_PRODUCTS = [
+var BC_HEXEREI_MAHOGANY_TREE_PRODUCTS = [
     'hexerei:mahogany_sapling',
     'hexerei:mahogany_leaves',
     'hexerei:mahogany_log',
@@ -52,15 +52,15 @@ var BTM_HEXEREI_MAHOGANY_TREE_PRODUCTS = [
 ]
 
 JEIEvents.hideItems(function (event) {
-    for (var i = 0; i < BTM_HEXEREI_MAHOGANY_TREE_PRODUCTS.length; i++) {
-        event.hide(BTM_HEXEREI_MAHOGANY_TREE_PRODUCTS[i])
+    for (var i = 0; i < BC_HEXEREI_MAHOGANY_TREE_PRODUCTS.length; i++) {
+        event.hide(BC_HEXEREI_MAHOGANY_TREE_PRODUCTS[i])
     }
 })
 
 if (Platform.isLoaded('emi') && typeof EMIEvents !== 'undefined') {
     EMIEvents.hideItems(function (event) {
-        for (var i = 0; i < BTM_HEXEREI_MAHOGANY_TREE_PRODUCTS.length; i++) {
-            event.hide(BTM_HEXEREI_MAHOGANY_TREE_PRODUCTS[i])
+        for (var i = 0; i < BC_HEXEREI_MAHOGANY_TREE_PRODUCTS.length; i++) {
+            event.hide(BC_HEXEREI_MAHOGANY_TREE_PRODUCTS[i])
         }
     })
 }

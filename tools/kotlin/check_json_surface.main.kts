@@ -123,7 +123,7 @@ fun walk(rootDir: Path, predicate: (Path) -> Boolean = { true }): List<Path> {
 val files = (
     walk(root.resolve("kubejs/data")) { it.toString().endsWith(".json") } +
     walk(root.resolve("config/classselector")) { it.toString().endsWith(".json") } +
-    listOf(root.resolve("kubejs/config/btm_expert_graph_catalog.json"))
+    listOf(root.resolve("kubejs/config/bc_expert_graph_catalog.json"))
 ).filter(Files::exists).sortedBy { root.relativize(it).toString() }
 
 val errors = mutableListOf<String>()

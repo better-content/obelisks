@@ -3,8 +3,6 @@
 #	Namespaces:   '<minecraft>'
 #	Tags:         '#forge:stone'
 #	IDs:          'minecraft:stone'
-# Generated from audited mod blockstate/model data. Keep fallback physics disabled;
-# add explicit IDs here only for blocks intended to receive this physics profile.
 Blocks = [
 	"aether:skyroot_fence",
 	"aether:skyroot_fence_gate",
@@ -104,12 +102,6 @@ Blocks = [
 	"tconstruct:scorched_bricks_fence",
 	"tconstruct:skyroot_fence",
 	"tconstruct:skyroot_fence_gate",
-	"the_finley_dimension_remastered:ashen_fence",
-	"the_finley_dimension_remastered:ashen_fence_gate",
-	"the_finley_dimension_remastered:finley_wood_fence",
-	"the_finley_dimension_remastered:finley_wood_fence_gate",
-	"the_finley_dimension_remastered:living_wood_fence",
-	"the_finley_dimension_remastered:living_wood_fence_gate",
 	"twilightforest:canopy_fence",
 	"twilightforest:canopy_fence_gate",
 	"twilightforest:dark_fence",
@@ -205,4 +197,3 @@ Blocks = [
 [ChunkAnalysis]
 	#Whether the block(s) should be processed during chunk analysis updates.
 	Enabled = false
-

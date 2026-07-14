@@ -1,19 +1,19 @@
 // E2E-style machine casing progression. Each tier adds a new mod's manufacturing complexity
 // while depending on all previous tiers through the casing chain.
 
-function btmReplaceInput(event, output, oldInput, newInput) {
+function bcReplaceInput(event, output, oldInput, newInput) {
     event.replaceInput({ output: output }, oldInput, newInput)
 }
 
-function btmGateAny(event, outputs, oldInputs, newInput) {
+function bcGateAny(event, outputs, oldInputs, newInput) {
     for (var i = 0; i < outputs.length; i++) {
         for (var j = 0; j < oldInputs.length; j++) {
-            btmReplaceInput(event, outputs[i], oldInputs[j], newInput)
+             bcReplaceInput(event, outputs[i], oldInputs[j], newInput)
         }
     }
 }
 
-function btmMachineProgExists(id) {
+function bcMachineProgExists(id) {
     try { return Item.exists(id) } catch (e) { return false }
 }
 
@@ -92,8 +92,8 @@ ServerEvents.recipes(function (event) {
         loops: 2
     }).id('kubejs:create/sequenced_assembly/machine_casing/brass')
 
-    if (btmMachineProgExists('kubejs:pressure_seal')) {
-        global.btmCreateCompacting(event, 'kubejs:pneumaticcraft/pressure_seal', 'kubejs:pressure_seal', 1, [
+    if (bcMachineProgExists('kubejs:pressure_seal')) {
+        global.bcCreateCompacting(event, 'kubejs:pneumaticcraft/pressure_seal', 'kubejs:pressure_seal', 1, [
             'minecraft:dried_kelp',
             'minecraft:dried_kelp',
             'minecraft:dried_kelp',
@@ -106,7 +106,7 @@ ServerEvents.recipes(function (event) {
         ])
     }
 
-    if (btmMachineProgExists('kubejs:rotational_compressor_core')) {
+    if (bcMachineProgExists('kubejs:rotational_compressor_core')) {
         event.custom({
             type: 'create:sequenced_assembly',
             ingredient: { item: 'create:precision_mechanism' },
@@ -165,7 +165,7 @@ ServerEvents.recipes(function (event) {
         results: [{ item: 'kubejs:electrical_machine_casing' }]
     }).id('kubejs:pneumaticcraft/pressure_chamber/machine_casing/electrical')
 
-    if (btmMachineProgExists('kubejs:titanium_thermal_plate')) {
+    if (bcMachineProgExists('kubejs:titanium_thermal_plate')) {
         event.custom({
             type: 'pneumaticcraft:pressure_chamber',
             inputs: [
@@ -238,7 +238,7 @@ ServerEvents.recipes(function (event) {
     event.remove({ output: 'pneumaticcraft:pressure_chamber_glass' })
     event.remove({ output: 'pneumaticcraft:pressure_chamber_interface' })
 
-    global.btmFactoryCrafting(event, 'kubejs:pneumaticcraft/pressure_chamber_wall_airtight', 'pneumaticcraft:pressure_chamber_wall', 16, [
+    global.bcFactoryCrafting(event, 'kubejs:pneumaticcraft/pressure_chamber_wall_airtight', 'pneumaticcraft:pressure_chamber_wall', 16, [
         'RRR',
         'RAR',
         'RRR'
@@ -247,7 +247,7 @@ ServerEvents.recipes(function (event) {
         A: 'kubejs:airtight_machine_casing'
     }, { mirrored: true })
 
-    global.btmFactoryCrafting(event, 'kubejs:pneumaticcraft/pressure_chamber_glass_airtight', 'pneumaticcraft:pressure_chamber_glass', 16, [
+    global.bcFactoryCrafting(event, 'kubejs:pneumaticcraft/pressure_chamber_glass_airtight', 'pneumaticcraft:pressure_chamber_glass', 16, [
         'RGR',
         'GAG',
         'RGR'
@@ -268,13 +268,13 @@ ServerEvents.recipes(function (event) {
     }).id('kubejs:pneumaticcraft/pressure_chamber_interface_airtight')
 
     // First block-like machines per tier. Avoid deadlocking Deployer; it remains pre-casing.
-    btmGateAny(event, [
+     bcGateAny(event, [
         'tconstruct:smeltery_controller',
         'tconstruct:seared_fuel_tank',
         'tconstruct:seared_melter'
     ], ['tconstruct:seared_bricks', 'tconstruct:seared_brick'], 'kubejs:seared_machine_casing')
 
-    btmGateAny(event, [
+     bcGateAny(event, [
         'create:mechanical_press',
         'create:mechanical_mixer',
         'create:mechanical_saw',
@@ -282,7 +282,7 @@ ServerEvents.recipes(function (event) {
         'create:mechanical_crafter'
     ], ['create:andesite_casing', 'minecraft:andesite', '#forge:ingots/iron'], 'kubejs:andesite_machine_casing')
 
-    btmGateAny(event, [
+     bcGateAny(event, [
         'create:rotation_speed_controller',
         'create:mechanical_arm',
         'create:stockpile_switch',
@@ -290,7 +290,7 @@ ServerEvents.recipes(function (event) {
         'create:cart_assembler'
     ], ['create:brass_casing', 'create:brass_ingot', '#forge:ingots/brass'], 'kubejs:brass_machine_casing')
 
-    btmGateAny(event, [
+     bcGateAny(event, [
         'pneumaticcraft:reinforced_pressure_tube',
         'pneumaticcraft:refinery',
         'pneumaticcraft:thermopneumatic_processing_plant',
@@ -305,13 +305,13 @@ ServerEvents.recipes(function (event) {
         '#forge:ingots/iron'
     ], 'kubejs:airtight_machine_casing')
 
-    btmGateAny(event, [
+     bcGateAny(event, [
         'powergrid:battery',
         'powergrid:electric_motor',
         'powergrid:generator_housing'
     ], ['create:andesite_casing', 'create:brass_casing', '#forge:ingots/iron', '#forge:plates/iron'], 'kubejs:electrical_machine_casing')
 
-    btmGateAny(event, [
+     bcGateAny(event, [
         'oc2r:computer',
         'oc2r:network_hub',
         'oc2r:disk_drive',
@@ -320,12 +320,12 @@ ServerEvents.recipes(function (event) {
         'oc2r:charger'
     ], ['minecraft:iron_ingot', '#forge:ingots/iron', 'powergrid:integrated_circuit'], 'kubejs:electrical_machine_casing')
 
-    btmGateAny(event, [
+     bcGateAny(event, [
         'creatingspace:chemical_synthesizer',
         'creatingspace:air_liquefier'
     ], ['create:brass_casing', 'powergrid:conductive_casing', '#forge:plates/iron'], 'kubejs:space_machine_casing')
 
-    btmGateAny(event, [
+     bcGateAny(event, [
         'ae2:controller',
         'ae2:drive',
         'ae2:energy_acceptor',

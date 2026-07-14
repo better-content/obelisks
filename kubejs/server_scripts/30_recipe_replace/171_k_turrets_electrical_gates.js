@@ -1,22 +1,22 @@
 // K-Turrets is advanced autonomous defense, not a survival dispenser sidegrade.
 // Replace the mod-default grid recipes with explicit electrical-era support parts.
 
-function btmTurretExists(id) {
+function bcTurretExists(id) {
     try { return Item.exists(id) } catch (e) { return false }
 }
 
-function btmTurretRecipe(event, output, pattern, key, id, count) {
-    if (!btmTurretExists(output)) return
+function bcTurretRecipe(event, output, pattern, key, id, count) {
+    if (!bcTurretExists(output)) return
     for (var symbol in key) {
         var ingredient = key[symbol]
-        if (ingredient && ingredient.charAt && ingredient.charAt(0) !== '#' && ingredient.indexOf(':') >= 0 && !btmTurretExists(ingredient)) return
+        if (ingredient && ingredient.charAt && ingredient.charAt(0) !== '#' && ingredient.indexOf(':') >= 0 && !bcTurretExists(ingredient)) return
     }
     event.remove({ output: output })
-    global.btmFactoryCrafting(event, id, output, count || 1, pattern, key, true)
+    global.bcFactoryCrafting(event, id, output, count || 1, pattern, key, true)
 }
 
 ServerEvents.recipes(function (event) {
-    btmTurretRecipe(event, 'k_turrets:copper_plate', [
+     bcTurretRecipe(event, 'k_turrets:copper_plate', [
         'CWC',
         'TAT',
         'CWC'
@@ -27,7 +27,7 @@ ServerEvents.recipes(function (event) {
         A: 'kubejs:electrical_machine_casing'
     }, 'kubejs:k_turrets/copper_plate_electrical', 4)
 
-    btmTurretRecipe(event, 'k_turrets:bullet', [
+     bcTurretRecipe(event, 'k_turrets:bullet', [
         ' I ',
         'ICI',
         ' G '
@@ -37,7 +37,7 @@ ServerEvents.recipes(function (event) {
         G: '#forge:nuggets/gold'
     }, 'kubejs:k_turrets/bullet_electrical', 8)
 
-    btmTurretRecipe(event, 'k_turrets:explosive_powder', [
+     bcTurretRecipe(event, 'k_turrets:explosive_powder', [
         ' B ',
         'GCG',
         ' B '
@@ -47,7 +47,7 @@ ServerEvents.recipes(function (event) {
         C: 'k_turrets:copper_plate'
     }, 'kubejs:k_turrets/explosive_powder_electrical', 6)
 
-    btmTurretRecipe(event, 'k_turrets:wrench', [
+     bcTurretRecipe(event, 'k_turrets:wrench', [
         ' TI',
         ' CT',
         'I  '
@@ -57,7 +57,7 @@ ServerEvents.recipes(function (event) {
         C: 'kubejs:electrical_instrumentation_module'
     }, 'kubejs:k_turrets/wrench_electrical')
 
-    btmTurretRecipe(event, 'k_turrets:exp_link', [
+     bcTurretRecipe(event, 'k_turrets:exp_link', [
         'OLO',
         'LCL',
         'OLO'
@@ -67,7 +67,7 @@ ServerEvents.recipes(function (event) {
         C: 'kubejs:electrical_instrumentation_module'
     }, 'kubejs:k_turrets/exp_link_electrical')
 
-    btmTurretRecipe(event, 'k_turrets:fire_shield', [
+     bcTurretRecipe(event, 'k_turrets:fire_shield', [
         'IBI',
         'BCB',
         'IBI'
@@ -77,7 +77,7 @@ ServerEvents.recipes(function (event) {
         C: 'kubejs:electrical_instrumentation_module'
     }, 'kubejs:k_turrets/fire_shield_electrical')
 
-    btmTurretRecipe(event, 'k_turrets:looting_link', [
+     bcTurretRecipe(event, 'k_turrets:looting_link', [
         'TNT',
         'NCN',
         'TNT'
@@ -87,7 +87,7 @@ ServerEvents.recipes(function (event) {
         C: 'kubejs:electrical_instrumentation_module'
     }, 'kubejs:k_turrets/looting_link_electrical')
 
-    btmTurretRecipe(event, 'k_turrets:recall_upgrade', [
+     bcTurretRecipe(event, 'k_turrets:recall_upgrade', [
         'TET',
         'ECE',
         'TET'
@@ -97,7 +97,7 @@ ServerEvents.recipes(function (event) {
         C: 'kubejs:electrical_instrumentation_module'
     }, 'kubejs:k_turrets/recall_upgrade_electrical')
 
-    btmTurretRecipe(event, 'k_turrets:magnet_upgrade', [
+     bcTurretRecipe(event, 'k_turrets:magnet_upgrade', [
         'T T',
         'ECE',
         'T T'
@@ -107,7 +107,7 @@ ServerEvents.recipes(function (event) {
         C: 'kubejs:electrical_control_module'
     }, 'kubejs:k_turrets/magnet_upgrade_electrical')
 
-    btmTurretRecipe(event, 'k_turrets:light_upgrade', [
+     bcTurretRecipe(event, 'k_turrets:light_upgrade', [
         'LGL',
         'ECE',
         'LGL'
@@ -118,7 +118,7 @@ ServerEvents.recipes(function (event) {
         C: 'kubejs:electrical_control_module'
     }, 'kubejs:k_turrets/light_upgrade_electrical')
 
-    btmTurretRecipe(event, 'k_turrets:reloader', [
+     bcTurretRecipe(event, 'k_turrets:reloader', [
         'CBC',
         'RAR',
         'CEC'
@@ -130,7 +130,7 @@ ServerEvents.recipes(function (event) {
         E: 'oc2r:circuit_board'
     }, 'kubejs:k_turrets/reloader_electrical')
 
-    btmTurretRecipe(event, 'k_turrets:cobble_turret_item', [
+     bcTurretRecipe(event, 'k_turrets:cobble_turret_item', [
         'STS',
         'CAC',
         'PMP'
@@ -143,7 +143,7 @@ ServerEvents.recipes(function (event) {
         M: 'powergrid:electric_motor'
     }, 'kubejs:k_turrets/cobble_turret_electrical')
 
-    btmTurretRecipe(event, 'k_turrets:cobble_drone_item', [
+     bcTurretRecipe(event, 'k_turrets:cobble_drone_item', [
         'SIS',
         'CAC',
         'FMF'
@@ -156,7 +156,7 @@ ServerEvents.recipes(function (event) {
         M: 'powergrid:electric_motor'
     }, 'kubejs:k_turrets/cobble_drone_electrical')
 
-    btmTurretRecipe(event, 'k_turrets:brick_turret_item', [
+     bcTurretRecipe(event, 'k_turrets:brick_turret_item', [
         'STS',
         'CAC',
         'PMP'
@@ -169,7 +169,7 @@ ServerEvents.recipes(function (event) {
         M: 'powergrid:electric_motor'
     }, 'kubejs:k_turrets/brick_turret_electrical')
 
-    btmTurretRecipe(event, 'k_turrets:brick_drone_item', [
+     bcTurretRecipe(event, 'k_turrets:brick_drone_item', [
         'SIS',
         'CAC',
         'FMF'
@@ -182,7 +182,7 @@ ServerEvents.recipes(function (event) {
         M: 'powergrid:electric_motor'
     }, 'kubejs:k_turrets/brick_drone_electrical')
 
-    btmTurretRecipe(event, 'k_turrets:arrow_turret_item', [
+     bcTurretRecipe(event, 'k_turrets:arrow_turret_item', [
         'ATA',
         'CAC',
         'RMR'
@@ -194,7 +194,7 @@ ServerEvents.recipes(function (event) {
         M: 'kubejs:electrical_machine_casing'
     }, 'kubejs:k_turrets/arrow_turret_electrical')
 
-    btmTurretRecipe(event, 'k_turrets:arrow_drone_item', [
+     bcTurretRecipe(event, 'k_turrets:arrow_drone_item', [
         'AIA',
         'CAC',
         'FMF'
@@ -206,7 +206,7 @@ ServerEvents.recipes(function (event) {
         M: 'powergrid:electric_motor'
     }, 'kubejs:k_turrets/arrow_drone_electrical')
 
-    btmTurretRecipe(event, 'k_turrets:bullet_turret_item', [
+     bcTurretRecipe(event, 'k_turrets:bullet_turret_item', [
         'BTB',
         'CAC',
         'RMR'
@@ -219,7 +219,7 @@ ServerEvents.recipes(function (event) {
         M: 'kubejs:electrical_machine_casing'
     }, 'kubejs:k_turrets/bullet_turret_electrical')
 
-    btmTurretRecipe(event, 'k_turrets:bullet_drone_item', [
+     bcTurretRecipe(event, 'k_turrets:bullet_drone_item', [
         'BIB',
         'CAC',
         'FMF'
@@ -232,7 +232,7 @@ ServerEvents.recipes(function (event) {
         M: 'powergrid:electric_motor'
     }, 'kubejs:k_turrets/bullet_drone_electrical')
 
-    btmTurretRecipe(event, 'k_turrets:firecharge_turret_item', [
+     bcTurretRecipe(event, 'k_turrets:firecharge_turret_item', [
         'ETE',
         'CAC',
         'BMB'
@@ -245,7 +245,7 @@ ServerEvents.recipes(function (event) {
         M: 'kubejs:electrical_machine_casing'
     }, 'kubejs:k_turrets/firecharge_turret_electrical')
 
-    btmTurretRecipe(event, 'k_turrets:firecharge_drone_item', [
+     bcTurretRecipe(event, 'k_turrets:firecharge_drone_item', [
         'EIE',
         'CAC',
         'FMF'
@@ -258,7 +258,7 @@ ServerEvents.recipes(function (event) {
         M: 'powergrid:electric_motor'
     }, 'kubejs:k_turrets/firecharge_drone_electrical')
 
-    btmTurretRecipe(event, 'k_turrets:gauss_bullet', [
+     bcTurretRecipe(event, 'k_turrets:gauss_bullet', [
         'ITI',
         'ECE',
         'ITI'
@@ -269,7 +269,7 @@ ServerEvents.recipes(function (event) {
         C: 'oc2r:circuit_board'
     }, 'kubejs:k_turrets/gauss_bullet_electrical', 8)
 
-    btmTurretRecipe(event, 'k_turrets:gauss_turret_item', [
+     bcTurretRecipe(event, 'k_turrets:gauss_turret_item', [
         'GTG',
         'CAC',
         'RMR'
@@ -282,7 +282,7 @@ ServerEvents.recipes(function (event) {
         M: 'kubejs:electrical_machine_casing'
     }, 'kubejs:k_turrets/gauss_turret_electrical')
 
-    btmTurretRecipe(event, 'k_turrets:gauss_drone_item', [
+     bcTurretRecipe(event, 'k_turrets:gauss_drone_item', [
         'GIG',
         'CAC',
         'FMF'
@@ -295,7 +295,7 @@ ServerEvents.recipes(function (event) {
         M: 'powergrid:electric_motor'
     }, 'kubejs:k_turrets/gauss_drone_electrical')
 
-    btmTurretRecipe(event, 'k_turrets:storage_drone_item', [
+     bcTurretRecipe(event, 'k_turrets:storage_drone_item', [
         'BIB',
         'CAC',
         'FMF'

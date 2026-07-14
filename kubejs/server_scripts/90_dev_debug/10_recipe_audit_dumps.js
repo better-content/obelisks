@@ -3,14 +3,14 @@
 // recipes that need removal or replacement, but it does not prove final KubeJS-added
 // recipe state from the same reload.
 
-var BTM_AUDIT_DUMP_CONFIG = 'kubejs/config/audit_dumps.json'
-var BTM_AUDIT_DUMP_DIR = 'kubejs/config/'
-var BTM_RECIPE_AUDIT_GENERATED_BY = 'kubejs/server_scripts/90_dev_debug/10_recipe_audit_dumps.js'
-var BTM_RECIPE_AUDIT_STAGE = 'pre_mutation_recipe_event'
-var BTM_RECIPE_AUDIT_SOURCE = 'ServerEvents.recipes event.forEachRecipe before KubeJS mutations are applied'
-var BTM_RECIPE_AUDIT_SCHEMA = 'btm.recipe_audit.v2'
+var BC_AUDIT_DUMP_CONFIG = 'kubejs/config/audit_dumps.json'
+var BC_AUDIT_DUMP_DIR = 'kubejs/config/'
+var BC_RECIPE_AUDIT_GENERATED_BY = 'kubejs/server_scripts/90_dev_debug/10_recipe_audit_dumps.js'
+var BC_RECIPE_AUDIT_STAGE = 'pre_mutation_recipe_event'
+var BC_RECIPE_AUDIT_SOURCE = 'ServerEvents.recipes event.forEachRecipe before KubeJS mutations are applied'
+var BC_RECIPE_AUDIT_SCHEMA = 'bc.recipe_audit.v2'
 
-function btmAuditTimestamp() {
+function bcAuditTimestamp() {
     try {
         return new Date().toISOString()
     } catch (e) {
@@ -18,7 +18,7 @@ function btmAuditTimestamp() {
     }
 }
 
-function btmAuditReadConfig() {
+function bcAuditReadConfig() {
     var fallback = {
         enabled: false,
         writeFullRecipeIndex: false,
@@ -27,7 +27,7 @@ function btmAuditReadConfig() {
         fullRecipeChunkSize: 1000
     }
 
-    var cfg = JsonIO.read(BTM_AUDIT_DUMP_CONFIG)
+    var cfg = JsonIO.read(BC_AUDIT_DUMP_CONFIG)
     if (!cfg) return fallback
 
     return {
@@ -39,35 +39,35 @@ function btmAuditReadConfig() {
     }
 }
 
-function btmAuditContainsAny(haystack, needles) {
+function bcAuditContainsAny(haystack, needles) {
     for (var i = 0; i < needles.length; i++) {
         if (haystack.indexOf(needles[i]) !== -1) return true
     }
     return false
 }
 
-function btmAuditTruncateJson(json, maxChars) {
+function bcAuditTruncateJson(json, maxChars) {
     if (!maxChars || maxChars < 100) return json
     if (json.length <= maxChars) return json
     return json.substring(0, maxChars) + '...<truncated ' + (json.length - maxChars) + ' chars>'
 }
 
-function btmAuditRecipeRecord(recipe, json, cfg) {
+function bcAuditRecipeRecord(recipe, json, cfg) {
     var out = {
         id: String(recipe.getId()),
         type: String(recipe.getType())
     }
-    if (cfg.writeMatchedRecipeJson) out.json = btmAuditTruncateJson(json, cfg.maxJsonCharsPerRecipe)
+    if (cfg.writeMatchedRecipeJson) out.json = bcAuditTruncateJson(json, cfg.maxJsonCharsPerRecipe)
     return out
 }
 
-function btmAuditMakeBucketMap(keys) {
+function bcAuditMakeBucketMap(keys) {
     var map = {}
     for (var i = 0; i < keys.length; i++) map[keys[i].id] = []
     return map
 }
 
-function btmAuditWriteFullIndexChunks(fullIndex, cfg, metadata) {
+function bcAuditWriteFullIndexChunks(fullIndex, cfg, metadata) {
     if (!cfg.writeFullRecipeIndex) return 0
 
     var chunkSize = cfg.fullRecipeChunkSize
@@ -83,7 +83,7 @@ function btmAuditWriteFullIndexChunks(fullIndex, cfg, metadata) {
 
         var padded = String(chunkCount)
         while (padded.length < 4) padded = '0' + padded
-        JsonIO.write(BTM_AUDIT_DUMP_DIR + 'full_recipe_index_' + padded + '.json', {
+        JsonIO.write(BC_AUDIT_DUMP_DIR + 'full_recipe_index_' + padded + '.json', {
             schema: metadata.schema,
             generatedBy: metadata.generatedBy,
             generatedAt: metadata.generatedAt,
@@ -97,7 +97,7 @@ function btmAuditWriteFullIndexChunks(fullIndex, cfg, metadata) {
         chunkCount++
     }
 
-    JsonIO.write(BTM_AUDIT_DUMP_DIR + 'full_recipe_index_manifest.json', {
+    JsonIO.write(BC_AUDIT_DUMP_DIR + 'full_recipe_index_manifest.json', {
         schema: metadata.schema,
         generatedBy: metadata.generatedBy,
         generatedAt: metadata.generatedAt,
@@ -114,7 +114,7 @@ function btmAuditWriteFullIndexChunks(fullIndex, cfg, metadata) {
     return chunkCount
 }
 
-var BTM_AUDIT_VALUABLE_MATERIALS = [
+var BC_AUDIT_VALUABLE_MATERIALS = [
     { id: 'iron', needles: ['minecraft:iron_ingot', 'minecraft:iron_block', 'minecraft:raw_iron', 'forge:ingots/iron', 'forge:nuggets/iron', 'forge:storage_blocks/iron', 'ingots/iron', 'nuggets/iron'] },
     { id: 'copper', needles: ['minecraft:copper_ingot', 'minecraft:copper_block', 'minecraft:raw_copper', 'forge:ingots/copper', 'forge:nuggets/copper', 'forge:storage_blocks/copper', 'ingots/copper', 'nuggets/copper'] },
     { id: 'gold', needles: ['minecraft:gold_ingot', 'minecraft:gold_block', 'minecraft:raw_gold', 'forge:ingots/gold', 'forge:nuggets/gold', 'forge:storage_blocks/gold', 'ingots/gold', 'nuggets/gold'] },
@@ -125,7 +125,7 @@ var BTM_AUDIT_VALUABLE_MATERIALS = [
     { id: 'amethyst', needles: ['minecraft:amethyst_shard', 'minecraft:amethyst_block', 'forge:gems/amethyst', 'gems/amethyst'] }
 ]
 
-var BTM_AUDIT_PROGRESSION_NEEDLES = [
+var BC_AUDIT_PROGRESSION_NEEDLES = [
     { id: 'tconstruct_grout', needles: ['"result":{"item":"tconstruct:grout"', '"result":"tconstruct:grout"', '"item":"tconstruct:grout"'] },
     { id: 'tconstruct_nether_grout', needles: ['"result":{"item":"tconstruct:nether_grout"', '"result":"tconstruct:nether_grout"', '"item":"tconstruct:nether_grout"'] },
     { id: 'create_andesite_alloy', needles: ['"result":{"item":"create:andesite_alloy"', '"result":"create:andesite_alloy"', '"item":"create:andesite_alloy"'] },
@@ -151,7 +151,7 @@ var BTM_AUDIT_PROGRESSION_NEEDLES = [
     { id: 'ae2_drive', needles: ['"result":{"item":"ae2:drive"', '"result":"ae2:drive"', '"item":"ae2:drive"'] }
 ]
 
-var BTM_AUDIT_BYPASS_NEEDLES = [
+var BC_AUDIT_BYPASS_NEEDLES = [
     { id: 'andesite_alloy_non_alloying', forbiddenTypes: ['minecraft:crafting_shaped', 'minecraft:crafting_shapeless', 'create:mixing'], outputNeedles: ['"result":{"item":"create:andesite_alloy"', '"result":{"count":9,"item":"create:andesite_alloy"', '"results":[{"item":"create:andesite_alloy"'] },
     { id: 'andesite_casing_item_application', forbiddenTypes: ['create:item_application'], outputNeedles: ['"results":[{"item":"create:andesite_casing"', '"result":{"item":"create:andesite_casing"'] },
     { id: 'nether_grout_crafting', forbiddenTypes: ['minecraft:crafting_shaped', 'minecraft:crafting_shapeless'], outputNeedles: ['"result":{"item":"tconstruct:nether_grout"', '"item":"tconstruct:nether_grout"', '"result":"tconstruct:nether_grout"'] },
@@ -159,14 +159,14 @@ var BTM_AUDIT_BYPASS_NEEDLES = [
 ]
 
 ServerEvents.recipes(function (event) {
-    var cfg = btmAuditReadConfig()
+    var cfg = bcAuditReadConfig()
     if (!cfg.enabled) return
     var scanned = 0
     var typeCounts = {}
     var namespaceCounts = {}
-    var progressionMentions = btmAuditMakeBucketMap(BTM_AUDIT_PROGRESSION_NEEDLES)
-    var materialMatches = btmAuditMakeBucketMap(BTM_AUDIT_VALUABLE_MATERIALS)
-    var bypassMatches = btmAuditMakeBucketMap(BTM_AUDIT_BYPASS_NEEDLES)
+    var progressionMentions = bcAuditMakeBucketMap(BC_AUDIT_PROGRESSION_NEEDLES)
+    var materialMatches = bcAuditMakeBucketMap(BC_AUDIT_VALUABLE_MATERIALS)
+    var bypassMatches = bcAuditMakeBucketMap(BC_AUDIT_BYPASS_NEEDLES)
     var fullIndex = []
 
     event.forEachRecipe({}, function (recipe) {
@@ -180,32 +180,32 @@ ServerEvents.recipes(function (event) {
         namespaceCounts[ns] = (namespaceCounts[ns] || 0) + 1
 
         if (cfg.writeFullRecipeIndex) {
-            fullIndex.push({ id: id, type: type, namespace: ns, json: btmAuditTruncateJson(json, cfg.maxJsonCharsPerRecipe) })
+            fullIndex.push({ id: id, type: type, namespace: ns, json: bcAuditTruncateJson(json, cfg.maxJsonCharsPerRecipe) })
         }
 
-        for (var i = 0; i < BTM_AUDIT_PROGRESSION_NEEDLES.length; i++) {
-            var p = BTM_AUDIT_PROGRESSION_NEEDLES[i]
-            if (btmAuditContainsAny(json, p.needles)) progressionMentions[p.id].push(btmAuditRecipeRecord(recipe, json, cfg))
+        for (var i = 0; i < BC_AUDIT_PROGRESSION_NEEDLES.length; i++) {
+            var p = BC_AUDIT_PROGRESSION_NEEDLES[i]
+            if (bcAuditContainsAny(json, p.needles)) progressionMentions[p.id].push(bcAuditRecipeRecord(recipe, json, cfg))
         }
 
-        for (var j = 0; j < BTM_AUDIT_VALUABLE_MATERIALS.length; j++) {
-            var m = BTM_AUDIT_VALUABLE_MATERIALS[j]
-            if (btmAuditContainsAny(json, m.needles)) materialMatches[m.id].push(btmAuditRecipeRecord(recipe, json, cfg))
+        for (var j = 0; j < BC_AUDIT_VALUABLE_MATERIALS.length; j++) {
+            var m = BC_AUDIT_VALUABLE_MATERIALS[j]
+            if (bcAuditContainsAny(json, m.needles)) materialMatches[m.id].push(bcAuditRecipeRecord(recipe, json, cfg))
         }
 
-        for (var k = 0; k < BTM_AUDIT_BYPASS_NEEDLES.length; k++) {
-            var b = BTM_AUDIT_BYPASS_NEEDLES[k]
+        for (var k = 0; k < BC_AUDIT_BYPASS_NEEDLES.length; k++) {
+            var b = BC_AUDIT_BYPASS_NEEDLES[k]
             var typeForbidden = b.forbiddenTypes.length === 0 || b.forbiddenTypes.indexOf(type) !== -1
-            if (typeForbidden && btmAuditContainsAny(json, b.outputNeedles)) bypassMatches[b.id].push(btmAuditRecipeRecord(recipe, json, cfg))
+            if (typeForbidden &&  bcAuditContainsAny(json, b.outputNeedles)) bypassMatches[b.id].push(bcAuditRecipeRecord(recipe, json, cfg))
         }
     })
 
     var metadata = {
-        schema: BTM_RECIPE_AUDIT_SCHEMA,
-        generatedBy: BTM_RECIPE_AUDIT_GENERATED_BY,
-        generatedAt: btmAuditTimestamp(),
-        source: BTM_RECIPE_AUDIT_SOURCE,
-        recipeEventStage: BTM_RECIPE_AUDIT_STAGE
+        schema: BC_RECIPE_AUDIT_SCHEMA,
+        generatedBy: BC_RECIPE_AUDIT_GENERATED_BY,
+        generatedAt: bcAuditTimestamp(),
+        source: BC_RECIPE_AUDIT_SOURCE,
+        recipeEventStage: BC_RECIPE_AUDIT_STAGE
     }
 
     var summary = {
@@ -226,24 +226,24 @@ ServerEvents.recipes(function (event) {
         fullRecipeChunkCount: 0
     }
 
-    for (var pi = 0; pi < BTM_AUDIT_PROGRESSION_NEEDLES.length; pi++) {
-        var pid = BTM_AUDIT_PROGRESSION_NEEDLES[pi].id
+    for (var pi = 0; pi < BC_AUDIT_PROGRESSION_NEEDLES.length; pi++) {
+        var pid = BC_AUDIT_PROGRESSION_NEEDLES[pi].id
         summary.progressionMentionCounts[pid] = progressionMentions[pid].length
     }
-    for (var mi = 0; mi < BTM_AUDIT_VALUABLE_MATERIALS.length; mi++) {
-        var mid = BTM_AUDIT_VALUABLE_MATERIALS[mi].id
+    for (var mi = 0; mi < BC_AUDIT_VALUABLE_MATERIALS.length; mi++) {
+        var mid = BC_AUDIT_VALUABLE_MATERIALS[mi].id
         summary.materialMatchCounts[mid] = materialMatches[mid].length
     }
-    for (var bi = 0; bi < BTM_AUDIT_BYPASS_NEEDLES.length; bi++) {
-        var bid = BTM_AUDIT_BYPASS_NEEDLES[bi].id
+    for (var bi = 0; bi < BC_AUDIT_BYPASS_NEEDLES.length; bi++) {
+        var bid = BC_AUDIT_BYPASS_NEEDLES[bi].id
         summary.bypassMatchCounts[bid] = bypassMatches[bid].length
     }
 
-    JsonIO.write(BTM_AUDIT_DUMP_DIR + 'progression_recipe_mentions.json', progressionMentions)
-    JsonIO.write(BTM_AUDIT_DUMP_DIR + 'valuable_material_usage_recipes.json', materialMatches)
-    JsonIO.write(BTM_AUDIT_DUMP_DIR + 'known_bypass_candidate_recipes.json', bypassMatches)
-    summary.fullRecipeChunkCount = btmAuditWriteFullIndexChunks(fullIndex, cfg, metadata)
-    JsonIO.write(BTM_AUDIT_DUMP_DIR + 'recipe_audit_summary.json', summary)
+    JsonIO.write(BC_AUDIT_DUMP_DIR + 'progression_recipe_mentions.json', progressionMentions)
+    JsonIO.write(BC_AUDIT_DUMP_DIR + 'valuable_material_usage_recipes.json', materialMatches)
+    JsonIO.write(BC_AUDIT_DUMP_DIR + 'known_bypass_candidate_recipes.json', bypassMatches)
+    summary.fullRecipeChunkCount = bcAuditWriteFullIndexChunks(fullIndex, cfg, metadata)
+    JsonIO.write(BC_AUDIT_DUMP_DIR + 'recipe_audit_summary.json', summary)
 
-    console.info('[BTM-RECIPE-AUDIT] scanned=' + scanned + ' fullChunks=' + summary.fullRecipeChunkCount + ' wrote ' + BTM_AUDIT_DUMP_DIR + 'recipe_audit_summary.json')
+    console.info('[BC-RECIPE-AUDIT] scanned=' + scanned + ' fullChunks=' + summary.fullRecipeChunkCount + ' wrote ' + BC_AUDIT_DUMP_DIR + 'recipe_audit_summary.json')
 })

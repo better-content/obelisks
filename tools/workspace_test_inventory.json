@@ -4,13 +4,13 @@
       "id": "pack",
       "path": ".",
       "kind": "root-pack",
-      "fastCommand": ["tools/btm", "internal", "verify-pack-fast"],
-      "fullCommand": ["tools/btm", "internal", "verify-pack-full"],
+      "fastCommand": ["tools/bc", "internal", "verify-pack-fast"],
+      "fullCommand": ["tools/bc", "internal", "verify-pack-full"],
       "fullMeaningful": true
     },
     {
-      "id": "bound-to-matter-fixes",
-      "path": "generated/custom-mod-sources/bound-to-matter-fixes",
+      "id": "better-content-fixes",
+      "path": "generated/custom-mod-sources/better-content-fixes",
       "kind": "custom-mod",
       "fastCommand": ["./gradlew", "verifyFast"],
       "fullCommand": ["./gradlew", "verifyFull"],
@@ -41,8 +41,8 @@
       "fullMeaningful": true
     },
     {
-      "id": "dimensional-fonts",
-      "path": "generated/custom-mod-sources/dimensional-fonts",
+      "id": "dimension-drink",
+      "path": "generated/custom-mod-sources/dimension-drink",
       "kind": "custom-mod",
       "fastCommand": ["./gradlew", "verifyFast"],
       "fullCommand": ["./gradlew", "verifyFull"],

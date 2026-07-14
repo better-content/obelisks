@@ -2,7 +2,7 @@
 
 var BuiltInRegistries = Java.loadClass('net.minecraft.core.registries.BuiltInRegistries')
 
-function btmIsBoatLikePath(path) {
+function bcIsBoatLikePath(path) {
     return (
         path === 'boat' ||
         path === 'chest_boat' ||
@@ -17,7 +17,7 @@ function btmIsBoatLikePath(path) {
     )
 }
 
-function btmCollectBoatItems() {
+function bcCollectBoatItems() {
     var found = []
     var keys = BuiltInRegistries.ITEM.keySet().iterator()
 
@@ -26,7 +26,7 @@ function btmCollectBoatItems() {
         var split = id.split(':')
 
         if (split.length !== 2) continue
-        if (!btmIsBoatLikePath(split[1])) continue
+        if (!bcIsBoatLikePath(split[1])) continue
 
         found.push(id)
     }
@@ -35,13 +35,13 @@ function btmCollectBoatItems() {
 }
 
 JEIEvents.hideItems(function (event) {
-    var boats = btmCollectBoatItems()
+    var boats = bcCollectBoatItems()
     for (var i = 0; i < boats.length; i++) event.hide(boats[i])
 })
 
 if (Platform.isLoaded('emi') && typeof EMIEvents !== 'undefined') {
     EMIEvents.hideItems(function (event) {
-        var boats = btmCollectBoatItems()
+        var boats = bcCollectBoatItems()
         for (var i = 0; i < boats.length; i++) event.hide(boats[i])
     })
 }

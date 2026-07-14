@@ -11,7 +11,7 @@ import kotlin.system.exitProcess
 data class ReleaseRun(val name: String, val command: List<String>, val runRoot: Path, val exitCode: Int, val durationMs: Long)
 
 val root = Paths.get("").toAbsolutePath().normalize()
-var runRoot = Paths.get("/tmp/btm-vs-ships-release")
+var runRoot = Paths.get("/tmp/bc-vs-ships-release")
 var bootstrapMode = "once"
 var keepGoing = false
 var keepRuns = false
@@ -19,7 +19,7 @@ var basePort = 25570
 var index = 0
 fun usage(message: String? = null): Nothing {
     message?.let(System.err::println)
-    System.err.println("Usage: tools/btm test scenario-headful vs_ships_release [--bootstrap-mode always|once|never] [--run-root PATH] [--port N] [--keep-going] [--keep-runs]")
+    System.err.println("Usage: tools/bc test scenario-headful vs_ships_release [--bootstrap-mode always|once|never] [--run-root PATH] [--port N] [--keep-going] [--keep-runs]")
     exitProcess(2)
 }
 while (index < args.size) when (args[index]) {
@@ -49,7 +49,7 @@ listOf("dh_disabled", "c2me_disabled", "dh_c2me_disabled").forEachIndexed { vari
 val results = mutableListOf<ReleaseRun>()
 for ((name, baseArgs) in specifications) {
     val childRoot = runRoot.resolve(name)
-    val command = listOf(root.resolve("tools/btm").toString()) + baseArgs + listOf("--bootstrap-mode", bootstrapMode, "--run-root", childRoot.toString()) + if (keepRuns) listOf("--keep-runs") else emptyList()
+    val command = listOf(root.resolve("tools/bc").toString()) + baseArgs + listOf("--bootstrap-mode", bootstrapMode, "--run-root", childRoot.toString()) + if (keepRuns) listOf("--keep-runs") else emptyList()
     val started = System.nanoTime()
     val process = ProcessBuilder(command).directory(root.toFile()).inheritIO().start()
     val finished = process.waitFor(3, TimeUnit.HOURS)

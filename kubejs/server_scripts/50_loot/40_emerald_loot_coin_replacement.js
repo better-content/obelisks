@@ -1,7 +1,7 @@
 // Generated from the live loot dump. Replaces emerald currency loot with Dot Coins.
 // Block ore drops are intentionally excluded; this is only chest/entity/package economy.
 
-var BTM_EMERALD_LOOT_COIN_REPLACEMENTS = [
+var BC_EMERALD_LOOT_COIN_REPLACEMENTS = [
     {
         coin: 'createdeco:copper_coin',
         count: 4,
@@ -216,8 +216,8 @@ var BTM_EMERALD_LOOT_COIN_REPLACEMENTS = [
 LootJS.modifiers(function (event) {
     // Baseline copper/iron chest float is owned by 20_world_chest_coin_tiers.js.
     // This pass only replaces emerald currency where emeralds were already present.
-    for (var i = 0; i < BTM_EMERALD_LOOT_COIN_REPLACEMENTS.length; i++) {
-        var row = BTM_EMERALD_LOOT_COIN_REPLACEMENTS[i]
+    for (var i = 0; i < BC_EMERALD_LOOT_COIN_REPLACEMENTS.length; i++) {
+        var row = BC_EMERALD_LOOT_COIN_REPLACEMENTS[i]
         if (!Item.exists(row.coin)) {
             console.warn('[emerald-loot-coin-replacement] Missing coin item: ' + row.coin)
             continue

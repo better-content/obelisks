@@ -1,22 +1,22 @@
 // Backpack automation that changes body logistics is post-AE2. These are explicit
 // recipes rather than broad input replacement so the gates remain visible in EMI.
 
-function btmBpExists(id) {
+function bcBpExists(id) {
     try { return Item.exists(id) } catch (e) { return false }
 }
 
-function btmBpRecipe(event, output, pattern, key, id) {
-    if (!btmBpExists(output)) return
+function bcBpRecipe(event, output, pattern, key, id) {
+    if (!bcBpExists(output)) return
     for (var symbol in key) {
         var ingredient = key[symbol]
-        if (ingredient && ingredient.charAt && ingredient.charAt(0) !== '#' && ingredient.indexOf(':') >= 0 && !btmBpExists(ingredient)) return
+        if (ingredient && ingredient.charAt && ingredient.charAt(0) !== '#' && ingredient.indexOf(':') >= 0 && !bcBpExists(ingredient)) return
     }
     event.remove({ output: output })
-    global.btmFactoryCrafting(event, id, output, 1, pattern, key, true)
+    global.bcFactoryCrafting(event, id, output, 1, pattern, key, true)
 }
 
 ServerEvents.recipes(function (event) {
-    btmBpRecipe(event, 'sophisticatedbackpacks:feeding_upgrade', [
+     bcBpRecipe(event, 'sophisticatedbackpacks:feeding_upgrade', [
         'FDF',
         'CAC',
         'FDF'
@@ -27,7 +27,7 @@ ServerEvents.recipes(function (event) {
         A: 'kubejs:ae_logic_package'
     }, 'kubejs:sophisticatedbackpacks/feeding_upgrade_post_ae2')
 
-    btmBpRecipe(event, 'sophisticatedbackpacks:advanced_feeding_upgrade', [
+     bcBpRecipe(event, 'sophisticatedbackpacks:advanced_feeding_upgrade', [
         'SQS',
         'UCU',
         'SQS'
@@ -38,7 +38,7 @@ ServerEvents.recipes(function (event) {
         C: 'kubejs:impossible_machine_casing'
     }, 'kubejs:sophisticatedbackpacks/advanced_feeding_upgrade_post_ae2')
 
-    btmBpRecipe(event, 'sophisticatedbackpacks:alchemy_upgrade', [
+     bcBpRecipe(event, 'sophisticatedbackpacks:alchemy_upgrade', [
         'ESE',
         'CAC',
         'ESE'
@@ -49,7 +49,7 @@ ServerEvents.recipes(function (event) {
         A: 'sophisticatedbackpacks:upgrade_base'
     }, 'kubejs:sophisticatedbackpacks/alchemy_upgrade_post_ae2')
 
-    btmBpRecipe(event, 'sophisticatedbackpacks:advanced_alchemy_upgrade', [
+     bcBpRecipe(event, 'sophisticatedbackpacks:advanced_alchemy_upgrade', [
         'SQS',
         'UCU',
         'SQS'
@@ -60,7 +60,7 @@ ServerEvents.recipes(function (event) {
         C: 'kubejs:impossible_machine_casing'
     }, 'kubejs:sophisticatedbackpacks/advanced_alchemy_upgrade_post_ae2')
 
-    btmBpRecipe(event, 'sophisticatedbackpacks:tool_swapper_upgrade', [
+     bcBpRecipe(event, 'sophisticatedbackpacks:tool_swapper_upgrade', [
         'TQT',
         'CAC',
         'TQT'
@@ -71,7 +71,7 @@ ServerEvents.recipes(function (event) {
         A: 'sophisticatedbackpacks:upgrade_base'
     }, 'kubejs:sophisticatedbackpacks/tool_swapper_upgrade_post_ae2')
 
-    btmBpRecipe(event, 'sophisticatedbackpacks:advanced_tool_swapper_upgrade', [
+     bcBpRecipe(event, 'sophisticatedbackpacks:advanced_tool_swapper_upgrade', [
         'SQS',
         'UCU',
         'SQS'
@@ -82,7 +82,7 @@ ServerEvents.recipes(function (event) {
         C: 'kubejs:impossible_machine_casing'
     }, 'kubejs:sophisticatedbackpacks/advanced_tool_swapper_upgrade_post_ae2')
 
-    btmBpRecipe(event, 'sophisticatedstorage:alchemy_upgrade', [
+     bcBpRecipe(event, 'sophisticatedstorage:alchemy_upgrade', [
         'ESE',
         'CAC',
         'ESE'
@@ -93,7 +93,7 @@ ServerEvents.recipes(function (event) {
         A: 'sophisticatedstorage:upgrade_base'
     }, 'kubejs:sophisticatedstorage/alchemy_upgrade_post_ae2')
 
-    btmBpRecipe(event, 'sophisticatedstorage:advanced_alchemy_upgrade', [
+     bcBpRecipe(event, 'sophisticatedstorage:advanced_alchemy_upgrade', [
         'SQS',
         'UCU',
         'SQS'

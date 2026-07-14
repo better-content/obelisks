@@ -188,7 +188,7 @@ if ("unearthed:siltstone_regolith" !in looseSurfaceIds) fail("unearthed:siltston
 
 val retiredFiles = listOf(retiredHookPath, retiredAssignmentsPath, retiredLootPath)
 val forbiddenMarkers = listOf(
-    "global.BTM_REALISTIC_HANDS_ASSIGNMENTS",
+    "global.BC_REALISTIC_HANDS_ASSIGNMENTS",
     "ForgeEvents.onEvent('net.minecraftforge.event.entity.player.PlayerEvent\$BreakSpeed'",
     "LootJS.modifiers("
 )

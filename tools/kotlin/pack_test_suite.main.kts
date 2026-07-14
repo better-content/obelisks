@@ -149,12 +149,12 @@ fun jsonInt(value: Any?): Int? = when (value) {
 fun jsonBool(value: Any?): Boolean? = value as? Boolean
 
 val repo: Path = Paths.get("").toAbsolutePath().normalize()
-val instance: Path = Paths.get(System.getenv("BTM_INSTANCE") ?: "server-instance").toAbsolutePath().normalize()
-val explicitInstance = System.getenv("BTM_INSTANCE") != null
-val strictRuntime = (System.getenv("BTM_STRICT_RUNTIME") == "1") || args.contains("--strict-runtime")
-val strictDataDumps = (System.getenv("BTM_STRICT_DATA_DUMPS") == "1") || args.contains("--strict-data-dumps")
-val runtimeOnly = System.getenv("BTM_RUNTIME_ONLY") == "1"
-val reportDir: Path = Paths.get(System.getenv("BTM_REPORT_DIR") ?: repo.resolve("generated/validation").toString())
+val instance: Path = Paths.get(System.getenv("BC_INSTANCE") ?: "server-instance").toAbsolutePath().normalize()
+val explicitInstance = System.getenv("BC_INSTANCE") != null
+val strictRuntime = (System.getenv("BC_STRICT_RUNTIME") == "1") || args.contains("--strict-runtime")
+val strictDataDumps = (System.getenv("BC_STRICT_DATA_DUMPS") == "1") || args.contains("--strict-data-dumps")
+val runtimeOnly = System.getenv("BC_RUNTIME_ONLY") == "1"
+val reportDir: Path = Paths.get(System.getenv("BC_REPORT_DIR") ?: repo.resolve("generated/validation").toString())
 val generatedConfigDir = instance.resolve("kubejs/config")
 val retainedRuntimeDumpDir = repo.resolve("generated/runtime-dumps")
 val retainedGeneratedConfigDir = retainedRuntimeDumpDir.resolve("kubejs-config")
@@ -199,6 +199,11 @@ val hardPatterns = listOf(
     Triple("jvm_fatal", "JVM fatal errors", Regex("OutOfMemoryError|hs_err_pid|fatal error has been detected", RegexOption.IGNORE_CASE)),
     Triple("modernfix_watchdog", "ModernFix watchdog signatures", Regex("modernfix.*watchdog|watchdog.*modernfix|server thread dump", RegexOption.IGNORE_CASE)),
     Triple("c2me_thread_guard", "C2ME/thread-guard signatures", Regex("(ThreadingDetector|PalettedContainer|BulkSectionAccess|safe.?random|random.*wrong thread|accessing legacyrandomsource|CheckedThreadLocalRandom|Chunk not there when requested).*\\b(Exception|Error|FATAL|ReportedException|IllegalStateException)\\b|\\b(Exception|Error|FATAL|ReportedException|IllegalStateException)\\b.*(ThreadingDetector|PalettedContainer|BulkSectionAccess|safe.?random|random.*wrong thread|accessing legacyrandomsource|CheckedThreadLocalRandom|Chunk not there when requested)", RegexOption.IGNORE_CASE)),
+)
+val hardPatternIgnores = mapOf(
+    "modernfix_watchdog" to listOf(
+        Regex("""Option 'mixin\.feature\.integrated_server_watchdog' overriden \(by user configuration\) to 'false'""", RegexOption.IGNORE_CASE),
+    ),
 )
 
 fun ok(name: String, detail: String = "") {
@@ -343,7 +348,8 @@ fun scanHardFailuresInline(logPath: Path, instanceDir: Path): Pair<Boolean, Stri
             if (it > 0) addHardFinding(findingsByKey, "kubejs_failed_recipes", "KubeJS failed recipe count", lineNumber, line)
         }
         for ((key, label, pattern) in hardPatterns) {
-            if (pattern.containsMatchIn(line)) addHardFinding(findingsByKey, key, label, lineNumber, line)
+            val ignored = hardPatternIgnores[key].orEmpty().any { it.containsMatchIn(line) }
+            if (!ignored && pattern.containsMatchIn(line)) addHardFinding(findingsByKey, key, label, lineNumber, line)
         }
     }
     val crashFiles = walk(instanceDir.resolve("crash-reports")) { Regex("""crash-.*\.txt$""").matches(it.fileName.toString()) }
@@ -511,7 +517,7 @@ fun extractRecipeOutputs(json: Any?): List<String> {
     return unique(outputs)
 }
 
-val catalogPath = repo.resolve("kubejs/config/btm_expert_graph_catalog.json")
+val catalogPath = repo.resolve("kubejs/config/bc_expert_graph_catalog.json")
 val catalog = try {
     jsonObject(readJson(catalogPath)).also { ok("progression catalog parses", "${jsonArray(it["tierOrder"]).size} tiers") }
 } catch (error: Exception) {
@@ -627,7 +633,7 @@ fun testCriticalSurfaces() {
         "kubejs/server_scripts/35_villager_trades/10_coin_villager_trades.js",
         "kubejs/server_scripts/50_loot/20_world_chest_coin_tiers.js",
         "kubejs/server_scripts/50_loot/40_emerald_loot_coin_replacement.js",
-        "kubejs/data/btm/advancements/creating_space_access.json",
+        "kubejs/data/bc/advancements/creating_space_access.json",
         "config/twilightforest-common.toml",
         "kubejs/data/wares/loot_tables/agreement/village/plains_payment_sell.json",
     ).map(repo::resolve)
@@ -1004,7 +1010,7 @@ fun testGeneratedRecipeGraph() {
     if (loaded == null) return missingRuntimeEvidence("generated recipe graph tests", generatedConfigDir.resolve("full_recipe_index_manifest.json").toString())
     val (manifest, recipes) = loaded
     metrics["generatedRecipes"] = recipes.size
-    if (jsonString(manifest["schema"]) == "btm.recipe_audit.v2") ok("generated recipe dump has provenance metadata", "${jsonString(manifest["schema"])}, ${jsonString(manifest["recipeEventStage"])}, ${jsonString(manifest["generatedAt"])}") else fail("generated recipe dump has provenance metadata", "schema=${jsonString(manifest["schema"]) ?: "<missing>"}")
+    if (jsonString(manifest["schema"]) == "bc.recipe_audit.v2") ok("generated recipe dump has provenance metadata", "${jsonString(manifest["schema"])}, ${jsonString(manifest["recipeEventStage"])}, ${jsonString(manifest["generatedAt"])}") else fail("generated recipe dump has provenance metadata", "schema=${jsonString(manifest["schema"]) ?: "<missing>"}")
     if (recipes.size == (jsonInt(manifest["recipeCount"]) ?: -1)) ok("generated recipe chunks match manifest", "${recipes.size} recipes") else fail("generated recipe chunks match manifest", "${recipes.size}/${jsonInt(manifest["recipeCount"]) ?: -1}")
     val ids = mutableSetOf<String>()
     val dupes = mutableListOf<String>()
@@ -1016,7 +1022,7 @@ fun testGeneratedRecipeGraph() {
         val id = jsonString(recipe["id"]).orEmpty()
         if (!ids.add(id)) dupes += id
         val jsonText = jsonString(recipe["json"]).orEmpty()
-        val parsed = try { readJson(Files.writeString(Files.createTempFile("btm-pack-test-", ".json"), jsonText)) } catch (error: Exception) {
+        val parsed = try { readJson(Files.writeString(Files.createTempFile("bc-pack-test-", ".json"), jsonText)) } catch (error: Exception) {
             parseFailures += "$id: ${error.message}"
             null
         }
@@ -1253,13 +1259,13 @@ fun testPlankRegressionStaticAndExports() {
     }
 }
 
-fun testBtmValidator(name: String, vararg command: String) {
-    val result = runCommand("tools/btm", "internal", *command)
+fun testBcValidator(name: String, vararg command: String) {
+    val result = runCommand("tools/bc", "internal", *command)
     if (result.exitCode == 0) ok(name, result.output.trim()) else fail(name, result.output.trim())
 }
 
 if (explicitInstance && !exists(instance)) {
-    System.err.println("FAIL - explicit BTM_INSTANCE exists: $instance")
+    System.err.println("FAIL - explicitBC_INSTANCE exists: $instance")
     exitProcess(1)
 }
 Files.createDirectories(reportDir)
@@ -1269,10 +1275,10 @@ if (runtimeOnly) {
 } else {
     runMeasured("JSON and JS syntax validation", ::testJsonAndSyntax)
     runMeasured("critical progression surfaces", ::testCriticalSurfaces)
-    runMeasured("progression parenting and economy validation") { testBtmValidator("progression parenting and economy contracts validate", "validate-player-progression-contracts") }
-    runMeasured("pack contract validation") { testBtmValidator("pack contract validates", "validate-pack-contract") }
-    runMeasured("contract completeness classification") { testBtmValidator("contract completeness is classified", "contract-completeness-report", "--check", "--no-write") }
-    runMeasured("autonomous contract validation") { testBtmValidator("autonomous contract validators pass", "validate-autonomous-contracts") }
+    runMeasured("progression parenting and economy validation") { testBcValidator("progression parenting and economy contracts validate", "validate-player-progression-contracts") }
+    runMeasured("pack contract validation") { testBcValidator("pack contract validates", "validate-pack-contract") }
+    runMeasured("contract completeness classification") { testBcValidator("contract completeness is classified", "contract-completeness-report", "--check", "--no-write") }
+    runMeasured("autonomous contract validation") { testBcValidator("autonomous contract validators pass", "validate-autonomous-contracts") }
     runMeasured("quest book validation", ::testQuestBook)
     runMeasured("Wares and villager trade validation", ::testWaresAndTrades)
     runMeasured("repo loot data validation", ::testLootData)
@@ -1284,9 +1290,9 @@ runMeasured("engine and world performance log analysis", ::testEngineWorldPerfor
 if (runtimeOnly) {
     skip("source asset and tooling validation profile", "runtime-only mode skips repo-wide asset/tool validators")
 } else {
-    runMeasured("Realistic Hands validation") { testBtmValidator("Realistic Hands validates", "validate-realistic-hands") }
-    runMeasured("KubeJS asset validation") { testBtmValidator("KubeJS custom assets validate", "validate-kubejs-assets") }
-    runMeasured("chemistry identity validation") { testBtmValidator("chemistry identity matrix validates", "validate-chemistry-identity") }
+    runMeasured("Realistic Hands validation") { testBcValidator("Realistic Hands validates", "validate-realistic-hands") }
+    runMeasured("KubeJS asset validation") { testBcValidator("KubeJS custom assets validate", "validate-kubejs-assets") }
+    runMeasured("chemistry identity validation") { testBcValidator("chemistry identity matrix validates", "validate-chemistry-identity") }
     runMeasured("dev dump health validation", ::testDevDumpHealth)
     runMeasured("plank regression static validation", ::testPlankRegressionStaticAndExports)
 }

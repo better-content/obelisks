@@ -5,13 +5,13 @@ import kotlin.system.exitProcess
 
 fun usage(message: String? = null): Nothing {
     if (message != null) System.err.println(message)
-    System.err.println("Usage: tools/btm test scenario worldgen_sampling --profile quick|release|local [--bootstrap-mode always|once|never] [--keep-going] [--keep-runs]")
+    System.err.println("Usage: tools/bc test scenario worldgen_sampling --profile quick|release|local [--bootstrap-mode always|once|never] [--keep-going] [--keep-runs]")
     exitProcess(2)
 }
 
 var profile: String? = null
 var bootstrapMode = "always"
-var port: String? = System.getenv("BTM_HARNESS_ACTUAL_PORT")?.takeIf { it.isNotBlank() }
+var port: String? = System.getenv("BC_HARNESS_ACTUAL_PORT")?.takeIf { it.isNotBlank() }
 val passthrough = mutableListOf<String>()
 var index = 0
 while (index < args.size) {
@@ -47,7 +47,7 @@ val mappedArgs = when (selected) {
 }
 
 val root = Paths.get("").toAbsolutePath().normalize()
-val contract = ProcessBuilder("tools/btm", "internal", "validate-worldgen-sampling-contracts")
+val contract = ProcessBuilder("tools/bc", "internal", "validate-worldgen-sampling-contracts")
     .directory(root.toFile())
     .inheritIO()
     .start()
@@ -65,14 +65,14 @@ val builder = ProcessBuilder(command).directory(root.toFile())
 builder.inheritIO()
 builder.environment().putAll(
     listOf(
-        "BTM_HARNESS_STATUS_PATH",
-        "BTM_HARNESS_SUMMARY_PATH",
-        "BTM_HARNESS_PIDS_PATH",
-        "BTM_HARNESS_LOCK_PATH",
-        "BTM_HARNESS_LATEST_STATUS_PATH",
-        "BTM_HARNESS_LATEST_SUMMARY_PATH",
-        "BTM_HARNESS_REQUESTED_PORT",
-        "BTM_HARNESS_ACTUAL_PORT",
+        "BC_HARNESS_STATUS_PATH",
+        "BC_HARNESS_SUMMARY_PATH",
+        "BC_HARNESS_PIDS_PATH",
+        "BC_HARNESS_LOCK_PATH",
+        "BC_HARNESS_LATEST_STATUS_PATH",
+        "BC_HARNESS_LATEST_SUMMARY_PATH",
+        "BC_HARNESS_REQUESTED_PORT",
+        "BC_HARNESS_ACTUAL_PORT",
     ).mapNotNull { key -> System.getenv(key)?.let { key to it } }.toMap(),
 )
 val process = builder.start()

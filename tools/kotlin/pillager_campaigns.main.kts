@@ -49,13 +49,13 @@ val laneTests = linkedMapOf(
 
 fun usage(message: String? = null): Nothing {
     if (message != null) System.err.println(message)
-    System.err.println("Usage: tools/btm test scenario pillager_campaigns [--lane rally|nemesis_cycle|warlord_collapse|multiplayer_bias] [--run-root PATH]")
+    System.err.println("Usage: tools/bc test scenario pillager_campaigns [--lane rally|nemesis_cycle|warlord_collapse|multiplayer_bias] [--run-root PATH]")
     exitProcess(2)
 }
 
 fun parseConfig(args: Array<String>): ScenarioConfig {
     var lane = "nemesis_cycle"
-    var runRoot = Paths.get("/tmp/btm-pillager-campaigns")
+    var runRoot = Paths.get("/tmp/bc-pillager-campaigns")
     var index = 0
     while (index < args.size) {
         when (args[index]) {

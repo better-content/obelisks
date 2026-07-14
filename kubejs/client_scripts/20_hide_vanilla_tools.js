@@ -1,7 +1,7 @@
-var BTM_VANILLA_TOOL_TIERS = ['wooden', 'stone', 'iron', 'golden', 'diamond', 'netherite']
-var BTM_VANILLA_TOOL_KINDS = ['pickaxe', 'axe', 'shovel', 'sword', 'hoe']
+var BC_VANILLA_TOOL_TIERS = ['wooden', 'stone', 'iron', 'golden', 'diamond', 'netherite']
+var BC_VANILLA_TOOL_KINDS = ['pickaxe', 'axe', 'shovel', 'sword', 'hoe']
 
-var BTM_VANILLA_STYLE_TOOL_FAMILIES = [
+var BC_VANILLA_STYLE_TOOL_FAMILIES = [
     ['ae2', ['certus_quartz', 'fluix', 'nether_quartz']],
     ['aether', ['gravitite', 'holystone', 'skyroot', 'zanite']],
     ['deeperdarker', ['resonarium', 'warden']],
@@ -10,11 +10,10 @@ var BTM_VANILLA_STYLE_TOOL_FAMILIES = [
     ['goety', ['dark']],
     ['iceandfire', ['copper', 'dragonbone', 'dragonsteel_fire', 'dragonsteel_ice', 'dragonsteel_lightning', 'myrmex_desert', 'myrmex_jungle', 'silver']],
     ['malum', ['soul_stained_steel']],
-    ['the_finley_dimension_remastered', ['forglite']],
     ['undergarden', ['cloggrum', 'forgotten', 'froststeel', 'utherium']]
 ]
 
-var BTM_VANILLA_STYLE_TOOL_EXTRAS = [
+var BC_VANILLA_STYLE_TOOL_EXTRAS = [
     'ars_nouveau:enchanters_sword',
     'create:cardboard_sword',
     'farmersdelight:diamond_knife',
@@ -79,22 +78,22 @@ var BTM_VANILLA_STYLE_TOOL_EXTRAS = [
 
 function vanillaToolIds() {
     var tools = []
-    for (var ti = 0; ti < BTM_VANILLA_TOOL_TIERS.length; ti++) {
-        for (var ki = 0; ki < BTM_VANILLA_TOOL_KINDS.length; ki++) {
-            tools.push('minecraft:' + BTM_VANILLA_TOOL_TIERS[ti] + '_' + BTM_VANILLA_TOOL_KINDS[ki])
+    for (var ti = 0; ti < BC_VANILLA_TOOL_TIERS.length; ti++) {
+        for (var ki = 0; ki < BC_VANILLA_TOOL_KINDS.length; ki++) {
+            tools.push('minecraft:' + BC_VANILLA_TOOL_TIERS[ti] + '_' + BC_VANILLA_TOOL_KINDS[ki])
         }
     }
 
-    for (var fi = 0; fi < BTM_VANILLA_STYLE_TOOL_FAMILIES.length; fi++) {
-        var family = BTM_VANILLA_STYLE_TOOL_FAMILIES[fi]
+    for (var fi = 0; fi < BC_VANILLA_STYLE_TOOL_FAMILIES.length; fi++) {
+        var family = BC_VANILLA_STYLE_TOOL_FAMILIES[fi]
         for (var mi = 0; mi < family[1].length; mi++) {
-            for (var fki = 0; fki < BTM_VANILLA_TOOL_KINDS.length; fki++) {
-                tools.push(family[0] + ':' + family[1][mi] + '_' + BTM_VANILLA_TOOL_KINDS[fki])
+            for (var fki = 0; fki < BC_VANILLA_TOOL_KINDS.length; fki++) {
+                tools.push(family[0] + ':' + family[1][mi] + '_' + BC_VANILLA_TOOL_KINDS[fki])
             }
         }
     }
 
-    for (var ei = 0; ei < BTM_VANILLA_STYLE_TOOL_EXTRAS.length; ei++) tools.push(BTM_VANILLA_STYLE_TOOL_EXTRAS[ei])
+    for (var ei = 0; ei < BC_VANILLA_STYLE_TOOL_EXTRAS.length; ei++) tools.push(BC_VANILLA_STYLE_TOOL_EXTRAS[ei])
 
     return tools
 }

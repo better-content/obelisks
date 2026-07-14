@@ -1,5 +1,5 @@
 {
-  "schema": "btm.pack_contract.v1",
+  "schema": "bc.pack_contract.v1",
   "description": "Versioned validation contract for Better Content's expert-pack content layer.",
   "pack": {
     "name": "Better Content",
@@ -96,7 +96,7 @@
       "mods/wares.pw.toml"
     ],
     "requiredBundledJars": [
-      "mods/btmfixes-0.1.0.jar",
+      "mods/bcfixes-0.1.0.jar",
       "mods/classselector-1.0.0.jar",
       "mods/computerbridge-0.1.0.jar",
       "mods/create-transmission-loss-0.1.0.jar",
@@ -186,19 +186,19 @@
         {
           "file": "kubejs/server_scripts/40_recipe_add/55_realistic_ores_identity_outputs.js",
           "all": [
-            "global.BTM_RO_DEPOSITS",
-            "global.BTM_RO_SOLVENTS",
-            "global.BTM_RO_BALLS",
-            "BTM_RO_RETENTION",
-            "BTM_RO_OVERWORLD_ORE_EXTRAS"
+            "global.BC_RO_DEPOSITS",
+            "global.BC_RO_SOLVENTS",
+            "global.BC_RO_BALLS",
+            "BC_RO_RETENTION",
+            "BC_RO_OVERWORLD_ORE_EXTRAS"
           ]
         },
         {
           "file": "kubejs/server_scripts/40_recipe_add/57_grown_material_acid_ball_processing.js",
           "all": [
-            "BTM_GROWN_MATERIALS",
+            "BC_GROWN_MATERIALS",
             "kubejs:grown_materials/acid_ball/",
-            "global.BTM_RO_SOLVENTS"
+            "global.BC_RO_SOLVENTS"
           ]
         },
         {
@@ -206,7 +206,7 @@
           "all": [
             "JsonIO.read",
             "create:mixing",
-            "btmAdpRetention"
+            " bcAdpRetention"
           ]
         }
       ],
@@ -332,7 +332,7 @@
           "all": [
             "createdeco:copper_coin",
             "createdeco:netherite_coin",
-            "btmAddCoinExchangeTrades",
+            " bcAddCoinExchangeTrades",
             "morejs$replaceEmeralds"
           ]
         }
@@ -346,16 +346,14 @@
         "kubejs/server_scripts/30_recipe_replace/155_dimension_proof_graph_starts.js",
         "kubejs/client_scripts/40_hide_quarantined_systems.js",
         "kubejs/server_scripts/70_spawn/10_spawn_randomizer.js",
-        "kubejs/data/btm/advancements/creating_space_access.json",
+        "kubejs/data/bc/advancements/creating_space_access.json",
         "kubejs/data/creatingspace/creatingspace/rocket_accessible_dimension/earth_orbit.json",
         "kubejs/data/lostcities/creatingspace/rocket_accessible_dimension/lostcity.json",
         "kubejs/data/twilightforest/creatingspace/rocket_accessible_dimension/twilight_forest.json",
         "kubejs/data/fallout_wastelands_/creatingspace/rocket_accessible_dimension/wastelands.json",
-        "kubejs/data/the_finley_dimension_remastered/creatingspace/rocket_accessible_dimension/finley_dimension.json",
-        "kubejs/data/callfromthedepth_/creatingspace/rocket_accessible_dimension/depth.json",
         "config/twilightforest-common.toml",
         "config/structurify.json",
-        "config/obelisks/obelisks/aether.json",
+        "config/dimension_drink/dimension_drink/aether.json",
         "config/TFTH.toml",
         "config/TFTH-Data.toml",
         "config/pillagercampaigns-common.toml",
@@ -365,16 +363,16 @@
         {
           "file": "kubejs/server_scripts/30_recipe_replace/170_space_dimension_access_gates.js",
           "all": [
-            "Dimensional Fonts or Creating Space rocket routes",
+            "Dimension Drink or Creating Space rocket routes",
             "fallout_wastelands_:portal_frame",
-            "callfromthedepth_:depth"
+            "undergarden:catalyst"
           ]
         },
         {
           "file": "kubejs/server_scripts/30_recipe_replace/155_dimension_proof_graph_starts.js",
           "all": [
             "kubejs:dimension_graph/aether/glider_wing",
-            "kubejs:dimension_graph/aether/airship"
+            "kubejs:dimension_graph/aether/hang_glider"
           ]
         },
         {
@@ -382,9 +380,7 @@
           "all": [
             "lostcities:lostcity",
             "twilightforest:twilight_forest",
-            "fallout_wastelands_:wastelands",
-            "the_finley_dimension_remastered:finley_dimension",
-            "callfromthedepth_:depth"
+            "fallout_wastelands_:wastelands"
           ]
         },
         {
@@ -401,8 +397,8 @@
       "id": "runtime_concurrency_performance",
       "tier": "L4",
       "requiredFiles": [
-        "tools/btm",
-        "tools/btm.main.kts",
+        "tools/bc",
+        "tools/bc.main.kts",
         "tools/kotlin/lc_tfth_c2me_dh_stability.main.kts",
         "config/c2me.toml",
         "config/DistantHorizons.toml"
@@ -419,7 +415,7 @@
           ]
         },
         {
-          "file": "tools/btm.main.kts",
+          "file": "tools/bc.main.kts",
           "all": [
             "ModernFix watchdog signatures",
             "KubeJS recipe parse errors",
@@ -471,8 +467,8 @@
       "id": "L0",
       "name": "inventory/source integrity",
       "requiredTools": [
-        "tools/btm",
-        "tools/btm.main.kts",
+        "tools/bc",
+        "tools/bc.main.kts",
         "tools/kotlin/contract_completeness_report.main.kts",
         "tools/kotlin/validate_pack_contract.main.kts"
       ]
@@ -481,8 +477,8 @@
       "id": "L1",
       "name": "static syntax/schema/reference checks",
       "requiredTools": [
-        "tools/btm",
-        "tools/btm.main.kts",
+        "tools/bc",
+        "tools/bc.main.kts",
         "tools/kotlin/validate_autonomous_contracts.main.kts",
         "tools/kotlin/validate_kubejs_assets.main.kts"
       ]
@@ -509,8 +505,8 @@
       "id": "L4",
       "name": "client/server scenario harnesses",
       "requiredTools": [
-        "tools/btm",
-        "tools/btm.main.kts",
+        "tools/bc",
+        "tools/bc.main.kts",
         "tools/kotlin/lc_tfth_c2me_dh_stability.main.kts"
       ]
     },
@@ -567,12 +563,12 @@
         "evidence": [
           "tools/kotlin/pack_test_suite.main.kts",
           "tools/kotlin/validate_kubejs_assets.main.kts",
-          "tools/btm.main.kts"
+          "tools/bc.main.kts"
         ],
         "validators": [
           "tools/kotlin/pack_test_suite.main.kts",
           "tools/kotlin/validate_kubejs_assets.main.kts",
-          "tools/btm.main.kts"
+          "tools/bc.main.kts"
         ],
         "openRequirements": []
       },
@@ -588,7 +584,7 @@
         ],
         "claim": "Tier order, machine-casing ladder, high-impact gates, removed bypasses, generated recipe IDs, and recipe parse health are checked from source plus fresh runtime dumps when pack_test_suite runs against a current instance.",
         "evidence": [
-          "kubejs/config/btm_expert_graph_catalog.json",
+          "kubejs/config/bc_expert_graph_catalog.json",
           "kubejs/server_scripts/90_dev_debug/10_recipe_audit_dumps.js",
           "tools/kotlin/pack_test_suite.main.kts",
           "tools/kotlin/expert_graph_audit.main.kts",
@@ -613,12 +609,12 @@
         ],
         "claim": "Deposit processing scripts, acid/ball matrix identity, Alchemistry-to-Create port shape, Chemlib/Latent Chemlib data, and synthesis routes are checked as hard source invariants.",
         "evidence": [
-          "tools/btm.main.kts",
+          "tools/bc.main.kts",
           "kubejs/server_scripts/40_recipe_add/55_realistic_ores_identity_outputs.js",
           "kubejs/config/alchemistry_dissolver_port.json"
         ],
         "validators": [
-          "tools/btm.main.kts",
+          "tools/bc.main.kts",
           "tools/kotlin/pack_test_suite.main.kts"
         ],
         "openRequirements": []
@@ -682,22 +678,22 @@
         "systemRefs": [
           "adventure_dimensions_combat_pressure"
         ],
-        "claim": "Dimension travel is source-checked to Dimensional Fonts and Creating Space rocket routes; direct portal/key routes, TFTH config, pillager campaigns, spawn randomizer, and village-wall pressure require scenario execution for full proof.",
+        "claim": "Dimension travel is source-checked to Dimension Drink and Creating Space rocket routes; direct portal/key routes, TFTH config, pillager campaigns, spawn randomizer, and village-wall pressure require scenario execution for full proof.",
         "evidence": [
           "kubejs/server_scripts/30_recipe_replace/170_space_dimension_access_gates.js",
           "kubejs/client_scripts/40_hide_quarantined_systems.js",
-          "kubejs/data/btm/advancements/creating_space_access.json",
+          "kubejs/data/bc/advancements/creating_space_access.json",
           "kubejs/data/creatingspace/creatingspace/rocket_accessible_dimension/earth_orbit.json",
           "kubejs/data/lostcities/creatingspace/rocket_accessible_dimension/lostcity.json",
           "kubejs/data/twilightforest/creatingspace/rocket_accessible_dimension/twilight_forest.json",
           "config/twilightforest-common.toml",
           "config/structurify.json",
-          "config/obelisks/obelisks/aether.json",
+          "config/dimension_drink/dimension_drink/aether.json",
           "tools/kotlin/lc_tfth_c2me_dh_stability.main.kts"
         ],
         "validators": [
-          "tools/btm",
-          "tools/btm.main.kts",
+          "tools/bc",
+          "tools/bc.main.kts",
           "tools/kotlin/pack_test_suite.main.kts"
         ],
         "openRequirements": [
@@ -717,13 +713,13 @@
         ],
         "claim": "Fresh server smoke validates boot, hard log scan, recipe parse health, tick/save budgets, dimension save fanout, DH backlog, and recent crash state.",
         "evidence": [
-          "tools/btm",
-          "tools/btm.main.kts",
+          "tools/bc",
+          "tools/bc.main.kts",
           "tools/kotlin/pack_test_suite.main.kts",
           "tools/kotlin/lc_tfth_c2me_dh_stability.main.kts"
         ],
         "validators": [
-          "tools/btm",
+          "tools/bc",
           "tools/kotlin/pack_test_suite.main.kts",
           "tools/kotlin/lc_tfth_c2me_dh_stability.main.kts"
         ],
@@ -791,7 +787,7 @@
           "tools/kotlin/validate_autonomous_contracts.main.kts",
           "tools/kotlin/validate_pack_contract.main.kts",
           "generated/custom-mod-sources",
-          "mods/btmfixes-0.1.0.jar",
+          "mods/bcfixes-0.1.0.jar",
           "mods/pillagercampaigns-0.2.0.jar"
         ],
         "validators": [
@@ -806,9 +802,9 @@
     "sourceRoot": "generated/custom-mod-sources",
     "entries": [
       {
-        "id": "btmfixes",
-        "repo": "bound-to-matter-fixes",
-        "jar": "mods/btmfixes-0.1.0.jar",
+        "id": "bcfixes",
+        "repo": "better-content-fixes",
+        "jar": "mods/bcfixes-0.1.0.jar",
         "minCodeFiles": 8,
         "minTestFiles": 1
       },
@@ -827,9 +823,9 @@
         "minTestFiles": 4
       },
       {
-        "id": "btmdimtrees",
+        "id": "bcdimtrees",
         "repo": "dynamic-trees-dimension-compat",
-        "jar": "mods/btmdimtrees-0.1.0.jar",
+        "jar": "mods/bcdimtrees-0.1.0.jar",
         "minCodeFiles": 9,
         "minTestFiles": 1
       },
@@ -855,9 +851,9 @@
         "minTestFiles": 10
       },
       {
-        "id": "dimensionalfonts",
-        "repo": "dimensional-fonts",
-        "jar": "mods/dimensionalfonts-1.0.0.jar",
+        "id": "dimensiondrink",
+        "repo": "dimension-drink",
+        "jar": "mods/dimensiondrink-1.0.0.jar",
         "minCodeFiles": 50,
         "minTestFiles": 5
       },

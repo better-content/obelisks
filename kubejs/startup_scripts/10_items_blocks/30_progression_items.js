@@ -1,6 +1,6 @@
 // Pack-owned progression items/blocks for expert machine casings and Blood Magic heart keys.
 
-function btmTitleCase(raw) {
+function bcTitleCase(raw) {
     var words = String(raw).split('_')
     for (var i = 0; i < words.length; i++) {
         if (words[i].length > 0) words[i] = words[i].charAt(0).toUpperCase() + words[i].substring(1)
@@ -9,7 +9,7 @@ function btmTitleCase(raw) {
 }
 
 StartupEvents.registry('block', function (event) {
-    var casings = global.BTM_MACHINE_CASING_TIERS || []
+    var casings = global.BC_MACHINE_CASING_TIERS || []
     for (var i = 0; i < casings.length; i++) {
         var path = casings[i].item.substring('kubejs:'.length)
         event.create(path)
@@ -134,7 +134,7 @@ StartupEvents.registry('item', function (event) {
         ['shadow_extract', 'Shadow Extract'],
         ['harm_extract', 'Harm Extract'],
         ['slowness_extract', 'Slowness Extract'],
-        ['stabilized_reagent', 'Stabilized Reagent']
+        ['stabilized_reagent', 'Trip Fuel']
     ]
 
     for (var r = 0; r < reagents.length; r++) {

@@ -5,128 +5,128 @@
 // Goety, Malum, Occultism, Forbidden Arcanus, and Reliquary provide the
 // working surfaces and reagents.
 
-var BTM_IRONS_T1 = 'bloodmagic:blankslate'
-var BTM_IRONS_T2 = 'bloodmagic:reinforcedslate'
-var BTM_IRONS_T3 = 'bloodmagic:infusedslate'
-var BTM_IRONS_T4 = 'bloodmagic:demonslate'
-var BTM_IRONS_T5 = 'bloodmagic:etherealslate'
-var BTM_IRONS_OS_T1 = 'deeperdarker:cobbled_sculk_stone'
-var BTM_IRONS_OS_T2 = 'deeperdarker:gloomslate'
-var BTM_IRONS_OS_T3 = 'minecraft:sculk_catalyst'
-var BTM_IRONS_OS_T4 = 'deeperdarker:sculk_bone'
-var BTM_IRONS_OS_T5 = 'deeperdarker:resonarium'
+var BC_IRONS_T1 = 'bloodmagic:blankslate'
+var BC_IRONS_T2 = 'bloodmagic:reinforcedslate'
+var BC_IRONS_T3 = 'bloodmagic:infusedslate'
+var BC_IRONS_T4 = 'bloodmagic:demonslate'
+var BC_IRONS_T5 = 'bloodmagic:etherealslate'
+var BC_IRONS_OS_T1 = 'deeperdarker:cobbled_sculk_stone'
+var BC_IRONS_OS_T2 = 'deeperdarker:gloomslate'
+var BC_IRONS_OS_T3 = 'minecraft:sculk_catalyst'
+var BC_IRONS_OS_T4 = 'deeperdarker:sculk_bone'
+var BC_IRONS_OS_T5 = 'deeperdarker:resonarium'
 
-function btmIronsExists(id) {
+function bcIronsExists(id) {
     try { return Item.exists(id) } catch (e) { return false }
 }
 
-function btmIronsIngredient(input) {
+function bcIronsIngredient(input) {
     if (typeof input !== 'string') return input
     if (input.charAt(0) === '#') return { tag: input.substring(1) }
     return { item: input }
 }
 
-function btmIronsIngredientExists(input) {
+function bcIronsIngredientExists(input) {
     if (!input) return false
-    if (typeof input === 'string') return input.charAt(0) === '#' || btmIronsExists(input)
-    if (input.item) return btmIronsExists(input.item)
+    if (typeof input === 'string') return input.charAt(0) === '#' ||  bcIronsExists(input)
+    if (input.item) return bcIronsExists(input.item)
     return !!input.tag || !!input.fluid
 }
 
-function btmIronsCanMake(output, inputs) {
-    if (!btmIronsExists(output)) return false
+function bcIronsCanMake(output, inputs) {
+    if (!bcIronsExists(output)) return false
     for (var i = 0; i < inputs.length; i++) {
-        if (!btmIronsIngredientExists(inputs[i])) return false
+        if (!bcIronsIngredientExists(inputs[i])) return false
     }
     return true
 }
 
-function btmIronsResult(output, count) {
+function bcIronsResult(output, count) {
     var result = { item: output }
     if (count && count > 1) result.count = count
     return result
 }
 
-function btmIronsCountIngredient(input, count) {
-    var ingredient = btmIronsIngredient(input)
+function bcIronsCountIngredient(input, count) {
+    var ingredient = bcIronsIngredient(input)
     if (!ingredient.count) ingredient.count = count || 1
     return ingredient
 }
 
-function btmIronsRemoveOutput(event, output) {
-    if (btmIronsExists(output)) event.remove({ output: output })
+function bcIronsRemoveOutput(event, output) {
+    if (bcIronsExists(output)) event.remove({ output: output })
 }
 
-function btmIronsRemoveOutputs(event, outputs) {
-    for (var i = 0; i < outputs.length; i++) btmIronsRemoveOutput(event, outputs[i])
+function bcIronsRemoveOutputs(event, outputs) {
+    for (var i = 0; i < outputs.length; i++)  bcIronsRemoveOutput(event, outputs[i])
 }
 
-function btmIronsBloodAlchemy(event, id, output, count, inputs, syphon, ticks, tier) {
-    if (!btmIronsCanMake(output, inputs)) return
+function bcIronsBloodAlchemy(event, id, output, count, inputs, syphon, ticks, tier) {
+    if (!bcIronsCanMake(output, inputs)) return
     event.custom({
         type: 'bloodmagic:alchemytable',
-        input: inputs.map(btmIronsIngredient),
-        output: btmIronsResult(output, count),
+        input: inputs.map(bcIronsIngredient),
+        output: bcIronsResult(output, count),
         syphon: syphon,
         ticks: ticks,
         upgradeLevel: tier
     }).id('kubejs:irons_cross_magic/blood_alchemy/' + id)
 }
 
-function btmIronsArsApparatus(event, id, output, count, reagent, pedestalItems, sourceCost) {
+function bcIronsArsApparatus(event, id, output, count, reagent, pedestalItems, sourceCost) {
     var inputs = [reagent].concat(pedestalItems)
-    if (!btmIronsCanMake(output, inputs)) return
+    if (!bcIronsCanMake(output, inputs)) return
     event.custom({
         type: 'ars_nouveau:enchanting_apparatus',
         keepNbtOfReagent: false,
-        output: btmIronsResult(output, count),
-        pedestalItems: pedestalItems.map(btmIronsIngredient),
-        reagent: [btmIronsIngredient(reagent)],
+        output: bcIronsResult(output, count),
+        pedestalItems: pedestalItems.map(bcIronsIngredient),
+        reagent: [bcIronsIngredient(reagent)],
         sourceCost: sourceCost
     }).id('kubejs:irons_cross_magic/ars_apparatus/' + id)
 }
 
-function btmIronsHexereiCauldron(event, id, output, count, ingredients, fluid, heat) {
-    if (!btmIronsCanMake(output, ingredients)) return
+function bcIronsHexereiCauldron(event, id, output, count, ingredients, fluid, heat) {
+    if (!bcIronsCanMake(output, ingredients)) return
     event.custom({
         type: 'hexerei:mixingcauldron',
         liquid: { fluid: fluid || 'minecraft:water' },
-        ingredients: ingredients.map(btmIronsIngredient),
-        output: btmIronsResult(output, count),
+        ingredients: ingredients.map(bcIronsIngredient),
+        output: bcIronsResult(output, count),
         liquidOutput: { fluid: fluid || 'minecraft:water' },
         fluidLevelsConsumed: 333,
         heatRequirement: heat || 'heated'
     }).id('kubejs:irons_cross_magic/hexerei_cauldron/' + id)
 }
 
-function btmIronsMalumInfusion(event, id, output, count, input, inputCount, extras, spirits) {
+function bcIronsMalumInfusion(event, id, output, count, input, inputCount, extras, spirits) {
     var inputs = [input].concat(extras)
-    if (!btmIronsCanMake(output, inputs)) return
+    if (!bcIronsCanMake(output, inputs)) return
     event.custom({
         type: 'malum:spirit_infusion',
-        input: btmIronsCountIngredient(input, inputCount || 1),
-        extra_items: extras.map(function (extra) { return btmIronsCountIngredient(extra, 1) }),
+        input: bcIronsCountIngredient(input, inputCount || 1),
+        extra_items: extras.map(function (extra) { return bcIronsCountIngredient(extra, 1) }),
         spirits: spirits,
-        output: btmIronsResult(output, count)
+        output: bcIronsResult(output, count)
     }).id('kubejs:irons_cross_magic/malum_spirit_infusion/' + id)
 }
 
-function btmIronsGoetyRitual(event, id, output, count, activationItem, ingredients, craftType, soulCost, duration) {
+function bcIronsGoetyRitual(event, id, output, count, activationItem, ingredients, craftType, soulCost, duration) {
     var inputs = [activationItem].concat(ingredients)
-    if (!btmIronsCanMake(output, inputs)) return
+    if (!bcIronsCanMake(output, inputs)) return
     event.custom({
         type: 'goety:ritual',
         ritual_type: 'goety:craft',
-        activation_item: btmIronsIngredient(activationItem),
+        activation_item: bcIronsIngredient(activationItem),
         craftType: craftType || 'sabbath',
         soulCost: soulCost || 100,
         duration: duration || 60,
-        ingredients: ingredients.map(btmIronsIngredient),
-        result: btmIronsResult(output, count)
+        ingredients: ingredients.map(bcIronsIngredient),
+        result: bcIronsResult(output, count)
     }).id('kubejs:irons_cross_magic/goety_ritual/' + id)
 }
 
-var BTM_IRONS_SPELLCRAFT_OUTPUTS = [
+var BC_IRONS_SPELLCRAFT_OUTPUTS = [
     'irons_spellbooks:scroll_forge',
     'irons_spellbooks:inscription_table',
     'irons_spellbooks:arcane_anvil',
@@ -173,7 +173,7 @@ var BTM_IRONS_SPELLCRAFT_OUTPUTS = [
     'irons_spellbooks:twilight_gale'
 ]
 
-var BTM_IRONS_RUNES = [
+var BC_IRONS_RUNES = [
     { id: 'blood', output: 'irons_spellbooks:blood_rune', focus: 'hexerei:blood_bottle', reagent: 'bloodmagic:blankslate', spirit: 'wicked' },
     { id: 'cooldown', output: 'irons_spellbooks:cooldown_rune', focus: 'forbidden_arcanus:arcane_crystal', reagent: 'ars_nouveau:source_gem', spirit: 'arcane' },
     { id: 'ender', output: 'irons_spellbooks:ender_rune', focus: 'occultism:otherworld_essence', reagent: 'minecraft:ender_pearl', spirit: 'eldritch' },
@@ -186,251 +186,233 @@ var BTM_IRONS_RUNES = [
     { id: 'protection', output: 'irons_spellbooks:protection_rune', focus: 'malum:processed_soulstone', reagent: 'minecraft:shield', spirit: 'sacred' }
 ]
 
-function btmIronsSpirit(type, count) {
+function bcIronsSpirit(type, count) {
     return { type: type, count: count }
 }
 
-function btmIronsRuneRecipes(event) {
-    for (var i = 0; i < BTM_IRONS_RUNES.length; i++) {
-        var rune = BTM_IRONS_RUNES[i]
-        btmIronsMalumInfusion(event, rune.id + '_rune', rune.output, 1, 'irons_spellbooks:blank_rune', 1, [
+function bcIronsRuneRecipes(event) {
+    for (var i = 0; i < BC_IRONS_RUNES.length; i++) {
+        var rune = BC_IRONS_RUNES[i]
+         bcIronsMalumInfusion(event, rune.id + '_rune', rune.output, 1, 'irons_spellbooks:blank_rune', 1, [
             rune.focus,
             rune.reagent,
-            BTM_IRONS_OS_T3,
-            BTM_IRONS_T3
-        ], [
-            btmIronsSpirit(rune.spirit, 6),
-            btmIronsSpirit('arcane', 2)
+            BC_IRONS_OS_T3,
+            BC_IRONS_T3
+        ], [bcIronsSpirit(rune.spirit, 6), bcIronsSpirit('arcane', 2)
         ])
-        btmIronsArsApparatus(event, rune.id + '_upgrade_orb', 'irons_spellbooks:' + rune.id + '_upgrade_orb', 1, 'irons_spellbooks:upgrade_orb', [
+         bcIronsArsApparatus(event, rune.id + '_upgrade_orb', 'irons_spellbooks:' + rune.id + '_upgrade_orb', 1, 'irons_spellbooks:upgrade_orb', [
             'irons_spellbooks:blank_rune',
             rune.focus,
             rune.reagent,
-            BTM_IRONS_OS_T3,
-            BTM_IRONS_T3
+            BC_IRONS_OS_T3,
+            BC_IRONS_T3
         ], 4500)
     }
 }
 
 ServerEvents.recipes(function (event) {
-    btmIronsRemoveOutputs(event, BTM_IRONS_SPELLCRAFT_OUTPUTS)
-    for (var i = 0; i < BTM_IRONS_RUNES.length; i++) {
-        btmIronsRemoveOutput(event, BTM_IRONS_RUNES[i].output)
-        btmIronsRemoveOutput(event, 'irons_spellbooks:' + BTM_IRONS_RUNES[i].id + '_upgrade_orb')
+     bcIronsRemoveOutputs(event, BC_IRONS_SPELLCRAFT_OUTPUTS)
+    for (var i = 0; i < BC_IRONS_RUNES.length; i++) {
+         bcIronsRemoveOutput(event, BC_IRONS_RUNES[i].output)
+         bcIronsRemoveOutput(event, 'irons_spellbooks:' + BC_IRONS_RUNES[i].id + '_upgrade_orb')
     }
 
-    btmIronsHexereiCauldron(event, 'magic_cloth', 'irons_spellbooks:magic_cloth', 4, [
+     bcIronsHexereiCauldron(event, 'magic_cloth', 'irons_spellbooks:magic_cloth', 4, [
         'hexerei:wax_blend',
         'hexerei:tallow_bottle',
         'malum:spirit_fabric',
         'malum:arcane_spirit',
-        BTM_IRONS_OS_T1,
-        BTM_IRONS_T1,
+        BC_IRONS_OS_T1,
+        BC_IRONS_T1,
         'minecraft:white_wool',
         'minecraft:string'
     ], 'minecraft:water', 'heated')
 
-    btmIronsMalumInfusion(event, 'arcane_ingot', 'irons_spellbooks:arcane_ingot', 1, 'forbidden_arcanus:arcane_crystal', 1, [
+     bcIronsMalumInfusion(event, 'arcane_ingot', 'irons_spellbooks:arcane_ingot', 1, 'forbidden_arcanus:arcane_crystal', 1, [
         'malum:hallowed_gold_ingot',
         'malum:arcane_spirit',
         'occultism:spirit_attuned_gem',
-        BTM_IRONS_OS_T2,
-        BTM_IRONS_T2
-    ], [btmIronsSpirit('arcane', 6), btmIronsSpirit('sacred', 2)])
+        BC_IRONS_OS_T2,
+        BC_IRONS_T2
+    ], [bcIronsSpirit('arcane', 6), bcIronsSpirit('sacred', 2)])
 
-    btmIronsMalumInfusion(event, 'mithril_weave', 'irons_spellbooks:mithril_weave', 2, 'irons_spellbooks:magic_cloth', 1, [
+     bcIronsMalumInfusion(event, 'mithril_weave', 'irons_spellbooks:mithril_weave', 2, 'irons_spellbooks:magic_cloth', 1, [
         'irons_spellbooks:arcane_ingot',
         'malum:spirit_fabric',
         'forbidden_arcanus:deorum_ingot',
-        BTM_IRONS_OS_T4,
-        BTM_IRONS_T4
-    ], [btmIronsSpirit('arcane', 8), btmIronsSpirit('aerial', 4)])
+        BC_IRONS_OS_T4,
+        BC_IRONS_T4
+    ], [bcIronsSpirit('arcane', 8), bcIronsSpirit('aerial', 4)])
 
-    btmIronsArsApparatus(event, 'blank_rune', 'irons_spellbooks:blank_rune', 2, 'forbidden_arcanus:rune', [
+     bcIronsArsApparatus(event, 'blank_rune', 'irons_spellbooks:blank_rune', 2, 'forbidden_arcanus:rune', [
         'ars_nouveau:source_gem',
         'malum:arcane_spirit',
         'occultism:otherworld_essence',
-        BTM_IRONS_OS_T2,
-        BTM_IRONS_T2
+        BC_IRONS_OS_T2,
+        BC_IRONS_T2
     ], 2500)
 
-    btmIronsArsApparatus(event, 'arcane_rune', 'irons_spellbooks:arcane_rune', 1, 'irons_spellbooks:blank_rune', [
+     bcIronsArsApparatus(event, 'arcane_rune', 'irons_spellbooks:arcane_rune', 1, 'irons_spellbooks:blank_rune', [
         'ars_nouveau:source_gem',
         'malum:arcane_spirit',
         'forbidden_arcanus:arcane_crystal',
-        BTM_IRONS_OS_T3,
-        BTM_IRONS_T3
+        BC_IRONS_OS_T3,
+        BC_IRONS_T3
     ], 3500)
 
-    btmIronsMalumInfusion(event, 'upgrade_orb', 'irons_spellbooks:upgrade_orb', 1, 'irons_spellbooks:arcane_rune', 1, [
+     bcIronsMalumInfusion(event, 'upgrade_orb', 'irons_spellbooks:upgrade_orb', 1, 'irons_spellbooks:arcane_rune', 1, [
         'malum:processed_soulstone',
         'occultism:spirit_attuned_gem',
         'ars_nouveau:source_gem',
-        BTM_IRONS_OS_T3,
-        BTM_IRONS_T3
-    ], [btmIronsSpirit('arcane', 8), btmIronsSpirit('eldritch', 2)])
+        BC_IRONS_OS_T3,
+        BC_IRONS_T3
+    ], [bcIronsSpirit('arcane', 8), bcIronsSpirit('eldritch', 2)])
 
-    btmIronsArsApparatus(event, 'scroll_forge', 'irons_spellbooks:scroll_forge', 1, 'minecraft:crying_obsidian', [
+     bcIronsArsApparatus(event, 'scroll_forge', 'irons_spellbooks:scroll_forge', 1, 'minecraft:crying_obsidian', [
         'irons_spellbooks:arcane_ingot',
         'ars_nouveau:source_gem',
         'hexerei:blood_bottle',
-        BTM_IRONS_OS_T2,
-        BTM_IRONS_T2
+        BC_IRONS_OS_T2,
+        BC_IRONS_T2
     ], 3000)
 
-    btmIronsArsApparatus(event, 'inscription_table', 'irons_spellbooks:inscription_table', 1, 'minecraft:lectern', [
+     bcIronsArsApparatus(event, 'inscription_table', 'irons_spellbooks:inscription_table', 1, 'minecraft:lectern', [
         'irons_spellbooks:arcane_ingot',
         'malum:runewood_tablet',
         'forbidden_arcanus:arcane_crystal',
-        BTM_IRONS_OS_T3,
-        BTM_IRONS_T3
+        BC_IRONS_OS_T3,
+        BC_IRONS_T3
     ], 4500)
 
-    btmIronsGoetyRitual(event, 'arcane_anvil', 'irons_spellbooks:arcane_anvil', 1, 'minecraft:anvil', [
+     bcIronsGoetyRitual(event, 'arcane_anvil', 'irons_spellbooks:arcane_anvil', 1, 'minecraft:anvil', [
         'goety:cursed_bars',
         'goety:magic_emerald',
         'irons_spellbooks:arcane_ingot',
         'malum:processed_soulstone',
-        BTM_IRONS_OS_T3,
-        BTM_IRONS_T3
+        BC_IRONS_OS_T3,
+        BC_IRONS_T3
     ], 'forge', 300, 120)
 
-    btmIronsHexereiCauldron(event, 'alchemist_cauldron', 'irons_spellbooks:alchemist_cauldron', 1, [
+     bcIronsHexereiCauldron(event, 'alchemist_cauldron', 'irons_spellbooks:alchemist_cauldron', 1, [
         'minecraft:cauldron',
         'hexerei:blood_bottle',
         'hexerei:mandrake_root',
         'reliquary:catalyzing_gland',
         'malum:aqueous_spirit',
-        BTM_IRONS_OS_T2,
-        BTM_IRONS_T2
+        BC_IRONS_OS_T2,
+        BC_IRONS_T2
     ], 'minecraft:water', 'heated')
 
-    btmIronsBloodAlchemy(event, 'lesser_spell_slot_upgrade', 'irons_spellbooks:lesser_spell_slot_upgrade', 1, [
-        btmIronsIngredient('irons_spellbooks:arcane_rune'),
-        btmIronsIngredient('irons_spellbooks:magic_cloth'),
-        btmIronsIngredient('ars_nouveau:source_gem'),
-        btmIronsIngredient('malum:arcane_spirit'),
-        btmIronsIngredient(BTM_IRONS_OS_T3),
-        btmIronsIngredient(BTM_IRONS_T3)
+     bcIronsBloodAlchemy(event, 'lesser_spell_slot_upgrade', 'irons_spellbooks:lesser_spell_slot_upgrade', 1, [bcIronsIngredient('irons_spellbooks:arcane_rune'), bcIronsIngredient('irons_spellbooks:magic_cloth'), bcIronsIngredient('ars_nouveau:source_gem'), bcIronsIngredient('malum:arcane_spirit'), bcIronsIngredient(BC_IRONS_OS_T3), bcIronsIngredient(BC_IRONS_T3)
     ], 12000, 220, 3)
 
-    btmIronsBloodAlchemy(event, 'divine_pearl', 'irons_spellbooks:divine_pearl', 1, [
-        btmIronsIngredient('ars_nouveau:source_gem'),
-        btmIronsIngredient('reliquary:angelic_feather'),
-        btmIronsIngredient('malum:sacred_spirit'),
-        btmIronsIngredient(BTM_IRONS_OS_T4),
-        btmIronsIngredient(BTM_IRONS_T4)
+     bcIronsBloodAlchemy(event, 'divine_pearl', 'irons_spellbooks:divine_pearl', 1, [bcIronsIngredient('ars_nouveau:source_gem'), bcIronsIngredient('reliquary:angelic_feather'), bcIronsIngredient('malum:sacred_spirit'), bcIronsIngredient(BC_IRONS_OS_T4), bcIronsIngredient(BC_IRONS_T4)
     ], 18000, 260, 4)
 
-    btmIronsMalumInfusion(event, 'energized_core', 'irons_spellbooks:energized_core', 1, 'forbidden_arcanus:deorum_ingot', 1, [
+     bcIronsMalumInfusion(event, 'energized_core', 'irons_spellbooks:energized_core', 1, 'forbidden_arcanus:deorum_ingot', 1, [
         'ars_nouveau:air_essence',
         'ars_nouveau:source_gem',
         'malum:aerial_spirit',
-        BTM_IRONS_OS_T4,
-        BTM_IRONS_T4
-    ], [btmIronsSpirit('aerial', 8), btmIronsSpirit('arcane', 6)])
+        BC_IRONS_OS_T4,
+        BC_IRONS_T4
+    ], [bcIronsSpirit('aerial', 8), bcIronsSpirit('arcane', 6)])
 
-    btmIronsGoetyRitual(event, 'eldritch_manuscript', 'irons_spellbooks:eldritch_manuscript', 1, 'minecraft:writable_book', [
+     bcIronsGoetyRitual(event, 'eldritch_manuscript', 'irons_spellbooks:eldritch_manuscript', 1, 'minecraft:writable_book', [
         'occultism:otherworld_essence',
         'goety:dark_scroll',
         'malum:eldritch_spirit',
         'reliquary:nebulous_heart',
-        BTM_IRONS_OS_T5,
-        BTM_IRONS_T5
+        BC_IRONS_OS_T5,
+        BC_IRONS_T5
     ], 'sabbath', 800, 240)
 
-    btmIronsBloodAlchemy(event, 'shriving_stone', 'irons_spellbooks:shriving_stone', 1, [
-        btmIronsIngredient('forbidden_arcanus:arcane_crystal'),
-        btmIronsIngredient('malum:sacred_spirit'),
-        btmIronsIngredient('occultism:spirit_attuned_gem'),
-        btmIronsIngredient(BTM_IRONS_OS_T3),
-        btmIronsIngredient(BTM_IRONS_T3)
+     bcIronsBloodAlchemy(event, 'shriving_stone', 'irons_spellbooks:shriving_stone', 1, [bcIronsIngredient('forbidden_arcanus:arcane_crystal'), bcIronsIngredient('malum:sacred_spirit'), bcIronsIngredient('occultism:spirit_attuned_gem'), bcIronsIngredient(BC_IRONS_OS_T3), bcIronsIngredient(BC_IRONS_T3)
     ], 9000, 180, 3)
 
-    btmIronsArsApparatus(event, 'copper_spell_book', 'irons_spellbooks:copper_spell_book', 1, 'minecraft:book', [
+     bcIronsArsApparatus(event, 'copper_spell_book', 'irons_spellbooks:copper_spell_book', 1, 'minecraft:book', [
         'irons_spellbooks:magic_cloth',
         'ars_nouveau:source_gem',
-        BTM_IRONS_T2
+        BC_IRONS_T2
     ], 1500)
-    btmIronsArsApparatus(event, 'iron_spell_book', 'irons_spellbooks:iron_spell_book', 1, 'irons_spellbooks:copper_spell_book', [
+     bcIronsArsApparatus(event, 'iron_spell_book', 'irons_spellbooks:iron_spell_book', 1, 'irons_spellbooks:copper_spell_book', [
         'irons_spellbooks:arcane_ingot',
         'malum:arcane_spirit',
-        BTM_IRONS_T3
+        BC_IRONS_T3
     ], 3000)
-    btmIronsArsApparatus(event, 'gold_spell_book', 'irons_spellbooks:gold_spell_book', 1, 'irons_spellbooks:iron_spell_book', [
+     bcIronsArsApparatus(event, 'gold_spell_book', 'irons_spellbooks:gold_spell_book', 1, 'irons_spellbooks:iron_spell_book', [
         'ars_nouveau:source_gem',
         'forbidden_arcanus:arcane_crystal',
-        BTM_IRONS_T3
+        BC_IRONS_T3
     ], 4500)
-    btmIronsArsApparatus(event, 'diamond_spell_book', 'irons_spellbooks:diamond_spell_book', 1, 'irons_spellbooks:gold_spell_book', [
+     bcIronsArsApparatus(event, 'diamond_spell_book', 'irons_spellbooks:diamond_spell_book', 1, 'irons_spellbooks:gold_spell_book', [
         'occultism:spirit_attuned_gem',
         'irons_spellbooks:mithril_weave',
         'occultism:spirit_attuned_gem',
-        BTM_IRONS_T4
+        BC_IRONS_T4
     ], 7000)
-    btmIronsArsApparatus(event, 'netherite_spell_book', 'irons_spellbooks:netherite_spell_book', 1, 'irons_spellbooks:diamond_spell_book', [
+     bcIronsArsApparatus(event, 'netherite_spell_book', 'irons_spellbooks:netherite_spell_book', 1, 'irons_spellbooks:diamond_spell_book', [
         'minecraft:netherite_ingot',
         'malum:eldritch_spirit',
         'forbidden_arcanus:stellarite_piece',
-        BTM_IRONS_T5
+        BC_IRONS_T5
     ], 11000)
 
-    btmIronsArsApparatus(event, 'ice_spell_book', 'irons_spellbooks:ice_spell_book', 1, 'irons_spellbooks:iron_spell_book', [
+     bcIronsArsApparatus(event, 'ice_spell_book', 'irons_spellbooks:ice_spell_book', 1, 'irons_spellbooks:iron_spell_book', [
         'irons_spellbooks:ice_rune',
         'ars_nouveau:water_essence',
         'malum:aqueous_spirit',
-        BTM_IRONS_T3
+        BC_IRONS_T3
     ], 5500)
-    btmIronsHexereiCauldron(event, 'druidic_spell_book', 'irons_spellbooks:druidic_spell_book', 1, [
+     bcIronsHexereiCauldron(event, 'druidic_spell_book', 'irons_spellbooks:druidic_spell_book', 1, [
         'irons_spellbooks:gold_spell_book',
         'irons_spellbooks:nature_rune',
         'ars_nouveau:sourceberry_bush',
         'hexerei:mandrake_root',
-        BTM_IRONS_T4
+        BC_IRONS_T4
     ], 'minecraft:water', 'heated')
-    btmIronsGoetyRitual(event, 'cursed_doll_spell_book', 'irons_spellbooks:cursed_doll_spell_book', 1, 'irons_spellbooks:gold_spell_book', [
+     bcIronsGoetyRitual(event, 'cursed_doll_spell_book', 'irons_spellbooks:cursed_doll_spell_book', 1, 'irons_spellbooks:gold_spell_book', [
         'goety:cursed_ingot',
         'hexerei:blood_bottle',
         'malum:wicked_spirit',
-        BTM_IRONS_T4
+        BC_IRONS_T4
     ], 'sabbath', 600, 180)
-    btmIronsGoetyRitual(event, 'dragonskin_spell_book', 'irons_spellbooks:dragonskin_spell_book', 1, 'irons_spellbooks:diamond_spell_book', [
+     bcIronsGoetyRitual(event, 'dragonskin_spell_book', 'irons_spellbooks:dragonskin_spell_book', 1, 'irons_spellbooks:diamond_spell_book', [
         'ars_nouveau:abjuration_essence',
         'forbidden_arcanus:dark_rune',
         'malum:infernal_spirit',
         'reliquary:infernal_tear',
-        BTM_IRONS_T5
+        BC_IRONS_T5
     ], 'forge', 900, 260)
 
-    btmIronsRuneRecipes(event)
+     bcIronsRuneRecipes(event)
 
-    btmIronsMalumInfusion(event, 'mana_upgrade_orb', 'irons_spellbooks:mana_upgrade_orb', 1, 'irons_spellbooks:upgrade_orb', 1, [
+     bcIronsMalumInfusion(event, 'mana_upgrade_orb', 'irons_spellbooks:mana_upgrade_orb', 1, 'irons_spellbooks:upgrade_orb', 1, [
         'ars_nouveau:source_gem',
         'ars_nouveau:manipulation_essence',
         'malum:arcane_spirit',
-        BTM_IRONS_T4
-    ], [btmIronsSpirit('arcane', 8), btmIronsSpirit('aerial', 4)])
+        BC_IRONS_T4
+    ], [bcIronsSpirit('arcane', 8), bcIronsSpirit('aerial', 4)])
 
-    btmIronsBloodAlchemy(event, 'affinity_ring', 'irons_spellbooks:affinity_ring', 1, [btmIronsIngredient('irons_spellbooks:arcane_rune'), btmIronsIngredient('malum:arcane_spirit'), btmIronsIngredient('minecraft:gold_ingot'), btmIronsIngredient(BTM_IRONS_T3)], 7000, 160, 3)
-    btmIronsBloodAlchemy(event, 'cast_time_ring', 'irons_spellbooks:cast_time_ring', 1, [btmIronsIngredient('ars_nouveau:air_essence'), btmIronsIngredient('malum:aerial_spirit'), btmIronsIngredient('minecraft:gold_ingot'), btmIronsIngredient(BTM_IRONS_T3)], 7000, 160, 3)
-    btmIronsBloodAlchemy(event, 'cooldown_ring', 'irons_spellbooks:cooldown_ring', 1, [btmIronsIngredient('irons_spellbooks:cooldown_rune'), btmIronsIngredient('ars_nouveau:source_gem'), btmIronsIngredient('minecraft:gold_ingot'), btmIronsIngredient(BTM_IRONS_T3)], 7000, 160, 3)
-    btmIronsBloodAlchemy(event, 'emerald_stoneplate_ring', 'irons_spellbooks:emerald_stoneplate_ring', 1, [btmIronsIngredient('goety:magic_emerald'), btmIronsIngredient('malum:earthen_spirit'), btmIronsIngredient('minecraft:gold_ingot'), btmIronsIngredient(BTM_IRONS_T3)], 7000, 160, 3)
-    btmIronsBloodAlchemy(event, 'fireward_ring', 'irons_spellbooks:fireward_ring', 1, [btmIronsIngredient('irons_spellbooks:fire_rune'), btmIronsIngredient('reliquary:infernal_tear'), btmIronsIngredient('minecraft:gold_ingot'), btmIronsIngredient(BTM_IRONS_T3)], 7000, 160, 3)
-    btmIronsBloodAlchemy(event, 'frostward_ring', 'irons_spellbooks:frostward_ring', 1, [btmIronsIngredient('irons_spellbooks:ice_rune'), btmIronsIngredient('malum:aqueous_spirit'), btmIronsIngredient('minecraft:gold_ingot'), btmIronsIngredient(BTM_IRONS_T3)], 7000, 160, 3)
-    btmIronsBloodAlchemy(event, 'mana_ring', 'irons_spellbooks:mana_ring', 1, [btmIronsIngredient('ars_nouveau:source_gem'), btmIronsIngredient('malum:arcane_spirit'), btmIronsIngredient('minecraft:gold_ingot'), btmIronsIngredient(BTM_IRONS_T3)], 7000, 160, 3)
-    btmIronsBloodAlchemy(event, 'poisonward_ring', 'irons_spellbooks:poisonward_ring', 1, [btmIronsIngredient('hexerei:belladonna_berries'), btmIronsIngredient('malum:earthen_spirit'), btmIronsIngredient('minecraft:gold_ingot'), btmIronsIngredient(BTM_IRONS_T3)], 7000, 160, 3)
-    btmIronsBloodAlchemy(event, 'visibility_ring', 'irons_spellbooks:visibility_ring', 1, [btmIronsIngredient('occultism:otherworld_essence'), btmIronsIngredient('malum:aerial_spirit'), btmIronsIngredient('minecraft:gold_ingot'), btmIronsIngredient(BTM_IRONS_T3)], 7000, 160, 3)
+     bcIronsBloodAlchemy(event, 'affinity_ring', 'irons_spellbooks:affinity_ring', 1, [bcIronsIngredient('irons_spellbooks:arcane_rune'), bcIronsIngredient('malum:arcane_spirit'), bcIronsIngredient('minecraft:gold_ingot'), bcIronsIngredient(BC_IRONS_T3)], 7000, 160, 3)
+     bcIronsBloodAlchemy(event, 'cast_time_ring', 'irons_spellbooks:cast_time_ring', 1, [bcIronsIngredient('ars_nouveau:air_essence'), bcIronsIngredient('malum:aerial_spirit'), bcIronsIngredient('minecraft:gold_ingot'), bcIronsIngredient(BC_IRONS_T3)], 7000, 160, 3)
+     bcIronsBloodAlchemy(event, 'cooldown_ring', 'irons_spellbooks:cooldown_ring', 1, [bcIronsIngredient('irons_spellbooks:cooldown_rune'), bcIronsIngredient('ars_nouveau:source_gem'), bcIronsIngredient('minecraft:gold_ingot'), bcIronsIngredient(BC_IRONS_T3)], 7000, 160, 3)
+     bcIronsBloodAlchemy(event, 'emerald_stoneplate_ring', 'irons_spellbooks:emerald_stoneplate_ring', 1, [bcIronsIngredient('goety:magic_emerald'), bcIronsIngredient('malum:earthen_spirit'), bcIronsIngredient('minecraft:gold_ingot'), bcIronsIngredient(BC_IRONS_T3)], 7000, 160, 3)
+     bcIronsBloodAlchemy(event, 'fireward_ring', 'irons_spellbooks:fireward_ring', 1, [bcIronsIngredient('irons_spellbooks:fire_rune'), bcIronsIngredient('reliquary:infernal_tear'), bcIronsIngredient('minecraft:gold_ingot'), bcIronsIngredient(BC_IRONS_T3)], 7000, 160, 3)
+     bcIronsBloodAlchemy(event, 'frostward_ring', 'irons_spellbooks:frostward_ring', 1, [bcIronsIngredient('irons_spellbooks:ice_rune'), bcIronsIngredient('malum:aqueous_spirit'), bcIronsIngredient('minecraft:gold_ingot'), bcIronsIngredient(BC_IRONS_T3)], 7000, 160, 3)
+     bcIronsBloodAlchemy(event, 'mana_ring', 'irons_spellbooks:mana_ring', 1, [bcIronsIngredient('ars_nouveau:source_gem'), bcIronsIngredient('malum:arcane_spirit'), bcIronsIngredient('minecraft:gold_ingot'), bcIronsIngredient(BC_IRONS_T3)], 7000, 160, 3)
+     bcIronsBloodAlchemy(event, 'poisonward_ring', 'irons_spellbooks:poisonward_ring', 1, [bcIronsIngredient('hexerei:belladonna_berries'), bcIronsIngredient('malum:earthen_spirit'), bcIronsIngredient('minecraft:gold_ingot'), bcIronsIngredient(BC_IRONS_T3)], 7000, 160, 3)
+     bcIronsBloodAlchemy(event, 'visibility_ring', 'irons_spellbooks:visibility_ring', 1, [bcIronsIngredient('occultism:otherworld_essence'), bcIronsIngredient('malum:aerial_spirit'), bcIronsIngredient('minecraft:gold_ingot'), bcIronsIngredient(BC_IRONS_T3)], 7000, 160, 3)
 
-    btmIronsArsApparatus(event, 'amethyst_resonance_charm', 'irons_spellbooks:amethyst_resonance_charm', 1, 'minecraft:amethyst_shard', ['malum:arcane_spirit', 'ars_nouveau:source_gem', BTM_IRONS_T2], 2500)
-    btmIronsArsApparatus(event, 'concentration_amulet', 'irons_spellbooks:concentration_amulet', 1, 'irons_spellbooks:arcane_rune', ['occultism:spirit_attuned_gem', 'malum:arcane_spirit', BTM_IRONS_T3], 4000)
-    btmIronsArsApparatus(event, 'conjurers_talisman', 'irons_spellbooks:conjurers_talisman', 1, 'irons_spellbooks:evocation_rune', ['goety:magic_emerald', 'malum:wicked_spirit', BTM_IRONS_T3], 5000)
-    btmIronsArsApparatus(event, 'greater_conjurers_talisman', 'irons_spellbooks:greater_conjurers_talisman', 1, 'irons_spellbooks:conjurers_talisman', ['goety:soul_emerald', 'malum:eldritch_spirit', BTM_IRONS_T4], 8000)
-    btmIronsBloodAlchemy(event, 'heavy_chain_necklace', 'irons_spellbooks:heavy_chain_necklace', 1, [btmIronsIngredient('goety:cursed_bars'), btmIronsIngredient('malum:processed_soulstone'), btmIronsIngredient(BTM_IRONS_T3)], 8000, 180, 3)
+     bcIronsArsApparatus(event, 'amethyst_resonance_charm', 'irons_spellbooks:amethyst_resonance_charm', 1, 'minecraft:amethyst_shard', ['malum:arcane_spirit', 'ars_nouveau:source_gem', BC_IRONS_T2], 2500)
+     bcIronsArsApparatus(event, 'concentration_amulet', 'irons_spellbooks:concentration_amulet', 1, 'irons_spellbooks:arcane_rune', ['occultism:spirit_attuned_gem', 'malum:arcane_spirit', BC_IRONS_T3], 4000)
+     bcIronsArsApparatus(event, 'conjurers_talisman', 'irons_spellbooks:conjurers_talisman', 1, 'irons_spellbooks:evocation_rune', ['goety:magic_emerald', 'malum:wicked_spirit', BC_IRONS_T3], 5000)
+     bcIronsArsApparatus(event, 'greater_conjurers_talisman', 'irons_spellbooks:greater_conjurers_talisman', 1, 'irons_spellbooks:conjurers_talisman', ['goety:soul_emerald', 'malum:eldritch_spirit', BC_IRONS_T4], 8000)
+     bcIronsBloodAlchemy(event, 'heavy_chain_necklace', 'irons_spellbooks:heavy_chain_necklace', 1, [bcIronsIngredient('goety:cursed_bars'), bcIronsIngredient('malum:processed_soulstone'), bcIronsIngredient(BC_IRONS_T3)], 8000, 180, 3)
 
-    btmIronsGoetyRitual(event, 'ice_staff', 'irons_spellbooks:ice_staff', 1, 'minecraft:stick', ['irons_spellbooks:ice_rune', 'ars_nouveau:water_essence', 'malum:aqueous_spirit', BTM_IRONS_T3], 'frost', 250, 100)
-    btmIronsGoetyRitual(event, 'graybeard_staff', 'irons_spellbooks:graybeard_staff', 1, 'irons_spellbooks:ice_staff', ['irons_spellbooks:mithril_weave', 'malum:aerial_spirit', 'occultism:spirit_attuned_gem', BTM_IRONS_T4], 'frost', 500, 160)
-    btmIronsGoetyRitual(event, 'pyrium_staff', 'irons_spellbooks:pyrium_staff', 1, 'minecraft:blaze_rod', ['irons_spellbooks:fire_rune', 'reliquary:infernal_tear', 'malum:infernal_spirit', BTM_IRONS_T4], 'forge', 500, 160)
-    btmIronsGoetyRitual(event, 'artificer_cane', 'irons_spellbooks:artificer_cane', 1, 'minecraft:stick', ['irons_spellbooks:arcane_ingot', 'forbidden_arcanus:deorum_ingot', 'malum:arcane_spirit', BTM_IRONS_T4], 'forge', 500, 160)
-    btmIronsGoetyRitual(event, 'spellbreaker', 'irons_spellbooks:spellbreaker', 1, 'minecraft:shield', ['irons_spellbooks:protection_rune', 'malum:sacred_spirit', 'forbidden_arcanus:dark_rune', BTM_IRONS_T4], 'sabbath', 650, 200)
-    btmIronsGoetyRitual(event, 'twilight_gale', 'irons_spellbooks:twilight_gale', 1, 'minecraft:crossbow', ['irons_spellbooks:ender_rune', 'malum:aerial_spirit', 'occultism:otherworld_essence', BTM_IRONS_T4], 'sabbath', 650, 200)
+     bcIronsGoetyRitual(event, 'ice_staff', 'irons_spellbooks:ice_staff', 1, 'minecraft:stick', ['irons_spellbooks:ice_rune', 'ars_nouveau:water_essence', 'malum:aqueous_spirit', BC_IRONS_T3], 'frost', 250, 100)
+     bcIronsGoetyRitual(event, 'graybeard_staff', 'irons_spellbooks:graybeard_staff', 1, 'irons_spellbooks:ice_staff', ['irons_spellbooks:mithril_weave', 'malum:aerial_spirit', 'occultism:spirit_attuned_gem', BC_IRONS_T4], 'frost', 500, 160)
+     bcIronsGoetyRitual(event, 'pyrium_staff', 'irons_spellbooks:pyrium_staff', 1, 'minecraft:blaze_rod', ['irons_spellbooks:fire_rune', 'reliquary:infernal_tear', 'malum:infernal_spirit', BC_IRONS_T4], 'forge', 500, 160)
+     bcIronsGoetyRitual(event, 'artificer_cane', 'irons_spellbooks:artificer_cane', 1, 'minecraft:stick', ['irons_spellbooks:arcane_ingot', 'forbidden_arcanus:deorum_ingot', 'malum:arcane_spirit', BC_IRONS_T4], 'forge', 500, 160)
+     bcIronsGoetyRitual(event, 'spellbreaker', 'irons_spellbooks:spellbreaker', 1, 'minecraft:shield', ['irons_spellbooks:protection_rune', 'malum:sacred_spirit', 'forbidden_arcanus:dark_rune', BC_IRONS_T4], 'sabbath', 650, 200)
+     bcIronsGoetyRitual(event, 'twilight_gale', 'irons_spellbooks:twilight_gale', 1, 'minecraft:crossbow', ['irons_spellbooks:ender_rune', 'malum:aerial_spirit', 'occultism:otherworld_essence', BC_IRONS_T4], 'sabbath', 650, 200)
 })

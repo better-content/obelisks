@@ -2,7 +2,7 @@
 // Create pressing is available for all listed plates from their ingot tags. TCon casting is
 // added only where a molten tag is known/supported; missing molten fluids are documented.
 
-var BTM_CHEMLIB_PLATES = [
+var BC_CHEMLIB_PLATES = [
     { material: 'iridium', plate: 'chemlib:iridium_plate', tcon: true },
     { material: 'osmium', plate: 'chemlib:osmium_plate', tcon: true },
     { material: 'palladium', plate: 'chemlib:palladium_plate', tcon: false },
@@ -13,12 +13,12 @@ var BTM_CHEMLIB_PLATES = [
     { material: 'uranium', plate: 'chemlib:uranium_plate', tcon: true }
 ]
 
-function btmChemlibPlateExists(id) {
+function bcChemlibPlateExists(id) {
     try { return Item.exists(id) } catch (e) { return false }
 }
 
-function btmChemlibPressing(event, entry) {
-    if (!btmChemlibPlateExists(entry.plate)) return
+function bcChemlibPressing(event, entry) {
+    if (!bcChemlibPlateExists(entry.plate)) return
     event.custom({
         type: 'create:pressing',
         conditions: [
@@ -29,8 +29,8 @@ function btmChemlibPressing(event, entry) {
     }).id('kubejs:create/pressing/chemlib/' + entry.material + '_plate')
 }
 
-function btmChemlibCasting(event, entry, consumed) {
-    if (!btmChemlibPlateExists(entry.plate)) return
+function bcChemlibCasting(event, entry, consumed) {
+    if (!bcChemlibPlateExists(entry.plate)) return
     event.custom({
         type: 'tconstruct:casting_table',
         cast: { tag: consumed ? 'tconstruct:casts/single_use/plate' : 'tconstruct:casts/multi_use/plate' },
@@ -46,12 +46,12 @@ function btmChemlibCasting(event, entry, consumed) {
 }
 
 ServerEvents.recipes(function (event) {
-    for (var i = 0; i < BTM_CHEMLIB_PLATES.length; i++) {
-        var entry = BTM_CHEMLIB_PLATES[i]
-        btmChemlibPressing(event, entry)
+    for (var i = 0; i < BC_CHEMLIB_PLATES.length; i++) {
+        var entry = BC_CHEMLIB_PLATES[i]
+         bcChemlibPressing(event, entry)
         if (entry.tcon) {
-            btmChemlibCasting(event, entry, false)
-            btmChemlibCasting(event, entry, true)
+             bcChemlibCasting(event, entry, false)
+             bcChemlibCasting(event, entry, true)
         }
     }
 })

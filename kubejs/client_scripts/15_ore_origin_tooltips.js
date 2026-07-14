@@ -1,6 +1,6 @@
 // Player-facing ore origin notes. JEI and EMI show these item tooltips on hover.
 
-function btmOreOriginLines(source, detail, processing) {
+function bcOreOriginLines(source, detail, processing) {
     var lines = [
         Text.gold('Ore source: ' + source),
         Text.gray(detail)
@@ -9,11 +9,11 @@ function btmOreOriginLines(source, detail, processing) {
     return lines
 }
 
-function btmAddOreOrigin(event, items, lines) {
+function bcAddOreOrigin(event, items, lines) {
     for (var i = 0; i < items.length; i++) event.add(items[i], lines)
 }
 
-var BTM_REALISTIC_ORE_ORIGINS = [
+var BC_REALISTIC_ORE_ORIGINS = [
     {
         name: 'Coal measures',
         source: 'Realistic Ores deposit',
@@ -192,49 +192,49 @@ var BTM_REALISTIC_ORE_ORIGINS = [
     }
 ]
 
-var BTM_SIMPLE_ORE_ORIGINS = [
+var BC_SIMPLE_ORE_ORIGINS = [
     {
         items: ['minecraft:coal_ore', 'minecraft:deepslate_coal_ore'],
-        lines: btmOreOriginLines('Realistic Ores deposit', 'Overworld coal field, Y 0 to 80.', 'Look for localized deposit fields instead of scattered vanilla ore.')
+        lines: bcOreOriginLines('Realistic Ores deposit', 'Overworld coal field, Y 0 to 80.', 'Look for localized deposit fields instead of scattered vanilla ore.')
     },
     {
         items: ['minecraft:gold_ore', 'minecraft:deepslate_gold_ore'],
-        lines: btmOreOriginLines('Realistic Ores deposit', 'Overworld gold field, Y 8 to 32.', 'Nether gold ore remains a Nether deposit.')
+        lines: bcOreOriginLines('Realistic Ores deposit', 'Overworld gold field, Y 8 to 32.', 'Nether gold ore remains a Nether deposit.')
     },
     {
         items: ['minecraft:nether_gold_ore'],
-        lines: btmOreOriginLines('Realistic Ores Nether deposit', 'Nether gold field, Y 8 to 118.', 'Overworld gold uses the localized Overworld deposit route.')
+        lines: bcOreOriginLines('Realistic Ores Nether deposit', 'Nether gold field, Y 8 to 118.', 'Overworld gold uses the localized Overworld deposit route.')
     },
     {
         items: ['minecraft:ancient_debris'],
-        lines: btmOreOriginLines('Realistic Ores Nether deposit', 'Nether ancient debris field, Y 8 to 22.', 'Look for localized deposit bodies rather than vanilla scatter.')
+        lines: bcOreOriginLines('Realistic Ores Nether deposit', 'Nether ancient debris field, Y 8 to 22.', 'Look for localized deposit bodies rather than vanilla scatter.')
     }
 ]
 
-var BTM_SUPPRESSED_NATIVE_ORES = [
+var BC_SUPPRESSED_NATIVE_ORES = [
     {
         items: ['create:raw_zinc', 'create:crushed_raw_zinc'],
-        lines: btmOreOriginLines('Realistic Ores zinc deposits', 'Create native zinc worldgen is disabled.', 'Mine zinc or lead-zinc deposits, then crush and wash for Create zinc materials.')
+        lines: bcOreOriginLines('Realistic Ores zinc deposits', 'Create native zinc worldgen is disabled.', 'Mine zinc or lead-zinc deposits, then crush and wash for Create zinc materials.')
     },
     {
         items: ['create:crushed_raw_aluminum', 'creatingspace:raw_aluminum', 'creatingspace:crushed_aluminum_ore'],
-        lines: btmOreOriginLines('Realistic Ores bauxite laterite', 'Overworld aluminum comes from bauxite laterite deposits, Y 16 to 64.', 'Creating Space lunar aluminum ore remains Moon-native.')
+        lines: bcOreOriginLines('Realistic Ores bauxite laterite', 'Overworld aluminum comes from bauxite laterite deposits, Y 16 to 64.', 'Creating Space lunar aluminum ore remains Moon-native.')
     },
     {
         items: ['create:crushed_raw_nickel', 'creatingspace:raw_nickel', 'creatingspace:crushed_nickel_ore'],
-        lines: btmOreOriginLines('Realistic Ores nickel sulfide', 'Overworld nickel comes from nickel sulfide deposits, Y 16 to 64.', 'Creating Space Overworld nickel generation is disabled; Moon nickel remains Moon-native.')
+        lines: bcOreOriginLines('Realistic Ores nickel sulfide', 'Overworld nickel comes from nickel sulfide deposits, Y 16 to 64.', 'Creating Space Overworld nickel generation is disabled; Moon nickel remains Moon-native.')
     },
     {
         items: ['creatingspace:raw_cobalt', 'creatingspace:crushed_cobalt_ore'],
-        lines: btmOreOriginLines('Realistic Ores cobalt deposits', 'Overworld cobalt is a localized deposit resource, Y 16 to 64.', 'TConstruct native cobalt worldgen is disabled in favor of the deposit economy.')
+        lines: bcOreOriginLines('Realistic Ores cobalt deposits', 'Overworld cobalt is a localized deposit resource, Y 16 to 64.', 'TConstruct native cobalt worldgen is disabled in favor of the deposit economy.')
     },
     {
         items: ['creatingspace:moon_aluminum_ore', 'creatingspace:moon_cobalt_ore', 'creatingspace:moon_nickel_ore'],
-        lines: btmOreOriginLines('Creating Space Moon', 'Lunar ores are dimension-native and are not part of the Overworld deposit pass.', 'Use the space route for these Moon-specific ore blocks.')
+        lines: bcOreOriginLines('Creating Space Moon', 'Lunar ores are dimension-native and are not part of the Overworld deposit pass.', 'Use the space route for these Moon-specific ore blocks.')
     }
 ]
 
-var BTM_METEOR_ORE_ORIGINS = [
+var BC_DIMENSION_DRINK_ORE_ORIGINS = [
     {
         ores: ['arcane_crystal_ore', 'runic_stone', 'stella_arcanum', 'mithril_ore'],
         items: [
@@ -249,7 +249,7 @@ var BTM_METEOR_ORE_ORIGINS = [
             'irons_spellbooks:deepslate_mithril_ore',
             'irons_spellbooks:raw_mithril'
         ],
-        lines: btmOreOriginLines('Meteor sky dimensions', 'Natural generation is in Aether meteor target biomes.', 'The original Overworld generators are disabled.')
+        lines: bcOreOriginLines('Dimension Drink sky dimensions', 'Natural generation is in Aether dimension_drink target biomes.', 'The original Overworld generators are disabled.')
     },
     {
         ores: ['darkstone', 'gilded_darkstone', 'jade_ore', 'cthonic_gold_ore', 'soulstone_ore', 'brilliant_stone', 'xpetrified_ore'],
@@ -269,7 +269,7 @@ var BTM_METEOR_ORE_ORIGINS = [
             'malum:brilliant_stone',
             'malum:brilliant_deepslate'
         ],
-        lines: btmOreOriginLines('Meteor deep dimensions', 'Natural generation is in Undergarden and Otherside meteor target biomes.', 'The original Overworld generators are disabled.')
+        lines: bcOreOriginLines('Dimension Drink deep dimensions', 'Natural generation is in Undergarden and Otherside dimension_drink target biomes.', 'The original Overworld generators are disabled.')
     },
     {
         ores: ['natural_quartz_ore'],
@@ -278,17 +278,17 @@ var BTM_METEOR_ORE_ORIGINS = [
             'malum:deepslate_quartz_ore',
             'malum:natural_quartz'
         ],
-        lines: btmOreOriginLines('Meteor sky and deep dimensions', 'Natural quartz appears in Aether, Undergarden, and Otherside meteor targets.', 'Malum quartz geodes are relocated with the ore.')
+        lines: bcOreOriginLines('Dimension Drink sky and deep dimensions', 'Natural quartz appears in Aether, Undergarden, and Otherside dimension_drink targets.', 'Malum quartz geodes are relocated with the ore.')
     },
     {
         ores: [],
         items: ['malum:blazing_quartz_ore', 'malum:blazing_quartz', 'malum:blazing_quartz_fragment'],
-        lines: btmOreOriginLines('Meteor Nether targets', 'Natural generation is restricted to Nether-tagged meteor target biomes.', 'The ordinary Malum biome modifier is overridden by the relocation datapack.')
+        lines: bcOreOriginLines('Dimension Drink Nether targets', 'Natural generation is restricted to Nether-tagged dimension_drink target biomes.', 'The ordinary Malum biome modifier is overridden by the relocation datapack.')
     },
     {
         ores: [],
         items: ['occultism:iesnium_ore_natural', 'occultism:raw_iesnium', 'occultism:iesnium_ore'],
-        lines: btmOreOriginLines('Meteor Nether targets', 'Natural Iesnium generation is restricted to Nether-tagged meteor target biomes.', 'Occultism miner shortcuts remain hidden; this is the natural ore route.')
+        lines: bcOreOriginLines('Dimension Drink Nether targets', 'Natural Iesnium generation is restricted to Nether-tagged dimension_drink target biomes.', 'Occultism miner shortcuts remain hidden; this is the natural ore route.')
     },
     {
         ores: [],
@@ -301,7 +301,7 @@ var BTM_METEOR_ORE_ORIGINS = [
             'hexerei:selenite_cluster',
             'hexerei:selenite_shard'
         ],
-        lines: btmOreOriginLines('Meteor sky dimensions', 'Selenite geodes generate in Aether meteor target biomes.', 'The original Overworld geode modifier is disabled.')
+        lines: bcOreOriginLines('Dimension Drink sky dimensions', 'Selenite geodes generate in Aether dimension_drink target biomes.', 'The original Overworld geode modifier is disabled.')
     },
     {
         ores: [],
@@ -314,7 +314,7 @@ var BTM_METEOR_ORE_ORIGINS = [
             'tconstruct:large_earth_slime_crystal_bud',
             'tconstruct:earth_slime_crystal_cluster'
         ],
-        lines: btmOreOriginLines('Meteor deep dimensions', 'Earth slime crystal geodes generate in Undergarden and Otherside meteor target biomes.', 'The original TConstruct geode modifier is disabled.')
+        lines: bcOreOriginLines('Dimension Drink deep dimensions', 'Earth slime crystal geodes generate in Undergarden and Otherside dimension_drink target biomes.', 'The original TConstruct geode modifier is disabled.')
     },
     {
         ores: [],
@@ -327,7 +327,7 @@ var BTM_METEOR_ORE_ORIGINS = [
             'tconstruct:large_sky_slime_crystal_bud',
             'tconstruct:sky_slime_crystal_cluster'
         ],
-        lines: btmOreOriginLines('Meteor sky dimensions', 'Sky slime crystal geodes generate in Aether meteor target biomes.', 'The original TConstruct geode modifier is disabled.')
+        lines: bcOreOriginLines('Dimension Drink sky dimensions', 'Sky slime crystal geodes generate in Aether dimension_drink target biomes.', 'The original TConstruct geode modifier is disabled.')
     },
     {
         ores: [],
@@ -340,11 +340,11 @@ var BTM_METEOR_ORE_ORIGINS = [
             'tconstruct:large_ichor_slime_crystal_bud',
             'tconstruct:ichor_slime_crystal_cluster'
         ],
-        lines: btmOreOriginLines('Meteor Nether targets', 'Ichor slime crystal geodes generate in Nether-tagged meteor target biomes.', 'The original TConstruct geode modifier is disabled.')
+        lines: bcOreOriginLines('Dimension Drink Nether targets', 'Ichor slime crystal geodes generate in Nether-tagged dimension_drink target biomes.', 'The original TConstruct geode modifier is disabled.')
     }
 ]
 
-var BTM_METEOR_EV_STONES = [
+var BC_DIMENSION_DRINK_EV_STONES = [
     'gravel',
     'aether_holystone',
     'aether_mossy_holystone',
@@ -357,32 +357,32 @@ var BTM_METEOR_EV_STONES = [
     'deeperdarker_sculk_grime'
 ]
 
-function btmAddExcavatedMeteorVariants(event, oreIds, lines) {
-    for (var i = 0; i < BTM_METEOR_EV_STONES.length; i++) {
+function bcAddExcavatedDimensionDrinkVariants(event, oreIds, lines) {
+    for (var i = 0; i < BC_DIMENSION_DRINK_EV_STONES.length; i++) {
         for (var j = 0; j < oreIds.length; j++) {
-            event.add('excavated_variants:' + BTM_METEOR_EV_STONES[i] + '_' + oreIds[j], lines)
+            event.add('excavated_variants:' + BC_DIMENSION_DRINK_EV_STONES[i] + '_' + oreIds[j], lines)
         }
     }
 }
 
 ItemEvents.tooltip(function (event) {
-    for (var i = 0; i < BTM_REALISTIC_ORE_ORIGINS.length; i++) {
-        var dep = BTM_REALISTIC_ORE_ORIGINS[i]
-        var lines = btmOreOriginLines(dep.source, dep.name + ': ' + dep.detail, dep.processing)
-        btmAddOreOrigin(event, dep.blocks, lines)
-        event.add(dep.crushed, btmOreOriginLines('Crushed Realistic Ores deposit', dep.name + ': made by crushing the matching deposit block.', dep.processing))
+    for (var i = 0; i < BC_REALISTIC_ORE_ORIGINS.length; i++) {
+        var dep = BC_REALISTIC_ORE_ORIGINS[i]
+        var lines = bcOreOriginLines(dep.source, dep.name + ': ' + dep.detail, dep.processing)
+         bcAddOreOrigin(event, dep.blocks, lines)
+        event.add(dep.crushed, bcOreOriginLines('Crushed Realistic Ores deposit', dep.name + ': made by crushing the matching deposit block.', dep.processing))
     }
 
-    for (var j = 0; j < BTM_SIMPLE_ORE_ORIGINS.length; j++) {
-        btmAddOreOrigin(event, BTM_SIMPLE_ORE_ORIGINS[j].items, BTM_SIMPLE_ORE_ORIGINS[j].lines)
+    for (var j = 0; j < BC_SIMPLE_ORE_ORIGINS.length; j++) {
+         bcAddOreOrigin(event, BC_SIMPLE_ORE_ORIGINS[j].items, BC_SIMPLE_ORE_ORIGINS[j].lines)
     }
 
-    for (var k = 0; k < BTM_SUPPRESSED_NATIVE_ORES.length; k++) {
-        btmAddOreOrigin(event, BTM_SUPPRESSED_NATIVE_ORES[k].items, BTM_SUPPRESSED_NATIVE_ORES[k].lines)
+    for (var k = 0; k < BC_SUPPRESSED_NATIVE_ORES.length; k++) {
+         bcAddOreOrigin(event, BC_SUPPRESSED_NATIVE_ORES[k].items, BC_SUPPRESSED_NATIVE_ORES[k].lines)
     }
 
-    for (var m = 0; m < BTM_METEOR_ORE_ORIGINS.length; m++) {
-        btmAddOreOrigin(event, BTM_METEOR_ORE_ORIGINS[m].items, BTM_METEOR_ORE_ORIGINS[m].lines)
-        btmAddExcavatedMeteorVariants(event, BTM_METEOR_ORE_ORIGINS[m].ores, BTM_METEOR_ORE_ORIGINS[m].lines)
+    for (var m = 0; m < BC_DIMENSION_DRINK_ORE_ORIGINS.length; m++) {
+         bcAddOreOrigin(event, BC_DIMENSION_DRINK_ORE_ORIGINS[m].items, BC_DIMENSION_DRINK_ORE_ORIGINS[m].lines)
+        bcAddExcavatedDimensionDrinkVariants(event, BC_DIMENSION_DRINK_ORE_ORIGINS[m].ores, BC_DIMENSION_DRINK_ORE_ORIGINS[m].lines)
     }
 })

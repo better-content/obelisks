@@ -4,56 +4,56 @@
 // demand roles. Create remains bulk/open processing, PNCR owns sealed pressure
 // and thermal control, and Blood Magic is manual high-yield chemistry.
 
-function btmFullChemExists(id) {
+function bcFullChemExists(id) {
     try { return Item.exists(id) } catch (e) { return false }
 }
 
-function btmFullChemFluidExists(id) {
+function bcFullChemFluidExists(id) {
     if (id === 'minecraft:water') return true
     try {
         if (typeof Fluid !== 'undefined' && Fluid.exists) return Fluid.exists(id)
     } catch (e) {}
-    return BTM_FULL_CHEM_KNOWN_FLUIDS[id] === true
+    returnBC_FULL_CHEM_KNOWN_FLUIDS[id] === true
 }
 
-function btmFullChemIngredientExists(input) {
+function bcFullChemIngredientExists(input) {
     if (!input) return false
     if (input.tag || input.fluid) return true
-    if (input.item) return btmFullChemExists(input.item)
+    if (input.item) return bcFullChemExists(input.item)
     return true
 }
 
-function btmFullChemAllInputsExist(inputs) {
+function bcFullChemAllInputsExist(inputs) {
     for (var i = 0; i < inputs.length; i++) {
-        if (!btmFullChemIngredientExists(inputs[i])) return false
+        if (!bcFullChemIngredientExists(inputs[i])) return false
     }
     return true
 }
 
-function btmFullChemResult(item, count, chance) {
+function bcFullChemResult(item, count, chance) {
     var result = { item: item }
     if (count && count > 1) result.count = count
     if (chance && chance < 1) result.chance = chance
     return result
 }
 
-function btmFullChemSideResults(items) {
+function bcFullChemSideResults(items) {
     var results = []
     for (var i = 0; i < (items || []).length; i++) {
         var item = items[i]
-        if (!btmFullChemExists(item.item)) continue
-        results.push(btmFullChemResult(item.item, item.count || 1, item.chance || null))
+        if (!bcFullChemExists(item.item)) continue
+        results.push(bcFullChemResult(item.item, item.count || 1, item.chance || null))
     }
     return results
 }
 
-function btmFullChemMix(event, id, inputs, outputs, heat, time) {
-    if (!btmFullChemAllInputsExist(inputs)) return
+function bcFullChemMix(event, id, inputs, outputs, heat, time) {
+    if (!bcFullChemAllInputsExist(inputs)) return
     var results = []
     for (var i = 0; i < outputs.length; i++) {
         var output = outputs[i]
-        if (!btmFullChemExists(output.item)) return
-        results.push(btmFullChemResult(output.item, output.count || 1, output.chance || null))
+        if (!bcFullChemExists(output.item)) return
+        results.push(bcFullChemResult(output.item, output.count || 1, output.chance || null))
     }
     var recipe = {
         type: 'create:mixing',
@@ -65,13 +65,13 @@ function btmFullChemMix(event, id, inputs, outputs, heat, time) {
     event.custom(recipe).id('kubejs:chemlib_full/create_mixing/' + id)
 }
 
-function btmFullChemCompact(event, id, inputs, outputs, heat) {
-    if (!btmFullChemAllInputsExist(inputs)) return
+function bcFullChemCompact(event, id, inputs, outputs, heat) {
+    if (!bcFullChemAllInputsExist(inputs)) return
     var results = []
     for (var i = 0; i < outputs.length; i++) {
         var output = outputs[i]
-        if (!btmFullChemExists(output.item)) return
-        results.push(btmFullChemResult(output.item, output.count || 1, output.chance || null))
+        if (!bcFullChemExists(output.item)) return
+        results.push(bcFullChemResult(output.item, output.count || 1, output.chance || null))
     }
     var recipe = {
         type: 'create:compacting',
@@ -83,11 +83,11 @@ function btmFullChemCompact(event, id, inputs, outputs, heat) {
     event.custom(recipe).id('kubejs:chemlib_full/create_compacting/' + id)
 }
 
-function btmFullChemPressure(event, id, inputs, output, pressure) {
-    if (!btmFullChemAllInputsExist(inputs) || !btmFullChemExists(output.item)) return
+function bcFullChemPressure(event, id, inputs, output, pressure) {
+    if (!bcFullChemAllInputsExist(inputs) || !bcFullChemExists(output.item)) return
     var pressureInputs = []
     for (var i = 0; i < inputs.length; i++) {
-        var mapped = btmFullChemPressureInput(inputs[i])
+        var mapped = bcFullChemPressureInput(inputs[i])
         if (!mapped) return
         pressureInputs.push(mapped)
     }
@@ -95,23 +95,23 @@ function btmFullChemPressure(event, id, inputs, output, pressure) {
         type: 'pneumaticcraft:pressure_chamber',
         inputs: pressureInputs,
         pressure: pressure,
-        results: [btmFullChemResult(output.item, output.count || 1, null)]
+        results: [bcFullChemResult(output.item, output.count || 1, null)]
     }).id('kubejs:chemlib_full/pncr_pressure/' + id)
 }
 
-function btmFullChemPressureInput(input) {
+function bcFullChemPressureInput(input) {
     if (input.type) return input
     if (input.item) return { type: 'pneumaticcraft:stacked_item', item: input.item, count: input.count || 1 }
     if (input.fluid) {
-        var mapped = BTM_FULL_CHEM_PRESSURE_FLUID_ITEMS[input.fluid]
-        if (!mapped || !btmFullChemExists(mapped)) return null
+        var mapped = BC_FULL_CHEM_PRESSURE_FLUID_ITEMS[input.fluid]
+        if (!mapped || !bcFullChemExists(mapped)) return null
         return { type: 'pneumaticcraft:stacked_item', item: mapped, count: input.amount && input.amount > 250 ? 2 : 1 }
     }
     return null
 }
 
-function btmFullChemThermo(event, id, itemInput, fluid, amount, output, pressure, minTemp) {
-    if (!btmFullChemIngredientExists(itemInput) || !btmFullChemFluidExists(fluid) || !btmFullChemExists(output.item)) return
+function bcFullChemThermo(event, id, itemInput, fluid, amount, output, pressure, minTemp) {
+    if (!bcFullChemIngredientExists(itemInput) || !bcFullChemFluidExists(fluid) || !bcFullChemExists(output.item)) return
     event.custom({
         type: 'pneumaticcraft:thermo_plant',
         exothermic: false,
@@ -121,32 +121,32 @@ function btmFullChemThermo(event, id, itemInput, fluid, amount, output, pressure
             fluid: fluid,
             amount: amount
         },
-        item_output: btmFullChemResult(output.item, output.count || 1, null),
+        item_output: bcFullChemResult(output.item, output.count || 1, null),
         pressure: pressure || 2.5,
         speed: 0.35,
         temperature: { min_temp: minTemp || 473 }
     }).id('kubejs:chemlib_full/pncr_thermo/' + id)
 }
 
-function btmFullChemBlood(event, id, inputs, output, syphon, ticks, tier) {
-    if (!btmFullChemAllInputsExist(inputs) || !btmFullChemExists(output.item)) return
+function bcFullChemBlood(event, id, inputs, output, syphon, ticks, tier) {
+    if (!bcFullChemAllInputsExist(inputs) || !bcFullChemExists(output.item)) return
     event.custom({
         type: 'bloodmagic:alchemytable',
         input: inputs,
-        output: btmFullChemResult(output.item, output.count || 1, null),
+        output: bcFullChemResult(output.item, output.count || 1, null),
         syphon: syphon,
         ticks: ticks,
         upgradeLevel: tier
     }).id('kubejs:chemlib_full/blood_manual/' + id)
 }
 
-function btmFullChemCompound(element, suffix) {
-    var aliases = BTM_FULL_CHEM_COMPOUND_ALIASES[element]
+function bcFullChemCompound(element, suffix) {
+    var aliases = BC_FULL_CHEM_COMPOUND_ALIASES[element]
     if (aliases && aliases[suffix]) return aliases[suffix]
     return 'chemlib:' + element + '_' + suffix
 }
 
-var BTM_FULL_CHEM_KNOWN_FLUIDS = {
+var BC_FULL_CHEM_KNOWN_FLUIDS = {
     'minecraft:water': true,
     'chemlib:ethanol_fluid': true,
     'chemlib:acetic_acid_fluid': true,
@@ -159,7 +159,7 @@ var BTM_FULL_CHEM_KNOWN_FLUIDS = {
     'chemlib:chlorine_fluid': true
 }
 
-var BTM_FULL_CHEM_PRESSURE_FLUID_ITEMS = {
+var BC_FULL_CHEM_PRESSURE_FLUID_ITEMS = {
     'minecraft:water': 'minecraft:water_bucket',
     'chemlib:ethanol_fluid': 'chemlib:ethanol',
     'chemlib:acetic_acid_fluid': 'chemlib:acetic_acid',
@@ -172,14 +172,14 @@ var BTM_FULL_CHEM_PRESSURE_FLUID_ITEMS = {
     'chemlib:chlorine_fluid': 'chemlib:chlorine'
 }
 
-var BTM_FULL_CHEM_COMPOUND_ALIASES = {
+var BC_FULL_CHEM_COMPOUND_ALIASES = {
     carbon: { oxide: 'chemlib:carbon_dioxide', sulfide: 'chemlib:carbon_disulfide' },
     copper: { oxide: 'chemlib:copper_i_oxide', hydroxide: 'chemlib:copper_ii_hydroxide', sulfate: 'chemlib:copper_ii_sulfate', sulfide: 'chemlib:copper_i_sulfide' },
     iron: { sulfate: 'chemlib:iron_ii_sulfate', nitrate: 'chemlib:iron_iii_nitrate' },
     silicon: { oxide: 'chemlib:silicon_dioxide' }
 }
 
-var BTM_FULL_CHEM_SOURCE_DEPOSITS = {
+var BC_FULL_CHEM_SOURCE_DEPOSITS = {
     light_metal: 'realisticores:crushed_bauxite_laterite',
     alkali: 'realisticores:crushed_lazurite_vein',
     alkaline: 'realisticores:crushed_phosphate_rock',
@@ -193,21 +193,21 @@ var BTM_FULL_CHEM_SOURCE_DEPOSITS = {
     gas: 'realisticores:crushed_coal_measures'
 }
 
-var BTM_FULL_CHEM_ELEMENT_GROUPS = [
-    { id: 'light_metal', slate: 'bloodmagic:reinforcedslate', source: BTM_FULL_CHEM_SOURCE_DEPOSITS.light_metal, acid: 'chemlib:sulfuric_acid_fluid', elements: ['aluminum', 'gallium', 'indium', 'thallium'] },
-    { id: 'alkali', slate: 'bloodmagic:blankslate', source: BTM_FULL_CHEM_SOURCE_DEPOSITS.alkali, acid: 'chemlib:hydrochloric_acid_fluid', elements: ['lithium', 'sodium', 'potassium', 'rubidium', 'cesium', 'francium'] },
-    { id: 'alkaline', slate: 'bloodmagic:blankslate', source: BTM_FULL_CHEM_SOURCE_DEPOSITS.alkaline, acid: 'kubejs:phosphoric_acid_fluid', elements: ['beryllium', 'magnesium', 'calcium', 'strontium', 'barium', 'radium'] },
-    { id: 'transition', slate: 'bloodmagic:infusedslate', source: BTM_FULL_CHEM_SOURCE_DEPOSITS.transition, acid: 'chemlib:nitric_acid_fluid', elements: ['scandium', 'titanium', 'vanadium', 'chromium', 'manganese', 'iron', 'cobalt', 'nickel', 'copper', 'zinc'] },
-    { id: 'refractory', slate: 'bloodmagic:demonslate', source: BTM_FULL_CHEM_SOURCE_DEPOSITS.refractory, acid: 'chemlib:hydrochloric_acid_fluid', elements: ['zirconium', 'niobium', 'molybdenum', 'hafnium', 'tantalum', 'tungsten', 'rhenium'] },
-    { id: 'noble', slate: 'bloodmagic:etherealslate', source: BTM_FULL_CHEM_SOURCE_DEPOSITS.noble, acid: 'chemlib:nitric_acid_fluid', elements: ['ruthenium', 'rhodium', 'palladium', 'osmium', 'iridium', 'platinum', 'gold', 'silver'] },
-    { id: 'rare_earth', slate: 'bloodmagic:demonslate', source: BTM_FULL_CHEM_SOURCE_DEPOSITS.rare_earth, acid: 'kubejs:phosphoric_acid_fluid', elements: ['lanthanum', 'cerium', 'praseodymium', 'neodymium', 'samarium', 'europium', 'gadolinium', 'terbium', 'dysprosium', 'holmium', 'erbium', 'thulium', 'ytterbium', 'lutetium', 'yttrium'] },
-    { id: 'chalcophile', slate: 'bloodmagic:infusedslate', source: BTM_FULL_CHEM_SOURCE_DEPOSITS.chalcophile, acid: 'chemlib:sulfuric_acid_fluid', elements: ['cadmium', 'mercury', 'lead', 'bismuth', 'arsenic', 'antimony', 'selenium', 'tellurium'] },
-    { id: 'radioactive', slate: 'bloodmagic:etherealslate', source: BTM_FULL_CHEM_SOURCE_DEPOSITS.radioactive, acid: 'chemlib:nitric_acid_fluid', elements: ['actinium', 'thorium', 'protactinium', 'uranium', 'polonium'] },
-    { id: 'biogenic', slate: 'bloodmagic:reinforcedslate', source: BTM_FULL_CHEM_SOURCE_DEPOSITS.biogenic, acid: 'chemlib:acetic_acid_fluid', elements: ['carbon', 'nitrogen', 'oxygen', 'phosphorus', 'sulfur', 'chlorine', 'iodine', 'fluorine', 'silicon'] },
-    { id: 'gas', slate: 'bloodmagic:infusedslate', source: BTM_FULL_CHEM_SOURCE_DEPOSITS.gas, acid: 'chemlib:ethanol_fluid', elements: ['hydrogen', 'helium', 'neon', 'argon', 'krypton', 'xenon', 'radon'] }
+var BC_FULL_CHEM_ELEMENT_GROUPS = [
+    { id: 'light_metal', slate: 'bloodmagic:reinforcedslate', source: BC_FULL_CHEM_SOURCE_DEPOSITS.light_metal, acid: 'chemlib:sulfuric_acid_fluid', elements: ['aluminum', 'gallium', 'indium', 'thallium'] },
+    { id: 'alkali', slate: 'bloodmagic:blankslate', source: BC_FULL_CHEM_SOURCE_DEPOSITS.alkali, acid: 'chemlib:hydrochloric_acid_fluid', elements: ['lithium', 'sodium', 'potassium', 'rubidium', 'cesium', 'francium'] },
+    { id: 'alkaline', slate: 'bloodmagic:blankslate', source: BC_FULL_CHEM_SOURCE_DEPOSITS.alkaline, acid: 'kubejs:phosphoric_acid_fluid', elements: ['beryllium', 'magnesium', 'calcium', 'strontium', 'barium', 'radium'] },
+    { id: 'transition', slate: 'bloodmagic:infusedslate', source: BC_FULL_CHEM_SOURCE_DEPOSITS.transition, acid: 'chemlib:nitric_acid_fluid', elements: ['scandium', 'titanium', 'vanadium', 'chromium', 'manganese', 'iron', 'cobalt', 'nickel', 'copper', 'zinc'] },
+    { id: 'refractory', slate: 'bloodmagic:demonslate', source: BC_FULL_CHEM_SOURCE_DEPOSITS.refractory, acid: 'chemlib:hydrochloric_acid_fluid', elements: ['zirconium', 'niobium', 'molybdenum', 'hafnium', 'tantalum', 'tungsten', 'rhenium'] },
+    { id: 'noble', slate: 'bloodmagic:etherealslate', source: BC_FULL_CHEM_SOURCE_DEPOSITS.noble, acid: 'chemlib:nitric_acid_fluid', elements: ['ruthenium', 'rhodium', 'palladium', 'osmium', 'iridium', 'platinum', 'gold', 'silver'] },
+    { id: 'rare_earth', slate: 'bloodmagic:demonslate', source: BC_FULL_CHEM_SOURCE_DEPOSITS.rare_earth, acid: 'kubejs:phosphoric_acid_fluid', elements: ['lanthanum', 'cerium', 'praseodymium', 'neodymium', 'samarium', 'europium', 'gadolinium', 'terbium', 'dysprosium', 'holmium', 'erbium', 'thulium', 'ytterbium', 'lutetium', 'yttrium'] },
+    { id: 'chalcophile', slate: 'bloodmagic:infusedslate', source: BC_FULL_CHEM_SOURCE_DEPOSITS.chalcophile, acid: 'chemlib:sulfuric_acid_fluid', elements: ['cadmium', 'mercury', 'lead', 'bismuth', 'arsenic', 'antimony', 'selenium', 'tellurium'] },
+    { id: 'radioactive', slate: 'bloodmagic:etherealslate', source: BC_FULL_CHEM_SOURCE_DEPOSITS.radioactive, acid: 'chemlib:nitric_acid_fluid', elements: ['actinium', 'thorium', 'protactinium', 'uranium', 'polonium'] },
+    { id: 'biogenic', slate: 'bloodmagic:reinforcedslate', source: BC_FULL_CHEM_SOURCE_DEPOSITS.biogenic, acid: 'chemlib:acetic_acid_fluid', elements: ['carbon', 'nitrogen', 'oxygen', 'phosphorus', 'sulfur', 'chlorine', 'iodine', 'fluorine', 'silicon'] },
+    { id: 'gas', slate: 'bloodmagic:infusedslate', source: BC_FULL_CHEM_SOURCE_DEPOSITS.gas, acid: 'chemlib:ethanol_fluid', elements: ['hydrogen', 'helium', 'neon', 'argon', 'krypton', 'xenon', 'radon'] }
 ]
 
-var BTM_FULL_CHEM_FAMILIES = [
+var BC_FULL_CHEM_FAMILIES = [
     { id: 'oxide', suffix: 'oxide', fluid: 'minecraft:water', amount: 125, reagent: 'chemlib:oxygen', side: [{ item: 'chemlib:oxygen', chance: 0.08 }], heat: 'heated', pressure: 2.0, temp: 473 },
     { id: 'hydroxide', suffix: 'hydroxide', fluid: 'minecraft:water', amount: 250, reagent: 'chemlib:sodium_hydroxide', side: [{ item: 'chemlib:hydrogen', chance: 0.10 }], heat: null, pressure: 2.0, temp: 423 },
     { id: 'carbonate', suffix: 'carbonate', fluid: 'minecraft:water', amount: 250, reagent: 'chemlib:carbon', side: [{ item: 'chemlib:carbon_dioxide', chance: 0.12 }], heat: null, pressure: 2.25, temp: 423 },
@@ -218,7 +218,7 @@ var BTM_FULL_CHEM_FAMILIES = [
     { id: 'phosphate', suffix: 'phosphate', fluid: 'kubejs:phosphoric_acid_fluid', amount: 250, reagent: 'chemlib:phosphorus', side: [{ item: 'chemlib:oxygen', chance: 0.10 }], heat: 'heated', pressure: 3.0, temp: 548 }
 ]
 
-var BTM_FULL_CHEM_GROUP_SINKS = {
+var BC_FULL_CHEM_GROUP_SINKS = {
     light_metal: [
         { id: 'light_ceramic_glass', output: 'minecraft:glass', count: 6, inputs: ['chemlib:silicon_dioxide', 'chemlib:aluminum_oxide'], kind: 'compact' },
         { id: 'light_pcb_laminate', output: 'pneumaticcraft:empty_pcb', count: 2, inputs: ['chemlib:polyvinyl_chloride', 'chemlib:silicon_dioxide'], kind: 'pressure', pressure: 2.0 }
@@ -265,7 +265,7 @@ var BTM_FULL_CHEM_GROUP_SINKS = {
     ]
 }
 
-var BTM_FULL_CHEM_MOLECULES = [
+var BC_FULL_CHEM_MOLECULES = [
     { id: 'cellulose', item: 'chemlib:cellulose', source: [{ tag: 'minecraft:logs' }, { fluid: 'minecraft:water', amount: 250 }], outputs: [{ item: 'minecraft:paper', count: 6 }], process: 'fiber_pulping', slate: 'bloodmagic:blankslate' },
     { id: 'starch', item: 'chemlib:starch', source: [{ item: 'minecraft:potato' }, { item: 'minecraft:wheat' }, { fluid: 'minecraft:water', amount: 250 }], outputs: [{ item: 'minecraft:slime_ball', count: 2 }], process: 'binder_gelatinization', slate: 'bloodmagic:blankslate' },
     { id: 'sucrose', item: 'chemlib:sucrose', source: [{ item: 'minecraft:sugar_cane' }, { item: 'minecraft:beetroot' }, { fluid: 'minecraft:water', amount: 250 }], outputs: [{ item: 'minecraft:sugar', count: 6 }], process: 'sugar_crystallization', slate: 'bloodmagic:blankslate' },
@@ -291,12 +291,12 @@ var BTM_FULL_CHEM_MOLECULES = [
     { id: 'polyvinyl_chloride', item: 'chemlib:polyvinyl_chloride', source: [{ item: 'chemlib:ethylene' }, { item: 'chemlib:chlorine' }, { item: 'kubejs:pressure_seal' }], outputs: [{ item: 'kubejs:pressure_seal', count: 4 }], process: 'polymer_compounding', slate: 'bloodmagic:infusedslate' }
 ]
 
-function btmFullChemRegisterElement(event, group, element) {
+function bcFullChemRegisterElement(event, group, element) {
     var elementItem = 'chemlib:' + element
-    if (!btmFullChemExists(elementItem)) return
+    if (!bcFullChemExists(elementItem)) return
 
-    if (btmFullChemExists(group.source)) {
-        btmFullChemMix(event, 'source/' + group.id + '/' + element, [
+    if (bcFullChemExists(group.source)) {
+         bcFullChemMix(event, 'source/' + group.id + '/' + element, [
             { item: group.source },
             { item: 'kubejs:titanium_grinding_ball' },
             { fluid: group.acid, amount: 250 }
@@ -305,29 +305,29 @@ function btmFullChemRegisterElement(event, group, element) {
             { item: 'kubejs:titanium_grinding_ball', chance: 0.78 }
         ], 'heated', 260)
 
-        btmFullChemBlood(event, 'source/' + group.id + '/' + element, [
+         bcFullChemBlood(event, 'source/' + group.id + '/' + element, [
             { item: group.source },
             { item: group.slate },
             { item: 'kubejs:pressure_seal' }
         ], { item: elementItem, count: group.id === 'noble' || group.id === 'radioactive' ? 2 : 4 }, group.id === 'noble' || group.id === 'radioactive' ? 18000 : 9000, 360, group.slate === 'bloodmagic:etherealslate' ? 4 : 3)
     }
 
-    for (var f = 0; f < BTM_FULL_CHEM_FAMILIES.length; f++) {
-        var family = BTM_FULL_CHEM_FAMILIES[f]
-        var compound = btmFullChemCompound(element, family.suffix)
-        if (!btmFullChemExists(compound) || !btmFullChemFluidExists(family.fluid)) continue
-        btmFullChemMix(event, 'compound/' + element + '/' + family.id, [
+    for (var f = 0; f < BC_FULL_CHEM_FAMILIES.length; f++) {
+        var family = BC_FULL_CHEM_FAMILIES[f]
+        var compound = bcFullChemCompound(element, family.suffix)
+        if (!bcFullChemExists(compound) || !bcFullChemFluidExists(family.fluid)) continue
+         bcFullChemMix(event, 'compound/' + element + '/' + family.id, [
             { item: elementItem },
             { item: family.reagent },
             { fluid: family.fluid, amount: family.amount }
-        ], [{ item: compound, count: 2 }].concat(btmFullChemSideResults(family.side)), family.heat, 220)
+        ], [{ item: compound, count: 2 }].concat(bcFullChemSideResults(family.side)), family.heat, 220)
 
-        btmFullChemThermo(event, 'compound/' + element + '/' + family.id, { item: elementItem }, family.fluid, family.amount, { item: compound, count: 3 }, family.pressure, family.temp)
+         bcFullChemThermo(event, 'compound/' + element + '/' + family.id, { item: elementItem }, family.fluid, family.amount, { item: compound, count: 3 }, family.pressure, family.temp)
     }
 
-    var oxide = btmFullChemCompound(element, 'oxide')
-    if (btmFullChemExists(oxide)) {
-        btmFullChemMix(event, 'reduction/carbon/' + element, [
+    var oxide = bcFullChemCompound(element, 'oxide')
+    if (bcFullChemExists(oxide)) {
+         bcFullChemMix(event, 'reduction/carbon/' + element, [
             { item: oxide },
             { item: 'chemlib:carbon' },
             { fluid: 'minecraft:water', amount: 125 }
@@ -335,48 +335,46 @@ function btmFullChemRegisterElement(event, group, element) {
             { item: elementItem, count: 1 },
             { item: 'chemlib:carbon_dioxide', chance: 0.25 }
         ], 'heated', 220)
-        btmFullChemBlood(event, 'reduction/blood/' + element, [
+         bcFullChemBlood(event, 'reduction/blood/' + element, [
             { item: oxide },
             { item: group.slate },
             { item: 'chemlib:carbon' }
         ], { item: elementItem, count: 4 }, 10000, 300, 3)
     }
 
-    var sinks = BTM_FULL_CHEM_GROUP_SINKS[group.id] || []
+    var sinks = BC_FULL_CHEM_GROUP_SINKS[group.id] || []
     for (var s = 0; s < sinks.length; s++) {
-        btmFullChemRegisterSink(event, group, elementItem, sinks[s])
+         bcFullChemRegisterSink(event, group, elementItem, sinks[s])
     }
 }
 
-function btmFullChemSinkInputs(elementItem, sink) {
+function bcFullChemSinkInputs(elementItem, sink) {
     var inputs = [{ item: elementItem }]
     for (var i = 0; i < sink.inputs.length; i++) inputs.push({ item: sink.inputs[i] })
     return inputs
 }
 
-function btmFullChemRegisterSink(event, group, elementItem, sink) {
-    var input = btmFullChemSinkInputs(elementItem, sink)
+function bcFullChemRegisterSink(event, group, elementItem, sink) {
+    var input = bcFullChemSinkInputs(elementItem, sink)
     if (sink.kind === 'pressure') {
-        btmFullChemPressure(event, 'sink/' + group.id + '/' + elementItem.substring(8) + '/' + sink.id, input, { item: sink.output, count: sink.count || 1 }, sink.pressure || 2.5)
+         bcFullChemPressure(event, 'sink/' + group.id + '/' + elementItem.substring(8) + '/' + sink.id, input, { item: sink.output, count: sink.count || 1 }, sink.pressure || 2.5)
     } else if (sink.kind === 'compact') {
-        btmFullChemCompact(event, 'sink/' + group.id + '/' + elementItem.substring(8) + '/' + sink.id, input, [{ item: sink.output, count: sink.count || 1 }], sink.heat || null)
+         bcFullChemCompact(event, 'sink/' + group.id + '/' + elementItem.substring(8) + '/' + sink.id, input, [{ item: sink.output, count: sink.count || 1 }], sink.heat || null)
     } else {
-        btmFullChemMix(event, 'sink/' + group.id + '/' + elementItem.substring(8) + '/' + sink.id, input, [{ item: sink.output, count: sink.count || 1 }], sink.heat || null, 200)
+         bcFullChemMix(event, 'sink/' + group.id + '/' + elementItem.substring(8) + '/' + sink.id, input, [{ item: sink.output, count: sink.count || 1 }], sink.heat || null, 200)
     }
 }
 
-function btmFullChemRegisterMolecule(event, molecule) {
-    if (!btmFullChemExists(molecule.item)) return
+function bcFullChemRegisterMolecule(event, molecule) {
+    if (!bcFullChemExists(molecule.item)) return bcFullChemMix(event, 'molecule/source/' + molecule.id, molecule.source, [{ item: molecule.item, count: 2 }], 'heated', 220)
+     bcFullChemPressure(event, 'molecule/pressure_source/' + molecule.id, molecule.source, { item: molecule.item, count: 3 }, 2.75)
+     bcFullChemBlood(event, 'molecule/manual_yield/' + molecule.id, molecule.source.concat([{ item: molecule.slate }]), { item: molecule.item, count: 5 }, 8000, 240, 2)
 
-    btmFullChemMix(event, 'molecule/source/' + molecule.id, molecule.source, [{ item: molecule.item, count: 2 }], 'heated', 220)
-    btmFullChemPressure(event, 'molecule/pressure_source/' + molecule.id, molecule.source, { item: molecule.item, count: 3 }, 2.75)
-    btmFullChemBlood(event, 'molecule/manual_yield/' + molecule.id, molecule.source.concat([{ item: molecule.slate }]), { item: molecule.item, count: 5 }, 8000, 240, 2)
+     bcFullChemMix(event, 'molecule/use/' + molecule.id + '/' + molecule.process, [{ item: molecule.item }], molecule.outputs, molecule.id.indexOf('oxide') >= 0 ? 'heated' : null, 180)
+     bcFullChemPressure(event, 'molecule/controlled_use/' + molecule.id + '/' + molecule.process, [{ item: molecule.item }, { item: 'kubejs:pressure_seal' }], { item: molecule.outputs[0].item, count: molecule.outputs[0].count || 1 }, 2.5)
 
-    btmFullChemMix(event, 'molecule/use/' + molecule.id + '/' + molecule.process, [{ item: molecule.item }], molecule.outputs, molecule.id.indexOf('oxide') >= 0 ? 'heated' : null, 180)
-    btmFullChemPressure(event, 'molecule/controlled_use/' + molecule.id + '/' + molecule.process, [{ item: molecule.item }, { item: 'kubejs:pressure_seal' }], { item: molecule.outputs[0].item, count: molecule.outputs[0].count || 1 }, 2.5)
-
-    if (molecule.fluid && btmFullChemFluidExists(molecule.fluid)) {
-        btmFullChemMix(event, 'molecule/fluid_spend/' + molecule.id, [
+    if (molecule.fluid &&  bcFullChemFluidExists(molecule.fluid)) {
+         bcFullChemMix(event, 'molecule/fluid_spend/' + molecule.id, [
             { item: molecule.item },
             { fluid: molecule.fluid, amount: 250 }
         ], molecule.outputs, null, 160)
@@ -384,14 +382,14 @@ function btmFullChemRegisterMolecule(event, molecule) {
 }
 
 ServerEvents.recipes(function (event) {
-    for (var g = 0; g < BTM_FULL_CHEM_ELEMENT_GROUPS.length; g++) {
-        var group = BTM_FULL_CHEM_ELEMENT_GROUPS[g]
+    for (var g = 0; g < BC_FULL_CHEM_ELEMENT_GROUPS.length; g++) {
+        var group = BC_FULL_CHEM_ELEMENT_GROUPS[g]
         for (var e = 0; e < group.elements.length; e++) {
-            btmFullChemRegisterElement(event, group, group.elements[e])
+             bcFullChemRegisterElement(event, group, group.elements[e])
         }
     }
 
-    for (var m = 0; m < BTM_FULL_CHEM_MOLECULES.length; m++) {
-        btmFullChemRegisterMolecule(event, BTM_FULL_CHEM_MOLECULES[m])
+    for (var m = 0; m < BC_FULL_CHEM_MOLECULES.length; m++) {
+         bcFullChemRegisterMolecule(event, BC_FULL_CHEM_MOLECULES[m])
     }
 })

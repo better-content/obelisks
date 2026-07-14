@@ -87,7 +87,7 @@ if (!clientContractPath.isRegularFile()) {
 } else {
     val properties = java.util.Properties().apply { Files.newBufferedReader(clientContractPath).use(::load) }
     val expected = mapOf(
-        "schema" to "btm.vs_ships_client_contract.v1",
+        "schema" to "bc.vs_ships_client_contract.v1",
         "eureka.sourceCommit" to "07cf4181d72590731d140d603bda5c9de23c5ae7",
         "vs.sourceCommit" to "9a09dd2609d482948f261a02c8103c1ba44ba5c1",
         "display.width" to "1280",
@@ -107,13 +107,13 @@ if (!clientContractPath.isRegularFile()) {
     else fail("VS client source contract is pinned", wrong.keys.joinToString())
 }
 
-val btmText = read("tools/btm.main.kts")
+val bcText = read("tools/bc.main.kts")
 for (scenario in listOf("vs_ships_stability", "vs_ships_matrix", "vs_ships_client", "vs_ships_release")) {
-    if (""""$scenario" to ScenarioDefinition(""" in btmText) ok("$scenario is registered")
+    if (""""$scenario" to ScenarioDefinition(""" in bcText) ok("$scenario is registered")
     else fail("$scenario is registered", "missing ScenarioDefinition")
 }
 for (internalCommand in listOf("prepare-server-runtime", "prepare-client-runtime", "minecraft-client-argfile")) {
-    if (btmText.contains("\"$internalCommand\" ->")) ok("$internalCommand internal hook is registered")
+    if (bcText.contains("\"$internalCommand\" ->")) ok("$internalCommand internal hook is registered")
     else fail("$internalCommand internal hook is registered", "missing internal command")
 }
 
@@ -174,6 +174,7 @@ val scriptChecks = mapOf(
         "render_environment_inconclusive",
         "assembly_sync_failure",
         "ship_transform_sync_failure",
+        "client_backlog_stress_failure",
         "assembledGeometryScore",
         "captureWorld",
         "flywheel_visual_failure",
@@ -202,6 +203,11 @@ val scriptChecks = mapOf(
         "helm-button-pressed.png",
         "--fixture",
         "--variant",
+        "--profile quick|release|stress",
+        "client_backlog_stress",
+        "stress_physics_queue_warnings",
+        "stress_modernfix_watchdogs",
+        "stress_disconnects",
         "dh_renderer_disabled",
         "dh_renderer_connectivity",
         "--stop-after",
@@ -242,10 +248,11 @@ else fail("VS isolation variants bypass smoke manifest preflight", "matrix still
 val docs = mapOf(
     "AGENTS.md" to listOf("vs_ships_stability", "vs_ships_matrix", "vs_ships_client"),
     "docs/runtime_validation.md" to listOf(
-        "tools/btm test scenario vs_ships_stability --profile quick --cycles 1 --bootstrap-mode once",
-        "tools/btm test scenario vs_ships_matrix --profile quick --bootstrap-mode once",
-        "tools/btm test scenario-headful vs_ships_client --profile quick --bootstrap-mode once",
-        "tools/btm test scenario-headful vs_ships_release --bootstrap-mode once",
+        "tools/bc test scenario vs_ships_stability --profile quick --cycles 1 --bootstrap-mode once",
+        "tools/bc test scenario vs_ships_matrix --profile quick --bootstrap-mode once",
+        "tools/bc test scenario-headful vs_ships_client --profile quick --bootstrap-mode once",
+        "tools/bc test scenario-headful vs_ships_client --profile stress --fixture combined --bootstrap-mode once",
+        "tools/bc test scenario-headful vs_ships_release --bootstrap-mode once",
     ),
     "docs/performance_and_mods.md" to listOf("Valkyrien Skies", "Eureka", "Clockwork", "Trackwork", "vs_ships_stability"),
 )

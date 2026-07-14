@@ -8,8 +8,8 @@ val root = Paths.get("").toAbsolutePath().normalize()
 val runtimeProbePath = root.resolve("generated/runtime-dumps/block_hardness_probe.json")
 val outputJsonPath = root.resolve("generated/runtime-dumps/realistic_hands_audit.json")
 val outputMdPath = root.resolve("generated/runtime-dumps/realistic_hands_audit.md")
-val blockTagDir = root.resolve("generated/custom-mod-sources/bound-to-matter-fixes/src/main/resources/data/btmfixes/tags/blocks/realistic_hands")
-val itemTagDir = root.resolve("generated/custom-mod-sources/bound-to-matter-fixes/src/main/resources/data/btmfixes/tags/items/realistic_hands/tools")
+val blockTagDir = root.resolve("generated/custom-mod-sources/better-content-fixes/src/main/resources/data/bcfixes/tags/blocks/realistic_hands")
+val itemTagDir = root.resolve("generated/custom-mod-sources/better-content-fixes/src/main/resources/data/bcfixes/tags/items/realistic_hands/tools")
 
 class JsonParser(private val text: String) {
     private var index = 0
@@ -230,11 +230,11 @@ val representativeSeparation = linkedMapOf(
 )
 
 val report = linkedMapOf<String, Any?>(
-    "schema" to "obelisks.realistic_hands.tag_policy_audit.v1",
+    "schema" to "dimension_drink.realistic_hands.tag_policy_audit.v1",
     "generatedBy" to "tools/kotlin/audit_realistic_hands.main.kts",
     "input" to rel(runtimeProbePath),
     "runtimeProbeSchema" to jsonString(runtimeProbe["schema"]).orEmpty(),
-    "policyRoot" to "generated/custom-mod-sources/bound-to-matter-fixes/src/main/resources/data/btmfixes/tags",
+    "policyRoot" to "generated/custom-mod-sources/better-content-fixes/src/main/resources/data/bcfixes/tags",
     "blockTags" to blockTags,
     "itemTags" to itemTags,
     "blockAssignments" to blockAssignments,

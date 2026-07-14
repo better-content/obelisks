@@ -3,21 +3,21 @@
 // spell focuses, generators, and programmable/networked magic that can otherwise be made
 // from plain vanilla valuables after the entry item is obtained.
 
-var BTM_MAGIC_T1 = 'bloodmagic:blankslate'
-var BTM_MAGIC_T2 = 'bloodmagic:reinforcedslate'
-var BTM_MAGIC_T3 = 'bloodmagic:infusedslate'
-var BTM_MAGIC_T4 = 'bloodmagic:demonslate'
-var BTM_MAGIC_T5 = 'bloodmagic:etherealslate'
+var BC_MAGIC_T1 = 'bloodmagic:blankslate'
+var BC_MAGIC_T2 = 'bloodmagic:reinforcedslate'
+var BC_MAGIC_T3 = 'bloodmagic:infusedslate'
+var BC_MAGIC_T4 = 'bloodmagic:demonslate'
+var BC_MAGIC_T5 = 'bloodmagic:etherealslate'
 
-function btmMagicReplace(event, filter, oldInputs, gate) {
+function bcMagicReplace(event, filter, oldInputs, gate) {
     for (var i = 0; i < oldInputs.length; i++) event.replaceInput(filter, oldInputs[i], gate)
 }
 
-function btmMagicGateOutputs(event, outputs, oldInputs, gate) {
-    for (var i = 0; i < outputs.length; i++) btmMagicReplace(event, { output: outputs[i] }, oldInputs, gate)
+function bcMagicGateOutputs(event, outputs, oldInputs, gate) {
+    for (var i = 0; i < outputs.length; i++)  bcMagicReplace(event, { output: outputs[i] }, oldInputs, gate)
 }
 
-function btmMagicRemoveOutputs(event, outputs) {
+function bcMagicRemoveOutputs(event, outputs) {
     for (var i = 0; i < outputs.length; i++) event.remove({ output: outputs[i] })
 }
 
@@ -33,14 +33,14 @@ ServerEvents.recipes(function (event) {
     ]
 
     // Blood I: first folk/spirit power should consume actual altar output, not only vanilla craft stock.
-    btmMagicGateOutputs(event, [
+     bcMagicGateOutputs(event, [
         'malum:spirit_altar',
         'rootsclassic:altar',
         'reliquary:apothecary_cauldron'
-    ], commonVanillaValuables.concat(['minecraft:torch', 'reliquary:catalyzing_gland']), BTM_MAGIC_T1)
+    ], commonVanillaValuables.concat(['minecraft:torch', 'reliquary:catalyzing_gland']), BC_MAGIC_T1)
 
     // Blood III: early Ars operations start once the teaser book can be fed by real proof.
-    btmMagicGateOutputs(event, [
+     bcMagicGateOutputs(event, [
         'ars_nouveau:ritual_brazier',
         'ars_nouveau:ritual_scrying',
         'ars_nouveau:ritual_overgrowth',
@@ -66,21 +66,21 @@ ServerEvents.recipes(function (event) {
     ], commonVanillaValuables.concat([
         '#forge:storage_blocks/source', '#forge:gems/source', 'ars_nouveau:source_gem',
         'ars_nouveau:earth_essence', 'ars_nouveau:air_essence', 'minecraft:ender_pearl'
-    ]), BTM_MAGIC_T3)
+    ]), BC_MAGIC_T3)
 
-    btmMagicGateOutputs(event, [
+     bcMagicGateOutputs(event, [
         'irons_spellbooks:pumpkin_helmet'
-    ], commonVanillaValuables, BTM_MAGIC_T2)
+    ], commonVanillaValuables, BC_MAGIC_T2)
 
     // Blood II: Hexerei is the first folk surface off the Fonts spine.
-    btmMagicGateOutputs(event, [
+     bcMagicGateOutputs(event, [
         'hexerei:book_of_shadows_altar',
         'hexerei:mixing_cauldron'
-    ], commonVanillaValuables.concat(['minecraft:torch']), BTM_MAGIC_T2)
+    ], commonVanillaValuables.concat(['minecraft:torch']), BC_MAGIC_T2)
 
     // Blood IV: Goety/Eidolon operational power. Keep Goety's internal focus chain,
     // but make the cheap focus entry and altar variants require a Demonic Slate.
-    btmMagicGateOutputs(event, [
+     bcMagicGateOutputs(event, [
         'eidolon:wooden_altar',
         'eidolon:necrotic_focus',
         'goety:dark_altar',
@@ -134,18 +134,18 @@ ServerEvents.recipes(function (event) {
         'minecraft:tnt', '#forge:gunpowder', '#forge:rods/blaze', '#forge:ender_pearls',
         '#forge:gems/quartz', '#forge:ingots/iron', 'goety:magic_emerald', 'goety:cursed_bars',
         'goety:mystic_core', 'goety:empty_focus'
-    ]), BTM_MAGIC_T4)
+    ]), BC_MAGIC_T4)
 
     // Blood IV: Theurgy matter work and large Ars Caelum rituals.
 
-    btmMagicGateOutputs(event, [
+     bcMagicGateOutputs(event, [
         'theurgy:incubator',
         'theurgy:incubator_sulfur_vessel',
         'theurgy:incubator_mercury_vessel',
         'theurgy:liquefaction_cauldron'
-    ], commonVanillaValuables.concat(['#forge:ingots/copper', 'minecraft:cauldron']), BTM_MAGIC_T4)
+    ], commonVanillaValuables.concat(['#forge:ingots/copper', 'minecraft:cauldron']), BC_MAGIC_T4)
 
-    btmMagicGateOutputs(event, [
+     bcMagicGateOutputs(event, [
         'ars_caelum:ritual_conjure_island_geode',
         'ars_caelum:ritual_conjure_island_vexing',
         'ars_caelum:ritual_conjure_island_village',
@@ -155,10 +155,10 @@ ServerEvents.recipes(function (event) {
         'ars_caelum:ritual_sedimentation',
         'ars_creo:starbuncle_wheel',
         'ars_technica:source_engine'
-    ], commonVanillaValuables.concat(['create:water_wheel', 'ars_nouveau:frostaya_pod']), BTM_MAGIC_T4)
+    ], commonVanillaValuables.concat(['create:water_wheel', 'ars_nouveau:frostaya_pod']), BC_MAGIC_T4)
 
     // Blood V: programmable/networked magic and late Ars/AE source bridges.
-    btmMagicGateOutputs(event, [
+     bcMagicGateOutputs(event, [
         'psi:programmer',
         'psi:cad_assembler',
         'psi:spell_drive',
@@ -184,10 +184,10 @@ ServerEvents.recipes(function (event) {
         '#forge:ingots/iron', 'minecraft:book', 'minecraft:paper', 'mna:vinteum_dust',
         'minecraft:water_bucket', 'ars_nouveau:manipulation_essence', 'ars_nouveau:source_gem_block',
         'ae2:cell_component_64k', 'ae2:cell_component_256k'
-    ]), BTM_MAGIC_T5)
+    ]), BC_MAGIC_T5)
 
     // Hard removals for normal-logistics bypasses from magic-adjacent systems.
-    btmMagicRemoveOutputs(event, [
+     bcMagicRemoveOutputs(event, [
         'bloodmagic:teleposer',
         'vampirism:crossbow_arrow_teleport'
     ])

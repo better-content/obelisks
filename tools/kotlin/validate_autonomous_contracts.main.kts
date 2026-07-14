@@ -8,7 +8,7 @@ import kotlin.io.path.exists
 import kotlin.system.exitProcess
 
 val root = Paths.get("").toAbsolutePath().normalize()
-val instance = System.getenv("BTM_INSTANCE") ?: ""
+val instance = System.getenv("BC_INSTANCE") ?: ""
 val failures = mutableListOf<String>()
 var passCount = 0
 
@@ -368,13 +368,13 @@ fun validateEconomy() {
     val tradeFile = "kubejs/server_scripts/35_villager_trades/10_coin_villager_trades.js"
     val text = read(tradeFile)
     val coinOrder = listOf("copper", "zinc", "iron", "industrial_iron", "brass", "gold", "platinum")
-    val coinMap = parseJsObjectStringMap(text, "BTM_COIN")
+    val coinMap = parseJsObjectStringMap(text, "BC_COIN")
     val coinItems = coinMap.values.toSet()
     val missingCoinTiers = coinOrder.filterNot(coinMap::containsKey)
     if (missingCoinTiers.isEmpty()) ok("economy coin tier map is complete", "${coinOrder.size} tiers")
     else fail("economy coin tier map is complete", missingCoinTiers.joinToString(", "))
 
-    val exchangeRows = extractCallArrays(text, "btmAddCoinExchangeTrades").flatten()
+    val exchangeRows = extractCallArrays(text, "bcAddCoinExchangeTrades").flatten()
     data class Edge(val from: String, val to: String, val input: Double, val output: Double, val rate: Double)
     val exchangeEdges = exchangeRows.map {
         Edge(
@@ -414,29 +414,29 @@ fun validateEconomy() {
             }
         }
     }
-    val blocklist = parseJsObjectTrueSet(text, "BTM_NON_GROWN_TRADE_BUY_BLOCKLIST")
+    val blocklist = parseJsObjectTrueSet(text, "BC_NON_GROWN_TRADE_BUY_BLOCKLIST")
     data class Buy(val tier: String, val cost: Double, val item: String, val count: Double, val source: String)
     val buys = mutableListOf<Buy>()
     fun addBuy(tier: String, cost: Number, item: String, count: Number, source: String) {
         if (item in blocklist) return
         buys += Buy(tier, cost.toDouble(), item, count.toDouble(), source)
     }
-    val thirtyItems = parseJsArrayLiteral(extractArrayBody(text, "BTM_30_ITEMS"))
+    val thirtyItems = parseJsArrayLiteral(extractArrayBody(text, "BC_30_ITEMS"))
     thirtyItems.forEachIndexed { i, row ->
-        addBuy("copper", 2 + kotlin.math.floor(i / 10.0), row[0].toString(), row[1] as Number, "BTM_30 copper")
-        addBuy("zinc", 3 + kotlin.math.floor(i / 10.0), row[0].toString(), row[1] as Number, "BTM_30 zinc")
-        addBuy("iron", 4 + kotlin.math.floor(i / 10.0), row[0].toString(), row[1] as Number, "BTM_30 iron")
+        addBuy("copper", 2 + kotlin.math.floor(i / 10.0), row[0].toString(), row[1] as Number, "BC_30 copper")
+        addBuy("zinc", 3 + kotlin.math.floor(i / 10.0), row[0].toString(), row[1] as Number, "BC_30 zinc")
+        addBuy("iron", 4 + kotlin.math.floor(i / 10.0), row[0].toString(), row[1] as Number, "BC_30 iron")
     }
-    for ((tier, arrayName) in listOf("industrial_iron" to "BTM_INDUSTRIAL_IRON_MARKET", "gold" to "BTM_GOLD_MARKET", "platinum" to "BTM_PLATINUM_MARKET")) {
+    for ((tier, arrayName) in listOf("industrial_iron" to "BC_INDUSTRIAL_IRON_MARKET", "gold" to "BC_GOLD_MARKET", "platinum" to "BC_PLATINUM_MARKET")) {
         parseJsArrayLiteral(extractArrayBody(text, arrayName)).forEach { row -> addBuy(tier, row[2] as Number, row[3].toString(), row[4] as Number, arrayName) }
     }
-    parseJsArrayLiteral(extractArrayBody(text, "BTM_WANDERER_MARKET")).forEach { row -> addBuy(row[1].toString(), row[2] as Number, row[3].toString(), row[4] as Number, "BTM_WANDERER_MARKET") }
-    extractCallArrays(text, "btmAddTrades").forEach { rows ->
-        rows.forEach { row -> addBuy(row[1].toString(), row[2] as Number, row[3].toString(), row[4] as Number, "btmAddTrades") }
+    parseJsArrayLiteral(extractArrayBody(text, "BC_WANDERER_MARKET")).forEach { row -> addBuy(row[1].toString(), row[2] as Number, row[3].toString(), row[4] as Number, "BC_WANDERER_MARKET") }
+    extractCallArrays(text, "bcAddTrades").forEach { rows ->
+        rows.forEach { row -> addBuy(row[1].toString(), row[2] as Number, row[3].toString(), row[4] as Number, "bcAddTrades") }
     }
     data class Sell(val item: String, val input: Double, val copper: Double)
     val sells = mutableListOf<Sell>()
-    extractCallArrays(text, "btmAddSellTrades").forEach { rows ->
+    extractCallArrays(text, "bcAddSellTrades").forEach { rows ->
         rows.forEach { row -> sells += Sell(row[1].toString(), (row[2] as Number).toDouble(), (row[3] as Number).toDouble()) }
     }
     val sellByItem = mutableMapOf<String, Double>()
@@ -481,7 +481,7 @@ fun validateMagicBody() {
     } else {
         val dump = readJsonAbs(dumpFile.file)
         val provenanceProblems = mutableListOf<String>()
-        if (jsonString(dump["schema"]) != "btm.food_effect_audit.v2") provenanceProblems += "schema=${jsonString(dump["schema"]) ?: "<missing>"}"
+        if (jsonString(dump["schema"]) != "bc.food_effect_audit.v2") provenanceProblems += "schema=${jsonString(dump["schema"]) ?: "<missing>"}"
         if (jsonString(dump["generatedBy"]) != "kubejs/server_scripts/90_dev_debug/20_food_effect_audit_dumps.js") provenanceProblems += "generatedBy=${jsonString(dump["generatedBy"]) ?: "<missing>"}"
         if (jsonString(dump["generatedAt"]).isNullOrBlank()) provenanceProblems += "generatedAt=<missing>"
         if (provenanceProblems.isEmpty()) ok("runtime food effect dump has provenance metadata", "${jsonString(dump["schema"])}, ${jsonString(dump["generatedAt"])}")
@@ -505,7 +505,7 @@ fun validateMagicBody() {
             val logPath = instanceLatestLog()
             if (logPath != null && logPath.exists()) {
                 val logText = readAbs(logPath)
-                val expectedLine = "[BTM-FOOD-AUDIT] foods=${jsonNumber(summary["foodCount"])?.toInt() ?: 0} withEffects=${jsonNumber(summary["foodsWithEffectCount"])?.toInt() ?: 0} errors=${jsonNumber(summary["errorCount"])?.toInt() ?: 0}"
+                val expectedLine = "[BC-FOOD-AUDIT] foods=${jsonNumber(summary["foodCount"])?.toInt() ?: 0} withEffects=${jsonNumber(summary["foodsWithEffectCount"])?.toInt() ?: 0} errors=${jsonNumber(summary["errorCount"])?.toInt() ?: 0}"
                 if (expectedLine in logText) ok("latest log confirms food effect dump emission", expectedLine)
                 else fail("latest log confirms food effect dump emission", "missing $expectedLine in $logPath")
             } else if (instance.isNotBlank()) fail("latest log exists for food effect dump correlation", Paths.get(instance).resolve("logs/latest.log").toString())
@@ -548,8 +548,8 @@ fun validateMagicBody() {
     if (heartFailures.isEmpty()) ok("Blood Orb heart bridge escalates monotonically", "${typed.size} typed orb tiers + weak fallback")
     else fail("Blood Orb heart bridge escalates monotonically", heartFailures.joinToString("\n"))
 
-    val fontHeartTagPath = full("generated/custom-mod-sources/dimensional-fonts/src/main/resources/data/dimensionalfonts/tags/items/font_hearts.json")
-    if (!fontHeartTagPath.exists()) fail("Dimensional Fonts accepts RPG Stats still-beating hearts", root.relativize(fontHeartTagPath).toString() + " is missing")
+    val fontHeartTagPath = full("generated/custom-mod-sources/dimension-drink/src/main/resources/data/dimensiondrink/tags/items/font_hearts.json")
+    if (!fontHeartTagPath.exists()) fail("Dimension Drink accepts RPG Stats still-beating hearts", root.relativize(fontHeartTagPath).toString() + " is missing")
     else {
         val tag = readJsonAbs(fontHeartTagPath)
         val values = jsonArray(tag["values"]).mapNotNull {
@@ -559,8 +559,8 @@ fun validateMagicBody() {
                 else -> null
             }
         }
-        if ("rpgstats:still_beating_heart" in values) ok("Dimensional Fonts accepts RPG Stats still-beating hearts")
-        else fail("Dimensional Fonts accepts RPG Stats still-beating hearts", "${root.relativize(fontHeartTagPath)} is missing rpgstats:still_beating_heart")
+        if ("rpgstats:still_beating_heart" in values) ok("Dimension Drink accepts RPG Stats still-beating hearts")
+        else fail("Dimension Drink accepts RPG Stats still-beating hearts", "${root.relativize(fontHeartTagPath)} is missing rpgstats:still_beating_heart")
     }
 
     val lifeforce = read("kubejs/server_scripts/30_recipe_replace/82_blood_magic_lifeforce_rework.js")
@@ -570,7 +570,7 @@ fun validateMagicBody() {
     val deathConfig = read("defaultconfigs/configurabledeath-server.toml")
     val noMovingSpawn = read("kubejs/startup_scripts/20_globals/10_immobile_spawn.js")
     val contract = readJson("tools/pack_contract.json")
-    val sourceRoot = Paths.get(System.getenv("BTM_CUSTOM_MODS_DIR") ?: jsonString(jsonObject(contract["customMods"])["sourceRoot"]).orEmpty())
+    val sourceRoot = Paths.get(System.getenv("BC_CUSTOM_MODS_DIR") ?: jsonString(jsonObject(contract["customMods"])["sourceRoot"]).orEmpty())
     val deathSources = listOf(
         deathConfig,
         noMovingSpawn,
@@ -636,11 +636,11 @@ fun validateClientQuestIntent() {
 fun validateVanillaStyleToolSuppression() {
     val server = read("kubejs/server_scripts/30_recipe_replace/60_vanilla_tools_to_tcon_heads.js")
     val client = read("kubejs/client_scripts/20_hide_vanilla_tools.js")
-    val requiredToolMarkers = listOf("minecraft:", "ae2", "aether", "deeperdarker", "everythingcopper", "forbidden_arcanus", "goety", "iceandfire", "malum", "occultism:iesnium_pickaxe", "the_finley_dimension_remastered", "undergarden", "twilightforest:ironwood_pickaxe", "ars_nouveau:enchanters_sword", "create:cardboard_sword", "farmersdelight:flint_knife", "notreepunching:flint_pickaxe", "notreepunching:iron_saw", "rpgstats:iron_ritual_dagger", "undergarden:forgotten_battleaxe")
+    val requiredToolMarkers = listOf("minecraft:", "ae2", "aether", "deeperdarker", "everythingcopper", "forbidden_arcanus", "goety", "iceandfire", "malum", "occultism:iesnium_pickaxe", "undergarden", "twilightforest:ironwood_pickaxe", "ars_nouveau:enchanters_sword", "create:cardboard_sword", "farmersdelight:flint_knife", "notreepunching:flint_pickaxe", "notreepunching:iron_saw", "rpgstats:iron_ritual_dagger", "undergarden:forgotten_battleaxe")
     val missingToolMarkers = requiredToolMarkers.filter { it !in server || it !in client }
     if (missingToolMarkers.isEmpty()) ok("vanilla-style tool suppression covers audited mod families", "${requiredToolMarkers.size} markers")
     else fail("vanilla-style tool suppression covers audited mod families", missingToolMarkers.joinToString(", "))
-    val serverNeedles = listOf("event.remove({ output: tool })", "event.remove({ id: tool })", "event.remove({ type: tool })", "event.remove({ type: 'minecraft:smithing_transform', output: tool })", "BTM_VANILLA_STYLE_TOOL_RECIPE_IDS", "occultism:ritual/craft_infused_pickaxe", "event.add('c:hidden_from_recipe_viewers'", "btmItemExists")
+    val serverNeedles = listOf("event.remove({ output: tool })", "event.remove({ id: tool })", "event.remove({ type: tool })", "event.remove({ type: 'minecraft:smithing_transform', output: tool })", "BC_VANILLA_STYLE_TOOL_RECIPE_IDS", "occultism:ritual/craft_infused_pickaxe", "event.add('c:hidden_from_recipe_viewers'", "bcItemExists")
     val missingServerNeedles = serverNeedles.filterNot(server::contains)
     if (missingServerNeedles.isEmpty()) ok("vanilla-style tools are blocked from crafting and recipe viewers server-side", "${serverNeedles.size} hooks")
     else fail("vanilla-style tools are blocked from crafting and recipe viewers server-side", missingServerNeedles.joinToString(", "))
@@ -648,7 +648,7 @@ fun validateVanillaStyleToolSuppression() {
     if (missingClientNeedles.isEmpty()) ok("vanilla-style tools are hidden from JEI and EMI") else fail("vanilla-style tools are hidden from JEI and EMI", missingClientNeedles.joinToString(", "))
     val forbiddenFamilies = listOf("['tconstruct'", "\"tconstruct\"").filter { it in server || it in client }
     if (forbiddenFamilies.isEmpty()) ok("vanilla-style tool suppression avoids TConstruct tool-building entries") else fail("vanilla-style tool suppression avoids TConstruct tool-building entries", forbiddenFamilies.joinToString(", "))
-    val skippedRemovalNeedles = listOf("if (!btmItemExists(tool)) continue", "if (btmItemExists(tool)) event.remove").filter(server::contains)
+    val skippedRemovalNeedles = listOf("if (!bcItemExists(tool)) continue", "if (bcItemExists(tool)) event.remove").filter(server::contains)
     if (skippedRemovalNeedles.isEmpty()) ok("vanilla-style tool recipe removals are unconditional") else fail("vanilla-style tool recipe removals are unconditional", skippedRemovalNeedles.joinToString(", "))
 }
 
@@ -656,13 +656,13 @@ fun validateRealisticHands() {
     val audit = readJson("generated/runtime-dumps/realistic_hands_audit.json")
     val blockTags = jsonObject(audit["blockTags"]).mapValues { (_, values) -> jsonArray(values).mapNotNull(::jsonString).toSet() }
     if ("minecraft:gravel" in (blockTags["hand"] ?: emptySet())) ok("Realistic Hands explicit hand tag keeps gravel hand-breakable")
-    else fail("Realistic Hands explicit hand tag keeps gravel hand-breakable", "minecraft:gravel missing from btmfixes:realistic_hands/hand")
+    else fail("Realistic Hands explicit hand tag keeps gravel hand-breakable", "minecraft:gravel missing frombcfixes:realistic_hands/hand")
     if ("unearthed:siltstone_regolith" in (blockTags["force_harvest"] ?: emptySet())) ok("Realistic Hands force-harvest tag covers siltstone regolith")
-    else fail("Realistic Hands force-harvest tag covers siltstone regolith", "unearthed:siltstone_regolith missing from btmfixes:realistic_hands/force_harvest")
+    else fail("Realistic Hands force-harvest tag covers siltstone regolith", "unearthed:siltstone_regolith missing frombcfixes:realistic_hands/force_harvest")
     val retiredHook = read("kubejs/startup_scripts/20_blocks/20_realistic_hands.js")
     val retiredAssignments = read("kubejs/startup_scripts/99_realistic_hands_assignments.js")
     val retiredLoot = read("kubejs/server_scripts/50_loot/11_realistic_hands_outcomes.js")
-    val retiredMarkers = listOf("global.BTM_REALISTIC_HANDS_ASSIGNMENTS", "ForgeEvents.onEvent(", "LootJS.modifiers(")
+    val retiredMarkers = listOf("global.BC_REALISTIC_HANDS_ASSIGNMENTS", "ForgeEvents.onEvent(", "LootJS.modifiers(")
     val leaked = retiredMarkers.filter { it in retiredHook || it in retiredAssignments || it in retiredLoot }
     if (leaked.isEmpty()) ok("Realistic Hands KubeJS runtime ownership is retired")
     else fail("Realistic Hands KubeJS runtime ownership is retired", leaked.joinToString(", "))
@@ -713,7 +713,7 @@ fun validatePrimitiveMiningRegressionContracts() = validateByNodeParity("validat
     if ("additionalweaponry:butcher_knife" !in jsonArray(fdKnives["values"]).mapNotNull(::jsonString)) knifeTagProblems += "farmersdelight:tools/knives"
     if ("additionalweaponry:butcher_knife" !in jsonArray(fdStrawHarvesters["values"]).mapNotNull(::jsonString)) knifeTagProblems += "farmersdelight:straw_harvesters"
     if (knifeTagProblems.isEmpty()) ok("flint butcher knife remains a Farmer Delight straw harvester") else fail("flint butcher knife remains a Farmer Delight straw harvester", knifeTagProblems.joinToString(", "))
-    val forgeRhCompat = read("generated/custom-mod-sources/bound-to-matter-fixes/src/main/java/io/github/btmfixes/compat/RealisticHandsCompat.java")
+    val forgeRhCompat = read("generated/custom-mod-sources/better-content-fixes/src/main/java/io/github/bcfixes/compat/RealisticHandsCompat.java")
     val knifeDurabilityMarkers = listOf("damageKnife", "state.is(RealisticHandsTags.KNIFE)", "stack.is(RealisticHandsTags.KNIFE_TOOLS)", "stack.hurtAndBreak(1", "broadcastBreakEvent(InteractionHand.MAIN_HAND)").filterNot(forgeRhCompat::contains)
     if (knifeDurabilityMarkers.isEmpty()) ok("knife-gated plant cutting consumes knife durability") else fail("knife-gated plant cutting consumes knife durability", knifeDurabilityMarkers.joinToString(", "))
     val tconPatternRoutes = read("kubejs/server_scripts/30_recipe_replace/98_starting_progression_bypasses.js")
@@ -753,7 +753,7 @@ fun validatePrimitiveMiningRegressionContracts() = validateByNodeParity("validat
 fun validateVanillishExpertRecipePass() = validateSimpleRecipePass(
     "kubejs/server_scripts/30_recipe_replace/145_vanillish_recipe_expert_pass.js",
     listOf("event.shaped(", "event.shapeless(", "event.smelting(", "event.blasting("),
-    listOf("create:deploying","create:compacting","minecraft:piston","minecraft:hopper","minecraft:observer","minecraft:rail","minecraft:minecart","createbigcannons:cannon_builder","immersive_aircraft:engine","everythingcopper:copper_hopper","chemlibDustIngots","btmVanRemoveCooking(event, 'minecraft:iron_ingot')","ae2:silicon"),
+    listOf("create:deploying","create:compacting","minecraft:piston","minecraft:hopper","minecraft:observer","minecraft:rail","minecraft:minecart","createbigcannons:cannon_builder","everythingcopper:copper_hopper","chemlibDustIngots","bcVanRemoveCooking(event, 'minecraft:iron_ingot')","ae2:silicon"),
     listOf("bloodmagic:alchemytable","minecraft:brewing_stand","minecraft:enchanting_table","minecraft:beacon","bloodmagic:ingot_hellforged","ars_nouveau:scribes_table","ars_nouveau:imbuement_chamber","ars_nouveau:enchanting_apparatus","bloodmagic:reinforcedslate","bloodmagic:infusedslate","bloodmagic:etherealslate"),
 )
 
@@ -773,7 +773,7 @@ fun validateNonGrownInfiniteResourceBoundaries() {
     val hidden = read("kubejs/client_scripts/40_hide_quarantined_systems.js")
     val trades = read("kubejs/server_scripts/35_villager_trades/10_coin_villager_trades.js")
     val docs = listOf(read("docs/content_systems.md"), read("docs/progression.md")).joinToString("\n")
-    val removeMarkers = listOf("event.remove({ type: 'occultism:miner' })","event.remove({ type: 'bloodmagic:meteor' })","event.remove({ id: 'createdieselgenerators:bulk_fermenting/lava' })","event.remove({ id: 'ars_nouveau:water_essence_to_bucket' })","ars_nouveau:glyph_conjure_water","bloodmagic:watersigil","bloodmagic:lavasigil").filterNot(remove::contains)
+    val removeMarkers = listOf("event.remove({ type: 'occultism:miner' })","event.remove({ type: 'bloodmagic:dimension_drink' })","event.remove({ id: 'createdieselgenerators:bulk_fermenting/lava' })","event.remove({ id: 'ars_nouveau:water_essence_to_bucket' })","ars_nouveau:glyph_conjure_water","bloodmagic:watersigil","bloodmagic:lavasigil").filterNot(remove::contains)
     if (removeMarkers.isEmpty()) ok("non-grown infinite resource recipe sources are quarantined", "7 markers") else fail("non-grown infinite resource recipe sources are quarantined", removeMarkers.joinToString(", "))
     val hiddenMarkers = listOf("JEIEvents.hideItems","EMIEvents.hideItems","ars_nouveau:ritual_conjure_island_plains","ars_nouveau:glyph_conjure_water","bloodmagic:watersigil","bloodmagic:lavasigil").filterNot(hidden::contains)
     if (hiddenMarkers.isEmpty()) ok("non-grown infinite resource shortcuts are hidden from JEI/EMI", "6 markers") else fail("non-grown infinite resource shortcuts are hidden from JEI/EMI", hiddenMarkers.joinToString(", "))
@@ -787,7 +787,7 @@ fun validateNonGrownInfiniteResourceBoundaries() {
     }
     if (bool(finiteWater["create_infinitePipes"]) != false) finiteWaterProblems += "create_infinitePipes=${bool(finiteWater["create_infinitePipes"])}"
     if (finiteWaterProblems.isEmpty()) ok("Finite Water config has no infinite biome/refill pipe sources") else fail("Finite Water config has no infinite biome/refill pipe sources", finiteWaterProblems.joinToString(", "))
-    val tradeMarkers = listOf("BTM_NON_GROWN_TRADE_BUY_BLOCKLIST","btmIsNonGrownInfiniteBuyResult(resultItem)","'minecraft:experience_bottle': true","'minecraft:echo_shard': true","'minecraft:sculk_catalyst': true").filterNot(trades::contains)
+    val tradeMarkers = listOf("BC_NON_GROWN_TRADE_BUY_BLOCKLIST","bcIsNonGrownInfiniteBuyResult(resultItem)","'minecraft:experience_bottle': true","'minecraft:echo_shard': true","'minecraft:sculk_catalyst': true").filterNot(trades::contains)
     if (tradeMarkers.isEmpty()) ok("restocking trades reject deep-progression buy results", "5 markers") else fail("restocking trades reject deep-progression buy results", tradeMarkers.joinToString(", "))
     val docMarkers = listOf("Non-grown infinite matter is not an authored resource source","villager buy restocks only skip knowledge and deep-progression outputs such as experience bottles, echo shards, and sculk catalysts").filterNot(docs::contains)
     if (docMarkers.isEmpty()) ok("living docs cover non-grown infinite resource policy") else fail("living docs cover non-grown infinite resource policy", docMarkers.joinToString(", "))
@@ -813,9 +813,9 @@ fun validateWorldgenStaticContractsImpl() {
     val generatedPackSolid = read("config/rbp/block_definitions/generated_pack_solid_blocks.toml")
     val generatedPackSolidIds = Regex(""""([a-z0-9_.-]+:[a-z0-9_/.-]+)"""").findAll(generatedPackSolid).map { it.groupValues[1] }.toList()
     val generatedPackSolidSet = generatedPackSolidIds.toSet()
-    if (generatedPackSolidIds.size >= 9000 && "minecraft:bedrock" !in generatedPackSolidSet) ok("RBP generated pack-solid definition covers broad solid block surface", "${generatedPackSolidIds.size} explicit ids")
+    if (generatedPackSolidIds.size >= 8900 && "minecraft:bedrock" !in generatedPackSolidSet) ok("RBP generated pack-solid definition covers broad solid block surface", "${generatedPackSolidIds.size} explicit ids")
     else fail("RBP generated pack-solid definition covers broad solid block surface", "${generatedPackSolidIds.size} explicit ids; bedrock included=${"minecraft:bedrock" in generatedPackSolidSet}")
-    val dynamicTreesManagedRbpPatterns = listOf(Regex("""^dynamictrees:"""), Regex("""^dynamictreesplus:"""), Regex("""^btmdimtrees:"""), Regex("""^dt[a-z0-9_]*:"""))
+    val dynamicTreesManagedRbpPatterns = listOf(Regex("""^dynamictrees:"""), Regex("""^dynamictreesplus:"""), Regex("""^bcdimtrees:"""), Regex("""^dt[a-z0-9_]*:"""))
     val dynamicTreesManagedPackSolidIds = generatedPackSolidIds.filter { id -> dynamicTreesManagedRbpPatterns.any { it.containsMatchIn(id) } }
     if (dynamicTreesManagedPackSolidIds.isEmpty()) ok("RBP generated pack-solid definition excludes Dynamic Trees-managed blocks")
     else fail("RBP generated pack-solid definition excludes Dynamic Trees-managed blocks", dynamicTreesManagedPackSolidIds.take(20).joinToString(", "))
@@ -838,7 +838,10 @@ fun validateWorldgenStaticContractsImpl() {
     val pvjDetailPackSolidIds = generatedPackSolidIds.filter { it in pvjDetailPackSolidBlocklist }
     if (pvjDetailPackSolidIds.isEmpty()) ok("RBP generated pack-solid definition excludes exact PVJ loose detail blocks")
     else fail("RBP generated pack-solid definition excludes exact PVJ loose detail blocks", pvjDetailPackSolidIds.joinToString(", "))
+    val removedNamespacePrefixes = listOf("alekiships:", "immersive_aircraft:", "inventorysorter:", "man_of_many_planes:", "the_finley_dimension_remastered:", "callfromthedepth_:")
     val looseEarthIds = jsonArray(readJson("generated/runtime-dumps/realistic_hands_audit.json")["looseSurfaceIds"])
+        .mapNotNull(::jsonString)
+        .filter { id -> removedNamespacePrefixes.none(id::startsWith) }
         .mapNotNull(::jsonString)
         .filterNot { it.startsWith("minecraft:") || it == "dynamictrees:rooty_gravel" }
     val generatedRbpWhitelistFiles = walk("config/rbp/block_definitions") { it.substringAfterLast('/').startsWith("generated_modded_") && it.endsWith(".toml") }
@@ -906,14 +909,14 @@ fun validateWorldgenStaticContractsImpl() {
     if (foragePlacedFeatures.size >= 40 && forageBiomeModifiers.size >= 20 && forageBiomeTags.size >= 7 && forageFailures.isEmpty()) ok("foraging datapack is Undergarden-only", "${foragePlacedFeatures.size} placed features, ${forageBiomeModifiers.size} biome modifiers, ${forageBiomeTags.size} biome tags")
     else fail("foraging datapack is Undergarden-only", "placed=${foragePlacedFeatures.size} modifiers=${forageBiomeModifiers.size} tags=${forageBiomeTags.size} bad=${forageFailures.joinToString(", ")}")
 
-    val meteorEvVariants = read("globalresources/obelisks/excavated_variants/obelisks/variants/meteor_modded_ores.json5")
-    if ("id: 'gravel'" in meteorEvVariants && "block_id: 'minecraft:gravel'" in meteorEvVariants && "types: ['gravel']" in meteorEvVariants) ok("Excavated Variants treats gravel as a gravel ore substrate")
+    val dimension_drinkEvVariants = read("globalresources/dimension_drink/excavated_variants/dimension_drink/variants/dimension_drink_modded_ores.json5")
+    if ("id: 'gravel'" in dimension_drinkEvVariants && "block_id: 'minecraft:gravel'" in dimension_drinkEvVariants && "types: ['gravel']" in dimension_drinkEvVariants) ok("Excavated Variants treats gravel as a gravel ore substrate")
     else fail("Excavated Variants treats gravel as a gravel ore substrate", "missing gravel provided_stones entry")
 
-    val meteorOreFeatureDir = "datapacks/meteor_ore_relocation/data/kubejs/worldgen/configured_feature"
-    val gravelTargetExclusions = setOf("meteor_blazing_quartz_ore.json", "meteor_iesnium_ore.json")
+    val dimension_drinkOreFeatureDir = "datapacks/dimension_drink_ore_relocation/data/kubejs/worldgen/configured_feature"
+    val gravelTargetExclusions = setOf("dimension_drink_blazing_quartz_ore.json", "dimension_drink_iesnium_ore.json")
     val gravelTargetProblems = mutableListOf<String>()
-    for (file in walk(meteorOreFeatureDir) { it.endsWith(".json") }.sorted()) {
+    for (file in walk(dimension_drinkOreFeatureDir) { it.endsWith(".json") }.sorted()) {
         val name = Paths.get(file).fileName.toString()
         val data = readJson(file)
         if (jsonString(data["type"]) != "minecraft:ore" || name in gravelTargetExclusions) continue
@@ -923,8 +926,8 @@ fun validateWorldgenStaticContractsImpl() {
         }
         if (!hasGravelTarget) gravelTargetProblems += name
     }
-    if (gravelTargetProblems.isEmpty()) ok("stone-style meteor ores can replace gravel")
-    else fail("stone-style meteor ores can replace gravel", gravelTargetProblems.joinToString(", "))
+    if (gravelTargetProblems.isEmpty()) ok("stone-style dimension drink ores can replace gravel")
+    else fail("stone-style dimension drink ores can replace gravel", gravelTargetProblems.joinToString(", "))
 
     val ntpAudit = readJson("generated/runtime-dumps/realistic_hands_audit.json")
     val rbpGeneratedSolid = read("config/rbp/block_definitions/generated_pack_solid_blocks.toml")
@@ -1004,7 +1007,7 @@ fun validateWorldgenStaticContractsImpl() {
     if (missingLavaSpawnerMarkers.isEmpty()) ok("lava-depth danger spawner targets lava diving band") else fail("lava-depth danger spawner targets lava diving band", missingLavaSpawnerMarkers.joinToString(", "))
 
     val contract = readJson("tools/pack_contract.json")
-    val sourceRoot = System.getenv("BTM_CUSTOM_MODS_DIR") ?: jsonString(jsonObject(contract["customMods"])["sourceRoot"]).orEmpty()
+    val sourceRoot = System.getenv("BC_CUSTOM_MODS_DIR") ?: jsonString(jsonObject(contract["customMods"])["sourceRoot"]).orEmpty()
     val lavaFeaturePath = Paths.get(sourceRoot, "realistic-ores/src/main/java/io/github/realisticores/worldgen/LavaExposedOreFeature.java")
     val lavaFeatureText = if (lavaFeaturePath.exists()) Files.readString(lavaFeaturePath) else ""
     val missingLavaFeatureMarkers = listOf("Feature.checkNeighbors", "FluidTags.LAVA", "target.target.test").filterNot(lavaFeatureText::contains)
@@ -1058,28 +1061,28 @@ fun validateDimensionProofGraphStartsImpl() {
     if (!exists(recipeFile)) return fail("dimension proof graph-start recipe pass exists", recipeFile)
     val recipeText = read(recipeFile)
     val progression = read("docs/progression.md")
-    val obeliskSection = Regex("""## Obelisk Dimension Graph Starts\n([\s\S]*?)(?=\n## )""").find(progression)?.groupValues?.getOrNull(1).orEmpty()
+    val dimensionDrinkSection = Regex("""## Dimension Drink Graph Starts\n([\s\S]*?)(?=\n## )""").find(progression)?.groupValues?.getOrNull(1).orEmpty()
     val dimensionIds = Regex("""['"]kubejs:dimension_graph/([^/'"]+)/""").findAll(recipeText).map { it.groupValues[1] }.toSet()
     val missingDimensions = listOf("aether").filterNot(dimensionIds::contains)
     if (missingDimensions.isEmpty()) ok("dimension proof graph-start recipe ids cover mapped route dimensions", "aether") else fail("dimension proof graph-start recipe ids cover mapped route dimensions", missingDimensions.joinToString(", "))
-    if ("BTM_DIM_PROOF_ADDED" in recipeText && "btmDimProofShaped" in recipeText) ok("dimension proof graph-start pass uses explicit helper and recipe counter") else fail("dimension proof graph-start pass uses explicit helper and recipe counter", "missing BTM_DIM_PROOF_ADDED or btmDimProofShaped")
-    val requiredRecipeMarkers = listOf("hangglider:glider_wing", "hangglider:glider_framework", "immersive_aircraft:hull", "immersive_aircraft:propeller").filterNot(recipeText::contains)
+    if ("BC_DIM_PROOF_ADDED" in recipeText && "bcDimProofShaped" in recipeText) ok("dimension proof graph-start pass uses explicit helper and recipe counter") else fail("dimension proof graph-start pass uses explicit helper and recipe counter", "missing BC_DIM_PROOF_ADDED or bcDimProofShaped")
+    val requiredRecipeMarkers = listOf("hangglider:glider_wing", "hangglider:glider_framework", "hangglider:hang_glider", "hangglider:reinforced_hang_glider").filterNot(recipeText::contains)
     if (requiredRecipeMarkers.isEmpty()) ok("dimension proof graph-start outputs stay on route-tool surfaces", "4 outputs") else fail("dimension proof graph-start outputs stay on route-tool surfaces", requiredRecipeMarkers.joinToString(", "))
     val forbiddenOutputPrefixes = listOf("create:","ae2:","advanced_ae:","pneumaticcraft:","computerbridge:","oc2r:","bloodmagic:","ars_nouveau:","hexerei:","malum:","goety:","irons_spellbooks:","aether:","deeperdarker:","thirst:")
-    val authoredOutputs = Regex("""btmDimProofShaped\(event, '([^']+)'""").findAll(recipeText).map { it.groupValues[1] }.toList()
+    val authoredOutputs = Regex("""bcDimProofShaped\(event, '([^']+)'""").findAll(recipeText).map { it.groupValues[1] }.toList()
     val forbiddenOutputs = authoredOutputs.filter { output -> forbiddenOutputPrefixes.any(output::startsWith) }
     if (forbiddenOutputs.isEmpty()) ok("dimension proof graph-start recipes avoid self-label and spine reassignment outputs", "${authoredOutputs.size} authored outputs") else fail("dimension proof graph-start recipes avoid self-label and spine reassignment outputs", forbiddenOutputs.joinToString(", "))
-    val tableRows = obeliskSection.lines().filter { it.startsWith('|') && !it.contains("---") }
+    val tableRows = dimensionDrinkSection.lines().filter { it.startsWith('|') && !it.contains("---") }
     val forbiddenPositiveMappings = listOf("Aether" to Regex("""^Aether$""", RegexOption.IGNORE_CASE), "Otherside" to Regex("""DeeperDarker"""))
         .flatMap { (dimension, pattern) ->
             val row = tableRows.find { "| $dimension |" in it }.orEmpty()
             val graphStart = row.split('|').getOrNull(2)?.trim().orEmpty()
             if (pattern.containsMatchIn(graphStart)) listOf("$dimension -> $graphStart") else emptyList()
         }
-    if (forbiddenPositiveMappings.isEmpty()) ok("obelisk graph starts reject self-label dimension mappings") else fail("obelisk graph starts reject self-label dimension mappings", forbiddenPositiveMappings.joinToString(", "))
+    if (forbiddenPositiveMappings.isEmpty()) ok("dimension drink graph starts reject self-label dimension mappings") else fail("dimension drink graph starts reject self-label dimension mappings", forbiddenPositiveMappings.joinToString(", "))
     val spineTerms = listOf("Create", "AE2", "PneumaticCraft", "OC2R", "Ars", "Hexerei", "Malum", "Goety", "Iron's Spells")
     val positiveTableSpineClaims = tableRows.filter { "| Nether |" !in it && "| Undergarden |" !in it }.filter { row -> spineTerms.any { term -> (row.split('|').getOrNull(2)?.trim().orEmpty()).contains(term) } }
-    if (positiveTableSpineClaims.isEmpty()) ok("obelisk graph-start table does not reassign tech or magic spines") else fail("obelisk graph-start table does not reassign tech or magic spines", positiveTableSpineClaims.joinToString("\n"))
+    if (positiveTableSpineClaims.isEmpty()) ok("dimension drink graph-start table does not reassign tech or magic spines") else fail("dimension drink graph-start table does not reassign tech or magic spines", positiveTableSpineClaims.joinToString("\n"))
     val basicWaterOutputs = authoredOutputs.filter { it == "minecraft:water_bucket" || it == "minecraft:potion" || it.startsWith("thirst:") }
     if (basicWaterOutputs.isEmpty()) ok("dimension proof routes leave basic water ungated")
     else fail("dimension proof routes do not gate basic water outputs", basicWaterOutputs.joinToString(", "))
@@ -1089,7 +1092,7 @@ fun validateDimensionTravelRoutesImpl() {
     val routeText = read("kubejs/server_scripts/30_recipe_replace/170_space_dimension_access_gates.js")
     val hiddenText = read("kubejs/client_scripts/40_hide_quarantined_systems.js")
     val removeText = read("kubejs/server_scripts/20_recipe_remove/30_remove_items.js")
-    val directRouteItems = listOf("fallout_wastelands_:portal_frame","fallout_wastelands_:wastelands","the_finley_dimension_remastered:finley_dimension","undergarden:catalyst","callfromthedepth_:depth","bloodmagic:simplekey","bloodmagic:minekey","bloodmagic:mineentrancekey","bloodmagic:teleposer","bloodmagic:telepositionsigil","bloodmagic:reagentteleposition","bloodmagic:teleposerfocus","bloodmagic:reinforcedteleposerfocus","bloodmagic:enhancedteleposerfocus","aether:aether_portal_frame","deeperdarker:otherside_portal")
+    val directRouteItems = listOf("fallout_wastelands_:portal_frame","fallout_wastelands_:wastelands","undergarden:catalyst","bloodmagic:simplekey","bloodmagic:minekey","bloodmagic:mineentrancekey","bloodmagic:teleposer","bloodmagic:telepositionsigil","bloodmagic:reagentteleposition","bloodmagic:teleposerfocus","bloodmagic:reinforcedteleposerfocus","bloodmagic:enhancedteleposerfocus","aether:aether_portal_frame","deeperdarker:otherside_portal")
     val missingDirectSuppression = directRouteItems.filter { it !in routeText || it !in hiddenText || it !in removeText }
     val directRecipeConstructors = Regex("""event\.(shaped|shapeless)\s*\(""").containsMatchIn(routeText)
     if (missingDirectSuppression.isEmpty() && !directRecipeConstructors) ok("direct dimension portal/key routes are suppressed and not re-authored", "${directRouteItems.size} route items")
@@ -1102,8 +1105,6 @@ fun validateDimensionTravelRoutesImpl() {
         "lostcities:lostcity" to "kubejs/data/lostcities/creatingspace/rocket_accessible_dimension/lostcity.json",
         "twilightforest:twilight_forest" to "kubejs/data/twilightforest/creatingspace/rocket_accessible_dimension/twilight_forest.json",
         "fallout_wastelands_:wastelands" to "kubejs/data/fallout_wastelands_/creatingspace/rocket_accessible_dimension/wastelands.json",
-        "the_finley_dimension_remastered:finley_dimension" to "kubejs/data/the_finley_dimension_remastered/creatingspace/rocket_accessible_dimension/finley_dimension.json",
-        "callfromthedepth_:depth" to "kubejs/data/callfromthedepth_/creatingspace/rocket_accessible_dimension/depth.json",
     )
     val routeProblems = mutableListOf<String>()
     for ((dimension, file) in spaceRoutes) {
@@ -1111,25 +1112,25 @@ fun validateDimensionTravelRoutesImpl() {
         if (!exists(file)) routeProblems += "missing $file"
         else if (jsonObject(readJson(file)["adjacentDimensions"])["creatingspace:earth_orbit"] == null) routeProblems += "$file missing creatingspace:earth_orbit"
     }
-    if (routeProblems.isEmpty()) ok("Creating Space rocket graph owns non-meteor adventure dimensions", "${spaceRoutes.size} dimensions") else fail("Creating Space rocket graph owns non-meteor adventure dimensions", routeProblems.joinToString(", "))
+    if (routeProblems.isEmpty()) ok("Creating Space rocket graph owns non-dimension_drink adventure dimensions", "${spaceRoutes.size} dimensions") else fail("Creating Space rocket graph owns non-dimension_drink adventure dimensions", routeProblems.joinToString(", "))
     val disabledStructures = jsonArray(readJson("config/structurify.json")["structures"]).map(::jsonObject).filter { bool(it["is_disabled"]) == true }.mapNotNull { jsonString(it["name"]) }.toSet()
-    val directPortalStructures = listOf("minecraft:ruined_portal","minecraft:ruined_portal_desert","minecraft:ruined_portal_jungle","minecraft:ruined_portal_mountain","minecraft:ruined_portal_nether","minecraft:ruined_portal_ocean","minecraft:ruined_portal_swamp","minecraft:stronghold","minecraft:ancient_city","ars_additions:ruined_portal","aether:ruined_portal","aether:ruined_portal_aether","aether:ruined_portal_desert","aether:ruined_portal_jungle","aether:ruined_portal_mountain","aether:ruined_portal_swamp","callfromthedepth_:ancientportal","deeperdarker:ancient_temple","the_finley_dimension_remastered:constructed_finley_portal_living","the_finley_dimension_remastered:constructed_finley_portal_plains","the_finley_dimension_remastered:constructed_finley_portal_wastes","the_finley_dimension_remastered:ruined_finley_portal")
+    val directPortalStructures = listOf("minecraft:ruined_portal","minecraft:ruined_portal_desert","minecraft:ruined_portal_jungle","minecraft:ruined_portal_mountain","minecraft:ruined_portal_nether","minecraft:ruined_portal_ocean","minecraft:ruined_portal_swamp","minecraft:stronghold","minecraft:ancient_city","ars_additions:ruined_portal","aether:ruined_portal","aether:ruined_portal_aether","aether:ruined_portal_desert","aether:ruined_portal_jungle","aether:ruined_portal_mountain","aether:ruined_portal_swamp","deeperdarker:ancient_temple")
     val missingDisabledStructures = directPortalStructures.filterNot(disabledStructures::contains)
     if (missingDisabledStructures.isEmpty()) ok("portal-bearing structures are disabled", "${directPortalStructures.size} structures") else fail("portal-bearing structures are disabled", missingDisabledStructures.joinToString(", "))
-    val aetherObelisk = readJson("config/obelisks/obelisks/aether.json")
+    val aetherObelisk = readJson("config/dimension_drink/dimension_drink/aether.json")
     if (jsonString(aetherObelisk["targetDimension"]) == "aether:the_aether" && bool(aetherObelisk["enabled"]) == true) ok("configured font routes include required Aether entry") else fail("configured font routes include required Aether entry", "aether config")
     val contract = readJson("tools/pack_contract.json")
-    val sourceRoot = Paths.get(System.getenv("BTM_CUSTOM_MODS_DIR") ?: jsonString(jsonObject(contract["customMods"])["sourceRoot"]).orEmpty())
-    val blockerPath = sourceRoot.resolve("dimensional-fonts/src/main/kotlin/dev/yourname/obelisks/runtime/player/VanillaPortalBlocker.kt")
+    val sourceRoot = Paths.get(System.getenv("BC_CUSTOM_MODS_DIR") ?: jsonString(jsonObject(contract["customMods"])["sourceRoot"]).orEmpty())
+    val blockerPath = sourceRoot.resolve("dimension-drink/src/main/kotlin/dev/yourname/dimensiondrink/runtime/player/VanillaPortalBlocker.kt")
     val blockerText = if (blockerPath.exists()) readAbs(blockerPath) else ""
     val missingNeedles = listOf("BlockEvent.PortalSpawnEvent","EntityTravelToDimensionEvent","path.contains(\"portal\")","path.contains(\"gateway\")").filterNot(blockerText::contains)
-    if (missingNeedles.isEmpty()) ok("obelisks runtime blocks vanilla/generic portal travel bypasses") else fail("obelisks runtime blocks vanilla/generic portal travel bypasses", "$blockerPath: ${missingNeedles.joinToString(", ")}")
+    if (missingNeedles.isEmpty()) ok("dimension_drink runtime blocks vanilla/generic portal travel bypasses") else fail("dimension_drink runtime blocks vanilla/generic portal travel bypasses", "$blockerPath: ${missingNeedles.joinToString(", ")}")
 }
 
 fun validateCustomModProvenanceSignalsImpl() {
     val contract = readJson("tools/pack_contract.json")
     val indexText = read("index.toml")
-    val sourceRoot = Paths.get(System.getenv("BTM_CUSTOM_MODS_DIR") ?: jsonString(jsonObject(contract["customMods"])["sourceRoot"]).orEmpty())
+    val sourceRoot = Paths.get(System.getenv("BC_CUSTOM_MODS_DIR") ?: jsonString(jsonObject(contract["customMods"])["sourceRoot"]).orEmpty())
     val rows = mutableListOf<String>()
     val problems = mutableListOf<String>()
     for (modValue in jsonArray(jsonObject(contract["customMods"])["entries"])) {
@@ -1150,7 +1151,7 @@ fun validateCustomModProvenanceSignalsImpl() {
 // END translated large helpers
 
 if (instance.isNotBlank() && !Paths.get(instance).exists()) {
-    fail("explicit BTM_INSTANCE exists", instance)
+    fail("explicitBC_INSTANCE exists", instance)
     fail("runtime food effect dump exists", Paths.get(instance).resolve("kubejs/config/food_effect_index.json").toString())
     println("\nautonomous contract validators: $passCount pass(es), ${failures.size} hard failure(s)")
     exitProcess(1)

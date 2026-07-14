@@ -1,21 +1,21 @@
 // Latent ChemLib owns chemical cloud containment, high-energy reactions, and
 // neutron-economy traversal. Heat transfer uses HeatSync.
 
-function btmLatentExists(id) {
+function bcLatentExists(id) {
     try { return Item.exists(id) } catch (e) { return false }
 }
 
-function btmLatentFactory(event, id, output, count, pattern, keys, mirrored) {
-    if (!btmLatentExists(output)) return
+function bcLatentFactory(event, id, output, count, pattern, keys, mirrored) {
+    if (!bcLatentExists(output)) return
     for (var key in keys) {
         var ingredient = keys[key]
-        if (ingredient && ingredient.charAt && ingredient.charAt(0) !== '#' && ingredient.indexOf(':') >= 0 && !btmLatentExists(ingredient)) return
+        if (ingredient && ingredient.charAt && ingredient.charAt(0) !== '#' && ingredient.indexOf(':') >= 0 && !bcLatentExists(ingredient)) return
     }
-    global.btmFactoryCrafting(event, id, output, count, pattern, keys, { mirrored: mirrored })
+    global.bcFactoryCrafting(event, id, output, count, pattern, keys, { mirrored: mirrored })
 }
 
 ServerEvents.recipes(function (event) {
-    btmLatentFactory(event, 'kubejs:create/assembly/latent_chemlib/gas_capture', 'latent_chemlib:gas_capture', 1, [
+     bcLatentFactory(event, 'kubejs:create/assembly/latent_chemlib/gas_capture', 'latent_chemlib:gas_capture', 1, [
         ' V ',
         'ACA',
         ' P '
@@ -26,7 +26,7 @@ ServerEvents.recipes(function (event) {
         P: 'pneumaticcraft:reinforced_pressure_tube'
     }, false)
 
-    btmLatentFactory(event, 'kubejs:create/assembly/latent_chemlib/gas_tank', 'latent_chemlib:gas_tank', 1, [
+     bcLatentFactory(event, 'kubejs:create/assembly/latent_chemlib/gas_tank', 'latent_chemlib:gas_tank', 1, [
         'GPG',
         'ACA',
         'GPG'
@@ -37,7 +37,7 @@ ServerEvents.recipes(function (event) {
         C: 'latent_chemlib:gas_capture'
     }, false)
 
-    btmLatentFactory(event, 'kubejs:create/assembly/latent_chemlib/gas_reaction_chamber', 'latent_chemlib:gas_reaction_chamber', 1, [
+     bcLatentFactory(event, 'kubejs:create/assembly/latent_chemlib/gas_reaction_chamber', 'latent_chemlib:gas_reaction_chamber', 1, [
         'SES',
         'TCT',
         'SPS'
@@ -49,7 +49,7 @@ ServerEvents.recipes(function (event) {
         P: 'powergrid:battery'
     }, false)
 
-    btmLatentFactory(event, 'kubejs:create/assembly/latent_chemlib/gas_release', 'latent_chemlib:gas_release', 1, [
+     bcLatentFactory(event, 'kubejs:create/assembly/latent_chemlib/gas_release', 'latent_chemlib:gas_release', 1, [
         ' P ',
         'TCT',
         ' V '
@@ -60,7 +60,7 @@ ServerEvents.recipes(function (event) {
         V: 'create:fluid_valve'
     }, false)
 
-    btmLatentFactory(event, 'kubejs:create/assembly/latent_chemlib/sealed_chemical_cell', 'latent_chemlib:sealed_chemical_cell', 4, [
+     bcLatentFactory(event, 'kubejs:create/assembly/latent_chemlib/sealed_chemical_cell', 'latent_chemlib:sealed_chemical_cell', 4, [
         ' G ',
         'SCS',
         ' P '

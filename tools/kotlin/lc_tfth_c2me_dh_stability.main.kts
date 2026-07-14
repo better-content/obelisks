@@ -41,7 +41,7 @@ data class VariantResult(
 
 fun usage(message: String? = null): Nothing {
     if (message != null) System.err.println(message)
-    System.err.println("Usage: tools/btm test scenario lc_tfth_c2me_dh [--port N] [--radius N] [--samples N] [--settle-seconds N] [--bootstrap-mode always|once|never] [--run-root PATH] [--keep-runs]")
+    System.err.println("Usage: tools/bc test scenario lc_tfth_c2me_dh [--port N] [--radius N] [--samples N] [--settle-seconds N] [--bootstrap-mode always|once|never] [--run-root PATH] [--keep-runs]")
     exitProcess(2)
 }
 
@@ -52,7 +52,7 @@ fun parseConfig(args: Array<String>): Config {
     var settleSeconds = 30
     var bootstrapMode = "always"
     var keepRuns = false
-    var runRoot = Paths.get("/tmp/btm-lc-c2me-dh-repro")
+    var runRoot = Paths.get("/tmp/bc-lc-c2me-dh-repro")
     var index = 0
     while (index < args.size) {
         when (args[index]) {
@@ -140,7 +140,7 @@ fun setServerPort(path: Path, port: Int) {
 
 fun ensureSmokeBootstrapped(root: Path, serverDir: Path, port: Int) {
     val exit = runCommand(
-        listOf("tools/btm", "test", "smoke", "--server-dir", serverDir.toString(), "--port", port.toString(), "--reset-runtime"),
+        listOf("tools/bc", "test", "smoke", "--server-dir", serverDir.toString(), "--port", port.toString(), "--reset-runtime"),
         root,
     )
     if (exit != 0) exitProcess(exit)
@@ -151,7 +151,7 @@ fun requirePreparedRuntime(serverDir: Path) {
 }
 
 fun setSerializeGuard(serverDir: Path, enabled: Boolean) {
-    val path = serverDir.resolve("config/btmfixes-common.toml")
+    val path = serverDir.resolve("config/bcfixes-common.toml")
     if (!path.exists()) error("missing config override target: $path")
     val current = Files.readString(path)
     val pattern = Regex("""(?m)^(\s*serializeDhC2meFeaturePlacement\s*=\s*)(true|false)\s*$""")
@@ -167,7 +167,7 @@ fun startServer(serverDir: Path, port: Int, evidenceDir: Path): RunningServer {
         .directory(serverDir.toFile())
         .redirectErrorStream(true)
         .redirectOutput(logPath.toFile())
-    builder.environment()["BTM_SERVER_PORT"] = port.toString()
+    builder.environment()["BC_SERVER_PORT"] = port.toString()
     val process = builder.start()
     return RunningServer(process, process.outputStream.bufferedWriter(), logPath)
 }

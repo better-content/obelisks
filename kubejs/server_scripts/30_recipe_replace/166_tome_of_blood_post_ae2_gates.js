@@ -2,30 +2,30 @@
 // recipes are small Blood/Ars conversions, but the outputs let Ars casting spend
 // LP, scale with Demon Will, and merge Living Armor with mage gear.
 
-function btmTobExists(id) {
+function bcTobExists(id) {
     try { return Item.exists(id) } catch (e) { return false }
 }
 
-function btmTobRemoveIds(event, ids) {
+function bcTobRemoveIds(event, ids) {
     for (var i = 0; i < ids.length; i++) event.remove({ id: ids[i] })
 }
 
-function btmTobInputExists(input) {
+function bcTobInputExists(input) {
     if (!input) return false
-    if (typeof input === 'string') return btmTobExists(input)
-    if (input.item) return btmTobExists(input.item)
+    if (typeof input === 'string') return bcTobExists(input)
+    if (input.item) return bcTobExists(input.item)
     return true
 }
 
-function btmTobInputsExist(inputs) {
+function bcTobInputsExist(inputs) {
     for (var i = 0; i < inputs.length; i++) {
-        if (!btmTobInputExists(inputs[i])) return false
+        if (!bcTobInputExists(inputs[i])) return false
     }
     return true
 }
 
-function btmTobAlchemy(event, output, input, syphon, ticks, upgradeLevel, id) {
-    if (!btmTobExists(output) || !btmTobInputsExist(input)) return
+function bcTobAlchemy(event, output, input, syphon, ticks, upgradeLevel, id) {
+    if (!bcTobExists(output) || !bcTobInputsExist(input)) return
     event.custom({
         type: 'bloodmagic:alchemytable',
         input: input,
@@ -36,8 +36,8 @@ function btmTobAlchemy(event, output, input, syphon, ticks, upgradeLevel, id) {
     }).id(id)
 }
 
-function btmTobGlyph(event, output, exp, inputItems, id) {
-    if (!btmTobExists(output) || !btmTobInputsExist(inputItems)) return
+function bcTobGlyph(event, output, exp, inputItems, id) {
+    if (!bcTobExists(output) || !bcTobInputsExist(inputItems)) return
     event.custom({
         type: 'ars_nouveau:glyph',
         count: 1,
@@ -47,8 +47,8 @@ function btmTobGlyph(event, output, exp, inputItems, id) {
     }).id(id)
 }
 
-function btmTobArmor(event, output, reagent, id) {
-    if (!btmTobExists(output) || !btmTobExists(reagent) || !btmTobInputsExist([
+function bcTobArmor(event, output, reagent, id) {
+    if (!bcTobExists(output) || !bcTobExists(reagent) || !bcTobInputsExist([
         'ars_nouveau:magebloom_fiber',
         'bloodmagic:etherealslate',
         'kubejs:ae_logic_package',
@@ -74,9 +74,7 @@ function btmTobArmor(event, output, reagent, id) {
 }
 
 ServerEvents.recipes(function (event) {
-    if (!btmTobExists('tomeofblood:novice_tome_of_blood')) return
-
-    btmTobRemoveIds(event, [
+    if (!bcTobExists('tomeofblood:novice_tome_of_blood')) return bcTobRemoveIds(event, [
         'tomeofblood:altar/novice_blood_tome',
         'tomeofblood:altar/apprentice_blood_tome',
         'tomeofblood:altar/archmage_blood_tome',
@@ -90,13 +88,13 @@ ServerEvents.recipes(function (event) {
         'tomeofblood:living_mage_boots'
     ])
 
-    btmTobAlchemy(event, 'kubejs:purified_blood_catalyst', [
+     bcTobAlchemy(event, 'kubejs:purified_blood_catalyst', [
         { item: 'bloodmagic:reinforcedslate' },
         { item: 'ars_nouveau:source_gem' },
         { item: 'minecraft:amethyst_shard' }
     ], 8000, 120, 2, 'kubejs:tomeofblood/alchemytable/purified_blood_catalyst')
 
-    btmTobAlchemy(event, 'kubejs:living_binding', [
+     bcTobAlchemy(event, 'kubejs:living_binding', [
         { item: 'bloodmagic:etherealslate' },
         { item: 'bloodmagic:archmagebloodorb' },
         { item: 'ars_nouveau:magebloom_fiber' },
@@ -104,7 +102,7 @@ ServerEvents.recipes(function (event) {
         { item: 'kubejs:soulstone_carbon_matrix' }
     ], 90000, 300, 5, 'kubejs:tomeofblood/alchemytable/living_binding')
 
-    if (btmTobInputsExist([
+    if (bcTobInputsExist([
         'ars_nouveau:source_gem_block',
         'ars_nouveau:wilden_tribute',
         'ars_nouveau:manipulation_essence',
@@ -135,7 +133,7 @@ ServerEvents.recipes(function (event) {
         }).id('kubejs:tomeofblood/enchanting_apparatus/purified_source_core')
     }
 
-    btmTobAlchemy(event, 'tomeofblood:novice_tome_of_blood', [
+     bcTobAlchemy(event, 'tomeofblood:novice_tome_of_blood', [
         { item: 'ars_nouveau:novice_spell_book' },
         { item: 'ars_nouveau:archmage_spell_book' },
         { item: 'bloodmagic:archmagebloodorb' },
@@ -145,7 +143,7 @@ ServerEvents.recipes(function (event) {
         { item: 'kubejs:living_binding' }
     ], 150000, 360, 5, 'kubejs:tomeofblood/alchemytable/novice_tome_post_ae2')
 
-    btmTobAlchemy(event, 'tomeofblood:apprentice_tome_of_blood', [
+     bcTobAlchemy(event, 'tomeofblood:apprentice_tome_of_blood', [
         { item: 'tomeofblood:novice_tome_of_blood' },
         { item: 'ars_nouveau:apprentice_spell_book' },
         { item: 'ars_nouveau:wilden_tribute' },
@@ -154,7 +152,7 @@ ServerEvents.recipes(function (event) {
         { item: 'kubejs:sky_steel_sheet' }
     ], 50000, 240, 4, 'kubejs:tomeofblood/alchemytable/apprentice_tome_post_ae2')
 
-    btmTobAlchemy(event, 'tomeofblood:archmage_tome_of_blood', [
+     bcTobAlchemy(event, 'tomeofblood:archmage_tome_of_blood', [
         { item: 'tomeofblood:apprentice_tome_of_blood' },
         { item: 'ars_nouveau:archmage_spell_book' },
         { item: 'minecraft:nether_star' },
@@ -163,14 +161,14 @@ ServerEvents.recipes(function (event) {
         { item: 'latent_chemlib:gas_reaction_chamber' }
     ], 100000, 320, 5, 'kubejs:tomeofblood/alchemytable/archmage_tome_post_ae2')
 
-    btmTobGlyph(event, 'tomeofblood:glyph_sentient_harm', 80, [
+     bcTobGlyph(event, 'tomeofblood:glyph_sentient_harm', 80, [
         'bloodmagic:soulsword',
         'bloodmagic:etherealslate',
         'kubejs:ae_logic_package',
         'kubejs:purified_source_core'
     ], 'kubejs:tomeofblood/glyph_sentient_harm_post_ae2')
 
-    btmTobGlyph(event, 'tomeofblood:glyph_sentient_wrath', 120, [
+     bcTobGlyph(event, 'tomeofblood:glyph_sentient_wrath', 120, [
         'bloodmagic:soulscythe',
         'bloodmagic:throwing_dagger',
         'ars_nouveau:conjuration_essence',
@@ -179,8 +177,8 @@ ServerEvents.recipes(function (event) {
         'latent_chemlib:gas_reaction_chamber'
     ], 'kubejs:tomeofblood/glyph_sentient_wrath_post_ae2')
 
-    btmTobArmor(event, 'tomeofblood:living_mage_hood', 'bloodmagic:livinghelmet', 'kubejs:tomeofblood/living_mage_hood_post_ae2')
-    btmTobArmor(event, 'tomeofblood:living_mage_robes', 'bloodmagic:livingplate', 'kubejs:tomeofblood/living_mage_robes_post_ae2')
-    btmTobArmor(event, 'tomeofblood:living_mage_leggings', 'bloodmagic:livingleggings', 'kubejs:tomeofblood/living_mage_leggings_post_ae2')
-    btmTobArmor(event, 'tomeofblood:living_mage_boots', 'bloodmagic:livingboots', 'kubejs:tomeofblood/living_mage_boots_post_ae2')
+     bcTobArmor(event, 'tomeofblood:living_mage_hood', 'bloodmagic:livinghelmet', 'kubejs:tomeofblood/living_mage_hood_post_ae2')
+     bcTobArmor(event, 'tomeofblood:living_mage_robes', 'bloodmagic:livingplate', 'kubejs:tomeofblood/living_mage_robes_post_ae2')
+     bcTobArmor(event, 'tomeofblood:living_mage_leggings', 'bloodmagic:livingleggings', 'kubejs:tomeofblood/living_mage_leggings_post_ae2')
+     bcTobArmor(event, 'tomeofblood:living_mage_boots', 'bloodmagic:livingboots', 'kubejs:tomeofblood/living_mage_boots_post_ae2')
 })

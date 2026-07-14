@@ -11,7 +11,7 @@ if (!Files.isRegularFile(contractPath)) {
 }
 val text = Files.readString(contractPath)
 val requiredNeedles = listOf(
-    "\"schema\": \"btm.worldgen_sampling_contract.v1\"",
+    "\"schema\": \"bc.worldgen_sampling_contract.v1\"",
     "\"scenario\": \"worldgen_sampling\"",
     "\"quick\"",
     "\"release\"",

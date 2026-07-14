@@ -97,7 +97,7 @@ ServerEvents.recipes(function (event) {
 
     event.remove({ output: 'minecraft:tnt', type: 'minecraft:crafting_shaped' })
     event.remove({ output: 'minecraft:tnt', type: 'minecraft:crafting_shapeless' })
-    global.btmCreateCompacting(event, 'kubejs:create/compacting/tnt_with_flint_core', 'minecraft:tnt', 1, [
+    global.bcCreateCompacting(event, 'kubejs:create/compacting/tnt_with_flint_core', 'minecraft:tnt', 1, [
         'minecraft:gunpowder',
         'minecraft:gunpowder',
         'minecraft:gunpowder',

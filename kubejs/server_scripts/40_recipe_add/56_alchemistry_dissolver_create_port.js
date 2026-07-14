@@ -3,9 +3,9 @@
 // The source table is generated from Alchemistry's dissolver JSON, then expressed
 // as Create mixing: item/tag + ChemLib acid/solvent + grinding ball catalyst.
 
-var BTM_ADP_TABLE = JsonIO.read('kubejs/config/alchemistry_dissolver_port.json') || { recipes: [] }
+var BC_ADP_TABLE = JsonIO.read('kubejs/config/alchemistry_dissolver_port.json') || { recipes: [] }
 
-function btmAdpGet(object, key) {
+function bcAdpGet(object, key) {
     if (!object || !key) return null
     try {
         if (object.containsKey && !object.containsKey(key)) return null
@@ -18,12 +18,12 @@ function btmAdpGet(object, key) {
     }
 }
 
-function btmAdpItemExists(id) {
+function bcAdpItemExists(id) {
     if (!id || id === 'minecraft:air') return false
     try { return Item.exists(id) } catch (e) { return false }
 }
 
-function btmAdpTagExists(tag) {
+function bcAdpTagExists(tag) {
     if (!tag) return false
     try {
         var ingredient = Ingredient.of('#' + tag)
@@ -35,49 +35,49 @@ function btmAdpTagExists(tag) {
     }
 }
 
-function btmAdpIngredientExists(input) {
+function bcAdpIngredientExists(input) {
     if (!input) return false
-    var item = btmAdpGet(input, 'item')
-    if (item) return btmAdpItemExists(item)
-    var tag = btmAdpGet(input, 'tag')
-    if (tag) return btmAdpTagExists(tag)
+    var item = bcAdpGet(input, 'item')
+    if (item) return bcAdpItemExists(item)
+    var tag = bcAdpGet(input, 'tag')
+    if (tag) return bcAdpTagExists(tag)
     return false
 }
 
-function btmAdpIngredientJson(input) {
-    var item = btmAdpGet(input, 'item')
+function bcAdpIngredientJson(input) {
+    var item = bcAdpGet(input, 'item')
     if (item) return { item: item }
-    return { tag: btmAdpGet(input, 'tag') }
+    return { tag: bcAdpGet(input, 'tag') }
 }
 
-function btmAdpSolventById(id) {
-    var solvents = global.BTM_RO_SOLVENTS || []
+function bcAdpSolventById(id) {
+    var solvents = global.BC_RO_SOLVENTS || []
     for (var i = 0; i < solvents.length; i++) if (solvents[i].id === id) return solvents[i]
     return null
 }
 
-function btmAdpBallById(id) {
-    var balls = global.BTM_RO_BALLS || []
+function bcAdpBallById(id) {
+    var balls = global.BC_RO_BALLS || []
     for (var i = 0; i < balls.length; i++) if (balls[i].id === id) return balls[i]
     return null
 }
 
-function btmAdpRetention(acid, ball) {
-    if (!global.BTM_RO_RETENTION) return 0.75
-    var acidRetention = btmAdpGet(global.BTM_RO_RETENTION, acid)
+function bcAdpRetention(acid, ball) {
+    if (!global.BC_RO_RETENTION) return 0.75
+    var acidRetention = bcAdpGet(global.BC_RO_RETENTION, acid)
     if (!acidRetention) return 0.75
-    return btmAdpGet(acidRetention, ball) || 0.75
+    return bcAdpGet(acidRetention, ball) || 0.75
 }
 
-function btmAdpResults(row) {
+function bcAdpResults(row) {
     var results = []
     for (var i = 0; i < row.results.length; i++) {
         var source = row.results[i]
-        var item = btmAdpGet(source, 'item')
-        if (!btmAdpItemExists(item)) continue
+        var item = bcAdpGet(source, 'item')
+        if (!bcAdpItemExists(item)) continue
         var result = { item: item }
-        var count = btmAdpGet(source, 'count')
-        var chance = btmAdpGet(source, 'chance')
+        var count = bcAdpGet(source, 'count')
+        var chance = bcAdpGet(source, 'chance')
         if (count && count > 1) result.count = count
         if (chance && chance < 1) result.chance = chance
         results.push(result)
@@ -85,7 +85,7 @@ function btmAdpResults(row) {
     return results
 }
 
-var BTM_ADP_GAS_PRODUCTS = {
+var BC_ADP_GAS_PRODUCTS = {
     ethanol: { item: 'chemlib:carbon_dioxide', chance: 0.06 },
     acetic: { item: 'chemlib:carbon_dioxide', chance: 0.10 },
     sulfuric: { item: 'chemlib:sulfur_dioxide', chance: 0.18 },
@@ -94,42 +94,41 @@ var BTM_ADP_GAS_PRODUCTS = {
     phosphoric: { item: 'chemlib:hydrogen', chance: 0.08 }
 }
 
-function btmAdpAddGasSideProduct(results, row) {
-    var gas = BTM_ADP_GAS_PRODUCTS[btmAdpGet(row, 'acid')]
-    if (!gas || !btmAdpItemExists(gas.item)) return
+function bcAdpAddGasSideProduct(results, row) {
+    var gas = BC_ADP_GAS_PRODUCTS[bcAdpGet(row, 'acid')]
+    if (!gas || !bcAdpItemExists(gas.item)) return
     results.push({ item: gas.item, chance: gas.chance })
 }
 
 ServerEvents.recipes(function (event) {
-    var recipes = BTM_ADP_TABLE.recipes || []
+    var recipes = BC_ADP_TABLE.recipes || []
     for (var i = 0; i < recipes.length; i++) {
         var row = recipes[i]
-        var acid = btmAdpGet(row, 'acid')
-        var ballId = btmAdpGet(row, 'ball')
-        var input = btmAdpGet(row, 'input')
-        var solvent = btmAdpSolventById(acid)
-        var ball = btmAdpBallById(ballId)
+        var acid = bcAdpGet(row, 'acid')
+        var ballId = bcAdpGet(row, 'ball')
+        var input = bcAdpGet(row, 'input')
+        var solvent = bcAdpSolventById(acid)
+        var ball = bcAdpBallById(ballId)
         if (!solvent || !ball) continue
-        if (!btmAdpIngredientExists(input) || !btmAdpItemExists(ball.item)) continue
+        if (!bcAdpIngredientExists(input) || !bcAdpItemExists(ball.item)) continue
 
-        var results = btmAdpResults(row)
+        var results = bcAdpResults(row)
         if (!results.length) continue
-        results.push({ item: ball.item, chance: btmAdpRetention(acid, ballId) })
-        btmAdpAddGasSideProduct(results, row)
+        results.push({ item: ball.item, chance: bcAdpRetention(acid, ballId) })
+         bcAdpAddGasSideProduct(results, row)
 
         var recipe = {
             type: 'create:mixing',
-            ingredients: [
-                btmAdpIngredientJson(input),
+            ingredients: [bcAdpIngredientJson(input),
                 { item: ball.item },
                 { fluid: solvent.fluid, amount: solvent.amount }
             ],
             results: results,
-            processingTime: btmAdpGet(row, 'processingTime') || solvent.time || 220
+            processingTime: bcAdpGet(row, 'processingTime') || solvent.time || 220
         }
 
-        var heat = btmAdpGet(row, 'heat') || solvent.heat
+        var heat = bcAdpGet(row, 'heat') || solvent.heat
         if (heat) recipe.heatRequirement = heat
-        event.custom(recipe).id('kubejs:alchemistry_dissolver_port/' + btmAdpGet(row, 'id'))
+        event.custom(recipe).id('kubejs:alchemistry_dissolver_port/' +  bcAdpGet(row, 'id'))
     }
 })

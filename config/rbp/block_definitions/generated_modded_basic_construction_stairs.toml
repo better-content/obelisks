@@ -3,8 +3,6 @@
 #	Namespaces:   '<minecraft>'
 #	Tags:         '#forge:stone'
 #	IDs:          'minecraft:stone'
-# Generated from audited mod blockstate/model data. Keep fallback physics disabled;
-# add explicit IDs here only for blocks intended to receive this physics profile.
 Blocks = [
 	"ae2:chiseled_quartz_stairs",
 	"ae2:cut_quartz_stairs",
@@ -74,7 +72,6 @@ Blocks = [
 	"burnt:sooty_spruce_stairs",
 	"burnt:sooty_stone_brick_stairs",
 	"burnt:sooty_stone_stairs",
-	"callfromthedepth_:marble_stairs",
 	"create:copper_shingle_stairs",
 	"create:copper_tile_stairs",
 	"create:cut_andesite_brick_stairs",
@@ -452,9 +449,6 @@ Blocks = [
 	"tconstruct:seared_paver_stairs",
 	"tconstruct:seared_stone_stairs",
 	"tconstruct:skyroot_planks_stairs",
-	"the_finley_dimension_remastered:ashen_stairs",
-	"the_finley_dimension_remastered:finley_wood_stairs",
-	"the_finley_dimension_remastered:living_wood_stairs",
 	"twilightforest:bold_castle_brick_stairs",
 	"twilightforest:canopy_stairs",
 	"twilightforest:castle_brick_stairs",
@@ -601,4 +595,3 @@ Blocks = [
 [ChunkAnalysis]
 	#Whether the block(s) should be processed during chunk analysis updates.
 	Enabled = true
-

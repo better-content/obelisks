@@ -4,7 +4,7 @@
 // crushed deposit + solvent/acid + grinding ball. Solvent selects the chemistry
 // family, ball selects recovery bias and operating cost through retention chance.
 
-var BTM_RO_SOLVENTS = [
+var BC_RO_SOLVENTS = [
     { id: 'ethanol', fluid: 'chemlib:ethanol_fluid', amount: 250, time: 180, primary: 0, secondary: 0.24, trace: 0.06, heat: null },
     { id: 'acetic', fluid: 'chemlib:acetic_acid_fluid', amount: 250, time: 200, primary: 1, secondary: 0.32, trace: 0.10, heat: null },
     { id: 'sulfuric', fluid: 'chemlib:sulfuric_acid_fluid', amount: 250, time: 220, primary: 2, secondary: 0.48, trace: 0.14, heat: 'heated' },
@@ -13,7 +13,7 @@ var BTM_RO_SOLVENTS = [
     { id: 'phosphoric', fluid: 'kubejs:phosphoric_acid_fluid', amount: 250, time: 230, primary: 1, secondary: 0.42, trace: 0.16, heat: 'heated' }
 ]
 
-var BTM_RO_BALLS = [
+var BC_RO_BALLS = [
     { id: 'andesite', item: 'kubejs:andesite_grinding_ball', primaryBonus: 0, secondaryBonus: 0.00, traceBonus: 0.00, bias: 'gangue' },
     { id: 'iron', item: 'kubejs:iron_grinding_ball', primaryBonus: 0, secondaryBonus: 0.06, traceBonus: 0.02, bias: 'ferrous' },
     { id: 'brass', item: 'kubejs:brass_grinding_ball', primaryBonus: 0, secondaryBonus: 0.08, traceBonus: 0.03, bias: 'nonferrous' },
@@ -24,7 +24,7 @@ var BTM_RO_BALLS = [
     { id: 'fluix', item: 'kubejs:fluix_grinding_ball', primaryBonus: 0, secondaryBonus: 0.10, traceBonus: 0.09, bias: 'ae' }
 ]
 
-var BTM_RO_RETENTION = {
+var BC_RO_RETENTION = {
     ethanol: { andesite: 0.80, iron: 0.90, brass: 0.92, steel: 0.94, nickel: 0.94, titanium: 0.96, blood_infused: 0.96, fluix: 0.95 },
     acetic: { andesite: 0.75, iron: 0.88, brass: 0.90, steel: 0.92, nickel: 0.92, titanium: 0.95, blood_infused: 0.94, fluix: 0.93 },
     sulfuric: { andesite: 0.55, iron: 0.62, brass: 0.72, steel: 0.78, nickel: 0.84, titanium: 0.88, blood_infused: 0.68, fluix: 0.70 },
@@ -33,7 +33,7 @@ var BTM_RO_RETENTION = {
     phosphoric: { andesite: 0.60, iron: 0.64, brass: 0.74, steel: 0.80, nickel: 0.84, titanium: 0.88, blood_infused: 0.74, fluix: 0.76 }
 }
 
-var BTM_RO_SOLVENT_GAS_PRODUCTS = {
+var BC_RO_SOLVENT_GAS_PRODUCTS = {
     ethanol: { item: 'chemlib:carbon_dioxide', chance: 0.06 },
     acetic: { item: 'chemlib:carbon_dioxide', chance: 0.10 },
     sulfuric: { item: 'chemlib:sulfur_dioxide', chance: 0.18 },
@@ -42,9 +42,9 @@ var BTM_RO_SOLVENT_GAS_PRODUCTS = {
     phosphoric: { item: 'chemlib:hydrogen', chance: 0.08 }
 }
 
-var BTM_RO_CREATE_ITEM_OUTPUT_LIMIT = 6
+var BC_RO_CREATE_ITEM_OUTPUT_LIMIT = 6
 
-var BTM_RO_OVERWORLD_ORE_EXTRAS = {
+var BC_RO_OVERWORLD_ORE_EXTRAS = {
     coal_measures: {
         ethanol: { andesite: 'minecraft:coal', steel: 'minecraft:coal' },
         sulfuric: { iron: 'create:crushed_raw_iron' },
@@ -91,7 +91,7 @@ var BTM_RO_OVERWORLD_ORE_EXTRAS = {
     }
 }
 
-var BTM_RO_DEPOSITS = [
+var BC_RO_DEPOSITS = [
     {
         id: 'coal_measures', crushed: 'realisticores:crushed_coal_measures', primary: 'minecraft:coal',
         ethanol: 'chemlib:carbon', acetic: 'chemlib:carbon', sulfuric: 'chemlib:sulfur', hydrochloric: 'chemlib:iron_oxide', nitric: 'chemlib:iron_iii_nitrate', phosphoric: 'chemlib:calcium_carbonate',
@@ -204,35 +204,35 @@ var BTM_RO_DEPOSITS = [
     }
 ]
 
-global.BTM_RO_SOLVENTS = BTM_RO_SOLVENTS
-global.BTM_RO_BALLS = BTM_RO_BALLS
-global.BTM_RO_DEPOSITS = BTM_RO_DEPOSITS
-global.BTM_RO_RETENTION = BTM_RO_RETENTION
+global.BC_RO_SOLVENTS = BC_RO_SOLVENTS
+global.BC_RO_BALLS = BC_RO_BALLS
+global.BC_RO_DEPOSITS = BC_RO_DEPOSITS
+global.BC_RO_RETENTION = BC_RO_RETENTION
 
-function btmRoItemExists(id) {
+function bcRoItemExists(id) {
     if (!id) return false
     try { return Item.exists(id) } catch (e) { return false }
 }
 
-function btmRoPushResult(results, result) {
-    if (results.length < BTM_RO_CREATE_ITEM_OUTPUT_LIMIT) results.push(result)
+function bcRoPushResult(results, result) {
+    if (results.length < BC_RO_CREATE_ITEM_OUTPUT_LIMIT) results.push(result)
 }
 
-function btmRoAddResult(results, id, count, chance) {
-    if (!id || id.indexOf('kubejs:') === 0 || !btmRoItemExists(id)) return
+function bcRoAddResult(results, id, count, chance) {
+    if (!id || id.indexOf('kubejs:') === 0 || !bcRoItemExists(id)) return
     var result = { item: id }
     if (count && count > 1) result.count = count
     if (chance && chance < 1) result.chance = Math.max(0.01, Math.min(0.99, chance))
-    btmRoPushResult(results, result)
+     bcRoPushResult(results, result)
 }
 
-function btmRoAddGasResult(results, seen, id, chance) {
-    if (!id || seen[id] || !btmRoItemExists(id)) return
+function bcRoAddGasResult(results, seen, id, chance) {
+    if (!id || seen[id] || !bcRoItemExists(id)) return
     seen[id] = true
-    btmRoAddResult(results, id, 1, chance)
+     bcRoAddResult(results, id, 1, chance)
 }
 
-function btmRoDepositGas(dep) {
+function bcRoDepositGas(dep) {
     var haystack = [
         dep.id, dep.primary, dep.ethanol, dep.acetic, dep.sulfuric, dep.hydrochloric,
         dep.nitric, dep.phosphoric, dep.gangue, dep.trace
@@ -249,58 +249,57 @@ function btmRoDepositGas(dep) {
     return null
 }
 
-function btmRoAddGasSideProducts(results, dep, solvent) {
+function bcRoAddGasSideProducts(results, dep, solvent) {
     var seen = {}
-    var solventGas = BTM_RO_SOLVENT_GAS_PRODUCTS[solvent.id]
-    if (solventGas) btmRoAddGasResult(results, seen, solventGas.item, solventGas.chance)
-    var depositGas = btmRoDepositGas(dep)
-    if (depositGas) btmRoAddGasResult(results, seen, depositGas.item, depositGas.chance)
+    var solventGas = BC_RO_SOLVENT_GAS_PRODUCTS[solvent.id]
+    if (solventGas)  bcRoAddGasResult(results, seen, solventGas.item, solventGas.chance)
+    var depositGas = bcRoDepositGas(dep)
+    if (depositGas)  bcRoAddGasResult(results, seen, depositGas.item, depositGas.chance)
 }
 
-function btmRoBallResult(dep, ball) {
+function bcRoBallResult(dep, ball) {
     var id = dep[ball.bias] || dep.trace || dep.secondary || dep.primary
     if (ball.bias === 'general') id = dep.secondary || dep.trace || dep.primary
     return id
 }
 
-function btmRoPrimaryCount(solvent, ball) {
+function bcRoPrimaryCount(solvent, ball) {
     return Math.max(1, solvent.primary + ball.primaryBonus)
 }
 
-function btmRoRecipeResults(dep, solvent, ball) {
+function bcRoRecipeResults(dep, solvent, ball) {
     var results = []
-    btmRoAddResult(results, dep.primary, btmRoPrimaryCount(solvent, ball), null)
-    btmRoAddResult(results, dep[solvent.id], 1, solvent.secondary + ball.secondaryBonus)
-    btmRoAddResult(results, btmRoBallResult(dep, ball), 1, 0.42 + ball.secondaryBonus)
-    btmRoAddOverworldOreExtra(results, dep, solvent, ball)
-    btmRoAddResult(results, dep.trace, 1, solvent.trace + ball.traceBonus)
-    var retained = BTM_RO_RETENTION[solvent.id][ball.id]
-    if (retained && retained > 0) btmRoPushResult(results, { item: ball.item, chance: retained })
-    btmRoAddGasSideProducts(results, dep, solvent)
+     bcRoAddResult(results, dep.primary, bcRoPrimaryCount(solvent, ball), null)
+     bcRoAddResult(results, dep[solvent.id], 1, solvent.secondary + ball.secondaryBonus)
+     bcRoAddResult(results, bcRoBallResult(dep, ball), 1, 0.42 + ball.secondaryBonus)
+     bcRoAddOverworldOreExtra(results, dep, solvent, ball)
+     bcRoAddResult(results, dep.trace, 1, solvent.trace + ball.traceBonus)
+    var retained = BC_RO_RETENTION[solvent.id][ball.id]
+    if (retained && retained > 0)  bcRoPushResult(results, { item: ball.item, chance: retained })
+     bcRoAddGasSideProducts(results, dep, solvent)
     return results
 }
 
-function btmRoAddOverworldOreExtra(results, dep, solvent, ball) {
-    var byDeposit = BTM_RO_OVERWORLD_ORE_EXTRAS[dep.id]
+function bcRoAddOverworldOreExtra(results, dep, solvent, ball) {
+    var byDeposit = BC_RO_OVERWORLD_ORE_EXTRAS[dep.id]
     if (!byDeposit) return
     var bySolvent = byDeposit[solvent.id]
     if (!bySolvent) return
     var extra = bySolvent[ball.id] || bySolvent[ball.bias]
-    if (!extra) return
-    btmRoAddResult(results, extra, 1, 0.18 + solvent.trace + ball.traceBonus)
+    if (!extra) return bcRoAddResult(results, extra, 1, 0.18 + solvent.trace + ball.traceBonus)
 }
 
-function btmRoIngredientsExist(ingredients) {
+function bcRoIngredientsExist(ingredients) {
     for (var i = 0; i < ingredients.length; i++) {
         var ingredient = ingredients[i]
         if (!ingredient || !ingredient.item) continue
-        if (!btmRoItemExists(ingredient.item)) return false
+        if (!bcRoItemExists(ingredient.item)) return false
     }
     return true
 }
 
-function btmRoMixing(event, dep, solvent, ball) {
-    if (!btmRoItemExists(dep.crushed) || !btmRoItemExists(ball.item)) return
+function bcRoMixing(event, dep, solvent, ball) {
+    if (!bcRoItemExists(dep.crushed) || !bcRoItemExists(ball.item)) return
     var recipe = {
         type: 'create:mixing',
         ingredients: [
@@ -308,15 +307,15 @@ function btmRoMixing(event, dep, solvent, ball) {
             { item: ball.item },
             { fluid: solvent.fluid, amount: solvent.amount }
         ],
-        results: btmRoRecipeResults(dep, solvent, ball),
+        results: bcRoRecipeResults(dep, solvent, ball),
         processingTime: solvent.time
     }
     if (solvent.heat) recipe.heatRequirement = solvent.heat
     event.custom(recipe).id('kubejs:realistic_ores/acid_ball/' + dep.id + '/' + solvent.id + '/' + ball.id)
 }
 
-function btmRoMixingComponent(event, id, output, ingredients, heat) {
-    if (!output || !output.item || !btmRoItemExists(output.item) || !btmRoIngredientsExist(ingredients)) return
+function bcRoMixingComponent(event, id, output, ingredients, heat) {
+    if (!output || !output.item || !bcRoItemExists(output.item) || !bcRoIngredientsExist(ingredients)) return
     var recipe = {
         type: 'create:mixing',
         ingredients: ingredients,
@@ -327,8 +326,8 @@ function btmRoMixingComponent(event, id, output, ingredients, heat) {
     event.custom(recipe).id('kubejs:realistic_ores/components/' + id)
 }
 
-function btmRoPressing(event, id, output, input) {
-    if (!btmRoItemExists(output) || !btmRoItemExists(input)) return
+function bcRoPressing(event, id, output, input) {
+    if (!bcRoItemExists(output) || !bcRoItemExists(input)) return
     event.custom({
         type: 'create:pressing',
         ingredients: [{ item: input }],
@@ -337,7 +336,7 @@ function btmRoPressing(event, id, output, input) {
 }
 
 ServerEvents.recipes(function (event) {
-    if (btmRoItemExists('kubejs:andesite_grinding_ball')) global.btmCreateCompacting(event, 'kubejs:realistic_ores/grinding_ball/andesite', 'kubejs:andesite_grinding_ball', 1, [
+    if (bcRoItemExists('kubejs:andesite_grinding_ball')) global.bcCreateCompacting(event, 'kubejs:realistic_ores/grinding_ball/andesite', 'kubejs:andesite_grinding_ball', 1, [
         'create:andesite_alloy',
         'create:andesite_alloy',
         'create:andesite_alloy',
@@ -345,7 +344,7 @@ ServerEvents.recipes(function (event) {
         'create:andesite_alloy'
     ])
 
-    if (btmRoItemExists('kubejs:iron_grinding_ball')) global.btmCreateCompacting(event, 'kubejs:realistic_ores/grinding_ball/iron', 'kubejs:iron_grinding_ball', 1, [
+    if (bcRoItemExists('kubejs:iron_grinding_ball')) global.bcCreateCompacting(event, 'kubejs:realistic_ores/grinding_ball/iron', 'kubejs:iron_grinding_ball', 1, [
         '#forge:ingots/iron',
         '#forge:ingots/iron',
         '#forge:ingots/iron',
@@ -353,7 +352,7 @@ ServerEvents.recipes(function (event) {
         '#forge:ingots/iron'
     ])
 
-    if (btmRoItemExists('kubejs:brass_grinding_ball')) global.btmCreateCompacting(event, 'kubejs:realistic_ores/grinding_ball/brass', 'kubejs:brass_grinding_ball', 1, [
+    if (bcRoItemExists('kubejs:brass_grinding_ball')) global.bcCreateCompacting(event, 'kubejs:realistic_ores/grinding_ball/brass', 'kubejs:brass_grinding_ball', 1, [
         '#forge:ingots/brass',
         '#forge:ingots/brass',
         '#forge:ingots/brass',
@@ -361,7 +360,7 @@ ServerEvents.recipes(function (event) {
         '#forge:ingots/brass'
     ])
 
-    if (btmRoItemExists('kubejs:steel_grinding_ball') && btmRoItemExists('kubejs:iron_grinding_ball')) global.btmCreateCompacting(event, 'kubejs:realistic_ores/grinding_ball/steel', 'kubejs:steel_grinding_ball', 1, [
+    if (bcRoItemExists('kubejs:steel_grinding_ball') &&  bcRoItemExists('kubejs:iron_grinding_ball')) global.bcCreateCompacting(event, 'kubejs:realistic_ores/grinding_ball/steel', 'kubejs:steel_grinding_ball', 1, [
         '#forge:ingots/steel',
         '#forge:ingots/steel',
         '#forge:ingots/steel',
@@ -369,7 +368,7 @@ ServerEvents.recipes(function (event) {
         'kubejs:iron_grinding_ball'
     ], 'heated')
 
-    if (btmRoItemExists('kubejs:nickel_grinding_ball') && btmRoItemExists('kubejs:steel_grinding_ball')) global.btmCreateCompacting(event, 'kubejs:realistic_ores/grinding_ball/nickel', 'kubejs:nickel_grinding_ball', 1, [
+    if (bcRoItemExists('kubejs:nickel_grinding_ball') &&  bcRoItemExists('kubejs:steel_grinding_ball')) global.bcCreateCompacting(event, 'kubejs:realistic_ores/grinding_ball/nickel', 'kubejs:nickel_grinding_ball', 1, [
         '#forge:ingots/nickel',
         '#forge:ingots/nickel',
         '#forge:ingots/nickel',
@@ -377,7 +376,7 @@ ServerEvents.recipes(function (event) {
         'kubejs:steel_grinding_ball'
     ], 'heated')
 
-    if (btmRoItemExists('kubejs:titanium_grinding_ball') && btmRoItemExists('kubejs:nickel_grinding_ball')) global.btmCreateCompacting(event, 'kubejs:realistic_ores/grinding_ball/titanium', 'kubejs:titanium_grinding_ball', 1, [
+    if (bcRoItemExists('kubejs:titanium_grinding_ball') &&  bcRoItemExists('kubejs:nickel_grinding_ball')) global.bcCreateCompacting(event, 'kubejs:realistic_ores/grinding_ball/titanium', 'kubejs:titanium_grinding_ball', 1, [
         'chemlib:titanium_ingot',
         'chemlib:titanium_ingot',
         'chemlib:titanium_ingot',
@@ -385,7 +384,7 @@ ServerEvents.recipes(function (event) {
         'kubejs:nickel_grinding_ball'
     ], 'heated')
 
-    if (btmRoItemExists('kubejs:blood_infused_grinding_ball') && btmRoItemExists('kubejs:steel_grinding_ball')) global.btmCreateCompacting(event, 'kubejs:realistic_ores/grinding_ball/blood_infused', 'kubejs:blood_infused_grinding_ball', 1, [
+    if (bcRoItemExists('kubejs:blood_infused_grinding_ball') &&  bcRoItemExists('kubejs:steel_grinding_ball')) global.bcCreateCompacting(event, 'kubejs:realistic_ores/grinding_ball/blood_infused', 'kubejs:blood_infused_grinding_ball', 1, [
         'bloodmagic:demonslate',
         'bloodmagic:demonslate',
         'bloodmagic:demonslate',
@@ -395,7 +394,7 @@ ServerEvents.recipes(function (event) {
         'kubejs:steel_grinding_ball'
     ], 'heated')
 
-    if (btmRoItemExists('kubejs:fluix_grinding_ball') && btmRoItemExists('kubejs:steel_grinding_ball')) global.btmCreateCompacting(event, 'kubejs:realistic_ores/grinding_ball/fluix', 'kubejs:fluix_grinding_ball', 1, [
+    if (bcRoItemExists('kubejs:fluix_grinding_ball') &&  bcRoItemExists('kubejs:steel_grinding_ball')) global.bcCreateCompacting(event, 'kubejs:realistic_ores/grinding_ball/fluix', 'kubejs:fluix_grinding_ball', 1, [
         'ae2:fluix_crystal',
         'ae2:fluix_crystal',
         'ae2:certus_quartz_crystal',
@@ -403,90 +402,90 @@ ServerEvents.recipes(function (event) {
         'kubejs:steel_grinding_ball'
     ], 'heated')
 
-    for (var d = 0; d < BTM_RO_DEPOSITS.length; d++) {
-        for (var s = 0; s < BTM_RO_SOLVENTS.length; s++) {
-            for (var b = 0; b < BTM_RO_BALLS.length; b++) {
-                btmRoMixing(event, BTM_RO_DEPOSITS[d], BTM_RO_SOLVENTS[s], BTM_RO_BALLS[b])
+    for (var d = 0; d < BC_RO_DEPOSITS.length; d++) {
+        for (var s = 0; s < BC_RO_SOLVENTS.length; s++) {
+            for (var b = 0; b < BC_RO_BALLS.length; b++) {
+                 bcRoMixing(event, BC_RO_DEPOSITS[d], BC_RO_SOLVENTS[s], BC_RO_BALLS[b])
             }
         }
     }
 
-    btmRoMixingComponent(event, 'tungsten_carbide_insert', { item: 'kubejs:tungsten_carbide_insert' }, [
+     bcRoMixingComponent(event, 'tungsten_carbide_insert', { item: 'kubejs:tungsten_carbide_insert' }, [
         { item: 'chemlib:tungsten' },
         { item: 'chemlib:tungsten' },
         { item: 'chemlib:carbon' },
         { item: 'kubejs:steel_grinding_ball' }
     ], 'heated')
 
-    btmRoMixingComponent(event, 'titanium_thermal_plate', { item: 'kubejs:titanium_thermal_plate' }, [
+     bcRoMixingComponent(event, 'titanium_thermal_plate', { item: 'kubejs:titanium_thermal_plate' }, [
         { item: 'chemlib:titanium_ingot' },
         { item: 'chemlib:titanium_oxide' },
         { item: 'kubejs:tungsten_carbide_insert' },
         { item: 'chemlib:oxygen' }
     ], 'heated')
 
-    btmRoMixingComponent(event, 'kimberlite_diamond_seed', { item: 'kubejs:kimberlite_diamond_seed' }, [
+     bcRoMixingComponent(event, 'kimberlite_diamond_seed', { item: 'kubejs:kimberlite_diamond_seed' }, [
         { item: 'minecraft:diamond' },
         { item: 'chemlib:carbon' },
         { item: 'chemlib:magnesium' },
         { item: 'kubejs:tungsten_carbide_insert' }
     ], 'heated')
 
-    btmRoMixingComponent(event, 'corundum_lapping_grit', { item: 'kubejs:corundum_lapping_grit', count: 2 }, [
+     bcRoMixingComponent(event, 'corundum_lapping_grit', { item: 'kubejs:corundum_lapping_grit', count: 2 }, [
         { item: 'chemlib:aluminum_oxide' },
         { item: 'minecraft:amethyst_shard' },
         { item: 'chemlib:beryllium' },
         { item: 'kubejs:brass_grinding_ball' }
     ], null)
 
-    btmRoMixingComponent(event, 'mountain_beryl_lens', { item: 'kubejs:mountain_beryl_lens' }, [
+     bcRoMixingComponent(event, 'mountain_beryl_lens', { item: 'kubejs:mountain_beryl_lens' }, [
         { item: 'minecraft:emerald' },
         { item: 'chemlib:beryllium' },
         { item: 'chemlib:silicon_dioxide' },
         { item: 'kubejs:corundum_lapping_grit' }
     ], 'heated')
 
-    btmRoMixingComponent(event, 'fissile_salt_blend', { item: 'kubejs:fissile_salt_blend' }, [
+     bcRoMixingComponent(event, 'fissile_salt_blend', { item: 'kubejs:fissile_salt_blend' }, [
         { item: 'chemlib:uranium' },
         { item: 'chemlib:thorium' },
         { item: 'chemlib:sodium_nitrate' },
         { item: 'kubejs:titanium_thermal_plate' }
     ], 'heated')
 
-    btmRoMixingComponent(event, 'soulstone_carbon_matrix', { item: 'kubejs:soulstone_carbon_matrix' }, [
+     bcRoMixingComponent(event, 'soulstone_carbon_matrix', { item: 'kubejs:soulstone_carbon_matrix' }, [
         { item: 'chemlib:carbon' },
         { item: 'chemlib:sulfur' },
         { item: 'minecraft:soul_sand' },
         { item: 'kubejs:blood_infused_grinding_ball' }
     ], 'heated')
 
-    btmRoMixingComponent(event, 'redbed_signal_salt', { item: 'kubejs:redbed_signal_salt' }, [
+     bcRoMixingComponent(event, 'redbed_signal_salt', { item: 'kubejs:redbed_signal_salt' }, [
         { item: 'minecraft:redstone' },
         { item: 'chemlib:copper_nitrate' },
         { item: 'chemlib:iron_oxide' },
         { item: 'kubejs:iron_grinding_ball' }
     ], null)
 
-    btmRoMixingComponent(event, 'lazurite_logic_pigment', { item: 'kubejs:lazurite_logic_pigment' }, [
+     bcRoMixingComponent(event, 'lazurite_logic_pigment', { item: 'kubejs:lazurite_logic_pigment' }, [
         { item: 'minecraft:lapis_lazuli' },
         { item: 'chemlib:sodium_chloride' },
         { item: 'chemlib:aluminum_oxide' },
         { item: 'kubejs:redbed_signal_salt' }
     ], null)
 
-    btmRoMixingComponent(event, 'phosphate_flux', { item: 'kubejs:phosphate_flux' }, [
+     bcRoMixingComponent(event, 'phosphate_flux', { item: 'kubejs:phosphate_flux' }, [
         { item: 'chemlib:phosphoric_acid' },
         { item: 'chemlib:phosphorus' },
         { item: 'chemlib:calcium' },
         { item: 'minecraft:bone_meal' }
     ], null)
 
-    btmRoMixingComponent(event, 'platinum_group_residue', { item: 'kubejs:platinum_group_residue' }, [
+     bcRoMixingComponent(event, 'platinum_group_residue', { item: 'kubejs:platinum_group_residue' }, [
         { item: 'chemlib:platinum' },
         { item: 'chemlib:palladium' },
         { item: 'chemlib:nickel_sulfate' },
         { item: 'kubejs:nickel_grinding_ball' }
     ], 'heated')
 
-    btmRoPressing(event, 'titanium_thermal_plate_from_ingot', 'kubejs:titanium_thermal_plate', 'chemlib:titanium_ingot')
+     bcRoPressing(event, 'titanium_thermal_plate_from_ingot', 'kubejs:titanium_thermal_plate', 'chemlib:titanium_ingot')
 })

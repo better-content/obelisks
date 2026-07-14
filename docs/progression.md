@@ -5,9 +5,9 @@
 The pack has two primary crafting spines, one independent magic lane, and one pressure spine:
 
 - Tech spine: Tinkers seared/scorched metallurgy into Create andesite/brass automation, then Power Grid, OC2R, Creating Space, and AE2-local intelligence.
-- Magic spines: `Dimensional Fonts -> Hexerei -> Occultism` and `Blood Magic -> Malum -> Goety`, with Blood Magic still supplying shared slate proofs where recipes need explicit authority.
+- Magic spines: `Dimension Drink -> Hexerei -> Occultism` and `Blood Magic -> Malum -> Goety`, with Blood Magic still supplying shared slate proofs where recipes need explicit authority.
 - Independent magic lane: Ars Nouveau opens as an early teaser book, but real spell power comes from manuscript-authored glyph unlocks fed by both dirty spines plus control/electrical precision.
-- Adventure spine: obelisks, dimensions, combat, villages, wares, and coins provide route pressure and recovery options without replacing production.
+- Adventure spine: dimension_drink, dimensions, combat, villages, wares, and coins provide route pressure and recovery options without replacing production.
 
 Local logistics stays first. Create trains and physical routes should matter before AE2 dominates a site, and OC2R is the intended intersite information bridge.
 
@@ -31,13 +31,13 @@ Spawn is intentionally sticky. New players use fixed Class Selector onboarding t
 
 Starting identities should read like jobs with partial truths, not solved classes. Useful loadout space is route support, hydration, light, food variety, low-value trade, animal handling, and camp utility. Unsafe loadout space is production machinery, storage systems, strong tools, raw metals, casing/circuit materials, explosives, magic/network starts, armor, and anything that skips the first logistics problem.
 
-## Obelisk Dimension Graph Starts
+## Dimension Drink Graph Starts
 
-Meteor/obelisk dimensions are origin proofs for outside reward systems. A valid edge needs native dimensional resources, hazards or structures, a first meaningful proof item, and a system whose entry feels earned there. The dimension is not a self-label and does not take ownership of the main tech or magic spine.
+Dimension Drink/obelisk dimensions are origin proofs for outside reward systems. A valid edge needs native dimensional resources, hazards or structures, a first meaningful proof item, and a system whose entry feels earned there. The dimension is not a self-label and does not take ownership of the main tech or magic spine.
 
 Current graph-start recipe gates are in `kubejs/server_scripts/30_recipe_replace/155_dimension_proof_graph_starts.js`. Existing Nether proof lives in the TCon grout pass, Aether owns early air mobility, Undergarden owns food/forage/body-survival pressure, and Otherside is the origin for sculk, echo, soul, and resonance matter refined by Blood Magic.
 
-Dimension travel has two authored surfaces only: Dimensional Fonts from `dimensionalfonts-1.0.0.jar` plus `config/obelisks/`, and Creating Space rocket graph entries under `kubejs/data/*/creatingspace/rocket_accessible_dimension/`. Direct portal/key routes are removed or hidden by `170_space_dimension_access_gates.js`, `40_hide_quarantined_systems.js`, `config/twilightforest-common.toml`, and `config/structurify.json`. The authored early font set is Nether, Aether, Undergarden, and Otherside; End font access is removed while strongholds remain disabled. Font shrine structure-set spacing is now 30 with separation 9, making shrines roughly twice as common as the earlier 42/12 spread. Lost Cities, Twilight Forest, Fallout Wastelands, Finley, and Call From The Depths are space-routed adventure dimensions.
+Dimension travel has two authored surfaces only: Dimension Drink from `dimensiondrink-1.0.0.jar` plus `config/dimension_drink/`, and Creating Space rocket graph entries under `kubejs/data/*/creatingspace/rocket_accessible_dimension/`. Direct portal/key routes are removed or hidden by `170_space_dimension_access_gates.js`, `40_hide_quarantined_systems.js`, `config/twilightforest-common.toml`, and `config/structurify.json`. The authored early font set is Nether, Aether, Undergarden, and Otherside; End font access is removed while strongholds remain disabled. Font shrine structure-set spacing is now 30 with separation 9, making shrines roughly twice as common as the earlier 42/12 spread. Lost Cities, Twilight Forest, and Fallout Wastelands are space-routed adventure dimensions.
 
 | Dimension | Graph Start Opened | Proof Route |
 | --- | --- | --- |
@@ -48,11 +48,11 @@ Dimension travel has two authored surfaces only: Dimensional Fonts from `dimensi
 
 The removed sky-dimension mod is no longer active pack content. End has no authored Dimensional Font access.
 
-Mod-specific natural ore and geode origins that are not part of the Realistic Ores deposit pass are meteor-dimension content. Their Overworld and ordinary Nether biome modifiers are suppressed by `datapacks/meteor_ore_relocation`, then reintroduced in Aether, Undergarden, Otherside, or Nether-obelisk target tags with Excavated Variants support for the local stone skins. Gravel is registered as a gravel Excavated Variants substrate, so gravel-specific meteor ores resolve to `excavated_variants:gravel_*` blocks and remain shovel-gated. This relocates raw worldgen origins only; workstation and recipe entry still follows the authored two-spine magic graph plus the independent Ars manuscript lane. JEI/EMI-facing ore origin tooltips live in `kubejs/client_scripts/15_ore_origin_tooltips.js` and should be updated with any future ore source move.
+Mod-specific natural ore and geode origins that are not part of the Realistic Ores deposit pass are dimension-drink content. Their Overworld and ordinary Nether biome modifiers are suppressed by `datapacks/dimension_drink_ore_relocation`, then reintroduced in Aether, Undergarden, Otherside, or Nether-obelisk target tags with Excavated Variants support for the local stone skins. Gravel is registered as a gravel Excavated Variants substrate, so gravel-specific dimension drink ores resolve to `excavated_variants:gravel_*` blocks and remain shovel-gated. This relocates raw worldgen origins only; workstation and recipe entry still follows the authored two-spine magic graph plus the independent Ars manuscript lane. JEI/EMI-facing ore origin tooltips live in `kubejs/client_scripts/15_ore_origin_tooltips.js` and should be updated with any future ore source move.
 
 ## Machine Casing Ladder
 
-The active casing catalogue is `global.BTM_MACHINE_CASING_TIERS` in `kubejs/startup_scripts/00_globals/20_progression_catalogues.js`:
+The active casing catalogue is `global.BC_MACHINE_CASING_TIERS` in `kubejs/startup_scripts/00_globals/20_progression_catalogues.js`:
 
 | Order | Casing | Authority |
 | --- | --- | --- |
@@ -73,7 +73,7 @@ The pack currently uses a narrow set of standalone KubeJS intermediates where th
 
 ## Early Chokepoints
 
-- No Tree Punching is replaced by a Forge-side `btmfixes` first-hour gate driven by explicit `btmfixes:realistic_hands/*` tags: loose primitive surfaces stay hand-or-shovel usable where tagged, while other tagged blocks need matching tools. Surface plants and leaf-like blocks remain knife-gated through explicit tags. The first authored tools are TConstruct hand axes and butcher knives made from flint, PVJ bones, or PVJ rocks. Hand axes use two head materials plus Farmer's Delight straw and a stick; butcher knives use three head materials plus a stick.
+- No Tree Punching is replaced by a Forge-side `bcfixes` first-hour gate driven by explicit `bcfixes:realistic_hands/*` tags: loose primitive surfaces stay hand-or-shovel usable where tagged, while other tagged blocks need matching tools. Surface plants and leaf-like blocks remain knife-gated through explicit tags. The first authored tools are TConstruct hand axes and butcher knives made from flint, PVJ bones, or PVJ rocks. Hand axes use two head materials plus Farmer's Delight straw and a stick; butcher knives use three head materials plus a stick.
 - TConstruct tool variety comes from authored tool families rather than vanilla-tier disposable tools. Current add-ons include Additional Weaponry, Battle Spades, Tinkers' Things, Katanas, Rapier, and Weaponry; their Better Combat categories are explicit datapack attributes so halberds, katanas, rapiers, lances, pikes, greatswords, and related tools animate consistently.
 - Netherrack grout keeps seared metallurgy tied to Nether-obelisk preparation.
 - `create:andesite_alloy` is an alloying output, not easy nugget crafting.
@@ -97,7 +97,7 @@ Deadlock checks:
 
 Deposit progression is authored through ADLODS configs, Realistic Ores tags, and KubeJS processing. Active deposit config files exist for aluminum, amethyst, ancient debris, coal, cobalt, copper, diamond, emerald, gas pockets, gold, iridium, iron, lapis, lead, nether gold, nether quartz, nickel, osmium, palladium, platinum, redstone, rhodium, ruby, ruthenium, sapphire, silver, tin, topaz, uranium, and zinc.
 
-The starter catalogue in `global.BTM_STARTER_DEPOSITS` currently names coal measures, ironstone, copper sulfide, tin, zinc, lead-zinc vein, quartz vein, and bauxite laterite. Processing should keep furnace output as a poor fallback, TCon melter/smeltery as first primary interpretation, foundry/byproduct work as better interpretation, and Create/PNCR chemistry as later material identity. Excavated gravel variants are part of the deposit surface, not a separate ore family: Realistic Ores stone configured features include gravel replacement targets, `excavated_variants:gravel_*` blocks stay shovel-mineable, and gravel substrate support lives in `defaultresources/excavated_variants`.
+The starter catalogue in `global.BC_STARTER_DEPOSITS` currently names coal measures, ironstone, copper sulfide, tin, zinc, lead-zinc vein, quartz vein, and bauxite laterite. Processing should keep furnace output as a poor fallback, TCon melter/smeltery as first primary interpretation, foundry/byproduct work as better interpretation, and Create/PNCR chemistry as later material identity. Excavated gravel variants are part of the deposit surface, not a separate ore family: Realistic Ores stone configured features include gravel replacement targets, `excavated_variants:gravel_*` blocks stay shovel-mineable, and gravel substrate support lives in `defaultresources/excavated_variants`.
 
 The late lava-diving band is Overworld terrain below Y 0, enabled by Tectonic `min_y = -64` and lava tunnels. This lower band is an authored progression zone rather than ordinary branch mining: Born in Chaos monsters only spawn below Y 0, and the lava-depth ore set is meant to be recovered as a prepared expedition with real lava-survival gear. `datapacks/realistic_ores_lava_depths` adds lava-exposed Realistic Ores uranium, thorium, and osmiridium lava sulfide in Y -64 to 0 only; the custom `realisticores:lava_exposed_ore` feature only places ore blocks that touch lava. Magma cubes are the current lava-band hazard, and Protection Pixel Tosaki gear is the intended post-AE2 diving suit for this route.
 
@@ -123,7 +123,7 @@ Blood Magic slates are the side-magic authority where a recipe needs hard proof,
 
 This keeps the agreed graph explicit:
 
-- Fonts spine: Dimensional Fonts -> Hexerei -> Occultism
+- Fonts spine: Dimension Drink -> Hexerei -> Occultism
 - Blood spine: Blood Magic -> Malum -> Goety
 - Ars lane: early novice book, then manuscript-authored glyph unlocks fed by both dirty spines plus Create/control precision
 - Otherside: common origin for Blood-refined magic matter, not a standalone magic workstation spine.
@@ -142,6 +142,6 @@ Iron's Spells is integrated as a cross-magic spellcraft branch, not as an indepe
 
 AE2 is late local intelligence, not early global logistics. `impossible_machine_casing` should mark the point where AE2-scale systems, high Sophisticated Storage control, and late utility can appear. Post-AE2 branches currently include Protection Pixel, Tome of Blood, hooks/drones/backpack utility gates, and Creating Space dimension access gates where the installed mods exist. Tome of Blood is the intended hybrid finisher here: the science side proves raw impossible matter through AE2 processors, sky steel, fluix, and sealed pressure assembly, while the magic side proves that the unstable body can be stabilized through Blood Magic, Ars source refinement, and late dark bindings.
 
-Lava-depth osmiridium is a post-AE2 material pressure point for Protection Pixel Tosaki recipes and selected late utility. The intended read is "gear up, dive, and come back with matter the surface cannot give," not "strip-mine deeper." JEI/EMI ore-origin tooltips should make clear when a material is a normal deposit, meteor-dimension origin, or lava-diving origin.
+Lava-depth osmiridium is a post-AE2 material pressure point for Protection Pixel Tosaki recipes and selected late utility. The intended read is "gear up, dive, and come back with matter the surface cannot give," not "strip-mine deeper." JEI/EMI ore-origin tooltips should make clear when a material is a normal deposit, dimension-drink origin, or lava-diving origin.
 
 Theurgy, Psi, and Hex Casting are not active manifest entries in the current repo. Treat references to them in old reports or generator comments as candidate/future design, not current pack state.

@@ -3,8 +3,6 @@
 #	Namespaces:   '<minecraft>'
 #	Tags:         '#forge:stone'
 #	IDs:          'minecraft:stone'
-# Generated from audited mod blockstate/model data. Keep fallback physics disabled;
-# add explicit IDs here only for blocks intended to receive this physics profile.
 Blocks = [
 	"chemlib:aluminum_metal_block",
 	"chemlib:cobalt_metal_block",
@@ -118,4 +116,3 @@ Blocks = [
 [ChunkAnalysis]
 	#Whether the block(s) should be processed during chunk analysis updates.
 	Enabled = true
-

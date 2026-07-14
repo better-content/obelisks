@@ -5,22 +5,22 @@
 // custom finishUsingItem code may need mod-specific adapters after this dump
 // identifies them.
 
-var BTM_FOOD_AUDIT_CONFIG = 'kubejs/config/audit_dumps.json'
-var BTM_FOOD_AUDIT_DIR = 'kubejs/config/'
-var BTM_FOOD_AUDIT_GENERATED_BY = 'kubejs/server_scripts/90_dev_debug/20_food_effect_audit_dumps.js'
-var BTM_FOOD_AUDIT_SCHEMA = 'btm.food_effect_audit.v2'
-var BTM_FOOD_AUDIT_SOURCE = 'runtime vanilla/Forge FoodProperties from BuiltInRegistries.ITEM during ServerEvents.recipes'
+var BC_FOOD_AUDIT_CONFIG = 'kubejs/config/audit_dumps.json'
+var BC_FOOD_AUDIT_DIR = 'kubejs/config/'
+var BC_FOOD_AUDIT_GENERATED_BY = 'kubejs/server_scripts/90_dev_debug/20_food_effect_audit_dumps.js'
+var BC_FOOD_AUDIT_SCHEMA = 'bc.food_effect_audit.v2'
+var BC_FOOD_AUDIT_SOURCE = 'runtime vanilla/Forge FoodProperties from BuiltInRegistries.ITEM during ServerEvents.recipes'
 
-var BtmFoodBuiltInRegistries = Java.loadClass('net.minecraft.core.registries.BuiltInRegistries')
-var BtmFoodItemStack = Java.loadClass('net.minecraft.world.item.ItemStack')
-var BtmFoodDietApi = null
+var BcFoodBuiltInRegistries = Java.loadClass('net.minecraft.core.registries.BuiltInRegistries')
+var BcFoodItemStack = Java.loadClass('net.minecraft.world.item.ItemStack')
+var BcFoodDietApi = null
 try {
-    BtmFoodDietApi = Java.loadClass('com.illusivesoulworks.diet.api.DietApi')
+    BcFoodDietApi = Java.loadClass('com.illusivesoulworks.diet.api.DietApi')
 } catch (e) {
-    BtmFoodDietApi = null
+    BcFoodDietApi = null
 }
 
-function btmFoodAuditTimestamp() {
+function bcFoodAuditTimestamp() {
     try {
         return new Date().toISOString()
     } catch (e) {
@@ -28,13 +28,13 @@ function btmFoodAuditTimestamp() {
     }
 }
 
-function btmFoodAuditReadConfig() {
+function bcFoodAuditReadConfig() {
     var fallback = {
         enabled: false,
         writeFoodEffectIndex: false
     }
 
-    var cfg = JsonIO.read(BTM_FOOD_AUDIT_CONFIG)
+    var cfg = JsonIO.read(BC_FOOD_AUDIT_CONFIG)
     if (!cfg) return fallback
 
     return {
@@ -43,7 +43,7 @@ function btmFoodAuditReadConfig() {
     }
 }
 
-function btmFoodSafeString(value) {
+function bcFoodSafeString(value) {
     if (value === null || value === undefined) return null
     try {
         return String(value)
@@ -52,7 +52,7 @@ function btmFoodSafeString(value) {
     }
 }
 
-function btmFoodCall(target, methodNames, args) {
+function bcFoodCall(target, methodNames, args) {
     if (target === null || target === undefined) return null
     for (var i = 0; i < methodNames.length; i++) {
         try {
@@ -68,18 +68,18 @@ function btmFoodCall(target, methodNames, args) {
     return null
 }
 
-function btmFoodNumber(value, fallback) {
+function bcFoodNumber(value, fallback) {
     if (value === null || value === undefined) return fallback
     var n = Number(value)
     if (isNaN(n)) return fallback
     return n
 }
 
-function btmFoodBool(value) {
+function bcFoodBool(value) {
     return value === true || String(value) === 'true'
 }
 
-function btmFoodPushUnique(arr, value) {
+function bcFoodPushUnique(arr, value) {
     if (value === null || value === undefined) return
     for (var i = 0; i < arr.length; i++) {
         if (arr[i] === value) return
@@ -87,7 +87,7 @@ function btmFoodPushUnique(arr, value) {
     arr.push(value)
 }
 
-function btmFoodSortStrings(arr) {
+function bcFoodSortStrings(arr) {
     arr.sort(function (a, b) {
         if (a < b) return -1
         if (a > b) return 1
@@ -96,26 +96,26 @@ function btmFoodSortStrings(arr) {
     return arr
 }
 
-function btmFoodEffectId(effect) {
+function bcFoodEffectId(effect) {
     if (!effect) return 'UNKNOWN'
     try {
-        var key = BtmFoodBuiltInRegistries.MOB_EFFECT.getKey(effect)
+        var key = BcFoodBuiltInRegistries.MOB_EFFECT.getKey(effect)
         if (key) return String(key)
     } catch (e) {
         // Fall through to string representation.
     }
-    return btmFoodSafeString(effect) || 'UNKNOWN'
+    return bcFoodSafeString(effect) || 'UNKNOWN'
 }
 
-function btmFoodPairFirst(pair) {
-    return btmFoodCall(pair, ['getFirst', 'getLeft', 'first'], [])
+function bcFoodPairFirst(pair) {
+    return bcFoodCall(pair, ['getFirst', 'getLeft', 'first'], [])
 }
 
-function btmFoodPairSecond(pair) {
-    return btmFoodCall(pair, ['getSecond', 'getRight', 'second'], [])
+function bcFoodPairSecond(pair) {
+    return bcFoodCall(pair, ['getSecond', 'getRight', 'second'], [])
 }
 
-function btmFoodIteratorToArray(collection) {
+function bcFoodIteratorToArray(collection) {
     var out = []
     if (!collection) return out
 
@@ -136,22 +136,22 @@ function btmFoodIteratorToArray(collection) {
     return out
 }
 
-function btmFoodCollectTags(item) {
+function bcFoodCollectTags(item) {
     var tags = []
     try {
         var holder = item.builtInRegistryHolder()
         var stream = holder.tags()
         var tagArray = stream.toArray()
         for (var i = 0; i < tagArray.length; i++) {
-            btmFoodPushUnique(tags, String(tagArray[i].location()))
+             bcFoodPushUnique(tags, String(tagArray[i].location()))
         }
     } catch (e) {
         // Tags are useful but not required for the dump.
     }
-    return btmFoodSortStrings(tags)
+    return bcFoodSortStrings(tags)
 }
 
-var BTM_FOOD_DIET_GROUPS = [
+var BC_FOOD_DIET_GROUPS = [
     'fruits',
     'grains',
     'proteins',
@@ -160,7 +160,7 @@ var BTM_FOOD_DIET_GROUPS = [
     'vegetables'
 ]
 
-function btmFoodIngredientIds(tagId) {
+function bcFoodIngredientIds(tagId) {
     var ids = []
     try {
         var ingredient = Ingredient.of('#' + tagId)
@@ -183,40 +183,40 @@ function btmFoodIngredientIds(tagId) {
     return ids
 }
 
-function btmFoodCollectDietGroups() {
+function bcFoodCollectDietGroups() {
     var map = {}
 
-    for (var i = 0; i < BTM_FOOD_DIET_GROUPS.length; i++) {
-        var group = BTM_FOOD_DIET_GROUPS[i]
-        var ids = btmFoodIngredientIds('diet:' + group)
+    for (var i = 0; i < BC_FOOD_DIET_GROUPS.length; i++) {
+        var group = BC_FOOD_DIET_GROUPS[i]
+        var ids = bcFoodIngredientIds('diet:' + group)
 
         for (var j = 0; j < ids.length; j++) {
             var id = ids[j]
             if (!map[id]) map[id] = []
-            btmFoodPushUnique(map[id], group)
+             bcFoodPushUnique(map[id], group)
         }
     }
 
-    for (var key in map) btmFoodSortStrings(map[key])
+    for (var key in map)  bcFoodSortStrings(map[key])
     return map
 }
 
-function btmFoodDietGroupName(group) {
-    var name = btmFoodCall(group, ['getName'], [])
-    return btmFoodSafeString(name)
+function bcFoodDietGroupName(group) {
+    var name = bcFoodCall(group, ['getName'], [])
+    return bcFoodSafeString(name)
 }
 
-function btmFoodReadDietApi(stack) {
+function bcFoodReadDietApi(stack) {
     var result = {
         groups: [],
         values: {},
         source: 'none'
     }
 
-    if (!BtmFoodDietApi) return result
+    if (!BcFoodDietApi) return result
 
     try {
-        var api = BtmFoodDietApi.getInstance()
+        var api = BcFoodDietApi.getInstance()
         if (!api) return result
 
         var dietResult = api.get(null, stack)
@@ -225,23 +225,23 @@ function btmFoodReadDietApi(stack) {
             var entries = map.entrySet().iterator()
             while (entries.hasNext()) {
                 var entry = entries.next()
-                var groupName = btmFoodDietGroupName(entry.getKey())
+                var groupName = bcFoodDietGroupName(entry.getKey())
                 if (!groupName) continue
-                btmFoodPushUnique(result.groups, groupName)
-                result.values[groupName] = btmFoodNumber(entry.getValue(), 0)
+                 bcFoodPushUnique(result.groups, groupName)
+                result.values[groupName] = bcFoodNumber(entry.getValue(), 0)
             }
-            result.groups = btmFoodSortStrings(result.groups)
+            result.groups = bcFoodSortStrings(result.groups)
             result.source = 'diet_api_result'
             return result
         }
 
         var groups = api.getGroups(null, stack)
-        var groupArray = btmFoodIteratorToArray(groups)
+        var groupArray = bcFoodIteratorToArray(groups)
         for (var i = 0; i < groupArray.length; i++) {
-            var name = btmFoodDietGroupName(groupArray[i])
-            if (name) btmFoodPushUnique(result.groups, name)
+            var name = bcFoodDietGroupName(groupArray[i])
+            if (name)  bcFoodPushUnique(result.groups, name)
         }
-        result.groups = btmFoodSortStrings(result.groups)
+        result.groups = bcFoodSortStrings(result.groups)
         result.source = result.groups.length ? 'diet_api_groups' : 'none'
     } catch (e) {
         result.error = String(e)
@@ -250,9 +250,9 @@ function btmFoodReadDietApi(stack) {
     return result
 }
 
-function btmFoodReadProperties(item, stack) {
-    var props = btmFoodCall(item, ['getFoodProperties'], [stack, null])
-    if (!props) props = btmFoodCall(item, ['getFoodProperties'], [])
+function bcFoodReadProperties(item, stack) {
+    var props = bcFoodCall(item, ['getFoodProperties'], [stack, null])
+    if (!props) props = bcFoodCall(item, ['getFoodProperties'], [])
     if (!props) {
         try {
             props = stack.getFoodProperties(null)
@@ -263,30 +263,30 @@ function btmFoodReadProperties(item, stack) {
     return props
 }
 
-function btmFoodReadEffects(props) {
-    var rawEffects = btmFoodCall(props, ['getEffects'], [])
-    var rawArray = btmFoodIteratorToArray(rawEffects)
+function bcFoodReadEffects(props) {
+    var rawEffects = bcFoodCall(props, ['getEffects'], [])
+    var rawArray = bcFoodIteratorToArray(rawEffects)
     var effects = []
 
     for (var i = 0; i < rawArray.length; i++) {
         var pair = rawArray[i]
-        var instance = btmFoodPairFirst(pair)
-        var probability = btmFoodPairSecond(pair)
+        var instance = bcFoodPairFirst(pair)
+        var probability = bcFoodPairSecond(pair)
 
         if (!instance) {
             instance = pair
             probability = 1
         }
 
-        var effect = btmFoodCall(instance, ['getEffect'], [])
+        var effect = bcFoodCall(instance, ['getEffect'], [])
         effects.push({
-            effect: btmFoodEffectId(effect),
-            amplifier: btmFoodNumber(btmFoodCall(instance, ['getAmplifier'], []), 0),
-            durationTicks: btmFoodNumber(btmFoodCall(instance, ['getDuration'], []), 0),
-            probability: btmFoodNumber(probability, 1),
-            ambient: btmFoodBool(btmFoodCall(instance, ['isAmbient'], [])),
-            visible: btmFoodBool(btmFoodCall(instance, ['isVisible'], [])),
-            showIcon: btmFoodBool(btmFoodCall(instance, ['showIcon'], []))
+            effect: bcFoodEffectId(effect),
+            amplifier: bcFoodNumber(bcFoodCall(instance, ['getAmplifier'], []), 0),
+            durationTicks: bcFoodNumber(bcFoodCall(instance, ['getDuration'], []), 0),
+            probability: bcFoodNumber(probability, 1),
+            ambient: bcFoodBool(bcFoodCall(instance, ['isAmbient'], [])),
+            visible: bcFoodBool(bcFoodCall(instance, ['isVisible'], [])),
+            showIcon: bcFoodBool(bcFoodCall(instance, ['showIcon'], []))
         })
     }
 
@@ -299,13 +299,13 @@ function btmFoodReadEffects(props) {
     return effects
 }
 
-function btmFoodNamespaceOf(id) {
+function bcFoodNamespaceOf(id) {
     var split = String(id).split(':')
     if (split.length < 2) return 'UNKNOWN'
     return split[0]
 }
 
-function btmFoodAddSummary(summary, record) {
+function bcFoodAddSummary(summary, record) {
     var ns = record.namespace
     summary.byNamespace[ns] = (summary.byNamespace[ns] || 0) + 1
     summary.byDietGroupCount[String(record.dietGroups.length)] = (summary.byDietGroupCount[String(record.dietGroups.length)] || 0) + 1
@@ -336,14 +336,14 @@ function btmFoodAddSummary(summary, record) {
     }
 }
 
-function btmFoodWriteAuditDump() {
+function bcFoodWriteAuditDump() {
     var records = []
     var errors = []
     var summary = {
-        schema: BTM_FOOD_AUDIT_SCHEMA,
-        generatedBy: BTM_FOOD_AUDIT_GENERATED_BY,
-        generatedAt: btmFoodAuditTimestamp(),
-        source: BTM_FOOD_AUDIT_SOURCE,
+        schema: BC_FOOD_AUDIT_SCHEMA,
+        generatedBy: BC_FOOD_AUDIT_GENERATED_BY,
+        generatedAt: bcFoodAuditTimestamp(),
+        source: BC_FOOD_AUDIT_SOURCE,
         limitations: [
             'Custom item effects applied only inside finishUsingItem may not appear here.',
             'Suspicious stew dynamic NBT effects are not expanded because they are not a fixed item-level food property.'
@@ -359,39 +359,39 @@ function btmFoodWriteAuditDump() {
         foodsWithoutEffects: []
     }
 
-    var dietGroupMap = btmFoodCollectDietGroups()
-    var keys = BtmFoodBuiltInRegistries.ITEM.keySet().iterator()
+    var dietGroupMap = bcFoodCollectDietGroups()
+    var keys = BcFoodBuiltInRegistries.ITEM.keySet().iterator()
     while (keys.hasNext()) {
         var key = keys.next()
         var id = String(key)
         try {
-            var item = BtmFoodBuiltInRegistries.ITEM.get(key)
-            var stack = new BtmFoodItemStack(item)
-            var props = btmFoodReadProperties(item, stack)
+            var item = BcFoodBuiltInRegistries.ITEM.get(key)
+            var stack = new BcFoodItemStack(item)
+            var props = bcFoodReadProperties(item, stack)
             if (!props) continue
 
-            var dietApi = btmFoodReadDietApi(stack)
+            var dietApi = bcFoodReadDietApi(stack)
             var fallbackDietGroups = dietGroupMap[id] || []
             var dietGroups = dietApi.groups.length ? dietApi.groups : fallbackDietGroups
 
             var record = {
                 id: id,
-                namespace: btmFoodNamespaceOf(id),
-                descriptionId: btmFoodSafeString(btmFoodCall(item, ['getDescriptionId'], [])),
-                nutrition: btmFoodNumber(btmFoodCall(props, ['getNutrition'], []), 0),
-                saturationModifier: btmFoodNumber(btmFoodCall(props, ['getSaturationModifier'], []), 0),
-                meat: btmFoodBool(btmFoodCall(props, ['isMeat'], [])),
-                alwaysEat: btmFoodBool(btmFoodCall(props, ['canAlwaysEat'], [])),
-                fastFood: btmFoodBool(btmFoodCall(props, ['isFastFood'], [])),
-                tags: btmFoodCollectTags(item),
+                namespace: bcFoodNamespaceOf(id),
+                descriptionId: bcFoodSafeString(bcFoodCall(item, ['getDescriptionId'], [])),
+                nutrition: bcFoodNumber(bcFoodCall(props, ['getNutrition'], []), 0),
+                saturationModifier: bcFoodNumber(bcFoodCall(props, ['getSaturationModifier'], []), 0),
+                meat: bcFoodBool(bcFoodCall(props, ['isMeat'], [])),
+                alwaysEat: bcFoodBool(bcFoodCall(props, ['canAlwaysEat'], [])),
+                fastFood: bcFoodBool(bcFoodCall(props, ['isFastFood'], [])),
+                tags: bcFoodCollectTags(item),
                 dietGroups: dietGroups,
                 dietGroupValues: dietApi.values,
                 dietSource: dietApi.source === 'none' && fallbackDietGroups.length ? 'diet_tags' : dietApi.source,
-                effects: btmFoodReadEffects(props)
+                effects: bcFoodReadEffects(props)
             }
 
             records.push(record)
-            btmFoodAddSummary(summary, record)
+             bcFoodAddSummary(summary, record)
         } catch (e) {
             errors.push({ id: id, error: String(e) })
         }
@@ -402,8 +402,8 @@ function btmFoodWriteAuditDump() {
         if (a.id > b.id) return 1
         return 0
     })
-    summary.foodsWithEffects = btmFoodSortStrings(summary.foodsWithEffects)
-    summary.foodsWithoutEffects = btmFoodSortStrings(summary.foodsWithoutEffects)
+    summary.foodsWithEffects = bcFoodSortStrings(summary.foodsWithEffects)
+    summary.foodsWithoutEffects = bcFoodSortStrings(summary.foodsWithoutEffects)
 
     for (var effectId in summary.byEffect) {
         summary.byEffect[effectId].sort(function (a, b) {
@@ -413,7 +413,7 @@ function btmFoodWriteAuditDump() {
         })
     }
     for (var dietGroup in summary.byDietGroup) {
-        summary.byDietGroup[dietGroup] = btmFoodSortStrings(summary.byDietGroup[dietGroup])
+        summary.byDietGroup[dietGroup] = bcFoodSortStrings(summary.byDietGroup[dietGroup])
     }
 
     summary.foodCount = records.length
@@ -421,7 +421,7 @@ function btmFoodWriteAuditDump() {
     summary.foodsWithoutEffectCount = summary.foodsWithoutEffects.length
     summary.errorCount = errors.length
 
-    JsonIO.write(BTM_FOOD_AUDIT_DIR + 'food_effect_index.json', {
+    JsonIO.write(BC_FOOD_AUDIT_DIR + 'food_effect_index.json', {
         schema: summary.schema,
         generatedBy: summary.generatedBy,
         generatedAt: summary.generatedAt,
@@ -432,13 +432,12 @@ function btmFoodWriteAuditDump() {
         foods: records,
         errors: errors
     })
-    JsonIO.write(BTM_FOOD_AUDIT_DIR + 'food_effect_summary.json', summary)
+    JsonIO.write(BC_FOOD_AUDIT_DIR + 'food_effect_summary.json', summary)
 
-    console.info('[BTM-FOOD-AUDIT] foods=' + summary.foodCount + ' withEffects=' + summary.foodsWithEffectCount + ' errors=' + summary.errorCount + ' wrote food_effect_index.json')
+    console.info('[BC-FOOD-AUDIT] foods=' + summary.foodCount + ' withEffects=' + summary.foodsWithEffectCount + ' errors=' + summary.errorCount + ' wrote food_effect_index.json')
 }
 
 ServerEvents.recipes(function (event) {
-    var cfg = btmFoodAuditReadConfig()
-    if (!cfg.enabled || !cfg.writeFoodEffectIndex) return
-    btmFoodWriteAuditDump()
+    var cfg = bcFoodAuditReadConfig()
+    if (!cfg.enabled || !cfg.writeFoodEffectIndex) return bcFoodWriteAuditDump()
 })

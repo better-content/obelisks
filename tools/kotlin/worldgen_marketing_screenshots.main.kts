@@ -122,7 +122,7 @@ val root = Paths.get("").toAbsolutePath().normalize()
 val width = 1920
 val height = 1080
 val shaderPack = "ComplementaryReimagined_r5.8.1.zip"
-val seed = "btm-worldgen-marketing-v1"
+val seed = "bc-worldgen-marketing-v1"
 var dhCaptureRadiusChunks = 32
 var serverForceloadRadiusChunks = 3
 val captureFovDegrees = 80
@@ -175,31 +175,31 @@ val knownBadFrameMarkers = listOf(
 
 fun usage(message: String? = null): Nothing {
     if (message != null) System.err.println(message)
-    System.err.println("Usage: tools/btm test scenario-headful worldgen_marketing_screenshots [--bootstrap-mode always|once|never] [--port N] [--run-root PATH] [--output-dir PATH] [--keep-runs] [--batch-mode bounded|session] [--start-shot N|SHOT_ID] [--end-shot N|SHOT_ID] [--dh-capture-radius CHUNKS] [--server-forceload-radius CHUNKS] [--dh-min-settle SECONDS] [--dh-quiet SECONDS] [--dh-timeout SECONDS] [--dh-low-tail-max CHUNKS] [--dh-low-tail-seconds SECONDS] [--allow-low-tail-dh] [--camera-search off|local-sweep] [--anchor-search off|locate-biome|locate-biome-sweep|locate-feature]")
+    System.err.println("Usage: tools/bc test scenario-headful worldgen_marketing_screenshots [--bootstrap-mode always|once|never] [--port N] [--run-root PATH] [--output-dir PATH] [--keep-runs] [--batch-mode bounded|session] [--start-shot N|SHOT_ID] [--end-shot N|SHOT_ID] [--dh-capture-radius CHUNKS] [--server-forceload-radius CHUNKS] [--dh-min-settle SECONDS] [--dh-quiet SECONDS] [--dh-timeout SECONDS] [--dh-low-tail-max CHUNKS] [--dh-low-tail-seconds SECONDS] [--allow-low-tail-dh] [--camera-search off|local-sweep] [--anchor-search off|locate-biome|locate-biome-sweep|locate-feature]")
     exitProcess(2)
 }
 
 if (args.contains("--help")) usage()
-val forceXvfb = System.getenv("BTM_FORCE_XVFB") == "1"
-if ((forceXvfb || System.getenv("DISPLAY").isNullOrBlank() || GraphicsEnvironment.isHeadless()) && System.getenv("BTM_WORLDGEN_SHOTS_XVFB") != "1") {
+val forceXvfb = System.getenv("BC_FORCE_XVFB") == "1"
+if ((forceXvfb || System.getenv("DISPLAY").isNullOrBlank() || GraphicsEnvironment.isHeadless()) && System.getenv("BC_WORLDGEN_SHOTS_XVFB") != "1") {
     val xvfbRun = listOfNotNull(
         System.getenv("XVFB_RUN")?.takeIf { it.isNotBlank() },
-        System.getenv("BTM_XVFB_RUN")?.takeIf { it.isNotBlank() },
+        System.getenv("BC_XVFB_RUN")?.takeIf { it.isNotBlank() },
         Paths.get(System.getProperty("user.home"), ".local", "bin", "xvfb-run").takeIf { Files.isExecutable(it) }?.toString(),
         "xvfb-run",
     ).first()
     val command = listOf(xvfbRun, "-a", "-s", "-screen 0 ${width}x${height}x24", "kotlin", "-J-Djava.awt.headless=false", root.resolve("tools/kotlin/worldgen_marketing_screenshots.main.kts").toString()) + args
-    val process = ProcessBuilder(command).directory(root.toFile()).inheritIO().apply { environment()["BTM_WORLDGEN_SHOTS_XVFB"] = "1" }.start()
+    val process = ProcessBuilder(command).directory(root.toFile()).inheritIO().apply { environment()["BC_WORLDGEN_SHOTS_XVFB"] = "1" }.start()
     exitProcess(process.waitFor())
 }
 
 var bootstrapMode = "always"
 var keepRuns = false
-var port = System.getenv("BTM_HARNESS_ACTUAL_PORT")?.takeIf { it.isNotBlank() }?.toIntOrNull() ?: 25569
+var port = System.getenv("BC_HARNESS_ACTUAL_PORT")?.takeIf { it.isNotBlank() }?.toIntOrNull() ?: 25569
 var runRoot = Paths.get(
-    System.getenv("BTM_HARNESS_RUN_ROOT")?.takeIf { it.isNotBlank() }
-        ?: System.getenv("BTM_WORLDGEN_SHOTS_RUN_ROOT")?.takeIf { it.isNotBlank() }
-        ?: Paths.get(System.getProperty("user.home"), ".cache", "btm", "worldgen-marketing-screenshots").toString(),
+    System.getenv("BC_HARNESS_RUN_ROOT")?.takeIf { it.isNotBlank() }
+        ?: System.getenv("BC_WORLDGEN_SHOTS_RUN_ROOT")?.takeIf { it.isNotBlank() }
+        ?: Paths.get(System.getProperty("user.home"), ".cache", "bc", "worldgen-marketing-screenshots").toString(),
 )
 var outputDir = root.resolve("generated/cache/worldgen-marketing")
 var startShotArg: String? = null
@@ -303,7 +303,7 @@ while (index < args.size) {
 // deliberately above the local terrain so spectator mode never captures from
 // inside hillsides or dense canopy.
 val shots = listOf(
-    Shot("01-overworld-forest", "01-overworld-forest.png", "natures_spirit:redwood_forest", "redwood forest ridge", 0.5, 220.0, -49.5, 0.0, 10.0, listOf("dimensionalfonts:dimensional_font", "minecraft:pillager_outpost", "minecraft:trail_ruins")),
+    Shot("01-overworld-forest", "01-overworld-forest.png", "natures_spirit:redwood_forest", "redwood forest ridge", 0.5, 220.0, -49.5, 0.0, 10.0, listOf("dimensiondrink:dimensional_font", "minecraft:pillager_outpost", "minecraft:trail_ruins")),
     Shot("02-overworld-jungle", "02-overworld-jungle.png", "minecraft:jungle", "jungle river valley", 704.5, 186.0, 608.5, 45.0, 28.0, listOf("minecraft:jungle_pyramid", "minecraft:trail_ruins", "minecraft:ruined_portal")),
     Shot("03-overworld-desert", "03-overworld-desert.png", "minecraft:desert", "desert plateau at a jungle boundary", 1152.5, 176.0, 1600.5, 45.0, 24.0, listOf("minecraft:desert_pyramid", "minecraft:village_desert", "minecraft:ruined_portal_desert")),
     Shot("04-overworld-badlands", "04-overworld-badlands.png", "minecraft:badlands", "badlands river basin", 96.5, 188.0, 1632.5, 45.0, 28.0, listOf("minecraft:mineshaft_mesa", "minecraft:ruined_portal", "minecraft:trail_ruins")),
@@ -364,7 +364,7 @@ if (batchMode == "bounded" && selectedShots.size > 1) {
     }
     val aggregate = buildString {
         appendLine("{")
-        appendLine("  \"schema\": \"btm.worldgen_marketing_screenshots.v1\",")
+        appendLine("  \"schema\": \"bc.worldgen_marketing_screenshots.v1\",")
         appendLine("  \"status\": ${q(if (failedSegments == 0) "technical-pass-pending-ai-review" else "failed")},")
         appendLine("  \"batchMode\": \"bounded\",")
         appendLine("  \"fov\": $captureFovDegrees,")
@@ -634,7 +634,7 @@ fun configureServer(serverDir: Path) {
     }
 }
 fun prepareArgfile(clientDir: Path, username: String, out: Path, log: Path) {
-    val command = listOf(root.resolve("tools/btm").toString(), "internal", "minecraft-client-argfile", "--client-dir", clientDir.toString(), "--version-id", "1.20.1-forge-47.4.13", "--username", username, "--server", "127.0.0.1:$port", "--out", out.toString())
+    val command = listOf(root.resolve("tools/bc").toString(), "internal", "minecraft-client-argfile", "--client-dir", clientDir.toString(), "--version-id", "1.20.1-forge-47.4.13", "--username", username, "--server", "127.0.0.1:$port", "--out", out.toString())
     if (run(command, 600, log) != 0) error("client argument generation failed; see $log")
     Files.writeString(out, Files.readString(out) + "\"--width\"\n\"$width\"\n\"--height\"\n\"$height\"\n")
 }
@@ -1024,7 +1024,7 @@ fun writeReview(path: Path, shot: Shot, dh: DhGateResult?, technicalStatus: Stri
 fun writeReview(path: Path, shot: Shot, camera: CameraPose, dh: DhGateResult?, technicalStatus: String, failureReason: String?, promptHandling: String, frame: FrameAssessment?, candidateLabel: String?, candidateScore: Double?, anchorMode: String?, anchorDetail: String?) {
     val review = """
 {
-  "schema": "btm.screenshot_review.v1",
+  "schema": "bc.screenshot_review.v1",
   "image": ${q(path.fileName.toString())},
   "sha256": ${q(sha256(path))},
   "style": "storefront",
@@ -1136,7 +1136,7 @@ fun cameraJson(pose: CameraPose): String =
 fun writeCandidateReport(path: Path, shot: Shot, reports: List<CandidateReport>, selected: CandidateFrame?) {
     val json = buildString {
         appendLine("{")
-        appendLine("  \"schema\": \"btm.screenshot_candidate_report.v1\",")
+        appendLine("  \"schema\": \"bc.screenshot_candidate_report.v1\",")
         appendLine("  \"shot\": ${q(shot.id)},")
         appendLine("  \"biome\": ${q(shot.biome)},")
         appendLine("  \"selected\": ${q(selected?.label)},")
@@ -1155,7 +1155,7 @@ fun writeAnchorSweepReport(path: Path, shot: Shot, reports: List<AnchorCandidate
     path.parent?.createDirectories()
     val json = buildString {
         appendLine("{")
-        appendLine("  \"schema\": \"btm.screenshot_anchor_sweep.v1\",")
+        appendLine("  \"schema\": \"bc.screenshot_anchor_sweep.v1\",")
         appendLine("  \"shot\": ${q(shot.id)},")
         appendLine("  \"biome\": ${q(shot.biome)},")
         appendLine("  \"selected\": ${q(selected?.label)},")
@@ -1438,12 +1438,12 @@ try {
             deleteTree(clientDir)
         }
         if (bootstrapMode != "never" || !serverDir.resolve("run.sh").exists()) {
-            val command = listOf(root.resolve("tools/btm").toString(), "internal", "prepare-server-runtime", "--server-dir", serverDir.toString(), "--port", port.toString(), "--reset-runtime")
+            val command = listOf(root.resolve("tools/bc").toString(), "internal", "prepare-server-runtime", "--server-dir", serverDir.toString(), "--port", port.toString(), "--reset-runtime")
             commands.appendLine(command.joinToString(" "))
             if (run(command, 1_200, evidence.resolve("prepare-server.log")) != 0) error("server runtime preparation failed")
         }
         if (bootstrapMode != "never" || !clientDir.resolve("versions/1.20.1-forge-47.4.13").exists()) {
-            val command = listOf(root.resolve("tools/btm").toString(), "internal", "prepare-client-runtime", "--client-dir", clientDir.toString())
+            val command = listOf(root.resolve("tools/bc").toString(), "internal", "prepare-client-runtime", "--client-dir", clientDir.toString())
             commands.appendLine(command.joinToString(" "))
             if (run(command, 1_800, evidence.resolve("prepare-client.log")) != 0) error("client runtime preparation failed")
         }
@@ -1563,7 +1563,7 @@ try {
 
 val manifest = buildString {
     appendLine("{")
-    appendLine("  \"schema\": \"btm.worldgen_marketing_screenshots.v1\",")
+    appendLine("  \"schema\": \"bc.worldgen_marketing_screenshots.v1\",")
     appendLine("  \"status\": ${q(if (failure == null) "technical-pass-pending-ai-review" else "failed")},")
     appendLine("  \"error\": ${q(failure?.message)},")
     appendLine("  \"seed\": ${q(seed)},")

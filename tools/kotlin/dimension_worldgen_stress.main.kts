@@ -19,8 +19,6 @@ val defaultDimensions = listOf(
     "deeperdarker:otherside",
     "lostcities:lostcity",
     "fallout_wastelands_:wastelands",
-    "the_finley_dimension_remastered:finley_dimension",
-    "callfromthedepth_:depth",
     "creatingspace:earth_orbit",
     "creatingspace:moon_orbit",
     "creatingspace:mars_orbit",
@@ -62,7 +60,7 @@ data class RunningServer(val process: Process, val stdin: BufferedWriter?, val l
 
 fun usage(message: String? = null): Nothing {
     if (message != null) System.err.println(message)
-    System.err.println("Usage: tools/btm test scenario-headful dimension_worldgen [--cycles N] [--port N] [--radius N] [--samples N] [--settle-seconds N] [--dimensions a,b,c] [--server-dir PATH] [--server-only] [--bootstrap-mode always|once|never] [--run-root PATH] [--keep-going] [--keep-runs]")
+    System.err.println("Usage: tools/bc test scenario-headful dimension_worldgen [--cycles N] [--port N] [--radius N] [--samples N] [--settle-seconds N] [--dimensions a,b,c] [--server-dir PATH] [--server-only] [--bootstrap-mode always|once|never] [--run-root PATH] [--keep-going] [--keep-runs]")
     exitProcess(2)
 }
 
@@ -76,7 +74,7 @@ fun parseConfig(args: Array<String>): Config {
     var bootstrapMode = "always"
     var keepGoing = false
     var keepRuns = false
-    var runRoot = Paths.get("/tmp/btm-dimension-worldgen")
+    var runRoot = Paths.get("/tmp/bc-dimension-worldgen")
     var serverDirOverride: Path? = null
     var index = 0
     while (index < args.size) {
@@ -163,7 +161,7 @@ fun setServerPort(path: Path, port: Int) {
 
 fun ensureSmokeBootstrapped(root: Path, serverDir: Path, port: Int) {
     val exit = runCommand(
-        listOf("tools/btm", "test", "smoke", "--server-dir", serverDir.toString(), "--port", port.toString(), "--reset-runtime"),
+        listOf("tools/bc", "test", "smoke", "--server-dir", serverDir.toString(), "--port", port.toString(), "--reset-runtime"),
         root,
     )
     if (exit != 0) exitProcess(exit)
@@ -180,7 +178,7 @@ fun startServer(serverDir: Path, port: Int, evidenceDir: Path): RunningServer {
         .directory(serverDir.toFile())
         .redirectErrorStream(true)
         .redirectOutput(logPath.toFile())
-    builder.environment()["BTM_SERVER_PORT"] = port.toString()
+    builder.environment()["BC_SERVER_PORT"] = port.toString()
     val process = builder.start()
     return RunningServer(process, process.outputStream.bufferedWriter(), logPath)
 }

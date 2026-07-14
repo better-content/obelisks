@@ -1,25 +1,25 @@
 // Dev-only block hardness registry probe. Enable kubejs/config/block_hardness_probe.json,
 // then restart or /reload. Writes actual runtime block destroy-time values.
 
-var BTM_BLOCK_PROBE_CONFIG = 'kubejs/config/block_hardness_probe.json'
-var BTM_BLOCK_PROBE_DEFAULT_DIR = 'generated/runtime-dumps/'
-var BTM_BLOCK_PROBE_FALLBACK_PATH = 'kubejs/config/block_hardness_probe.runtime.json'
+var BC_BLOCK_PROBE_CONFIG = 'kubejs/config/block_hardness_probe.json'
+var BC_BLOCK_PROBE_DEFAULT_DIR = 'generated/runtime-dumps/'
+var BC_BLOCK_PROBE_FALLBACK_PATH = 'kubejs/config/block_hardness_probe.runtime.json'
 
-var BtmBlockProbeBuiltInRegistries = Java.loadClass('net.minecraft.core.registries.BuiltInRegistries')
-var BtmBlockProbeResourceLocation = Java.loadClass('net.minecraft.resources.ResourceLocation')
-var BtmBlockProbeBlockTags = Java.loadClass('net.minecraft.tags.BlockTags')
-var BtmBlockProbeItemTags = Java.loadClass('net.minecraft.tags.ItemTags')
-var BtmBlockProbeItemStack = Java.loadClass('net.minecraft.world.item.ItemStack')
-var BtmBlockProbeToolActions = Java.loadClass('net.minecraftforge.common.ToolActions')
-var BtmBlockProbeHandBreakableTag = BtmBlockProbeBlockTags.create(new BtmBlockProbeResourceLocation('kubejs', 'hand_breakable'))
-var BtmBlockProbeKnivesTag = BtmBlockProbeItemTags.create(new BtmBlockProbeResourceLocation('forge', 'tools/knives'))
-var BtmBlockProbeCropsTag = BtmBlockProbeBlockTags.create(new BtmBlockProbeResourceLocation('minecraft', 'crops'))
-var BtmBlockProbeFlowersTag = BtmBlockProbeBlockTags.create(new BtmBlockProbeResourceLocation('minecraft', 'flowers'))
-var BtmBlockProbeLeavesTag = BtmBlockProbeBlockTags.create(new BtmBlockProbeResourceLocation('minecraft', 'leaves'))
-var BtmBlockProbeReplaceableTag = BtmBlockProbeBlockTags.create(new BtmBlockProbeResourceLocation('minecraft', 'replaceable'))
-var BtmBlockProbeSaplingsTag = BtmBlockProbeBlockTags.create(new BtmBlockProbeResourceLocation('minecraft', 'saplings'))
+var BcBlockProbeBuiltInRegistries = Java.loadClass('net.minecraft.core.registries.BuiltInRegistries')
+var BcBlockProbeResourceLocation = Java.loadClass('net.minecraft.resources.ResourceLocation')
+var BcBlockProbeBlockTags = Java.loadClass('net.minecraft.tags.BlockTags')
+var BcBlockProbeItemTags = Java.loadClass('net.minecraft.tags.ItemTags')
+var BcBlockProbeItemStack = Java.loadClass('net.minecraft.world.item.ItemStack')
+var BcBlockProbeToolActions = Java.loadClass('net.minecraftforge.common.ToolActions')
+var BcBlockProbeHandBreakableTag = BcBlockProbeBlockTags.create(new BcBlockProbeResourceLocation('kubejs', 'hand_breakable'))
+var BcBlockProbeKnivesTag = BcBlockProbeItemTags.create(new BcBlockProbeResourceLocation('forge', 'tools/knives'))
+var BcBlockProbeCropsTag = BcBlockProbeBlockTags.create(new BcBlockProbeResourceLocation('minecraft', 'crops'))
+var BcBlockProbeFlowersTag = BcBlockProbeBlockTags.create(new BcBlockProbeResourceLocation('minecraft', 'flowers'))
+var BcBlockProbeLeavesTag = BcBlockProbeBlockTags.create(new BcBlockProbeResourceLocation('minecraft', 'leaves'))
+var BcBlockProbeReplaceableTag = BcBlockProbeBlockTags.create(new BcBlockProbeResourceLocation('minecraft', 'replaceable'))
+var BcBlockProbeSaplingsTag = BcBlockProbeBlockTags.create(new BcBlockProbeResourceLocation('minecraft', 'saplings'))
 
-var BTM_BLOCK_PROBE_DEFAULT_BLOCKS = [
+var BC_BLOCK_PROBE_DEFAULT_BLOCKS = [
     'minecraft:dirt',
     'minecraft:grass_block',
     'minecraft:coarse_dirt',
@@ -62,49 +62,49 @@ var BTM_BLOCK_PROBE_DEFAULT_BLOCKS = [
     'hexerei:mahogany_log'
 ]
 
-var BTM_BLOCK_PROBE_TAGS = [
-    { id: 'minecraft:mineable/pickaxe', tag: BtmBlockProbeBlockTags.MINEABLE_WITH_PICKAXE },
-    { id: 'minecraft:mineable/axe', tag: BtmBlockProbeBlockTags.MINEABLE_WITH_AXE },
-    { id: 'minecraft:mineable/shovel', tag: BtmBlockProbeBlockTags.MINEABLE_WITH_SHOVEL },
-    { id: 'minecraft:mineable/hoe', tag: BtmBlockProbeBlockTags.MINEABLE_WITH_HOE },
-    { id: 'minecraft:sword_efficient', tag: BtmBlockProbeBlockTags.SWORD_EFFICIENT },
-    { id: 'minecraft:needs_stone_tool', tag: BtmBlockProbeBlockTags.NEEDS_STONE_TOOL },
-    { id: 'minecraft:needs_iron_tool', tag: BtmBlockProbeBlockTags.NEEDS_IRON_TOOL },
-    { id: 'minecraft:needs_diamond_tool', tag: BtmBlockProbeBlockTags.NEEDS_DIAMOND_TOOL },
-    { id: 'kubejs:hand_breakable', tag: BtmBlockProbeHandBreakableTag },
-    { id: 'minecraft:crops', tag: BtmBlockProbeCropsTag },
-    { id: 'minecraft:flowers', tag: BtmBlockProbeFlowersTag },
-    { id: 'minecraft:leaves', tag: BtmBlockProbeLeavesTag },
-    { id: 'minecraft:replaceable', tag: BtmBlockProbeReplaceableTag },
-    { id: 'minecraft:saplings', tag: BtmBlockProbeSaplingsTag }
+var BC_BLOCK_PROBE_TAGS = [
+    { id: 'minecraft:mineable/pickaxe', tag: BcBlockProbeBlockTags.MINEABLE_WITH_PICKAXE },
+    { id: 'minecraft:mineable/axe', tag: BcBlockProbeBlockTags.MINEABLE_WITH_AXE },
+    { id: 'minecraft:mineable/shovel', tag: BcBlockProbeBlockTags.MINEABLE_WITH_SHOVEL },
+    { id: 'minecraft:mineable/hoe', tag: BcBlockProbeBlockTags.MINEABLE_WITH_HOE },
+    { id: 'minecraft:sword_efficient', tag: BcBlockProbeBlockTags.SWORD_EFFICIENT },
+    { id: 'minecraft:needs_stone_tool', tag: BcBlockProbeBlockTags.NEEDS_STONE_TOOL },
+    { id: 'minecraft:needs_iron_tool', tag: BcBlockProbeBlockTags.NEEDS_IRON_TOOL },
+    { id: 'minecraft:needs_diamond_tool', tag: BcBlockProbeBlockTags.NEEDS_DIAMOND_TOOL },
+    { id: 'kubejs:hand_breakable', tag: BcBlockProbeHandBreakableTag },
+    { id: 'minecraft:crops', tag: BcBlockProbeCropsTag },
+    { id: 'minecraft:flowers', tag: BcBlockProbeFlowersTag },
+    { id: 'minecraft:leaves', tag: BcBlockProbeLeavesTag },
+    { id: 'minecraft:replaceable', tag: BcBlockProbeReplaceableTag },
+    { id: 'minecraft:saplings', tag: BcBlockProbeSaplingsTag }
 ]
-var BTM_BLOCK_PROBE_EXACT_SURFACE_PLANT_IDS = {
+var BC_BLOCK_PROBE_EXACT_SURFACE_PLANT_IDS = {
     'minecraft:grass': true,
     'minecraft:short_grass': true,
     'minecraft:tall_grass': true,
     'projectvibrantjourneys:short_grass': true
 }
 
-function btmBlockProbeReadConfig() {
+function bcBlockProbeReadConfig() {
     var fallback = {
         enabled: false,
-        outputDir: BTM_BLOCK_PROBE_DEFAULT_DIR,
+        outputDir: BC_BLOCK_PROBE_DEFAULT_DIR,
         writeAllBlocks: false,
-        blockIds: BTM_BLOCK_PROBE_DEFAULT_BLOCKS
+        blockIds: BC_BLOCK_PROBE_DEFAULT_BLOCKS
     }
 
-    var cfg = JsonIO.read(BTM_BLOCK_PROBE_CONFIG)
+    var cfg = JsonIO.read(BC_BLOCK_PROBE_CONFIG)
     if (!cfg) return fallback
 
     return {
         enabled: cfg.enabled === true,
         outputDir: String(cfg.outputDir || fallback.outputDir),
         writeAllBlocks: cfg.writeAllBlocks === true || cfg.scanAllBlocks === true,
-        blockIds: btmBlockProbeArray(cfg.blockIds, fallback.blockIds)
+        blockIds: bcBlockProbeArray(cfg.blockIds, fallback.blockIds)
     }
 }
 
-function btmBlockProbeArray(value, fallback) {
+function bcBlockProbeArray(value, fallback) {
     if (!value) return fallback
     var out = []
     try {
@@ -115,7 +115,7 @@ function btmBlockProbeArray(value, fallback) {
     return out.length ? out : fallback
 }
 
-function btmBlockProbeCall(target, methodNames, args) {
+function bcBlockProbeCall(target, methodNames, args) {
     if (target === null || target === undefined) return null
     for (var i = 0; i < methodNames.length; i++) {
         try {
@@ -131,23 +131,23 @@ function btmBlockProbeCall(target, methodNames, args) {
     return null
 }
 
-function btmBlockProbeNumber(value) {
+function bcBlockProbeNumber(value) {
     if (value === null || value === undefined) return null
     var n = Number(value)
     if (isNaN(n)) return null
     return n
 }
 
-function btmBlockProbeBool(value) {
+function bcBlockProbeBool(value) {
     return value === true || String(value) === 'true'
 }
 
-function btmBlockProbeTagId(tag) {
-    var location = btmBlockProbeCall(tag, ['location'], [])
+function bcBlockProbeTagId(tag) {
+    var location = bcBlockProbeCall(tag, ['location'], [])
     return location ? String(location) : String(tag)
 }
 
-function btmBlockProbeUniquePush(arr, value) {
+function bcBlockProbeUniquePush(arr, value) {
     if (value === null || value === undefined) return
     for (var i = 0; i < arr.length; i++) {
         if (arr[i] === value) return
@@ -155,7 +155,7 @@ function btmBlockProbeUniquePush(arr, value) {
     arr.push(value)
 }
 
-function btmBlockProbeSortStrings(arr) {
+function bcBlockProbeSortStrings(arr) {
     arr.sort(function (a, b) {
         if (a < b) return -1
         if (a > b) return 1
@@ -164,11 +164,11 @@ function btmBlockProbeSortStrings(arr) {
     return arr
 }
 
-function btmBlockProbeBlockById(id) {
+function bcBlockProbeBlockById(id) {
     try {
-        var key = new BtmBlockProbeResourceLocation(id)
-        var block = BtmBlockProbeBuiltInRegistries.BLOCK.get(key)
-        var actualKey = BtmBlockProbeBuiltInRegistries.BLOCK.getKey(block)
+        var key = new BcBlockProbeResourceLocation(id)
+        var block = BcBlockProbeBuiltInRegistries.BLOCK.get(key)
+        var actualKey = BcBlockProbeBuiltInRegistries.BLOCK.getKey(block)
         if (String(actualKey) !== id) return null
         return block
     } catch (e) {
@@ -176,62 +176,62 @@ function btmBlockProbeBlockById(id) {
     }
 }
 
-function btmBlockProbeTags(state) {
+function bcBlockProbeTags(state) {
     var out = []
     if (!state) return out
 
-    for (var i = 0; i < BTM_BLOCK_PROBE_TAGS.length; i++) {
-        if (btmBlockProbeBool(btmBlockProbeCall(state, ['is', 'm_60713_'], [BTM_BLOCK_PROBE_TAGS[i].tag]))) {
-            btmBlockProbeUniquePush(out, BTM_BLOCK_PROBE_TAGS[i].id)
+    for (var i = 0; i < BC_BLOCK_PROBE_TAGS.length; i++) {
+        if (bcBlockProbeBool(bcBlockProbeCall(state, ['is', 'm_60713_'], [BC_BLOCK_PROBE_TAGS[i].tag]))) {
+             bcBlockProbeUniquePush(out, BC_BLOCK_PROBE_TAGS[i].id)
         }
     }
 
     try {
-        var stream = btmBlockProbeCall(state, ['getTags', 'm_204343_'], [])
-        var iterator = stream ? btmBlockProbeCall(stream, ['iterator'], []) : null
-        while (iterator && btmBlockProbeBool(btmBlockProbeCall(iterator, ['hasNext'], []))) {
-            var tagId = btmBlockProbeTagId(btmBlockProbeCall(iterator, ['next'], []))
-            btmBlockProbeUniquePush(out, tagId)
+        var stream = bcBlockProbeCall(state, ['getTags', 'm_204343_'], [])
+        var iterator = stream ?  bcBlockProbeCall(stream, ['iterator'], []) : null
+        while (iterator &&  bcBlockProbeBool(bcBlockProbeCall(iterator, ['hasNext'], []))) {
+            var tagId = bcBlockProbeTagId(bcBlockProbeCall(iterator, ['next'], []))
+             bcBlockProbeUniquePush(out, tagId)
         }
     } catch (e) {
         // Some unusual states may not expose tag streams cleanly through Rhino.
     }
 
-    return btmBlockProbeSortStrings(out)
+    return bcBlockProbeSortStrings(out)
 }
 
-function btmBlockProbeItemTags(stack) {
+function bcBlockProbeItemTags(stack) {
     var out = []
     if (!stack) return out
 
     try {
-        var stream = btmBlockProbeCall(stack, ['getTags'], [])
-        var iterator = stream ? btmBlockProbeCall(stream, ['iterator'], []) : null
-        while (iterator && btmBlockProbeBool(btmBlockProbeCall(iterator, ['hasNext'], []))) {
-            var tagId = btmBlockProbeTagId(btmBlockProbeCall(iterator, ['next'], []))
-            btmBlockProbeUniquePush(out, tagId)
+        var stream = bcBlockProbeCall(stack, ['getTags'], [])
+        var iterator = stream ?  bcBlockProbeCall(stream, ['iterator'], []) : null
+        while (iterator &&  bcBlockProbeBool(bcBlockProbeCall(iterator, ['hasNext'], []))) {
+            var tagId = bcBlockProbeTagId(bcBlockProbeCall(iterator, ['next'], []))
+             bcBlockProbeUniquePush(out, tagId)
         }
     } catch (e) {
         // Some unusual stacks may not expose tag streams cleanly through Rhino.
     }
 
-    return btmBlockProbeSortStrings(out)
+    return bcBlockProbeSortStrings(out)
 }
 
-function btmBlockProbeStackIs(stack, tag) {
-    return btmBlockProbeBool(btmBlockProbeCall(stack, ['is'], [tag]))
+function bcBlockProbeStackIs(stack, tag) {
+    return bcBlockProbeBool(bcBlockProbeCall(stack, ['is'], [tag]))
 }
 
-function btmBlockProbeStackCanPerform(stack, action) {
-    return btmBlockProbeBool(btmBlockProbeCall(stack, ['canPerformAction'], [action]))
+function bcBlockProbeStackCanPerform(stack, action) {
+    return bcBlockProbeBool(bcBlockProbeCall(stack, ['canPerformAction'], [action]))
 }
 
-function btmBlockProbeItemRecord(id) {
+function bcBlockProbeItemRecord(id) {
     var item = null
     try {
-        var key = new BtmBlockProbeResourceLocation(id)
-        item = BtmBlockProbeBuiltInRegistries.ITEM.get(key)
-        var actualKey = BtmBlockProbeBuiltInRegistries.ITEM.getKey(item)
+        var key = new BcBlockProbeResourceLocation(id)
+        item = BcBlockProbeBuiltInRegistries.ITEM.get(key)
+        var actualKey = BcBlockProbeBuiltInRegistries.ITEM.getKey(item)
         if (String(actualKey) !== id) return { id: id, missing: true }
     } catch (e) {
         return { id: id, missing: true }
@@ -239,54 +239,54 @@ function btmBlockProbeItemRecord(id) {
 
     var stack = null
     try {
-        stack = new BtmBlockProbeItemStack(item)
+        stack = new BcBlockProbeItemStack(item)
     } catch (ignored) {}
-    if (!stack) stack = btmBlockProbeCall(item, ['getDefaultInstance', 'm_7968_'], [])
+    if (!stack) stack = bcBlockProbeCall(item, ['getDefaultInstance', 'm_7968_'], [])
 
     var actions = []
-    if (btmBlockProbeStackCanPerform(stack, BtmBlockProbeToolActions.AXE_DIG)) btmBlockProbeUniquePush(actions, 'axe')
-    if (btmBlockProbeStackCanPerform(stack, BtmBlockProbeToolActions.PICKAXE_DIG)) btmBlockProbeUniquePush(actions, 'pickaxe')
-    if (btmBlockProbeStackCanPerform(stack, BtmBlockProbeToolActions.SHOVEL_DIG)) btmBlockProbeUniquePush(actions, 'shovel')
-    if (btmBlockProbeStackCanPerform(stack, BtmBlockProbeToolActions.HOE_DIG)) btmBlockProbeUniquePush(actions, 'hoe')
-    if (btmBlockProbeStackCanPerform(stack, BtmBlockProbeToolActions.SWORD_DIG)) btmBlockProbeUniquePush(actions, 'sword')
-    if (btmBlockProbeStackIs(stack, BtmBlockProbeKnivesTag)) btmBlockProbeUniquePush(actions, 'knife')
+    if (bcBlockProbeStackCanPerform(stack, BcBlockProbeToolActions.AXE_DIG))  bcBlockProbeUniquePush(actions, 'axe')
+    if (bcBlockProbeStackCanPerform(stack, BcBlockProbeToolActions.PICKAXE_DIG))  bcBlockProbeUniquePush(actions, 'pickaxe')
+    if (bcBlockProbeStackCanPerform(stack, BcBlockProbeToolActions.SHOVEL_DIG))  bcBlockProbeUniquePush(actions, 'shovel')
+    if (bcBlockProbeStackCanPerform(stack, BcBlockProbeToolActions.HOE_DIG))  bcBlockProbeUniquePush(actions, 'hoe')
+    if (bcBlockProbeStackCanPerform(stack, BcBlockProbeToolActions.SWORD_DIG))  bcBlockProbeUniquePush(actions, 'sword')
+    if (bcBlockProbeStackIs(stack, BcBlockProbeKnivesTag))  bcBlockProbeUniquePush(actions, 'knife')
 
     return {
         id: id,
         missing: false,
-        runtimeTags: btmBlockProbeItemTags(stack),
-        toolActions: btmBlockProbeSortStrings(actions)
+        runtimeTags: bcBlockProbeItemTags(stack),
+        toolActions: bcBlockProbeSortStrings(actions)
     }
 }
 
-function btmBlockProbeMiningTags(tags) {
+function bcBlockProbeMiningTags(tags) {
     var out = []
     var wanted = {}
-    for (var i = 0; i < BTM_BLOCK_PROBE_TAGS.length; i++) wanted[BTM_BLOCK_PROBE_TAGS[i].id] = true
+    for (var i = 0; i < BC_BLOCK_PROBE_TAGS.length; i++) wanted[BC_BLOCK_PROBE_TAGS[i].id] = true
     for (var j = 0; j < tags.length; j++) {
-        if (wanted[tags[j]]) btmBlockProbeUniquePush(out, tags[j])
+        if (wanted[tags[j]])  bcBlockProbeUniquePush(out, tags[j])
     }
-    return btmBlockProbeSortStrings(out)
+    return bcBlockProbeSortStrings(out)
 }
 
-function btmBlockProbeTagContains(tags, id) {
+function bcBlockProbeTagContains(tags, id) {
     for (var i = 0; i < tags.length; i++) {
         if (tags[i] === id) return true
     }
     return false
 }
 
-function btmBlockProbePath(id) {
+function bcBlockProbePath(id) {
     return id.indexOf(':') >= 0 ? id.split(':')[1] : id
 }
 
-function btmBlockProbeIsLeafId(id) {
-    var path = btmBlockProbePath(id)
+function bcBlockProbeIsLeafId(id) {
+    var path = bcBlockProbePath(id)
     return path.indexOf('leaves') >= 0 || path.indexOf('leaf') >= 0
 }
 
-function btmBlockProbeIsLooseSurfaceId(id) {
-    var path = btmBlockProbePath(id)
+function bcBlockProbeIsLooseSurfaceId(id) {
+    var path = bcBlockProbePath(id)
     return path === 'gravel' ||
         path === 'sand' ||
         path === 'red_sand' ||
@@ -294,7 +294,7 @@ function btmBlockProbeIsLooseSurfaceId(id) {
         path.lastIndexOf('_sand') === path.length - '_sand'.length
 }
 
-function btmBlockProbeIsSurfaceSoilPath(path) {
+function bcBlockProbeIsSurfaceSoilPath(path) {
     return path === 'grass_block' ||
         path === 'rooty_grass_block' ||
         path.lastIndexOf('_grass_block') === path.length - '_grass_block'.length ||
@@ -306,12 +306,12 @@ function btmBlockProbeIsSurfaceSoilPath(path) {
         path.lastIndexOf('_regolith') === path.length - '_regolith'.length
 }
 
-function btmBlockProbePathEndsWith(path, suffix) {
+function bcBlockProbePathEndsWith(path, suffix) {
     if (path.length < suffix.length) return false
     return path.lastIndexOf(suffix) === path.length - suffix.length
 }
 
-function btmBlockProbeIsSurfacePlantPath(path) {
+function bcBlockProbeIsSurfacePlantPath(path) {
     return path === 'fern' ||
         path === 'large_fern' ||
         path === 'dead_bush' ||
@@ -324,41 +324,41 @@ function btmBlockProbeIsSurfacePlantPath(path) {
         path === 'cave_vines_plant' ||
         path === 'glow_lichen' ||
         path.indexOf('fern') >= 0 ||
-        btmBlockProbePathEndsWith(path, 'flower') ||
-        btmBlockProbePathEndsWith(path, '_flower') ||
-        btmBlockProbePathEndsWith(path, 'bush') ||
-        btmBlockProbePathEndsWith(path, '_bush') ||
-        btmBlockProbePathEndsWith(path, 'shrub') ||
-        btmBlockProbePathEndsWith(path, '_shrub') ||
-        btmBlockProbePathEndsWith(path, 'reed') ||
-        btmBlockProbePathEndsWith(path, '_reed') ||
-        btmBlockProbePathEndsWith(path, 'vine') ||
-        btmBlockProbePathEndsWith(path, 'vines') ||
+         bcBlockProbePathEndsWith(path, 'flower') ||
+         bcBlockProbePathEndsWith(path, '_flower') ||
+         bcBlockProbePathEndsWith(path, 'bush') ||
+         bcBlockProbePathEndsWith(path, '_bush') ||
+         bcBlockProbePathEndsWith(path, 'shrub') ||
+         bcBlockProbePathEndsWith(path, '_shrub') ||
+         bcBlockProbePathEndsWith(path, 'reed') ||
+         bcBlockProbePathEndsWith(path, '_reed') ||
+         bcBlockProbePathEndsWith(path, 'vine') ||
+         bcBlockProbePathEndsWith(path, 'vines') ||
         path.indexOf('_vine_') >= 0 ||
         path.indexOf('_vines_') >= 0
 }
 
-function btmBlockProbeIsSurfacePlantId(id) {
-    if (BTM_BLOCK_PROBE_EXACT_SURFACE_PLANT_IDS[id] === true) return true
+function bcBlockProbeIsSurfacePlantId(id) {
+    if (BC_BLOCK_PROBE_EXACT_SURFACE_PLANT_IDS[id] === true) return true
 
-    var path = btmBlockProbePath(id)
-    if (btmBlockProbeIsSurfaceSoilPath(path)) return false
+    var path = bcBlockProbePath(id)
+    if (bcBlockProbeIsSurfaceSoilPath(path)) return false
 
-    return btmBlockProbeIsSurfacePlantPath(path)
+    return bcBlockProbeIsSurfacePlantPath(path)
 }
 
-function btmBlockProbeRealisticHandsClassification(id, tags) {
-    var surfacePlant = btmBlockProbeIsSurfacePlantId(id)
-    var leaf = btmBlockProbeIsLeafId(id)
-    var looseSurface = btmBlockProbeIsLooseSurfaceId(id)
-    var handTag = btmBlockProbeTagContains(tags, 'kubejs:hand_breakable')
+function bcBlockProbeRealisticHandsClassification(id, tags) {
+    var surfacePlant = bcBlockProbeIsSurfacePlantId(id)
+    var leaf = bcBlockProbeIsLeafId(id)
+    var looseSurface = bcBlockProbeIsLooseSurfaceId(id)
+    var handTag = bcBlockProbeTagContains(tags, 'kubejs:hand_breakable')
     var toolCategories = []
 
-    if (btmBlockProbeTagContains(tags, 'minecraft:mineable/axe')) toolCategories.push('axe')
-    if (btmBlockProbeTagContains(tags, 'minecraft:mineable/pickaxe')) toolCategories.push('pickaxe')
-    if (btmBlockProbeTagContains(tags, 'minecraft:mineable/shovel')) toolCategories.push('shovel')
-    if (btmBlockProbeTagContains(tags, 'minecraft:mineable/hoe')) toolCategories.push('hoe')
-    if (btmBlockProbeTagContains(tags, 'minecraft:sword_efficient')) toolCategories.push('sword')
+    if (bcBlockProbeTagContains(tags, 'minecraft:mineable/axe')) toolCategories.push('axe')
+    if (bcBlockProbeTagContains(tags, 'minecraft:mineable/pickaxe')) toolCategories.push('pickaxe')
+    if (bcBlockProbeTagContains(tags, 'minecraft:mineable/shovel')) toolCategories.push('shovel')
+    if (bcBlockProbeTagContains(tags, 'minecraft:mineable/hoe')) toolCategories.push('hoe')
+    if (bcBlockProbeTagContains(tags, 'minecraft:sword_efficient')) toolCategories.push('sword')
 
     return {
         surfacePlant: surfacePlant,
@@ -371,8 +371,8 @@ function btmBlockProbeRealisticHandsClassification(id, tags) {
     }
 }
 
-function btmBlockProbeRecord(id) {
-    var block = btmBlockProbeBlockById(id)
+function bcBlockProbeRecord(id) {
+    var block = bcBlockProbeBlockById(id)
     if (!block) {
         return {
             id: id,
@@ -380,11 +380,11 @@ function btmBlockProbeRecord(id) {
         }
     }
 
-    var state = btmBlockProbeCall(block, ['defaultBlockState', 'm_49966_'], [])
-    var destroyTime = btmBlockProbeNumber(btmBlockProbeCall(block, ['defaultDestroyTime', 'm_155943_'], []))
-    var stateDestroyTime = btmBlockProbeNumber(btmBlockProbeCall(state, ['getDestroySpeed', 'm_60800_'], [null, null]))
-    var explosionResistance = btmBlockProbeNumber(btmBlockProbeCall(block, ['getExplosionResistance', 'm_7334_'], []))
-    var runtimeTags = btmBlockProbeTags(state)
+    var state = bcBlockProbeCall(block, ['defaultBlockState', 'm_49966_'], [])
+    var destroyTime = bcBlockProbeNumber(bcBlockProbeCall(block, ['defaultDestroyTime', 'm_155943_'], []))
+    var stateDestroyTime = bcBlockProbeNumber(bcBlockProbeCall(state, ['getDestroySpeed', 'm_60800_'], [null, null]))
+    var explosionResistance = bcBlockProbeNumber(bcBlockProbeCall(block, ['getExplosionResistance', 'm_7334_'], []))
+    var runtimeTags = bcBlockProbeTags(state)
 
     return {
         id: id,
@@ -392,28 +392,28 @@ function btmBlockProbeRecord(id) {
         defaultDestroyTime: destroyTime,
         defaultStateDestroySpeed: stateDestroyTime,
         explosionResistance: explosionResistance,
-        requiresCorrectToolForDrops: btmBlockProbeBool(btmBlockProbeCall(state, ['requiresCorrectToolForDrops', 'm_60815_'], [])),
+        requiresCorrectToolForDrops: bcBlockProbeBool(bcBlockProbeCall(state, ['requiresCorrectToolForDrops', 'm_60815_'], [])),
         runtimeTags: runtimeTags,
-        miningTags: btmBlockProbeMiningTags(runtimeTags),
-        realisticHands: btmBlockProbeRealisticHandsClassification(id, runtimeTags)
+        miningTags: bcBlockProbeMiningTags(runtimeTags),
+        realisticHands: bcBlockProbeRealisticHandsClassification(id, runtimeTags)
     }
 }
 
-function btmBlockProbeAllBlockIds() {
+function bcBlockProbeAllBlockIds() {
     var ids = []
-    var keys = BtmBlockProbeBuiltInRegistries.BLOCK.keySet().iterator()
+    var keys = BcBlockProbeBuiltInRegistries.BLOCK.keySet().iterator()
     while (keys.hasNext()) ids.push(String(keys.next()))
-    return btmBlockProbeSortStrings(ids)
+    return bcBlockProbeSortStrings(ids)
 }
 
-function btmBlockProbeAllItemIds() {
+function bcBlockProbeAllItemIds() {
     var ids = []
-    var keys = BtmBlockProbeBuiltInRegistries.ITEM.keySet().iterator()
+    var keys = BcBlockProbeBuiltInRegistries.ITEM.keySet().iterator()
     while (keys.hasNext()) ids.push(String(keys.next()))
-    return btmBlockProbeSortStrings(ids)
+    return bcBlockProbeSortStrings(ids)
 }
 
-function btmBlockProbeSummarize(records) {
+function bcBlockProbeSummarize(records) {
     var missing = []
     var distinctDestroyTimes = []
     var destroyTimeCounts = {}
@@ -427,11 +427,11 @@ function btmBlockProbeSummarize(records) {
 
         var key = String(r.defaultDestroyTime)
         destroyTimeCounts[key] = (destroyTimeCounts[key] || 0) + 1
-        btmBlockProbeUniquePush(distinctDestroyTimes, key)
+         bcBlockProbeUniquePush(distinctDestroyTimes, key)
     }
 
-    btmBlockProbeSortStrings(missing)
-    btmBlockProbeSortStrings(distinctDestroyTimes)
+     bcBlockProbeSortStrings(missing)
+     bcBlockProbeSortStrings(distinctDestroyTimes)
 
     return {
         totalRecords: records.length,
@@ -442,49 +442,49 @@ function btmBlockProbeSummarize(records) {
     }
 }
 
-function btmBlockProbeWrite(outputDir, payload) {
+function bcBlockProbeWrite(outputDir, payload) {
     var primaryPath = outputDir + 'block_hardness_probe.json'
     try {
         JsonIO.write(primaryPath, payload)
         return primaryPath
     } catch (e) {
-        JsonIO.write(BTM_BLOCK_PROBE_FALLBACK_PATH, payload)
-        console.warn('[BTM-BLOCK-HARDNESS-PROBE] primary write failed for ' + primaryPath + '; wrote fallback ' + BTM_BLOCK_PROBE_FALLBACK_PATH + ' (' + e + ')')
-        return BTM_BLOCK_PROBE_FALLBACK_PATH
+        JsonIO.write(BC_BLOCK_PROBE_FALLBACK_PATH, payload)
+        console.warn('[BC-BLOCK-HARDNESS-PROBE] primary write failed for ' + primaryPath + '; wrote fallback ' + BC_BLOCK_PROBE_FALLBACK_PATH + ' (' + e + ')')
+        returnBC_BLOCK_PROBE_FALLBACK_PATH
     }
 }
 
 ServerEvents.recipes(function (event) {
-    var cfg = btmBlockProbeReadConfig()
+    var cfg = bcBlockProbeReadConfig()
     if (!cfg.enabled) return
     if (!String(cfg.outputDir).endsWith('/')) cfg.outputDir = String(cfg.outputDir) + '/'
 
     var selected = []
-    for (var i = 0; i < cfg.blockIds.length; i++) selected.push(btmBlockProbeRecord(cfg.blockIds[i]))
+    for (var i = 0; i < cfg.blockIds.length; i++) selected.push(bcBlockProbeRecord(cfg.blockIds[i]))
 
     var allBlocks = []
     if (cfg.writeAllBlocks) {
-        var ids = btmBlockProbeAllBlockIds()
-        for (var j = 0; j < ids.length; j++) allBlocks.push(btmBlockProbeRecord(ids[j]))
+        var ids = bcBlockProbeAllBlockIds()
+        for (var j = 0; j < ids.length; j++) allBlocks.push(bcBlockProbeRecord(ids[j]))
     }
 
     var allItems = []
     if (cfg.writeAllBlocks) {
-        var itemIds = btmBlockProbeAllItemIds()
-        for (var k = 0; k < itemIds.length; k++) allItems.push(btmBlockProbeItemRecord(itemIds[k]))
+        var itemIds = bcBlockProbeAllItemIds()
+        for (var k = 0; k < itemIds.length; k++) allItems.push(bcBlockProbeItemRecord(itemIds[k]))
     }
 
     var out = {
-        schema: 'obelisks.block_hardness_probe.v3',
+        schema: 'bc.block_hardness_probe.v3',
         generatedBy: 'kubejs/server_scripts/90_dev_debug/40_block_hardness_probe.js',
         generatedAt: 'runtime_recipe_event',
-        selectedSummary: btmBlockProbeSummarize(selected),
+        selectedSummary: bcBlockProbeSummarize(selected),
         selectedBlocks: selected,
-        allBlockSummary: cfg.writeAllBlocks ? btmBlockProbeSummarize(allBlocks) : null,
+        allBlockSummary: cfg.writeAllBlocks ?  bcBlockProbeSummarize(allBlocks) : null,
         allBlocks: cfg.writeAllBlocks ? allBlocks : [],
         allItems: cfg.writeAllBlocks ? allItems : []
     }
 
-    var writtenPath = btmBlockProbeWrite(cfg.outputDir, out)
-    console.info('[BTM-BLOCK-HARDNESS-PROBE] wrote ' + selected.length + ' selected blocks' + (cfg.writeAllBlocks ? ', ' + allBlocks.length + ' all-block records, and ' + allItems.length + ' item records' : '') + ' to ' + writtenPath)
+    var writtenPath = bcBlockProbeWrite(cfg.outputDir, out)
+    console.info('[BC-BLOCK-HARDNESS-PROBE] wrote ' + selected.length + ' selected blocks' + (cfg.writeAllBlocks ? ', ' + allBlocks.length + ' all-block records, and ' + allItems.length + ' item records' : '') + ' to ' + writtenPath)
 })

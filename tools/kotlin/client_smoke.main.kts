@@ -13,14 +13,14 @@ fun deleteTree(path: java.nio.file.Path) {
 
 fun usage(message: String? = null): Nothing {
     if (message != null) System.err.println(message)
-    System.err.println("Usage: tools/btm test scenario-headful client_smoke --profile quick|release [--bootstrap-mode always|once|never] [--keep-runs]")
+    System.err.println("Usage: tools/bc test scenario-headful client_smoke --profile quick|release [--bootstrap-mode always|once|never] [--keep-runs]")
     exitProcess(2)
 }
 
 var profile: String? = null
 var bootstrapMode = "always"
 var keepRuns = false
-var port: String? = System.getenv("BTM_HARNESS_ACTUAL_PORT")?.takeIf { it.isNotBlank() }
+var port: String? = System.getenv("BC_HARNESS_ACTUAL_PORT")?.takeIf { it.isNotBlank() }
 var index = 0
 while (index < args.size) {
     when (args[index]) {
@@ -50,21 +50,21 @@ while (index < args.size) {
 val selected = profile ?: usage("--profile is required")
 if (selected !in setOf("quick", "release")) usage("invalid profile: $selected")
 
-val contract = ProcessBuilder("tools/btm", "internal", "validate-client-smoke-contracts")
+val contract = ProcessBuilder("tools/bc", "internal", "validate-client-smoke-contracts")
     .directory(Paths.get("").toAbsolutePath().normalize().toFile())
     .inheritIO()
     .start()
 val contractExit = contract.waitFor()
 if (contractExit != 0) exitProcess(contractExit)
 
-val runtimeDir = Paths.get("/tmp", if (selected == "quick") "btm-client-smoke-quick" else "btm-client-smoke-release")
+val runtimeDir = Paths.get("/tmp", if (selected == "quick") "bc-client-smoke-quick" else "bc-client-smoke-release")
 val smokePort = port ?: if (selected == "quick") "25567" else "25568"
 if (!keepRuns && bootstrapMode != "never" && Files.exists(runtimeDir)) {
     deleteTree(runtimeDir)
 }
 
 val smokeBuilder = ProcessBuilder(
-    "tools/btm",
+    "tools/bc",
     "test",
     "smoke",
     "--server-dir",
@@ -79,14 +79,14 @@ val smokeBuilder = ProcessBuilder(
 smokeBuilder.inheritIO()
 smokeBuilder.environment().putAll(
     listOf(
-        "BTM_HARNESS_STATUS_PATH",
-        "BTM_HARNESS_SUMMARY_PATH",
-        "BTM_HARNESS_PIDS_PATH",
-        "BTM_HARNESS_LOCK_PATH",
-        "BTM_HARNESS_LATEST_STATUS_PATH",
-        "BTM_HARNESS_LATEST_SUMMARY_PATH",
-        "BTM_HARNESS_REQUESTED_PORT",
-        "BTM_HARNESS_ACTUAL_PORT",
+        "BC_HARNESS_STATUS_PATH",
+        "BC_HARNESS_SUMMARY_PATH",
+        "BC_HARNESS_PIDS_PATH",
+        "BC_HARNESS_LOCK_PATH",
+        "BC_HARNESS_LATEST_STATUS_PATH",
+        "BC_HARNESS_LATEST_SUMMARY_PATH",
+        "BC_HARNESS_REQUESTED_PORT",
+        "BC_HARNESS_ACTUAL_PORT",
     ).mapNotNull { key -> System.getenv(key)?.let { key to it } }.toMap(),
 )
 val smoke = smokeBuilder.start()

@@ -6,10 +6,10 @@ import java.nio.file.Paths
 
 val repo = Paths.get("").toAbsolutePath().normalize()
 val defaultInstance = "/home/gerald/.local/share/PrismLauncher/instances/Better Content-Playtest 4 - v1/minecraft"
-val instance = System.getenv("BTM_INSTANCE") ?: defaultInstance
+val instance = System.getenv("BC_INSTANCE") ?: defaultInstance
 val configDir = Paths.get(instance).resolve("kubejs/config")
 val dumpDir = Paths.get(instance).resolve("dump/data_raw")
-val catalogPath = repo.resolve("kubejs/config/btm_expert_graph_catalog.json")
+val catalogPath = repo.resolve("kubejs/config/bc_expert_graph_catalog.json")
 
 class JsonParser(private val text: String) {
     private var index = 0

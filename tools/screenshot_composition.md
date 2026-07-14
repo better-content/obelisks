@@ -28,8 +28,7 @@ works.
   may establish scale or context but must not displace it.
 - Use only verified pack environments. Suitable candidates include Tectonic
   Overworld terrain, geological and deep-lava terrain, Dimensional Font sites,
-  Aether, Undergarden, Otherside, Lost Cities, Fallout Wastelands, Finley, and
-  Call From The Depths.
+  Aether, Undergarden, Otherside, Lost Cities, and Fallout Wastelands.
 - Prefer variety over dimension completeness. A first set should include a grand
   landscape, a vertical or cavernous scene, a structure in its landscape, a
   hostile environment, and an environment with a distinct color palette.

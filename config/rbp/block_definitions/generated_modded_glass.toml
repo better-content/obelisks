@@ -3,8 +3,6 @@
 #	Namespaces:   '<minecraft>'
 #	Tags:         '#forge:stone'
 #	IDs:          'minecraft:stone'
-# Generated from audited mod blockstate/model data. Keep fallback physics disabled;
-# add explicit IDs here only for blocks intended to receive this physics profile.
 Blocks = [
 	"ae2:quartz_glass",
 	"ae2:quartz_vibrant_glass",
@@ -75,7 +73,6 @@ Blocks = [
 	"tconstruct:soul_glass",
 	"tconstruct:white_clear_stained_glass",
 	"tconstruct:yellow_clear_stained_glass",
-	"the_finley_dimension_remastered:ashen_glass",
 	"twilightforest:auroralized_glass",
 	"undergarden:sediment_glass",
 ]
@@ -150,4 +147,3 @@ Blocks = [
 [ChunkAnalysis]
 	#Whether the block(s) should be processed during chunk analysis updates.
 	Enabled = true
-

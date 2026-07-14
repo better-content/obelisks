@@ -1,7 +1,7 @@
 // Emergency furnace fallback for starter deposits.
 // This keeps furnaces useful for survival recovery without making them a real ore-processing tier.
 
-var BTM_DEPOSIT_FURNACE_FALLBACKS = [
+var BC_DEPOSIT_FURNACE_FALLBACKS = [
     { id: 'coal_measures', tag: 'kubejs:deposit_blocks/coal_measures', output: 'minecraft:coal', count: 1 },
     { id: 'ironstone', tag: 'kubejs:deposit_blocks/ironstone', output: 'minecraft:iron_nugget', count: 3 },
     { id: 'copper_sulfide', tag: 'kubejs:deposit_blocks/copper_sulfide', output: 'tconstruct:copper_nugget', count: 3 },
@@ -13,8 +13,8 @@ var BTM_DEPOSIT_FURNACE_FALLBACKS = [
 ]
 
 ServerEvents.recipes(function (event) {
-    for (var i = 0; i < BTM_DEPOSIT_FURNACE_FALLBACKS.length; i++) {
-        var dep = BTM_DEPOSIT_FURNACE_FALLBACKS[i]
+    for (var i = 0; i < BC_DEPOSIT_FURNACE_FALLBACKS.length; i++) {
+        var dep = BC_DEPOSIT_FURNACE_FALLBACKS[i]
         var input = '#' + dep.tag
         var output = Item.of(dep.output, dep.count)
 

@@ -1,5 +1,5 @@
 {
-  "schema": "btm.economy_acquisition.v1",
+  "schema": "bc.economy_acquisition.v1",
   "description": "Authoritative economy and reward-surface acquisition policy.",
   "entries": [
     {
@@ -9,7 +9,7 @@
       "policy": "currency_only",
       "era_reference": null,
       "evidence": [
-        "generated/custom-mod-sources/dimensional-fonts/src/main/resources/defaults/rewards/default.json"
+        "generated/custom-mod-sources/dimension-drink/src/main/resources/defaults/rewards/default.json"
       ]
     },
     {
@@ -19,7 +19,7 @@
       "policy": "currency_only",
       "era_reference": null,
       "evidence": [
-        "generated/custom-mod-sources/dimensional-fonts/src/main/resources/defaults/rewards/overworld.json"
+        "generated/custom-mod-sources/dimension-drink/src/main/resources/defaults/rewards/overworld.json"
       ]
     },
     {
@@ -29,7 +29,7 @@
       "policy": "currency_only",
       "era_reference": null,
       "evidence": [
-        "generated/custom-mod-sources/dimensional-fonts/src/main/resources/defaults/rewards/end.json"
+        "generated/custom-mod-sources/dimension-drink/src/main/resources/defaults/rewards/end.json"
       ]
     },
     {
@@ -39,7 +39,7 @@
       "policy": "currency_only",
       "era_reference": null,
       "evidence": [
-        "generated/custom-mod-sources/dimensional-fonts/src/main/resources/defaults/rewards/nether.json"
+        "generated/custom-mod-sources/dimension-drink/src/main/resources/defaults/rewards/nether.json"
       ]
     },
     {
@@ -2498,7 +2498,7 @@
       ]
     },
     {
-      "id": "villager_trade:BTM_30_ITEMS:minecraft:bread:18",
+      "id": "villager_trade:BC_30_ITEMS:minecraft:bread:18",
       "source": "villager_trade",
       "output": "minecraft:bread",
       "policy": "support_only",
@@ -2512,7 +2512,7 @@
       ]
     },
     {
-      "id": "villager_trade:BTM_30_ITEMS:minecraft:bucket:20",
+      "id": "villager_trade:BC_30_ITEMS:minecraft:bucket:20",
       "source": "villager_trade",
       "output": "minecraft:bucket",
       "policy": "support_only",
@@ -2526,7 +2526,7 @@
       ]
     },
     {
-      "id": "villager_trade:BTM_30_ITEMS:minecraft:iron_ingot:22",
+      "id": "villager_trade:BC_30_ITEMS:minecraft:iron_ingot:22",
       "source": "villager_trade",
       "output": "minecraft:iron_ingot",
       "policy": "support_only",
@@ -2540,7 +2540,7 @@
       ]
     },
     {
-      "id": "villager_trade:BTM_30_ITEMS:minecraft:oak_planks:21",
+      "id": "villager_trade:BC_30_ITEMS:minecraft:oak_planks:21",
       "source": "villager_trade",
       "output": "minecraft:oak_planks",
       "policy": "support_only",
@@ -2554,7 +2554,7 @@
       ]
     },
     {
-      "id": "villager_trade:BTM_30_ITEMS:minecraft:shears:23",
+      "id": "villager_trade:BC_30_ITEMS:minecraft:shears:23",
       "source": "villager_trade",
       "output": "minecraft:shears",
       "policy": "support_only",
@@ -2568,7 +2568,7 @@
       ]
     },
     {
-      "id": "villager_trade:BTM_30_ITEMS:minecraft:string:19",
+      "id": "villager_trade:BC_30_ITEMS:minecraft:string:19",
       "source": "villager_trade",
       "output": "minecraft:string",
       "policy": "support_only",
@@ -2582,7 +2582,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:additionalweaponry:wrench:271",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:additionalweaponry:wrench:271",
       "source": "wanderer_trade",
       "output": "additionalweaponry:wrench",
       "policy": "support_only",
@@ -2592,7 +2592,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:create:copper_diving_boots:274",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:create:copper_diving_boots:274",
       "source": "wanderer_trade",
       "output": "create:copper_diving_boots",
       "policy": "finished_gear_allowed",
@@ -2606,7 +2606,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:create:copper_diving_helmet:273",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:create:copper_diving_helmet:273",
       "source": "wanderer_trade",
       "output": "create:copper_diving_helmet",
       "policy": "finished_gear_allowed",
@@ -2620,7 +2620,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:create:linked_controller:272",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:create:linked_controller:272",
       "source": "wanderer_trade",
       "output": "create:linked_controller",
       "policy": "support_only",
@@ -2634,7 +2634,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:create:super_glue:270",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:create:super_glue:270",
       "source": "wanderer_trade",
       "output": "create:super_glue",
       "policy": "support_only",
@@ -2648,7 +2648,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:create:track:269",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:create:track:269",
       "source": "wanderer_trade",
       "output": "create:track",
       "policy": "support_only",
@@ -2662,7 +2662,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:acacia_sapling:115",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:acacia_sapling:115",
       "source": "wanderer_trade",
       "output": "minecraft:acacia_sapling",
       "policy": "support_only",
@@ -2672,7 +2672,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:allium:142",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:allium:142",
       "source": "wanderer_trade",
       "output": "minecraft:allium",
       "policy": "support_only",
@@ -2682,7 +2682,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:amethyst_shard:219",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:amethyst_shard:219",
       "source": "wanderer_trade",
       "output": "minecraft:amethyst_shard",
       "policy": "support_only",
@@ -2696,7 +2696,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:angler_pottery_sherd:233",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:angler_pottery_sherd:233",
       "source": "wanderer_trade",
       "output": "minecraft:angler_pottery_sherd",
       "policy": "support_only",
@@ -2706,7 +2706,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:archer_pottery_sherd:234",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:archer_pottery_sherd:234",
       "source": "wanderer_trade",
       "output": "minecraft:archer_pottery_sherd",
       "policy": "support_only",
@@ -2716,7 +2716,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:arms_up_pottery_sherd:235",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:arms_up_pottery_sherd:235",
       "source": "wanderer_trade",
       "output": "minecraft:arms_up_pottery_sherd",
       "policy": "support_only",
@@ -2726,7 +2726,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:axolotl_bucket:209",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:axolotl_bucket:209",
       "source": "wanderer_trade",
       "output": "minecraft:axolotl_bucket",
       "policy": "support_only",
@@ -2736,7 +2736,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:azure_bluet:143",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:azure_bluet:143",
       "source": "wanderer_trade",
       "output": "minecraft:azure_bluet",
       "policy": "support_only",
@@ -2746,7 +2746,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:bamboo:121",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:bamboo:121",
       "source": "wanderer_trade",
       "output": "minecraft:bamboo",
       "policy": "support_only",
@@ -2760,7 +2760,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:bell:198",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:bell:198",
       "source": "wanderer_trade",
       "output": "minecraft:bell",
       "policy": "support_only",
@@ -2770,7 +2770,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:big_dripleaf:126",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:big_dripleaf:126",
       "source": "wanderer_trade",
       "output": "minecraft:big_dripleaf",
       "policy": "support_only",
@@ -2780,7 +2780,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:birch_sapling:113",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:birch_sapling:113",
       "source": "wanderer_trade",
       "output": "minecraft:birch_sapling",
       "policy": "support_only",
@@ -2790,7 +2790,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:black_dye:174",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:black_dye:174",
       "source": "wanderer_trade",
       "output": "minecraft:black_dye",
       "policy": "support_only",
@@ -2804,7 +2804,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:blade_pottery_sherd:236",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:blade_pottery_sherd:236",
       "source": "wanderer_trade",
       "output": "minecraft:blade_pottery_sherd",
       "policy": "support_only",
@@ -2814,7 +2814,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:blaze_rod:214",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:blaze_rod:214",
       "source": "wanderer_trade",
       "output": "minecraft:blaze_rod",
       "policy": "support_only",
@@ -2828,7 +2828,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:blue_dye:170",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:blue_dye:170",
       "source": "wanderer_trade",
       "output": "minecraft:blue_dye",
       "policy": "support_only",
@@ -2842,7 +2842,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:blue_ice:190",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:blue_ice:190",
       "source": "wanderer_trade",
       "output": "minecraft:blue_ice",
       "policy": "support_only",
@@ -2856,7 +2856,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:blue_orchid:141",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:blue_orchid:141",
       "source": "wanderer_trade",
       "output": "minecraft:blue_orchid",
       "policy": "support_only",
@@ -2866,7 +2866,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:brewer_pottery_sherd:237",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:brewer_pottery_sherd:237",
       "source": "wanderer_trade",
       "output": "minecraft:brewer_pottery_sherd",
       "policy": "support_only",
@@ -2876,7 +2876,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:brown_dye:171",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:brown_dye:171",
       "source": "wanderer_trade",
       "output": "minecraft:brown_dye",
       "policy": "support_only",
@@ -2890,7 +2890,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:brown_mushroom:134",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:brown_mushroom:134",
       "source": "wanderer_trade",
       "output": "minecraft:brown_mushroom",
       "policy": "support_only",
@@ -2904,7 +2904,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:burn_pottery_sherd:238",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:burn_pottery_sherd:238",
       "source": "wanderer_trade",
       "output": "minecraft:burn_pottery_sherd",
       "policy": "support_only",
@@ -2914,7 +2914,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:cactus:119",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:cactus:119",
       "source": "wanderer_trade",
       "output": "minecraft:cactus",
       "policy": "support_only",
@@ -2928,7 +2928,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:calcite:175",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:calcite:175",
       "source": "wanderer_trade",
       "output": "minecraft:calcite",
       "policy": "support_only",
@@ -2942,7 +2942,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:campfire:193",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:campfire:193",
       "source": "wanderer_trade",
       "output": "minecraft:campfire",
       "policy": "support_only",
@@ -2952,7 +2952,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:chain:200",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:chain:200",
       "source": "wanderer_trade",
       "output": "minecraft:chain",
       "policy": "support_only",
@@ -2966,7 +2966,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:cherry_sapling:118",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:cherry_sapling:118",
       "source": "wanderer_trade",
       "output": "minecraft:cherry_sapling",
       "policy": "support_only",
@@ -2976,7 +2976,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:clay:181",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:clay:181",
       "source": "wanderer_trade",
       "output": "minecraft:clay",
       "policy": "support_only",
@@ -2990,7 +2990,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:clock:223",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:clock:223",
       "source": "wanderer_trade",
       "output": "minecraft:clock",
       "policy": "support_only",
@@ -3004,7 +3004,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:coast_armor_trim_smithing_template:253",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:coast_armor_trim_smithing_template:253",
       "source": "wanderer_trade",
       "output": "minecraft:coast_armor_trim_smithing_template",
       "policy": "support_only",
@@ -3018,7 +3018,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:cocoa_beans:130",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:cocoa_beans:130",
       "source": "wanderer_trade",
       "output": "minecraft:cocoa_beans",
       "policy": "support_only",
@@ -3032,7 +3032,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:cod_bucket:205",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:cod_bucket:205",
       "source": "wanderer_trade",
       "output": "minecraft:cod_bucket",
       "policy": "support_only",
@@ -3042,7 +3042,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:compass:224",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:compass:224",
       "source": "wanderer_trade",
       "output": "minecraft:compass",
       "policy": "support_only",
@@ -3056,7 +3056,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:cornflower:149",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:cornflower:149",
       "source": "wanderer_trade",
       "output": "minecraft:cornflower",
       "policy": "support_only",
@@ -3066,7 +3066,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:cyan_dye:168",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:cyan_dye:168",
       "source": "wanderer_trade",
       "output": "minecraft:cyan_dye",
       "policy": "support_only",
@@ -3080,7 +3080,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:dandelion:139",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:dandelion:139",
       "source": "wanderer_trade",
       "output": "minecraft:dandelion",
       "policy": "support_only",
@@ -3090,7 +3090,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:danger_pottery_sherd:239",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:danger_pottery_sherd:239",
       "source": "wanderer_trade",
       "output": "minecraft:danger_pottery_sherd",
       "policy": "support_only",
@@ -3100,7 +3100,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:dark_oak_sapling:116",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:dark_oak_sapling:116",
       "source": "wanderer_trade",
       "output": "minecraft:dark_oak_sapling",
       "policy": "support_only",
@@ -3110,7 +3110,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:dragon_breath:278",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:dragon_breath:278",
       "source": "wanderer_trade",
       "output": "minecraft:dragon_breath",
       "policy": "support_only",
@@ -3120,7 +3120,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:dragon_head:279",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:dragon_head:279",
       "source": "wanderer_trade",
       "output": "minecraft:dragon_head",
       "policy": "support_only",
@@ -3134,7 +3134,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:dripstone_block:177",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:dripstone_block:177",
       "source": "wanderer_trade",
       "output": "minecraft:dripstone_block",
       "policy": "support_only",
@@ -3148,7 +3148,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:dune_armor_trim_smithing_template:254",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:dune_armor_trim_smithing_template:254",
       "source": "wanderer_trade",
       "output": "minecraft:dune_armor_trim_smithing_template",
       "policy": "support_only",
@@ -3162,7 +3162,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:echo_shard:221",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:echo_shard:221",
       "source": "wanderer_trade",
       "output": "minecraft:echo_shard",
       "policy": "support_only",
@@ -3176,7 +3176,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:ender_pearl:213",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:ender_pearl:213",
       "source": "wanderer_trade",
       "output": "minecraft:ender_pearl",
       "policy": "support_only",
@@ -3190,7 +3190,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:explorer_pottery_sherd:240",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:explorer_pottery_sherd:240",
       "source": "wanderer_trade",
       "output": "minecraft:explorer_pottery_sherd",
       "policy": "support_only",
@@ -3200,7 +3200,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:eye_armor_trim_smithing_template:255",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:eye_armor_trim_smithing_template:255",
       "source": "wanderer_trade",
       "output": "minecraft:eye_armor_trim_smithing_template",
       "policy": "support_only",
@@ -3214,7 +3214,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:friend_pottery_sherd:241",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:friend_pottery_sherd:241",
       "source": "wanderer_trade",
       "output": "minecraft:friend_pottery_sherd",
       "policy": "support_only",
@@ -3224,7 +3224,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:ghast_tear:215",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:ghast_tear:215",
       "source": "wanderer_trade",
       "output": "minecraft:ghast_tear",
       "policy": "support_only",
@@ -3234,7 +3234,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:glow_berries:128",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:glow_berries:128",
       "source": "wanderer_trade",
       "output": "minecraft:glow_berries",
       "policy": "support_only",
@@ -3248,7 +3248,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:glowstone_dust:217",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:glowstone_dust:217",
       "source": "wanderer_trade",
       "output": "minecraft:glowstone_dust",
       "policy": "support_only",
@@ -3262,7 +3262,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:grass_block:137",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:grass_block:137",
       "source": "wanderer_trade",
       "output": "minecraft:grass_block",
       "policy": "support_only",
@@ -3276,7 +3276,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:gravel:187",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:gravel:187",
       "source": "wanderer_trade",
       "output": "minecraft:gravel",
       "policy": "support_only",
@@ -3290,7 +3290,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:gray_dye:166",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:gray_dye:166",
       "source": "wanderer_trade",
       "output": "minecraft:gray_dye",
       "policy": "support_only",
@@ -3304,7 +3304,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:green_dye:172",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:green_dye:172",
       "source": "wanderer_trade",
       "output": "minecraft:green_dye",
       "policy": "support_only",
@@ -3318,7 +3318,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:heart_of_the_sea:212",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:heart_of_the_sea:212",
       "source": "wanderer_trade",
       "output": "minecraft:heart_of_the_sea",
       "policy": "support_only",
@@ -3328,7 +3328,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:heart_pottery_sherd:242",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:heart_pottery_sherd:242",
       "source": "wanderer_trade",
       "output": "minecraft:heart_pottery_sherd",
       "policy": "support_only",
@@ -3338,7 +3338,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:heartbreak_pottery_sherd:243",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:heartbreak_pottery_sherd:243",
       "source": "wanderer_trade",
       "output": "minecraft:heartbreak_pottery_sherd",
       "policy": "support_only",
@@ -3348,7 +3348,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:honey_bottle:203",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:honey_bottle:203",
       "source": "wanderer_trade",
       "output": "minecraft:honey_bottle",
       "policy": "support_only",
@@ -3362,7 +3362,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:honeycomb:202",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:honeycomb:202",
       "source": "wanderer_trade",
       "output": "minecraft:honeycomb",
       "policy": "support_only",
@@ -3372,7 +3372,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:host_armor_trim_smithing_template:256",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:host_armor_trim_smithing_template:256",
       "source": "wanderer_trade",
       "output": "minecraft:host_armor_trim_smithing_template",
       "policy": "support_only",
@@ -3386,7 +3386,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:howl_pottery_sherd:244",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:howl_pottery_sherd:244",
       "source": "wanderer_trade",
       "output": "minecraft:howl_pottery_sherd",
       "policy": "support_only",
@@ -3396,7 +3396,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:ice:188",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:ice:188",
       "source": "wanderer_trade",
       "output": "minecraft:ice",
       "policy": "support_only",
@@ -3410,7 +3410,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:jungle_sapling:114",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:jungle_sapling:114",
       "source": "wanderer_trade",
       "output": "minecraft:jungle_sapling",
       "policy": "support_only",
@@ -3420,7 +3420,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:kelp:122",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:kelp:122",
       "source": "wanderer_trade",
       "output": "minecraft:kelp",
       "policy": "support_only",
@@ -3430,7 +3430,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:lantern:191",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:lantern:191",
       "source": "wanderer_trade",
       "output": "minecraft:lantern",
       "policy": "support_only",
@@ -3444,7 +3444,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:lead:196",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:lead:196",
       "source": "wanderer_trade",
       "output": "minecraft:lead",
       "policy": "support_only",
@@ -3458,7 +3458,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:light_blue_dye:162",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:light_blue_dye:162",
       "source": "wanderer_trade",
       "output": "minecraft:light_blue_dye",
       "policy": "support_only",
@@ -3472,7 +3472,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:light_gray_dye:167",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:light_gray_dye:167",
       "source": "wanderer_trade",
       "output": "minecraft:light_gray_dye",
       "policy": "support_only",
@@ -3486,7 +3486,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:lilac:152",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:lilac:152",
       "source": "wanderer_trade",
       "output": "minecraft:lilac",
       "policy": "support_only",
@@ -3496,7 +3496,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:lily_of_the_valley:150",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:lily_of_the_valley:150",
       "source": "wanderer_trade",
       "output": "minecraft:lily_of_the_valley",
       "policy": "support_only",
@@ -3506,7 +3506,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:lily_pad:124",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:lily_pad:124",
       "source": "wanderer_trade",
       "output": "minecraft:lily_pad",
       "policy": "support_only",
@@ -3520,7 +3520,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:lime_dye:164",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:lime_dye:164",
       "source": "wanderer_trade",
       "output": "minecraft:lime_dye",
       "policy": "support_only",
@@ -3534,7 +3534,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:magenta_dye:161",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:magenta_dye:161",
       "source": "wanderer_trade",
       "output": "minecraft:magenta_dye",
       "policy": "support_only",
@@ -3548,7 +3548,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:magma_cream:216",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:magma_cream:216",
       "source": "wanderer_trade",
       "output": "minecraft:magma_cream",
       "policy": "support_only",
@@ -3562,7 +3562,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:mangrove_propagule:117",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:mangrove_propagule:117",
       "source": "wanderer_trade",
       "output": "minecraft:mangrove_propagule",
       "policy": "support_only",
@@ -3572,7 +3572,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:miner_pottery_sherd:245",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:miner_pottery_sherd:245",
       "source": "wanderer_trade",
       "output": "minecraft:miner_pottery_sherd",
       "policy": "support_only",
@@ -3582,7 +3582,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:moss_block:125",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:moss_block:125",
       "source": "wanderer_trade",
       "output": "minecraft:moss_block",
       "policy": "support_only",
@@ -3596,7 +3596,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:mourner_pottery_sherd:246",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:mourner_pottery_sherd:246",
       "source": "wanderer_trade",
       "output": "minecraft:mourner_pottery_sherd",
       "policy": "support_only",
@@ -3606,7 +3606,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:mud:179",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:mud:179",
       "source": "wanderer_trade",
       "output": "minecraft:mud",
       "policy": "support_only",
@@ -3620,7 +3620,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:music_disc_13:226",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:music_disc_13:226",
       "source": "wanderer_trade",
       "output": "minecraft:music_disc_13",
       "policy": "support_only",
@@ -3630,7 +3630,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:music_disc_5:229",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:music_disc_5:229",
       "source": "wanderer_trade",
       "output": "minecraft:music_disc_5",
       "policy": "support_only",
@@ -3644,7 +3644,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:music_disc_cat:227",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:music_disc_cat:227",
       "source": "wanderer_trade",
       "output": "minecraft:music_disc_cat",
       "policy": "support_only",
@@ -3654,7 +3654,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:music_disc_otherside:228",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:music_disc_otherside:228",
       "source": "wanderer_trade",
       "output": "minecraft:music_disc_otherside",
       "policy": "support_only",
@@ -3664,7 +3664,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:mycelium:184",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:mycelium:184",
       "source": "wanderer_trade",
       "output": "minecraft:mycelium",
       "policy": "support_only",
@@ -3678,7 +3678,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:name_tag:197",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:name_tag:197",
       "source": "wanderer_trade",
       "output": "minecraft:name_tag",
       "policy": "support_only",
@@ -3692,7 +3692,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:nautilus_shell:211",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:nautilus_shell:211",
       "source": "wanderer_trade",
       "output": "minecraft:nautilus_shell",
       "policy": "support_only",
@@ -3702,7 +3702,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:nether_star:280",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:nether_star:280",
       "source": "wanderer_trade",
       "output": "minecraft:nether_star",
       "policy": "support_only",
@@ -3712,7 +3712,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:oak_sapling:111",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:oak_sapling:111",
       "source": "wanderer_trade",
       "output": "minecraft:oak_sapling",
       "policy": "support_only",
@@ -3722,7 +3722,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:orange_dye:160",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:orange_dye:160",
       "source": "wanderer_trade",
       "output": "minecraft:orange_dye",
       "policy": "support_only",
@@ -3736,7 +3736,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:orange_tulip:145",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:orange_tulip:145",
       "source": "wanderer_trade",
       "output": "minecraft:orange_tulip",
       "policy": "support_only",
@@ -3746,7 +3746,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:oxeye_daisy:148",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:oxeye_daisy:148",
       "source": "wanderer_trade",
       "output": "minecraft:oxeye_daisy",
       "policy": "support_only",
@@ -3756,7 +3756,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:packed_ice:189",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:packed_ice:189",
       "source": "wanderer_trade",
       "output": "minecraft:packed_ice",
       "policy": "support_only",
@@ -3770,7 +3770,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:packed_mud:180",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:packed_mud:180",
       "source": "wanderer_trade",
       "output": "minecraft:packed_mud",
       "policy": "support_only",
@@ -3784,7 +3784,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:peony:154",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:peony:154",
       "source": "wanderer_trade",
       "output": "minecraft:peony",
       "policy": "support_only",
@@ -3794,7 +3794,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:phantom_membrane:220",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:phantom_membrane:220",
       "source": "wanderer_trade",
       "output": "minecraft:phantom_membrane",
       "policy": "support_only",
@@ -3808,7 +3808,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:pink_dye:165",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:pink_dye:165",
       "source": "wanderer_trade",
       "output": "minecraft:pink_dye",
       "policy": "support_only",
@@ -3822,7 +3822,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:pink_petals:155",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:pink_petals:155",
       "source": "wanderer_trade",
       "output": "minecraft:pink_petals",
       "policy": "support_only",
@@ -3832,7 +3832,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:pink_tulip:147",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:pink_tulip:147",
       "source": "wanderer_trade",
       "output": "minecraft:pink_tulip",
       "policy": "support_only",
@@ -3842,7 +3842,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:pitcher_plant:158",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:pitcher_plant:158",
       "source": "wanderer_trade",
       "output": "minecraft:pitcher_plant",
       "policy": "support_only",
@@ -3852,7 +3852,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:pitcher_pod:232",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:pitcher_pod:232",
       "source": "wanderer_trade",
       "output": "minecraft:pitcher_pod",
       "policy": "support_only",
@@ -3862,7 +3862,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:plenty_pottery_sherd:247",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:plenty_pottery_sherd:247",
       "source": "wanderer_trade",
       "output": "minecraft:plenty_pottery_sherd",
       "policy": "support_only",
@@ -3872,7 +3872,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:podzol:183",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:podzol:183",
       "source": "wanderer_trade",
       "output": "minecraft:podzol",
       "policy": "support_only",
@@ -3882,7 +3882,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:pointed_dripstone:178",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:pointed_dripstone:178",
       "source": "wanderer_trade",
       "output": "minecraft:pointed_dripstone",
       "policy": "support_only",
@@ -3892,7 +3892,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:poppy:140",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:poppy:140",
       "source": "wanderer_trade",
       "output": "minecraft:poppy",
       "policy": "support_only",
@@ -3902,7 +3902,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:prize_pottery_sherd:248",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:prize_pottery_sherd:248",
       "source": "wanderer_trade",
       "output": "minecraft:prize_pottery_sherd",
       "policy": "support_only",
@@ -3912,7 +3912,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:pufferfish_bucket:208",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:pufferfish_bucket:208",
       "source": "wanderer_trade",
       "output": "minecraft:pufferfish_bucket",
       "policy": "support_only",
@@ -3922,7 +3922,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:purple_dye:169",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:purple_dye:169",
       "source": "wanderer_trade",
       "output": "minecraft:purple_dye",
       "policy": "support_only",
@@ -3936,7 +3936,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:quartz:218",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:quartz:218",
       "source": "wanderer_trade",
       "output": "minecraft:quartz",
       "policy": "support_only",
@@ -3950,7 +3950,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:rabbit_foot:204",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:rabbit_foot:204",
       "source": "wanderer_trade",
       "output": "minecraft:rabbit_foot",
       "policy": "support_only",
@@ -3964,7 +3964,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:raiser_armor_trim_smithing_template:257",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:raiser_armor_trim_smithing_template:257",
       "source": "wanderer_trade",
       "output": "minecraft:raiser_armor_trim_smithing_template",
       "policy": "support_only",
@@ -3978,7 +3978,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:recovery_compass:225",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:recovery_compass:225",
       "source": "wanderer_trade",
       "output": "minecraft:recovery_compass",
       "policy": "support_only",
@@ -3992,7 +3992,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:red_dye:173",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:red_dye:173",
       "source": "wanderer_trade",
       "output": "minecraft:red_dye",
       "policy": "support_only",
@@ -4006,7 +4006,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:red_mushroom:135",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:red_mushroom:135",
       "source": "wanderer_trade",
       "output": "minecraft:red_mushroom",
       "policy": "support_only",
@@ -4020,7 +4020,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:red_sand:186",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:red_sand:186",
       "source": "wanderer_trade",
       "output": "minecraft:red_sand",
       "policy": "support_only",
@@ -4034,7 +4034,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:red_tulip:144",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:red_tulip:144",
       "source": "wanderer_trade",
       "output": "minecraft:red_tulip",
       "policy": "support_only",
@@ -4044,7 +4044,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:rib_armor_trim_smithing_template:258",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:rib_armor_trim_smithing_template:258",
       "source": "wanderer_trade",
       "output": "minecraft:rib_armor_trim_smithing_template",
       "policy": "support_only",
@@ -4058,7 +4058,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:rooted_dirt:138",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:rooted_dirt:138",
       "source": "wanderer_trade",
       "output": "minecraft:rooted_dirt",
       "policy": "support_only",
@@ -4068,7 +4068,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:rose_bush:153",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:rose_bush:153",
       "source": "wanderer_trade",
       "output": "minecraft:rose_bush",
       "policy": "support_only",
@@ -4078,7 +4078,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:saddle:195",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:saddle:195",
       "source": "wanderer_trade",
       "output": "minecraft:saddle",
       "policy": "support_only",
@@ -4092,7 +4092,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:salmon_bucket:206",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:salmon_bucket:206",
       "source": "wanderer_trade",
       "output": "minecraft:salmon_bucket",
       "policy": "support_only",
@@ -4102,7 +4102,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:sand:185",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:sand:185",
       "source": "wanderer_trade",
       "output": "minecraft:sand",
       "policy": "support_only",
@@ -4116,7 +4116,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:scaffolding:199",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:scaffolding:199",
       "source": "wanderer_trade",
       "output": "minecraft:scaffolding",
       "policy": "support_only",
@@ -4130,7 +4130,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:sea_pickle:136",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:sea_pickle:136",
       "source": "wanderer_trade",
       "output": "minecraft:sea_pickle",
       "policy": "support_only",
@@ -4140,7 +4140,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:sentry_armor_trim_smithing_template:259",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:sentry_armor_trim_smithing_template:259",
       "source": "wanderer_trade",
       "output": "minecraft:sentry_armor_trim_smithing_template",
       "policy": "support_only",
@@ -4154,7 +4154,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:shaper_armor_trim_smithing_template:260",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:shaper_armor_trim_smithing_template:260",
       "source": "wanderer_trade",
       "output": "minecraft:shaper_armor_trim_smithing_template",
       "policy": "support_only",
@@ -4168,7 +4168,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:sheaf_pottery_sherd:249",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:sheaf_pottery_sherd:249",
       "source": "wanderer_trade",
       "output": "minecraft:sheaf_pottery_sherd",
       "policy": "support_only",
@@ -4178,7 +4178,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:shelter_pottery_sherd:250",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:shelter_pottery_sherd:250",
       "source": "wanderer_trade",
       "output": "minecraft:shelter_pottery_sherd",
       "policy": "support_only",
@@ -4188,7 +4188,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:shulker_shell:276",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:shulker_shell:276",
       "source": "wanderer_trade",
       "output": "minecraft:shulker_shell",
       "policy": "support_only",
@@ -4202,7 +4202,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:silence_armor_trim_smithing_template:261",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:silence_armor_trim_smithing_template:261",
       "source": "wanderer_trade",
       "output": "minecraft:silence_armor_trim_smithing_template",
       "policy": "support_only",
@@ -4216,7 +4216,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:skull_pottery_sherd:251",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:skull_pottery_sherd:251",
       "source": "wanderer_trade",
       "output": "minecraft:skull_pottery_sherd",
       "policy": "support_only",
@@ -4226,7 +4226,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:slime_ball:201",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:slime_ball:201",
       "source": "wanderer_trade",
       "output": "minecraft:slime_ball",
       "policy": "support_only",
@@ -4240,7 +4240,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:small_dripleaf:127",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:small_dripleaf:127",
       "source": "wanderer_trade",
       "output": "minecraft:small_dripleaf",
       "policy": "support_only",
@@ -4250,7 +4250,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:sniffer_egg:230",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:sniffer_egg:230",
       "source": "wanderer_trade",
       "output": "minecraft:sniffer_egg",
       "policy": "support_only",
@@ -4260,7 +4260,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:snort_pottery_sherd:252",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:snort_pottery_sherd:252",
       "source": "wanderer_trade",
       "output": "minecraft:snort_pottery_sherd",
       "policy": "support_only",
@@ -4270,7 +4270,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:snout_armor_trim_smithing_template:262",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:snout_armor_trim_smithing_template:262",
       "source": "wanderer_trade",
       "output": "minecraft:snout_armor_trim_smithing_template",
       "policy": "support_only",
@@ -4284,7 +4284,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:soul_campfire:194",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:soul_campfire:194",
       "source": "wanderer_trade",
       "output": "minecraft:soul_campfire",
       "policy": "support_only",
@@ -4298,7 +4298,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:soul_lantern:192",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:soul_lantern:192",
       "source": "wanderer_trade",
       "output": "minecraft:soul_lantern",
       "policy": "support_only",
@@ -4312,7 +4312,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:spire_armor_trim_smithing_template:263",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:spire_armor_trim_smithing_template:263",
       "source": "wanderer_trade",
       "output": "minecraft:spire_armor_trim_smithing_template",
       "policy": "support_only",
@@ -4326,7 +4326,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:spore_blossom:156",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:spore_blossom:156",
       "source": "wanderer_trade",
       "output": "minecraft:spore_blossom",
       "policy": "support_only",
@@ -4336,7 +4336,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:spruce_sapling:112",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:spruce_sapling:112",
       "source": "wanderer_trade",
       "output": "minecraft:spruce_sapling",
       "policy": "support_only",
@@ -4346,7 +4346,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:spyglass:222",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:spyglass:222",
       "source": "wanderer_trade",
       "output": "minecraft:spyglass",
       "policy": "support_only",
@@ -4360,7 +4360,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:sugar_cane:120",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:sugar_cane:120",
       "source": "wanderer_trade",
       "output": "minecraft:sugar_cane",
       "policy": "support_only",
@@ -4374,7 +4374,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:sunflower:151",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:sunflower:151",
       "source": "wanderer_trade",
       "output": "minecraft:sunflower",
       "policy": "support_only",
@@ -4384,7 +4384,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:sweet_berries:129",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:sweet_berries:129",
       "source": "wanderer_trade",
       "output": "minecraft:sweet_berries",
       "policy": "support_only",
@@ -4398,7 +4398,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:tadpole_bucket:210",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:tadpole_bucket:210",
       "source": "wanderer_trade",
       "output": "minecraft:tadpole_bucket",
       "policy": "support_only",
@@ -4408,7 +4408,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:terracotta:182",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:terracotta:182",
       "source": "wanderer_trade",
       "output": "minecraft:terracotta",
       "policy": "support_only",
@@ -4422,7 +4422,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:tide_armor_trim_smithing_template:264",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:tide_armor_trim_smithing_template:264",
       "source": "wanderer_trade",
       "output": "minecraft:tide_armor_trim_smithing_template",
       "policy": "support_only",
@@ -4436,7 +4436,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:torchflower:157",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:torchflower:157",
       "source": "wanderer_trade",
       "output": "minecraft:torchflower",
       "policy": "support_only",
@@ -4446,7 +4446,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:torchflower_seeds:231",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:torchflower_seeds:231",
       "source": "wanderer_trade",
       "output": "minecraft:torchflower_seeds",
       "policy": "support_only",
@@ -4456,7 +4456,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:totem_of_undying:277",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:totem_of_undying:277",
       "source": "wanderer_trade",
       "output": "minecraft:totem_of_undying",
       "policy": "support_only",
@@ -4466,7 +4466,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:tropical_fish_bucket:207",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:tropical_fish_bucket:207",
       "source": "wanderer_trade",
       "output": "minecraft:tropical_fish_bucket",
       "policy": "support_only",
@@ -4476,7 +4476,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:tuff:176",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:tuff:176",
       "source": "wanderer_trade",
       "output": "minecraft:tuff",
       "policy": "support_only",
@@ -4490,7 +4490,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:vex_armor_trim_smithing_template:265",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:vex_armor_trim_smithing_template:265",
       "source": "wanderer_trade",
       "output": "minecraft:vex_armor_trim_smithing_template",
       "policy": "support_only",
@@ -4504,7 +4504,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:vine:123",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:vine:123",
       "source": "wanderer_trade",
       "output": "minecraft:vine",
       "policy": "support_only",
@@ -4514,7 +4514,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:ward_armor_trim_smithing_template:266",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:ward_armor_trim_smithing_template:266",
       "source": "wanderer_trade",
       "output": "minecraft:ward_armor_trim_smithing_template",
       "policy": "support_only",
@@ -4528,7 +4528,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:wayfinder_armor_trim_smithing_template:267",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:wayfinder_armor_trim_smithing_template:267",
       "source": "wanderer_trade",
       "output": "minecraft:wayfinder_armor_trim_smithing_template",
       "policy": "support_only",
@@ -4542,7 +4542,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:white_dye:159",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:white_dye:159",
       "source": "wanderer_trade",
       "output": "minecraft:white_dye",
       "policy": "support_only",
@@ -4556,7 +4556,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:white_tulip:146",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:white_tulip:146",
       "source": "wanderer_trade",
       "output": "minecraft:white_tulip",
       "policy": "support_only",
@@ -4566,7 +4566,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:wild_armor_trim_smithing_template:268",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:wild_armor_trim_smithing_template:268",
       "source": "wanderer_trade",
       "output": "minecraft:wild_armor_trim_smithing_template",
       "policy": "support_only",
@@ -4580,7 +4580,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:minecraft:yellow_dye:163",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:minecraft:yellow_dye:163",
       "source": "wanderer_trade",
       "output": "minecraft:yellow_dye",
       "policy": "support_only",
@@ -4594,7 +4594,7 @@
       ]
     },
     {
-      "id": "wanderer_trade:BTM_WANDERER_MARKET:pneumaticcraft:night_vision_upgrade:275",
+      "id": "wanderer_trade:BC_WANDERER_MARKET:pneumaticcraft:night_vision_upgrade:275",
       "source": "wanderer_trade",
       "output": "pneumaticcraft:night_vision_upgrade",
       "policy": "support_only",

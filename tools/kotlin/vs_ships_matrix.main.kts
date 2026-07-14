@@ -46,7 +46,7 @@ val variantsByName = variants.associateBy { it.name }
 
 fun usage(message: String? = null): Nothing {
     if (message != null) System.err.println(message)
-    System.err.println("Usage: tools/btm test scenario vs_ships_matrix --profile quick|release|brutal [--variants NAME,...] [--cycles N] [--port N] [--bootstrap-mode always|once|never] [--run-root PATH] [--timeout-seconds N] [--keep-going] [--keep-runs]")
+    System.err.println("Usage: tools/bc test scenario vs_ships_matrix --profile quick|release|brutal [--variants NAME,...] [--cycles N] [--port N] [--bootstrap-mode always|once|never] [--run-root PATH] [--timeout-seconds N] [--keep-going] [--keep-runs]")
     exitProcess(2)
 }
 fun q(value: String?) = if (value == null) "null" else "\"" + value.replace("\\", "\\\\").replace("\"", "\\\"").replace("\n", "\\n") + "\""
@@ -157,8 +157,8 @@ var keepGoing = false
 var keepRuns = false
 var cycles = 1
 var requestedVariants: List<String>? = null
-var runRoot = System.getenv("BTM_HARNESS_RUN_ROOT")?.takeIf(String::isNotBlank)?.let(Paths::get) ?: Paths.get("/tmp/btm-vs-ships-matrix")
-var port = System.getenv("BTM_HARNESS_ACTUAL_PORT")?.takeIf(String::isNotBlank)?.toIntOrNull() ?: 25565
+var runRoot = System.getenv("BC_HARNESS_RUN_ROOT")?.takeIf(String::isNotBlank)?.let(Paths::get) ?: Paths.get("/tmp/bc-vs-ships-matrix")
+var port = System.getenv("BC_HARNESS_ACTUAL_PORT")?.takeIf(String::isNotBlank)?.toIntOrNull() ?: 25565
 var timeoutSeconds = 240L
 var index = 0
 while (index < args.size) {
@@ -200,7 +200,7 @@ cycleLoop@ for (cycle in 1..cycles) {
     val base = runRoot.resolve("cycle-$cycle-base")
     val shouldPrepare = bootstrapMode == "always" || (bootstrapMode == "once" && !base.exists())
     if (shouldPrepare) {
-        val command = listOf(root.resolve("tools/btm").toString(), "internal", "prepare-server-runtime", "--server-dir", base.toString(), "--port", nextPort.toString(), "--reset-runtime")
+        val command = listOf(root.resolve("tools/bc").toString(), "internal", "prepare-server-runtime", "--server-dir", base.toString(), "--port", nextPort.toString(), "--reset-runtime")
         commandsLog.appendLine(command.joinToString(" "))
         val prep = runTimed(command, 900)
         Files.writeString(runRoot.resolve("cycle-$cycle-prepare.log"), prep.output)

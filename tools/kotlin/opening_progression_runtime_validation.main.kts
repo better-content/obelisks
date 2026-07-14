@@ -31,7 +31,7 @@ data class RunningServer(val process: Process, val stdin: BufferedWriter?, val l
 
 fun usage(message: String? = null): Nothing {
     if (message != null) System.err.println(message)
-    System.err.println("Usage: tools/btm test scenario opening_progression [--cycles N] [--timeout N] [--port N] [--bootstrap-mode always|once|never] [--run-root PATH] [--keep-going] [--keep-runs]")
+    System.err.println("Usage: tools/bc test scenario opening_progression [--cycles N] [--timeout N] [--port N] [--bootstrap-mode always|once|never] [--run-root PATH] [--keep-going] [--keep-runs]")
     exitProcess(2)
 }
 
@@ -40,16 +40,16 @@ fun envPath(name: String): Path? = System.getenv(name)?.takeIf { it.isNotBlank()
 fun parseConfig(args: Array<String>): ScenarioConfig {
     var cycles = 1
     var timeoutSeconds = 240
-    var requestedPort = System.getenv("BTM_HARNESS_REQUESTED_PORT")?.toIntOrNull() ?: 25565
-    var actualPort = System.getenv("BTM_HARNESS_ACTUAL_PORT")?.toIntOrNull()
+    var requestedPort = System.getenv("BC_HARNESS_REQUESTED_PORT")?.toIntOrNull() ?: 25565
+    var actualPort = System.getenv("BC_HARNESS_ACTUAL_PORT")?.toIntOrNull()
     var bootstrapMode = "always"
     var keepGoing = false
     var keepRuns = false
-    var runRoot = envPath("BTM_HARNESS_RUN_ROOT") ?: Paths.get("/tmp/btm-opening-progression")
-    var statusPath = envPath("BTM_HARNESS_STATUS_PATH")
-    var summaryPath = envPath("BTM_HARNESS_SUMMARY_PATH")
-    var latestStatusPath = envPath("BTM_HARNESS_LATEST_STATUS_PATH")
-    var latestSummaryPath = envPath("BTM_HARNESS_LATEST_SUMMARY_PATH")
+    var runRoot = envPath("BC_HARNESS_RUN_ROOT") ?: Paths.get("/tmp/bc-opening-progression")
+    var statusPath = envPath("BC_HARNESS_STATUS_PATH")
+    var summaryPath = envPath("BC_HARNESS_SUMMARY_PATH")
+    var latestStatusPath = envPath("BC_HARNESS_LATEST_STATUS_PATH")
+    var latestSummaryPath = envPath("BC_HARNESS_LATEST_SUMMARY_PATH")
     var index = 0
     while (index < args.size) {
         when (args[index]) {
@@ -126,7 +126,7 @@ fun parseConfig(args: Array<String>): ScenarioConfig {
         summaryPath = summaryPath,
         latestStatusPath = latestStatusPath,
         latestSummaryPath = latestSummaryPath,
-        fakeMode = System.getenv("BTM_TEST_OPENING_PROGRESS_FAKE")?.takeIf { it.isNotBlank() },
+        fakeMode = System.getenv("BC_TEST_OPENING_PROGRESS_FAKE")?.takeIf { it.isNotBlank() },
     )
 }
 
@@ -160,7 +160,7 @@ fun setServerPort(path: Path, port: Int) {
 fun ensureSmokeBootstrapped(root: Path, serverDir: Path, port: Int) {
     val exit = runCommand(
         listOf(
-            "tools/btm",
+            "tools/bc",
             "test",
             "smoke",
             "--server-dir",
@@ -187,7 +187,7 @@ fun startServer(serverDir: Path, port: Int, evidenceDir: Path): RunningServer {
         .directory(serverDir.toFile())
         .redirectErrorStream(true)
         .redirectOutput(logPath.toFile())
-    builder.environment()["BTM_SERVER_PORT"] = port.toString()
+    builder.environment()["BC_SERVER_PORT"] = port.toString()
     val process = builder.start()
     return RunningServer(process, process.outputStream.bufferedWriter(), logPath)
 }

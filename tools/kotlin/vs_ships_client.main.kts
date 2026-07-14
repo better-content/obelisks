@@ -59,15 +59,15 @@ val contract = ClientContract(
     syncWaitSeconds = contractInt("assembly.syncWaitSeconds"),
     screenshots = contractProperties.getProperty("screenshots").split(',').filter(String::isNotBlank),
 )
-if ((System.getenv("DISPLAY").isNullOrBlank() || GraphicsEnvironment.isHeadless()) && System.getenv("BTM_VS_XVFB") != "1") {
+if ((System.getenv("DISPLAY").isNullOrBlank() || GraphicsEnvironment.isHeadless()) && System.getenv("BC_VS_XVFB") != "1") {
     val command = listOf("xvfb-run", "-a", "-s", "-screen 0 ${contract.displayWidth}x${contract.displayHeight}x24", "kotlin", "-J-Djava.awt.headless=false", root.resolve("tools/kotlin/vs_ships_client.main.kts").toString()) + args
-    val process = ProcessBuilder(command).directory(root.toFile()).inheritIO().apply { environment()["BTM_VS_XVFB"] = "1" }.start()
+    val process = ProcessBuilder(command).directory(root.toFile()).inheritIO().apply { environment()["BC_VS_XVFB"] = "1" }.start()
     exitProcess(process.waitFor())
 }
 
 fun usage(message: String? = null): Nothing {
     if (message != null) System.err.println(message)
-    System.err.println("Usage: tools/btm test scenario-headful vs_ships_client --profile quick|release [--fixture core|trackwork|clockwork|combined] [--variant current|dh_disabled|c2me_disabled|dh_c2me_disabled|dh_renderer_disabled|dh_renderer_connectivity] [--stop-after assembly|lifecycle] [--bootstrap-mode always|once|never] [--port N] [--run-root PATH] [--keep-runs]")
+    System.err.println("Usage: tools/bc test scenario-headful vs_ships_client --profile quick|release|stress [--fixture core|trackwork|clockwork|combined] [--variant current|dh_disabled|c2me_disabled|dh_c2me_disabled|dh_renderer_disabled|dh_renderer_connectivity] [--stop-after assembly|lifecycle] [--bootstrap-mode always|once|never] [--port N] [--run-root PATH] [--keep-runs]")
     exitProcess(2)
 }
 fun q(value: String?) = if (value == null) "null" else "\"" + value.replace("\\", "\\\\").replace("\"", "\\\"").replace("\n", "\\n") + "\""
@@ -152,7 +152,7 @@ fun stopProcess(process: Process?) {
     if (!process.waitFor(20, TimeUnit.SECONDS)) process.destroyForcibly()
 }
 fun prepareArgfile(clientDir: Path, username: String, port: Int, out: Path, log: Path) {
-    val command = listOf(root.resolve("tools/btm").toString(), "internal", "minecraft-client-argfile", "--client-dir", clientDir.toString(), "--version-id", "1.20.1-forge-47.4.13", "--username", username, "--server", "127.0.0.1:$port", "--out", out.toString())
+    val command = listOf(root.resolve("tools/bc").toString(), "internal", "minecraft-client-argfile", "--client-dir", clientDir.toString(), "--version-id", "1.20.1-forge-47.4.13", "--username", username, "--server", "127.0.0.1:$port", "--out", out.toString())
     if (run(command, 600, log) != 0) error("client argument generation failed; see $log")
     Files.writeString(out, Files.readString(out) + "\"--width\"\n\"${contract.displayWidth}\"\n\"--height\"\n\"${contract.displayHeight}\"\n")
 }
@@ -319,6 +319,7 @@ fun classify(text: String, error: Throwable): String {
         "render_environment_inconclusive" to Regex("render environment inconclusive|llvmpipe|unsupported GLSL", RegexOption.IGNORE_CASE),
         "assembly_sync_failure" to Regex("assembly sync failure|visible only after client reconnect", RegexOption.IGNORE_CASE),
         "ship_transform_sync_failure" to Regex("ship transform sync failure|visible only after command teleport", RegexOption.IGNORE_CASE),
+        "client_backlog_stress_failure" to Regex("client backlog stress failure", RegexOption.IGNORE_CASE),
         "ship_assembly_failure" to Regex("helm|assembly|assemble|ship assertion|Found ship", RegexOption.IGNORE_CASE),
         "ship_save_reload_failure" to Regex("restart|reconnect", RegexOption.IGNORE_CASE),
     )
@@ -343,8 +344,8 @@ var variant = "current"
 var stopAfter = "lifecycle"
 var bootstrapMode = "always"
 var keepRuns = false
-var runRoot = System.getenv("BTM_HARNESS_RUN_ROOT")?.takeIf(String::isNotBlank)?.let(Paths::get) ?: Paths.get("/tmp/btm-vs-ships-client-quick")
-var port = System.getenv("BTM_HARNESS_ACTUAL_PORT")?.toIntOrNull() ?: 25569
+var runRoot = System.getenv("BC_HARNESS_RUN_ROOT")?.takeIf(String::isNotBlank)?.let(Paths::get) ?: Paths.get("/tmp/bc-vs-ships-client-quick")
+var port = System.getenv("BC_HARNESS_ACTUAL_PORT")?.toIntOrNull() ?: 25569
 var index = 0
 while (index < args.size) {
     when (args[index]) {
@@ -360,7 +361,7 @@ while (index < args.size) {
         else -> usage("unknown argument: ${args[index]}")
     }
 }
-if (profile !in setOf("quick", "release")) usage("invalid profile: $profile")
+if (profile !in setOf("quick", "release", "stress")) usage("invalid profile: $profile")
 if (fixture !in setOf("core", "trackwork", "clockwork", "combined")) usage("invalid fixture: $fixture")
 if (variant !in setOf("current", "dh_disabled", "c2me_disabled", "dh_c2me_disabled", "dh_renderer_disabled", "dh_renderer_connectivity")) usage("invalid variant: $variant")
 if (stopAfter !in setOf("assembly", "lifecycle")) usage("invalid stop phase: $stopAfter")
@@ -382,6 +383,11 @@ var assembledRenderScore: Double? = null
 var reconnectProbeRenderScore: Double? = null
 var teleportProbeRenderScore: Double? = null
 var teleportProbeConfirmed = false
+var stressSamples = 0
+var stressDurationMs: Long? = null
+var stressPhysicsQueueWarnings = 0
+var stressModernFixWatchdogs = 0
+var stressDisconnects = 0
 val robot = Robot().apply { autoDelay = 80 }
 fun phase(name: String, block: () -> Unit) {
     val started = System.nanoTime()
@@ -398,14 +404,14 @@ try {
     phase("prepare_runtimes") {
         val shouldPrepareServer = bootstrapMode == "always" || (bootstrapMode == "once" && !serverDir.resolve("run.sh").exists())
         if (shouldPrepareServer) {
-            val command = listOf(root.resolve("tools/btm").toString(), "internal", "prepare-server-runtime", "--server-dir", serverDir.toString(), "--port", port.toString(), "--reset-runtime")
+            val command = listOf(root.resolve("tools/bc").toString(), "internal", "prepare-server-runtime", "--server-dir", serverDir.toString(), "--port", port.toString(), "--reset-runtime")
             commands.appendLine(command.joinToString(" "))
             if (run(command, 900, evidence.resolve("prepare-server.log")) != 0) error("server runtime preparation failed")
         } else if (!serverDir.resolve("run.sh").exists()) error("prepared server runtime missing: $serverDir")
         val shouldPrepareClient = bootstrapMode == "always" || (bootstrapMode == "once" && !pilotDir.resolve("versions/1.20.1-forge-47.4.13").exists())
         if (shouldPrepareClient) {
             if (!keepRuns) deleteTree(pilotDir)
-            val command = listOf(root.resolve("tools/btm").toString(), "internal", "prepare-client-runtime", "--client-dir", pilotDir.toString())
+            val command = listOf(root.resolve("tools/bc").toString(), "internal", "prepare-client-runtime", "--client-dir", pilotDir.toString())
             commands.appendLine(command.joinToString(" "))
             if (run(command, 1_200, evidence.resolve("prepare-client.log")) != 0) error("client runtime preparation failed")
         } else if (!pilotDir.resolve("versions/1.20.1-forge-47.4.13").exists()) error("prepared client runtime missing: $pilotDir")
@@ -445,15 +451,15 @@ try {
         screenshot(robot, evidence.resolve("pilot-title.png"))
         waitFor(server!!.log, Regex("AgentPilot joined the game"), 900, pilot, joins + 1)
         Thread.sleep(5_000)
-        assertPlayerConnected(server!!, "AgentPilot", commands, "BTM_VS_PILOT_CONNECTION_STABLE")
+        assertPlayerConnected(server!!, "AgentPilot", commands, "BC_VS_PILOT_CONNECTION_STABLE")
         respawnIfDead(robot, server!!, commands)
         screenshot(robot, evidence.resolve("pilot-loading.png"))
         if (!waitForPlayableFrame(robot, evidence.resolve("pilot-joined.png"), 120)) error("joined client never produced a playable frame")
         var onboardingComplete = false
-        val onboardingPattern = Regex("\\[Server] BTM_VS_ONBOARDING_COMPLETE")
+        val onboardingPattern = Regex("\\[Server] BC_VS_ONBOARDING_COMPLETE")
         val previousOnboardingMarkers = onboardingPattern.findAll(tail(server!!.log)).count()
         for (attempt in 1..6) {
-            send(server!!, "execute if entity @a[name=AgentPilot,gamemode=!spectator] run say BTM_VS_ONBOARDING_COMPLETE", commands)
+            send(server!!, "execute if entity @a[name=AgentPilot,gamemode=!spectator] run sayBC_VS_ONBOARDING_COMPLETE", commands)
             Thread.sleep(1_000)
             if (onboardingPattern.findAll(tail(server!!.log)).count() > previousOnboardingMarkers) {
                 onboardingComplete = true
@@ -475,11 +481,11 @@ try {
         if (fixture in setOf("trackwork", "combined")) send(server!!, "setblock 1 $y 1 trackwork:phys_track", commands)
         if (fixture in setOf("clockwork", "combined")) send(server!!, "setblock 1 $y -1 vs_clockwork:phys_bearing", commands)
         listOf("0 $y 0 vs_eureka:oak_ship_helm", "1 $y 0 minecraft:oak_planks", "2 $y 0 vs_eureka:engine", "1 ${y + 1} 0 vs_eureka:floater").forEachIndexed { fixtureIndex, check ->
-            send(server!!, "execute if block $check run say BTM_VS_CORE_FIXTURE_$fixtureIndex", commands)
+            send(server!!, "execute if block $check run sayBC_VS_CORE_FIXTURE_$fixtureIndex", commands)
         }
-        send(server!!, "say BTM_VS_CLIENT_FIXTURE_READY", commands)
-        waitFor(server!!.log, Regex("BTM_VS_CLIENT_FIXTURE_READY"), 30, server!!.process)
-        waitFor(server!!.log, Regex("BTM_VS_CORE_FIXTURE_3"), 30, server!!.process)
+        send(server!!, "sayBC_VS_CLIENT_FIXTURE_READY", commands)
+        waitFor(server!!.log, Regex("BC_VS_CLIENT_FIXTURE_READY"), 30, server!!.process)
+        waitFor(server!!.log, Regex("BC_VS_CORE_FIXTURE_3"), 30, server!!.process)
         send(server!!, "item replace entity AgentPilot weapon.mainhand with minecraft:air", commands)
         send(server!!, "item replace entity AgentPilot weapon.offhand with minecraft:air", commands)
         send(server!!, "tp AgentPilot 0.5 ${contract.fixtureY - 1.0} 4.5 180 2", commands)
@@ -558,7 +564,7 @@ try {
         pilot = startClient(pilotDir, evidence.resolve("pilot.args"), evidence.resolve("pilot-client-console-render-probe.log"))
         waitForTitleReady(pilotDir, pilot!!)
         waitFor(server!!.log, Regex("AgentPilot joined the game"), 900, pilot, joins + 1)
-        assertPlayerConnected(server!!, "AgentPilot", commands, "BTM_VS_RENDER_PROBE_CONNECTED")
+        assertPlayerConnected(server!!, "AgentPilot", commands, "BC_VS_RENDER_PROBE_CONNECTED")
         send(server!!, "gamemode creative AgentPilot", commands)
         send(server!!, "tp AgentPilot 0.5 ${y - 1.0} 4.5 180 2", commands)
         Thread.sleep(10_000)
@@ -583,9 +589,62 @@ try {
         waitForTitleReady(pilotDir, pilot!!)
         screenshot(robot, evidence.resolve("pilot-title-reconnect.png"))
         waitFor(server!!.log, Regex("AgentPilot joined the game"), 900, pilot, joins + 1)
-        assertPlayerConnected(server!!, "AgentPilot", commands, "BTM_VS_PILOT_RECONNECT_STABLE")
+        assertPlayerConnected(server!!, "AgentPilot", commands, "BC_VS_PILOT_RECONNECT_STABLE")
         if (!waitForPlayableFrame(robot, evidence.resolve("pilot-reconnected.png"), 120)) error("reconnect never produced a playable frame")
         assertShips(server!!, commands, makeStatic = true)
+    }
+    if (profile == "stress" && stopAfter == "lifecycle") phase("client_backlog_stress") {
+        val started = System.nanoTime()
+        val physicsPattern = Regex("Too many physics frames in the physics frame queue", RegexOption.IGNORE_CASE)
+        val watchdogPattern = Regex("ModernFix integrated server watchdog|A single server tick has taken|server thread dump", RegexOption.IGNORE_CASE)
+        val disconnectPattern = Regex("AgentPilot lost connection|Disconnected|Connection Lost|Timed out", RegexOption.IGNORE_CASE)
+        val serverBefore = tail(server!!.log)
+        val clientBefore = tail(pilotDir.resolve("logs/latest.log"))
+        val consoleBefore = tail(evidence.resolve("pilot-client-console-2.log"))
+        val beforePhysics = physicsPattern.findAll(serverBefore + clientBefore + consoleBefore).count()
+        val beforeWatchdogs = watchdogPattern.findAll(serverBefore + clientBefore + consoleBefore).count()
+        val beforeDisconnects = disconnectPattern.findAll(serverBefore + clientBefore + consoleBefore).count()
+        val y = contract.fixtureY
+        val probes = listOf(
+            0 to 0,
+            384 to 0,
+            -384 to 384,
+            768 to -384,
+            -768 to -768,
+            1152 to 512,
+        )
+        for ((probeIndex, coordinate) in probes.withIndex()) {
+            val x = coordinate.first
+            val z = coordinate.second
+            send(server!!, "tp AgentPilot ${x + 0.5} ${y - 1.0} ${z + 4.5} 180 2", commands)
+            if (probeIndex > 0) {
+                val previousTeleports = Regex("Teleported 1 ships", RegexOption.IGNORE_CASE).findAll(tail(server!!.log)).count()
+                send(server!!, "vs teleport @v[] $x $y $z", commands)
+                waitFor(server!!.log, Regex("Teleported 1 ships", RegexOption.IGNORE_CASE), 30, server!!.process, previousTeleports + 1)
+            }
+            Thread.sleep(8_000)
+            assertPlayerConnected(server!!, "AgentPilot", commands, "BC_VS_STRESS_CONNECTED_$probeIndex")
+            captureWorld(robot, evidence.resolve("stress-probe-${probeIndex + 1}.png"))
+            stressSamples++
+        }
+        Thread.sleep(20_000)
+        val serverAfter = tail(server!!.log)
+        val clientAfter = tail(pilotDir.resolve("logs/latest.log"))
+        val consoleAfter = tail(evidence.resolve("pilot-client-console-2.log"))
+        val stressText = serverAfter + clientAfter + consoleAfter
+        stressPhysicsQueueWarnings = (physicsPattern.findAll(stressText).count() - beforePhysics).coerceAtLeast(0)
+        stressModernFixWatchdogs = (watchdogPattern.findAll(stressText).count() - beforeWatchdogs).coerceAtLeast(0)
+        stressDisconnects = (disconnectPattern.findAll(stressText).count() - beforeDisconnects).coerceAtLeast(0)
+        stressDurationMs = (System.nanoTime() - started) / 1_000_000
+        Files.writeString(evidence.resolve("stress-metrics.txt"), buildString {
+            appendLine("samples=$stressSamples")
+            appendLine("duration_ms=$stressDurationMs")
+            appendLine("physics_queue_warnings=$stressPhysicsQueueWarnings")
+            appendLine("modernfix_watchdogs=$stressModernFixWatchdogs")
+            appendLine("disconnects=$stressDisconnects")
+        })
+        if (stressModernFixWatchdogs > 0) error("client backlog stress failure: ModernFix watchdog signature appeared ($stressModernFixWatchdogs)")
+        if (stressDisconnects > 0) error("client backlog stress failure: client disconnect signature appeared ($stressDisconnects)")
     }
     if (stopAfter == "lifecycle") phase("server_restart_reload") {
         stopProcess(pilot)
@@ -598,7 +657,7 @@ try {
         waitForTitleReady(pilotDir, pilot!!)
         screenshot(robot, evidence.resolve("pilot-title-restart.png"))
         waitFor(server!!.log, Regex("AgentPilot joined the game"), 900, pilot)
-        assertPlayerConnected(server!!, "AgentPilot", commands, "BTM_VS_PILOT_RESTART_STABLE")
+        assertPlayerConnected(server!!, "AgentPilot", commands, "BC_VS_PILOT_RESTART_STABLE")
         if (!waitForPlayableFrame(robot, evidence.resolve("pilot-after-server-restart.png"), 120)) error("server restart never produced a playable frame")
         assertShips(server!!, commands, makeStatic = true)
     }
@@ -642,6 +701,11 @@ val metricsJson = """{
   "variant": ${q(variant)},
   "stop_after": ${q(stopAfter)},
   "dh_client_color_failures": $dhClientColorFailures,
+  "stress_samples": $stressSamples,
+  "stress_duration_ms": ${stressDurationMs ?: "null"},
+  "stress_physics_queue_warnings": $stressPhysicsQueueWarnings,
+  "stress_modernfix_watchdogs": $stressModernFixWatchdogs,
+  "stress_disconnects": $stressDisconnects,
   "fixture_render_score": ${fixtureRenderScore ?: "null"},
   "assembled_render_score": ${assembledRenderScore ?: "null"},
   "reconnect_probe_render_score": ${reconnectProbeRenderScore ?: "null"},
@@ -676,7 +740,7 @@ val screenshotExpectations = mapOf(
 )
 Files.writeString(runRoot.resolve("screenshot-manifest.json"), buildString {
     appendLine("{")
-    appendLine("  \"schema\": \"btm.vs_screenshot_manifest.v1\",")
+    appendLine("  \"schema\": \"bc.vs_screenshot_manifest.v1\",")
     appendLine("  \"fixture\": ${q(fixture)},")
     appendLine("  \"variant\": ${q(variant)},")
     appendLine("  \"review_required\": true,")
@@ -701,6 +765,11 @@ Files.writeString(runRoot.resolve("summary.json"), """{
   "variant": ${q(variant)},
   "stop_after": ${q(stopAfter)},
   "dh_client_color_failures": $dhClientColorFailures,
+  "stress_samples": $stressSamples,
+  "stress_duration_ms": ${stressDurationMs ?: "null"},
+  "stress_physics_queue_warnings": $stressPhysicsQueueWarnings,
+  "stress_modernfix_watchdogs": $stressModernFixWatchdogs,
+  "stress_disconnects": $stressDisconnects,
   "fixture_render_score": ${fixtureRenderScore ?: "null"},
   "assembled_render_score": ${assembledRenderScore ?: "null"},
   "reconnect_probe_render_score": ${reconnectProbeRenderScore ?: "null"},

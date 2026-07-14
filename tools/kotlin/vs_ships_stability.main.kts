@@ -34,7 +34,7 @@ val fixtureBlocks = listOf(
 
 fun usage(message: String? = null): Nothing {
     if (message != null) System.err.println(message)
-    System.err.println("Usage: tools/btm test scenario vs_ships_stability --profile quick|release|brutal [--cycles N] [--port N] [--timeout-seconds N] [--bootstrap-mode always|once|never] [--run-root PATH] [--keep-runs]")
+    System.err.println("Usage: tools/bc test scenario vs_ships_stability --profile quick|release|brutal [--cycles N] [--port N] [--timeout-seconds N] [--bootstrap-mode always|once|never] [--run-root PATH] [--keep-runs]")
     exitProcess(2)
 }
 fun q(value: String?) = if (value == null) "null" else "\"" + value.replace("\\", "\\\\").replace("\"", "\\\"").replace("\n", "\\n") + "\""
@@ -159,11 +159,11 @@ fun removeAndVerify(server: RunningServer, dimensions: List<String>, commands: S
         val z = dimensionIndex * 16
         fixtureBlocks.forEachIndexed { blockIndex, (x, dz, id) ->
             send(server, "execute in $dimension run setblock $x 200 ${z + dz} minecraft:air", commands)
-            send(server, "execute in $dimension unless block $x 200 ${z + dz} $id run say BTM_VS_REMOVED_${dimensionIndex}_$blockIndex", commands)
+            send(server, "execute in $dimension unless block $x 200 ${z + dz} $id run sayBC_VS_REMOVED_${dimensionIndex}_$blockIndex", commands)
         }
         send(server, "execute in $dimension run forceload remove all", commands)
     }
-    waitFor(server, Regex("BTM_VS_REMOVED_${dimensions.lastIndex}_${fixtureBlocks.lastIndex}"), 60, "fixture removal")
+    waitFor(server, Regex("BC_VS_REMOVED_${dimensions.lastIndex}_${fixtureBlocks.lastIndex}"), 60, "fixture removal")
 }
 
 var profile = "quick"
@@ -171,8 +171,8 @@ var cycles = 1
 var bootstrapMode = "always"
 var keepRuns = false
 var timeoutSeconds = 900L
-var runRoot = System.getenv("BTM_HARNESS_RUN_ROOT")?.takeIf(String::isNotBlank)?.let(Paths::get) ?: Paths.get("/tmp/btm-vs-ships-stability")
-var port = System.getenv("BTM_HARNESS_ACTUAL_PORT")?.toIntOrNull() ?: 25565
+var runRoot = System.getenv("BC_HARNESS_RUN_ROOT")?.takeIf(String::isNotBlank)?.let(Paths::get) ?: Paths.get("/tmp/bc-vs-ships-stability")
+var port = System.getenv("BC_HARNESS_ACTUAL_PORT")?.toIntOrNull() ?: 25565
 var index = 0
 while (index < args.size) {
     when (args[index]) {
@@ -217,7 +217,7 @@ for (cycle in 1..cycles) {
         phase("prepare_runtime") {
             val shouldPrepare = bootstrapMode == "always" || (bootstrapMode == "once" && !serverDir.resolve("run.sh").exists())
             if (shouldPrepare) {
-                val command = listOf(root.resolve("tools/btm").toString(), "internal", "prepare-server-runtime", "--server-dir", serverDir.toString(), "--port", port.toString(), "--reset-runtime")
+                val command = listOf(root.resolve("tools/bc").toString(), "internal", "prepare-server-runtime", "--server-dir", serverDir.toString(), "--port", port.toString(), "--reset-runtime")
                 commands.appendLine(command.joinToString(" "))
                 val exit = run(command, timeoutSeconds, evidence.resolve("prepare.log"))
                 if (exit != 0) error("runtime preparation failed with exit $exit")
@@ -229,11 +229,11 @@ for (cycle in 1..cycles) {
             waitFor(active!!, Regex("Done \\([0-9.]+s\\)!"), timeoutSeconds, "initial server boot")
         }
         phase("registry_contract") { registrySnapshot(serverDir, evidence.resolve("registry-snapshot.json")) }
-        phase("component_fixture") { placeAndVerify(active!!, dimensions, commands, "BTM_VS_PLACED") }
+        phase("component_fixture") { placeAndVerify(active!!, dimensions, commands, "BC_VS_PLACED") }
         phase("save_shutdown") {
             send(active!!, "save-all flush", commands)
-            send(active!!, "say BTM_VS_SAVED", commands)
-            waitFor(active!!, Regex("BTM_VS_SAVED"), 30, "save marker")
+            send(active!!, "sayBC_VS_SAVED", commands)
+            waitFor(active!!, Regex("BC_VS_SAVED"), 30, "save marker")
             stop(active, commands)
             active = null
         }
@@ -241,7 +241,7 @@ for (cycle in 1..cycles) {
             active = startServer(serverDir, port, evidence.resolve("server-console-boot-2.log"))
             waitFor(active!!, Regex("Done \\([0-9.]+s\\)!"), timeoutSeconds, "reload server boot")
         }
-        phase("reload_verification") { verifyFixture(active!!, dimensions, commands, "BTM_VS_RELOADED") }
+        phase("reload_verification") { verifyFixture(active!!, dimensions, commands, "BC_VS_RELOADED") }
         phase("removal_unload") { removeAndVerify(active!!, dimensions, commands) }
         phase("clean_shutdown") { stop(active, commands); active = null }
         phases += PhaseResult("ship_assembly", "not_automatable_headless", 0, "VS 2.4.11 exposes no server-side assembly command")

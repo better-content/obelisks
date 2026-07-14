@@ -7,8 +7,8 @@ import java.nio.file.Paths
 val root = Paths.get("").toAbsolutePath().normalize()
 val legacyAuditPath = Paths.get(args.getOrNull(0) ?: root.resolve("generated/runtime-dumps/realistic_hands_audit.json").toString())
 val runtimeProbePath = root.resolve("generated/runtime-dumps/block_hardness_probe.json")
-val blockTagDir = root.resolve("generated/custom-mod-sources/bound-to-matter-fixes/src/main/resources/data/btmfixes/tags/blocks/realistic_hands")
-val itemTagDir = root.resolve("generated/custom-mod-sources/bound-to-matter-fixes/src/main/resources/data/btmfixes/tags/items/realistic_hands/tools")
+val blockTagDir = root.resolve("generated/custom-mod-sources/better-content-fixes/src/main/resources/data/bcfixes/tags/blocks/realistic_hands")
+val itemTagDir = root.resolve("generated/custom-mod-sources/better-content-fixes/src/main/resources/data/bcfixes/tags/items/realistic_hands/tools")
 
 class JsonParser(private val text: String) {
     private var index = 0

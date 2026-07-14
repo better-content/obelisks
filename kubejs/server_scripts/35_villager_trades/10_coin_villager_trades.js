@@ -1,7 +1,7 @@
 // Replaces village trades with dotcoin purchases and lossy coin exchange.
 // Coins are rewards from quests/adventure first; exchange trades are convenience with spread.
 
-var BTM_COIN = {
+var BC_COIN = {
     copper: 'createdeco:copper_coin',
     zinc: 'createdeco:zinc_coin',
     iron: 'createdeco:iron_coin',
@@ -11,10 +11,10 @@ var BTM_COIN = {
     platinum: 'createdeco:netherite_coin'
 }
 
-var BTM_VILLAGER_COIN_WHITELIST = { copper: true, zinc: true, iron: true, industrial_iron: true, brass: true, gold: true, platinum: true }
-var BTM_LOW_TIER_PROFESSIONS = ['minecraft:farmer','minecraft:fisherman','minecraft:fletcher','minecraft:mason','minecraft:librarian','minecraft:toolsmith']
+var BC_VILLAGER_COIN_WHITELIST = { copper: true, zinc: true, iron: true, industrial_iron: true, brass: true, gold: true, platinum: true }
+var BC_LOW_TIER_PROFESSIONS = ['minecraft:farmer','minecraft:fisherman','minecraft:fletcher','minecraft:mason','minecraft:librarian','minecraft:toolsmith']
 
-var BTM_30_ITEMS = [
+var BC_30_ITEMS = [
     ['minecraft:bread',4],['minecraft:apple',4],['minecraft:torch',16],['minecraft:coal',8],['minecraft:stick',32],
     ['minecraft:string',8],['minecraft:leather',4],['minecraft:paper',16],['minecraft:arrow',16],['minecraft:glass',8],
     ['minecraft:bucket',1],['minecraft:lantern',2],['minecraft:cooked_beef',4],['minecraft:carrot',12],['minecraft:potato',12],
@@ -23,7 +23,7 @@ var BTM_30_ITEMS = [
     ['minecraft:shears',1],['minecraft:rail',16],['minecraft:tnt',1],['minecraft:bone_meal',16],['minecraft:bookshelf',1]
 ]
 
-var BTM_INDUSTRIAL_IRON_MARKET = [
+var BC_INDUSTRIAL_IRON_MARKET = [
     ['minecraft:mason',2,3,'create:andesite_alloy',4,8,6],
     ['minecraft:mason',2,3,'create:andesite_casing',4,8,6],
     ['minecraft:mason',3,4,'create:cut_limestone',16,8,8],
@@ -56,7 +56,7 @@ var BTM_INDUSTRIAL_IRON_MARKET = [
     ['minecraft:weaponsmith',3,4,'minecraft:tnt',3,6,10]
 ]
 
-var BTM_GOLD_MARKET = [
+var BC_GOLD_MARKET = [
     ['minecraft:farmer',4,5,'farmersdelight:stuffed_pumpkin_block',1,3,16],
     ['minecraft:farmer',4,5,'farmersdelight:gleaming_salad_block',1,3,16],
     ['minecraft:butcher',4,5,'farmersdelight:steak_and_potatoes',4,5,16],
@@ -81,7 +81,7 @@ var BTM_GOLD_MARKET = [
     ['minecraft:cartographer',4,5,'minecraft:recovery_compass',1,3,18]
 ]
 
-var BTM_PLATINUM_MARKET = [
+var BC_PLATINUM_MARKET = [
     ['minecraft:fisherman',5,7,'minecraft:trident',1,1,24],
     ['minecraft:fisherman',5,7,'minecraft:conduit',1,1,24],
     ['minecraft:fletcher',5,7,'minecraft:totem_of_undying',1,1,24],
@@ -107,7 +107,7 @@ var BTM_PLATINUM_MARKET = [
 // Wandering trader: broad recovery, exploration, ecology, decor, and route supplies.
 // Keep mandatory progression machinery out; this is a roaming convenience/sideload market.
 // Row shape: [level, coin tier, cost, output item, output count, max uses, xp].
-var BTM_WANDERER_MARKET = [
+var BC_WANDERER_MARKET = [
     [1, 'copper', 2, 'minecraft:oak_sapling', 4, 8, 2],
     [1, 'copper', 2, 'minecraft:spruce_sapling', 4, 8, 2],
     [1, 'copper', 2, 'minecraft:birch_sapling', 4, 8, 2],
@@ -277,50 +277,50 @@ var BTM_WANDERER_MARKET = [
     [2, 'platinum', 10, 'minecraft:nether_star', 1, 1, 32]
 ]
 
-var BTM_NON_GROWN_TRADE_BUY_BLOCKLIST = {
+var BC_NON_GROWN_TRADE_BUY_BLOCKLIST = {
     'minecraft:experience_bottle': true,
     'minecraft:echo_shard': true,
     'minecraft:sculk_catalyst': true
 }
 
-function btmIsNonGrownInfiniteBuyResult(item) {
-    return BTM_NON_GROWN_TRADE_BUY_BLOCKLIST[item] === true
+function bcIsNonGrownInfiniteBuyResult(item) {
+    returnBC_NON_GROWN_TRADE_BUY_BLOCKLIST[item] === true
 }
 
-function btmAddThirtyBuys(event, tier, baseCost) {
-    for (var i = 0; i < BTM_30_ITEMS.length; i++) {
-        var p = BTM_LOW_TIER_PROFESSIONS[i % BTM_LOW_TIER_PROFESSIONS.length]
+function bcAddThirtyBuys(event, tier, baseCost) {
+    for (var i = 0; i < BC_30_ITEMS.length; i++) {
+        var p = BC_LOW_TIER_PROFESSIONS[i % BC_LOW_TIER_PROFESSIONS.length]
         var lvl = (i % 5) + 1
-        var it = BTM_30_ITEMS[i][0]
-        var ct = BTM_30_ITEMS[i][1]
-        btmTrade(event, p, lvl, tier, baseCost + Math.floor(i / 10), it, ct, 8, lvl * 3)
+        var it = BC_30_ITEMS[i][0]
+        var ct = BC_30_ITEMS[i][1]
+         bcTrade(event, p, lvl, tier, baseCost + Math.floor(i / 10), it, ct, 8, lvl * 3)
     }
 }
 
-function btmAddTierMarket(event, tier, rows) {
+function bcAddTierMarket(event, tier, rows) {
     for (var i = 0; i < rows.length; i++) {
         var r = rows[i]
-        btmTrade(event, r[0], r[1], tier, r[2], r[3], r[4], r[5], r[6])
+         bcTrade(event, r[0], r[1], tier, r[2], r[3], r[4], r[5], r[6])
     }
 }
 
-function btmItemExists(id) {
+function bcItemExists(id) {
     try { return Item.exists(id) } catch (e) { return false }
 }
 
-function btmTrade(event, profession, level, coinTier, costCount, resultItem, resultCount, uses, xp) {
-    if (btmIsNonGrownInfiniteBuyResult(resultItem)) return
-    if (!BTM_VILLAGER_COIN_WHITELIST[coinTier]) return
-    var coin = BTM_COIN[coinTier]
+function bcTrade(event, profession, level, coinTier, costCount, resultItem, resultCount, uses, xp) {
+    if (bcIsNonGrownInfiniteBuyResult(resultItem)) return
+    if (!BC_VILLAGER_COIN_WHITELIST[coinTier]) return
+    var coin = BC_COIN[coinTier]
     if (!coin) {
         console.warn('[coin-villager-trades] Unknown coin tier: ' + coinTier + ' for ' + resultItem)
         return
     }
-    if (!btmItemExists(coin)) {
+    if (!bcItemExists(coin)) {
         console.warn('[coin-villager-trades] Missing coin item: ' + coin + ' for ' + resultItem)
         return
     }
-    if (!btmItemExists(resultItem)) return
+    if (!bcItemExists(resultItem)) return
 
     var trade = event.addTrade(profession, level, [Item.of(coin, costCount)], Item.of(resultItem, resultCount))
     if (trade && trade.maxUses) trade.maxUses(uses || 8)
@@ -328,11 +328,11 @@ function btmTrade(event, profession, level, coinTier, costCount, resultItem, res
     if (trade && trade.priceMultiplier) trade.priceMultiplier(0.0)
 }
 
-function btmWandererTrade(event, level, coinTier, costCount, resultItem, resultCount, uses, xp) {
-    if (btmIsNonGrownInfiniteBuyResult(resultItem)) return false
-    if (!BTM_VILLAGER_COIN_WHITELIST[coinTier]) return
-    var coin = BTM_COIN[coinTier]
-    if (!coin || !btmItemExists(coin) || !btmItemExists(resultItem)) return false
+function bcWandererTrade(event, level, coinTier, costCount, resultItem, resultCount, uses, xp) {
+    if (bcIsNonGrownInfiniteBuyResult(resultItem)) return false
+    if (!BC_VILLAGER_COIN_WHITELIST[coinTier]) return
+    var coin = BC_COIN[coinTier]
+    if (!coin || !bcItemExists(coin) || !bcItemExists(resultItem)) return false
 
     var trade = event.addTrade(level, [Item.of(coin, costCount)], Item.of(resultItem, resultCount))
     if (trade && trade.maxUses) trade.maxUses(uses || 4)
@@ -341,27 +341,27 @@ function btmWandererTrade(event, level, coinTier, costCount, resultItem, resultC
     return true
 }
 
-function btmAddWandererMarket(event, rows) {
+function bcAddWandererMarket(event, rows) {
     var attempted = 0
     var registered = 0
     for (var i = 0; i < rows.length; i++) {
         var r = rows[i]
         attempted++
-        if (btmWandererTrade(event, r[0], r[1], r[2], r[3], r[4], r[5], r[6])) registered++
+        if (bcWandererTrade(event, r[0], r[1], r[2], r[3], r[4], r[5], r[6])) registered++
     }
     console.info('[coin-villager-trades] Authored wandering trader options attempted=' + attempted + ' registered=' + registered)
 }
 
-function btmAddTrades(event, profession, rows) {
+function bcAddTrades(event, profession, rows) {
     for (var i = 0; i < rows.length; i++) {
         var r = rows[i]
-        btmTrade(event, profession, r[0], r[1], r[2], r[3], r[4], r[5], r[6])
+         bcTrade(event, profession, r[0], r[1], r[2], r[3], r[4], r[5], r[6])
     }
 }
 
-function btmSellTrade(event, profession, level, inputItem, inputCount, copperCount, uses, xp) {
-    var coin = BTM_COIN.copper
-    if (!btmItemExists(coin) || !btmItemExists(inputItem)) return
+function bcSellTrade(event, profession, level, inputItem, inputCount, copperCount, uses, xp) {
+    var coin = BC_COIN.copper
+    if (!bcItemExists(coin) || !bcItemExists(inputItem)) return
 
     var trade = event.addTrade(profession, level, [Item.of(inputItem, inputCount)], Item.of(coin, copperCount))
     if (trade && trade.maxUses) trade.maxUses(uses || 12)
@@ -369,22 +369,22 @@ function btmSellTrade(event, profession, level, inputItem, inputCount, copperCou
     if (trade && trade.priceMultiplier) trade.priceMultiplier(0.0)
 }
 
-function btmAddSellTrades(event, profession, rows) {
+function bcAddSellTrades(event, profession, rows) {
     for (var i = 0; i < rows.length; i++) {
         var r = rows[i]
-        btmSellTrade(event, profession, r[0], r[1], r[2], r[3], r[4], r[5])
+         bcSellTrade(event, profession, r[0], r[1], r[2], r[3], r[4], r[5])
     }
 }
 
-function btmCoinExchangeTrade(event, profession, level, inputTier, inputCount, outputTier, outputCount, uses, xp) {
-    if (!BTM_VILLAGER_COIN_WHITELIST[inputTier] || !BTM_VILLAGER_COIN_WHITELIST[outputTier]) return
-    var inputCoin = BTM_COIN[inputTier]
-    var outputCoin = BTM_COIN[outputTier]
+function bcCoinExchangeTrade(event, profession, level, inputTier, inputCount, outputTier, outputCount, uses, xp) {
+    if (!BC_VILLAGER_COIN_WHITELIST[inputTier] || !BC_VILLAGER_COIN_WHITELIST[outputTier]) return
+    var inputCoin = BC_COIN[inputTier]
+    var outputCoin = BC_COIN[outputTier]
     if (!inputCoin || !outputCoin) {
         console.warn('[coin-villager-trades] Unknown exchange tier: ' + inputTier + ' -> ' + outputTier)
         return
     }
-    if (!btmItemExists(inputCoin) || !btmItemExists(outputCoin)) return
+    if (!bcItemExists(inputCoin) || !bcItemExists(outputCoin)) return
 
     var trade = event.addTrade(profession, level, [Item.of(inputCoin, inputCount)], Item.of(outputCoin, outputCount))
     if (trade && trade.maxUses) trade.maxUses(uses || 12)
@@ -392,10 +392,10 @@ function btmCoinExchangeTrade(event, profession, level, inputTier, inputCount, o
     if (trade && trade.priceMultiplier) trade.priceMultiplier(0.0)
 }
 
-function btmAddCoinExchangeTrades(event, profession, rows) {
+function bcAddCoinExchangeTrades(event, profession, rows) {
     for (var i = 0; i < rows.length; i++) {
         var r = rows[i]
-        btmCoinExchangeTrade(event, profession, r[0], r[1], r[2], r[3], r[4], r[5], r[6], r[7])
+         bcCoinExchangeTrade(event, profession, r[0], r[1], r[2], r[3], r[4], r[5], r[6], r[7])
     }
 }
 
@@ -406,29 +406,29 @@ if (typeof MoreJSEvents !== 'undefined') {
 
         // Moneychanger trades are intentionally lossy in both directions.
         // They smooth progression currency without making lower-tier farms mint higher-tier coins efficiently.
-        btmAddCoinExchangeTrades(event, 'minecraft:cleric', [
+         bcAddCoinExchangeTrades(event, 'minecraft:cleric', [
             [1, 'copper', 10, 'zinc', 1, 16, 2],
             [1, 'zinc', 1, 'copper', 6, 16, 2],
             [2, 'zinc', 8, 'iron', 1, 12, 6],
             [2, 'iron', 1, 'zinc', 5, 12, 6],
             [3, 'iron', 1, 'copper', 24, 6, 20]
         ])
-        btmAddCoinExchangeTrades(event, 'minecraft:cartographer', [
+         bcAddCoinExchangeTrades(event, 'minecraft:cartographer', [
             [2, 'copper', 12, 'zinc', 1, 8, 6],
             [2, 'zinc', 1, 'copper', 5, 8, 6],
             [3, 'zinc', 10, 'iron', 1, 6, 10],
             [3, 'iron', 1, 'zinc', 4, 6, 10]
         ])
-        btmAddThirtyBuys(event, 'copper', 2)
-        btmAddThirtyBuys(event, 'zinc', 3)
-        btmAddThirtyBuys(event, 'iron', 4)
-        btmAddTierMarket(event, 'industrial_iron', BTM_INDUSTRIAL_IRON_MARKET)
-        btmAddTierMarket(event, 'gold', BTM_GOLD_MARKET)
-        btmAddTierMarket(event, 'platinum', BTM_PLATINUM_MARKET)
+         bcAddThirtyBuys(event, 'copper', 2)
+         bcAddThirtyBuys(event, 'zinc', 3)
+         bcAddThirtyBuys(event, 'iron', 4)
+         bcAddTierMarket(event, 'industrial_iron', BC_INDUSTRIAL_IRON_MARKET)
+         bcAddTierMarket(event, 'gold', BC_GOLD_MARKET)
+         bcAddTierMarket(event, 'platinum', BC_PLATINUM_MARKET)
 
         // Copper payout trades replace vanilla sell-for-emerald loops.
         // These create a low-tier market floor without enabling coin conversion.
-        btmAddSellTrades(event, 'minecraft:farmer', [
+         bcAddSellTrades(event, 'minecraft:farmer', [
             [1, 'minecraft:wheat', 20, 2, 16, 2],
             [1, 'minecraft:carrot', 24, 2, 16, 2],
             [1, 'minecraft:potato', 24, 2, 16, 2],
@@ -439,7 +439,7 @@ if (typeof MoreJSEvents !== 'undefined') {
             [2, 'farmersdelight:tomato', 18, 2, 12, 4],
             [2, 'farmersdelight:rice', 24, 2, 12, 4]
         ])
-        btmAddSellTrades(event, 'minecraft:fisherman', [
+         bcAddSellTrades(event, 'minecraft:fisherman', [
             [1, 'minecraft:cod', 16, 2, 16, 2],
             [1, 'minecraft:salmon', 16, 2, 16, 2],
             [1, 'minecraft:string', 20, 2, 12, 2],
@@ -452,68 +452,68 @@ if (typeof MoreJSEvents !== 'undefined') {
             [4, 'starcatcher:sculkfish', 2, 6, 4, 16],
             [4, 'starcatcher:magma_fish', 2, 6, 4, 16]
         ])
-        btmAddSellTrades(event, 'minecraft:fletcher', [
+         bcAddSellTrades(event, 'minecraft:fletcher', [
             [1, 'minecraft:stick', 48, 2, 16, 2],
             [1, 'minecraft:flint', 16, 2, 12, 2],
             [1, 'minecraft:feather', 16, 2, 12, 2],
             [2, 'minecraft:string', 20, 2, 10, 4]
         ])
-        btmAddSellTrades(event, 'minecraft:shepherd', [
+         bcAddSellTrades(event, 'minecraft:shepherd', [
             [1, 'minecraft:white_wool', 12, 2, 16, 2],
             [1, 'minecraft:black_wool', 12, 2, 16, 2],
             [1, 'minecraft:brown_wool', 12, 2, 16, 2],
             [2, 'minecraft:white_dye', 16, 2, 12, 4]
         ])
-        btmAddSellTrades(event, 'minecraft:leatherworker', [
+         bcAddSellTrades(event, 'minecraft:leatherworker', [
             [1, 'minecraft:leather', 10, 2, 12, 2],
             [1, 'minecraft:rabbit_hide', 12, 2, 12, 2],
             [2, 'minecraft:scute', 4, 2, 8, 4]
         ])
-        btmAddSellTrades(event, 'minecraft:mason', [
+         bcAddSellTrades(event, 'minecraft:mason', [
             [1, 'minecraft:clay_ball', 32, 2, 16, 2],
             [1, 'minecraft:stone', 32, 2, 12, 2],
             [1, 'minecraft:granite', 32, 2, 12, 2],
             [1, 'minecraft:andesite', 32, 2, 12, 2],
             [1, 'minecraft:diorite', 32, 2, 12, 2]
         ])
-        btmAddSellTrades(event, 'minecraft:butcher', [
+         bcAddSellTrades(event, 'minecraft:butcher', [
             [1, 'minecraft:chicken', 14, 2, 12, 2],
             [1, 'minecraft:porkchop', 10, 2, 12, 2],
             [1, 'minecraft:beef', 10, 2, 12, 2],
             [1, 'minecraft:mutton', 10, 2, 12, 2]
         ])
-        btmAddSellTrades(event, 'minecraft:cleric', [
+         bcAddSellTrades(event, 'minecraft:cleric', [
             [1, 'minecraft:rotten_flesh', 24, 2, 16, 2],
             [1, 'minecraft:bone', 24, 2, 12, 2],
             [2, 'minecraft:glass_bottle', 12, 2, 10, 4]
         ])
-        btmAddSellTrades(event, 'minecraft:librarian', [
+         bcAddSellTrades(event, 'minecraft:librarian', [
             [1, 'minecraft:paper', 32, 2, 16, 2],
             [1, 'minecraft:book', 8, 2, 10, 2],
             [2, 'minecraft:ink_sac', 12, 2, 10, 4]
         ])
-        btmAddSellTrades(event, 'minecraft:cartographer', [
+         bcAddSellTrades(event, 'minecraft:cartographer', [
             [1, 'minecraft:paper', 32, 2, 16, 2],
             [2, 'minecraft:compass', 2, 2, 8, 4],
             [2, 'minecraft:glass_pane', 24, 2, 10, 4]
         ])
-        btmAddSellTrades(event, 'minecraft:toolsmith', [
+         bcAddSellTrades(event, 'minecraft:toolsmith', [
             [1, 'minecraft:flint', 16, 2, 12, 2],
             [1, 'minecraft:coal', 16, 2, 12, 2],
             [2, 'minecraft:copper_ingot', 8, 2, 8, 4]
         ])
-        btmAddSellTrades(event, 'minecraft:weaponsmith', [
+         bcAddSellTrades(event, 'minecraft:weaponsmith', [
             [1, 'minecraft:coal', 16, 2, 12, 2],
             [1, 'minecraft:flint', 16, 2, 12, 2],
             [2, 'minecraft:gunpowder', 8, 2, 8, 4]
         ])
-        btmAddSellTrades(event, 'minecraft:armorer', [
+         bcAddSellTrades(event, 'minecraft:armorer', [
             [1, 'minecraft:coal', 16, 2, 12, 2],
             [2, 'minecraft:copper_ingot', 8, 2, 8, 4]
         ])
 
         // Farmer: food recovery, cooking infrastructure, feast/restock support.
-        btmAddTrades(event, 'minecraft:farmer', [
+         bcAddTrades(event, 'minecraft:farmer', [
             [1, 'copper', 2, 'minecraft:bread', 6, 16, 2],
             [1, 'copper', 2, 'minecraft:apple', 4, 12, 2],
             [1, 'copper', 3, 'farmersdelight:cabbage', 4, 12, 2],
@@ -529,7 +529,7 @@ if (typeof MoreJSEvents !== 'undefined') {
         ])
 
         // Butcher: protein and recovery meals. No bulk animal-product arbitrage.
-        btmAddTrades(event, 'minecraft:butcher', [
+         bcAddTrades(event, 'minecraft:butcher', [
             [1, 'copper', 2, 'minecraft:cooked_porkchop', 4, 12, 2],
             [1, 'copper', 2, 'minecraft:cooked_beef', 4, 12, 2],
             [2, 'iron', 3, 'farmersdelight:smoked_ham', 2, 8, 6],
@@ -542,7 +542,7 @@ if (typeof MoreJSEvents !== 'undefined') {
         ])
 
         // Fisherman: water travel, food, and ocean expedition restock.
-        btmAddTrades(event, 'minecraft:fisherman', [
+         bcAddTrades(event, 'minecraft:fisherman', [
             [1, 'copper', 2, 'minecraft:cod', 8, 16, 2],
             [1, 'copper', 3, 'minecraft:fishing_rod', 1, 8, 2],
             [1, 'copper', 2, 'starcatcher:worm', 8, 12, 2],
@@ -563,7 +563,7 @@ if (typeof MoreJSEvents !== 'undefined') {
         ])
 
         // Fletcher: ranged combat and route marking.
-        btmAddTrades(event, 'minecraft:fletcher', [
+         bcAddTrades(event, 'minecraft:fletcher', [
             [1, 'copper', 2, 'minecraft:arrow', 16, 16, 2],
             [1, 'copper', 3, 'minecraft:bow', 1, 8, 2],
             [2, 'iron', 3, 'minecraft:crossbow', 1, 6, 6],
@@ -575,7 +575,7 @@ if (typeof MoreJSEvents !== 'undefined') {
         ])
 
         // Shepherd: beds, wool, banners, and settlement comfort.
-        btmAddTrades(event, 'minecraft:shepherd', [
+         bcAddTrades(event, 'minecraft:shepherd', [
             [1, 'copper', 2, 'minecraft:white_wool', 8, 16, 2],
             [1, 'copper', 3, 'minecraft:white_bed', 1, 8, 2],
             [2, 'iron', 2, 'minecraft:leather', 6, 12, 6],
@@ -589,7 +589,7 @@ if (typeof MoreJSEvents !== 'undefined') {
         ])
 
         // Leatherworker: carry, clothing, temperature and travel utility.
-        btmAddTrades(event, 'minecraft:leatherworker', [
+         bcAddTrades(event, 'minecraft:leatherworker', [
             [1, 'copper', 4, 'sophisticatedbackpacks:backpack', 1, 4, 4],
             [1, 'copper', 2, 'minecraft:leather_boots', 1, 8, 2],
             [1, 'copper', 3, 'cold_sweat:filled_waterskin', 1, 6, 3],
@@ -604,7 +604,7 @@ if (typeof MoreJSEvents !== 'undefined') {
         ])
 
         // Mason: construction stock and controlled tech material convenience.
-        btmAddTrades(event, 'minecraft:mason', [
+         bcAddTrades(event, 'minecraft:mason', [
             [1, 'copper', 2, 'minecraft:bricks', 8, 16, 2],
             [1, 'copper', 2, 'minecraft:terracotta', 8, 16, 2],
             [1, 'copper', 2, 'minecraft:cobblestone_wall', 16, 16, 2],
@@ -628,7 +628,7 @@ if (typeof MoreJSEvents !== 'undefined') {
         ])
 
         // Toolsmith: recovery tools and workshop consumables.
-        btmAddTrades(event, 'minecraft:toolsmith', [
+         bcAddTrades(event, 'minecraft:toolsmith', [
             [1, 'copper', 4, 'tconstruct:repair_kit', 1, 8, 3],
             [1, 'copper', 2, 'minecraft:flint_and_steel', 1, 8, 2],
             [1, 'copper', 3, 'minecraft:stone_pickaxe', 1, 8, 2],
@@ -640,7 +640,7 @@ if (typeof MoreJSEvents !== 'undefined') {
         ])
 
         // Armorer: defensive recovery, not main gear progression.
-        btmAddTrades(event, 'minecraft:armorer', [
+         bcAddTrades(event, 'minecraft:armorer', [
             [1, 'copper', 3, 'minecraft:shield', 1, 8, 3],
             [1, 'copper', 3, 'minecraft:chainmail_boots', 1, 6, 2],
             [2, 'iron', 4, 'minecraft:chainmail_leggings', 1, 6, 6],
@@ -654,7 +654,7 @@ if (typeof MoreJSEvents !== 'undefined') {
         ])
 
         // Weaponsmith: expedition weapons and blast-mining stock.
-        btmAddTrades(event, 'minecraft:weaponsmith', [
+         bcAddTrades(event, 'minecraft:weaponsmith', [
             [1, 'copper', 3, 'minecraft:stone_sword', 1, 8, 2],
             [1, 'copper', 3, 'minecraft:iron_axe', 1, 6, 3],
             [2, 'iron', 4, 'minecraft:crossbow', 1, 6, 6],
@@ -668,7 +668,7 @@ if (typeof MoreJSEvents !== 'undefined') {
         ])
 
         // Cleric: magic recovery and ritual support. High slates stay altar-authored.
-        btmAddTrades(event, 'minecraft:cleric', [
+         bcAddTrades(event, 'minecraft:cleric', [
             [1, 'copper', 3, 'minecraft:redstone', 8, 12, 3],
             [1, 'copper', 3, 'minecraft:lapis_lazuli', 8, 12, 3],
             [2, 'iron', 4, 'minecraft:glowstone_dust', 8, 10, 6],
@@ -682,7 +682,7 @@ if (typeof MoreJSEvents !== 'undefined') {
         ])
 
         // Librarian: books, manuals, local intelligence, and late knowledge artifacts.
-        btmAddTrades(event, 'minecraft:librarian', [
+         bcAddTrades(event, 'minecraft:librarian', [
             [1, 'copper', 2, 'minecraft:book', 3, 16, 2],
             [1, 'copper', 3, 'minecraft:bookshelf', 2, 10, 2],
             [2, 'iron', 4, 'minecraft:name_tag', 1, 6, 6],
@@ -696,7 +696,7 @@ if (typeof MoreJSEvents !== 'undefined') {
         ])
 
         // Cartographer: maps, route planning, and authored distance tools.
-        btmAddTrades(event, 'minecraft:cartographer', [
+         bcAddTrades(event, 'minecraft:cartographer', [
             [1, 'copper', 3, 'minecraft:map', 2, 12, 2],
             [1, 'copper', 3, 'minecraft:compass', 1, 8, 2],
             [1, 'copper', 2, 'minecraft:oak_sign', 8, 12, 2],
@@ -721,11 +721,11 @@ if (typeof MoreJSEvents !== 'undefined') {
         event.removeVanillaTrades(2)
         event.removeModdedTrades(1)
         event.removeModdedTrades(2)
-        btmAddWandererMarket(event, BTM_WANDERER_MARKET)
+         bcAddWandererMarket(event, BC_WANDERER_MARKET)
     })
 
     MoreJSEvents.playerStartTrading(function (event) {
-        var copperStack = Item.of(BTM_COIN.copper)
+        var copperStack = Item.of(BC_COIN.copper)
         var copperItem = null
         try {
             if (copperStack && copperStack.getItem) copperItem = copperStack.getItem()

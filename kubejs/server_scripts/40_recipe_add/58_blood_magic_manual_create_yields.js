@@ -1,7 +1,7 @@
 // Blood Magic offers attentive, LP-paid batch alternatives for essential Create
 // materials. These are not free bypasses: slates and LP replace automation.
 
-function btmBmManualAlchemy(event, id, inputs, output, syphon, ticks, tier) {
+function bcBmManualAlchemy(event, id, inputs, output, syphon, ticks, tier) {
     if (!output || !output.item || !Item.exists(output.item)) return
     event.custom({
         type: 'bloodmagic:alchemytable',
@@ -14,9 +14,7 @@ function btmBmManualAlchemy(event, id, inputs, output, syphon, ticks, tier) {
 }
 
 ServerEvents.recipes(function (event) {
-    if (!Platform.isLoaded('bloodmagic') || !Platform.isLoaded('create')) return
-
-    btmBmManualAlchemy(event, 'andesite_alloy_batch', [
+    if (!Platform.isLoaded('bloodmagic') || !Platform.isLoaded('create')) return bcBmManualAlchemy(event, 'andesite_alloy_batch', [
         { item: 'minecraft:andesite' },
         { item: 'minecraft:andesite' },
         { item: 'minecraft:iron_ingot' },
@@ -24,7 +22,7 @@ ServerEvents.recipes(function (event) {
         { item: 'bloodmagic:blankslate' }
     ], { item: 'create:andesite_alloy', count: 6 }, 1600, 120, 1)
 
-    btmBmManualAlchemy(event, 'brass_ingot_batch', [
+     bcBmManualAlchemy(event, 'brass_ingot_batch', [
         { item: 'minecraft:copper_ingot' },
         { item: 'minecraft:copper_ingot' },
         { item: 'chemlib:zinc_ingot' },
@@ -32,7 +30,7 @@ ServerEvents.recipes(function (event) {
         { item: 'bloodmagic:reinforcedslate' }
     ], { item: 'create:brass_ingot', count: 4 }, 4200, 160, 2)
 
-    btmBmManualAlchemy(event, 'precision_mechanism_pair', [
+     bcBmManualAlchemy(event, 'precision_mechanism_pair', [
         { item: 'create:brass_sheet' },
         { item: 'create:cogwheel' },
         { item: 'create:large_cogwheel' },
@@ -40,7 +38,7 @@ ServerEvents.recipes(function (event) {
         { item: 'bloodmagic:infusedslate' }
     ], { item: 'create:precision_mechanism', count: 2 }, 12000, 220, 3)
 
-    btmBmManualAlchemy(event, 'pressure_seal_batch', [
+     bcBmManualAlchemy(event, 'pressure_seal_batch', [
         { item: 'minecraft:dried_kelp' },
         { item: 'minecraft:dried_kelp' },
         { item: 'minecraft:slime_ball' },

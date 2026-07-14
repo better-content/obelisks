@@ -1,4 +1,4 @@
-# Bound To Matter Docs
+# Better Content Docs
 
 This directory is intentionally limited to five living Markdown files. The repo is the source of truth for pack content; these docs summarize current intent and operating state only.
 
@@ -12,7 +12,7 @@ This directory is intentionally limited to five living Markdown files. The repo 
 
 ## Pack Thesis
 
-Bound To Matter is a Forge 1.20.1 expert-pack content layer built around bounded matter, local logistics, and adventure pressure. Geological deposits, Y-band locality, processing ladders, machine casing tiers, Blood Magic-parented magic, coin/villager/wares economy, obelisk and dimension routes, body systems, and the death/respawn life-length loop are all progression surfaces.
+Better Content is a Forge 1.20.1 expert-pack content layer built around bounded matter, local logistics, and adventure pressure. Geological deposits, Y-band locality, processing ladders, machine casing tiers, Blood Magic-parented magic, coin/villager/wares economy, obelisk and dimension routes, body systems, and the death/respawn life-length loop are all progression surfaces.
 
 The main source trees are `kubejs/`, `config/`, `defaultconfigs/`, `datapacks/`, `globalresources/`, `resourcepacks/`, `shaderpacks/`, active `mods/*.pw.toml`, bundled custom jars in `mods/`, and `tools/`.
 

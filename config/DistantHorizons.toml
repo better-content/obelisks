@@ -114,7 +114,7 @@ _version = 3
 	[common.multiThreading]
 		#
 		# How many threads should be used by Distant Horizons?
-		numberOfThreads = 3
+		numberOfThreads = 6
 		#
 		# A value between 1.0 and 0.0 that represents the percentage 
 		# of time each thread can run before going idle. 
@@ -223,7 +223,7 @@ _version = 3
 		# but may cause server/simulation lag. 
 		# Note: unlike other modes this option DOES save generated chunks to 
 		# Minecraft's region files.
-		distantGeneratorMode = "PRE_EXISTING_ONLY"
+		distantGeneratorMode = "INTERNAL_SERVER"
 		#
 		# How should distant generator progress be displayed? 
 		# 
@@ -821,3 +821,4 @@ _version = 3
 			# NAME_IP: Example: "Minecraft Server IP 192.168.1.40" 
 			# NAME_IP_PORT: Example: "Minecraft Server IP 192.168.1.40:25565"NAME_IP_PORT_MC_VERSION: Example: "Minecraft Server IP 192.168.1.40:25565 GameVersion 1.16.5"
 			serverFolderNameMode = "NAME_ONLY"
+

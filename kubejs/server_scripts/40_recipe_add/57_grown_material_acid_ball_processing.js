@@ -2,7 +2,7 @@
 // grinding media selects recovery bias. These routes make farms and animal loops
 // feed chemistry without turning them into simple grid shortcuts.
 
-var BTM_GROWN_MATERIALS = [
+var BC_GROWN_MATERIALS = [
     { id: 'wheat_starch', input: 'minecraft:wheat', primary: 'minecraft:sugar', ethanol: 'chemlib:carbon', acetic: 'chemlib:carbon_dioxide', sulfuric: 'chemlib:sulfur', hydrochloric: 'chemlib:hydrogen', nitric: 'chemlib:nitrogen', phosphoric: 'chemlib:phosphorus', gangue: 'minecraft:wheat_seeds', ferrous: 'chemlib:iron', nonferrous: 'chemlib:potassium', hard: 'chemlib:magnesium', rare: 'chemlib:phosphorus', blood: 'minecraft:bone_meal', ae: 'chemlib:silicon', trace: 'chemlib:potassium' },
     { id: 'potato_starch', input: 'minecraft:potato', primary: 'minecraft:sugar', ethanol: 'chemlib:carbon', acetic: 'chemlib:carbon_dioxide', sulfuric: 'chemlib:sulfur', hydrochloric: 'chemlib:chlorine', nitric: 'chemlib:nitrogen', phosphoric: 'chemlib:phosphorus', gangue: 'minecraft:poisonous_potato', ferrous: 'chemlib:iron', nonferrous: 'chemlib:potassium', hard: 'chemlib:magnesium', rare: 'chemlib:phosphorus', blood: 'minecraft:bone_meal', ae: 'chemlib:silicon', trace: 'chemlib:potassium' },
     { id: 'carrot_root', input: 'minecraft:carrot', primary: 'minecraft:orange_dye', ethanol: 'minecraft:sugar', acetic: 'chemlib:carbon', sulfuric: 'chemlib:sulfur', hydrochloric: 'chemlib:chlorine', nitric: 'chemlib:nitrogen', phosphoric: 'chemlib:phosphorus', gangue: 'minecraft:bone_meal', ferrous: 'chemlib:iron', nonferrous: 'chemlib:potassium', hard: 'chemlib:magnesium', rare: 'minecraft:gold_nugget', blood: 'minecraft:redstone', ae: 'chemlib:silicon', trace: 'chemlib:potassium' },
@@ -25,37 +25,37 @@ var BTM_GROWN_MATERIALS = [
     { id: 'venom_rot', input: 'minecraft:spider_eye', primary: 'minecraft:fermented_spider_eye', ethanol: 'chemlib:carbon', acetic: 'chemlib:carbon_dioxide', sulfuric: 'chemlib:sulfur', hydrochloric: 'chemlib:hydrogen', nitric: 'chemlib:nitrogen', phosphoric: 'chemlib:phosphorus', gangue: 'minecraft:fermented_spider_eye', ferrous: 'chemlib:iron', nonferrous: 'chemlib:potassium', hard: 'chemlib:magnesium', rare: 'minecraft:redstone', blood: 'minecraft:redstone', ae: 'chemlib:silicon', trace: 'chemlib:nitrogen' }
 ]
 
-function btmGrowExists(id) {
+function bcGrowExists(id) {
     if (!id) return false
     try { return Item.exists(id) } catch (e) { return false }
 }
 
-function btmGrowPush(results, id, count, chance) {
-    if (!btmGrowExists(id) || results.length >= 6) return
+function bcGrowPush(results, id, count, chance) {
+    if (!bcGrowExists(id) || results.length >= 6) return
     var result = { item: id }
     if (count && count > 1) result.count = count
     if (chance && chance < 1) result.chance = Math.max(0.01, Math.min(0.99, chance))
     results.push(result)
 }
 
-function btmGrowBallProduct(def, ball) {
+function bcGrowBallProduct(def, ball) {
     if (ball.bias === 'general') return def.trace || def.primary
     return def[ball.bias] || def.trace || def.primary
 }
 
-function btmGrowResults(def, solvent, ball) {
+function bcGrowResults(def, solvent, ball) {
     var results = []
-    btmGrowPush(results, def.primary, ball.primaryBonus > 0 ? 2 : 1, null)
-    btmGrowPush(results, def[solvent.id], 1, solvent.secondary + ball.secondaryBonus)
-    btmGrowPush(results, btmGrowBallProduct(def, ball), 1, 0.35 + ball.secondaryBonus)
-    btmGrowPush(results, def.trace, 1, solvent.trace + ball.traceBonus)
-    var retained = global.BTM_RO_RETENTION[solvent.id][ball.id]
-    if (retained && btmGrowExists(ball.item)) results.push({ item: ball.item, chance: retained })
+     bcGrowPush(results, def.primary, ball.primaryBonus > 0 ? 2 : 1, null)
+     bcGrowPush(results, def[solvent.id], 1, solvent.secondary + ball.secondaryBonus)
+     bcGrowPush(results, bcGrowBallProduct(def, ball), 1, 0.35 + ball.secondaryBonus)
+     bcGrowPush(results, def.trace, 1, solvent.trace + ball.traceBonus)
+    var retained = global.BC_RO_RETENTION[solvent.id][ball.id]
+    if (retained &&  bcGrowExists(ball.item)) results.push({ item: ball.item, chance: retained })
     return results
 }
 
-function btmGrowRecipe(event, def, solvent, ball) {
-    if (!btmGrowExists(def.input) || !btmGrowExists(ball.item)) return
+function bcGrowRecipe(event, def, solvent, ball) {
+    if (!bcGrowExists(def.input) || !bcGrowExists(ball.item)) return
     var recipe = {
         type: 'create:mixing',
         ingredients: [
@@ -63,7 +63,7 @@ function btmGrowRecipe(event, def, solvent, ball) {
             { item: ball.item },
             { fluid: solvent.fluid, amount: solvent.amount }
         ],
-        results: btmGrowResults(def, solvent, ball),
+        results: bcGrowResults(def, solvent, ball),
         processingTime: solvent.time
     }
     if (!recipe.results.length) return
@@ -72,11 +72,11 @@ function btmGrowRecipe(event, def, solvent, ball) {
 }
 
 ServerEvents.recipes(function (event) {
-    if (!global.BTM_RO_SOLVENTS || !global.BTM_RO_BALLS || !global.BTM_RO_RETENTION) return
-    for (var d = 0; d < BTM_GROWN_MATERIALS.length; d++) {
-        for (var s = 0; s < global.BTM_RO_SOLVENTS.length; s++) {
-            for (var b = 0; b < global.BTM_RO_BALLS.length; b++) {
-                btmGrowRecipe(event, BTM_GROWN_MATERIALS[d], global.BTM_RO_SOLVENTS[s], global.BTM_RO_BALLS[b])
+    if (!global.BC_RO_SOLVENTS || !global.BC_RO_BALLS || !global.BC_RO_RETENTION) return
+    for (var d = 0; d < BC_GROWN_MATERIALS.length; d++) {
+        for (var s = 0; s < global.BC_RO_SOLVENTS.length; s++) {
+            for (var b = 0; b < global.BC_RO_BALLS.length; b++) {
+                 bcGrowRecipe(event, BC_GROWN_MATERIALS[d], global.BC_RO_SOLVENTS[s], global.BC_RO_BALLS[b])
             }
         }
     }

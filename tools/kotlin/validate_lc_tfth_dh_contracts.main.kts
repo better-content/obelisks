@@ -142,7 +142,7 @@ fun expectLostCitiesRouting() {
         earth,
         lostcity,
         "config/lostcities/common.toml",
-        "config/btmfixes-common.toml",
+        "config/bcfixes-common.toml",
     )
     val sourceHits = Files.walk(root).use { stream ->
         stream
@@ -196,7 +196,7 @@ expectPackwizManifest("Lost Cities", "mods/the-lost-cities.pw.toml", Regex("""lo
 expectPackwizManifest("TFTH", "mods/the-flesh-that-hates.pw.toml", Regex("""(TFTH|.*flesh.*hates).*\.jar""", RegexOption.IGNORE_CASE))
 expectPackwizManifest("C2ME", "mods/concurrent-chunk-management-engine-for-forge-the.pw.toml", Regex("""c2me.*\.jar""", RegexOption.IGNORE_CASE))
 expectPackwizManifest("Distant Horizons", "mods/distant-horizons.pw.toml", Regex("""DistantHorizons.*\.jar""", RegexOption.IGNORE_CASE))
-expectCustomJar("btmfixes", Regex("""btmfixes.*\.jar""", RegexOption.IGNORE_CASE))
+expectCustomJar("bcfixes", Regex("""bcfixes.*\.jar""", RegexOption.IGNORE_CASE))
 expectTomlParses(listOf("config/c2me.toml", "config/DistantHorizons.toml", "config/TFTH.toml", "config/TFTH-Data.toml"))
 expectLostCitiesRouting()
 expectScenarioHarnessContracts()

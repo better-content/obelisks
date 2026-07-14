@@ -176,7 +176,7 @@ val generatedAt = java.time.Instant.now().toString()
 val summaryJson = buildString {
     appendLine("{")
     appendLine("  \"generatedAt\": \"$generatedAt\",")
-    appendLine("  \"schema\": \"btm.contract_completeness_report.v1\",")
+    appendLine("  \"schema\": \"bc.contract_completeness_report.v1\",")
     appendLine("  \"contract\": \"tools/pack_contract.json\",")
     appendLine("  \"dimensions\": ${dimensions.size},")
     appendLine("  \"strongDimensions\": ${strongDimensions.size},")

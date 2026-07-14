@@ -1,7 +1,4 @@
 ServerEvents.recipes(event => {
-    // Manual fluid unification (Almost Unified does not handle these fluid recipe ingredients).
-    event.replaceInput({}, Fluid.of('the_finley_dimension_remastered:acid', 1), Fluid.of('chemlib:nitric_acid_fluid', 1))
-
     // Power Grid's generic acid is split into chemistry-specific ChemLib fluids.
     // Batteries want sulfuric acid; copper-board etching wants hydrochloric acid.
     event.remove({ id: 'powergrid:mixing/acid' })

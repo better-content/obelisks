@@ -29,7 +29,7 @@ val forwarded = buildList {
     addAll(0, listOf("internal", "resolve-packwiz-downloads"))
 }
 
-val process = ProcessBuilder(listOf(root.resolve("tools/btm").toString()) + forwarded)
+val process = ProcessBuilder(listOf(root.resolve("tools/bc").toString()) + forwarded)
     .directory(root.toFile())
     .inheritIO()
     .start()

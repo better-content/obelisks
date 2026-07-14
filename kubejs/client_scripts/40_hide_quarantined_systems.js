@@ -1,4 +1,4 @@
-var BTM_HIDDEN_QUARANTINED_ITEMS = [
+var BC_HIDDEN_QUARANTINED_ITEMS = [
     'alchemistry:atomizer',
     'alchemistry:combiner',
     'alchemistry:compactor',
@@ -54,12 +54,10 @@ var BTM_HIDDEN_QUARANTINED_ITEMS = [
     'pneumaticcraft:jet_boots_upgrade_5'
 ]
 
-var BTM_HIDDEN_DIRECT_DIMENSION_TRAVEL_ITEMS = [
+var BC_HIDDEN_DIRECT_DIMENSION_TRAVEL_ITEMS = [
     'fallout_wastelands_:portal_frame',
     'fallout_wastelands_:wastelands',
-    'the_finley_dimension_remastered:finley_dimension',
     'undergarden:catalyst',
-    'callfromthedepth_:depth',
     'bloodmagic:simplekey',
     'bloodmagic:minekey',
     'bloodmagic:mineentrancekey',
@@ -76,14 +74,14 @@ var BTM_HIDDEN_DIRECT_DIMENSION_TRAVEL_ITEMS = [
     'deeperdarker:otherside_portal'
 ]
 
-var BTM_HIDDEN_ITEMS = BTM_HIDDEN_QUARANTINED_ITEMS.concat(BTM_HIDDEN_DIRECT_DIMENSION_TRAVEL_ITEMS)
+var BC_HIDDEN_ITEMS = BC_HIDDEN_QUARANTINED_ITEMS.concat(BC_HIDDEN_DIRECT_DIMENSION_TRAVEL_ITEMS)
 
 JEIEvents.hideItems(function (event) {
-    BTM_HIDDEN_ITEMS.forEach(function (item) { event.hide(item) })
+    BC_HIDDEN_ITEMS.forEach(function (item) { event.hide(item) })
 })
 
 if (Platform.isLoaded('emi') && typeof EMIEvents !== 'undefined') {
     EMIEvents.hideItems(function (event) {
-        BTM_HIDDEN_ITEMS.forEach(function (item) { event.hide(item) })
+        BC_HIDDEN_ITEMS.forEach(function (item) { event.hide(item) })
     })
 }

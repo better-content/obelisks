@@ -1,26 +1,26 @@
 // Dimension proof gates for external reward graph starts.
-// Meteor dimensions provide native material proofs for route tools; they do not
+// Dimension Drink dimensions provide native material proofs for route tools; they do not
 // become labels for the main Create, AE2, PNCR, OC2R, or side-magic spines.
 
-var BTM_DIM_PROOF_ADDED = 0
+var BC_DIM_PROOF_ADDED = 0
 
-function btmDimProofShaped(event, output, pattern, keys, recipeId, count) {
+function bcDimProofShaped(event, output, pattern, keys, recipeId, count) {
     event.remove({ output: output })
     event.shaped(count ? Item.of(output, count) : output, pattern, keys).id(recipeId)
-    BTM_DIM_PROOF_ADDED++
+    BC_DIM_PROOF_ADDED++
 }
 
-function btmDimProofMechanical(event, output, pattern, keys, recipeId, count) {
+function bcDimProofMechanical(event, output, pattern, keys, recipeId, count) {
     event.remove({ output: output })
-    global.btmFactoryCrafting(event, recipeId, output, count || 1, pattern, keys, true)
-    BTM_DIM_PROOF_ADDED++
+    global.bcFactoryCrafting(event, recipeId, output, count || 1, pattern, keys, true)
+    BC_DIM_PROOF_ADDED++
 }
 
 ServerEvents.recipes(function (event) {
-    BTM_DIM_PROOF_ADDED = 0
+    BC_DIM_PROOF_ADDED = 0
 
     // Aether -> air travel and expedition mobility.
-    btmDimProofMechanical(event, 'hangglider:glider_wing', [
+     bcDimProofMechanical(event, 'hangglider:glider_wing', [
         '  S',
         ' SA',
         'SAA'
@@ -29,7 +29,7 @@ ServerEvents.recipes(function (event) {
         A: 'aether:blue_aercloud'
     }, 'kubejs:dimension_graph/aether/glider_wing')
 
-    btmDimProofMechanical(event, 'hangglider:glider_framework', [
+     bcDimProofMechanical(event, 'hangglider:glider_framework', [
         ' Z ',
         'IAI',
         'I I'
@@ -39,7 +39,7 @@ ServerEvents.recipes(function (event) {
         A: 'aether:aerogel'
     }, 'kubejs:dimension_graph/aether/glider_framework')
 
-    btmDimProofMechanical(event, 'hangglider:hang_glider', [
+     bcDimProofMechanical(event, 'hangglider:hang_glider', [
         'WFW',
         ' A ',
         ' B '
@@ -50,7 +50,7 @@ ServerEvents.recipes(function (event) {
         B: 'kubejs:brass_machine_casing'
     }, 'kubejs:dimension_graph/aether/hang_glider')
 
-    btmDimProofMechanical(event, 'hangglider:reinforced_hang_glider', [
+     bcDimProofMechanical(event, 'hangglider:reinforced_hang_glider', [
         'EGE',
         'SCS',
         'EGE'
@@ -61,91 +61,5 @@ ServerEvents.recipes(function (event) {
         C: 'kubejs:impossible_machine_casing'
     }, 'kubejs:dimension_graph/aether/reinforced_hang_glider')
 
-    btmDimProofMechanical(event, 'immersive_aircraft:sail', [
-        'AAA',
-        'SBS',
-        'AAA'
-    ], {
-        A: 'aether:blue_aercloud',
-        S: 'minecraft:string',
-        B: 'aether:ambrosium_shard'
-    }, 'kubejs:dimension_graph/aether/aircraft_sail')
-
-    btmDimProofMechanical(event, 'immersive_aircraft:hull', [
-        'SZS',
-        'PAP',
-        'SZS'
-    ], {
-        S: 'aether:skyroot_log',
-        Z: 'aether:zanite_gemstone',
-        P: '#forge:plates/iron',
-        A: 'aether:aerogel'
-    }, 'kubejs:dimension_graph/aether/aircraft_hull')
-
-    btmDimProofMechanical(event, 'immersive_aircraft:propeller', [
-        ' Q ',
-        'PAP',
-        ' Q '
-    ], {
-        Q: 'aether:quicksoil_glass',
-        P: '#forge:plates/iron',
-        A: 'aether:aerogel'
-    }, 'kubejs:dimension_graph/aether/aircraft_propeller')
-
-    btmDimProofMechanical(event, 'immersive_aircraft:airship', [
-        'SSS',
-        'HHH',
-        'BCE'
-    ], {
-        S: 'immersive_aircraft:sail',
-        H: 'immersive_aircraft:hull',
-        B: 'kubejs:brass_machine_casing',
-        C: 'aether:aerogel',
-        E: 'immersive_aircraft:engine'
-    }, 'kubejs:dimension_graph/aether/airship')
-
-    btmDimProofMechanical(event, 'immersive_aircraft:biplane', [
-        ' H ',
-        'HEP',
-        ' B '
-    ], {
-        H: 'immersive_aircraft:hull',
-        E: 'immersive_aircraft:engine',
-        P: 'immersive_aircraft:propeller',
-        B: 'kubejs:brass_machine_casing'
-    }, 'kubejs:dimension_graph/aether/biplane')
-
-    btmDimProofMechanical(event, 'immersive_aircraft:gyrodyne', [
-        ' S ',
-        'HPH',
-        ' B '
-    ], {
-        S: 'immersive_aircraft:sail',
-        H: 'immersive_aircraft:hull',
-        P: 'immersive_aircraft:propeller',
-        B: 'kubejs:brass_machine_casing'
-    }, 'kubejs:dimension_graph/aether/gyrodyne')
-
-    btmDimProofMechanical(event, 'immersive_aircraft:quadrocopter', [
-        'PBP',
-        'BEB',
-        'PBP'
-    ], {
-        P: 'immersive_aircraft:propeller',
-        B: 'kubejs:brass_machine_casing',
-        E: 'immersive_aircraft:engine'
-    }, 'kubejs:dimension_graph/aether/quadrocopter')
-
-    btmDimProofMechanical(event, 'immersive_aircraft:cargo_airship', [
-        'CAC',
-        'CHC',
-        ' B '
-    ], {
-        C: 'minecraft:chest',
-        A: 'immersive_aircraft:airship',
-        H: 'immersive_aircraft:hull',
-        B: 'kubejs:electrical_machine_casing'
-    }, 'kubejs:dimension_graph/aether/cargo_airship')
-
-    console.info('[dimension-proof-graph-starts] registered ' + BTM_DIM_PROOF_ADDED + ' recipe gates')
+    console.info('[dimension-proof-graph-starts] registered ' + BC_DIM_PROOF_ADDED + ' recipe gates')
 })

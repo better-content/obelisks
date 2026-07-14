@@ -280,7 +280,7 @@ fun validateMods(indexByFile: Map<String, String>) {
 }
 
 fun validateProgressionCatalog() {
-    val catalog = try { jsonObject(readJson("kubejs/config/btm_expert_graph_catalog.json")) } catch (error: Exception) {
+    val catalog = try { jsonObject(readJson("kubejs/config/bc_expert_graph_catalog.json")) } catch (error: Exception) {
         fail("expert graph catalog parses", error.message ?: error.javaClass.simpleName)
         return
     }
@@ -339,7 +339,7 @@ fun validateValidationTiers() {
 
 fun validateCustomMods(indexByFile: Map<String, String>) {
     val customMods = jsonObject(contract["customMods"])
-    val sourceRoot = System.getenv("BTM_CUSTOM_MODS_DIR") ?: jsonString(customMods["sourceRoot"])
+    val sourceRoot = System.getenv("BC_CUSTOM_MODS_DIR") ?: jsonString(customMods["sourceRoot"])
     if (sourceRoot.isNullOrBlank() || !Paths.get(sourceRoot).exists()) return fail("custom mod source root exists", sourceRoot ?: "<missing>")
     ok("custom mod source root exists", sourceRoot)
     for (modValue in jsonArray(customMods["entries"])) {

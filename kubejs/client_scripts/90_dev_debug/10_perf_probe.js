@@ -27,9 +27,9 @@
       var player = mc.player
       var dim = level == null ? 'no_level' : String(level.dimension().location())
       var pos = player == null ? 'no_player' : Math.floor(player.getX()) + ',' + Math.floor(player.getY()) + ',' + Math.floor(player.getZ())
-      console.info('[BTM-PERF-PROBE] source=' + source + ' clientTicks=' + clientTicks + ' renderFps=' + renderFps + ' mcFps=' + fps + ' dim=' + dim + ' pos=' + pos)
+      console.info('[BC-PERF-PROBE] source=' + source + ' clientTicks=' + clientTicks + ' renderFps=' + renderFps + ' mcFps=' + fps + ' dim=' + dim + ' pos=' + pos)
     } catch (e) {
-      console.info('[BTM-PERF-PROBE] error=' + e)
+      console.info('[BC-PERF-PROBE] error=' + e)
     }
   }
 
@@ -44,8 +44,8 @@
       logProbe('forge_client_tick')
     })
 
-    console.info('[BTM-PERF-PROBE] registered forge render/client tick probe interval=' + interval)
+    console.info('[BC-PERF-PROBE] registered forge render/client tick probe interval=' + interval)
   } else {
-    console.info('[BTM-PERF-PROBE] ForgeEvents unavailable; FPS probe disabled')
+    console.info('[BC-PERF-PROBE] ForgeEvents unavailable; FPS probe disabled')
   }
 })()

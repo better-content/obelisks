@@ -1,1 +1,1 @@
-// Retired. Realistic Hands assignments now live in btmfixes tag data and retained audit output.
+// Retired. Realistic Hands assignments now live inbcfixes tag data and retained audit output.

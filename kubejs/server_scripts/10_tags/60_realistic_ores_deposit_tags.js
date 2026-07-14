@@ -1,7 +1,7 @@
 // Deposit source tags for Realistic Ores. These tags are consumed by TCon and
 // Create recipe generators.
 
-var BTM_DEPOSIT_SOURCE_BLOCKS = {
+var BC_DEPOSIT_SOURCE_BLOCKS = {
     coal_measures: ['realisticores:coal_measures', 'realisticores:deepslate_coal_measures'],
     ironstone: ['realisticores:ironstone', 'realisticores:deepslate_ironstone'],
     copper_sulfide: ['realisticores:copper_sulfide_ore', 'realisticores:deepslate_copper_sulfide_ore'],
@@ -26,13 +26,13 @@ var BTM_DEPOSIT_SOURCE_BLOCKS = {
     sulfur_bearing_pyrite_ore: ['realisticores:sulfur_bearing_pyrite_ore', 'realisticores:deepslate_sulfur_bearing_pyrite_ore']
 }
 
-function btmAddDepositTags(event) {
-    for (var id in BTM_DEPOSIT_SOURCE_BLOCKS) {
+function bcAddDepositTags(event) {
+    for (var id inBC_DEPOSIT_SOURCE_BLOCKS) {
         var tag = 'kubejs:deposit_blocks/' + id
-        var blocks = BTM_DEPOSIT_SOURCE_BLOCKS[id]
+        var blocks = BC_DEPOSIT_SOURCE_BLOCKS[id]
         for (var i = 0; i < blocks.length; i++) event.add(tag, blocks[i])
     }
 }
 
-ServerEvents.tags('item', function (event) { btmAddDepositTags(event) })
-ServerEvents.tags('block', function (event) { btmAddDepositTags(event) })
+ServerEvents.tags('item', function (event) {  bcAddDepositTags(event) })
+ServerEvents.tags('block', function (event) {  bcAddDepositTags(event) })

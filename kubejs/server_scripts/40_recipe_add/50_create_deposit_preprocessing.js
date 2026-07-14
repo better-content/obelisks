@@ -1,7 +1,7 @@
 // Create ore preprocessing for the starter Realistic Ores deposit subset.
 // Conceptual chain: deposit -> crushed deposit -> washed concentrate -> TCon/Foundry input.
 
-var BTM_CREATE_DEPOSITS = [
+var BC_CREATE_DEPOSITS = [
     { id: 'coal_measures', tag: 'kubejs:deposit_blocks/coal_measures', crushed: 'realisticores:crushed_coal_measures', wash: [{ item: 'minecraft:coal', count: 2 }, { item: 'chemlib:carbon', chance: 0.35 }, { item: 'create:crushed_raw_iron', chance: 0.20 }], fluid: 'forge:molten_iron', amount: 90, temp: 800 },
     { id: 'ironstone', tag: 'kubejs:deposit_blocks/ironstone', crushed: 'realisticores:crushed_ironstone', wash: [{ item: 'create:crushed_raw_iron', count: 2 }, { item: 'create:crushed_raw_nickel', chance: 0.40 }, { item: 'chemlib:chromium', chance: 0.18 }], fluid: 'forge:molten_iron', amount: 180, temp: 800 },
     { id: 'copper_sulfide', tag: 'kubejs:deposit_blocks/copper_sulfide', crushed: 'realisticores:crushed_copper_sulfide_ore', wash: [{ item: 'create:crushed_raw_copper', count: 2 }, { item: 'create:crushed_raw_iron', chance: 0.35 }, { item: 'create:crushed_raw_gold', chance: 0.12 }, { item: 'chemlib:sulfur', chance: 0.30 }], fluid: 'forge:molten_copper', amount: 180, temp: 500 },
@@ -25,14 +25,14 @@ var BTM_CREATE_DEPOSITS = [
     { id: 'soul_bearing_black_shale_soulstone_vein', tag: 'kubejs:deposit_blocks/soul_bearing_black_shale_soulstone_vein', crushed: 'realisticores:crushed_soul_bearing_black_shale_soulstone_vein', wash: [{ item: 'chemlib:carbon', count: 2 }, { item: 'minecraft:soul_sand', chance: 0.45 }, { item: 'chemlib:sulfur', chance: 0.30 }, { item: 'minecraft:redstone', chance: 0.12 }] },
     { id: 'sulfur_bearing_pyrite_ore', tag: 'kubejs:deposit_blocks/sulfur_bearing_pyrite_ore', crushed: 'realisticores:crushed_sulfur_bearing_pyrite_ore', wash: [{ item: 'chemlib:sulfur', count: 3 }, { item: 'create:crushed_raw_iron', chance: 0.65 }, { item: 'create:crushed_raw_copper', chance: 0.20 }, { item: 'create:crushed_raw_gold', chance: 0.08 }] }
 ]
-function btmResult(entry) {
+function bcResult(entry) {
     var result = { item: entry.item }
     if (entry.count) result.count = entry.count
     if (entry.chance) result.chance = entry.chance
     return result
 }
 
-function btmFluidOutput(ref, amount) {
+function bcFluidOutput(ref, amount) {
     var output = { amount: amount }
     if (ref.indexOf('forge:') === 0) output.tag = ref
     else output.fluid = ref
@@ -40,8 +40,8 @@ function btmFluidOutput(ref, amount) {
 }
 
 ServerEvents.recipes(function (event) {
-    for (var i = 0; i < BTM_CREATE_DEPOSITS.length; i++) {
-        var dep = BTM_CREATE_DEPOSITS[i]
+    for (var i = 0; i < BC_CREATE_DEPOSITS.length; i++) {
+        var dep = BC_CREATE_DEPOSITS[i]
 
         event.custom({
             type: 'create:crushing',
@@ -56,7 +56,7 @@ ServerEvents.recipes(function (event) {
         }).id('kubejs:create/crushing/deposits/' + dep.id)
 
         var washResults = []
-        for (var j = 0; j < dep.wash.length; j++) washResults.push(btmResult(dep.wash[j]))
+        for (var j = 0; j < dep.wash.length; j++) washResults.push(bcResult(dep.wash[j]))
         event.custom({
             type: 'create:splashing',
             ingredients: [{ item: dep.crushed }],
@@ -67,7 +67,7 @@ ServerEvents.recipes(function (event) {
             event.custom({
                 type: 'tconstruct:melting',
                 ingredient: { item: dep.crushed },
-                result: btmFluidOutput(dep.fluid, dep.amount),
+                result: bcFluidOutput(dep.fluid, dep.amount),
                 temperature: dep.temp,
                 time: 120
             }).id('kubejs:tconstruct/melting/crushed_deposit/' + dep.id)
@@ -75,7 +75,7 @@ ServerEvents.recipes(function (event) {
             event.custom({
                 type: 'tconstruct:ore_melting',
                 ingredient: { item: dep.crushed },
-                result: btmFluidOutput(dep.fluid, dep.amount + 90),
+                result: bcFluidOutput(dep.fluid, dep.amount + 90),
                 rate: 'metal',
                 temperature: dep.temp,
                 time: 160

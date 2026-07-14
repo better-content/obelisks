@@ -65,9 +65,7 @@ const DISABLED_ITEMS = [
 'pneumaticcraft:jet_boots_upgrade_5',
 'fallout_wastelands_:portal_frame',
 'fallout_wastelands_:wastelands',
-'the_finley_dimension_remastered:finley_dimension',
 'undergarden:catalyst',
-'callfromthedepth_:depth',
 'bloodmagic:simplekey',
 'bloodmagic:minekey',
 'bloodmagic:mineentrancekey',
@@ -109,7 +107,7 @@ ServerEvents.recipes(event => {
     event.remove({ id: 'burnt:gunpowder_recipe' })
     event.remove({ id: 'burnt:fire_barrel_recipe_2' })
     event.remove({ type: 'occultism:miner' })
-    event.remove({ type: 'bloodmagic:meteor' })
+    event.remove({ type: 'bloodmagic:dimension_drink' })
     event.remove({ id: 'createdieselgenerators:bulk_fermenting/lava' })
     event.remove({ id: 'ars_nouveau:water_essence_to_bucket' })
     event.remove({ id: 'ars_nouveau:water_essence_to_obsidian' })

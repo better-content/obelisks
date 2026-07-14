@@ -6,10 +6,10 @@ import kotlin.system.exitProcess
 
 val root = Paths.get("").toAbsolutePath().normalize()
 val files = listOf(
-    "kubejs/config/tech_parenting.json" to listOf("\"schema\": \"btm.tech_parenting.v1\"", "\"entries\"", "\"era\": \"survival\""),
-    "kubejs/config/magic_parenting.json" to listOf("\"schema\": \"btm.magic_parenting.v1\"", "\"entries\"", "\"mod\": \"bloodmagic\""),
-    "kubejs/config/economy_acquisition.json" to listOf("\"schema\": \"btm.economy_acquisition.v1\"", "\"entries\"", "\"policy\": \"currency_only\""),
-    "kubejs/config/surface_registry.json" to listOf("\"schema\": \"btm.surface_registry.v1\"", "\"recipe_surface_types\"", "\"acquisition_surface_types\""),
+    "kubejs/config/tech_parenting.json" to listOf("\"schema\": \"bc.tech_parenting.v1\"", "\"entries\"", "\"era\": \"survival\""),
+    "kubejs/config/magic_parenting.json" to listOf("\"schema\": \"bc.magic_parenting.v1\"", "\"entries\"", "\"mod\": \"bloodmagic\""),
+    "kubejs/config/economy_acquisition.json" to listOf("\"schema\": \"bc.economy_acquisition.v1\"", "\"entries\"", "\"policy\": \"currency_only\""),
+    "kubejs/config/surface_registry.json" to listOf("\"schema\": \"bc.surface_registry.v1\"", "\"recipe_surface_types\"", "\"acquisition_surface_types\""),
 )
 val failures = mutableListOf<String>()
 

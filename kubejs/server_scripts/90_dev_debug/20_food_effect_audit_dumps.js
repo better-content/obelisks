@@ -439,5 +439,5 @@ function bcFoodWriteAuditDump() {
 
 ServerEvents.recipes(function (event) {
     var cfg = bcFoodAuditReadConfig()
-    if (!cfg.enabled || !cfg.writeFoodEffectIndex) return bcFoodWriteAuditDump()
+    if (cfg.enabled && cfg.writeFoodEffectIndex) return bcFoodWriteAuditDump()
 })

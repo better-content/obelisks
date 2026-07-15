@@ -1,15 +1,15 @@
 {
-	"schema": "btm.food_effect_audit.v2",
+	"schema": "bc.food_effect_audit.v2",
 	"generatedBy": "kubejs/server_scripts/90_dev_debug/20_food_effect_audit_dumps.js",
-	"generatedAt": "2026-07-05T01:02:14.633Z",
+	"generatedAt": "2026-07-15T04:48:06.412Z",
 	"source": "runtime vanilla/Forge FoodProperties from BuiltInRegistries.ITEM during ServerEvents.recipes",
 	"limitations": [
 		"Custom item effects applied only inside finishUsingItem may not appear here.",
 		"Suspicious stew dynamic NBT effects are not expanded because they are not a fixed item-level food property."
 	],
-	"foodCount": 841,
-	"foodsWithEffectCount": 363,
-	"foodsWithoutEffectCount": 478,
+	"foodCount": 829,
+	"foodsWithEffectCount": 365,
+	"foodsWithoutEffectCount": 464,
 	"byNamespace": {
 		"minecraft": 40,
 		"goety": 5,
@@ -20,9 +20,8 @@
 		"immersive_weathering": 6,
 		"pneumaticcraft": 4,
 		"fiahi": 2,
-		"the_finley_dimension_remastered": 2,
-		"callfromthedepth_": 4,
 		"fallout_wastelands_": 37,
+		"eanimod": 20,
 		"sushigocrafting": 46,
 		"brewinandchewin": 35,
 		"farmersrespite": 30,
@@ -30,8 +29,6 @@
 		"ubesdelight": 42,
 		"cold_sweat": 1,
 		"hexerei": 9,
-		"blue_skies": 25,
-		"swem": 1,
 		"ars_nouveau": 7,
 		"aether": 8,
 		"iceandfire": 6,
@@ -148,14 +145,6 @@
 				"durationTicks": 610,
 				"amplifier": 0,
 				"probability": 1
-			},
-			{
-				"item": "blue_skies:pink_brewberry",
-				"nutrition": 2,
-				"saturationModifier": 0.10000000149011612,
-				"durationTicks": 40,
-				"amplifier": 2,
-				"probability": 100
 			},
 			{
 				"item": "corn_delight:creamy_corn_drink",
@@ -772,6 +761,46 @@
 				"probability": 0.30000001192092896
 			},
 			{
+				"item": "eanimod:rawchicken_dark",
+				"nutrition": 1,
+				"saturationModifier": 0.30000001192092896,
+				"durationTicks": 600,
+				"amplifier": 0,
+				"probability": 0.30000001192092896
+			},
+			{
+				"item": "eanimod:rawchicken_darkbig",
+				"nutrition": 2,
+				"saturationModifier": 0.30000001192092896,
+				"durationTicks": 600,
+				"amplifier": 0,
+				"probability": 0.30000001192092896
+			},
+			{
+				"item": "eanimod:rawchicken_darksmall",
+				"nutrition": 1,
+				"saturationModifier": 0.20000000298023224,
+				"durationTicks": 600,
+				"amplifier": 0,
+				"probability": 0.30000001192092896
+			},
+			{
+				"item": "eanimod:rawchicken_pale",
+				"nutrition": 1,
+				"saturationModifier": 0.30000001192092896,
+				"durationTicks": 600,
+				"amplifier": 0,
+				"probability": 0.30000001192092896
+			},
+			{
+				"item": "eanimod:rawchicken_palesmall",
+				"nutrition": 1,
+				"saturationModifier": 0.20000000298023224,
+				"durationTicks": 600,
+				"amplifier": 0,
+				"probability": 0.30000001192092896
+			},
+			{
 				"item": "farmersdelight:chicken_cuts",
 				"nutrition": 1,
 				"saturationModifier": 0.30000001192092896,
@@ -1052,14 +1081,6 @@
 				"durationTicks": 400,
 				"amplifier": 0,
 				"probability": 0.5
-			},
-			{
-				"item": "swem:yellow_snow_cone",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 100,
-				"amplifier": 0,
-				"probability": 1
 			},
 			{
 				"item": "the_flesh_that_hates:piece_of_flesh_cooked",
@@ -3254,14 +3275,6 @@
 				"probability": 1
 			},
 			{
-				"item": "swem:yellow_snow_cone",
-				"nutrition": 0,
-				"saturationModifier": 0,
-				"durationTicks": 60,
-				"amplifier": 0,
-				"probability": 1
-			},
-			{
 				"item": "undergarden:inky_stew",
 				"nutrition": 4,
 				"saturationModifier": 0.4000000059604645,
@@ -3271,14 +3284,6 @@
 			}
 		],
 		"minecraft:slowness": [
-			{
-				"item": "blue_skies:cryo_root",
-				"nutrition": 3,
-				"saturationModifier": 0.30000001192092896,
-				"durationTicks": 40,
-				"amplifier": 0,
-				"probability": 0.05000000074505806
-			},
 			{
 				"item": "brewinandchewin:withering_dross",
 				"nutrition": 0,
@@ -4173,12 +4178,6 @@
 	},
 	"byDietGroup": {
 		"fruits": [
-			"blue_skies:black_brewberry",
-			"blue_skies:brewberry",
-			"blue_skies:crescent_fruit",
-			"blue_skies:pine_fruit",
-			"blue_skies:pink_brewberry",
-			"blue_skies:scalefruit",
 			"create:chocolate_glazed_berries",
 			"create:honeyed_apple",
 			"delightful:salmonberries",
@@ -4265,19 +4264,6 @@
 		],
 		"proteins": [
 			"artifacts:everlasting_beef",
-			"blue_skies:carabeef",
-			"blue_skies:charscale_moki",
-			"blue_skies:cooked_charscale_moki",
-			"blue_skies:cooked_grittle_flatfish",
-			"blue_skies:cooked_horizofin_tunid",
-			"blue_skies:cooked_municipal_monkfish",
-			"blue_skies:fiery_beans",
-			"blue_skies:grittle_flatfish",
-			"blue_skies:horizofin_tunid",
-			"blue_skies:monitor_tail",
-			"blue_skies:municipal_monkfish",
-			"blue_skies:solnut",
-			"blue_skies:venison",
 			"delightful:acorn",
 			"delightful:animal_fat",
 			"delightful:crab_rangoon",
@@ -4438,8 +4424,6 @@
 			"undergarden:raw_gwibling"
 		],
 		"vegetables": [
-			"blue_skies:cryo_root",
-			"blue_skies:winter_leaves",
 			"corn_delight:corn",
 			"corn_delight:nachos_bowl",
 			"delightful:green_tea_leaf",
@@ -4517,8 +4501,8 @@
 		]
 	},
 	"byDietGroupCount": {
-		"0": 611,
-		"1": 185,
+		"0": 620,
+		"1": 164,
 		"2": 10,
 		"3": 12,
 		"4": 23
@@ -4532,8 +4516,6 @@
 		"ars_nouveau:source_berry_pie",
 		"ars_nouveau:source_berry_roll",
 		"ars_nouveau:sourceberry_bush",
-		"blue_skies:cryo_root",
-		"blue_skies:pink_brewberry",
 		"brewinandchewin:beer",
 		"brewinandchewin:bloody_mary",
 		"brewinandchewin:cheesy_pasta",
@@ -4628,6 +4610,11 @@
 		"delightful:venison_stew",
 		"delightful:venison_stew_cup",
 		"delightful:wrapped_cantaloupe",
+		"eanimod:rawchicken_dark",
+		"eanimod:rawchicken_darkbig",
+		"eanimod:rawchicken_darksmall",
+		"eanimod:rawchicken_pale",
+		"eanimod:rawchicken_palesmall",
 		"everythingcopper:copper_nugget",
 		"farmersdelight:apple_cider",
 		"farmersdelight:apple_pie_slice",
@@ -4809,7 +4796,6 @@
 		"sushigocrafting:tobiko",
 		"sushigocrafting:tuna_fillet",
 		"sushigocrafting:wasabi_paste",
-		"swem:yellow_snow_cone",
 		"tconstruct:earth_slime_bottle",
 		"tconstruct:ender_slime_bottle",
 		"tconstruct:ichor_slime_bottle",
@@ -4899,29 +4885,6 @@
 		"artifacts:eternal_steak",
 		"artifacts:everlasting_beef",
 		"artifacts:onion_ring",
-		"blue_skies:black_brewberry",
-		"blue_skies:brewberry",
-		"blue_skies:carabeef",
-		"blue_skies:charscale_moki",
-		"blue_skies:comet_berries",
-		"blue_skies:cooked_carabeef",
-		"blue_skies:cooked_charscale_moki",
-		"blue_skies:cooked_grittle_flatfish",
-		"blue_skies:cooked_horizofin_tunid",
-		"blue_skies:cooked_monitor_tail",
-		"blue_skies:cooked_municipal_monkfish",
-		"blue_skies:cooked_venison",
-		"blue_skies:crescent_fruit",
-		"blue_skies:fiery_beans",
-		"blue_skies:grittle_flatfish",
-		"blue_skies:horizofin_tunid",
-		"blue_skies:monitor_tail",
-		"blue_skies:municipal_monkfish",
-		"blue_skies:pine_fruit",
-		"blue_skies:scalefruit",
-		"blue_skies:solnut",
-		"blue_skies:venison",
-		"blue_skies:winter_leaves",
 		"brewinandchewin:apple_jelly",
 		"brewinandchewin:flaxen_cheese_wedge",
 		"brewinandchewin:glow_berry_marmalade",
@@ -4936,10 +4899,6 @@
 		"brewinandchewin:sweet_berry_jam",
 		"burnt:baked_apple",
 		"burnt:ember_berries",
-		"callfromthedepth_:jawsappleeat",
-		"callfromthedepth_:jawsapplepie",
-		"callfromthedepth_:magmamushroomstew",
-		"callfromthedepth_:soulrosetincture",
 		"cold_sweat:soul_sprout",
 		"corn_delight:boiled_corn",
 		"corn_delight:caramel_popcorn",
@@ -4973,6 +4932,21 @@
 		"delightful:roasted_acorn",
 		"delightful:venison_chops",
 		"dynamictreesplus:saguaro_cactus_seed",
+		"eanimod:cookedchicken_dark",
+		"eanimod:cookedchicken_darkbig",
+		"eanimod:cookedchicken_darksmall",
+		"eanimod:cookedchicken_pale",
+		"eanimod:cookedchicken_palesmall",
+		"eanimod:cookedrabbit_small",
+		"eanimod:fivesixths_milk_bucket",
+		"eanimod:half_milk_bottle",
+		"eanimod:half_milk_bucket",
+		"eanimod:milk_bottle",
+		"eanimod:onesixth_milk_bucket",
+		"eanimod:onethird_milk_bucket",
+		"eanimod:rabbitstew_weak",
+		"eanimod:rawrabbit_small",
+		"eanimod:twothirds_milk_bucket",
 		"fallout_wastelands_:absinthe",
 		"fallout_wastelands_:beer",
 		"fallout_wastelands_:bloat_fly_meat",
@@ -5299,8 +5273,6 @@
 		"tconstruct:cheese_block",
 		"tconstruct:cheese_ingot",
 		"tconstruct:meat_soup",
-		"the_finley_dimension_remastered:finley_flesh",
-		"the_finley_dimension_remastered:finn_flesh",
 		"twilightforest:cooked_meef",
 		"twilightforest:cooked_venison",
 		"twilightforest:experiment_115",

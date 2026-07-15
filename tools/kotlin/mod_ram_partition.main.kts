@@ -957,13 +957,6 @@ fun measureRuntime(
         runJcmd(jvmPid, listOf("jcmd", jvmPid.toString(), "GC.heap_info"), heapInfoPath)
         runJcmd(jvmPid, listOf("jcmd", jvmPid.toString(), "VM.native_memory", "summary"), nmtPath)
         runJcmd(jvmPid, listOf("jcmd", jvmPid.toString(), "VM.flags"), flagsPath)
-        process.outputStream.bufferedWriter().use { writer ->
-            writer.appendLine("stop")
-            writer.flush()
-        }
-        process.waitFor(90, TimeUnit.SECONDS)
-        val latest = runtimeDir.resolve("logs/latest.log")
-        if (latest.exists()) Files.copy(latest, evidenceDir.resolve("latest.log"), StandardCopyOption.REPLACE_EXISTING)
         val medianRss = samples.takeIf { it.isNotEmpty() }?.map { it.vmRssMiB }?.let(::median)
         val maxHwm = samples.maxOfOrNull { it.vmHwmMiB }
         Files.writeString(
@@ -979,6 +972,13 @@ fun measureRuntime(
                 ),
             ) + "\n",
         )
+        process.outputStream.bufferedWriter().use { writer ->
+            writer.appendLine("stop")
+            writer.flush()
+        }
+        process.waitFor(20, TimeUnit.SECONDS)
+        val latest = runtimeDir.resolve("logs/latest.log")
+        if (latest.exists()) Files.copy(latest, evidenceDir.resolve("latest.log"), StandardCopyOption.REPLACE_EXISTING)
         return MeasurementResult(
             status = "passed",
             classifier = null,
@@ -1368,7 +1368,7 @@ fun main() {
     }
 
     while (pending.isNotEmpty()) {
-        val node = pending.removeLast()
+        val node = if (config.seedStrategy == "smallest_islands") pending.removeFirst() else pending.removeLast()
         writeHarnessStatus(config.runRoot, "running", "measure", mapOf("node" to node.id, "mode" to node.mode))
         val seed = node.seedJarNames.toSet()
         val actualRemoved = closureForSeed(seed, inventory, providersByModId, retainedFoundationJarNames)

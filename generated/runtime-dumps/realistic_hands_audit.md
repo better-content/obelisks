@@ -1,7 +1,7 @@
 # Realistic Hands Audit
 
 Input: `generated/runtime-dumps/block_hardness_probe.json`
-Runtime probe schema: `obelisks.block_hardness_probe.v3`
+Runtime probe schema: `bc.block_hardness_probe.v3`
 
 ## Explicit Tag Counts
 
@@ -31,7 +31,7 @@ Runtime probe schema: `obelisks.block_hardness_probe.v3`
 
 ## Force Harvest Coverage
 
-- Required: 59
+- Required: 58
 - Missing: 0
 
 ## Outcome Families

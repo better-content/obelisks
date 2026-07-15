@@ -1,9 +1,9 @@
 {
-  "schema": "obelisks.realistic_hands.tag_policy_audit.v1",
+  "schema": "dimension_drink.realistic_hands.tag_policy_audit.v1",
   "generatedBy": "tools/kotlin/audit_realistic_hands.main.kts",
   "input": "generated/runtime-dumps/block_hardness_probe.json",
-  "runtimeProbeSchema": "obelisks.block_hardness_probe.v3",
-  "policyRoot": "generated/custom-mod-sources/bound-to-matter-fixes/src/main/resources/data/btmfixes/tags",
+  "runtimeProbeSchema": "bc.block_hardness_probe.v3",
+  "policyRoot": "generated/custom-mod-sources/better-content-fixes/src/main/resources/data/bcfixes/tags",
   "blockTags": {
     "hand": [
       "aether:aether_dirt",
@@ -11,6 +11,39 @@
       "aether:aether_grass_block",
       "aether:enchanted_aether_grass_block",
       "aether:quicksoil",
+      "bcfixes:burnt_aether_grass_block",
+      "bcfixes:burnt_beige_limestone_grassy_regolith",
+      "bcfixes:burnt_chorus_grass_block",
+      "bcfixes:burnt_conglomerate_grassy_regolith",
+      "bcfixes:burnt_dolomite_grassy_regolith",
+      "bcfixes:burnt_enchanted_aether_grass_block",
+      "bcfixes:burnt_finley_grass_block",
+      "bcfixes:burnt_gabbro_grassy_regolith",
+      "bcfixes:burnt_granodiorite_grassy_regolith",
+      "bcfixes:burnt_grassy_permafrost",
+      "bcfixes:burnt_grassy_silt",
+      "bcfixes:burnt_grey_limestone_grassy_regolith",
+      "bcfixes:burnt_kimberlite_grassy_regolith",
+      "bcfixes:burnt_limestone_grassy_regolith",
+      "bcfixes:burnt_living_grass_block",
+      "bcfixes:burnt_lunar_comet_grass_block",
+      "bcfixes:burnt_lunar_grass_block",
+      "bcfixes:burnt_mudstone_grassy_regolith",
+      "bcfixes:burnt_phyllite_grassy_regolith",
+      "bcfixes:burnt_quartzite_grassy_regolith",
+      "bcfixes:burnt_rhyolite_grassy_regolith",
+      "bcfixes:burnt_rooted_grass_block",
+      "bcfixes:burnt_rooty_aether_grass_block",
+      "bcfixes:burnt_rooty_enchanted_aether_grass_block",
+      "bcfixes:burnt_rooty_frozen_aether_grass_block",
+      "bcfixes:burnt_rooty_grass_block",
+      "bcfixes:burnt_sandstone_grassy_regolith",
+      "bcfixes:burnt_siltstone_grassy_regolith",
+      "bcfixes:burnt_slate_grassy_regolith",
+      "bcfixes:burnt_stone_grassy_regolith",
+      "bcfixes:burnt_turquoise_comet_grass_block",
+      "bcfixes:burnt_turquoise_grass_block",
+      "bcfixes:burnt_white_granite_grassy_regolith",
       "bloodmagic:nether_soil",
       "blue_skies:coarse_lunar_dirt",
       "blue_skies:coarse_turquoise_dirt",
@@ -23,39 +56,6 @@
       "blue_skies:turquoise_comet_grass_block",
       "blue_skies:turquoise_dirt",
       "blue_skies:turquoise_grass_block",
-      "btmfixes:burnt_aether_grass_block",
-      "btmfixes:burnt_beige_limestone_grassy_regolith",
-      "btmfixes:burnt_chorus_grass_block",
-      "btmfixes:burnt_conglomerate_grassy_regolith",
-      "btmfixes:burnt_dolomite_grassy_regolith",
-      "btmfixes:burnt_enchanted_aether_grass_block",
-      "btmfixes:burnt_finley_grass_block",
-      "btmfixes:burnt_gabbro_grassy_regolith",
-      "btmfixes:burnt_granodiorite_grassy_regolith",
-      "btmfixes:burnt_grassy_permafrost",
-      "btmfixes:burnt_grassy_silt",
-      "btmfixes:burnt_grey_limestone_grassy_regolith",
-      "btmfixes:burnt_kimberlite_grassy_regolith",
-      "btmfixes:burnt_limestone_grassy_regolith",
-      "btmfixes:burnt_living_grass_block",
-      "btmfixes:burnt_lunar_comet_grass_block",
-      "btmfixes:burnt_lunar_grass_block",
-      "btmfixes:burnt_mudstone_grassy_regolith",
-      "btmfixes:burnt_phyllite_grassy_regolith",
-      "btmfixes:burnt_quartzite_grassy_regolith",
-      "btmfixes:burnt_rhyolite_grassy_regolith",
-      "btmfixes:burnt_rooted_grass_block",
-      "btmfixes:burnt_rooty_aether_grass_block",
-      "btmfixes:burnt_rooty_enchanted_aether_grass_block",
-      "btmfixes:burnt_rooty_frozen_aether_grass_block",
-      "btmfixes:burnt_rooty_grass_block",
-      "btmfixes:burnt_sandstone_grassy_regolith",
-      "btmfixes:burnt_siltstone_grassy_regolith",
-      "btmfixes:burnt_slate_grassy_regolith",
-      "btmfixes:burnt_stone_grassy_regolith",
-      "btmfixes:burnt_turquoise_comet_grass_block",
-      "btmfixes:burnt_turquoise_grass_block",
-      "btmfixes:burnt_white_granite_grassy_regolith",
       "burnt:burnt_dirt",
       "burnt:burnt_grassy_earthen_clay",
       "burnt:burnt_grassy_sandy_d_irt",
@@ -268,6 +268,13 @@
       "ars_nouveau:sourceberry_bush",
       "ars_nouveau:sourceberry_sack",
       "ars_nouveau:whirlisprig_flower",
+      "bcfixes:burnt_chared_grass",
+      "bcfixes:burnt_crackled_grass",
+      "bcfixes:burnt_deepgrass",
+      "bcfixes:burnt_depthsforestgrass",
+      "bcfixes:burnt_frozen_grass",
+      "bcfixes:burnt_swampgrass",
+      "bcfixes:burnt_wastelandgrassblock",
       "blue_skies:baneful_mushroom",
       "blue_skies:bluebright_leaves",
       "blue_skies:bluebright_sapling",
@@ -363,13 +370,6 @@
       "blue_skies:tall_turquoise_grass",
       "blue_skies:turquoise_grass",
       "blue_skies:winter_leaves",
-      "btmfixes:burnt_chared_grass",
-      "btmfixes:burnt_crackled_grass",
-      "btmfixes:burnt_deepgrass",
-      "btmfixes:burnt_depthsforestgrass",
-      "btmfixes:burnt_frozen_grass",
-      "btmfixes:burnt_swampgrass",
-      "btmfixes:burnt_wastelandgrassblock",
       "burnt:blast_leaves",
       "burnt:burning_cave_vines_plant",
       "burnt:burnt_cave_vines",
@@ -5279,6 +5279,9 @@
       "ars_nouveau:volcanic_sourcelink",
       "ars_nouveau:wixie_cauldron",
       "ars_nouveau:yellow_sbed",
+      "bcfixes:burnt_overgrown_andesite",
+      "bcfixes:burnt_overgrown_diorite",
+      "bcfixes:burnt_overgrown_granite",
       "bloodmagic:accelerationrune",
       "bloodmagic:accelerationrune2",
       "bloodmagic:airritualstone",
@@ -5737,9 +5740,6 @@
       "brewinandchewin:scarlet_cheese_wheel",
       "brewinandchewin:unripe_flaxen_cheese_wheel",
       "brewinandchewin:unripe_scarlet_cheese_wheel",
-      "btmfixes:burnt_overgrown_andesite",
-      "btmfixes:burnt_overgrown_diorite",
-      "btmfixes:burnt_overgrown_granite",
       "buildinggadgets2:render_block",
       "buildinggadgets2:template_manager",
       "burnt:burnt_azalea",
@@ -7158,8 +7158,8 @@
       "delightful:passion_fruit_tart",
       "delightful:pumpkin_pie",
       "delightful:quartz_cabinet",
-      "dimensionalfonts:dimensional_font",
-      "dimensionalfonts:return_seal",
+      "dimensiondrink:dimensional_font",
+      "dimensiondrink:return_seal",
       "dtaether:golden_apple",
       "dtaether:white_apple",
       "dtarsnouveau:bastion",
@@ -13199,6 +13199,39 @@
       "aether:aether_grass_block",
       "aether:enchanted_aether_grass_block",
       "aether:quicksoil",
+      "bcfixes:burnt_aether_grass_block",
+      "bcfixes:burnt_beige_limestone_grassy_regolith",
+      "bcfixes:burnt_chorus_grass_block",
+      "bcfixes:burnt_conglomerate_grassy_regolith",
+      "bcfixes:burnt_dolomite_grassy_regolith",
+      "bcfixes:burnt_enchanted_aether_grass_block",
+      "bcfixes:burnt_finley_grass_block",
+      "bcfixes:burnt_gabbro_grassy_regolith",
+      "bcfixes:burnt_granodiorite_grassy_regolith",
+      "bcfixes:burnt_grassy_permafrost",
+      "bcfixes:burnt_grassy_silt",
+      "bcfixes:burnt_grey_limestone_grassy_regolith",
+      "bcfixes:burnt_kimberlite_grassy_regolith",
+      "bcfixes:burnt_limestone_grassy_regolith",
+      "bcfixes:burnt_living_grass_block",
+      "bcfixes:burnt_lunar_comet_grass_block",
+      "bcfixes:burnt_lunar_grass_block",
+      "bcfixes:burnt_mudstone_grassy_regolith",
+      "bcfixes:burnt_phyllite_grassy_regolith",
+      "bcfixes:burnt_quartzite_grassy_regolith",
+      "bcfixes:burnt_rhyolite_grassy_regolith",
+      "bcfixes:burnt_rooted_grass_block",
+      "bcfixes:burnt_rooty_aether_grass_block",
+      "bcfixes:burnt_rooty_enchanted_aether_grass_block",
+      "bcfixes:burnt_rooty_frozen_aether_grass_block",
+      "bcfixes:burnt_rooty_grass_block",
+      "bcfixes:burnt_sandstone_grassy_regolith",
+      "bcfixes:burnt_siltstone_grassy_regolith",
+      "bcfixes:burnt_slate_grassy_regolith",
+      "bcfixes:burnt_stone_grassy_regolith",
+      "bcfixes:burnt_turquoise_comet_grass_block",
+      "bcfixes:burnt_turquoise_grass_block",
+      "bcfixes:burnt_white_granite_grassy_regolith",
       "bloodmagic:nether_soil",
       "blue_skies:coarse_lunar_dirt",
       "blue_skies:coarse_turquoise_dirt",
@@ -13211,39 +13244,6 @@
       "blue_skies:turquoise_comet_grass_block",
       "blue_skies:turquoise_dirt",
       "blue_skies:turquoise_grass_block",
-      "btmfixes:burnt_aether_grass_block",
-      "btmfixes:burnt_beige_limestone_grassy_regolith",
-      "btmfixes:burnt_chorus_grass_block",
-      "btmfixes:burnt_conglomerate_grassy_regolith",
-      "btmfixes:burnt_dolomite_grassy_regolith",
-      "btmfixes:burnt_enchanted_aether_grass_block",
-      "btmfixes:burnt_finley_grass_block",
-      "btmfixes:burnt_gabbro_grassy_regolith",
-      "btmfixes:burnt_granodiorite_grassy_regolith",
-      "btmfixes:burnt_grassy_permafrost",
-      "btmfixes:burnt_grassy_silt",
-      "btmfixes:burnt_grey_limestone_grassy_regolith",
-      "btmfixes:burnt_kimberlite_grassy_regolith",
-      "btmfixes:burnt_limestone_grassy_regolith",
-      "btmfixes:burnt_living_grass_block",
-      "btmfixes:burnt_lunar_comet_grass_block",
-      "btmfixes:burnt_lunar_grass_block",
-      "btmfixes:burnt_mudstone_grassy_regolith",
-      "btmfixes:burnt_phyllite_grassy_regolith",
-      "btmfixes:burnt_quartzite_grassy_regolith",
-      "btmfixes:burnt_rhyolite_grassy_regolith",
-      "btmfixes:burnt_rooted_grass_block",
-      "btmfixes:burnt_rooty_aether_grass_block",
-      "btmfixes:burnt_rooty_enchanted_aether_grass_block",
-      "btmfixes:burnt_rooty_frozen_aether_grass_block",
-      "btmfixes:burnt_rooty_grass_block",
-      "btmfixes:burnt_sandstone_grassy_regolith",
-      "btmfixes:burnt_siltstone_grassy_regolith",
-      "btmfixes:burnt_slate_grassy_regolith",
-      "btmfixes:burnt_stone_grassy_regolith",
-      "btmfixes:burnt_turquoise_comet_grass_block",
-      "btmfixes:burnt_turquoise_grass_block",
-      "btmfixes:burnt_white_granite_grassy_regolith",
       "burnt:burnt_dirt",
       "burnt:burnt_grassy_earthen_clay",
       "burnt:burnt_grassy_sandy_d_irt",
@@ -13483,7 +13483,7 @@
       "projectvibrantjourneys:warped_nettle"
     ],
     "force_harvest": [
-      "btmfixes:burnt_chorus_grass_block",
+      "bcfixes:burnt_chorus_grass_block",
       "fallout_wastelands_:wasteland_sand_stone",
       "goety:bottom_soiled_end_basalt",
       "goety:chorus_grass_block",
@@ -16995,7 +16995,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -17006,7 +17006,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -19641,6 +19641,512 @@
 
       ]
     },
+    "bcfixes:burnt_aether_grass_block": {
+      "tools": [
+        "hand",
+        "shovel"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_beige_limestone_grassy_regolith": {
+      "tools": [
+        "hand",
+        "shovel"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_chared_grass": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_chorus_grass_block": {
+      "tools": [
+        "hand",
+        "shovel"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": true,
+      "forceHarvest": true,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_conglomerate_grassy_regolith": {
+      "tools": [
+        "hand",
+        "shovel"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_crackled_grass": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_deepgrass": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_depthsforestgrass": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_dolomite_grassy_regolith": {
+      "tools": [
+        "hand",
+        "shovel"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_enchanted_aether_grass_block": {
+      "tools": [
+        "hand",
+        "shovel"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_finley_grass_block": {
+      "tools": [
+        "hand",
+        "shovel"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_frozen_grass": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_gabbro_grassy_regolith": {
+      "tools": [
+        "hand",
+        "shovel"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_granodiorite_grassy_regolith": {
+      "tools": [
+        "hand",
+        "shovel"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_grassy_permafrost": {
+      "tools": [
+        "hand",
+        "shovel"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_grassy_silt": {
+      "tools": [
+        "hand",
+        "shovel"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_grey_limestone_grassy_regolith": {
+      "tools": [
+        "hand",
+        "shovel"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_kimberlite_grassy_regolith": {
+      "tools": [
+        "hand",
+        "shovel"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_limestone_grassy_regolith": {
+      "tools": [
+        "hand",
+        "shovel"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_living_grass_block": {
+      "tools": [
+        "hand",
+        "shovel"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_lunar_comet_grass_block": {
+      "tools": [
+        "hand",
+        "shovel"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_lunar_grass_block": {
+      "tools": [
+        "hand",
+        "shovel"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_mudstone_grassy_regolith": {
+      "tools": [
+        "hand",
+        "shovel"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_overgrown_andesite": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_overgrown_diorite": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_overgrown_granite": {
+      "tools": [
+        "pickaxe"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_phyllite_grassy_regolith": {
+      "tools": [
+        "hand",
+        "shovel"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_quartzite_grassy_regolith": {
+      "tools": [
+        "hand",
+        "shovel"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_rhyolite_grassy_regolith": {
+      "tools": [
+        "hand",
+        "shovel"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_rooted_grass_block": {
+      "tools": [
+        "hand",
+        "shovel"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_rooty_aether_grass_block": {
+      "tools": [
+        "hand",
+        "shovel"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_rooty_enchanted_aether_grass_block": {
+      "tools": [
+        "hand",
+        "shovel"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_rooty_frozen_aether_grass_block": {
+      "tools": [
+        "hand",
+        "shovel"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_rooty_grass_block": {
+      "tools": [
+        "hand",
+        "shovel"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_sandstone_grassy_regolith": {
+      "tools": [
+        "hand",
+        "shovel"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_siltstone_grassy_regolith": {
+      "tools": [
+        "hand",
+        "shovel"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_slate_grassy_regolith": {
+      "tools": [
+        "hand",
+        "shovel"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_stone_grassy_regolith": {
+      "tools": [
+        "hand",
+        "shovel"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_swampgrass": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_turquoise_comet_grass_block": {
+      "tools": [
+        "hand",
+        "shovel"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_turquoise_grass_block": {
+      "tools": [
+        "hand",
+        "shovel"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_wastelandgrassblock": {
+      "tools": [
+        "knife"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
+    "bcfixes:burnt_white_granite_grassy_regolith": {
+      "tools": [
+        "hand",
+        "shovel"
+      ],
+      "origin": "explicit-tags",
+      "requiresCorrectToolForDrops": false,
+      "forceHarvest": false,
+      "outcomes": [
+
+      ]
+    },
     "bloodmagic:accelerationrune": {
       "tools": [
         "pickaxe"
@@ -21990,7 +22496,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -22012,7 +22518,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -22023,7 +22529,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -22034,7 +22540,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -22045,7 +22551,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -22056,7 +22562,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -22067,7 +22573,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -22122,7 +22628,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -22133,7 +22639,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -22144,7 +22650,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -22155,7 +22661,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -22166,7 +22672,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -22485,7 +22991,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -22496,7 +23002,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -22507,7 +23013,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -22518,7 +23024,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -22551,7 +23057,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -22573,7 +23079,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -22584,7 +23090,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -22595,7 +23101,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -22606,7 +23112,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -22639,7 +23145,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -22650,7 +23156,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -22661,7 +23167,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -22672,7 +23178,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -22683,7 +23189,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -22694,7 +23200,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -22705,7 +23211,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -22993,7 +23499,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -23004,7 +23510,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -23015,7 +23521,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -23026,7 +23532,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -23037,7 +23543,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -23048,7 +23554,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -23059,7 +23565,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -23070,7 +23576,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -23181,7 +23687,7 @@
         "axe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -23203,7 +23709,7 @@
         "knife"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
         "knife_extra_sticks"
@@ -23214,7 +23720,7 @@
         "axe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -23225,7 +23731,7 @@
         "axe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -23236,7 +23742,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -23247,7 +23753,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -23258,7 +23764,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -23269,7 +23775,7 @@
         "axe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -23280,7 +23786,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -23291,7 +23797,7 @@
         "axe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -23302,7 +23808,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -23313,7 +23819,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -23566,7 +24072,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -23577,7 +24083,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -23588,7 +24094,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -23599,7 +24105,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -23610,7 +24116,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -23621,7 +24127,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -23632,7 +24138,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -23643,7 +24149,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -23654,7 +24160,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -23665,7 +24171,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -23676,7 +24182,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -23687,7 +24193,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -23698,7 +24204,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -23709,7 +24215,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24017,7 +24523,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24028,7 +24534,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24039,7 +24545,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24050,7 +24556,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24061,7 +24567,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24072,7 +24578,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24083,7 +24589,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24094,7 +24600,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24105,7 +24611,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24116,7 +24622,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24127,7 +24633,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24138,7 +24644,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24149,7 +24655,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24160,7 +24666,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24171,7 +24677,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24182,7 +24688,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24193,7 +24699,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24204,7 +24710,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24215,7 +24721,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24226,7 +24732,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24237,7 +24743,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24248,7 +24754,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24259,7 +24765,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24270,7 +24776,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24281,7 +24787,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24292,7 +24798,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24303,7 +24809,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24314,7 +24820,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24325,7 +24831,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24380,7 +24886,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24391,7 +24897,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24402,7 +24908,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24413,7 +24919,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24470,7 +24976,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24670,7 +25176,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24692,7 +25198,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24703,7 +25209,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24714,7 +25220,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24725,7 +25231,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24736,7 +25242,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24747,7 +25253,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -24758,7 +25264,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25144,7 +25650,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25166,7 +25672,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25177,7 +25683,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25188,7 +25694,7 @@
         "knife"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25199,7 +25705,7 @@
         "knife"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25210,7 +25716,7 @@
         "knife"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25221,7 +25727,7 @@
         "knife"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25232,7 +25738,7 @@
         "knife"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25243,7 +25749,7 @@
         "knife"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25254,7 +25760,7 @@
         "knife"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25265,7 +25771,7 @@
         "knife"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25276,7 +25782,7 @@
         "knife"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25287,7 +25793,7 @@
         "knife"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25298,7 +25804,7 @@
         "knife"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25309,7 +25815,7 @@
         "knife"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25320,7 +25826,7 @@
         "knife"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25331,7 +25837,7 @@
         "knife"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25342,7 +25848,7 @@
         "knife"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25353,7 +25859,7 @@
         "knife"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25375,7 +25881,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25386,7 +25892,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25397,7 +25903,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25408,7 +25914,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25419,7 +25925,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25430,7 +25936,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25441,7 +25947,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25452,7 +25958,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25485,7 +25991,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25496,7 +26002,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25507,7 +26013,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25518,7 +26024,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25529,7 +26035,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25540,7 +26046,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25551,7 +26057,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25562,7 +26068,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25584,7 +26090,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25595,7 +26101,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25606,7 +26112,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25617,7 +26123,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25628,7 +26134,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25639,7 +26145,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25650,7 +26156,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25661,7 +26167,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25672,7 +26178,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25683,7 +26189,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25694,7 +26200,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25705,7 +26211,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25716,7 +26222,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25727,7 +26233,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25738,7 +26244,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25749,7 +26255,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25760,7 +26266,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25771,7 +26277,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25782,7 +26288,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25793,7 +26299,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25804,7 +26310,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25815,7 +26321,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25826,7 +26332,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -25837,7 +26343,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -26145,7 +26651,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -26156,7 +26662,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -26167,7 +26673,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -26178,7 +26684,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -26189,7 +26695,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -26200,7 +26706,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -26211,7 +26717,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -26222,7 +26728,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -26233,7 +26739,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -26244,7 +26750,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -26255,7 +26761,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -26266,7 +26772,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -26277,7 +26783,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -26387,7 +26893,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -26398,7 +26904,7 @@
         "sword"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
         "sword_preserve_web"
@@ -26409,7 +26915,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -26475,7 +26981,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -26838,7 +27344,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -26860,7 +27366,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -26904,7 +27410,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -26915,7 +27421,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -26926,7 +27432,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -26937,7 +27443,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -26970,7 +27476,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -26981,7 +27487,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -26992,7 +27498,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -27003,7 +27509,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -27038,7 +27544,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -27094,7 +27600,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -27116,7 +27622,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -27127,7 +27633,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -27138,7 +27644,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -27149,7 +27655,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -27160,7 +27666,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -27171,7 +27677,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -27182,7 +27688,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -27193,7 +27699,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -27204,7 +27710,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -27215,7 +27721,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -27226,7 +27732,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -27259,7 +27765,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -27270,7 +27776,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -27281,7 +27787,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -27292,7 +27798,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -27303,7 +27809,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -27433,512 +27939,6 @@
     "brewinandchewin:unripe_scarlet_cheese_wheel": {
       "tools": [
         "pickaxe"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_aether_grass_block": {
-      "tools": [
-        "hand",
-        "shovel"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_beige_limestone_grassy_regolith": {
-      "tools": [
-        "hand",
-        "shovel"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_chared_grass": {
-      "tools": [
-        "knife"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_chorus_grass_block": {
-      "tools": [
-        "hand",
-        "shovel"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
-      "forceHarvest": true,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_conglomerate_grassy_regolith": {
-      "tools": [
-        "hand",
-        "shovel"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_crackled_grass": {
-      "tools": [
-        "knife"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_deepgrass": {
-      "tools": [
-        "knife"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_depthsforestgrass": {
-      "tools": [
-        "knife"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_dolomite_grassy_regolith": {
-      "tools": [
-        "hand",
-        "shovel"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_enchanted_aether_grass_block": {
-      "tools": [
-        "hand",
-        "shovel"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_finley_grass_block": {
-      "tools": [
-        "hand",
-        "shovel"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_frozen_grass": {
-      "tools": [
-        "knife"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_gabbro_grassy_regolith": {
-      "tools": [
-        "hand",
-        "shovel"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_granodiorite_grassy_regolith": {
-      "tools": [
-        "hand",
-        "shovel"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_grassy_permafrost": {
-      "tools": [
-        "hand",
-        "shovel"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_grassy_silt": {
-      "tools": [
-        "hand",
-        "shovel"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_grey_limestone_grassy_regolith": {
-      "tools": [
-        "hand",
-        "shovel"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_kimberlite_grassy_regolith": {
-      "tools": [
-        "hand",
-        "shovel"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_limestone_grassy_regolith": {
-      "tools": [
-        "hand",
-        "shovel"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_living_grass_block": {
-      "tools": [
-        "hand",
-        "shovel"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_lunar_comet_grass_block": {
-      "tools": [
-        "hand",
-        "shovel"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_lunar_grass_block": {
-      "tools": [
-        "hand",
-        "shovel"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_mudstone_grassy_regolith": {
-      "tools": [
-        "hand",
-        "shovel"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_overgrown_andesite": {
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_overgrown_diorite": {
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_overgrown_granite": {
-      "tools": [
-        "pickaxe"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_phyllite_grassy_regolith": {
-      "tools": [
-        "hand",
-        "shovel"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_quartzite_grassy_regolith": {
-      "tools": [
-        "hand",
-        "shovel"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_rhyolite_grassy_regolith": {
-      "tools": [
-        "hand",
-        "shovel"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_rooted_grass_block": {
-      "tools": [
-        "hand",
-        "shovel"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_rooty_aether_grass_block": {
-      "tools": [
-        "hand",
-        "shovel"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_rooty_enchanted_aether_grass_block": {
-      "tools": [
-        "hand",
-        "shovel"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_rooty_frozen_aether_grass_block": {
-      "tools": [
-        "hand",
-        "shovel"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_rooty_grass_block": {
-      "tools": [
-        "hand",
-        "shovel"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_sandstone_grassy_regolith": {
-      "tools": [
-        "hand",
-        "shovel"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_siltstone_grassy_regolith": {
-      "tools": [
-        "hand",
-        "shovel"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_slate_grassy_regolith": {
-      "tools": [
-        "hand",
-        "shovel"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_stone_grassy_regolith": {
-      "tools": [
-        "hand",
-        "shovel"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_swampgrass": {
-      "tools": [
-        "knife"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_turquoise_comet_grass_block": {
-      "tools": [
-        "hand",
-        "shovel"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_turquoise_grass_block": {
-      "tools": [
-        "hand",
-        "shovel"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_wastelandgrassblock": {
-      "tools": [
-        "knife"
-      ],
-      "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": false,
-      "forceHarvest": false,
-      "outcomes": [
-
-      ]
-    },
-    "btmfixes:burnt_white_granite_grassy_regolith": {
-      "tools": [
-        "hand",
-        "shovel"
       ],
       "origin": "explicit-tags",
       "requiresCorrectToolForDrops": false,
@@ -31268,7 +31268,7 @@
         "hoe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -31301,7 +31301,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -31367,7 +31367,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -31642,7 +31642,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -31653,7 +31653,7 @@
         "axe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -31664,7 +31664,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -31675,7 +31675,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -31686,7 +31686,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -31697,7 +31697,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -31708,7 +31708,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -31730,7 +31730,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -31774,7 +31774,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -31796,7 +31796,7 @@
         "hoe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -31864,7 +31864,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -31875,7 +31875,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -31897,7 +31897,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -31908,7 +31908,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -31952,7 +31952,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -32139,7 +32139,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -32150,7 +32150,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -32161,7 +32161,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -32183,7 +32183,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -32216,7 +32216,7 @@
         "hoe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -32249,7 +32249,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -49839,7 +49839,7 @@
 
       ]
     },
-    "dimensionalfonts:dimensional_font": {
+    "dimensiondrink:dimensional_font": {
       "tools": [
         "pickaxe"
       ],
@@ -49850,7 +49850,7 @@
 
       ]
     },
-    "dimensionalfonts:return_seal": {
+    "dimensiondrink:return_seal": {
       "tools": [
         "pickaxe"
       ],
@@ -55084,7 +55084,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -55480,7 +55480,7 @@
         "knife"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -55876,7 +55876,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56283,7 +56283,7 @@
         "knife"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56294,7 +56294,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56305,7 +56305,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56316,7 +56316,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56327,7 +56327,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56338,7 +56338,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56349,7 +56349,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56360,7 +56360,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56371,7 +56371,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56382,7 +56382,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56393,7 +56393,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56404,7 +56404,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56415,7 +56415,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56426,7 +56426,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56437,7 +56437,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56448,7 +56448,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56459,7 +56459,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56470,7 +56470,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56481,7 +56481,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56492,7 +56492,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56503,7 +56503,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56514,7 +56514,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56525,7 +56525,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56536,7 +56536,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56547,7 +56547,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56558,7 +56558,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56569,7 +56569,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56580,7 +56580,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56591,7 +56591,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56602,7 +56602,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56613,7 +56613,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56624,7 +56624,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56635,7 +56635,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56646,7 +56646,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56657,7 +56657,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56668,7 +56668,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56679,7 +56679,7 @@
         "knife"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56690,7 +56690,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56701,7 +56701,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56712,7 +56712,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56723,7 +56723,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56734,7 +56734,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56745,7 +56745,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56756,7 +56756,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56767,7 +56767,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56778,7 +56778,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56789,7 +56789,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56800,7 +56800,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56811,7 +56811,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56822,7 +56822,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56833,7 +56833,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56844,7 +56844,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56855,7 +56855,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56866,7 +56866,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56877,7 +56877,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56888,7 +56888,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56899,7 +56899,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56910,7 +56910,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56921,7 +56921,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56932,7 +56932,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56943,7 +56943,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56954,7 +56954,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56965,7 +56965,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56976,7 +56976,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56987,7 +56987,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -56998,7 +56998,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57009,7 +57009,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57020,7 +57020,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57031,7 +57031,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57042,7 +57042,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57053,7 +57053,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57064,7 +57064,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57075,7 +57075,7 @@
         "knife"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57086,7 +57086,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57097,7 +57097,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57108,7 +57108,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57119,7 +57119,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57130,7 +57130,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57141,7 +57141,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57152,7 +57152,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57163,7 +57163,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57174,7 +57174,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57185,7 +57185,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57196,7 +57196,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57207,7 +57207,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57218,7 +57218,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57229,7 +57229,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57240,7 +57240,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57251,7 +57251,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57262,7 +57262,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57273,7 +57273,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57284,7 +57284,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57295,7 +57295,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57306,7 +57306,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57317,7 +57317,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57328,7 +57328,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57339,7 +57339,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57350,7 +57350,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57361,7 +57361,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57372,7 +57372,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57383,7 +57383,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57394,7 +57394,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57405,7 +57405,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57416,7 +57416,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57427,7 +57427,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57438,7 +57438,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57449,7 +57449,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57460,7 +57460,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57471,7 +57471,7 @@
         "knife"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57482,7 +57482,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57493,7 +57493,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57504,7 +57504,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57515,7 +57515,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57526,7 +57526,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57537,7 +57537,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57548,7 +57548,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57559,7 +57559,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57570,7 +57570,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57581,7 +57581,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57592,7 +57592,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57603,7 +57603,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57614,7 +57614,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57625,7 +57625,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57636,7 +57636,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57647,7 +57647,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57658,7 +57658,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57669,7 +57669,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57680,7 +57680,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57691,7 +57691,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57702,7 +57702,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57713,7 +57713,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57724,7 +57724,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57735,7 +57735,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57746,7 +57746,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57757,7 +57757,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57768,7 +57768,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57779,7 +57779,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57790,7 +57790,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57801,7 +57801,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57812,7 +57812,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57823,7 +57823,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57834,7 +57834,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57845,7 +57845,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57856,7 +57856,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57867,7 +57867,7 @@
         "knife"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57878,7 +57878,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57889,7 +57889,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57900,7 +57900,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57911,7 +57911,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57922,7 +57922,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57933,7 +57933,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57944,7 +57944,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57955,7 +57955,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57966,7 +57966,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57977,7 +57977,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57988,7 +57988,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -57999,7 +57999,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58010,7 +58010,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58021,7 +58021,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58032,7 +58032,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58043,7 +58043,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58054,7 +58054,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58065,7 +58065,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58076,7 +58076,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58087,7 +58087,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58098,7 +58098,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58109,7 +58109,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58120,7 +58120,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58131,7 +58131,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58142,7 +58142,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58153,7 +58153,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58164,7 +58164,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58175,7 +58175,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58186,7 +58186,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58197,7 +58197,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58208,7 +58208,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58219,7 +58219,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58230,7 +58230,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58241,7 +58241,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58252,7 +58252,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58263,7 +58263,7 @@
         "knife"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58274,7 +58274,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58285,7 +58285,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58296,7 +58296,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58307,7 +58307,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58318,7 +58318,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58329,7 +58329,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58340,7 +58340,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58351,7 +58351,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58362,7 +58362,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58373,7 +58373,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58384,7 +58384,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58395,7 +58395,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58406,7 +58406,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58417,7 +58417,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58428,7 +58428,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58439,7 +58439,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58450,7 +58450,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58461,7 +58461,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58472,7 +58472,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58483,7 +58483,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58494,7 +58494,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58505,7 +58505,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58516,7 +58516,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58527,7 +58527,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58538,7 +58538,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58549,7 +58549,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58560,7 +58560,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58571,7 +58571,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58582,7 +58582,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58593,7 +58593,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58604,7 +58604,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58615,7 +58615,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58626,7 +58626,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58637,7 +58637,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58648,7 +58648,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -58692,7 +58692,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -59088,7 +59088,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -59484,7 +59484,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -59880,7 +59880,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -60276,7 +60276,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -60683,7 +60683,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -61101,7 +61101,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -61508,7 +61508,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -61904,7 +61904,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -62300,7 +62300,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -62696,7 +62696,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -63059,7 +63059,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -63158,7 +63158,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -63554,7 +63554,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -63950,7 +63950,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -64346,7 +64346,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -64742,7 +64742,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -65138,7 +65138,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -65567,7 +65567,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -65985,7 +65985,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -66381,7 +66381,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -66777,7 +66777,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -67173,7 +67173,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -67569,7 +67569,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -67965,7 +67965,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -68361,7 +68361,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -68757,7 +68757,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -69153,7 +69153,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -69549,7 +69549,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -69945,7 +69945,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -70341,7 +70341,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -70737,7 +70737,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -71144,7 +71144,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -71540,7 +71540,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -71936,7 +71936,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -72332,7 +72332,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -72728,7 +72728,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -73135,7 +73135,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -73531,7 +73531,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -73927,7 +73927,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -137933,7 +137933,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -137977,7 +137977,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -137999,7 +137999,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -138076,7 +138076,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -140892,7 +140892,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -140958,7 +140958,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -140969,7 +140969,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -140980,7 +140980,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -142598,7 +142598,7 @@
         "shovel"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": true,
       "outcomes": [
 
@@ -142829,7 +142829,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -148674,7 +148674,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -148731,7 +148731,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -148742,7 +148742,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -148753,7 +148753,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -148797,7 +148797,7 @@
         "axe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -148874,7 +148874,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -148885,7 +148885,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -149041,7 +149041,7 @@
         "pickaxe"
       ],
       "origin": "explicit-tags",
-      "requiresCorrectToolForDrops": true,
+      "requiresCorrectToolForDrops": false,
       "forceHarvest": false,
       "outcomes": [
 
@@ -163756,6 +163756,39 @@
     "aether:aether_grass_block",
     "aether:enchanted_aether_grass_block",
     "aether:quicksoil",
+    "bcfixes:burnt_aether_grass_block",
+    "bcfixes:burnt_beige_limestone_grassy_regolith",
+    "bcfixes:burnt_chorus_grass_block",
+    "bcfixes:burnt_conglomerate_grassy_regolith",
+    "bcfixes:burnt_dolomite_grassy_regolith",
+    "bcfixes:burnt_enchanted_aether_grass_block",
+    "bcfixes:burnt_finley_grass_block",
+    "bcfixes:burnt_gabbro_grassy_regolith",
+    "bcfixes:burnt_granodiorite_grassy_regolith",
+    "bcfixes:burnt_grassy_permafrost",
+    "bcfixes:burnt_grassy_silt",
+    "bcfixes:burnt_grey_limestone_grassy_regolith",
+    "bcfixes:burnt_kimberlite_grassy_regolith",
+    "bcfixes:burnt_limestone_grassy_regolith",
+    "bcfixes:burnt_living_grass_block",
+    "bcfixes:burnt_lunar_comet_grass_block",
+    "bcfixes:burnt_lunar_grass_block",
+    "bcfixes:burnt_mudstone_grassy_regolith",
+    "bcfixes:burnt_phyllite_grassy_regolith",
+    "bcfixes:burnt_quartzite_grassy_regolith",
+    "bcfixes:burnt_rhyolite_grassy_regolith",
+    "bcfixes:burnt_rooted_grass_block",
+    "bcfixes:burnt_rooty_aether_grass_block",
+    "bcfixes:burnt_rooty_enchanted_aether_grass_block",
+    "bcfixes:burnt_rooty_frozen_aether_grass_block",
+    "bcfixes:burnt_rooty_grass_block",
+    "bcfixes:burnt_sandstone_grassy_regolith",
+    "bcfixes:burnt_siltstone_grassy_regolith",
+    "bcfixes:burnt_slate_grassy_regolith",
+    "bcfixes:burnt_stone_grassy_regolith",
+    "bcfixes:burnt_turquoise_comet_grass_block",
+    "bcfixes:burnt_turquoise_grass_block",
+    "bcfixes:burnt_white_granite_grassy_regolith",
     "bloodmagic:nether_soil",
     "blue_skies:coarse_lunar_dirt",
     "blue_skies:coarse_turquoise_dirt",
@@ -163768,39 +163801,6 @@
     "blue_skies:turquoise_comet_grass_block",
     "blue_skies:turquoise_dirt",
     "blue_skies:turquoise_grass_block",
-    "btmfixes:burnt_aether_grass_block",
-    "btmfixes:burnt_beige_limestone_grassy_regolith",
-    "btmfixes:burnt_chorus_grass_block",
-    "btmfixes:burnt_conglomerate_grassy_regolith",
-    "btmfixes:burnt_dolomite_grassy_regolith",
-    "btmfixes:burnt_enchanted_aether_grass_block",
-    "btmfixes:burnt_finley_grass_block",
-    "btmfixes:burnt_gabbro_grassy_regolith",
-    "btmfixes:burnt_granodiorite_grassy_regolith",
-    "btmfixes:burnt_grassy_permafrost",
-    "btmfixes:burnt_grassy_silt",
-    "btmfixes:burnt_grey_limestone_grassy_regolith",
-    "btmfixes:burnt_kimberlite_grassy_regolith",
-    "btmfixes:burnt_limestone_grassy_regolith",
-    "btmfixes:burnt_living_grass_block",
-    "btmfixes:burnt_lunar_comet_grass_block",
-    "btmfixes:burnt_lunar_grass_block",
-    "btmfixes:burnt_mudstone_grassy_regolith",
-    "btmfixes:burnt_phyllite_grassy_regolith",
-    "btmfixes:burnt_quartzite_grassy_regolith",
-    "btmfixes:burnt_rhyolite_grassy_regolith",
-    "btmfixes:burnt_rooted_grass_block",
-    "btmfixes:burnt_rooty_aether_grass_block",
-    "btmfixes:burnt_rooty_enchanted_aether_grass_block",
-    "btmfixes:burnt_rooty_frozen_aether_grass_block",
-    "btmfixes:burnt_rooty_grass_block",
-    "btmfixes:burnt_sandstone_grassy_regolith",
-    "btmfixes:burnt_siltstone_grassy_regolith",
-    "btmfixes:burnt_slate_grassy_regolith",
-    "btmfixes:burnt_stone_grassy_regolith",
-    "btmfixes:burnt_turquoise_comet_grass_block",
-    "btmfixes:burnt_turquoise_grass_block",
-    "btmfixes:burnt_white_granite_grassy_regolith",
     "burnt:burnt_dirt",
     "burnt:burnt_grassy_earthen_clay",
     "burnt:burnt_grassy_sandy_d_irt",
@@ -163970,7 +163970,7 @@
   ],
   "forceHarvestCoverage": {
     "required": [
-      "btmfixes:burnt_chorus_grass_block",
+      "bcfixes:burnt_chorus_grass_block",
       "fallout_wastelands_:wasteland_sand_stone",
       "goety:bottom_soiled_end_basalt",
       "goety:chorus_grass_block",
@@ -164010,7 +164010,6 @@
       "immersive_weathering:sandy_cobblestone",
       "immersive_weathering:sandy_stone",
       "immersive_weathering:vitrified_sand",
-      "swem:soiled_shavings",
       "thirst:sand_filter",
       "unearthed:beige_limestone_regolith",
       "unearthed:conglomerate_regolith",

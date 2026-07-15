@@ -1,13 +1,13 @@
 {
-	"schema": "btm.recipe_audit.v2",
+	"schema": "bc.recipe_audit.v2",
 	"generatedBy": "kubejs/server_scripts/90_dev_debug/10_recipe_audit_dumps.js",
-	"generatedAt": "2026-07-05T01:02:13.468Z",
+	"generatedAt": "2026-07-15T04:48:04.811Z",
 	"source": "ServerEvents.recipes event.forEachRecipe before KubeJS mutations are applied",
 	"recipeEventStage": "pre_mutation_recipe_event",
 	"writeMatchedRecipeJson": false,
 	"maxJsonCharsPerRecipe": 12000,
 	"chunkSize": 1000,
-	"chunkCount": 27,
-	"recipeCount": 26284,
+	"chunkCount": 25,
+	"recipeCount": 24518,
 	"pattern": "full_recipe_index_0000.json"
 }

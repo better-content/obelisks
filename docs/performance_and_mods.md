@@ -31,7 +31,7 @@ All four mods ship as diagnostic-active surfaces. They do not yet have pack reci
 - `settlementroads-0.1.0.jar`
 - `villagewalls-1.0.0.jar`
 
-Do not infer active state from old RAM cuts or runtime caches. In the current repo, Hexerei, Iron's Spells, Malum, Occultism, Goety, Forbidden and Arcanus, and Reliquary have active manifests. Theurgy, Psi, and Hex Casting do not have active `mods/*.pw.toml` entries and should be treated as inactive/future unless re-added.
+Do not infer active state from old RAM cuts or runtime caches. In the current repo, Hexerei, Iron's Spells, Malum, Occultism, Goety, Forbidden and Arcanus, and Reliquary have active manifests. Roots Classic, Mahoutsukai, Eidolon, Theurgy, Psi, and Hex Casting do not have active `mods/*.pw.toml` entries and should be treated as inactive/future unless re-added.
 
 ## Runtime Pruning
 

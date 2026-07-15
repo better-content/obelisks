@@ -35,7 +35,6 @@ ServerEvents.recipes(function (event) {
     // Blood I: first folk/spirit power should consume actual altar output, not only vanilla craft stock.
      bcMagicGateOutputs(event, [
         'malum:spirit_altar',
-        'rootsclassic:altar',
         'reliquary:apothecary_cauldron'
     ], commonVanillaValuables.concat(['minecraft:torch', 'reliquary:catalyzing_gland']), BC_MAGIC_T1)
 
@@ -78,11 +77,9 @@ ServerEvents.recipes(function (event) {
         'hexerei:mixing_cauldron'
     ], commonVanillaValuables.concat(['minecraft:torch']), BC_MAGIC_T2)
 
-    // Blood IV: Goety/Eidolon operational power. Keep Goety's internal focus chain,
+    // Blood IV: Goety operational power. Keep Goety's internal focus chain,
     // but make the cheap focus entry and altar variants require a Demonic Slate.
      bcMagicGateOutputs(event, [
-        'eidolon:wooden_altar',
-        'eidolon:necrotic_focus',
         'goety:dark_altar',
         'goety:dark_altar_stone',
         'goety:dark_altar_deepslate',

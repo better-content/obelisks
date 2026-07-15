@@ -41,7 +41,6 @@ var BC_EMERALD_LOOT_COIN_REPLACEMENTS = [
         count: 2,
         tables: [
             'born_in_chaos_v1:entities/barrel_zombie',
-            'eidolon:entities/necromancer',
             'golemoverhaul:entities/barrel_golem',
             'minecraft:entities/evoker',
             'minecraft:entities/vindicator',

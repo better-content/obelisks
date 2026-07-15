@@ -20,7 +20,6 @@ ServerEvents.recipes(function (event) {
     // Altar I: first dirty-magic proofs.
     gate(event, { id: 'malum:spirit_altar' }, '#forge:ingots/gold', BM_SLATE_T1)
     gate(event, { id: 'malum:spirit_altar' }, '#forge:stone', BC_OTHERSIDE_T1)
-    gate(event, { id: 'rootsclassic:altar' }, '#forge:storage_blocks/gold', BM_SLATE_T1)
     gate(event, { id: 'reliquary:apothecary_cauldron' }, 'reliquary:catalyzing_gland', BM_SLATE_T1)
     gate(event, { id: 'reliquary:apothecary_cauldron' }, 'minecraft:cauldron', BC_OTHERSIDE_T1)
 
@@ -37,27 +36,6 @@ ServerEvents.recipes(function (event) {
     // Altar III: dangerous bridge magic, spirits, and servants.
     // Tome of Blood moved to the post-AE2 hybrid branch in
     // 166_tome_of_blood_post_ae2_gates.js.
-
-    if (Item.exists('mahoutsukai:attuned_diamond') && Item.exists('mahoutsukai:attuner')) {
-        event.remove({ id: 'mahoutsukai:attuned_diamond' })
-        event.custom({
-            type: 'bloodmagic:alchemytable',
-            input: [
-                { item: 'mahoutsukai:attuner' },
-                { item: 'minecraft:diamond' },
-                { item: BM_SLATE_T3 }
-            ],
-            output: { item: 'mahoutsukai:attuned_diamond' },
-            syphon: 9000,
-            ticks: 180,
-            upgradeLevel: 3
-        }).id('kubejs:mahoutsukai/attuned_diamond_blood_gate')
-    }
-
-    gate(event, { id: 'eidolon:crucible' }, 'eidolon:pewter_ingot', BM_SLATE_T3)
-    gate(event, { id: 'eidolon:crucible' }, 'minecraft:stone_bricks', BC_OTHERSIDE_T3)
-    gate(event, { id: 'eidolon:soul_enchanter' }, '#forge:gems/diamond', BM_SLATE_T3)
-    gate(event, { id: 'eidolon:soul_enchanter' }, 'minecraft:bookshelf', BC_OTHERSIDE_T3)
 
     // Altar III: Ars source handling begins once both dirty spines can already feed it.
     gate(event, { output: 'ars_nouveau:source_gem' }, 'minecraft:amethyst_shard', BM_SLATE_T3)

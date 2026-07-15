@@ -13504,34 +13504,6 @@
       "weight_class": "decor_theme"
     },
     {
-      "id": "crafted:kubejs:replace_input_gate:eidolon:crucible",
-      "kind": "crafted",
-      "mod": "eidolon",
-      "output": "eidolon:crucible",
-      "authority": "exact:slate_t3_infused/dark",
-      "surface_type": "kubejs:replace_input_gate",
-      "evidence": [
-        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:48"
-      ],
-      "blood_era": "slate_t3_infused",
-      "branch": "dark",
-      "weight_class": "structural_progression"
-    },
-    {
-      "id": "crafted:kubejs:replace_input_gate:eidolon:soul_enchanter",
-      "kind": "crafted",
-      "mod": "eidolon",
-      "output": "eidolon:soul_enchanter",
-      "authority": "exact:slate_t3_infused/dark",
-      "surface_type": "kubejs:replace_input_gate",
-      "evidence": [
-        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:49"
-      ],
-      "blood_era": "slate_t3_infused",
-      "branch": "dark",
-      "weight_class": "structural_progression"
-    },
-    {
       "id": "crafted:kubejs:replace_input_gate:forbidden_arcanus:clibano_core",
       "kind": "crafted",
       "mod": "forbidden_arcanus",
@@ -15154,20 +15126,6 @@
       "evidence": [
         "kubejs/config/player_progression_regression.json"
       ]
-    },
-    {
-      "id": "machine_output:event.custom(kubejs):mahoutsukai:attuned_diamond",
-      "kind": "machine_output",
-      "mod": "mahoutsukai",
-      "output": "mahoutsukai:attuned_diamond",
-      "authority": "exact:slate_t3_infused/dark",
-      "surface_type": "event.custom(kubejs)",
-      "evidence": [
-        "kubejs/server_scripts/30_recipe_replace/80_magic_progression_blood_slate_gates.js:41"
-      ],
-      "blood_era": "slate_t3_infused",
-      "branch": "dark",
-      "weight_class": "structural_progression"
     },
     {
       "id": "crafted:kubejs:replace_input_gate:malum:spirit_altar",

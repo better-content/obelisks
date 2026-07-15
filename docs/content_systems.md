@@ -54,7 +54,7 @@ Vanilla Overworld ore placed features are removed by `datapacks/worldgen_compat_
 
 Tinkers establishes seared/scorched metallurgy before Create authority. Create addon integration is handled through `121_create_stack_integration_gates.js`; PNCR compression gates in `122_pneumaticcraft_create_pressing_gates.js` make compressed iron and compressed stone Create pressing outputs and remove pressure/explosion shortcuts. Core machine blocks now default to ordinary shaped assembly from manufactured parts and casing tiers, and the active pack content no longer authors Create mechanical-crafting recipes. TCon remains the molten metallurgy surface, Blood Magic alchemy owns magic work, and PNCR pressure or assembly owns late electronics/circuit completion.
 
-Player kills on any mob now award one copper coin. Campaign pillagers keep their separate strength-scaled coin bundles, so the surface threat remains a premium combat payout rather than being flattened into the global baseline.
+`50_loot/50_player_kill_coin_drops.js` awards one copper coin for every non-player living entity killed by a player, including player-fired projectiles. Campaign pillagers keep their separate strength-scaled coin bundles, so the surface threat remains a premium combat payout rather than being flattened into the global baseline.
 
 The first hand tools are authored TConstruct stacks: a hand axe crafted from flint, PVJ bones, or PVJ rocks plus Farmer's Delight straw and a stick, plus a butcher knife crafted from flint, PVJ bones, or PVJ rocks plus a stick. No Tree Punching tools and pottery/vessel routes are not part of the active early-game spine.
 

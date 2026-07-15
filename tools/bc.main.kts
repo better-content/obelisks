@@ -343,6 +343,7 @@ val hardPatterns = listOf(
     Triple("modernfix_watchdog", "ModernFix watchdog signatures", Regex("modernfix.*watchdog|watchdog.*modernfix|server thread dump", RegexOption.IGNORE_CASE)),
     Triple("c2me_thread_guard", "C2ME/thread-guard signatures", Regex("(ThreadingDetector|PalettedContainer|BulkSectionAccess|safe.?random|random.*wrong thread|accessing legacyrandomsource|CheckedThreadLocalRandom|Chunk not there when requested).*\\b(Exception|Error|FATAL|ReportedException|IllegalStateException)\\b|\\b(Exception|Error|FATAL|ReportedException|IllegalStateException)\\b.*(ThreadingDetector|PalettedContainer|BulkSectionAccess|safe.?random|random.*wrong thread|accessing legacyrandomsource|CheckedThreadLocalRandom|Chunk not there when requested)", RegexOption.IGNORE_CASE)),
 )
+val kubeJsErrorPattern = Regex("""\[[^\]]+/ERROR]|\[ERROR]""")
 val hardPatternIgnores = mapOf(
     "modernfix_watchdog" to listOf(
         Regex("""Option 'mixin\.feature\.integrated_server_watchdog' overriden \(by user configuration\) to 'false'""", RegexOption.IGNORE_CASE),
@@ -1352,18 +1353,32 @@ fun scanHardFailures(logPath: Path?, instanceDir: Path?): HardScanResult {
     val findingsByKey = linkedMapOf<String, HardFinding>()
     var failedRecipeCount = 0
     var parseErrorCount = 0
-    Files.readAllLines(logPath).forEachIndexed { index, line ->
-        val lineNumber = index + 1
-        if (Regex("Error parsing recipe", RegexOption.IGNORE_CASE).containsMatchIn(line)) parseErrorCount += 1
-        Regex("""with (\d+) failed recipes""", RegexOption.IGNORE_CASE).find(line)?.groupValues?.getOrNull(1)?.toIntOrNull()?.let {
-            if (it > 0) {
-                failedRecipeCount = maxOf(failedRecipeCount, it)
-                addFinding(findingsByKey, "kubejs_failed_recipes", "KubeJS failed recipe count", lineNumber, line)
-            }
+    val logsToScan = mutableListOf(logPath to false)
+    if (instanceDir != null) {
+        for (name in listOf("server.log", "startup.log", "client.log")) {
+            val kubeLog = instanceDir.resolve("logs/kubejs/$name")
+            if (kubeLog.exists()) logsToScan += kubeLog to true
         }
-        for ((key, label, pattern) in hardPatterns) {
-            val ignored = hardPatternIgnores[key].orEmpty().any { it.containsMatchIn(line) }
-            if (!ignored && pattern.containsMatchIn(line)) addFinding(findingsByKey, key, label, lineNumber, line)
+    }
+    for ((path, isKubeJsLog) in logsToScan.distinctBy { it.first.toAbsolutePath().normalize() }) {
+        val sourcePrefix = instanceDir?.let { runCatching { it.relativize(path).toString() }.getOrNull() } ?: path.toString()
+        Files.readAllLines(path).forEachIndexed { index, rawLine ->
+            val lineNumber = index + 1
+            val line = if (path == logPath) rawLine else "$sourcePrefix:$lineNumber: $rawLine"
+            if (Regex("Error parsing recipe", RegexOption.IGNORE_CASE).containsMatchIn(rawLine)) parseErrorCount += 1
+            Regex("""with (\d+) failed recipes""", RegexOption.IGNORE_CASE).find(rawLine)?.groupValues?.getOrNull(1)?.toIntOrNull()?.let {
+                if (it > 0) {
+                    failedRecipeCount = maxOf(failedRecipeCount, it)
+                    addFinding(findingsByKey, "kubejs_failed_recipes", "KubeJS failed recipe count", lineNumber, line)
+                }
+            }
+            if (isKubeJsLog && kubeJsErrorPattern.containsMatchIn(rawLine)) {
+                addFinding(findingsByKey, "kubejs_script_error", "KubeJS script log errors", lineNumber, line)
+            }
+            for ((key, label, pattern) in hardPatterns) {
+                val ignored = hardPatternIgnores[key].orEmpty().any { it.containsMatchIn(rawLine) }
+                if (!ignored && pattern.containsMatchIn(rawLine)) addFinding(findingsByKey, key, label, lineNumber, line)
+            }
         }
     }
     if (instanceDir != null) {

@@ -27,7 +27,7 @@ var BC_DEPOSIT_SOURCE_BLOCKS = {
 }
 
 function bcAddDepositTags(event) {
-    for (var id inBC_DEPOSIT_SOURCE_BLOCKS) {
+    for (var id in BC_DEPOSIT_SOURCE_BLOCKS) {
         var tag = 'kubejs:deposit_blocks/' + id
         var blocks = BC_DEPOSIT_SOURCE_BLOCKS[id]
         for (var i = 0; i < blocks.length; i++) event.add(tag, blocks[i])

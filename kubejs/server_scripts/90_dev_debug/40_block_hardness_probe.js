@@ -450,7 +450,7 @@ function bcBlockProbeWrite(outputDir, payload) {
     } catch (e) {
         JsonIO.write(BC_BLOCK_PROBE_FALLBACK_PATH, payload)
         console.warn('[BC-BLOCK-HARDNESS-PROBE] primary write failed for ' + primaryPath + '; wrote fallback ' + BC_BLOCK_PROBE_FALLBACK_PATH + ' (' + e + ')')
-        returnBC_BLOCK_PROBE_FALLBACK_PATH
+        return BC_BLOCK_PROBE_FALLBACK_PATH
     }
 }
 

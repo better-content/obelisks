@@ -242,7 +242,7 @@ var BC_SYN_MAGIC_CUTTING_FLUIDS = {
 }
 
 ServerEvents.recipes(function (event) {
-    for (var fluidKey inBC_SYN_MAGIC_CUTTING_FLUIDS) {
+    for (var fluidKey in BC_SYN_MAGIC_CUTTING_FLUIDS) {
         var cuttingFluid = BC_SYN_MAGIC_CUTTING_FLUIDS[fluidKey]
          bcSynBloodAlchemy(event, fluidKey + '_cutting_fluid_charge', [
             { item: cuttingFluid.acid },

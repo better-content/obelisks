@@ -13,7 +13,7 @@ function bcFullChemFluidExists(id) {
     try {
         if (typeof Fluid !== 'undefined' && Fluid.exists) return Fluid.exists(id)
     } catch (e) {}
-    returnBC_FULL_CHEM_KNOWN_FLUIDS[id] === true
+    return BC_FULL_CHEM_KNOWN_FLUIDS[id] === true
 }
 
 function bcFullChemIngredientExists(input) {

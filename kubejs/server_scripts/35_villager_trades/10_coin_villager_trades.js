@@ -284,7 +284,7 @@ var BC_NON_GROWN_TRADE_BUY_BLOCKLIST = {
 }
 
 function bcIsNonGrownInfiniteBuyResult(item) {
-    returnBC_NON_GROWN_TRADE_BUY_BLOCKLIST[item] === true
+    return BC_NON_GROWN_TRADE_BUY_BLOCKLIST[item] === true
 }
 
 function bcAddThirtyBuys(event, tier, baseCost) {

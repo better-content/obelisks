@@ -40,20 +40,28 @@ val env = CompilerEnvirons().apply {
     isReservedKeywordAsIdentifier = true
 }
 val parser = Parser(env, reporter)
+val collapsedBcKeywordPattern = Regex("\\b(?:return|in|throw|typeof|void|delete|await|yield)BC[A-Za-z0-9_]*\\b")
+val lintErrors = mutableListOf<String>()
 
 for (file in files) {
+    val source = Files.readString(file)
     try {
-        parser.parse(Files.readString(file), root.relativize(file).toString(), 1)
+        parser.parse(source, root.relativize(file).toString(), 1)
     } catch (_: Exception) {
         // reporter captures syntax errors; parse may still throw after reporting.
     }
+    source.lineSequence().forEachIndexed { index, line ->
+        collapsedBcKeywordPattern.findAll(line).forEach { match ->
+            lintErrors += "${root.relativize(file)}:${index + 1}:${match.range.first + 1} collapsed JavaScript keyword and BC identifier: ${match.value}"
+        }
+    }
 }
 
-if (reporter.errors.isEmpty()) {
+if (reporter.errors.isEmpty() && lintErrors.isEmpty()) {
     println("ok - all KubeJS JS parses with Rhino (${"%d".format(files.size)} files)")
     exitProcess(0)
 }
 
 System.err.println("FAIL - all KubeJS JS parses with Rhino")
-System.err.println(reporter.errors.take(20).joinToString("\n"))
+System.err.println((reporter.errors + lintErrors).take(20).joinToString("\n"))
 exitProcess(1)

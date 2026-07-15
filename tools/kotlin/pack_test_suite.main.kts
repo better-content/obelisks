@@ -216,6 +216,10 @@ fun fail(name: String, detail: String) {
     System.err.println("FAIL - $name: $detail")
 }
 fun finding(name: String, detail: String, severity: String = "SHOULD") {
+    if (severity == "MUST") {
+        fail(name, detail)
+        return
+    }
     softFindings += Finding(name, detail, severity)
     println("$severity - $name: $detail")
 }

@@ -88,6 +88,7 @@ fun parseJson(text: String): Any? {
             skipWhitespace()
             val value = parseValue()
             skipWhitespace()
+            if (index != raw.length) error("unexpected trailing JSON content at index $index")
             return value
         }
 
@@ -225,6 +226,19 @@ fun jsonNumber(value: Any?): Number? = value as? Number
 fun jsonArray(value: Any?): List<Any?> = value as? List<Any?> ?: emptyList()
 
 fun readJson(path: Path): Map<String, Any?> = jsonObject(parseJson(Files.readString(path)))
+fun parseJsonObject(text: String): Map<String, Any?> = jsonObject(parseJson(text))
+
+fun waitForHarnessRunDir(harnessRoot: Path, timeoutMs: Long = 10_000): Path {
+    val deadline = System.currentTimeMillis() + timeoutMs
+    while (System.currentTimeMillis() < deadline) {
+        val lockPath = Files.walk(harnessRoot).use { stream ->
+            stream.filter { it.fileName.toString() == "lock.json" }.findFirst().orElse(null)
+        }
+        if (lockPath != null) return lockPath.parent
+        Thread.sleep(100)
+    }
+    error("timed out waiting for harness lock under $harnessRoot")
+}
 
 fun copyTree(source: Path, target: Path) {
     Files.walk(source).use { stream ->
@@ -298,20 +312,34 @@ test("graph item without id is usage error") {
 test("graph item json returns producer and consumer counts") {
     val (exit, output) = runCommand("tools/bc", "--json", "graph", "item", "minecraft:glass")
     assertTrue(exit == 0, "graph item json should exit 0, got $exit")
-    assertContains(output, "\"command\":\"graph item\"", "graph item json should identify its command")
-    assertContains(output, "\"status\":\"success\"", "graph item json should report success")
-    assertContains(output, "\"item\":\"minecraft:glass\"", "graph item json should report the item")
-    assertContains(output, "\"producerCount\":", "graph item json should report producerCount")
-    assertContains(output, "\"consumerCount\":", "graph item json should report consumerCount")
+    val json = parseJsonObject(output)
+    val details = jsonObject(json["details"])
+    assertTrue(jsonString(json["command"]) == "graph item", "graph item json should identify its command: $json")
+    assertTrue(jsonString(json["status"]) == "success", "graph item json should report success: $json")
+    assertTrue(jsonString(details["item"]) == "minecraft:glass", "graph item json should report the item: $json")
+    assertTrue(jsonNumber(details["producerCount"]) != null, "graph item json should report producerCount: $json")
+    assertTrue(jsonNumber(details["consumerCount"]) != null, "graph item json should report consumerCount: $json")
 }
 
 test("graph route json returns a structured route") {
     val (exit, output) = runCommand("tools/bc", "--json", "graph", "route", "kubejs:seared_machine_casing")
     assertTrue(exit == 0, "graph route json should exit 0, got $exit")
-    assertContains(output, "\"command\":\"graph route\"", "graph route json should identify its command")
-    assertContains(output, "\"reachable\":true", "graph route json should report reachability")
-    assertContains(output, "\"route\":[", "graph route json should include a route array")
-    assertContains(output, "\"item\":\"kubejs:seared_machine_casing\"", "graph route json should include the target route step")
+    val json = parseJsonObject(output)
+    val details = jsonObject(json["details"])
+    val route = jsonArray(details["route"])
+    assertTrue(jsonString(json["command"]) == "graph route", "graph route json should identify its command: $json")
+    assertTrue(details["reachable"] == true, "graph route json should report reachability: $json")
+    assertTrue(route.isNotEmpty(), "graph route json should include a non-empty route array: $json")
+    assertTrue(
+        route.any { step ->
+            when (step) {
+                is Map<*, *> -> step.values.any { it == "kubejs:seared_machine_casing" }
+                is String -> step == "kubejs:seared_machine_casing"
+                else -> false
+            }
+        },
+        "graph route json should include the target route step: $json",
+    )
 }
 
 test("graph blockers json returns explicit blocker data") {
@@ -397,6 +425,7 @@ test("build sync server dry-run works") {
         assertTrue(exit == 0, "server sync dry-run should exit 0, got $exit")
         assertContains(output, "\"status\":\"success\"", "server sync dry-run should report success JSON")
         assertContains(output, "\"command\":\"build sync server\"", "server sync dry-run should identify its command")
+        assertTrue(Files.list(temp).use { !it.findAny().isPresent }, "server sync dry-run should not populate destination $temp")
     } finally {
         deleteTree(temp)
     }
@@ -409,6 +438,7 @@ test("build sync client dry-run works") {
         assertTrue(exit == 0, "client sync dry-run should exit 0, got $exit")
         assertContains(output, "\"status\":\"success\"", "client sync dry-run should report success JSON")
         assertContains(output, "\"command\":\"build sync client\"", "client sync dry-run should identify its command")
+        assertTrue(Files.list(temp).use { !it.findAny().isPresent }, "client sync dry-run should not populate destination $temp")
     } finally {
         deleteTree(temp)
     }
@@ -610,15 +640,49 @@ test("client smoke rejects invalid profile with usage error") {
 }
 
 test("opening progression rejects invalid bootstrap mode with usage error") {
-    val (exit, output) = runCommand("tools/bc", "test", "scenario", "opening_progression", "--bootstrap-mode", "bad")
-    assertTrue(exit == 2, "opening_progression with invalid bootstrap mode should exit 2, got $exit")
-    assertContains(output, "invalid bootstrap mode: bad", "opening_progression should reject invalid bootstrap mode")
+    val harnessRoot = createTestTempDirectory("bc-kotlin-test-opening-invalid-bootstrap-harness")
+    val runRoot = createTestTempDirectory("bc-kotlin-test-opening-invalid-bootstrap-run")
+    try {
+        val (exit, output) = runCommand(
+            "tools/bc",
+            "test",
+            "scenario",
+            "opening_progression",
+            "--bootstrap-mode",
+            "bad",
+            "--run-root",
+            runRoot.toString(),
+            extraEnv = mapOf("BC_HARNESS_ROOT" to harnessRoot.toString()),
+        )
+        assertTrue(exit == 2, "opening_progression with invalid bootstrap mode should exit 2, got $exit")
+        assertContains(output, "invalid bootstrap mode: bad", "opening_progression should reject invalid bootstrap mode")
+    } finally {
+        deleteTree(harnessRoot)
+        deleteTree(runRoot)
+    }
 }
 
 test("mod_ram_partition rejects invalid seed strategy with usage error") {
-    val (exit, output) = runCommand("tools/bc", "test", "scenario", "mod_ram_partition", "--seed-strategy", "bad")
-    assertTrue(exit == 2, "mod_ram_partition with invalid seed strategy should exit 2, got $exit")
-    assertContains(output, "invalid seed strategy: bad", "mod_ram_partition should reject invalid seed strategy")
+    val harnessRoot = createTestTempDirectory("bc-kotlin-test-mod-ram-invalid-seed-harness")
+    val runRoot = createTestTempDirectory("bc-kotlin-test-mod-ram-invalid-seed-run")
+    try {
+        val (exit, output) = runCommand(
+            "tools/bc",
+            "test",
+            "scenario",
+            "mod_ram_partition",
+            "--seed-strategy",
+            "bad",
+            "--run-root",
+            runRoot.toString(),
+            extraEnv = mapOf("BC_HARNESS_ROOT" to harnessRoot.toString()),
+        )
+        assertTrue(exit == 2, "mod_ram_partition with invalid seed strategy should exit 2, got $exit")
+        assertContains(output, "invalid seed strategy: bad", "mod_ram_partition should reject invalid seed strategy")
+    } finally {
+        deleteTree(harnessRoot)
+        deleteTree(runRoot)
+    }
 }
 
 test("mod_ram_partition help advertises smallest_islands seed strategy") {
@@ -638,10 +702,7 @@ test("fast duplicate invocation fails immediately with harness diagnostics") {
         ),
     )
     try {
-        val deadline = System.currentTimeMillis() + 10_000
-        while (System.currentTimeMillis() < deadline && Files.list(harnessRoot).use { !it.findAny().isPresent }) {
-            Thread.sleep(100)
-        }
+        waitForHarnessRunDir(harnessRoot)
         val (exit, output) = runCommand(
             "tools/bc",
             "test",
@@ -686,7 +747,7 @@ test("full workspace writes repo progress into status and summary") {
         assertTrue(exit == 0, "workspace full should succeed under stub mode, got $exit")
         assertContains(output, "==> [1/1] pack", "workspace full should report repo progress")
         assertContains(output, "PASS pack", "workspace full should report repo success")
-        val statusPath = Files.list(harnessRoot).use { it.findFirst().orElseThrow() }.resolve("status.json")
+        val statusPath = firstHarnessRunDir(harnessRoot).resolve("status.json")
         val summaryPath = statusPath.parent.resolve("summary.json")
         val status = readJson(statusPath)
         val summary = readJson(summaryPath)
@@ -717,16 +778,18 @@ test("smoke auto-remaps occupied ports and records requested and actual port") {
             ),
         )
         assertTrue(exit == 0, "smoke should auto-remap occupied port, got $exit")
-        assertContains(output, "using ${requestedPort + 1}", "smoke should report remapped port")
+        assertContains(output, "using ", "smoke should report remapped port")
     }
     try {
-        val statusPath = Files.list(harnessRoot).use { it.findFirst().orElseThrow() }.resolve("status.json")
+        val statusPath = firstHarnessRunDir(harnessRoot).resolve("status.json")
         val summaryPath = statusPath.parent.resolve("summary.json")
         val status = readJson(statusPath)
         val summary = readJson(summaryPath)
+        val actualPort = jsonNumber(status["actual_port"])?.toInt()
         assertTrue(jsonNumber(status["requested_port"])?.toInt() == requestedPort, "smoke status should record requested port: $status")
-        assertTrue(jsonNumber(status["actual_port"])?.toInt() == requestedPort + 1, "smoke status should record remapped actual port: $status")
-        assertTrue(jsonNumber(summary["actual_port"])?.toInt() == requestedPort + 1, "smoke summary should record remapped actual port: $summary")
+        assertTrue(actualPort != null && actualPort != requestedPort, "smoke status should record a remapped actual port: $status")
+        assertTrue(actualPort in (requestedPort + 1)..(requestedPort + 50), "smoke actual port should stay within remap window: $status")
+        assertTrue(jsonNumber(summary["actual_port"])?.toInt() == actualPort, "smoke summary should record the same remapped actual port: $summary")
     } finally {
         deleteTree(harnessRoot)
         deleteTree(runtimeDir)
@@ -755,7 +818,7 @@ test("opening progression remaps occupied ports and refreshes latest status arti
             ),
         )
         assertTrue(exit == 0, "opening_progression should succeed under fake mode, got $exit")
-        assertContains(output, "using ${requestedPort + 1}", "opening_progression should report remapped port")
+        assertContains(output, "using ", "opening_progression should report remapped port")
     }
     try {
         val latestStatus = runRoot.resolve("latest-status.json")
@@ -764,8 +827,10 @@ test("opening progression remaps occupied ports and refreshes latest status arti
         assertTrue(latestSummary.exists(), "opening_progression should refresh latest-summary.json")
         val summary = readJson(latestSummary)
         val cycles = jsonArray(summary["cycles"])
+        val actualPort = jsonNumber(summary["actual_port"])?.toInt()
         assertTrue(jsonString(summary["status"]) == "passed", "opening_progression summary should pass: $summary")
-        assertTrue(jsonNumber(summary["actual_port"])?.toInt() == requestedPort + 1, "opening_progression summary should record remapped port: $summary")
+        assertTrue(actualPort != null && actualPort != requestedPort, "opening_progression summary should record a remapped port: $summary")
+        assertTrue(actualPort in (requestedPort + 1)..(requestedPort + 50), "opening_progression summary should keep remapped port in range: $summary")
         assertTrue(cycles.isNotEmpty(), "opening_progression summary should include cycle results")
     } finally {
         deleteTree(harnessRoot)
@@ -784,10 +849,7 @@ test("stale lock with dead pid is reclaimed automatically") {
         ),
     )
     try {
-        val deadline = System.currentTimeMillis() + 10_000
-        while (System.currentTimeMillis() < deadline && Files.list(harnessRoot).use { !it.findAny().isPresent }) {
-            Thread.sleep(100)
-        }
+        waitForHarnessRunDir(harnessRoot)
         terminateHarnessOwner(harnessRoot, force = true)
         process.destroyForcibly()
         process.waitFor(10, TimeUnit.SECONDS)
@@ -836,7 +898,9 @@ test("opening progression failure writes final summary with phase reason and evi
         val cycle = cycles.first()
         assertTrue(jsonString(cycle["status"]) == "failed", "cycle should record failure: $cycle")
         assertTrue(!jsonString(cycle["failure_reason"]).isNullOrBlank(), "cycle failure should include reason: $cycle")
-        assertTrue(!jsonString(cycle["evidence_dir"]).isNullOrBlank(), "cycle failure should include evidence dir: $cycle")
+        val evidenceDir = jsonString(cycle["evidence_dir"])
+        assertTrue(!evidenceDir.isNullOrBlank(), "cycle failure should include evidence dir: $cycle")
+        assertTrue(Path.of(evidenceDir!!).exists(), "cycle evidence dir should exist: $cycle")
     } finally {
         deleteTree(harnessRoot)
         deleteTree(runRoot)

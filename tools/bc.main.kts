@@ -451,7 +451,7 @@ Commands:
 """.trimIndent()
 
 fun internalHelp(): String = """
-Usage: tools/bc internal <resolve-packwiz-downloads|prune-runtime-mods|log-hard-failure-scan|prepare-server-runtime|prepare-client-runtime|minecraft-client-argfile|sync-burnt-coverage-tags|generate-completionist-quests|audit-ftbq-layout|check-js-syntax|check-json-surface|validate-pack-contract|contract-completeness-report|validate-kubejs-assets|validate-autonomous-contracts|validate-realistic-hands|validate-dynamic-trees-coverage|validate-chemistry-identity|validate-synthesis-pipeline|validate-player-progression-contracts|validate-progression-reachability|validate-burnt-coverage|validate-lc-tfth-dh-contracts|validate-kotlin-tool-surface|validate-tool-doc-surface|validate-worldgen-sampling-contracts|validate-client-smoke-contracts|verify-pack-fast|verify-pack-full> ...
+Usage: tools/bc internal <resolve-packwiz-downloads|prune-runtime-mods|log-hard-failure-scan|prepare-server-runtime|prepare-client-runtime|minecraft-client-argfile|sync-burnt-coverage-tags|generate-completionist-quests|audit-ftbq-layout|check-js-syntax|check-json-surface|validate-bettergrassify-grass-blocks|validate-pack-contract|contract-completeness-report|validate-kubejs-assets|validate-autonomous-contracts|validate-realistic-hands|validate-dynamic-trees-coverage|validate-chemistry-identity|validate-synthesis-pipeline|validate-player-progression-contracts|validate-progression-reachability|validate-burnt-coverage|validate-lc-tfth-dh-contracts|validate-kotlin-tool-surface|validate-tool-doc-surface|validate-worldgen-sampling-contracts|validate-client-smoke-contracts|verify-pack-fast|verify-pack-full> ...
 """.trimIndent()
 
 fun usageError(message: String, help: String = mainHelp()): CommandResult =
@@ -4145,6 +4145,9 @@ fun runContractCompletenessReport(checkMode: Boolean, writeReports: Boolean): Pr
 fun runKubejsAssetsValidation(): ProcessRun =
     runKotlinScript(root.resolve("tools/kotlin/validate_kubejs_assets.main.kts"))
 
+fun runBetterGrassifyGrassBlocksValidation(): ProcessRun =
+    runKotlinScript(root.resolve("tools/kotlin/validate_bettergrassify_grass_blocks.main.kts"))
+
 fun runAutonomousContractsValidation(): ProcessRun =
     runKotlinScript(root.resolve("tools/kotlin/validate_autonomous_contracts.main.kts"))
 
@@ -4631,6 +4634,10 @@ fun handleInternal(subArgs: List<String>): CommandResult {
         "check-json-surface" -> {
             val run = runJsonSurfaceCheck()
             CommandResult("internal check-json-surface", if (run.exitCode == 0) "success" else "failure", run.output, exitCode = if (run.exitCode == 0) 0 else 1)
+        }
+        "validate-bettergrassify-grass-blocks" -> {
+            val run = runBetterGrassifyGrassBlocksValidation()
+            CommandResult("internal validate-bettergrassify-grass-blocks", if (run.exitCode == 0) "success" else "failure", run.output, exitCode = if (run.exitCode == 0) 0 else 1)
         }
         "validate-pack-contract" -> {
             val run = runPackContractValidation()

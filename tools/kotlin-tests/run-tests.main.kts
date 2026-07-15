@@ -587,6 +587,12 @@ test("internal json surface check runs through bc") {
     assertContains(output, "all repo JSON parses", "internal check-json-surface should report JSON surface validation")
 }
 
+test("internal BetterGrassify grass block validator runs through bc") {
+    val (exit, output) = runCommand("tools/bc", "internal", "validate-bettergrassify-grass-blocks")
+    assertTrue(exit == 0, "internal validate-bettergrassify-grass-blocks should exit 0, got $exit")
+    assertContains(output, "BetterGrassify grass block coverage validates", "internal validate-bettergrassify-grass-blocks should report validator summary")
+}
+
 test("internal burnt sync check runs through bc") {
     val (exit, output) = runCommand("tools/bc", "internal", "sync-burnt-coverage-tags", "--check")
     assertTrue(exit == 0, "internal sync-burnt-coverage-tags --check should exit 0, got $exit")

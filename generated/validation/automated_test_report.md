@@ -1,10 +1,10 @@
 # Automated Pack Test Report
 
-Generated: 2026-07-16T11:53:34.513702069Z
+Generated: 2026-07-16T12:15:20.058862025Z
 
 Repo: `/home/dev/workspace`
 
-Instance: `/home/dev/.cache/bc/opening-progression/prepared/server`
+Instance: `/home/dev/.cache/bc/client-smoke-quick`
 
 Validation profile: `runtime-only`
 
@@ -38,15 +38,15 @@ Data dump evidence mode: `opportunistic`
 | runtime minecraft:planks item tag keeps vanilla and mahogany planks | 131 values                              |
 | generic wood storage fallback routes remain registered              |                                         |
 | representative wood-specific recipes remain specialized             |                                         |
-| performance budget: runtime core tag regression validation          | 492.62 ms <= 1500 ms                    |
+| performance budget: runtime core tag regression validation          | 493.76 ms <= 1500 ms                    |
 | latest engine log is recent                                         | 0.06 minutes old                        |
 | engine reached dedicated server startup                             |                                         |
 | world became playable/servable                                      |                                         |
-| spawn preparation budget                                            | 45072 ms <= 60000 ms                    |
+| spawn preparation budget                                            | 30652 ms <= 60000 ms                    |
 | server tick-behind budget                                           | 0 warnings, max 0 ms                    |
-| world save budget                                                   | 840 ms <= 10000 ms                      |
+| world save budget                                                   | 905 ms <= 10000 ms                      |
 | hard engine log failure scan                                        |                                         |
-| performance budget: engine and world performance log analysis       | 509.3 ms <= 750 ms                      |
+| performance budget: engine and world performance log analysis       | 493.17 ms <= 750 ms                     |
 ## Skipped
 | Test                                        | Detail                                                  |
 | ------------------------------------------- | ------------------------------------------------------- |
@@ -55,5 +55,5 @@ Data dump evidence mode: `opportunistic`
 ## Metrics
 
 ```json
-{"runtimeCoreTagRecipeGraph":{"path":"/home/dev/.cache/bc/opening-progression/prepared/server/generated/runtime-dumps/recipes.json", "sizeBytes":26166104}, "runtimeCoreTagConsumers":{"logs":39, "logs_that_burn":1, "wooden_buttons":5, "wooden_slabs":69, "wooden_doors":6, "wooden_pressure_plates":6, "wooden_stairs":3, "wooden_trapdoors":3, "fence_gates":1, "wooden_fences":6}, "engineWorld":{"latestLog":"/home/dev/.cache/bc/opening-progression/prepared/server/logs/latest.log", "latestLogAgeMinutes":0.06, "latestLogLines":26140, "reachedIntegratedServer":false, "reachedDedicatedServer":true, "startedServingLan":false, "reachedInGame":true, "spawnPrepTimeMs":45072, "serverTickBehindWarnings":0, "maxTickBehindMs":0, "distantHorizonsIncompleteTasks":0, "emiTotalReloadMs":null, "kubejsRecipeParseErrors":0, "kubejsFailedRecipeCount":0, "newestCrashReport":null, "newestCrashReportAfterLatestLog":false, "hardLogScanOk":true, "hardLogScan":"ok - hard log failure scan (/home/dev/.cache/bc/opening-progression/prepared/server/logs/latest.log)"}, "performance":{"budgetsMs":{"JSON and JS syntax validation":8000, "critical progression surfaces":750, "progression parenting and economy validation":2500, "pack contract validation":1000, "contract completeness classification":1000, "autonomous contract validation":1500, "quest book validation":250, "Wares and villager trade validation":250, "repo loot data validation":500, "runtime core tag regression validation":1500, "generated recipe graph validation":5000, "generated loot dump validation":2500, "engine and world performance log analysis":750, "Realistic Hands validation":2000, "KubeJS asset validation":2000, "chemistry identity validation":1500, "dev dump health validation":50, "plank regression static validation":250}, "hardLimitsMs":{"JSON and JS syntax validation":24000, "critical progression surfaces":3000, "progression parenting and economy validation":10000, "pack contract validation":5000, "contract completeness classification":5000, "autonomous contract validation":6000, "quest book validation":1500, "Wares and villager trade validation":1500, "repo loot data validation":3000, "runtime core tag regression validation":6000, "generated recipe graph validation":20000, "generated loot dump validation":10000, "engine and world performance log analysis":1500, "Realistic Hands validation":5000, "KubeJS asset validation":5000, "chemistry identity validation":4000, "dev dump health validation":500, "plank regression static validation":1500}, "results":[{"name":"runtime core tag regression validation", "durationMs":492.62, "budgetMs":1500, "hardLimitMs":6000}, {"name":"engine and world performance log analysis", "durationMs":509.3, "budgetMs":750, "hardLimitMs":1500}]}}
+{"runtimeCoreTagRecipeGraph":{"path":"/home/dev/.cache/bc/client-smoke-quick/generated/runtime-dumps/recipes.json", "sizeBytes":26166104}, "runtimeCoreTagConsumers":{"logs":39, "logs_that_burn":1, "wooden_buttons":5, "wooden_slabs":69, "wooden_doors":6, "wooden_pressure_plates":6, "wooden_stairs":3, "wooden_trapdoors":3, "fence_gates":1, "wooden_fences":6}, "engineWorld":{"latestLog":"/home/dev/.cache/bc/client-smoke-quick/logs/latest.log", "latestLogAgeMinutes":0.06, "latestLogLines":26023, "reachedIntegratedServer":false, "reachedDedicatedServer":true, "startedServingLan":false, "reachedInGame":true, "spawnPrepTimeMs":30652, "serverTickBehindWarnings":0, "maxTickBehindMs":0, "distantHorizonsIncompleteTasks":0, "emiTotalReloadMs":null, "kubejsRecipeParseErrors":0, "kubejsFailedRecipeCount":0, "newestCrashReport":null, "newestCrashReportAfterLatestLog":false, "hardLogScanOk":true, "hardLogScan":"ok - hard log failure scan (/home/dev/.cache/bc/client-smoke-quick/logs/latest.log)"}, "performance":{"budgetsMs":{"JSON and JS syntax validation":8000, "critical progression surfaces":750, "progression parenting and economy validation":2500, "pack contract validation":1000, "contract completeness classification":1000, "autonomous contract validation":1500, "quest book validation":250, "Wares and villager trade validation":250, "repo loot data validation":500, "runtime core tag regression validation":1500, "generated recipe graph validation":5000, "generated loot dump validation":2500, "engine and world performance log analysis":750, "Realistic Hands validation":2000, "KubeJS asset validation":2000, "chemistry identity validation":1500, "dev dump health validation":50, "plank regression static validation":250}, "hardLimitsMs":{"JSON and JS syntax validation":24000, "critical progression surfaces":3000, "progression parenting and economy validation":10000, "pack contract validation":5000, "contract completeness classification":5000, "autonomous contract validation":6000, "quest book validation":1500, "Wares and villager trade validation":1500, "repo loot data validation":3000, "runtime core tag regression validation":6000, "generated recipe graph validation":20000, "generated loot dump validation":10000, "engine and world performance log analysis":1500, "Realistic Hands validation":5000, "KubeJS asset validation":5000, "chemistry identity validation":4000, "dev dump health validation":500, "plank regression static validation":1500}, "results":[{"name":"runtime core tag regression validation", "durationMs":493.76, "budgetMs":1500, "hardLimitMs":6000}, {"name":"engine and world performance log analysis", "durationMs":493.17, "budgetMs":750, "hardLimitMs":1500}]}}
 ```

@@ -2,4 +2,5 @@
 
 ServerEvents.tags('block', event => {
     event.add('hyle:replaceable', 'minecraft:deepslate')
+    event.add('hyle:replaceable', 'minecraft:tuff')
 })

@@ -1026,10 +1026,48 @@ fun validateWorldgenStaticContractsImpl() {
     val hyleConfigured = readJson("datapacks/hyle_deep/data/hyle/worldgen/configured_feature/stone_replacer.json")
     val hyleConfig = jsonObject(hyleConfigured["config"])
     val hyleRegions = jsonArray(hyleConfig["regions"]).mapNotNull(::jsonString)
-    val requiredHyleRegions = listOf("unearthed:default", "unearthed:limestone", "unearthed:sedimentary", "unearthed:vanilla")
+    val requiredHyleRegions = listOf("unearthed:default", "unearthed:limestone", "unearthed:sedimentary")
     val missingHyleRegions = requiredHyleRegions.filterNot(hyleRegions::contains)
-    if (missingHyleRegions.isEmpty()) ok("Hyle stone replacement has active Unearthed regions", hyleRegions.joinToString(", "))
-    else fail("Hyle stone replacement has active Unearthed regions", missingHyleRegions.joinToString(", "))
+    val unexpectedHyleRegions = hyleRegions.filterNot(requiredHyleRegions::contains)
+    if (missingHyleRegions.isEmpty() && unexpectedHyleRegions.isEmpty()) ok("Hyle stone replacement uses only exhaustive Unearthed regions", hyleRegions.joinToString(", "))
+    else fail("Hyle stone replacement uses only exhaustive Unearthed regions", "missing=${missingHyleRegions.joinToString(", ")} unexpected=${unexpectedHyleRegions.joinToString(", ")}")
+
+    val activeHyleRegionFiles = requiredHyleRegions.map { region ->
+        "datapacks/hyle_deep/data/${region.substringBefore(':')}/hyledata/regions/${region.substringAfter(':')}.json"
+    }
+    val activeHyleEmptyEntries = activeHyleRegionFiles.filter { path -> Regex("\\\"\\s*\\\"").containsMatchIn(read(path)) }
+    if (activeHyleEmptyEntries.isEmpty()) ok("active Hyle regions have no vanilla-preserving empty palette entries", "${activeHyleRegionFiles.size} regions")
+    else fail("active Hyle regions have no vanilla-preserving empty palette entries", activeHyleEmptyEntries.joinToString(", "))
+
+    val hyleTagScript = read("kubejs/server_scripts/10_tags/20_replaceable_deepslate.js")
+    val requiredHyleHostBlocks = listOf("minecraft:deepslate", "minecraft:tuff")
+    val missingHyleHostBlocks = requiredHyleHostBlocks.filterNot { "'$it'" in hyleTagScript }
+    if (missingHyleHostBlocks.isEmpty()) ok("Hyle replaces deep vanilla host stones", requiredHyleHostBlocks.joinToString(", "))
+    else fail("Hyle replaces deep vanilla host stones", missingHyleHostBlocks.joinToString(", "))
+
+    val vanillaWorldgenRemoval = read("datapacks/worldgen_compat_fixes/data/kubejs/forge/biome_modifier/remove_vanilla_overworld_ores.json")
+    val lateVanillaStoneFeatures = listOf("ore_granite_upper", "ore_granite_lower", "ore_diorite_upper", "ore_diorite_lower", "ore_andesite_upper", "ore_andesite_lower", "ore_tuff")
+    val unremovedLateVanillaStoneFeatures = lateVanillaStoneFeatures.filterNot { "minecraft:$it" in vanillaWorldgenRemoval }
+    if (unremovedLateVanillaStoneFeatures.isEmpty()) ok("late vanilla stone features cannot overwrite Hyle geology", "${lateVanillaStoneFeatures.size} features")
+    else fail("late vanilla stone features cannot overwrite Hyle geology", unremovedLateVanillaStoneFeatures.joinToString(", "))
+
+    val bcfixesHyleMixinConfig = readJson("generated/custom-mod-sources/better-content-fixes/src/main/resources/bcfixes.mixins.json")
+    val bcfixesHyleMixins = jsonArray(bcfixesHyleMixinConfig["mixins"]).mapNotNull(::jsonString)
+    val hyleBottomMixinPath = "generated/custom-mod-sources/better-content-fixes/src/main/java/io/github/bcfixes/mixin/hyle/StoneReplacerMixin.java"
+    val hyleBottomMixin = if (exists(hyleBottomMixinPath)) read(hyleBottomMixinPath) else ""
+    val hyleBottomCoverageEnabled = "hyle.StoneReplacerMixin" in bcfixesHyleMixins &&
+        "chunk.getMinBuildHeight()" in hyleBottomMixin &&
+        "nearestReplacement(columnTypes, generatedIndex, original)" in hyleBottomMixin
+    if (hyleBottomCoverageEnabled) ok("Hyle bottom interpolation gaps are repaired", "nearest valid generated stratum completes the lowest chunk section")
+    else fail("Hyle bottom interpolation gaps are repaired", "missing bottom-section mixin or generated-stratum fallback")
+
+    val hyleTimingMixinPath = "generated/custom-mod-sources/better-content-fixes/src/main/java/io/github/bcfixes/mixin/hyle/BiomeInjectorMixin.java"
+    val hyleTimingMixin = if (exists(hyleTimingMixinPath)) read(hyleTimingMixinPath) else ""
+    val hyleRunsAfterUndergroundFeatures = "hyle.BiomeInjectorMixin" in bcfixesHyleMixins &&
+        "GenerationStep.Decoration.UNDERGROUND_DECORATION" in hyleTimingMixin &&
+        "GenerationStep.Decoration.LOCAL_MODIFICATIONS" in hyleTimingMixin
+    if (hyleRunsAfterUndergroundFeatures) ok("Hyle replaces late underground stone outputs", "geology pass runs at underground decoration tail")
+    else fail("Hyle replaces late underground stone outputs", "missing Hyle injection timing override")
 
     val hyleOverrideFiles = walk("datapacks/hyle_deep/data/unearthed/hyledata") { it.endsWith(".json") }
     val hyleOverrideText = hyleOverrideFiles.joinToString("\n") { read(it) }

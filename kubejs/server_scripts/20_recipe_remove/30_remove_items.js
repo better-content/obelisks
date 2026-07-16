@@ -109,6 +109,7 @@ ServerEvents.recipes(event => {
     event.remove({ type: 'occultism:miner' })
     event.remove({ type: 'bloodmagic:dimension_drink' })
     event.remove({ id: 'createdieselgenerators:bulk_fermenting/lava' })
+    event.remove({ id: 'pneumaticcraft:amadron/emerald_to_oil' })
     event.remove({ id: 'ars_nouveau:water_essence_to_bucket' })
     event.remove({ id: 'ars_nouveau:water_essence_to_obsidian' })
     event.remove({ id: 'ars_nouveau:fire_essence_to_magma_block' })

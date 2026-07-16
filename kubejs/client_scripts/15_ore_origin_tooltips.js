@@ -128,16 +128,16 @@ var BC_REALISTIC_ORE_ORIGINS = [
     },
     {
         name: 'Uranium ore',
-        source: 'Realistic Ores deposit',
-        detail: 'Deep Overworld uranium field, Y -64 to -48, plus a lava-exposed Y -64 to 0 diving pass.',
+        source: 'Signalled strategic lava field',
+        detail: 'ADLODS-localized uranium replaces lava in the Y -64 to 0 diving band.',
         processing: 'Crush for uranium with lead, thorium, and calcium traces.',
         blocks: ['realisticores:uranium_ore', 'realisticores:deepslate_uranium_ore'],
         crushed: 'realisticores:crushed_uranium_ore'
     },
     {
         name: 'Thorium ore',
-        source: 'Realistic Ores lava-depth pass',
-        detail: 'Deep Overworld lava-exposed deepslate source, Y -64 to 0.',
+        source: 'Signalled strategic lava field',
+        detail: 'ADLODS-localized thorium replaces lava in the Y -64 to 0 diving band.',
         processing: 'Crush for thorium with uranium and lead traces.',
         blocks: ['realisticores:thorium_ore', 'realisticores:deepslate_thorium_ore'],
         crushed: 'realisticores:crushed_thorium_ore'
@@ -176,7 +176,7 @@ var BC_REALISTIC_ORE_ORIGINS = [
     },
     {
         name: 'Soul-bearing black shale',
-        source: 'Realistic Ores deposit',
+        source: 'Realistic Ores cave vein',
         detail: 'Deep carbon and soulstone-adjacent deposit field.',
         processing: 'Crush for carbon, soul sand, sulfur, and redstone traces.',
         blocks: ['realisticores:soul_bearing_black_shale_soulstone_vein', 'realisticores:deepslate_soul_bearing_black_shale_soulstone_vein'],
@@ -195,11 +195,11 @@ var BC_REALISTIC_ORE_ORIGINS = [
 var BC_SIMPLE_ORE_ORIGINS = [
     {
         items: ['minecraft:coal_ore', 'minecraft:deepslate_coal_ore'],
-        lines: bcOreOriginLines('Realistic Ores deposit', 'Overworld coal field, Y 0 to 80.', 'Look for localized deposit fields instead of scattered vanilla ore.')
+        lines: bcOreOriginLines('Suppressed vanilla ore form', 'Overworld coal comes from coal-measures cave veins and signalled bulk fields.', 'Process the composite host rock rather than searching for scattered vanilla coal ore.')
     },
     {
         items: ['minecraft:gold_ore', 'minecraft:deepslate_gold_ore'],
-        lines: bcOreOriginLines('Realistic Ores deposit', 'Overworld gold field, Y 8 to 32.', 'Nether gold ore remains a Nether deposit.')
+        lines: bcOreOriginLines('Associated copper-field enrichment', 'Overworld direct gold zones occur as optional descendants inside copper sulfide fields.', 'Copper, quartz, lead-zinc, and pyrite chemistry also recover gold traces; Nether gold remains separate.')
     },
     {
         items: ['minecraft:nether_gold_ore'],
@@ -208,6 +208,25 @@ var BC_SIMPLE_ORE_ORIGINS = [
     {
         items: ['minecraft:ancient_debris'],
         lines: bcOreOriginLines('Realistic Ores Nether deposit', 'Nether ancient debris field, Y 8 to 22.', 'Look for localized deposit bodies rather than vanilla scatter.')
+    }
+]
+
+var BC_STRATEGIC_ORE_ORIGINS = [
+    {
+        items: ['chemlib:silver'],
+        lines: bcOreOriginLines('Lead-zinc enrichment and processing', 'Direct silver zones are optional descendants of signalled lead-zinc fields.', 'Lead-zinc processing supplies silver traces without requiring a direct enrichment find.')
+    },
+    {
+        items: ['chemlib:platinum', 'chemlib:palladium'],
+        lines: bcOreOriginLines('Nickel-field enrichment or noble chemistry', 'Direct light PGM zones are optional descendants of signalled nickel sulfide fields.', 'Nickel traces and osmiridium chemistry prevent regional absence from becoming a progression lock.')
+    },
+    {
+        items: ['chemlib:osmium', 'chemlib:iridium', 'chemlib:rhodium', 'chemlib:ruthenium'],
+        lines: bcOreOriginLines('Nickel-field enrichment or lava osmiridium', 'Direct heavy PGM zones are optional descendants of signalled nickel sulfide fields.', 'Late noble-family synthesis can target any missing member from osmiridium feedstock.')
+    },
+    {
+        items: ['pneumaticcraft:oil_bucket'],
+        lines: bcOreOriginLines('Signalled finite petroleum field', 'Surface oil-seep rubble marks sealed ADLODS reservoirs ranging from small pockets to exceptional fields.', 'Native oil lakes and Amadron oil purchases are disabled; refine the finite crude you recover.')
     }
 ]
 
@@ -226,7 +245,7 @@ var BC_SUPPRESSED_NATIVE_ORES = [
     },
     {
         items: ['creatingspace:raw_cobalt', 'creatingspace:crushed_cobalt_ore'],
-        lines: bcOreOriginLines('Realistic Ores cobalt deposits', 'Overworld cobalt is a localized deposit resource, Y 16 to 64.', 'TConstruct native cobalt worldgen is disabled in favor of the deposit economy.')
+        lines: bcOreOriginLines('Associated nickel-field enrichment', 'Overworld direct cobalt zones occur as optional descendants inside signalled nickel sulfide fields.', 'Copper and nickel processing also recover cobalt; TConstruct native worldgen remains disabled.')
     },
     {
         items: ['creatingspace:moon_aluminum_ore', 'creatingspace:moon_cobalt_ore', 'creatingspace:moon_nickel_ore'],
@@ -368,9 +387,10 @@ function bcAddExcavatedDimensionDrinkVariants(event, oreIds, lines) {
 ItemEvents.tooltip(function (event) {
     for (var i = 0; i < BC_REALISTIC_ORE_ORIGINS.length; i++) {
         var dep = BC_REALISTIC_ORE_ORIGINS[i]
-        var lines = bcOreOriginLines(dep.source, dep.name + ': ' + dep.detail, dep.processing)
+        var source = dep.source === 'Realistic Ores deposit' ? 'Cave vein + signalled ADLODS field' : dep.source
+        var lines = bcOreOriginLines(source, dep.name + ': ' + dep.detail, dep.processing)
          bcAddOreOrigin(event, dep.blocks, lines)
-        event.add(dep.crushed, bcOreOriginLines('Crushed Realistic Ores deposit', dep.name + ': made by crushing the matching deposit block.', dep.processing))
+        event.add(dep.crushed, bcOreOriginLines('Crushed ore and placeable survey sample', dep.name + ': process it, or place it as low groundcover. Matching surface samples mark bulk fields where configured.', dep.processing))
     }
 
     for (var j = 0; j < BC_SIMPLE_ORE_ORIGINS.length; j++) {
@@ -379,6 +399,10 @@ ItemEvents.tooltip(function (event) {
 
     for (var k = 0; k < BC_SUPPRESSED_NATIVE_ORES.length; k++) {
          bcAddOreOrigin(event, BC_SUPPRESSED_NATIVE_ORES[k].items, BC_SUPPRESSED_NATIVE_ORES[k].lines)
+    }
+
+    for (var s = 0; s < BC_STRATEGIC_ORE_ORIGINS.length; s++) {
+         bcAddOreOrigin(event, BC_STRATEGIC_ORE_ORIGINS[s].items, BC_STRATEGIC_ORE_ORIGINS[s].lines)
     }
 
     for (var m = 0; m < BC_DIMENSION_DRINK_ORE_ORIGINS.length; m++) {

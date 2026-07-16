@@ -27,16 +27,16 @@
 			dependencies: ["AD6076BBBC63B6E7"]
 			id: "88AB3FECBB5A97EC"
 			title: "Samples"
-			icon: "minecraft:raw_copper"
+			icon: "realisticores:crushed_copper_sulfide_ore"
 			shape: "rsquare"
 			tasks: [{
 				id: "EC2218D222B150F5"
-				title: "Collect surface evidence"
-				type: "checkmark"
+				item: "realisticores:crushed_copper_sulfide_ore"
+				type: "item"
 			}]
 			x: -4.75d
 			y: -3.0d
-			description: ["Collect samples and watch the stone around them. That small survey step saves time by telling you whether a deposit is worth serious labor."]
+			description: ["Collect the low crushed-ore rubble scattered above a bulk field. It is a usable assay sample, and its texture tells you which host geology lies below before you commit to a shaft."]
 		}
 		{
 			dependencies: ["88AB3FECBB5A97EC"]
@@ -250,7 +250,7 @@
 			}]
 			x: 6.34d
 			y: -0.5d
-			description: ["Treat lava-depth ores as expedition material from the start. They ask for heat gear, combat answers, and a way home, not just a better pick."]
+			description: ["Uranium and thorium are surface-signalled strategic fields inside the lava band; osmiridium remains lava-exposed expedition geology. All three ask for heat gear, combat answers, and a way home, not just a better pick."]
 		},
 		{
 			dependencies: ["AD6076BBBC63B6E7"]

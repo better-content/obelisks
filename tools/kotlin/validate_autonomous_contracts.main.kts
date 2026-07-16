@@ -868,8 +868,50 @@ fun validateWorldgenStaticContractsImpl() {
     if ((jsonNumber(terrain["min_y"])?.toInt() == -64) && bool(terrain["lava_tunnels"]) == true) ok("Tectonic Overworld exposes lava-depth terrain band", "min_y=${jsonNumber(terrain["min_y"])}, lava_tunnels=${bool(terrain["lava_tunnels"])}")
     else fail("Tectonic Overworld exposes lava-depth terrain band", "min_y=${jsonNumber(terrain["min_y"])}, lava_tunnels=${bool(terrain["lava_tunnels"])}")
     val adlodDeposits = walk("config/adlods/Deposits") { it.endsWith(".cfg") }
-    if (adlodDeposits.size >= 28) ok("ADLODS deposit surface remains broad", "${adlodDeposits.size} deposits") else fail("ADLODS deposit surface remains broad", "${adlodDeposits.size} < 28")
-    if (listOf("config/adlods/Deposits/thorium.cfg", "config/adlods/Deposits/magnetite.cfg").any(::exists)) fail("retired Create New Age deposits stay absent", "thorium or magnetite deposit cfg exists") else ok("retired Create New Age deposits stay absent")
+    if (adlodDeposits.size >= 40) ok("ADLODS deposit surface covers bulk and strategic geology", "${adlodDeposits.size} deposits") else fail("ADLODS deposit surface covers bulk and strategic geology", "${adlodDeposits.size} < 40")
+    if (exists("config/adlods/Deposits/magnetite.cfg")) fail("retired Create New Age magnetite deposit stays absent", "config/adlods/Deposits/magnetite.cfg") else ok("retired Create New Age magnetite deposit stays absent")
+
+    val adlodCompositeHosts = mapOf(
+        "coal.cfg" to "realisticores:coal_measures",
+        "iron.cfg" to "realisticores:ironstone",
+        "copper.cfg" to "realisticores:copper_sulfide_ore",
+        "lead.cfg" to "realisticores:lead_zinc_vein",
+        "aluminum.cfg" to "realisticores:bauxite_laterite",
+        "nickel.cfg" to "realisticores:nickel_sulfide_ore",
+        "diamond.cfg" to "realisticores:kimberlite_pipe"
+    )
+    val invalidCompositeFields = adlodCompositeHosts.mapNotNull { (file, host) ->
+        val path = "config/adlods/Deposits/$file"
+        val text = read(path)
+        if (host in text && "#minecraft:deepslate_ore_replaceables" in text && "realisticores:crushed_" in text) null else path
+    }
+    if (invalidCompositeFields.isEmpty()) ok("ADLODS bulk fields use host-correct Realistic Ores geology", "${adlodCompositeHosts.size} representatives")
+    else fail("ADLODS bulk fields use host-correct Realistic Ores geology", invalidCompositeFields.joinToString(", "))
+
+    val enrichmentFiles = listOf("gold", "silver", "cobalt", "platinum", "palladium", "osmium", "iridium", "rhodium", "ruthenium", "amethyst", "ruby", "sapphire", "topaz")
+    val independentlyCommonEnrichments = enrichmentFiles.filter { "I:rarity=256000" !in read("config/adlods/Deposits/$it.cfg") }
+    if (independentlyCommonEnrichments.isEmpty()) ok("associated enrichments are descendant-first", "${enrichmentFiles.size} capped standalone rarities")
+    else fail("associated enrichments are descendant-first", independentlyCommonEnrichments.joinToString(", "))
+
+    val nickelField = read("config/adlods/Deposits/nickel.cfg")
+    val missingNickelDescendants = listOf("deposit:cobalt", "deposit:platinum", "deposit:palladium", "deposit:osmium", "deposit:iridium", "deposit:rhodium", "deposit:ruthenium", ":light_pgm", ":heavy_pgm").filterNot(nickelField::contains)
+    if (missingNickelDescendants.isEmpty()) ok("nickel fields own cobalt and PGM enrichment families") else fail("nickel fields own cobalt and PGM enrichment families", missingNickelDescendants.joinToString(", "))
+
+    val fissileFiles = listOf("uranium", "thorium")
+    val invalidFissileFields = fissileFiles.filter { id ->
+        val text = read("config/adlods/Deposits/$id.cfg")
+        "minecraft:lava -> realisticores:deepslate_${id}_ore" !in text ||
+            "realisticores:crushed_${id}_ore" !in text ||
+            "I:min=-64" !in text || "I:max=0" !in text
+    }
+    if (invalidFissileFields.isEmpty()) ok("uranium and thorium are signalled ADLODS lava fields") else fail("uranium and thorium are signalled ADLODS lava fields", invalidFissileFields.joinToString(", "))
+
+    val oilSizes = mapOf("oil_small" to "I:max=120", "oil_medium" to "I:max=600", "oil_large" to "I:max=3000", "oil_huge" to "I:max=12000")
+    val invalidOilFields = oilSizes.mapNotNull { (id, sizeMarker) ->
+        val text = read("config/adlods/Deposits/$id.cfg")
+        if ("pneumaticcraft:oil" in text && "realisticores:oil_seep" in text && sizeMarker in text && "B:exposed=false" in text) null else id
+    }
+    if (invalidOilFields.isEmpty()) ok("finite ADLODS oil fields cover small through huge scales") else fail("finite ADLODS oil fields cover small through huge scales", invalidOilFields.joinToString(", "))
 
     val forageFiles = walk("datapacks/datapack_foraging_everywhere/data") { it.endsWith(".json") }
     val foragePlacedFeatures = forageFiles.filter { "/worldgen/placed_feature/" in it }
@@ -966,14 +1008,8 @@ fun validateWorldgenStaticContractsImpl() {
 
     val lavaDepthFiles = listOf(
         "datapacks/realistic_ores_lava_depths/data/realisticores/forge/biome_modifier/add_osmiridium_lava_sulfide_ore_deepslate.json",
-        "datapacks/realistic_ores_lava_depths/data/realisticores/forge/biome_modifier/add_thorium_ore_deepslate.json",
-        "datapacks/realistic_ores_lava_depths/data/realisticores/forge/biome_modifier/add_uranium_ore_deepslate.json",
         "datapacks/realistic_ores_lava_depths/data/realisticores/worldgen/configured_feature/osmiridium_lava_sulfide_ore_deepslate.json",
-        "datapacks/realistic_ores_lava_depths/data/realisticores/worldgen/configured_feature/thorium_ore_deepslate.json",
-        "datapacks/realistic_ores_lava_depths/data/realisticores/worldgen/configured_feature/uranium_ore_deepslate.json",
         "datapacks/realistic_ores_lava_depths/data/realisticores/worldgen/placed_feature/osmiridium_lava_sulfide_ore_deepslate.json",
-        "datapacks/realistic_ores_lava_depths/data/realisticores/worldgen/placed_feature/thorium_ore_deepslate.json",
-        "datapacks/realistic_ores_lava_depths/data/realisticores/worldgen/placed_feature/uranium_ore_deepslate.json",
         "datapacks/hyle_deep/data/hyle/worldgen/configured_feature/stone_replacer.json",
         "datapacks/hyle_deep/data/hyle/worldgen/placed_feature/stone_replacer.json"
     )
@@ -1053,6 +1089,37 @@ fun validateWorldgenStaticContractsImpl() {
     if (missingLavaFeatureMarkers.isEmpty()) ok("Realistic Ores implements per-block lava-exposed ore placement")
     else fail("Realistic Ores implements per-block lava-exposed ore placement", "$lavaFeaturePath: ${missingLavaFeatureMarkers.joinToString(", ")}")
 
+    val realisticOresRoot = Paths.get(sourceRoot, "realistic-ores")
+    val expectedCaveCounts = mapOf(
+        "coal_measures" to 18, "ironstone" to 14, "copper_sulfide" to 12,
+        "tin" to 10, "zinc" to 10, "lead_zinc_vein" to 8, "nickel_sulfide" to 8,
+        "phosphate_rock" to 8, "sulfur_bearing_pyrite" to 8, "tin_tungsten_greisen" to 6,
+        "bauxite_laterite" to 6, "quartz_vein" to 6, "titanium_iron_oxide" to 5,
+        "cupriferous_redbed_redstone_vein" to 5, "soul_bearing_black_shale_soulstone_vein" to 5,
+        "kimberlite_pipe" to 4, "corundum_beryl_gem_vein" to 4,
+        "emerald_schist_beryl_vein" to 4, "lazurite_vein" to 4
+    )
+    val generationRoot = realisticOresRoot.resolve("src/main/resources/data/realisticores/realistic_ore_generation")
+    val invalidCaveCounts = if (generationRoot.exists()) Files.list(generationRoot).use { paths ->
+        paths.filter { it.fileName.toString().endsWith(".json") }.toList().mapNotNull { path ->
+            val data = readJson(path.toString())
+            val oreId = jsonString(data["ore_id"]).orEmpty()
+            val expected = expectedCaveCounts[oreId]
+            val actual = jsonNumber(data["count_per_chunk"])?.toInt()
+            if (expected != null && actual != expected) "$oreId=$actual expected=$expected" else null
+        }
+    } else listOf("missing $generationRoot")
+    if (invalidCaveCounts.isEmpty()) ok("Realistic Ores cave frequencies use the halved ore-pass budget", "${expectedCaveCounts.size} deposits")
+    else fail("Realistic Ores cave frequencies use the halved ore-pass budget", invalidCaveCounts.distinct().joinToString(", "))
+
+    val modBlocksPath = realisticOresRoot.resolve("src/main/java/io/github/realisticores/registry/ModBlocks.java")
+    val sampleBlockPath = realisticOresRoot.resolve("src/main/java/io/github/realisticores/block/SurfaceSampleBlock.java")
+    val sampleSourceText = listOf(modBlocksPath, sampleBlockPath).filter { Files.exists(it) }.joinToString("\n") { Files.readString(it) }
+    val missingSampleMarkers = listOf("SURFACE_SAMPLES_BY_ID", "OIL_SEEP", "SimpleWaterloggedBlock", "noCollission", "instabreak").filterNot(sampleSourceText::contains)
+    val ironSampleState = realisticOresRoot.resolve("src/main/resources/assets/realisticores/blockstates/crushed_ironstone.json")
+    if (missingSampleMarkers.isEmpty() && ironSampleState.exists()) ok("crushed ores register as placeable collectible surface samples")
+    else fail("crushed ores register as placeable collectible surface samples", missingSampleMarkers.joinToString(", "))
+
     val osmiridiumDefinitionPath = Paths.get(sourceRoot, "realistic-ores/src/main/resources/data/realisticores/realistic_ores/osmiridium_lava_sulfide.json")
     val osmiridiumDefinitionText = if (osmiridiumDefinitionPath.exists()) Files.readString(osmiridiumDefinitionPath) else ""
     val osmiridiumNormalOreTagFiles = listOf(
@@ -1074,6 +1141,14 @@ fun validateWorldgenStaticContractsImpl() {
     val removeItemsText = read("kubejs/server_scripts/20_recipe_remove/30_remove_items.js")
     val missingLavaBypassRemovals = listOf("event.remove({ type: 'occultism:miner' })").filterNot(removeItemsText::contains)
     if (missingLavaBypassRemovals.isEmpty()) ok("Occultism miner bypass recipes stay removed") else fail("Occultism miner bypass recipes stay removed", missingLavaBypassRemovals.joinToString(", "))
+
+    val oilSuppressText = listOf(
+        "datapacks/worldgen_compat_fixes/data/pneumaticcraft/forge/biome_modifier/oil_lake_surface.json",
+        "datapacks/worldgen_compat_fixes/data/pneumaticcraft/forge/biome_modifier/oil_lake_underground.json"
+    ).joinToString("\n") { read(it) }
+    val missingOilBounds = listOf("#kubejs:no_biomes", "pneumaticcraft:oil_lake_surface", "pneumaticcraft:oil_lake_underground").filterNot(oilSuppressText::contains)
+    if (missingOilBounds.isEmpty() && "pneumaticcraft:amadron/emerald_to_oil" in removeItemsText) ok("native and purchased oil bypasses stay disabled")
+    else fail("native and purchased oil bypasses stay disabled", missingOilBounds.joinToString(", "))
 
     val lavaProgressionText = listOf(
         "kubejs/server_scripts/10_tags/60_realistic_ores_deposit_tags.js",

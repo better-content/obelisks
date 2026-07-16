@@ -1,6 +1,7 @@
 #!/usr/bin/env kotlin
 
 import java.io.ByteArrayOutputStream
+import java.io.ByteArrayInputStream
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.Paths
@@ -10,6 +11,7 @@ import java.util.ArrayDeque
 import java.util.Comparator
 import java.util.concurrent.TimeUnit
 import java.util.jar.JarFile
+import java.util.jar.JarInputStream
 import kotlin.io.path.createDirectories
 import kotlin.io.path.exists
 import kotlin.math.abs
@@ -28,6 +30,8 @@ data class Config(
     val minFreeGiB: Double,
     val keepRuns: Boolean,
     val resume: Boolean,
+    val excludedModIds: Set<String>,
+    val seedJarsFile: Path?,
 )
 
 data class JarInfo(
@@ -50,6 +54,7 @@ data class SamplePoint(
     val index: Int,
     val vmRssMiB: Double,
     val vmHwmMiB: Double,
+    val postGcHeapUsedMiB: Double?,
 )
 
 data class MeasurementResult(
@@ -107,7 +112,7 @@ val platformDependencyModIds = setOf("forge", "minecraft")
 fun usage(message: String? = null): Nothing {
     if (message != null) System.err.println(message)
     System.err.println(
-        "Usage: tools/bc test scenario mod_ram_partition [--port N] [--run-root PATH] [--bootstrap-mode always|once|never] [--seed-strategy bisect|smallest_islands] [--settle-seconds N] [--sample-count N] [--max-depth N] [--min-delta-mib N] [--min-free-gb N] [--keep-runs] [--resume]",
+        "Usage: tools/bc test scenario mod_ram_partition [--port N] [--run-root PATH] [--bootstrap-mode always|once|never] [--seed-strategy bisect|smallest_islands|balanced_halves] [--seed-jars-file PATH] [--exclude-mod-id MOD_ID] [--settle-seconds N] [--sample-count N] [--max-depth N] [--min-delta-mib N] [--min-free-gb N] [--keep-runs] [--resume]",
     )
     exitProcess(2)
 }
@@ -125,6 +130,8 @@ fun parseConfig(args: Array<String>): Config {
     var minFreeGiB = 3.0
     var keepRuns = false
     var resume = false
+    val excludedModIds = linkedSetOf<String>()
+    var seedJarsFile: Path? = null
     var index = 0
     while (index < args.size) {
         when (args[index]) {
@@ -142,8 +149,16 @@ fun parseConfig(args: Array<String>): Config {
                 index += 2
             }
             "--seed-strategy" -> {
-                seedStrategy = args.getOrNull(index + 1) ?: usage("--seed-strategy needs bisect or smallest_islands")
-                if (seedStrategy !in setOf("bisect", "smallest_islands")) usage("invalid seed strategy: $seedStrategy")
+                seedStrategy = args.getOrNull(index + 1) ?: usage("--seed-strategy needs bisect, smallest_islands, or balanced_halves")
+                if (seedStrategy !in setOf("bisect", "smallest_islands", "balanced_halves")) usage("invalid seed strategy: $seedStrategy")
+                index += 2
+            }
+            "--exclude-mod-id" -> {
+                excludedModIds += args.getOrNull(index + 1)?.takeIf(String::isNotBlank) ?: usage("--exclude-mod-id needs a mod ID")
+                index += 2
+            }
+            "--seed-jars-file" -> {
+                seedJarsFile = Paths.get(args.getOrNull(index + 1) ?: usage("--seed-jars-file needs a path")).toAbsolutePath().normalize()
                 index += 2
             }
             "--settle-seconds" -> {
@@ -191,6 +206,8 @@ fun parseConfig(args: Array<String>): Config {
         minFreeGiB = minFreeGiB,
         keepRuns = keepRuns,
         resume = resume,
+        excludedModIds = excludedModIds,
+        seedJarsFile = seedJarsFile,
     )
 }
 
@@ -491,9 +508,7 @@ fun configureJvmArgs(path: Path, heapLimitGiB: Int) {
 fun parseModsToml(jar: Path): Pair<Set<String>, Set<String>> {
     val provided = linkedSetOf<String>()
     val deps = linkedSetOf<String>()
-    JarFile(jar.toFile()).use { zip ->
-        val entry = zip.getEntry("META-INF/mods.toml") ?: return provided to deps
-        val lines = zip.getInputStream(entry).bufferedReader().readLines()
+    fun parseLines(lines: List<String>) {
         var currentSection: String? = null
         var currentDependencyOwner: String? = null
         var currentDependencyTarget: String? = null
@@ -538,6 +553,26 @@ fun parseModsToml(jar: Path): Pair<Set<String>, Set<String>> {
             }
         }
         flushDependency()
+    }
+    JarFile(jar.toFile()).use { zip ->
+        zip.getEntry("META-INF/mods.toml")?.let { entry ->
+            parseLines(zip.getInputStream(entry).bufferedReader().readLines())
+        }
+        val entries = zip.entries()
+        while (entries.hasMoreElements()) {
+            val nested = entries.nextElement()
+            if (!nested.name.startsWith("META-INF/jarjar/") || !nested.name.endsWith(".jar")) continue
+            JarInputStream(ByteArrayInputStream(zip.getInputStream(nested).readBytes())).use { nestedJar ->
+                var nestedEntry = nestedJar.nextJarEntry
+                while (nestedEntry != null) {
+                    if (nestedEntry.name == "META-INF/mods.toml") {
+                        parseLines(nestedJar.bufferedReader().readLines())
+                        break
+                    }
+                    nestedEntry = nestedJar.nextJarEntry
+                }
+            }
+        }
     }
     return provided to deps
 }
@@ -595,6 +630,80 @@ fun closureForSeed(
         }
     }
     return removed
+}
+
+fun missingMandatoryDependencies(
+    removed: Set<String>,
+    inventory: List<JarInfo>,
+    providersByModId: Map<String, Set<String>>,
+): Map<String, List<String>> = inventory
+    .filterNot { it.fileName in removed }
+    .mapNotNull { jar ->
+        val missing = jar.mandatoryDeps.filter { dep ->
+            val providers = providersByModId[dep].orEmpty()
+            dep !in platformDependencyModIds && providers.isNotEmpty() && providers.all { it in removed }
+        }.sorted()
+        missing.takeIf { it.isNotEmpty() }?.let { jar.fileName to it }
+    }
+    .toMap()
+
+fun dependencyProviderClosure(
+    seed: Set<String>,
+    inventory: List<JarInfo>,
+    providersByModId: Map<String, Set<String>>,
+): Set<String> {
+    val retained = seed.toMutableSet()
+    var changed = true
+    while (changed) {
+        changed = false
+        inventory.filter { it.fileName in retained }.forEach { jar ->
+            jar.mandatoryDeps.filterNot { it in platformDependencyModIds }.forEach { dep ->
+                providersByModId[dep].orEmpty().forEach { provider ->
+                    if (retained.add(provider)) changed = true
+                }
+            }
+        }
+    }
+    return retained
+}
+
+fun packDataReferencedModIds(repo: Path, knownModIds: Set<String>): Set<String> {
+    val tokenPattern = Regex("""\b([a-z0-9_.-]+):[a-z0-9_./-]+""")
+    val referenced = linkedSetOf<String>()
+    listOf(repo.resolve("datapacks"), repo.resolve("globalresources"), repo.resolve("kubejs")).filter { it.exists() }.forEach { root ->
+        Files.walk(root).use { paths ->
+            paths.filter(Files::isRegularFile).forEach { path ->
+                val relative = root.relativize(path).toString().replace('\\', '/')
+                Regex("""(?:^|/)data/([a-z0-9_.-]+)/""").find(relative)?.groupValues?.get(1)?.let { namespace ->
+                    if (namespace in knownModIds) referenced += namespace
+                }
+                if (path.toFile().length() <= 4L * 1024L * 1024L) {
+                    runCatching { Files.readString(path) }.getOrNull()?.let { text ->
+                        tokenPattern.findAll(text).forEach { match ->
+                            match.groupValues[1].takeIf { it in knownModIds }?.let(referenced::add)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return referenced
+}
+
+fun packScriptApiModIds(repo: Path, knownModIds: Set<String>): Set<String> {
+    val apiOwners = mapOf("MoreJSEvents" to "morejs")
+    val scriptRoot = repo.resolve("kubejs")
+    if (!scriptRoot.exists()) return emptySet()
+    val required = linkedSetOf<String>()
+    Files.walk(scriptRoot).use { paths ->
+        paths.filter { Files.isRegularFile(it) && it.fileName.toString().endsWith(".js") }.forEach { path ->
+            val text = runCatching { Files.readString(path) }.getOrNull() ?: return@forEach
+            apiOwners.forEach { (api, modId) ->
+                if (modId in knownModIds && Regex("""\b${Regex.escape(api)}\s*\.""").containsMatchIn(text)) required += modId
+            }
+        }
+    }
+    return required
 }
 
 fun splitWeightedGroups(groups: List<Set<String>>, weightsByJar: Map<String, Double>): Pair<List<String>, List<String>> {
@@ -863,6 +972,27 @@ fun runJcmd(pid: Long, command: List<String>, outPath: Path) {
     Files.writeString(outPath, "exit=$exitCode\n$output")
 }
 
+fun stabilizeGc(pid: Long, evidenceDir: Path, sampleIndex: Int): Double? {
+    var previousUsedMiB: Double? = null
+    var currentUsedMiB: Double? = null
+    repeat(3) { pass ->
+        val gc = runCatching { runCommand(listOf("jcmd", pid.toString(), "GC.run"), Paths.get("").toAbsolutePath().normalize(), 120) }.getOrNull()
+        Files.writeString(evidenceDir.resolve("gc-sample-$sampleIndex-pass-${pass + 1}.txt"), gc?.second ?: "GC.run failed\n")
+        if (gc?.first != 0) return currentUsedMiB
+        Thread.sleep(5000)
+        val heap = runCatching { runCommand(listOf("jcmd", pid.toString(), "GC.heap_info"), Paths.get("").toAbsolutePath().normalize(), 60) }.getOrNull()
+        val heapText = heap?.second.orEmpty()
+        Files.writeString(evidenceDir.resolve("heap-sample-$sampleIndex-pass-${pass + 1}.txt"), heapText)
+        currentUsedMiB = Regex("""garbage-first heap\s+total\s+\d+K, used\s+(\d+)K""")
+            .find(heapText)?.groupValues?.get(1)?.toDoubleOrNull()?.div(1024.0)
+        val previous = previousUsedMiB
+        val current = currentUsedMiB
+        if (previous != null && current != null && abs(current - previous) / max(1.0, previous) < 0.02) return current
+        previousUsedMiB = current
+    }
+    return currentUsedMiB
+}
+
 fun measureRuntime(
     config: Config,
     preparedDir: Path,
@@ -945,8 +1075,9 @@ fun measureRuntime(
         val samples = mutableListOf<SamplePoint>()
         repeat(config.sampleCount) { sampleIndex ->
             val jvmPid = serverJvmPid(process.pid()) ?: process.pid()
+            val heapUsedMiB = stabilizeGc(jvmPid, evidenceDir, sampleIndex + 1)
             readProcStatusMiB(jvmPid)?.let { (rss, hwm) ->
-                samples += SamplePoint(sampleIndex + 1, ((rss * 100.0).toInt() / 100.0), ((hwm * 100.0).toInt() / 100.0))
+                samples += SamplePoint(sampleIndex + 1, ((rss * 100.0).toInt() / 100.0), ((hwm * 100.0).toInt() / 100.0), heapUsedMiB)
             }
             if (sampleIndex + 1 < config.sampleCount) Thread.sleep(sampleDelayMs)
         }
@@ -968,7 +1099,8 @@ fun measureRuntime(
                     "heap_limit_gib" to heapLimitGiB,
                     "median_vm_rss_mib" to medianRss,
                     "max_vm_hwm_mib" to maxHwm,
-                    "samples" to samples.map { mapOf("index" to it.index, "vm_rss_mib" to it.vmRssMiB, "vm_hwm_mib" to it.vmHwmMiB) },
+                    "samples" to samples.map { mapOf("index" to it.index, "vm_rss_mib" to it.vmRssMiB, "vm_hwm_mib" to it.vmHwmMiB, "post_gc_heap_used_mib" to it.postGcHeapUsedMiB) },
+                    "median_post_gc_heap_used_mib" to samples.mapNotNull { it.postGcHeapUsedMiB }.takeIf { it.isNotEmpty() }?.let(::median),
                 ),
             ) + "\n",
         )
@@ -1124,6 +1256,8 @@ fun summaryMap(
             "min_free_gb" to config.minFreeGiB,
             "keep_runs" to config.keepRuns,
             "resume" to config.resume,
+            "excluded_mod_ids" to config.excludedModIds.sorted(),
+            "seed_jars_file" to config.seedJarsFile?.toString(),
         ),
         "top_attribution_deltas" to attribution,
         "rescue_candidates" to rescue,
@@ -1139,6 +1273,7 @@ fun main() {
     val dependencyPath = config.runRoot.resolve("dependency-closure.json")
     val dependencyGraphPath = config.runRoot.resolve("dependency-graph.json")
     val dependencyIslandsPath = config.runRoot.resolve("dependency-islands.json")
+    val splitPlanPath = config.runRoot.resolve("balanced-halves.json")
     val resumePath = config.runRoot.resolve("resume-state.json")
     val commandsPath = config.runRoot.resolve("commands.log")
     val summaryTextPath = config.runRoot.resolve("summary.txt")
@@ -1189,6 +1324,11 @@ fun main() {
         }
     }.mapValues { it.value.toSet() }
     val jarDependencyAdjacency = buildJarDependencyAdjacency(inventory, providersByModId)
+    val repo = Paths.get("").toAbsolutePath().normalize()
+    val packDataRequiredModIds = packDataReferencedModIds(repo, providersByModId.keys)
+    val packScriptRequiredModIds = packScriptApiModIds(repo, providersByModId.keys)
+    val packRuntimeRequiredModIds = setOf("structure_generation_improver").filter { it in providersByModId }.toSet()
+    val packRequiredJarNames = (packDataRequiredModIds + packScriptRequiredModIds + packRuntimeRequiredModIds).flatMap { providersByModId[it].orEmpty() }.toSet()
     val reverseDependencyCountByJar = mutableMapOf<String, Int>().withDefault { 0 }
     inventory.forEach { consumer ->
         consumer.mandatoryDeps.forEach { dep ->
@@ -1198,10 +1338,31 @@ fun main() {
             }
         }
     }
-    val retainedFoundationJarNames = inventory
+    val highFanoutFoundationJarNames = inventory
         .filter { reverseDependencyCountByJar.getValue(it.fileName) >= 8 }
         .map { it.fileName }
-        .toMutableSet()
+        .toSet()
+    val explicitlyExcludedProviders = config.excludedModIds.flatMap { providersByModId[it].orEmpty() }.toSet()
+    val unknownExcludedModIds = config.excludedModIds.filter { providersByModId[it].isNullOrEmpty() }
+    if (unknownExcludedModIds.isNotEmpty()) usage("excluded mod IDs not found: ${unknownExcludedModIds.sorted().joinToString(", ")}")
+    val fixedExcludedJarNames = closureForSeed(explicitlyExcludedProviders, inventory, providersByModId, emptySet())
+    var retainedFoundationJarNames = dependencyProviderClosure(
+        (highFanoutFoundationJarNames + packRequiredJarNames) - fixedExcludedJarNames,
+        inventory,
+        providersByModId,
+    ).minus(fixedExcludedJarNames).toMutableSet()
+    val selectedSeedJarNames = config.seedJarsFile?.let { path ->
+        if (!path.exists()) usage("seed jars file not found: $path")
+        Files.readAllLines(path).map { it.trim() }.filter { it.isNotBlank() }.toSet().also { selected ->
+            val unknown = selected - inventory.map { it.fileName }.toSet()
+            if (unknown.isNotEmpty()) usage("seed jars not found in inventory: ${unknown.sorted().joinToString(", ")}")
+        }
+    }
+    if (selectedSeedJarNames != null) {
+        val nonSelected = inventory.map { it.fileName }.toSet() - selectedSeedJarNames - fixedExcludedJarNames
+        retainedFoundationJarNames = dependencyProviderClosure(retainedFoundationJarNames + nonSelected, inventory, providersByModId)
+            .minus(fixedExcludedJarNames).toMutableSet()
+    }
     val missingClassProviderCache = mutableMapOf<String, String?>()
     writeJson(
         inventoryPath,
@@ -1229,8 +1390,9 @@ fun main() {
         },
     )
 
+    val activeInventory = inventory.filterNot { it.fileName in fixedExcludedJarNames }
     val removableIslands = removableIslandsForStrategy(
-        inventory = inventory,
+        inventory = activeInventory,
         retainedFoundationJarNames = retainedFoundationJarNames,
         adjacency = jarDependencyAdjacency,
         weightsByJar = weightsByJar,
@@ -1247,9 +1409,31 @@ fun main() {
             )
         },
     )
-    val initialQueue = removableIslands.mapIndexed { index, island ->
+    val initialQueue = if (config.seedStrategy == "balanced_halves") {
+        val (left, right) = splitWeightedGroups(removableIslands, weightsByJar)
+        listOf(
+            PendingNode("attrib-half-a", "attribution", 1, left),
+            PendingNode("attrib-half-b", "attribution", 1, right),
+        )
+    } else removableIslands.mapIndexed { index, island ->
         PendingNode("attrib-island-${index + 1}", "attribution", 1, island.sorted())
     }
+    val splitPlan = initialQueue.associate { node ->
+        val removed = closureForSeed(fixedExcludedJarNames + node.seedJarNames, inventory, providersByModId, retainedFoundationJarNames)
+        node.id to mapOf(
+            "seed_jar_names" to node.seedJarNames,
+            "seed_weight" to node.seedJarNames.sumOf { weightsByJar[it] ?: 0.0 },
+            "fixed_excluded_jar_names" to fixedExcludedJarNames.sorted(),
+            "pack_data_foundation_mod_ids" to packDataRequiredModIds.sorted(),
+            "pack_script_foundation_mod_ids" to packScriptRequiredModIds.sorted(),
+            "pack_runtime_foundation_mod_ids" to packRuntimeRequiredModIds.sorted(),
+            "measured_removed_jar_names" to removed.sorted(),
+            "missing_mandatory_dependencies" to missingMandatoryDependencies(removed, inventory, providersByModId),
+        )
+    }
+    writeJson(splitPlanPath, splitPlan)
+    val invalidPlans = splitPlan.filterValues { jsonObject(it["missing_mandatory_dependencies"]).isNotEmpty() }
+    if (invalidPlans.isNotEmpty()) error("dependency preflight failed for ${invalidPlans.keys.sorted().joinToString(", ")}; see $splitPlanPath")
 
     var pending = if (config.resume && queuePath.exists()) {
         jsonArray(readJsonIfExists(queuePath)).map { item ->
@@ -1308,7 +1492,7 @@ fun main() {
         writeJson(resultsPath, results.map(::resultToMap))
         val closure = mutableMapOf<String, Any?>()
         pending.forEach { node ->
-            val actual = closureForSeed(node.seedJarNames.toSet(), inventory, providersByModId, retainedFoundationJarNames)
+            val actual = closureForSeed(fixedExcludedJarNames + node.seedJarNames, inventory, providersByModId, retainedFoundationJarNames)
             closure[node.id] = mapOf(
                 "seed_jar_names" to node.seedJarNames,
                 "measured_removed_jar_names" to actual.sorted(),
@@ -1341,7 +1525,7 @@ fun main() {
     }
 
     fun runBaseline(epoch: Int, heapLimitGiB: Int): BaselineState? {
-        val result = measureRuntime(config, preparedDir, "baseline-epoch-$epoch", emptySet(), heapLimitGiB, config.basePort, config.keepRuns)
+        val result = measureRuntime(config, preparedDir, "baseline-epoch-$epoch", fixedExcludedJarNames, heapLimitGiB, config.basePort, config.keepRuns)
         if (result.status != "passed" || result.medianVmRssMiB == null || result.maxVmHwmMiB == null) return null
         return BaselineState(epoch, heapLimitGiB, result.medianVmRssMiB, result.maxVmHwmMiB, result.evidenceDir)
     }
@@ -1361,17 +1545,17 @@ fun main() {
 
     fun enqueueChildren(node: PendingNode) {
         if (node.depth >= config.maxDepth || node.seedJarNames.size <= 1) return
-        if (config.seedStrategy == "smallest_islands") return
+        if (config.seedStrategy in setOf("smallest_islands", "balanced_halves")) return
         val (left, right) = splitSeeds(node.seedJarNames, weightsByJar, jarDependencyAdjacency)
         if (left.isNotEmpty()) pending += PendingNode("${node.mode}-${node.id}-l", node.mode, node.depth + 1, left)
         if (right.isNotEmpty()) pending += PendingNode("${node.mode}-${node.id}-r", node.mode, node.depth + 1, right)
     }
 
     while (pending.isNotEmpty()) {
-        val node = if (config.seedStrategy == "smallest_islands") pending.removeFirst() else pending.removeLast()
+        val node = if (config.seedStrategy in setOf("smallest_islands", "balanced_halves")) pending.removeFirst() else pending.removeLast()
         writeHarnessStatus(config.runRoot, "running", "measure", mapOf("node" to node.id, "mode" to node.mode))
         val seed = node.seedJarNames.toSet()
-        val actualRemoved = closureForSeed(seed, inventory, providersByModId, retainedFoundationJarNames)
+        val actualRemoved = closureForSeed(fixedExcludedJarNames + seed, inventory, providersByModId, retainedFoundationJarNames)
         val measurement = measurementResultWithClosure(
             measureRuntime(config, preparedDir, node.id, actualRemoved, baseline?.heapLimitGiB ?: 8, config.basePort + results.size + 1, config.keepRuns),
             seed,
@@ -1486,6 +1670,15 @@ fun main() {
 
     val finalSummary = summaryMap(mode, config, baseline, retainedFoundationJarNames.sorted(), pending, results)
     writeHarnessSummary(config.runRoot, finalSummary)
+    if (config.seedStrategy == "balanced_halves") {
+        val failedArms = initialQueue.map { it.id }.filter { armId ->
+            results.none { it.status == "passed" && (it.nodeId == armId || it.nodeId.startsWith("$armId-retain-")) }
+        }
+        if (failedArms.isNotEmpty()) {
+            writeHarnessStatus(config.runRoot, "failed", "complete", mapOf("failed_arms" to failedArms))
+            error("balanced half measurements did not produce valid runs for: ${failedArms.joinToString(", ")}")
+        }
+    }
     writeHarnessStatus(config.runRoot, "passed", "complete", mapOf("mode" to mode, "completed_results" to results.size))
     println("mod_ram_partition completed mode=$mode baseline_heap=${baseline?.heapLimitGiB ?: "UNKNOWN"}GiB results=${results.size}")
 }

@@ -24,6 +24,7 @@ The repo is the authoritative content layer, not a live Minecraft instance. Trea
 - `shaderpacks/`
 - `mods/*.pw.toml`
 - custom bundled jars in `mods/`
+- the tracked repo-root `options.txt`, which is the curated client-default baseline and must ship in client/CurseForge bundles
 - `docs/` five living Markdown summaries only
 - `tools/`
 
@@ -32,9 +33,9 @@ Treat these as generated or runtime state:
 - `server-template/`
 - local client game directories
 - `generated/runtime-dumps/`, `generated/mod-sync-backup/`, `generated/ftbquests/`
-- worlds, saves, logs, crash reports, screenshots, profiler dumps, launcher account/cache files, and `options.txt`
+- worlds, saves, logs, crash reports, screenshots, profiler dumps, launcher account/cache files, and runtime-generated `options.txt` files outside the repo root
 
-Do not sync or delete player/runtime state by default. Use explicit reset flags only when the user asks for a disposable runtime.
+Do not sync or delete player/runtime state by default. The tracked repo-root `options.txt` is the explicit exception: preserve it as source and include it in client-facing pack exports. Use explicit reset flags only when the user asks for a disposable runtime.
 
 ## Runtime Defaults
 - Minecraft: `1.20.1`

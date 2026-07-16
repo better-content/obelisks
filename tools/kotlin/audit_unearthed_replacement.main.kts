@@ -50,6 +50,12 @@ data class BandCounts(
     val vanillaSurfaceTotal: Long get() = vanillaSurface.values.sum()
 }
 
+data class RockLocationCounts(
+    val bySectionY: MutableMap<Int, Long> = sortedMapOf(),
+    val byBlockY: MutableMap<Int, Long> = sortedMapOf(),
+    val byChunk: MutableMap<String, Long> = mutableMapOf(),
+)
+
 private fun usage(message: String? = null): Nothing {
     if (message != null) System.err.println(message)
     System.err.println("Usage: tools/bc test unearthed-replacement --instance PATH [--world PATH] [--output PATH]")
@@ -118,26 +124,72 @@ private fun paletteCounts(blockStates: Map<String, Any?>): Map<String, Long> {
     return palette.indices.associate { palette[it] to counts[it] }
 }
 
-private fun countSection(root: Map<String, Any?>, underground: BandCounts, aboveground: BandCounts) {
+private fun vanillaRockCountsByLocalY(blockStates: Map<String, Any?>): LongArray {
+    val palette = list(blockStates["palette"]).map { compound(it)["Name"] as? String ?: "UNKNOWN" }
+    val counts = LongArray(16)
+    if (palette.isEmpty()) return counts
+    val data = blockStates["data"] as? LongArray
+    if (data == null) {
+        if (palette[0] in vanillaRockHosts) counts.fill(256)
+        return counts
+    }
+    val bits = maxOf(4, 32 - Integer.numberOfLeadingZeros(palette.size - 1))
+    val valuesPerLong = 64 / bits
+    val mask = (1L shl bits) - 1L
+    repeat(4096) { blockIndex ->
+        val storageIndex = blockIndex / valuesPerLong
+        if (storageIndex < data.size) {
+            val paletteIndex = ((data[storageIndex] ushr ((blockIndex % valuesPerLong) * bits)) and mask).toInt()
+            if (paletteIndex in palette.indices && palette[paletteIndex] in vanillaRockHosts) {
+                counts[blockIndex ushr 8]++
+            }
+        }
+    }
+    return counts
+}
+
+private fun countSection(
+    root: Map<String, Any?>,
+    underground: BandCounts,
+    aboveground: BandCounts,
+    undergroundLocations: RockLocationCounts,
+) {
+    val chunkKey = "${number(root["xPos"])?.toInt() ?: 0},${number(root["zPos"])?.toInt() ?: 0}"
     for (sectionValue in list(root["sections"])) {
         val section = compound(sectionValue)
         val sectionY = number(section["Y"])?.toInt() ?: continue
         val blockStates = compound(section["block_states"])
         if (blockStates.isEmpty()) continue
         val band = if (sectionY * 16 < CUTOFF_Y) underground else aboveground
+        if (band === underground) {
+            vanillaRockCountsByLocalY(blockStates).forEachIndexed { localY, count ->
+                if (count > 0) undergroundLocations.byBlockY.merge(sectionY * 16 + localY, count, Long::plus)
+            }
+        }
         for ((block, count) in paletteCounts(blockStates)) {
             band.total += count
             if (block.startsWith("unearthed:")) {
                 band.unearthed += count
                 if ("regolith" in block || "overgrown" in block) band.regolith += count
             }
-            if (block in vanillaRockHosts) band.vanillaRock[block] = band.vanillaRock.getValue(block) + count
+            if (block in vanillaRockHosts) {
+                band.vanillaRock[block] = band.vanillaRock.getValue(block) + count
+                if (band === underground && count > 0) {
+                    undergroundLocations.bySectionY.merge(sectionY, count, Long::plus)
+                    undergroundLocations.byChunk.merge(chunkKey, count, Long::plus)
+                }
+            }
             if (block in vanillaSurfaceHosts) band.vanillaSurface[block] = band.vanillaSurface.getValue(block) + count
         }
     }
 }
 
-private fun readRegion(path: Path, underground: BandCounts, aboveground: BandCounts): Int {
+private fun readRegion(
+    path: Path,
+    underground: BandCounts,
+    aboveground: BandCounts,
+    undergroundLocations: RockLocationCounts,
+): Int {
     var fullChunks = 0
     RandomAccessFile(path.toFile(), "r").use { region ->
         if (region.length() < 4096) return 0
@@ -166,7 +218,7 @@ private fun readRegion(path: Path, underground: BandCounts, aboveground: BandCou
                 val root = DataInputStream(BufferedInputStream(raw)).use(::readNbt)
                 if (root["Status"] != "minecraft:full") return@repeat
                 fullChunks++
-                countSection(root, underground, aboveground)
+                countSection(root, underground, aboveground, undergroundLocations)
             } catch (error: EOFException) {
                 throw IllegalStateException("truncated region chunk in $path slot $index", error)
             }
@@ -216,11 +268,12 @@ val outputPath = output ?: (instance ?: worldPath!!)!!.resolve("validation-evide
 
 val underground = BandCounts()
 val aboveground = BandCounts()
+val undergroundLocations = RockLocationCounts()
 var fullChunks = 0
 Files.list(regionPath).use { paths ->
     paths.filter { it.fileName.toString().matches(Regex("r\\.-?\\d+\\.-?\\d+\\.mca")) }
         .sorted()
-        .forEach { fullChunks += readRegion(it, underground, aboveground) }
+        .forEach { fullChunks += readRegion(it, underground, aboveground, undergroundLocations) }
 }
 
 val undergroundRockRatio = ratio(underground.vanillaRockTotal, underground.vanillaRockTotal + underground.unearthed)
@@ -255,6 +308,12 @@ val report = linkedMapOf<String, Any?>(
         "unearthed" to underground.unearthed,
         "vanillaRock" to underground.vanillaRock,
         "vanillaRockRatio" to undergroundRockRatio,
+        "vanillaRockBySectionY" to undergroundLocations.bySectionY,
+        "vanillaRockByBlockY" to undergroundLocations.byBlockY,
+        "topVanillaRockChunks" to undergroundLocations.byChunk.entries
+            .sortedByDescending { it.value }
+            .take(20)
+            .associate { it.key to it.value },
     ),
     "aboveground" to linkedMapOf(
         "unearthed" to aboveground.unearthed,

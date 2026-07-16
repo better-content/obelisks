@@ -276,6 +276,7 @@ for (cycle in 1..config.cycles) {
     }
 
     var server: RunningServer? = null
+    var cyclePassed = true
     try {
         val cyclePort = if (config.bootstrapMode == "always") config.basePort + cycle - 1 else config.basePort
         server = startServer(serverDir, cyclePort, evidenceDir)
@@ -293,9 +294,9 @@ for (cycle in 1..config.cycles) {
             }
             sendCommand(server, "execute in $dimension run forceload remove all")
         }
-        println("cycle $cycle: PASS")
     } catch (error: Throwable) {
         failed = true
+        cyclePassed = false
         System.err.println("cycle $cycle: FAIL - ${error.message}")
         if (!config.keepGoing) {
             stopServer(server)
@@ -304,6 +305,27 @@ for (cycle in 1..config.cycles) {
     } finally {
         stopServer(server)
     }
+    if (cyclePassed && "minecraft:overworld" in config.dimensions) {
+        val auditExit = runCommand(
+            listOf(
+                "tools/bc",
+                "test",
+                "unearthed-replacement",
+                "--instance",
+                serverDir.toString(),
+                "--output",
+                evidenceDir.resolve("unearthed-replacement-audit.json").toString(),
+            ),
+            root,
+        )
+        if (auditExit != 0) {
+            failed = true
+            cyclePassed = false
+            System.err.println("cycle $cycle: FAIL - Unearthed replacement regression guard")
+            if (!config.keepGoing) break
+        }
+    }
+    if (cyclePassed) println("cycle $cycle: PASS")
 }
 
 exitProcess(if (failed) 1 else 0)

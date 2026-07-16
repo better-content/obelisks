@@ -62,6 +62,7 @@ Do not sync or delete player/runtime state by default. The tracked repo-root `op
 - Launcher: `tools/bc`
 - Validation: `tools/bc test static`
 - Existing runtime validation: `tools/bc test runtime --instance /path/to/fresh/runtime`
+- Unearthed replacement regression: `tools/bc test unearthed-replacement --instance /path/to/fresh/runtime`
 - Fresh smoke validation: `tools/bc test smoke --server-dir ~/.cache/bc/agent-validate-smoke --port 25565 --reset-runtime`
 - Headless scenario validation: `tools/bc test scenario opening_progression --cycles 1`
 - Headful scenario validation: `tools/bc test scenario-headful client_smoke --profile quick --bootstrap-mode once`

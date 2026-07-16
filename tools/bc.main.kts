@@ -359,6 +359,7 @@ Public commands:
   tools/bc test full [--workspace [--repo ID|PATH] [--list-repos]]
   tools/bc test static
   tools/bc test runtime --instance PATH [--strict-data-dumps]
+  tools/bc test unearthed-replacement --instance PATH [--world PATH] [--output PATH]
   tools/bc test smoke [--server-dir PATH] [--port N] [--reset-runtime]
   tools/bc test scenario NAME [scenario args]
   tools/bc test scenario-headful NAME [scenario args]
@@ -405,13 +406,14 @@ Examples:
 """.trimIndent()
 
 fun testHelp(): String = """
-Usage: tools/bc test <fast|full|static|runtime|smoke|scenario|kotlin> ...
+Usage: tools/bc test <fast|full|static|runtime|unearthed-replacement|smoke|scenario|kotlin> ...
 
 Commands:
   fast [--repo ID|PATH] [--list-repos]
   full [--workspace [--repo ID|PATH] [--list-repos]]
   static
   runtime --instance PATH [--strict-data-dumps]
+  unearthed-replacement --instance PATH [--world PATH] [--output PATH]
   smoke [--server-dir PATH] [--port N] [--reset-runtime] [--bootstrap-mode always|once|never]
   scenario NAME [scenario args]
   scenario-headful NAME [scenario args]
@@ -2731,6 +2733,14 @@ fun runPackSuite(instance: Path, strictDataDumps: Boolean, runtimeOnly: Boolean 
     return runKotlinScript(root.resolve("tools/kotlin/pack_test_suite.main.kts"), extraEnv = env)
 }
 
+fun runUnearthedReplacementAudit(instance: Path?, world: Path?, output: Path): ProcessRun {
+    val args = mutableListOf<String>()
+    if (instance != null) args += listOf("--instance", instance.toString())
+    if (world != null) args += listOf("--world", world.toString())
+    args += listOf("--output", output.toString())
+    return runKotlinScript(root.resolve("tools/kotlin/audit_unearthed_replacement.main.kts"), args)
+}
+
 fun runStepSequence(steps: List<Pair<String, () -> ProcessRun>>): ProcessRun {
     val output = mutableListOf<String>()
     for ((label, step) in steps) {
@@ -3956,6 +3966,7 @@ fun runToolDocSurfaceValidation(): ProcessRun {
         "tools/bc test fast",
         "tools/bc test full",
         "tools/bc test full --workspace",
+        "tools/bc test unearthed-replacement --instance /path/to/fresh/runtime",
         "tools/bc test scenario-headful dimension_worldgen --cycles 1 --radius 1 --samples 1 --bootstrap-mode once",
         "tools/bc test scenario lc_tfth_c2me_dh --samples 4 --settle-seconds 30 --bootstrap-mode once",
         "tools/bc test scenario mod_ram_partition --bootstrap-mode once",
@@ -4104,6 +4115,11 @@ fun runSmokeValidation(serverDir: Path, port: Int, reset: Boolean, bootstrapMode
         }.trim()
         return ProcessRun(1, output)
     }
+    harness?.updateStatus(status = "running", phase = "unearthed_replacement_audit")
+    val unearthedAuditPath = evidenceDir.resolve("unearthed-replacement-audit.json")
+    val unearthedAudit = runUnearthedReplacementAudit(serverDir, null, unearthedAuditPath)
+    if (unearthedAudit.exitCode != 0) return unearthedAudit
+    harness?.updateStatus(status = "running", phase = "runtime_validation")
     val suite = runPackSuite(serverDir, strictDataDumps = false, runtimeOnly = true)
     if (suite.exitCode == 0) {
         writeJsonFile(
@@ -4113,11 +4129,11 @@ fun runSmokeValidation(serverDir: Path, port: Int, reset: Boolean, bootstrapMode
                 "server_dir" to serverDir.toString(),
                 "requested_port" to harness?.spec?.requestedPort,
                 "actual_port" to port,
-                "evidence_paths" to listOf(evidenceDir.toString(), latestLog.toString()),
+                "evidence_paths" to listOf(evidenceDir.toString(), latestLog.toString(), unearthedAuditPath.toString()),
             ),
         )
     }
-    return suite
+    return ProcessRun(suite.exitCode, listOf(unearthedAudit.output, suite.output).filter(String::isNotBlank).joinToString("\n\n"))
 }
 
 fun runKotlinTests(filter: String?): ProcessRun {
@@ -5116,6 +5132,58 @@ fun handleTest(subArgs: List<String>): CommandResult {
                 details = mapOf("instance" to instancePath.toString(), "strictDataDumps" to strict) + listOfNotNull(outputSnippet(run.output)?.let { "capturedOutput" to it }).toMap(),
                 exitCode = exitCode,
                 evidenceLevel = "strict-runtime",
+            )
+        }
+        "unearthed-replacement" -> {
+            var instance: Path? = null
+            var world: Path? = null
+            var output: Path? = null
+            val rest = subArgs.drop(1)
+            var index = 0
+            while (index < rest.size) {
+                when (rest[index]) {
+                    "--instance" -> {
+                        instance = resolveUserPath(rest.getOrNull(index + 1) ?: return usageError("--instance needs a path", testHelp()))
+                        index += 2
+                    }
+                    "--world" -> {
+                        world = resolveUserPath(rest.getOrNull(index + 1) ?: return usageError("--world needs a path", testHelp()))
+                        index += 2
+                    }
+                    "--output" -> {
+                        output = resolveUserPath(rest.getOrNull(index + 1) ?: return usageError("--output needs a path", testHelp()))
+                        index += 2
+                    }
+                    "--help" -> return success("test unearthed-replacement", testHelp(), evidenceLevel = "runtime")
+                    else -> return usageError("unknown argument: ${rest[index]}", testHelp())
+                }
+            }
+            if (instance == null && world == null) {
+                return usageError("test unearthed-replacement requires --instance PATH or --world PATH", testHelp())
+            }
+            if (instance != null && (!instance!!.exists() || !instance!!.isDirectory())) {
+                return usageError("runtime instance does not exist: $instance", testHelp())
+            }
+            if (world != null && (!world!!.exists() || !world!!.isDirectory())) {
+                return usageError("world does not exist: $world", testHelp())
+            }
+            val outputPath = output ?: (instance ?: world!!).resolve("validation-evidence/unearthed-replacement-audit.json")
+            val run = runUnearthedReplacementAudit(instance, world, outputPath)
+            if (run.exitCode == 0) success(
+                command = "test unearthed-replacement",
+                summary = "Unearthed underground and aboveground replacement audit passed",
+                artifacts = listOf(ArtifactRef(outputPath.toString())),
+                details = mapOf("instance" to instance?.toString(), "world" to world?.toString()),
+                evidenceLevel = "runtime",
+            ) else CommandResult(
+                command = "test unearthed-replacement",
+                status = "failure",
+                summary = "Unearthed replacement audit failed",
+                findings = listOf(ValidationFinding("error", "Unearthed underground or aboveground replacement regressed")),
+                details = mapOf("instance" to instance?.toString(), "world" to world?.toString()) + listOfNotNull(outputSnippet(run.output)?.let { "capturedOutput" to it }).toMap(),
+                artifacts = listOf(ArtifactRef(outputPath.toString())),
+                exitCode = 1,
+                evidenceLevel = "runtime",
             )
         }
         "smoke" -> {

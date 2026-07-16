@@ -296,6 +296,7 @@ test("help shows public commands") {
     assertContains(output, "tools/bc test fast", "help should list fast test")
     assertContains(output, "tools/bc test full", "help should list full test")
     assertContains(output, "tools/bc test static", "help should list static test")
+    assertContains(output, "tools/bc test unearthed-replacement", "help should list Unearthed replacement test")
     assertContains(output, "tools/bc build sync server", "help should list build sync server")
     assertContains(output, "tools/bc graph item ITEM_ID", "help should list graph item")
     assertContains(output, "tools/bc graph route ITEM_ID", "help should list graph route")
@@ -371,6 +372,12 @@ test("runtime without instance is usage error") {
     val (exit, output) = runCommand("tools/bc", "test", "runtime")
     assertTrue(exit == 2, "runtime without instance should exit 2, got $exit")
     assertContains(output, "test runtime requires --instance PATH", "runtime usage error should be specific")
+}
+
+test("Unearthed replacement without a world is usage error") {
+    val (exit, output) = runCommand("tools/bc", "test", "unearthed-replacement")
+    assertTrue(exit == 2, "Unearthed replacement without a world should exit 2, got $exit")
+    assertContains(output, "requires --instance PATH or --world PATH", "Unearthed replacement usage error should be specific")
 }
 
 test("scenario help shows scenarios") {

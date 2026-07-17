@@ -203,7 +203,9 @@ tools/bc test scenario progression_milestones --bootstrap-mode once
 tools/bc test scenario progression_milestones --phase create_brass --bootstrap-mode once
 ```
 
-This disposable-server lane injects the reobfuscated `bc_validation_probe` only after runtime preparation; it is never part of pack exports. It checks every declared milestone output and recipe ID against the live registry/recipe manager, preserves the existing opening runtime proof, and writes machine-readable phase evidence under its run root. Operational machine fixtures and negative controls are added as each tier receives a concrete runtime cell.
+This disposable-server lane injects the reobfuscated `bc_validation_probe` only after runtime preparation; it is never part of pack exports. It covers the full player progression manifest, including `dimension_routes`, and fails if the runtime milestone contract drifts from the manifest. Each phase checks live item/block registry presence, recipe ID presence, expected recipe type, exposed recipe ingredients where Forge's generic recipe API provides them, accepted recipe outputs where the route proof is not the final milestone item, and declared data-route files. Machine recipe classes that do not expose generic ingredients are reported as `craftability_deferred:<recipe type>` and remain covered by source/graph/static progression fixtures. The primitive phase still preserves the existing `sam validate_opening_progression` proof. Static progression validation remains the bypass-negative gate for starting options, loot, Wares, villager results, generated quest rewards, and direct simple-route surfaces.
+
+This is release-gate progression validation, not a full autonomous player playthrough. It proves the authored route surfaces are live and visible enough to ship or playtest; it does not simulate hours of player gathering, build every multiblock, or run every machine recipe in-world.
 
 Worldgen sampling:
 
@@ -225,7 +227,7 @@ tools/bc test scenario-headful client_smoke --profile quick --bootstrap-mode onc
 tools/bc test scenario-headful client_smoke --profile release --bootstrap-mode once
 ```
 
-`client_smoke` is a headful-only lane. Its checked-in contract lives at `tools/client_smoke_contract.json`; run it through `scenario-headful` only.
+`client_smoke` is a headful-only lane. Its checked-in contract lives at `tools/client_smoke_contract.json`; run it through `scenario-headful` only. The `release` profile now blocks on progression recipe visibility evidence after the smoke run: milestone recipe IDs must appear in runtime/retained/source recipe evidence, client JEI and EMI hide hooks must exist, and milestone outputs must not be hidden by the client hide surfaces.
 
 Worldgen marketing screenshots:
 

@@ -8,6 +8,7 @@
       "tier": "survival",
       "expectedOutputs": ["additionalweaponry:butcher_knife", "tconstruct:hand_axe"],
       "recipeIds": ["kubejs:primitive/flint_butcher_knife", "kubejs:primitive/flint_hand_axe"],
+      "recipeTypes": ["minecraft:crafting"],
       "negativeControls": ["minecraft:stone", "minecraft:oak_log"]
     },
     {
@@ -15,69 +16,93 @@
       "tier": "tcon_seared",
       "dependsOn": ["primitive_tools"],
       "expectedOutputs": ["kubejs:seared_machine_casing"],
-      "recipeIds": ["kubejs:machine_casing/seared"]
+      "recipeIds": ["kubejs:machine_casing/seared"],
+      "recipeTypes": ["minecraft:crafting"]
     },
     {
       "id": "create_andesite",
       "tier": "create_andesite",
       "dependsOn": ["tcon_seared"],
       "expectedOutputs": ["create:andesite_alloy", "kubejs:andesite_machine_casing"],
-      "recipeIds": ["kubejs:machine_casing/andesite"]
+      "recipeIds": ["kubejs:machine_casing/andesite"],
+      "recipeTypes": ["minecraft:crafting"]
     },
     {
       "id": "create_brass",
       "tier": "create_brass",
       "dependsOn": ["create_andesite"],
       "expectedOutputs": ["create:precision_mechanism", "kubejs:brass_machine_casing"],
-      "recipeIds": ["kubejs:create/sequenced_assembly/machine_casing/brass"]
+      "recipeIds": ["kubejs:create/sequenced_assembly/machine_casing/brass"],
+      "recipeTypes": ["create:sequenced_assembly"]
     },
     {
       "id": "airtight",
       "tier": "airtight",
       "dependsOn": ["create_brass"],
       "expectedOutputs": ["kubejs:airtight_machine_casing", "kubejs:rotational_compressor_core"],
-      "recipeIds": ["kubejs:create/sequenced_assembly/pneumaticcraft/rotational_compressor_core"]
+      "recipeIds": ["kubejs:create/sequenced_assembly/pneumaticcraft/rotational_compressor_core"],
+      "recipeTypes": ["create:sequenced_assembly"]
     },
     {
       "id": "power_grid",
       "tier": "power_grid",
       "dependsOn": ["airtight"],
       "expectedOutputs": ["kubejs:electrical_machine_casing", "ae2:engineering_processor"],
-      "recipeIds": ["kubejs:pneumaticcraft/pressure_chamber/machine_casing/electrical"]
+      "recipeIds": ["kubejs:pneumaticcraft/pressure_chamber/machine_casing/electrical"],
+      "recipeTypes": ["pneumaticcraft:pressure_chamber"]
     },
     {
       "id": "space",
       "tier": "space",
       "dependsOn": ["power_grid"],
       "expectedOutputs": ["kubejs:space_machine_casing"],
-      "recipeIds": ["kubejs:pneumaticcraft/pressure_chamber/machine_casing/space"]
+      "recipeIds": ["kubejs:pneumaticcraft/pressure_chamber/machine_casing/space"],
+      "recipeTypes": ["pneumaticcraft:pressure_chamber"]
     },
     {
       "id": "raw_impossible",
       "tier": "raw_impossible",
       "dependsOn": ["space"],
       "expectedOutputs": ["kubejs:raw_impossible_casing"],
-      "recipeIds": ["kubejs:pneumaticcraft/pressure_chamber/machine_casing/raw_impossible"]
+      "recipeIds": ["kubejs:pneumaticcraft/pressure_chamber/machine_casing/raw_impossible"],
+      "recipeTypes": ["pneumaticcraft:pressure_chamber"]
     },
     {
       "id": "ae2",
       "tier": "ae2",
       "dependsOn": ["raw_impossible"],
       "expectedOutputs": ["kubejs:impossible_machine_casing", "ae2:controller"],
-      "recipeIds": ["kubejs:bloodmagic/machine_casing/impossible"]
+      "recipeIds": ["kubejs:bloodmagic/machine_casing/impossible"],
+      "recipeTypes": ["bloodmagic:altar"]
     },
     {
       "id": "blood_magic",
       "tier": "survival",
       "expectedOutputs": ["bloodmagic:weakbloodorb", "bloodmagic:apprenticebloodorb", "bloodmagic:magicianbloodorb", "bloodmagic:masterbloodorb", "bloodmagic:archmagebloodorb"],
-      "recipeIds": ["kubejs:bloodmagic/10_typed_heart_to_weak_orb", "kubejs:bloodmagic/50_typed_heart_to_archmage_orb"]
+      "recipeIds": ["kubejs:bloodmagic/10_typed_heart_to_weak_orb", "kubejs:bloodmagic/50_typed_heart_to_archmage_orb"],
+      "recipeTypes": ["bloodmagic:altar"]
+    },
+    {
+      "id": "dimension_routes",
+      "tier": "space",
+      "dependsOn": ["space"],
+      "expectedOutputs": ["creatingspace:rocket"],
+      "acceptedRecipeOutputs": ["creatingspace:rocket_engineer_table"],
+      "recipeIds": ["creatingspace:rocket_engineer_table"],
+      "recipeTypes": ["minecraft:crafting"],
+      "dataChecks": [
+        "kubejs/data/creatingspace/creatingspace/rocket_accessible_dimension/earth_orbit.json",
+        "config/twilightforest-common.toml"
+      ],
+      "negativeControls": ["twilightforest:magic_map", "aether:skyroot_bucket"]
     },
     {
       "id": "hybrid_matter",
       "tier": "hybrid_matter",
       "dependsOn": ["ae2", "blood_magic"],
       "expectedOutputs": ["tomeofblood:novice_tome_of_blood"],
-      "recipeIds": ["kubejs:tomeofblood/alchemytable/novice_tome_post_ae2"]
+      "recipeIds": ["kubejs:tomeofblood/alchemytable/novice_tome_post_ae2"],
+      "recipeTypes": ["bloodmagic:alchemytable"]
     }
   ]
 }

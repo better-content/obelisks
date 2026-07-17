@@ -17,6 +17,8 @@ val requiredNeedles = listOf(
     "\"release\"",
     "\"requiresHeadful\": true",
     "\"client_join_attempt\"",
+    "\"recipe_ui_probe\"",
+    "\"hidden_item_probe\"",
     "\"nonblank_ui_evidence\"",
 )
 val missing = requiredNeedles.filterNot(text::contains)

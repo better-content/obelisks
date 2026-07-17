@@ -96,4 +96,20 @@ smokeBuilder.environment().putAll(
     ).mapNotNull { key -> System.getenv(key)?.let { key to it } }.toMap(),
 )
 val smoke = smokeBuilder.start()
-exitProcess(smoke.waitFor())
+val smokeExit = smoke.waitFor()
+if (smokeExit != 0) exitProcess(smokeExit)
+
+if (selected == "release") {
+    val visibility = ProcessBuilder(
+        "kotlin",
+        "tools/kotlin/validate_progression_client_visibility.main.kts",
+        "--runtime-dir",
+        runtimeDir.toString(),
+    )
+        .directory(Paths.get("").toAbsolutePath().normalize().toFile())
+        .inheritIO()
+        .start()
+    exitProcess(visibility.waitFor())
+}
+
+exitProcess(0)

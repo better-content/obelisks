@@ -1203,6 +1203,31 @@ fun validateWorldgenStaticContractsImpl() {
         ok("crushed ore surface samples use unique per-ore geometry", "${sampleGeometrySignatures.size} material scatters")
     } else fail("crushed ore surface samples use unique per-ore geometry", "${sampleGeometrySignatures.values.toSet().size}/${sampleGeometrySignatures.size} unique")
 
+    val expectedSampleUv = listOf(8, 8, 10, 11)
+    val sampleModelPaths = if (sampleModelRoot.exists()) Files.list(sampleModelRoot).use { paths ->
+        paths.filter { it.fileName.toString().matches(Regex("crushed_.+_[0-4]\\.json")) }.toList()
+    } else emptyList()
+    val invalidSampleModels = sampleModelPaths.filter { path ->
+        val model = readJson(path.toString())
+        val textures = jsonObject(model["textures"])
+        val faces = jsonArray(model["elements"]).flatMap { element ->
+            jsonObject(jsonObject(element)["faces"]).values
+        }
+        textures["particle"] != "#all" || faces.isEmpty() || faces.any { face ->
+            jsonArray(jsonObject(face)["uv"]).mapNotNull { (it as? Number)?.toInt() } != expectedSampleUv
+        }
+    }
+    val osmiridiumSampleModel = sampleModelRoot.resolve("crushed_osmiridium_lava_sulfide_ore_0.json")
+    val osmiridiumSampleTexture = if (osmiridiumSampleModel.exists()) {
+        jsonObject(readJson(osmiridiumSampleModel.toString())["textures"])["all"]
+    } else null
+    if (invalidSampleModels.isEmpty() && sampleModelPaths.size >= 100 && osmiridiumSampleTexture == "realisticores:item/crushed_nickel_sulfide_ore") {
+        ok("crushed ore surface models use opaque UVs and resolved texture aliases", "${sampleModelPaths.size} models")
+    } else fail(
+        "crushed ore surface models use opaque UVs and resolved texture aliases",
+        "invalid=${invalidSampleModels.take(5).joinToString(", ")}; osmiridium=$osmiridiumSampleTexture"
+    )
+
     val osmiridiumDefinitionPath = Paths.get(sourceRoot, "realistic-ores/src/main/resources/data/realisticores/realistic_ores/osmiridium_lava_sulfide.json")
     val osmiridiumDefinitionText = if (osmiridiumDefinitionPath.exists()) Files.readString(osmiridiumDefinitionPath) else ""
     val osmiridiumNormalOreTagFiles = listOf(

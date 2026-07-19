@@ -129,6 +129,7 @@ Use the portable harness layer for repeatable runtime tests instead of hand-buil
   - `vs_ships_stability`
   - `vs_ships_matrix`
   - `client_smoke`
+  - `revival`
   - `vs_ships_client`
   - `vs_ships_release`
 - Internal harness/scenario implementation should define only:
@@ -223,6 +224,7 @@ Active pack-critical sources:
 - `pillager-campaigns` (`pillagercampaigns`)
 - `procedural-bouquets` (`procedural_bouquets`)
 - `realistic-ores` (`realisticores`)
+- `revival` (`revival`)
 - `rpg-stats` (`rpgstats`)
 - `settlement-roads` (`settlementroads`)
 - `tcon-affixes` (`tconaffixes`)

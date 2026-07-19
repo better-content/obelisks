@@ -333,6 +333,12 @@ val scenarios = linkedMapOf(
         "tools/kotlin/client_smoke.main.kts",
         headful = true,
     ),
+    "revival" to ScenarioDefinition(
+        "revival",
+        "Revival client/server load, replacement, and visual-surface smoke lane",
+        "tools/kotlin/revival.main.kts",
+        headful = true,
+    ),
     "vs_ships_client" to ScenarioDefinition(
         "vs_ships_client",
         "Valkyrien Skies family headful client/render/sync diagnostics",

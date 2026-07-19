@@ -108,6 +108,7 @@
       "mods/pillagercampaigns-0.2.0.jar",
       "mods/procedural_bouquets-0.1.0.jar",
       "mods/realisticores-0.1.0.jar",
+      "mods/revival-1.0.0.jar",
       "mods/rpgstats-1.0.0.jar",
       "mods/settlementroads-0.1.0.jar",
       "mods/villagewalls-1.0.0.jar"
@@ -808,6 +809,13 @@
         "jar": "mods/bcfixes-0.1.0.jar",
         "minCodeFiles": 8,
         "minTestFiles": 1
+      },
+      {
+        "id": "revival",
+        "repo": "revival",
+        "jar": "mods/revival-1.0.0.jar",
+        "minCodeFiles": 18,
+        "minTestFiles": 2
       },
       {
         "id": "classselector",

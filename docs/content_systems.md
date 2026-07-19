@@ -107,7 +107,7 @@ Permanent-ish spawn is owned by Class Selector onboarding and the no-moving-spaw
 
 Unfinalized players receive a private list of other unfinalized players and render those tracked peers glowing; completed players are excluded. Respawn protection discards every hostile inside the exact 64-block sphere without loot, XP, death events, or inventory mutation, while Pillager Campaigns reconciles purged campaign mobs and warlords into paused or dormant state.
 
-Early hydration includes `bcfixes:rain_collector`, an isolated plank-tier vessel implementation intended to remain easy to move into its own mod. Exposed collectors gain one of four charges during rain, provide Thirst hydration/quench or fill supported containers, and consume a charge only on successful transfer. Snow directly below a lit campfire melts to water after a bounded delay without extinguishing the campfire. RBP no longer treats snow layers as generated solid physics blocks.
+Early hydration includes `bcfixes:rain_collector`, an isolated plank-tier vessel implementation intended to remain easy to move into its own mod. Exposed collectors gain one of four charges during rain, provide Thirst hydration/quench or fill supported containers, and consume a charge only on successful transfer. Snow blocks anywhere in the 3×3×3 cube centered on a lit campfire melt to water after a bounded delay; the campfire remains lit during the conversion. RBP no longer treats snow layers as generated solid physics blocks.
 
 Pollution of the Realms no longer receives emissions from player block-breaking or ordinary hostile death/burning hooks; machine and automation paths remain. Pollution dust settles as Supplementaries ash layers, which are excluded from RBP physics.
 

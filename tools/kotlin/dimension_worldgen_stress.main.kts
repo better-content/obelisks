@@ -225,6 +225,9 @@ fun stopServer(server: RunningServer?) {
 }
 
 fun hasFatalLogText(text: String): String? {
+    val classifierText = text.lineSequence()
+        .filterNot { it.contains("Option 'mixin.feature.integrated_server_watchdog' overriden (by user configuration) to 'false'", ignoreCase = true) }
+        .joinToString("\n")
     val checks = linkedMapOf(
         "invalid_dimension" to Regex("""argument\.dimension\.invalid|Unknown dimension|Can't find dimension""", RegexOption.IGNORE_CASE),
         "modernfix_watchdog" to Regex("""modernfix.*watchdog|watchdog.*modernfix|server thread dump""", RegexOption.IGNORE_CASE),
@@ -236,7 +239,7 @@ fun hasFatalLogText(text: String): String? {
         "worldgen_exception" to Regex("""(Feature|ChunkGenerator|ChunkStatus|WorldGen|Noise|Structure|Biome).*\b(ReportedException|IllegalStateException|ConcurrentModificationException|ArrayIndexOutOfBoundsException|NullPointerException|Exception|Error)\b|\b(ReportedException|IllegalStateException|ConcurrentModificationException|ArrayIndexOutOfBoundsException|NullPointerException)\b.*(Feature|ChunkGenerator|ChunkStatus|WorldGen|Noise|Structure|Biome)""", RegexOption.IGNORE_CASE),
         "jvm_fatal" to Regex("""OutOfMemoryError|hs_err_pid|fatal error has been detected""", RegexOption.IGNORE_CASE),
     )
-    return checks.entries.firstOrNull { it.value.containsMatchIn(text) }?.key
+    return checks.entries.firstOrNull { it.value.containsMatchIn(classifierText) }?.key
 }
 
 val oreAuditMarker = Regex("""\[BC-ORE-AUDIT]([^\r\n]+)""")

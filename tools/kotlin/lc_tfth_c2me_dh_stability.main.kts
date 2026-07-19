@@ -233,6 +233,9 @@ fun stopServer(server: RunningServer?) {
 
 fun fatalClassifier(text: String): String? {
     val serious = """(?:ReportedException|IllegalStateException|NullPointerException|RuntimeException|ExceptionInInitializerError|ConcurrentModificationException|ArrayIndexOutOfBoundsException|ClassCastException|UnsupportedOperationException|LinkageError|AssertionError)"""
+    val classifierText = text.lineSequence()
+        .filterNot { it.contains("Option 'mixin.feature.integrated_server_watchdog' overriden (by user configuration) to 'false'", ignoreCase = true) }
+        .joinToString("\n")
     val checks = linkedMapOf(
         "modernfix_watchdog" to Regex("""modernfix.*watchdog|watchdog.*modernfix|server thread dump""", RegexOption.IGNORE_CASE),
         "crash_report" to Regex("""crash report|this crash report has been saved|preparing crash report""", RegexOption.IGNORE_CASE),
@@ -241,7 +244,7 @@ fun fatalClassifier(text: String): String? {
         "lostcities_exception" to Regex("""(lostcities|LostCityFeature|LostCityTerrainFeature).*\b$serious\b|\b$serious\b.*(lostcities|LostCityFeature|LostCityTerrainFeature)""", RegexOption.IGNORE_CASE),
         "c2me_far_chunk_write" to Regex("""Detected setBlock in a far chunk""", RegexOption.IGNORE_CASE),
     )
-    return checks.entries.firstOrNull { it.value.containsMatchIn(text) }?.key
+    return checks.entries.firstOrNull { it.value.containsMatchIn(classifierText) }?.key
 }
 
 fun sampleLostCity(server: RunningServer, cursors: List<LogCursor>, config: Config, variant: String): String? {

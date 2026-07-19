@@ -181,6 +181,9 @@ fun expectScenarioHarnessContracts() {
     if (missingFatalKeys.isEmpty()) ok("LC/C2ME/DH harness keeps required fatal classifiers", "${requiredFatalKeys.size} classifiers")
     else fail("LC/C2ME/DH harness keeps required fatal classifiers", missingFatalKeys.joinToString(", "))
 
+    if ("integrated_server_watchdog' overriden" in text) ok("LC/C2ME/DH watchdog classifier ignores the disabled-option startup line")
+    else fail("LC/C2ME/DH watchdog classifier ignores the disabled-option startup line", "missing benign ModernFix startup-line filter")
+
     val requiredNeedles = listOf(
         "serializeDhC2meFeaturePlacement",
         "execute in lostcities:lostcity run forceload add",

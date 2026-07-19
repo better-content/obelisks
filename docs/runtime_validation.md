@@ -183,7 +183,7 @@ This lane is now a targeted regression repro for the `bcfixes` Lost Cities seria
 tools/bc test scenario lc_tfth_c2me_dh --samples 4 --settle-seconds 30 --bootstrap-mode once
 ```
 
-Expected validation: a guarded Lost Cities-only control runtime passes with no targeted fatal signatures, an otherwise identical unguarded runtime fails with a targeted Lost Cities/C2ME/DH classifier, and the scenario fails as inconclusive if the repro run does not trigger within its fixed sample budget.
+Expected validation: a guarded Lost Cities-only control runtime passes with no targeted fatal signatures, an otherwise identical unguarded runtime fails with a targeted Lost Cities/C2ME/DH classifier, and the scenario fails as inconclusive if the repro run does not trigger within its fixed sample budget. The watchdog classifier ignores ModernFix's ordinary startup confirmation that the integrated-server watchdog option is disabled; actual watchdog thread dumps remain fatal.
 
 Dedicated-server RAM partitioning:
 

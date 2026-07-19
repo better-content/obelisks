@@ -161,54 +161,8 @@ for (path in listOf("mods/shoulder-surfing-reloaded.pw.toml", "config/shouldersu
     else fail("deferred or incompatible pack surface is absent", path)
 }
 
-val bcText = read("tools/bc.main.kts")
-for (scenario in listOf("vs_ships_stability")) {
-    if (""""$scenario" to ScenarioDefinition(""" in bcText) ok("$scenario is registered")
-    else fail("$scenario is registered", "missing ScenarioDefinition")
-}
-for (internalCommand in listOf("prepare-server-runtime")) {
-    if (bcText.contains("\"$internalCommand\" ->")) ok("$internalCommand internal hook is registered")
-    else fail("$internalCommand internal hook is registered", "missing internal command")
-}
-
-val scriptChecks = mapOf(
-    "tools/kotlin/vs_ships_stability.main.kts" to listOf(
-        "registry_contract_failure",
-        "component_fixture_failure",
-        "ship_save_reload_failure",
-        "dimension_conflict",
-        "c2me_dh_threading_failure",
-        "vs_init_failure",
-        "eureka_init_failure",
-        "clockwork_init_failure",
-        "trackwork_init_failure",
-        "suspected_ship_object_leak",
-        "ship_assembly\", \"not_automatable_headless",
-        "component_fixture",
-        "reload_verification",
-        "removal_unload",
-        "save-all flush",
-        "status == \"passed\" && !keepRuns",
-        "vs_eureka:oak_ship_helm",
-        "vs_eureka:floater",
-    ),
-)
-for ((path, needles) in scriptChecks) {
-    if (!rel(path).isRegularFile()) {
-        fail("$path exists", "missing")
-        continue
-    }
-    val text = read(path)
-    val missing = needles.filterNot(text::contains)
-    if (missing.isEmpty()) ok("$path keeps required VS classifiers/contracts", "${needles.size} checks")
-    else fail("$path keeps required VS classifiers/contracts", missing.joinToString(", "))
-}
 val docs = mapOf(
-    "AGENTS.md" to listOf("vs_ships_stability"),
-    "docs/runtime_validation.md" to listOf(
-        "tools/bc test scenario vs_ships_stability --profile quick --cycles 1 --bootstrap-mode once",
-    ),
-    "docs/performance_and_mods.md" to listOf("Valkyrien Skies", "Eureka", "Clockwork", "Trackwork", "vs_ships_stability"),
+    "docs/performance_and_mods.md" to listOf("Valkyrien Skies", "Eureka", "Clockwork", "Trackwork"),
 )
 for ((path, needles) in docs) {
     val text = read(path)

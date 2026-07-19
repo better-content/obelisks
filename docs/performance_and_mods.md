@@ -72,13 +72,7 @@ Revalidate with the current harness after touching `config/c2me.toml`, `config/D
 
 ## Valkyrien Skies Family
 
-Valkyrien Skies, Eureka, VS: Clockwork, and Trackwork are active as pinned transport progression. Current regression entry points:
-
-```bash
-tools/bc test scenario vs_ships_stability --profile quick --cycles 1 --bootstrap-mode once
-```
-
-Use these to classify server boot, dependency/mixin, ship assembly, save/restart lifecycle, dimension, C2ME/DH/threading, add-on removal, partial-save corruption, and suspected ship object leaks. They write raw evidence under `~/.cache/bc/bc-vs-*`; keep durable conclusions here only after a fresh run. Player-control and rendering behavior remain manual-playtest surfaces.
+Valkyrien Skies, Eureka, VS: Clockwork, and Trackwork are active as pinned transport progression. Their automated stability scenario was removed under the one-world test rule; player-control, rendering, and compatibility behavior remain manual-playtest surfaces.
 
 Current evidence from 2026-07-10: `~/.cache/bc/bc-vs-stability-expanded-3cycle` passed three fresh DH-enabled quick lifecycle cycles, and `~/.cache/bc/bc-vs-matrix-expanded-direct` passed three paired current-config/DH-disabled boots cloned from identical disposable baselines. The old DH-disabled startup stall did not reproduce with the corrected matrix launcher, so it is not current evidence of a DH-off-only defect.
 

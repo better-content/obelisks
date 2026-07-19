@@ -262,11 +262,6 @@ val scenarios = linkedMapOf(
         "Seeded worldgen sampling lane with local/quick/release profiles",
         "tools/kotlin/worldgen_sampling.main.kts",
     ),
-    "vs_ships_stability" to ScenarioDefinition(
-        "vs_ships_stability",
-        "Valkyrien Skies family headless server stability diagnostics",
-        "tools/kotlin/vs_ships_stability.main.kts",
-    ),
 )
 
 val rawArgs = args.toList()
@@ -3956,7 +3951,6 @@ fun runToolDocSurfaceValidation(): ProcessRun {
         "tools/bc test scenario worldgen_sampling --profile local --bootstrap-mode once",
         "tools/bc test scenario worldgen_sampling --profile quick --bootstrap-mode once",
         "tools/bc test scenario worldgen_sampling --profile release --bootstrap-mode once",
-        "tools/bc test scenario vs_ships_stability --profile quick --cycles 1 --bootstrap-mode once",
     )
     for (command in requiredRuntimeCommands) {
         if (!runtimeText.contains(command)) fail("$runtimeValidationPath missing scenario command: `$command`")
@@ -5052,7 +5046,6 @@ fun scenarioDefaultRunRoot(name: String, args: List<String>): Path {
         "progression_milestones" -> cachePath("progression-milestones")
         "worldgen_sampling" -> cachePath("dimension-worldgen")
         "pillager_campaigns" -> cachePath("pillager-campaigns")
-        "vs_ships_stability" -> cachePath("vs-ships-stability")
         else -> cachePath("scenario-$name")
     }.toAbsolutePath().normalize()
 }

@@ -1147,6 +1147,7 @@ enable-query=false
 enable-rcon=false
 enforce-secure-profile=${if (onlineMode) "true" else "false"}
 gamemode=survival
+level-seed=better-content-validation-v1
 level-name=world
 max-players=8
 motd=${if (onlineMode) "Better Content server bundle" else "Better Content local agent runtime"}
@@ -1158,7 +1159,10 @@ simulation-distance=6
 spawn-protection=0
 view-distance=12
 white-list=false
-""".trimIndent() + "\n"
+""".trimIndent()
+        .lineSequence()
+        .filterNot { onlineMode && it.startsWith("level-seed=") }
+        .joinToString("\n", postfix = "\n")
     Files.writeString(path, text)
 }
 
@@ -2784,6 +2788,35 @@ fun waitForFiles(paths: List<Path>, timeoutSeconds: Int, process: Process, phase
     error("$phase timed out after ${timeoutSeconds}s waiting for $missing")
 }
 
+fun captureSmokeStartupDiagnostics(running: RunningProcess, evidenceDir: Path) {
+    val jvm = runCatching {
+        running.process.toHandle().descendants()
+            .filter { handle -> handle.isAlive && handle.info().command().orElse("").endsWith("java") }
+            .findFirst()
+            .orElse(null)
+    }.getOrNull() ?: return
+    val pid = jvm.pid()
+    val commands = listOf(
+        "thread-dump.txt" to listOf("jcmd", pid.toString(), "Thread.print", "-l"),
+        "heap-info.txt" to listOf("jcmd", pid.toString(), "GC.heap_info"),
+        "native-memory-summary.txt" to listOf("jcmd", pid.toString(), "VM.native_memory", "summary"),
+    )
+    for ((name, command) in commands) {
+        val output = evidenceDir.resolve(name)
+        runCatching {
+            val process = ProcessBuilder(command).redirectErrorStream(true).redirectOutput(output.toFile()).start()
+            if (!process.waitFor(30, java.util.concurrent.TimeUnit.SECONDS)) {
+                process.destroy()
+                if (!process.waitFor(5, java.util.concurrent.TimeUnit.SECONDS)) process.destroyForcibly()
+            }
+        }
+    }
+    val procStatus = Paths.get("/proc/$pid/status")
+    if (procStatus.exists()) {
+        Files.copy(procStatus, evidenceDir.resolve("process-status.txt"), StandardCopyOption.REPLACE_EXISTING)
+    }
+}
+
 fun sendCommand(runningProcess: RunningProcess?, command: String) {
     runningProcess?.stdin?.apply {
         write(command)
@@ -4181,6 +4214,7 @@ fun runSmokeValidation(serverDir: Path, port: Int, reset: Boolean, bootstrapMode
             Thread.sleep(2000)
         }
         if (!reachedDone) {
+            captureSmokeStartupDiagnostics(running, evidenceDir)
             return ProcessRun(1, "server startup timed out before Done marker")
         }
         harness?.updateStatus(status = "running", phase = "runtime_validation")

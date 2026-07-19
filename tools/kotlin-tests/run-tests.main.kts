@@ -831,6 +831,32 @@ test("smoke auto-remaps occupied ports and records requested and actual port") {
     }
 }
 
+test("local validation runtimes use a deterministic world seed") {
+    val source = Files.readString(root.resolve("tools/bc.main.kts"))
+    assertContains(
+        source,
+        "level-seed=better-content-validation-v1",
+        "local smoke bootstraps should pin a deterministic validation seed",
+    )
+    assertContains(
+        source,
+        ".filterNot { onlineMode && it.startsWith(\"level-seed=\") }",
+        "published authenticated server bundles must not force the validation seed",
+    )
+}
+
+test("smoke startup timeouts capture JVM diagnostics") {
+    val source = Files.readString(root.resolve("tools/bc.main.kts"))
+    for (artifact in listOf("thread-dump.txt", "heap-info.txt", "native-memory-summary.txt", "process-status.txt")) {
+        assertContains(source, artifact, "smoke timeout diagnostics should include $artifact")
+    }
+    assertContains(
+        source,
+        "captureSmokeStartupDiagnostics(running, evidenceDir)",
+        "the smoke timeout path should capture diagnostics before stopping the server",
+    )
+}
+
 test("opening progression remaps occupied ports and refreshes latest status artifacts") {
     val harnessRoot = createTestTempDirectory("bc-kotlin-test-harness-opening-pass")
     val runRoot = createTestTempDirectory("bc-kotlin-test-opening-pass")

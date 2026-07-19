@@ -1,0 +1,22 @@
+plugins {
+    id 'net.minecraftforge.gradle' version '[6.0,6.2)' apply false
+    id 'org.jetbrains.kotlin.jvm' version '1.9.24' apply false
+}
+
+ext {
+    modId = 'tconaffixes'
+    modName = 'TCon Affixes'
+    modGroupId = 'io.github.tconaffixes'
+    modDescription = 'Affixed Tinkers parts found throughout the world.'
+}
+
+apply from: file('gradle/forge-module.gradle')
+
+dependencies {
+    def mantleDep = 'curse.maven:mantle-74924:7563777'
+    def tconstructDep = 'curse.maven:tinkers-construct-74072:7449219'
+    compileOnly fg.deobf(mantleDep)
+    compileOnly fg.deobf(tconstructDep)
+    runtimeOnly fg.deobf(mantleDep)
+    runtimeOnly fg.deobf(tconstructDep)
+}

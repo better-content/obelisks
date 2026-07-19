@@ -28,7 +28,6 @@ var BC_GRID_POLICY_COMPLEX_NAMESPACES = {
     createaddition: true,
     createadditionallogistics: true,
     createadvlogistics: true,
-    createbigcannons: true,
     createdieselgenerators: true,
     createmoredrillheads: true,
     creatingspace: true,
@@ -51,14 +50,12 @@ var BC_GRID_POLICY_COMPLEX_NAMESPACES = {
     pneumaticcraft: true,
     powergrid: true,
     psi: true,
-    reliquary: true,
     rehooked: true,
     sophisticatedbackpacks: true,
     sophisticatedstorage: true,
     theurgy: true,
     tradingpost: true,
-    tconstruct: true,
-    wands: true
+    tconstruct: true
 }
 
 var BC_GRID_POLICY_MAGIC_NAMESPACES = {
@@ -82,9 +79,7 @@ var BC_GRID_POLICY_MAGIC_NAMESPACES = {
     naturesaura: true,
     occultism: true,
     psi: true,
-    reliquary: true,
-    theurgy: true,
-    wands: true
+    theurgy: true
 }
 
 var BC_GRID_POLICY_ROOT_OUTPUTS = {

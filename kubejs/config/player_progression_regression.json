@@ -377,6 +377,39 @@
           ]
         }
       ]
+    },
+    {
+      "id": "hybrid_matter",
+      "tier": "hybrid_matter",
+      "outputs": [
+        "tomeofblood:novice_tome_of_blood"
+      ],
+      "requiresPrevious": "ae2",
+      "route": [
+        "AE2 controller and logic package",
+        "archmage Blood Magic proof",
+        "Ars source refinement",
+        "Tome of Blood hybrid capstone"
+      ],
+      "sourceAssertions": [
+        {
+          "file": "kubejs/server_scripts/30_recipe_replace/166_tome_of_blood_post_ae2_gates.js",
+          "all": [
+            "tomeofblood:novice_tome_of_blood",
+            "bloodmagic:archmagebloodorb",
+            "ae2:controller",
+            "kubejs:ae_logic_package",
+            "kubejs:purified_source_core",
+            "kubejs:living_binding"
+          ]
+        },
+        {
+          "file": "docs/progression.md",
+          "all": [
+            "Tome of Blood is the intended hybrid finisher"
+          ]
+        }
+      ]
     }
   ],
   "forbiddenBypassOutputs": [

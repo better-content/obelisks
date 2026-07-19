@@ -2,245 +2,244 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "deposits_ore_identity"
-	group: "65CC8BE9C7D2A5C0"
+	group: "5B6E48C1A9D207F3"
 	icon: "minecraft:raw_copper"
-	id: "CE25BEAE938B81E2"
+	id: "20D05FC5226A9C35"
 	order_index: 1
 	quest_links: [ ]
 	quests: [
 		{
-			id: "AD6076BBBC63B6E7"
-			title: "Survey"
+			description: ["Read the terrain before you mine. In this pack, ore bodies are local and geological clues matter more than blind strip-mining."]
 			icon: "minecraft:spyglass"
+			id: "3491050BFC37BA75"
 			shape: "hexagon"
 			size: 1.25d
 			tasks: [{
-				id: "8930699F8A18EB8A"
+				id: "27DC90E237E70C88"
 				title: "Read terrain before mining"
 				type: "checkmark"
 			}]
+			title: "Survey"
 			x: -6.34d
 			y: 0.0d
-			description: ["Read the terrain before you mine. In this pack, ore bodies are local and geological clues matter more than blind strip-mining."]
 		}
 		{
-			dependencies: ["AD6076BBBC63B6E7"]
-			id: "88AB3FECBB5A97EC"
-			title: "Samples"
-			icon: "minecraft:raw_copper"
+			description: ["Collect the low crushed-ore rubble scattered above a bulk field. It is a usable assay sample, and its texture tells you which host geology lies below before you commit to a shaft."]
+			icon: "realisticores:crushed_copper_sulfide_ore"
+			id: "3961F998AF754A01"
 			shape: "rsquare"
 			tasks: [{
-				id: "EC2218D222B150F5"
-				title: "Collect surface evidence"
-				type: "checkmark"
+				id: "0EC44E8942388C61"
+				item: "realisticores:crushed_copper_sulfide_ore"
+				type: "item"
 			}]
+			title: "Samples"
 			x: -4.75d
 			y: -3.0d
-			description: ["Collect samples and watch the stone around them. That small survey step saves time by telling you whether a deposit is worth serious labor."]
 		}
 		{
-			dependencies: ["88AB3FECBB5A97EC"]
-			id: "D1B0284719CE935D"
-			title: "Coal"
+			description: ["Coal is more than furnace fuel here. Treat it as a mining cost, a chemistry input, and a reason to plan routes carefully."]
 			icon: "minecraft:coal"
+			id: "38EC1A6BC8E84C20"
 			shape: "rsquare"
 			tasks: [{
-				id: "A864A30C2D39CB5D"
+				id: "4A03EE8C082EBE99"
 				title: "Find coal measures"
 				type: "checkmark"
 			}]
+			title: "Coal"
 			x: -3.17d
 			y: -4.0d
-			description: ["Coal is more than furnace fuel here. Treat it as a mining cost, a chemistry input, and a reason to plan routes carefully."]
 		}
 		{
-			dependencies: ["88AB3FECBB5A97EC"]
-			id: "F3267A0525F8E508"
-			title: "Ironstone"
+			description: ["Ironstone is your proof that metal starts in specific geology. Learn where it lives now so later mining stops feeling random."]
 			icon: "minecraft:raw_iron"
+			id: "4C44B2E215DA4371"
+			rewards: [{
+				count: 4
+				id: "411728C80AB2207A"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			shape: "rsquare"
 			tasks: [{
 				id: "2E8CAACCD83EBB91"
 				item: "minecraft:raw_iron"
 				type: "item"
 			}]
+			title: "Ironstone"
 			x: -3.17d
 			y: -2.5d
-			rewards: [{ id: "D735DD89D7E2A8EC" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Ironstone is your proof that metal starts in specific geology. Learn where it lives now so later mining stops feeling random."]
 		}
 		{
-			dependencies: ["88AB3FECBB5A97EC"]
-			id: "9FB7FAC134090CFF"
-			title: "Copper"
+			description: ["Copper matters because it feeds coins, Create parts, and early electrical work. Bring it home through the route that preserves where it came from."]
 			icon: "minecraft:raw_copper"
+			id: "7100C41AA8C18CA7"
 			shape: "rsquare"
 			tasks: [{
-				id: "C77B3A8CAAE1FFC4"
+				id: "2493F70A08BEA804"
 				item: "minecraft:raw_copper"
 				type: "item"
 			}]
+			title: "Copper"
 			x: -3.17d
 			y: -1.0d
-			description: ["Copper matters because it feeds coins, Create parts, and early electrical work. Bring it home through the route that preserves where it came from."]
 		}
 		{
-			dependencies: ["D1B0284719CE935D"]
-			id: "0976FB57A47DF8D4"
-			title: "Tin"
+			description: ["Tin matters early because later alloys and electronics need it. Store tin with a label for the deposit or region where you found it."]
 			icon: "chemlib:tin_ingot"
+			id: "0976FB57A47DF8D4"
 			shape: "rsquare"
 			tasks: [{
-				id: "97DB9A5868C2D8CF"
+				id: "592EA16CDD9170F1"
 				item: "chemlib:tin_ingot"
 				type: "item"
 			}]
+			title: "Tin"
 			x: -1.58d
 			y: -4.0d
-			description: ["Tin matters early because later alloys and electronics need it. Store tin with a label for the deposit or region where you found it."]
 		}
 		{
-			dependencies: ["F3267A0525F8E508"]
-			id: "FF9487345EDB59C6"
-			title: "Zinc"
+			description: ["Zinc is the deposit that points straight at brass. Secure it early if you know the Create lane is going to be your next big push."]
 			icon: "create:zinc_ingot"
+			id: "57E27C32528DD548"
 			shape: "rsquare"
 			tasks: [{
 				id: "3788FD235E97926A"
 				item: "create:zinc_ingot"
 				type: "item"
 			}]
+			title: "Zinc"
 			x: -1.58d
 			y: -2.5d
-			description: ["Zinc is the deposit that points straight at brass. Secure it early if you know the Create lane is going to be your next big push."]
 		}
 		{
-			dependencies: ["9FB7FAC134090CFF"]
-			id: "992544F772FA5B9B"
-			title: "Lead"
+			description: ["Lead is mostly a future-proof material at first. Mine it when you can, because later chemistry and protection routes will want a real stockpile."]
 			icon: "chemlib:lead_ingot"
+			id: "57253BCD3E049F8C"
 			shape: "rsquare"
 			tasks: [{
-				id: "D69305C534478ADE"
+				id: "774907C80358E164"
 				item: "chemlib:lead_ingot"
 				type: "item"
 			}]
+			title: "Lead"
 			x: -1.58d
 			y: -1.0d
-			description: ["Lead is mostly a future-proof material at first. Mine it when you can, because later chemistry and protection routes will want a real stockpile."]
 		}
 		{
-			dependencies: ["0976FB57A47DF8D4" "FF9487345EDB59C6"]
-			id: "5F857A4BFE9337E7"
-			title: "Bauxite"
+			dependencies: ["0976FB57A47DF8D4"]
+			description: ["Treat bauxite as a named deposit with its own route. Aluminum should come from real geology and chemistry, not from a vague transmutation shortcut."]
 			icon: "chemlib:aluminum_ingot"
+			id: "5F857A4BFE9337E7"
 			shape: "rsquare"
 			tasks: [{
-				id: "C6439B1AAC57F1A9"
+				id: "20BB70EC5B77A9AB"
 				item: "chemlib:aluminum_ingot"
 				type: "item"
 			}]
+			title: "Bauxite"
 			x: 0.0d
 			y: -3.25d
-			description: ["Treat bauxite as a named deposit with its own route. Aluminum should come from real geology and chemistry, not from a vague transmutation shortcut."]
 		}
 		{
-			dependencies: ["F3267A0525F8E508"]
-			id: "B346673EAE19FC65"
-			title: "Furnace"
+			description: ["A furnace is the emergency route, not the good route. Use it when a run needs saving, then move serious processing onto better machines."]
 			icon: "minecraft:furnace"
+			id: "394AA72FA4ADC767"
 			shape: "rsquare"
 			tasks: [{
 				id: "5065A6514080CEDD"
 				item: "minecraft:furnace"
 				type: "item"
 			}]
+			title: "Furnace"
 			x: 0.0d
 			y: 1.5d
-			description: ["A furnace is the emergency route, not the good route. Use it when a run needs saving, then move serious processing onto better machines."]
 		}
 		{
-			dependencies: ["B346673EAE19FC65"]
-			id: "611CC642195B7D66"
-			title: "Melter"
+			description: ["The melter is your first strong interpretation tool for ore. Once you can melt and cast a deposit, you understand it much better than a furnace ever could."]
 			icon: "tconstruct:seared_melter"
+			id: "611CC642195B7D66"
+			rewards: [{
+				count: 4
+				id: "71DCAF5A5651586C"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			shape: "square"
 			size: 1.05d
 			tasks: [{
-				id: "A80B8F83E75B984B"
+				id: "0A09551E9B7525F9"
 				item: "tconstruct:seared_melter"
 				type: "item"
 			}]
+			title: "Melter"
 			x: 1.58d
 			y: 1.5d
-			rewards: [{ id: "71DCAF5A5651586C" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["The melter is your first strong interpretation tool for ore. Once you can melt and cast a deposit, you understand it much better than a furnace ever could."]
 		}
 		{
 			dependencies: ["611CC642195B7D66"]
-			id: "8B2C868F1240B6EC"
-			title: "Smeltery"
+			description: ["Scale into a smeltery when one-off melts stop being enough. Keep each deposit's ores and byproducts organized so repeated pours stay predictable."]
 			icon: "tconstruct:smeltery_controller"
+			id: "174E2AEF965FF760"
 			shape: "rsquare"
 			tasks: [{
 				id: "69393339BCDCC382"
 				item: "tconstruct:smeltery_controller"
 				type: "item"
 			}]
+			title: "Smeltery"
 			x: 3.17d
 			y: 1.5d
-			description: ["Scale into a smeltery when one-off melts stop being enough. Keep each deposit's ores and byproducts organized so repeated pours stay predictable."]
 		}
 		{
 			dependencies: ["5F857A4BFE9337E7"]
-			id: "A67CDD2A30C926B0"
-			title: "Crusher"
+			description: ["Use crushing once you want better yield and visible byproducts. It is the first big upgrade from simple melting into bulk processing."]
 			icon: "create:crushing_wheel"
+			id: "6080F81725AA2C56"
 			shape: "rsquare"
 			tasks: [{
 				id: "09E6C971DE67AEBB"
 				item: "create:crushing_wheel"
 				type: "item"
 			}]
+			title: "Crusher"
 			x: 1.58d
 			y: -2.5d
-			description: ["Use crushing once you want better yield and visible byproducts. It is the first big upgrade from simple melting into bulk processing."]
 		}
 		{
-			dependencies: ["A67CDD2A30C926B0"]
-			id: "D56BD0037669EF02"
-			title: "Washer"
+			description: ["Washing routes matter because they show what else the deposit contains. That extra visibility is part of why machinery beats emergency smelting."]
 			icon: "create:encased_fan"
+			id: "74D73B14BF4302C9"
 			shape: "rsquare"
 			tasks: [{
-				id: "9E9A10CE38C20C02"
+				id: "6F661BFA6699A833"
 				item: "create:encased_fan"
 				type: "item"
 			}]
+			title: "Washer"
 			x: 3.17d
 			y: -2.5d
-			description: ["Washing routes matter because they show what else the deposit contains. That extra visibility is part of why machinery beats emergency smelting."]
 		}
 		{
-			dependencies: ["D56BD0037669EF02" "8B2C868F1240B6EC"]
-			id: "7361C081C9473BE7"
-			title: "Solvents"
+			description: ["Use chemistry to refine a deposit, not to erase where it came from. If every ore starts looking interchangeable, you are losing useful information."]
 			icon: "minecraft:glass_bottle"
+			id: "7361C081C9473BE7"
 			shape: "rsquare"
 			tasks: [{
-				id: "9C6164F2ADB6D4CF"
+				id: "158772E4AAB4E02C"
 				title: "Track sources through chemistry"
 				type: "checkmark"
 			}]
+			title: "Solvents"
 			x: 4.75d
 			y: -0.5d
-			description: ["Use chemistry to refine a deposit, not to erase where it came from. If every ore starts looking interchangeable, you are losing useful information."]
 		}
 		{
 			dependencies: ["7361C081C9473BE7"]
-			id: "2A4B33F864785BB8"
-			title: "Depths"
+			description: ["Uranium and thorium are surface-signalled strategic fields inside the lava band; osmiridium remains lava-exposed expedition geology. All three ask for heat gear, combat answers, and a way home, not just a better pick."]
 			icon: "minecraft:lava_bucket"
+			id: "2A4B33F864785BB8"
 			shape: "octagon"
 			size: 1.15d
 			tasks: [{
@@ -248,15 +247,14 @@
 				title: "Respect lava-depth materials"
 				type: "checkmark"
 			}]
+			title: "Depths"
 			x: 6.34d
 			y: -0.5d
-			description: ["Treat lava-depth ores as expedition material from the start. They ask for heat gear, combat answers, and a way home, not just a better pick."]
-		},
+		}
 		{
-			dependencies: ["AD6076BBBC63B6E7"]
-			id: "068185E25590F47B"
-			title: "Field Notes"
+			description: ["Write down biome, stone, height, and samples like a survey map. Good notes save more mining time than one more blind tunnel."]
 			icon: "minecraft:writable_book"
+			id: "068185E25590F47B"
 			shape: "diamond"
 			size: 0.9d
 			tasks: [{
@@ -264,33 +262,29 @@
 				title: "Record biome, stone, height, and sample results"
 				type: "checkmark"
 			}]
+			title: "Field Notes"
 			x: -6.34d
 			y: -2.0d
-			description: ["Write down biome, stone, height, and samples like a survey map. Good notes save more mining time than one more blind tunnel."]
 		}
-,
 		{
-			dependencies: ["88AB3FECBB5A97EC"]
-			id: "2109184CE541FB35"
-			title: "Claim Stakes"
+			description: ["Mark claims near important deposits. Knowing which place produced an ore makes later restocking and processing easier."]
 			icon: "minecraft:oak_fence"
+			id: "2109184CE541FB35"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
-				id: "C92CC16AD3112274"
+				id: "6EE7BACE7B81FC20"
 				title: "Mark deposits before digging"
 				type: "checkmark"
 			}]
+			title: "Claim Stakes"
 			x: -4.75d
 			y: -1.0d
-			description: ["Mark claims near important deposits. Knowing which place produced an ore makes later restocking and processing easier."]
 		}
-,
 		{
-			dependencies: ["D1B0284719CE935D"]
-			id: "2CC9D7DE7EA981B7"
-			title: "Fuel Ledger"
+			description: ["Track coal as a real processing cost instead of dumping it thoughtlessly into furnaces. It anchors many later decisions."]
 			icon: "minecraft:charcoal"
+			id: "2CC9D7DE7EA981B7"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
@@ -298,16 +292,14 @@
 				title: "Track fuel as a mining cost"
 				type: "checkmark"
 			}]
+			title: "Fuel Ledger"
 			x: -3.17d
 			y: -5.9d
-			description: ["Track coal as a real processing cost instead of dumping it thoughtlessly into furnaces. It anchors many later decisions."]
 		}
-,
 		{
-			dependencies: ["9FB7FAC134090CFF"]
-			id: "2680578FAA63580B"
-			title: "Sulfide Path"
+			description: ["Keep copper tied to both coin work and chemistry so its route stays visible. That will help later when one stockpile is feeding several systems."]
 			icon: "chemlib:sulfur"
+			id: "2680578FAA63580B"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
@@ -315,16 +307,14 @@
 				title: "Track copper through processing"
 				type: "checkmark"
 			}]
+			title: "Sulfide Path"
 			x: -3.17d
 			y: 1.1d
-			description: ["Keep copper tied to both coin work and chemistry so its route stays visible. That will help later when one stockpile is feeding several systems."]
 		}
-,
 		{
-			dependencies: ["FF9487345EDB59C6"]
-			id: "85489E9BDC7D87D1"
-			title: "Brass Future"
+			description: ["Zinc needs a visible forward hook into Create."]
 			icon: "create:brass_ingot"
+			id: "14ABE85547900D2A"
 			shape: "diamond"
 			size: 0.9d
 			tasks: [{
@@ -332,16 +322,15 @@
 				title: "Reserve zinc for brass and controls"
 				type: "checkmark"
 			}]
+			title: "Brass Future"
 			x: -1.58d
 			y: -0.5d
-			description: ["Zinc needs a visible forward hook into Create."]
 		}
-,
 		{
 			dependencies: ["5F857A4BFE9337E7"]
-			id: "D52DBF12ACF842FE"
-			title: "Alumina Notes"
+			description: ["Keep bauxite separate from generic ore storage. Aluminum should come from its own deposit and processing steps."]
 			icon: "minecraft:white_dye"
+			id: "4681FE1E7DC0CAA2"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
@@ -349,33 +338,30 @@
 				title: "Treat aluminum as geology plus chemistry"
 				type: "checkmark"
 			}]
+			title: "Alumina Notes"
 			x: 0.0d
 			y: -5.25d
-			description: ["Keep bauxite separate from generic ore storage. Aluminum should come from its own deposit and processing steps."]
 		}
-,
 		{
 			dependencies: ["611CC642195B7D66"]
-			id: "C51A2F86BA4B2A03"
-			title: "Cast Choice"
+			description: ["Casting decisions make early metallurgy readable."]
 			icon: "tconstruct:ingot_cast"
+			id: "6983BA3683B1DEFA"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
-				id: "AE708C6E1A38FB6E"
+				id: "636A7329639607B7"
 				title: "Choose casts before scaling"
 				type: "checkmark"
 			}]
+			title: "Cast Choice"
 			x: 1.58d
 			y: -0.5d
-			description: ["Casting decisions make early metallurgy readable."]
 		}
-,
 		{
-			dependencies: ["A67CDD2A30C926B0"]
-			id: "79C3D926C113BD85"
-			title: "Byproduct Watch"
+			description: ["Use crushed outputs and byproducts to see why machinery beats raw smelting. This is where geology starts rewarding better interpretation."]
 			icon: "create:crushed_raw_iron"
+			id: "79C3D926C113BD85"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
@@ -383,16 +369,15 @@
 				title: "Track crushed outputs and secondary products"
 				type: "checkmark"
 			}]
+			title: "Byproduct Watch"
 			x: 1.58d
 			y: -0.5d
-			description: ["Use crushed outputs and byproducts to see why machinery beats raw smelting. This is where geology starts rewarding better interpretation."]
 		}
-,
 		{
 			dependencies: ["7361C081C9473BE7"]
-			id: "5FBE342F90D8A5EC"
-			title: "Assay Batch"
+			description: ["Run small chemistry batches first so the process feels like assay work instead of blind consumption. Once the results make sense, scale up."]
 			icon: "minecraft:glass_bottle"
+			id: "5FBE342F90D8A5EC"
 			shape: "diamond"
 			size: 0.9d
 			tasks: [{
@@ -400,16 +385,15 @@
 				title: "Run small chemistry batches before bulk processing"
 				type: "checkmark"
 			}]
+			title: "Assay Batch"
 			x: 4.75d
 			y: -2.5d
-			description: ["Run small chemistry batches first so the process feels like assay work instead of blind consumption. Once the results make sense, scale up."]
 		}
-,
 		{
 			dependencies: ["2A4B33F864785BB8"]
-			id: "69188677069A302F"
-			title: "Lava Dive Kit"
+			description: ["Build a real lava-dive kit before you chase the late ores. The gear, exits, and recovery plan are part of the resource cost."]
 			icon: "minecraft:blaze_powder"
+			id: "69188677069A302F"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
@@ -417,9 +401,9 @@
 				title: "Prepare heat, recovery, and routing for lava-depth ores"
 				type: "checkmark"
 			}]
+			title: "Lava Dive Kit"
 			x: 6.34d
 			y: 1.5d
-			description: ["Build a real lava-dive kit before you chase the late ores. The gear, exits, and recovery plan are part of the resource cost."]
 		}
 	]
 	title: "Deposits and Ore Identity"

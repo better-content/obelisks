@@ -13,6 +13,14 @@
 	#Prevents worldgen crashes when Hyle's tertiary selector requests an index outside the available tertiary list size.
 	#Keeps Unearthed/Hyle stone replacement enabled while avoiding ArrayIndexOutOfBoundsException in RoughNoiseSampler.selectTertiary.
 	safeTertiarySelection = true
+	#Completes Hyle stone replacement in the Overworld's lowest chunk section.
+	#Hyle's bottom interpolation slice can resolve to its no-replacement sentinel, leaving deepslate and tuff below Y -48 untouched.
+	#The repair uses the nearest valid generated Hyle stratum for each column, so regional Unearthed geology remains continuous.
+	completeBottomSection = true
+	#Moves Hyle's stone replacement pass to the end of underground decoration.
+	#This replaces stone-family blocks emitted after local modifications by underground structures, ores, and decoration features.
+	#Above-ground authored boulders and structure masonry remain outside this underground geology pass.
+	runAfterUndergroundDecoration = true
 
 [apotheosis]
 	#Skips Apotheosis' client tooltip augmentation when another mod computes tooltips off the Minecraft client thread.

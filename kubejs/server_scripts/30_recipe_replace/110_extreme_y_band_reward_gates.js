@@ -16,8 +16,6 @@ var BC_EXTREME = {
         ruthenium: 'kubejs:kimberlite_diamond_seed'
     },
     lava: {
-        uranium: 'kubejs:fissile_salt_blend',
-        thorium: 'kubejs:fissile_salt_blend',
         osmium: 'kubejs:soulstone_carbon_matrix',
         iridium: 'kubejs:titanium_thermal_plate',
         osmiridium: 'realisticores:crushed_osmiridium_lava_sulfide_ore',
@@ -141,28 +139,25 @@ ServerEvents.recipes(function (event) {
 
     // Lava-depth rewards: survival/combat upgrades for the most dangerous extraction band.
      bcExtremeRecipe(event, 'artifacts:obsidian_skull', [
-        'DUO',
+        'DIO',
         'SBS',
-        'OTD'
+        'OID'
     ], {
         D: BC_EXTREME.lava.debris,
-        U: BC_EXTREME.lava.uranium,
+        I: BC_EXTREME.lava.iridium,
         O: BC_EXTREME.lava.osmium,
         S: 'minecraft:obsidian',
-        B: BC_EXTREME.gate.space,
-        T: BC_EXTREME.lava.thorium
+        B: BC_EXTREME.gate.space
     }, 'kubejs:extreme_y_rewards/lava_depths/obsidian_skull')
 
      bcExtremeRecipe(event, 'artifacts:fire_gauntlet', [
-        'UOU',
+        'OIO',
         'IBI',
-        'TST'
+        'OSO'
     ], {
-        U: BC_EXTREME.lava.uranium,
         O: BC_EXTREME.lava.osmium,
         I: BC_EXTREME.lava.iridium,
         B: BC_EXTREME.gate.space,
-        T: BC_EXTREME.lava.thorium,
         S: 'bloodmagic:demonslate'
     }, 'kubejs:extreme_y_rewards/lava_depths/fire_gauntlet')
 

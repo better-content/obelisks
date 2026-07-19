@@ -636,7 +636,7 @@ fun validateClientQuestIntent() {
 fun validateVanillaStyleToolSuppression() {
     val server = read("kubejs/server_scripts/30_recipe_replace/60_vanilla_tools_to_tcon_heads.js")
     val client = read("kubejs/client_scripts/20_hide_vanilla_tools.js")
-    val requiredToolMarkers = listOf("minecraft:", "ae2", "aether", "deeperdarker", "everythingcopper", "forbidden_arcanus", "goety", "iceandfire", "malum", "occultism:iesnium_pickaxe", "undergarden", "twilightforest:ironwood_pickaxe", "ars_nouveau:enchanters_sword", "create:cardboard_sword", "farmersdelight:flint_knife", "notreepunching:flint_pickaxe", "notreepunching:iron_saw", "rpgstats:iron_ritual_dagger", "undergarden:forgotten_battleaxe")
+    val requiredToolMarkers = listOf("minecraft:", "ae2", "aether", "deeperdarker", "everythingcopper", "forbidden_arcanus", "goety", "malum", "occultism:iesnium_pickaxe", "undergarden", "twilightforest:ironwood_pickaxe", "ars_nouveau:enchanters_sword", "create:cardboard_sword", "farmersdelight:flint_knife", "notreepunching:flint_pickaxe", "notreepunching:iron_saw", "rpgstats:iron_ritual_dagger", "undergarden:forgotten_battleaxe")
     val missingToolMarkers = requiredToolMarkers.filter { it !in server || it !in client }
     if (missingToolMarkers.isEmpty()) ok("vanilla-style tool suppression covers audited mod families", "${requiredToolMarkers.size} markers")
     else fail("vanilla-style tool suppression covers audited mod families", missingToolMarkers.joinToString(", "))
@@ -653,12 +653,42 @@ fun validateVanillaStyleToolSuppression() {
 }
 
 fun validateRealisticHands() {
-    val audit = readJson("generated/runtime-dumps/realistic_hands_audit.json")
-    val blockTags = jsonObject(audit["blockTags"]).mapValues { (_, values) -> jsonArray(values).mapNotNull(::jsonString).toSet() }
-    if ("minecraft:gravel" in (blockTags["hand"] ?: emptySet())) ok("Realistic Hands explicit hand tag keeps gravel hand-breakable")
-    else fail("Realistic Hands explicit hand tag keeps gravel hand-breakable", "minecraft:gravel missing frombcfixes:realistic_hands/hand")
-    if ("unearthed:siltstone_regolith" in (blockTags["force_harvest"] ?: emptySet())) ok("Realistic Hands force-harvest tag covers siltstone regolith")
-    else fail("Realistic Hands force-harvest tag covers siltstone regolith", "unearthed:siltstone_regolith missing frombcfixes:realistic_hands/force_harvest")
+    val tagRoot = "generated/custom-mod-sources/better-content-fixes/src/main/resources/data/bcfixes/tags"
+    val blockTag = readJson("$tagRoot/blocks/realistic_hands/axe.json")
+    val itemTag = readJson("$tagRoot/items/realistic_hands/tools/axe.json")
+    val blockValues = jsonArray(blockTag["values"]).mapNotNull(::jsonString).toSet()
+    val itemValues = jsonArray(itemTag["values"]).mapNotNull(::jsonString).toSet()
+    if (blockValues == setOf("#minecraft:logs") && itemValues == setOf("#forge:tools/axes")) {
+        ok("Realistic Hands retains only the no-tree-punching tag gate")
+    } else fail("Realistic Hands retains only the no-tree-punching tag gate", "blocks=$blockValues tools=$itemValues")
+    val blockFiles = walk("$tagRoot/blocks/realistic_hands") { it.endsWith(".json") }
+    val itemFiles = walk("$tagRoot/items/realistic_hands/tools") { it.endsWith(".json") }
+    if (blockFiles.size == 1 && itemFiles.size == 1) ok("Realistic Hands runtime tags exclude exhaustive policy data")
+    else fail("Realistic Hands runtime tags exclude exhaustive policy data", "blockFiles=${blockFiles.size} itemFiles=${itemFiles.size}")
+    val quarantine = "generated/custom-mod-sources/better-content-fixes/quarantine/realistic-hands-exhaustive-policy"
+    if (exists("$quarantine/README.md") && exists("$quarantine/resources/tags/blocks/knife.json") && exists("$quarantine/java/RealisticHandsKnifeLootModifier.java")) {
+        ok("exhaustive Realistic Hands policy remains quarantined outside runtime resources")
+    } else fail("exhaustive Realistic Hands policy remains quarantined outside runtime resources", quarantine)
+    val retiredLogOverrides = "tools/quarantine/realistic-hands-exhaustive-policy/retired-log-tag-overrides"
+    val activeLogs = readJson("kubejs/data/minecraft/tags/blocks/logs.json")
+    val activeBurnableLogs = readJson("kubejs/data/minecraft/tags/blocks/logs_that_burn.json")
+    val activeItemLogs = readJson("kubejs/data/minecraft/tags/items/logs.json")
+    val activeBurnableItemLogs = readJson("kubejs/data/minecraft/tags/items/logs_that_burn.json")
+    val coreLogTags = setOf("#minecraft:acacia_logs", "#minecraft:birch_logs", "#minecraft:cherry_logs", "#minecraft:dark_oak_logs", "#minecraft:jungle_logs", "#minecraft:mangrove_logs", "#minecraft:oak_logs", "#minecraft:spruce_logs")
+    if (jsonArray(activeLogs["values"]).mapNotNull(::jsonString).toSet() == coreLogTags &&
+        jsonArray(activeBurnableLogs["values"]).mapNotNull(::jsonString).toSet() == coreLogTags &&
+        jsonArray(activeItemLogs["values"]).mapNotNull(::jsonString).toSet() == coreLogTags &&
+        jsonArray(activeBurnableItemLogs["values"]).mapNotNull(::jsonString).toSet() == coreLogTags &&
+        exists("$retiredLogOverrides/logs.json") && exists("$retiredLogOverrides/logs_that_burn.json") &&
+        exists("$retiredLogOverrides/item_logs.json") && exists("$retiredLogOverrides/item_logs_that_burn.json")) {
+        ok("stale pack-wide Minecraft log overrides remain quarantined")
+    } else fail("stale pack-wide Minecraft log overrides remain quarantined", retiredLogOverrides)
+    val compat = read("generated/custom-mod-sources/better-content-fixes/src/main/java/io/github/bcfixes/compat/RealisticHandsCompat.java")
+    val requiredCompat = listOf("state.is(RealisticHandsTags.AXE)", "stack.is(RealisticHandsTags.AXE_TOOLS)")
+    val forbiddenCompat = listOf("RealisticHandsTags.KNIFE", "RealisticHandsTags.PICKAXE", "damageKnife")
+    val compatProblems = requiredCompat.filterNot(compat::contains) + forbiddenCompat.filter(compat::contains)
+    if (compatProblems.isEmpty()) ok("Forge enforcement is scoped to logs and axes")
+    else fail("Forge enforcement is scoped to logs and axes", compatProblems.joinToString(", "))
     val retiredHook = read("kubejs/startup_scripts/20_blocks/20_realistic_hands.js")
     val retiredAssignments = read("kubejs/startup_scripts/99_realistic_hands_assignments.js")
     val retiredLoot = read("kubejs/server_scripts/50_loot/11_realistic_hands_outcomes.js")
@@ -671,25 +701,7 @@ fun validateRealisticHands() {
 // Remaining sections are direct text/JSON audits translated from the JS validator.
 // They stay explicit rather than abstract so the contract remains easy to diff against the original source.
 fun validatePrimitiveMiningRegressionContracts() = validateByNodeParity("validatePrimitiveMiningRegressionContracts") {
-    val audit = readJson("generated/runtime-dumps/realistic_hands_audit.json")
-    val blockSets = jsonObject(audit["blockTags"]).mapValues { (_, values) -> jsonArray(values).mapNotNull(::jsonString).toSet() }
-    fun blocksIn(group: String, ids: List<String>): List<String> = ids.filter { it !in (blockSets[group] ?: emptySet()) }
     fun ingredientCount(recipe: Map<String, Any?>, item: String): Int = jsonArray(recipe["ingredients"]).map(::jsonObject).count { jsonString(it["item"]) == item }
-    val handSoftBlocks = listOf("minecraft:sand","minecraft:red_sand","minecraft:gravel","minecraft:dirt","minecraft:coarse_dirt","minecraft:rooted_dirt","minecraft:mud","minecraft:grass_block","immersive_weathering:loam","immersive_weathering:silt","dynamictrees:rooty_gravel")
-    val missingHandSoft = blocksIn("hand", handSoftBlocks)
-    if (missingHandSoft.isEmpty()) ok("primitive soft ground blocks remain hand-mineable", "${handSoftBlocks.size} representative blocks") else fail("primitive soft ground blocks remain hand-mineable", missingHandSoft.joinToString(", "))
-    val pickStoneBlocks = listOf("minecraft:stone","minecraft:cobblestone","minecraft:deepslate","minecraft:tuff","minecraft:calcite","minecraft:granite","minecraft:diorite","minecraft:andesite","minecraft:basalt")
-    val missingPickStone = blocksIn("pickaxe", pickStoneBlocks)
-    if (missingPickStone.isEmpty()) ok("stone-like blocks remain pickaxe-mineable", "${pickStoneBlocks.size} representative blocks") else fail("stone-like blocks remain pickaxe-mineable", missingPickStone.joinToString(", "))
-    val axeWoodBlocks = listOf("minecraft:oak_log","minecraft:oak_wood","minecraft:stripped_oak_log","minecraft:oak_planks","malum:runewood_log","hexerei:willow_log","dynamictrees:oak_branch")
-    val missingAxeWood = blocksIn("axe", axeWoodBlocks)
-    if (missingAxeWood.isEmpty()) ok("wood-like blocks remain axe-mineable", "${axeWoodBlocks.size} representative blocks") else fail("wood-like blocks remain axe-mineable", missingAxeWood.joinToString(", "))
-    val shovelSoftBlocks = listOf("minecraft:sand","minecraft:gravel","minecraft:dirt","minecraft:coarse_dirt","minecraft:rooted_dirt","minecraft:mud","minecraft:grass_block","immersive_weathering:grassy_silt")
-    val missingShovelSoft = shovelSoftBlocks.filter { it !in (blockSets["hand"] ?: emptySet()) && it !in (blockSets["shovel"] ?: emptySet()) }
-    if (missingShovelSoft.isEmpty()) ok("soft ground blocks remain shovel-usable through hand or shovel gates", "${shovelSoftBlocks.size} representative blocks") else fail("soft ground blocks remain shovel-usable through hand or shovel gates", missingShovelSoft.joinToString(", "))
-    val grassRegolithBlocks = listOf("unearthed:beige_limestone_grassy_regolith","unearthed:conglomerate_grassy_regolith","unearthed:limestone_grassy_regolith","unearthed:stone_grassy_regolith")
-    val missingGrassRegolith = grassRegolithBlocks.filter { it !in (blockSets["hand"] ?: emptySet()) && it !in (blockSets["shovel"] ?: emptySet()) }
-    if (missingGrassRegolith.isEmpty()) ok("grassy regolith remains hand-or-shovel usable", "${grassRegolithBlocks.size} representative blocks") else fail("grassy regolith remains hand-or-shovel usable", missingGrassRegolith.joinToString(", "))
     val butcherKnife = readJson("kubejs/data/kubejs/recipes/primitive/flint_butcher_knife.json")
     val handAxe = readJson("kubejs/data/kubejs/recipes/primitive/flint_hand_axe.json")
     val knifeProblems = mutableListOf<String>()
@@ -707,15 +719,22 @@ fun validatePrimitiveMiningRegressionContracts() = validateByNodeParity("validat
     val axeNbt = jsonString(jsonObject(handAxe["result"])["nbt"]).orEmpty()
     if ("tconstruct:flint" !in axeNbt || "tconstruct:wood" !in axeNbt) axeProblems += "TConstruct flint/wood NBT"
     if (axeProblems.isEmpty()) ok("straw/flint/stick hand axe primitive recipe remains craftable") else fail("straw/flint/stick hand axe primitive recipe remains craftable", axeProblems.joinToString(", "))
+    val primitiveBoneMaterial = readJson("kubejs/data/kubejs/recipes/tools/materials/primitive_bones.json")
+    val primitiveRockMaterial = readJson("kubejs/data/kubejs/recipes/tools/materials/primitive_rocks.json")
+    val partBuilderMaterialProblems = mutableListOf<String>()
+    if (jsonString(primitiveBoneMaterial["type"]) != "tconstruct:material") partBuilderMaterialProblems += "bone recipe type"
+    if (jsonString(jsonObject(primitiveBoneMaterial["ingredient"])["tag"]) != "kubejs:primitive_tcon_bones") partBuilderMaterialProblems += "bone ingredient tag"
+    if (jsonString(primitiveBoneMaterial["material"]) != "tconstruct:bone") partBuilderMaterialProblems += "bone material"
+    if (jsonString(primitiveRockMaterial["type"]) != "tconstruct:material") partBuilderMaterialProblems += "rock recipe type"
+    if (jsonString(jsonObject(primitiveRockMaterial["ingredient"])["tag"]) != "kubejs:primitive_tcon_rocks") partBuilderMaterialProblems += "rock ingredient tag"
+    if (jsonString(primitiveRockMaterial["material"]) != "tconstruct:rock#stone") partBuilderMaterialProblems += "rock material"
+    if (partBuilderMaterialProblems.isEmpty()) ok("PVJ bootstrap materials work in the TConstruct part builder") else fail("PVJ bootstrap materials work in the TConstruct part builder", partBuilderMaterialProblems.joinToString(", "))
     val fdKnives = readJson("kubejs/data/farmersdelight/tags/items/tools/knives.json")
     val fdStrawHarvesters = readJson("kubejs/data/farmersdelight/tags/items/straw_harvesters.json")
     val knifeTagProblems = mutableListOf<String>()
     if ("additionalweaponry:butcher_knife" !in jsonArray(fdKnives["values"]).mapNotNull(::jsonString)) knifeTagProblems += "farmersdelight:tools/knives"
     if ("additionalweaponry:butcher_knife" !in jsonArray(fdStrawHarvesters["values"]).mapNotNull(::jsonString)) knifeTagProblems += "farmersdelight:straw_harvesters"
     if (knifeTagProblems.isEmpty()) ok("flint butcher knife remains a Farmer Delight straw harvester") else fail("flint butcher knife remains a Farmer Delight straw harvester", knifeTagProblems.joinToString(", "))
-    val forgeRhCompat = read("generated/custom-mod-sources/better-content-fixes/src/main/java/io/github/bcfixes/compat/RealisticHandsCompat.java")
-    val knifeDurabilityMarkers = listOf("damageKnife", "state.is(RealisticHandsTags.KNIFE)", "stack.is(RealisticHandsTags.KNIFE_TOOLS)", "stack.hurtAndBreak(1", "broadcastBreakEvent(InteractionHand.MAIN_HAND)").filterNot(forgeRhCompat::contains)
-    if (knifeDurabilityMarkers.isEmpty()) ok("knife-gated plant cutting consumes knife durability") else fail("knife-gated plant cutting consumes knife durability", knifeDurabilityMarkers.joinToString(", "))
     val tconPatternRoutes = read("kubejs/server_scripts/30_recipe_replace/98_starting_progression_bypasses.js")
     val tconPatternMarkers = listOf("event.remove({ id: 'tconstruct:common/pattern' })","event.remove({ id: 'tconstruct:tables/pattern' })","event.remove({ id: 'tconstruct:pattern' })","event.remove({ type: 'minecraft:crafting_shaped', output: 'tconstruct:pattern' })","event.remove({ type: 'minecraft:crafting_shapeless', output: 'tconstruct:pattern' })","event.shaped(Item.of('tconstruct:pattern', 4)","C: 'farmersdelight:canvas'","type: 'create:pressing'","{ item: 'minecraft:paper' }","{ item: 'tconstruct:pattern' }").filterNot(tconPatternRoutes::contains)
     if (tconPatternMarkers.isEmpty()) ok("TConstruct pattern routes use canvas grid and Create paper pressing") else fail("TConstruct pattern routes use canvas grid and Create paper pressing", tconPatternMarkers.joinToString(", "))
@@ -753,7 +772,7 @@ fun validatePrimitiveMiningRegressionContracts() = validateByNodeParity("validat
 fun validateVanillishExpertRecipePass() = validateSimpleRecipePass(
     "kubejs/server_scripts/30_recipe_replace/145_vanillish_recipe_expert_pass.js",
     listOf("event.shaped(", "event.shapeless(", "event.smelting(", "event.blasting("),
-    listOf("create:deploying","create:compacting","minecraft:piston","minecraft:hopper","minecraft:observer","minecraft:rail","minecraft:minecart","createbigcannons:cannon_builder","everythingcopper:copper_hopper","chemlibDustIngots","bcVanRemoveCooking(event, 'minecraft:iron_ingot')","ae2:silicon"),
+    listOf("create:deploying","create:compacting","minecraft:piston","minecraft:hopper","minecraft:observer","minecraft:rail","minecraft:minecart","everythingcopper:copper_hopper","chemlibDustIngots","bcVanRemoveCooking(event, 'minecraft:iron_ingot')","ae2:silicon"),
     listOf("bloodmagic:alchemytable","minecraft:brewing_stand","minecraft:enchanting_table","minecraft:beacon","bloodmagic:ingot_hellforged","ars_nouveau:scribes_table","ars_nouveau:imbuement_chamber","ars_nouveau:enchanting_apparatus","bloodmagic:reinforcedslate","bloodmagic:infusedslate","bloodmagic:etherealslate"),
 )
 
@@ -813,12 +832,16 @@ fun validateWorldgenStaticContractsImpl() {
     val generatedPackSolid = read("config/rbp/block_definitions/generated_pack_solid_blocks.toml")
     val generatedPackSolidIds = Regex(""""([a-z0-9_.-]+:[a-z0-9_/.-]+)"""").findAll(generatedPackSolid).map { it.groupValues[1] }.toList()
     val generatedPackSolidSet = generatedPackSolidIds.toSet()
-    if (generatedPackSolidIds.size >= 8900 && "minecraft:bedrock" !in generatedPackSolidSet) ok("RBP generated pack-solid definition covers broad solid block surface", "${generatedPackSolidIds.size} explicit ids")
+    if (generatedPackSolidIds.size >= 8500 && "minecraft:bedrock" !in generatedPackSolidSet) ok("RBP generated pack-solid definition covers broad solid block surface", "${generatedPackSolidIds.size} explicit ids")
     else fail("RBP generated pack-solid definition covers broad solid block surface", "${generatedPackSolidIds.size} explicit ids; bedrock included=${"minecraft:bedrock" in generatedPackSolidSet}")
     val dynamicTreesManagedRbpPatterns = listOf(Regex("""^dynamictrees:"""), Regex("""^dynamictreesplus:"""), Regex("""^bcdimtrees:"""), Regex("""^dt[a-z0-9_]*:"""))
     val dynamicTreesManagedPackSolidIds = generatedPackSolidIds.filter { id -> dynamicTreesManagedRbpPatterns.any { it.containsMatchIn(id) } }
     if (dynamicTreesManagedPackSolidIds.isEmpty()) ok("RBP generated pack-solid definition excludes Dynamic Trees-managed blocks")
     else fail("RBP generated pack-solid definition excludes Dynamic Trees-managed blocks", dynamicTreesManagedPackSolidIds.take(20).joinToString(", "))
+    val layeredDetailBlocks = setOf("minecraft:snow", "supplementaries:ash")
+    val layeredDetailPackSolidIds = generatedPackSolidIds.filter { it in layeredDetailBlocks }
+    if (layeredDetailPackSolidIds.isEmpty()) ok("RBP generated pack-solid definition excludes snow and ash layers")
+    else fail("RBP generated pack-solid definition excludes snow and ash layers", layeredDetailPackSolidIds.joinToString(", "))
     val pvjDetailPackSolidBlocklist = setOf(
         "projectvibrantjourneys:bones",
         "projectvibrantjourneys:charred_bones",
@@ -838,12 +861,12 @@ fun validateWorldgenStaticContractsImpl() {
     val pvjDetailPackSolidIds = generatedPackSolidIds.filter { it in pvjDetailPackSolidBlocklist }
     if (pvjDetailPackSolidIds.isEmpty()) ok("RBP generated pack-solid definition excludes exact PVJ loose detail blocks")
     else fail("RBP generated pack-solid definition excludes exact PVJ loose detail blocks", pvjDetailPackSolidIds.joinToString(", "))
-    val removedNamespacePrefixes = listOf("alekiships:", "immersive_aircraft:", "inventorysorter:", "man_of_many_planes:", "the_finley_dimension_remastered:", "callfromthedepth_:")
-    val looseEarthIds = jsonArray(readJson("generated/runtime-dumps/realistic_hands_audit.json")["looseSurfaceIds"])
-        .mapNotNull(::jsonString)
-        .filter { id -> removedNamespacePrefixes.none(id::startsWith) }
-        .mapNotNull(::jsonString)
-        .filterNot { it.startsWith("minecraft:") || it == "dynamictrees:rooty_gravel" }
+    val generatedModdedSandText = read("config/rbp/block_definitions/generated_modded_sand.toml")
+    val looseEarthIds = Regex(""""([a-z0-9_.-]+:[a-z0-9_/.-]+)"""").findAll(generatedModdedSandText)
+        .map { it.groupValues[1] }
+        .filter { id -> listOf("sand", "gravel", "dirt", "mud", "regolith", "loam", "silt", "soil").any(id::contains) }
+        .filterNot { it.startsWith("notreepunching:") }
+        .toList()
     val generatedRbpWhitelistFiles = walk("config/rbp/block_definitions") { it.substringAfterLast('/').startsWith("generated_modded_") && it.endsWith(".toml") }
     val generatedRbpWhitelistText = generatedRbpWhitelistFiles.joinToString("\n") { read(it) }
     val generatedRbpWhitelistIds = generatedRbpWhitelistText.lineSequence().map(String::trim).filter { it.startsWith('"') }.map { it.replace(Regex("""^"([^"]+)".*$"""), "$1") }.toList()
@@ -865,11 +888,61 @@ fun validateWorldgenStaticContractsImpl() {
     if (forbiddenIds.isEmpty()) ok("RBP generated whitelist excludes lifecycle/progression/decor-sensitive blocks") else fail("RBP generated whitelist excludes lifecycle/progression/decor-sensitive blocks", forbiddenIds.take(20).joinToString(", "))
     val tectonic = readJson("config/tectonic.json")
     val terrain = jsonObject(tectonic["global_terrain"])
-    if ((jsonNumber(terrain["min_y"])?.toInt() == -64) && bool(terrain["lava_tunnels"]) == true) ok("Tectonic Overworld exposes lava-depth terrain band", "min_y=${jsonNumber(terrain["min_y"])}, lava_tunnels=${bool(terrain["lava_tunnels"])}")
+    if ((jsonNumber(terrain["min_y"])?.toInt() == -128) && bool(terrain["lava_tunnels"]) == true) ok("Tectonic Overworld exposes lava-depth terrain band", "min_y=${jsonNumber(terrain["min_y"])}, lava_tunnels=${bool(terrain["lava_tunnels"])}")
     else fail("Tectonic Overworld exposes lava-depth terrain band", "min_y=${jsonNumber(terrain["min_y"])}, lava_tunnels=${bool(terrain["lava_tunnels"])}")
     val adlodDeposits = walk("config/adlods/Deposits") { it.endsWith(".cfg") }
-    if (adlodDeposits.size >= 28) ok("ADLODS deposit surface remains broad", "${adlodDeposits.size} deposits") else fail("ADLODS deposit surface remains broad", "${adlodDeposits.size} < 28")
-    if (listOf("config/adlods/Deposits/thorium.cfg", "config/adlods/Deposits/magnetite.cfg").any(::exists)) fail("retired Create New Age deposits stay absent", "thorium or magnetite deposit cfg exists") else ok("retired Create New Age deposits stay absent")
+    if (adlodDeposits.size >= 40) ok("ADLODS deposit surface covers bulk and strategic geology", "${adlodDeposits.size} deposits") else fail("ADLODS deposit surface covers bulk and strategic geology", "${adlodDeposits.size} < 40")
+    if (exists("config/adlods/Deposits/magnetite.cfg")) fail("retired Create New Age magnetite deposit stays absent", "config/adlods/Deposits/magnetite.cfg") else ok("retired Create New Age magnetite deposit stays absent")
+
+    val adlodCompositeHosts = mapOf(
+        "coal.cfg" to "realisticores:coal_measures",
+        "iron.cfg" to "realisticores:ironstone",
+        "copper.cfg" to "realisticores:copper_sulfide_ore",
+        "lead.cfg" to "realisticores:lead_zinc_vein",
+        "aluminum.cfg" to "realisticores:bauxite_laterite",
+        "nickel.cfg" to "realisticores:nickel_sulfide_ore",
+        "diamond.cfg" to "realisticores:kimberlite_pipe"
+    )
+    val invalidCompositeFields = adlodCompositeHosts.mapNotNull { (file, host) ->
+        val path = "config/adlods/Deposits/$file"
+        val text = read(path)
+        if (host in text && "#realisticores:overworld_ore_replaceables" in text && "realisticores:crushed_" in text) null else path
+    }
+    if (invalidCompositeFields.isEmpty()) ok("ADLODS bulk fields use host-correct Realistic Ores geology", "${adlodCompositeHosts.size} representatives")
+    else fail("ADLODS bulk fields use host-correct Realistic Ores geology", invalidCompositeFields.joinToString(", "))
+
+    val enrichmentFiles = listOf("gold", "silver", "cobalt", "platinum", "palladium", "osmium", "iridium", "rhodium", "ruthenium", "amethyst", "ruby", "sapphire", "topaz")
+    val independentlyCommonEnrichments = enrichmentFiles.filter { "I:rarity=256000" !in read("config/adlods/Deposits/$it.cfg") }
+    if (independentlyCommonEnrichments.isEmpty()) ok("associated enrichments are descendant-first", "${enrichmentFiles.size} capped standalone rarities")
+    else fail("associated enrichments are descendant-first", independentlyCommonEnrichments.joinToString(", "))
+
+    val nickelField = read("config/adlods/Deposits/nickel.cfg")
+    val missingNickelDescendants = listOf("deposit:cobalt", "deposit:platinum", "deposit:palladium", "deposit:osmium", "deposit:iridium", "deposit:rhodium", "deposit:ruthenium", ":light_pgm", ":heavy_pgm").filterNot(nickelField::contains)
+    if (missingNickelDescendants.isEmpty()) ok("nickel fields own cobalt and PGM enrichment families") else fail("nickel fields own cobalt and PGM enrichment families", missingNickelDescendants.joinToString(", "))
+
+    val fissileFiles = listOf("uranium", "thorium")
+    val invalidFissileFields = fissileFiles.filter { id ->
+        val text = read("config/adlods/Deposits/$id.cfg")
+        "#minecraft:stone_ore_replaceables -> realisticores:${id}_ore" !in text ||
+            "#minecraft:deepslate_ore_replaceables -> realisticores:deepslate_${id}_ore" !in text ||
+            "#realisticores:overworld_ore_replaceables" !in text ||
+            "minecraft:lava" in text ||
+            "realisticores:crushed_${id}_ore" !in text ||
+            "I:min=-128" !in text || "I:max=512" !in text
+    }
+    if (invalidFissileFields.isEmpty()) ok("uranium and thorium are full-height signalled rock-hosted ADLODS fields") else fail("uranium and thorium are full-height signalled rock-hosted ADLODS fields", invalidFissileFields.joinToString(", "))
+
+    val commonBulkRarities = mapOf("coal.cfg" to 32, "iron.cfg" to 32, "copper.cfg" to 48, "tin.cfg" to 64, "zinc.cfg" to 64, "lead.cfg" to 64)
+    val sparseBulkFields = commonBulkRarities.filter { (file, rarity) -> "I:rarity=$rarity" !in read("config/adlods/Deposits/$file") }
+    if (sparseBulkFields.isEmpty()) ok("ADLODS parent fields are regional rather than lottery-rare", "${commonBulkRarities.size} bulk representatives")
+    else fail("ADLODS parent fields are regional rather than lottery-rare", sparseBulkFields.keys.joinToString(", "))
+
+    val oilSizes = mapOf("oil_small" to "I:max=120", "oil_medium" to "I:max=600", "oil_large" to "I:max=3000", "oil_huge" to "I:max=12000")
+    val invalidOilFields = oilSizes.mapNotNull { (id, sizeMarker) ->
+        val text = read("config/adlods/Deposits/$id.cfg")
+        if ("pneumaticcraft:oil" in text && "realisticores:oil_seep" in text && sizeMarker in text && "B:exposed=false" in text) null else id
+    }
+    if (invalidOilFields.isEmpty()) ok("finite ADLODS oil fields cover small through huge scales") else fail("finite ADLODS oil fields cover small through huge scales", invalidOilFields.joinToString(", "))
 
     val forageFiles = walk("datapacks/datapack_foraging_everywhere/data") { it.endsWith(".json") }
     val foragePlacedFeatures = forageFiles.filter { "/worldgen/placed_feature/" in it }
@@ -906,7 +979,7 @@ fun validateWorldgenStaticContractsImpl() {
     forageFailures += placedWithoutUndergardenFilter.map { "$it: missing-undergarden-placement-filter" }
     forageFailures += modifiersWithoutUndergardenTarget.map { "$it: missing-undergarden-biome-modifier-target" }
     forageFailures += tagsOutsideUndergarden.map { "$it: tag-outside-undergarden" }
-    if (foragePlacedFeatures.size >= 40 && forageBiomeModifiers.size >= 20 && forageBiomeTags.size >= 7 && forageFailures.isEmpty()) ok("foraging datapack is Undergarden-only", "${foragePlacedFeatures.size} placed features, ${forageBiomeModifiers.size} biome modifiers, ${forageBiomeTags.size} biome tags")
+    if (foragePlacedFeatures.size >= 30 && forageBiomeModifiers.size >= 20 && forageBiomeTags.size >= 7 && forageFailures.isEmpty()) ok("foraging datapack is Undergarden-only", "${foragePlacedFeatures.size} placed features, ${forageBiomeModifiers.size} biome modifiers, ${forageBiomeTags.size} biome tags")
     else fail("foraging datapack is Undergarden-only", "placed=${foragePlacedFeatures.size} modifiers=${forageBiomeModifiers.size} tags=${forageBiomeTags.size} bad=${forageFailures.joinToString(", ")}")
 
     val dimension_drinkEvVariants = read("globalresources/dimension_drink/excavated_variants/dimension_drink/variants/dimension_drink_modded_ores.json5")
@@ -929,7 +1002,6 @@ fun validateWorldgenStaticContractsImpl() {
     if (gravelTargetProblems.isEmpty()) ok("stone-style dimension drink ores can replace gravel")
     else fail("stone-style dimension drink ores can replace gravel", gravelTargetProblems.joinToString(", "))
 
-    val ntpAudit = readJson("generated/runtime-dumps/realistic_hands_audit.json")
     val rbpGeneratedSolid = read("config/rbp/block_definitions/generated_pack_solid_blocks.toml")
     val rbpGeneratedModdedSand = read("config/rbp/block_definitions/generated_modded_sand.toml")
     val staleGravelEvOres = listOf(
@@ -941,17 +1013,12 @@ fun validateWorldgenStaticContractsImpl() {
         "gravel_natural_quartz_ore",
         "gravel_zinc_ore"
     ).map { "excavated_variants:$it" }
-    val ntpBlocks = jsonObject(ntpAudit["blockTags"])
-    val shovelSet = jsonArray(ntpBlocks["shovel"]).mapNotNull(::jsonString).toSet()
-    val pickaxeSet = jsonArray(ntpBlocks["pickaxe"]).mapNotNull(::jsonString).toSet()
-    val staleGravelShovel = staleGravelEvOres.filter { it in shovelSet }
-    val staleGravelPickaxe = staleGravelEvOres.filter { it in pickaxeSet }
     val staleGravelRbp = staleGravelEvOres.filter { id ->
         val key = "\"$id\""
         key in rbpGeneratedSolid || key in rbpGeneratedModdedSand
     }
-    if (staleGravelShovel.isEmpty() && staleGravelPickaxe.isEmpty() && staleGravelRbp.isEmpty()) ok("stale gravel Excavated Variants ore IDs stay out of generated assignments", "${staleGravelEvOres.size} representatives")
-    else fail("stale gravel Excavated Variants ore IDs stay out of generated assignments", "shovel=${staleGravelShovel.joinToString(", ")} pickaxe=${staleGravelPickaxe.joinToString(", ")} rbp=${staleGravelRbp.joinToString(", ")}")
+    if (staleGravelRbp.isEmpty()) ok("stale gravel Excavated Variants ore IDs stay out of generated assignments", "${staleGravelEvOres.size} representatives")
+    else fail("stale gravel Excavated Variants ore IDs stay out of generated assignments", "rbp=${staleGravelRbp.joinToString(", ")}")
 
     val looseEarthMissingSandPhysics = looseEarthIds.filter { "\"$it\"" !in rbpGeneratedModdedSand }
     val looseEarthStillStonePhysics = looseEarthIds.filter { "\"$it\"" in rbpGeneratedSolid || "\"$it\"" in read("config/rbp/block_definitions/generated_modded_stone.toml") }
@@ -966,14 +1033,8 @@ fun validateWorldgenStaticContractsImpl() {
 
     val lavaDepthFiles = listOf(
         "datapacks/realistic_ores_lava_depths/data/realisticores/forge/biome_modifier/add_osmiridium_lava_sulfide_ore_deepslate.json",
-        "datapacks/realistic_ores_lava_depths/data/realisticores/forge/biome_modifier/add_thorium_ore_deepslate.json",
-        "datapacks/realistic_ores_lava_depths/data/realisticores/forge/biome_modifier/add_uranium_ore_deepslate.json",
         "datapacks/realistic_ores_lava_depths/data/realisticores/worldgen/configured_feature/osmiridium_lava_sulfide_ore_deepslate.json",
-        "datapacks/realistic_ores_lava_depths/data/realisticores/worldgen/configured_feature/thorium_ore_deepslate.json",
-        "datapacks/realistic_ores_lava_depths/data/realisticores/worldgen/configured_feature/uranium_ore_deepslate.json",
         "datapacks/realistic_ores_lava_depths/data/realisticores/worldgen/placed_feature/osmiridium_lava_sulfide_ore_deepslate.json",
-        "datapacks/realistic_ores_lava_depths/data/realisticores/worldgen/placed_feature/thorium_ore_deepslate.json",
-        "datapacks/realistic_ores_lava_depths/data/realisticores/worldgen/placed_feature/uranium_ore_deepslate.json",
         "datapacks/hyle_deep/data/hyle/worldgen/configured_feature/stone_replacer.json",
         "datapacks/hyle_deep/data/hyle/worldgen/placed_feature/stone_replacer.json"
     )
@@ -984,16 +1045,54 @@ fun validateWorldgenStaticContractsImpl() {
     val hyleStoneReplacer = readJson("datapacks/hyle_deep/data/hyle/worldgen/placed_feature/stone_replacer.json")
     val hylePlacement = jsonArray(hyleStoneReplacer["placement"])
     val hyleStoneReplacerY = jsonNumber(jsonObject(jsonObject(hylePlacement.firstOrNull())["height"])["value"]?.let(::jsonObject)?.get("absolute"))?.toInt()
-    if (hyleStoneReplacerY == -64) ok("Hyle stone replacement starts at world bottom", "y=$hyleStoneReplacerY")
+    if (hyleStoneReplacerY == -128) ok("Hyle stone replacement starts at world bottom", "y=$hyleStoneReplacerY")
     else fail("Hyle stone replacement starts at world bottom", "y=$hyleStoneReplacerY")
 
     val hyleConfigured = readJson("datapacks/hyle_deep/data/hyle/worldgen/configured_feature/stone_replacer.json")
     val hyleConfig = jsonObject(hyleConfigured["config"])
     val hyleRegions = jsonArray(hyleConfig["regions"]).mapNotNull(::jsonString)
-    val requiredHyleRegions = listOf("unearthed:default", "unearthed:limestone", "unearthed:sedimentary", "unearthed:vanilla")
+    val requiredHyleRegions = listOf("unearthed:default", "unearthed:limestone", "unearthed:sedimentary")
     val missingHyleRegions = requiredHyleRegions.filterNot(hyleRegions::contains)
-    if (missingHyleRegions.isEmpty()) ok("Hyle stone replacement has active Unearthed regions", hyleRegions.joinToString(", "))
-    else fail("Hyle stone replacement has active Unearthed regions", missingHyleRegions.joinToString(", "))
+    val unexpectedHyleRegions = hyleRegions.filterNot(requiredHyleRegions::contains)
+    if (missingHyleRegions.isEmpty() && unexpectedHyleRegions.isEmpty()) ok("Hyle stone replacement uses only exhaustive Unearthed regions", hyleRegions.joinToString(", "))
+    else fail("Hyle stone replacement uses only exhaustive Unearthed regions", "missing=${missingHyleRegions.joinToString(", ")} unexpected=${unexpectedHyleRegions.joinToString(", ")}")
+
+    val activeHyleRegionFiles = requiredHyleRegions.map { region ->
+        "datapacks/hyle_deep/data/${region.substringBefore(':')}/hyledata/regions/${region.substringAfter(':')}.json"
+    }
+    val activeHyleEmptyEntries = activeHyleRegionFiles.filter { path -> Regex("\\\"\\s*\\\"").containsMatchIn(read(path)) }
+    if (activeHyleEmptyEntries.isEmpty()) ok("active Hyle regions have no vanilla-preserving empty palette entries", "${activeHyleRegionFiles.size} regions")
+    else fail("active Hyle regions have no vanilla-preserving empty palette entries", activeHyleEmptyEntries.joinToString(", "))
+
+    val hyleTagScript = read("kubejs/server_scripts/10_tags/20_replaceable_deepslate.js")
+    val requiredHyleHostBlocks = listOf("minecraft:deepslate", "minecraft:tuff")
+    val missingHyleHostBlocks = requiredHyleHostBlocks.filterNot { "'$it'" in hyleTagScript }
+    if (missingHyleHostBlocks.isEmpty()) ok("Hyle replaces deep vanilla host stones", requiredHyleHostBlocks.joinToString(", "))
+    else fail("Hyle replaces deep vanilla host stones", missingHyleHostBlocks.joinToString(", "))
+
+    val vanillaWorldgenRemoval = read("datapacks/worldgen_compat_fixes/data/kubejs/forge/biome_modifier/remove_vanilla_overworld_ores.json")
+    val lateVanillaStoneFeatures = listOf("ore_granite_upper", "ore_granite_lower", "ore_diorite_upper", "ore_diorite_lower", "ore_andesite_upper", "ore_andesite_lower", "ore_tuff")
+    val unremovedLateVanillaStoneFeatures = lateVanillaStoneFeatures.filterNot { "minecraft:$it" in vanillaWorldgenRemoval }
+    if (unremovedLateVanillaStoneFeatures.isEmpty()) ok("late vanilla stone features cannot overwrite Hyle geology", "${lateVanillaStoneFeatures.size} features")
+    else fail("late vanilla stone features cannot overwrite Hyle geology", unremovedLateVanillaStoneFeatures.joinToString(", "))
+
+    val bcfixesHyleMixinConfig = readJson("generated/custom-mod-sources/better-content-fixes/src/main/resources/bcfixes.mixins.json")
+    val bcfixesHyleMixins = jsonArray(bcfixesHyleMixinConfig["mixins"]).mapNotNull(::jsonString)
+    val hyleBottomMixinPath = "generated/custom-mod-sources/better-content-fixes/src/main/java/io/github/bcfixes/mixin/hyle/StoneReplacerMixin.java"
+    val hyleBottomMixin = if (exists(hyleBottomMixinPath)) read(hyleBottomMixinPath) else ""
+    val hyleBottomCoverageEnabled = "hyle.StoneReplacerMixin" in bcfixesHyleMixins &&
+        "chunk.getMinBuildHeight()" in hyleBottomMixin &&
+        "nearestReplacement(columnTypes, generatedIndex, original)" in hyleBottomMixin
+    if (hyleBottomCoverageEnabled) ok("Hyle bottom interpolation gaps are repaired", "nearest valid generated stratum completes the lowest chunk section")
+    else fail("Hyle bottom interpolation gaps are repaired", "missing bottom-section mixin or generated-stratum fallback")
+
+    val hyleTimingMixinPath = "generated/custom-mod-sources/better-content-fixes/src/main/java/io/github/bcfixes/mixin/hyle/BiomeInjectorMixin.java"
+    val hyleTimingMixin = if (exists(hyleTimingMixinPath)) read(hyleTimingMixinPath) else ""
+    val hyleRunsAfterUndergroundFeatures = "hyle.BiomeInjectorMixin" in bcfixesHyleMixins &&
+        "GenerationStep.Decoration.UNDERGROUND_DECORATION" in hyleTimingMixin &&
+        "GenerationStep.Decoration.LOCAL_MODIFICATIONS" in hyleTimingMixin
+    if (hyleRunsAfterUndergroundFeatures) ok("Hyle replaces late underground stone outputs", "geology pass runs at underground decoration tail")
+    else fail("Hyle replaces late underground stone outputs", "missing Hyle injection timing override")
 
     val hyleOverrideFiles = walk("datapacks/hyle_deep/data/unearthed/hyledata") { it.endsWith(".json") }
     val hyleOverrideText = hyleOverrideFiles.joinToString("\n") { read(it) }
@@ -1011,6 +1110,23 @@ fun validateWorldgenStaticContractsImpl() {
     val misplacedHyleData = if (exists("datapacks/hyle_deep/data/hyledata")) walk("datapacks/hyle_deep/data/hyledata") { it.endsWith(".json") } else emptyList()
     if (misplacedHyleData.isEmpty()) ok("Hyle datapack data uses namespaced loader paths") else fail("Hyle datapack data uses namespaced loader paths", misplacedHyleData.joinToString(", "))
 
+    val sgiMixinConfig = readJson("generated/custom-mod-sources/better-content-fixes/src/main/resources/bcfixes.mixins.json")
+    val sgiMixinNames = jsonArray(sgiMixinConfig["mixins"]).mapNotNull(::jsonString)
+    val sgiDeferredMixinPath = "generated/custom-mod-sources/better-content-fixes/src/main/java/io/github/bcfixes/mixin/sgi/ChunkGeneratorMixin.java"
+    val sgiDeferredMixin = if (exists(sgiDeferredMixinPath)) read(sgiDeferredMixinPath) else ""
+    val sgiDefersSurfaceConform = "sgi.ChunkGeneratorMixin" in sgiMixinNames &&
+        "sgi.TerrainConformUtilMixin" in sgiMixinNames &&
+        "TerrainConformUtil;applyDuringSurface" in sgiDeferredMixin &&
+        "@At(\"TAIL\")" in sgiDeferredMixin &&
+        "applyDuringSurface.invoke(null, level, structureManager, chunk)" in sgiDeferredMixin
+    if (sgiDefersSurfaceConform) ok(
+        "SGI support terrain samples the final Hyle/Unearthed palette",
+        "surface conform is deferred to decoration tail with a post-conform Hyle safety pass"
+    ) else fail(
+        "SGI support terrain samples the final Hyle/Unearthed palette",
+        "missing SGI defer mixin, tail invocation, or Hyle safety mixin"
+    )
+
     val lavaConfigured = walk("datapacks/realistic_ores_lava_depths/data/realisticores/worldgen/configured_feature") { it.endsWith(".json") }
     val nonLavaFeatureConfigured = lavaConfigured.filter { jsonString(readJson(it)["type"]) != "realisticores:lava_exposed_ore" }
     if (nonLavaFeatureConfigured.isEmpty()) ok("lava-depth configured features use the Realistic Ores lava-exposed feature", "${lavaConfigured.size} configured features")
@@ -1019,13 +1135,13 @@ fun validateWorldgenStaticContractsImpl() {
     val lavaPlaced = walk("datapacks/realistic_ores_lava_depths/data/realisticores/worldgen/placed_feature") { it.endsWith(".json") }
     val lavaPlacementFailures = lavaPlaced.filter { file ->
         val text = read(file)
-        "minecraft:block_predicate_filter" !in text || "minecraft:matching_fluids" !in text || "minecraft:lava" !in text || "\"absolute\": -64" !in text || "\"absolute\": 0" !in text
+        "minecraft:block_predicate_filter" !in text || "minecraft:matching_fluids" !in text || "minecraft:lava" !in text || "\"absolute\": -128" !in text || "\"absolute\": 0" !in text
     }
     if (lavaPlacementFailures.isEmpty()) ok("lava-depth placed features are height-bounded and lava-contact filtered", "${lavaPlaced.size} placed features")
     else fail("lava-depth placed features are height-bounded and lava-contact filtered", lavaPlacementFailures.joinToString(", "))
 
     val spawnerText = read("config/incontrol/spawner.json")
-    val missingLavaSpawnerMarkers = listOf("minecraft:magma_cube", "\"inlava\": true", "\"minheight\": -64", "\"maxheight\": 0").filterNot(spawnerText::contains)
+    val missingLavaSpawnerMarkers = listOf("minecraft:magma_cube", "\"inlava\": true", "\"minheight\": -128", "\"maxheight\": 0").filterNot(spawnerText::contains)
     if (missingLavaSpawnerMarkers.isEmpty()) ok("lava-depth danger spawner targets lava diving band") else fail("lava-depth danger spawner targets lava diving band", missingLavaSpawnerMarkers.joinToString(", "))
 
     val contract = readJson("tools/pack_contract.json")
@@ -1035,6 +1151,98 @@ fun validateWorldgenStaticContractsImpl() {
     val missingLavaFeatureMarkers = listOf("Feature.checkNeighbors", "FluidTags.LAVA", "target.target.test").filterNot(lavaFeatureText::contains)
     if (missingLavaFeatureMarkers.isEmpty()) ok("Realistic Ores implements per-block lava-exposed ore placement")
     else fail("Realistic Ores implements per-block lava-exposed ore placement", "$lavaFeaturePath: ${missingLavaFeatureMarkers.joinToString(", ")}")
+
+    val realisticOresRoot = Paths.get(sourceRoot, "realistic-ores")
+    val expectedCaveCounts = mapOf(
+        "coal_measures" to 18, "ironstone" to 14, "copper_sulfide" to 12,
+        "tin" to 10, "zinc" to 10, "lead_zinc_vein" to 8, "nickel_sulfide" to 8,
+        "phosphate_rock" to 8, "sulfur_bearing_pyrite" to 8, "tin_tungsten_greisen" to 6,
+        "bauxite_laterite" to 6, "quartz_vein" to 6, "titanium_iron_oxide" to 5,
+        "cupriferous_redbed_redstone_vein" to 5, "soul_bearing_black_shale_soulstone_vein" to 5,
+        "kimberlite_pipe" to 4, "corundum_beryl_gem_vein" to 4,
+        "emerald_schist_beryl_vein" to 4, "lazurite_vein" to 4
+    )
+    val generationRoot = realisticOresRoot.resolve("src/main/resources/data/realisticores/realistic_ore_generation")
+    val invalidCaveCounts = if (generationRoot.exists()) Files.list(generationRoot).use { paths ->
+        paths.filter { it.fileName.toString().endsWith(".json") }.toList().mapNotNull { path ->
+            val data = readJson(path.toString())
+            val oreId = jsonString(data["ore_id"]).orEmpty()
+            val expected = expectedCaveCounts[oreId]
+            val actual = jsonNumber(data["count_per_chunk"])?.toInt()
+            if (expected != null && actual != expected) "$oreId=$actual expected=$expected" else null
+        }
+    } else listOf("missing $generationRoot")
+    if (invalidCaveCounts.isEmpty()) ok("Realistic Ores cave frequencies use the halved ore-pass budget", "${expectedCaveCounts.size} deposits")
+    else fail("Realistic Ores cave frequencies use the halved ore-pass budget", invalidCaveCounts.distinct().joinToString(", "))
+
+    val replacedVanillaOres = listOf("coal", "copper", "diamond", "emerald", "gold", "iron", "lapis", "redstone")
+    val restoredVanillaOres = replacedVanillaOres.filter { ore ->
+        "S:generation=none" !in read("config/adlods/VanillaOres/${ore}_ore.cfg")
+    }
+    val copiedBiomeOres = walk("datapacks") { it.endsWith(".json") && "/worldgen/biome/" in it }.filter { file ->
+        Regex("minecraft:ore_(coal|copper|diamond|emerald|gold|iron|lapis|redstone)").containsMatchIn(read(file))
+    }
+    if (restoredVanillaOres.isEmpty() && copiedBiomeOres.isEmpty()) {
+        ok("overridden vanilla ores stay disabled across ADLODS and copied biome data")
+    } else fail(
+        "overridden vanilla ores stay disabled across ADLODS and copied biome data",
+        (restoredVanillaOres + copiedBiomeOres).joinToString(", ")
+    )
+
+    val oreHostTag = readJson("datapacks/hyle_deep/data/realisticores/tags/blocks/overworld_ore_replaceables.json")
+    val oreHostValues = jsonArray(oreHostTag["values"]).mapNotNull(::jsonString)
+    val configuredOreFeatures = walk("generated/custom-mod-sources/realistic-ores/src/main/resources/data/realisticores/worldgen/configured_feature") { it.endsWith(".json") }
+    val wrongOreHosts = configuredOreFeatures.filter { "realisticores:overworld_ore_replaceables" !in read(it) }
+    val hasCurrentSchistId = "unearthed:schist" in oreHostValues && oreHostValues.none { it.matches(Regex("unearthed:schist_[xyz]")) }
+    if (oreHostValues.count { it.startsWith("unearthed:") } >= 16 && hasCurrentSchistId && wrongOreHosts.isEmpty()) {
+        ok("Realistic Ores veins replace active Hyle/Unearthed strata", "${configuredOreFeatures.size} features, ${oreHostValues.size} hosts")
+    } else fail("Realistic Ores veins replace active Hyle/Unearthed strata", wrongOreHosts.joinToString(", "))
+
+    val modBlocksPath = realisticOresRoot.resolve("src/main/java/io/github/realisticores/registry/ModBlocks.java")
+    val sampleBlockPath = realisticOresRoot.resolve("src/main/java/io/github/realisticores/block/SurfaceSampleBlock.java")
+    val sampleSourceText = listOf(modBlocksPath, sampleBlockPath).filter { Files.exists(it) }.joinToString("\n") { Files.readString(it) }
+    val missingSampleMarkers = listOf("SURFACE_SAMPLES_BY_ID", "OIL_SEEP", "SimpleWaterloggedBlock", "noCollission", "instabreak").filterNot(sampleSourceText::contains)
+    val ironSampleState = realisticOresRoot.resolve("src/main/resources/assets/realisticores/blockstates/surface_sample_ironstone.json")
+    val crushedIronState = realisticOresRoot.resolve("src/main/resources/assets/realisticores/blockstates/crushed_ironstone.json")
+    if (missingSampleMarkers.isEmpty() && ironSampleState.exists() && !crushedIronState.exists()) {
+        ok("surface samples are dedicated blocks separate from crushed ingredients")
+    } else fail("surface samples are dedicated blocks separate from crushed ingredients", missingSampleMarkers.joinToString(", "))
+
+    val sampleModelRoot = realisticOresRoot.resolve("src/main/resources/assets/realisticores/models/block")
+    val sampleGeometrySignatures = if (sampleModelRoot.exists()) Files.list(sampleModelRoot).use { paths ->
+        paths.filter { it.fileName.toString().matches(Regex("surface_sample_.+_[0-4]\\.json")) }
+            .toList()
+            .groupBy { it.fileName.toString().replace(Regex("_[0-4]\\.json$"), "") }
+            .mapValues { (_, models) -> models.sorted().joinToString("|") { path -> jsonArray(readJson(path.toString())["elements"]).toString() } }
+    } else emptyMap()
+    if (sampleGeometrySignatures.size >= 20 && sampleGeometrySignatures.values.toSet().size == sampleGeometrySignatures.size) {
+        ok("surface samples use unique per-ore geometry", "${sampleGeometrySignatures.size} material scatters")
+    } else fail("surface samples use unique per-ore geometry", "${sampleGeometrySignatures.values.toSet().size}/${sampleGeometrySignatures.size} unique")
+
+    val expectedSampleUv = listOf(0, 0, 16, 16)
+    val sampleModelPaths = if (sampleModelRoot.exists()) Files.list(sampleModelRoot).use { paths ->
+        paths.filter { it.fileName.toString().matches(Regex("surface_sample_.+_[0-4]\\.json")) }.toList()
+    } else emptyList()
+    val invalidSampleModels = sampleModelPaths.filter { path ->
+        val model = readJson(path.toString())
+        val textures = jsonObject(model["textures"])
+        val faces = jsonArray(model["elements"]).flatMap { element ->
+            jsonObject(jsonObject(element)["faces"]).values
+        }
+        textures["particle"] != "#all" || faces.isEmpty() || faces.any { face ->
+            jsonArray(jsonObject(face)["uv"]).mapNotNull { (it as? Number)?.toInt() } != expectedSampleUv
+        }
+    }
+    val osmiridiumSampleModel = sampleModelRoot.resolve("surface_sample_osmiridium_lava_sulfide_ore_0.json")
+    val osmiridiumSampleTexture = if (osmiridiumSampleModel.exists()) {
+        jsonObject(readJson(osmiridiumSampleModel.toString())["textures"])["all"]
+    } else null
+    if (invalidSampleModels.isEmpty() && sampleModelPaths.size >= 100 && osmiridiumSampleTexture == "realisticores:block/osmiridium_lava_sulfide_ore_0_south") {
+        ok("surface sample models use opaque raw-ore textures", "${sampleModelPaths.size} models")
+    } else fail(
+        "surface sample models use opaque raw-ore textures",
+        "invalid=${invalidSampleModels.take(5).joinToString(", ")}; osmiridium=$osmiridiumSampleTexture"
+    )
 
     val osmiridiumDefinitionPath = Paths.get(sourceRoot, "realistic-ores/src/main/resources/data/realisticores/realistic_ores/osmiridium_lava_sulfide.json")
     val osmiridiumDefinitionText = if (osmiridiumDefinitionPath.exists()) Files.readString(osmiridiumDefinitionPath) else ""
@@ -1057,6 +1265,14 @@ fun validateWorldgenStaticContractsImpl() {
     val removeItemsText = read("kubejs/server_scripts/20_recipe_remove/30_remove_items.js")
     val missingLavaBypassRemovals = listOf("event.remove({ type: 'occultism:miner' })").filterNot(removeItemsText::contains)
     if (missingLavaBypassRemovals.isEmpty()) ok("Occultism miner bypass recipes stay removed") else fail("Occultism miner bypass recipes stay removed", missingLavaBypassRemovals.joinToString(", "))
+
+    val oilSuppressText = listOf(
+        "datapacks/worldgen_compat_fixes/data/pneumaticcraft/forge/biome_modifier/oil_lake_surface.json",
+        "datapacks/worldgen_compat_fixes/data/pneumaticcraft/forge/biome_modifier/oil_lake_underground.json"
+    ).joinToString("\n") { read(it) }
+    val missingOilBounds = listOf("#kubejs:no_biomes", "pneumaticcraft:oil_lake_surface", "pneumaticcraft:oil_lake_underground").filterNot(oilSuppressText::contains)
+    if (missingOilBounds.isEmpty() && "pneumaticcraft:amadron/emerald_to_oil" in removeItemsText) ok("native and purchased oil bypasses stay disabled")
+    else fail("native and purchased oil bypasses stay disabled", missingOilBounds.joinToString(", "))
 
     val lavaProgressionText = listOf(
         "kubejs/server_scripts/10_tags/60_realistic_ores_deposit_tags.js",

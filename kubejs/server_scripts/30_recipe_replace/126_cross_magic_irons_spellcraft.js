@@ -176,8 +176,8 @@ var BC_IRONS_RUNES = [
     { id: 'cooldown', output: 'irons_spellbooks:cooldown_rune', focus: 'forbidden_arcanus:arcane_crystal', reagent: 'ars_nouveau:source_gem', spirit: 'arcane' },
     { id: 'ender', output: 'irons_spellbooks:ender_rune', focus: 'occultism:otherworld_essence', reagent: 'minecraft:ender_pearl', spirit: 'eldritch' },
     { id: 'evocation', output: 'irons_spellbooks:evocation_rune', focus: 'goety:magic_emerald', reagent: 'goety:cursed_bars', spirit: 'wicked' },
-    { id: 'fire', output: 'irons_spellbooks:fire_rune', focus: 'minecraft:blaze_powder', reagent: 'reliquary:infernal_tear', spirit: 'infernal' },
-    { id: 'holy', output: 'irons_spellbooks:holy_rune', focus: 'reliquary:angelic_feather', reagent: 'bloodmagic:infusedslate', spirit: 'sacred' },
+    { id: 'fire', output: 'irons_spellbooks:fire_rune', focus: 'minecraft:blaze_powder', reagent: 'minecraft:magma_cream', spirit: 'infernal' },
+    { id: 'holy', output: 'irons_spellbooks:holy_rune', focus: 'minecraft:ghast_tear', reagent: 'bloodmagic:infusedslate', spirit: 'sacred' },
     { id: 'ice', output: 'irons_spellbooks:ice_rune', focus: 'minecraft:packed_ice', reagent: 'ars_nouveau:water_essence', spirit: 'aqueous' },
     { id: 'lightning', output: 'irons_spellbooks:lightning_rune', focus: 'forbidden_arcanus:deorum_ingot', reagent: 'powergrid:redstone_relay', spirit: 'aerial' },
     { id: 'nature', output: 'irons_spellbooks:nature_rune', focus: 'hexerei:mandrake_root', reagent: 'ars_nouveau:sourceberry_bush', spirit: 'earthen' },
@@ -325,7 +325,7 @@ ServerEvents.recipes(function (event) {
      bcIronsBloodAlchemy(event, 'lesser_spell_slot_upgrade', 'irons_spellbooks:lesser_spell_slot_upgrade', 1, [bcIronsIngredient('irons_spellbooks:arcane_rune'), bcIronsIngredient('irons_spellbooks:magic_cloth'), bcIronsIngredient('ars_nouveau:source_gem'), bcIronsIngredient('malum:arcane_spirit'), bcIronsIngredient(BC_IRONS_OS_T3), bcIronsIngredient(BC_IRONS_T3)
     ], 12000, 220, 3)
 
-     bcIronsBloodAlchemy(event, 'divine_pearl', 'irons_spellbooks:divine_pearl', 1, [bcIronsIngredient('ars_nouveau:source_gem'), bcIronsIngredient('reliquary:angelic_feather'), bcIronsIngredient('malum:sacred_spirit'), bcIronsIngredient(BC_IRONS_OS_T4), bcIronsIngredient(BC_IRONS_T4)
+     bcIronsBloodAlchemy(event, 'divine_pearl', 'irons_spellbooks:divine_pearl', 1, [bcIronsIngredient('ars_nouveau:source_gem'), bcIronsIngredient('minecraft:ghast_tear'), bcIronsIngredient('malum:sacred_spirit'), bcIronsIngredient(BC_IRONS_OS_T4), bcIronsIngredient(BC_IRONS_T4)
     ], 18000, 260, 4)
 
      bcIronsMalumInfusion(event, 'energized_core', 'irons_spellbooks:energized_core', 1, 'forbidden_arcanus:deorum_ingot', 1, [
@@ -340,7 +340,7 @@ ServerEvents.recipes(function (event) {
         'occultism:otherworld_essence',
         'goety:dark_scroll',
         'malum:eldritch_spirit',
-        'reliquary:nebulous_heart',
+        'minecraft:echo_shard',
         BC_IRONS_OS_T5,
         BC_IRONS_T5
     ], 'sabbath', 800, 240)
@@ -387,7 +387,7 @@ ServerEvents.recipes(function (event) {
         'ars_nouveau:abjuration_essence',
         'forbidden_arcanus:dark_rune',
         'malum:infernal_spirit',
-        'reliquary:infernal_tear',
+        'minecraft:blaze_powder',
         BC_IRONS_T5
     ], 'forge', 900, 260)
 
@@ -404,7 +404,7 @@ ServerEvents.recipes(function (event) {
      bcIronsBloodAlchemy(event, 'cast_time_ring', 'irons_spellbooks:cast_time_ring', 1, [bcIronsIngredient('ars_nouveau:air_essence'), bcIronsIngredient('malum:aerial_spirit'), bcIronsIngredient('minecraft:gold_ingot'), bcIronsIngredient(BC_IRONS_T3)], 7000, 160, 3)
      bcIronsBloodAlchemy(event, 'cooldown_ring', 'irons_spellbooks:cooldown_ring', 1, [bcIronsIngredient('irons_spellbooks:cooldown_rune'), bcIronsIngredient('ars_nouveau:source_gem'), bcIronsIngredient('minecraft:gold_ingot'), bcIronsIngredient(BC_IRONS_T3)], 7000, 160, 3)
      bcIronsBloodAlchemy(event, 'emerald_stoneplate_ring', 'irons_spellbooks:emerald_stoneplate_ring', 1, [bcIronsIngredient('goety:magic_emerald'), bcIronsIngredient('malum:earthen_spirit'), bcIronsIngredient('minecraft:gold_ingot'), bcIronsIngredient(BC_IRONS_T3)], 7000, 160, 3)
-     bcIronsBloodAlchemy(event, 'fireward_ring', 'irons_spellbooks:fireward_ring', 1, [bcIronsIngredient('irons_spellbooks:fire_rune'), bcIronsIngredient('reliquary:infernal_tear'), bcIronsIngredient('minecraft:gold_ingot'), bcIronsIngredient(BC_IRONS_T3)], 7000, 160, 3)
+     bcIronsBloodAlchemy(event, 'fireward_ring', 'irons_spellbooks:fireward_ring', 1, [bcIronsIngredient('irons_spellbooks:fire_rune'), bcIronsIngredient('minecraft:magma_cream'), bcIronsIngredient('minecraft:gold_ingot'), bcIronsIngredient(BC_IRONS_T3)], 7000, 160, 3)
      bcIronsBloodAlchemy(event, 'frostward_ring', 'irons_spellbooks:frostward_ring', 1, [bcIronsIngredient('irons_spellbooks:ice_rune'), bcIronsIngredient('malum:aqueous_spirit'), bcIronsIngredient('minecraft:gold_ingot'), bcIronsIngredient(BC_IRONS_T3)], 7000, 160, 3)
      bcIronsBloodAlchemy(event, 'mana_ring', 'irons_spellbooks:mana_ring', 1, [bcIronsIngredient('ars_nouveau:source_gem'), bcIronsIngredient('malum:arcane_spirit'), bcIronsIngredient('minecraft:gold_ingot'), bcIronsIngredient(BC_IRONS_T3)], 7000, 160, 3)
      bcIronsBloodAlchemy(event, 'poisonward_ring', 'irons_spellbooks:poisonward_ring', 1, [bcIronsIngredient('hexerei:belladonna_berries'), bcIronsIngredient('malum:earthen_spirit'), bcIronsIngredient('minecraft:gold_ingot'), bcIronsIngredient(BC_IRONS_T3)], 7000, 160, 3)
@@ -418,7 +418,7 @@ ServerEvents.recipes(function (event) {
 
      bcIronsGoetyRitual(event, 'ice_staff', 'irons_spellbooks:ice_staff', 1, 'minecraft:stick', ['irons_spellbooks:ice_rune', 'ars_nouveau:water_essence', 'malum:aqueous_spirit', BC_IRONS_T3], 'frost', 250, 100)
      bcIronsGoetyRitual(event, 'graybeard_staff', 'irons_spellbooks:graybeard_staff', 1, 'irons_spellbooks:ice_staff', ['irons_spellbooks:mithril_weave', 'malum:aerial_spirit', 'occultism:spirit_attuned_gem', BC_IRONS_T4], 'frost', 500, 160)
-     bcIronsGoetyRitual(event, 'pyrium_staff', 'irons_spellbooks:pyrium_staff', 1, 'minecraft:blaze_rod', ['irons_spellbooks:fire_rune', 'reliquary:infernal_tear', 'malum:infernal_spirit', BC_IRONS_T4], 'forge', 500, 160)
+     bcIronsGoetyRitual(event, 'pyrium_staff', 'irons_spellbooks:pyrium_staff', 1, 'minecraft:blaze_rod', ['irons_spellbooks:fire_rune', 'minecraft:magma_cream', 'malum:infernal_spirit', BC_IRONS_T4], 'forge', 500, 160)
      bcIronsGoetyRitual(event, 'artificer_cane', 'irons_spellbooks:artificer_cane', 1, 'minecraft:stick', ['irons_spellbooks:arcane_ingot', 'forbidden_arcanus:deorum_ingot', 'malum:arcane_spirit', BC_IRONS_T4], 'forge', 500, 160)
      bcIronsGoetyRitual(event, 'spellbreaker', 'irons_spellbooks:spellbreaker', 1, 'minecraft:shield', ['irons_spellbooks:protection_rune', 'malum:sacred_spirit', 'forbidden_arcanus:dark_rune', BC_IRONS_T4], 'sabbath', 650, 200)
      bcIronsGoetyRitual(event, 'twilight_gale', 'irons_spellbooks:twilight_gale', 1, 'minecraft:crossbow', ['irons_spellbooks:ender_rune', 'malum:aerial_spirit', 'occultism:otherworld_essence', BC_IRONS_T4], 'sabbath', 650, 200)

@@ -2,63 +2,77 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "pressure_power_control"
-	group: "2DFE3653F3B634B9"
+	group: "5B6E48C1A9D207F3"
 	icon: "pneumaticcraft:pressure_chamber_valve"
 	id: "1318B04A16619D51"
 	order_index: 3
 	quest_links: [ ]
 	quests: [
 		{
-			id: "7BA3BC1109BE6EFA"
-			title: "Iron"
+			description: ["Compressed iron is the material proof that pressure has begun. Make it through the intended route so the whole chapter starts from real manufacturing instead of a shortcut."]
 			icon: "pneumaticcraft:ingot_iron_compressed"
+			id: "7BA3BC1109BE6EFA"
+			rewards: [{
+				count: 4
+				id: "0883B96D3F52EB53"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.15d
 			tasks: [{
-				id: "EB232C5CDC56F4A3"
+				id: "0166E56979204B0C"
 				item: "pneumaticcraft:ingot_iron_compressed"
 				type: "item"
 			}]
+			title: "Iron"
 			x: -6.34d
 			y: 0.0d
-			rewards: [{ id: "F4628718B1745B37" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Compressed iron is the material proof that pressure has begun. Make it through the intended route so the whole chapter starts from real manufacturing instead of a shortcut."]
 		}
 		{
 			dependencies: ["7BA3BC1109BE6EFA"]
-			id: "064CFC665D86BAD3"
-			title: "Tube"
+			description: ["Pressure tubes are how air starts moving like a real resource. Lay them out early so the rest of PNCR stops feeling mysterious."]
 			icon: "pneumaticcraft:pressure_tube"
+			id: "064CFC665D86BAD3"
 			shape: "rsquare"
 			tasks: [{
-				id: "E023DFFBA0CA3745"
+				id: "65E532E6F319FA41"
 				item: "pneumaticcraft:pressure_tube"
 				type: "item"
 			}]
+			title: "Tube"
 			x: -4.75d
 			y: -3.0d
-			description: ["Pressure tubes are how air starts moving like a real resource. Lay them out early so the rest of PNCR stops feeling mysterious."]
 		}
 		{
 			dependencies: ["7BA3BC1109BE6EFA"]
-			id: "0937583E1460B930"
-			title: "Gauge"
+			description: ["Build the gauge before you trust any air network. Reading pressure is what turns experiments into dependable machines."]
 			icon: "pneumaticcraft:pressure_gauge"
+			id: "0937583E1460B930"
 			shape: "rsquare"
 			tasks: [{
 				id: "2CE905436E4F8D64"
 				item: "pneumaticcraft:pressure_gauge"
 				type: "item"
 			}]
+			title: "Gauge"
 			x: -4.75d
 			y: -1.5d
-			description: ["Build the gauge before you trust any air network. Reading pressure is what turns experiments into dependable machines."]
 		}
 		{
-			dependencies: ["064CFC665D86BAD3" "0937583E1460B930"]
-			id: "5DCC13C74FA59703"
-			title: "Chamber"
+			dependencies: [
+				"064CFC665D86BAD3"
+				"0937583E1460B930"
+			]
+			description: ["The pressure chamber is the first big payoff in this lane. It unlocks sealed processing and the materials that lead into plastics and boards."]
 			icon: "pneumaticcraft:pressure_chamber_valve"
+			id: "5DCC13C74FA59703"
+			rewards: [{
+				count: 4
+				id: "02015B1D04F16394"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			shape: "square"
 			size: 1.05d
 			tasks: [{
@@ -66,76 +80,73 @@
 				item: "pneumaticcraft:pressure_chamber_valve"
 				type: "item"
 			}]
+			title: "Chamber"
 			x: -3.17d
 			y: -2.25d
-			rewards: [{ id: "E5ED86A3AA7098D9" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["The pressure chamber is the first big payoff in this lane. It unlocks sealed processing and the materials that lead into plastics and boards."]
 		}
 		{
 			dependencies: ["5DCC13C74FA59703"]
-			id: "EB8D4711E0C2A4FF"
-			title: "Compressor"
+			description: ["Use the rotational compressor to feed pressure from your existing Create power. This lets one power room support both Create machines and pressure work."]
 			icon: "compressedcreativity:rotational_compressor"
+			id: "600F16DD06445D0D"
 			shape: "rsquare"
 			tasks: [{
-				id: "E001C8EBC00A5B50"
+				id: "5CB892E366B560EB"
 				item: "compressedcreativity:rotational_compressor"
 				type: "item"
 			}]
+			title: "Compressor"
 			x: -1.58d
 			y: -4.0d
-			description: ["Use the rotational compressor to feed pressure from your existing Create power. This lets one power room support both Create machines and pressure work."]
 		}
 		{
 			dependencies: ["5DCC13C74FA59703"]
-			id: "27761A19A3827951"
-			title: "Rotor"
+			description: ["Turbine parts matter once you want pressure to do more than one job. They are the bridge into larger pneumatic systems and better energy planning."]
 			icon: "pneumaticcraft:turbine_rotor"
+			id: "27761A19A3827951"
 			shape: "rsquare"
 			tasks: [{
 				id: "7A3A0BC3BE6BE82B"
 				item: "pneumaticcraft:turbine_rotor"
 				type: "item"
 			}]
+			title: "Rotor"
 			x: -1.58d
 			y: -2.5d
-			description: ["Turbine parts matter once you want pressure to do more than one job. They are the bridge into larger pneumatic systems and better energy planning."]
 		}
 		{
 			dependencies: ["5DCC13C74FA59703"]
-			id: "E9C1DC5036632296"
-			title: "Plastic"
+			description: ["Plastic is the first material that clearly links pressure work to electronics. Make it early so the later board route feels earned."]
 			icon: "pneumaticcraft:plastic"
+			id: "49DC185F1980F4E3"
 			shape: "rsquare"
 			tasks: [{
 				id: "72CB192431F55F70"
 				item: "pneumaticcraft:plastic"
 				type: "item"
 			}]
+			title: "Plastic"
 			x: -1.58d
 			y: -1.0d
-			description: ["Plastic is the first material that clearly links pressure work to electronics. Make it early so the later board route feels earned."]
 		}
 		{
-			dependencies: ["E9C1DC5036632296"]
-			id: "D7A56007EC9F328E"
-			title: "Battery"
+			description: ["Bring Power Grid online after basic pressure work. Use it to separate generation, storage, and logic instead of running every machine from one messy setup."]
 			icon: "powergrid:battery"
+			id: "4C5C5C74A457E34F"
 			shape: "rsquare"
 			tasks: [{
-				id: "FB33F7C901EAB752"
+				id: "43347D7A29C705FC"
 				item: "powergrid:battery"
 				type: "item"
 			}]
+			title: "Battery"
 			x: 0.0d
 			y: -3.0d
-			description: ["Bring Power Grid online after basic pressure work. Use it to separate generation, storage, and logic instead of running every machine from one messy setup."]
 		}
 		{
-			dependencies: ["D7A56007EC9F328E"]
-			id: "C6D58E68605E0DE0"
-			title: "Design"
+			description: ["Use the design table to plan circuits, not to skip board assembly. PNCR machines still handle the finished PCB work."]
 			icon: "powergrid:circuit_design_table"
+			id: "04C9EB5FBCCFB09A"
 			shape: "diamond"
 			size: 1.05d
 			tasks: [{
@@ -143,46 +154,49 @@
 				item: "powergrid:circuit_design_table"
 				type: "item"
 			}]
+			title: "Design"
 			x: 1.58d
 			y: -3.0d
-			description: ["Use the design table to plan circuits, not to skip board assembly. PNCR machines still handle the finished PCB work."]
 		}
 		{
-			dependencies: ["C6D58E68605E0DE0"]
-			id: "15AA1D081CD6B3B2"
-			title: "Blank PCB"
+			description: ["Unassembled boards are a checkpoint, not the finish line. They prove your chemistry and design work is ready for the assembly machines."]
 			icon: "pneumaticcraft:unassembled_pcb"
+			id: "15AA1D081CD6B3B2"
 			shape: "rsquare"
 			tasks: [{
 				id: "0178CD5C68DA5E4D"
 				item: "pneumaticcraft:unassembled_pcb"
 				type: "item"
 			}]
+			title: "Blank PCB"
 			x: 3.17d
 			y: -3.0d
-			description: ["Unassembled boards are a checkpoint, not the finish line. They prove your chemistry and design work is ready for the assembly machines."]
 		}
 		{
 			dependencies: ["15AA1D081CD6B3B2"]
-			id: "E7B001B84823265B"
-			title: "PCB"
+			description: ["Printed circuit boards unlock many control machines at once. Once you can make them reliably, check EMI for drones, assembly parts, and security hardware."]
 			icon: "pneumaticcraft:printed_circuit_board"
+			id: "4F21F4F7C4150D7D"
+			rewards: [{
+				count: 4
+				id: "735CA19B9D593426"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			shape: "rsquare"
 			tasks: [{
 				id: "17F16F5150B4C6C2"
 				item: "pneumaticcraft:printed_circuit_board"
 				type: "item"
 			}]
+			title: "PCB"
 			x: 4.75d
 			y: -3.0d
-			rewards: [{ id: "735CA19B9D593426" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Printed circuit boards unlock many control machines at once. Once you can make them reliably, check EMI for drones, assembly parts, and security hardware."]
 		}
 		{
-			dependencies: ["E7B001B84823265B"]
-			id: "82F2BACA61C5F8E1"
-			title: "Assembly"
+			description: ["Build assembly machines when hand-crafted boards start slowing you down. Group the controller, platform, laser, drill, and import/export parts together."]
 			icon: "pneumaticcraft:assembly_controller"
+			id: "67B7DDA7976C7903"
 			shape: "hexagon"
 			size: 1.15d
 			tasks: [{
@@ -190,90 +204,86 @@
 				item: "pneumaticcraft:assembly_controller"
 				type: "item"
 			}]
+			title: "Assembly"
 			x: 6.34d
 			y: -3.0d
-			description: ["Build assembly machines when hand-crafted boards start slowing you down. Group the controller, platform, laser, drill, and import/export parts together."]
 		}
 		{
-			dependencies: ["82F2BACA61C5F8E1"]
-			id: "29F946BFE1267DF0"
-			title: "Laser"
+			description: ["The assembly laser is for precision work that does not belong on a crafting table. Use it to feel the jump from preparation into finished manufacture."]
 			icon: "pneumaticcraft:assembly_laser"
+			id: "29F946BFE1267DF0"
 			shape: "rsquare"
 			tasks: [{
-				id: "ACA5B56107838856"
+				id: "3A37430D36E87999"
 				item: "pneumaticcraft:assembly_laser"
 				type: "item"
 			}]
+			title: "Laser"
 			x: 7.92d
 			y: -4.0d
-			description: ["The assembly laser is for precision work that does not belong on a crafting table. Use it to feel the jump from preparation into finished manufacture."]
 		}
 		{
-			dependencies: ["82F2BACA61C5F8E1"]
-			id: "B1A2D3DF07B2C5A0"
-			title: "Drill"
+			description: ["The assembly drill matters because some parts need to look machined, not hand-finished. It helps the whole board route read as industrial."]
 			icon: "pneumaticcraft:assembly_drill"
+			id: "6D98944E2044FC1F"
 			shape: "rsquare"
 			tasks: [{
 				id: "565D6B6C6F2C5165"
 				item: "pneumaticcraft:assembly_drill"
 				type: "item"
 			}]
+			title: "Drill"
 			x: 7.92d
 			y: -2.5d
-			description: ["The assembly drill matters because some parts need to look machined, not hand-finished. It helps the whole board route read as industrial."]
 		}
 		{
-			dependencies: ["E7B001B84823265B"]
-			id: "23B1CD2A1143A540"
-			title: "Drone"
+			description: ["Build drones after PCBs and programming are repeatable. They need a base with clear routes, power, and jobs before they are useful."]
 			icon: "pneumaticcraft:drone"
+			id: "23B1CD2A1143A540"
 			shape: "rsquare"
 			tasks: [{
 				id: "5F60DDEE15470870"
 				item: "pneumaticcraft:drone"
 				type: "item"
 			}]
+			title: "Drone"
 			x: 6.34d
 			y: 0.5d
-			description: ["Build drones after PCBs and programming are repeatable. They need a base with clear routes, power, and jobs before they are useful."]
 		}
 		{
 			dependencies: ["23B1CD2A1143A540"]
-			id: "9E0BDE917DFAE8ED"
-			title: "Programmer"
+			description: ["The programmer is where machines stop being fixed-purpose. Use it once you want pressure hardware to follow instructions instead of just providing force."]
 			icon: "pneumaticcraft:programmer"
+			id: "31E24BED8A789B48"
 			shape: "rsquare"
 			tasks: [{
 				id: "1D2DA74F2AEAE0C8"
 				item: "pneumaticcraft:programmer"
 				type: "item"
 			}]
+			title: "Programmer"
 			x: 7.92d
 			y: 0.5d
-			description: ["The programmer is where machines stop being fixed-purpose. Use it once you want pressure hardware to follow instructions instead of just providing force."]
 		}
 		{
-			dependencies: ["9E0BDE917DFAE8ED"]
-			id: "E34FCC9DF23493F5"
-			title: "Security"
+			description: ["Security hardware proves this lane is about control as much as production. Use it to make your base logic visible instead of leaving it implied."]
 			icon: "pneumaticcraft:security_station"
+			id: "7BAB081D7A1C594D"
 			shape: "rsquare"
 			tasks: [{
-				id: "B5FB67F66337F61B"
+				id: "2A1A98EF87685A20"
 				item: "pneumaticcraft:security_station"
 				type: "item"
 			}]
+			title: "Security"
 			x: 9.5d
 			y: 0.5d
-			description: ["Security hardware proves this lane is about control as much as production. Use it to make your base logic visible instead of leaving it implied."]
 		}
 		{
-			dependencies: ["29F946BFE1267DF0" "B1A2D3DF07B2C5A0"]
-			id: "C1D0BE5D13A824EB"
-			title: "OC2R"
+			dependencies: ["29F946BFE1267DF0"]
+			description: ["OC2R is for moving information between sites while physical logistics still do the heavy lifting. Use it to coordinate work, not to pretend distance vanished."]
 			icon: "oc2r:computer"
+			id: "641E184360804B8D"
 			shape: "octagon"
 			size: 1.15d
 			tasks: [{
@@ -281,46 +291,44 @@
 				item: "oc2r:computer"
 				type: "item"
 			}]
+			title: "OC2R"
 			x: 9.5d
 			y: -3.25d
-			description: ["OC2R is for moving information between sites while physical logistics still do the heavy lifting. Use it to coordinate work, not to pretend distance vanished."]
 		}
 		{
-			dependencies: ["C1D0BE5D13A824EB"]
-			id: "FBDA0C0DE35723D0"
-			title: "Wireless"
+			description: ["Wireless control should extend a good base, not rescue a bad one. Get the local machines readable first, then stretch signals outward."]
 			icon: "oc2rwireless:wireless_card"
+			id: "6ED939DD5CA47F30"
 			shape: "rsquare"
 			tasks: [{
-				id: "DFF866CD3D59774E"
+				id: "79F95E68D29447FC"
 				item: "oc2rwireless:wireless_card"
 				type: "item"
 			}]
+			title: "Wireless"
 			x: 11.09d
 			y: -3.25d
-			description: ["Wireless control should extend a good base, not rescue a bad one. Get the local machines readable first, then stretch signals outward."]
 		}
 		{
-			dependencies: ["E34FCC9DF23493F5" "FBDA0C0DE35723D0"]
-			id: "C6D673C304DD18FA"
-			title: "Control"
+			description: ["Keep pressure, boards, electricity, and programming close enough that you can trace a machine from air supply to final control signal."]
 			icon: "minecraft:redstone"
+			id: "1766592EED232441"
 			shape: "hexagon"
 			size: 1.15d
 			tasks: [{
-				id: "8A5676E0C3DFB6A9"
+				id: "7C7437245C749B11"
 				title: "Separate power, logic, and logistics"
 				type: "checkmark"
 			}]
+			title: "Control"
 			x: 12.67d
 			y: -1.5d
-			description: ["Keep pressure, boards, electricity, and programming close enough that you can trace a machine from air supply to final control signal."]
-		},
+		}
 		{
 			dependencies: ["7BA3BC1109BE6EFA"]
-			id: "27F80DD57773A65C"
-			title: "Compression Cell"
+			description: ["Make compressed iron through the pressure route and keep a small stock. It is the first sign that air pressure is now part of manufacturing."]
 			icon: "create:mechanical_press"
+			id: "27F80DD57773A65C"
 			shape: "diamond"
 			size: 0.9d
 			tasks: [{
@@ -328,16 +336,15 @@
 				title: "Show how iron becomes pressure material"
 				type: "checkmark"
 			}]
+			title: "Compression Cell"
 			x: -6.34d
 			y: -2.1d
-			description: ["Make compressed iron through the pressure route and keep a small stock. It is the first sign that air pressure is now part of manufacturing."]
 		}
-,
 		{
 			dependencies: ["5DCC13C74FA59703"]
-			id: "6CD9CFD9EDC50210"
-			title: "Safety Valve"
+			description: ["Add gauges and relief paths before expanding a chamber. If pressure rises too far, you should be able to see the problem and vent it safely."]
 			icon: "pneumaticcraft:pressure_gauge"
+			id: "6CD9CFD9EDC50210"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
@@ -345,16 +352,14 @@
 				title: "Build pressure relief into every chamber"
 				type: "checkmark"
 			}]
+			title: "Safety Valve"
 			x: -3.17d
 			y: -0.25d
-			description: ["Add gauges and relief paths before expanding a chamber. If pressure rises too far, you should be able to see the problem and vent it safely."]
 		}
-,
 		{
-			dependencies: ["EB8D4711E0C2A4FF"]
-			id: "FBEAAF3C2BC1C2CE"
-			title: "Rotational Feed"
+			description: ["Power the compressor from your local Create setup so pressure work grows out of the machines you already understand."]
 			icon: "create:shaft"
+			id: "1E521D54CE181E54"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
@@ -362,16 +367,14 @@
 				title: "Feed pressure from local Create power"
 				type: "checkmark"
 			}]
+			title: "Rotational Feed"
 			x: -1.58d
 			y: -6.0d
-			description: ["Power the compressor from your local Create setup so pressure work grows out of the machines you already understand."]
 		}
-,
 		{
-			dependencies: ["E9C1DC5036632296"]
-			id: "24DE8706FD21403C"
-			title: "Etch Prep"
+			description: ["Make plastic and substrate before PCB assembly. Keeping those parts together makes the PCB chain easier to repeat."]
 			icon: "pneumaticcraft:empty_pcb"
+			id: "24DE8706FD21403C"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
@@ -379,33 +382,29 @@
 				title: "Prepare plastic and substrate before boards"
 				type: "checkmark"
 			}]
+			title: "Etch Prep"
 			x: -1.58d
 			y: 1.0d
-			description: ["Make plastic and substrate before PCB assembly. Keeping those parts together makes the PCB chain easier to repeat."]
 		}
-,
 		{
-			dependencies: ["C6D58E68605E0DE0"]
-			id: "17670111DBB9DC72"
-			title: "Circuit Plan"
+			description: ["Use the design table to plan circuits, then send the board work through PNCR machines for final assembly."]
 			icon: "powergrid:circuit_design_table"
+			id: "17670111DBB9DC72"
 			shape: "diamond"
 			size: 0.9d
 			tasks: [{
-				id: "AF3A3C91FBD67567"
+				id: "2A172546BAA2ABD5"
 				title: "Separate design from board manufacture"
 				type: "checkmark"
 			}]
+			title: "Circuit Plan"
 			x: 1.58d
 			y: -1.0d
-			description: ["Use the design table to plan circuits, then send the board work through PNCR machines for final assembly."]
 		}
-,
 		{
-			dependencies: ["E7B001B84823265B"]
-			id: "087DE37DBBA6BBAB"
-			title: "Board Authority"
+			description: ["Treat the PCB node like a major hub and follow its uses immediately. It is one of the clearest signs that your control lane is now paying off."]
 			icon: "pneumaticcraft:transistor"
+			id: "087DE37DBBA6BBAB"
 			shape: "diamond"
 			size: 0.9d
 			tasks: [{
@@ -413,50 +412,45 @@
 				title: "Use PCBs to unlock real control"
 				type: "checkmark"
 			}]
+			title: "Board Authority"
 			x: 4.75d
 			y: -0.8d
-			description: ["Treat the PCB node like a major hub and follow its uses immediately. It is one of the clearest signs that your control lane is now paying off."]
 		}
-,
 		{
-			dependencies: ["82F2BACA61C5F8E1"]
-			id: "6411A35D04A18483"
-			title: "Part Cell"
+			description: ["Lay out the assembly area like a real workcell with inputs, outputs, and clear flow. That makes repeated board jobs much easier to manage."]
 			icon: "pneumaticcraft:assembly_io_unit_import"
+			id: "6411A35D04A18483"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
-				id: "EF2D24BC18DCF205"
+				id: "266E74B61DA81173"
 				title: "Lay out import/export and platform flow"
 				type: "checkmark"
 			}]
+			title: "Part Cell"
 			x: 6.34d
 			y: -1.0d
-			description: ["Lay out the assembly area like a real workcell with inputs, outputs, and clear flow. That makes repeated board jobs much easier to manage."]
 		}
-,
 		{
 			dependencies: ["23B1CD2A1143A540"]
-			id: "34B74EC219A885D4"
-			title: "Program Slot"
+			description: ["Keep drone programming near the PCB and control machines. It is easier to debug drones when their parts, programs, and charging live together."]
 			icon: "pneumaticcraft:programmer"
+			id: "34B74EC219A885D4"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
-				id: "A470FDD7DC3BDE2F"
+				id: "67FE8F3E5D4C9AFC"
 				title: "Program drones as controlled labor"
 				type: "checkmark"
 			}]
+			title: "Program Slot"
 			x: 6.34d
 			y: 2.5d
-			description: ["Keep drone programming near the PCB and control machines. It is easier to debug drones when their parts, programs, and charging live together."]
 		}
-,
 		{
-			dependencies: ["E34FCC9DF23493F5"]
-			id: "5F41CC13E2FEC65F"
-			title: "Base Logic"
+			description: ["Use security hardware beside your automation controls so doors, routes, and machines respond to the same base plan."]
 			icon: "pneumaticcraft:security_station"
+			id: "5F41CC13E2FEC65F"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
@@ -464,26 +458,24 @@
 				title: "Use control for defense and routing"
 				type: "checkmark"
 			}]
+			title: "Base Logic"
 			x: 9.5d
 			y: -1.5d
-			description: ["Use security hardware beside your automation controls so doors, routes, and machines respond to the same base plan."]
 		}
-,
 		{
-			dependencies: ["C6D673C304DD18FA"]
-			id: "DAA79B1B92850EF0"
-			title: "Control Thesis"
+			description: ["End this chapter with a readable control area: pressure gauges visible, power storage labeled, board machines grouped, and programmed devices easy to inspect."]
 			icon: "minecraft:comparator"
+			id: "6F3EAD2682408682"
 			shape: "octagon"
 			size: 0.9d
 			tasks: [{
-				id: "828147116F5E7852"
+				id: "463597625A293A1D"
 				title: "Readable pressure, power, and program state is the goal"
 				type: "checkmark"
 			}]
+			title: "Control Thesis"
 			x: 12.67d
 			y: 0.6d
-			description: ["End this chapter with a readable control area: pressure gauges visible, power storage labeled, board machines grouped, and programmed devices easy to inspect."]
 		}
 	]
 	title: "Pressure, Power, and Control"

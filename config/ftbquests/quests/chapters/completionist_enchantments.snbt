@@ -4,585 +4,489 @@
 	filename: "completionist_enchantments"
 	group: "0D8C0A1E9F5B4C72"
 	icon: "minecraft:enchanted_book"
-	id: "A54E0D3C89B17F62"
-	order_index: 12
+	id: "7B16C1A29CDEB9B7"
+	order_index: 2
 	quest_links: [ ]
 	quests: [
 		{
-			id: "F8E55ED94BCC2E56"
-			title: "Ars Nouveau"
-			icon: "minecraft:enchanted_book"
-			shape: "square"
-			size: 0.8d
-			x: 0.0d
-			y: 0.0d
-			tasks: [
-				{
-					id: "C3C32FF0B5DADF58"
-					type: "checkmark"
-					title: "Ars Nouveau"
-				}
-			]
-			rewards: [ ]
 			description: ["3 starter stubs."]
-		}
-		{
-			id: "7114F36A24911676"
-			title: "All Enchantments: Mana Boost"
 			icon: "minecraft:enchanted_book"
-			shape: "rsquare"
-			size: 1.0d
-			x: 1.5d
-			y: 0.0d
-			tasks: [
-				{
-					id: "A530E7D7F3F51C0D"
-					type: "checkmark"
-					title: "Mana Boost"
-				}
-			]
-			rewards: [ ]
-			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:sourceberry_bush, forge:storage_blocks/source, forge:gems/diamond, forge:storage_blocks/lapis | Source cost: 2000-5000"]
-		}
-		{
-			id: "E1D243D1122AEEF4"
-			title: "All Enchantments: Mana Regen"
-			icon: "minecraft:enchanted_book"
-			shape: "rsquare"
-			size: 1.0d
-			x: 2.75d
-			y: 0.0d
-			tasks: [
-				{
-					id: "C12BB8C96A9D7580"
-					type: "checkmark"
-					title: "Mana Regen"
-				}
-			]
-			rewards: [ ]
-			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:sourceberry_bush, ars_nouveau:abjuration_essence, forge:storage_blocks/source, forge:storage_blocks/lapis | Source cost: 2000-5000"]
-		}
-		{
-			id: "814FF67AAE9C3CF1"
-			title: "All Enchantments: Reactive"
-			icon: "minecraft:enchanted_book"
-			shape: "rsquare"
-			size: 1.0d
-			x: 4.0d
-			y: 0.0d
-			tasks: [
-				{
-					id: "1414FC0CF3ED1C85"
-					type: "checkmark"
-					title: "Reactive"
-				}
-			]
-			rewards: [ ]
-			description: ["Hint: Ars Enchanting Apparatus via forge:gems/diamond, forge:ender_pearls, ars_nouveau:wilden_tribute, minecraft:blaze_powder | Source cost: 6000-9000"]
-		}
-		{
-			id: "B640B756BF3685D8"
-			title: "Minecraft"
-			icon: "minecraft:enchanted_book"
+			id: "648B537180843B02"
 			shape: "square"
 			size: 0.8d
+			tasks: [{
+				id: "6A1067077E81DC45"
+				title: "Ars Nouveau"
+				type: "checkmark"
+			}]
+			title: "Ars Nouveau"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:sourceberry_bush, forge:storage_blocks/source, forge:gems/diamond, forge:storage_blocks/lapis | Source cost: 2000-5000"]
+			icon: "minecraft:enchanted_book"
+			id: "7114F36A24911676"
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{
+				id: "4755D5A8E3513557"
+				title: "Mana Boost"
+				type: "checkmark"
+			}]
+			title: "All Enchantments: Mana Boost"
+			x: 1.5d
+			y: 0.0d
+		}
+		{
+			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:sourceberry_bush, ars_nouveau:abjuration_essence, forge:storage_blocks/source, forge:storage_blocks/lapis | Source cost: 2000-5000"]
+			icon: "minecraft:enchanted_book"
+			id: "1B08F6B3233F584C"
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{
+				id: "50CA017FE6E6F91E"
+				title: "Mana Regen"
+				type: "checkmark"
+			}]
+			title: "All Enchantments: Mana Regen"
+			x: 2.75d
+			y: 0.0d
+		}
+		{
+			description: ["Hint: Ars Enchanting Apparatus via forge:gems/diamond, forge:ender_pearls, ars_nouveau:wilden_tribute, minecraft:blaze_powder | Source cost: 6000-9000"]
+			icon: "minecraft:enchanted_book"
+			id: "3C0BE3733A6143DE"
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{
+				id: "1414FC0CF3ED1C85"
+				title: "Reactive"
+				type: "checkmark"
+			}]
+			title: "All Enchantments: Reactive"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			description: ["27 starter stubs."]
+			icon: "minecraft:enchanted_book"
+			id: "49C6605CF1EE2629"
+			shape: "square"
+			size: 0.8d
+			tasks: [{
+				id: "49D2B5ED71A6AF59"
+				title: "Minecraft"
+				type: "checkmark"
+			}]
+			title: "Minecraft"
 			x: 0.0d
 			y: 3.25d
-			tasks: [
-				{
-					id: "B3EA1A31006809C5"
-					type: "checkmark"
-					title: "Minecraft"
-				}
-			]
-			rewards: [ ]
-			description: ["27 starter stubs."]
 		}
 		{
-			id: "DC32713FEF4EF0F9"
-			title: "All Enchantments: Aqua Affinity"
-			icon: "minecraft:enchanted_book"
-			shape: "rsquare"
-			size: 1.0d
-			x: 1.5d
-			y: 3.25d
-			tasks: [
-				{
-					id: "EC9F6E268C1529AC"
-					type: "checkmark"
-					title: "Aqua Affinity"
-				}
-			]
-			rewards: [ ]
 			description: ["Hint: Ars Enchanting Apparatus via minecraft:fishes, forge:storage_blocks/source, forge:storage_blocks/lapis | Source cost: 5000-5000"]
-		}
-		{
-			id: "222920C78923E4B1"
-			title: "All Enchantments: Bane Of Arthropods"
 			icon: "minecraft:enchanted_book"
+			id: "043C9CF755E44226"
 			shape: "rsquare"
 			size: 1.0d
-			x: 2.75d
+			tasks: [{
+				id: "550A56DAEC97DD9D"
+				title: "Aqua Affinity"
+				type: "checkmark"
+			}]
+			title: "All Enchantments: Aqua Affinity"
+			x: 1.5d
 			y: 3.25d
-			tasks: [
-				{
-					id: "1E351CA439B389B2"
-					type: "checkmark"
-					title: "Bane Of Arthropods"
-				}
-			]
-			rewards: [ ]
+		}
+		{
 			description: ["Hint: Ars Enchanting Apparatus via minecraft:spider_eye, forge:storage_blocks/source, forge:storage_blocks/lapis, minecraft:fermented_spider_eye | Source cost: 2000-8000"]
-		}
-		{
-			id: "FE55CC9BA12F5313"
-			title: "All Enchantments: Blast Protection"
 			icon: "minecraft:enchanted_book"
+			id: "222920C78923E4B1"
 			shape: "rsquare"
 			size: 1.0d
-			x: 4.0d
+			tasks: [{
+				id: "1E351CA439B389B2"
+				title: "Bane Of Arthropods"
+				type: "checkmark"
+			}]
+			title: "All Enchantments: Bane Of Arthropods"
+			x: 2.75d
 			y: 3.25d
-			tasks: [
-				{
-					id: "437F8924786CABA0"
-					type: "checkmark"
-					title: "Blast Protection"
-				}
-			]
-			rewards: [ ]
+		}
+		{
 			description: ["Hint: Ars Enchanting Apparatus via forge:gems/diamond, forge:storage_blocks/source, forge:storage_blocks/gold, forge:obsidian | Source cost: 2000-8000"]
-		}
-		{
-			id: "F79049B536BE79A5"
-			title: "All Enchantments: Depth Strider"
 			icon: "minecraft:enchanted_book"
+			id: "4B603AA95240AABB"
 			shape: "rsquare"
 			size: 1.0d
-			x: 5.25d
+			tasks: [{
+				id: "437F8924786CABA0"
+				title: "Blast Protection"
+				type: "checkmark"
+			}]
+			title: "All Enchantments: Blast Protection"
+			x: 4.0d
 			y: 3.25d
-			tasks: [
-				{
-					id: "A6A5E1F744A1A1E1"
-					type: "checkmark"
-					title: "Depth Strider"
-				}
-			]
-			rewards: [ ]
+		}
+		{
 			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:water_essence, forge:storage_blocks/source, minecraft:prismarine_shard, minecraft:nautilus_shell | Source cost: 3000-9000"]
-		}
-		{
-			id: "C9EA2A38E88225BA"
-			title: "All Enchantments: Efficiency"
 			icon: "minecraft:enchanted_book"
+			id: "0C952EFF3E40E771"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "2F58B7D7E672027A"
+				title: "Depth Strider"
+				type: "checkmark"
+			}]
+			title: "All Enchantments: Depth Strider"
+			x: 5.25d
+			y: 3.25d
+		}
+		{
+			description: ["Hint: Ars Enchanting Apparatus via forge:storage_blocks/redstone, minecraft:diamond_pickaxe, minecraft:diamond_shovel, forge:storage_blocks/source | Source cost: 2000-8000"]
+			icon: "minecraft:enchanted_book"
+			id: "0296AFF40D77809D"
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{
+				id: "1DE0903CADA27F80"
+				title: "Efficiency"
+				type: "checkmark"
+			}]
+			title: "All Enchantments: Efficiency"
 			x: 6.5d
 			y: 3.25d
-			tasks: [
-				{
-					id: "1DE0903CADA27F80"
-					type: "checkmark"
-					title: "Efficiency"
-				}
-			]
-			rewards: [ ]
-			description: ["Hint: Ars Enchanting Apparatus via forge:storage_blocks/redstone, minecraft:diamond_pickaxe, minecraft:diamond_shovel, forge:storage_blocks/source | Source cost: 2000-8000"]
 		}
 		{
-			id: "F5FECC2F210BC180"
-			title: "All Enchantments: Feather Falling"
+			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:air_essence, forge:slimeballs, forge:storage_blocks/source, forge:storage_blocks/lapis | Source cost: 2000-6500"]
 			icon: "minecraft:enchanted_book"
+			id: "1F23019AD66F1891"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "78524E7F59EA3FDF"
+				title: "Feather Falling"
+				type: "checkmark"
+			}]
+			title: "All Enchantments: Feather Falling"
 			x: 7.75d
 			y: 3.25d
-			tasks: [
-				{
-					id: "78524E7F59EA3FDF"
-					type: "checkmark"
-					title: "Feather Falling"
-				}
-			]
-			rewards: [ ]
-			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:air_essence, forge:slimeballs, forge:storage_blocks/source, forge:storage_blocks/lapis | Source cost: 2000-6500"]
 		}
 		{
-			id: "77A6837E23D408A7"
-			title: "All Enchantments: Fire Aspect"
+			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:fire_essence, forge:storage_blocks/source, forge:storage_blocks/lapis | Source cost: 2000-4000"]
 			icon: "minecraft:enchanted_book"
+			id: "77A6837E23D408A7"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "7318D93E26C76018"
+				title: "Fire Aspect"
+				type: "checkmark"
+			}]
+			title: "All Enchantments: Fire Aspect"
 			x: 9.0d
 			y: 3.25d
-			tasks: [
-				{
-					id: "7318D93E26C76018"
-					type: "checkmark"
-					title: "Fire Aspect"
-				}
-			]
-			rewards: [ ]
-			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:fire_essence, forge:storage_blocks/source, forge:storage_blocks/lapis | Source cost: 2000-4000"]
 		}
 		{
-			id: "B1281AE43B1F6380"
-			title: "All Enchantments: Fire Protection"
+			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:fire_essence, ars_nouveau:abjuration_essence, forge:storage_blocks/source, forge:rods/blaze | Source cost: 2000-8000"]
 			icon: "minecraft:enchanted_book"
+			id: "1A8E20C29272A402"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "4827F02F692E560F"
+				title: "Fire Protection"
+				type: "checkmark"
+			}]
+			title: "All Enchantments: Fire Protection"
 			x: 10.25d
 			y: 3.25d
-			tasks: [
-				{
-					id: "4827F02F692E560F"
-					type: "checkmark"
-					title: "Fire Protection"
-				}
-			]
-			rewards: [ ]
-			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:fire_essence, ars_nouveau:abjuration_essence, forge:storage_blocks/source, forge:rods/blaze | Source cost: 2000-8000"]
 		}
 		{
-			id: "756935E3003AD4E3"
-			title: "All Enchantments: Flame"
+			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:fire_essence, ars_nouveau:air_essence, forge:rods/blaze | Source cost: 5000-5000"]
 			icon: "minecraft:enchanted_book"
+			id: "756935E3003AD4E3"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "2B061A758AF372F3"
+				title: "Flame"
+				type: "checkmark"
+			}]
+			title: "All Enchantments: Flame"
 			x: 11.5d
 			y: 3.25d
-			tasks: [
-				{
-					id: "9906E3CCBAAD409B"
-					type: "checkmark"
-					title: "Flame"
-				}
-			]
-			rewards: [ ]
-			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:fire_essence, ars_nouveau:air_essence, forge:rods/blaze | Source cost: 5000-5000"]
 		}
 		{
-			id: "45303570F823023B"
-			title: "All Enchantments: Fortune"
+			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:earth_essence, forge:storage_blocks/diamond, forge:storage_blocks/lapis, forge:storage_blocks/source | Source cost: 6000-9000"]
 			icon: "minecraft:enchanted_book"
+			id: "45303570F823023B"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "6B4292DD1CEF47E3"
+				title: "Fortune"
+				type: "checkmark"
+			}]
+			title: "All Enchantments: Fortune"
 			x: 12.75d
 			y: 3.25d
-			tasks: [
-				{
-					id: "BF39DDD949C684EC"
-					type: "checkmark"
-					title: "Fortune"
-				}
-			]
-			rewards: [ ]
-			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:earth_essence, forge:storage_blocks/diamond, forge:storage_blocks/lapis, forge:storage_blocks/source | Source cost: 6000-9000"]
 		}
 		{
-			id: "4C89B8A09BC430CC"
-			title: "All Enchantments: Infinity"
+			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:air_essence, forge:storage_blocks/diamond | Source cost: 9000-9000"]
 			icon: "minecraft:enchanted_book"
+			id: "4C89B8A09BC430CC"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "0299582051172ACF"
+				title: "Infinity"
+				type: "checkmark"
+			}]
+			title: "All Enchantments: Infinity"
 			x: 14.0d
 			y: 3.25d
-			tasks: [
-				{
-					id: "86498A3ADB49EB31"
-					type: "checkmark"
-					title: "Infinity"
-				}
-			]
-			rewards: [ ]
-			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:air_essence, forge:storage_blocks/diamond | Source cost: 9000-9000"]
 		}
 		{
-			id: "5FF77F5D6A42E6AC"
-			title: "All Enchantments: Knockback"
+			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:manipulation_essence, ars_nouveau:air_essence, forge:storage_blocks/source | Source cost: 2000-4000"]
 			icon: "minecraft:enchanted_book"
+			id: "5FF77F5D6A42E6AC"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "79342C73671FF05C"
+				title: "Knockback"
+				type: "checkmark"
+			}]
+			title: "All Enchantments: Knockback"
 			x: 15.25d
 			y: 3.25d
-			tasks: [
-				{
-					id: "DC317E638FAAA446"
-					type: "checkmark"
-					title: "Knockback"
-				}
-			]
-			rewards: [ ]
-			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:manipulation_essence, ars_nouveau:air_essence, forge:storage_blocks/source | Source cost: 2000-4000"]
 		}
 		{
-			id: "3747B891D4401D4D"
-			title: "All Enchantments: Looting"
+			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:earth_essence, forge:storage_blocks/emerald, forge:storage_blocks/lapis, forge:storage_blocks/source | Source cost: 6000-9000"]
 			icon: "minecraft:enchanted_book"
+			id: "3747B891D4401D4D"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "55AC0736F4621E9A"
+				title: "Looting"
+				type: "checkmark"
+			}]
+			title: "All Enchantments: Looting"
 			x: 1.5d
 			y: 4.5d
-			tasks: [
-				{
-					id: "C8A18DDE59BE61FA"
-					type: "checkmark"
-					title: "Looting"
-				}
-			]
-			rewards: [ ]
-			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:earth_essence, forge:storage_blocks/emerald, forge:storage_blocks/lapis, forge:storage_blocks/source | Source cost: 6000-9000"]
 		}
 		{
-			id: "DA56CE913697231F"
-			title: "All Enchantments: Multishot"
+			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:manipulation_essence, forge:storage_blocks/source | Source cost: 9000-9000"]
 			icon: "minecraft:enchanted_book"
+			id: "22729C737A57F724"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "740DC7C61580D8E5"
+				title: "Multishot"
+				type: "checkmark"
+			}]
+			title: "All Enchantments: Multishot"
 			x: 2.75d
 			y: 4.5d
-			tasks: [
-				{
-					id: "740DC7C61580D8E5"
-					type: "checkmark"
-					title: "Multishot"
-				}
-			]
-			rewards: [ ]
-			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:manipulation_essence, forge:storage_blocks/source | Source cost: 9000-9000"]
 		}
 		{
-			id: "CF23D71627781BB8"
-			title: "All Enchantments: Piercing"
+			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:manipulation_essence, forge:storage_blocks/source, forge:storage_blocks/lapis | Source cost: 2500-9000"]
 			icon: "minecraft:enchanted_book"
+			id: "240F623DF7D8ECA1"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "69980BC5A218AC9F"
+				title: "Piercing"
+				type: "checkmark"
+			}]
+			title: "All Enchantments: Piercing"
 			x: 4.0d
 			y: 4.5d
-			tasks: [
-				{
-					id: "C881DBC0DC07D3A8"
-					type: "checkmark"
-					title: "Piercing"
-				}
-			]
-			rewards: [ ]
-			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:manipulation_essence, forge:storage_blocks/source, forge:storage_blocks/lapis | Source cost: 2500-9000"]
 		}
 		{
-			id: "CEA9D9E34119FDEA"
-			title: "All Enchantments: Power"
+			description: ["Hint: Ars Enchanting Apparatus via forge:gems/diamond, ars_nouveau:air_essence, forge:storage_blocks/source, forge:storage_blocks/lapis | Source cost: 2000-9000"]
 			icon: "minecraft:enchanted_book"
+			id: "3E73A3947BF95F9E"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "566F2E2204C71A4C"
+				title: "Power"
+				type: "checkmark"
+			}]
+			title: "All Enchantments: Power"
 			x: 5.25d
 			y: 4.5d
-			tasks: [
-				{
-					id: "566F2E2204C71A4C"
-					type: "checkmark"
-					title: "Power"
-				}
-			]
-			rewards: [ ]
-			description: ["Hint: Ars Enchanting Apparatus via forge:gems/diamond, ars_nouveau:air_essence, forge:storage_blocks/source, forge:storage_blocks/lapis | Source cost: 2000-9000"]
 		}
 		{
-			id: "44F3709F6222A900"
-			title: "All Enchantments: Projectile Protection"
+			description: ["Hint: Ars Enchanting Apparatus via minecraft:arrow, ars_nouveau:air_essence, ars_nouveau:abjuration_essence, forge:storage_blocks/source | Source cost: 2000-8000"]
 			icon: "minecraft:enchanted_book"
+			id: "44F3709F6222A900"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "0CC3854230118C9B"
+				title: "Projectile Protection"
+				type: "checkmark"
+			}]
+			title: "All Enchantments: Projectile Protection"
 			x: 6.5d
 			y: 4.5d
-			tasks: [
-				{
-					id: "0CC3854230118C9B"
-					type: "checkmark"
-					title: "Projectile Protection"
-				}
-			]
-			rewards: [ ]
-			description: ["Hint: Ars Enchanting Apparatus via minecraft:arrow, ars_nouveau:air_essence, ars_nouveau:abjuration_essence, forge:storage_blocks/source | Source cost: 2000-8000"]
 		}
 		{
-			id: "51E48D720BED3284"
-			title: "All Enchantments: Protection"
+			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:manipulation_essence, ars_nouveau:abjuration_essence, forge:storage_blocks/source, forge:storage_blocks/lapis | Source cost: 2000-8000"]
 			icon: "minecraft:enchanted_book"
+			id: "51E48D720BED3284"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "31880DBBD1FD1805"
+				title: "Protection"
+				type: "checkmark"
+			}]
+			title: "All Enchantments: Protection"
 			x: 7.75d
 			y: 4.5d
-			tasks: [
-				{
-					id: "31880DBBD1FD1805"
-					type: "checkmark"
-					title: "Protection"
-				}
-			]
-			rewards: [ ]
-			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:manipulation_essence, ars_nouveau:abjuration_essence, forge:storage_blocks/source, forge:storage_blocks/lapis | Source cost: 2000-8000"]
 		}
 		{
-			id: "D9DFA5E64942AC06"
-			title: "All Enchantments: Punch"
+			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:air_essence, forge:storage_blocks/source | Source cost: 2000-4000"]
 			icon: "minecraft:enchanted_book"
+			id: "3FB40FD8790D79BA"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "29101440E7C54CE8"
+				title: "Punch"
+				type: "checkmark"
+			}]
+			title: "All Enchantments: Punch"
 			x: 9.0d
 			y: 4.5d
-			tasks: [
-				{
-					id: "EE107A221BEF911C"
-					type: "checkmark"
-					title: "Punch"
-				}
-			]
-			rewards: [ ]
-			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:air_essence, forge:storage_blocks/source | Source cost: 2000-4000"]
 		}
 		{
-			id: "ACFF07BE86553A24"
-			title: "All Enchantments: Quick Charge"
+			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:air_essence, ars_nouveau:abjuration_essence, forge:storage_blocks/source | Source cost: 2000-6000"]
 			icon: "minecraft:enchanted_book"
+			id: "1EC8A46EA239DB32"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "20B1960879C494AC"
+				title: "Quick Charge"
+				type: "checkmark"
+			}]
+			title: "All Enchantments: Quick Charge"
 			x: 10.25d
 			y: 4.5d
-			tasks: [
-				{
-					id: "20B1960879C494AC"
-					type: "checkmark"
-					title: "Quick Charge"
-				}
-			]
-			rewards: [ ]
-			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:air_essence, ars_nouveau:abjuration_essence, forge:storage_blocks/source | Source cost: 2000-6000"]
 		}
 		{
-			id: "EB1B93E881FC0BDA"
-			title: "All Enchantments: Respiration"
+			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:water_essence, forge:storage_blocks/source | Source cost: 3000-9000"]
 			icon: "minecraft:enchanted_book"
+			id: "560E4DF365C80894"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "659D75BE20D0D6DE"
+				title: "Respiration"
+				type: "checkmark"
+			}]
+			title: "All Enchantments: Respiration"
 			x: 11.5d
 			y: 4.5d
-			tasks: [
-				{
-					id: "8A60DAFC5A87CB48"
-					type: "checkmark"
-					title: "Respiration"
-				}
-			]
-			rewards: [ ]
-			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:water_essence, forge:storage_blocks/source | Source cost: 3000-9000"]
 		}
 		{
-			id: "3708174C382A8E67"
-			title: "All Enchantments: Sharpness"
+			description: ["Hint: Ars Enchanting Apparatus via forge:storage_blocks/quartz, forge:gems/diamond, forge:storage_blocks/lapis, forge:storage_blocks/source | Source cost: 2000-8000"]
 			icon: "minecraft:enchanted_book"
+			id: "3708174C382A8E67"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "754E1041E88D0BAF"
+				title: "Sharpness"
+				type: "checkmark"
+			}]
+			title: "All Enchantments: Sharpness"
 			x: 12.75d
 			y: 4.5d
-			tasks: [
-				{
-					id: "97A2388E27A5C9D1"
-					type: "checkmark"
-					title: "Sharpness"
-				}
-			]
-			rewards: [ ]
-			description: ["Hint: Ars Enchanting Apparatus via forge:storage_blocks/quartz, forge:gems/diamond, forge:storage_blocks/lapis, forge:storage_blocks/source | Source cost: 2000-8000"]
 		}
 		{
-			id: "69036E0EEE55E862"
-			title: "All Enchantments: Silk Touch"
+			description: ["Hint: Ars Enchanting Apparatus via forge:gems/emerald, forge:gems/diamond, forge:storage_blocks/source, forge:storage_blocks/lapis | Source cost: 9000-9000"]
 			icon: "minecraft:enchanted_book"
+			id: "69036E0EEE55E862"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "2C73627C76AE641B"
+				title: "Silk Touch"
+				type: "checkmark"
+			}]
+			title: "All Enchantments: Silk Touch"
 			x: 14.0d
 			y: 4.5d
-			tasks: [
-				{
-					id: "2C73627C76AE641B"
-					type: "checkmark"
-					title: "Silk Touch"
-				}
-			]
-			rewards: [ ]
-			description: ["Hint: Ars Enchanting Apparatus via forge:gems/emerald, forge:gems/diamond, forge:storage_blocks/source, forge:storage_blocks/lapis | Source cost: 9000-9000"]
 		}
 		{
-			id: "8AC7ABE2B988D0DE"
-			title: "All Enchantments: Smite"
+			description: ["Hint: Ars Enchanting Apparatus via minecraft:bone_block, forge:storage_blocks/source, forge:storage_blocks/lapis | Source cost: 2000-8000"]
 			icon: "minecraft:enchanted_book"
+			id: "45A9F4644DA4E1B5"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "51ADA5B3F02F68AA"
+				title: "Smite"
+				type: "checkmark"
+			}]
+			title: "All Enchantments: Smite"
 			x: 15.25d
 			y: 4.5d
-			tasks: [
-				{
-					id: "51ADA5B3F02F68AA"
-					type: "checkmark"
-					title: "Smite"
-				}
-			]
-			rewards: [ ]
-			description: ["Hint: Ars Enchanting Apparatus via minecraft:bone_block, forge:storage_blocks/source, forge:storage_blocks/lapis | Source cost: 2000-8000"]
 		}
 		{
-			id: "851FBAB01777E7C1"
-			title: "All Enchantments: Sweeping"
+			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:manipulation_essence, forge:storage_blocks/source, forge:storage_blocks/lapis | Source cost: 2000-5000"]
 			icon: "minecraft:enchanted_book"
+			id: "3D247CE2435579ED"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "7152B800515DF3E3"
+				title: "Sweeping"
+				type: "checkmark"
+			}]
+			title: "All Enchantments: Sweeping"
 			x: 1.5d
 			y: 5.75d
-			tasks: [
-				{
-					id: "943F654E47280703"
-					type: "checkmark"
-					title: "Sweeping"
-				}
-			]
-			rewards: [ ]
-			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:manipulation_essence, forge:storage_blocks/source, forge:storage_blocks/lapis | Source cost: 2000-5000"]
 		}
 		{
-			id: "C5FADC4C142A0065"
-			title: "All Enchantments: Thorns"
+			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:wilden_spike, forge:storage_blocks/source, forge:storage_blocks/lapis | Source cost: 2000-5000"]
 			icon: "minecraft:enchanted_book"
+			id: "1EC97CF2C4E7A7D7"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "4BC8888E44FC562D"
+				title: "Thorns"
+				type: "checkmark"
+			}]
+			title: "All Enchantments: Thorns"
 			x: 2.75d
 			y: 5.75d
-			tasks: [
-				{
-					id: "4BC8888E44FC562D"
-					type: "checkmark"
-					title: "Thorns"
-				}
-			]
-			rewards: [ ]
-			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:wilden_spike, forge:storage_blocks/source, forge:storage_blocks/lapis | Source cost: 2000-5000"]
 		}
 		{
-			id: "8B75BC7CB8EB2340"
-			title: "All Enchantments: Unbreaking"
+			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:abjuration_essence, forge:gems/diamond, forge:storage_blocks/source, forge:storage_blocks/lapis | Source cost: 2000-5000"]
 			icon: "minecraft:enchanted_book"
+			id: "39E17978FE5E656B"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "1781939CD77569DD"
+				title: "Unbreaking"
+				type: "checkmark"
+			}]
+			title: "All Enchantments: Unbreaking"
 			x: 4.0d
 			y: 5.75d
-			tasks: [
-				{
-					id: "1781939CD77569DD"
-					type: "checkmark"
-					title: "Unbreaking"
-				}
-			]
-			rewards: [ ]
-			description: ["Hint: Ars Enchanting Apparatus via ars_nouveau:abjuration_essence, forge:gems/diamond, forge:storage_blocks/source, forge:storage_blocks/lapis | Source cost: 2000-5000"]
 		}
 	]
 }

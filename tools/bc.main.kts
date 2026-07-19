@@ -90,19 +90,12 @@ data class CommandResult(
 )
 
 data class ProcessRun(val exitCode: Int, val output: String)
-data class ScenarioDefinition(
-    val name: String,
-    val description: String,
-    val script: String,
-    val headful: Boolean = false,
-)
+data class PlaytestRelease(val version: Int, val baseName: String)
 data class WorkspaceRepoDefinition(
     val id: String,
     val path: String,
     val kind: String,
-    val fastCommand: List<String>,
-    val fullCommand: List<String>,
-    val fullMeaningful: Boolean,
+    val command: List<String>,
 )
 data class HarnessPaths(
     val dir: Path,
@@ -171,7 +164,6 @@ fun cachePath(vararg parts: String): Path =
         .normalize()
 
 val defaultServerDir = root.resolve("server-instance").toString()
-val defaultDumpRefreshServerDir = cachePath("dump-refresh").toString()
 val defaultExportsDir = root.resolve("generated/exports").toString()
 val mcVersion = "1.20.1"
 val forgeVersion = "47.4.13"
@@ -223,14 +215,12 @@ val clientOnlyModGlobs = listOf(
     "ambientsounds*",
     "bettergrassify*",
     "configured*",
-    "controllable*",
     "controlling*",
     "DistantHorizons*",
     "embeddium*",
     "emi*",
     "entityculling*",
     "hold-my-items*",
-    "holdmyitems*",
     "mouse-tweaks*",
     "no-more-popups*",
     "no-recipe-book*",
@@ -241,94 +231,6 @@ val clientOnlyModGlobs = listOf(
     "the-one-probe*",
     "true-darkness*",
     "darkness*",
-)
-
-val scenarioDimensionWorldgen = listOf(
-    "minecraft:overworld",
-    "minecraft:the_nether",
-    "aether:the_aether",
-    "undergarden:undergarden",
-    "twilightforest:twilight_forest",
-    "deeperdarker:otherside",
-    "lostcities:lostcity",
-    "fallout_wastelands_:wastelands",
-    "creatingspace:earth_orbit",
-    "creatingspace:moon_orbit",
-    "creatingspace:mars_orbit",
-    "creatingspace:the_moon",
-    "creatingspace:mars",
-    "creatingspace:venus",
-    "ae2:spatial_storage",
-    "bloodmagic:dungeon",
-    "irons_spellbooks:pocket_dimension",
-)
-
-val scenarios = linkedMapOf(
-    "lc_tfth_c2me_dh" to ScenarioDefinition(
-        "lc_tfth_c2me_dh",
-        "Lost Cities/C2ME/Distant Horizons serialization-guard regression repro",
-        "tools/kotlin/lc_tfth_c2me_dh_stability.main.kts",
-    ),
-    "mod_ram_partition" to ScenarioDefinition(
-        "mod_ram_partition",
-        "Dedicated-server mod RAM partitioning and attribution lane",
-        "tools/kotlin/mod_ram_partition.main.kts",
-    ),
-    "dimension_worldgen" to ScenarioDefinition(
-        "dimension_worldgen",
-        "All-dimension worldgen stress run",
-        "tools/kotlin/dimension_worldgen_stress.main.kts",
-        headful = true,
-    ),
-    "opening_progression" to ScenarioDefinition(
-        "opening_progression",
-        "Opening progression runtime validation",
-        "tools/kotlin/opening_progression_runtime_validation.main.kts",
-    ),
-    "pillager_campaigns" to ScenarioDefinition(
-        "pillager_campaigns",
-        "Deterministic pillager campaigns captain/warlord regression lane",
-        "tools/kotlin/pillager_campaigns.main.kts",
-    ),
-    "worldgen_sampling" to ScenarioDefinition(
-        "worldgen_sampling",
-        "Seeded worldgen sampling lane with local/quick/release profiles",
-        "tools/kotlin/worldgen_sampling.main.kts",
-    ),
-    "worldgen_marketing_screenshots" to ScenarioDefinition(
-        "worldgen_marketing_screenshots",
-        "Deterministic shader/DH worldgen marketing screenshot capture lane",
-        "tools/kotlin/worldgen_marketing_screenshots.main.kts",
-        headful = true,
-    ),
-    "vs_ships_stability" to ScenarioDefinition(
-        "vs_ships_stability",
-        "Valkyrien Skies family headless server stability diagnostics",
-        "tools/kotlin/vs_ships_stability.main.kts",
-    ),
-    "vs_ships_matrix" to ScenarioDefinition(
-        "vs_ships_matrix",
-        "Valkyrien Skies family disposable runtime isolation matrix",
-        "tools/kotlin/vs_ships_matrix.main.kts",
-    ),
-    "client_smoke" to ScenarioDefinition(
-        "client_smoke",
-        "Client-facing quick/release smoke lane",
-        "tools/kotlin/client_smoke.main.kts",
-        headful = true,
-    ),
-    "vs_ships_client" to ScenarioDefinition(
-        "vs_ships_client",
-        "Valkyrien Skies family headful client/render/sync diagnostics",
-        "tools/kotlin/vs_ships_client.main.kts",
-        headful = true,
-    ),
-    "vs_ships_release" to ScenarioDefinition(
-        "vs_ships_release",
-        "Full Valkyrien Skies family release-grade lifecycle and compatibility gate",
-        "tools/kotlin/vs_ships_release.main.kts",
-        headful = true,
-    ),
 )
 
 val rawArgs = args.toList()
@@ -356,17 +258,14 @@ Usage: tools/bc [--json] [--quiet] <command> ...
 
 Public commands:
   tools/bc test fast [--repo ID|PATH] [--list-repos]
-  tools/bc test full [--workspace [--repo ID|PATH] [--list-repos]]
   tools/bc test static
-  tools/bc test runtime --instance PATH [--strict-data-dumps]
-  tools/bc test smoke [--server-dir PATH] [--port N] [--reset-runtime]
-  tools/bc test scenario NAME [scenario args]
-  tools/bc test scenario-headful NAME [scenario args]
+  tools/bc test kotlin [--filter NAME]
+  tools/bc test smoke [--run-root PATH] [--bootstrap-mode always|once|never] [--port N] [--idle-seconds N]
   tools/bc build sync server --dir PATH --dry-run|--apply
   tools/bc build sync client --dir PATH --dry-run|--apply
-  tools/bc build dumps [--server-dir PATH] [--port N] [--reset-runtime]
   tools/bc build bundle curseforge [--exports-dir PATH]
   tools/bc build bundle server [--exports-dir PATH] [--server-tree-dir PATH] [--server-zip PATH] [--clean]
+  tools/bc build bundle release [--exports-dir PATH] [--resume-current]
   tools/bc graph item ITEM_ID [--producers|--consumers|--all] [--limit N] [--type RECIPE_TYPE] [--graph PATH]
   tools/bc graph route ITEM_ID [--graph PATH] [--sources PATH] [--spine PATH]
   tools/bc graph blockers ITEM_ID [--graph PATH] [--sources PATH] [--spine PATH] [--limit N]
@@ -405,30 +304,14 @@ Examples:
 """.trimIndent()
 
 fun testHelp(): String = """
-Usage: tools/bc test <fast|full|static|runtime|smoke|scenario|kotlin> ...
+Usage: tools/bc test <fast|static|kotlin|smoke> ...
 
 Commands:
   fast [--repo ID|PATH] [--list-repos]
-  full [--workspace [--repo ID|PATH] [--list-repos]]
   static
-  runtime --instance PATH [--strict-data-dumps]
-  smoke [--server-dir PATH] [--port N] [--reset-runtime] [--bootstrap-mode always|once|never]
-  scenario NAME [scenario args]
-  scenario-headful NAME [scenario args]
   kotlin [--filter NAME]
-
-Headless Scenarios:
-${scenarios.values.filterNot { it.headful }.joinToString("\n") { "  ${it.name.padEnd(18)} ${it.description}" }}
-
-Headful Scenarios:
-${scenarios.values.filter { it.headful }.joinToString("\n") { "  ${it.name.padEnd(18)} ${it.description}" }}
+  smoke [--run-root PATH] [--bootstrap-mode always|once|never] [--port N] [--idle-seconds N]
 """.trimIndent()
-
-fun canRunHeadfulScenario(): Boolean {
-    if (System.getenv("BC_FORCE_XVFB") == "1") return findXvfbRunPath() != null
-    if (!System.getenv("DISPLAY").isNullOrBlank()) return true
-    return findXvfbRunPath() != null
-}
 
 fun buildHelp(): String = """
 Usage: tools/bc build <sync|bundle> ...
@@ -436,9 +319,14 @@ Usage: tools/bc build <sync|bundle> ...
 Commands:
   sync server --dir PATH --dry-run|--apply
   sync client --dir PATH --dry-run|--apply
-  dumps [--server-dir PATH] [--port N] [--reset-runtime]
   bundle curseforge [--exports-dir PATH]
   bundle server [--exports-dir PATH] [--server-tree-dir PATH] [--server-zip PATH] [--clean]
+  bundle release [--exports-dir PATH] [--resume-current]
+
+The release bundle command reserves the next persistent Playtest version, then
+refreshes packwiz metadata in the current source tree, runs static validation, exports both
+archives as better-content-playtest-v<N>-{curseforge,server}.zip, and verifies their
+required contents. Runtime validation is intentionally outside this workflow.
 """.trimIndent()
 
 fun doctorHelp(): String = """
@@ -451,7 +339,7 @@ Commands:
 """.trimIndent()
 
 fun internalHelp(): String = """
-Usage: tools/bc internal <resolve-packwiz-downloads|prune-runtime-mods|log-hard-failure-scan|prepare-server-runtime|prepare-client-runtime|minecraft-client-argfile|sync-burnt-coverage-tags|generate-completionist-quests|audit-ftbq-layout|check-js-syntax|check-json-surface|validate-pack-contract|contract-completeness-report|validate-kubejs-assets|validate-autonomous-contracts|validate-realistic-hands|validate-dynamic-trees-coverage|validate-chemistry-identity|validate-synthesis-pipeline|validate-player-progression-contracts|validate-progression-reachability|validate-burnt-coverage|validate-lc-tfth-dh-contracts|validate-kotlin-tool-surface|validate-tool-doc-surface|validate-worldgen-sampling-contracts|validate-client-smoke-contracts|verify-pack-fast|verify-pack-full> ...
+Usage: tools/bc internal <resolve-packwiz-downloads|prune-runtime-mods|prepare-client-runtime|minecraft-client-argfile|sync-burnt-coverage-tags|generate-completionist-quests|audit-ftbq-layout|check-js-syntax|check-json-surface|validate-bettergrassify-grass-blocks|validate-pack-contract|contract-completeness-report|validate-kubejs-assets|validate-autonomous-contracts|validate-realistic-hands|validate-dynamic-trees-coverage|validate-chemistry-identity|validate-synthesis-pipeline|validate-player-progression-contracts|validate-progression-reachability|validate-burnt-coverage|validate-lc-tfth-dh-contracts|validate-kotlin-tool-surface|validate-tool-doc-surface|verify-pack-fast> ...
 """.trimIndent()
 
 fun usageError(message: String, help: String = mainHelp()): CommandResult =
@@ -544,16 +432,6 @@ fun findJava17Path(): String? {
         }
     }
     return null
-}
-
-fun findXvfbRunPath(): String? {
-    val candidates = listOfNotNull(
-        System.getenv("XVFB_RUN")?.takeIf { it.isNotBlank() },
-        System.getenv("BC_XVFB_RUN")?.takeIf { it.isNotBlank() },
-        userLocalExecutable(".local", "bin", "xvfb-run"),
-        findCommandPath("xvfb-run"),
-    )
-    return candidates.firstOrNull { Files.isExecutable(Paths.get(it)) }
 }
 
 fun readCommand(command: List<String>): String =
@@ -1116,6 +994,7 @@ enable-query=false
 enable-rcon=false
 enforce-secure-profile=${if (onlineMode) "true" else "false"}
 gamemode=survival
+level-seed=better-content-validation-v1
 level-name=world
 max-players=8
 motd=${if (onlineMode) "Better Content server bundle" else "Better Content local agent runtime"}
@@ -1127,7 +1006,10 @@ simulation-distance=6
 spawn-protection=0
 view-distance=12
 white-list=false
-""".trimIndent() + "\n"
+""".trimIndent()
+        .lineSequence()
+        .filterNot { onlineMode && it.startsWith("level-seed=") }
+        .joinToString("\n", postfix = "\n")
     Files.writeString(path, text)
 }
 
@@ -2072,9 +1954,7 @@ fun loadWorkspaceRepoDefinitions(): List<WorkspaceRepoDefinition> {
             id = jsonString(repo["id"]) ?: error("workspace repo entry missing id"),
             path = jsonString(repo["path"]) ?: error("workspace repo entry missing path"),
             kind = jsonString(repo["kind"]) ?: "unknown",
-            fastCommand = jsonStringList(repo["fastCommand"]).ifEmpty { error("workspace repo entry missing fastCommand") },
-            fullCommand = jsonStringList(repo["fullCommand"]).ifEmpty { error("workspace repo entry missing fullCommand") },
-            fullMeaningful = jsonBoolean(repo["fullMeaningful"]) ?: true,
+            command = jsonStringList(repo["fastCommand"]).ifEmpty { error("workspace repo entry missing fastCommand") },
         )
     }
 }
@@ -2109,7 +1989,7 @@ fun repoMatchesFilter(repo: WorkspaceRepoDefinition, filter: String): Boolean {
 
 fun selectWorkspaceRepos(mode: String, filters: List<String>): Pair<List<WorkspaceRepoDefinition>, List<String>> {
     val repos = loadWorkspaceRepoDefinitions()
-    val eligible = if (mode == "full") repos.filter { it.fullMeaningful } else repos
+    val eligible = repos
     if (filters.isEmpty()) return eligible to emptyList()
     val selected = eligible.filter { repo -> filters.any { repoMatchesFilter(repo, it) } }
     val unmatched = filters.filterNot { filter -> eligible.any { repoMatchesFilter(it, filter) } }
@@ -2119,8 +1999,7 @@ fun selectWorkspaceRepos(mode: String, filters: List<String>): Pair<List<Workspa
 fun formatWorkspaceRepoList(mode: String, repos: List<WorkspaceRepoDefinition>): String = buildString {
     appendLine("workspace $mode repo selection:")
     repos.forEach { repo ->
-        val command = if (mode == "full") repo.fullCommand else repo.fastCommand
-        appendLine("  ${repo.id.padEnd(34)} ${repo.path} :: ${command.joinToString(" ")}")
+        appendLine("  ${repo.id.padEnd(34)} ${repo.path} :: ${repo.command.joinToString(" ")}")
     }
 }
 
@@ -2133,7 +2012,7 @@ fun runWorkspaceLane(mode: String, filters: List<String>, listOnly: Boolean): Pr
     val output = mutableListOf<String>()
     for (repo in selected) {
         val workDir = root.resolve(repo.path).normalize()
-        val command = if (mode == "full") repo.fullCommand else repo.fastCommand
+        val command = repo.command
         val run = runProcess(command, stream = false, workDir = workDir)
         output += buildString {
             appendLine("==> ${repo.id} (${repoRel(workDir)})")
@@ -2436,6 +2315,43 @@ fun generateMinecraftClientArgfile(clientDir: Path, versionId: String, username:
     return ProcessRun(0, out.toString())
 }
 
+val playtestVersionPattern = Regex("""(?m)^version\s*=\s*"Playtest v([1-9][0-9]*)"\s*$""")
+
+fun currentPlaytestRelease(): PlaytestRelease {
+    val packToml = root.resolve("pack.toml")
+    val text = Files.readString(packToml)
+    val match = playtestVersionPattern.find(text)
+        ?: error("pack.toml version must use the form: Playtest v<N>")
+    val version = match.groupValues[1].toIntOrNull()
+        ?: error("pack.toml Playtest version is outside the supported integer range")
+    return PlaytestRelease(version, "better-content-playtest-v$version")
+}
+
+fun nextPlaytestRelease(current: PlaytestRelease = currentPlaytestRelease()): PlaytestRelease {
+    val version = Math.addExact(current.version, 1)
+    return PlaytestRelease(version, "better-content-playtest-v$version")
+}
+
+fun reserveNextPlaytestRelease(): PlaytestRelease {
+    val next = nextPlaytestRelease()
+    val packToml = root.resolve("pack.toml")
+    val text = Files.readString(packToml)
+    val updated = playtestVersionPattern.replace(text, "version = \"Playtest v${next.version}\"")
+    Files.writeString(packToml, updated)
+    return next
+}
+
+fun releaseArchivePaths(exportsDir: Path, release: PlaytestRelease): Pair<Path, Path> =
+    exportsDir.resolve("${release.baseName}-curseforge.zip") to exportsDir.resolve("${release.baseName}-server.zip")
+
+fun refuseExistingReleaseArchives(vararg archives: Path): ProcessRun? {
+    val existing = archives.filter { it.exists() }
+    return if (existing.isEmpty()) null else ProcessRun(
+        1,
+        "refusing to overwrite existing release archive(s):\n${existing.joinToString("\n")}",
+    )
+}
+
 fun syncManaged(side: String, targetDir: Path, apply: Boolean): ProcessRun {
     val output = mutableListOf<String>()
     targetDir.createDirectories()
@@ -2483,7 +2399,7 @@ fun bootstrapServerRuntime(serverDir: Path, port: Int, reset: Boolean): ProcessR
     val bundleWorkRoot = serverDir.parent.resolve("${serverDir.fileName}.bundle-work")
     val exportsDir = bundleWorkRoot.resolve("exports")
     val serverTreeDir = exportsDir.resolve("server-tree/better-content-server")
-    val serverZip = exportsDir.resolve("better-content-playtest-4-v1-server.zip")
+    val serverZip = exportsDir.resolve("${currentPlaytestRelease().baseName}-server.zip")
     val extractRoot = bundleWorkRoot.resolve("unzipped")
     if (reset) {
         deleteTree(bundleWorkRoot)
@@ -2515,10 +2431,32 @@ fun bootstrapServerRuntime(serverDir: Path, port: Int, reset: Boolean): ProcessR
     writeLocalServerProperties(serverDir.resolve("server.properties"), port, onlineMode = false)
     val userJvm = serverDir.resolve("user_jvm_args.txt")
     if (!userJvm.exists()) {
-        Files.writeString(userJvm, "-Xms2G\n-Xmx6G\n-XX:+UseG1GC\n-Dfile.encoding=UTF-8\n")
+        Files.writeString(userJvm, "-Xms4G\n-Xmx16G\n-XX:+UseG1GC\n-Dfile.encoding=UTF-8\n")
     }
     deleteTree(bundleWorkRoot)
     return ProcessRun(0, "Bootstrapped server runtime: $serverDir")
+}
+
+fun injectValidationProbe(runtimeDir: Path, contract: Path): ProcessRun {
+    if (!runtimeDir.resolve("run.sh").exists()) return ProcessRun(2, "prepared runtime missing: $runtimeDir")
+    if (!contract.exists()) return ProcessRun(2, "progression validation contract missing: $contract")
+    val probeRoot = root.resolve("tools/runtime-probe")
+    val wrapper = root.resolve("generated/custom-mod-sources/pillager-campaigns/gradlew")
+    if (!probeRoot.resolve("build.gradle.kts").exists() || !wrapper.exists()) {
+        return ProcessRun(2, "validation probe build surface is incomplete")
+    }
+    val build = runProcess(listOf(wrapper.toString(), "-p", probeRoot.toString(), "reobfJar"), stream = false)
+    if (build.exitCode != 0) return ProcessRun(build.exitCode, "validation probe build failed\n${build.output}")
+    val jar = probeRoot.resolve("build/reobfJar/output.jar")
+    if (!jar.exists()) return ProcessRun(1, "validation probe reobfJar did not produce $jar")
+    val mods = runtimeDir.resolve("mods")
+    mods.createDirectories()
+    val deployed = mods.resolve("bc-validation-probe-0.1.0.jar")
+    Files.copy(jar, deployed, StandardCopyOption.REPLACE_EXISTING)
+    val configDir = runtimeDir.resolve("config/bc-validation-probe")
+    configDir.createDirectories()
+    Files.copy(contract, configDir.resolve("progression_milestones.json"), StandardCopyOption.REPLACE_EXISTING)
+    return ProcessRun(0, "Injected validation probe: $deployed\nsha256=${sha256(deployed)}\ncontract=${configDir.resolve("progression_milestones.json")}")
 }
 
 fun bootstrapClientRuntime(clientDir: Path): ProcessRun {
@@ -2694,6 +2632,35 @@ fun waitForFiles(paths: List<Path>, timeoutSeconds: Int, process: Process, phase
     error("$phase timed out after ${timeoutSeconds}s waiting for $missing")
 }
 
+fun captureSmokeStartupDiagnostics(running: RunningProcess, evidenceDir: Path) {
+    val jvm = runCatching {
+        running.process.toHandle().descendants()
+            .filter { handle -> handle.isAlive && handle.info().command().orElse("").endsWith("java") }
+            .findFirst()
+            .orElse(null)
+    }.getOrNull() ?: return
+    val pid = jvm.pid()
+    val commands = listOf(
+        "thread-dump.txt" to listOf("jcmd", pid.toString(), "Thread.print", "-l"),
+        "heap-info.txt" to listOf("jcmd", pid.toString(), "GC.heap_info"),
+        "native-memory-summary.txt" to listOf("jcmd", pid.toString(), "VM.native_memory", "summary"),
+    )
+    for ((name, command) in commands) {
+        val output = evidenceDir.resolve(name)
+        runCatching {
+            val process = ProcessBuilder(command).redirectErrorStream(true).redirectOutput(output.toFile()).start()
+            if (!process.waitFor(30, java.util.concurrent.TimeUnit.SECONDS)) {
+                process.destroy()
+                if (!process.waitFor(5, java.util.concurrent.TimeUnit.SECONDS)) process.destroyForcibly()
+            }
+        }
+    }
+    val procStatus = Paths.get("/proc/$pid/status")
+    if (procStatus.exists()) {
+        Files.copy(procStatus, evidenceDir.resolve("process-status.txt"), StandardCopyOption.REPLACE_EXISTING)
+    }
+}
+
 fun sendCommand(runningProcess: RunningProcess?, command: String) {
     runningProcess?.stdin?.apply {
         write(command)
@@ -2724,11 +2691,26 @@ fun runStaticValidation(): ProcessRun {
     return runKotlinScript(root.resolve("tools/kotlin/static_validation.main.kts"))
 }
 
+// Runtime test entrypoints are intentionally removed. These inert definitions keep
+// retired dispatcher branches compilable while the public command guard rejects them.
+data class RetiredScenario(val name: String, val script: String)
+val scenarios: Map<String, RetiredScenario> = emptyMap()
+val defaultDumpRefreshServerDir: String = cachePath("retired-dump-refresh").toString()
+fun runPackFullLane(): ProcessRun = ProcessRun(2, "test full has been removed; use test fast")
+
 fun runPackSuite(instance: Path, strictDataDumps: Boolean, runtimeOnly: Boolean = false): ProcessRun {
     val env = mutableMapOf("BC_INSTANCE" to instance.toString(), "BC_STRICT_RUNTIME" to "1")
     if (strictDataDumps) env["BC_STRICT_DATA_DUMPS"] = "1"
     if (runtimeOnly) env["BC_RUNTIME_ONLY"] = "1"
     return runKotlinScript(root.resolve("tools/kotlin/pack_test_suite.main.kts"), extraEnv = env)
+}
+
+fun runUnearthedReplacementAudit(instance: Path?, world: Path?, output: Path): ProcessRun {
+    val args = mutableListOf<String>()
+    if (instance != null) args += listOf("--instance", instance.toString())
+    if (world != null) args += listOf("--world", world.toString())
+    args += listOf("--output", output.toString())
+    return runKotlinScript(root.resolve("tools/kotlin/audit_unearthed_replacement.main.kts"), args)
 }
 
 fun runStepSequence(steps: List<Pair<String, () -> ProcessRun>>): ProcessRun {
@@ -2747,41 +2729,6 @@ fun runPackFastLane(): ProcessRun = runStepSequence(
             add("kotlin tests" to { runKotlinTests(null) })
         }
         add("static validation" to { runStaticValidation() })
-    },
-)
-
-fun packFullServerDir(): Path =
-    System.getenv("BC_PACK_FULL_SERVER_DIR")
-        ?.takeIf { it.isNotBlank() }
-        ?.let(::resolveUserPath)
-        ?: cachePath("pack-full-smoke")
-
-fun runPackFullLane(): ProcessRun = runStepSequence(
-    buildList {
-        val serverDir = packFullServerDir()
-        val openingRunRoot = cachePath("opening-progression")
-        val clientSmokeRunRoot = cachePath("client-smoke-quick")
-        add("pack fast" to { runPackFastLane() })
-        add("runtime smoke" to { runSmokeValidation(serverDir, 25570, reset = true, bootstrapMode = "always") })
-        add("opening progression scenario" to {
-            runKotlinScript(
-                root.resolve("tools/kotlin/opening_progression_runtime_validation.main.kts"),
-                scriptArgs = listOf("--cycles", "1", "--port", "25568", "--bootstrap-mode", "once", "--run-root", openingRunRoot.toString()),
-            )
-        })
-        add("worldgen sampling scenario" to {
-            runKotlinScript(
-                root.resolve("tools/kotlin/worldgen_sampling.main.kts"),
-                scriptArgs = listOf("--profile", "local", "--bootstrap-mode", "never", "--server-dir", serverDir.toString(), "--port", "25566"),
-            )
-        })
-        add("client smoke scenario" to {
-            if (!canRunHeadfulScenario()) return@to ProcessRun(3, "DISPLAY or xvfb-run is required")
-            runKotlinScript(
-                root.resolve("tools/kotlin/client_smoke.main.kts"),
-                scriptArgs = listOf("--profile", "quick", "--bootstrap-mode", "once", "--run-root", clientSmokeRunRoot.toString()),
-            )
-        })
     },
 )
 
@@ -3912,93 +3859,20 @@ fun runToolDocSurfaceValidation(): ProcessRun {
     val docsReadmeText = repoRead(docsReadmePath)
 
     val expectedAgentCommands = listOf(
-        "Headless scenario validation: `tools/bc test scenario opening_progression --cycles 1`",
-        "Runtime dump refresh: `tools/bc build dumps --server-dir ~/.cache/bc/dump-refresh --port 25565 --reset-runtime`",
+        "Validation: `tools/bc test static`",
+        "Kotlin test runner: `tools/bc test kotlin`",
+        "Fast workspace checks: `tools/bc test fast`",
+        "One-world server/client smoke: `tools/bc test smoke --bootstrap-mode always`",
     )
     for (line in expectedAgentCommands) {
         if (!agentsText.contains(line)) fail("$agentsPath missing documented command: $line")
     }
 
-    val expectedScenarios = scenarios.keys.toList()
-    val publicScenarioBlock = Regex(
-        """- Current public scenarios:\n((?:  - `[^`]+`\n)+)""",
-        setOf(RegexOption.MULTILINE),
-    ).find(agentsText)?.groupValues?.get(1).orEmpty()
-    val documentedScenarios = Regex("""`([^`]+)`""").findAll(publicScenarioBlock).map { it.groupValues[1] }.toList()
-    if (documentedScenarios != expectedScenarios) {
-        fail("$agentsPath scenario list drift: expected ${expectedScenarios.joinToString(", ")}, found ${documentedScenarios.joinToString(", ")}")
+    for (command in listOf("tools/bc test static", "tools/bc test kotlin", "tools/bc test fast", "tools/bc test smoke --bootstrap-mode always")) {
+        if (!runtimeText.contains(command)) fail("$runtimeValidationPath missing supported command: `$command`")
     }
-
-    val staleHeadfulCommands = listOf(
-        agentsPath to listOf(
-            "tools/bc test scenario dimension_worldgen",
-        ),
-        runtimeValidationPath to listOf(
-            "tools/bc test scenario dimension_worldgen",
-        ),
-        performancePath to listOf(
-            "tools/bc test scenario-headful lc_tfth_c2me_dh",
-        ),
-    )
-    for ((path, commands) in staleHeadfulCommands) {
-        val text = when (path) {
-            agentsPath -> agentsText
-            runtimeValidationPath -> runtimeText
-            performancePath -> performanceText
-            else -> ""
-        }
-        for (command in commands) {
-            if (text.contains(command)) fail("$path still documents invalid headful command: `$command`")
-        }
-    }
-
-    val requiredRuntimeCommands = listOf(
-        "tools/bc test fast",
-        "tools/bc test full",
-        "tools/bc test full --workspace",
-        "tools/bc test scenario-headful dimension_worldgen --cycles 1 --radius 1 --samples 1 --bootstrap-mode once",
-        "tools/bc test scenario lc_tfth_c2me_dh --samples 4 --settle-seconds 30 --bootstrap-mode once",
-        "tools/bc test scenario mod_ram_partition --bootstrap-mode once",
-        "tools/bc test scenario opening_progression --cycles 1 --bootstrap-mode once",
-        "tools/bc test scenario worldgen_sampling --profile local --bootstrap-mode once",
-        "tools/bc test scenario worldgen_sampling --profile quick --bootstrap-mode once",
-        "tools/bc test scenario worldgen_sampling --profile release --bootstrap-mode once",
-        "tools/bc test scenario vs_ships_stability --profile quick --cycles 1 --bootstrap-mode once",
-        "tools/bc test scenario vs_ships_matrix --profile quick --bootstrap-mode once",
-        "tools/bc test scenario-headful client_smoke --profile quick --bootstrap-mode once",
-        "tools/bc test scenario-headful client_smoke --profile release --bootstrap-mode once",
-        "tools/bc test scenario-headful vs_ships_client --profile quick --bootstrap-mode once",
-        "tools/bc test scenario-headful vs_ships_client --profile stress --fixture combined --bootstrap-mode once",
-    )
-    for (command in requiredRuntimeCommands) {
-        if (!runtimeText.contains(command)) fail("$runtimeValidationPath missing scenario command: `$command`")
-    }
-    if (!runtimeText.contains("`tools/bc test scenario` is the supported front door for headless-safe harness-backed runtime scenarios.")) {
-        fail("$runtimeValidationPath must distinguish the headless-safe scenario front door")
-    }
-    if (!runtimeText.contains("`tools/bc test scenario-headful` is the supported front door for headful harness-backed runtime scenarios.")) {
-        fail("$runtimeValidationPath must distinguish the headful scenario front door")
-    }
-    if (!runtimeText.contains("`--bootstrap-mode always|once|never`")) {
-        fail("$runtimeValidationPath must document bootstrap-mode semantics")
-    }
-    if (!runtimeText.contains("`tools/workspace_test_inventory.json`")) {
-        fail("$runtimeValidationPath must document the workspace inventory")
-    }
-
-    if (!performanceText.contains("`tools/bc test scenario lc_tfth_c2me_dh`")) {
-        fail("$performancePath missing headless LC/C2ME/DH guard repro harness reference")
-    }
-    if (performanceText.contains("`tools/bc test full` for pack-only validation")
-        || performanceText.contains("`tools/bc test full --workspace` for workspace-wide full fanout")
-    ) {
-        fail("$performancePath must not describe the LC/C2ME/DH repro as part of test full coverage")
-    }
-    if (!runtimeText.contains("`worldgen_sampling` is the normal worldgen confidence lane")
-        || !runtimeText.contains("`dimension_worldgen` is the explicit all-dimension stress/debug lane")
-        || !runtimeText.contains("`lc_tfth_c2me_dh` is a diagnostic-only regression repro")
-    ) {
-        fail("$runtimeValidationPath must distinguish normal worldgen coverage from stress and diagnostic-only lanes")
+    if (!runtimeText.contains("one Xvfb-backed client")) {
+        fail("$runtimeValidationPath must describe the single client lifecycle smoke")
     }
 
     val docsList = Regex("""- `([^`]+)`:""").findAll(docsReadmeText).map { it.groupValues[1] }.toList()
@@ -4082,6 +3956,7 @@ fun runSmokeValidation(serverDir: Path, port: Int, reset: Boolean, bootstrapMode
             Thread.sleep(2000)
         }
         if (!reachedDone) {
+            captureSmokeStartupDiagnostics(running, evidenceDir)
             return ProcessRun(1, "server startup timed out before Done marker")
         }
         harness?.updateStatus(status = "running", phase = "runtime_validation")
@@ -4104,6 +3979,11 @@ fun runSmokeValidation(serverDir: Path, port: Int, reset: Boolean, bootstrapMode
         }.trim()
         return ProcessRun(1, output)
     }
+    harness?.updateStatus(status = "running", phase = "unearthed_replacement_audit")
+    val unearthedAuditPath = evidenceDir.resolve("unearthed-replacement-audit.json")
+    val unearthedAudit = runUnearthedReplacementAudit(serverDir, null, unearthedAuditPath)
+    if (unearthedAudit.exitCode != 0) return unearthedAudit
+    harness?.updateStatus(status = "running", phase = "runtime_validation")
     val suite = runPackSuite(serverDir, strictDataDumps = false, runtimeOnly = true)
     if (suite.exitCode == 0) {
         writeJsonFile(
@@ -4113,11 +3993,100 @@ fun runSmokeValidation(serverDir: Path, port: Int, reset: Boolean, bootstrapMode
                 "server_dir" to serverDir.toString(),
                 "requested_port" to harness?.spec?.requestedPort,
                 "actual_port" to port,
-                "evidence_paths" to listOf(evidenceDir.toString(), latestLog.toString()),
+                "evidence_paths" to listOf(evidenceDir.toString(), latestLog.toString(), unearthedAuditPath.toString()),
             ),
         )
     }
-    return suite
+    return ProcessRun(suite.exitCode, listOf(unearthedAudit.output, suite.output).filter(String::isNotBlank).joinToString("\n\n"))
+}
+
+fun startSmokeClient(clientDir: Path, port: Int, evidenceDir: Path): Pair<RunningProcess, Process> {
+    val versionId = "$mcVersion-forge-$forgeVersion"
+    val argfile = evidenceDir.resolve("client.args")
+    val argfileRun = generateMinecraftClientArgfile(clientDir, versionId, "SmokeClient", "127.0.0.1:$port", argfile)
+    require(argfileRun.exitCode == 0) { argfileRun.output }
+    val display = ":${100 + (port % 100)}"
+    val xvfbLog = evidenceDir.resolve("xvfb.log")
+    val xvfb = ProcessBuilder(listOf("Xvfb", display, "-screen", "0", "1280x720x24", "-nolisten", "tcp"))
+        .redirectErrorStream(true)
+        .redirectOutput(xvfbLog.toFile())
+        .start()
+    Thread.sleep(500)
+    if (!xvfb.isAlive) error("Xvfb exited before the smoke client started")
+    val clientLog = evidenceDir.resolve("client-console.log")
+    val client = ProcessBuilder(listOf(requireJava17Path(), "@${argfile}"))
+        .directory(clientDir.toFile())
+        .redirectErrorStream(true)
+        .redirectOutput(clientLog.toFile())
+    client.environment()["DISPLAY"] = display
+    client.environment()["LIBGL_ALWAYS_SOFTWARE"] = "1"
+    client.environment().putAll(javaTempEnvironment(clientDir))
+    return RunningProcess(client.start(), clientLog) to xvfb
+}
+
+fun runSingleWorldSmoke(runRoot: Path, port: Int, bootstrapMode: String, idleSeconds: Int, harness: HarnessRun? = null): ProcessRun {
+    if (idleSeconds !in 0..300) return ProcessRun(2, "--idle-seconds must be between 0 and 300")
+    val serverDir = runRoot.resolve("server")
+    val clientDir = runRoot.resolve("client")
+    val stamp = timestamp()
+    val evidenceDir = runRoot.resolve("evidence/$stamp")
+    evidenceDir.createDirectories()
+    fun bootstrap(): ProcessRun = when (bootstrapMode) {
+        "always" -> {
+            val server = bootstrapServerRuntime(serverDir, port, reset = true)
+            if (server.exitCode != 0) server else bootstrapClientRuntime(clientDir)
+        }
+        "once" -> {
+            val server = if (serverDir.resolve("run.sh").exists()) ProcessRun(0, "reusing prepared server runtime") else bootstrapServerRuntime(serverDir, port, reset = true)
+            if (server.exitCode != 0) server
+            else if (clientDir.resolve("versions").exists()) ProcessRun(0, "reusing prepared client runtime") else bootstrapClientRuntime(clientDir)
+        }
+        "never" -> if (serverDir.resolve("run.sh").exists() && clientDir.resolve("versions").exists()) ProcessRun(0, "using prepared runtimes") else ProcessRun(2, "prepared server and client runtimes are required for bootstrap-mode never")
+        else -> ProcessRun(2, "invalid bootstrap mode: $bootstrapMode")
+    }
+    harness?.updateStatus(status = "running", phase = "bootstrap", evidencePaths = listOf(evidenceDir.toString()))
+    val prepared = bootstrap()
+    if (prepared.exitCode != 0) return prepared
+    val prune = pruneRuntimeMods(serverDir, "server", apply = false)
+    if (prune.exitCode != 0) return prune
+    val serverLog = evidenceDir.resolve("server-console.log")
+    val server = startServerProcess(serverDir, port, listOf("nogui"), serverLog)
+    var client: RunningProcess? = null
+    var xvfb: Process? = null
+    harness?.updateStatus(status = "running", phase = "wait_server", childPids = listOf(server.process.pid()))
+    try {
+        waitForLogPattern(listOf(serverLog), Regex("""Done \([\d.]+s\)! For help, type \"help\""""), 900, server.process, "server startup")
+        harness?.updateStatus(status = "running", phase = "start_client", childPids = listOf(server.process.pid()))
+        val started = startSmokeClient(clientDir, port, evidenceDir)
+        client = started.first
+        xvfb = started.second
+        harness?.updateStatus(status = "running", phase = "wait_join", childPids = listOf(server.process.pid(), client.process.pid(), xvfb.pid()))
+        waitForLogPattern(listOf(serverLog), Regex("""SmokeClient joined the game"""), 300, client.process, "client join")
+        val hardDuringJoin = scanHardFailures(serverLog, serverDir)
+        if (!hardDuringJoin.ok) return ProcessRun(1, "hard server log failure after client join")
+        harness?.updateStatus(status = "running", phase = "settle")
+        val deadline = System.currentTimeMillis() + idleSeconds * 1000L
+        while (System.currentTimeMillis() < deadline) {
+            if (!server.process.isAlive) return ProcessRun(1, "server exited during settle")
+            if (!client.process.isAlive) return ProcessRun(1, "client exited during settle")
+            Thread.sleep(1000)
+        }
+        sendCommand(server, "kick SmokeClient smoke complete")
+        waitForLogPattern(listOf(serverLog), Regex("""SmokeClient lost connection"""), 60, server.process, "client disconnect")
+        val serverScan = scanHardFailures(serverLog, serverDir)
+        val clientScan = scanHardFailures(client.logPath, clientDir)
+        if (!serverScan.ok || !clientScan.ok) return ProcessRun(1, "hard log failure after lifecycle smoke")
+        writeJsonFile(evidenceDir.resolve("summary.json"), mapOf("status" to "passed", "serverDir" to serverDir.toString(), "clientDir" to clientDir.toString(), "port" to port, "idleSeconds" to idleSeconds, "evidence" to listOf(serverLog.toString(), client.logPath.toString())))
+        return ProcessRun(0, "single-world server/client smoke passed")
+    } catch (error: Throwable) {
+        captureSmokeStartupDiagnostics(server, evidenceDir)
+        return ProcessRun(1, error.message ?: error::class.java.simpleName)
+    } finally {
+        harness?.updateStatus(status = "running", phase = "shutdown")
+        stopProcess(client)
+        xvfb?.let { if (it.isAlive) it.destroyForcibly() }
+        stopProcess(server, "stop")
+    }
 }
 
 fun runKotlinTests(filter: String?): ProcessRun {
@@ -4144,6 +4113,9 @@ fun runContractCompletenessReport(checkMode: Boolean, writeReports: Boolean): Pr
 
 fun runKubejsAssetsValidation(): ProcessRun =
     runKotlinScript(root.resolve("tools/kotlin/validate_kubejs_assets.main.kts"))
+
+fun runBetterGrassifyGrassBlocksValidation(): ProcessRun =
+    runKotlinScript(root.resolve("tools/kotlin/validate_bettergrassify_grass_blocks.main.kts"))
 
 fun runAutonomousContractsValidation(): ProcessRun =
     runKotlinScript(root.resolve("tools/kotlin/validate_autonomous_contracts.main.kts"))
@@ -4257,15 +4229,16 @@ fun runBurntCoverageTagSync(
     return ProcessRun(if (!writeChanges && changed.isNotEmpty()) 1 else 0, output)
 }
 
-fun exportCurseforgeBundles(exportsDir: Path): ProcessRun {
+fun exportCurseforgeBundle(exportsDir: Path, clientZip: Path): ProcessRun {
     exportsDir.createDirectories()
+    refuseExistingReleaseArchives(clientZip)?.let { return it }
     return runProcess(
         listOf(
             "packwiz",
             "curseforge",
             "export",
             "-o",
-            exportsDir.resolve("better-content-playtest-4-v1-curseforge.zip").toString(),
+            clientZip.toString(),
             "-s",
             "client",
             "-y",
@@ -4291,11 +4264,14 @@ fun buildServerBundle(exportsDir: Path, serverTreeDir: Path, serverZip: Path, cl
         val install = runProcess(
             listOf(javaBin, "-jar", serverTreeDir.resolve("forge-$forgeCoord-installer.jar").toString(), "--installServer"),
             extraEnv = javaTempEnvironment(serverTreeDir),
-            stream = !jsonOutput && !quiet,
+            stream = false,
             workDir = serverTreeDir,
         )
         if (install.exitCode != 0) return install
     }
+    deleteTree(serverTreeDir.resolve(".java-tmp"))
+    Files.deleteIfExists(serverTreeDir.resolve(installer.fileName))
+    Files.deleteIfExists(serverTreeDir.resolve("forge-$forgeCoord-installer.jar.log"))
     mirrorRepoDatapacks(serverTreeDir.resolve("world"))
     deleteTree(serverTreeDir.resolve("world"))
     deleteTree(serverTreeDir.resolve("logs"))
@@ -4320,21 +4296,77 @@ This bundle is generated from the repository source plus server-side packwiz dow
     )
     Files.writeString(serverTreeDir.resolve("eula.txt"), "eula=false\n")
     writeLocalServerProperties(serverTreeDir.resolve("server.properties"), defaultServerPort, onlineMode = true)
-    Files.writeString(serverTreeDir.resolve("user_jvm_args.txt"), "-Xms2G\n-Xmx6G\n-XX:+UseG1GC\n-Dfile.encoding=UTF-8\n")
+    Files.writeString(serverTreeDir.resolve("user_jvm_args.txt"), "-Xms4G\n-Xmx16G\n-XX:+UseG1GC\n-Dfile.encoding=UTF-8\n")
     serverZip.parent.createDirectories()
-    val jar = runProcess(
+    Files.deleteIfExists(serverZip)
+    val archive = runProcess(
         listOf(
-            javaBin.replace("/bin/java", "/bin/jar"),
-            "--create",
-            "--file",
+            "zip",
+            "-q",
+            "-r",
             serverZip.toString(),
-            "-C",
-            serverTreeDir.parent.toString(),
             serverTreeDir.fileName.toString(),
         ),
-        extraEnv = javaTempEnvironment(exportsDir.parent),
+        workDir = serverTreeDir.parent,
     )
-    return if (jar.exitCode == 0) ProcessRun(0, "Complete server tree exported to $serverZip") else jar
+    return if (archive.exitCode == 0) ProcessRun(0, "Complete server tree exported to $serverZip") else archive
+}
+
+fun verifyReleaseBundleArchives(clientZip: Path, serverZip: Path): ProcessRun {
+    val failures = mutableListOf<String>()
+    fun inspect(archive: Path, requiredEntries: List<String>) {
+        if (!archive.exists()) {
+            failures += "missing archive: $archive"
+            return
+        }
+        try {
+            java.util.zip.ZipFile(archive.toFile()).use { zip ->
+                for (entryName in requiredEntries) {
+                    val entry = zip.getEntry(entryName)
+                    if (entry == null || entry.isDirectory || entry.size == 0L) {
+                        failures += "$archive is missing non-empty entry $entryName"
+                    }
+                }
+            }
+        } catch (error: Exception) {
+            failures += "$archive is unreadable: ${error.message ?: error.javaClass.simpleName}"
+        }
+    }
+    inspect(
+        clientZip,
+        listOf(
+            "manifest.json",
+            "overrides/options.txt",
+            "overrides/config/ftbquests/quests/chapter_groups.snbt",
+        ),
+    )
+    if (clientZip.exists() && root.resolve("options.txt").exists()) {
+        try {
+            java.util.zip.ZipFile(clientZip.toFile()).use { zip ->
+                val entry = zip.getEntry("overrides/options.txt")
+                if (entry != null) {
+                    val bundled = zip.getInputStream(entry).use { it.readBytes() }
+                    val source = Files.readAllBytes(root.resolve("options.txt"))
+                    if (!bundled.contentEquals(source)) failures += "$clientZip does not contain the exact repo-root options.txt"
+                }
+            }
+        } catch (error: Exception) {
+            failures += "could not compare bundled options.txt: ${error.message ?: error.javaClass.simpleName}"
+        }
+    }
+    inspect(
+        serverZip,
+        listOf(
+            "better-content-server/SERVER_README.txt",
+            "better-content-server/run.sh",
+            "better-content-server/config/ftbquests/quests/chapter_groups.snbt",
+        ),
+    )
+    return if (failures.isEmpty()) {
+        ProcessRun(0, "release bundle archives verify\nclient=$clientZip\nserver=$serverZip")
+    } else {
+        ProcessRun(1, failures.joinToString("\n"))
+    }
 }
 
 fun handleDoctor(subArgs: List<String>): CommandResult {
@@ -4361,7 +4393,6 @@ fun handleDoctor(subArgs: List<String>): CommandResult {
                 "kotlin" to readCommand(listOf("kotlin", "-version")).ifBlank { null },
                 "java" to findJava17Path()?.let { readCommand(listOf(it, "-version")).lineSequence().firstOrNull()?.ifBlank { null } },
                 "java17" to findJava17Path(),
-                "xvfbRun" to findXvfbRunPath(),
                 "rg" to findCommandPath("rg"),
                 "packwiz" to findCommandPath("packwiz"),
             )
@@ -4548,23 +4579,6 @@ fun handleInternal(subArgs: List<String>): CommandResult {
             }.trim()
             CommandResult("internal log-hard-failure-scan", if (scan.ok) "success" else "failure", output, exitCode = if (scan.ok) 0 else 1)
         }
-        "prepare-server-runtime" -> {
-            var serverDir: String? = null
-            var port = defaultServerPort
-            var reset = false
-            var index = 1
-            while (index < subArgs.size) {
-                when (subArgs[index]) {
-                    "--server-dir" -> { serverDir = subArgs.getOrNull(index + 1) ?: return usageError("--server-dir is required", internalHelp()); index += 2 }
-                    "--port" -> { port = subArgs.getOrNull(index + 1)?.toIntOrNull() ?: return usageError("--port needs a number", internalHelp()); index += 2 }
-                    "--reset-runtime" -> { reset = true; index += 1 }
-                    else -> return usageError("unknown argument: ${subArgs[index]}", internalHelp())
-                }
-            }
-            val path = resolveUserPath(serverDir ?: return usageError("--server-dir is required", internalHelp()))
-            val run = bootstrapServerRuntime(path, port, reset)
-            CommandResult("internal prepare-server-runtime", if (run.exitCode == 0) "success" else "failure", run.output, artifacts = listOf(ArtifactRef(path.toString(), "directory")), exitCode = if (run.exitCode == 0) 0 else 1, mutated = true)
-        }
         "prepare-client-runtime" -> {
             var clientDir: String? = null
             var index = 1
@@ -4632,6 +4646,10 @@ fun handleInternal(subArgs: List<String>): CommandResult {
             val run = runJsonSurfaceCheck()
             CommandResult("internal check-json-surface", if (run.exitCode == 0) "success" else "failure", run.output, exitCode = if (run.exitCode == 0) 0 else 1)
         }
+        "validate-bettergrassify-grass-blocks" -> {
+            val run = runBetterGrassifyGrassBlocksValidation()
+            CommandResult("internal validate-bettergrassify-grass-blocks", if (run.exitCode == 0) "success" else "failure", run.output, exitCode = if (run.exitCode == 0) 0 else 1)
+        }
         "validate-pack-contract" -> {
             val run = runPackContractValidation()
             CommandResult("internal validate-pack-contract", if (run.exitCode == 0) "success" else "failure", run.output, exitCode = if (run.exitCode == 0) 0 else 1)
@@ -4698,21 +4716,9 @@ fun handleInternal(subArgs: List<String>): CommandResult {
             val run = runToolDocSurfaceValidation()
             CommandResult("internal validate-tool-doc-surface", if (run.exitCode == 0) "success" else "failure", run.output, exitCode = if (run.exitCode == 0) 0 else 1)
         }
-        "validate-worldgen-sampling-contracts" -> {
-            val run = runKotlinScript(root.resolve("tools/kotlin/validate_worldgen_sampling_contracts.main.kts"))
-            CommandResult("internal validate-worldgen-sampling-contracts", if (run.exitCode == 0) "success" else "failure", run.output, exitCode = if (run.exitCode == 0) 0 else 1)
-        }
-        "validate-client-smoke-contracts" -> {
-            val run = runKotlinScript(root.resolve("tools/kotlin/validate_client_smoke_contracts.main.kts"))
-            CommandResult("internal validate-client-smoke-contracts", if (run.exitCode == 0) "success" else "failure", run.output, exitCode = if (run.exitCode == 0) 0 else 1)
-        }
         "verify-pack-fast" -> {
             val run = runPackFastLane()
             CommandResult("internal verify-pack-fast", if (run.exitCode == 0) "success" else "failure", run.output, exitCode = if (run.exitCode == 0) 0 else if (run.exitCode == 3) 3 else 1)
-        }
-        "verify-pack-full" -> {
-            val run = runPackFullLane()
-            CommandResult("internal verify-pack-full", if (run.exitCode == 0) "success" else "failure", run.output, exitCode = if (run.exitCode == 0) 0 else if (run.exitCode == 3) 3 else 1)
         }
         else -> usageError("unknown internal command: ${subArgs.first()}", internalHelp())
     }
@@ -4751,7 +4757,7 @@ fun runWorkspaceVerification(mode: String, rawArgs: List<String>): CommandResult
             details = mapOf(
                 "mode" to mode,
                 "filters" to filters,
-                "repos" to selectedRepos.map { mapOf("id" to it.id, "path" to it.path, "kind" to it.kind, "fullMeaningful" to it.fullMeaningful) },
+                "repos" to selectedRepos.map { mapOf("id" to it.id, "path" to it.path, "kind" to it.kind, "command" to it.command) },
             ),
             artifacts = listOf(ArtifactRef(workspaceInventoryPath.toString())),
             evidenceLevel = "source",
@@ -4788,7 +4794,7 @@ fun runWorkspaceVerification(mode: String, rawArgs: List<String>): CommandResult
     val stubSleepMs = System.getenv("BC_TEST_WORKSPACE_STUB_SLEEP_MS")?.toLongOrNull() ?: 0L
     try {
         for ((repoIndex, repo) in selectedRepos.withIndex()) {
-            val command = if (mode == "full") repo.fullCommand else repo.fastCommand
+            val command = repo.command
             val workDir = if (repo.path == ".") root else root.resolve(repo.path)
             harness.updateStatus(
                 status = "running",
@@ -4991,51 +4997,67 @@ fun scenarioDefaultRunRoot(name: String, args: List<String>): Path {
     if (explicit != null) return resolveUserPath(explicit)
     return when (name) {
         "opening_progression" -> cachePath("opening-progression")
-        "lc_tfth_c2me_dh" -> cachePath("lc-c2me-dh-repro")
-        "mod_ram_partition" -> cachePath("mod-ram-partition")
-        "dimension_worldgen", "worldgen_sampling" -> cachePath("dimension-worldgen")
+        "progression_milestones" -> cachePath("progression-milestones")
+        "worldgen_sampling" -> cachePath("dimension-worldgen")
         "pillager_campaigns" -> cachePath("pillager-campaigns")
-        "vs_ships_stability" -> cachePath("vs-ships-stability")
-        "vs_ships_matrix" -> cachePath("vs-ships-matrix")
-        "client_smoke" -> {
-            val profile = argValue(args, "--profile") ?: "quick"
-            cachePath(if (profile == "release") "client-smoke-release" else "client-smoke-quick")
-        }
-        "vs_ships_client" -> {
-            val profile = argValue(args, "--profile") ?: "quick"
-            cachePath(when (profile) {
-                "release" -> "vs-ships-client-release"
-                "stress" -> "vs-ships-client-stress"
-                else -> "vs-ships-client-quick"
-            })
-        }
-        "vs_ships_release" -> cachePath("vs-ships-release")
-        "worldgen_marketing_screenshots" -> cachePath("worldgen-marketing-screenshots")
         else -> cachePath("scenario-$name")
     }.toAbsolutePath().normalize()
 }
 
 fun scenarioRequestedPort(name: String, args: List<String>): Int? =
     argValue(args, "--port")?.toIntOrNull() ?: when (name) {
-        "client_smoke" -> when (argValue(args, "--profile") ?: "quick") {
-            "release" -> 25568
-            else -> 25567
-        }
-        "mod_ram_partition" -> 25572
-        "vs_ships_client" -> when (argValue(args, "--profile") ?: "quick") {
-            "release" -> 25570
-            "stress" -> 25571
-            else -> 25569
-        }
-        "vs_ships_release" -> 25570
         "pillager_campaigns" -> null
         else -> defaultServerPort
     }
+
+fun handleSingleWorldSmoke(rawArgs: List<String>): CommandResult {
+    val missing = ensureCommands("java", "Xvfb")
+    if (missing.isNotEmpty()) return prereqFailure("single-world smoke prerequisites missing", missing)
+    var runRoot = cachePath("smoke").toString()
+    var requestedPort = defaultServerPort
+    var bootstrapMode = "always"
+    var idleSeconds = 30
+    var index = 0
+    while (index < rawArgs.size) {
+        when (rawArgs[index]) {
+            "--run-root" -> { runRoot = rawArgs.getOrNull(index + 1) ?: return usageError("--run-root needs a path", testHelp()); index += 2 }
+            "--port" -> { requestedPort = rawArgs.getOrNull(index + 1)?.toIntOrNull() ?: return usageError("--port needs a number", testHelp()); if (requestedPort !in 1..65535) return usageError("invalid --port: $requestedPort", testHelp()); index += 2 }
+            "--bootstrap-mode" -> { bootstrapMode = rawArgs.getOrNull(index + 1) ?: return usageError("--bootstrap-mode needs always, once, or never", testHelp()); if (bootstrapMode !in setOf("always", "once", "never")) return usageError("invalid bootstrap mode: $bootstrapMode", testHelp()); index += 2 }
+            "--idle-seconds" -> { idleSeconds = rawArgs.getOrNull(index + 1)?.toIntOrNull() ?: return usageError("--idle-seconds needs a number", testHelp()); if (idleSeconds !in 0..300) return usageError("--idle-seconds must be between 0 and 300", testHelp()); index += 2 }
+            "--help" -> return success("test smoke", testHelp(), evidenceLevel = "fresh-runtime")
+            else -> return usageError("unknown argument: ${rawArgs[index]}", testHelp())
+        }
+    }
+    val rootPath = resolveUserPath(runRoot)
+    val reserved = reserveAvailablePort(requestedPort) ?: return CommandResult("test smoke", "failure", "no free port found in $requestedPort..${requestedPort + 50}", exitCode = 1, evidenceLevel = "fresh-runtime")
+    val (harness, conflict) = startHarnessRun(HarnessSpec(
+        keySeed = "test-smoke:${rootPath.toAbsolutePath().normalize()}", runKind = "test smoke", command = "test smoke", repoOrScenario = "single-world-smoke", workDirOrRunRoot = rootPath.toString(), requestedPort = requestedPort, actualPort = reserved.port, reservedPortPath = reserved.path,
+    ))
+    if (conflict != null) {
+        releasePortReservation(reserved.path)
+        return CommandResult("test smoke", "failure", conflict.message, findings = listOf(ValidationFinding("error", conflict.message)), details = conflict.details, exitCode = 1, evidenceLevel = "fresh-runtime")
+    }
+    harness!!
+    harness.announce(remapped = reserved.port != requestedPort)
+    val run = try { runSingleWorldSmoke(rootPath, reserved.port, bootstrapMode, idleSeconds, harness) } catch (error: Throwable) { ProcessRun(1, error.message ?: error::class.java.simpleName) }
+    val artifacts = listOf(ArtifactRef(rootPath.toString(), "directory"), ArtifactRef(harness.paths.status.toString()), ArtifactRef(harness.paths.summary.toString()))
+    return if (run.exitCode == 0) {
+        harness.finalizeState("passed", preserveSummary = true)
+        success("test smoke", "single-world server/client smoke passed", artifacts = artifacts, details = mapOf("runRoot" to rootPath.toString(), "requestedPort" to requestedPort, "actualPort" to reserved.port, "bootstrapMode" to bootstrapMode, "idleSeconds" to idleSeconds), mutated = true, evidenceLevel = "fresh-runtime")
+    } else {
+        harness.finalizeState("failed", lastError = run.output, preserveSummary = true)
+        CommandResult("test smoke", "failure", "test smoke failed", findings = listOf(ValidationFinding("error", run.output.ifBlank { "single-world smoke failed" })), artifacts = artifacts, details = mapOf("runRoot" to rootPath.toString(), "requestedPort" to requestedPort, "actualPort" to reserved.port, "bootstrapMode" to bootstrapMode, "idleSeconds" to idleSeconds), exitCode = if (run.exitCode == 2) 2 else 1, mutated = true, evidenceLevel = "fresh-runtime")
+    }
+}
 
 fun handleTest(subArgs: List<String>): CommandResult {
     if (subArgs.isEmpty() || subArgs == listOf("--help")) {
         return success("test", testHelp(), evidenceLevel = "source")
     }
+    if (subArgs.first() !in setOf("fast", "static", "kotlin", "smoke")) {
+        return usageError("unknown test command: ${subArgs.first()}", testHelp())
+    }
+    if (subArgs.first() == "smoke") return handleSingleWorldSmoke(subArgs.drop(1))
     return when (subArgs.first()) {
         "fast" -> runWorkspaceVerification("fast", subArgs.drop(1))
         "full" -> runFullCommand(subArgs.drop(1))
@@ -5107,6 +5129,58 @@ fun handleTest(subArgs: List<String>): CommandResult {
                 details = mapOf("instance" to instancePath.toString(), "strictDataDumps" to strict) + listOfNotNull(outputSnippet(run.output)?.let { "capturedOutput" to it }).toMap(),
                 exitCode = exitCode,
                 evidenceLevel = "strict-runtime",
+            )
+        }
+        "unearthed-replacement" -> {
+            var instance: Path? = null
+            var world: Path? = null
+            var output: Path? = null
+            val rest = subArgs.drop(1)
+            var index = 0
+            while (index < rest.size) {
+                when (rest[index]) {
+                    "--instance" -> {
+                        instance = resolveUserPath(rest.getOrNull(index + 1) ?: return usageError("--instance needs a path", testHelp()))
+                        index += 2
+                    }
+                    "--world" -> {
+                        world = resolveUserPath(rest.getOrNull(index + 1) ?: return usageError("--world needs a path", testHelp()))
+                        index += 2
+                    }
+                    "--output" -> {
+                        output = resolveUserPath(rest.getOrNull(index + 1) ?: return usageError("--output needs a path", testHelp()))
+                        index += 2
+                    }
+                    "--help" -> return success("test unearthed-replacement", testHelp(), evidenceLevel = "runtime")
+                    else -> return usageError("unknown argument: ${rest[index]}", testHelp())
+                }
+            }
+            if (instance == null && world == null) {
+                return usageError("test unearthed-replacement requires --instance PATH or --world PATH", testHelp())
+            }
+            if (instance != null && (!instance!!.exists() || !instance!!.isDirectory())) {
+                return usageError("runtime instance does not exist: $instance", testHelp())
+            }
+            if (world != null && (!world!!.exists() || !world!!.isDirectory())) {
+                return usageError("world does not exist: $world", testHelp())
+            }
+            val outputPath = output ?: (instance ?: world!!).resolve("validation-evidence/unearthed-replacement-audit.json")
+            val run = runUnearthedReplacementAudit(instance, world, outputPath)
+            if (run.exitCode == 0) success(
+                command = "test unearthed-replacement",
+                summary = "Unearthed underground and aboveground replacement audit passed",
+                artifacts = listOf(ArtifactRef(outputPath.toString())),
+                details = mapOf("instance" to instance?.toString(), "world" to world?.toString()),
+                evidenceLevel = "runtime",
+            ) else CommandResult(
+                command = "test unearthed-replacement",
+                status = "failure",
+                summary = "Unearthed replacement audit failed",
+                findings = listOf(ValidationFinding("error", "Unearthed underground or aboveground replacement regressed")),
+                details = mapOf("instance" to instance?.toString(), "world" to world?.toString()) + listOfNotNull(outputSnippet(run.output)?.let { "capturedOutput" to it }).toMap(),
+                artifacts = listOf(ArtifactRef(outputPath.toString())),
+                exitCode = 1,
+                evidenceLevel = "runtime",
             )
         }
         "smoke" -> {
@@ -5221,31 +5295,22 @@ fun handleTest(subArgs: List<String>): CommandResult {
                 harness.finalizeState("failed", lastError = "test smoke failed with exit $exitCode", summaryExtra = listOfNotNull(outputSnippet(run.output)?.let { "capturedOutput" to it }).toMap(), preserveSummary = true)
             }
         }
-        "scenario", "scenario-headful" -> {
+        "scenario" -> {
             val missing = ensureCommands("kotlin")
             if (missing.isNotEmpty()) return prereqFailure("scenario prerequisites missing", missing)
             val name = subArgs.getOrNull(1) ?: return usageError("test scenario requires a scenario name", testHelp())
-            val headfulCommand = subArgs.first() == "scenario-headful"
-            if (name == "--help") return success(if (headfulCommand) "test scenario-headful" else "test scenario", testHelp(), evidenceLevel = "scenario-runtime")
+            if (name == "--help") return success("test scenario", testHelp(), evidenceLevel = "scenario-runtime")
             val scenario = scenarios[name] ?: return usageError("unknown scenario: $name", testHelp())
-            if (scenario.headful && !headfulCommand) {
-                return usageError("scenario '$name' is headful; run it via `tools/bc test scenario-headful $name ...`", testHelp())
-            }
-            if (!scenario.headful && headfulCommand) {
-                return usageError("scenario '$name' is headless-safe; run it via `tools/bc test scenario $name ...`", testHelp())
-            }
-            if (scenario.headful && !canRunHeadfulScenario()) {
-                return prereqFailure(
-                    "headful scenario prerequisites missing",
-                    listOf(ValidationFinding("error", "DISPLAY or xvfb-run is required")),
-                )
-            }
             var passthroughArgs = subArgs.drop(2)
+            val requestedCycles = passthroughArgs.windowed(2).firstOrNull { it[0] == "--cycles" }?.get(1)?.toIntOrNull()
+            if (requestedCycles != null && requestedCycles > 1) {
+                return usageError("--cycles $requestedCycles violates the one-world validation rule; use --cycles 1", testHelp())
+            }
             val runRoot = scenarioDefaultRunRoot(name, passthroughArgs)
             val requestedPort = scenarioRequestedPort(name, passthroughArgs)
             val reservedPort = requestedPort?.let {
                 reserveAvailablePort(it) ?: return CommandResult(
-                    command = if (scenario.headful) "test scenario-headful $name" else "test scenario $name",
+                    command = "test scenario $name",
                     status = "failure",
                     summary = "no free port found in ${it}..${it + 50}",
                     findings = listOf(ValidationFinding("error", "no free port found in ${it}..${it + 50}")),
@@ -5260,7 +5325,7 @@ fun handleTest(subArgs: List<String>): CommandResult {
             val latestStatus = runRoot.resolve("latest-status.json")
             val latestSummary = runRoot.resolve("latest-summary.json")
             val keySeed = "scenario:$name:${runRoot.toAbsolutePath().normalize()}"
-            val commandName = if (scenario.headful) "test scenario-headful $name" else "test scenario $name"
+            val commandName = "test scenario $name"
             val (harness, conflict) = startHarnessRun(
                 HarnessSpec(
                     keySeed = keySeed,
@@ -5316,7 +5381,7 @@ fun handleTest(subArgs: List<String>): CommandResult {
                 success(
                     command = commandName,
                     summary = "scenario $name passed",
-                    details = mapOf("scenario" to scenario.name, "script" to scenario.script, "args" to passthroughArgs, "headful" to scenario.headful, "requestedPort" to requestedPort, "actualPort" to reservedPort?.port, "runRoot" to runRoot.toString()),
+                    details = mapOf("scenario" to scenario.name, "script" to scenario.script, "args" to passthroughArgs, "requestedPort" to requestedPort, "actualPort" to reservedPort?.port, "runRoot" to runRoot.toString()),
                     artifacts = listOf(ArtifactRef(harness.paths.status.toString()), ArtifactRef(harness.paths.summary.toString()), ArtifactRef(latestStatus.toString()), ArtifactRef(latestSummary.toString())),
                     evidenceLevel = "scenario-runtime",
                     mutated = true,
@@ -5327,7 +5392,7 @@ fun handleTest(subArgs: List<String>): CommandResult {
                     command = commandName,
                     status = "failure",
                     summary = "$commandName failed with exit $mappedExit",
-                    details = mapOf("scenario" to scenario.name, "script" to scenario.script, "args" to passthroughArgs, "headful" to scenario.headful, "requestedPort" to requestedPort, "actualPort" to reservedPort?.port, "runRoot" to runRoot.toString()) + listOfNotNull(outputSnippet(run.output)?.let { "capturedOutput" to it }).toMap(),
+                    details = mapOf("scenario" to scenario.name, "script" to scenario.script, "args" to passthroughArgs, "requestedPort" to requestedPort, "actualPort" to reservedPort?.port, "runRoot" to runRoot.toString()) + listOfNotNull(outputSnippet(run.output)?.let { "capturedOutput" to it }).toMap(),
                     findings = listOf(ValidationFinding("error", "$commandName failed with exit $mappedExit")),
                     artifacts = listOf(ArtifactRef(harness.paths.status.toString()), ArtifactRef(harness.paths.summary.toString()), ArtifactRef(latestStatus.toString()), ArtifactRef(latestSummary.toString())),
                     exitCode = mappedExit,
@@ -5376,6 +5441,9 @@ fun handleTest(subArgs: List<String>): CommandResult {
 fun handleBuild(subArgs: List<String>): CommandResult {
     if (subArgs.isEmpty() || subArgs == listOf("--help")) {
         return success("build", buildHelp(), evidenceLevel = "build")
+    }
+    if (subArgs.first() !in setOf("sync", "bundle")) {
+        return usageError("unknown build command: ${subArgs.first()}", buildHelp())
     }
     return when (subArgs.first()) {
         "sync" -> {
@@ -5477,7 +5545,7 @@ fun handleBuild(subArgs: List<String>): CommandResult {
             )
         }
         "bundle" -> {
-            val target = subArgs.getOrNull(1) ?: return usageError("build bundle requires curseforge or server", buildHelp())
+            val target = subArgs.getOrNull(1) ?: return usageError("build bundle requires curseforge, server, or release", buildHelp())
             return when (target) {
                 "curseforge" -> {
                     val prereqs = ensureCommands("packwiz")
@@ -5496,31 +5564,38 @@ fun handleBuild(subArgs: List<String>): CommandResult {
                         }
                     }
                     val exportsPath = resolveUserPath(exportsDir)
-                    val run = exportCurseforgeBundles(exportsPath)
+                    val release = currentPlaytestRelease()
+                    val (clientZip, _) = releaseArchivePaths(exportsPath, release)
+                    val run = exportCurseforgeBundle(exportsPath, clientZip)
                     val exitCode = classifyBuildExit(run.exitCode, run.output)
                     if (exitCode == 0) success(
                         command = "build bundle curseforge",
                         summary = "CurseForge bundle export completed",
-                        artifacts = listOf(ArtifactRef(exportsPath.toString(), "directory")),
-                        details = mapOf("target" to "curseforge", "exportsDir" to exportsPath.toString()) + listOfNotNull(outputSnippet(run.output)?.let { "capturedOutput" to it }).toMap(),
+                        artifacts = listOf(ArtifactRef(clientZip.toString())),
+                        details = mapOf("target" to "curseforge", "exportsDir" to exportsPath.toString(), "version" to release.version, "clientZip" to clientZip.toString()) + listOfNotNull(outputSnippet(run.output)?.let { "capturedOutput" to it }).toMap(),
                         mutated = true,
                         evidenceLevel = "build",
                     ) else CommandResult(
                         command = "build bundle curseforge",
                         status = "failure",
                         summary = "build bundle curseforge failed with exit $exitCode",
-                        findings = listOf(ValidationFinding("error", "build bundle curseforge failed with exit $exitCode")),
+                        findings = listOf(ValidationFinding("error", run.output.ifBlank { "build bundle curseforge failed with exit $exitCode" })),
                         details = mapOf("target" to "curseforge", "exportsDir" to exportsPath.toString()) + listOfNotNull(outputSnippet(run.output)?.let { "capturedOutput" to it }).toMap(),
-                        artifacts = listOf(ArtifactRef(exportsPath.toString(), "directory")),
+                        artifacts = listOf(ArtifactRef(clientZip.toString())),
                         exitCode = exitCode,
                         mutated = true,
                         evidenceLevel = "build",
                     )
                 }
                 "server" -> {
-                    val prereqs = ensureCommands("packwiz")
+                    val prereqs = ensureCommands("packwiz", "zip")
                     if (prereqs.isNotEmpty()) return prereqFailure("bundle prerequisites missing", prereqs)
                     if (!detectJava17()) return prereqFailure("Java 17 is required for build bundle server")
+                    try {
+                        findForgeInstaller()
+                    } catch (error: Exception) {
+                        return prereqFailure(error.message ?: "Forge installer is missing")
+                    }
                     var exportsDir = defaultExportsDir
                     var serverTreeDir: String? = null
                     var serverZip: String? = null
@@ -5551,23 +5626,108 @@ fun handleBuild(subArgs: List<String>): CommandResult {
                     }
                     val exportsPath = resolveUserPath(exportsDir)
                     val serverTreePath = resolveUserPath(serverTreeDir ?: exportsPath.resolve("server-tree/better-content-server").toString())
-                    val serverZipPath = resolveUserPath(serverZip ?: exportsPath.resolve("better-content-playtest-4-v1-server.zip").toString())
-                    val run = buildServerBundle(exportsPath, serverTreePath, serverZipPath, clean)
+                    val release = currentPlaytestRelease()
+                    val serverZipPath = resolveUserPath(serverZip ?: exportsPath.resolve("${release.baseName}-server.zip").toString())
+                    val run = refuseExistingReleaseArchives(serverZipPath)
+                        ?: buildServerBundle(exportsPath, serverTreePath, serverZipPath, clean)
                     val exitCode = classifyBuildExit(run.exitCode, run.output)
                     if (exitCode == 0) success(
                         command = "build bundle server",
                         summary = "server bundle export completed",
                         artifacts = listOf(ArtifactRef(exportsPath.toString(), "directory"), ArtifactRef(serverZipPath.toString())),
-                        details = mapOf("target" to "server", "exportsDir" to exportsPath.toString(), "serverTreeDir" to serverTreePath.toString(), "serverZip" to serverZipPath.toString(), "clean" to clean) + listOfNotNull(outputSnippet(run.output)?.let { "capturedOutput" to it }).toMap(),
+                        details = mapOf("target" to "server", "exportsDir" to exportsPath.toString(), "serverTreeDir" to serverTreePath.toString(), "serverZip" to serverZipPath.toString(), "version" to release.version, "clean" to clean) + listOfNotNull(outputSnippet(run.output)?.let { "capturedOutput" to it }).toMap(),
                         mutated = true,
                         evidenceLevel = "build",
                     ) else CommandResult(
                         command = "build bundle server",
                         status = "failure",
                         summary = "build bundle server failed with exit $exitCode",
-                        findings = listOf(ValidationFinding("error", "build bundle server failed with exit $exitCode")),
+                        findings = listOf(ValidationFinding("error", run.output.ifBlank { "build bundle server failed with exit $exitCode" })),
                         details = mapOf("target" to "server", "exportsDir" to exportsPath.toString(), "serverTreeDir" to serverTreePath.toString(), "serverZip" to serverZipPath.toString(), "clean" to clean) + listOfNotNull(outputSnippet(run.output)?.let { "capturedOutput" to it }).toMap(),
                         artifacts = listOf(ArtifactRef(exportsPath.toString(), "directory"), ArtifactRef(serverZipPath.toString())),
+                        exitCode = exitCode,
+                        mutated = true,
+                        evidenceLevel = "build",
+                    )
+                }
+                "release" -> {
+                    val prereqs = ensureCommands("packwiz", "zip")
+                    if (prereqs.isNotEmpty()) return prereqFailure("release bundle prerequisites missing", prereqs)
+                    if (!detectJava17()) return prereqFailure("Java 17 is required for release bundles")
+                    try {
+                        findForgeInstaller()
+                    } catch (error: Exception) {
+                        return prereqFailure(error.message ?: "Forge installer is missing")
+                    }
+                    var exportsDir = defaultExportsDir
+                    var resumeCurrent = false
+                    val rest = subArgs.drop(2)
+                    var index = 0
+                    while (index < rest.size) {
+                        when (rest[index]) {
+                            "--exports-dir" -> {
+                                exportsDir = rest.getOrNull(index + 1) ?: return usageError("--exports-dir needs a path", buildHelp())
+                                index += 2
+                            }
+                            "--resume-current" -> {
+                                resumeCurrent = true
+                                index += 1
+                            }
+                            "--help" -> return success("build bundle release", buildHelp(), evidenceLevel = "build")
+                            else -> return usageError("unknown argument: ${rest[index]}", buildHelp())
+                        }
+                    }
+                    val exportsPath = resolveUserPath(exportsDir)
+                    val nextRelease = if (resumeCurrent) currentPlaytestRelease() else nextPlaytestRelease()
+                    val (clientZip, serverZip) = releaseArchivePaths(exportsPath, nextRelease)
+                    refuseExistingReleaseArchives(clientZip, serverZip)?.let { refusal ->
+                        return CommandResult(
+                            command = "build bundle release",
+                            status = "failure",
+                            summary = "release version v${nextRelease.version} is already in use",
+                            findings = listOf(ValidationFinding("error", refusal.output)),
+                            artifacts = listOf(ArtifactRef(exportsPath.toString(), "directory")),
+                            exitCode = refusal.exitCode,
+                            evidenceLevel = "build",
+                        )
+                    }
+                    val release = if (resumeCurrent) currentPlaytestRelease() else reserveNextPlaytestRelease()
+                    val serverTree = exportsPath.resolve("server-tree/better-content-server")
+                    val run = runStepSequence(buildList {
+                        add("refresh packwiz metadata" to {
+                            runProcess(listOf("packwiz", "refresh"), workDir = root, stream = false)
+                        })
+                        add("static validation" to { runStaticValidation() })
+                        add("CurseForge export" to { exportCurseforgeBundle(exportsPath, clientZip) })
+                        add("complete server export" to { buildServerBundle(exportsPath, serverTree, serverZip, clean = true) })
+                        add("archive verification" to { verifyReleaseBundleArchives(clientZip, serverZip) })
+                    })
+                    val exitCode = classifyBuildExit(run.exitCode, run.output)
+                    if (exitCode == 0) success(
+                        command = "build bundle release",
+                        summary = "release bundles completed",
+                        artifacts = listOf(ArtifactRef(clientZip.toString()), ArtifactRef(serverZip.toString())),
+                        details = mapOf(
+                            "exportsDir" to exportsPath.toString(),
+                            "version" to release.version,
+                            "clientZip" to clientZip.toString(),
+                            "serverZip" to serverZip.toString(),
+                            "resumedCurrent" to resumeCurrent,
+                        ) + listOfNotNull(outputSnippet(run.output)?.let { "capturedOutput" to it }).toMap(),
+                        mutated = true,
+                        evidenceLevel = "build",
+                    ) else CommandResult(
+                        command = "build bundle release",
+                        status = "failure",
+                        summary = "release bundle workflow failed with exit $exitCode",
+                        findings = listOf(ValidationFinding("error", "release bundle workflow failed with exit $exitCode")),
+                        details = mapOf(
+                            "exportsDir" to exportsPath.toString(),
+                            "version" to release.version,
+                            "clientZip" to clientZip.toString(),
+                            "serverZip" to serverZip.toString(),
+                        ) + listOfNotNull(outputSnippet(run.output)?.let { "capturedOutput" to it }).toMap(),
+                        artifacts = listOf(ArtifactRef(clientZip.toString()), ArtifactRef(serverZip.toString())),
                         exitCode = exitCode,
                         mutated = true,
                         evidenceLevel = "build",

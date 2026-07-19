@@ -81,17 +81,17 @@ ServerEvents.recipes(function (event) {
     }
 
     cutting('farmersrespite:green_tea_leaves', 'kubejs:cut_green_tea_leaves', 2, 'green_tea_leaves')
-    cutting('delightful:salmonberries', 'kubejs:mashed_salmonberries', 2, 'salmonberries')
-    cutting('delightful:cactus_chili', 'kubejs:charred_blazing_chili', 1, 'cactus_chili_prep')
+    cutting('minecraft:sweet_berries', 'kubejs:mashed_salmonberries', 2, 'sweet_berries')
+    cutting('minecraft:nether_wart', 'kubejs:charred_blazing_chili', 1, 'nether_wart_prep')
 
     campfire('farmersrespite:coffee_beans', 'kubejs:roasted_coffee_reagent', 'coffee_reagent', 600)
-    campfire('delightful:cactus_chili', 'kubejs:charred_blazing_chili', 'cactus_chili', 800)
+    campfire('minecraft:nether_wart', 'kubejs:charred_blazing_chili', 'nether_wart', 800)
 
     cooking(['kubejs:mashed_salmonberries', 'minecraft:sea_pickle', 'minecraft:dried_kelp', 'minecraft:pufferfish'], 'kubejs:brine_extract', 'brine_extract', 300)
     cooking(['minecraft:golden_carrot', 'ubesdelight:ube', 'minecraft:glow_berries'], 'kubejs:vision_extract', 'vision_extract', 240)
-    cooking(['kubejs:charred_blazing_chili', 'mynethersdelight:hot_spice', 'minecraft:magma_cream'], 'kubejs:heatproof_extract', 'heatproof_extract', 320)
+    cooking(['kubejs:charred_blazing_chili', 'minecraft:blaze_powder', 'minecraft:magma_cream'], 'kubejs:heatproof_extract', 'heatproof_extract', 320)
     cooking(['undergarden:gloomper_leg', 'minecraft:rabbit_foot', 'minecraft:sugar'], 'kubejs:leaping_extract', 'leaping_extract', 260)
-    cooking(['delightful:cooked_marshmallow_stick', 'minecraft:phantom_membrane', 'minecraft:honey_bottle'], 'kubejs:featherlight_extract', 'featherlight_extract', 260)
+    cooking(['minecraft:feather', 'minecraft:phantom_membrane', 'minecraft:honey_bottle'], 'kubejs:featherlight_extract', 'featherlight_extract', 260)
     cooking(['minecraft:glistering_melon_slice', 'kubejs:rose_hip_extract', 'minecraft:honey_bottle'], 'kubejs:melon_life_extract', 'melon_life_extract', 240)
     cooking(['minecraft:turtle_helmet', 'kubejs:brine_extract', 'minecraft:scute'], 'kubejs:turtle_guard_extract', 'turtle_guard_extract', 360)
     cooking(['kubejs:toxic_extract', 'minecraft:fermented_spider_eye', 'farmersrespite:purulent_tea'], 'kubejs:weakening_extract', 'weakening_extract', 260)

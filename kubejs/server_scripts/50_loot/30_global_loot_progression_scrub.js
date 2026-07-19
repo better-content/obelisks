@@ -33,17 +33,13 @@ var BC_LOOT_REMOVE_ITEMS = [
     'createmoredrillheads:redstone_dusts_tipped_netherite_drill',
     'creatingspace:netherite_oxygen_backtank',
     'creatingspace:netherite_oxygen_backtank_placeable',
-    'delightful:gilded_netherite_knife',
-    'delightful:netherite_opal_knife',
     'farmersdelight:netherite_knife',
     'forbidden_arcanus:netherite_blacksmith_gavel',
     'goety:netherite_ravager_armor',
     'goety:netherite_trampler_armor',
-    'golemoverhaul:netherite_golem_spawn_egg',
     'hexcasting:creative_unlocker',
     'hexerei:broom_netherite_tip',
     'hexerei:creative_waxing_kit',
-    'iceandfire:creative_dragon_meal',
     'irons_spellbooks:netherite_mage_boots',
     'irons_spellbooks:netherite_mage_chestplate',
     'irons_spellbooks:netherite_mage_helmet',
@@ -122,8 +118,6 @@ var BC_LOOT_REMOVE_ITEMS = [
     'tinkers_advanced:blaze_netherite',
     'tinkers_advanced:molten_blaze_netherite_bucket',
     'ubesdelight:rolling_pin_netherite',
-    'wands:creative_wand',
-    'wands:netherite_wand'
 ]
 
 var BC_LOOT_EMERALD_TABLES_TO_COIN = [

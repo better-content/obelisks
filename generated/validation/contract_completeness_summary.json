@@ -1,51 +1,10 @@
 {
-  "generatedAt": "2026-05-31T17:57:28.940Z",
-  "schema": "btm.contract_completeness_report.v1",
+  "generatedAt": "2026-07-19T22:33:26.012948173Z",
+  "schema": "bc.contract_completeness_report.v1",
   "contract": "tools/pack_contract.json",
-  "dimensions": 12,
-  "strongDimensions": 9,
+  "dimensions": 10,
+  "strongDimensions": 7,
   "weakDimensions": 3,
-  "statusCounts": {
-    "hard_checked": 7,
-    "runtime_checked": 2,
-    "scenario_required": 1,
-    "marker_checked": 1,
-    "telemetry_required": 1
-  },
-  "unclassifiedSystems": [],
-  "unreferencedTiers": [],
-  "errors": [],
-  "warnings": [],
-  "openRequirements": [
-    {
-      "dimension": "adventure_dimensions_combat",
-      "status": "scenario_required",
-      "requirement": "Run and retain fresh evidence for actual Creating Space travel UI and travel to Lost Cities."
-    },
-    {
-      "dimension": "adventure_dimensions_combat",
-      "status": "scenario_required",
-      "requirement": "Add long-run pillager campaign, settlement-roads, and village-walls generation scenarios."
-    },
-    {
-      "dimension": "worldgen_statistics",
-      "status": "marker_checked",
-      "requirement": "Add deterministic seed sampling for deposits, Y-bands, villages, roads, walls, structures, forageables, and spawn viability."
-    },
-    {
-      "dimension": "worldgen_statistics",
-      "status": "marker_checked",
-      "requirement": "Define acceptable distance/depth distributions and fail outside confidence bounds."
-    },
-    {
-      "dimension": "playtest_telemetry_friction",
-      "status": "telemetry_required",
-      "requirement": "Capture route telemetry for time-to-tier, deaths, lookup stalls, travel distance, recovery loops, and player confusion."
-    },
-    {
-      "dimension": "playtest_telemetry_friction",
-      "status": "telemetry_required",
-      "requirement": "Define friction budgets per progression segment and compare playtest traces against them."
-    }
-  ]
+  "errors": 0,
+  "warnings": 0
 }

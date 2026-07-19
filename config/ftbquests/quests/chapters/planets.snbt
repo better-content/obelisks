@@ -2,136 +2,124 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "planets"
-	group: "3D1BF480E4BCDBA6"
+	group: "5B6E48C1A9D207F3"
 	id: "5F91B2C7A4E86D10"
 	order_index: 3
 	quest_links: [ ]
 	quests: [
 		{
-			id: "F9C3B76D8410A25E"
-			title: "Earth Orbit"
+			description: ["Your first orbital trip is a logistics check, not a sightseeing step. Bring fuel, oxygen, food, a return plan, and one clear reason for the launch."]
+			id: "2A7C9DC957D52D0B"
+			rewards: [{
+				count: 4
+				id: "5C6612C821B507FB"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			subtitle: "Reach orbit and prove your launch setup works."
 			tasks: [{
 				dimension: "creatingspace:earth_orbit"
 				id: "2B0E7C5A1FD64B3C"
 				type: "dimension"
 			}]
+			title: "Earth Orbit"
 			x: -5.5d
 			y: -2.5d
-			description: ["Your first orbital trip is a logistics check, not a sightseeing step. Bring fuel, oxygen, food, a return plan, and one clear reason for the launch."]
-			rewards: [
-				{
-					id: "5C6612C821B507FB"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
 		}
 		{
-			id: "B07D8FE1C3A95426"
-			title: "Moon Orbit"
+			description: ["Use orbit to confirm that your supply chain can support repeated flights. If the trip out feels fragile, landing only makes the recovery problem worse."]
+			id: "570F163150B219A6"
+			rewards: [{
+				count: 4
+				id: "15D82A44660CF183"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			subtitle: "Stage the route before you commit to a landing."
 			tasks: [{
 				dimension: "creatingspace:moon_orbit"
-				id: "A36FD7C54E9182B0"
+				id: "151A8724BD47FEE5"
 				type: "dimension"
 			}]
+			title: "Moon Orbit"
 			x: -5.5d
 			y: -1.5d
-			description: ["Use orbit to confirm that your supply chain can support repeated flights. If the trip out feels fragile, landing only makes the recovery problem worse."]
-			rewards: [
-				{
-					id: "15D82A44660CF183"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
 		}
 		{
+			description: ["A landing only counts if you can return with the target item and your gear intact. Treat the Moon like an expedition, not a one-way unlock screen."]
 			id: "7E10A4BD2C658F93"
-			title: "The Moon"
+			rewards: [{
+				count: 4
+				id: "680621A278CAF96F"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			subtitle: "Land, collect proof, and bring the run home."
 			tasks: [{
 				dimension: "creatingspace:the_moon"
 				id: "1C96E5AF30B274D8"
 				type: "dimension"
 			}]
+			title: "The Moon"
 			x: -5.5d
 			y: -0.5d
-			description: ["A landing only counts if you can return with the target item and your gear intact. Treat the Moon like an expedition, not a one-way unlock screen."]
-			rewards: [
-				{
-					id: "DBB5011889C02A36"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
 		}
 		{
-			id: "D3A1485EB97C20F1"
-			title: "Mars Orbit"
+			description: ["Mars is where distance starts to punish sloppy preparation. Confirm the launch stack, return supplies, and replacement plan before you drop to the surface."]
+			id: "46A67A37E442AAEB"
+			rewards: [{
+				count: 4
+				id: "7604EDFB1CD98554"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			subtitle: "Check the route before you commit to hostile distance."
 			tasks: [{
 				dimension: "creatingspace:mars_orbit"
 				id: "4FD7B9028A61CE35"
 				type: "dimension"
 			}]
+			title: "Mars Orbit"
 			x: -5.5d
 			y: 0.5d
-			description: ["Mars is where distance starts to punish sloppy preparation. Confirm the launch stack, return supplies, and replacement plan before you drop to the surface."]
-			rewards: [
-				{
-					id: "7604EDFB1CD98554"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
 		}
 		{
-			id: "89E2C7A10B4FD635"
-			title: "Mars"
+			description: ["Expect a harsher expedition than the Moon. Pack for distance, hostile terrain, and the trip back before you treat Mars as a farming route."]
+			id: "3376D0BB49883028"
+			rewards: [{
+				count: 4
+				id: "2C476204AEEA7390"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			subtitle: "Bring better logistics, better recovery, and better heat planning."
 			tasks: [{
 				dimension: "creatingspace:mars"
-				id: "C51A8DE37F0264B9"
+				id: "43CF41481B42F38A"
 				type: "dimension"
 			}]
+			title: "Mars"
 			x: -5.5d
 			y: 1.5d
-			description: ["Expect a harsher expedition than the Moon. Pack for distance, hostile terrain, and the trip back before you treat Mars as a farming route."]
-			rewards: [
-				{
-					id: "2C476204AEEA7390"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
 		}
 		{
+			description: ["By the time you reach Venus, the question is whether your systems can sustain remote work. If the launch, suit, or resupply plan is weak, fix that first and come back later."]
 			id: "24BF67D9E81A3C50"
-			title: "Venus"
-	subtitle: "Late planets test fuel, oxygen, gear, and return planning."
+			rewards: [{
+				count: 4
+				id: "0268ADD64BA6944B"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
+			subtitle: "Late planets test fuel, oxygen, gear, and return planning."
 			tasks: [{
 				dimension: "creatingspace:venus"
-				id: "E0D34A6CB58F2197"
+				id: "35C2403C9C237BEE"
 				type: "dimension"
 			}]
+			title: "Venus"
 			x: -5.5d
 			y: 2.5d
-			description: ["By the time you reach Venus, the question is whether your systems can sustain remote work. If the launch, suit, or resupply plan is weak, fix that first and come back later."]
-			rewards: [
-				{
-					id: "811AC27C4DBF99F5"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
 		}
 	]
 	title: "Planets"

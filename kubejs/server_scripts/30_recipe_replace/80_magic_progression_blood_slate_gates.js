@@ -20,8 +20,6 @@ ServerEvents.recipes(function (event) {
     // Altar I: first dirty-magic proofs.
     gate(event, { id: 'malum:spirit_altar' }, '#forge:ingots/gold', BM_SLATE_T1)
     gate(event, { id: 'malum:spirit_altar' }, '#forge:stone', BC_OTHERSIDE_T1)
-    gate(event, { id: 'reliquary:apothecary_cauldron' }, 'reliquary:catalyzing_gland', BM_SLATE_T1)
-    gate(event, { id: 'reliquary:apothecary_cauldron' }, 'minecraft:cauldron', BC_OTHERSIDE_T1)
 
     // Altar II: Hexerei is the first authored folk branch off fonts. Ars gets an
     // early teaser book separately, but real source work still waits for later proof.
@@ -71,8 +69,6 @@ ServerEvents.recipes(function (event) {
     gate(event, { id: 'ars_technica:source_engine' }, 'ars_technica:calibrated_precision_mechanism', BM_SLATE_T4)
     gate(event, { id: 'ars_caelum:ritual_conjure_island_geode' }, '#forge:gems/diamond', BM_SLATE_T4)
     gate(event, { id: 'ars_caelum:ritual_sedimentation' }, 'ars_nouveau:frostaya_pod', BM_SLATE_T4)
-    gate(event, { id: 'reliquary:alkahestry_altar' }, 'minecraft:redstone_lamp', BM_SLATE_T4)
-    gate(event, { id: 'reliquary:alkahestry_altar' }, 'minecraft:nether_star', BC_OTHERSIDE_T4)
 
     // Altar V: programmable / networked magic.
     gate(event, { id: 'psi:programmer' }, '#forge:ingots/iron', BM_SLATE_T5)
@@ -86,6 +82,4 @@ ServerEvents.recipes(function (event) {
     gate(event, { id: 'arseng:me_source_jar' }, 'ars_nouveau:manipulation_essence', BM_SLATE_T5)
     gate(event, { id: 'arseng:source_acceptor' }, 'ars_nouveau:source_gem_block', BM_SLATE_T5)
     gate(event, { id: 'arseng:source_cell_housing' }, 'ars_nouveau:manipulation_essence', BM_SLATE_T5)
-    gate(event, { id: 'reliquary:alkahestry_tome' }, 'minecraft:book', BM_SLATE_T5)
-    gate(event, { id: 'reliquary:alkahestry_tome' }, 'minecraft:nether_star', BC_OTHERSIDE_T5)
 })

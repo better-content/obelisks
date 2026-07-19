@@ -298,58 +298,6 @@ ServerEvents.recipes(function (event) {
         P: BC_VANILLISH.copperPlate
     })
 
-     bcVanMechanical(event, 'createbigcannons/cannon_builder', 'createbigcannons:cannon_builder', 1, [
-        'IPI',
-        'PAP',
-        'ICI'
-    ], {
-        I: BC_VANILLISH.ironPlate,
-        P: 'create:piston_extension_pole',
-        A: BC_VANILLISH.andesite,
-        C: 'create:andesite_casing'
-    })
-     bcVanMechanical(event, 'createbigcannons/cannon_drill', 'createbigcannons:cannon_drill', 1, [
-        'IDI',
-        'PAP',
-        'FCF'
-    ], {
-        I: BC_VANILLISH.ironPlate,
-        D: 'create:mechanical_drill',
-        P: 'create:piston_extension_pole',
-        A: BC_VANILLISH.andesite,
-        F: 'create:fluid_pipe',
-        C: 'create:andesite_casing'
-    })
-     bcVanMechanical(event, 'createbigcannons/cannon_loader', 'createbigcannons:cannon_loader', 1, [
-        'IGI',
-        'PAP',
-        'ICI'
-    ], {
-        I: BC_VANILLISH.ironPlate,
-        G: '#createbigcannons:gunpowder',
-        P: 'create:piston_extension_pole',
-        A: BC_VANILLISH.andesite,
-        C: 'create:andesite_casing'
-    })
-     bcVanMechanical(event, 'createbigcannons/wrought_iron_cannon_chamber', 'createbigcannons:wrought_iron_cannon_chamber', 1, [
-        'PPP',
-        'GBG',
-        'PPP'
-    ], {
-        P: BC_VANILLISH.ironPlate,
-        G: '#createbigcannons:gunpowder',
-        B: BC_VANILLISH.brass
-    })
-     bcVanMechanical(event, 'createbigcannons/machine_gun_round', 'createbigcannons:machine_gun_round', 4, [
-        ' C ',
-        ' R ',
-        ' G '
-    ], {
-        C: '#forge:nuggets/copper',
-        R: 'createbigcannons:empty_machine_gun_round',
-        G: '#createbigcannons:gunpowder'
-    })
-
     // Furnace-style metals become heated Create compaction. Deposit furnace fallbacks
     // still output poor nuggets and are intentionally not matched here.
      bcVanRemoveCooking(event, 'minecraft:iron_ingot')

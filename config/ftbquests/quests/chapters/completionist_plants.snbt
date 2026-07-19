@@ -5,2834 +5,1629 @@
 	group: "0D8C0A1E9F5B4C72"
 	icon: "minecraft:oak_sapling"
 	id: "7C8E14AB56D2039F"
-	order_index: 14
+	order_index: 4
 	quest_links: [ ]
 	quests: [
 		{
-			id: "SYNTHETIC"
-			title: "Items"
-			icon: "minecraft:oak_sapling"
-			shape: "square"
-			size: 0.8d
-			x: 0.0d
-			y: 0.0d
-			tasks: [
-				{
-					id: "SYNTHETIC"
-					type: "checkmark"
-					title: "Items"
-				}
-			]
-			rewards: [ ]
 			description: ["7 starter stubs."]
+			icon: "minecraft:oak_sapling"
+			id: "52573BB0AF8E3D20"
+			shape: "square"
+			size: 0.8d
+			tasks: [{
+				id: "24056D269CC075DD"
+				title: "Items"
+				type: "checkmark"
+			}]
+			title: "Items"
+			x: 0.0d
+			y: 0.0d
 		}
 		{
-			id: "FEF8CACDE404485A"
-			title: "All Plants: Cabbage Seeds"
 			icon: "farmersdelight:cabbage_seeds"
+			id: "2DF32254DEB903A7"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "00B32B8612AED63A"
+				item: "farmersdelight:cabbage_seeds"
+				type: "item"
+			}]
+			title: "All Plants: Cabbage Seeds"
 			x: 1.5d
 			y: 0.0d
-			tasks: [
-				{
-					id: "00B32B8612AED63A"
-					type: "item"
-					item: "farmersdelight:cabbage_seeds"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "01562CB8C70566C6"
-			title: "All Plants: Tomato Seeds"
 			icon: "farmersdelight:tomato_seeds"
+			id: "01562CB8C70566C6"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "78E5A5357677B493"
+				item: "farmersdelight:tomato_seeds"
+				type: "item"
+			}]
+			title: "All Plants: Tomato Seeds"
 			x: 2.75d
 			y: 0.0d
-			tasks: [
-				{
-					id: "E83761D8D28E6612"
-					type: "item"
-					item: "farmersdelight:tomato_seeds"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "8E1EA7BAD84249EA"
-			title: "All Plants: Beetroot Seeds"
 			icon: "minecraft:beetroot_seeds"
+			id: "171A703393802B20"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "76F5F3501B30C6C1"
+				item: "minecraft:beetroot_seeds"
+				type: "item"
+			}]
+			title: "All Plants: Beetroot Seeds"
 			x: 4.0d
 			y: 0.0d
-			tasks: [
-				{
-					id: "99DE8754D8F52A11"
-					type: "item"
-					item: "minecraft:beetroot_seeds"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "89F25839D9C97B14"
-			title: "All Plants: Melon Seeds"
 			icon: "minecraft:melon_seeds"
+			id: "6B120BB6E8FA4B0F"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "3B0131977493B9B9"
+				item: "minecraft:melon_seeds"
+				type: "item"
+			}]
+			title: "All Plants: Melon Seeds"
 			x: 5.25d
 			y: 0.0d
-			tasks: [
-				{
-					id: "3B0131977493B9B9"
-					type: "item"
-					item: "minecraft:melon_seeds"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "61A97AE81BC83961"
-			title: "All Plants: Pumpkin Seeds"
 			icon: "minecraft:pumpkin_seeds"
+			id: "61A97AE81BC83961"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "1F306266B5E265A7"
+				item: "minecraft:pumpkin_seeds"
+				type: "item"
+			}]
+			title: "All Plants: Pumpkin Seeds"
 			x: 6.5d
 			y: 0.0d
-			tasks: [
-				{
-					id: "DA35A87CE144F59E"
-					type: "item"
-					item: "minecraft:pumpkin_seeds"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "232909A1A72C8CB5"
-			title: "All Plants: Wheat Seeds"
 			icon: "minecraft:wheat_seeds"
+			id: "232909A1A72C8CB5"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "4092E624400D2E67"
+				item: "minecraft:wheat_seeds"
+				type: "item"
+			}]
+			title: "All Plants: Wheat Seeds"
 			x: 7.75d
 			y: 0.0d
-			tasks: [
-				{
-					id: "DE3165AAE94F5AF7"
-					type: "item"
-					item: "minecraft:wheat_seeds"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "175D344C5B3A210D"
-			title: "All Plants: Gloomgourd Seeds"
 			icon: "undergarden:gloomgourd_seeds"
+			id: "175D344C5B3A210D"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "337528C224EE903C"
+				item: "undergarden:gloomgourd_seeds"
+				type: "item"
+			}]
+			title: "All Plants: Gloomgourd Seeds"
 			x: 9.0d
 			y: 0.0d
-			tasks: [
-				{
-					id: "337528C224EE903C"
-					type: "item"
-					item: "undergarden:gloomgourd_seeds"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "75991AFBEF186884"
-			title: "Flowers"
+			description: ["25 starter stubs."]
 			icon: "ars_nouveau:magebloom_block"
+			id: "75991AFBEF186884"
 			shape: "square"
 			size: 0.8d
+			tasks: [{
+				id: "15B4252ABFA4E8B5"
+				title: "Flowers"
+				type: "checkmark"
+			}]
+			title: "Flowers"
 			x: 0.0d
 			y: 3.25d
-			tasks: [
-				{
-					id: "15B4252ABFA4E8B5"
-					type: "checkmark"
-					title: "Flowers"
-				}
-			]
-			rewards: [ ]
-			description: ["33 starter stubs."]
 		}
 		{
-			id: "0E4C9407A8AE0490"
-			title: "All Plants: Magebloom Crop"
 			icon: "ars_nouveau:magebloom_crop"
+			id: "0E4C9407A8AE0490"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "1D9B2B1FFBDDD92A"
+				item: "ars_nouveau:magebloom_crop"
+				type: "item"
+			}]
+			title: "All Plants: Magebloom Crop"
 			x: 1.5d
 			y: 3.25d
-			tasks: [
-				{
-					id: "1D9B2B1FFBDDD92A"
-					type: "item"
-					item: "ars_nouveau:magebloom_crop"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "64A9949267A722A5"
-			title: "All Plants: Magebloom Fiber"
 			icon: "ars_nouveau:magebloom_fiber"
+			id: "64A9949267A722A5"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "1760703C934CCFE8"
+				item: "ars_nouveau:magebloom_fiber"
+				type: "item"
+			}]
+			title: "All Plants: Magebloom Fiber"
 			x: 2.75d
 			y: 3.25d
-			tasks: [
-				{
-					id: "1760703C934CCFE8"
-					type: "item"
-					item: "ars_nouveau:magebloom_fiber"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "E37181DDF9CDC865"
-			title: "All Plants: Ritual Flowering"
 			icon: "ars_nouveau:ritual_flowering"
+			id: "63C7C63367C8B72B"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "3DA12B0D9291EFBF"
+				item: "ars_nouveau:ritual_flowering"
+				type: "item"
+			}]
+			title: "All Plants: Ritual Flowering"
 			x: 4.0d
 			y: 3.25d
-			tasks: [
-				{
-					id: "3DA12B0D9291EFBF"
-					type: "item"
-					item: "ars_nouveau:ritual_flowering"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "04C3ACFBB2EC5CB3"
-			title: "All Plants: Framed Flower Pot"
 			icon: "framedblocks:framed_flower_pot"
+			id: "04C3ACFBB2EC5CB3"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "249B14C6200479CA"
+				item: "framedblocks:framed_flower_pot"
+				type: "item"
+			}]
+			title: "All Plants: Framed Flower Pot"
 			x: 5.25d
 			y: 3.25d
-			tasks: [
-				{
-					id: "F0531F1FCBD93A83"
-					type: "item"
-					item: "framedblocks:framed_flower_pot"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
+			icon: {
+				Count: 1
+				id: "immersive_weathering:flower_crown"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "00E269C530E0F490"
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{
+				id: "3016CE63F67930A9"
+				item: {
+					Count: 1
+					id: "immersive_weathering:flower_crown"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
 			title: "All Plants: Flower Crown"
-			icon: "immersive_weathering:flower_crown"
-			shape: "rsquare"
-			size: 1.0d
 			x: 6.5d
 			y: 3.25d
-			tasks: [
-				{
-					id: "E28D6C7EB6250AED"
-					type: "item"
-					item: "immersive_weathering:flower_crown"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "39BC653463F87669"
-			title: "All Plants: Quark/blue Blossom Leaf Pile"
 			icon: "immersive_weathering:quark/blue_blossom_leaf_pile"
+			id: "39BC653463F87669"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "2B9C0A084959C896"
+				item: "immersive_weathering:quark/blue_blossom_leaf_pile"
+				type: "item"
+			}]
+			title: "All Plants: Quark/blue Blossom Leaf Pile"
 			x: 7.75d
 			y: 3.25d
-			tasks: [
-				{
-					id: "2B9C0A084959C896"
-					type: "item"
-					item: "immersive_weathering:quark/blue_blossom_leaf_pile"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "A0D03E7599A17D41"
-			title: "All Plants: Quark/lavender Blossom Leaf Pile"
 			icon: "immersive_weathering:quark/lavender_blossom_leaf_pile"
+			id: "7FABCABE33F8FC5C"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "37D6E78C98C49BB9"
+				item: "immersive_weathering:quark/lavender_blossom_leaf_pile"
+				type: "item"
+			}]
+			title: "All Plants: Quark/lavender Blossom Leaf Pile"
 			x: 9.0d
 			y: 3.25d
-			tasks: [
-				{
-					id: "F0BEE4999AFB1642"
-					type: "item"
-					item: "immersive_weathering:quark/lavender_blossom_leaf_pile"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "B1036C4F737F9DC0"
-			title: "All Plants: Quark/orange Blossom Leaf Pile"
 			icon: "immersive_weathering:quark/orange_blossom_leaf_pile"
+			id: "1829E43A6A23A2E2"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "77CAC61DF9BB56E1"
+				item: "immersive_weathering:quark/orange_blossom_leaf_pile"
+				type: "item"
+			}]
+			title: "All Plants: Quark/orange Blossom Leaf Pile"
 			x: 10.25d
 			y: 3.25d
-			tasks: [
-				{
-					id: "994D6AD3977A11D9"
-					type: "item"
-					item: "immersive_weathering:quark/orange_blossom_leaf_pile"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "E51ADFA71D7FC9F3"
-			title: "All Plants: Quark/red Blossom Leaf Pile"
 			icon: "immersive_weathering:quark/red_blossom_leaf_pile"
+			id: "58F231409BFC9D33"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "2E26E66140D4F062"
+				item: "immersive_weathering:quark/red_blossom_leaf_pile"
+				type: "item"
+			}]
+			title: "All Plants: Quark/red Blossom Leaf Pile"
 			x: 11.5d
 			y: 3.25d
-			tasks: [
-				{
-					id: "2E26E66140D4F062"
-					type: "item"
-					item: "immersive_weathering:quark/red_blossom_leaf_pile"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "9754C79288C74A84"
-			title: "All Plants: Quark/yellow Blossom Leaf Pile"
 			icon: "immersive_weathering:quark/yellow_blossom_leaf_pile"
+			id: "196C9D2DFD5C8059"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "2921BE2AF9B78D32"
+				item: "immersive_weathering:quark/yellow_blossom_leaf_pile"
+				type: "item"
+			}]
+			title: "All Plants: Quark/yellow Blossom Leaf Pile"
 			x: 12.75d
 			y: 3.25d
-			tasks: [
-				{
-					id: "2921BE2AF9B78D32"
-					type: "item"
-					item: "immersive_weathering:quark/yellow_blossom_leaf_pile"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "4A45BFD9E8ACB3BB"
-			title: "All Plants: Flower Pot"
 			icon: "minecraft:flower_pot"
+			id: "4A45BFD9E8ACB3BB"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "6C5C3FB64C33C681"
+				item: "minecraft:flower_pot"
+				type: "item"
+			}]
+			title: "All Plants: Flower Pot"
 			x: 14.0d
 			y: 3.25d
-			tasks: [
-				{
-					id: "BE390B6A27B8D49F"
-					type: "item"
-					item: "minecraft:flower_pot"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "D975A017C9C440D5"
-			title: "All Plants: Lily Pad"
 			icon: "minecraft:lily_pad"
+			id: "6DB9F19F664AAF1E"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "4709EC0197AE0B2A"
+				item: "minecraft:lily_pad"
+				type: "item"
+			}]
+			title: "All Plants: Lily Pad"
 			x: 15.25d
 			y: 3.25d
-			tasks: [
-				{
-					id: "4709EC0197AE0B2A"
-					type: "item"
-					item: "minecraft:lily_pad"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "15075540FDFADEFA"
-			title: "All Plants: Potted Bouquet"
 			icon: "procedural_bouquets:potted_bouquet"
+			id: "15075540FDFADEFA"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "68939315C55E4EAE"
+				item: "procedural_bouquets:potted_bouquet"
+				type: "item"
+			}]
+			title: "All Plants: Potted Bouquet"
 			x: 1.5d
 			y: 4.5d
-			tasks: [
-				{
-					id: "68939315C55E4EAE"
-					type: "item"
-					item: "procedural_bouquets:potted_bouquet"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "FBC8042A8FA8400F"
-			title: "All Plants: Blue Blossom Hedge"
 			icon: "quark:blue_blossom_hedge"
+			id: "1451B6F34C0C3996"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "474FDCC8FB797449"
+				item: "quark:blue_blossom_hedge"
+				type: "item"
+			}]
+			title: "All Plants: Blue Blossom Hedge"
 			x: 2.75d
 			y: 4.5d
-			tasks: [
-				{
-					id: "CCE738D19CC58B3E"
-					type: "item"
-					item: "quark:blue_blossom_hedge"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "BBB21E4A2A33C8DF"
-			title: "All Plants: Lavender Blossom Hedge"
 			icon: "quark:lavender_blossom_hedge"
+			id: "34A7403630554942"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "1A2FE6E8E1F2FFC5"
+				item: "quark:lavender_blossom_hedge"
+				type: "item"
+			}]
+			title: "All Plants: Lavender Blossom Hedge"
 			x: 4.0d
 			y: 4.5d
-			tasks: [
-				{
-					id: "1A2FE6E8E1F2FFC5"
-					type: "item"
-					item: "quark:lavender_blossom_hedge"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "315CAB140C85D7E2"
-			title: "All Plants: Orange Blossom Hedge"
 			icon: "quark:orange_blossom_hedge"
+			id: "315CAB140C85D7E2"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "45277339FBD72877"
+				item: "quark:orange_blossom_hedge"
+				type: "item"
+			}]
+			title: "All Plants: Orange Blossom Hedge"
 			x: 5.25d
 			y: 4.5d
-			tasks: [
-				{
-					id: "81461A1F5FC84B0F"
-					type: "item"
-					item: "quark:orange_blossom_hedge"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "0D911E7714721572"
-			title: "All Plants: Red Blossom Hedge"
 			icon: "quark:red_blossom_hedge"
+			id: "0D911E7714721572"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "19BBB8BE00F3DA0E"
+				item: "quark:red_blossom_hedge"
+				type: "item"
+			}]
+			title: "All Plants: Red Blossom Hedge"
 			x: 6.5d
 			y: 4.5d
-			tasks: [
-				{
-					id: "F011448AE11C9673"
-					type: "item"
-					item: "quark:red_blossom_hedge"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "8CAD01048CE65A28"
-			title: "All Plants: Yellow Blossom Hedge"
 			icon: "quark:yellow_blossom_hedge"
+			id: "15B4028E7EE51569"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "195FD40002155107"
+				item: "quark:yellow_blossom_hedge"
+				type: "item"
+			}]
+			title: "All Plants: Yellow Blossom Hedge"
 			x: 7.75d
 			y: 4.5d
-			tasks: [
-				{
-					id: "9D1E73E11FA6BD63"
-					type: "item"
-					item: "quark:yellow_blossom_hedge"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "5890EDEA1887B699"
-			title: "All Plants: Cherry Blossom Roll"
-			icon: "rusticdelight:cherry_blossom_roll"
-			shape: "rsquare"
-			size: 1.0d
-			x: 9.0d
-			y: 4.5d
-			tasks: [
-				{
-					id: "23F2DA0E6B393684"
-					type: "item"
-					item: "rusticdelight:cherry_blossom_roll"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "80C998314B2DDDB5"
-			title: "All Plants: Huge Lily Pad"
 			icon: "twilightforest:huge_lily_pad"
+			id: "0FF552DE67B5A773"
 			shape: "rsquare"
 			size: 1.0d
-			x: 10.25d
+			tasks: [{
+				id: "0F4D3651D11793CA"
+				item: "twilightforest:huge_lily_pad"
+				type: "item"
+			}]
+			title: "All Plants: Huge Lily Pad"
+			x: 9.0d
 			y: 4.5d
-			tasks: [
-				{
-					id: "CED42D44036CDFE8"
-					type: "item"
-					item: "twilightforest:huge_lily_pad"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "BB7283D330A670DB"
-			title: "All Plants: Cauliflower"
-			icon: "veggiesdelight:cauliflower"
-			shape: "rsquare"
-			size: 1.0d
-			x: 11.5d
-			y: 4.5d
-			tasks: [
-				{
-					id: "2CE9319E9A807893"
-					type: "item"
-					item: "veggiesdelight:cauliflower"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "3A37D8E771E63288"
-			title: "All Plants: Cauliflower Bread"
-			icon: "veggiesdelight:cauliflower_bread"
-			shape: "rsquare"
-			size: 1.0d
-			x: 12.75d
-			y: 4.5d
-			tasks: [
-				{
-					id: "2F9542A394BFC450"
-					type: "item"
-					item: "veggiesdelight:cauliflower_bread"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "A2876133F64A2DEC"
-			title: "All Plants: Cauliflower Floret"
-			icon: "veggiesdelight:cauliflower_floret"
-			shape: "rsquare"
-			size: 1.0d
-			x: 14.0d
-			y: 4.5d
-			tasks: [
-				{
-					id: "5B2CCC025A71C983"
-					type: "item"
-					item: "veggiesdelight:cauliflower_floret"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "6BCB95822113BF62"
-			title: "All Plants: Cauliflower Kuku"
-			icon: "veggiesdelight:cauliflower_kuku"
-			shape: "rsquare"
-			size: 1.0d
-			x: 15.25d
-			y: 4.5d
-			tasks: [
-				{
-					id: "BC20B1C810CC59FB"
-					type: "item"
-					item: "veggiesdelight:cauliflower_kuku"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "2E4BC5E8B57D5DDC"
-			title: "All Plants: Garlic Rice With Cauliflower"
-			icon: "veggiesdelight:garlic_rice_with_cauliflower"
-			shape: "rsquare"
-			size: 1.0d
-			x: 1.5d
-			y: 5.75d
-			tasks: [
-				{
-					id: "EC9E4436D84CDEEB"
-					type: "item"
-					item: "veggiesdelight:garlic_rice_with_cauliflower"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "F09AD9E657CE42C6"
-			title: "All Plants: Mushroom Rice"
 			icon: "farmersdelight:mushroom_rice"
+			id: "54AF5301433489E7"
 			shape: "rsquare"
 			size: 1.0d
-			x: 2.75d
-			y: 5.75d
-			tasks: [
-				{
-					id: "A383C948B1FE51E5"
-					type: "item"
-					item: "farmersdelight:mushroom_rice"
-					count: 1
-				}
-			]
-			rewards: [ ]
+			tasks: [{
+				id: "4C12219EE0CE4EA0"
+				item: "farmersdelight:mushroom_rice"
+				type: "item"
+			}]
+			title: "All Plants: Mushroom Rice"
+			x: 10.25d
+			y: 4.5d
 		}
 		{
-			id: "D61B5ECFB69A3B70"
-			title: "All Plants: Brown Mushroom"
 			icon: "minecraft:brown_mushroom"
+			id: "465FEDAC35178B82"
 			shape: "rsquare"
 			size: 1.0d
-			x: 4.0d
-			y: 5.75d
-			tasks: [
-				{
-					id: "C04F3CAD08A6718A"
-					type: "item"
-					item: "minecraft:brown_mushroom"
-					count: 1
-				}
-			]
-			rewards: [ ]
+			tasks: [{
+				id: "6C447C8F5BD5077C"
+				item: "minecraft:brown_mushroom"
+				type: "item"
+			}]
+			title: "All Plants: Brown Mushroom"
+			x: 11.5d
+			y: 4.5d
 		}
 		{
-			id: "717117985B1DEC49"
-			title: "All Plants: Crimson Fungus"
 			icon: "minecraft:crimson_fungus"
+			id: "717117985B1DEC49"
 			shape: "rsquare"
 			size: 1.0d
-			x: 5.25d
-			y: 5.75d
-			tasks: [
-				{
-					id: "39E6BF5B60CB6736"
-					type: "item"
-					item: "minecraft:crimson_fungus"
-					count: 1
-				}
-			]
-			rewards: [ ]
+			tasks: [{
+				id: "39E6BF5B60CB6736"
+				item: "minecraft:crimson_fungus"
+				type: "item"
+			}]
+			title: "All Plants: Crimson Fungus"
+			x: 12.75d
+			y: 4.5d
 		}
 		{
-			id: "9A458E741108CD27"
-			title: "All Plants: Red Mushroom"
 			icon: "minecraft:red_mushroom"
+			id: "0784CA43F81269FC"
 			shape: "rsquare"
 			size: 1.0d
-			x: 6.5d
-			y: 5.75d
-			tasks: [
-				{
-					id: "D6BC3B7B0CC7158F"
-					type: "item"
-					item: "minecraft:red_mushroom"
-					count: 1
-				}
-			]
-			rewards: [ ]
+			tasks: [{
+				id: "7A8EE91379F8EB94"
+				item: "minecraft:red_mushroom"
+				type: "item"
+			}]
+			title: "All Plants: Red Mushroom"
+			x: 14.0d
+			y: 4.5d
 		}
 		{
-			id: "8E308878B994DA66"
-			title: "All Plants: Warped Fungus"
 			icon: "minecraft:warped_fungus"
+			id: "23636D3B45DA0923"
 			shape: "rsquare"
 			size: 1.0d
-			x: 7.75d
-			y: 5.75d
-			tasks: [
-				{
-					id: "9CF05D017AC7A9FC"
-					type: "item"
-					item: "minecraft:warped_fungus"
-					count: 1
-				}
-			]
-			rewards: [ ]
+			tasks: [{
+				id: "08A748A682B43857"
+				item: "minecraft:warped_fungus"
+				type: "item"
+			}]
+			title: "All Plants: Warped Fungus"
+			x: 15.25d
+			y: 4.5d
 		}
 		{
+			icon: {
+				Count: 1
+				id: "minecraft:warped_fungus_on_a_stick"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "19D1AE4E1D8A582B"
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{
+				id: "17AA12FAA20B9315"
+				item: {
+					Count: 1
+					id: "minecraft:warped_fungus_on_a_stick"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
 			title: "All Plants: Warped Fungus On A Stick"
-			icon: "minecraft:warped_fungus_on_a_stick"
-			shape: "rsquare"
-			size: 1.0d
-			x: 9.0d
+			x: 1.5d
 			y: 5.75d
-			tasks: [
-				{
-					id: "17AA12FAA20B9315"
-					type: "item"
-					item: "minecraft:warped_fungus_on_a_stick"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "CEE11333E49E6174"
-			title: "All Plants: Strider With Grilled Fungus"
-			icon: "mynethersdelight:strider_with_grilled_fungus"
-			shape: "rsquare"
-			size: 1.0d
-			x: 10.25d
-			y: 5.75d
-			tasks: [
-				{
-					id: "D03AB8AB0C1B73F6"
-					type: "item"
-					item: "mynethersdelight:strider_with_grilled_fungus"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "00A871052A3D061B"
-			title: "All Plants: Garlic Stuffed Mushrooms"
-			icon: "veggiesdelight:garlic_stuffed_mushrooms"
-			shape: "rsquare"
-			size: 1.0d
-			x: 11.5d
-			y: 5.75d
-			tasks: [
-				{
-					id: "4883F2548E38C0A1"
-					type: "item"
-					item: "veggiesdelight:garlic_stuffed_mushrooms"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "FC6F8501F13917D8"
-			title: "Roots And Vines"
+			description: ["28 starter stubs."]
 			icon: "aether:aether_grass_block"
+			id: "3B8A99D87502CB7C"
 			shape: "square"
 			size: 0.8d
+			tasks: [{
+				id: "558D3F24C6BD4063"
+				title: "Roots And Vines"
+				type: "checkmark"
+			}]
+			title: "Roots And Vines"
 			x: 0.0d
 			y: 9.0d
-			tasks: [
-				{
-					id: "8FF1A0FCCEFF140C"
-					type: "checkmark"
-					title: "Roots And Vines"
-				}
-			]
-			rewards: [ ]
-			description: ["31 starter stubs."]
 		}
 		{
-			id: "1479D4417BBC0B85"
-			title: "All Plants: Skyroot Stick"
 			icon: "aether:skyroot_stick"
+			id: "1479D4417BBC0B85"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "573ED3F87F9DC675"
+				item: "aether:skyroot_stick"
+				type: "item"
+			}]
+			title: "All Plants: Skyroot Stick"
 			x: 1.5d
 			y: 9.0d
-			tasks: [
-				{
-					id: "573ED3F87F9DC675"
-					type: "item"
-					item: "aether:skyroot_stick"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "D312918085E6C836"
-			title: "All Plants: Sourceberry Bush"
 			icon: "ars_nouveau:sourceberry_bush"
+			id: "0CB9D63816D914D3"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "32AA66D37E48A7BC"
+				item: "ars_nouveau:sourceberry_bush"
+				type: "item"
+			}]
+			title: "All Plants: Sourceberry Bush"
 			x: 2.75d
 			y: 9.0d
-			tasks: [
-				{
-					id: "32AA66D37E48A7BC"
-					type: "item"
-					item: "ars_nouveau:sourceberry_bush"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "93F691BE55FD8E58"
-			title: "All Plants: Ritualdiviner"
 			icon: "bloodmagic:ritualdiviner"
+			id: "5C38FBF1740204E0"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "675267354589F69A"
+				item: "bloodmagic:ritualdiviner"
+				type: "item"
+			}]
+			title: "All Plants: Ritualdiviner"
 			x: 4.0d
 			y: 9.0d
-			tasks: [
-				{
-					id: "FA25D9EA54FF25D4"
-					type: "item"
-					item: "bloodmagic:ritualdiviner"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "6A2EFE00BB96A233"
-			title: "All Plants: Ritualdivinerdusk"
 			icon: "bloodmagic:ritualdivinerdusk"
+			id: "6A2EFE00BB96A233"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "360F1D83575D9CD6"
+				item: "bloodmagic:ritualdivinerdusk"
+				type: "item"
+			}]
+			title: "All Plants: Ritualdivinerdusk"
 			x: 5.25d
 			y: 9.0d
-			tasks: [
-				{
-					id: "FD11820AB16C8CDE"
-					type: "item"
-					item: "bloodmagic:ritualdivinerdusk"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "A00BD6EDDD51337F"
-			title: "All Plants: Bamboo Window"
 			icon: "create:bamboo_window"
+			id: "08F612D4DEE3F23C"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "3624677AA306FC8F"
+				item: "create:bamboo_window"
+				type: "item"
+			}]
+			title: "All Plants: Bamboo Window"
 			x: 6.5d
 			y: 9.0d
-			tasks: [
-				{
-					id: "E27BD481541273F1"
-					type: "item"
-					item: "create:bamboo_window"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "9FADFC373911DBFA"
-			title: "All Plants: Cactus Chili"
-			icon: "delightful:cactus_chili"
-			shape: "rsquare"
-			size: 1.0d
-			x: 7.75d
-			y: 9.0d
-			tasks: [
-				{
-					id: "A9E5D2BE4771F8FC"
-					type: "item"
-					item: "delightful:cactus_chili"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "1490BD3EC7B34B7A"
-			title: "All Plants: Cactus Flesh"
-			icon: "delightful:cactus_flesh"
-			shape: "rsquare"
-			size: 1.0d
-			x: 9.0d
-			y: 9.0d
-			tasks: [
-				{
-					id: "D0CF2BD81B20A810"
-					type: "item"
-					item: "delightful:cactus_flesh"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "B825F104E26FFD73"
-			title: "All Plants: Cabbage Leaf"
 			icon: "farmersdelight:cabbage_leaf"
+			id: "0B131CF0827D5DBD"
 			shape: "rsquare"
 			size: 1.0d
-			x: 10.25d
+			tasks: [{
+				id: "7B294353758F0C2C"
+				item: "farmersdelight:cabbage_leaf"
+				type: "item"
+			}]
+			title: "All Plants: Cabbage Leaf"
+			x: 7.75d
 			y: 9.0d
-			tasks: [
-				{
-					id: "7B294353758F0C2C"
-					type: "item"
-					item: "farmersdelight:cabbage_leaf"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "7AFB4AD23F6A0BE4"
-			title: "All Plants: Aether/crystal Fruit Leaf Pile"
 			icon: "immersive_weathering:aether/crystal_fruit_leaf_pile"
+			id: "7AFB4AD23F6A0BE4"
 			shape: "rsquare"
 			size: 1.0d
-			x: 11.5d
+			tasks: [{
+				id: "50E8608C523B40A4"
+				item: "immersive_weathering:aether/crystal_fruit_leaf_pile"
+				type: "item"
+			}]
+			title: "All Plants: Aether/crystal Fruit Leaf Pile"
+			x: 9.0d
 			y: 9.0d
-			tasks: [
-				{
-					id: "50E8608C523B40A4"
-					type: "item"
-					item: "immersive_weathering:aether/crystal_fruit_leaf_pile"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "A937A9C4008D48AB"
-			title: "All Plants: Aether/skyroot Leaf Pile"
 			icon: "immersive_weathering:aether/skyroot_leaf_pile"
+			id: "5D7B070176EB51DE"
 			shape: "rsquare"
 			size: 1.0d
-			x: 12.75d
+			tasks: [{
+				id: "026C866E0C151E26"
+				item: "immersive_weathering:aether/skyroot_leaf_pile"
+				type: "item"
+			}]
+			title: "All Plants: Aether/skyroot Leaf Pile"
+			x: 10.25d
 			y: 9.0d
-			tasks: [
-				{
-					id: "026C866E0C151E26"
-					type: "item"
-					item: "immersive_weathering:aether/skyroot_leaf_pile"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "1FC30B9665933F01"
-			title: "All Plants: Golden Moss Clump"
 			icon: "immersive_weathering:golden_moss_clump"
+			id: "1FC30B9665933F01"
 			shape: "rsquare"
 			size: 1.0d
-			x: 14.0d
+			tasks: [{
+				id: "0107442978E98D39"
+				item: "immersive_weathering:golden_moss_clump"
+				type: "item"
+			}]
+			title: "All Plants: Golden Moss Clump"
+			x: 11.5d
 			y: 9.0d
-			tasks: [
-				{
-					id: "0107442978E98D39"
-					type: "item"
-					item: "immersive_weathering:golden_moss_clump"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "F0B08CFECEF8FF7C"
-			title: "All Plants: Moss Clump"
 			icon: "immersive_weathering:moss_clump"
+			id: "09C1979E2BE0D1BC"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "2A689F68970F4BD3"
+				item: "immersive_weathering:moss_clump"
+				type: "item"
+			}]
+			title: "All Plants: Moss Clump"
+			x: 12.75d
+			y: 9.0d
+		}
+		{
+			icon: "immersive_weathering:twilightforest/beanstalk_leaf_pile"
+			id: "01670E29C546203B"
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{
+				id: "2E87340B6032C00D"
+				item: "immersive_weathering:twilightforest/beanstalk_leaf_pile"
+				type: "item"
+			}]
+			title: "All Plants: Twilightforest/beanstalk Leaf Pile"
+			x: 14.0d
+			y: 9.0d
+		}
+		{
+			icon: "minecraft:bamboo"
+			id: "06FBBE6C8E030AD7"
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{
+				id: "7D27AC8998F462F1"
+				item: "minecraft:bamboo"
+				type: "item"
+			}]
+			title: "All Plants: Bamboo"
 			x: 15.25d
 			y: 9.0d
-			tasks: [
-				{
-					id: "87D6FB338637FE91"
-					type: "item"
-					item: "immersive_weathering:moss_clump"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "01670E29C546203B"
-			title: "All Plants: Twilightforest/beanstalk Leaf Pile"
-			icon: "immersive_weathering:twilightforest/beanstalk_leaf_pile"
-			shape: "rsquare"
-			size: 1.0d
-			x: 1.5d
-			y: 10.25d
-			tasks: [
-				{
-					id: "FAFFC782992B4CC6"
-					type: "item"
-					item: "immersive_weathering:twilightforest/beanstalk_leaf_pile"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "06FBBE6C8E030AD7"
-			title: "All Plants: Bamboo"
-			icon: "minecraft:bamboo"
-			shape: "rsquare"
-			size: 1.0d
-			x: 2.75d
-			y: 10.25d
-			tasks: [
-				{
-					id: "96596054B8EDE6A0"
-					type: "item"
-					item: "minecraft:bamboo"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "2864106B1085FA79"
-			title: "All Plants: Beetroot"
 			icon: "minecraft:beetroot"
+			id: "2864106B1085FA79"
 			shape: "rsquare"
 			size: 1.0d
-			x: 4.0d
+			tasks: [{
+				id: "27541FEF8DD8E1F5"
+				item: "minecraft:beetroot"
+				type: "item"
+			}]
+			title: "All Plants: Beetroot"
+			x: 1.5d
 			y: 10.25d
-			tasks: [
-				{
-					id: "D8F3282460DB8CD0"
-					type: "item"
-					item: "minecraft:beetroot"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "5A230C685DB9B213"
-			title: "All Plants: Cactus"
 			icon: "minecraft:cactus"
+			id: "5A230C685DB9B213"
 			shape: "rsquare"
 			size: 1.0d
-			x: 5.25d
+			tasks: [{
+				id: "20CEC91F69596263"
+				item: "minecraft:cactus"
+				type: "item"
+			}]
+			title: "All Plants: Cactus"
+			x: 2.75d
 			y: 10.25d
-			tasks: [
-				{
-					id: "20CEC91F69596263"
-					type: "item"
-					item: "minecraft:cactus"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "B0B730EE5C9D1938"
-			title: "All Plants: Dead Bush"
 			icon: "minecraft:dead_bush"
+			id: "39AE8097D198B50A"
 			shape: "rsquare"
 			size: 1.0d
-			x: 6.5d
+			tasks: [{
+				id: "2567C1CD2C29EAAD"
+				item: "minecraft:dead_bush"
+				type: "item"
+			}]
+			title: "All Plants: Dead Bush"
+			x: 4.0d
 			y: 10.25d
-			tasks: [
-				{
-					id: "2567C1CD2C29EAAD"
-					type: "item"
-					item: "minecraft:dead_bush"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "025C212842A03FF5"
-			title: "All Plants: Grass"
 			icon: "minecraft:grass"
+			id: "025C212842A03FF5"
 			shape: "rsquare"
 			size: 1.0d
-			x: 7.75d
+			tasks: [{
+				id: "258697BC28882FF8"
+				item: "minecraft:grass"
+				type: "item"
+			}]
+			title: "All Plants: Grass"
+			x: 5.25d
 			y: 10.25d
-			tasks: [
-				{
-					id: "C5433BAA7B4F78A3"
-					type: "item"
-					item: "minecraft:grass"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "CFFD8BF83D5C294D"
-			title: "All Plants: Moss Carpet"
 			icon: "minecraft:moss_carpet"
+			id: "427D556BC55D6E48"
 			shape: "rsquare"
 			size: 1.0d
-			x: 9.0d
+			tasks: [{
+				id: "297FCA5C63EDCA52"
+				item: "minecraft:moss_carpet"
+				type: "item"
+			}]
+			title: "All Plants: Moss Carpet"
+			x: 6.5d
 			y: 10.25d
-			tasks: [
-				{
-					id: "D79B9B23DC5B75E5"
-					type: "item"
-					item: "minecraft:moss_carpet"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "14CEBD311EB877B0"
-			title: "All Plants: Muddy Mangrove Roots"
 			icon: "minecraft:muddy_mangrove_roots"
+			id: "14CEBD311EB877B0"
 			shape: "rsquare"
 			size: 1.0d
-			x: 10.25d
+			tasks: [{
+				id: "5D62BB1EDD551621"
+				item: "minecraft:muddy_mangrove_roots"
+				type: "item"
+			}]
+			title: "All Plants: Muddy Mangrove Roots"
+			x: 7.75d
 			y: 10.25d
-			tasks: [
-				{
-					id: "5D62BB1EDD551621"
-					type: "item"
-					item: "minecraft:muddy_mangrove_roots"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "04B3C948F5FBDC49"
-			title: "All Plants: Bamboo Mat"
 			icon: "quark:bamboo_mat"
+			id: "04B3C948F5FBDC49"
 			shape: "rsquare"
 			size: 1.0d
-			x: 11.5d
+			tasks: [{
+				id: "5F0DCC894E3DEBCA"
+				item: "quark:bamboo_mat"
+				type: "item"
+			}]
+			title: "All Plants: Bamboo Mat"
+			x: 9.0d
 			y: 10.25d
-			tasks: [
-				{
-					id: "F8BBE3EBEEBFFB09"
-					type: "item"
-					item: "quark:bamboo_mat"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "487D2A8E03DB0AC3"
-			title: "All Plants: Earth Enderbark Roots"
 			icon: "tconstruct:earth_enderbark_roots"
+			id: "487D2A8E03DB0AC3"
 			shape: "rsquare"
 			size: 1.0d
-			x: 12.75d
+			tasks: [{
+				id: "61F539F30ECEDC4B"
+				item: "tconstruct:earth_enderbark_roots"
+				type: "item"
+			}]
+			title: "All Plants: Earth Enderbark Roots"
+			x: 10.25d
 			y: 10.25d
-			tasks: [
-				{
-					id: "F4ABCC5B78D6F4CF"
-					type: "item"
-					item: "tconstruct:earth_enderbark_roots"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "40DBF4D1C8071614"
-			title: "All Plants: Ender Enderbark Roots"
 			icon: "tconstruct:ender_enderbark_roots"
+			id: "40DBF4D1C8071614"
 			shape: "rsquare"
 			size: 1.0d
-			x: 14.0d
+			tasks: [{
+				id: "590A7EADBB3FBCDF"
+				item: "tconstruct:ender_enderbark_roots"
+				type: "item"
+			}]
+			title: "All Plants: Ender Enderbark Roots"
+			x: 11.5d
 			y: 10.25d
-			tasks: [
-				{
-					id: "590A7EADBB3FBCDF"
-					type: "item"
-					item: "tconstruct:ender_enderbark_roots"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "2DD7749CE10F8FBF"
-			title: "All Plants: Ichor Enderbark Roots"
 			icon: "tconstruct:ichor_enderbark_roots"
+			id: "2DD7749CE10F8FBF"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "3518EBCA3285049F"
+				item: "tconstruct:ichor_enderbark_roots"
+				type: "item"
+			}]
+			title: "All Plants: Ichor Enderbark Roots"
+			x: 12.75d
+			y: 10.25d
+		}
+		{
+			icon: "tconstruct:sky_enderbark_roots"
+			id: "4FC8F0877C49A639"
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{
+				id: "076998CAA8BC52CA"
+				item: "tconstruct:sky_enderbark_roots"
+				type: "item"
+			}]
+			title: "All Plants: Sky Enderbark Roots"
+			x: 14.0d
+			y: 10.25d
+		}
+		{
+			icon: "twilightforest:moss_patch"
+			id: "1CA8B47585BF4AE4"
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{
+				id: "2C299C5ED1175AC0"
+				item: "twilightforest:moss_patch"
+				type: "item"
+			}]
+			title: "All Plants: Moss Patch"
 			x: 15.25d
 			y: 10.25d
-			tasks: [
-				{
-					id: "3518EBCA3285049F"
-					type: "item"
-					item: "tconstruct:ichor_enderbark_roots"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "8C0861104C7A03E0"
-			title: "All Plants: Sky Enderbark Roots"
-			icon: "tconstruct:sky_enderbark_roots"
-			shape: "rsquare"
-			size: 1.0d
-			x: 1.5d
-			y: 11.5d
-			tasks: [
-				{
-					id: "076998CAA8BC52CA"
-					type: "item"
-					item: "tconstruct:sky_enderbark_roots"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "87F1664130416820"
-			title: "All Plants: Moss Patch"
-			icon: "twilightforest:moss_patch"
-			shape: "rsquare"
-			size: 1.0d
-			x: 2.75d
-			y: 11.5d
-			tasks: [
-				{
-					id: "2C299C5ED1175AC0"
-					type: "item"
-					item: "twilightforest:moss_patch"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "7850D5E4EE8195BA"
-			title: "All Plants: Lemongrass"
 			icon: "ubesdelight:lemongrass"
+			id: "7850D5E4EE8195BA"
 			shape: "rsquare"
 			size: 1.0d
-			x: 4.0d
+			tasks: [{
+				id: "30B0F40081C0C520"
+				item: "ubesdelight:lemongrass"
+				type: "item"
+			}]
+			title: "All Plants: Lemongrass"
+			x: 1.5d
 			y: 11.5d
-			tasks: [
-				{
-					id: "30B0F40081C0C520"
-					type: "item"
-					item: "ubesdelight:lemongrass"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "86911B8F2DAE8DBC"
-			title: "All Plants: Blue Mogmoss Rug"
 			icon: "undergarden:blue_mogmoss_rug"
+			id: "229A8604D554859B"
 			shape: "rsquare"
 			size: 1.0d
-			x: 5.25d
+			tasks: [{
+				id: "0C460E04FBA8EB14"
+				item: "undergarden:blue_mogmoss_rug"
+				type: "item"
+			}]
+			title: "All Plants: Blue Mogmoss Rug"
+			x: 2.75d
 			y: 11.5d
-			tasks: [
-				{
-					id: "0C460E04FBA8EB14"
-					type: "item"
-					item: "undergarden:blue_mogmoss_rug"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "E37AFCCBC0D9A03D"
-			title: "All Plants: Droopvine Item"
 			icon: "undergarden:droopvine_item"
+			id: "3D90A9E960DB468C"
 			shape: "rsquare"
 			size: 1.0d
-			x: 6.5d
+			tasks: [{
+				id: "6DB7DB70F0F91C56"
+				item: "undergarden:droopvine_item"
+				type: "item"
+			}]
+			title: "All Plants: Droopvine Item"
+			x: 4.0d
 			y: 11.5d
-			tasks: [
-				{
-					id: "6DB7DB70F0F91C56"
-					type: "item"
-					item: "undergarden:droopvine_item"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "87C152512AF769B2"
-			title: "All Plants: Mogmoss Rug"
 			icon: "undergarden:mogmoss_rug"
+			id: "5384EA4B37E17F01"
 			shape: "rsquare"
 			size: 1.0d
-			x: 7.75d
+			tasks: [{
+				id: "24E024B0E52D3167"
+				item: "undergarden:mogmoss_rug"
+				type: "item"
+			}]
+			title: "All Plants: Mogmoss Rug"
+			x: 5.25d
 			y: 11.5d
-			tasks: [
-				{
-					id: "BB218E2EC85A59E7"
-					type: "item"
-					item: "undergarden:mogmoss_rug"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "CFFC8AB6B5485A35"
-			title: "All Plants: Beetroot Brownie"
-			icon: "veggiesdelight:beetroot_brownie"
-			shape: "rsquare"
-			size: 1.0d
-			x: 9.0d
-			y: 11.5d
-			tasks: [
-				{
-					id: "128C82C5AD967943"
-					type: "item"
-					item: "veggiesdelight:beetroot_brownie"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "FE3313C05337AA44"
+			description: ["46 starter stubs."]
+			icon: "aether:blue_berry"
+			id: "6FB5AA6A261C3B85"
+			shape: "square"
+			size: 0.8d
+			tasks: [{
+				id: "14F9A5A2413B2E89"
+				title: "Produce"
+				type: "checkmark"
+			}]
 			title: "Produce"
-			icon: "aether:blue_berry"
-			shape: "square"
-			size: 0.8d
 			x: 0.0d
 			y: 14.75d
-			tasks: [
-				{
-					id: "14F9A5A2413B2E89"
-					type: "checkmark"
-					title: "Produce"
-				}
-			]
-			rewards: [ ]
-			description: ["80 starter stubs."]
 		}
 		{
-			id: "83E59AC2B42DABCC"
+			icon: "aether:blue_berry"
+			id: "74E42C5DB2AF78A5"
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{
+				id: "50537D97D6FA0762"
+				item: "aether:blue_berry"
+				type: "item"
+			}]
 			title: "All Plants: Blue Berry"
-			icon: "aether:blue_berry"
-			shape: "rsquare"
-			size: 1.0d
 			x: 1.5d
 			y: 14.75d
-			tasks: [
-				{
-					id: "50537D97D6FA0762"
-					type: "item"
-					item: "aether:blue_berry"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "5345A5BD618138BF"
-			title: "All Plants: Enchanted Berry"
 			icon: "aether:enchanted_berry"
+			id: "5345A5BD618138BF"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "029EE5390ABDBCFC"
+				item: "aether:enchanted_berry"
+				type: "item"
+			}]
+			title: "All Plants: Enchanted Berry"
 			x: 2.75d
 			y: 14.75d
-			tasks: [
-				{
-					id: "029EE5390ABDBCFC"
-					type: "item"
-					item: "aether:enchanted_berry"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "7A3442B1FC5FA847"
-			title: "All Plants: Source Berry Roll"
 			icon: "ars_nouveau:source_berry_roll"
+			id: "7A3442B1FC5FA847"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "25574DE197EB56BC"
+				item: "ars_nouveau:source_berry_roll"
+				type: "item"
+			}]
+			title: "All Plants: Source Berry Roll"
 			x: 4.0d
 			y: 14.75d
-			tasks: [
-				{
-					id: "25574DE197EB56BC"
-					type: "item"
-					item: "ars_nouveau:source_berry_roll"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "26446C3F17B3C25A"
-			title: "All Plants: Sourceberry Sack"
 			icon: "ars_nouveau:sourceberry_sack"
+			id: "26446C3F17B3C25A"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "761D3B652BDB4105"
+				item: "ars_nouveau:sourceberry_sack"
+				type: "item"
+			}]
+			title: "All Plants: Sourceberry Sack"
 			x: 5.25d
 			y: 14.75d
-			tasks: [
-				{
-					id: "761D3B652BDB4105"
-					type: "item"
-					item: "ars_nouveau:sourceberry_sack"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "0B4B84AC9310BBEB"
-			title: "All Plants: Glow Berry Marmalade"
 			icon: "brewinandchewin:glow_berry_marmalade"
+			id: "0B4B84AC9310BBEB"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "2FEEBA3C8D598518"
+				item: "brewinandchewin:glow_berry_marmalade"
+				type: "item"
+			}]
+			title: "All Plants: Glow Berry Marmalade"
 			x: 6.5d
 			y: 14.75d
-			tasks: [
-				{
-					id: "D678A908233A015B"
-					type: "item"
-					item: "brewinandchewin:glow_berry_marmalade"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "E4A01162799C25D3"
-			title: "All Plants: Honeyed Apple"
 			icon: "create:honeyed_apple"
+			id: "7449B625934D1D3D"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "748E01F3DD45CEA8"
+				item: "create:honeyed_apple"
+				type: "item"
+			}]
+			title: "All Plants: Honeyed Apple"
 			x: 7.75d
 			y: 14.75d
-			tasks: [
-				{
-					id: "ACD54687B6EE83AF"
-					type: "item"
-					item: "create:honeyed_apple"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "38A47538F9EA1725"
-			title: "All Plants: Salmonberries"
-			icon: "delightful:salmonberries"
-			shape: "rsquare"
-			size: 1.0d
-			x: 9.0d
-			y: 14.75d
-			tasks: [
-				{
-					id: "35B1BBE57899600F"
-					type: "item"
-					item: "delightful:salmonberries"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "BE093354007F3CC1"
-			title: "All Plants: Salmonberry Gummy"
-			icon: "delightful:salmonberry_gummy"
-			shape: "rsquare"
-			size: 1.0d
-			x: 10.25d
-			y: 14.75d
-			tasks: [
-				{
-					id: "2C7047E81729C69F"
-					type: "item"
-					item: "delightful:salmonberry_gummy"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "8F2673C81E9D0936"
-			title: "All Plants: Salmonberry Ice Cream"
-			icon: "delightful:salmonberry_ice_cream"
-			shape: "rsquare"
-			size: 1.0d
-			x: 11.5d
-			y: 14.75d
-			tasks: [
-				{
-					id: "504E0FCDC2F7571A"
-					type: "item"
-					item: "delightful:salmonberry_ice_cream"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "FBBBC99EF11E69ED"
-			title: "All Plants: Source Berry Gummy"
-			icon: "delightful:source_berry_gummy"
-			shape: "rsquare"
-			size: 1.0d
-			x: 12.75d
-			y: 14.75d
-			tasks: [
-				{
-					id: "B8F2F792AFB304FF"
-					type: "item"
-					item: "delightful:source_berry_gummy"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "D1DC62B33BA68428"
-			title: "All Plants: Source Berry Ice Cream"
-			icon: "delightful:source_berry_ice_cream"
-			shape: "rsquare"
-			size: 1.0d
-			x: 14.0d
-			y: 14.75d
-			tasks: [
-				{
-					id: "46112246C4A9A92A"
-					type: "item"
-					item: "delightful:source_berry_ice_cream"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "2E387AB07E15ABEA"
-			title: "All Plants: Cabbage"
 			icon: "farmersdelight:cabbage"
+			id: "2E387AB07E15ABEA"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "59A8FF62DE327A16"
+				item: "farmersdelight:cabbage"
+				type: "item"
+			}]
+			title: "All Plants: Cabbage"
+			x: 9.0d
+			y: 14.75d
+		}
+		{
+			icon: "farmersdelight:cabbage_rolls"
+			id: "3BC7BE9622A388EC"
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{
+				id: "33FF5C57AF2A6209"
+				item: "farmersdelight:cabbage_rolls"
+				type: "item"
+			}]
+			title: "All Plants: Cabbage Rolls"
+			x: 10.25d
+			y: 14.75d
+		}
+		{
+			icon: "farmersdelight:glow_berry_custard"
+			id: "1508B64D1054B696"
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{
+				id: "044B95651CE56B73"
+				item: "farmersdelight:glow_berry_custard"
+				type: "item"
+			}]
+			title: "All Plants: Glow Berry Custard"
+			x: 11.5d
+			y: 14.75d
+		}
+		{
+			icon: "farmersdelight:melon_popsicle"
+			id: "209AD0A2F2630829"
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{
+				id: "2C331F072A53F967"
+				item: "farmersdelight:melon_popsicle"
+				type: "item"
+			}]
+			title: "All Plants: Melon Popsicle"
+			x: 12.75d
+			y: 14.75d
+		}
+		{
+			icon: "farmersdelight:onion"
+			id: "026EF20EA85DB89E"
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{
+				id: "21E713F7DC82827B"
+				item: "farmersdelight:onion"
+				type: "item"
+			}]
+			title: "All Plants: Onion"
+			x: 14.0d
+			y: 14.75d
+		}
+		{
+			icon: "farmersdelight:pumpkin_slice"
+			id: "77F6FF16DE8E11EA"
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{
+				id: "0B650528A04CDC44"
+				item: "farmersdelight:pumpkin_slice"
+				type: "item"
+			}]
+			title: "All Plants: Pumpkin Slice"
 			x: 15.25d
 			y: 14.75d
-			tasks: [
-				{
-					id: "59A8FF62DE327A16"
-					type: "item"
-					item: "farmersdelight:cabbage"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "DA46D2354D18F532"
-			title: "All Plants: Cabbage Rolls"
-			icon: "farmersdelight:cabbage_rolls"
-			shape: "rsquare"
-			size: 1.0d
-			x: 1.5d
-			y: 16.0d
-			tasks: [
-				{
-					id: "33FF5C57AF2A6209"
-					type: "item"
-					item: "farmersdelight:cabbage_rolls"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "E67CC2171C92EB17"
-			title: "All Plants: Glow Berry Custard"
-			icon: "farmersdelight:glow_berry_custard"
-			shape: "rsquare"
-			size: 1.0d
-			x: 2.75d
-			y: 16.0d
-			tasks: [
-				{
-					id: "E7807AA2691DD792"
-					type: "item"
-					item: "farmersdelight:glow_berry_custard"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "209AD0A2F2630829"
-			title: "All Plants: Melon Popsicle"
-			icon: "farmersdelight:melon_popsicle"
-			shape: "rsquare"
-			size: 1.0d
-			x: 4.0d
-			y: 16.0d
-			tasks: [
-				{
-					id: "8BCC09D54919C4CB"
-					type: "item"
-					item: "farmersdelight:melon_popsicle"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "026EF20EA85DB89E"
-			title: "All Plants: Onion"
-			icon: "farmersdelight:onion"
-			shape: "rsquare"
-			size: 1.0d
-			x: 5.25d
-			y: 16.0d
-			tasks: [
-				{
-					id: "21E713F7DC82827B"
-					type: "item"
-					item: "farmersdelight:onion"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "77F6FF16DE8E11EA"
-			title: "All Plants: Pumpkin Slice"
-			icon: "farmersdelight:pumpkin_slice"
-			shape: "rsquare"
-			size: 1.0d
-			x: 6.5d
-			y: 16.0d
-			tasks: [
-				{
-					id: "0B650528A04CDC44"
-					type: "item"
-					item: "farmersdelight:pumpkin_slice"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "037D2B2989D50BB7"
-			title: "All Plants: Rotten Tomato"
 			icon: "farmersdelight:rotten_tomato"
+			id: "037D2B2989D50BB7"
 			shape: "rsquare"
 			size: 1.0d
-			x: 7.75d
+			tasks: [{
+				id: "17C348257A7108C3"
+				item: "farmersdelight:rotten_tomato"
+				type: "item"
+			}]
+			title: "All Plants: Rotten Tomato"
+			x: 1.5d
 			y: 16.0d
-			tasks: [
-				{
-					id: "AC062B5D07A418CC"
-					type: "item"
-					item: "farmersdelight:rotten_tomato"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "4160DCDE6149C484"
-			title: "All Plants: Stuffed Potato"
 			icon: "farmersdelight:stuffed_potato"
+			id: "4160DCDE6149C484"
 			shape: "rsquare"
 			size: 1.0d
-			x: 9.0d
+			tasks: [{
+				id: "549AA8441C7D79FA"
+				item: "farmersdelight:stuffed_potato"
+				type: "item"
+			}]
+			title: "All Plants: Stuffed Potato"
+			x: 2.75d
 			y: 16.0d
-			tasks: [
-				{
-					id: "A3484DE43FB88909"
-					type: "item"
-					item: "farmersdelight:stuffed_potato"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "E0A904E313A45408"
-			title: "All Plants: Tomato"
 			icon: "farmersdelight:tomato"
+			id: "6C1D84FB65CE3686"
 			shape: "rsquare"
 			size: 1.0d
-			x: 10.25d
+			tasks: [{
+				id: "02BF6CCA6CBB956A"
+				item: "farmersdelight:tomato"
+				type: "item"
+			}]
+			title: "All Plants: Tomato"
+			x: 4.0d
 			y: 16.0d
-			tasks: [
-				{
-					id: "FBB21B635C3F55AA"
-					type: "item"
-					item: "farmersdelight:tomato"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "82D71B3C85EE28F8"
-			title: "All Plants: Apple"
 			icon: "minecraft:apple"
+			id: "54B0558FBFC9C792"
 			shape: "rsquare"
 			size: 1.0d
-			x: 11.5d
+			tasks: [{
+				id: "6A8D1B815EF32A2D"
+				item: "minecraft:apple"
+				type: "item"
+			}]
+			title: "All Plants: Apple"
+			x: 5.25d
 			y: 16.0d
-			tasks: [
-				{
-					id: "9B2874CE86EA2005"
-					type: "item"
-					item: "minecraft:apple"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "53EEC28023E3E7EA"
-			title: "All Plants: Baked Potato"
 			icon: "minecraft:baked_potato"
+			id: "53EEC28023E3E7EA"
 			shape: "rsquare"
 			size: 1.0d
-			x: 12.75d
+			tasks: [{
+				id: "4AACA2245233F3E7"
+				item: "minecraft:baked_potato"
+				type: "item"
+			}]
+			title: "All Plants: Baked Potato"
+			x: 6.5d
 			y: 16.0d
-			tasks: [
-				{
-					id: "90E78BAABE608B72"
-					type: "item"
-					item: "minecraft:baked_potato"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "B5C291AD17BDB462"
-			title: "All Plants: Carrot"
 			icon: "minecraft:carrot"
+			id: "30317EA3EF8C85E5"
 			shape: "rsquare"
 			size: 1.0d
-			x: 14.0d
+			tasks: [{
+				id: "0F0F4BF6ADD5F72A"
+				item: "minecraft:carrot"
+				type: "item"
+			}]
+			title: "All Plants: Carrot"
+			x: 7.75d
 			y: 16.0d
-			tasks: [
-				{
-					id: "FF1E3986C70420FB"
-					type: "item"
-					item: "minecraft:carrot"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
+			icon: {
+				Count: 1
+				id: "minecraft:carrot_on_a_stick"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "77E4D643543774B1"
-			title: "All Plants: Carrot On A Stick"
-			icon: "minecraft:carrot_on_a_stick"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "5AC843B301F2B2E1"
+				item: {
+					Count: 1
+					id: "minecraft:carrot_on_a_stick"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			title: "All Plants: Carrot On A Stick"
+			x: 9.0d
+			y: 16.0d
+		}
+		{
+			icon: "minecraft:carved_pumpkin"
+			id: "1E5DDC2F722A8ED6"
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{
+				id: "1D2EEDF52676E6F1"
+				item: "minecraft:carved_pumpkin"
+				type: "item"
+			}]
+			title: "All Plants: Carved Pumpkin"
+			x: 10.25d
+			y: 16.0d
+		}
+		{
+			icon: "minecraft:chorus_fruit"
+			id: "04FC20DC8129BFE4"
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{
+				id: "2BAB18F90ED2FC8C"
+				item: "minecraft:chorus_fruit"
+				type: "item"
+			}]
+			title: "All Plants: Chorus Fruit"
+			x: 11.5d
+			y: 16.0d
+		}
+		{
+			icon: "minecraft:cocoa_beans"
+			id: "33FE00798E04F5DF"
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{
+				id: "059989E19CB314EB"
+				item: "minecraft:cocoa_beans"
+				type: "item"
+			}]
+			title: "All Plants: Cocoa Beans"
+			x: 12.75d
+			y: 16.0d
+		}
+		{
+			icon: "minecraft:enchanted_golden_apple"
+			id: "0165A44C030322E9"
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{
+				id: "1BF7609538BD8D49"
+				item: "minecraft:enchanted_golden_apple"
+				type: "item"
+			}]
+			title: "All Plants: Enchanted Golden Apple"
+			x: 14.0d
+			y: 16.0d
+		}
+		{
+			icon: "minecraft:glistering_melon_slice"
+			id: "4A442D7D46D4097D"
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{
+				id: "632BC47F0DCCA052"
+				item: "minecraft:glistering_melon_slice"
+				type: "item"
+			}]
+			title: "All Plants: Glistering Melon Slice"
 			x: 15.25d
 			y: 16.0d
-			tasks: [
-				{
-					id: "5AC843B301F2B2E1"
-					type: "item"
-					item: "minecraft:carrot_on_a_stick"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "F34FBF16917E70A7"
-			title: "All Plants: Carved Pumpkin"
-			icon: "minecraft:carved_pumpkin"
-			shape: "rsquare"
-			size: 1.0d
-			x: 1.5d
-			y: 17.25d
-			tasks: [
-				{
-					id: "1D2EEDF52676E6F1"
-					type: "item"
-					item: "minecraft:carved_pumpkin"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "04FC20DC8129BFE4"
-			title: "All Plants: Chorus Fruit"
-			icon: "minecraft:chorus_fruit"
-			shape: "rsquare"
-			size: 1.0d
-			x: 2.75d
-			y: 17.25d
-			tasks: [
-				{
-					id: "2BAB18F90ED2FC8C"
-					type: "item"
-					item: "minecraft:chorus_fruit"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "A8ACF1D8BAEF13E3"
-			title: "All Plants: Cocoa Beans"
-			icon: "minecraft:cocoa_beans"
-			shape: "rsquare"
-			size: 1.0d
-			x: 4.0d
-			y: 17.25d
-			tasks: [
-				{
-					id: "059989E19CB314EB"
-					type: "item"
-					item: "minecraft:cocoa_beans"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "EBAE8C7776F55E92"
-			title: "All Plants: Enchanted Golden Apple"
-			icon: "minecraft:enchanted_golden_apple"
-			shape: "rsquare"
-			size: 1.0d
-			x: 5.25d
-			y: 17.25d
-			tasks: [
-				{
-					id: "C21556D257ADFD4F"
-					type: "item"
-					item: "minecraft:enchanted_golden_apple"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "4A442D7D46D4097D"
-			title: "All Plants: Glistering Melon Slice"
-			icon: "minecraft:glistering_melon_slice"
-			shape: "rsquare"
-			size: 1.0d
-			x: 6.5d
-			y: 17.25d
-			tasks: [
-				{
-					id: "632BC47F0DCCA052"
-					type: "item"
-					item: "minecraft:glistering_melon_slice"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "AC13A122F812E40C"
-			title: "All Plants: Glow Berries"
 			icon: "minecraft:glow_berries"
+			id: "684A6D776647792C"
 			shape: "rsquare"
 			size: 1.0d
-			x: 7.75d
+			tasks: [{
+				id: "46D3ADEFECAA6B1C"
+				item: "minecraft:glow_berries"
+				type: "item"
+			}]
+			title: "All Plants: Glow Berries"
+			x: 1.5d
 			y: 17.25d
-			tasks: [
-				{
-					id: "BE95BD927CD68A3A"
-					type: "item"
-					item: "minecraft:glow_berries"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "BBF15F17339A4D48"
-			title: "All Plants: Golden Apple"
 			icon: "minecraft:golden_apple"
+			id: "0079BA57BB2331CB"
 			shape: "rsquare"
 			size: 1.0d
-			x: 9.0d
+			tasks: [{
+				id: "3F3E00426D6C551A"
+				item: "minecraft:golden_apple"
+				type: "item"
+			}]
+			title: "All Plants: Golden Apple"
+			x: 2.75d
 			y: 17.25d
-			tasks: [
-				{
-					id: "A0824CA6AB6AB8F9"
-					type: "item"
-					item: "minecraft:golden_apple"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "DA340B7732F915A9"
-			title: "All Plants: Golden Carrot"
 			icon: "minecraft:golden_carrot"
+			id: "0514BC0DBD3FED0E"
 			shape: "rsquare"
 			size: 1.0d
-			x: 10.25d
+			tasks: [{
+				id: "2F60C34D1C4DDCBF"
+				item: "minecraft:golden_carrot"
+				type: "item"
+			}]
+			title: "All Plants: Golden Carrot"
+			x: 4.0d
 			y: 17.25d
-			tasks: [
-				{
-					id: "FEE656AB16452E61"
-					type: "item"
-					item: "minecraft:golden_carrot"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "25000027FB67FF14"
-			title: "All Plants: Melon"
 			icon: "minecraft:melon"
+			id: "25000027FB67FF14"
 			shape: "rsquare"
 			size: 1.0d
-			x: 11.5d
+			tasks: [{
+				id: "1A01740552FAB7B6"
+				item: "minecraft:melon"
+				type: "item"
+			}]
+			title: "All Plants: Melon"
+			x: 5.25d
 			y: 17.25d
-			tasks: [
-				{
-					id: "1A01740552FAB7B6"
-					type: "item"
-					item: "minecraft:melon"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "BC594A7A24B9E319"
-			title: "All Plants: Melon Slice"
 			icon: "minecraft:melon_slice"
+			id: "75162BA9369624D8"
 			shape: "rsquare"
 			size: 1.0d
-			x: 12.75d
+			tasks: [{
+				id: "343C9EE516E6F6BE"
+				item: "minecraft:melon_slice"
+				type: "item"
+			}]
+			title: "All Plants: Melon Slice"
+			x: 6.5d
 			y: 17.25d
-			tasks: [
-				{
-					id: "343C9EE516E6F6BE"
-					type: "item"
-					item: "minecraft:melon_slice"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "8EAAC71EBE7FF51F"
-			title: "All Plants: Nether Wart"
 			icon: "minecraft:nether_wart"
+			id: "1553A6F31836B0B4"
 			shape: "rsquare"
 			size: 1.0d
-			x: 14.0d
+			tasks: [{
+				id: "70CE6A2DD8BECF8E"
+				item: "minecraft:nether_wart"
+				type: "item"
+			}]
+			title: "All Plants: Nether Wart"
+			x: 7.75d
 			y: 17.25d
-			tasks: [
-				{
-					id: "E44E0278E2185189"
-					type: "item"
-					item: "minecraft:nether_wart"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "99284C1B5E85C50E"
-			title: "All Plants: Poisonous Potato"
 			icon: "minecraft:poisonous_potato"
+			id: "3DE2E816B7956F6A"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "7FDECFED664764A5"
+				item: "minecraft:poisonous_potato"
+				type: "item"
+			}]
+			title: "All Plants: Poisonous Potato"
+			x: 9.0d
+			y: 17.25d
+		}
+		{
+			icon: "minecraft:popped_chorus_fruit"
+			id: "3BA0C9055F98E95D"
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{
+				id: "108E2CEC046F594C"
+				item: "minecraft:popped_chorus_fruit"
+				type: "item"
+			}]
+			title: "All Plants: Popped Chorus Fruit"
+			x: 10.25d
+			y: 17.25d
+		}
+		{
+			icon: "minecraft:potato"
+			id: "6908D087FFECBC6A"
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{
+				id: "081427370BC50A99"
+				item: "minecraft:potato"
+				type: "item"
+			}]
+			title: "All Plants: Potato"
+			x: 11.5d
+			y: 17.25d
+		}
+		{
+			icon: "minecraft:pumpkin"
+			id: "755F83EBDEDCA68D"
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{
+				id: "06558B9757603ECE"
+				item: "minecraft:pumpkin"
+				type: "item"
+			}]
+			title: "All Plants: Pumpkin"
+			x: 12.75d
+			y: 17.25d
+		}
+		{
+			icon: "minecraft:sweet_berries"
+			id: "24CA703811EDBC20"
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{
+				id: "5FA7655FBDAE0C9B"
+				item: "minecraft:sweet_berries"
+				type: "item"
+			}]
+			title: "All Plants: Sweet Berries"
+			x: 14.0d
+			y: 17.25d
+		}
+		{
+			icon: "natures_spirit:desert_turnip"
+			id: "13E24A3F2AD0D67E"
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{
+				id: "308744DF4C22C4CE"
+				item: "natures_spirit:desert_turnip"
+				type: "item"
+			}]
+			title: "All Plants: Desert Turnip"
 			x: 15.25d
 			y: 17.25d
-			tasks: [
-				{
-					id: "7FDECFED664764A5"
-					type: "item"
-					item: "minecraft:poisonous_potato"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "F61B8539D3847F08"
-			title: "All Plants: Popped Chorus Fruit"
-			icon: "minecraft:popped_chorus_fruit"
-			shape: "rsquare"
-			size: 1.0d
-			x: 1.5d
-			y: 18.5d
-			tasks: [
-				{
-					id: "108E2CEC046F594C"
-					type: "item"
-					item: "minecraft:popped_chorus_fruit"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "6908D087FFECBC6A"
-			title: "All Plants: Potato"
-			icon: "minecraft:potato"
-			shape: "rsquare"
-			size: 1.0d
-			x: 2.75d
-			y: 18.5d
-			tasks: [
-				{
-					id: "C02DB37058BE0227"
-					type: "item"
-					item: "minecraft:potato"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "BA8D2CBF2B444748"
-			title: "All Plants: Pumpkin"
-			icon: "minecraft:pumpkin"
-			shape: "rsquare"
-			size: 1.0d
-			x: 4.0d
-			y: 18.5d
-			tasks: [
-				{
-					id: "06558B9757603ECE"
-					type: "item"
-					item: "minecraft:pumpkin"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "DBE637E202095A96"
-			title: "All Plants: Sweet Berries"
-			icon: "minecraft:sweet_berries"
-			shape: "rsquare"
-			size: 1.0d
-			x: 5.25d
-			y: 18.5d
-			tasks: [
-				{
-					id: "E04E0583D68C12AB"
-					type: "item"
-					item: "minecraft:sweet_berries"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "86DADBCBE83136A2"
-			title: "All Plants: Bullet Pepper"
-			icon: "mynethersdelight:bullet_pepper"
-			shape: "rsquare"
-			size: 1.0d
-			x: 6.5d
-			y: 18.5d
-			tasks: [
-				{
-					id: "9C9FFB4A94B013E4"
-					type: "item"
-					item: "mynethersdelight:bullet_pepper"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "21135271BE0B8627"
-			title: "All Plants: Sausage And Potatoes"
-			icon: "mynethersdelight:sausage_and_potatoes"
-			shape: "rsquare"
-			size: 1.0d
-			x: 7.75d
-			y: 18.5d
-			tasks: [
-				{
-					id: "6E168C9175C0BD2F"
-					type: "item"
-					item: "mynethersdelight:sausage_and_potatoes"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "187A65DAC142774E"
-			title: "All Plants: Stuffed Pepper"
-			icon: "mynethersdelight:stuffed_pepper"
-			shape: "rsquare"
-			size: 1.0d
-			x: 9.0d
-			y: 18.5d
-			tasks: [
-				{
-					id: "4841CF5ACDC7526D"
-					type: "item"
-					item: "mynethersdelight:stuffed_pepper"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "13E24A3F2AD0D67E"
-			title: "All Plants: Desert Turnip"
-			icon: "natures_spirit:desert_turnip"
-			shape: "rsquare"
-			size: 1.0d
-			x: 10.25d
-			y: 18.5d
-			tasks: [
-				{
-					id: "308744DF4C22C4CE"
-					type: "item"
-					item: "natures_spirit:desert_turnip"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "4582B95DA1242DA2"
-			title: "All Plants: Berry Sack"
 			icon: "quark:berry_sack"
+			id: "4582B95DA1242DA2"
 			shape: "rsquare"
 			size: 1.0d
-			x: 11.5d
+			tasks: [{
+				id: "34612537D3323703"
+				item: "quark:berry_sack"
+				type: "item"
+			}]
+			title: "All Plants: Berry Sack"
+			x: 1.5d
 			y: 18.5d
-			tasks: [
-				{
-					id: "34612537D3323703"
-					type: "item"
-					item: "quark:berry_sack"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "6EF4D039689FF236"
-			title: "All Plants: Cocoa Beans Sack"
 			icon: "quark:cocoa_beans_sack"
+			id: "6EF4D039689FF236"
 			shape: "rsquare"
 			size: 1.0d
-			x: 12.75d
+			tasks: [{
+				id: "0F8861B9686BF737"
+				item: "quark:cocoa_beans_sack"
+				type: "item"
+			}]
+			title: "All Plants: Cocoa Beans Sack"
+			x: 2.75d
 			y: 18.5d
-			tasks: [
-				{
-					id: "A0CB913D154574B9"
-					type: "item"
-					item: "quark:cocoa_beans_sack"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "DA756E4E5E37A437"
-			title: "All Plants: Glowberry Sack"
 			icon: "quark:glowberry_sack"
+			id: "242C147FC10C59B6"
 			shape: "rsquare"
 			size: 1.0d
-			x: 14.0d
+			tasks: [{
+				id: "70C798AFFE8C0E6A"
+				item: "quark:glowberry_sack"
+				type: "item"
+			}]
+			title: "All Plants: Glowberry Sack"
+			x: 4.0d
 			y: 18.5d
-			tasks: [
-				{
-					id: "C09C5EE8589040A5"
-					type: "item"
-					item: "quark:glowberry_sack"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "F26FDA3DA0AF7393"
-			title: "All Plants: Nether Wart Sack"
 			icon: "quark:nether_wart_sack"
+			id: "70443D23D79CC6BA"
 			shape: "rsquare"
 			size: 1.0d
-			x: 15.25d
+			tasks: [{
+				id: "55F2080161DF7CDB"
+				item: "quark:nether_wart_sack"
+				type: "item"
+			}]
+			title: "All Plants: Nether Wart Sack"
+			x: 5.25d
 			y: 18.5d
-			tasks: [
-				{
-					id: "55F2080161DF7CDB"
-					type: "item"
-					item: "quark:nether_wart_sack"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "4F3B3F0BD9CD8791"
-			title: "All Plants: Baked Potato Slices"
-			icon: "rusticdelight:baked_potato_slices"
-			shape: "rsquare"
-			size: 1.0d
-			x: 1.5d
-			y: 19.75d
-			tasks: [
-				{
-					id: "DACD24F3DFF55666"
-					type: "item"
-					item: "rusticdelight:baked_potato_slices"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "1D2C8506DADCF24F"
-			title: "All Plants: Bell Pepper Green"
-			icon: "rusticdelight:bell_pepper_green"
-			shape: "rsquare"
-			size: 1.0d
-			x: 2.75d
-			y: 19.75d
-			tasks: [
-				{
-					id: "AFC4D425DC7B2ED9"
-					type: "item"
-					item: "rusticdelight:bell_pepper_green"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "1166067AF53D44F5"
-			title: "All Plants: Bell Pepper Red"
-			icon: "rusticdelight:bell_pepper_red"
-			shape: "rsquare"
-			size: 1.0d
-			x: 4.0d
-			y: 19.75d
-			tasks: [
-				{
-					id: "BA8CD81BFE8AB78A"
-					type: "item"
-					item: "rusticdelight:bell_pepper_red"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "17B98BA6C2BD9CCC"
-			title: "All Plants: Bell Pepper Roll Green"
-			icon: "rusticdelight:bell_pepper_roll_green"
-			shape: "rsquare"
-			size: 1.0d
-			x: 5.25d
-			y: 19.75d
-			tasks: [
-				{
-					id: "5C34D771A7D42C2A"
-					type: "item"
-					item: "rusticdelight:bell_pepper_roll_green"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "2D4CAAD473B5A90A"
-			title: "All Plants: Bell Pepper Roll Red"
-			icon: "rusticdelight:bell_pepper_roll_red"
-			shape: "rsquare"
-			size: 1.0d
-			x: 6.5d
-			y: 19.75d
-			tasks: [
-				{
-					id: "FAE8E76F2BC7CF63"
-					type: "item"
-					item: "rusticdelight:bell_pepper_roll_red"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "5C7844B0C7745241"
-			title: "All Plants: Bell Pepper Roll Yellow"
-			icon: "rusticdelight:bell_pepper_roll_yellow"
-			shape: "rsquare"
-			size: 1.0d
-			x: 7.75d
-			y: 19.75d
-			tasks: [
-				{
-					id: "ED5AB8C357550E04"
-					type: "item"
-					item: "rusticdelight:bell_pepper_roll_yellow"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "79975E860E27AEC6"
-			title: "All Plants: Bell Pepper Slice Green"
-			icon: "rusticdelight:bell_pepper_slice_green"
-			shape: "rsquare"
-			size: 1.0d
-			x: 9.0d
-			y: 19.75d
-			tasks: [
-				{
-					id: "DE65040EF8C3A1C4"
-					type: "item"
-					item: "rusticdelight:bell_pepper_slice_green"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "451BF931F22AF59B"
-			title: "All Plants: Bell Pepper Slice Red"
-			icon: "rusticdelight:bell_pepper_slice_red"
-			shape: "rsquare"
-			size: 1.0d
-			x: 10.25d
-			y: 19.75d
-			tasks: [
-				{
-					id: "8B6B319EF3842C6E"
-					type: "item"
-					item: "rusticdelight:bell_pepper_slice_red"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "22A136F53F9DDBF3"
-			title: "All Plants: Bell Pepper Slice Yellow"
-			icon: "rusticdelight:bell_pepper_slice_yellow"
-			shape: "rsquare"
-			size: 1.0d
-			x: 11.5d
-			y: 19.75d
-			tasks: [
-				{
-					id: "831416852DDCBF68"
-					type: "item"
-					item: "rusticdelight:bell_pepper_slice_yellow"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "F1D6A0FFC3A10C9D"
-			title: "All Plants: Bell Pepper Yellow"
-			icon: "rusticdelight:bell_pepper_yellow"
-			shape: "rsquare"
-			size: 1.0d
-			x: 12.75d
-			y: 19.75d
-			tasks: [
-				{
-					id: "A4325A3B29EF89E4"
-					type: "item"
-					item: "rusticdelight:bell_pepper_yellow"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "4FEE27E099AC2908"
-			title: "All Plants: Fruit Beignet"
-			icon: "rusticdelight:fruit_beignet"
-			shape: "rsquare"
-			size: 1.0d
-			x: 14.0d
-			y: 19.75d
-			tasks: [
-				{
-					id: "9F0B399C2DD69FD4"
-					type: "item"
-					item: "rusticdelight:fruit_beignet"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "CC586AAA096F3505"
-			title: "All Plants: Potato Slices"
-			icon: "rusticdelight:potato_slices"
-			shape: "rsquare"
-			size: 1.0d
-			x: 15.25d
-			y: 19.75d
-			tasks: [
-				{
-					id: "576741A7935510FB"
-					type: "item"
-					item: "rusticdelight:potato_slices"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "100F7AAB0DBF009F"
-			title: "All Plants: Stuffed Bell Pepper Green"
-			icon: "rusticdelight:stuffed_bell_pepper_green"
-			shape: "rsquare"
-			size: 1.0d
-			x: 1.5d
-			y: 21.0d
-			tasks: [
-				{
-					id: "31424A93216F2BD2"
-					type: "item"
-					item: "rusticdelight:stuffed_bell_pepper_green"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "717CF0F48E430392"
-			title: "All Plants: Stuffed Bell Pepper Red"
-			icon: "rusticdelight:stuffed_bell_pepper_red"
-			shape: "rsquare"
-			size: 1.0d
-			x: 2.75d
-			y: 21.0d
-			tasks: [
-				{
-					id: "157CBE216148E33E"
-					type: "item"
-					item: "rusticdelight:stuffed_bell_pepper_red"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "D5D98E1190FAE675"
-			title: "All Plants: Stuffed Bell Pepper Yellow"
-			icon: "rusticdelight:stuffed_bell_pepper_yellow"
-			shape: "rsquare"
-			size: 1.0d
-			x: 4.0d
-			y: 21.0d
-			tasks: [
-				{
-					id: "D61173F6C7FB0D36"
-					type: "item"
-					item: "rusticdelight:stuffed_bell_pepper_yellow"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "B46FE1EF25B4B82C"
-			title: "All Plants: Jeweled Apple"
 			icon: "tconstruct:jeweled_apple"
+			id: "1EA8933D1D28F998"
 			shape: "rsquare"
 			size: 1.0d
-			x: 5.25d
-			y: 21.0d
-			tasks: [
-				{
-					id: "945C24A225B8D0E2"
-					type: "item"
-					item: "tconstruct:jeweled_apple"
-					count: 1
-				}
-			]
-			rewards: [ ]
+			tasks: [{
+				id: "509641386D194808"
+				item: "tconstruct:jeweled_apple"
+				type: "item"
+			}]
+			title: "All Plants: Jeweled Apple"
+			x: 6.5d
+			y: 18.5d
 		}
 		{
-			id: "174C0EF3AD2729EF"
-			title: "All Plants: Torchberries"
 			icon: "twilightforest:torchberries"
+			id: "174C0EF3AD2729EF"
 			shape: "rsquare"
 			size: 1.0d
-			x: 6.5d
-			y: 21.0d
-			tasks: [
-				{
-					id: "60CC0C358A1D04B4"
-					type: "item"
-					item: "twilightforest:torchberries"
-					count: 1
-				}
-			]
-			rewards: [ ]
+			tasks: [{
+				id: "60CC0C358A1D04B4"
+				item: "twilightforest:torchberries"
+				type: "item"
+			}]
+			title: "All Plants: Torchberries"
+			x: 7.75d
+			y: 18.5d
 		}
 		{
-			id: "CE138B7B9FF3ABDC"
-			title: "All Plants: Blisterberry"
 			icon: "undergarden:blisterberry"
+			id: "48C31595F7A98FAE"
 			shape: "rsquare"
 			size: 1.0d
-			x: 7.75d
-			y: 21.0d
-			tasks: [
-				{
-					id: "8449FD0D84EB428D"
-					type: "item"
-					item: "undergarden:blisterberry"
-					count: 1
-				}
-			]
-			rewards: [ ]
+			tasks: [{
+				id: "6F1DD2AFDC30FAF8"
+				item: "undergarden:blisterberry"
+				type: "item"
+			}]
+			title: "All Plants: Blisterberry"
+			x: 9.0d
+			y: 18.5d
 		}
 		{
-			id: "C84582A992D2CE7F"
-			title: "All Plants: Rotten Blisterberry"
 			icon: "undergarden:rotten_blisterberry"
+			id: "749AD4494053BB0D"
 			shape: "rsquare"
 			size: 1.0d
-			x: 9.0d
-			y: 21.0d
-			tasks: [
-				{
-					id: "F3A1BF0FF1448F19"
-					type: "item"
-					item: "undergarden:rotten_blisterberry"
-					count: 1
-				}
-			]
-			rewards: [ ]
+			tasks: [{
+				id: "086F287BC534D8B5"
+				item: "undergarden:rotten_blisterberry"
+				type: "item"
+			}]
+			title: "All Plants: Rotten Blisterberry"
+			x: 10.25d
+			y: 18.5d
 		}
 		{
-			id: "D44D99649B3D0366"
+			icon: {
+				Count: 1
+				id: "undergarden:underbean_on_a_stick"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "585BBBA578CFEB0C"
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{
+				id: "5A1A69289D4DFD19"
+				item: {
+					Count: 1
+					id: "undergarden:underbean_on_a_stick"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
 			title: "All Plants: Underbean On A Stick"
-			icon: "undergarden:underbean_on_a_stick"
-			shape: "rsquare"
-			size: 1.0d
-			x: 10.25d
-			y: 21.0d
-			tasks: [
-				{
-					id: "FC44EDCB9FCB3CF9"
-					type: "item"
-					item: "undergarden:underbean_on_a_stick"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "9A6500AAB5364ED2"
-			title: "All Plants: Underbeans"
-			icon: "undergarden:underbeans"
-			shape: "rsquare"
-			size: 1.0d
 			x: 11.5d
-			y: 21.0d
-			tasks: [
-				{
-					id: "1C753B271C4DC64E"
-					type: "item"
-					item: "undergarden:underbeans"
-					count: 1
-				}
-			]
-			rewards: [ ]
+			y: 18.5d
 		}
 		{
-			id: "5E432884D1A9A66F"
-			title: "All Plants: Baked Sweet Potato"
-			icon: "veggiesdelight:baked_sweet_potato"
+			icon: "undergarden:underbeans"
+			id: "47DC5696088E6E0B"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "1C753B271C4DC64E"
+				item: "undergarden:underbeans"
+				type: "item"
+			}]
+			title: "All Plants: Underbeans"
 			x: 12.75d
-			y: 21.0d
-			tasks: [
-				{
-					id: "FCF4563C45164A56"
-					type: "item"
-					item: "veggiesdelight:baked_sweet_potato"
-					count: 1
-				}
-			]
-			rewards: [ ]
+			y: 18.5d
 		}
 		{
-			id: "AB0CCAA484A9F3CA"
-			title: "All Plants: Bellpepper"
-			icon: "veggiesdelight:bellpepper"
-			shape: "rsquare"
-			size: 1.0d
-			x: 14.0d
-			y: 21.0d
-			tasks: [
-				{
-					id: "B56C522CBDEEE897"
-					type: "item"
-					item: "veggiesdelight:bellpepper"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "2F08E4F056D7960B"
-			title: "All Plants: Mashed Potatoes"
-			icon: "veggiesdelight:mashed_potatoes"
-			shape: "rsquare"
-			size: 1.0d
-			x: 15.25d
-			y: 21.0d
-			tasks: [
-				{
-					id: "6FC1EAC55F03A68F"
-					type: "item"
-					item: "veggiesdelight:mashed_potatoes"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "C654D597CEDEBC37"
-			title: "All Plants: Potato Noodle"
-			icon: "veggiesdelight:potato_noodle"
-			shape: "rsquare"
-			size: 1.0d
-			x: 1.5d
-			y: 22.25d
-			tasks: [
-				{
-					id: "C7618BA5AA654972"
-					type: "item"
-					item: "veggiesdelight:potato_noodle"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "A94C2C83CCF98F8A"
-			title: "All Plants: Potato Noodles"
-			icon: "veggiesdelight:potato_noodles"
-			shape: "rsquare"
-			size: 1.0d
-			x: 2.75d
-			y: 22.25d
-			tasks: [
-				{
-					id: "470D5A6AD5A13700"
-					type: "item"
-					item: "veggiesdelight:potato_noodles"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "02358B3B660A9E8A"
-			title: "All Plants: Smoked Bellpepper"
-			icon: "veggiesdelight:smoked_bellpepper"
-			shape: "rsquare"
-			size: 1.0d
-			x: 4.0d
-			y: 22.25d
-			tasks: [
-				{
-					id: "4A2BEC621D03D44B"
-					type: "item"
-					item: "veggiesdelight:smoked_bellpepper"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "B039D1332D706F1B"
-			title: "All Plants: Sweet Potato"
-			icon: "veggiesdelight:sweet_potato"
-			shape: "rsquare"
-			size: 1.0d
-			x: 5.25d
-			y: 22.25d
-			tasks: [
-				{
-					id: "867459C69ACCDFC4"
-					type: "item"
-					item: "veggiesdelight:sweet_potato"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "47C99A727AA42EFD"
-			title: "All Plants: Sweet Potato Dough"
-			icon: "veggiesdelight:sweet_potato_dough"
-			shape: "rsquare"
-			size: 1.0d
-			x: 6.5d
-			y: 22.25d
-			tasks: [
-				{
-					id: "F68DBC6713E907B1"
-					type: "item"
-					item: "veggiesdelight:sweet_potato_dough"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "721D8E059A5BEE0F"
-			title: "All Plants: Turnip"
-			icon: "veggiesdelight:turnip"
-			shape: "rsquare"
-			size: 1.0d
-			x: 7.75d
-			y: 22.25d
-			tasks: [
-				{
-					id: "05D32F11E809582F"
-					type: "item"
-					item: "veggiesdelight:turnip"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "08EC3209D18AA5B3"
-			title: "All Plants: Turnip Mutton Skewer"
-			icon: "veggiesdelight:turnip_mutton_skewer"
-			shape: "rsquare"
-			size: 1.0d
-			x: 9.0d
-			y: 22.25d
-			tasks: [
-				{
-					id: "4AE37A9F9C86BD7B"
-					type: "item"
-					item: "veggiesdelight:turnip_mutton_skewer"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "FEB3416C5EFF8AB7"
-			title: "All Plants: Turnip Water"
-			icon: "veggiesdelight:turnip_water"
-			shape: "rsquare"
-			size: 1.0d
-			x: 10.25d
-			y: 22.25d
-			tasks: [
-				{
-					id: "F52A125880014651"
-					type: "item"
-					item: "veggiesdelight:turnip_water"
-					count: 1
-				}
-			]
-			rewards: [ ]
-		}
-		{
-			id: "0C41D84D79B17D04"
-			title: "Other Plants"
+			description: ["1 starter stubs."]
 			icon: "quark:seed_pouch"
+			id: "0C41D84D79B17D04"
 			shape: "square"
 			size: 0.8d
+			tasks: [{
+				id: "570D9F4CC350C7EB"
+				title: "Other Plants"
+				type: "checkmark"
+			}]
+			title: "Other Plants"
 			x: 0.0d
-			y: 25.5d
-			tasks: [
-				{
-					id: "C79E4A52953A3854"
-					type: "checkmark"
-					title: "Other Plants"
-				}
-			]
-			rewards: [ ]
-			description: ["1 starter stubs."]
+			y: 21.75d
 		}
 		{
-			id: "741B61A9F39F633F"
-			title: "All Plants: Seed Pouch"
 			icon: "quark:seed_pouch"
+			id: "741B61A9F39F633F"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [{
+				id: "0461DAC99AFE2455"
+				item: "quark:seed_pouch"
+				type: "item"
+			}]
+			title: "All Plants: Seed Pouch"
 			x: 1.5d
-			y: 25.5d
-			tasks: [
-				{
-					id: "0461DAC99AFE2455"
-					type: "item"
-					item: "quark:seed_pouch"
-					count: 1
-				}
-			]
-			rewards: [ ]
+			y: 21.75d
 		}
 	]
 }

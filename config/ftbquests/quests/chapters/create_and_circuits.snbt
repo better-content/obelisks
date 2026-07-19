@@ -2,309 +2,323 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "create_and_circuits"
-	group: "65CC8BE9C7D2A5C0"
+	group: "5B6E48C1A9D207F3"
 	icon: "create:cogwheel"
-	id: "908023E4C093B680"
+	id: "62C650735A840DE1"
 	order_index: 2
 	quest_links: [ ]
 	quests: [
 		{
-			id: "1C422F3D6A28E9E7"
-			title: "Andesite"
+			description: ["Make andesite alloy once seared metalwork is steady. This is the part that turns simple foundry progress into real Create machines."]
 			icon: "create:andesite_alloy"
+			id: "1C422F3D6A28E9E7"
+			rewards: [{
+				count: 4
+				id: "4DA5E8C3A21E8CF5"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.2d
 			tasks: [{
-				id: "C70F656175963B76"
+				id: "4D34F713E2142FF5"
 				item: "create:andesite_alloy"
 				type: "item"
 			}]
+			title: "Andesite"
 			x: -6.8d
 			y: 0.0d
-			rewards: [{ id: "EFF046DF7400D0EF" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Make andesite alloy once seared metalwork is steady. This is the part that turns simple foundry progress into real Create machines."]
 		}
 		{
 			dependencies: ["1C422F3D6A28E9E7"]
-			id: "AC5E74E8D1FB556B"
-			title: "Shaft"
+			description: ["Start with shafts because rotation has to travel somehow. Every later Create machine will make more sense if you can already route power cleanly."]
 			icon: "create:shaft"
+			id: "4800B838DBC550AD"
 			shape: "rsquare"
 			tasks: [{
-				id: "AC1DE1EF70622C00"
+				id: "7188C912849AF6D1"
 				item: "create:shaft"
 				type: "item"
 			}]
+			title: "Shaft"
 			x: -4.75d
 			y: -4.0d
-			description: ["Start with shafts because rotation has to travel somehow. Every later Create machine will make more sense if you can already route power cleanly."]
 		}
 		{
 			dependencies: ["1C422F3D6A28E9E7"]
-			id: "F86B90EFCD2DC382"
-			title: "Cogs"
+			description: ["Use cogs to change direction and spread power locally. This is where mechanical routing stops being theory and starts becoming a layout problem."]
 			icon: "create:cogwheel"
+			id: "4514593EF2F3FDA2"
 			shape: "rsquare"
 			tasks: [{
 				id: "34196EFB2F3CAD7A"
 				item: "create:cogwheel"
 				type: "item"
 			}]
+			title: "Cogs"
 			x: -4.75d
 			y: -2.5d
-			description: ["Use cogs to change direction and spread power locally. This is where mechanical routing stops being theory and starts becoming a layout problem."]
 		}
 		{
 			dependencies: ["1C422F3D6A28E9E7"]
-			id: "4145E9AE6FCF2471"
-			title: "Casing"
+			description: ["Check andesite casing uses in EMI as soon as you craft it. Its recipes point you toward the first useful Create machines."]
 			icon: "create:andesite_casing"
+			id: "4145E9AE6FCF2471"
+			rewards: [{
+				count: 4
+				id: "1F616987450FC867"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			shape: "square"
 			size: 1.05d
 			tasks: [{
-				id: "F6AE1446A26AF7B5"
+				id: "55BE556FB3BA944A"
 				item: "create:andesite_casing"
 				type: "item"
 			}]
+			title: "Casing"
 			x: -4.7d
 			y: 0.0d
-			rewards: [{ id: "1F616987450FC867" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Check andesite casing uses in EMI as soon as you craft it. Its recipes point you toward the first useful Create machines."]
 		}
 		{
 			dependencies: ["4145E9AE6FCF2471"]
-			id: "745F897829E7FFB9"
-			title: "Press"
+			description: ["Build the press when you start needing repeated plates and compact parts. It is one of the first machines that pays back immediately in many other recipes."]
 			icon: "create:mechanical_press"
+			id: "745F897829E7FFB9"
 			shape: "rsquare"
 			tasks: [{
 				id: "49D61EE933B15394"
 				item: "create:mechanical_press"
 				type: "item"
 			}]
+			title: "Press"
 			x: -3.17d
 			y: -4.0d
-			description: ["Build the press when you start needing repeated plates and compact parts. It is one of the first machines that pays back immediately in many other recipes."]
 		}
 		{
 			dependencies: ["4145E9AE6FCF2471"]
-			id: "E7C60362B9AC8F83"
-			title: "Mixer"
+			description: ["Use the mixer for your first serious alloys and open-vat chemistry. It is the easy way to see that some materials now want machines, not hand crafting."]
 			icon: "create:mechanical_mixer"
+			id: "365A91EF34589A8D"
 			shape: "rsquare"
 			tasks: [{
 				id: "4E26BECB9AB7E6C2"
 				item: "create:mechanical_mixer"
 				type: "item"
 			}]
+			title: "Mixer"
 			x: -3.17d
 			y: -2.5d
-			description: ["Use the mixer for your first serious alloys and open-vat chemistry. It is the easy way to see that some materials now want machines, not hand crafting."]
 		}
 		{
 			dependencies: ["4145E9AE6FCF2471"]
-			id: "D2D49E52D48854FE"
-			title: "Fan"
+			description: ["The encased fan is a cheap multi-tool. Set one up early so washing, blasting, and other air jobs stop feeling like hidden side mechanics."]
 			icon: "create:encased_fan"
+			id: "513A8A724758D332"
 			shape: "rsquare"
 			tasks: [{
-				id: "954734005FD27C7D"
+				id: "42230803F69CECF1"
 				item: "create:encased_fan"
 				type: "item"
 			}]
+			title: "Fan"
 			x: -3.17d
 			y: -1.0d
-			description: ["The encased fan is a cheap multi-tool. Set one up early so washing, blasting, and other air jobs stop feeling like hidden side mechanics."]
 		}
 		{
 			dependencies: ["4145E9AE6FCF2471"]
-			id: "AAB85935EE144DFE"
-			title: "Drill"
+			description: ["Treat the drill as controlled extraction, not as a magic mining shortcut. It matters most when you can pair movement with a real material goal."]
 			icon: "create:mechanical_drill"
+			id: "5C5E820B84BF4627"
 			shape: "rsquare"
 			tasks: [{
-				id: "FBF6A79A4B20DA6B"
+				id: "66D10CC7581A7C0C"
 				item: "create:mechanical_drill"
 				type: "item"
 			}]
+			title: "Drill"
 			x: -3.17d
 			y: 1.05d
-			description: ["Treat the drill as controlled extraction, not as a magic mining shortcut. It matters most when you can pair movement with a real material goal."]
 		}
 		{
 			dependencies: ["4145E9AE6FCF2471"]
-			id: "2EC964E3473CF2B9"
-			title: "Saw"
+			description: ["The saw helps with wood flow and processing loops long before late automation appears. Build it when manual cutting starts wasting too much time."]
 			icon: "create:mechanical_saw"
+			id: "2EC964E3473CF2B9"
 			shape: "rsquare"
 			tasks: [{
-				id: "FC9C050924F762A9"
+				id: "7AC0429EC42ED634"
 				item: "create:mechanical_saw"
 				type: "item"
 			}]
+			title: "Saw"
 			x: -3.17d
 			y: 2.0d
-			description: ["The saw helps with wood flow and processing loops long before late automation appears. Build it when manual cutting starts wasting too much time."]
 		}
 		{
-			dependencies: ["745F897829E7FFB9" "E7C60362B9AC8F83"]
-			id: "A78DB795C876699D"
-			title: "Deployer"
+			dependencies: ["745F897829E7FFB9"]
+			description: ["The deployer is your first clear automation proof. Once it works, you can start replacing repeated hand actions with stable machine loops."]
 			icon: "create:deployer"
+			id: "4F9F165124F0D4E0"
+			rewards: [{
+				count: 4
+				id: "70060ECDB04F68F8"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			shape: "rsquare"
 			tasks: [{
 				id: "709DEF01F7777A99"
 				item: "create:deployer"
 				type: "item"
 			}]
+			title: "Deployer"
 			x: -1.58d
 			y: -3.0d
-			rewards: [{ id: "A26FAA5C60755673" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["The deployer is your first clear automation proof. Once it works, you can start replacing repeated hand actions with stable machine loops."]
 		}
 		{
-			dependencies: ["A78DB795C876699D"]
-			id: "447A586BFE2667F3"
-			title: "Tube"
+			description: ["Electron tubes are your first visible electronics part in this lane. Make them once you are ready for smarter control blocks instead of pure motion."]
 			icon: "create:electron_tube"
+			id: "447A586BFE2667F3"
 			shape: "rsquare"
 			tasks: [{
 				id: "7755B15E28E0B4AB"
 				item: "create:electron_tube"
 				type: "item"
 			}]
+			title: "Tube"
 			x: -1.58d
 			y: -1.0d
-			description: ["Electron tubes are your first visible electronics part in this lane. Make them once you are ready for smarter control blocks instead of pure motion."]
 		}
 		{
-			dependencies: ["D2D49E52D48854FE"]
-			id: "5C37980430C2D51F"
-			title: "Alloy"
+			description: ["Red alloy starts the primitive circuit route without forcing a Nether shortcut. Make it here so early logic stays tied to your local machines."]
 			icon: "morered:red_alloy_ingot"
+			id: "5C37980430C2D51F"
 			shape: "rsquare"
 			tasks: [{
-				id: "BEB3A63E54A35CBF"
+				id: "15AB6E7E945115C8"
 				item: "morered:red_alloy_ingot"
 				type: "item"
 			}]
+			title: "Alloy"
 			x: -1.58d
 			y: 1.0d
-			description: ["Red alloy starts the primitive circuit route without forcing a Nether shortcut. Make it here so early logic stays tied to your local machines."]
 		}
 		{
 			dependencies: ["5C37980430C2D51F"]
-			id: "654CC900134B8FBD"
-			title: "Wire"
+			description: ["Red alloy wire is what makes simple logic buildable. Once you have wire, redstone starts behaving like a system you can route instead of dust you sprinkle."]
 			icon: "morered:red_alloy_wire"
+			id: "654CC900134B8FBD"
 			shape: "rsquare"
 			tasks: [{
-				id: "EBF8A57DA3A2EE56"
+				id: "18BF666F32E6EC7A"
 				item: "morered:red_alloy_wire"
 				type: "item"
 			}]
+			title: "Wire"
 			x: 0.0d
 			y: 1.0d
-			description: ["Red alloy wire is what makes simple logic buildable. Once you have wire, redstone starts behaving like a system you can route instead of dust you sprinkle."]
 		}
 		{
 			dependencies: ["654CC900134B8FBD"]
-			id: "8F728191626B1BED"
-			title: "Solder"
+			description: ["Use the soldering table for early bench logic work. It teaches primitive circuits before PNCR machines take over PCB assembly."]
 			icon: "morered:soldering_table"
+			id: "1978FB7FDB5437F1"
+			rewards: [{
+				count: 4
+				id: "3392F18E499C9CD7"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			shape: "diamond"
 			size: 1.05d
 			tasks: [{
-				id: "FFE80C5D1169CB7B"
+				id: "1D1007FA5EA9389E"
 				item: "morered:soldering_table"
 				type: "item"
 			}]
+			title: "Solder"
 			x: 1.58d
 			y: 1.0d
-			rewards: [{ id: "A82440FC29C3FC2F" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Use the soldering table for early bench logic work. It teaches primitive circuits before PNCR machines take over PCB assembly."]
 		}
 		{
-			dependencies: ["8F728191626B1BED"]
-			id: "E418DB64F7C96E19"
-			title: "Diode"
+			description: ["Make a diode or gate to prove that your logic route is real. These are the parts that teach control before the full PCB era arrives."]
 			icon: "morered:diode"
+			id: "717EC5F6A1ADF69E"
 			shape: "rsquare"
 			tasks: [{
 				id: "53784DA293B24700"
 				item: "morered:diode"
 				type: "item"
 			}]
+			title: "Diode"
 			x: 3.17d
 			y: 1.0d
-			description: ["Make a diode or gate to prove that your logic route is real. These are the parts that teach control before the full PCB era arrives."]
 		}
 		{
 			dependencies: ["447A586BFE2667F3"]
-			id: "B1D2E9D9D4F77E0C"
-			title: "Brass"
+			description: ["Check brass casing uses right away. Brass is where Create stops being basic machinery and starts unlocking logistics, sensing, and route control."]
 			icon: "create:brass_casing"
+			id: "7DF707B2CB4ED504"
 			shape: "square"
 			size: 1.05d
 			tasks: [{
-				id: "9B5A252364B09259"
+				id: "2DDADFFBACBA1D66"
 				item: "create:brass_casing"
 				type: "item"
 			}]
+			title: "Brass"
 			x: 0.0d
 			y: -3.0d
-			description: ["Check brass casing uses right away. Brass is where Create stops being basic machinery and starts unlocking logistics, sensing, and route control."]
 		}
 		{
-			dependencies: ["B1D2E9D9D4F77E0C"]
-			id: "E52BDE1C2071533D"
-			title: "Precision"
+			description: ["Make precision mechanisms once you can run deployers and supply gold sheets reliably. They are the step from basic motion into repeatable assembly."]
 			icon: "create:precision_mechanism"
+			id: "462D890004610901"
 			shape: "rsquare"
 			tasks: [{
 				id: "5DF243BD0694ECA4"
 				item: "create:precision_mechanism"
 				type: "item"
 			}]
+			title: "Precision"
 			x: 1.58d
 			y: -3.0d
-			description: ["Make precision mechanisms once you can run deployers and supply gold sheets reliably. They are the step from basic motion into repeatable assembly."]
 		}
 		{
-			dependencies: ["E52BDE1C2071533D"]
-			id: "60974CBBB7171B20"
-			title: "Arm"
+			description: ["Use the mechanical arm when a machine needs to move specific items to specific places. It is best for local sorting, loading, and controlled handoffs."]
 			icon: "create:mechanical_arm"
+			id: "60974CBBB7171B20"
 			shape: "rsquare"
 			tasks: [{
-				id: "FCF188F814E10B25"
+				id: "006ACEECFAC52C53"
 				item: "create:mechanical_arm"
 				type: "item"
 			}]
+			title: "Arm"
 			x: 3.17d
 			y: -3.0d
-			description: ["Use the mechanical arm when a machine needs to move specific items to specific places. It is best for local sorting, loading, and controlled handoffs."]
 		}
 		{
-			dependencies: ["B1D2E9D9D4F77E0C"]
-			id: "FE246240BF196C7B"
-			title: "Display"
+			description: ["Use display links to show machine states, stock levels, or station information. They help you read a factory without replacing the belts, arms, and trains that move items."]
 			icon: "create:display_link"
+			id: "460B2326C604578F"
 			shape: "rsquare"
 			tasks: [{
-				id: "FF0EED79F02DA1E4"
+				id: "4E552533F792B9D6"
 				item: "create:display_link"
 				type: "item"
 			}]
+			title: "Display"
 			x: 4.75d
 			y: -3.0d
-			description: ["Use display links to show machine states, stock levels, or station information. They help you read a factory without replacing the belts, arms, and trains that move items."]
 		}
 		{
-			dependencies: ["FE246240BF196C7B" "60974CBBB7171B20"]
-			id: "43E30496929C8519"
-			title: "Railway"
+			dependencies: ["60974CBBB7171B20"]
+			description: ["Railway casing points toward trains for moving items between sites. Use rail before expecting storage networks to solve long-distance transport."]
 			icon: "create:railway_casing"
+			id: "43E30496929C8519"
 			shape: "octagon"
 			size: 1.15d
 			tasks: [{
@@ -312,15 +326,15 @@
 				item: "create:railway_casing"
 				type: "item"
 			}]
+			title: "Railway"
 			x: 6.34d
 			y: -3.0d
-			description: ["Railway casing points toward trains for moving items between sites. Use rail before expecting storage networks to solve long-distance transport."]
-		},
+		}
 		{
 			dependencies: ["5C37980430C2D51F"]
-			id: "54DEA39BC5F4D55B"
-			title: "Stress Budget"
+			description: ["Place a stressometer or speedometer where you can read it. Check the power budget before adding more machines to the same shaft line."]
 			icon: "create:stressometer"
+			id: "54DEA39BC5F4D55B"
 			shape: "diamond"
 			size: 0.9d
 			tasks: [{
@@ -328,84 +342,76 @@
 				title: "Measure stress before machine spam"
 				type: "checkmark"
 			}]
+			title: "Stress Budget"
 			x: -0.4d
 			y: -1.95d
-			description: ["Place a stressometer or speedometer where you can read it. Check the power budget before adding more machines to the same shaft line."]
 		}
-,
 		{
 			dependencies: ["4145E9AE6FCF2471"]
-			id: "E09D6E32AAD9952D"
-			title: "Fanout Hub"
+			description: ["Group the press, mixer, fan, saw, drill, and deployer around the andesite casing stage. A tight work area makes the next machine choice easier to see."]
 			icon: "create:andesite_tunnel"
+			id: "5A911C2880A3D6F8"
 			shape: "diamond"
 			size: 0.9d
 			tasks: [{
-				id: "96513A95ADFAFA82"
+				id: "5F182BE291DC3BA7"
 				title: "Use casing to find machine recipes"
 				type: "checkmark"
 			}]
+			title: "Fanout Hub"
 			x: -4.25d
 			y: 2.7d
-			description: ["Group the press, mixer, fan, saw, drill, and deployer around the andesite casing stage. A tight work area makes the next machine choice easier to see."]
 		}
-,
 		{
 			dependencies: ["745F897829E7FFB9"]
-			id: "0DC5AD5B9406C1FA"
-			title: "Plate Line"
+			description: ["Turn pressing into a small production lane instead of a one-off machine. It pays back quickly once plate recipes start stacking up."]
 			icon: "create:iron_sheet"
+			id: "0DC5AD5B9406C1FA"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
-				id: "F097D12CDCB46749"
+				id: "0B651126E3692ECF"
 				title: "Build a plate line for repeated recipes"
 				type: "checkmark"
 			}]
+			title: "Plate Line"
 			x: -3.17d
 			y: -5.8d
-			description: ["Turn pressing into a small production lane instead of a one-off machine. It pays back quickly once plate recipes start stacking up."]
 		}
-,
 		{
-			dependencies: ["E7C60362B9AC8F83"]
-			id: "B3533B7F7734590C"
-			title: "Alloy Vat"
+			description: ["Feed basin recipes with planned inputs instead of tossing materials in by guesswork. Use the mixer when alloys or open-vat recipes start repeating."]
 			icon: "create:basin"
+			id: "3E2EDA89083B4080"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
-				id: "E06BF1E916FE5B37"
+				id: "2075B8146052CE0A"
 				title: "Feed basin recipes intentionally"
 				type: "checkmark"
 			}]
+			title: "Alloy Vat"
 			x: -2.25d
 			y: -1.8d
-			description: ["Feed basin recipes with planned inputs instead of tossing materials in by guesswork. Use the mixer when alloys or open-vat recipes start repeating."]
 		}
-,
 		{
-			dependencies: ["D2D49E52D48854FE"]
-			id: "0FF4382CBD152A18"
-			title: "Wash Stack"
+			description: ["Build separate washing, blasting, and haunting spots around fan processing. Label or space them clearly so recipes go to the right setup."]
 			icon: "minecraft:water_bucket"
+			id: "0FF4382CBD152A18"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
-				id: "AED393A9BCA56839"
+				id: "793CB347E5776A00"
 				title: "Build washing/blasting/haunting spots"
 				type: "checkmark"
 			}]
+			title: "Wash Stack"
 			x: -1.5d
 			y: -6.7d
-			description: ["Build separate washing, blasting, and haunting spots around fan processing. Label or space them clearly so recipes go to the right setup."]
 		}
-,
 		{
-			dependencies: ["A78DB795C876699D"]
-			id: "DE2E81A2C25ED50E"
-			title: "Hand Loop"
+			description: ["Build one deployer and depot loop that repeats a real craft. A single working loop teaches more than several loose machines with no item flow."]
 			icon: "create:depot"
+			id: "495DD25FCB7250D2"
 			shape: "diamond"
 			size: 0.9d
 			tasks: [{
@@ -413,16 +419,14 @@
 				title: "Make deployer+depot loops before autocrafting"
 				type: "checkmark"
 			}]
+			title: "Hand Loop"
 			x: -0.7d
 			y: -4.25d
-			description: ["Build one deployer and depot loop that repeats a real craft. A single working loop teaches more than several loose machines with no item flow."]
 		}
-,
 		{
-			dependencies: ["8F728191626B1BED"]
-			id: "1A0961A8998C54BD"
-			title: "Logic Bench"
+			description: ["Keep More Red parts together as a visible circuit bench. Primitive logic is easier to trust once you can see the whole lane in one place."]
 			icon: "minecraft:redstone"
+			id: "1A0961A8998C54BD"
 			shape: "diamond"
 			size: 0.9d
 			tasks: [{
@@ -430,50 +434,45 @@
 				title: "Treat primitive circuits as bench work"
 				type: "checkmark"
 			}]
+			title: "Logic Bench"
 			x: 2.55d
 			y: -1.75d
-			description: ["Keep More Red parts together as a visible circuit bench. Primitive logic is easier to trust once you can see the whole lane in one place."]
 		}
-,
 		{
-			dependencies: ["B1D2E9D9D4F77E0C"]
-			id: "AC5B64DDFE41CD64"
-			title: "Logistics Pivot"
+			description: ["Use brass parts for selective movement and sensing. Keep arms, stockpile switches, and display links near the machines they control."]
 			icon: "create:stockpile_switch"
+			id: "32F8D3F860F430B9"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
-				id: "A595677CC18BA0B0"
+				id: "39FE6073DC3088FA"
 				title: "Use brass for selective movement and sensing"
 				type: "checkmark"
 			}]
+			title: "Logistics Pivot"
 			x: 0.0d
 			y: -5.2d
-			description: ["Use brass parts for selective movement and sensing. Keep arms, stockpile switches, and display links near the machines they control."]
 		}
-,
 		{
-			dependencies: ["E52BDE1C2071533D"]
-			id: "58A7FED8289BFF88"
-			title: "Assembly Loop"
+			description: ["Use precision mechanisms to bridge into serious automation, not just prettier recipes. This is where your factory starts asking for repeatable assembly."]
 			icon: "create:mechanical_crafter"
+			id: "58A7FED8289BFF88"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
-				id: "DD351544A14F803D"
+				id: "1B63EE953E3E67DE"
 				title: "Build repeatable precision mechanisms"
 				type: "checkmark"
 			}]
+			title: "Assembly Loop"
 			x: 2.3d
 			y: -0.15d
-			description: ["Use precision mechanisms to bridge into serious automation, not just prettier recipes. This is where your factory starts asking for repeatable assembly."]
 		}
-,
 		{
 			dependencies: ["43E30496929C8519"]
-			id: "6ECBF70F9DA72F59"
-			title: "Train Thesis"
+			description: ["Treat this as your reminder that Create should point you toward trains and physical movement. The machines are here to support logistics, not to erase it."]
 			icon: "create:track"
+			id: "6ECBF70F9DA72F59"
 			shape: "octagon"
 			size: 0.9d
 			tasks: [{
@@ -481,9 +480,32 @@
 				title: "Commit to trains before remote storage"
 				type: "checkmark"
 			}]
+			title: "Train Thesis"
 			x: 6.34d
 			y: -1.0d
-			description: ["Treat this as your reminder that Create should point you toward trains and physical movement. The machines are here to support logistics, not to erase it."]
+		}
+		{
+			dependencies: ["43E30496929C8519"]
+			description: ["Use Trackwork when a fixed rail line is the wrong answer. Its wheels and tracks consume railway casing and precision mechanisms, so rough-terrain vehicles arrive beside trains instead of bypassing them."]
+			icon: "trackwork:phys_track"
+			id: "3162DC713348344A"
+			shape: "octagon"
+			size: 1.0d
+			tasks: [
+				{
+					id: "014862CAEF75169B"
+					item: "trackwork:phys_track"
+					type: "item"
+				}
+				{
+					id: "125973DBF08627AC"
+					item: "trackwork:track_tool_kit"
+					type: "item"
+				}
+			]
+			title: "Tracked Mobility"
+			x: 7.95d
+			y: -3.0d
 		}
 	]
 	title: "Create and Primitive Circuits"

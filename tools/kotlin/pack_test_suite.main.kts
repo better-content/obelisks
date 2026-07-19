@@ -964,7 +964,6 @@ fun testRuntimeCoreTagRegressions() {
     val genericRuntimeChecks = listOf(
         Triple("minecraft:crafting_table", listOf(""""tag": "minecraft:planks""""), "crafting table still accepts #minecraft:planks"),
         Triple("create:crafting/appliances/linked_controller", listOf(""""tag": "minecraft:wooden_buttons""""), "linked controller still consumes #minecraft:wooden_buttons"),
-        Triple("createbigcannons:log_cannon_end", listOf(""""tag": "minecraft:logs""""), "runtime generic log consumer still exists"),
         Triple("procedural_bouquets:bouquet_grid", listOf(""""tag": "minecraft:wooden_slabs""""), "runtime generic slab consumer still exists"),
     )
     val missingGenericRuntime = genericRuntimeChecks.mapNotNull { (id, needles, label) ->
@@ -1243,10 +1242,15 @@ fun testPlankRegressionStaticAndExports() {
         fail("repo minecraft:planks tag additions are additive", sourcePlanksProblems.joinToString("\n"))
     }
 
-    val exports = listOf(
-        repo.resolve("generated/exports/better-content-playtest-4-v1-curseforge.zip"),
-        repo.resolve("generated/exports/better-content-playtest-4-v1-server.zip"),
-    ).filter(::exists)
+    val exportsDir = repo.resolve("generated/exports")
+    val releaseArchivePattern = Regex("""better-content-playtest-v[1-9][0-9]*-(curseforge|server)\.zip""")
+    val exports = if (exists(exportsDir)) {
+        Files.list(exportsDir).use { paths ->
+            paths.filter { exists(it) && releaseArchivePattern.matches(it.fileName.toString()) }
+                .sorted()
+                .toList()
+        }
+    } else emptyList()
     if (exports.isEmpty()) {
         skip("export bundles keep minecraft:planks tag additions additive", "generated exports not present")
     } else {

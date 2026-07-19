@@ -1,0 +1,173 @@
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'maven-publish'
+apply plugin: 'net.minecraftforge.gradle'
+apply plugin: 'org.jetbrains.kotlin.jvm'
+
+version = rootProject.findProperty('mod_version')
+group = modGroupId
+
+base {
+    archivesName = modId
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+java.withSourcesJar()
+
+repositories {
+    mavenCentral()
+    maven { url = 'https://maven.minecraftforge.net/' }
+    maven { url = 'https://cursemaven.com' }
+    maven { url = 'https://maven.quiltmc.org/repository/release/' }
+    maven { url = 'https://maven.theillusivec4.top/' }
+}
+
+println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
+
+dependencies {
+    minecraft "net.minecraftforge:forge:${rootProject.minecraft_version}-${rootProject.forge_version}"
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.7.3'
+    implementation fg.deobf('curse.maven:kotlin-for-forge-351264:4578885')
+    testImplementation 'org.jetbrains.kotlin:kotlin-test'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+}
+
+minecraft {
+    mappings channel: rootProject.mapping_channel, version: rootProject.mapping_version
+    copyIdeResources = true
+
+    if (file('src/main/resources/META-INF/accesstransformer.cfg').exists()) {
+        accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+    }
+
+    runs {
+        configureEach {
+            workingDirectory rootProject.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+
+            mods {
+                "${project.name.replace('-', '_')}" {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        client {
+            property 'forge.enabledGameTestNamespaces', modId
+        }
+
+        server {
+            property 'forge.enabledGameTestNamespaces', modId
+            args '--nogui'
+        }
+
+        gameTestServer {
+            workingDirectory rootProject.file('run-gametest')
+            property 'forge.enabledGameTestNamespaces', modId
+        }
+
+        data {
+            workingDirectory rootProject.file("run-data/${project.name}")
+            args '--mod', modId, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+        }
+    }
+}
+
+sourceSets.main.resources { srcDir 'src/generated/resources' }
+
+tasks.named('processResources', ProcessResources).configure {
+    var replaceProperties = [
+        minecraft_version      : rootProject.minecraft_version,
+        minecraft_version_range: rootProject.minecraft_version_range,
+        forge_version          : rootProject.forge_version,
+        forge_version_range    : rootProject.forge_version_range,
+        loader_version_range   : rootProject.loader_version_range,
+        mod_id                 : modId,
+        mod_name               : modName,
+        mod_license            : rootProject.mod_license,
+        mod_version            : rootProject.mod_version,
+        mod_authors            : rootProject.mod_authors,
+        mod_description        : modDescription,
+    ]
+    inputs.properties replaceProperties
+
+    filesMatching(['META-INF/mods.toml', 'pack.mcmeta']) {
+        expand replaceProperties + [project: project]
+    }
+}
+
+tasks.named('jar', Jar).configure {
+    manifest {
+        attributes([
+            'Specification-Title'     : modId,
+            'Specification-Vendor'    : rootProject.mod_authors,
+            'Specification-Version'   : '1',
+            'Implementation-Title'    : project.name,
+            'Implementation-Version'  : project.jar.archiveVersion,
+            'Implementation-Vendor'   : rootProject.mod_authors,
+            'Implementation-Timestamp': new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+        ])
+    }
+
+    finalizedBy 'reobfJar'
+}
+
+tasks.register('stageRuntimeJar', Copy) {
+    group = 'build'
+    description = 'Stages the reobfuscated runtime jar into build/libs using the canonical release filename.'
+    dependsOn tasks.named('reobfJar')
+    from layout.buildDirectory.file('reobfJar/output.jar')
+    into layout.buildDirectory.dir('libs')
+    rename { "${modId}-${rootProject.mod_version}.jar" }
+}
+
+tasks.named('assemble').configure {
+    dependsOn tasks.named('stageRuntimeJar')
+}
+
+publishing {
+    publications {
+        register('mavenJava', MavenPublication) {
+            artifact jar
+        }
+    }
+    repositories {
+        maven {
+            url "file://${project.projectDir}/mcmodsrepo"
+        }
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+tasks.named('test', Test).configure {
+    useJUnitPlatform()
+}
+
+tasks.register('headlessGameTest') {
+    group = 'verification'
+    description = 'Runs the default Forge game test server selection.'
+    dependsOn tasks.named('runGameTestServer')
+}
+
+if (file('src/gameteststructures').exists()) {
+    tasks.register('syncGameTestStructures', Copy) {
+        from('src/gameteststructures')
+        into(rootProject.file('run/gameteststructures'))
+    }
+
+    tasks.register('syncGameTestStructuresGameTest', Copy) {
+        from('src/gameteststructures')
+        into(rootProject.file('run-gametest/gameteststructures'))
+    }
+
+    tasks.matching { it.name.startsWith('prepareRun') }.configureEach {
+        dependsOn(tasks.named('syncGameTestStructures'))
+        dependsOn(tasks.named('syncGameTestStructuresGameTest'))
+    }
+}

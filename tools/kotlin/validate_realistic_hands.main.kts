@@ -6,7 +6,10 @@ import java.nio.file.Paths
 import kotlin.system.exitProcess
 
 val root = Paths.get("").toAbsolutePath().normalize()
-val auditPath = root.resolve("generated/runtime-dumps/realistic_hands_audit.json")
+val blockTagDir = root.resolve("generated/custom-mod-sources/better-content-fixes/src/main/resources/data/bcfixes/tags/blocks/realistic_hands")
+val itemTagDir = root.resolve("generated/custom-mod-sources/better-content-fixes/src/main/resources/data/bcfixes/tags/items/realistic_hands/tools")
+val quarantinePath = root.resolve("generated/custom-mod-sources/better-content-fixes/quarantine/realistic-hands-exhaustive-policy")
+val compatPath = root.resolve("generated/custom-mod-sources/better-content-fixes/src/main/java/io/github/bcfixes/compat/RealisticHandsCompat.java")
 val retiredHookPath = root.resolve("kubejs/startup_scripts/20_blocks/20_realistic_hands.js")
 val retiredAssignmentsPath = root.resolve("kubejs/startup_scripts/99_realistic_hands_assignments.js")
 val retiredLootPath = root.resolve("kubejs/server_scripts/50_loot/11_realistic_hands_outcomes.js")
@@ -146,45 +149,49 @@ fun fail(message: String): Nothing {
     exitProcess(1)
 }
 
-if (!Files.exists(auditPath)) fail("missing ${root.relativize(auditPath)}")
-
-val audit = readJson(auditPath)
-val blockTags = jsonObject(audit["blockTags"]).mapValues { (_, value) -> jsonArray(value).mapNotNull(::jsonString).toSet() }
-val forceHarvestMissing = jsonArray(jsonObject(audit["forceHarvestCoverage"])["missing"]).mapNotNull(::jsonString)
-val reps = jsonObject(audit["representativeSeparation"])
-val looseSurfaceIds = jsonArray(audit["looseSurfaceIds"]).mapNotNull(::jsonString)
-
-val requiredHandOrShovel = listOf(
-    "minecraft:sand",
-    "minecraft:red_sand",
-    "minecraft:gravel",
-    "minecraft:dirt",
-    "minecraft:coarse_dirt",
-    "minecraft:rooted_dirt",
-    "minecraft:mud",
-    "minecraft:grass_block",
-    "immersive_weathering:loam",
-    "immersive_weathering:silt",
-    "immersive_weathering:grassy_silt",
-    "dynamictrees:rooty_gravel",
-    "unearthed:beige_limestone_grassy_regolith",
-    "unearthed:conglomerate_grassy_regolith",
-    "unearthed:limestone_grassy_regolith",
-    "unearthed:stone_grassy_regolith",
-    "unearthed:siltstone_regolith"
-)
-
-val missingLooseSurfaces = requiredHandOrShovel.filter { id ->
-    id !in (blockTags["hand"] ?: emptySet()) && id !in (blockTags["shovel"] ?: emptySet())
+val blockTagPath = blockTagDir.resolve("axe.json")
+val itemTagPath = itemTagDir.resolve("axe.json")
+if (!Files.exists(blockTagPath) || !Files.exists(itemTagPath)) fail("missing no-tree-punching tag resources")
+val blockValues = jsonArray(readJson(blockTagPath)["values"]).mapNotNull(::jsonString).toSet()
+val itemValues = jsonArray(readJson(itemTagPath)["values"]).mapNotNull(::jsonString).toSet()
+if (blockValues != setOf("#minecraft:logs")) fail("block policy must contain only #minecraft:logs: $blockValues")
+if (itemValues != setOf("#forge:tools/axes")) fail("tool policy must contain only #forge:tools/axes: $itemValues")
+Files.list(blockTagDir).use { files ->
+    val runtimeFiles = files.filter(Files::isRegularFile).map { it.fileName.toString() }.toList()
+    if (runtimeFiles != listOf("axe.json")) fail("unexpected runtime block policy files: $runtimeFiles")
 }
-if (missingLooseSurfaces.isNotEmpty()) fail("missing explicit loose-surface coverage: ${missingLooseSurfaces.joinToString(", ")}")
-if (forceHarvestMissing.isNotEmpty()) fail("missing force_harvest coverage: ${forceHarvestMissing.take(20).joinToString(", ")}")
-if (reps["knifeGrass"] != true || reps["knifeLeaves"] != true || reps["swordCobweb"] != true || reps["swordTripwire"] != true) {
-    fail("representative knife/sword separation regressed: $reps")
+Files.list(itemTagDir).use { files ->
+    val runtimeFiles = files.filter(Files::isRegularFile).map { it.fileName.toString() }.toList()
+    if (runtimeFiles != listOf("axe.json")) fail("unexpected runtime item policy files: $runtimeFiles")
 }
-if ("minecraft:cobweb" in (blockTags["knife"] ?: emptySet())) fail("minecraft:cobweb must not move into knife")
-if ("projectvibrantjourneys:short_grass" in (blockTags["sword"] ?: emptySet())) fail("projectvibrantjourneys:short_grass must not move into sword")
-if ("unearthed:siltstone_regolith" !in looseSurfaceIds) fail("unearthed:siltstone_regolith must stay in loose surface audit coverage")
+if (!Files.exists(quarantinePath.resolve("README.md")) ||
+    !Files.exists(quarantinePath.resolve("resources/tags/blocks/knife.json")) ||
+    !Files.exists(quarantinePath.resolve("java/RealisticHandsKnifeLootModifier.java"))) {
+    fail("exhaustive policy is not retained under ${root.relativize(quarantinePath)}")
+}
+val retiredLogOverrides = root.resolve("tools/quarantine/realistic-hands-exhaustive-policy/retired-log-tag-overrides")
+val activeLogs = root.resolve("kubejs/data/minecraft/tags/blocks/logs.json")
+val activeBurnableLogs = root.resolve("kubejs/data/minecraft/tags/blocks/logs_that_burn.json")
+val activeItemLogs = root.resolve("kubejs/data/minecraft/tags/items/logs.json")
+val activeBurnableItemLogs = root.resolve("kubejs/data/minecraft/tags/items/logs_that_burn.json")
+val coreLogTags = setOf("#minecraft:acacia_logs", "#minecraft:birch_logs", "#minecraft:cherry_logs", "#minecraft:dark_oak_logs", "#minecraft:jungle_logs", "#minecraft:mangrove_logs", "#minecraft:oak_logs", "#minecraft:spruce_logs")
+if (jsonArray(readJson(activeLogs)["values"]).mapNotNull(::jsonString).toSet() != coreLogTags ||
+    jsonArray(readJson(activeBurnableLogs)["values"]).mapNotNull(::jsonString).toSet() != coreLogTags ||
+    jsonArray(readJson(activeItemLogs)["values"]).mapNotNull(::jsonString).toSet() != coreLogTags ||
+    jsonArray(readJson(activeBurnableItemLogs)["values"]).mapNotNull(::jsonString).toSet() != coreLogTags ||
+    !Files.exists(retiredLogOverrides.resolve("logs.json")) ||
+    !Files.exists(retiredLogOverrides.resolve("logs_that_burn.json")) ||
+    !Files.exists(retiredLogOverrides.resolve("item_logs.json")) ||
+    !Files.exists(retiredLogOverrides.resolve("item_logs_that_burn.json"))) {
+    fail("stale pack-wide Minecraft log overrides must remain quarantined")
+}
+val compat = Files.readString(compatPath)
+for (marker in listOf("state.is(RealisticHandsTags.AXE)", "stack.is(RealisticHandsTags.AXE_TOOLS)")) {
+    if (marker !in compat) fail("missing Forge no-tree-punching marker `$marker`")
+}
+for (marker in listOf("RealisticHandsTags.KNIFE", "RealisticHandsTags.PICKAXE", "damageKnife")) {
+    if (marker in compat) fail("exhaustive Forge policy marker remains active: `$marker`")
+}
 
 val retiredFiles = listOf(retiredHookPath, retiredAssignmentsPath, retiredLootPath)
 val forbiddenMarkers = listOf(
@@ -199,4 +206,4 @@ for (path in retiredFiles) {
 }
 
 println("Realistic Hands validates")
-println("PASS - Realistic Hands explicit tag policy validated")
+println("PASS - no-tree-punching gate active; exhaustive policy quarantined")

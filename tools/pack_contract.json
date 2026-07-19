@@ -57,6 +57,7 @@
     "excludedIndexPrefixes": [
       "tools/",
       "generated/",
+      "exports/",
       "server-instance/",
       "server-template/"
     ],
@@ -107,6 +108,7 @@
       "mods/pillagercampaigns-0.2.0.jar",
       "mods/procedural_bouquets-0.1.0.jar",
       "mods/realisticores-0.1.0.jar",
+      "mods/revival-1.0.0.jar",
       "mods/rpgstats-1.0.0.jar",
       "mods/settlementroads-0.1.0.jar",
       "mods/villagewalls-1.0.0.jar"
@@ -399,21 +401,10 @@
       "requiredFiles": [
         "tools/bc",
         "tools/bc.main.kts",
-        "tools/kotlin/lc_tfth_c2me_dh_stability.main.kts",
         "config/c2me.toml",
         "config/DistantHorizons.toml"
       ],
       "contains": [
-        {
-          "file": "tools/kotlin/lc_tfth_c2me_dh_stability.main.kts",
-          "all": [
-            "modernfix_watchdog",
-            "C2ME",
-            "DistantHorizons",
-            "serializeDhC2meFeaturePlacement",
-            "lostcities:lostcity"
-          ]
-        },
         {
           "file": "tools/bc.main.kts",
           "all": [
@@ -437,26 +428,6 @@
             "alchemistry:dissolver",
             "occultism:miner_foliot_unspecialized",
             "sophisticatedbackpacks:stack_upgrade_omega_tier"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "worldgen_statistical_sampling",
-      "tier": "L5",
-      "requiredFiles": [
-        "tools/kotlin/worldgen_sampling.main.kts",
-        "tools/worldgen_sampling_contract.json",
-        "datapacks/realistic_ores_lava_depths/pack.mcmeta",
-        "datapacks/hyle_deep/pack.mcmeta"
-      ],
-      "contains": [
-        {
-          "file": "docs/runtime_validation.md",
-          "all": [
-            "settlement-roads",
-            "village-walls",
-            "Hyle"
           ]
         }
       ]
@@ -503,20 +474,10 @@
     },
     {
       "id": "L4",
-      "name": "client/server scenario harnesses",
+      "name": "source build and configuration checks",
       "requiredTools": [
         "tools/bc",
-        "tools/bc.main.kts",
-        "tools/kotlin/lc_tfth_c2me_dh_stability.main.kts"
-      ]
-    },
-    {
-      "id": "L5",
-      "name": "statistical seed/worldgen/performance sampling",
-      "requiredTools": [
-        "tools/kotlin/worldgen_sampling.main.kts",
-        "tools/kotlin/validate_worldgen_sampling_contracts.main.kts",
-        "tools/worldgen_sampling_contract.json"
+        "tools/bc.main.kts"
       ]
     }
   ],
@@ -574,7 +535,7 @@
       },
       {
         "id": "progression_recipe_graph",
-        "status": "runtime_checked",
+        "status": "marker_checked",
         "tierRefs": [
           "L2",
           "L3"
@@ -595,7 +556,9 @@
           "tools/kotlin/expert_graph_audit.main.kts",
           "tools/kotlin/audit_indirect_casing_economy.main.kts"
         ],
-        "openRequirements": []
+        "openRequirements": [
+          "Restore runtime proof only through the approved one-world validation suite."
+        ]
       },
       {
         "id": "bounded_matter_geology_chemistry",
@@ -688,8 +651,7 @@
           "kubejs/data/twilightforest/creatingspace/rocket_accessible_dimension/twilight_forest.json",
           "config/twilightforest-common.toml",
           "config/structurify.json",
-          "config/dimension_drink/dimension_drink/aether.json",
-          "tools/kotlin/lc_tfth_c2me_dh_stability.main.kts"
+          "config/dimension_drink/dimension_drink/aether.json"
         ],
         "validators": [
           "tools/bc",
@@ -703,7 +665,7 @@
       },
       {
         "id": "runtime_concurrency_performance",
-        "status": "runtime_checked",
+        "status": "marker_checked",
         "tierRefs": [
           "L3",
           "L4"
@@ -711,19 +673,19 @@
         "systemRefs": [
           "runtime_concurrency_performance"
         ],
-        "claim": "Fresh server smoke validates boot, hard log scan, recipe parse health, tick/save budgets, dimension save fanout, DH backlog, and recent crash state.",
+        "claim": "Runtime concurrency configuration and retained audit scripts are source-checked; no runtime smoke claim is active.",
         "evidence": [
           "tools/bc",
           "tools/bc.main.kts",
-          "tools/kotlin/pack_test_suite.main.kts",
-          "tools/kotlin/lc_tfth_c2me_dh_stability.main.kts"
+          "tools/kotlin/pack_test_suite.main.kts"
         ],
         "validators": [
           "tools/bc",
-          "tools/kotlin/pack_test_suite.main.kts",
-          "tools/kotlin/lc_tfth_c2me_dh_stability.main.kts"
+          "tools/kotlin/pack_test_suite.main.kts"
         ],
-        "openRequirements": []
+        "openRequirements": [
+          "Design and implement the approved one-world runtime validation suite before making runtime claims."
+        ]
       },
       {
         "id": "client_visibility_quests",
@@ -746,33 +708,6 @@
           "tools/kotlin/validate_pack_contract.main.kts"
         ],
         "openRequirements": []
-      },
-      {
-        "id": "worldgen_statistics",
-        "status": "marker_checked",
-        "tierRefs": [
-          "L5"
-        ],
-        "systemRefs": [
-          "worldgen_statistical_sampling"
-        ],
-        "claim": "Worldgen datapacks, C2ME matrix tooling, memory inventory, and known follow-ups exist; density and accessibility proof requires seed sampling.",
-        "evidence": [
-          "tools/kotlin/validate_autonomous_contracts.main.kts",
-          "tools/kotlin/worldgen_sampling.main.kts",
-          "tools/worldgen_sampling_contract.json",
-          "datapacks/realistic_ores_lava_depths/pack.mcmeta",
-          "datapacks/hyle_deep/pack.mcmeta"
-        ],
-        "validators": [
-          "tools/kotlin/validate_autonomous_contracts.main.kts",
-          "tools/kotlin/worldgen_sampling.main.kts",
-          "tools/kotlin/validate_worldgen_sampling_contracts.main.kts"
-        ],
-        "openRequirements": [
-          "Add deterministic seed sampling for deposits, Y-bands, villages, roads, walls, structures, forageables, and spawn viability.",
-          "Define acceptable distance/depth distributions and fail outside confidence bounds."
-        ]
       },
       {
         "id": "custom_mods",
@@ -807,6 +742,13 @@
         "jar": "mods/bcfixes-0.1.0.jar",
         "minCodeFiles": 8,
         "minTestFiles": 1
+      },
+      {
+        "id": "revival",
+        "repo": "revival",
+        "jar": "mods/revival-1.0.0.jar",
+        "minCodeFiles": 18,
+        "minTestFiles": 2
       },
       {
         "id": "classselector",
@@ -856,6 +798,13 @@
         "jar": "mods/dimensiondrink-1.0.0.jar",
         "minCodeFiles": 50,
         "minTestFiles": 5
+      },
+      {
+        "id": "tconaffixes",
+        "repo": "tcon-affixes",
+        "jar": "mods/tconaffixes-1.0.0.jar",
+        "minCodeFiles": 4,
+        "minTestFiles": 1
       },
       {
         "id": "computerbridge",

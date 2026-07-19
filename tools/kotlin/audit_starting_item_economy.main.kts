@@ -154,7 +154,7 @@ fun walkFiles(root: Path, predicate: (Path) -> Boolean, out: MutableList<Path> =
 
 val dumpRoot = "generated/runtime-dumps/kubejs-config"
 val outputRoot = "generated/validation"
-val hardPrefixRejects = listOf("ae2:", "advanced_ae:", "ars_nouveau:", "pneumaticcraft:", "bloodmagic:", "chemlib:", "createbigcannons:", "k_turrets:", "tconstruct:", "wares:", "protection_pixel:", "sophisticatedbackpacks:", "sophisticatedstorage:")
+val hardPrefixRejects = listOf("ae2:", "advanced_ae:", "ars_nouveau:", "pneumaticcraft:", "bloodmagic:", "chemlib:", "k_turrets:", "tconstruct:", "wares:", "protection_pixel:", "sophisticatedbackpacks:", "sophisticatedstorage:")
 val hardExactRejects = setOf("create:track", "create:track_station", "create:controller_rail", "create:precision_mechanism", "minecraft:tnt", "minecraft:tnt_minecart", "minecraft:flint_and_steel", "minecraft:gunpowder", "minecraft:fire_charge", "minecraft:water_bucket", "minecraft:lava_bucket", "minecraft:emerald", "minecraft:emerald_block", "minecraft:golden_carrot", "minecraft:golden_apple", "minecraft:bone_meal", "minecraft:redstone_torch", "minecraft:note_block", "minecraft:chest_minecart", "minecraft:hopper_minecart", "minecraft:furnace_minecart", "farmersdelight:flint_knife", "tconstruct:hand_axe", "quark:seed_pouch", "minecraft:bucket")
 val hardPatternRejects = listOf(
     Regex("""(^|:)stripped_"""),

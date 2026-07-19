@@ -161,17 +161,6 @@ ServerEvents.recipes(function (event) {
         'chemlib:sulfur',
         'chemlib:carbon'
     ], null)
-     bcChemAltCompact(event, 'createbigcannons/powder_charge_nitrate', 'createbigcannons:powder_charge', 2, [
-        'minecraft:paper',
-        'chemlib:sodium_nitrate',
-        'chemlib:sulfur',
-        'chemlib:carbon'
-    ], null)
-     bcChemAltCompact(event, 'createbigcannons/impact_fuze_copper_nitrate', 'createbigcannons:impact_fuze', 1, [
-        'minecraft:redstone',
-        'chemlib:copper_nitrate',
-        '#forge:plates/copper'
-    ], null)
 
     // Create machinery and control parts.
      bcChemAltMix(event, 'create/abrasive_slurry_for_precision', 'create:polished_rose_quartz', 2, [

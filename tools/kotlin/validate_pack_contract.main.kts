@@ -238,7 +238,7 @@ fun validatePackwiz(): Map<String, String> {
     val entries = parseIndex(read(indexRel))
     val indexByFile = entries.associate { it.first to it.second }
     val excludedHits = entries.filter { entry -> jsonArray(packwiz["excludedIndexPrefixes"]).mapNotNull(::jsonString).any { prefix -> entry.first.startsWith(prefix) } }
-    if (excludedHits.isEmpty()) ok("packwiz index excludes generated/tool roots") else fail("packwiz index excludes generated/tool roots", excludedHits.take(20).joinToString(", ") { it.first })
+    if (excludedHits.isEmpty()) ok("packwiz index excludes generated/export/tool/runtime roots") else fail("packwiz index excludes generated/export/tool/runtime roots", excludedHits.take(20).joinToString(", ") { it.first })
     val missing = mutableListOf<String>()
     val badHashes = mutableListOf<String>()
     for ((file, hash) in entries) {

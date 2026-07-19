@@ -34,9 +34,8 @@ ServerEvents.recipes(function (event) {
 
     // Blood I: first folk/spirit power should consume actual altar output, not only vanilla craft stock.
      bcMagicGateOutputs(event, [
-        'malum:spirit_altar',
-        'reliquary:apothecary_cauldron'
-    ], commonVanillaValuables.concat(['minecraft:torch', 'reliquary:catalyzing_gland']), BC_MAGIC_T1)
+        'malum:spirit_altar'
+    ], commonVanillaValuables.concat(['minecraft:torch']), BC_MAGIC_T1)
 
     // Blood III: early Ars operations start once the teaser book can be fed by real proof.
      bcMagicGateOutputs(event, [

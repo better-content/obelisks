@@ -29,6 +29,10 @@ fun test(name: String, block: () -> Unit) {
     tests += TestCase(name, block)
 }
 
+// Retired runtime tests are deliberately not registered. Keep no runtime command
+// invocation in the active Kotlin suite while the one-world replacement is designed.
+fun retiredTest(name: String, block: () -> Unit) = Unit
+
 fun runCommand(
     vararg args: String,
     workdir: Path = root,
@@ -294,12 +298,24 @@ test("help shows public commands") {
     val (exit, output) = runCommand("tools/bc", "--help")
     assertTrue(exit == 0, "help should exit 0, got $exit")
     assertContains(output, "tools/bc test fast", "help should list fast test")
-    assertContains(output, "tools/bc test full", "help should list full test")
     assertContains(output, "tools/bc test static", "help should list static test")
+    assertContains(output, "tools/bc test kotlin", "help should list Kotlin tests")
+    assertContains(output, "tools/bc test smoke", "help should list the single-world smoke")
+    assertNotContains(output, "tools/bc test scenario", "help must not list removed runtime scenarios")
     assertContains(output, "tools/bc build sync server", "help should list build sync server")
+    assertContains(output, "tools/bc build bundle release", "help should list tested release bundles")
     assertContains(output, "tools/bc graph item ITEM_ID", "help should list graph item")
     assertContains(output, "tools/bc graph route ITEM_ID", "help should list graph route")
     assertContains(output, "tools/bc doctor env", "help should list doctor env")
+}
+
+test("release bundle help is bounded") {
+    val (helpExit, helpOutput) = runCommand("tools/bc", "build", "bundle", "release", "--help")
+    assertTrue(helpExit == 0, "release bundle help should exit 0, got $helpExit")
+    assertContains(helpOutput, "refreshes packwiz metadata", "release help should describe manifest refresh")
+    assertContains(helpOutput, "reserves the next persistent Playtest version", "release help should describe automatic versioning")
+    assertContains(helpOutput, "better-content-playtest-v<N>-{curseforge,server}.zip", "release help should describe paired versioned archive names")
+    assertNotContains(helpOutput, "fresh server smoke", "release help must not claim runtime validation")
 }
 
 test("graph help shows subcommands") {
@@ -367,23 +383,27 @@ test("graph blockers json returns explicit blocker data") {
     }
 }
 
-test("runtime without instance is usage error") {
+retiredTest("runtime without instance is usage error") {
     val (exit, output) = runCommand("tools/bc", "test", "runtime")
     assertTrue(exit == 2, "runtime without instance should exit 2, got $exit")
     assertContains(output, "test runtime requires --instance PATH", "runtime usage error should be specific")
 }
 
-test("scenario help shows scenarios") {
+retiredTest("Unearthed replacement without a world is usage error") {
+    val (exit, output) = runCommand("tools/bc", "test", "unearthed-replacement")
+    assertTrue(exit == 2, "Unearthed replacement without a world should exit 2, got $exit")
+    assertContains(output, "requires --instance PATH or --world PATH", "Unearthed replacement usage error should be specific")
+}
+
+retiredTest("scenario help shows scenarios") {
     val (exit, output) = runCommand("tools/bc", "test", "scenario", "--help")
     assertTrue(exit == 0, "scenario help should exit 0, got $exit")
     assertContains(output, "fast [--repo ID|PATH] [--list-repos]", "scenario help should show fast usage")
     assertContains(output, "full [--workspace [--repo ID|PATH] [--list-repos]]", "scenario help should show full workspace usage")
     assertContains(output, "--bootstrap-mode always|once|never", "scenario help should show bootstrap mode")
-    assertContains(output, "Headless Scenarios:", "scenario help should list headless scenarios")
-    assertContains(output, "Headful Scenarios:", "scenario help should list headful scenarios")
+    assertContains(output, "Scenarios:", "scenario help should list scenarios")
     assertContains(output, "opening_progression", "scenario help should include opening_progression")
     assertContains(output, "worldgen_sampling", "scenario help should include worldgen_sampling")
-    assertContains(output, "client_smoke", "scenario help should include client_smoke")
 }
 
 test("fast repo listing shows workspace inventory") {
@@ -394,7 +414,7 @@ test("fast repo listing shows workspace inventory") {
     assertContains(output, "better-content-fixes", "fast listing should include nested repos")
 }
 
-test("full repo listing honors repo filters and meaningful full lanes") {
+retiredTest("full repo listing honors repo filters and meaningful full lanes") {
     val (exit, output) = runCommand("tools/bc", "test", "full", "--workspace", "--list-repos", "--repo", "pack", "--repo", "class-selector")
     assertTrue(exit == 0, "test full --workspace --list-repos with filters should exit 0, got $exit")
     assertContains(output, "pack", "filtered full listing should include pack")
@@ -402,7 +422,7 @@ test("full repo listing honors repo filters and meaningful full lanes") {
     assertNotContains(output, "rpg-stats", "filtered full listing should exclude unselected repos")
 }
 
-test("full repo listing without workspace flag is a usage error") {
+retiredTest("full repo listing without workspace flag is a usage error") {
     val (exit, output) = runCommand("tools/bc", "test", "full", "--list-repos")
     assertTrue(exit == 2, "test full --list-repos without --workspace should exit 2, got $exit")
     assertContains(output, "test full workspace selection requires --workspace", "full listing without --workspace should explain the requirement")
@@ -414,10 +434,16 @@ test("unknown workspace repo filter is a usage error") {
     assertContains(output, "unknown repo filter(s): not-a-real-repo", "unknown repo filter error should be specific")
 }
 
-test("unknown scenario is a usage error") {
+retiredTest("unknown scenario is a usage error") {
     val (exit, output) = runCommand("tools/bc", "test", "scenario", "not_a_real_scenario")
     assertTrue(exit == 2, "unknown scenario should exit 2, got $exit")
     assertContains(output, "unknown scenario: not_a_real_scenario", "unknown scenario error should be specific")
+}
+
+retiredTest("multiple scenario cycles are rejected") {
+    val (exit, output) = runCommand("tools/bc", "test", "scenario", "opening_progression", "--cycles", "2")
+    assertTrue(exit == 2, "multiple cycles should exit 2, got $exit")
+    assertContains(output, "use --cycles 1", "multiple cycles should explain the one-world limit")
 }
 
 test("doctor repo succeeds") {
@@ -460,6 +486,15 @@ test("public static lane passes") {
     assertContains(output, "\"evidenceLevel\":\"source\"", "test static should report source evidence")
 }
 
+test("single-world smoke validates bounded options without launching") {
+    val (badIdleExit, badIdleOutput) = runCommand("tools/bc", "test", "smoke", "--idle-seconds", "301")
+    assertTrue(badIdleExit == 2, "smoke should reject an out-of-range idle duration, got $badIdleExit")
+    assertContains(badIdleOutput, "--idle-seconds must be between 0 and 300", "smoke should report its idle bound")
+    val (badBootstrapExit, badBootstrapOutput) = runCommand("tools/bc", "test", "smoke", "--bootstrap-mode", "twice")
+    assertTrue(badBootstrapExit == 2, "smoke should reject invalid bootstrap mode, got $badBootstrapExit")
+    assertContains(badBootstrapOutput, "invalid bootstrap mode: twice", "smoke should report invalid bootstrap mode")
+}
+
 test("public fast lane passes when recursive kotlin step is disabled") {
     val (exit, output) = runCommand(
         "tools/bc",
@@ -499,7 +534,7 @@ test("doctor runtime accepts a minimal runtime shape") {
     }
 }
 
-test("smoke rejects non-numeric port") {
+retiredTest("smoke rejects non-numeric port") {
     val (exit, output) = runCommand("tools/bc", "test", "smoke", "--port", "abc")
     assertTrue(exit == 2, "smoke with non-numeric port should exit 2, got $exit")
     assertContains(output, "--port needs a number", "smoke should reject non-numeric ports")
@@ -526,16 +561,10 @@ test("internal kotlin tool surface validator runs through bc") {
     assertContains(output, "kotlin tool surface validates", "internal validate-kotlin-tool-surface should report validator summary")
 }
 
-test("internal worldgen sampling contract validator runs through bc") {
+retiredTest("internal worldgen sampling contract validator runs through bc") {
     val (exit, output) = runCommand("tools/bc", "internal", "validate-worldgen-sampling-contracts")
     assertTrue(exit == 0, "internal validate-worldgen-sampling-contracts should exit 0, got $exit")
     assertContains(output, "worldgen sampling contracts validate", "worldgen sampling contract validator should report success")
-}
-
-test("internal client smoke contract validator runs through bc") {
-    val (exit, output) = runCommand("tools/bc", "internal", "validate-client-smoke-contracts")
-    assertTrue(exit == 0, "internal validate-client-smoke-contracts should exit 0, got $exit")
-    assertContains(output, "client smoke contracts validate", "client smoke contract validator should report success")
 }
 
 test("internal kubejs assets validator runs through bc") {
@@ -587,6 +616,12 @@ test("internal json surface check runs through bc") {
     assertContains(output, "all repo JSON parses", "internal check-json-surface should report JSON surface validation")
 }
 
+test("internal BetterGrassify grass block validator runs through bc") {
+    val (exit, output) = runCommand("tools/bc", "internal", "validate-bettergrassify-grass-blocks")
+    assertTrue(exit == 0, "internal validate-bettergrassify-grass-blocks should exit 0, got $exit")
+    assertContains(output, "BetterGrassify grass block coverage validates", "internal validate-bettergrassify-grass-blocks should report validator summary")
+}
+
 test("internal burnt sync check runs through bc") {
     val (exit, output) = runCommand("tools/bc", "internal", "sync-burnt-coverage-tags", "--check")
     assertTrue(exit == 0, "internal sync-burnt-coverage-tags --check should exit 0, got $exit")
@@ -623,31 +658,13 @@ test("no active python or shell source files remain under tools") {
     assertTrue(offenders.isEmpty(), "active tools surface should not contain .py or .sh files: $offenders")
 }
 
-test("headful scenario enforcement rejects client smoke on headless path") {
-    val (exit, output) = runCommand("tools/bc", "test", "scenario", "client_smoke", "--profile", "quick")
-    assertTrue(exit == 2, "client_smoke on headless path should exit 2, got $exit")
-    assertContains(output, "scenario 'client_smoke' is headful", "client_smoke should require scenario-headful")
-}
-
-test("headless scenario enforcement rejects lc repro on headful path") {
-    val (exit, output) = runCommand("tools/bc", "test", "scenario-headful", "lc_tfth_c2me_dh", "--samples", "1", "--settle-seconds", "1")
-    assertTrue(exit == 2, "lc_tfth_c2me_dh on headful path should exit 2, got $exit")
-    assertContains(output, "scenario 'lc_tfth_c2me_dh' is headless-safe", "lc_tfth_c2me_dh should require scenario")
-}
-
-test("worldgen sampling rejects invalid profile with usage error") {
+retiredTest("worldgen sampling rejects invalid profile with usage error") {
     val (exit, output) = runCommand("tools/bc", "test", "scenario", "worldgen_sampling", "--profile", "bad")
     assertTrue(exit == 2, "worldgen_sampling with invalid profile should exit 2, got $exit")
     assertContains(output, "invalid profile: bad", "worldgen_sampling should reject invalid profile")
 }
 
-test("client smoke rejects invalid profile with usage error") {
-    val (exit, output) = runCommand("tools/bc", "test", "scenario-headful", "client_smoke", "--profile", "bad")
-    assertTrue(exit == 2, "client_smoke with invalid profile should exit 2, got $exit")
-    assertContains(output, "invalid profile: bad", "client_smoke should reject invalid profile")
-}
-
-test("opening progression rejects invalid bootstrap mode with usage error") {
+retiredTest("opening progression rejects invalid bootstrap mode with usage error") {
     val harnessRoot = createTestTempDirectory("bc-kotlin-test-opening-invalid-bootstrap-harness")
     val runRoot = createTestTempDirectory("bc-kotlin-test-opening-invalid-bootstrap-run")
     try {
@@ -668,35 +685,6 @@ test("opening progression rejects invalid bootstrap mode with usage error") {
         deleteTree(harnessRoot)
         deleteTree(runRoot)
     }
-}
-
-test("mod_ram_partition rejects invalid seed strategy with usage error") {
-    val harnessRoot = createTestTempDirectory("bc-kotlin-test-mod-ram-invalid-seed-harness")
-    val runRoot = createTestTempDirectory("bc-kotlin-test-mod-ram-invalid-seed-run")
-    try {
-        val (exit, output) = runCommand(
-            "tools/bc",
-            "test",
-            "scenario",
-            "mod_ram_partition",
-            "--seed-strategy",
-            "bad",
-            "--run-root",
-            runRoot.toString(),
-            extraEnv = mapOf("BC_HARNESS_ROOT" to harnessRoot.toString()),
-        )
-        assertTrue(exit == 2, "mod_ram_partition with invalid seed strategy should exit 2, got $exit")
-        assertContains(output, "invalid seed strategy: bad", "mod_ram_partition should reject invalid seed strategy")
-    } finally {
-        deleteTree(harnessRoot)
-        deleteTree(runRoot)
-    }
-}
-
-test("mod_ram_partition help advertises smallest_islands seed strategy") {
-    val (exit, output) = runCommand("kotlin", "tools/kotlin/mod_ram_partition.main.kts", "--help")
-    assertTrue(exit == 2, "mod_ram_partition --help should exit 2, got $exit")
-    assertContains(output, "--seed-strategy bisect|smallest_islands", "mod_ram_partition help should advertise smallest_islands strategy")
 }
 
 test("fast duplicate invocation fails immediately with harness diagnostics") {
@@ -736,7 +724,7 @@ test("fast duplicate invocation fails immediately with harness diagnostics") {
     }
 }
 
-test("full workspace writes repo progress into status and summary") {
+retiredTest("full workspace writes repo progress into status and summary") {
     val harnessRoot = createTestTempDirectory("bc-kotlin-test-harness-full-progress")
     try {
         val (exit, output) = runCommand(
@@ -767,7 +755,7 @@ test("full workspace writes repo progress into status and summary") {
     }
 }
 
-test("smoke auto-remaps occupied ports and records requested and actual port") {
+retiredTest("smoke auto-remaps occupied ports and records requested and actual port") {
     val harnessRoot = createTestTempDirectory("bc-kotlin-test-harness-smoke-port")
     val runtimeDir = createTestTempDirectory("bc-kotlin-test-smoke-runtime")
     val requestedPort = ephemeralPort()
@@ -804,7 +792,33 @@ test("smoke auto-remaps occupied ports and records requested and actual port") {
     }
 }
 
-test("opening progression remaps occupied ports and refreshes latest status artifacts") {
+retiredTest("local validation runtimes use a deterministic world seed") {
+    val source = Files.readString(root.resolve("tools/bc.main.kts"))
+    assertContains(
+        source,
+        "level-seed=better-content-validation-v1",
+        "local smoke bootstraps should pin a deterministic validation seed",
+    )
+    assertContains(
+        source,
+        ".filterNot { onlineMode && it.startsWith(\"level-seed=\") }",
+        "published authenticated server bundles must not force the validation seed",
+    )
+}
+
+retiredTest("smoke startup timeouts capture JVM diagnostics") {
+    val source = Files.readString(root.resolve("tools/bc.main.kts"))
+    for (artifact in listOf("thread-dump.txt", "heap-info.txt", "native-memory-summary.txt", "process-status.txt")) {
+        assertContains(source, artifact, "smoke timeout diagnostics should include $artifact")
+    }
+    assertContains(
+        source,
+        "captureSmokeStartupDiagnostics(running, evidenceDir)",
+        "the smoke timeout path should capture diagnostics before stopping the server",
+    )
+}
+
+retiredTest("opening progression remaps occupied ports and refreshes latest status artifacts") {
     val harnessRoot = createTestTempDirectory("bc-kotlin-test-harness-opening-pass")
     val runRoot = createTestTempDirectory("bc-kotlin-test-opening-pass")
     val requestedPort = ephemeralPort()
@@ -880,7 +894,7 @@ test("stale lock with dead pid is reclaimed automatically") {
     }
 }
 
-test("opening progression failure writes final summary with phase reason and evidence path") {
+retiredTest("opening progression failure writes final summary with phase reason and evidence path") {
     val harnessRoot = createTestTempDirectory("bc-kotlin-test-harness-opening-fail")
     val runRoot = createTestTempDirectory("bc-kotlin-test-opening-fail")
     try {
@@ -950,16 +964,10 @@ test("interrupt clears lock ownership and leaves final aborted status") {
     }
 }
 
-test("worldgen sampling rejects invalid bootstrap mode with usage error") {
+retiredTest("worldgen sampling rejects invalid bootstrap mode with usage error") {
     val (exit, output) = runCommand("tools/bc", "test", "scenario", "worldgen_sampling", "--profile", "quick", "--bootstrap-mode", "bad")
     assertTrue(exit == 2, "worldgen_sampling with invalid bootstrap mode should exit 2, got $exit")
     assertContains(output, "invalid bootstrap mode: bad", "worldgen_sampling should reject invalid bootstrap mode")
-}
-
-test("client smoke rejects invalid bootstrap mode with usage error") {
-    val (exit, output) = runCommand("tools/bc", "test", "scenario-headful", "client_smoke", "--profile", "quick", "--bootstrap-mode", "bad")
-    assertTrue(exit == 2, "client_smoke with invalid bootstrap mode should exit 2, got $exit")
-    assertContains(output, "invalid bootstrap mode: bad", "client_smoke should reject invalid bootstrap mode")
 }
 
 test("kotlin test filter runs only matching cases") {

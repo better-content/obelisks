@@ -8,36 +8,14 @@
 	quest_links: [ ]
 	quests: [
 		{
-			id: "5AFD3E9046C0E33F"
-			title: "Loose Stone"
-			tasks: [{
-				id: "6F056EE80C8B2EC4"
-				item: {
-					Count: 1
-					id: "ftbfiltersystem:smart_filter"
-					tag: {
-						"ftbfiltersystem:filter": "ftbfiltersystem:item_tag(forge:gravel)"
-					}
-				}
-				title: "Any #forge:gravel"
+			description: ["Grab flint, bone, or rock for your first tool head. You are proving that early tools come from scavenging, not from punching a tree and rushing vanilla recipes."]
+			id: "0F3870494C55ACF1"
+			rewards: [{
+				count: 4
+				id: "32B5987DA6078910"
+				item: "createdeco:copper_coin"
 				type: "item"
 			}]
-			x: -15.0d
-			y: -4.0d
-			description: ["Pick up gravel early. Loose stone and loose soil are your first honest materials before proper tools exist."]
-			rewards: [
-				{
-					id: "FF589B35E365469A"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
-		}
-		{
-			dependencies: ["5AFD3E9046C0E33F"]
-			id: "0F3870494C55ACF1"
-			title: "Starter Head Material"
 			tasks: [{
 				id: "1EE068EE9E6B4AD7"
 				item: {
@@ -50,42 +28,38 @@
 				title: "Any starter tool material"
 				type: "item"
 			}]
-			x: -13.5d
-			y: -3.5d
-			description: ["Grab flint, bone, or rock for your first tool head. You are proving that early tools come from scavenging, not from punching a tree and rushing vanilla recipes."]
-			rewards: [
-				{
-					id: "AA9DD5ECE9F00954"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
+			title: "Starter Head Material"
+			x: -15.0d
+			y: -3.0d
 		}
 		{
-			dependencies: ["5AFD3E9046C0E33F"]
+			dependencies: ["7373AB0BB0504908"]
+			description: ["Gunpowder is an early route item, not just combat loot. Hold onto it when you find it, because primitive blasting and demolition arrive before comfortable mining does."]
 			id: "426CBCE75C2B62E3"
-			title: "Gunpowder"
+			rewards: [{
+				count: 4
+				id: "448EC236F53E47E9"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "079E7B988080F2B1"
 				item: "minecraft:gunpowder"
 				type: "item"
 			}]
+			title: "Gunpowder"
 			x: -13.5d
 			y: -4.5d
-			description: ["Gunpowder is an early route item, not just combat loot. Hold onto it when you find it, because primitive blasting and demolition arrive before comfortable mining does."]
-			rewards: [
-				{
-					id: "E7C91942F98EC746"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
 		}
 		{
+			description: ["Collect sand alongside gravel. Early progress keeps circling back to loose surface materials, so bring them home instead of treating them as filler."]
 			id: "5AFEF9A018450CE8"
-			title: "Sand"
+			rewards: [{
+				count: 4
+				id: "6DDC0A59A9D999DA"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "757C22602493E597"
 				item: {
@@ -98,91 +72,83 @@
 				title: "Any #minecraft:sand"
 				type: "item"
 			}]
+			title: "Sand"
 			x: -15.0d
 			y: -6.0d
-			description: ["Collect sand alongside gravel. Early progress keeps circling back to loose surface materials, so bring them home instead of treating them as filler."]
-			rewards: [
-				{
-					id: "FF5B5C05BDE0A94D"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
 		}
 		{
 			dependencies: [
 				"5AFEF9A018450CE8"
 				"426CBCE75C2B62E3"
 			]
+			description: ["TNT is for deliberate terrain breaking, not random explosions. Make one when scavenged surface materials need to become a controlled blast."]
 			id: "17D12AFB935DD6AE"
-			title: "TNT"
+			rewards: [{
+				count: 4
+				id: "66676308A7E5B6D0"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			size: 2.0d
 			tasks: [{
 				id: "5EFDDFBAB454ACEF"
 				item: "minecraft:tnt"
 				type: "item"
 			}]
+			title: "TNT"
 			x: -13.0d
 			y: -6.0d
-			description: ["TNT is for deliberate terrain breaking, not random explosions. Make one when scavenged surface materials need to become a controlled blast."]
-			rewards: [
-				{
-					id: "B2748F5E36F8730B"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
 		}
 		{
+			description: ["Start by gathering twigs from the ground. The first minutes are about scavenging what the world offers, not assuming full wood access immediately."]
 			id: "0FFDBBEC71FD62F6"
-			title: "Twigs"
+			rewards: [{
+				count: 4
+				id: "459B5383A31B1FE1"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "6C57B026AF929D81"
 				item: "projectvibrantjourneys:twigs"
 				type: "item"
 			}]
+			title: "Twigs"
 			x: -15.0d
 			y: -1.5d
-			description: ["Start by gathering twigs from the ground. The first minutes are about scavenging what the world offers, not assuming full wood access immediately."]
-			rewards: [
-				{
-					id: "AA581E49D458C753"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
 		}
 		{
 			dependencies: ["0FFDBBEC71FD62F6"]
+			description: ["Turn loose wood into a stick as soon as you can. That single handle is what lets the rest of the primitive tool route start moving."]
 			id: "5AE459C6DF548ECF"
-			title: "Stick"
+			rewards: [{
+				count: 4
+				id: "71B098266733A1DB"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "6F663F069A8404B4"
 				item: "minecraft:stick"
 				type: "item"
 			}]
+			title: "Stick"
 			x: -13.5d
 			y: -1.5d
-			description: ["Turn loose wood into a stick as soon as you can. That single handle is what lets the rest of the primitive tool route start moving."]
-			rewards: [
-				{
-					id: "FF41FC637AF12B6A"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
 		}
 		{
 			dependencies: [
 				"0F3870494C55ACF1"
 				"5AE459C6DF548ECF"
 			]
+			description: ["Make the primitive butcher knife first. It opens plant cutting, food prep, and several early survival materials that bare hands will not give you."]
 			id: "066B63A7427BBAE2"
-			title: "Butcher Knife"
+			rewards: [{
+				count: 4
+				id: "2B3AFF87C80E81B2"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			size: 1.2d
 			tasks: [{
 				id: "489166A85D3B7710"
@@ -232,43 +198,39 @@
 				match_nbt: false
 				type: "item"
 			}]
-			x: -12.5d
-			y: -2.5d
-			description: ["Make the primitive butcher knife first. It opens plant cutting, food prep, and several early survival materials that bare hands will not give you."]
-			rewards: [
-				{
-					id: "A3CEC602E7DE1F47"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
+			title: "Butcher Knife"
+			x: -12.6d
+			y: -3.0d
 		}
 		{
 			dependencies: ["066B63A7427BBAE2"]
+			description: ["Collect straw once the knife is online. Use it for early survival crafts and workstation parts instead of leaving plant cutting as a dead end."]
 			id: "42D24E824C64D60C"
-			title: "Straw"
+			rewards: [{
+				count: 4
+				id: "7F3FB629664868F1"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "6F7348886F1517B8"
 				item: "farmersdelight:straw"
 				type: "item"
 			}]
+			title: "Straw"
 			x: -11.0d
 			y: -2.5d
-			description: ["Collect straw once the knife is online. Use it for early survival crafts and workstation parts instead of leaving plant cutting as a dead end."]
-			rewards: [
-				{
-					id: "E777EB27E9C173A9"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
 		}
 		{
 			dependencies: ["42D24E824C64D60C"]
+			description: ["Make the primitive hand axe before you expect normal wood flow. This is the tool that turns the world from scavenging to controlled harvesting."]
 			id: "23C82ECF7FDF2B5A"
-			title: "Hand Axe"
+			rewards: [{
+				count: 4
+				id: "6233793D5255C380"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			size: 1.2d
 			tasks: [{
 				id: "69921272465B8BCC"
@@ -318,22 +280,20 @@
 				match_nbt: false
 				type: "item"
 			}]
+			title: "Hand Axe"
 			x: -9.6d
 			y: -2.4d
-			description: ["Make the primitive hand axe before you expect normal wood flow. This is the tool that turns the world from scavenging to controlled harvesting."]
-			rewards: [
-				{
-					id: "866D8B6ADA7A8EFF"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
 		}
 		{
 			dependencies: ["23C82ECF7FDF2B5A"]
+			description: ["Now take real logs. Reaching this point means you have earned stable wood gathering instead of relying on dropped scraps."]
 			id: "66E00FBCA8C5476E"
-			title: "Logs"
+			rewards: [{
+				count: 4
+				id: "7ED7CF47F6CC0D1B"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "2D4AF404F697B9A1"
 				item: {
@@ -346,85 +306,77 @@
 				title: "Any #minecraft:logs"
 				type: "item"
 			}]
+			title: "Logs"
 			x: -8.0d
 			y: -2.5d
-			description: ["Now take real logs. Reaching this point means you have earned stable wood gathering instead of relying on dropped scraps."]
-			rewards: [
-				{
-					id: "C345AA190D60E2CB"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
 		}
 		{
 			dependencies: ["42D24E824C64D60C"]
+			description: ["Canvas is an early fabric check. It opens storage and workstation parts, and it shows that primitive survival materials matter past the first tool craft."]
 			id: "2C6BBA4DA6B238F5"
-			title: "Canvas"
+			rewards: [{
+				count: 4
+				id: "575D2D04303F9F6C"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "5322C5DD38EE7E00"
 				item: "farmersdelight:canvas"
 				type: "item"
 			}]
+			title: "Canvas"
 			x: -9.5d
 			y: -4.0d
-			description: ["Canvas is an early fabric check. It opens storage and workstation parts, and it shows that primitive survival materials matter past the first tool craft."]
-			rewards: [
-				{
-					id: "89CE1FE803179D50"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
 		}
 		{
 			dependencies: ["2C6BBA4DA6B238F5"]
+			description: ["Use the first basket as mobile storage, not decoration. Carrying a little more safely matters when your base, spawn, and supply routes are still fragile."]
 			id: "37415796F9E8231D"
-			title: "Basket"
+			rewards: [{
+				count: 4
+				id: "7A29AEA03831EDDF"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "0C254D5348E5B87A"
 				item: "farmersdelight:wooden_basket"
 				type: "item"
 			}]
+			title: "Basket"
 			x: -10.5d
 			y: -5.0d
-			description: ["Use the first basket as mobile storage, not decoration. Carrying a little more safely matters when your base, spawn, and supply routes are still fragile."]
-			rewards: [
-				{
-					id: "92E4F2335C4D86B8"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
 		}
 		{
 			dependencies: ["2C6BBA4DA6B238F5"]
+			description: ["Patterns mark the shift into Tinkers workstations. Once you can cut patterns, you can start building tools as parts instead of relying on one-off crafts."]
 			id: "67B724BED12A7BBE"
-			title: "Pattern"
+			rewards: [{
+				count: 4
+				id: "7B01111A12A77C51"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "4E6B41B768C7A6D3"
 				item: "tconstruct:pattern"
 				type: "item"
 			}]
+			title: "Pattern"
 			x: -8.0d
 			y: -4.0d
-			description: ["Patterns mark the shift into Tinkers workstations. Once you can cut patterns, you can start building tools as parts instead of relying on one-off crafts."]
-			rewards: [
-				{
-					id: "C212811B748FDE1B"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
 		}
 		{
 			dependencies: ["66E00FBCA8C5476E"]
+			description: ["Cut planks after you secure logs. Stable wood processing is what finally lets you build stations and settle into repeatable tool work."]
 			id: "535E16A7456BAE19"
-			title: "Planks"
+			rewards: [{
+				count: 4
+				id: "38AA04B848278F05"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "01855F06EB04EA2A"
 				item: {
@@ -437,25 +389,23 @@
 				title: "Any #minecraft:planks"
 				type: "item"
 			}]
+			title: "Planks"
 			x: -6.5d
 			y: -2.5d
-			description: ["Cut planks after you secure logs. Stable wood processing is what finally lets you build stations and settle into repeatable tool work."]
-			rewards: [
-				{
-					id: "F6FBB302E0CE0BBC"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
 		}
 		{
 			dependencies: [
 				"67B724BED12A7BBE"
 				"535E16A7456BAE19"
 			]
+			description: ["Build the Tinker Station once patterns and planks are ready. This is where your early parts become real tools and repairs stop being guesswork."]
 			id: "0EB806E4337DC7FA"
-			title: "Tinker Station"
+			rewards: [{
+				count: 4
+				id: "5F4568EEBE58DB8D"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			size: 1.3d
 			tasks: [{
 				id: "1F7DF8AB62AD0DB0"
@@ -463,67 +413,109 @@
 				match_nbt: false
 				type: "item"
 			}]
+			title: "Tinker Station"
 			x: -3.9000000000000004d
 			y: -2.6d
-			description: ["Build the Tinker Station once patterns and planks are ready. This is where your early parts become real tools and repairs stop being guesswork."]
-			rewards: [
+		}
+		{
+			dependencies: [
+				"0EB806E4337DC7FA"
+				"1B09C8F1C2FE5053"
+			]
+			description: ["Turn Part Builder handles, blades, and repair kits into a working wooden ship. Vanilla boats are absent: build a helm, primitive fuel engine, floaters, and a hull so rivers and coasts become your first serious resource routes."]
+			icon: "vs_eureka:oak_ship_helm"
+			id: "20AFF935B3BB1384"
+			rewards: [{
+				count: 4
+				id: "305331C8026A6C0F"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
+			shape: "hexagon"
+			size: 1.3d
+			tasks: [
 				{
-					id: "AB1DA34196D8625F"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
+					id: "6124946D15D2C3F9"
+					item: {
+						Count: 1
+						id: "ftbfiltersystem:smart_filter"
+						tag: {
+							"ftbfiltersystem:filter": "ftbfiltersystem:item_tag(vs_eureka:ship_helms)"
+						}
+					}
+					title: "Any #vs_eureka:ship_helms"
+					type: "item"
+				}
+				{
+					id: "0B0887DB0D374F73"
+					item: "vs_eureka:engine"
+					type: "item"
+				}
+				{
+					id: "4EA0F60C623A8508"
+					item: "vs_eureka:floater"
+					type: "item"
 				}
 			]
+			title: "Build a Real Boat"
+			x: -1.3d
+			y: -3.25d
 		}
 		{
 			dependencies: [
 				"67B724BED12A7BBE"
 				"535E16A7456BAE19"
 			]
+			description: ["The Part Builder is the first serious tool bench. Use it to make heads, handles, and bindings on purpose instead of hoping the next recipe is obvious."]
 			id: "1B09C8F1C2FE5053"
-			title: "Part Builder"
+			rewards: [{
+				count: 4
+				id: "716165C8516D52E8"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			size: 1.3d
 			tasks: [{
 				id: "4A9CC2C882A9CC1D"
 				item: "tconstruct:part_builder"
 				type: "item"
 			}]
+			title: "Part Builder"
 			x: -3.9000000000000004d
 			y: -3.9000000000000004d
-			description: ["The Part Builder is the first serious tool bench. Use it to make heads, handles, and bindings on purpose instead of hoping the next recipe is obvious."]
-			rewards: [
-				{
-					id: "BEAC6D54675BF5F6"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
 		}
 		{
 			dependencies: [
 				"67B724BED12A7BBE"
 				"535E16A7456BAE19"
 			]
+			description: ["Upgrade to a crafting station as soon as planks and patterns are under control. Better workstation flow saves time and cuts down on avoidable early-game friction."]
 			id: "300DA0AD6EE9E507"
-			title: "Crafting Station"
+			rewards: [{
+				count: 4
+				id: "1027CE31E3BAD4AA"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			size: 1.0d
 			tasks: [{
 				id: "01886B0AE28FED6A"
 				item: "tconstruct:crafting_station"
 				type: "item"
 			}]
+			title: "Crafting Station"
 			x: -6.5d
 			y: -5.5d
-			description: ["Upgrade to a crafting station as soon as planks and patterns are under control. Better workstation flow saves time and cuts down on avoidable early-game friction."]
-			rewards: [
-				{
-					id: "95A80508CB4C40A2"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
+		}
+		{
+			id: "7373AB0BB0504908"
+			tasks: [{
+				id: "441F68C3EADB1D27"
+				item: "minecraft:gravel"
+				type: "item"
+			}]
+			x: -15.0d
+			y: -4.5d
 		}
 	]
 	title: "Basic Tools"

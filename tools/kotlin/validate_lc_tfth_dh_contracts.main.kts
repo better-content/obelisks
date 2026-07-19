@@ -162,36 +162,6 @@ fun expectLostCitiesRouting() {
     else fail("Lost Cities dimension route stays on intended Creating Space surface", (routeProblems + unexpected.map { "unexpected reference: $it" }).joinToString("; "))
 }
 
-fun expectScenarioHarnessContracts() {
-    val path = "tools/kotlin/lc_tfth_c2me_dh_stability.main.kts"
-    if (!rel(path).isRegularFile()) {
-        fail("LC/C2ME/DH scenario harness exists", "missing $path")
-        return
-    }
-    val text = read(path)
-    val requiredFatalKeys = listOf(
-        "modernfix_watchdog",
-        "c2me_thread_guard",
-        "dh_worldgen_exception",
-        "lostcities_exception",
-        "crash_report",
-        "c2me_far_chunk_write",
-    )
-    val missingFatalKeys = requiredFatalKeys.filterNot { "\"$it\"" in text }
-    if (missingFatalKeys.isEmpty()) ok("LC/C2ME/DH harness keeps required fatal classifiers", "${requiredFatalKeys.size} classifiers")
-    else fail("LC/C2ME/DH harness keeps required fatal classifiers", missingFatalKeys.joinToString(", "))
-
-    val requiredNeedles = listOf(
-        "serializeDhC2meFeaturePlacement",
-        "execute in lostcities:lostcity run forceload add",
-        "unguarded repro tripped targeted fatal classifier",
-        "unguarded repro was inconclusive",
-    )
-    val missingNeedles = requiredNeedles.filterNot(text::contains)
-    if (missingNeedles.isEmpty()) ok("LC/C2ME/DH harness compares guarded control against unguarded repro")
-    else fail("LC/C2ME/DH harness compares guarded control against unguarded repro", missingNeedles.joinToString(", "))
-}
-
 expectPackwizManifest("Lost Cities", "mods/the-lost-cities.pw.toml", Regex("""lostcities.*\.jar""", RegexOption.IGNORE_CASE))
 expectPackwizManifest("TFTH", "mods/the-flesh-that-hates.pw.toml", Regex("""(TFTH|.*flesh.*hates).*\.jar""", RegexOption.IGNORE_CASE))
 expectPackwizManifest("C2ME", "mods/concurrent-chunk-management-engine-for-forge-the.pw.toml", Regex("""c2me.*\.jar""", RegexOption.IGNORE_CASE))
@@ -199,7 +169,6 @@ expectPackwizManifest("Distant Horizons", "mods/distant-horizons.pw.toml", Regex
 expectCustomJar("bcfixes", Regex("""bcfixes.*\.jar""", RegexOption.IGNORE_CASE))
 expectTomlParses(listOf("config/c2me.toml", "config/DistantHorizons.toml", "config/TFTH.toml", "config/TFTH-Data.toml"))
 expectLostCitiesRouting()
-expectScenarioHarnessContracts()
 
 println()
 println("LC/C2ME/DH contract validators: ${passes.size} pass(es), ${failures.size} hard failure(s)")

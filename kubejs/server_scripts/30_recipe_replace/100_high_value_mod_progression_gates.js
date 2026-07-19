@@ -207,12 +207,8 @@ ServerEvents.recipes(function (event) {
         'sophisticatedstorage:diamond_to_netherite_tier_upgrade'
     ], 'sophisticatedstorage/space', BC_GATE.space, 'kubejs:sky_steel_sheet', '#forge:ingots/netherite')
 
-    // Building Wands and Building Gadgets: mass construction edits are post-AE2.
+    // Building Gadgets mass construction edits are post-AE2.
      bcGateOutputs(event, [
-        'wands:netherite_wand',
-        'wands:diamond_wand',
-        'wands:magic_bag_2',
-        'wands:magic_bag_3',
         'buildinggadgets2:gadget_building',
         'buildinggadgets2:gadget_exchanging',
         'buildinggadgets2:template_manager'
@@ -235,19 +231,6 @@ ServerEvents.recipes(function (event) {
         'buildinggadgets2:gadget_cut_paste',
         'buildinggadgets2:gadget_destruction'
     ], 'buildinggadgets2/ae2', BC_GATE.ae2, 'kubejs:ae_logic_package', 'kubejs:sky_steel_sheet')
-
-     bcMechanicalGateMany(event, [
-        'wands:stone_wand',
-        'wands:copper_wand',
-        'wands:iron_wand'
-    ], 'wands/seared', BC_GATE.seared, 'morered:red_alloy_wire', '#forge:rods/wooden')
-
-     bcMechanicalGateMany(event, [
-        'wands:diamond_wand',
-        'wands:magic_bag_1',
-        'wands:magic_bag_2',
-        'wands:magic_bag_3'
-    ], 'wands/ae2', BC_GATE.ae2, 'kubejs:ae_logic_package', 'kubejs:sky_steel_sheet')
 
     // Chunk loading is remote-site infrastructure. It must not appear before power/computing logistics.
      bcGateOutputs(event, [

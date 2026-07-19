@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-15T06:32:40.722477017Z",
+  "generatedAt": "2026-07-19T23:09:25.129418592Z",
   "note": "Hybrid audit. KubeJS source is used for authored recipes/removes; runtime recipe dumps are used for base mod machine-surface outputs and simple recipe bypass candidates. Current dumps still lack KubeJS recipes.",
-  "sourceRecipeCount": 2982,
-  "dumpRecipeCount": 24518,
-  "dumpMachineSurfaceRecipeCount": 3388,
-  "casedSurfaceRecipeCount": 5132,
-  "indirectOutputCount": 489,
+  "sourceRecipeCount": 5555,
+  "dumpRecipeCount": 22528,
+  "dumpMachineSurfaceRecipeCount": 3277,
+  "casedSurfaceRecipeCount": 7582,
+  "indirectOutputCount": 1181,
   "directCasingOutputCount": 13,
   "directCasingConsumerCount": 17,
   "aestheticDirectCasingConsumerCount": 0,
@@ -301,203 +301,881 @@
       "ars_nouveau:archwood_pressure_plate",
       "burnt:burnt_bamboo_pressure_plate",
       "burnt:burnt_pressure_plate",
+      "chemlib:actinium",
+      "chemlib:actinium_carbonate",
+      "chemlib:actinium_chloride",
+      "chemlib:actinium_hydroxide",
       "chemlib:actinium_ingot",
+      "chemlib:actinium_nitrate",
+      "chemlib:actinium_oxide",
+      "chemlib:actinium_phosphate",
+      "chemlib:actinium_sulfate",
+      "chemlib:actinium_sulfide",
       "chemlib:aluminum",
       "chemlib:aluminum_carbonate",
+      "chemlib:aluminum_chloride",
       "chemlib:aluminum_hydroxide",
       "chemlib:aluminum_ingot",
       "chemlib:aluminum_nitrate",
       "chemlib:aluminum_nugget",
       "chemlib:aluminum_oxide",
+      "chemlib:aluminum_phosphate",
       "chemlib:aluminum_plate",
+      "chemlib:aluminum_sulfate",
+      "chemlib:aluminum_sulfide",
+      "chemlib:antimony",
+      "chemlib:antimony_carbonate",
+      "chemlib:antimony_chloride",
+      "chemlib:antimony_hydroxide",
+      "chemlib:antimony_nitrate",
+      "chemlib:antimony_oxide",
+      "chemlib:antimony_phosphate",
+      "chemlib:antimony_sulfate",
+      "chemlib:antimony_sulfide",
+      "chemlib:argon",
+      "chemlib:argon_carbonate",
+      "chemlib:argon_chloride",
+      "chemlib:argon_hydroxide",
+      "chemlib:argon_nitrate",
+      "chemlib:argon_oxide",
+      "chemlib:argon_phosphate",
+      "chemlib:argon_sulfate",
+      "chemlib:argon_sulfide",
+      "chemlib:arsenic",
+      "chemlib:arsenic_carbonate",
+      "chemlib:arsenic_chloride",
+      "chemlib:arsenic_hydroxide",
+      "chemlib:arsenic_nitrate",
+      "chemlib:arsenic_oxide",
+      "chemlib:arsenic_phosphate",
+      "chemlib:arsenic_sulfate",
       "chemlib:arsenic_sulfide",
+      "chemlib:barium",
+      "chemlib:barium_carbonate",
+      "chemlib:barium_chloride",
+      "chemlib:barium_hydroxide",
       "chemlib:barium_ingot",
+      "chemlib:barium_nitrate",
+      "chemlib:barium_oxide",
+      "chemlib:barium_phosphate",
+      "chemlib:barium_sulfate",
+      "chemlib:barium_sulfide",
       "chemlib:beryl",
       "chemlib:beryllium",
       "chemlib:beryllium_carbonate",
       "chemlib:beryllium_chloride",
+      "chemlib:beryllium_hydroxide",
       "chemlib:beryllium_ingot",
       "chemlib:beryllium_nitrate",
+      "chemlib:beryllium_oxide",
+      "chemlib:beryllium_phosphate",
       "chemlib:beryllium_sulfate",
+      "chemlib:beryllium_sulfide",
+      "chemlib:bismuth",
+      "chemlib:bismuth_carbonate",
+      "chemlib:bismuth_chloride",
+      "chemlib:bismuth_hydroxide",
       "chemlib:bismuth_ingot",
+      "chemlib:bismuth_nitrate",
+      "chemlib:bismuth_oxide",
+      "chemlib:bismuth_phosphate",
+      "chemlib:bismuth_sulfate",
+      "chemlib:bismuth_sulfide",
       "chemlib:cadmium",
+      "chemlib:cadmium_carbonate",
+      "chemlib:cadmium_chloride",
+      "chemlib:cadmium_hydroxide",
       "chemlib:cadmium_ingot",
+      "chemlib:cadmium_nitrate",
+      "chemlib:cadmium_oxide",
+      "chemlib:cadmium_phosphate",
+      "chemlib:cadmium_sulfate",
+      "chemlib:cadmium_sulfide",
       "chemlib:calcium",
       "chemlib:calcium_carbonate",
       "chemlib:calcium_chloride",
+      "chemlib:calcium_hydroxide",
       "chemlib:calcium_ingot",
       "chemlib:calcium_nitrate",
       "chemlib:calcium_oxide",
+      "chemlib:calcium_phosphate",
       "chemlib:calcium_sulfate",
+      "chemlib:calcium_sulfide",
       "chemlib:carbon",
+      "chemlib:carbon_carbonate",
+      "chemlib:carbon_chloride",
       "chemlib:carbon_dioxide",
+      "chemlib:carbon_disulfide",
+      "chemlib:carbon_hydroxide",
+      "chemlib:carbon_nitrate",
+      "chemlib:carbon_phosphate",
+      "chemlib:carbon_sulfate",
+      "chemlib:cerium",
+      "chemlib:cerium_carbonate",
+      "chemlib:cerium_chloride",
+      "chemlib:cerium_hydroxide",
       "chemlib:cerium_ingot",
+      "chemlib:cerium_nitrate",
+      "chemlib:cerium_oxide",
+      "chemlib:cerium_phosphate",
+      "chemlib:cerium_sulfate",
+      "chemlib:cerium_sulfide",
+      "chemlib:cesium",
+      "chemlib:cesium_carbonate",
+      "chemlib:cesium_chloride",
+      "chemlib:cesium_hydroxide",
       "chemlib:cesium_ingot",
+      "chemlib:cesium_nitrate",
+      "chemlib:cesium_oxide",
+      "chemlib:cesium_phosphate",
+      "chemlib:cesium_sulfate",
+      "chemlib:cesium_sulfide",
       "chemlib:chlorine",
+      "chemlib:chlorine_carbonate",
+      "chemlib:chlorine_chloride",
+      "chemlib:chlorine_hydroxide",
+      "chemlib:chlorine_nitrate",
+      "chemlib:chlorine_oxide",
+      "chemlib:chlorine_phosphate",
+      "chemlib:chlorine_sulfate",
+      "chemlib:chlorine_sulfide",
       "chemlib:chromium",
+      "chemlib:chromium_carbonate",
+      "chemlib:chromium_chloride",
+      "chemlib:chromium_hydroxide",
       "chemlib:chromium_ingot",
+      "chemlib:chromium_nitrate",
+      "chemlib:chromium_oxide",
+      "chemlib:chromium_phosphate",
+      "chemlib:chromium_sulfate",
+      "chemlib:chromium_sulfide",
       "chemlib:cobalt",
+      "chemlib:cobalt_carbonate",
+      "chemlib:cobalt_chloride",
+      "chemlib:cobalt_hydroxide",
       "chemlib:cobalt_ingot",
+      "chemlib:cobalt_nitrate",
       "chemlib:cobalt_nugget",
+      "chemlib:cobalt_oxide",
+      "chemlib:cobalt_phosphate",
       "chemlib:cobalt_plate",
+      "chemlib:cobalt_sulfate",
+      "chemlib:cobalt_sulfide",
       "chemlib:copper",
       "chemlib:copper_carbonate",
       "chemlib:copper_chloride",
+      "chemlib:copper_i_oxide",
+      "chemlib:copper_i_sulfide",
       "chemlib:copper_ii_hydroxide",
       "chemlib:copper_ii_oxide",
       "chemlib:copper_ii_sulfate",
       "chemlib:copper_nitrate",
+      "chemlib:copper_phosphate",
       "chemlib:copper_plate",
+      "chemlib:diammonium_phosphate",
+      "chemlib:dysprosium",
+      "chemlib:dysprosium_carbonate",
+      "chemlib:dysprosium_chloride",
+      "chemlib:dysprosium_hydroxide",
       "chemlib:dysprosium_ingot",
+      "chemlib:dysprosium_nitrate",
+      "chemlib:dysprosium_oxide",
+      "chemlib:dysprosium_phosphate",
+      "chemlib:dysprosium_sulfate",
+      "chemlib:dysprosium_sulfide",
+      "chemlib:erbium",
+      "chemlib:erbium_carbonate",
+      "chemlib:erbium_chloride",
+      "chemlib:erbium_hydroxide",
       "chemlib:erbium_ingot",
+      "chemlib:erbium_nitrate",
+      "chemlib:erbium_oxide",
+      "chemlib:erbium_phosphate",
+      "chemlib:erbium_sulfate",
+      "chemlib:erbium_sulfide",
+      "chemlib:europium",
+      "chemlib:europium_carbonate",
+      "chemlib:europium_chloride",
+      "chemlib:europium_hydroxide",
       "chemlib:europium_ingot",
+      "chemlib:europium_nitrate",
+      "chemlib:europium_oxide",
+      "chemlib:europium_phosphate",
+      "chemlib:europium_sulfate",
+      "chemlib:europium_sulfide",
       "chemlib:fluorine",
+      "chemlib:fluorine_carbonate",
+      "chemlib:fluorine_chloride",
+      "chemlib:fluorine_hydroxide",
+      "chemlib:fluorine_nitrate",
+      "chemlib:fluorine_oxide",
+      "chemlib:fluorine_phosphate",
+      "chemlib:fluorine_sulfate",
+      "chemlib:fluorine_sulfide",
+      "chemlib:francium",
+      "chemlib:francium_carbonate",
+      "chemlib:francium_chloride",
+      "chemlib:francium_hydroxide",
       "chemlib:francium_ingot",
+      "chemlib:francium_nitrate",
+      "chemlib:francium_oxide",
+      "chemlib:francium_phosphate",
+      "chemlib:francium_sulfate",
+      "chemlib:francium_sulfide",
+      "chemlib:gadolinium",
+      "chemlib:gadolinium_carbonate",
+      "chemlib:gadolinium_chloride",
+      "chemlib:gadolinium_hydroxide",
       "chemlib:gadolinium_ingot",
+      "chemlib:gadolinium_nitrate",
+      "chemlib:gadolinium_oxide",
+      "chemlib:gadolinium_phosphate",
+      "chemlib:gadolinium_sulfate",
+      "chemlib:gadolinium_sulfide",
       "chemlib:gallium",
+      "chemlib:gallium_carbonate",
+      "chemlib:gallium_chloride",
+      "chemlib:gallium_hydroxide",
       "chemlib:gallium_ingot",
+      "chemlib:gallium_nitrate",
+      "chemlib:gallium_oxide",
+      "chemlib:gallium_phosphate",
+      "chemlib:gallium_sulfate",
+      "chemlib:gallium_sulfide",
       "chemlib:gold",
+      "chemlib:gold_carbonate",
+      "chemlib:gold_chloride",
+      "chemlib:gold_hydroxide",
+      "chemlib:gold_nitrate",
+      "chemlib:gold_oxide",
+      "chemlib:gold_phosphate",
       "chemlib:gold_plate",
+      "chemlib:gold_sulfate",
+      "chemlib:gold_sulfide",
+      "chemlib:hafnium",
+      "chemlib:hafnium_carbonate",
+      "chemlib:hafnium_chloride",
+      "chemlib:hafnium_hydroxide",
       "chemlib:hafnium_ingot",
+      "chemlib:hafnium_nitrate",
+      "chemlib:hafnium_oxide",
+      "chemlib:hafnium_phosphate",
+      "chemlib:hafnium_sulfate",
+      "chemlib:hafnium_sulfide",
+      "chemlib:helium",
+      "chemlib:helium_carbonate",
+      "chemlib:helium_chloride",
+      "chemlib:helium_hydroxide",
+      "chemlib:helium_nitrate",
+      "chemlib:helium_oxide",
+      "chemlib:helium_phosphate",
+      "chemlib:helium_sulfate",
+      "chemlib:helium_sulfide",
+      "chemlib:holmium",
+      "chemlib:holmium_carbonate",
+      "chemlib:holmium_chloride",
+      "chemlib:holmium_hydroxide",
       "chemlib:holmium_ingot",
+      "chemlib:holmium_nitrate",
+      "chemlib:holmium_oxide",
+      "chemlib:holmium_phosphate",
+      "chemlib:holmium_sulfate",
+      "chemlib:holmium_sulfide",
       "chemlib:hydrogen",
+      "chemlib:hydrogen_carbonate",
+      "chemlib:hydrogen_chloride",
+      "chemlib:hydrogen_hydroxide",
+      "chemlib:hydrogen_nitrate",
+      "chemlib:hydrogen_oxide",
+      "chemlib:hydrogen_phosphate",
+      "chemlib:hydrogen_sulfate",
       "chemlib:hydrogen_sulfide",
+      "chemlib:indium",
+      "chemlib:indium_carbonate",
+      "chemlib:indium_chloride",
+      "chemlib:indium_hydroxide",
       "chemlib:indium_ingot",
+      "chemlib:indium_nitrate",
+      "chemlib:indium_oxide",
+      "chemlib:indium_phosphate",
+      "chemlib:indium_sulfate",
+      "chemlib:indium_sulfide",
       "chemlib:iodine",
+      "chemlib:iodine_carbonate",
+      "chemlib:iodine_chloride",
+      "chemlib:iodine_hydroxide",
+      "chemlib:iodine_nitrate",
+      "chemlib:iodine_oxide",
+      "chemlib:iodine_phosphate",
+      "chemlib:iodine_sulfate",
+      "chemlib:iodine_sulfide",
       "chemlib:iridium",
+      "chemlib:iridium_carbonate",
+      "chemlib:iridium_chloride",
+      "chemlib:iridium_hydroxide",
       "chemlib:iridium_ingot",
+      "chemlib:iridium_nitrate",
+      "chemlib:iridium_oxide",
+      "chemlib:iridium_phosphate",
       "chemlib:iridium_plate",
+      "chemlib:iridium_sulfate",
+      "chemlib:iridium_sulfide",
       "chemlib:iron",
       "chemlib:iron_carbonate",
+      "chemlib:iron_chloride",
       "chemlib:iron_disulfide",
+      "chemlib:iron_hydroxide",
       "chemlib:iron_ii_oxide",
       "chemlib:iron_ii_sulfate",
       "chemlib:iron_iii_nitrate",
       "chemlib:iron_oxide",
+      "chemlib:iron_phosphate",
       "chemlib:iron_plate",
+      "chemlib:iron_sulfide",
+      "chemlib:krypton",
+      "chemlib:krypton_carbonate",
+      "chemlib:krypton_chloride",
+      "chemlib:krypton_hydroxide",
+      "chemlib:krypton_nitrate",
+      "chemlib:krypton_oxide",
+      "chemlib:krypton_phosphate",
+      "chemlib:krypton_sulfate",
+      "chemlib:krypton_sulfide",
+      "chemlib:lanthanum",
+      "chemlib:lanthanum_carbonate",
+      "chemlib:lanthanum_chloride",
+      "chemlib:lanthanum_hydroxide",
       "chemlib:lanthanum_ingot",
+      "chemlib:lanthanum_nitrate",
+      "chemlib:lanthanum_oxide",
+      "chemlib:lanthanum_phosphate",
+      "chemlib:lanthanum_sulfate",
+      "chemlib:lanthanum_sulfide",
       "chemlib:lead",
       "chemlib:lead_carbonate",
+      "chemlib:lead_chloride",
+      "chemlib:lead_hydroxide",
       "chemlib:lead_ingot",
       "chemlib:lead_nitrate",
       "chemlib:lead_oxide",
+      "chemlib:lead_phosphate",
       "chemlib:lead_sulfate",
+      "chemlib:lead_sulfide",
+      "chemlib:lithium",
+      "chemlib:lithium_carbonate",
+      "chemlib:lithium_chloride",
+      "chemlib:lithium_hydroxide",
       "chemlib:lithium_ingot",
+      "chemlib:lithium_nitrate",
+      "chemlib:lithium_oxide",
+      "chemlib:lithium_phosphate",
+      "chemlib:lithium_sulfate",
+      "chemlib:lithium_sulfide",
+      "chemlib:lutetium",
+      "chemlib:lutetium_carbonate",
+      "chemlib:lutetium_chloride",
+      "chemlib:lutetium_hydroxide",
       "chemlib:lutetium_ingot",
+      "chemlib:lutetium_nitrate",
+      "chemlib:lutetium_oxide",
+      "chemlib:lutetium_phosphate",
+      "chemlib:lutetium_sulfate",
+      "chemlib:lutetium_sulfide",
       "chemlib:magnesium",
       "chemlib:magnesium_carbonate",
       "chemlib:magnesium_chloride",
+      "chemlib:magnesium_hydroxide",
       "chemlib:magnesium_ingot",
       "chemlib:magnesium_nitrate",
       "chemlib:magnesium_oxide",
+      "chemlib:magnesium_phosphate",
       "chemlib:magnesium_sulfate",
+      "chemlib:magnesium_sulfide",
       "chemlib:manganese",
+      "chemlib:manganese_carbonate",
+      "chemlib:manganese_chloride",
+      "chemlib:manganese_hydroxide",
       "chemlib:manganese_ingot",
+      "chemlib:manganese_nitrate",
+      "chemlib:manganese_oxide",
+      "chemlib:manganese_phosphate",
+      "chemlib:manganese_sulfate",
+      "chemlib:manganese_sulfide",
+      "chemlib:mercury",
+      "chemlib:mercury_carbonate",
+      "chemlib:mercury_chloride",
+      "chemlib:mercury_hydroxide",
+      "chemlib:mercury_nitrate",
+      "chemlib:mercury_oxide",
+      "chemlib:mercury_phosphate",
+      "chemlib:mercury_sulfate",
       "chemlib:mercury_sulfide",
+      "chemlib:molybdenum",
+      "chemlib:molybdenum_carbonate",
+      "chemlib:molybdenum_chloride",
+      "chemlib:molybdenum_hydroxide",
       "chemlib:molybdenum_ingot",
+      "chemlib:molybdenum_nitrate",
+      "chemlib:molybdenum_oxide",
+      "chemlib:molybdenum_phosphate",
+      "chemlib:molybdenum_sulfate",
+      "chemlib:molybdenum_sulfide",
+      "chemlib:neodymium",
+      "chemlib:neodymium_carbonate",
+      "chemlib:neodymium_chloride",
+      "chemlib:neodymium_hydroxide",
       "chemlib:neodymium_ingot",
+      "chemlib:neodymium_nitrate",
+      "chemlib:neodymium_oxide",
+      "chemlib:neodymium_phosphate",
+      "chemlib:neodymium_sulfate",
+      "chemlib:neodymium_sulfide",
+      "chemlib:neon",
+      "chemlib:neon_carbonate",
+      "chemlib:neon_chloride",
+      "chemlib:neon_hydroxide",
+      "chemlib:neon_nitrate",
+      "chemlib:neon_oxide",
+      "chemlib:neon_phosphate",
+      "chemlib:neon_sulfate",
+      "chemlib:neon_sulfide",
       "chemlib:nickel",
       "chemlib:nickel_carbonate",
       "chemlib:nickel_chloride",
+      "chemlib:nickel_hydroxide",
       "chemlib:nickel_ingot",
       "chemlib:nickel_nitrate",
       "chemlib:nickel_nugget",
       "chemlib:nickel_oxide",
+      "chemlib:nickel_phosphate",
       "chemlib:nickel_plate",
       "chemlib:nickel_sulfate",
+      "chemlib:nickel_sulfide",
+      "chemlib:niobium",
+      "chemlib:niobium_carbonate",
+      "chemlib:niobium_chloride",
+      "chemlib:niobium_hydroxide",
       "chemlib:niobium_ingot",
+      "chemlib:niobium_nitrate",
+      "chemlib:niobium_oxide",
+      "chemlib:niobium_phosphate",
+      "chemlib:niobium_sulfate",
+      "chemlib:niobium_sulfide",
+      "chemlib:nitric_acid",
       "chemlib:nitrogen",
+      "chemlib:nitrogen_carbonate",
+      "chemlib:nitrogen_chloride",
       "chemlib:nitrogen_dioxide",
+      "chemlib:nitrogen_hydroxide",
+      "chemlib:nitrogen_nitrate",
+      "chemlib:nitrogen_oxide",
+      "chemlib:nitrogen_phosphate",
+      "chemlib:nitrogen_sulfate",
+      "chemlib:nitrogen_sulfide",
       "chemlib:osmium",
+      "chemlib:osmium_carbonate",
+      "chemlib:osmium_chloride",
+      "chemlib:osmium_hydroxide",
       "chemlib:osmium_ingot",
+      "chemlib:osmium_nitrate",
+      "chemlib:osmium_oxide",
+      "chemlib:osmium_phosphate",
       "chemlib:osmium_plate",
+      "chemlib:osmium_sulfate",
+      "chemlib:osmium_sulfide",
       "chemlib:oxygen",
+      "chemlib:oxygen_carbonate",
+      "chemlib:oxygen_chloride",
+      "chemlib:oxygen_hydroxide",
+      "chemlib:oxygen_nitrate",
+      "chemlib:oxygen_oxide",
+      "chemlib:oxygen_phosphate",
+      "chemlib:oxygen_sulfate",
+      "chemlib:oxygen_sulfide",
       "chemlib:palladium",
+      "chemlib:palladium_carbonate",
+      "chemlib:palladium_chloride",
+      "chemlib:palladium_hydroxide",
       "chemlib:palladium_ingot",
+      "chemlib:palladium_nitrate",
+      "chemlib:palladium_oxide",
+      "chemlib:palladium_phosphate",
       "chemlib:palladium_plate",
+      "chemlib:palladium_sulfate",
+      "chemlib:palladium_sulfide",
       "chemlib:phosphate",
       "chemlib:phosphoric_acid",
       "chemlib:phosphorus",
+      "chemlib:phosphorus_carbonate",
+      "chemlib:phosphorus_chloride",
+      "chemlib:phosphorus_hydroxide",
+      "chemlib:phosphorus_nitrate",
+      "chemlib:phosphorus_oxide",
+      "chemlib:phosphorus_phosphate",
+      "chemlib:phosphorus_sulfate",
+      "chemlib:phosphorus_sulfide",
       "chemlib:platinum",
+      "chemlib:platinum_carbonate",
+      "chemlib:platinum_chloride",
+      "chemlib:platinum_hydroxide",
       "chemlib:platinum_ingot",
+      "chemlib:platinum_nitrate",
+      "chemlib:platinum_oxide",
+      "chemlib:platinum_phosphate",
       "chemlib:platinum_plate",
+      "chemlib:platinum_sulfate",
+      "chemlib:platinum_sulfide",
+      "chemlib:polonium",
+      "chemlib:polonium_carbonate",
+      "chemlib:polonium_chloride",
+      "chemlib:polonium_hydroxide",
       "chemlib:polonium_ingot",
+      "chemlib:polonium_nitrate",
+      "chemlib:polonium_oxide",
+      "chemlib:polonium_phosphate",
+      "chemlib:polonium_sulfate",
+      "chemlib:polonium_sulfide",
+      "chemlib:polyvinyl_chloride",
       "chemlib:potassium",
+      "chemlib:potassium_carbonate",
+      "chemlib:potassium_chloride",
+      "chemlib:potassium_hydroxide",
       "chemlib:potassium_ingot",
+      "chemlib:potassium_nitrate",
+      "chemlib:potassium_oxide",
+      "chemlib:potassium_phosphate",
+      "chemlib:potassium_sulfate",
+      "chemlib:potassium_sulfide",
+      "chemlib:praseodymium",
+      "chemlib:praseodymium_carbonate",
+      "chemlib:praseodymium_chloride",
+      "chemlib:praseodymium_hydroxide",
       "chemlib:praseodymium_ingot",
+      "chemlib:praseodymium_nitrate",
+      "chemlib:praseodymium_oxide",
+      "chemlib:praseodymium_phosphate",
+      "chemlib:praseodymium_sulfate",
+      "chemlib:praseodymium_sulfide",
+      "chemlib:protactinium",
+      "chemlib:protactinium_carbonate",
+      "chemlib:protactinium_chloride",
+      "chemlib:protactinium_hydroxide",
       "chemlib:protactinium_ingot",
+      "chemlib:protactinium_nitrate",
+      "chemlib:protactinium_oxide",
+      "chemlib:protactinium_phosphate",
+      "chemlib:protactinium_sulfate",
+      "chemlib:protactinium_sulfide",
+      "chemlib:radium",
+      "chemlib:radium_carbonate",
+      "chemlib:radium_chloride",
+      "chemlib:radium_hydroxide",
       "chemlib:radium_ingot",
+      "chemlib:radium_nitrate",
+      "chemlib:radium_oxide",
+      "chemlib:radium_phosphate",
+      "chemlib:radium_sulfate",
+      "chemlib:radium_sulfide",
+      "chemlib:radon",
+      "chemlib:radon_carbonate",
+      "chemlib:radon_chloride",
+      "chemlib:radon_hydroxide",
+      "chemlib:radon_nitrate",
+      "chemlib:radon_oxide",
+      "chemlib:radon_phosphate",
+      "chemlib:radon_sulfate",
+      "chemlib:radon_sulfide",
+      "chemlib:rhenium",
+      "chemlib:rhenium_carbonate",
+      "chemlib:rhenium_chloride",
+      "chemlib:rhenium_hydroxide",
       "chemlib:rhenium_ingot",
+      "chemlib:rhenium_nitrate",
+      "chemlib:rhenium_oxide",
+      "chemlib:rhenium_phosphate",
+      "chemlib:rhenium_sulfate",
+      "chemlib:rhenium_sulfide",
+      "chemlib:rhodium",
+      "chemlib:rhodium_carbonate",
+      "chemlib:rhodium_chloride",
+      "chemlib:rhodium_hydroxide",
       "chemlib:rhodium_ingot",
+      "chemlib:rhodium_nitrate",
+      "chemlib:rhodium_oxide",
+      "chemlib:rhodium_phosphate",
       "chemlib:rhodium_plate",
+      "chemlib:rhodium_sulfate",
+      "chemlib:rhodium_sulfide",
+      "chemlib:rubidium",
+      "chemlib:rubidium_carbonate",
+      "chemlib:rubidium_chloride",
+      "chemlib:rubidium_hydroxide",
       "chemlib:rubidium_ingot",
+      "chemlib:rubidium_nitrate",
+      "chemlib:rubidium_oxide",
+      "chemlib:rubidium_phosphate",
+      "chemlib:rubidium_sulfate",
+      "chemlib:rubidium_sulfide",
       "chemlib:ruthenium",
+      "chemlib:ruthenium_carbonate",
+      "chemlib:ruthenium_chloride",
+      "chemlib:ruthenium_hydroxide",
       "chemlib:ruthenium_ingot",
+      "chemlib:ruthenium_nitrate",
+      "chemlib:ruthenium_oxide",
+      "chemlib:ruthenium_phosphate",
       "chemlib:ruthenium_plate",
+      "chemlib:ruthenium_sulfate",
+      "chemlib:ruthenium_sulfide",
+      "chemlib:samarium",
+      "chemlib:samarium_carbonate",
+      "chemlib:samarium_chloride",
+      "chemlib:samarium_hydroxide",
       "chemlib:samarium_ingot",
+      "chemlib:samarium_nitrate",
+      "chemlib:samarium_oxide",
+      "chemlib:samarium_phosphate",
+      "chemlib:samarium_sulfate",
+      "chemlib:samarium_sulfide",
+      "chemlib:scandium",
+      "chemlib:scandium_carbonate",
+      "chemlib:scandium_chloride",
+      "chemlib:scandium_hydroxide",
       "chemlib:scandium_ingot",
+      "chemlib:scandium_nitrate",
+      "chemlib:scandium_oxide",
+      "chemlib:scandium_phosphate",
+      "chemlib:scandium_sulfate",
+      "chemlib:scandium_sulfide",
+      "chemlib:selenium",
+      "chemlib:selenium_carbonate",
+      "chemlib:selenium_chloride",
+      "chemlib:selenium_hydroxide",
+      "chemlib:selenium_nitrate",
+      "chemlib:selenium_oxide",
+      "chemlib:selenium_phosphate",
+      "chemlib:selenium_sulfate",
+      "chemlib:selenium_sulfide",
       "chemlib:silicon",
+      "chemlib:silicon_carbonate",
+      "chemlib:silicon_chloride",
       "chemlib:silicon_dioxide",
+      "chemlib:silicon_hydroxide",
+      "chemlib:silicon_nitrate",
+      "chemlib:silicon_phosphate",
+      "chemlib:silicon_sulfate",
+      "chemlib:silicon_sulfide",
       "chemlib:silver",
+      "chemlib:silver_carbonate",
+      "chemlib:silver_chloride",
+      "chemlib:silver_hydroxide",
       "chemlib:silver_ingot",
+      "chemlib:silver_nitrate",
       "chemlib:silver_nugget",
+      "chemlib:silver_oxide",
+      "chemlib:silver_phosphate",
+      "chemlib:silver_sulfate",
+      "chemlib:silver_sulfide",
       "chemlib:sodium",
       "chemlib:sodium_carbonate",
       "chemlib:sodium_chloride",
       "chemlib:sodium_hydroxide",
       "chemlib:sodium_ingot",
       "chemlib:sodium_nitrate",
+      "chemlib:sodium_oxide",
+      "chemlib:sodium_phosphate",
       "chemlib:sodium_sulfate",
+      "chemlib:sodium_sulfide",
+      "chemlib:strontium",
+      "chemlib:strontium_carbonate",
+      "chemlib:strontium_chloride",
+      "chemlib:strontium_hydroxide",
       "chemlib:strontium_ingot",
+      "chemlib:strontium_nitrate",
+      "chemlib:strontium_oxide",
+      "chemlib:strontium_phosphate",
+      "chemlib:strontium_sulfate",
+      "chemlib:strontium_sulfide",
       "chemlib:sulfur",
+      "chemlib:sulfur_carbonate",
+      "chemlib:sulfur_chloride",
       "chemlib:sulfur_dioxide",
+      "chemlib:sulfur_hydroxide",
+      "chemlib:sulfur_nitrate",
+      "chemlib:sulfur_oxide",
+      "chemlib:sulfur_phosphate",
+      "chemlib:sulfur_sulfate",
+      "chemlib:sulfur_sulfide",
+      "chemlib:sulfuric_acid",
       "chemlib:tantalum",
+      "chemlib:tantalum_carbonate",
+      "chemlib:tantalum_chloride",
+      "chemlib:tantalum_hydroxide",
       "chemlib:tantalum_ingot",
+      "chemlib:tantalum_nitrate",
+      "chemlib:tantalum_oxide",
+      "chemlib:tantalum_phosphate",
+      "chemlib:tantalum_sulfate",
+      "chemlib:tantalum_sulfide",
+      "chemlib:tellurium",
+      "chemlib:tellurium_carbonate",
+      "chemlib:tellurium_chloride",
+      "chemlib:tellurium_hydroxide",
+      "chemlib:tellurium_nitrate",
+      "chemlib:tellurium_oxide",
+      "chemlib:tellurium_phosphate",
+      "chemlib:tellurium_sulfate",
+      "chemlib:tellurium_sulfide",
+      "chemlib:terbium",
+      "chemlib:terbium_carbonate",
+      "chemlib:terbium_chloride",
+      "chemlib:terbium_hydroxide",
       "chemlib:terbium_ingot",
+      "chemlib:terbium_nitrate",
+      "chemlib:terbium_oxide",
+      "chemlib:terbium_phosphate",
+      "chemlib:terbium_sulfate",
+      "chemlib:terbium_sulfide",
+      "chemlib:thallium",
+      "chemlib:thallium_carbonate",
+      "chemlib:thallium_chloride",
+      "chemlib:thallium_hydroxide",
       "chemlib:thallium_ingot",
+      "chemlib:thallium_nitrate",
+      "chemlib:thallium_oxide",
+      "chemlib:thallium_phosphate",
+      "chemlib:thallium_sulfate",
+      "chemlib:thallium_sulfide",
       "chemlib:thorium",
+      "chemlib:thorium_carbonate",
+      "chemlib:thorium_chloride",
+      "chemlib:thorium_hydroxide",
       "chemlib:thorium_ingot",
+      "chemlib:thorium_nitrate",
+      "chemlib:thorium_oxide",
+      "chemlib:thorium_phosphate",
       "chemlib:thorium_plate",
+      "chemlib:thorium_sulfate",
+      "chemlib:thorium_sulfide",
+      "chemlib:thulium",
+      "chemlib:thulium_carbonate",
+      "chemlib:thulium_chloride",
+      "chemlib:thulium_hydroxide",
       "chemlib:thulium_ingot",
+      "chemlib:thulium_nitrate",
+      "chemlib:thulium_oxide",
+      "chemlib:thulium_phosphate",
+      "chemlib:thulium_sulfate",
+      "chemlib:thulium_sulfide",
       "chemlib:tin",
+      "chemlib:tin_carbonate",
+      "chemlib:tin_chloride",
+      "chemlib:tin_hydroxide",
       "chemlib:tin_ingot",
+      "chemlib:tin_nitrate",
       "chemlib:tin_oxide",
+      "chemlib:tin_phosphate",
       "chemlib:tin_sulfate",
+      "chemlib:tin_sulfide",
       "chemlib:titanium",
+      "chemlib:titanium_carbonate",
+      "chemlib:titanium_chloride",
+      "chemlib:titanium_hydroxide",
       "chemlib:titanium_ingot",
+      "chemlib:titanium_nitrate",
       "chemlib:titanium_oxide",
+      "chemlib:titanium_phosphate",
+      "chemlib:titanium_sulfate",
+      "chemlib:titanium_sulfide",
       "chemlib:tungsten",
+      "chemlib:tungsten_carbonate",
+      "chemlib:tungsten_chloride",
+      "chemlib:tungsten_hydroxide",
       "chemlib:tungsten_ingot",
+      "chemlib:tungsten_nitrate",
+      "chemlib:tungsten_oxide",
+      "chemlib:tungsten_phosphate",
+      "chemlib:tungsten_sulfate",
+      "chemlib:tungsten_sulfide",
       "chemlib:uranium",
+      "chemlib:uranium_carbonate",
+      "chemlib:uranium_chloride",
+      "chemlib:uranium_hydroxide",
       "chemlib:uranium_ingot",
+      "chemlib:uranium_nitrate",
+      "chemlib:uranium_oxide",
+      "chemlib:uranium_phosphate",
       "chemlib:uranium_plate",
+      "chemlib:uranium_sulfate",
+      "chemlib:uranium_sulfide",
       "chemlib:vanadium",
+      "chemlib:vanadium_carbonate",
+      "chemlib:vanadium_chloride",
+      "chemlib:vanadium_hydroxide",
       "chemlib:vanadium_ingot",
+      "chemlib:vanadium_nitrate",
+      "chemlib:vanadium_oxide",
+      "chemlib:vanadium_phosphate",
+      "chemlib:vanadium_sulfate",
+      "chemlib:vanadium_sulfide",
+      "chemlib:xenon",
+      "chemlib:xenon_carbonate",
+      "chemlib:xenon_chloride",
+      "chemlib:xenon_hydroxide",
+      "chemlib:xenon_nitrate",
+      "chemlib:xenon_oxide",
+      "chemlib:xenon_phosphate",
+      "chemlib:xenon_sulfate",
+      "chemlib:xenon_sulfide",
+      "chemlib:ytterbium",
+      "chemlib:ytterbium_carbonate",
+      "chemlib:ytterbium_chloride",
+      "chemlib:ytterbium_hydroxide",
       "chemlib:ytterbium_ingot",
+      "chemlib:ytterbium_nitrate",
+      "chemlib:ytterbium_oxide",
+      "chemlib:ytterbium_phosphate",
+      "chemlib:ytterbium_sulfate",
+      "chemlib:ytterbium_sulfide",
+      "chemlib:yttrium",
+      "chemlib:yttrium_carbonate",
+      "chemlib:yttrium_chloride",
+      "chemlib:yttrium_hydroxide",
       "chemlib:yttrium_ingot",
+      "chemlib:yttrium_nitrate",
+      "chemlib:yttrium_oxide",
+      "chemlib:yttrium_phosphate",
+      "chemlib:yttrium_sulfate",
+      "chemlib:yttrium_sulfide",
       "chemlib:zinc",
       "chemlib:zinc_carbonate",
+      "chemlib:zinc_chloride",
       "chemlib:zinc_hydroxide",
       "chemlib:zinc_ingot",
       "chemlib:zinc_nitrate",
       "chemlib:zinc_nugget",
       "chemlib:zinc_oxide",
+      "chemlib:zinc_phosphate",
       "chemlib:zinc_plate",
       "chemlib:zinc_sulfate",
+      "chemlib:zinc_sulfide",
+      "chemlib:zirconium",
+      "chemlib:zirconium_carbonate",
+      "chemlib:zirconium_chloride",
+      "chemlib:zirconium_hydroxide",
       "chemlib:zirconium_ingot",
+      "chemlib:zirconium_nitrate",
+      "chemlib:zirconium_oxide",
+      "chemlib:zirconium_phosphate",
+      "chemlib:zirconium_sulfate",
+      "chemlib:zirconium_sulfide",
       "create:brass_ingot",
       "create:brass_sheet",
       "create:crushed_raw_osmium",
       "create:crushed_raw_uranium",
       "create:industrial_iron_block",
+      "create:precision_mechanism",
       "create_more_additions:electrum_ingot",
-      "createbigcannons:autocannon_cartridge_sheet",
-      "createbigcannons:autocannon_recoil_spring_cast_mould",
-      "createbigcannons:bronze_ingot",
-      "createbigcannons:cast_iron_ingot",
-      "createbigcannons:nethersteel_ingot",
-      "createbigcannons:spring_wire",
-      "createbigcannons:steel_ingot",
       "createdeco:andesite_sheet",
       "createdeco:industrial_iron_ingot",
       "createdeco:industrial_iron_sheet",
@@ -568,7 +1246,6 @@
       "morered:red_alloy_ingot",
       "morered:red_alloy_wire",
       "morered:stone_plate",
-      "mynethersdelight:powdery_pressure_plate",
       "natures_spirit:aspen_pressure_plate",
       "natures_spirit:cedar_pressure_plate",
       "natures_spirit:coconut_pressure_plate",
@@ -663,6 +1340,7 @@
       "undergarden:wigglewood_pressure_plate"
     ],
     "MAGIC:Blood Magic": [
+      "ae2:fluix_dust",
       "ars_nouveau:arcane_core",
       "bloodmagic:demonwillgauge",
       "bloodmagic:hellforged_explosive_cell",
@@ -671,36 +1349,845 @@
       "bloodmagic:mastercore",
       "bloodmagic:mastercorespeed",
       "bloodmagic:primitive_explosive_cell",
+      "chemlib:acetic_acid",
+      "chemlib:acetylene",
+      "chemlib:actinium",
       "chemlib:aluminum",
+      "chemlib:ammonia",
+      "chemlib:ammonium",
+      "chemlib:ammonium_chloride",
+      "chemlib:antimony",
+      "chemlib:argon",
+      "chemlib:arsenic",
+      "chemlib:barium",
+      "chemlib:beryllium",
+      "chemlib:bismuth",
+      "chemlib:butane",
+      "chemlib:cadmium",
+      "chemlib:calcium",
+      "chemlib:carbon",
+      "chemlib:carbon_dioxide",
+      "chemlib:carbon_disulfide",
+      "chemlib:carbon_monoxide",
+      "chemlib:cellulose",
+      "chemlib:cerium",
+      "chemlib:cesium",
+      "chemlib:chlorine",
+      "chemlib:chromium",
+      "chemlib:cobalt",
+      "chemlib:copper",
       "chemlib:copper_dust",
+      "chemlib:diammonium_phosphate",
+      "chemlib:dysprosium",
+      "chemlib:erbium",
+      "chemlib:ethanol",
+      "chemlib:ethylene",
+      "chemlib:europium",
+      "chemlib:fluorine",
+      "chemlib:francium",
+      "chemlib:gadolinium",
+      "chemlib:gallium",
+      "chemlib:gold",
       "chemlib:gold_dust",
+      "chemlib:hafnium",
+      "chemlib:helium",
+      "chemlib:holmium",
+      "chemlib:hydrogen",
+      "chemlib:hydrogen_sulfide",
+      "chemlib:indium",
+      "chemlib:iodine",
+      "chemlib:iridium",
+      "chemlib:iron",
       "chemlib:iron_dust",
+      "chemlib:krypton",
+      "chemlib:lanthanum",
+      "chemlib:lead",
+      "chemlib:lithium",
+      "chemlib:lutetium",
+      "chemlib:magnesium",
+      "chemlib:manganese",
+      "chemlib:mercury",
+      "chemlib:methane",
+      "chemlib:molybdenum",
+      "chemlib:neodymium",
+      "chemlib:neon",
+      "chemlib:nickel",
+      "chemlib:niobium",
+      "chemlib:nitric_oxide",
+      "chemlib:nitrogen",
+      "chemlib:nitrogen_dioxide",
+      "chemlib:osmium",
+      "chemlib:oxygen",
+      "chemlib:palladium",
+      "chemlib:phosphorus",
+      "chemlib:platinum",
+      "chemlib:polonium",
+      "chemlib:polyvinyl_chloride",
+      "chemlib:potassium",
+      "chemlib:praseodymium",
+      "chemlib:propane",
+      "chemlib:protactinium",
+      "chemlib:radium",
+      "chemlib:radon",
+      "chemlib:rhenium",
+      "chemlib:rhodium",
+      "chemlib:rubidium",
+      "chemlib:ruthenium",
+      "chemlib:samarium",
+      "chemlib:scandium",
+      "chemlib:selenium",
+      "chemlib:silicon",
+      "chemlib:silver",
+      "chemlib:sodium",
+      "chemlib:starch",
+      "chemlib:strontium",
+      "chemlib:sucrose",
+      "chemlib:sulfur",
+      "chemlib:sulfur_dioxide",
       "chemlib:sulfur_dust",
+      "chemlib:sulfur_trioxide",
+      "chemlib:tantalum",
+      "chemlib:tellurium",
+      "chemlib:terbium",
+      "chemlib:thallium",
+      "chemlib:thorium",
+      "chemlib:thulium",
+      "chemlib:tin",
+      "chemlib:titanium",
+      "chemlib:tungsten",
+      "chemlib:uranium",
+      "chemlib:vanadium",
+      "chemlib:xenon",
+      "chemlib:ytterbium",
+      "chemlib:yttrium",
+      "chemlib:zinc",
+      "chemlib:zirconium",
       "create:brass_ingot",
       "create:precision_mechanism",
       "irons_spellbooks:emerald_stoneplate_ring",
       "kubejs:living_binding",
       "kubejs:pressure_seal",
-      "kubejs:purified_blood_catalyst"
+      "kubejs:purified_blood_catalyst",
+      "kubejs:sanguine_acetic_cutting_fluid",
+      "kubejs:sanguine_hydrochloric_cutting_fluid",
+      "kubejs:sanguine_nitric_cutting_fluid",
+      "kubejs:sanguine_phosphoric_cutting_fluid",
+      "kubejs:sanguine_sulfuric_cutting_fluid"
     ],
     "kubejs:airtight_machine_casing": [
       "ae2:calculation_processor",
       "ae2:engineering_processor",
       "ae2:logic_processor",
+      "chemlib:acetic_acid",
+      "chemlib:acetylene",
+      "chemlib:actinium_carbonate",
+      "chemlib:actinium_chloride",
+      "chemlib:actinium_hydroxide",
+      "chemlib:actinium_nitrate",
+      "chemlib:actinium_oxide",
+      "chemlib:actinium_phosphate",
+      "chemlib:actinium_sulfate",
+      "chemlib:actinium_sulfide",
       "chemlib:aluminum_carbonate",
+      "chemlib:aluminum_chloride",
       "chemlib:aluminum_hydroxide",
+      "chemlib:aluminum_nitrate",
       "chemlib:aluminum_oxide",
+      "chemlib:aluminum_phosphate",
+      "chemlib:aluminum_sulfate",
+      "chemlib:aluminum_sulfide",
+      "chemlib:ammonia",
+      "chemlib:ammonium",
       "chemlib:ammonium_chloride",
+      "chemlib:antimony_carbonate",
+      "chemlib:antimony_chloride",
+      "chemlib:antimony_hydroxide",
+      "chemlib:antimony_nitrate",
+      "chemlib:antimony_oxide",
+      "chemlib:antimony_phosphate",
+      "chemlib:antimony_sulfate",
+      "chemlib:antimony_sulfide",
+      "chemlib:argon_carbonate",
+      "chemlib:argon_chloride",
+      "chemlib:argon_hydroxide",
+      "chemlib:argon_nitrate",
+      "chemlib:argon_oxide",
+      "chemlib:argon_phosphate",
+      "chemlib:argon_sulfate",
+      "chemlib:argon_sulfide",
+      "chemlib:arsenic_carbonate",
+      "chemlib:arsenic_chloride",
+      "chemlib:arsenic_hydroxide",
+      "chemlib:arsenic_nitrate",
+      "chemlib:arsenic_oxide",
+      "chemlib:arsenic_phosphate",
+      "chemlib:arsenic_sulfate",
+      "chemlib:arsenic_sulfide",
+      "chemlib:barium_carbonate",
+      "chemlib:barium_chloride",
+      "chemlib:barium_hydroxide",
+      "chemlib:barium_nitrate",
+      "chemlib:barium_oxide",
+      "chemlib:barium_phosphate",
+      "chemlib:barium_sulfate",
+      "chemlib:barium_sulfide",
       "chemlib:beryllium",
+      "chemlib:beryllium_carbonate",
+      "chemlib:beryllium_chloride",
+      "chemlib:beryllium_hydroxide",
+      "chemlib:beryllium_nitrate",
+      "chemlib:beryllium_oxide",
+      "chemlib:beryllium_phosphate",
+      "chemlib:beryllium_sulfate",
+      "chemlib:beryllium_sulfide",
+      "chemlib:bismuth_carbonate",
+      "chemlib:bismuth_chloride",
+      "chemlib:bismuth_hydroxide",
+      "chemlib:bismuth_nitrate",
+      "chemlib:bismuth_oxide",
+      "chemlib:bismuth_phosphate",
+      "chemlib:bismuth_sulfate",
+      "chemlib:bismuth_sulfide",
+      "chemlib:butane",
+      "chemlib:cadmium_carbonate",
+      "chemlib:cadmium_chloride",
+      "chemlib:cadmium_hydroxide",
+      "chemlib:cadmium_nitrate",
+      "chemlib:cadmium_oxide",
+      "chemlib:cadmium_phosphate",
+      "chemlib:cadmium_sulfate",
+      "chemlib:cadmium_sulfide",
+      "chemlib:calcium_carbonate",
+      "chemlib:calcium_chloride",
+      "chemlib:calcium_hydroxide",
+      "chemlib:calcium_nitrate",
+      "chemlib:calcium_oxide",
+      "chemlib:calcium_phosphate",
+      "chemlib:calcium_sulfate",
+      "chemlib:calcium_sulfide",
+      "chemlib:carbon_carbonate",
+      "chemlib:carbon_chloride",
+      "chemlib:carbon_dioxide",
+      "chemlib:carbon_disulfide",
+      "chemlib:carbon_hydroxide",
+      "chemlib:carbon_monoxide",
+      "chemlib:carbon_nitrate",
+      "chemlib:carbon_phosphate",
+      "chemlib:carbon_sulfate",
+      "chemlib:cerium_carbonate",
+      "chemlib:cerium_chloride",
+      "chemlib:cerium_hydroxide",
+      "chemlib:cerium_nitrate",
+      "chemlib:cerium_oxide",
+      "chemlib:cerium_phosphate",
+      "chemlib:cerium_sulfate",
+      "chemlib:cerium_sulfide",
+      "chemlib:cesium_carbonate",
+      "chemlib:cesium_chloride",
+      "chemlib:cesium_hydroxide",
+      "chemlib:cesium_nitrate",
+      "chemlib:cesium_oxide",
+      "chemlib:cesium_phosphate",
+      "chemlib:cesium_sulfate",
+      "chemlib:cesium_sulfide",
+      "chemlib:chlorine_carbonate",
+      "chemlib:chlorine_chloride",
+      "chemlib:chlorine_hydroxide",
+      "chemlib:chlorine_nitrate",
+      "chemlib:chlorine_oxide",
+      "chemlib:chlorine_phosphate",
+      "chemlib:chlorine_sulfate",
+      "chemlib:chlorine_sulfide",
+      "chemlib:chromium_carbonate",
+      "chemlib:chromium_chloride",
+      "chemlib:chromium_hydroxide",
+      "chemlib:chromium_nitrate",
+      "chemlib:chromium_oxide",
+      "chemlib:chromium_phosphate",
+      "chemlib:chromium_sulfate",
+      "chemlib:chromium_sulfide",
+      "chemlib:cobalt_carbonate",
+      "chemlib:cobalt_chloride",
+      "chemlib:cobalt_hydroxide",
+      "chemlib:cobalt_nitrate",
+      "chemlib:cobalt_oxide",
+      "chemlib:cobalt_phosphate",
+      "chemlib:cobalt_sulfate",
+      "chemlib:cobalt_sulfide",
+      "chemlib:copper_carbonate",
       "chemlib:copper_chloride",
+      "chemlib:copper_i_oxide",
+      "chemlib:copper_i_sulfide",
+      "chemlib:copper_ii_hydroxide",
+      "chemlib:copper_ii_sulfate",
       "chemlib:copper_nitrate",
+      "chemlib:copper_phosphate",
       "chemlib:diammonium_phosphate",
+      "chemlib:dysprosium_carbonate",
+      "chemlib:dysprosium_chloride",
+      "chemlib:dysprosium_hydroxide",
+      "chemlib:dysprosium_nitrate",
+      "chemlib:dysprosium_oxide",
+      "chemlib:dysprosium_phosphate",
+      "chemlib:dysprosium_sulfate",
+      "chemlib:dysprosium_sulfide",
+      "chemlib:erbium_carbonate",
+      "chemlib:erbium_chloride",
+      "chemlib:erbium_hydroxide",
+      "chemlib:erbium_nitrate",
+      "chemlib:erbium_oxide",
+      "chemlib:erbium_phosphate",
+      "chemlib:erbium_sulfate",
+      "chemlib:erbium_sulfide",
+      "chemlib:ethanol",
+      "chemlib:ethylene",
+      "chemlib:europium_carbonate",
+      "chemlib:europium_chloride",
+      "chemlib:europium_hydroxide",
+      "chemlib:europium_nitrate",
+      "chemlib:europium_oxide",
+      "chemlib:europium_phosphate",
+      "chemlib:europium_sulfate",
+      "chemlib:europium_sulfide",
+      "chemlib:fluorine_carbonate",
+      "chemlib:fluorine_chloride",
+      "chemlib:fluorine_hydroxide",
+      "chemlib:fluorine_nitrate",
+      "chemlib:fluorine_oxide",
+      "chemlib:fluorine_phosphate",
+      "chemlib:fluorine_sulfate",
+      "chemlib:fluorine_sulfide",
+      "chemlib:francium_carbonate",
+      "chemlib:francium_chloride",
+      "chemlib:francium_hydroxide",
+      "chemlib:francium_nitrate",
+      "chemlib:francium_oxide",
+      "chemlib:francium_phosphate",
+      "chemlib:francium_sulfate",
+      "chemlib:francium_sulfide",
+      "chemlib:gadolinium_carbonate",
+      "chemlib:gadolinium_chloride",
+      "chemlib:gadolinium_hydroxide",
+      "chemlib:gadolinium_nitrate",
+      "chemlib:gadolinium_oxide",
+      "chemlib:gadolinium_phosphate",
+      "chemlib:gadolinium_sulfate",
+      "chemlib:gadolinium_sulfide",
+      "chemlib:gallium_carbonate",
+      "chemlib:gallium_chloride",
+      "chemlib:gallium_hydroxide",
+      "chemlib:gallium_nitrate",
+      "chemlib:gallium_oxide",
+      "chemlib:gallium_phosphate",
+      "chemlib:gallium_sulfate",
+      "chemlib:gallium_sulfide",
+      "chemlib:gold_carbonate",
+      "chemlib:gold_chloride",
+      "chemlib:gold_hydroxide",
+      "chemlib:gold_nitrate",
+      "chemlib:gold_oxide",
+      "chemlib:gold_phosphate",
+      "chemlib:gold_sulfate",
+      "chemlib:gold_sulfide",
+      "chemlib:hafnium_carbonate",
+      "chemlib:hafnium_chloride",
+      "chemlib:hafnium_hydroxide",
+      "chemlib:hafnium_nitrate",
+      "chemlib:hafnium_oxide",
+      "chemlib:hafnium_phosphate",
+      "chemlib:hafnium_sulfate",
+      "chemlib:hafnium_sulfide",
+      "chemlib:helium_carbonate",
+      "chemlib:helium_chloride",
+      "chemlib:helium_hydroxide",
+      "chemlib:helium_nitrate",
+      "chemlib:helium_oxide",
+      "chemlib:helium_phosphate",
+      "chemlib:helium_sulfate",
+      "chemlib:helium_sulfide",
+      "chemlib:holmium_carbonate",
+      "chemlib:holmium_chloride",
+      "chemlib:holmium_hydroxide",
+      "chemlib:holmium_nitrate",
+      "chemlib:holmium_oxide",
+      "chemlib:holmium_phosphate",
+      "chemlib:holmium_sulfate",
+      "chemlib:holmium_sulfide",
+      "chemlib:hydrogen_carbonate",
+      "chemlib:hydrogen_chloride",
+      "chemlib:hydrogen_hydroxide",
+      "chemlib:hydrogen_nitrate",
+      "chemlib:hydrogen_oxide",
+      "chemlib:hydrogen_phosphate",
+      "chemlib:hydrogen_sulfate",
       "chemlib:hydrogen_sulfide",
+      "chemlib:indium_carbonate",
+      "chemlib:indium_chloride",
+      "chemlib:indium_hydroxide",
+      "chemlib:indium_nitrate",
+      "chemlib:indium_oxide",
+      "chemlib:indium_phosphate",
+      "chemlib:indium_sulfate",
+      "chemlib:indium_sulfide",
+      "chemlib:iodine_carbonate",
+      "chemlib:iodine_chloride",
+      "chemlib:iodine_hydroxide",
+      "chemlib:iodine_nitrate",
+      "chemlib:iodine_oxide",
+      "chemlib:iodine_phosphate",
+      "chemlib:iodine_sulfate",
+      "chemlib:iodine_sulfide",
+      "chemlib:iridium_carbonate",
+      "chemlib:iridium_chloride",
+      "chemlib:iridium_hydroxide",
+      "chemlib:iridium_nitrate",
+      "chemlib:iridium_oxide",
+      "chemlib:iridium_phosphate",
+      "chemlib:iridium_sulfate",
+      "chemlib:iridium_sulfide",
+      "chemlib:iron",
+      "chemlib:iron_carbonate",
+      "chemlib:iron_chloride",
+      "chemlib:iron_hydroxide",
+      "chemlib:iron_ii_sulfate",
+      "chemlib:iron_iii_nitrate",
+      "chemlib:iron_oxide",
+      "chemlib:iron_phosphate",
+      "chemlib:iron_sulfide",
+      "chemlib:krypton_carbonate",
+      "chemlib:krypton_chloride",
+      "chemlib:krypton_hydroxide",
+      "chemlib:krypton_nitrate",
+      "chemlib:krypton_oxide",
+      "chemlib:krypton_phosphate",
+      "chemlib:krypton_sulfate",
+      "chemlib:krypton_sulfide",
+      "chemlib:lanthanum_carbonate",
+      "chemlib:lanthanum_chloride",
+      "chemlib:lanthanum_hydroxide",
+      "chemlib:lanthanum_nitrate",
+      "chemlib:lanthanum_oxide",
+      "chemlib:lanthanum_phosphate",
+      "chemlib:lanthanum_sulfate",
+      "chemlib:lanthanum_sulfide",
+      "chemlib:lead_carbonate",
+      "chemlib:lead_chloride",
+      "chemlib:lead_hydroxide",
+      "chemlib:lead_nitrate",
+      "chemlib:lead_oxide",
+      "chemlib:lead_phosphate",
+      "chemlib:lead_sulfate",
+      "chemlib:lead_sulfide",
+      "chemlib:lithium_carbonate",
+      "chemlib:lithium_chloride",
+      "chemlib:lithium_hydroxide",
+      "chemlib:lithium_nitrate",
+      "chemlib:lithium_oxide",
+      "chemlib:lithium_phosphate",
+      "chemlib:lithium_sulfate",
+      "chemlib:lithium_sulfide",
+      "chemlib:lutetium_carbonate",
+      "chemlib:lutetium_chloride",
+      "chemlib:lutetium_hydroxide",
+      "chemlib:lutetium_nitrate",
+      "chemlib:lutetium_oxide",
+      "chemlib:lutetium_phosphate",
+      "chemlib:lutetium_sulfate",
+      "chemlib:lutetium_sulfide",
+      "chemlib:magnesium_carbonate",
+      "chemlib:magnesium_chloride",
+      "chemlib:magnesium_hydroxide",
+      "chemlib:magnesium_nitrate",
+      "chemlib:magnesium_oxide",
+      "chemlib:magnesium_phosphate",
+      "chemlib:magnesium_sulfate",
+      "chemlib:magnesium_sulfide",
+      "chemlib:manganese_carbonate",
+      "chemlib:manganese_chloride",
+      "chemlib:manganese_hydroxide",
+      "chemlib:manganese_nitrate",
+      "chemlib:manganese_oxide",
+      "chemlib:manganese_phosphate",
+      "chemlib:manganese_sulfate",
+      "chemlib:manganese_sulfide",
+      "chemlib:mercury_carbonate",
+      "chemlib:mercury_chloride",
+      "chemlib:mercury_hydroxide",
+      "chemlib:mercury_nitrate",
+      "chemlib:mercury_oxide",
+      "chemlib:mercury_phosphate",
+      "chemlib:mercury_sulfate",
+      "chemlib:mercury_sulfide",
+      "chemlib:methane",
+      "chemlib:molybdenum_carbonate",
+      "chemlib:molybdenum_chloride",
+      "chemlib:molybdenum_hydroxide",
+      "chemlib:molybdenum_nitrate",
+      "chemlib:molybdenum_oxide",
+      "chemlib:molybdenum_phosphate",
+      "chemlib:molybdenum_sulfate",
+      "chemlib:molybdenum_sulfide",
+      "chemlib:neodymium_carbonate",
+      "chemlib:neodymium_chloride",
+      "chemlib:neodymium_hydroxide",
+      "chemlib:neodymium_nitrate",
+      "chemlib:neodymium_oxide",
+      "chemlib:neodymium_phosphate",
+      "chemlib:neodymium_sulfate",
+      "chemlib:neodymium_sulfide",
+      "chemlib:neon_carbonate",
+      "chemlib:neon_chloride",
+      "chemlib:neon_hydroxide",
+      "chemlib:neon_nitrate",
+      "chemlib:neon_oxide",
+      "chemlib:neon_phosphate",
+      "chemlib:neon_sulfate",
+      "chemlib:neon_sulfide",
+      "chemlib:nickel_carbonate",
+      "chemlib:nickel_chloride",
+      "chemlib:nickel_hydroxide",
+      "chemlib:nickel_nitrate",
+      "chemlib:nickel_oxide",
+      "chemlib:nickel_phosphate",
+      "chemlib:nickel_sulfate",
+      "chemlib:nickel_sulfide",
+      "chemlib:niobium_carbonate",
+      "chemlib:niobium_chloride",
+      "chemlib:niobium_hydroxide",
+      "chemlib:niobium_nitrate",
+      "chemlib:niobium_oxide",
+      "chemlib:niobium_phosphate",
+      "chemlib:niobium_sulfate",
+      "chemlib:niobium_sulfide",
+      "chemlib:nitric_acid",
       "chemlib:nitric_oxide",
+      "chemlib:nitrogen_carbonate",
+      "chemlib:nitrogen_chloride",
+      "chemlib:nitrogen_dioxide",
+      "chemlib:nitrogen_hydroxide",
+      "chemlib:nitrogen_nitrate",
+      "chemlib:nitrogen_oxide",
+      "chemlib:nitrogen_phosphate",
+      "chemlib:nitrogen_sulfate",
+      "chemlib:nitrogen_sulfide",
+      "chemlib:osmium_carbonate",
+      "chemlib:osmium_chloride",
+      "chemlib:osmium_hydroxide",
+      "chemlib:osmium_nitrate",
+      "chemlib:osmium_oxide",
+      "chemlib:osmium_phosphate",
+      "chemlib:osmium_sulfate",
+      "chemlib:osmium_sulfide",
+      "chemlib:oxygen_carbonate",
+      "chemlib:oxygen_chloride",
+      "chemlib:oxygen_hydroxide",
+      "chemlib:oxygen_nitrate",
+      "chemlib:oxygen_oxide",
+      "chemlib:oxygen_phosphate",
+      "chemlib:oxygen_sulfate",
+      "chemlib:oxygen_sulfide",
+      "chemlib:palladium_carbonate",
+      "chemlib:palladium_chloride",
+      "chemlib:palladium_hydroxide",
+      "chemlib:palladium_nitrate",
+      "chemlib:palladium_oxide",
+      "chemlib:palladium_phosphate",
+      "chemlib:palladium_sulfate",
+      "chemlib:palladium_sulfide",
+      "chemlib:phosphorus_carbonate",
+      "chemlib:phosphorus_chloride",
+      "chemlib:phosphorus_hydroxide",
+      "chemlib:phosphorus_nitrate",
+      "chemlib:phosphorus_oxide",
+      "chemlib:phosphorus_phosphate",
+      "chemlib:phosphorus_sulfate",
+      "chemlib:phosphorus_sulfide",
+      "chemlib:platinum_carbonate",
+      "chemlib:platinum_chloride",
+      "chemlib:platinum_hydroxide",
+      "chemlib:platinum_nitrate",
+      "chemlib:platinum_oxide",
+      "chemlib:platinum_phosphate",
+      "chemlib:platinum_sulfate",
+      "chemlib:platinum_sulfide",
+      "chemlib:polonium_carbonate",
+      "chemlib:polonium_chloride",
+      "chemlib:polonium_hydroxide",
+      "chemlib:polonium_nitrate",
+      "chemlib:polonium_oxide",
+      "chemlib:polonium_phosphate",
+      "chemlib:polonium_sulfate",
+      "chemlib:polonium_sulfide",
       "chemlib:polyvinyl_chloride",
+      "chemlib:potassium_carbonate",
+      "chemlib:potassium_chloride",
+      "chemlib:potassium_hydroxide",
+      "chemlib:potassium_nitrate",
+      "chemlib:potassium_oxide",
+      "chemlib:potassium_phosphate",
+      "chemlib:potassium_sulfate",
+      "chemlib:potassium_sulfide",
+      "chemlib:praseodymium_carbonate",
+      "chemlib:praseodymium_chloride",
+      "chemlib:praseodymium_hydroxide",
+      "chemlib:praseodymium_nitrate",
+      "chemlib:praseodymium_oxide",
+      "chemlib:praseodymium_phosphate",
+      "chemlib:praseodymium_sulfate",
+      "chemlib:praseodymium_sulfide",
+      "chemlib:propane",
+      "chemlib:protactinium_carbonate",
+      "chemlib:protactinium_chloride",
+      "chemlib:protactinium_hydroxide",
+      "chemlib:protactinium_nitrate",
+      "chemlib:protactinium_oxide",
+      "chemlib:protactinium_phosphate",
+      "chemlib:protactinium_sulfate",
+      "chemlib:protactinium_sulfide",
+      "chemlib:radium_carbonate",
+      "chemlib:radium_chloride",
+      "chemlib:radium_hydroxide",
+      "chemlib:radium_nitrate",
+      "chemlib:radium_oxide",
+      "chemlib:radium_phosphate",
+      "chemlib:radium_sulfate",
+      "chemlib:radium_sulfide",
+      "chemlib:radon_carbonate",
+      "chemlib:radon_chloride",
+      "chemlib:radon_hydroxide",
+      "chemlib:radon_nitrate",
+      "chemlib:radon_oxide",
+      "chemlib:radon_phosphate",
+      "chemlib:radon_sulfate",
+      "chemlib:radon_sulfide",
+      "chemlib:rhenium_carbonate",
+      "chemlib:rhenium_chloride",
+      "chemlib:rhenium_hydroxide",
+      "chemlib:rhenium_nitrate",
+      "chemlib:rhenium_oxide",
+      "chemlib:rhenium_phosphate",
+      "chemlib:rhenium_sulfate",
+      "chemlib:rhenium_sulfide",
+      "chemlib:rhodium_carbonate",
+      "chemlib:rhodium_chloride",
+      "chemlib:rhodium_hydroxide",
+      "chemlib:rhodium_nitrate",
+      "chemlib:rhodium_oxide",
+      "chemlib:rhodium_phosphate",
+      "chemlib:rhodium_sulfate",
+      "chemlib:rhodium_sulfide",
+      "chemlib:rubidium_carbonate",
+      "chemlib:rubidium_chloride",
+      "chemlib:rubidium_hydroxide",
+      "chemlib:rubidium_nitrate",
+      "chemlib:rubidium_oxide",
+      "chemlib:rubidium_phosphate",
+      "chemlib:rubidium_sulfate",
+      "chemlib:rubidium_sulfide",
+      "chemlib:ruthenium_carbonate",
+      "chemlib:ruthenium_chloride",
+      "chemlib:ruthenium_hydroxide",
+      "chemlib:ruthenium_nitrate",
+      "chemlib:ruthenium_oxide",
+      "chemlib:ruthenium_phosphate",
+      "chemlib:ruthenium_sulfate",
+      "chemlib:ruthenium_sulfide",
+      "chemlib:samarium_carbonate",
+      "chemlib:samarium_chloride",
+      "chemlib:samarium_hydroxide",
+      "chemlib:samarium_nitrate",
+      "chemlib:samarium_oxide",
+      "chemlib:samarium_phosphate",
+      "chemlib:samarium_sulfate",
+      "chemlib:samarium_sulfide",
+      "chemlib:scandium_carbonate",
+      "chemlib:scandium_chloride",
+      "chemlib:scandium_hydroxide",
+      "chemlib:scandium_nitrate",
+      "chemlib:scandium_oxide",
+      "chemlib:scandium_phosphate",
+      "chemlib:scandium_sulfate",
+      "chemlib:scandium_sulfide",
+      "chemlib:selenium_carbonate",
+      "chemlib:selenium_chloride",
+      "chemlib:selenium_hydroxide",
+      "chemlib:selenium_nitrate",
+      "chemlib:selenium_oxide",
+      "chemlib:selenium_phosphate",
+      "chemlib:selenium_sulfate",
+      "chemlib:selenium_sulfide",
+      "chemlib:silicon_carbonate",
+      "chemlib:silicon_chloride",
+      "chemlib:silicon_dioxide",
+      "chemlib:silicon_hydroxide",
+      "chemlib:silicon_nitrate",
+      "chemlib:silicon_phosphate",
+      "chemlib:silicon_sulfate",
+      "chemlib:silicon_sulfide",
+      "chemlib:silver_carbonate",
+      "chemlib:silver_chloride",
+      "chemlib:silver_hydroxide",
+      "chemlib:silver_nitrate",
+      "chemlib:silver_oxide",
+      "chemlib:silver_phosphate",
+      "chemlib:silver_sulfate",
+      "chemlib:silver_sulfide",
+      "chemlib:sodium_carbonate",
+      "chemlib:sodium_chloride",
       "chemlib:sodium_hydroxide",
+      "chemlib:sodium_nitrate",
+      "chemlib:sodium_oxide",
+      "chemlib:sodium_phosphate",
+      "chemlib:sodium_sulfate",
+      "chemlib:sodium_sulfide",
+      "chemlib:starch",
+      "chemlib:strontium_carbonate",
+      "chemlib:strontium_chloride",
+      "chemlib:strontium_hydroxide",
+      "chemlib:strontium_nitrate",
+      "chemlib:strontium_oxide",
+      "chemlib:strontium_phosphate",
+      "chemlib:strontium_sulfate",
+      "chemlib:strontium_sulfide",
+      "chemlib:sucrose",
+      "chemlib:sulfur",
+      "chemlib:sulfur_carbonate",
+      "chemlib:sulfur_chloride",
+      "chemlib:sulfur_dioxide",
+      "chemlib:sulfur_hydroxide",
+      "chemlib:sulfur_nitrate",
+      "chemlib:sulfur_oxide",
+      "chemlib:sulfur_phosphate",
+      "chemlib:sulfur_sulfate",
+      "chemlib:sulfur_sulfide",
+      "chemlib:sulfur_trioxide",
+      "chemlib:sulfuric_acid",
+      "chemlib:tantalum_carbonate",
+      "chemlib:tantalum_chloride",
+      "chemlib:tantalum_hydroxide",
+      "chemlib:tantalum_nitrate",
+      "chemlib:tantalum_oxide",
+      "chemlib:tantalum_phosphate",
+      "chemlib:tantalum_sulfate",
+      "chemlib:tantalum_sulfide",
+      "chemlib:tellurium_carbonate",
+      "chemlib:tellurium_chloride",
+      "chemlib:tellurium_hydroxide",
+      "chemlib:tellurium_nitrate",
+      "chemlib:tellurium_oxide",
+      "chemlib:tellurium_phosphate",
+      "chemlib:tellurium_sulfate",
+      "chemlib:tellurium_sulfide",
+      "chemlib:terbium_carbonate",
+      "chemlib:terbium_chloride",
+      "chemlib:terbium_hydroxide",
+      "chemlib:terbium_nitrate",
+      "chemlib:terbium_oxide",
+      "chemlib:terbium_phosphate",
+      "chemlib:terbium_sulfate",
+      "chemlib:terbium_sulfide",
+      "chemlib:thallium_carbonate",
+      "chemlib:thallium_chloride",
+      "chemlib:thallium_hydroxide",
+      "chemlib:thallium_nitrate",
+      "chemlib:thallium_oxide",
+      "chemlib:thallium_phosphate",
+      "chemlib:thallium_sulfate",
+      "chemlib:thallium_sulfide",
+      "chemlib:thorium_carbonate",
+      "chemlib:thorium_chloride",
+      "chemlib:thorium_hydroxide",
+      "chemlib:thorium_nitrate",
+      "chemlib:thorium_oxide",
+      "chemlib:thorium_phosphate",
+      "chemlib:thorium_sulfate",
+      "chemlib:thorium_sulfide",
+      "chemlib:thulium_carbonate",
+      "chemlib:thulium_chloride",
+      "chemlib:thulium_hydroxide",
+      "chemlib:thulium_nitrate",
+      "chemlib:thulium_oxide",
+      "chemlib:thulium_phosphate",
+      "chemlib:thulium_sulfate",
+      "chemlib:thulium_sulfide",
+      "chemlib:tin_chloride",
+      "chemlib:tin_nitrate",
+      "chemlib:tin_sulfate",
+      "chemlib:titanium_carbonate",
+      "chemlib:titanium_chloride",
+      "chemlib:titanium_hydroxide",
+      "chemlib:titanium_nitrate",
+      "chemlib:titanium_oxide",
+      "chemlib:titanium_phosphate",
+      "chemlib:titanium_sulfate",
+      "chemlib:titanium_sulfide",
+      "chemlib:tungsten_carbonate",
+      "chemlib:tungsten_chloride",
+      "chemlib:tungsten_hydroxide",
+      "chemlib:tungsten_nitrate",
+      "chemlib:tungsten_oxide",
+      "chemlib:tungsten_phosphate",
+      "chemlib:tungsten_sulfate",
+      "chemlib:tungsten_sulfide",
+      "chemlib:uranium_carbonate",
+      "chemlib:uranium_chloride",
+      "chemlib:uranium_hydroxide",
+      "chemlib:uranium_nitrate",
+      "chemlib:uranium_oxide",
+      "chemlib:uranium_phosphate",
+      "chemlib:uranium_sulfate",
+      "chemlib:uranium_sulfide",
+      "chemlib:vanadium_carbonate",
+      "chemlib:vanadium_chloride",
+      "chemlib:vanadium_hydroxide",
+      "chemlib:vanadium_nitrate",
+      "chemlib:vanadium_oxide",
+      "chemlib:vanadium_phosphate",
+      "chemlib:vanadium_sulfate",
+      "chemlib:vanadium_sulfide",
+      "chemlib:xenon_carbonate",
+      "chemlib:xenon_chloride",
+      "chemlib:xenon_hydroxide",
+      "chemlib:xenon_nitrate",
+      "chemlib:xenon_oxide",
+      "chemlib:xenon_phosphate",
+      "chemlib:xenon_sulfate",
+      "chemlib:xenon_sulfide",
+      "chemlib:ytterbium_carbonate",
+      "chemlib:ytterbium_chloride",
+      "chemlib:ytterbium_hydroxide",
+      "chemlib:ytterbium_nitrate",
+      "chemlib:ytterbium_oxide",
+      "chemlib:ytterbium_phosphate",
+      "chemlib:ytterbium_sulfate",
+      "chemlib:ytterbium_sulfide",
+      "chemlib:yttrium_carbonate",
+      "chemlib:yttrium_chloride",
+      "chemlib:yttrium_hydroxide",
+      "chemlib:yttrium_nitrate",
+      "chemlib:yttrium_oxide",
+      "chemlib:yttrium_phosphate",
+      "chemlib:yttrium_sulfate",
+      "chemlib:yttrium_sulfide",
+      "chemlib:zinc_carbonate",
+      "chemlib:zinc_chloride",
+      "chemlib:zinc_hydroxide",
+      "chemlib:zinc_nitrate",
+      "chemlib:zinc_oxide",
+      "chemlib:zinc_phosphate",
+      "chemlib:zinc_sulfate",
+      "chemlib:zinc_sulfide",
+      "chemlib:zirconium_carbonate",
+      "chemlib:zirconium_chloride",
+      "chemlib:zirconium_hydroxide",
+      "chemlib:zirconium_nitrate",
+      "chemlib:zirconium_oxide",
+      "chemlib:zirconium_phosphate",
+      "chemlib:zirconium_sulfate",
+      "chemlib:zirconium_sulfide",
       "kubejs:airtight_fluid_module",
       "kubejs:electrical_control_module",
+      "kubejs:pressure_seal",
       "latent_chemlib:sealed_chemical_cell",
       "oc2r:block_operations_module",
       "oc2r:bus_cable",
@@ -744,7 +2231,6 @@
       "create:andesite_alloy",
       "create:precision_mechanism",
       "create:sturdy_sheet",
-      "createbigcannons:recoil_spring",
       "kubejs:brass_control_assembly",
       "kubejs:rotational_compressor_core",
       "minecraft:iron_ingot",
@@ -766,11 +2252,15 @@
       "protection_pixel:workerhornetas_chestplate"
     ],
     "MAGIC:Ars Nouveau": [
+      "ae2:fluix_dust",
       "ars_nouveau:brazier_relay",
       "ars_nouveau:relay_collector",
       "ars_nouveau:relay_deposit",
       "ars_nouveau:relay_splitter",
       "ars_nouveau:relay_warp",
+      "chemlib:beryllium",
+      "chemlib:silicon",
+      "chemlib:silicon_dioxide",
       "kubejs:purified_source_core",
       "minecraft:glowstone_dust"
     ],
@@ -1475,13 +2965,6 @@
         {
           "id": "pneumaticcraft:copper_ingot_from_nugget",
           "type": "minecraft:crafting_shaped",
-          "inputs": [
-
-          ]
-        },
-        {
-          "id": "iceandfire:copper_nuggets_to_ingot",
-          "type": "minecraft:crafting_shapeless",
           "inputs": [
 
           ]
@@ -4786,6 +6269,216 @@
         },
         {
           "output": "minecraft:glowstone_dust",
+          "type": "create:mixing",
+          "id": "kubejs:chemlib_full/create_mixing/sink/rare_earth/lanthanum/rare_earth_signal_pigment",
+          "file": "kubejs/server_scripts/40_recipe_add/63_chemlib_full_integration_routes.js",
+          "origin": "kubejs-source",
+          "surface": "create andesite machine surfaces",
+          "gate": "kubejs:andesite_machine_casing",
+          "inputs": [
+            "chemlib:lanthanum",
+            "minecraft:redstone",
+            "minecraft:lapis_lazuli"
+          ]
+        },
+        {
+          "output": "minecraft:glowstone_dust",
+          "type": "create:mixing",
+          "id": "kubejs:chemlib_full/create_mixing/sink/rare_earth/cerium/rare_earth_signal_pigment",
+          "file": "kubejs/server_scripts/40_recipe_add/63_chemlib_full_integration_routes.js",
+          "origin": "kubejs-source",
+          "surface": "create andesite machine surfaces",
+          "gate": "kubejs:andesite_machine_casing",
+          "inputs": [
+            "chemlib:cerium",
+            "minecraft:redstone",
+            "minecraft:lapis_lazuli"
+          ]
+        },
+        {
+          "output": "minecraft:glowstone_dust",
+          "type": "create:mixing",
+          "id": "kubejs:chemlib_full/create_mixing/sink/rare_earth/praseodymium/rare_earth_signal_pigment",
+          "file": "kubejs/server_scripts/40_recipe_add/63_chemlib_full_integration_routes.js",
+          "origin": "kubejs-source",
+          "surface": "create andesite machine surfaces",
+          "gate": "kubejs:andesite_machine_casing",
+          "inputs": [
+            "chemlib:praseodymium",
+            "minecraft:redstone",
+            "minecraft:lapis_lazuli"
+          ]
+        },
+        {
+          "output": "minecraft:glowstone_dust",
+          "type": "create:mixing",
+          "id": "kubejs:chemlib_full/create_mixing/sink/rare_earth/neodymium/rare_earth_signal_pigment",
+          "file": "kubejs/server_scripts/40_recipe_add/63_chemlib_full_integration_routes.js",
+          "origin": "kubejs-source",
+          "surface": "create andesite machine surfaces",
+          "gate": "kubejs:andesite_machine_casing",
+          "inputs": [
+            "chemlib:neodymium",
+            "minecraft:redstone",
+            "minecraft:lapis_lazuli"
+          ]
+        },
+        {
+          "output": "minecraft:glowstone_dust",
+          "type": "create:mixing",
+          "id": "kubejs:chemlib_full/create_mixing/sink/rare_earth/samarium/rare_earth_signal_pigment",
+          "file": "kubejs/server_scripts/40_recipe_add/63_chemlib_full_integration_routes.js",
+          "origin": "kubejs-source",
+          "surface": "create andesite machine surfaces",
+          "gate": "kubejs:andesite_machine_casing",
+          "inputs": [
+            "chemlib:samarium",
+            "minecraft:redstone",
+            "minecraft:lapis_lazuli"
+          ]
+        },
+        {
+          "output": "minecraft:glowstone_dust",
+          "type": "create:mixing",
+          "id": "kubejs:chemlib_full/create_mixing/sink/rare_earth/europium/rare_earth_signal_pigment",
+          "file": "kubejs/server_scripts/40_recipe_add/63_chemlib_full_integration_routes.js",
+          "origin": "kubejs-source",
+          "surface": "create andesite machine surfaces",
+          "gate": "kubejs:andesite_machine_casing",
+          "inputs": [
+            "chemlib:europium",
+            "minecraft:redstone",
+            "minecraft:lapis_lazuli"
+          ]
+        },
+        {
+          "output": "minecraft:glowstone_dust",
+          "type": "create:mixing",
+          "id": "kubejs:chemlib_full/create_mixing/sink/rare_earth/gadolinium/rare_earth_signal_pigment",
+          "file": "kubejs/server_scripts/40_recipe_add/63_chemlib_full_integration_routes.js",
+          "origin": "kubejs-source",
+          "surface": "create andesite machine surfaces",
+          "gate": "kubejs:andesite_machine_casing",
+          "inputs": [
+            "chemlib:gadolinium",
+            "minecraft:redstone",
+            "minecraft:lapis_lazuli"
+          ]
+        },
+        {
+          "output": "minecraft:glowstone_dust",
+          "type": "create:mixing",
+          "id": "kubejs:chemlib_full/create_mixing/sink/rare_earth/terbium/rare_earth_signal_pigment",
+          "file": "kubejs/server_scripts/40_recipe_add/63_chemlib_full_integration_routes.js",
+          "origin": "kubejs-source",
+          "surface": "create andesite machine surfaces",
+          "gate": "kubejs:andesite_machine_casing",
+          "inputs": [
+            "chemlib:terbium",
+            "minecraft:redstone",
+            "minecraft:lapis_lazuli"
+          ]
+        },
+        {
+          "output": "minecraft:glowstone_dust",
+          "type": "create:mixing",
+          "id": "kubejs:chemlib_full/create_mixing/sink/rare_earth/dysprosium/rare_earth_signal_pigment",
+          "file": "kubejs/server_scripts/40_recipe_add/63_chemlib_full_integration_routes.js",
+          "origin": "kubejs-source",
+          "surface": "create andesite machine surfaces",
+          "gate": "kubejs:andesite_machine_casing",
+          "inputs": [
+            "chemlib:dysprosium",
+            "minecraft:redstone",
+            "minecraft:lapis_lazuli"
+          ]
+        },
+        {
+          "output": "minecraft:glowstone_dust",
+          "type": "create:mixing",
+          "id": "kubejs:chemlib_full/create_mixing/sink/rare_earth/holmium/rare_earth_signal_pigment",
+          "file": "kubejs/server_scripts/40_recipe_add/63_chemlib_full_integration_routes.js",
+          "origin": "kubejs-source",
+          "surface": "create andesite machine surfaces",
+          "gate": "kubejs:andesite_machine_casing",
+          "inputs": [
+            "chemlib:holmium",
+            "minecraft:redstone",
+            "minecraft:lapis_lazuli"
+          ]
+        },
+        {
+          "output": "minecraft:glowstone_dust",
+          "type": "create:mixing",
+          "id": "kubejs:chemlib_full/create_mixing/sink/rare_earth/erbium/rare_earth_signal_pigment",
+          "file": "kubejs/server_scripts/40_recipe_add/63_chemlib_full_integration_routes.js",
+          "origin": "kubejs-source",
+          "surface": "create andesite machine surfaces",
+          "gate": "kubejs:andesite_machine_casing",
+          "inputs": [
+            "chemlib:erbium",
+            "minecraft:redstone",
+            "minecraft:lapis_lazuli"
+          ]
+        },
+        {
+          "output": "minecraft:glowstone_dust",
+          "type": "create:mixing",
+          "id": "kubejs:chemlib_full/create_mixing/sink/rare_earth/thulium/rare_earth_signal_pigment",
+          "file": "kubejs/server_scripts/40_recipe_add/63_chemlib_full_integration_routes.js",
+          "origin": "kubejs-source",
+          "surface": "create andesite machine surfaces",
+          "gate": "kubejs:andesite_machine_casing",
+          "inputs": [
+            "chemlib:thulium",
+            "minecraft:redstone",
+            "minecraft:lapis_lazuli"
+          ]
+        },
+        {
+          "output": "minecraft:glowstone_dust",
+          "type": "create:mixing",
+          "id": "kubejs:chemlib_full/create_mixing/sink/rare_earth/ytterbium/rare_earth_signal_pigment",
+          "file": "kubejs/server_scripts/40_recipe_add/63_chemlib_full_integration_routes.js",
+          "origin": "kubejs-source",
+          "surface": "create andesite machine surfaces",
+          "gate": "kubejs:andesite_machine_casing",
+          "inputs": [
+            "chemlib:ytterbium",
+            "minecraft:redstone",
+            "minecraft:lapis_lazuli"
+          ]
+        },
+        {
+          "output": "minecraft:glowstone_dust",
+          "type": "create:mixing",
+          "id": "kubejs:chemlib_full/create_mixing/sink/rare_earth/lutetium/rare_earth_signal_pigment",
+          "file": "kubejs/server_scripts/40_recipe_add/63_chemlib_full_integration_routes.js",
+          "origin": "kubejs-source",
+          "surface": "create andesite machine surfaces",
+          "gate": "kubejs:andesite_machine_casing",
+          "inputs": [
+            "chemlib:lutetium",
+            "minecraft:redstone",
+            "minecraft:lapis_lazuli"
+          ]
+        },
+        {
+          "output": "minecraft:glowstone_dust",
+          "type": "create:mixing",
+          "id": "kubejs:chemlib_full/create_mixing/sink/rare_earth/yttrium/rare_earth_signal_pigment",
+          "file": "kubejs/server_scripts/40_recipe_add/63_chemlib_full_integration_routes.js",
+          "origin": "kubejs-source",
+          "surface": "create andesite machine surfaces",
+          "gate": "kubejs:andesite_machine_casing",
+          "inputs": [
+            "chemlib:yttrium",
+            "minecraft:redstone",
+            "minecraft:lapis_lazuli"
+          ]
+        },
+        {
+          "output": "minecraft:glowstone_dust",
           "type": "create:filling",
           "id": "create:filling/glowstone",
           "file": "generated/runtime-dumps/kubejs-config",
@@ -4839,13 +6532,6 @@
           "type": "minecraft:smelting",
           "inputs": [
             "projectvibrantjourneys:glowcap"
-          ]
-        },
-        {
-          "id": "reliquary:uncrafting/glowstone_dust",
-          "type": "minecraft:crafting_shaped",
-          "inputs": [
-
           ]
         }
       ],
@@ -5247,54 +6933,6 @@
       ]
     },
     {
-      "output": "createbigcannons:cast_iron_ingot",
-      "casedProducers": [
-        {
-          "output": "createbigcannons:cast_iron_ingot",
-          "type": "create:compacting",
-          "id": "createbigcannons:compacting/iron_to_cast_iron_ingot",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-
-          ]
-        },
-        {
-          "output": "createbigcannons:cast_iron_ingot",
-          "type": "create:compacting",
-          "id": "createbigcannons:compacting/forge_cast_iron_ingot",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-
-          ]
-        }
-      ],
-      "simpleDumpProducers": [
-        {
-          "id": "createbigcannons:cast_iron_ingot_from_block",
-          "type": "minecraft:crafting_shapeless",
-          "inputs": [
-            "createbigcannons:cast_iron_block"
-          ]
-        },
-        {
-          "id": "createbigcannons:cast_iron_ingot_from_nuggets",
-          "type": "minecraft:crafting_shaped",
-          "inputs": [
-
-          ]
-        }
-      ],
-      "authoredSimpleProducers": [
-
-      ]
-    },
-    {
       "output": "chemlib:nickel_nugget",
       "casedProducers": [
         {
@@ -5449,78 +7087,6 @@
       ]
     },
     {
-      "output": "createbigcannons:bronze_ingot",
-      "casedProducers": [
-        {
-          "output": "createbigcannons:bronze_ingot",
-          "type": "create:mixing",
-          "id": "createbigcannons:mixing/alloy_bronze_tin",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-
-          ]
-        },
-        {
-          "output": "createbigcannons:bronze_ingot",
-          "type": "create:mixing",
-          "id": "createbigcannons:mixing/alloy_bronze_tinless",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-            "create:cinder_flour"
-          ]
-        },
-        {
-          "output": "createbigcannons:bronze_ingot",
-          "type": "create:compacting",
-          "id": "createbigcannons:compacting/forge_bronze_ingot",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-
-          ]
-        },
-        {
-          "output": "createbigcannons:bronze_ingot",
-          "type": "create:mixing",
-          "id": "createbigcannons:mixing/alloy_bronze_brass",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-            "create:cinder_flour"
-          ]
-        }
-      ],
-      "simpleDumpProducers": [
-        {
-          "id": "createbigcannons:bronze_ingot_from_nuggets",
-          "type": "minecraft:crafting_shaped",
-          "inputs": [
-
-          ]
-        },
-        {
-          "id": "createbigcannons:bronze_ingot_from_block",
-          "type": "minecraft:crafting_shapeless",
-          "inputs": [
-            "createbigcannons:bronze_block"
-          ]
-        }
-      ],
-      "authoredSimpleProducers": [
-
-      ]
-    },
-    {
       "output": "chemlib:osmium_metal_block",
       "casedProducers": [
         {
@@ -5597,54 +7163,6 @@
       "simpleDumpProducers": [
         {
           "id": "ars_nouveau:archwood_pressure_plate",
-          "type": "minecraft:crafting_shaped",
-          "inputs": [
-
-          ]
-        }
-      ],
-      "authoredSimpleProducers": [
-
-      ]
-    },
-    {
-      "output": "createbigcannons:steel_ingot",
-      "casedProducers": [
-        {
-          "output": "createbigcannons:steel_ingot",
-          "type": "create:compacting",
-          "id": "createbigcannons:compacting/forge_steel_ingot",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-
-          ]
-        },
-        {
-          "output": "createbigcannons:steel_ingot",
-          "type": "create:mixing",
-          "id": "createbigcannons:mixing/alloy_steel",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-
-          ]
-        }
-      ],
-      "simpleDumpProducers": [
-        {
-          "id": "createbigcannons:steel_ingot_from_block",
-          "type": "minecraft:crafting_shapeless",
-          "inputs": [
-
-          ]
-        },
-        {
-          "id": "createbigcannons:steel_ingot_from_nuggets",
           "type": "minecraft:crafting_shaped",
           "inputs": [
 
@@ -5831,20 +7349,6 @@
           "type": "minecraft:crafting_shapeless",
           "inputs": [
 
-          ]
-        },
-        {
-          "id": "delightful:knives/blasting/zinc_create",
-          "type": "minecraft:blasting",
-          "inputs": [
-            "delightful:zinc_knife"
-          ]
-        },
-        {
-          "id": "delightful:knives/smelting/zinc_create",
-          "type": "minecraft:smelting",
-          "inputs": [
-            "delightful:zinc_knife"
           ]
         }
       ],
@@ -6535,18 +8039,6 @@
         },
         {
           "output": "chemlib:silver_nugget",
-          "type": "create:splashing",
-          "id": "create:splashing/iceandfire/crushed_raw_silver",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-            "create:crushed_raw_silver"
-          ]
-        },
-        {
-          "output": "chemlib:silver_nugget",
           "type": "tconstruct:casting_table",
           "id": "tconstruct:smeltery/casting/metal/silver/nugget_sand_cast",
           "file": "generated/runtime-dumps/kubejs-config",
@@ -6559,36 +8051,6 @@
         }
       ],
       "simpleDumpProducers": [
-        {
-          "id": "iceandfire:furnace/silver_nugget",
-          "type": "minecraft:smelting",
-          "inputs": [
-            "iceandfire:silver_pickaxe",
-            "iceandfire:silver_shovel",
-            "iceandfire:silver_axe",
-            "iceandfire:silver_hoe",
-            "iceandfire:silver_sword",
-            "iceandfire:armor_silver_metal_helmet",
-            "iceandfire:armor_silver_metal_chestplate",
-            "iceandfire:armor_silver_metal_leggings",
-            "iceandfire:armor_silver_metal_boots"
-          ]
-        },
-        {
-          "id": "iceandfire:furnace/silver_nugget_blasting",
-          "type": "minecraft:blasting",
-          "inputs": [
-            "iceandfire:silver_pickaxe",
-            "iceandfire:silver_shovel",
-            "iceandfire:silver_axe",
-            "iceandfire:silver_hoe",
-            "iceandfire:silver_sword",
-            "iceandfire:armor_silver_metal_helmet",
-            "iceandfire:armor_silver_metal_chestplate",
-            "iceandfire:armor_silver_metal_leggings",
-            "iceandfire:armor_silver_metal_boots"
-          ]
-        },
         {
           "id": "chemlib:silver_ingot_to_nugget",
           "type": "minecraft:crafting_shapeless",
@@ -7407,66 +8869,6 @@
       ]
     },
     {
-      "output": "createbigcannons:nethersteel_ingot",
-      "casedProducers": [
-        {
-          "output": "createbigcannons:nethersteel_ingot",
-          "type": "create:mixing",
-          "id": "createbigcannons:mixing/alloy_nethersteel_cast_iron",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-            "minecraft:netherite_scrap"
-          ]
-        },
-        {
-          "output": "createbigcannons:nethersteel_ingot",
-          "type": "create:compacting",
-          "id": "createbigcannons:compacting/forge_nethersteel_ingot",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-
-          ]
-        },
-        {
-          "output": "createbigcannons:nethersteel_ingot",
-          "type": "create:mixing",
-          "id": "createbigcannons:mixing/alloy_nethersteel_steel",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-            "minecraft:netherite_scrap"
-          ]
-        }
-      ],
-      "simpleDumpProducers": [
-        {
-          "id": "createbigcannons:nethersteel_ingot_from_block",
-          "type": "minecraft:crafting_shapeless",
-          "inputs": [
-            "createbigcannons:nethersteel_block"
-          ]
-        },
-        {
-          "id": "createbigcannons:nethersteel_ingot_from_nuggets",
-          "type": "minecraft:crafting_shaped",
-          "inputs": [
-
-          ]
-        }
-      ],
-      "authoredSimpleProducers": [
-
-      ]
-    },
-    {
       "output": "powergrid:generator_commutator",
       "casedProducers": [
         {
@@ -7903,35 +9305,6 @@
       "simpleDumpProducers": [
         {
           "id": "chemlib:tin_ingot_to_block",
-          "type": "minecraft:crafting_shaped",
-          "inputs": [
-
-          ]
-        }
-      ],
-      "authoredSimpleProducers": [
-
-      ]
-    },
-    {
-      "output": "mynethersdelight:powdery_pressure_plate",
-      "casedProducers": [
-        {
-          "output": "mynethersdelight:powdery_pressure_plate",
-          "type": "create:cutting",
-          "id": "create:cutting/runtime_generated/compat/mynethersdelight/powdery_planks_to_powdery_pressure_plate",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-            "mynethersdelight:powdery_planks"
-          ]
-        }
-      ],
-      "simpleDumpProducers": [
-        {
-          "id": "mynethersdelight:crafting/powdery_pressure_plate",
           "type": "minecraft:crafting_shaped",
           "inputs": [
 
@@ -9111,13 +10484,6 @@
           "inputs": [
 
           ]
-        },
-        {
-          "id": "iceandfire:copper_nuggets_to_ingot",
-          "type": "minecraft:crafting_shapeless",
-          "inputs": [
-
-          ]
         }
       ],
       "authoredSimpleProducers": [
@@ -12549,6 +13915,216 @@
         },
         {
           "output": "minecraft:glowstone_dust",
+          "type": "create:mixing",
+          "id": "kubejs:chemlib_full/create_mixing/sink/rare_earth/lanthanum/rare_earth_signal_pigment",
+          "file": "kubejs/server_scripts/40_recipe_add/63_chemlib_full_integration_routes.js",
+          "origin": "kubejs-source",
+          "surface": "create andesite machine surfaces",
+          "gate": "kubejs:andesite_machine_casing",
+          "inputs": [
+            "chemlib:lanthanum",
+            "minecraft:redstone",
+            "minecraft:lapis_lazuli"
+          ]
+        },
+        {
+          "output": "minecraft:glowstone_dust",
+          "type": "create:mixing",
+          "id": "kubejs:chemlib_full/create_mixing/sink/rare_earth/cerium/rare_earth_signal_pigment",
+          "file": "kubejs/server_scripts/40_recipe_add/63_chemlib_full_integration_routes.js",
+          "origin": "kubejs-source",
+          "surface": "create andesite machine surfaces",
+          "gate": "kubejs:andesite_machine_casing",
+          "inputs": [
+            "chemlib:cerium",
+            "minecraft:redstone",
+            "minecraft:lapis_lazuli"
+          ]
+        },
+        {
+          "output": "minecraft:glowstone_dust",
+          "type": "create:mixing",
+          "id": "kubejs:chemlib_full/create_mixing/sink/rare_earth/praseodymium/rare_earth_signal_pigment",
+          "file": "kubejs/server_scripts/40_recipe_add/63_chemlib_full_integration_routes.js",
+          "origin": "kubejs-source",
+          "surface": "create andesite machine surfaces",
+          "gate": "kubejs:andesite_machine_casing",
+          "inputs": [
+            "chemlib:praseodymium",
+            "minecraft:redstone",
+            "minecraft:lapis_lazuli"
+          ]
+        },
+        {
+          "output": "minecraft:glowstone_dust",
+          "type": "create:mixing",
+          "id": "kubejs:chemlib_full/create_mixing/sink/rare_earth/neodymium/rare_earth_signal_pigment",
+          "file": "kubejs/server_scripts/40_recipe_add/63_chemlib_full_integration_routes.js",
+          "origin": "kubejs-source",
+          "surface": "create andesite machine surfaces",
+          "gate": "kubejs:andesite_machine_casing",
+          "inputs": [
+            "chemlib:neodymium",
+            "minecraft:redstone",
+            "minecraft:lapis_lazuli"
+          ]
+        },
+        {
+          "output": "minecraft:glowstone_dust",
+          "type": "create:mixing",
+          "id": "kubejs:chemlib_full/create_mixing/sink/rare_earth/samarium/rare_earth_signal_pigment",
+          "file": "kubejs/server_scripts/40_recipe_add/63_chemlib_full_integration_routes.js",
+          "origin": "kubejs-source",
+          "surface": "create andesite machine surfaces",
+          "gate": "kubejs:andesite_machine_casing",
+          "inputs": [
+            "chemlib:samarium",
+            "minecraft:redstone",
+            "minecraft:lapis_lazuli"
+          ]
+        },
+        {
+          "output": "minecraft:glowstone_dust",
+          "type": "create:mixing",
+          "id": "kubejs:chemlib_full/create_mixing/sink/rare_earth/europium/rare_earth_signal_pigment",
+          "file": "kubejs/server_scripts/40_recipe_add/63_chemlib_full_integration_routes.js",
+          "origin": "kubejs-source",
+          "surface": "create andesite machine surfaces",
+          "gate": "kubejs:andesite_machine_casing",
+          "inputs": [
+            "chemlib:europium",
+            "minecraft:redstone",
+            "minecraft:lapis_lazuli"
+          ]
+        },
+        {
+          "output": "minecraft:glowstone_dust",
+          "type": "create:mixing",
+          "id": "kubejs:chemlib_full/create_mixing/sink/rare_earth/gadolinium/rare_earth_signal_pigment",
+          "file": "kubejs/server_scripts/40_recipe_add/63_chemlib_full_integration_routes.js",
+          "origin": "kubejs-source",
+          "surface": "create andesite machine surfaces",
+          "gate": "kubejs:andesite_machine_casing",
+          "inputs": [
+            "chemlib:gadolinium",
+            "minecraft:redstone",
+            "minecraft:lapis_lazuli"
+          ]
+        },
+        {
+          "output": "minecraft:glowstone_dust",
+          "type": "create:mixing",
+          "id": "kubejs:chemlib_full/create_mixing/sink/rare_earth/terbium/rare_earth_signal_pigment",
+          "file": "kubejs/server_scripts/40_recipe_add/63_chemlib_full_integration_routes.js",
+          "origin": "kubejs-source",
+          "surface": "create andesite machine surfaces",
+          "gate": "kubejs:andesite_machine_casing",
+          "inputs": [
+            "chemlib:terbium",
+            "minecraft:redstone",
+            "minecraft:lapis_lazuli"
+          ]
+        },
+        {
+          "output": "minecraft:glowstone_dust",
+          "type": "create:mixing",
+          "id": "kubejs:chemlib_full/create_mixing/sink/rare_earth/dysprosium/rare_earth_signal_pigment",
+          "file": "kubejs/server_scripts/40_recipe_add/63_chemlib_full_integration_routes.js",
+          "origin": "kubejs-source",
+          "surface": "create andesite machine surfaces",
+          "gate": "kubejs:andesite_machine_casing",
+          "inputs": [
+            "chemlib:dysprosium",
+            "minecraft:redstone",
+            "minecraft:lapis_lazuli"
+          ]
+        },
+        {
+          "output": "minecraft:glowstone_dust",
+          "type": "create:mixing",
+          "id": "kubejs:chemlib_full/create_mixing/sink/rare_earth/holmium/rare_earth_signal_pigment",
+          "file": "kubejs/server_scripts/40_recipe_add/63_chemlib_full_integration_routes.js",
+          "origin": "kubejs-source",
+          "surface": "create andesite machine surfaces",
+          "gate": "kubejs:andesite_machine_casing",
+          "inputs": [
+            "chemlib:holmium",
+            "minecraft:redstone",
+            "minecraft:lapis_lazuli"
+          ]
+        },
+        {
+          "output": "minecraft:glowstone_dust",
+          "type": "create:mixing",
+          "id": "kubejs:chemlib_full/create_mixing/sink/rare_earth/erbium/rare_earth_signal_pigment",
+          "file": "kubejs/server_scripts/40_recipe_add/63_chemlib_full_integration_routes.js",
+          "origin": "kubejs-source",
+          "surface": "create andesite machine surfaces",
+          "gate": "kubejs:andesite_machine_casing",
+          "inputs": [
+            "chemlib:erbium",
+            "minecraft:redstone",
+            "minecraft:lapis_lazuli"
+          ]
+        },
+        {
+          "output": "minecraft:glowstone_dust",
+          "type": "create:mixing",
+          "id": "kubejs:chemlib_full/create_mixing/sink/rare_earth/thulium/rare_earth_signal_pigment",
+          "file": "kubejs/server_scripts/40_recipe_add/63_chemlib_full_integration_routes.js",
+          "origin": "kubejs-source",
+          "surface": "create andesite machine surfaces",
+          "gate": "kubejs:andesite_machine_casing",
+          "inputs": [
+            "chemlib:thulium",
+            "minecraft:redstone",
+            "minecraft:lapis_lazuli"
+          ]
+        },
+        {
+          "output": "minecraft:glowstone_dust",
+          "type": "create:mixing",
+          "id": "kubejs:chemlib_full/create_mixing/sink/rare_earth/ytterbium/rare_earth_signal_pigment",
+          "file": "kubejs/server_scripts/40_recipe_add/63_chemlib_full_integration_routes.js",
+          "origin": "kubejs-source",
+          "surface": "create andesite machine surfaces",
+          "gate": "kubejs:andesite_machine_casing",
+          "inputs": [
+            "chemlib:ytterbium",
+            "minecraft:redstone",
+            "minecraft:lapis_lazuli"
+          ]
+        },
+        {
+          "output": "minecraft:glowstone_dust",
+          "type": "create:mixing",
+          "id": "kubejs:chemlib_full/create_mixing/sink/rare_earth/lutetium/rare_earth_signal_pigment",
+          "file": "kubejs/server_scripts/40_recipe_add/63_chemlib_full_integration_routes.js",
+          "origin": "kubejs-source",
+          "surface": "create andesite machine surfaces",
+          "gate": "kubejs:andesite_machine_casing",
+          "inputs": [
+            "chemlib:lutetium",
+            "minecraft:redstone",
+            "minecraft:lapis_lazuli"
+          ]
+        },
+        {
+          "output": "minecraft:glowstone_dust",
+          "type": "create:mixing",
+          "id": "kubejs:chemlib_full/create_mixing/sink/rare_earth/yttrium/rare_earth_signal_pigment",
+          "file": "kubejs/server_scripts/40_recipe_add/63_chemlib_full_integration_routes.js",
+          "origin": "kubejs-source",
+          "surface": "create andesite machine surfaces",
+          "gate": "kubejs:andesite_machine_casing",
+          "inputs": [
+            "chemlib:yttrium",
+            "minecraft:redstone",
+            "minecraft:lapis_lazuli"
+          ]
+        },
+        {
+          "output": "minecraft:glowstone_dust",
           "type": "create:filling",
           "id": "create:filling/glowstone",
           "file": "generated/runtime-dumps/kubejs-config",
@@ -12602,13 +14178,6 @@
           "type": "minecraft:smelting",
           "inputs": [
             "projectvibrantjourneys:glowcap"
-          ]
-        },
-        {
-          "id": "reliquary:uncrafting/glowstone_dust",
-          "type": "minecraft:crafting_shaped",
-          "inputs": [
-
           ]
         }
       ],
@@ -13030,56 +14599,6 @@
       "reason": "raw metal form"
     },
     {
-      "output": "createbigcannons:cast_iron_ingot",
-      "casedProducers": [
-        {
-          "output": "createbigcannons:cast_iron_ingot",
-          "type": "create:compacting",
-          "id": "createbigcannons:compacting/iron_to_cast_iron_ingot",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-
-          ]
-        },
-        {
-          "output": "createbigcannons:cast_iron_ingot",
-          "type": "create:compacting",
-          "id": "createbigcannons:compacting/forge_cast_iron_ingot",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-
-          ]
-        }
-      ],
-      "simpleDumpProducers": [
-        {
-          "id": "createbigcannons:cast_iron_ingot_from_block",
-          "type": "minecraft:crafting_shapeless",
-          "inputs": [
-            "createbigcannons:cast_iron_block"
-          ]
-        },
-        {
-          "id": "createbigcannons:cast_iron_ingot_from_nuggets",
-          "type": "minecraft:crafting_shaped",
-          "inputs": [
-
-          ]
-        }
-      ],
-      "authoredSimpleProducers": [
-
-      ],
-      "benign": true,
-      "reason": "raw metal form"
-    },
-    {
       "output": "chemlib:nickel_nugget",
       "casedProducers": [
         {
@@ -13240,80 +14759,6 @@
       "reason": "raw metal form"
     },
     {
-      "output": "createbigcannons:bronze_ingot",
-      "casedProducers": [
-        {
-          "output": "createbigcannons:bronze_ingot",
-          "type": "create:mixing",
-          "id": "createbigcannons:mixing/alloy_bronze_tin",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-
-          ]
-        },
-        {
-          "output": "createbigcannons:bronze_ingot",
-          "type": "create:mixing",
-          "id": "createbigcannons:mixing/alloy_bronze_tinless",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-            "create:cinder_flour"
-          ]
-        },
-        {
-          "output": "createbigcannons:bronze_ingot",
-          "type": "create:compacting",
-          "id": "createbigcannons:compacting/forge_bronze_ingot",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-
-          ]
-        },
-        {
-          "output": "createbigcannons:bronze_ingot",
-          "type": "create:mixing",
-          "id": "createbigcannons:mixing/alloy_bronze_brass",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-            "create:cinder_flour"
-          ]
-        }
-      ],
-      "simpleDumpProducers": [
-        {
-          "id": "createbigcannons:bronze_ingot_from_nuggets",
-          "type": "minecraft:crafting_shaped",
-          "inputs": [
-
-          ]
-        },
-        {
-          "id": "createbigcannons:bronze_ingot_from_block",
-          "type": "minecraft:crafting_shapeless",
-          "inputs": [
-            "createbigcannons:bronze_block"
-          ]
-        }
-      ],
-      "authoredSimpleProducers": [
-
-      ],
-      "benign": true,
-      "reason": "raw metal form"
-    },
-    {
       "output": "chemlib:osmium_metal_block",
       "casedProducers": [
         {
@@ -13405,56 +14850,6 @@
       ],
       "benign": true,
       "reason": "decorative pressure plate"
-    },
-    {
-      "output": "createbigcannons:steel_ingot",
-      "casedProducers": [
-        {
-          "output": "createbigcannons:steel_ingot",
-          "type": "create:compacting",
-          "id": "createbigcannons:compacting/forge_steel_ingot",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-
-          ]
-        },
-        {
-          "output": "createbigcannons:steel_ingot",
-          "type": "create:mixing",
-          "id": "createbigcannons:mixing/alloy_steel",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-
-          ]
-        }
-      ],
-      "simpleDumpProducers": [
-        {
-          "id": "createbigcannons:steel_ingot_from_block",
-          "type": "minecraft:crafting_shapeless",
-          "inputs": [
-
-          ]
-        },
-        {
-          "id": "createbigcannons:steel_ingot_from_nuggets",
-          "type": "minecraft:crafting_shaped",
-          "inputs": [
-
-          ]
-        }
-      ],
-      "authoredSimpleProducers": [
-
-      ],
-      "benign": true,
-      "reason": "raw metal form"
     },
     {
       "output": "minecraft:warped_pressure_plate",
@@ -13636,20 +15031,6 @@
           "type": "minecraft:crafting_shapeless",
           "inputs": [
 
-          ]
-        },
-        {
-          "id": "delightful:knives/blasting/zinc_create",
-          "type": "minecraft:blasting",
-          "inputs": [
-            "delightful:zinc_knife"
-          ]
-        },
-        {
-          "id": "delightful:knives/smelting/zinc_create",
-          "type": "minecraft:smelting",
-          "inputs": [
-            "delightful:zinc_knife"
           ]
         }
       ],
@@ -14384,18 +15765,6 @@
         },
         {
           "output": "chemlib:silver_nugget",
-          "type": "create:splashing",
-          "id": "create:splashing/iceandfire/crushed_raw_silver",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-            "create:crushed_raw_silver"
-          ]
-        },
-        {
-          "output": "chemlib:silver_nugget",
           "type": "tconstruct:casting_table",
           "id": "tconstruct:smeltery/casting/metal/silver/nugget_sand_cast",
           "file": "generated/runtime-dumps/kubejs-config",
@@ -14408,36 +15777,6 @@
         }
       ],
       "simpleDumpProducers": [
-        {
-          "id": "iceandfire:furnace/silver_nugget",
-          "type": "minecraft:smelting",
-          "inputs": [
-            "iceandfire:silver_pickaxe",
-            "iceandfire:silver_shovel",
-            "iceandfire:silver_axe",
-            "iceandfire:silver_hoe",
-            "iceandfire:silver_sword",
-            "iceandfire:armor_silver_metal_helmet",
-            "iceandfire:armor_silver_metal_chestplate",
-            "iceandfire:armor_silver_metal_leggings",
-            "iceandfire:armor_silver_metal_boots"
-          ]
-        },
-        {
-          "id": "iceandfire:furnace/silver_nugget_blasting",
-          "type": "minecraft:blasting",
-          "inputs": [
-            "iceandfire:silver_pickaxe",
-            "iceandfire:silver_shovel",
-            "iceandfire:silver_axe",
-            "iceandfire:silver_hoe",
-            "iceandfire:silver_sword",
-            "iceandfire:armor_silver_metal_helmet",
-            "iceandfire:armor_silver_metal_chestplate",
-            "iceandfire:armor_silver_metal_leggings",
-            "iceandfire:armor_silver_metal_boots"
-          ]
-        },
         {
           "id": "chemlib:silver_ingot_to_nugget",
           "type": "minecraft:crafting_shapeless",
@@ -15310,68 +16649,6 @@
       "reason": "raw metal form"
     },
     {
-      "output": "createbigcannons:nethersteel_ingot",
-      "casedProducers": [
-        {
-          "output": "createbigcannons:nethersteel_ingot",
-          "type": "create:mixing",
-          "id": "createbigcannons:mixing/alloy_nethersteel_cast_iron",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-            "minecraft:netherite_scrap"
-          ]
-        },
-        {
-          "output": "createbigcannons:nethersteel_ingot",
-          "type": "create:compacting",
-          "id": "createbigcannons:compacting/forge_nethersteel_ingot",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-
-          ]
-        },
-        {
-          "output": "createbigcannons:nethersteel_ingot",
-          "type": "create:mixing",
-          "id": "createbigcannons:mixing/alloy_nethersteel_steel",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-            "minecraft:netherite_scrap"
-          ]
-        }
-      ],
-      "simpleDumpProducers": [
-        {
-          "id": "createbigcannons:nethersteel_ingot_from_block",
-          "type": "minecraft:crafting_shapeless",
-          "inputs": [
-            "createbigcannons:nethersteel_block"
-          ]
-        },
-        {
-          "id": "createbigcannons:nethersteel_ingot_from_nuggets",
-          "type": "minecraft:crafting_shaped",
-          "inputs": [
-
-          ]
-        }
-      ],
-      "authoredSimpleProducers": [
-
-      ],
-      "benign": true,
-      "reason": "raw metal form"
-    },
-    {
       "output": "powergrid:generator_commutator",
       "casedProducers": [
         {
@@ -15847,37 +17124,6 @@
       ],
       "benign": true,
       "reason": "raw metal form"
-    },
-    {
-      "output": "mynethersdelight:powdery_pressure_plate",
-      "casedProducers": [
-        {
-          "output": "mynethersdelight:powdery_pressure_plate",
-          "type": "create:cutting",
-          "id": "create:cutting/runtime_generated/compat/mynethersdelight/powdery_planks_to_powdery_pressure_plate",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-            "mynethersdelight:powdery_planks"
-          ]
-        }
-      ],
-      "simpleDumpProducers": [
-        {
-          "id": "mynethersdelight:crafting/powdery_pressure_plate",
-          "type": "minecraft:crafting_shaped",
-          "inputs": [
-
-          ]
-        }
-      ],
-      "authoredSimpleProducers": [
-
-      ],
-      "benign": true,
-      "reason": "decorative pressure plate"
     },
     {
       "output": "minecraft:crimson_pressure_plate",
@@ -16573,13 +17819,6 @@
         {
           "id": "pneumaticcraft:copper_ingot_from_nugget",
           "type": "minecraft:crafting_shaped",
-          "inputs": [
-
-          ]
-        },
-        {
-          "id": "iceandfire:copper_nuggets_to_ingot",
-          "type": "minecraft:crafting_shapeless",
           "inputs": [
 
           ]
@@ -19764,56 +21003,6 @@
       "reason": "raw metal form"
     },
     {
-      "output": "createbigcannons:cast_iron_ingot",
-      "casedProducers": [
-        {
-          "output": "createbigcannons:cast_iron_ingot",
-          "type": "create:compacting",
-          "id": "createbigcannons:compacting/iron_to_cast_iron_ingot",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-
-          ]
-        },
-        {
-          "output": "createbigcannons:cast_iron_ingot",
-          "type": "create:compacting",
-          "id": "createbigcannons:compacting/forge_cast_iron_ingot",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-
-          ]
-        }
-      ],
-      "simpleDumpProducers": [
-        {
-          "id": "createbigcannons:cast_iron_ingot_from_block",
-          "type": "minecraft:crafting_shapeless",
-          "inputs": [
-            "createbigcannons:cast_iron_block"
-          ]
-        },
-        {
-          "id": "createbigcannons:cast_iron_ingot_from_nuggets",
-          "type": "minecraft:crafting_shaped",
-          "inputs": [
-
-          ]
-        }
-      ],
-      "authoredSimpleProducers": [
-
-      ],
-      "benign": true,
-      "reason": "raw metal form"
-    },
-    {
       "output": "chemlib:nickel_nugget",
       "casedProducers": [
         {
@@ -19974,80 +21163,6 @@
       "reason": "raw metal form"
     },
     {
-      "output": "createbigcannons:bronze_ingot",
-      "casedProducers": [
-        {
-          "output": "createbigcannons:bronze_ingot",
-          "type": "create:mixing",
-          "id": "createbigcannons:mixing/alloy_bronze_tin",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-
-          ]
-        },
-        {
-          "output": "createbigcannons:bronze_ingot",
-          "type": "create:mixing",
-          "id": "createbigcannons:mixing/alloy_bronze_tinless",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-            "create:cinder_flour"
-          ]
-        },
-        {
-          "output": "createbigcannons:bronze_ingot",
-          "type": "create:compacting",
-          "id": "createbigcannons:compacting/forge_bronze_ingot",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-
-          ]
-        },
-        {
-          "output": "createbigcannons:bronze_ingot",
-          "type": "create:mixing",
-          "id": "createbigcannons:mixing/alloy_bronze_brass",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-            "create:cinder_flour"
-          ]
-        }
-      ],
-      "simpleDumpProducers": [
-        {
-          "id": "createbigcannons:bronze_ingot_from_nuggets",
-          "type": "minecraft:crafting_shaped",
-          "inputs": [
-
-          ]
-        },
-        {
-          "id": "createbigcannons:bronze_ingot_from_block",
-          "type": "minecraft:crafting_shapeless",
-          "inputs": [
-            "createbigcannons:bronze_block"
-          ]
-        }
-      ],
-      "authoredSimpleProducers": [
-
-      ],
-      "benign": true,
-      "reason": "raw metal form"
-    },
-    {
       "output": "chemlib:osmium_metal_block",
       "casedProducers": [
         {
@@ -20139,56 +21254,6 @@
       ],
       "benign": true,
       "reason": "decorative pressure plate"
-    },
-    {
-      "output": "createbigcannons:steel_ingot",
-      "casedProducers": [
-        {
-          "output": "createbigcannons:steel_ingot",
-          "type": "create:compacting",
-          "id": "createbigcannons:compacting/forge_steel_ingot",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-
-          ]
-        },
-        {
-          "output": "createbigcannons:steel_ingot",
-          "type": "create:mixing",
-          "id": "createbigcannons:mixing/alloy_steel",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-
-          ]
-        }
-      ],
-      "simpleDumpProducers": [
-        {
-          "id": "createbigcannons:steel_ingot_from_block",
-          "type": "minecraft:crafting_shapeless",
-          "inputs": [
-
-          ]
-        },
-        {
-          "id": "createbigcannons:steel_ingot_from_nuggets",
-          "type": "minecraft:crafting_shaped",
-          "inputs": [
-
-          ]
-        }
-      ],
-      "authoredSimpleProducers": [
-
-      ],
-      "benign": true,
-      "reason": "raw metal form"
     },
     {
       "output": "minecraft:warped_pressure_plate",
@@ -20370,20 +21435,6 @@
           "type": "minecraft:crafting_shapeless",
           "inputs": [
 
-          ]
-        },
-        {
-          "id": "delightful:knives/blasting/zinc_create",
-          "type": "minecraft:blasting",
-          "inputs": [
-            "delightful:zinc_knife"
-          ]
-        },
-        {
-          "id": "delightful:knives/smelting/zinc_create",
-          "type": "minecraft:smelting",
-          "inputs": [
-            "delightful:zinc_knife"
           ]
         }
       ],
@@ -21118,18 +22169,6 @@
         },
         {
           "output": "chemlib:silver_nugget",
-          "type": "create:splashing",
-          "id": "create:splashing/iceandfire/crushed_raw_silver",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-            "create:crushed_raw_silver"
-          ]
-        },
-        {
-          "output": "chemlib:silver_nugget",
           "type": "tconstruct:casting_table",
           "id": "tconstruct:smeltery/casting/metal/silver/nugget_sand_cast",
           "file": "generated/runtime-dumps/kubejs-config",
@@ -21142,36 +22181,6 @@
         }
       ],
       "simpleDumpProducers": [
-        {
-          "id": "iceandfire:furnace/silver_nugget",
-          "type": "minecraft:smelting",
-          "inputs": [
-            "iceandfire:silver_pickaxe",
-            "iceandfire:silver_shovel",
-            "iceandfire:silver_axe",
-            "iceandfire:silver_hoe",
-            "iceandfire:silver_sword",
-            "iceandfire:armor_silver_metal_helmet",
-            "iceandfire:armor_silver_metal_chestplate",
-            "iceandfire:armor_silver_metal_leggings",
-            "iceandfire:armor_silver_metal_boots"
-          ]
-        },
-        {
-          "id": "iceandfire:furnace/silver_nugget_blasting",
-          "type": "minecraft:blasting",
-          "inputs": [
-            "iceandfire:silver_pickaxe",
-            "iceandfire:silver_shovel",
-            "iceandfire:silver_axe",
-            "iceandfire:silver_hoe",
-            "iceandfire:silver_sword",
-            "iceandfire:armor_silver_metal_helmet",
-            "iceandfire:armor_silver_metal_chestplate",
-            "iceandfire:armor_silver_metal_leggings",
-            "iceandfire:armor_silver_metal_boots"
-          ]
-        },
         {
           "id": "chemlib:silver_ingot_to_nugget",
           "type": "minecraft:crafting_shapeless",
@@ -22044,68 +23053,6 @@
       "reason": "raw metal form"
     },
     {
-      "output": "createbigcannons:nethersteel_ingot",
-      "casedProducers": [
-        {
-          "output": "createbigcannons:nethersteel_ingot",
-          "type": "create:mixing",
-          "id": "createbigcannons:mixing/alloy_nethersteel_cast_iron",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-            "minecraft:netherite_scrap"
-          ]
-        },
-        {
-          "output": "createbigcannons:nethersteel_ingot",
-          "type": "create:compacting",
-          "id": "createbigcannons:compacting/forge_nethersteel_ingot",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-
-          ]
-        },
-        {
-          "output": "createbigcannons:nethersteel_ingot",
-          "type": "create:mixing",
-          "id": "createbigcannons:mixing/alloy_nethersteel_steel",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-            "minecraft:netherite_scrap"
-          ]
-        }
-      ],
-      "simpleDumpProducers": [
-        {
-          "id": "createbigcannons:nethersteel_ingot_from_block",
-          "type": "minecraft:crafting_shapeless",
-          "inputs": [
-            "createbigcannons:nethersteel_block"
-          ]
-        },
-        {
-          "id": "createbigcannons:nethersteel_ingot_from_nuggets",
-          "type": "minecraft:crafting_shaped",
-          "inputs": [
-
-          ]
-        }
-      ],
-      "authoredSimpleProducers": [
-
-      ],
-      "benign": true,
-      "reason": "raw metal form"
-    },
-    {
       "output": "powergrid:generator_commutator",
       "casedProducers": [
         {
@@ -22581,37 +23528,6 @@
       ],
       "benign": true,
       "reason": "raw metal form"
-    },
-    {
-      "output": "mynethersdelight:powdery_pressure_plate",
-      "casedProducers": [
-        {
-          "output": "mynethersdelight:powdery_pressure_plate",
-          "type": "create:cutting",
-          "id": "create:cutting/runtime_generated/compat/mynethersdelight/powdery_planks_to_powdery_pressure_plate",
-          "file": "generated/runtime-dumps/kubejs-config",
-          "origin": "runtime-dump",
-          "surface": "create andesite machine surfaces",
-          "gate": "kubejs:andesite_machine_casing",
-          "inputs": [
-            "mynethersdelight:powdery_planks"
-          ]
-        }
-      ],
-      "simpleDumpProducers": [
-        {
-          "id": "mynethersdelight:crafting/powdery_pressure_plate",
-          "type": "minecraft:crafting_shaped",
-          "inputs": [
-
-          ]
-        }
-      ],
-      "authoredSimpleProducers": [
-
-      ],
-      "benign": true,
-      "reason": "decorative pressure plate"
     },
     {
       "output": "minecraft:crimson_pressure_plate",
@@ -23150,9 +24066,9 @@
   ],
   "bypassReasonCounts": {
     "component-like simple recipe": 17,
-    "decorative pressure plate": 65,
+    "decorative pressure plate": 64,
     "decorative weathered plate": 1,
-    "raw metal form": 101,
+    "raw metal form": 97,
     "reversible orientation conversion": 1
   },
   "actionableBypasses": [
@@ -23359,11 +24275,8 @@
     }
   ],
   "errors": [
-    "kubejs/server_scripts/10_tags/60_realistic_ores_deposit_tags.js: missing ; after for-loop initializer (/home/dev/workspace/kubejs/server_scripts/10_tags/60_realistic_ores_deposit_tags.js#30)",
     "kubejs/server_scripts/20_recipe_remove/10_no_boats.js: TypeError: Cannot call method \"keySet\" of undefined (/home/dev/workspace/kubejs/server_scripts/20_recipe_remove/10_no_boats.js#24)",
-    "kubejs/server_scripts/20_recipe_remove/30_remove_items.js: missing ; before statement (/home/dev/workspace/kubejs/server_scripts/20_recipe_remove/30_remove_items.js#131)",
-    "kubejs/server_scripts/30_recipe_replace/40_ingot_rewrites.js: missing ; after for-loop initializer (/home/dev/workspace/kubejs/server_scripts/30_recipe_replace/40_ingot_rewrites.js#17)",
-    "kubejs/server_scripts/40_recipe_add/59_formulaic_synthesis_magic_routes.js: missing ; after for-loop initializer (/home/dev/workspace/kubejs/server_scripts/40_recipe_add/59_formulaic_synthesis_magic_routes.js#245)",
-    "kubejs/server_scripts/40_recipe_add/63_chemlib_full_integration_routes.js: ReferenceError: \"returnBC_FULL_CHEM_KNOWN_FLUIDS\" is not defined. (/home/dev/workspace/kubejs/server_scripts/40_recipe_add/63_chemlib_full_integration_routes.js#16)"
+    "kubejs/server_scripts/20_recipe_remove/30_remove_items.js: missing ; before statement (/home/dev/workspace/kubejs/server_scripts/20_recipe_remove/30_remove_items.js#132)",
+    "kubejs/server_scripts/30_recipe_replace/40_ingot_rewrites.js: missing ; after for-loop initializer (/home/dev/workspace/kubejs/server_scripts/30_recipe_replace/40_ingot_rewrites.js#17)"
   ]
 }

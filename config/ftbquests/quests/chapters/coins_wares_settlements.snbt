@@ -2,108 +2,110 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "coins_wares_settlements"
-	group: "3D1BF480E4BCDBA6"
+	group: "5B6E48C1A9D207F3"
 	icon: "createdeco:copper_coin"
-	id: "E3AA658E94A43325"
+	id: "5A9E559013A2938B"
 	order_index: 5
 	quest_links: [ ]
 	quests: [
 		{
-			id: "3928BE5AE760D41E"
-			title: "Copper"
+			description: ["Copper coins are the recovery economy, not a replacement for production."]
 			icon: "createdeco:copper_coin"
-			shape: "hexagon"
-			size: 1.2d
-			tasks: [{
-				id: "E7FC985650C52713"
+			id: "3928BE5AE760D41E"
+			rewards: [{
+				count: 4
+				id: "3FC0FC06C8ACBA80"
 				item: "createdeco:copper_coin"
 				type: "item"
 			}]
+			shape: "hexagon"
+			size: 1.2d
+			tasks: [{
+				id: "582FD9925AC169A4"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
+			title: "Copper"
 			x: -6.34d
 			y: 0.0d
-			rewards: [{ id: "FD29822C34828A61" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Copper coins are the recovery economy, not a replacement for production."]
 		}
 		{
 			dependencies: ["3928BE5AE760D41E"]
-			id: "C8005EB1A778738F"
-			title: "Earn"
+			description: ["Expect coins to come from routes, jobs, quests, and settlement contact. They reward useful play, not passive farming."]
 			icon: "minecraft:emerald"
+			id: "6DD278981E9BC5B6"
 			shape: "rsquare"
 			tasks: [{
-				id: "D09BB3D398F66D3A"
+				id: "383E5021D4CB84C6"
 				title: "Earn through routes and work"
 				type: "checkmark"
 			}]
+			title: "Earn"
 			x: -4.75d
 			y: -3.0d
-			description: ["Expect coins to come from routes, jobs, quests, and settlement contact. They reward useful play, not passive farming."]
 		}
 		{
-			dependencies: ["C8005EB1A778738F"]
-			id: "2E3F90FB1612D18F"
-			title: "Wares"
+			description: ["Wares packages are expedition support and trade texture, not renewable ore factories."]
 			icon: "wares:delivery_agreement"
+			id: "2E3F90FB1612D18F"
 			shape: "rsquare"
 			tasks: [{
 				id: "5DA037F3511F058F"
 				item: "wares:delivery_agreement"
 				type: "item"
 			}]
+			title: "Wares"
 			x: -3.17d
 			y: -3.0d
-			description: ["Wares packages are expedition support and trade texture, not renewable ore factories."]
 		}
 		{
 			dependencies: ["2E3F90FB1612D18F"]
-			id: "26402A61C9A8BE8C"
-			title: "Packages"
+			description: ["Use package contents to recover from distance and pressure without skipping machine gates."]
 			icon: "minecraft:barrel"
+			id: "26402A61C9A8BE8C"
 			shape: "rsquare"
 			tasks: [{
-				id: "E956E6CE651BA6B6"
+				id: "3FCFDEA266450E4A"
 				title: "Open packages as risk relief"
 				type: "checkmark"
 			}]
+			title: "Packages"
 			x: -1.58d
 			y: -3.0d
-			description: ["Use package contents to recover from distance and pressure without skipping machine gates."]
 		}
 		{
-			dependencies: ["C8005EB1A778738F"]
-			id: "CEF579B8E8AA139A"
-			title: "Mason"
+			description: ["Use village specialists to support your routes, not to skip the pack. A good trade should solve friction, not replace progression."]
 			icon: "minecraft:stonecutter"
+			id: "582DBBB296EBD5E9"
 			shape: "rsquare"
 			tasks: [{
-				id: "C58D38B3E378D3EB"
+				id: "30079719C8A1858C"
 				title: "Use village specialists intentionally"
 				type: "checkmark"
 			}]
+			title: "Mason"
 			x: -3.17d
 			y: -1.0d
-			description: ["Use village specialists to support your routes, not to skip the pack. A good trade should solve friction, not replace progression."]
 		}
 		{
-			dependencies: ["CEF579B8E8AA139A"]
-			id: "AB70C30EAD2A1141"
-			title: "Andesite"
+			description: ["Andesite casing can appear in trade context, but the real progression still runs through Create manufacture."]
 			icon: "create:andesite_casing"
+			id: "08A0DDB84CDDED6C"
 			shape: "rsquare"
 			tasks: [{
 				id: "680FAB0DEC847ECC"
 				item: "create:andesite_casing"
 				type: "item"
 			}]
+			title: "Andesite"
 			x: -1.58d
 			y: -1.0d
-			description: ["Andesite casing can appear in trade context, but the real progression still runs through Create manufacture."]
 		}
 		{
 			dependencies: ["3928BE5AE760D41E"]
-			id: "414E6E7F667C165B"
-			title: "Zinc"
+			description: ["Coin conversion loses value on purpose. Use it when access matters more than efficiency, not because every coin should collapse into one stack."]
 			icon: "createdeco:zinc_coin"
+			id: "414E6E7F667C165B"
 			shape: "diamond"
 			size: 1.05d
 			tasks: [{
@@ -111,153 +113,158 @@
 				item: "createdeco:zinc_coin"
 				type: "item"
 			}]
+			title: "Zinc"
 			x: -4.75d
 			y: 3.0d
-			description: ["Coin conversion loses value on purpose. Use it when access matters more than efficiency, not because every coin should collapse into one stack."]
 		}
 		{
 			dependencies: ["414E6E7F667C165B"]
-			id: "D071FCB648FDF641"
-			title: "Brass"
+			description: ["Higher coins represent harder routes and later markets, not permission to skip casings or circuits."]
 			icon: "createdeco:brass_coin"
+			id: "3ECB0601D1A8A322"
+			rewards: [{
+				count: 4
+				id: "45DDE46F9F0DB552"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			shape: "rsquare"
 			tasks: [{
 				id: "480079C0A1F67441"
 				item: "createdeco:brass_coin"
 				type: "item"
 			}]
+			title: "Brass"
 			x: -3.17d
 			y: 3.0d
-			rewards: [{ id: "A567944308870D88" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Higher coins represent harder routes and later markets, not permission to skip casings or circuits."]
 		}
 		{
-			dependencies: ["D071FCB648FDF641"]
-			id: "022C30C02F9E7139"
-			title: "Iron"
+			description: ["Spend iron coins on midgame support and procurement, especially when a settlement saves a long or dangerous trip."]
 			icon: "createdeco:iron_coin"
+			id: "022C30C02F9E7139"
 			shape: "rsquare"
 			tasks: [{
 				id: "77AA017D05E60DEF"
 				item: "createdeco:iron_coin"
 				type: "item"
 			}]
+			title: "Iron"
 			x: -1.58d
 			y: 3.0d
-			description: ["Spend iron coins on midgame support and procurement, especially when a settlement saves a long or dangerous trip."]
 		}
 		{
 			dependencies: ["022C30C02F9E7139"]
-			id: "E425BFBB92593AB1"
-			title: "Gold"
+			description: ["Gold-tier exchange belongs after the player can defend and supply routes consistently."]
 			icon: "createdeco:gold_coin"
+			id: "02EDB317C2076A80"
 			shape: "rsquare"
 			tasks: [{
-				id: "9BD7783AC2EC0277"
+				id: "70642D1CCBC4E9CB"
 				item: "createdeco:gold_coin"
 				type: "item"
 			}]
+			title: "Gold"
 			x: 0.0d
 			y: 3.0d
-			description: ["Gold-tier exchange belongs after the player can defend and supply routes consistently."]
 		}
 		{
-			dependencies: ["E425BFBB92593AB1"]
-			id: "AABAC054D31CBE7F"
-			title: "Netherite"
+			description: ["Top-tier currency buys support, not late proof. If a trade feels like it skips a major route, treat it as suspicious."]
 			icon: "createdeco:netherite_coin"
+			id: "2B135CCB969EAD86"
 			shape: "octagon"
 			size: 1.15d
 			tasks: [{
-				id: "CF84D32A5157CB2A"
+				id: "27D25C6A08117AE6"
 				item: "createdeco:netherite_coin"
 				type: "item"
 			}]
+			title: "Netherite"
 			x: 1.58d
 			y: 3.0d
-			description: ["Top-tier currency buys support, not late proof. If a trade feels like it skips a major route, treat it as suspicious."]
 		}
 		{
 			dependencies: ["26402A61C9A8BE8C"]
-			id: "C782E0C59F24EAFA"
-			title: "Walls"
+			description: ["Village defense is spatial: walls, elevation, lighting, and patrol paths matter."]
 			icon: "minecraft:cobblestone_wall"
+			id: "1FE763F553FF921A"
 			shape: "rsquare"
 			tasks: [{
 				id: "43C7F9289817780C"
 				title: "Wall approaches and seal caves"
 				type: "checkmark"
 			}]
+			title: "Walls"
 			x: 0.0d
 			y: -3.0d
-			description: ["Village defense is spatial: walls, elevation, lighting, and patrol paths matter."]
 		}
 		{
-			dependencies: ["C782E0C59F24EAFA"]
-			id: "925683523DC42F41"
-			title: "Roads"
+			description: ["Roads and rails make settlements useful after the first visit. Connect markets you return to often so trade trips are safer and faster."]
 			icon: "minecraft:rail"
+			id: "360CA2E0773A8CB3"
 			shape: "rsquare"
 			tasks: [{
 				id: "642E98F114BCA6CA"
 				title: "Build reliable surface routes"
 				type: "checkmark"
 			}]
+			title: "Roads"
 			x: 1.58d
 			y: -3.0d
-			description: ["Roads and rails make settlements useful after the first visit. Connect markets you return to often so trade trips are safer and faster."]
 		}
 		{
-			dependencies: ["925683523DC42F41"]
-			id: "8E9BAD6F9A91868E"
-			title: "Sightlines"
+			description: ["Open sightlines make raids and patrols manageable before automated defense exists."]
 			icon: "minecraft:spyglass"
+			id: "69ABAD9BA167E6B3"
 			shape: "rsquare"
 			tasks: [{
-				id: "A5AC34A0EB9D117A"
+				id: "1D40206BA1A7C724"
 				title: "Design for visibility"
 				type: "checkmark"
 			}]
+			title: "Sightlines"
 			x: 3.17d
 			y: -2.0d
-			description: ["Open sightlines make raids and patrols manageable before automated defense exists."]
 		}
 		{
-			dependencies: ["AABAC054D31CBE7F" "8E9BAD6F9A91868E"]
-			id: "8ACDA7509F139383"
-			title: "Markets"
+			description: ["A good market helps you recover, travel, and build, but it should not sell the main crafting steps for you."]
 			icon: "minecraft:bell"
+			id: "044140C970AED8CB"
 			shape: "rsquare"
 			tasks: [{
 				id: "6D394CB365785EA9"
 				title: "Separate support from bypass"
 				type: "checkmark"
 			}]
+			title: "Markets"
 			x: 3.17d
 			y: 2.0d
-			description: ["A good market helps you recover, travel, and build, but it should not sell the main crafting steps for you."]
 		}
 		{
-			dependencies: ["8ACDA7509F139383"]
-			id: "B26052FCE579CF54"
-			title: "Campaign"
-			icon: "minecraft:crossbow"
+			description: ["Let pillager pressure push you toward stronger settlements and better routes. Economy and defense belong together here."]
+			icon: {
+				Count: 1
+				id: "minecraft:crossbow"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "3092C394125CD76D"
 			shape: "hexagon"
 			size: 1.15d
 			tasks: [{
-				id: "C4D8C66BB6DF5896"
+				id: "285DD900D4FD38C3"
 				title: "Treat pillagers as a campaign"
 				type: "checkmark"
 			}]
+			title: "Campaign"
 			x: 4.75d
 			y: 0.0d
-			description: ["Let pillager pressure push you toward stronger settlements and better routes. Economy and defense belong together here."]
-		},
+		}
 		{
 			dependencies: ["3928BE5AE760D41E"]
-			id: "05402A01C5CACCD0"
-			title: "Small Jobs"
+			description: ["Economy density comes from jobs and settlement texture, not raw coin icons."]
 			icon: "minecraft:wheat"
+			id: "05402A01C5CACCD0"
 			shape: "diamond"
 			size: 0.9d
 			tasks: [{
@@ -265,16 +272,15 @@
 				title: "Earn copper through local labor and route help"
 				type: "checkmark"
 			}]
+			title: "Small Jobs"
 			x: -6.34d
 			y: -2.1d
-			description: ["Economy density comes from jobs and settlement texture, not raw coin icons."]
 		}
-,
 		{
 			dependencies: ["2E3F90FB1612D18F"]
-			id: "6E7D62EFF5601E64"
-			title: "Delivery Loop"
+			description: ["Run wares packages through your roads and recovery loops. They are logistics support, not a disconnected loot box."]
 			icon: "wares:delivery_agreement"
+			id: "6E7D62EFF5601E64"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
@@ -282,16 +288,15 @@
 				title: "Run packages along roads instead of hoarding them"
 				type: "checkmark"
 			}]
+			title: "Delivery Loop"
 			x: -3.17d
 			y: -0.9d
-			description: ["Run wares packages through your roads and recovery loops. They are logistics support, not a disconnected loot box."]
 		}
-,
 		{
 			dependencies: ["26402A61C9A8BE8C"]
-			id: "406AABDD6BABDEE9"
-			title: "Relief Not Bypass"
+			description: ["Use trades for supplies and recovery, not to skip a major machine, magic, or travel milestone."]
 			icon: "minecraft:bundle"
+			id: "406AABDD6BABDEE9"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
@@ -299,16 +304,14 @@
 				title: "Use packages to recover from pressure, not skip machines"
 				type: "checkmark"
 			}]
+			title: "Relief Not Bypass"
 			x: -1.58d
 			y: -5.0d
-			description: ["Use trades for supplies and recovery, not to skip a major machine, magic, or travel milestone."]
 		}
-,
 		{
-			dependencies: ["CEF579B8E8AA139A"]
-			id: "54B10DA35768677C"
-			title: "Stone Demand"
+			description: ["Feed village building demand when it helps a route you care about. That is how trade starts looking like settlement growth instead of barter trivia."]
 			icon: "minecraft:bricks"
+			id: "54B10DA35768677C"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
@@ -316,16 +319,14 @@
 				title: "Feed village building demand"
 				type: "checkmark"
 			}]
+			title: "Stone Demand"
 			x: -3.17d
 			y: 1.0d
-			description: ["Feed village building demand when it helps a route you care about. That is how trade starts looking like settlement growth instead of barter trivia."]
 		}
-,
 		{
-			dependencies: ["D071FCB648FDF641"]
-			id: "E5A784465C9CE935"
-			title: "Exchange Loss"
+			description: ["Treat exchange loss as a caution sign. If you are converting too often, you may be solving the wrong problem."]
 			icon: "minecraft:gold_nugget"
+			id: "2BA333636A75198E"
 			shape: "diamond"
 			size: 0.9d
 			tasks: [{
@@ -333,16 +334,14 @@
 				title: "Respect lossy exchange tiers"
 				type: "checkmark"
 			}]
+			title: "Exchange Loss"
 			x: -3.17d
 			y: 1.0d
-			description: ["Treat exchange loss as a caution sign. If you are converting too often, you may be solving the wrong problem."]
 		}
-,
 		{
-			dependencies: ["E425BFBB92593AB1"]
-			id: "463F8CDB47EDBB9F"
-			title: "Route Tax"
+			description: ["Spend higher coins on route relief, supply help, and recovery support. That keeps the economy useful without making it a bypass."]
 			icon: "minecraft:rail"
+			id: "463F8CDB47EDBB9F"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
@@ -350,50 +349,44 @@
 				title: "Spend high coins on travel support"
 				type: "checkmark"
 			}]
+			title: "Route Tax"
 			x: 0.0d
 			y: 1.0d
-			description: ["Spend higher coins on route relief, supply help, and recovery support. That keeps the economy useful without making it a bypass."]
 		}
-,
 		{
-			dependencies: ["C782E0C59F24EAFA"]
-			id: "B22A3053081E827F"
-			title: "Gatehouse"
+			description: ["Build gates, walls, and clear entrances before decorating a settlement. Defended paths make trade safer when raids or patrols pressure the route."]
 			icon: "minecraft:iron_door"
+			id: "6DDE86F8149AC77E"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
-				id: "A116A7D0A3FCC6BF"
+				id: "2A2914FE846F078B"
 				title: "Build entrances before decoration"
 				type: "checkmark"
 			}]
+			title: "Gatehouse"
 			x: 0.0d
 			y: -1.0d
-			description: ["Build gates, walls, and clear entrances before decorating a settlement. Defended paths make trade safer when raids or patrols pressure the route."]
 		}
-,
 		{
-			dependencies: ["925683523DC42F41"]
-			id: "F26EFD7D45BDFFDD"
-			title: "Milestones"
+			description: ["Mark distances and connect settlements with roads so they function like a network. That makes the economy easier to use and easier to defend."]
 			icon: "minecraft:oak_sign"
+			id: "29853E0FF81DEEB4"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
-				id: "A13ABAFF039CD105"
+				id: "6BDB2FAE25A09730"
 				title: "Mark distances between markets"
 				type: "checkmark"
 			}]
+			title: "Milestones"
 			x: 1.58d
 			y: -1.0d
-			description: ["Mark distances and connect settlements with roads so they function like a network. That makes the economy easier to use and easier to defend."]
 		}
-,
 		{
-			dependencies: ["8ACDA7509F139383"]
-			id: "48E2A42F36643255"
-			title: "Buy Lists"
+			description: ["Write down trades that help recovery, travel, or building, and mark any trade that skips a major craft. Keep the useful list near your market route."]
 			icon: "minecraft:writable_book"
+			id: "48E2A42F36643255"
 			shape: "diamond"
 			size: 0.9d
 			tasks: [{
@@ -401,26 +394,24 @@
 				title: "Document useful trades and forbidden bypasses"
 				type: "checkmark"
 			}]
+			title: "Buy Lists"
 			x: 3.17d
 			y: -0.1d
-			description: ["Write down trades that help recovery, travel, or building, and mark any trade that skips a major craft. Keep the useful list near your market route."]
 		}
-,
 		{
-			dependencies: ["B26052FCE579CF54"]
-			id: "5D2C1D5BDEF4A15B"
-			title: "Raid Economy"
+			description: ["Treat raids as disruptions to both travel and trade. If pillagers are hitting your routes, the economy is telling you to fortify."]
 			icon: "minecraft:white_banner"
+			id: "5D2C1D5BDEF4A15B"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
-				id: "E3E078BBC76DF689"
+				id: "6B5094B740A7DF04"
 				title: "Treat raids as economic disruption"
 				type: "checkmark"
 			}]
+			title: "Raid Economy"
 			x: 4.75d
 			y: 2.0d
-			description: ["Treat raids as disruptions to both travel and trade. If pillagers are hitting your routes, the economy is telling you to fortify."]
 		}
 	]
 	title: "Coins, Wares, and Settlements"

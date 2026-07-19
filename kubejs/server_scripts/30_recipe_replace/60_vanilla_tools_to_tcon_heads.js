@@ -10,7 +10,6 @@ var BC_VANILLA_STYLE_TOOL_FAMILIES = [
     ['everythingcopper', ['copper']],
     ['forbidden_arcanus', ['draco_arcanus']],
     ['goety', ['dark']],
-    ['iceandfire', ['copper', 'dragonbone', 'dragonsteel_fire', 'dragonsteel_ice', 'dragonsteel_lightning', 'myrmex_desert', 'myrmex_jungle', 'silver']],
     ['malum', ['soul_stained_steel']],
     ['undergarden', ['cloggrum', 'forgotten', 'froststeel', 'utherium']]
 ]
@@ -29,10 +28,6 @@ var BC_VANILLA_STYLE_TOOL_EXTRAS = [
     'goety:graverobber_shovel',
     'goety:iron_ice_axe',
     'goety:rampaging_axe',
-    'iceandfire:ghost_sword',
-    'iceandfire:hippogryph_sword',
-    'iceandfire:myrmex_desert_staff',
-    'iceandfire:myrmex_jungle_staff',
     'notreepunching:diamond_knife',
     'notreepunching:diamond_mattock',
     'notreepunching:diamond_saw',

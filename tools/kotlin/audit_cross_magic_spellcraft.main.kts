@@ -236,7 +236,7 @@ Files.list(modsDir).use { stream ->
     stream.filter { Files.isRegularFile(it) && it.fileName.toString().endsWith(".jar") }
         .forEach { jarPath ->
             val jarName = jarPath.fileName.toString()
-            if (!Regex("""(ars|bloodmagic|hexerei|malum|occultism|goety|forbidden|reliquary)""", RegexOption.IGNORE_CASE).containsMatchIn(jarName)) return@forEach
+            if (!Regex("""(ars|bloodmagic|hexerei|malum|occultism|goety|forbidden)""", RegexOption.IGNORE_CASE).containsMatchIn(jarName)) return@forEach
             JarFile(jarPath.toFile()).use { jar ->
                 for (entry in jar.entries().asSequence()) {
                     val name = entry.name

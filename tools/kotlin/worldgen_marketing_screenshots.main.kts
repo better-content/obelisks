@@ -175,7 +175,7 @@ val knownBadFrameMarkers = listOf(
 
 fun usage(message: String? = null): Nothing {
     if (message != null) System.err.println(message)
-    System.err.println("Usage: tools/bc test scenario-headful worldgen_marketing_screenshots [--fixture worldgen|rain-collector|ore-gallery-normal|ore-gallery-shader] [--bootstrap-mode always|once|never] [--port N] [--run-root PATH] [--output-dir PATH] [--keep-runs] [--batch-mode bounded|session] [--start-shot N|SHOT_ID] [--end-shot N|SHOT_ID] [--dh-capture-radius CHUNKS] [--server-forceload-radius CHUNKS] [--dh-min-settle SECONDS] [--dh-quiet SECONDS] [--dh-timeout SECONDS] [--dh-low-tail-max CHUNKS] [--dh-low-tail-seconds SECONDS] [--allow-low-tail-dh] [--camera-search off|local-sweep] [--anchor-search off|locate-biome|locate-biome-sweep|locate-feature]")
+    System.err.println("Usage: tools/bc test scenario-headful worldgen_marketing_screenshots [--fixture worldgen|rain-collector|ore-gallery-normal|ore-gallery-shader|ore-gallery-closeup|ore-gallery-samples] [--bootstrap-mode always|once|never] [--port N] [--run-root PATH] [--output-dir PATH] [--keep-runs] [--batch-mode bounded|session] [--start-shot N|SHOT_ID] [--end-shot N|SHOT_ID] [--dh-capture-radius CHUNKS] [--server-forceload-radius CHUNKS] [--dh-min-settle SECONDS] [--dh-quiet SECONDS] [--dh-timeout SECONDS] [--dh-low-tail-max CHUNKS] [--dh-low-tail-seconds SECONDS] [--allow-low-tail-dh] [--camera-search off|local-sweep] [--anchor-search off|locate-biome|locate-biome-sweep|locate-feature]")
     exitProcess(2)
 }
 
@@ -219,7 +219,7 @@ while (index < args.size) {
     when (args[index]) {
         "--fixture" -> {
             fixture = args.getOrNull(index + 1) ?: usage("--fixture needs a fixture name")
-            if (fixture !in setOf("worldgen", "rain-collector", "ore-gallery-normal", "ore-gallery-shader")) usage("invalid fixture: $fixture")
+if (fixture !in setOf("worldgen", "rain-collector", "ore-gallery-normal", "ore-gallery-shader", "ore-gallery-closeup", "ore-gallery-samples")) usage("invalid fixture: $fixture")
             index += 2
         }
         "--bootstrap-mode" -> {
@@ -313,6 +313,8 @@ if (fixture == "rain-collector" && outputDir == root.resolve("generated/cache/wo
     anchorSearchMode = "off"
 }
 val oreGalleryFixture = fixture.startsWith("ore-gallery-")
+val oreCloseupFixture = fixture == "ore-gallery-closeup"
+val surfaceSampleFixture = fixture == "ore-gallery-samples"
 val authoredFixture = fixture == "rain-collector" || oreGalleryFixture
 val shadersEnabled = fixture == "worldgen" || fixture == "ore-gallery-shader"
 if (oreGalleryFixture && outputDir == root.resolve("generated/cache/worldgen-marketing")) {
@@ -335,17 +337,55 @@ val worldgenShots = listOf(
     Shot("06-overworld-cherry-grove", "06-overworld-cherry-grove.png", "minecraft:cherry_grove", "cherry grove in a mountain amphitheater", 4384.5, 320.0, -543.5, 45.0, 42.0, listOf("minecraft:ancient_city", "minecraft:trail_ruins", "minecraft:ruined_portal_mountain")),
 )
 val oreGalleryShots = listOf(
-    Shot("01-sedimentary-deposits", "01-sedimentary-deposits.png", "minecraft:plains", "coal measures, ironstone, bauxite laterite, and phosphate rock embedded as bedded seams and nodules", 0.5, 106.0, 20.0, 180.0, 8.0),
-    Shot("02-base-metal-sulfides", "02-base-metal-sulfides.png", "minecraft:plains", "copper sulfide, nickel sulfide, lead-zinc, and sulfur-bearing pyrite in clustered replacement bodies", 48.5, 106.0, 20.0, 180.0, 8.0),
-    Shot("03-hydrothermal-veins", "03-hydrothermal-veins.png", "minecraft:plains", "quartz, tin, tin-tungsten greisen, and zinc in cross-cutting fracture and vein systems", 96.5, 106.0, 20.0, 180.0, 8.0),
-    Shot("04-gem-systems", "04-gem-systems.png", "minecraft:plains", "corundum-beryl, emerald schist-beryl, lazurite, and kimberlite in crystal veins and a pipe", 144.5, 106.0, 20.0, 180.0, 8.0),
-    Shot("05-strategic-deep-ores", "05-strategic-deep-ores.png", "minecraft:plains", "cupriferous redbed, soul-bearing black shale, titanium-iron oxide, uranium, and thorium in deepslate structures", 192.5, 106.0, 20.0, 180.0, 8.0),
-    Shot("06-osmiridium-lava-depth", "06-osmiridium-lava-depth.png", "minecraft:plains", "osmiridium lava sulfide blebs exposed beside a contained lava-depth pocket", 240.5, 105.0, 18.0, 180.0, 12.0),
+    Shot("01-sedimentary-deposits", "01-sedimentary-deposits.png", "minecraft:plains", "coal measures, ironstone, bauxite laterite, and phosphate rock embedded as bedded seams and nodules", 0.5, 108.0, -20.0, 0.0, 0.0),
+    Shot("02-base-metal-sulfides", "02-base-metal-sulfides.png", "minecraft:plains", "copper sulfide, nickel sulfide, lead-zinc, and sulfur-bearing pyrite in clustered replacement bodies", 48.5, 108.0, -20.0, 0.0, 0.0),
+    Shot("03-hydrothermal-veins", "03-hydrothermal-veins.png", "minecraft:plains", "quartz, tin, tin-tungsten greisen, and zinc in cross-cutting fracture and vein systems", 96.5, 108.0, -20.0, 0.0, 0.0),
+    Shot("04-gem-systems", "04-gem-systems.png", "minecraft:plains", "corundum-beryl, emerald schist-beryl, lazurite, and kimberlite in crystal veins and a pipe", 144.5, 108.0, -20.0, 0.0, 0.0),
+    Shot("05-strategic-deep-ores", "05-strategic-deep-ores.png", "minecraft:plains", "cupriferous redbed, soul-bearing black shale, titanium-iron oxide, uranium, and thorium in deepslate structures", 192.5, 108.0, -20.0, 0.0, 0.0),
+    Shot("06-osmiridium-lava-depth", "06-osmiridium-lava-depth.png", "minecraft:plains", "osmiridium lava sulfide blebs exposed beside a contained lava-depth pocket", 240.5, 106.0, -18.0, 0.0, 4.0),
 )
+val oreCloseupShots = listOf(
+    Shot("coal-measures", "coal-measures.png", "minecraft:plains", "coal measures seam", -14.0, 105.0, -8.0, 0.0, 0.0),
+    Shot("ironstone", "ironstone.png", "minecraft:plains", "ironstone seam", -5.0, 107.0, -8.0, 0.0, 0.0),
+    Shot("bauxite-laterite", "bauxite-laterite.png", "minecraft:plains", "bauxite laterite nodules", 5.0, 105.0, -8.0, 0.0, 0.0),
+    Shot("phosphate-rock", "phosphate-rock.png", "minecraft:plains", "phosphate rock nodules", 14.0, 107.0, -8.0, 0.0, 0.0),
+    Shot("copper-sulfide", "copper-sulfide.png", "minecraft:plains", "copper sulfide cluster", 34.0, 105.0, -8.0, 0.0, 0.0),
+    Shot("nickel-sulfide", "nickel-sulfide.png", "minecraft:plains", "nickel sulfide cluster", 43.0, 107.0, -8.0, 0.0, 0.0),
+    Shot("lead-zinc", "lead-zinc.png", "minecraft:plains", "lead-zinc vein", 53.0, 105.0, -8.0, 0.0, 0.0),
+    Shot("sulfur-pyrite", "sulfur-pyrite.png", "minecraft:plains", "sulfur-bearing pyrite cluster", 62.0, 107.0, -8.0, 0.0, 0.0),
+    Shot("quartz-vein", "quartz-vein.png", "minecraft:plains", "quartz vein", 82.0, 105.0, -8.0, 0.0, 0.0),
+    Shot("tin-ore", "tin-ore.png", "minecraft:plains", "tin vein", 91.0, 107.0, -8.0, 0.0, 0.0),
+    Shot("tin-tungsten-greisen", "tin-tungsten-greisen.png", "minecraft:plains", "tin-tungsten greisen network", 101.0, 105.0, -8.0, 0.0, 0.0),
+    Shot("zinc-ore", "zinc-ore.png", "minecraft:plains", "zinc cluster", 110.0, 107.0, -8.0, 0.0, 0.0),
+    Shot("corundum-beryl", "corundum-beryl.png", "minecraft:plains", "corundum-beryl gem vein", 130.0, 105.0, -8.0, 0.0, 0.0),
+    Shot("emerald-schist-beryl", "emerald-schist-beryl.png", "minecraft:plains", "emerald schist-beryl network", 139.0, 107.0, -8.0, 0.0, 0.0),
+    Shot("lazurite-vein", "lazurite-vein.png", "minecraft:plains", "lazurite vein", 149.0, 105.0, -8.0, 0.0, 0.0),
+    Shot("kimberlite-pipe", "kimberlite-pipe.png", "minecraft:plains", "kimberlite pipe", 158.0, 107.0, -8.0, 0.0, 0.0),
+    Shot("cupriferous-redbed", "cupriferous-redbed.png", "minecraft:plains", "cupriferous redbed fracture", 177.0, 105.0, -8.0, 0.0, 0.0),
+    Shot("soul-black-shale", "soul-black-shale.png", "minecraft:plains", "soul-bearing black shale seam", 184.0, 107.0, -8.0, 0.0, 0.0),
+    Shot("titanium-iron-oxide", "titanium-iron-oxide.png", "minecraft:plains", "titanium-iron oxide seam", 192.0, 105.0, -8.0, 0.0, 0.0),
+    Shot("uranium-ore", "uranium-ore.png", "minecraft:plains", "uranium cluster", 200.0, 107.0, -8.0, 0.0, 0.0),
+    Shot("thorium-ore", "thorium-ore.png", "minecraft:plains", "thorium splinters", 207.0, 105.0, -8.0, 0.0, 0.0),
+    Shot("osmiridium", "osmiridium.png", "minecraft:plains", "osmiridium lava-sulfide blebs", 226.0, 105.0, -7.0, 0.0, 0.0),
+)
+val surfaceSampleShots = listOf(
+    Shot("surface-samples-01", "surface-samples-01.png", "minecraft:plains", "first eleven dedicated raw-ore surface samples", 0.5, 106.0, 16.0, 180.0, 45.0),
+    Shot("surface-samples-02", "surface-samples-02.png", "minecraft:plains", "second eleven dedicated raw-ore surface samples", 32.5, 106.0, 16.0, 180.0, 45.0),
+)
+val closeupSceneByShot = oreCloseupShots.mapIndexed { index, shot -> shot.id to when {
+    index < 4 -> 0
+    index < 8 -> 1
+    index < 12 -> 2
+    index < 16 -> 3
+    index < 21 -> 4
+    else -> 5
+} }.toMap()
 val shots = when {
     fixture == "rain-collector" -> listOf(
         Shot("rain-collector-levels", "rain-collector-levels.png", "minecraft:plains", "rain collector empty-to-full water-level lineup during rainfall", 0.5, 104.0, 7.0, 180.0, 30.0),
     )
+    surfaceSampleFixture -> surfaceSampleShots
+    oreCloseupFixture -> oreCloseupShots
     oreGalleryFixture -> oreGalleryShots
     else -> worldgenShots
 }
@@ -378,6 +418,7 @@ if (batchMode == "bounded" && selectedShots.size > 1) {
         val segmentRoot = segments.resolve(shot.id)
         val command = listOf(
             "kotlin", "-J-Djava.awt.headless=false", root.resolve("tools/kotlin/worldgen_marketing_screenshots.main.kts").toString(),
+            "--fixture", fixture,
             "--bootstrap-mode", bootstrapMode,
             "--port", port.toString(),
             "--run-root", segmentRoot.toString(),
@@ -476,9 +517,15 @@ fun waitForLogAfter(path: Path, offset: Long, pattern: Regex, timeoutMillis: Lon
     return false
 }
 fun setServerPort(properties: Path, port: Int) {
-    val lines = if (properties.exists()) Files.readAllLines(properties).filterNot { it.startsWith("server-port=") || it.startsWith("level-seed=") }.toMutableList() else mutableListOf()
+    val lines = if (properties.exists()) Files.readAllLines(properties).filterNot {
+        it.startsWith("server-port=") || it.startsWith("level-seed=") || (authoredFixture && it.startsWith("gamemode="))
+    }.toMutableList() else mutableListOf()
     lines += "server-port=$port"
     lines += "level-seed=$seed"
+    // Authored visual fixtures do not exercise the pack's survival onboarding.
+    // Starting them in creative keeps class-selector inactive while the harness
+    // switches the capture account to spectator for framing.
+    if (authoredFixture) lines += "gamemode=creative"
     Files.write(properties, lines)
 }
 fun startServer(serverDir: Path, log: Path): RunningServer {
@@ -609,7 +656,7 @@ fun configureClient(clientDir: Path) {
         "onboardAccessibility" to "false",
         "chatVisibility" to "2",
         "fov" to captureFovOptionValue.toString(),
-    ) + if (authoredFixture) mapOf("hideGui" to "true") else emptyMap()
+    ) + if (fixture == "rain-collector") mapOf("hideGui" to "true") else emptyMap()
     patchColonFile(
         clientDir.resolve("options.txt"),
         optionOverrides,
@@ -1174,7 +1221,7 @@ fun pressKey(key: Int) {
     robot.keyRelease(key)
 }
 fun teleportCamera(pose: CameraPose) {
-    val prefix = if (fixture == "rain-collector") "execute in minecraft:overworld run " else ""
+    val prefix = if (authoredFixture) "execute in minecraft:overworld run " else ""
     send(server!!, "${prefix}tp AgentShot ${pose.asCommandArgs()}", commands)
 }
 
@@ -1510,32 +1557,55 @@ fun galleryPattern(morphology: String): List<Pair<Int, Int>> = when (morphology)
     "lava-blebs" -> listOf(-5 to 2, -4 to 2, -4 to 1, -2 to -1, -1 to -1, -1 to 0, 0 to 0, 2 to 2, 3 to 2, 3 to 1, 5 to -2, 6 to -2, 6 to -3)
     else -> listOf(-4 to -3, -3 to -2, -2 to -1, -1 to 0, 0 to 1, 1 to 2, 2 to 3, 0 to 0, 1 to -1)
 }
+fun prepareOreGalleryScene(sceneIndex: Int) {
+    val deposits = galleryScenes[sceneIndex]
+    val centerX = sceneIndex * 48
+    val deep = sceneIndex >= 4
+    val host = if (deep) "minecraft:deepslate" else "minecraft:stone"
+    send(server!!, "execute in minecraft:overworld run fill ${centerX - 28} 99 -24 ${centerX + 28} 99 3 $host", commands)
+    send(server!!, "execute in minecraft:overworld run fill ${centerX - 28} 100 0 ${centerX + 28} 114 3 $host", commands)
+    send(server!!, "execute in minecraft:overworld run fill ${centerX - 28} 100 -24 ${centerX + 28} 120 -1 minecraft:air", commands)
+    listOf(
+        Triple(-28, -20, 116), Triple(-19, -10, 118), Triple(-9, 0, 117),
+        Triple(1, 10, 120), Triple(11, 19, 117), Triple(20, 28, 115),
+    ).forEach { (fromX, toX, topY) ->
+        send(server!!, "execute in minecraft:overworld run fill ${centerX + fromX} 115 0 ${centerX + toX} $topY 3 $host", commands)
+    }
+    val offsets = if (deposits.size == 5) listOf(-15, -8, 0, 8, 15) else listOf(-14, -5, 5, 14)
+    deposits.forEachIndexed { depositIndex, deposit ->
+        val anchorX = centerX + offsets[depositIndex]
+        val anchorY = 106 + ((depositIndex % 2) * 2 - 1)
+        galleryPattern(deposit.morphology).forEachIndexed { pointIndex, (dx, dy) ->
+            val z = if (pointIndex % 4 == 0) 1 else 0
+            send(server!!, "execute in minecraft:overworld run setblock ${anchorX + dx} ${anchorY + dy} $z ${deposit.block}", commands)
+        }
+    }
+    if (sceneIndex == 5) {
+        send(server!!, "execute in minecraft:overworld run fill ${centerX - 9} 100 -10 ${centerX + 9} 100 -2 minecraft:polished_blackstone", commands)
+        send(server!!, "execute in minecraft:overworld run fill ${centerX - 7} 100 -8 ${centerX + 7} 100 -4 minecraft:lava", commands)
+        send(server!!, "execute in minecraft:overworld run fill ${centerX - 8} 101 -9 ${centerX + 8} 101 -3 minecraft:air", commands)
+    }
+}
 fun prepareOreGalleryFixture() {
-    galleryScenes.forEachIndexed { sceneIndex, deposits ->
-        val centerX = sceneIndex * 48
-        val deep = sceneIndex >= 4
-        val host = if (deep) "minecraft:deepslate" else "minecraft:stone"
-        send(server!!, "execute in minecraft:overworld run fill ${centerX - 20} 99 -2 ${centerX + 20} 99 22 $host", commands)
-        send(server!!, "execute in minecraft:overworld run fill ${centerX - 20} 100 0 ${centerX + 20} 114 2 $host", commands)
-        send(server!!, "execute in minecraft:overworld run fill ${centerX - 20} 100 3 ${centerX + 20} 113 24 minecraft:air", commands)
-        send(server!!, "execute in minecraft:overworld run fill ${centerX - 20} 114 0 ${centerX + 20} 114 22 $host", commands)
-        val offsets = if (deposits.size == 5) listOf(-15, -8, 0, 8, 15) else listOf(-14, -5, 5, 14)
-        deposits.forEachIndexed { depositIndex, deposit ->
-            val anchorX = centerX + offsets[depositIndex]
-            val anchorY = 106 + ((depositIndex % 2) * 2 - 1)
-            galleryPattern(deposit.morphology).forEachIndexed { pointIndex, (dx, dy) ->
-                val z = if (pointIndex % 4 == 0) 1 else 2
-                send(server!!, "execute in minecraft:overworld run setblock ${anchorX + dx} ${anchorY + dy} $z ${deposit.block}", commands)
-            }
-        }
-        for (lightX in listOf(centerX - 12, centerX, centerX + 12)) {
-            send(server!!, "execute in minecraft:overworld run setblock $lightX 108 8 minecraft:light[level=11]", commands)
-        }
-        if (sceneIndex == 5) {
-            send(server!!, "execute in minecraft:overworld run fill ${centerX - 9} 100 2 ${centerX + 9} 100 9 minecraft:polished_blackstone", commands)
-            send(server!!, "execute in minecraft:overworld run fill ${centerX - 7} 100 3 ${centerX + 7} 100 7 minecraft:lava", commands)
-            send(server!!, "execute in minecraft:overworld run fill ${centerX - 8} 101 2 ${centerX + 8} 101 8 minecraft:air", commands)
-        }
+    send(server!!, "weather clear", commands)
+    send(server!!, "time set 6000", commands)
+}
+val surfaceSampleIds = listOf(
+    "bauxite_laterite", "coal_measures", "copper_sulfide_ore", "corundum_beryl_gem_vein",
+    "cupriferous_redbed_redstone_vein", "emerald_schist_beryl_vein", "ironstone", "kimberlite_pipe",
+    "lazurite_vein", "lead_zinc_vein", "nickel_sulfide_ore", "osmiridium_lava_sulfide_ore",
+    "phosphate_rock", "quartz_vein", "soul_bearing_black_shale_soulstone_vein",
+    "sulfur_bearing_pyrite_ore", "thorium_ore", "tin_ore", "tin_tungsten_greisen",
+    "titanium_iron_oxide_ore", "uranium_ore", "zinc_ore",
+)
+fun prepareSurfaceSampleScene(sceneIndex: Int) {
+    val centerX = sceneIndex * 32
+    send(server!!, "execute in minecraft:overworld run fill ${centerX - 10} 99 -4 ${centerX + 10} 99 11 minecraft:white_concrete", commands)
+    send(server!!, "execute in minecraft:overworld run fill ${centerX - 10} 100 -4 ${centerX + 10} 112 11 minecraft:air", commands)
+    surfaceSampleIds.drop(sceneIndex * 11).take(11).forEachIndexed { index, id ->
+        val x = centerX - 6 + (index % 4) * 4
+        val z = 8 - (index / 4) * 4
+        send(server!!, "execute in minecraft:overworld run setblock $x 100 $z realisticores:surface_sample_$id", commands)
     }
     send(server!!, "weather clear", commands)
     send(server!!, "time set 6000", commands)
@@ -1548,9 +1618,19 @@ fun deployGalleryRealisticOresJar() {
         val mods = runtime.resolve("mods")
         mods.createDirectories()
         Files.list(mods).use { paths ->
-            paths.filter { it.fileName.toString().startsWith("realisticores-") && it.fileName.toString().endsWith(".jar") }
+            paths.filter {
+                val name = it.fileName.toString()
+                name.endsWith(".jar") && (
+                    name.startsWith("realisticores-") ||
+                    name.startsWith("realisticphysics-") ||
+                    name.startsWith("rbp-")
+                )
+            }
                 .forEach(Files::deleteIfExists)
         }
+        // The authored walls are intentionally shaped by commands. Pack-level
+        // block physics would collapse them before the client can capture the
+        // ore morphology, so it is excluded from this visual-isolation fixture.
         Files.copy(source, mods.resolve(source.fileName), StandardCopyOption.REPLACE_EXISTING)
     }
 }
@@ -1562,9 +1642,9 @@ fun prepareCleanFrame(stage: String): String {
         hudHidden = true
         appendProgress("hud_hidden", detail = "stage=$stage")
     }
-    // This disposable username begins in class-selector's spawn-only flow.
-    // Pressing the bound key is idempotent after completion and clears the prompt before captures.
-    if (fixture == "worldgen") pressKey(KeyEvent.VK_K)
+    // Worldgen's survival fixture begins in class-selector's spawn-only flow.
+    // Authored fixtures start in creative, where onboarding is intentionally inactive.
+    if (!authoredFixture) pressKey(KeyEvent.VK_K)
     send(server!!, "gamemode spectator AgentShot", commands)
     send(server!!, "effect clear AgentShot", commands)
     Thread.sleep(2_000)
@@ -1621,8 +1701,12 @@ try {
         prepareArgfile(clientDir, "AgentShot", evidence.resolve("client.args"), evidence.resolve("client-argfile.log"))
     }
     phase("server_boot") {
-        deleteTree(serverDir.resolve("world/data"))
-        deleteTree(serverDir.resolve("world/dimensions"))
+        if (authoredFixture) {
+            deleteTree(serverDir.resolve("world"))
+        } else {
+            deleteTree(serverDir.resolve("world/data"))
+            deleteTree(serverDir.resolve("world/dimensions"))
+        }
         server = startServer(serverDir, evidence.resolve("server-console.log"))
         waitFor(server!!.log, Regex("Done \\([0-9.]+s\\)!"), 900, server!!.process)
         send(server!!, "op AgentShot", commands)
@@ -1653,16 +1737,28 @@ try {
             teleportCamera(shots.first().basePose())
         }
         verifyCaptureConfiguration()
-        if (fixture == "worldgen") prepareCleanFrame("client_join")
+        if (fixture == "worldgen" || oreGalleryFixture) prepareCleanFrame("client_join")
         val playable = waitForPlayableFrame(robot, evidence.resolve("joined-playable.png"), 180)
         if (!playable) error("client never produced a playable frame")
     }
     phase("capture_shots") {
         val captured = mutableListOf<String>()
+        val preparedGalleryScenes = mutableSetOf<Int>()
         appendProgress("capture_begin", detail = "starting at shot ${selectedShots.firstOrNull()?.id ?: "none"}")
         for (shot in selectedShots) {
             activeShot = shot
             appendProgress("shot_begin", shot)
+            val galleryScene = when {
+                surfaceSampleFixture -> surfaceSampleShots.indexOf(shot)
+                oreCloseupFixture -> closeupSceneByShot.getValue(shot.id)
+                oreGalleryFixture -> oreGalleryShots.indexOf(shot)
+                else -> -1
+            }
+            val newGalleryScene = galleryScene >= 0 && preparedGalleryScenes.add(galleryScene)
+            if (newGalleryScene) {
+                if (surfaceSampleFixture) prepareSurfaceSampleScene(galleryScene)
+                else prepareOreGalleryScene(galleryScene)
+            }
             if (fixture == "worldgen") {
                 send(server!!, "weather clear", commands)
                 send(server!!, "time set 1000", commands)
@@ -1683,7 +1779,11 @@ try {
             val toBlockZ = (chunkZ + serverForceloadRadiusChunks) * 16
             send(server!!, "forceload add $fromBlockX $fromBlockZ $toBlockX $toBlockZ", commands)
             appendProgress("server_forceload", shot, "radius=$serverForceloadRadiusChunks from=$fromBlockX,$fromBlockZ to=$toBlockX,$toBlockZ")
-            Thread.sleep(if (authoredFixture) 3_000 else 8_000)
+            Thread.sleep(when {
+                oreCloseupFixture && !newGalleryScene -> 2_000
+                authoredFixture -> 10_000
+                else -> 8_000
+            })
             if (fixture == "worldgen") appendProgress("shot_wait_dh", shot)
             val dh = if (authoredFixture) DhGateResult("not-applicable", 0, 0, 0, 0, false, 0, 0, 0, null, 0) else waitForDhStable(clientDir)
             appendProgress("shot_dh_gate", shot, "status=${dh.status} elapsed=${dh.elapsedSeconds}s tail=${dh.tailChunksLeft ?: "none"} tailStable=${dh.tailStableSeconds}s")
@@ -1692,8 +1792,11 @@ try {
                 val expectation = if (allowLowTailDh) "a stable quiet window or explicitly allowed bounded low-tail state" else "a stable quiet window"
                 error("DH did not reach $expectation for ${shot.id}; status=${dh.status} tail=${dh.tailChunksLeft ?: "none"} tailStable=${dh.tailStableSeconds}s")
             }
-            Thread.sleep(if (authoredFixture) 8_000 else 15_000)
-            val promptHandling = if (authoredFixture) "passive-client-server-fixture" else prepareCleanFrame("shot:${shot.id}")
+            Thread.sleep(if (oreCloseupFixture && !newGalleryScene) 3_000 else 15_000)
+            val promptHandling = when {
+                fixture == "rain-collector" -> "passive-client-server-fixture"
+                else -> prepareCleanFrame("shot:${shot.id}")
+            }
             val bestCandidate = if (authoredFixture) CandidateFrame("authored-fixture", captureShot.basePose(), outputDir.resolve("candidate-previews").resolve(shot.id).resolve("authored-fixture.png"), FrameAssessment(true), 0.0, "fixed authored fixture") else chooseCameraCandidate(captureShot, outputDir.resolve("candidate-previews").resolve(shot.id))
             appendProgress("candidate_selected", shot, "${bestCandidate.label} score=${"%.2f".format(java.util.Locale.US, bestCandidate.score)} ${bestCandidate.detail}")
             teleportCamera(bestCandidate.pose)

@@ -126,6 +126,7 @@ Use the portable harness layer for repeatable runtime tests instead of hand-buil
   - `worldgen_sampling`
   - `worldgen_marketing_screenshots`
   - `rain_collector_visuals`
+  - `ore_texture_gallery`
   - `vs_ships_stability`
   - `vs_ships_matrix`
   - `client_smoke`

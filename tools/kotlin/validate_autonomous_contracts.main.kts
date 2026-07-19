@@ -1202,24 +1202,26 @@ fun validateWorldgenStaticContractsImpl() {
     val sampleBlockPath = realisticOresRoot.resolve("src/main/java/io/github/realisticores/block/SurfaceSampleBlock.java")
     val sampleSourceText = listOf(modBlocksPath, sampleBlockPath).filter { Files.exists(it) }.joinToString("\n") { Files.readString(it) }
     val missingSampleMarkers = listOf("SURFACE_SAMPLES_BY_ID", "OIL_SEEP", "SimpleWaterloggedBlock", "noCollission", "instabreak").filterNot(sampleSourceText::contains)
-    val ironSampleState = realisticOresRoot.resolve("src/main/resources/assets/realisticores/blockstates/crushed_ironstone.json")
-    if (missingSampleMarkers.isEmpty() && ironSampleState.exists()) ok("crushed ores register as placeable collectible surface samples")
-    else fail("crushed ores register as placeable collectible surface samples", missingSampleMarkers.joinToString(", "))
+    val ironSampleState = realisticOresRoot.resolve("src/main/resources/assets/realisticores/blockstates/surface_sample_ironstone.json")
+    val crushedIronState = realisticOresRoot.resolve("src/main/resources/assets/realisticores/blockstates/crushed_ironstone.json")
+    if (missingSampleMarkers.isEmpty() && ironSampleState.exists() && !crushedIronState.exists()) {
+        ok("surface samples are dedicated blocks separate from crushed ingredients")
+    } else fail("surface samples are dedicated blocks separate from crushed ingredients", missingSampleMarkers.joinToString(", "))
 
     val sampleModelRoot = realisticOresRoot.resolve("src/main/resources/assets/realisticores/models/block")
     val sampleGeometrySignatures = if (sampleModelRoot.exists()) Files.list(sampleModelRoot).use { paths ->
-        paths.filter { it.fileName.toString().matches(Regex("crushed_.+_[0-4]\\.json")) }
+        paths.filter { it.fileName.toString().matches(Regex("surface_sample_.+_[0-4]\\.json")) }
             .toList()
             .groupBy { it.fileName.toString().replace(Regex("_[0-4]\\.json$"), "") }
             .mapValues { (_, models) -> models.sorted().joinToString("|") { path -> jsonArray(readJson(path.toString())["elements"]).toString() } }
     } else emptyMap()
     if (sampleGeometrySignatures.size >= 20 && sampleGeometrySignatures.values.toSet().size == sampleGeometrySignatures.size) {
-        ok("crushed ore surface samples use unique per-ore geometry", "${sampleGeometrySignatures.size} material scatters")
-    } else fail("crushed ore surface samples use unique per-ore geometry", "${sampleGeometrySignatures.values.toSet().size}/${sampleGeometrySignatures.size} unique")
+        ok("surface samples use unique per-ore geometry", "${sampleGeometrySignatures.size} material scatters")
+    } else fail("surface samples use unique per-ore geometry", "${sampleGeometrySignatures.values.toSet().size}/${sampleGeometrySignatures.size} unique")
 
-    val expectedSampleUv = listOf(8, 8, 10, 11)
+    val expectedSampleUv = listOf(0, 0, 16, 16)
     val sampleModelPaths = if (sampleModelRoot.exists()) Files.list(sampleModelRoot).use { paths ->
-        paths.filter { it.fileName.toString().matches(Regex("crushed_.+_[0-4]\\.json")) }.toList()
+        paths.filter { it.fileName.toString().matches(Regex("surface_sample_.+_[0-4]\\.json")) }.toList()
     } else emptyList()
     val invalidSampleModels = sampleModelPaths.filter { path ->
         val model = readJson(path.toString())
@@ -1231,14 +1233,14 @@ fun validateWorldgenStaticContractsImpl() {
             jsonArray(jsonObject(face)["uv"]).mapNotNull { (it as? Number)?.toInt() } != expectedSampleUv
         }
     }
-    val osmiridiumSampleModel = sampleModelRoot.resolve("crushed_osmiridium_lava_sulfide_ore_0.json")
+    val osmiridiumSampleModel = sampleModelRoot.resolve("surface_sample_osmiridium_lava_sulfide_ore_0.json")
     val osmiridiumSampleTexture = if (osmiridiumSampleModel.exists()) {
         jsonObject(readJson(osmiridiumSampleModel.toString())["textures"])["all"]
     } else null
-    if (invalidSampleModels.isEmpty() && sampleModelPaths.size >= 100 && osmiridiumSampleTexture == "realisticores:item/crushed_nickel_sulfide_ore") {
-        ok("crushed ore surface models use opaque UVs and resolved texture aliases", "${sampleModelPaths.size} models")
+    if (invalidSampleModels.isEmpty() && sampleModelPaths.size >= 100 && osmiridiumSampleTexture == "realisticores:block/osmiridium_lava_sulfide_ore_0_south") {
+        ok("surface sample models use opaque raw-ore textures", "${sampleModelPaths.size} models")
     } else fail(
-        "crushed ore surface models use opaque UVs and resolved texture aliases",
+        "surface sample models use opaque raw-ore textures",
         "invalid=${invalidSampleModels.take(5).joinToString(", ")}; osmiridium=$osmiridiumSampleTexture"
     )
 

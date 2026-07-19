@@ -31,7 +31,7 @@ All four mods ship as integrated transport surfaces. Eureka owns primitive woode
 - `settlementroads-0.1.0.jar`
 - `villagewalls-1.0.0.jar`
 
-Do not infer active state from old RAM cuts or runtime caches. In the current repo, Hexerei, Iron's Spells, Malum, Occultism, Goety, and Forbidden and Arcanus have active manifests. The July 2026 breadth cut retired Ice and Fire, Dungeon Crawl, Create Big Cannons, Reliquary, Supplementaries, the secondary Delight food families, and their now-orphaned libraries. Markdown Manual remains solely because essential OC2R requires it at mod construction. Roots Classic, Mahoutsukai, Eidolon, Theurgy, Psi, and Hex Casting do not have active `mods/*.pw.toml` entries and should be treated as inactive/future unless re-added.
+Do not infer active state from old RAM cuts or runtime caches. In the current repo, Hexerei, Iron's Spells, Malum, Occultism, Goety, Forbidden and Arcanus, Polymorph, Supplementaries, and Amendments are active. Supplementaries is retained as the physical ash-layer target for Pollution of the Realms; its ash layers are excluded from RBP solid physics. The July 2026 breadth cut still retires Ice and Fire, Dungeon Crawl, Create Big Cannons, Reliquary, the secondary Delight food families, and their now-orphaned libraries. Markdown Manual remains solely because essential OC2R requires it at mod construction. Roots Classic, Mahoutsukai, Eidolon, Theurgy, Psi, and Hex Casting do not have active `mods/*.pw.toml` entries and should be treated as inactive/future unless re-added.
 
 ## Runtime Pruning
 
@@ -51,6 +51,8 @@ Historical profiling showed that strict low-memory targets are profile decisions
 - Removing large worldgen/decorative/model surfaces gave larger wins than small JVM adjustments.
 
 Current full-pack work should assume a higher memory budget unless the user explicitly asks for a lite profile. Do not delete active content for memory reasons without a new measured A/B against current manifests.
+
+Current dedicated-server defaults are 4 GiB initial and 16 GiB maximum heap, with DH request/render distance at 32 chunks. Dimension Fonts no longer add their former artificial per-player monster ramp or forced aggro acceleration; configured ordinary spawning and font progression remain.
 
 Current server-side memory attribution lane: `tools/bc test scenario mod_ram_partition --bootstrap-mode once`. It is the supported unattended path for disposable dedicated-server RAM triage against the current mod pool. The default `bisect` seed strategy clones one prepared runtime per branch and removes dependency-closed halves. For direct dependency-island A/B work, use `--seed-strategy smallest_islands`. For one weighted 50/50 cross-section, use `--seed-strategy balanced_halves`; repeatable `--exclude-mod-id MOD_ID` arguments remove fixed providers and their reverse mandatory-dependency closure from the baseline and every arm. The lane records `/proc` RSS/HWM plus `jcmd` heap/native-memory summaries and persists resumable queue/results state under `~/.cache/bc/bc-mod-ram-partition` by default. Treat grouped deltas as branch-attribution evidence, not perfect isolated per-jar truth, especially when forced dependency closure removes additional jars beyond the requested seed set.
 

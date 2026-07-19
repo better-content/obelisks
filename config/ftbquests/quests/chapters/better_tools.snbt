@@ -3,377 +3,641 @@
 	default_quest_shape: ""
 	filename: "better_tools"
 	group: "65CC8BE9C7D2A5C0"
-	icon: "tconstruct:pickaxe"
+	icon: {
+		Count: 1
+		id: "tconstruct:pickaxe"
+		tag: {
+			Damage: 0
+			tic_broken: 0b
+		}
+	}
 	id: "2432CAA2B38B2AB2"
 	order_index: 0
 	quest_links: [ ]
 	quests: [
 		{
-			id: "15C391E4708D16B9"
-			title: "Netherrack"
+			description: ["Bring back netherrack to prove Nether heat is now part of progression. You need that proof before early metalwork becomes reliable."]
 			icon: "minecraft:netherrack"
+			id: "15C391E4708D16B9"
+			rewards: [{
+				count: 4
+				id: "6BEB60429169DEA1"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			shape: "hexagon"
-			tasks: [{ id: "1EBE9E86314A44CA" item: "minecraft:netherrack" type: "item" }]
+			tasks: [{
+				id: "1EBE9E86314A44CA"
+				item: "minecraft:netherrack"
+				type: "item"
+			}]
+			title: "Netherrack"
 			x: -12.0d
 			y: 0.0d
-			rewards: [{ id: "B0663441D528B31C" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Bring back netherrack to prove Nether heat is now part of progression. You need that proof before early metalwork becomes reliable."]
 		}
 		{
 			dependencies: ["15C391E4708D16B9"]
-			id: "7CD10E3F93270496"
-			title: "Grout"
+			description: ["Make grout from the rough materials you already gathered. This is the first real step from surface scavenging into foundry parts."]
 			icon: "tconstruct:grout"
-			tasks: [{ id: "0ED1612E16B46ED0" item: "tconstruct:grout" type: "item" }]
+			id: "7CD10E3F93270496"
+			rewards: [{
+				count: 4
+				id: "31674C5060830074"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
+			tasks: [{
+				id: "0ED1612E16B46ED0"
+				item: "tconstruct:grout"
+				type: "item"
+			}]
+			title: "Grout"
 			x: -9.0d
 			y: 0.0d
-			rewards: [{ id: "D974AB9A3682A133" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Make grout from the rough materials you already gathered. This is the first real step from surface scavenging into foundry parts."]
 		}
 		{
 			dependencies: ["7CD10E3F93270496"]
-			id: "0C10825F73EDBA68"
-			title: "Seared Brick"
+			description: ["Fire grout into seared brick and keep batching it. Seared brick is your first real metalwork building material, not optional decoration."]
 			icon: "tconstruct:seared_brick"
-			tasks: [{ id: "20BE8A02982451DC" item: "tconstruct:seared_brick" type: "item" }]
+			id: "0C10825F73EDBA68"
+			rewards: [{
+				count: 4
+				id: "5D5E0E849A5C3333"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
+			tasks: [{
+				id: "20BE8A02982451DC"
+				item: "tconstruct:seared_brick"
+				type: "item"
+			}]
+			title: "Seared Brick"
 			x: -6.0d
 			y: 0.0d
-			rewards: [{ id: "A9B527FAD6481FCD" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Fire grout into seared brick and keep batching it. Seared brick is your first real metalwork building material, not optional decoration."]
 		}
 		{
 			dependencies: ["0C10825F73EDBA68"]
-			id: "7A5355E1E30918C4"
-			title: "Heater"
+			description: ["Build the heater so fuel and heat become visible parts of the process. Early molten metal work only feels stable once the heat source is controlled."]
 			icon: "tconstruct:seared_heater"
-			tasks: [{ id: "6233F97DE5265F30" item: "tconstruct:seared_heater" type: "item" }]
+			id: "7A5355E1E30918C4"
+			rewards: [{
+				count: 4
+				id: "1250E9698AC284D0"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6233F97DE5265F30"
+				item: "tconstruct:seared_heater"
+				type: "item"
+			}]
+			title: "Heater"
 			x: -3.0d
 			y: -3.0d
-			rewards: [{ id: "DFF6F04446ACBD61" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Build the heater so fuel and heat become visible parts of the process. Early molten metal work only feels stable once the heat source is controlled."]
 		}
 		{
 			dependencies: ["0C10825F73EDBA68"]
-			id: "28DDBFB5911AFA2D"
-			title: "Melter"
+			description: ["The melter is your first true metal machine. Use it to turn ore into liquid metal and prove that tools now come from processing, not from simple crafting."]
 			icon: "tconstruct:seared_melter"
+			id: "28DDBFB5911AFA2D"
+			rewards: [{
+				count: 4
+				id: "6145BA4AC9E0886B"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.2d
-			tasks: [{ id: "72AE0CA0668F7FB0" item: "tconstruct:seared_melter" type: "item" }]
+			tasks: [{
+				id: "72AE0CA0668F7FB0"
+				item: "tconstruct:seared_melter"
+				type: "item"
+			}]
+			title: "Melter"
 			x: -3.0d
 			y: 0.0d
-			rewards: [{ id: "8D781A1034BF5F88" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["The melter is your first true metal machine. Use it to turn ore into liquid metal and prove that tools now come from processing, not from simple crafting."]
 		}
 		{
 			dependencies: ["28DDBFB5911AFA2D"]
-			id: "0FE05B3739E9E636"
-			title: "Seared Bricks"
+			description: ["Upgrade from single parts to seared brick structure as soon as you can. That makes metalwork repeatable instead of a one-off stunt."]
 			icon: "tconstruct:seared_bricks"
-			tasks: [{ id: "5B4452657AAF42FB" item: "tconstruct:seared_bricks" type: "item" }]
+			id: "0FE05B3739E9E636"
+			rewards: [{
+				count: 4
+				id: "5120E4DEBB1AB274"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
+			tasks: [{
+				id: "5B4452657AAF42FB"
+				item: "tconstruct:seared_bricks"
+				type: "item"
+			}]
+			title: "Seared Bricks"
 			x: -3.0d
 			y: 3.0d
-			rewards: [{ id: "AA45FE929C4C4393" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Upgrade from single parts to seared brick structure as soon as you can. That makes metalwork repeatable instead of a one-off stunt."]
 		}
 		{
-			dependencies: ["7A5355E1E30918C4" "28DDBFB5911AFA2D"]
-			id: "1E7CD8C092AE1895"
-			title: "Fuel Tank"
+			dependencies: [
+				"7A5355E1E30918C4"
+				"28DDBFB5911AFA2D"
+			]
+			description: ["Add a fuel tank so melting can run in batches instead of one tiny job at a time. Reliable fuel storage is what makes a real work cell."]
 			icon: "tconstruct:seared_fuel_tank"
-			tasks: [{ id: "4358F74BB46B03EB" item: "tconstruct:seared_fuel_tank" type: "item" }]
+			id: "1E7CD8C092AE1895"
+			rewards: [{
+				count: 4
+				id: "360FCBE0FA78323C"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
+			tasks: [{
+				id: "4358F74BB46B03EB"
+				item: "tconstruct:seared_fuel_tank"
+				type: "item"
+			}]
+			title: "Fuel Tank"
 			x: 0.0d
 			y: -4.5d
-			rewards: [{ id: "BBD97D65370BBD30" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Add a fuel tank so melting can run in batches instead of one tiny job at a time. Reliable fuel storage is what makes a real work cell."]
 		}
 		{
 			dependencies: ["1E7CD8C092AE1895"]
-			id: "760336E92F1C069B"
-			title: "Fuel Gauge"
+			description: ["Add a fuel gauge early and watch it. Reading your fuel level prevents wasted ore and teaches you to treat molten work like a system."]
 			icon: "tconstruct:seared_fuel_gauge"
-			tasks: [{ id: "2DCA1BD4B033648F" item: "tconstruct:seared_fuel_gauge" type: "item" }]
+			id: "760336E92F1C069B"
+			rewards: [{
+				count: 4
+				id: "5B44EFFFB515041C"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
+			tasks: [{
+				id: "2DCA1BD4B033648F"
+				item: "tconstruct:seared_fuel_gauge"
+				type: "item"
+			}]
+			title: "Fuel Gauge"
 			x: 0.0d
 			y: -3.0d
-			rewards: [{ id: "D3A6934C8AB9A33E" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Add a fuel gauge early and watch it. Reading your fuel level prevents wasted ore and teaches you to treat molten work like a system."]
 		}
 		{
 			dependencies: ["28DDBFB5911AFA2D"]
-			id: "6E54887445AA930E"
-			title: "Casting Table"
+			description: ["Use the casting table for parts and casts first. This is the surface where liquid metal turns into exact tool pieces."]
 			icon: "tconstruct:seared_table"
-			tasks: [{ id: "68FB159C9122600F" item: "tconstruct:seared_table" type: "item" }]
+			id: "6E54887445AA930E"
+			rewards: [{
+				count: 4
+				id: "20DAA59ABDCE2665"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
+			tasks: [{
+				id: "68FB159C9122600F"
+				item: "tconstruct:seared_table"
+				type: "item"
+			}]
+			title: "Casting Table"
 			x: 0.0d
 			y: -1.5d
-			rewards: [{ id: "CBF12DD1E00F36AB" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Use the casting table for parts and casts first. This is the surface where liquid metal turns into exact tool pieces."]
 		}
 		{
 			dependencies: ["28DDBFB5911AFA2D"]
-			id: "609904A3320C55BE"
-			title: "Casting Basin"
+			description: ["Use the basin when you need blocks or bigger pours. It is the easy way to see the difference between part-scale casting and bulk material work."]
 			icon: "tconstruct:seared_basin"
-			tasks: [{ id: "1AD322E16AE8C95C" item: "tconstruct:seared_basin" type: "item" }]
+			id: "609904A3320C55BE"
+			rewards: [{
+				count: 4
+				id: "7075A47694971E51"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
+			tasks: [{
+				id: "1AD322E16AE8C95C"
+				item: "tconstruct:seared_basin"
+				type: "item"
+			}]
+			title: "Casting Basin"
 			x: 0.0d
 			y: 1.5d
-			rewards: [{ id: "C53CA10697A9F01B" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Use the basin when you need blocks or bigger pours. It is the easy way to see the difference between part-scale casting and bulk material work."]
 		}
 		{
-			dependencies: ["28DDBFB5911AFA2D" "6E54887445AA930E" "609904A3320C55BE"]
-			id: "4EE5822769F6F1F1"
-			title: "Faucet"
+			dependencies: [
+				"28DDBFB5911AFA2D"
+				"6E54887445AA930E"
+				"609904A3320C55BE"
+			]
+			description: ["The faucet is the first precise pour tool. Place it once and you will stop thinking of molten metal as a black box."]
 			icon: "tconstruct:seared_faucet"
-			tasks: [{ id: "6272290D0F88C008" item: "tconstruct:seared_faucet" type: "item" }]
+			id: "4EE5822769F6F1F1"
+			rewards: [{
+				count: 4
+				id: "1D96E155144D4067"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6272290D0F88C008"
+				item: "tconstruct:seared_faucet"
+				type: "item"
+			}]
+			title: "Faucet"
 			x: 3.0d
 			y: -3.0d
-			rewards: [{ id: "EB402782CC535454" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["The faucet is the first precise pour tool. Place it once and you will stop thinking of molten metal as a black box."]
 		}
 		{
 			dependencies: ["4EE5822769F6F1F1"]
-			id: "38B4A7E8270AA9F2"
-			title: "Channel"
+			description: ["Channels let you route molten metal instead of hand-waving it between blocks. Use them when the casting setup starts growing wider than one basin."]
 			icon: "tconstruct:seared_channel"
-			tasks: [{ id: "6B5774BA4546BC08" item: "tconstruct:seared_channel" type: "item" }]
+			id: "38B4A7E8270AA9F2"
+			rewards: [{
+				count: 4
+				id: "7EECBD4C24801B8C"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6B5774BA4546BC08"
+				item: "tconstruct:seared_channel"
+				type: "item"
+			}]
+			title: "Channel"
 			x: 3.0d
 			y: -1.5d
-			rewards: [{ id: "9D11024D82AF0C57" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Channels let you route molten metal instead of hand-waving it between blocks. Use them when the casting setup starts growing wider than one basin."]
 		}
 		{
 			dependencies: ["4EE5822769F6F1F1"]
-			id: "0DB9BF3F6DFF3EDD"
-			title: "Drain"
+			description: ["The drain is the connection point between storage and pouring. Once you understand the drain, larger smeltery layouts become much easier to reason about."]
 			icon: "tconstruct:seared_drain"
-			tasks: [{ id: "1B453AA6FD78EB5C" item: "tconstruct:seared_drain" type: "item" }]
+			id: "0DB9BF3F6DFF3EDD"
+			rewards: [{
+				count: 4
+				id: "2A18CF9EBCD7624D"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
+			tasks: [{
+				id: "1B453AA6FD78EB5C"
+				item: "tconstruct:seared_drain"
+				type: "item"
+			}]
+			title: "Drain"
 			x: 3.0d
 			y: 0.0d
-			rewards: [{ id: "A81C1A9AC85A9B78" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["The drain is the connection point between storage and pouring. Once you understand the drain, larger smeltery layouts become much easier to reason about."]
 		}
 		{
 			dependencies: ["0DB9BF3F6DFF3EDD"]
-			id: "1A2A372A607208B1"
-			title: "Duct"
+			description: ["Ducts are for taking material out on purpose instead of breaking and rebuilding the setup. They matter once the foundry stops fitting in one corner."]
 			icon: "tconstruct:seared_duct"
-			tasks: [{ id: "612DDA62E923622A" item: "tconstruct:seared_duct" type: "item" }]
+			id: "1A2A372A607208B1"
+			rewards: [{
+				count: 4
+				id: "0013E6E3E995D49E"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
+			tasks: [{
+				id: "612DDA62E923622A"
+				item: "tconstruct:seared_duct"
+				type: "item"
+			}]
+			title: "Duct"
 			x: 3.0d
 			y: 1.5d
-			rewards: [{ id: "BF8F928FC5D7AD14" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Ducts are for taking material out on purpose instead of breaking and rebuilding the setup. They matter once the foundry stops fitting in one corner."]
 		}
 		{
 			dependencies: ["1A2A372A607208B1"]
-			id: "48B3726F25099F68"
-			title: "Chute"
+			description: ["Chutes finish the jump from manual pouring to item flow. Add them when you want the casting line to feed other work instead of your inventory."]
 			icon: "tconstruct:seared_chute"
-			tasks: [{ id: "4D6552EB2A81669E" item: "tconstruct:seared_chute" type: "item" }]
+			id: "48B3726F25099F68"
+			rewards: [{
+				count: 4
+				id: "3DE0F1728F08B769"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
+			tasks: [{
+				id: "4D6552EB2A81669E"
+				item: "tconstruct:seared_chute"
+				type: "item"
+			}]
+			title: "Chute"
 			x: 3.0d
 			y: 3.0d
-			rewards: [{ id: "ED16D7CA80AC3ACD" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Chutes finish the jump from manual pouring to item flow. Add them when you want the casting line to feed other work instead of your inventory."]
 		}
 		{
 			dependencies: ["28DDBFB5911AFA2D"]
-			id: "4FABFAF748F8880E"
-			title: "Ingot Tank"
+			description: ["Store molten metal by ingot count so you can plan batches cleanly. Visible stock is what keeps the metal route predictable."]
 			icon: "tconstruct:seared_ingot_tank"
-			tasks: [{ id: "2175F17BB82DDCD0" item: "tconstruct:seared_ingot_tank" type: "item" }]
+			id: "4FABFAF748F8880E"
+			rewards: [{
+				count: 4
+				id: "4E2254D58B6A31E5"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
+			tasks: [{
+				id: "2175F17BB82DDCD0"
+				item: "tconstruct:seared_ingot_tank"
+				type: "item"
+			}]
+			title: "Ingot Tank"
 			x: 0.0d
 			y: 4.5d
-			rewards: [{ id: "EA0E5F52ED5D2DAB" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Store molten metal by ingot count so you can plan batches cleanly. Visible stock is what keeps the metal route predictable."]
 		}
 		{
 			dependencies: ["4FABFAF748F8880E"]
-			id: "7BAF73ECD259B043"
-			title: "Ingot Gauge"
+			description: ["An ingot gauge tells you whether you have enough metal before you start another batch. Use it to avoid guessing and wasting setup time."]
 			icon: "tconstruct:seared_ingot_gauge"
-			tasks: [{ id: "46ECB5411C7823C0" item: "tconstruct:seared_ingot_gauge" type: "item" }]
+			id: "7BAF73ECD259B043"
+			rewards: [{
+				count: 4
+				id: "56DE344FB24A0EF4"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
+			tasks: [{
+				id: "46ECB5411C7823C0"
+				item: "tconstruct:seared_ingot_gauge"
+				type: "item"
+			}]
+			title: "Ingot Gauge"
 			x: 3.0d
 			y: 4.5d
-			rewards: [{ id: "DE0AD64977FC15E6" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["An ingot gauge tells you whether you have enough metal before you start another batch. Use it to avoid guessing and wasting setup time."]
 		}
 		{
 			dependencies: ["0FE05B3739E9E636"]
-			id: "46EA90BCC44701CB"
-			title: "Seared Lantern"
+			description: ["The lantern is optional, but it is a good reminder to turn this area into a safe work room, not just a pile of hot blocks."]
 			icon: "tconstruct:seared_lantern"
-			tasks: [{ id: "6D5B58089F9B3407" item: "tconstruct:seared_lantern" type: "item" }]
+			id: "46EA90BCC44701CB"
+			rewards: [{
+				count: 4
+				id: "65ED68A5477A9BBE"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D5B58089F9B3407"
+				item: "tconstruct:seared_lantern"
+				type: "item"
+			}]
+			title: "Seared Lantern"
 			x: -6.0d
 			y: 3.0d
-			rewards: [{ id: "E34F351961E2A46E" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["The lantern is optional, but it is a good reminder to turn this area into a safe work room, not just a pile of hot blocks."]
 		}
 		{
 			dependencies: ["6E54887445AA930E"]
-			id: "036BF7C739C65CC0"
-			title: "Sand Cast"
+			description: ["Start with sand casts when you need a quick shape check. They prove that metalwork is about parts and forms, not just smelting ingots."]
 			icon: "tconstruct:ingot_sand_cast"
-			tasks: [{ id: "5ADC3A1FC31A37C3" item: "tconstruct:ingot_sand_cast" type: "item" }]
+			id: "036BF7C739C65CC0"
+			rewards: [{
+				count: 4
+				id: "26D05B52978F0024"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
+			tasks: [{
+				id: "5ADC3A1FC31A37C3"
+				item: "tconstruct:ingot_sand_cast"
+				type: "item"
+			}]
+			title: "Sand Cast"
 			x: 6.0d
 			y: -3.0d
-			rewards: [{ id: "A6CE52629C63F965" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Start with sand casts when you need a quick shape check. They prove that metalwork is about parts and forms, not just smelting ingots."]
 		}
 		{
-			dependencies: ["036BF7C739C65CC0" "4EE5822769F6F1F1"]
-			id: "38C6C603300A0551"
-			title: "Ingot Cast"
+			dependencies: [
+				"036BF7C739C65CC0"
+				"4EE5822769F6F1F1"
+			]
+			description: ["Upgrade to permanent casts as soon as a part matters more than once. That is when metalworking stops being experimental and starts becoming production."]
 			icon: "tconstruct:ingot_cast"
-			tasks: [{ id: "035D96E7679950A8" item: "tconstruct:ingot_cast" type: "item" }]
+			id: "38C6C603300A0551"
+			rewards: [{
+				count: 4
+				id: "2A55CF7FE631A1C2"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
+			tasks: [{
+				id: "035D96E7679950A8"
+				item: "tconstruct:ingot_cast"
+				type: "item"
+			}]
+			title: "Ingot Cast"
 			x: 6.0d
 			y: -1.5d
-			rewards: [{ id: "9D6363A695AFA0F4" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Upgrade to permanent casts as soon as a part matters more than once. That is when metalworking stops being experimental and starts becoming production."]
 		}
 		{
 			dependencies: ["38C6C603300A0551"]
-			id: "A111000000000001"
-			title: "Copper"
+			description: ["Run copper through the line to prove your first local metal can now be processed cleanly. This is the point where mining and casting truly connect."]
 			icon: "minecraft:raw_copper"
-			tasks: [{ id: "A111000000000101" item: "minecraft:raw_copper" type: "item" }]
+			id: "4FB42BE946930752"
+			tasks: [{
+				id: "1FCCFBF717711866"
+				item: "minecraft:raw_copper"
+				type: "item"
+			}]
+			title: "Copper"
 			x: 9.0d
 			y: -4.5d
-			description: ["Run copper through the line to prove your first local metal can now be processed cleanly. This is the point where mining and casting truly connect."]
 		}
 		{
 			dependencies: ["38C6C603300A0551"]
-			id: "A111000000000002"
-			title: "Iron"
+			description: ["Process iron once the casting line works. Iron is your first serious tool metal, so make sure it enters the part route instead of stopping at ingots."]
 			icon: "minecraft:raw_iron"
-			tasks: [{ id: "A111000000000102" item: "minecraft:raw_iron" type: "item" }]
+			id: "0F5598CF14BBC847"
+			tasks: [{
+				id: "52282AD08700BD8E"
+				item: "minecraft:raw_iron"
+				type: "item"
+			}]
+			title: "Iron"
 			x: 9.0d
 			y: -3.0d
-			description: ["Process iron once the casting line works. Iron is your first serious tool metal, so make sure it enters the part route instead of stopping at ingots."]
 		}
 		{
 			dependencies: ["38C6C603300A0551"]
-			id: "A111000000000003"
-			title: "Pick Head Cast"
+			description: ["Make part casts on purpose. They are the clearest proof that the foundry exists to build tools, not just to smelt ore differently."]
 			icon: "tconstruct:pick_head_cast"
-			tasks: [{ id: "A111000000000103" item: "tconstruct:pick_head_cast" type: "item" }]
+			id: "4BAE2145C0E54202"
+			tasks: [{
+				id: "1875802AA2CD9AF5"
+				item: "tconstruct:pick_head_cast"
+				type: "item"
+			}]
+			title: "Pick Head Cast"
 			x: 9.0d
 			y: -1.5d
-			description: ["Make part casts on purpose. They are the clearest proof that the foundry exists to build tools, not just to smelt ore differently."]
 		}
 		{
 			dependencies: ["38C6C603300A0551"]
-			id: "A111000000000004"
-			title: "Binding Cast"
+			description: ["Bindings matter because Tinkers tools are assembled from real parts. Making one helps the whole tool route read clearly instead of feeling magical."]
 			icon: "tconstruct:tool_binding_cast"
-			tasks: [{ id: "A111000000000104" item: "tconstruct:tool_binding_cast" type: "item" }]
+			id: "34811EBBB17BB4D9"
+			tasks: [{
+				id: "6852F94C5E8DCA78"
+				item: "tconstruct:tool_binding_cast"
+				type: "item"
+			}]
+			title: "Binding Cast"
 			x: 9.0d
 			y: 0.0d
-			description: ["Bindings matter because Tinkers tools are assembled from real parts. Making one helps the whole tool route read clearly instead of feeling magical."]
 		}
 		{
 			dependencies: ["38C6C603300A0551"]
-			id: "A111000000000005"
-			title: "Handle Cast"
+			description: ["Handles carry durability and material traits into finished tools. Craft one early so you can see how part choice changes the result."]
 			icon: "tconstruct:tool_handle_cast"
-			tasks: [{ id: "A111000000000105" item: "tconstruct:tool_handle_cast" type: "item" }]
+			id: "65B43D2447DE96F3"
+			tasks: [{
+				id: "451FBDE60F7BC48A"
+				item: "tconstruct:tool_handle_cast"
+				type: "item"
+			}]
+			title: "Handle Cast"
 			x: 9.0d
 			y: 1.5d
-			description: ["Handles carry durability and material traits into finished tools. Craft one early so you can see how part choice changes the result."]
 		}
 		{
 			dependencies: ["0C10825F73EDBA68"]
-			id: "A111000000000006"
-			title: "Part Builder"
+			description: ["Keep the Part Builder next to the foundry tools. Not every useful part is molten, and this bench keeps the whole route in one place."]
 			icon: "tconstruct:part_builder"
-			tasks: [{ id: "A111000000000106" item: "tconstruct:part_builder" type: "item" }]
+			id: "26A0E06D0361D2A9"
+			tasks: [{
+				id: "69642743828B020B"
+				item: "tconstruct:part_builder"
+				type: "item"
+			}]
+			title: "Part Builder"
 			x: 9.0d
 			y: 3.0d
-			description: ["Keep the Part Builder next to the foundry tools. Not every useful part is molten, and this bench keeps the whole route in one place."]
 		}
 		{
-			dependencies: ["A111000000000003" "A111000000000004" "A111000000000005" "A111000000000006"]
-			id: "A111000000000007"
-			title: "Tinker Station"
+			description: ["Use the Tinker Station to assemble, inspect, and repair tools. It is the bench that makes all the separate parts turn back into one usable item."]
 			icon: "tconstruct:tinker_station"
+			id: "29C15286CC9446CA"
 			shape: "hexagon"
-			tasks: [{ id: "A111000000000107" item: "tconstruct:tinker_station" type: "item" }]
+			tasks: [{
+				id: "23881D1B2DD0F516"
+				item: "tconstruct:tinker_station"
+				type: "item"
+			}]
+			title: "Tinker Station"
 			x: 12.0d
 			y: -3.0d
-			description: ["Use the Tinker Station to assemble, inspect, and repair tools. It is the bench that makes all the separate parts turn back into one usable item."]
 		}
 		{
-			dependencies: ["A111000000000002" "A111000000000003"]
-			id: "A111000000000008"
-			title: "Pick Head"
+			description: ["Make a metal pick head as soon as the line allows it. This is the clearest sign that your foundry now builds better tools, not just better materials."]
 			icon: "tconstruct:pick_head"
-			tasks: [{ id: "A111000000000108" item: "tconstruct:pick_head" type: "item" }]
+			id: "37C306B851726F54"
+			tasks: [{
+				id: "07DBE0F7ED033A6C"
+				item: "tconstruct:pick_head"
+				type: "item"
+			}]
+			title: "Pick Head"
 			x: 12.0d
 			y: -1.5d
-			description: ["Make a metal pick head as soon as the line allows it. This is the clearest sign that your foundry now builds better tools, not just better materials."]
 		}
 		{
-			dependencies: ["A111000000000004"]
-			id: "A111000000000009"
-			title: "Binding"
+			description: ["Treat bindings as part of the tool plan, not leftover junk. A good tool route cares about every part, not only the head."]
 			icon: "tconstruct:tool_binding"
-			tasks: [{ id: "A111000000000109" item: "tconstruct:tool_binding" type: "item" }]
+			id: "3D6786930A85E384"
+			tasks: [{
+				id: "2792E3922A4F423A"
+				item: "tconstruct:tool_binding"
+				type: "item"
+			}]
+			title: "Binding"
 			x: 12.0d
 			y: 0.0d
-			description: ["Treat bindings as part of the tool plan, not leftover junk. A good tool route cares about every part, not only the head."]
 		}
 		{
-			dependencies: ["A111000000000005"]
-			id: "A11100000000000A"
-			title: "Handle"
+			description: ["Choose handles intentionally because they change the finished tool. This is where Tinkers starts rewarding part planning instead of one best recipe."]
 			icon: "tconstruct:tool_handle"
-			tasks: [{ id: "A11100000000010A" item: "tconstruct:tool_handle" type: "item" }]
+			id: "30BF794893BC7F09"
+			tasks: [{
+				id: "1EB4018DB753D832"
+				item: "tconstruct:tool_handle"
+				type: "item"
+			}]
+			title: "Handle"
 			x: 12.0d
 			y: 1.5d
-			description: ["Choose handles intentionally because they change the finished tool. This is where Tinkers starts rewarding part planning instead of one best recipe."]
 		}
 		{
-			dependencies: ["A111000000000007" "A111000000000008" "A111000000000009" "A11100000000000A"]
-			id: "A11100000000000B"
-			title: "Metal Pickaxe"
-			icon: "tconstruct:pickaxe"
+			description: ["Finish the line by making a true metal pickaxe. The tool should now feel earned through parts, heat, and casting instead of a simple recipe unlock."]
+			icon: {
+				Count: 1
+				id: "tconstruct:pickaxe"
+				tag: {
+					Damage: 0
+					tic_broken: 0b
+				}
+			}
+			id: "360D0EEC35715910"
+			rewards: [{
+				count: 4
+				id: "5DD560FCBF69F94C"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.2d
-			tasks: [{ id: "A11100000000010B" item: "tconstruct:pickaxe" type: "item" }]
+			tasks: [{
+				id: "5DD06A24686DD98E"
+				item: {
+					Count: 1
+					id: "tconstruct:pickaxe"
+					tag: {
+						Damage: 0
+						tic_broken: 0b
+					}
+				}
+				type: "item"
+			}]
+			title: "Metal Pickaxe"
 			x: 15.0d
 			y: -1.5d
-			rewards: [{ id: "A11100000000020B" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Finish the line by making a true metal pickaxe. The tool should now feel earned through parts, heat, and casting instead of a simple recipe unlock."]
 		}
 		{
-			dependencies: ["A11100000000000B"]
-			id: "A11100000000000C"
-			title: "Repair Kit"
-			icon: "tconstruct:repair_kit"
-			tasks: [{ id: "A11100000000010C" item: "tconstruct:repair_kit" type: "item" }]
-			x: 15.0d
-			y: 0.0d
 			description: ["Make a repair kit early so your new tools stay in circulation. Repair is part of the economy here, not a side feature you learn later."]
+			icon: "tconstruct:repair_kit"
+			id: "3EE112B1B8E979C7"
+			tasks: [{
+				id: "5F0FCCF7693B1932"
+				item: "tconstruct:repair_kit"
+				type: "item"
+			}]
+			title: "Repair Kit"
+			x: 15.0d
+			y: 0.0d
 		}
 		{
-			dependencies: ["A11100000000000C"]
-			id: "A11100000000000D"
-			title: "Modifiers"
+			description: ["Modifiers are how good tools improve without being thrown away. Learn them now so upgrading feels cheaper and safer than constant replacement."]
 			icon: "tconstruct:modifier_worktable"
-			tasks: [{ id: "A11100000000010D" item: "tconstruct:modifier_worktable" type: "item" }]
+			id: "697CC81AA4A47FCB"
+			tasks: [{
+				id: "18E8F620B3211B61"
+				item: "tconstruct:modifier_worktable"
+				type: "item"
+			}]
+			title: "Modifiers"
 			x: 18.0d
 			y: -1.5d
-			description: ["Modifiers are how good tools improve without being thrown away. Learn them now so upgrading feels cheaper and safer than constant replacement."]
 		}
 		{
-			dependencies: ["A11100000000000B"]
-			id: "A11100000000000E"
-			title: "Tinker's Anvil"
+			description: ["The Tinker's Anvil is the later upgrade bench for serious tool work. It is a continuation of the foundry, not a separate system that replaces it."]
 			icon: "tconstruct:tinkers_anvil"
+			id: "30DD553AB2B2E852"
 			shape: "octagon"
-			tasks: [{ id: "A11100000000010E" item: "tconstruct:tinkers_anvil" type: "item" }]
+			tasks: [{
+				id: "1B29C7311542F8BE"
+				item: "tconstruct:tinkers_anvil"
+				type: "item"
+			}]
+			title: "Tinker's Anvil"
 			x: 18.0d
 			y: 0.0d
-			description: ["The Tinker's Anvil is the later upgrade bench for serious tool work. It is a continuation of the foundry, not a separate system that replaces it."]
 		}
 	]
 	title: "Metals and Metal Tools"

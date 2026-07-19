@@ -9,55 +9,54 @@
 	quests: [
 		{
 			id: "632A0926919CA7AB"
-			title: "Nether: Heat and Metallurgy"
+			rewards: [{
+				count: 4
+				id: "1515FB354B7F32BC"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			subtitle: "Prove heat, netherrack grout, and hard material processing."
 			tasks: [{
 				dimension: "minecraft:the_nether"
 				id: "758B82ADE9D02306"
 				type: "dimension"
 			}]
+			title: "Nether: Heat and Metallurgy"
 			x: -5.5d
 			y: -1.5d
-			rewards: [
-				{
-					id: "C68FAC833439020E"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
 		}
 		{
 			id: "14F60973DD91B6F2"
-			title: "Aether: Mobility"
+			rewards: [{
+				count: 4
+				id: "61D1B688D9D2FD8F"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			subtitle: "Air travel and expedition range begin here."
 			tasks: [{
 				dimension: "aether:the_aether"
 				id: "039C102255C92191"
 				type: "dimension"
 			}]
+			title: "Aether: Mobility"
 			x: -5.5d
 			y: -0.5d
-			rewards: [
-				{
-					id: "B153ACD678341357"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
 		}
 		{
-			dependencies: [
-				"14F60973DD91B6F2"
-				"E767D2D9AD86FB78"
-			]
-			id: "236A84EC019738BD"
-			title: "Powered Aeronautics"
-			subtitle: "Aether buoyancy plus Airtight manufacture opens powered flight."
+			dependencies: ["14F60973DD91B6F2"]
+			description: ["Gliders prove Aether mobility at brass. Powered ships wait for sealed Airtight manufacture: aercloud, aerogel, and ambrosium identify every flight route while Clockwork controllers provide the machinery."]
 			icon: "vs_eureka:balloon"
+			id: "236A84EC019738BD"
+			rewards: [{
+				count: 4
+				id: "569DB71F34CA6BE0"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.2d
+			subtitle: "Aether buoyancy plus Airtight manufacture opens powered flight."
 			tasks: [
 				{
 					id: "347B95FD12A849CE"
@@ -70,50 +69,45 @@
 					type: "item"
 				}
 			]
+			title: "Powered Aeronautics"
 			x: -3.0d
 			y: -0.5d
-			description: ["Gliders prove Aether mobility at brass. Powered ships wait for sealed Airtight manufacture: aercloud, aerogel, and ambrosium identify every flight route while Clockwork controllers provide the machinery."]
-			rewards: [{ id: "569DB71F34CA6BE0" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
 		}
 		{
 			id: "29DD7BCEDC44AEF3"
-			title: "Undergarden: Pantry"
+			rewards: [{
+				count: 4
+				id: "22CBACFEABB1496E"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			subtitle: "Food, forage, and body-survival materials live below."
 			tasks: [{
 				dimension: "undergarden:undergarden"
 				id: "44FAC15DEB384B1C"
 				type: "dimension"
 			}]
+			title: "Undergarden: Pantry"
 			x: -5.5d
 			y: 0.5d
-			rewards: [
-				{
-					id: "8C78DE6B79E10B56"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
 		}
 		{
 			id: "41E455CD4D16FB44"
-			title: "Otherside: Magic Matter"
+			rewards: [{
+				count: 4
+				id: "3B8416B632CBD073"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			subtitle: "Sculk, echo, soul, and resonance feed Blood-refined magic."
 			tasks: [{
 				dimension: "deeperdarker:otherside"
 				id: "0CE308F73007DB38"
 				type: "dimension"
 			}]
+			title: "Otherside: Magic Matter"
 			x: -5.5d
 			y: 1.5d
-			rewards: [
-				{
-					id: "E441F068E8B35EE1"
-					type: "ftbquests:item"
-					item: "createdeco:copper_coin"
-					count: 4
-				}
-			]
 		}
 	]
 	title: "Dimensions"

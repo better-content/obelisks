@@ -9,162 +9,170 @@
 	quest_links: [ ]
 	quests: [
 		{
-			id: "3A2B0FA3A95CE344"
-			title: "Farms"
+			description: ["Use growable resources after the main machines are running. They should support side recipes, not replace ore and chemistry work."]
 			icon: "minecraft:wheat"
+			id: "3A2B0FA3A95CE344"
 			shape: "hexagon"
 			size: 1.1d
 			tasks: [{
-				id: "BADBD7B1CF05CF94"
+				id: "188FFE0089C8ABB0"
 				title: "Use farms as chemistry inputs, not free matter"
 				type: "checkmark"
 			}]
+			title: "Farms"
 			x: -6.34d
 			y: 0.0d
-			description: ["Use growable resources after the main machines are running. They should support side recipes, not replace ore and chemistry work."]
 		}
 		{
 			dependencies: ["3A2B0FA3A95CE344"]
-			id: "E4543FAFCE29ED66"
-			title: "Honey"
+			description: ["Honeycomb and wax become material inputs without turning farms into infinite ore."]
 			icon: "minecraft:honeycomb"
+			id: "0BB340E72410A4E7"
 			shape: "rsquare"
 			tasks: [{
-				id: "EA551089F33CE426"
+				id: "144BF0E17DC821E9"
 				item: "minecraft:honeycomb"
 				type: "item"
 			}]
+			title: "Honey"
 			x: -4.75d
 			y: -4.0d
-			description: ["Honeycomb and wax become material inputs without turning farms into infinite ore."]
 		}
 		{
 			dependencies: ["3A2B0FA3A95CE344"]
-			id: "B11B71E50AE93AE9"
-			title: "Bone"
+			description: ["Bone, hide, feathers, venom, and food waste become chemical side streams."]
 			icon: "minecraft:bone_meal"
+			id: "735DDCD94C82F80B"
 			shape: "rsquare"
 			tasks: [{
 				id: "4146AB0E66D1067C"
 				item: "minecraft:bone_meal"
 				type: "item"
 			}]
+			title: "Bone"
 			x: -4.75d
 			y: -2.5d
-			description: ["Bone, hide, feathers, venom, and food waste become chemical side streams."]
 		}
 		{
 			dependencies: ["3A2B0FA3A95CE344"]
-			id: "4369F36F1439BE66"
-			title: "Bottle"
+			description: ["Bottles are cheap but not free: glass logistics gate controlled chemistry."]
 			icon: "minecraft:glass_bottle"
+			id: "4369F36F1439BE66"
+			rewards: [{
+				count: 4
+				id: "694E5BA7D2B0572D"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			shape: "rsquare"
 			tasks: [{
-				id: "FAB7A09CC81176B8"
+				id: "0AA8FCD596CB3101"
 				item: "minecraft:glass_bottle"
 				type: "item"
 			}]
+			title: "Bottle"
 			x: -4.75d
 			y: -1.0d
-			rewards: [{ id: "694E5BA7D2B0572D" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Bottles are cheap but not free: glass logistics gate controlled chemistry."]
 		}
 		{
 			dependencies: ["4369F36F1439BE66"]
-			id: "9C8D956D9D41353C"
-			title: "Acid"
+			description: ["Use acids when a material needs a clear chemical step. Keep the input and output near the same work area so the transformation is easy to trace."]
 			icon: "chemlib:hydrochloric_acid"
+			id: "20A429D1163D444A"
 			shape: "rsquare"
 			tasks: [{
-				id: "944EAE3395F43D27"
+				id: "0F20EA6C16DC7A84"
 				item: "chemlib:hydrochloric_acid"
 				type: "item"
 			}]
+			title: "Acid"
 			x: -3.17d
 			y: -3.0d
-			description: ["Use acids when a material needs a clear chemical step. Keep the input and output near the same work area so the transformation is easy to trace."]
 		}
 		{
 			dependencies: ["4369F36F1439BE66"]
-			id: "9C4806BE96C165D3"
-			title: "Media"
+			description: ["Grinding media, salts, and reagents are the cost of controlled transformation."]
 			icon: "minecraft:gravel"
+			id: "2184D99FFF8EED11"
 			shape: "rsquare"
 			tasks: [{
-				id: "BBAB0B431589C6D8"
+				id: "3A4ECE208066FEC1"
 				title: "Prepare grinding media and salts"
 				type: "checkmark"
 			}]
+			title: "Media"
 			x: -3.17d
 			y: -1.0d
-			description: ["Grinding media, salts, and reagents are the cost of controlled transformation."]
 		}
 		{
-			dependencies: ["9C8D956D9D41353C" "9C4806BE96C165D3"]
-			id: "E73E988D633633C2"
-			title: "Open Chem"
+			description: ["Create handles open mixing, washing, precipitation, reduction, and bulk transformations."]
 			icon: "create:mechanical_mixer"
+			id: "08B7998EC9B77508"
 			shape: "square"
 			size: 1.05d
 			tasks: [{
-				id: "8A6E27203E2BAF86"
+				id: "05D158D76DF2B7FF"
 				item: "create:mechanical_mixer"
 				type: "item"
 			}]
+			title: "Open Chem"
 			x: -1.58d
 			y: -3.0d
-			description: ["Create handles open mixing, washing, precipitation, reduction, and bulk transformations."]
 		}
 		{
-			dependencies: ["E73E988D633633C2"]
-			id: "6ED592E593A00B56"
-			title: "Wash"
+			description: ["Washing and blasting make chemistry visible before sealed machines appear."]
 			icon: "create:encased_fan"
+			id: "6ED592E593A00B56"
 			shape: "rsquare"
 			tasks: [{
-				id: "B831B2D0AE7B3293"
+				id: "122ED91D51EC5A03"
 				item: "create:encased_fan"
 				type: "item"
 			}]
+			title: "Wash"
 			x: -1.58d
 			y: -1.0d
-			description: ["Washing and blasting make chemistry visible before sealed machines appear."]
 		}
 		{
-			dependencies: ["E73E988D633633C2"]
-			id: "15E8F973446C60BC"
-			title: "Cell"
+			description: ["Sealed cells mark the move from open vats to controlled pressure chemistry."]
 			icon: "latent_chemlib:sealed_chemical_cell"
+			id: "15E8F973446C60BC"
 			shape: "rsquare"
 			tasks: [{
 				id: "23AA18BA366029EF"
 				item: "latent_chemlib:sealed_chemical_cell"
 				type: "item"
 			}]
+			title: "Cell"
 			x: 0.0d
 			y: -3.0d
-			description: ["Sealed cells mark the move from open vats to controlled pressure chemistry."]
 		}
 		{
 			dependencies: ["15E8F973446C60BC"]
-			id: "E6E4C0B35936EA81"
-			title: "Gas"
+			description: ["Gas reaction chambers own dangerous sealed reactions rather than pretending bottles are enough."]
 			icon: "latent_chemlib:gas_reaction_chamber"
+			id: "3D8722F9925D50DE"
 			shape: "rsquare"
 			tasks: [{
-				id: "F0F3CEF3202C4D1C"
+				id: "63E37BA65413682F"
 				item: "latent_chemlib:gas_reaction_chamber"
 				type: "item"
 			}]
+			title: "Gas"
 			x: 1.58d
 			y: -3.0d
-			description: ["Gas reaction chambers own dangerous sealed reactions rather than pretending bottles are enough."]
 		}
 		{
 			dependencies: ["6ED592E593A00B56"]
-			id: "89BBEA358AA36261"
-			title: "Pressure"
+			description: ["Use PNCR for pressure, gas handling, thermal control, plastics, and PCB etching."]
 			icon: "pneumaticcraft:pressure_chamber_valve"
+			id: "07162C74BA5A22E4"
+			rewards: [{
+				count: 4
+				id: "66A3FC6348F1DF84"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			shape: "square"
 			size: 1.05d
 			tasks: [{
@@ -172,76 +180,70 @@
 				item: "pneumaticcraft:pressure_chamber_valve"
 				type: "item"
 			}]
+			title: "Pressure"
 			x: 0.0d
 			y: -1.0d
-			rewards: [{ id: "66A3FC6348F1DF84" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Use PNCR for pressure, gas handling, thermal control, plastics, and PCB etching."]
 		}
 		{
-			dependencies: ["89BBEA358AA36261"]
-			id: "ED4C9825703E8F60"
-			title: "Plastic"
+			description: ["Plastic moves chemistry into durable components and circuit parts. Keep plastic production close to the board materials that consume it."]
 			icon: "pneumaticcraft:plastic"
+			id: "7FEB6CA01490BF18"
 			shape: "rsquare"
 			tasks: [{
-				id: "D1B7DC69C1AD595E"
+				id: "047CC4BF4142DB98"
 				item: "pneumaticcraft:plastic"
 				type: "item"
 			}]
+			title: "Plastic"
 			x: 1.58d
 			y: -1.0d
-			description: ["Plastic moves chemistry into durable components and circuit parts. Keep plastic production close to the board materials that consume it."]
 		}
 		{
-			dependencies: ["ED4C9825703E8F60" "E6E4C0B35936EA81"]
-			id: "441F01E0A65494F5"
-			title: "Wafer"
+			description: ["Wafers are precursors for later circuits, not completed PCBs by themselves."]
 			icon: "pneumaticcraft:solar_wafer"
+			id: "441F01E0A65494F5"
 			shape: "rsquare"
 			tasks: [{
-				id: "A101DE8367608811"
+				id: "5D492D30E012206A"
 				item: "pneumaticcraft:solar_wafer"
 				type: "item"
 			}]
+			title: "Wafer"
 			x: 3.17d
 			y: -2.0d
-			description: ["Wafers are precursors for later circuits, not completed PCBs by themselves."]
 		}
 		{
-			dependencies: ["ED4C9825703E8F60"]
-			id: "1CB99ED728C9C647"
-			title: "Transistor"
+			description: ["Transistors sit between chemical preparation and PNCR assembly."]
 			icon: "pneumaticcraft:transistor"
+			id: "1CB99ED728C9C647"
 			shape: "rsquare"
 			tasks: [{
 				id: "192DF7D095CF66D7"
 				item: "pneumaticcraft:transistor"
 				type: "item"
 			}]
+			title: "Transistor"
 			x: 3.17d
 			y: 0.0d
-			description: ["Transistors sit between chemical preparation and PNCR assembly."]
 		}
 		{
-			dependencies: ["ED4C9825703E8F60"]
-			id: "75FD1D48EC2FB5C4"
-			title: "Capacitor"
+			description: ["Capacitors make circuit progression depend on materials, not just redstone dust."]
 			icon: "pneumaticcraft:capacitor"
+			id: "75FD1D48EC2FB5C4"
 			shape: "rsquare"
 			tasks: [{
 				id: "29CE8E89AEE90BC9"
 				item: "pneumaticcraft:capacitor"
 				type: "item"
 			}]
+			title: "Capacitor"
 			x: 3.17d
 			y: 2.0d
-			description: ["Capacitors make circuit progression depend on materials, not just redstone dust."]
 		}
 		{
-			dependencies: ["9C8D956D9D41353C"]
-			id: "2D93F328B5631FF3"
-			title: "LP Yield"
+			description: ["Blood Magic can pay LP for high-yield manual chemistry without becoming unattended throughput."]
 			icon: "bloodmagic:blankslate"
+			id: "2D93F328B5631FF3"
 			shape: "diamond"
 			size: 1.05d
 			tasks: [{
@@ -249,61 +251,65 @@
 				title: "Spend LP and slates for deliberate batches"
 				type: "checkmark"
 			}]
+			title: "LP Yield"
 			x: -1.58d
 			y: 3.0d
-			description: ["Blood Magic can pay LP for high-yield manual chemistry without becoming unattended throughput."]
 		}
 		{
 			dependencies: ["2D93F328B5631FF3"]
-			id: "ADF2D921D8BD58D9"
-			title: "Slate"
+			description: ["Higher slates justify higher-yield, higher-intent chemistry routes."]
 			icon: "bloodmagic:infusedslate"
+			id: "0B24391529D34788"
 			shape: "rsquare"
 			tasks: [{
-				id: "ADAC141280B1BD1F"
+				id: "66ABEC4F57655D69"
 				item: "bloodmagic:infusedslate"
 				type: "item"
 			}]
+			title: "Slate"
 			x: 0.0d
 			y: 3.0d
-			description: ["Higher slates justify higher-yield, higher-intent chemistry routes."]
 		}
 		{
-			dependencies: ["441F01E0A65494F5" "1CB99ED728C9C647" "75FD1D48EC2FB5C4" "ADF2D921D8BD58D9"]
-			id: "6863547474BA90DE"
-			title: "Precursors"
+			dependencies: [
+				"441F01E0A65494F5"
+				"1CB99ED728C9C647"
+				"75FD1D48EC2FB5C4"
+			]
+			description: ["Chemistry makes etchants, wafers, substrates, and traces; PNCR assembly finishes boards."]
 			icon: "pneumaticcraft:empty_pcb"
+			id: "6863547474BA90DE"
 			shape: "octagon"
 			size: 1.15d
 			tasks: [{
-				id: "B4A65539E724FD05"
+				id: "47655D9520EE1EA3"
 				title: "Prepare boards and wafers, not finished circuits"
 				type: "checkmark"
 			}]
+			title: "Precursors"
 			x: 4.75d
 			y: 0.0d
-			description: ["Chemistry makes etchants, wafers, substrates, and traces; PNCR assembly finishes boards."]
 		}
 		{
 			dependencies: ["6863547474BA90DE"]
-			id: "7E22E89C8E8982E6"
-			title: "PCB"
+			description: ["The recipe explorer shows printed boards fan out into drones, assembly, pneumatic armor, security, compressors, and programming."]
 			icon: "pneumaticcraft:printed_circuit_board"
+			id: "7E22E89C8E8982E6"
 			shape: "rsquare"
 			tasks: [{
-				id: "806EC42BBD93200A"
+				id: "316B79787A7FD19D"
 				item: "pneumaticcraft:printed_circuit_board"
 				type: "item"
 			}]
+			title: "PCB"
 			x: 6.34d
 			y: 0.0d
-			description: ["The recipe explorer shows printed boards fan out into drones, assembly, pneumatic armor, security, compressors, and programming."]
 		}
 		{
 			dependencies: ["7E22E89C8E8982E6"]
-			id: "F7A4B2C41B81DED6"
-			title: "Identity"
+			description: ["Use chemistry to refine sources through real costs and machines. If it flattens the matter economy into one generic soup, you are using it wrong."]
 			icon: "minecraft:spyglass"
+			id: "05A1567F77AFDC73"
 			shape: "hexagon"
 			size: 1.15d
 			tasks: [{
@@ -311,49 +317,46 @@
 				title: "Do not erase geology"
 				type: "checkmark"
 			}]
+			title: "Identity"
 			x: 7.92d
 			y: 0.0d
-			description: ["Use chemistry to refine sources through real costs and machines. If it flattens the matter economy into one generic soup, you are using it wrong."]
-		},
+		}
 		{
 			dependencies: ["3A2B0FA3A95CE344"]
-			id: "5B516223F348409E"
-			title: "Growable Boundary"
+			description: ["Use chemlib conversions only when they keep the original source understandable. If a conversion hides where the material came from, avoid relying on it."]
 			icon: "minecraft:carrot"
+			id: "5B516223F348409E"
 			shape: "diamond"
 			size: 0.9d
 			tasks: [{
-				id: "F6DDF3DE21FE701B"
+				id: "1B7C21CB93C31FF9"
 				title: "Separate grown inputs from mined matter"
 				type: "checkmark"
 			}]
+			title: "Growable Boundary"
 			x: -6.34d
 			y: -2.2d
-			description: ["Use chemlib conversions only when they keep the original source understandable. If a conversion hides where the material came from, avoid relying on it."]
 		}
-,
 		{
 			dependencies: ["4369F36F1439BE66"]
-			id: "E28AF6E5D75E39F2"
-			title: "Glass Logistics"
+			description: ["Chemistry density begins with containers."]
 			icon: "minecraft:glass"
+			id: "7E34B31CE22E2057"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
-				id: "A48907296F29467F"
+				id: "5B1E5F1D1DD5E9B0"
 				title: "Batch bottles and jars for processing"
 				type: "checkmark"
 			}]
+			title: "Glass Logistics"
 			x: -4.75d
 			y: 1.0d
-			description: ["Chemistry density begins with containers."]
 		}
-,
 		{
-			dependencies: ["9C8D956D9D41353C"]
-			id: "401992B3EDAC644D"
-			title: "Acid Cabinet"
+			description: ["Store acids carefully and spend them on purpose. They are process inputs with cost, not cheap fluids you spray everywhere."]
 			icon: "minecraft:cauldron"
+			id: "401992B3EDAC644D"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
@@ -361,16 +364,14 @@
 				title: "Store acids as deliberate process inputs"
 				type: "checkmark"
 			}]
+			title: "Acid Cabinet"
 			x: -3.17d
 			y: -5.0d
-			description: ["Store acids carefully and spend them on purpose. They are process inputs with cost, not cheap fluids you spray everywhere."]
 		}
-,
 		{
-			dependencies: ["E73E988D633633C2"]
-			id: "9C1947AFEF5F8553"
-			title: "Basin Work"
+			description: ["Keep open-vat chemistry in a visible station with room to inspect recipes. That makes transformation steps easier to trust and debug."]
 			icon: "create:basin"
+			id: "6E6B9CFEB0837CA1"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
@@ -378,50 +379,45 @@
 				title: "Run open-vat recipes before sealed reactions"
 				type: "checkmark"
 			}]
+			title: "Basin Work"
 			x: -1.58d
 			y: -1.0d
-			description: ["Keep open-vat chemistry in a visible station with room to inspect recipes. That makes transformation steps easier to trust and debug."]
 		}
-,
 		{
 			dependencies: ["15E8F973446C60BC"]
-			id: "259352F93245052C"
-			title: "Seal Proof"
+			description: ["Treat sealed cells as a real threshold from open mixing into dangerous reactions. Move into them only when the recipe actually needs that control."]
 			icon: "minecraft:iron_bars"
+			id: "259352F93245052C"
 			shape: "diamond"
 			size: 0.9d
 			tasks: [{
-				id: "DDA4F0A90DE4E3C3"
+				id: "5C718C81DADFD7AC"
 				title: "Move dangerous reactions into sealed cells"
 				type: "checkmark"
 			}]
+			title: "Seal Proof"
 			x: 0.0d
 			y: -0.9d
-			description: ["Treat sealed cells as a real threshold from open mixing into dangerous reactions. Move into them only when the recipe actually needs that control."]
 		}
-,
 		{
-			dependencies: ["89BBEA358AA36261"]
-			id: "50AA0F7A25633FED"
-			title: "Pressure Chem"
+			description: ["Use PNCR when recipes need pressure, heat, gas handling, or controlled reactions."]
 			icon: "pneumaticcraft:pressure_gauge"
+			id: "50AA0F7A25633FED"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
-				id: "BA030BCEB9875EAB"
+				id: "688D8BD3483C74C6"
 				title: "Watch pressure and temperature during chemistry"
 				type: "checkmark"
 			}]
+			title: "Pressure Chem"
 			x: 0.0d
 			y: 1.0d
-			description: ["Use PNCR when recipes need pressure, heat, gas handling, or controlled reactions."]
 		}
-,
 		{
-			dependencies: ["ED4C9825703E8F60"]
-			id: "638323B2E2889CDA"
-			title: "Polymer Line"
+			description: ["Plastic deserves a visible side line."]
 			icon: "pneumaticcraft:plastic_brick_red"
+			id: "638323B2E2889CDA"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
@@ -429,33 +425,31 @@
 				title: "Turn chemistry into durable components"
 				type: "checkmark"
 			}]
+			title: "Polymer Line"
 			x: 1.58d
 			y: -3.0d
-			description: ["Plastic deserves a visible side line."]
 		}
-,
 		{
 			dependencies: ["2D93F328B5631FF3"]
-			id: "632665DBBB1E2E9D"
-			title: "Blood Batch"
+			description: ["Keep Blood-assisted chemistry visible and limited to deliberate batches. It is there to boost careful work, not to replace the whole factory."]
 			icon: "bloodmagic:alchemytable"
+			id: "632665DBBB1E2E9D"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
-				id: "DB7DFEC6F90555E1"
+				id: "5B0AD5027E58E254"
 				title: "Spend LP for deliberate batch boosts"
 				type: "checkmark"
 			}]
+			title: "Blood Batch"
 			x: -1.58d
 			y: 5.0d
-			description: ["Keep Blood-assisted chemistry visible and limited to deliberate batches. It is there to boost careful work, not to replace the whole factory."]
 		}
-,
 		{
 			dependencies: ["6863547474BA90DE"]
-			id: "8497DCCD2D40E66D"
-			title: "Board Stack"
+			description: ["Store wafers, substrates, capacitors, and transistors beside the board machines. Seeing the precursors together makes the PCB chain easier to repeat."]
 			icon: "pneumaticcraft:empty_pcb"
+			id: "2FC9A727A31B7047"
 			shape: "diamond"
 			size: 0.9d
 			tasks: [{
@@ -463,16 +457,14 @@
 				title: "Accumulate substrates, wafers, capacitors, and transistors"
 				type: "checkmark"
 			}]
+			title: "Board Stack"
 			x: 4.75d
 			y: -2.0d
-			description: ["Store wafers, substrates, capacitors, and transistors beside the board machines. Seeing the precursors together makes the PCB chain easier to repeat."]
 		}
-,
 		{
-			dependencies: ["F7A4B2C41B81DED6"]
-			id: "B6ED62E8793C218A"
-			title: "Audit Trail"
+			description: ["Trace important outputs back to their source ore, plant, gas, or reagent. If you know where a material came from, shortages are much easier to fix."]
 			icon: "minecraft:spyglass"
+			id: "366348FD8CF74489"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
@@ -480,9 +472,9 @@
 				title: "Trace outputs back to sources"
 				type: "checkmark"
 			}]
+			title: "Audit Trail"
 			x: 7.92d
 			y: 2.0d
-			description: ["Trace important outputs back to their source ore, plant, gas, or reagent. If you know where a material came from, shortages are much easier to fix."]
 		}
 	]
 	title: "Chemistry and Matter Routes"

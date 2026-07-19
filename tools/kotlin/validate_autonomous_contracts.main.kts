@@ -828,6 +828,10 @@ fun validateWorldgenStaticContractsImpl() {
     val dynamicTreesManagedPackSolidIds = generatedPackSolidIds.filter { id -> dynamicTreesManagedRbpPatterns.any { it.containsMatchIn(id) } }
     if (dynamicTreesManagedPackSolidIds.isEmpty()) ok("RBP generated pack-solid definition excludes Dynamic Trees-managed blocks")
     else fail("RBP generated pack-solid definition excludes Dynamic Trees-managed blocks", dynamicTreesManagedPackSolidIds.take(20).joinToString(", "))
+    val layeredDetailBlocks = setOf("minecraft:snow", "supplementaries:ash")
+    val layeredDetailPackSolidIds = generatedPackSolidIds.filter { it in layeredDetailBlocks }
+    if (layeredDetailPackSolidIds.isEmpty()) ok("RBP generated pack-solid definition excludes snow and ash layers")
+    else fail("RBP generated pack-solid definition excludes snow and ash layers", layeredDetailPackSolidIds.joinToString(", "))
     val pvjDetailPackSolidBlocklist = setOf(
         "projectvibrantjourneys:bones",
         "projectvibrantjourneys:charred_bones",

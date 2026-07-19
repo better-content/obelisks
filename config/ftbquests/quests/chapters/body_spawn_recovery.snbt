@@ -4,60 +4,65 @@
 	filename: "body_spawn_recovery"
 	group: "5B6E48C1A9D207F3"
 	icon: "minecraft:red_bed"
-	id: "CA5156F23EE34208"
+	id: "73CE3C0152120340"
 	order_index: 4
 	quest_links: [ ]
 	quests: [
 		{
-			id: "2DF95D9A30A46A2B"
-			title: "Spawn"
+			description: ["Death sends you back to your locked start point. Treat beds as temporary camps and travel support, not as a way to rewrite your home base."]
 			icon: "minecraft:red_bed"
+			id: "2DF95D9A30A46A2B"
 			shape: "hexagon"
 			size: 1.3d
 			tasks: [{
-				id: "AF1EB2BBC3B0EE70"
+				id: "1E92EB4D310882F0"
 				title: "Read the locked-spawn rule"
 				type: "checkmark"
 			}]
+			title: "Spawn"
 			x: -6.34d
 			y: 0.0d
-			description: ["Death sends you back to your locked start point. Treat beds as temporary camps and travel support, not as a way to rewrite your home base."]
 		}
 		{
 			dependencies: ["2DF95D9A30A46A2B"]
-			id: "2C8F9611F5D5DD16"
-			title: "Route"
+			description: ["Mark the road home before you need it. A visible route turns corpse recovery into a plan instead of a blind sprint."]
 			icon: "minecraft:compass"
+			id: "2C8F9611F5D5DD16"
 			shape: "rsquare"
 			tasks: [{
 				id: "4C498E04BC93E9AE"
 				title: "Mark the road back"
 				type: "checkmark"
 			}]
+			title: "Route"
 			x: -4.75d
 			y: -3.0d
-			description: ["Mark the road home before you need it. A visible route turns corpse recovery into a plan instead of a blind sprint."]
 		}
 		{
 			dependencies: ["2C8F9611F5D5DD16"]
-			id: "999F66BDD3EBF54E"
-			title: "Caches"
+			description: ["Leave cheap supplies along routes you expect to run again. A small cache is often the difference between a recovery trip and another death."]
 			icon: "minecraft:barrel"
+			id: "213E227E5189732F"
 			shape: "rsquare"
 			tasks: [{
 				id: "198C7A2CCC83CD89"
 				title: "Stage cheap recovery kits"
 				type: "checkmark"
 			}]
+			title: "Caches"
 			x: -3.17d
 			y: -3.0d
-			description: ["Leave cheap supplies along routes you expect to run again. A small cache is often the difference between a recovery trip and another death."]
 		}
 		{
-			dependencies: ["999F66BDD3EBF54E"]
-			id: "E454A578105E3C5D"
-			title: "Food"
+			description: ["Carry varied food instead of one stack of filler. Better meals give you more working time, which matters when a bad trip can turn into a long walk back."]
 			icon: "minecraft:bread"
+			id: "7E86ED9EE029CCEB"
+			rewards: [{
+				count: 4
+				id: "6014B500804B358D"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			shape: "square"
 			size: 1.05d
 			tasks: [{
@@ -65,76 +70,79 @@
 				item: "minecraft:bread"
 				type: "item"
 			}]
+			title: "Food"
 			x: -1.58d
 			y: -3.0d
-			rewards: [{ id: "6014B500804B358D" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Carry varied food instead of one stack of filler. Better meals give you more working time, which matters when a bad trip can turn into a long walk back."]
 		}
 		{
-			dependencies: ["999F66BDD3EBF54E"]
-			id: "0CC3D3A3FF0F586A"
-			title: "Water"
+			description: ["Secure drinkable water before longer trips. Dirty water turns every mistake into extra attrition, so purification is a travel tool, not luxury prep."]
 			icon: "minecraft:water_bucket"
+			id: "0CC3D3A3FF0F586A"
 			shape: "rsquare"
 			tasks: [{
-				id: "DE766C5615E28338"
+				id: "1AA897790A9EFDAF"
 				title: "Secure drinkable water"
 				type: "checkmark"
 			}]
+			title: "Water"
 			x: -1.58d
 			y: -1.5d
-			description: ["Secure drinkable water before longer trips. Dirty water turns every mistake into extra attrition, so purification is a travel tool, not luxury prep."]
 		}
 		{
-			dependencies: ["E454A578105E3C5D" "0CC3D3A3FF0F586A"]
-			id: "50B2F24168118EF2"
-			title: "Climate"
+			dependencies: ["0CC3D3A3FF0F586A"]
+			description: ["Check the temperature problem before you leave home. Climate changes what gear, fuel, and healing you need, especially for deep or dimensional trips."]
 			icon: "cold_sweat:thermometer"
+			id: "50B2F24168118EF2"
 			shape: "rsquare"
 			tasks: [{
-				id: "D79650BBE69F02C3"
+				id: "51C40E028E26A8E5"
 				title: "Read heat and cold before travel"
 				type: "checkmark"
 			}]
+			title: "Climate"
 			x: 0.0d
 			y: -2.25d
-			description: ["Check the temperature problem before you leave home. Climate changes what gear, fuel, and healing you need, especially for deep or dimensional trips."]
 		}
 		{
 			dependencies: ["50B2F24168118EF2"]
-			id: "9DCD541E1DBF398C"
-			title: "Pack"
+			description: ["Pack for the return trip, not only for arrival. Leave room for target items, recovery supplies, and whatever you will need if the trip goes wrong."]
 			icon: "minecraft:bundle"
+			id: "642D225A550A6609"
 			shape: "rsquare"
 			tasks: [{
-				id: "8826D79E7E8200A5"
+				id: "4746D354EB0B4F67"
 				title: "Pack for the return trip"
 				type: "checkmark"
 			}]
+			title: "Pack"
 			x: 1.58d
 			y: -2.25d
-			description: ["Pack for the return trip, not only for arrival. Leave room for target items, recovery supplies, and whatever you will need if the trip goes wrong."]
 		}
 		{
-			dependencies: ["9DCD541E1DBF398C"]
-			id: "0379349149C465BF"
-			title: "Mounts"
+			description: ["Mounts matter because travel stays physical for a long time in this pack. Use animals to shorten recovery loops and move supplies, not as decoration."]
 			icon: "minecraft:saddle"
+			id: "0379349149C465BF"
 			shape: "rsquare"
 			tasks: [{
-				id: "DB8D24F1FB3B2249"
+				id: "2F07343041992152"
 				title: "Use animals as logistics, not decoration"
 				type: "checkmark"
 			}]
+			title: "Mounts"
 			x: 3.17d
 			y: -2.25d
-			description: ["Mounts matter because travel stays physical for a long time in this pack. Use animals to shorten recovery loops and move supplies, not as decoration."]
 		}
 		{
 			dependencies: ["2DF95D9A30A46A2B"]
-			id: "66A303C7B87687A4"
-			title: "Heart"
+			description: ["A still-beating heart is proof that a run mattered. Keep it safe, because it bridges survival into Blood Magic and is not meant to be spent like ordinary loot."]
 			icon: "rpgstats:still_beating_heart"
+			id: "66A303C7B87687A4"
+			rewards: [{
+				count: 4
+				id: "339DD7FA23CCA838"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			shape: "diamond"
 			size: 1.15d
 			tasks: [{
@@ -142,46 +150,64 @@
 				item: "rpgstats:still_beating_heart"
 				type: "item"
 			}]
+			title: "Heart"
 			x: -4.75d
 			y: 3.0d
-			rewards: [{ id: "9D225354E0351222" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["A still-beating heart is proof that a run mattered. Keep it safe, because it bridges survival into Blood Magic and is not meant to be spent like ordinary loot."]
 		}
 		{
 			dependencies: ["66A303C7B87687A4"]
-			id: "A90EEABE0BB97F1B"
-			title: "Knife"
-			icon: "additionalweaponry:butcher_knife"
+			description: ["The primitive knife keeps paying for itself through food prep and plant cutting. It is part of the survival loop long before machines smooth anything out."]
+			icon: {
+				Count: 1
+				id: "additionalweaponry:butcher_knife"
+				tag: {
+					Damage: 0
+					tic_broken: 0b
+				}
+			}
+			id: "582458854796B12B"
 			shape: "rsquare"
 			tasks: [{
-				id: "E0DB2838C2BC75DB"
-				item: "additionalweaponry:butcher_knife"
+				id: "05A3016AE3C09BA2"
+				item: {
+					Count: 1
+					id: "additionalweaponry:butcher_knife"
+					tag: {
+						Damage: 0
+						tic_broken: 0b
+					}
+				}
 				type: "item"
 			}]
+			title: "Knife"
 			x: -3.17d
 			y: 3.0d
-			description: ["The primitive knife keeps paying for itself through food prep and plant cutting. It is part of the survival loop long before machines smooth anything out."]
 		}
 		{
-			dependencies: ["A90EEABE0BB97F1B"]
-			id: "9BC440056C693801"
-			title: "Stats"
+			description: ["Death costs you body progress, not just a walk. Respect that loss and plan safer routes once a life starts getting valuable."]
 			icon: "rpgstats:myofibra_catalyst"
+			id: "3FA9A4546B77AE0C"
 			shape: "rsquare"
 			tasks: [{
-				id: "B7E04365A6133A40"
+				id: "602E4F0557AEBDCC"
 				title: "Respect body progression"
 				type: "checkmark"
 			}]
+			title: "Stats"
 			x: -1.58d
 			y: 3.0d
-			description: ["Death costs you body progress, not just a walk. Respect that loss and plan safer routes once a life starts getting valuable."]
 		}
 		{
 			dependencies: ["66A303C7B87687A4"]
-			id: "56D43612CD94F3C2"
-			title: "Orb"
+			description: ["The weak orb is your first stable Blood Magic tool. It turns the heart step into repeatable LP storage and altar work."]
 			icon: "bloodmagic:weakbloodorb"
+			id: "56D43612CD94F3C2"
+			rewards: [{
+				count: 4
+				id: "3E7EB7D562816C32"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.1d
 			tasks: [{
@@ -189,61 +215,64 @@
 				item: "bloodmagic:weakbloodorb"
 				type: "item"
 			}]
+			title: "Orb"
 			x: 0.0d
 			y: 3.0d
-			rewards: [{ id: "F0B9E4D60479AF25" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["The weak orb is your first stable Blood Magic tool. It turns the heart step into repeatable LP storage and altar work."]
 		}
 		{
 			dependencies: ["56D43612CD94F3C2"]
-			id: "11B6803A865589C5"
-			title: "Altar"
+			description: ["Build the altar once the heart and orb make sense together. Blood Magic starts as a response to risk and recovery, not as a free side craft."]
 			icon: "bloodmagic:altar"
+			id: "11B6803A865589C5"
 			shape: "rsquare"
 			tasks: [{
 				id: "384F56891A50AC3D"
 				title: "Build the altar as a recovery consequence"
 				type: "checkmark"
 			}]
+			title: "Altar"
 			x: 1.58d
 			y: 3.0d
-			description: ["Build the altar once the heart and orb make sense together. Blood Magic starts as a response to risk and recovery, not as a free side craft."]
 		}
 		{
-			dependencies: ["9DCD541E1DBF398C"]
-			id: "DC0BBF7695937B20"
-			title: "Villages"
+			description: ["Use settlements to recover, restock, and survive repeated trips through dangerous terrain. Villages, walls, and wares are worth protecting."]
 			icon: "minecraft:bell"
+			id: "3F75899D6048A24C"
 			shape: "rsquare"
 			tasks: [{
-				id: "FC3F161C5A9EC298"
+				id: "28B58248CE4348E9"
 				title: "Use settlements for recovery"
 				type: "checkmark"
 			}]
+			title: "Villages"
 			x: 3.17d
 			y: 1.5d
-			description: ["Use settlements to recover, restock, and survive repeated trips through dangerous terrain. Villages, walls, and wares are worth protecting."]
 		}
 		{
-			dependencies: ["DC0BBF7695937B20"]
-			id: "E3A44470D379F056"
-			title: "Patrols"
-			icon: "minecraft:crossbow"
+			description: ["Expect pillager pressure on exposed routes and weak settlements. Defending roads and approach lines is part of staying alive, not optional flavor."]
+			icon: {
+				Count: 1
+				id: "minecraft:crossbow"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "46383547C2A9246F"
 			shape: "rsquare"
 			tasks: [{
 				id: "1807653D3991443F"
 				title: "Expect surface pressure"
 				type: "checkmark"
 			}]
+			title: "Patrols"
 			x: 4.75d
 			y: 1.5d
-			description: ["Expect pillager pressure on exposed routes and weak settlements. Defending roads and approach lines is part of staying alive, not optional flavor."]
 		}
 		{
-			dependencies: ["11B6803A865589C5" "E3A44470D379F056"]
-			id: "40B21AD1972A4A62"
-			title: "Blood"
+			dependencies: ["11B6803A865589C5"]
+			description: ["By this point, the lesson is clear: survival mistakes, recovery planning, and body risk are what feed your first Blood Magic progress."]
 			icon: "bloodmagic:weakbloodorb"
+			id: "40B21AD1972A4A62"
 			shape: "octagon"
 			size: 1.2d
 			tasks: [{
@@ -251,15 +280,15 @@
 				title: "Bridge survival into Blood Magic"
 				type: "checkmark"
 			}]
+			title: "Blood"
 			x: 6.34d
 			y: 1.5d
-			description: ["By this point, the lesson is clear: survival mistakes, recovery planning, and body risk are what feed your first Blood Magic progress."]
-		},
+		}
 		{
 			dependencies: ["2DF95D9A30A46A2B"]
-			id: "689EE6FDBCD85143"
-			title: "Grave Route"
+			description: ["Mark likely death routes before you need them. Doing that once early will save more runs than any emergency item later."]
 			icon: "minecraft:map"
+			id: "689EE6FDBCD85143"
 			shape: "diamond"
 			size: 0.9d
 			tasks: [{
@@ -267,16 +296,14 @@
 				title: "Mark death routes before travelling"
 				type: "checkmark"
 			}]
+			title: "Grave Route"
 			x: -5.68d
 			y: 1.8d
-			description: ["Mark likely death routes before you need them. Doing that once early will save more runs than any emergency item later."]
 		}
-,
 		{
-			dependencies: ["999F66BDD3EBF54E"]
-			id: "57FB61A1AF700D64"
-			title: "Torch Cache"
+			description: ["Stash torches and blocks in every route cache. Small recovery supplies solve a lot of problems faster than a heroic second expedition."]
 			icon: "minecraft:torch"
+			id: "57FB61A1AF700D64"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
@@ -284,16 +311,14 @@
 				title: "Stage light and blocks in every route cache"
 				type: "checkmark"
 			}]
+			title: "Torch Cache"
 			x: -2.95d
 			y: -0.9d
-			description: ["Stash torches and blocks in every route cache. Small recovery supplies solve a lot of problems faster than a heroic second expedition."]
 		}
-,
 		{
-			dependencies: ["E454A578105E3C5D"]
-			id: "3BE957C18837FB1E"
-			title: "Diet Spread"
+			description: ["Spread your diet once travel starts getting longer. Better nutrition means longer working windows and fewer avoidable collapse points."]
 			icon: "minecraft:carrot"
+			id: "3BE957C18837FB1E"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
@@ -301,16 +326,15 @@
 				title: "Eat varied food, not one stack forever"
 				type: "checkmark"
 			}]
+			title: "Diet Spread"
 			x: -1.47d
 			y: -5.0d
-			description: ["Spread your diet once travel starts getting longer. Better nutrition means longer working windows and fewer avoidable collapse points."]
 		}
-,
 		{
 			dependencies: ["0CC3D3A3FF0F586A"]
-			id: "33D5395E3B545D2F"
-			title: "Purify"
+			description: ["Always carry a water plan before leaving home. If you cannot explain how you will refill or purify, you are not ready for the route yet."]
 			icon: "minecraft:campfire"
+			id: "33D5395E3B545D2F"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
@@ -318,50 +342,52 @@
 				title: "Carry a purification plan"
 				type: "checkmark"
 			}]
+			title: "Purify"
 			x: -1.47d
 			y: 0.5d
-			description: ["Always carry a water plan before leaving home. If you cannot explain how you will refill or purify, you are not ready for the route yet."]
 		}
-,
 		{
 			dependencies: ["50B2F24168118EF2"]
-			id: "8195B915BE8C30D4"
-			title: "Warm Kit"
-			icon: "minecraft:leather_chestplate"
+			description: ["Pack heat or cold gear before the biome punishes you. Climate problems are cheaper to prevent than to survive in the field."]
+			icon: {
+				Count: 1
+				id: "minecraft:leather_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "6910C03AE3072932"
 			shape: "diamond"
 			size: 0.9d
 			tasks: [{
-				id: "FA5DD3CAD0793469"
+				id: "34CC4E7DED28A0F0"
 				title: "Prepare heat/cold counter-gear"
 				type: "checkmark"
 			}]
+			title: "Warm Kit"
 			x: 0.0d
 			y: -4.25d
-			description: ["Pack heat or cold gear before the biome punishes you. Climate problems are cheaper to prevent than to survive in the field."]
 		}
-,
 		{
-			dependencies: ["9DCD541E1DBF398C"]
-			id: "8DB9E6993AE49710"
-			title: "Return Slot"
+			description: ["Reserve inventory for the trip home. If every slot is already spoken for, the return leg will be worse than the outward trip."]
 			icon: "minecraft:ender_pearl"
+			id: "1BBCCDB274799D04"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
-				id: "D4556C5E782A07DC"
+				id: "347AEFDCAB09BE01"
 				title: "Reserve inventory for the trip home"
 				type: "checkmark"
 			}]
+			title: "Return Slot"
 			x: 1.58d
 			y: -0.25d
-			description: ["Reserve inventory for the trip home. If every slot is already spoken for, the return leg will be worse than the outward trip."]
 		}
-,
 		{
 			dependencies: ["66A303C7B87687A4"]
-			id: "F8A3FFD03EAABC8B"
-			title: "Life Debt"
+			description: ["Treat the heart as a run record, not pocket change. It is important because it proves a life had weight and turns that weight into magic access."]
 			icon: "minecraft:totem_of_undying"
+			id: "7405D818C5579A85"
 			shape: "diamond"
 			size: 0.9d
 			tasks: [{
@@ -369,16 +395,15 @@
 				title: "Save the heart for Blood Magic"
 				type: "checkmark"
 			}]
+			title: "Life Debt"
 			x: -4.75d
 			y: 1.0d
-			description: ["Treat the heart as a run record, not pocket change. It is important because it proves a life had weight and turns that weight into magic access."]
 		}
-,
 		{
 			dependencies: ["11B6803A865589C5"]
-			id: "D3EA42355835E274"
-			title: "LP Safety"
+			description: ["Read your LP before you cut yourself or start a craft. Blood Magic gets much safer once you stop guessing about your reserves."]
 			icon: "bloodmagic:divinationsigil"
+			id: "1744005E6016051F"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
@@ -386,16 +411,14 @@
 				title: "Read LP before committing sacrifice"
 				type: "checkmark"
 			}]
+			title: "LP Safety"
 			x: 1.58d
 			y: 5.0d
-			description: ["Read your LP before you cut yourself or start a craft. Blood Magic gets much safer once you stop guessing about your reserves."]
 		}
-,
 		{
-			dependencies: ["DC0BBF7695937B20"]
-			id: "E1BEBFBA84DE22DA"
-			title: "Safehouse"
+			description: ["Turn a village into a safehouse with storage, approach control, and supply caches. A good settlement reduces recovery pain every time you pass through it."]
 			icon: "minecraft:bell"
+			id: "0455F0B35836821C"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
@@ -403,16 +426,14 @@
 				title: "Connect settlements to your routes"
 				type: "checkmark"
 			}]
+			title: "Safehouse"
 			x: 3.17d
 			y: -0.5d
-			description: ["Turn a village into a safehouse with storage, approach control, and supply caches. A good settlement reduces recovery pain every time you pass through it."]
 		}
-,
 		{
-			dependencies: ["E3A44470D379F056"]
-			id: "B18E5A52BB0C9AE9"
-			title: "Alarm Line"
+			description: ["Build alarms and fallback paths before the next raid proves you needed them. Surface pressure is easiest to survive when the terrain is already on your side."]
 			icon: "minecraft:tripwire_hook"
+			id: "527B640130D6CE5C"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
@@ -420,9 +441,9 @@
 				title: "Build warning lines and fallback routes"
 				type: "checkmark"
 			}]
+			title: "Alarm Line"
 			x: 4.75d
 			y: 3.5d
-			description: ["Build alarms and fallback paths before the next raid proves you needed them. Surface pressure is easiest to survive when the terrain is already on your side."]
 		}
 	]
 	title: "Body, Spawn, and Recovery"

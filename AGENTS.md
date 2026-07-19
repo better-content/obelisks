@@ -91,6 +91,7 @@ Original shell/Python tools are quarantined under `tools/quarantine/original-too
 ## Release Bundle Workflow
 - Use `tools/bc build bundle release --exports-dir /path/to/exports` as the normal front door when the user asks for fresh or tested ZIPs. Do not reproduce this workflow with a disposable Git worktree, direct `packwiz` calls, manual archive assembly, or copied ignored artifacts.
 - Keep the persistent pack version in `pack.toml` as `Playtest v<N>`. The full release command must reserve the next integer before building and name the matched outputs `better-content-playtest-v<N>-curseforge.zip` and `better-content-playtest-v<N>-server.zip`. Never reuse or overwrite a release number, never hand-edit a release ZIP back to an earlier version, and report the reserved version with both artifacts.
+- If the full workflow fails after reserving a version but before creating either matched archive, repair the source failure and resume that exact reservation with `tools/bc build bundle release --resume-current ...`. The resume path must refuse to run if either archive already exists; do not increment again merely to recover from a pre-export validation failure.
 - The release command operates on the current source tree intentionally. It refreshes packwiz metadata, runs static validation, builds the CurseForge/client and complete-server ZIPs, verifies required archive entries (including the tracked root `options.txt`), and runs a reset-runtime server smoke by default.
 - Keep release outputs under `generated/exports/` or another path outside the repo. Repo-root `exports/` is ignored and contract-forbidden from `index.toml` so packwiz cannot recursively package previous ZIPs or server trees.
 - Review the working tree before running it. Packwiz refresh updates `index.toml` and `pack.toml` to match all current indexed source files. Preserve unrelated edits, and commit the source changes together with their refreshed manifest hashes; never commit manifest hashes that refer to source changes left outside the commit.
@@ -124,6 +125,7 @@ Use the portable harness layer for repeatable runtime tests instead of hand-buil
   - `pillager_campaigns`
   - `worldgen_sampling`
   - `worldgen_marketing_screenshots`
+  - `rain_collector_visuals`
   - `vs_ships_stability`
   - `vs_ships_matrix`
   - `client_smoke`
@@ -142,6 +144,10 @@ Use the portable harness layer for repeatable runtime tests instead of hand-buil
 - Prefer adding a new scenario wrapper over copying launcher/process code. Keep shared harness behavior internal and expose new cases through `tools/bc test scenario`.
 - Use `--cycles`, `--idle-seconds`, `--keep-going`, `--keep-runs`, `--min-free-gb`, and `--max-old-runs` to tune validation runs. Default behavior should prune old cache-backed runs and fail early if free space is low.
 - On stalls, timeouts, watchdogs, JVM exits, or crash reports, capture diagnostics through the harness before stopping processes.
+
+Current rain collector visual scenario:
+- Run: `tools/bc test scenario-headful rain_collector_visuals --bootstrap-mode once`
+- Expectation: a disposable Xvfb client captures the fixed no-shader collector fixture under active rain, including every water level from empty through full. Treat the generated technical review as incomplete until a vision-capable AI has inspected the final image for missing textures, broken transparency, clipping, z-fighting, and readable level progression.
 
 Current LC/DH scenario:
 - Run: `tools/bc test scenario lc_tfth_c2me_dh`

@@ -9,236 +9,258 @@
 	quest_links: [ ]
 	quests: [
 		{
-			id: "CCE823C794059335"
-			title: "Fonts"
+			description: ["Treat dimension fonts as route gates tied to place. Dirty magic starts by sending you somewhere with a cost, not by handing you a free bench."]
 			icon: "minecraft:book"
+			id: "2B446CDF8966C3D1"
 			shape: "hexagon"
 			size: 1.15d
 			tasks: [{
-				id: "C1852B81147A544A"
+				id: "30707352780E9DFE"
 				title: "Treat dimension fonts as route surfaces"
 				type: "checkmark"
 			}]
+			title: "Fonts"
 			x: -6.34d
 			y: 0.0d
-			description: ["Treat dimension fonts as route gates tied to place. Dirty magic starts by sending you somewhere with a cost, not by handing you a free bench."]
 		}
 		{
-			dependencies: ["F58727CBAA57D84C"]
-			id: "4F6E07C014B384B6"
-			title: "Hexerei"
+			description: ["Hexerei begins with a cauldron and local materials. Use it as practical folk alchemy, not as a generic replacement for every other magic system."]
 			icon: "hexerei:mixing_cauldron"
+			id: "4F6E07C014B384B6"
 			shape: "rsquare"
 			tasks: [{
-				id: "A8FBEB192C3D9B83"
+				id: "3B523495B6A18F33"
 				item: "hexerei:mixing_cauldron"
 				type: "item"
 			}]
+			title: "Hexerei"
 			x: -4.75d
 			y: -4.0d
-			description: ["Hexerei begins with a cauldron and local materials. Use it as practical folk alchemy, not as a generic replacement for every other magic system."]
 		}
 		{
 			dependencies: ["4F6E07C014B384B6"]
-			id: "89BF23FEC51643A5"
-			title: "Mahogany"
+			description: ["Mahogany matters because wood identity feeds specific magic crafts here. Bring it back on purpose so the material route stays readable."]
 			icon: "hexerei:mahogany_sapling"
+			id: "58347F55126E07DE"
 			shape: "rsquare"
 			tasks: [{
-				id: "C9CF179A7B73EB7D"
+				id: "38A06B3FDFE7BCC5"
 				item: "hexerei:mahogany_sapling"
 				type: "item"
 			}]
+			title: "Mahogany"
 			x: -3.17d
 			y: -4.0d
-			description: ["Mahogany matters because wood identity feeds specific magic crafts here. Bring it back on purpose so the material route stays readable."]
 		}
 		{
-			dependencies: ["89BF23FEC51643A5"]
-			id: "F58727CBAA57D84C"
-			title: "Broom"
+			description: ["Brooms are earned mobility, not free flight. Build one when your ritual materials and route prep can support it."]
 			icon: "hexerei:mahogany_broom"
+			id: "3ED34D7E4733D7FB"
 			shape: "rsquare"
 			tasks: [{
 				id: "2C0D0D914F054EFA"
 				item: "hexerei:mahogany_broom"
 				type: "item"
 			}]
+			title: "Broom"
 			x: -1.58d
 			y: -4.0d
-			description: ["Brooms are earned mobility, not free flight. Build one when your ritual materials and route prep can support it."]
 		}
 		{
-			dependencies: ["CCE823C794059335"]
-			id: "3A14D437A1D38C02"
-			title: "Pact"
+			description: ["Occultism is about attunement, circles, and entity bargains. If it starts looking like a passive miner shortcut, you are using it too loosely."]
 			icon: "occultism:dictionary_of_spirits"
+			id: "3A14D437A1D38C02"
 			shape: "rsquare"
 			tasks: [{
-				id: "9D73D883C258D646"
+				id: "1E4C262B5D19724E"
 				item: "occultism:dictionary_of_spirits"
 				type: "item"
 			}]
+			title: "Pact"
 			x: -4.75d
 			y: -1.5d
-			description: ["Occultism is about attunement, circles, and entity bargains. If it starts looking like a passive miner shortcut, you are using it too loosely."]
 		}
 		{
 			dependencies: ["3A14D437A1D38C02"]
-			id: "ED595E4C505AB4C5"
-			title: "Chalk"
-			icon: "occultism:chalk_white"
+			description: ["Chalk is what makes rituals take up real space. Use it early so the branch feels planned instead of abstract."]
+			icon: {
+				Count: 1
+				id: "occultism:chalk_white"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "351D61D9C90AA572"
 			shape: "rsquare"
 			tasks: [{
 				id: "4DE7C6962C8FDBDE"
-				item: "occultism:chalk_white"
+				item: {
+					Count: 1
+					id: "occultism:chalk_white"
+					tag: {
+						Damage: 0
+					}
+				}
 				type: "item"
 			}]
+			title: "Chalk"
 			x: -3.17d
 			y: -1.5d
-			description: ["Chalk is what makes rituals take up real space. Use it early so the branch feels planned instead of abstract."]
 		}
 		{
-			dependencies: ["ED595E4C505AB4C5"]
-			id: "7EE05287206646BF"
-			title: "Bowl"
+			description: ["The sacrificial bowl is a reminder that spirit work needs preparation. Set the area up before you summon anything expensive or dangerous."]
 			icon: "occultism:golden_sacrificial_bowl"
+			id: "7EE05287206646BF"
 			shape: "rsquare"
 			tasks: [{
 				id: "50600F1422B5BA9C"
 				item: "occultism:golden_sacrificial_bowl"
 				type: "item"
 			}]
+			title: "Bowl"
 			x: -1.58d
 			y: -1.5d
-			description: ["The sacrificial bowl is a reminder that spirit work needs preparation. Set the area up before you summon anything expensive or dangerous."]
 		}
 		{
-			dependencies: ["CCE823C794059335"]
-			id: "711805EB7FB3B97D"
-			title: "Malum"
+			description: ["Malum is the spirit-heavy branch on the Blood side. Expect soul materials and slates to become required ingredients, not generic filler."]
 			icon: "malum:spirit_altar"
+			id: "711805EB7FB3B97D"
 			shape: "rsquare"
 			tasks: [{
-				id: "CE33DB867C858C81"
+				id: "10B25CC3E01852C3"
 				item: "malum:spirit_altar"
 				type: "item"
 			}]
+			title: "Malum"
 			x: -4.75d
 			y: 2.0d
-			description: ["Malum is the spirit-heavy branch on the Blood side. Expect soul materials and slates to become required ingredients, not generic filler."]
 		}
 		{
 			dependencies: ["095D6A4C4C57ABA5"]
-			id: "C651E31C8857F83A"
-			title: "Spirit"
+			description: ["Spirit jars matter because they let you handle essence deliberately. Once you have them, souls stop feeling like flavor and start becoming a resource."]
 			icon: "malum:spirit_jar"
+			id: "68F222C71F1FCDF5"
 			shape: "rsquare"
 			tasks: [{
-				id: "E8D2A592CD8F308A"
+				id: "2CD3FB0FDF6FE3A0"
 				item: "malum:spirit_jar"
 				type: "item"
 			}]
+			title: "Spirit"
 			x: -3.17d
 			y: 2.0d
-			description: ["Spirit jars matter because they let you handle essence deliberately. Once you have them, souls stop feeling like flavor and start becoming a resource."]
 		}
 		{
-			dependencies: ["C651E31C8857F83A"]
+			description: ["A soul-stained tool is a real threshold item. Make one when you want proof that the branch has become material, not just thematic."]
+			icon: {
+				Count: 1
+				id: "malum:soul_stained_steel_scythe"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "095D6A4C4C57ABA5"
-			title: "Scythe"
-			icon: "malum:soul_stained_steel_scythe"
 			shape: "rsquare"
 			tasks: [{
 				id: "5F9326EE350FFC2F"
-				item: "malum:soul_stained_steel_scythe"
+				item: {
+					Count: 1
+					id: "malum:soul_stained_steel_scythe"
+					tag: {
+						Damage: 0
+					}
+				}
 				type: "item"
 			}]
+			title: "Scythe"
 			x: -1.58d
 			y: 2.0d
-			description: ["A soul-stained tool is a real threshold item. Make one when you want proof that the branch has become material, not just thematic."]
 		}
 		{
 			dependencies: ["711805EB7FB3B97D"]
-			id: "42C10D6629B6D28A"
-			title: "Goety"
+			description: ["Goety is dangerous command magic and belongs later for a reason. Do not rush it until containment and supply are better than the spells themselves."]
 			icon: "goety:dark_altar"
+			id: "42C10D6629B6D28A"
 			shape: "rsquare"
 			tasks: [{
-				id: "D561AED3E4C2EC84"
+				id: "3B129887D630A96F"
 				item: "goety:dark_altar"
 				type: "item"
 			}]
+			title: "Goety"
 			x: -4.75d
 			y: 5.0d
-			description: ["Goety is dangerous command magic and belongs later for a reason. Do not rush it until containment and supply are better than the spells themselves."]
 		}
 		{
 			dependencies: ["42C10D6629B6D28A"]
-			id: "CB17C8EE341E7C49"
-			title: "Focus"
+			description: ["Use foci to specialize command magic once the base route is stable. They are for deliberate capability choices, not for random power sampling."]
 			icon: "goety:empty_focus"
+			id: "593A23AB89B7F60F"
 			shape: "rsquare"
 			tasks: [{
-				id: "B99D07410BB61C89"
+				id: "746A1441BAC69144"
 				item: "goety:empty_focus"
 				type: "item"
 			}]
+			title: "Focus"
 			x: -3.17d
 			y: 5.0d
-			description: ["Use foci to specialize command magic once the base route is stable. They are for deliberate capability choices, not for random power sampling."]
 		}
 		{
-			id: "61DF7A5803F5A8CF"
-			title: "Programmable Magic"
+			description: ["Build the novice book early. It is only an empty language until ink and a native magical proof give the Scribe's Table an effect to formalize."]
 			icon: "ars_nouveau:novice_spell_book"
+			id: "61DF7A5803F5A8CF"
+			rewards: [{
+				count: 4
+				id: "1B0AF4A9C4C0114C"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			shape: "diamond"
 			size: 1.05d
 			tasks: [{
-				id: "E0918E0D2D817441"
+				id: "5F8A0B74D9E0B978"
 				item: "ars_nouveau:novice_spell_book"
 				type: "item"
 			}]
+			title: "Programmable Magic"
 			x: 0.0d
 			y: 0.0d
-			rewards: [{ id: "1B0AF4A9C4C0114C" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Build the novice book early. It is only an empty language until ink and a native magical proof give the Scribe's Table an effect to formalize."]
 		}
 		{
 			dependencies: ["61DF7A5803F5A8CF"]
-			id: "C43AA03C2209FA3E"
-			title: "Scribe"
+			description: ["Build the writing desk before chasing power. The table is cheap; every usable glyph still consumes ink, a tradition's proof, and a thematic catalyst."]
 			icon: "ars_nouveau:scribes_table"
+			id: "00A5D84A474BCCAB"
 			shape: "rsquare"
 			tasks: [{
-				id: "B31BFFAD46FE8504"
+				id: "512EA10E7BF1E851"
 				item: "ars_nouveau:scribes_table"
 				type: "item"
 			}]
+			title: "Scribe"
 			x: 1.58d
 			y: 0.0d
-			description: ["Build the writing desk before chasing power. The table is cheap; every usable glyph still consumes ink, a tradition's proof, and a thematic catalyst."]
 		}
 		{
-			dependencies: ["C43AA03C2209FA3E"]
-			id: "EF3FCCBEA1B19672"
-			title: "First Glyph"
+			description: ["Use common ink plus proof from any dirty tradition to author a first effect. Forms and modifiers are shared grammar; effect domains come from the tradition that understands them."]
 			icon: "ars_nouveau:glyph_projectile"
+			id: "040653C1A2132910"
 			shape: "octagon"
 			size: 1.2d
 			tasks: [{
-				id: "AF15C0574177CFC8"
+				id: "7326D3AC2D066B41"
 				title: "Author one ink-bound glyph"
 				type: "checkmark"
 			}]
+			title: "First Glyph"
 			x: 3.17d
 			y: 0.0d
-			description: ["Use common ink plus proof from any dirty tradition to author a first effect. Forms and modifiers are shared grammar; effect domains come from the tradition that understands them."]
 		}
 		{
-			id: "65BF28B6840B359C"
-			title: "Fixed Magic"
+			description: ["Iron's is a separate formal system for fixed spells. The empty copper book is early, but it needs ink, a school focus, a forged scroll, and inscription before it can cast anything."]
 			icon: "irons_spellbooks:copper_spell_book"
+			id: "65BF28B6840B359C"
 			shape: "hexagon"
 			size: 1.15d
 			tasks: [{
@@ -246,78 +268,76 @@
 				item: "irons_spellbooks:copper_spell_book"
 				type: "item"
 			}]
+			title: "Fixed Magic"
 			x: 4.75d
 			y: 0.0d
-			description: ["Iron's is a separate formal system for fixed spells. The empty copper book is early, but it needs ink, a school focus, a forged scroll, and inscription before it can cast anything."]
 		}
 		{
 			dependencies: ["65BF28B6840B359C"]
-			id: "885E88450D25E2DC"
-			title: "Ink"
+			description: ["Brew common ink from water and an entry proof from any dirty tradition. Stronger proof raises the shared ink tier globally, so one deeply developed route can support stronger formal writing."]
 			icon: "irons_spellbooks:common_ink"
+			id: "195310C592E3673B"
 			shape: "rsquare"
 			tasks: [{
 				id: "1E771BF735D4FA0C"
 				item: "irons_spellbooks:common_ink"
 				type: "item"
 			}]
+			title: "Ink"
 			x: 6.34d
 			y: -2.0d
-			description: ["Brew common ink from water and an entry proof from any dirty tradition. Stronger proof raises the shared ink tier globally, so one deeply developed route can support stronger formal writing."]
 		}
 		{
 			dependencies: ["65BF28B6840B359C"]
-			id: "04D31A9636DC517C"
-			title: "Scroll"
+			description: ["Forge a scroll with ink and a native school focus. Blood, folk, spirit, pact, and command reagents each expose different schools instead of becoming interchangeable flavor."]
 			icon: "irons_spellbooks:scroll"
+			id: "04D31A9636DC517C"
 			shape: "rsquare"
 			tasks: [{
 				id: "5E1829691AE5DFC8"
 				item: "irons_spellbooks:scroll"
 				type: "item"
 			}]
+			title: "Scroll"
 			x: 6.34d
 			y: 2.0d
-			description: ["Forge a scroll with ink and a native school focus. Blood, folk, spirit, pact, and command reagents each expose different schools instead of becoming interchangeable flavor."]
 		}
 		{
-			dependencies: ["885E88450D25E2DC" "04D31A9636DC517C"]
-			id: "549CB984F5C3F088"
-			title: "Two Formalisms"
+			dependencies: ["04D31A9636DC517C"]
+			description: ["Ars composes effects from glyphs; Iron's records fixed spells in scrolls and books. They share inks and selected stations without collapsing into the same spell system."]
 			icon: "minecraft:enchanted_book"
+			id: "549CB984F5C3F088"
 			shape: "octagon"
 			size: 1.15d
 			tasks: [{
-				id: "886519E54EEB38BD"
+				id: "2A851B73799DE100"
 				title: "Use programmable and fixed spellcraft"
 				type: "checkmark"
 			}]
+			title: "Two Formalisms"
 			x: 7.92d
 			y: 0.0d
-			description: ["Ars composes effects from glyphs; Iron's records fixed spells in scrolls and books. They share inks and selected stations without collapsing into the same spell system."]
-		},
+		}
 		{
-			dependencies: ["CCE823C794059335"]
-			id: "297284C211C0A322"
-			title: "Place Memory"
+			description: ["Mark where each font or ritual site belongs on your route. Place-bound magic is easier to use when you know which location each craft sends you back to."]
 			icon: "minecraft:lodestone"
+			id: "297284C211C0A322"
 			shape: "diamond"
 			size: 0.9d
 			tasks: [{
-				id: "8EA893319778544D"
+				id: "6683FD450862FB85"
 				title: "Bind magic to places and routes"
 				type: "checkmark"
 			}]
+			title: "Place Memory"
 			x: -6.95d
 			y: -2.75d
-			description: ["Mark where each font or ritual site belongs on your route. Place-bound magic is easier to use when you know which location each craft sends you back to."]
 		}
-,
 		{
 			dependencies: ["4F6E07C014B384B6"]
-			id: "3202FB47AA616C53"
-			title: "Cauldron Shelf"
+			description: ["Keep herbs, bottles, candles, and mahogany near the cauldron. A prepared shelf makes Hexerei crafts easier to repeat without searching through storage."]
 			icon: "hexerei:candle"
+			id: "3202FB47AA616C53"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
@@ -325,16 +345,14 @@
 				title: "Stage herbs, bottles, candles, and wood"
 				type: "checkmark"
 			}]
+			title: "Cauldron Shelf"
 			x: -4.55d
 			y: -2.95d
-			description: ["Keep herbs, bottles, candles, and mahogany near the cauldron. A prepared shelf makes Hexerei crafts easier to repeat without searching through storage."]
 		}
-,
 		{
-			dependencies: ["F58727CBAA57D84C"]
-			id: "98372AFB994FD50C"
-			title: "Flight Tax"
+			description: ["Brooms are earned movement, not free flight."]
 			icon: "minecraft:phantom_membrane"
+			id: "4827B01A10C7358E"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
@@ -342,101 +360,101 @@
 				title: "Keep mobility tied to ritual materials"
 				type: "checkmark"
 			}]
+			title: "Flight Tax"
 			x: -0.15d
 			y: -5.15d
-			description: ["Brooms are earned movement, not free flight."]
 		}
-,
 		{
 			dependencies: ["3A14D437A1D38C02"]
-			id: "C3FC1C5B2A447D96"
-			title: "Spirit Risk"
+			description: ["Build spirit work in a visible ritual area with room for circles and mistakes. Do not hide summons inside your main storage room."]
 			icon: "occultism:spirit_attuned_gem"
+			id: "28C1C742492A5A54"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
-				id: "AFBE96462E777965"
+				id: "1646FE70793A3DAC"
 				title: "Keep spirit work risky"
 				type: "checkmark"
 			}]
+			title: "Spirit Risk"
 			x: -5.55d
 			y: 0.95d
-			description: ["Build spirit work in a visible ritual area with room for circles and mistakes. Do not hide summons inside your main storage room."]
 		}
-,
 		{
 			dependencies: ["7EE05287206646BF"]
+			description: ["Draw and check the circle before you begin a binding. Fix missing chalk, bowls, and space problems before the summon starts."]
+			icon: {
+				Count: 1
+				id: "occultism:chalk_gold"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "4BDEF7FF2B8DF4FB"
-			title: "Circle Prep"
-			icon: "occultism:chalk_gold"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
-				id: "B4B799B30C4143FB"
+				id: "4FF0F28B0F631FBE"
 				title: "Prepare circles before binding"
 				type: "checkmark"
 			}]
+			title: "Circle Prep"
 			x: -2.35d
 			y: -2.85d
-			description: ["Draw and check the circle before you begin a binding. Fix missing chalk, bowls, and space problems before the summon starts."]
 		}
-,
 		{
 			dependencies: ["711805EB7FB3B97D"]
-			id: "255996C6BFFFAF3A"
-			title: "Soul Fuel"
+			description: ["Use Malum outputs to feed later material magic directly so the branch keeps paying into the rest of the tree."]
 			icon: "malum:processed_soulstone"
+			id: "255996C6BFFFAF3A"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
-				id: "AD60AF227AC217B6"
+				id: "000ED500D8C940C0"
 				title: "Route soulstone and spirits into materials"
 				type: "checkmark"
 			}]
+			title: "Soul Fuel"
 			x: -3.75d
 			y: 0.65d
-			description: ["Use Malum outputs to feed later material magic directly so the branch keeps paying into the rest of the tree."]
 		}
-,
 		{
 			dependencies: ["42C10D6629B6D28A"]
-			id: "CED5FCB0882B89EB"
-			title: "Command Cost"
+			description: ["Prepare cages, walls, or a separate room before you lean on command magic. Treat hostile summons as a base hazard, not as ordinary crafting."]
 			icon: "goety:cursed_cage"
+			id: "24F012D4D14A5CA1"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
-				id: "D33A9BF75281BEB2"
+				id: "7C8891F6F12A12D9"
 				title: "Bind command magic to containment"
 				type: "checkmark"
 			}]
+			title: "Command Cost"
 			x: -4.75d
 			y: 3.0d
-			description: ["Prepare cages, walls, or a separate room before you lean on command magic. Treat hostile summons as a base hazard, not as ordinary crafting."]
 		}
-,
 		{
 			dependencies: ["61DF7A5803F5A8CF"]
-			id: "4BC2BED60256ACEB"
-			title: "Programmable Breadth"
+			description: ["Core forms accept proof from any tradition. Hexerei, Occultism, Blood Magic, Malum, and Goety each own a distinct family of effects, so the full glyph catalog requires broad magical study."]
 			icon: "ars_nouveau:blank_parchment"
+			id: "4BC2BED60256ACEB"
 			shape: "diamond"
 			size: 0.9d
 			tasks: [{
-				id: "B85FCC063AB96372"
+				id: "4B0031946C4F1E42"
 				title: "Expand glyph domains through traditions"
 				type: "checkmark"
 			}]
+			title: "Programmable Breadth"
 			x: 0.0d
 			y: -2.75d
-			description: ["Core forms accept proof from any tradition. Hexerei, Occultism, Blood Magic, Malum, and Goety each own a distinct family of effects, so the full glyph catalog requires broad magical study."]
 		}
-,
 		{
 			dependencies: ["65BF28B6840B359C"]
-			id: "1EDA0E885EBC6024"
-			title: "Fixed-Spell Breadth"
+			description: ["Each Iron's school consumes a focus from its parent tradition. Ink rarity controls depth while school focuses control breadth."]
 			icon: "irons_spellbooks:arcane_essence"
+			id: "1EDA0E885EBC6024"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
@@ -444,26 +462,30 @@
 				title: "Open schools with native focuses"
 				type: "checkmark"
 			}]
+			title: "Fixed-Spell Breadth"
 			x: 5.55d
 			y: -3.15d
-			description: ["Each Iron's school consumes a focus from its parent tradition. Ink rarity controls depth while school focuses control breadth."]
 		}
-,
 		{
-			dependencies: ["549CB984F5C3F088" "F58727CBAA57D84C" "7EE05287206646BF" "7537B1C6F801B0BA" "095D6A4C4C57ABA5" "CB17C8EE341E7C49"]
-			id: "FE4D8461184D9C2F"
-			title: "Formal Concordance"
+			dependencies: [
+				"549CB984F5C3F088"
+				"7EE05287206646BF"
+				"7537B1C6F801B0BA"
+				"095D6A4C4C57ABA5"
+			]
+			description: ["Complete Hexerei, Occultism, Blood Magic, Malum, and Goety, then confirm that both formal systems can express every domain. This marks breadth completion; it is not a universal ingredient tax on every high-tier spell."]
 			icon: "minecraft:nether_star"
+			id: "5F283E259B94D840"
 			shape: "octagon"
 			size: 0.9d
 			tasks: [{
-				id: "FE3E5C3BD5DE44B2"
+				id: "40864613A030774E"
 				title: "Open every formal spell domain"
 				type: "checkmark"
 			}]
+			title: "Formal Concordance"
 			x: 7.92d
 			y: 3.15d
-			description: ["Complete Hexerei, Occultism, Blood Magic, Malum, and Goety, then confirm that both formal systems can express every domain. This marks breadth completion; it is not a universal ingredient tax on every high-tier spell."]
 		}
 	]
 	title: "Dirty and Formal Magic"

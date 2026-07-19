@@ -305,6 +305,18 @@ val scenarios = linkedMapOf(
         "tools/kotlin/worldgen_marketing_screenshots.main.kts",
         headful = true,
     ),
+    "rain_collector_visuals" to ScenarioDefinition(
+        "rain_collector_visuals",
+        "Xvfb functional visual gate for rain collector models and water levels",
+        "tools/kotlin/rain_collector_visuals.main.kts",
+        headful = true,
+    ),
+    "ore_texture_gallery" to ScenarioDefinition(
+        "ore_texture_gallery",
+        "Matched normal and shader galleries for realistic ore-family outcrops",
+        "tools/kotlin/ore_texture_gallery.main.kts",
+        headful = true,
+    ),
     "vs_ships_stability" to ScenarioDefinition(
         "vs_ships_stability",
         "Valkyrien Skies family headless server stability diagnostics",
@@ -372,7 +384,7 @@ Public commands:
   tools/bc build dumps [--server-dir PATH] [--port N] [--reset-runtime]
   tools/bc build bundle curseforge [--exports-dir PATH]
   tools/bc build bundle server [--exports-dir PATH] [--server-tree-dir PATH] [--server-zip PATH] [--clean]
-  tools/bc build bundle release [--exports-dir PATH] [--smoke-server-dir PATH] [--port N] [--skip-smoke]
+  tools/bc build bundle release [--exports-dir PATH] [--smoke-server-dir PATH] [--port N] [--resume-current] [--skip-smoke]
   tools/bc graph item ITEM_ID [--producers|--consumers|--all] [--limit N] [--type RECIPE_TYPE] [--graph PATH]
   tools/bc graph route ITEM_ID [--graph PATH] [--sources PATH] [--spine PATH]
   tools/bc graph blockers ITEM_ID [--graph PATH] [--sources PATH] [--spine PATH] [--limit N]
@@ -446,7 +458,7 @@ Commands:
   dumps [--server-dir PATH] [--port N] [--reset-runtime]
   bundle curseforge [--exports-dir PATH]
   bundle server [--exports-dir PATH] [--server-tree-dir PATH] [--server-zip PATH] [--clean]
-  bundle release [--exports-dir PATH] [--smoke-server-dir PATH] [--port N] [--skip-smoke]
+  bundle release [--exports-dir PATH] [--smoke-server-dir PATH] [--port N] [--resume-current] [--skip-smoke]
 
 The release bundle command reserves the next persistent Playtest version, then
 refreshes packwiz metadata in the current source tree, runs static validation, exports both
@@ -2565,7 +2577,7 @@ fun bootstrapServerRuntime(serverDir: Path, port: Int, reset: Boolean): ProcessR
     writeLocalServerProperties(serverDir.resolve("server.properties"), port, onlineMode = false)
     val userJvm = serverDir.resolve("user_jvm_args.txt")
     if (!userJvm.exists()) {
-        Files.writeString(userJvm, "-Xms2G\n-Xmx6G\n-XX:+UseG1GC\n-Dfile.encoding=UTF-8\n")
+        Files.writeString(userJvm, "-Xms4G\n-Xmx16G\n-XX:+UseG1GC\n-Dfile.encoding=UTF-8\n")
     }
     deleteTree(bundleWorkRoot)
     return ProcessRun(0, "Bootstrapped server runtime: $serverDir")
@@ -4413,7 +4425,7 @@ This bundle is generated from the repository source plus server-side packwiz dow
     )
     Files.writeString(serverTreeDir.resolve("eula.txt"), "eula=false\n")
     writeLocalServerProperties(serverTreeDir.resolve("server.properties"), defaultServerPort, onlineMode = true)
-    Files.writeString(serverTreeDir.resolve("user_jvm_args.txt"), "-Xms2G\n-Xmx6G\n-XX:+UseG1GC\n-Dfile.encoding=UTF-8\n")
+    Files.writeString(serverTreeDir.resolve("user_jvm_args.txt"), "-Xms4G\n-Xmx16G\n-XX:+UseG1GC\n-Dfile.encoding=UTF-8\n")
     serverZip.parent.createDirectories()
     Files.deleteIfExists(serverZip)
     val archive = runProcess(
@@ -5181,6 +5193,8 @@ fun scenarioDefaultRunRoot(name: String, args: List<String>): Path {
         }
         "vs_ships_release" -> cachePath("vs-ships-release")
         "worldgen_marketing_screenshots" -> cachePath("worldgen-marketing-screenshots")
+        "rain_collector_visuals" -> cachePath("rain-collector-visuals")
+        "ore_texture_gallery" -> cachePath("ore-texture-gallery")
         else -> cachePath("scenario-$name")
     }.toAbsolutePath().normalize()
 }
@@ -5192,6 +5206,8 @@ fun scenarioRequestedPort(name: String, args: List<String>): Int? =
             else -> 25567
         }
         "mod_ram_partition" -> 25572
+        "rain_collector_visuals" -> 25573
+        "ore_texture_gallery" -> 25574
         "vs_ships_client" -> when (argValue(args, "--profile") ?: "quick") {
             "release" -> 25570
             "stress" -> 25571
@@ -5817,6 +5833,7 @@ fun handleBuild(subArgs: List<String>): CommandResult {
                     var smokeServerDir = cachePath("bundle-release-smoke").toString()
                     var port = defaultServerPort.toString()
                     var skipSmoke = false
+                    var resumeCurrent = false
                     val rest = subArgs.drop(2)
                     var index = 0
                     while (index < rest.size) {
@@ -5838,12 +5855,16 @@ fun handleBuild(subArgs: List<String>): CommandResult {
                                 skipSmoke = true
                                 index += 1
                             }
+                            "--resume-current" -> {
+                                resumeCurrent = true
+                                index += 1
+                            }
                             "--help" -> return success("build bundle release", buildHelp(), evidenceLevel = "build")
                             else -> return usageError("unknown argument: ${rest[index]}", buildHelp())
                         }
                     }
                     val exportsPath = resolveUserPath(exportsDir)
-                    val nextRelease = nextPlaytestRelease()
+                    val nextRelease = if (resumeCurrent) currentPlaytestRelease() else nextPlaytestRelease()
                     val (clientZip, serverZip) = releaseArchivePaths(exportsPath, nextRelease)
                     refuseExistingReleaseArchives(clientZip, serverZip)?.let { refusal ->
                         return CommandResult(
@@ -5856,7 +5877,7 @@ fun handleBuild(subArgs: List<String>): CommandResult {
                             evidenceLevel = "build",
                         )
                     }
-                    val release = reserveNextPlaytestRelease()
+                    val release = if (resumeCurrent) currentPlaytestRelease() else reserveNextPlaytestRelease()
                     val serverTree = exportsPath.resolve("server-tree/better-content-server")
                     val smokePath = resolveUserPath(smokeServerDir)
                     val run = runStepSequence(buildList {
@@ -5883,6 +5904,7 @@ fun handleBuild(subArgs: List<String>): CommandResult {
                             "serverZip" to serverZip.toString(),
                             "smokeServerDir" to if (skipSmoke) null else smokePath.toString(),
                             "smokeSkipped" to skipSmoke,
+                            "resumedCurrent" to resumeCurrent,
                         ) + listOfNotNull(outputSnippet(run.output)?.let { "capturedOutput" to it }).toMap(),
                         mutated = true,
                         evidenceLevel = if (skipSmoke) "build" else "fresh-runtime",

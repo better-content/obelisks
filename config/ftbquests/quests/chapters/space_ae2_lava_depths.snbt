@@ -4,181 +4,182 @@
 	filename: "space_ae2_lava_depths"
 	group: "5B6E48C1A9D207F3"
 	icon: "ae2:controller"
-	id: "A6B4DA73E21F9374"
+	id: "79490DA65F4D785F"
 	order_index: 4
 	quest_links: [ ]
 	quests: [
 		{
-			id: "A3BD0DDEF6ED0325"
-			title: "Routes"
+			description: ["Use rockets for the late adventure dimensions instead of hunting for old portal shortcuts. Space access is the route gate now, so launch prep matters."]
 			icon: "minecraft:firework_rocket"
+			id: "770A77227693E474"
 			shape: "hexagon"
 			size: 1.15d
 			tasks: [{
-				id: "D54E206C39B3BB42"
+				id: "3F4E970A9EE5ED33"
 				title: "Use rockets for late dimension access"
 				type: "checkmark"
 			}]
+			title: "Routes"
 			x: -6.34d
 			y: 0.0d
-			description: ["Use rockets for the late adventure dimensions instead of hunting for old portal shortcuts. Space access is the route gate now, so launch prep matters."]
 		}
 		{
-			dependencies: ["A3BD0DDEF6ED0325"]
-			id: "E38BFCA4E9BA3B4F"
-			title: "Recorder"
+			description: ["The flight recorder proves your launch work still grows out of Create hardware. Space is the next tier of logistics, not a disconnected gimmick."]
 			icon: "creatingspace:flight_recorder"
+			id: "6E5D875133F7C96B"
 			shape: "rsquare"
 			tasks: [{
 				id: "38481E8A4EABD57A"
 				item: "creatingspace:flight_recorder"
 				type: "item"
 			}]
+			title: "Recorder"
 			x: -4.75d
 			y: -3.0d
-			description: ["The flight recorder proves your launch work still grows out of Create hardware. Space is the next tier of logistics, not a disconnected gimmick."]
 		}
 		{
-			dependencies: ["E38BFCA4E9BA3B4F"]
-			id: "D75B1E9CD31BC40F"
-			title: "Air"
+			description: ["Build the air liquefier before you trust space travel. Oxygen needs to come from industry, not from hand-waved preparation."]
 			icon: "creatingspace:air_liquefier"
+			id: "3589E17568B596C6"
 			shape: "rsquare"
 			tasks: [{
-				id: "B3197A80C0B0C37D"
+				id: "4BCE50084485E721"
 				item: "creatingspace:air_liquefier"
 				type: "item"
 			}]
+			title: "Air"
 			x: -3.17d
 			y: -3.0d
-			description: ["Build the air liquefier before you trust space travel. Oxygen needs to come from industry, not from hand-waved preparation."]
 		}
 		{
-			dependencies: ["D75B1E9CD31BC40F"]
-			id: "9A5C64EB7037230A"
-			title: "Casing"
+			description: ["Space casing is the point where distance becomes a crafting cost. Once you reach it, launches and remote work are part of the normal machine ladder."]
 			icon: "kubejs:space_machine_casing"
+			id: "0AC1761CC0D7B17C"
 			shape: "square"
 			size: 1.05d
 			tasks: [{
-				id: "E008E72E7C979292"
+				id: "00391FD7B55ED9CC"
 				item: "kubejs:space_machine_casing"
 				type: "item"
 			}]
+			title: "Casing"
 			x: -1.58d
 			y: -3.0d
-			description: ["Space casing is the point where distance becomes a crafting cost. Once you reach it, launches and remote work are part of the normal machine ladder."]
 		}
 		{
-			dependencies: ["9A5C64EB7037230A"]
-			id: "DE4D524CF80272D1"
-			title: "Moon"
+			description: ["Treat orbital travel as an extension of your supply chain. If a launch cannot be supported repeatedly, it is still only a stunt."]
 			icon: "minecraft:firework_rocket"
+			id: "087ACA19CD158833"
 			shape: "rsquare"
 			tasks: [{
-				id: "9502424AE961E6FB"
+				id: "724D4E09C5D53512"
 				title: "Treat orbital routes as logistics"
 				type: "checkmark"
 			}]
+			title: "Moon"
 			x: -0.25d
 			y: -3.65d
-			description: ["Treat orbital travel as an extension of your supply chain. If a launch cannot be supported repeatedly, it is still only a stunt."]
 		}
 		{
-			dependencies: ["9A5C64EB7037230A"]
-			id: "990FBC2BE4DD42E2"
-			title: "Mars"
+			description: ["Planets past orbit demand better logistics, better survival gear, and a better return plan. Do the prep first so the trip teaches something besides panic."]
 			icon: "kubejs:space_machine_casing"
+			id: "41D780E865272B0B"
 			shape: "rsquare"
 			tasks: [{
-				id: "F5AED06C3988CC4C"
+				id: "577F111E0E5F4526"
 				title: "Prepare for hostile distance"
 				type: "checkmark"
 			}]
+			title: "Mars"
 			x: -0.25d
 			y: -1.95d
-			description: ["Planets past orbit demand better logistics, better survival gear, and a better return plan. Do the prep first so the trip teaches something besides panic."]
 		}
 		{
-			dependencies: ["DE4D524CF80272D1" "990FBC2BE4DD42E2"]
-			id: "12925948A84BF40B"
-			title: "Sky Stone"
+			description: ["Sky Stone comes from dimension_drink salvage. Bring some home before starting AE2 so storage work begins with exploration, not only bench crafting."]
 			icon: "ae2:sky_stone_block"
+			id: "12925948A84BF40B"
 			shape: "rsquare"
 			tasks: [{
-				id: "8D5B6859916F58EA"
+				id: "22BD2566161AB908"
 				item: "ae2:sky_stone_block"
 				type: "item"
 			}]
+			title: "Sky Stone"
 			x: 1.25d
 			y: -2.85d
-			description: ["Sky Stone comes from dimension_drink salvage. Bring some home before starting AE2 so storage work begins with exploration, not only bench crafting."]
 		}
 		{
 			dependencies: ["12925948A84BF40B"]
-			id: "18BB5327624EDB2D"
-			title: "Fluix"
+			description: ["Make Fluix once the AE2 route is truly open. It is the first AE2 material that needs to feel distinct instead of interchangeable with generic tech parts."]
 			icon: "ae2:fluix_crystal"
+			id: "18BB5327624EDB2D"
 			shape: "rsquare"
 			tasks: [{
-				id: "BAEEA9C74836713E"
+				id: "3A2F655223BC8232"
 				item: "ae2:fluix_crystal"
 				type: "item"
 			}]
+			title: "Fluix"
 			x: 3.17d
 			y: -4.0d
-			description: ["Make Fluix once the AE2 route is truly open. It is the first AE2 material that needs to feel distinct instead of interchangeable with generic tech parts."]
 		}
 		{
 			dependencies: ["12925948A84BF40B"]
-			id: "8E617A54B89E2EB3"
-			title: "Inscriber"
+			description: ["The inscriber is what makes processors a real manufacturing chain. Build it so AE2 progress comes from machines and planning, not from one recipe surprise."]
 			icon: "ae2:inscriber"
+			id: "2B2E49DF2EA56A08"
 			shape: "rsquare"
 			tasks: [{
-				id: "CCB65B28533D477A"
+				id: "67B8997030A7D224"
 				item: "ae2:inscriber"
 				type: "item"
 			}]
+			title: "Inscriber"
 			x: 3.17d
 			y: -2.5d
-			description: ["The inscriber is what makes processors a real manufacturing chain. Build it so AE2 progress comes from machines and planning, not from one recipe surprise."]
 		}
 		{
-			dependencies: ["8E617A54B89E2EB3"]
-			id: "B2C2EB0D25A694E4"
-			title: "Logic"
+			description: ["Make logic processors after the inscriber is placed, powered, and stocked with the right presses. Keep enough ingredients nearby to make more than one."]
 			icon: "ae2:logic_processor"
+			id: "0F8FEDB646C2C075"
 			shape: "rsquare"
 			tasks: [{
-				id: "ACE1EB4B422656A4"
+				id: "0129B3F5F6DFEA63"
 				item: "ae2:logic_processor"
 				type: "item"
 			}]
+			title: "Logic"
 			x: 4.75d
 			y: -4.0d
-			description: ["Make logic processors after the inscriber is placed, powered, and stocked with the right presses. Keep enough ingredients nearby to make more than one."]
 		}
 		{
-			dependencies: ["8E617A54B89E2EB3"]
-			id: "7A15771CDACE42EC"
-			title: "Engineer"
+			description: ["Engineering processors are the heavier AE2 processor step. Make them before the larger AE2 bodies so storage machines cost real processor work."]
 			icon: "ae2:engineering_processor"
+			id: "7A15771CDACE42EC"
 			shape: "rsquare"
 			tasks: [{
 				id: "7FD20DA075D8AB5E"
 				item: "ae2:engineering_processor"
 				type: "item"
 			}]
+			title: "Engineer"
 			x: 4.75d
 			y: -2.5d
-			description: ["Engineering processors are the heavier AE2 processor step. Make them before the larger AE2 bodies so storage machines cost real processor work."]
 		}
 		{
-			dependencies: ["18BB5327624EDB2D" "B2C2EB0D25A694E4" "7A15771CDACE42EC"]
-			id: "86339E21F9017663"
-			title: "AE2"
+			dependencies: [
+				"18BB5327624EDB2D"
+				"7A15771CDACE42EC"
+			]
+			description: ["Check the controller recipe before crafting it. Have Sky Stone, Fluix, and both processor types ready so AE2 starts from a prepared work area."]
 			icon: "ae2:controller"
+			id: "42C56AEFFBEA166A"
+			rewards: [{
+				count: 4
+				id: "664D13F351314EE0"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			shape: "rsquare"
 			size: 1.05d
 			tasks: [{
@@ -186,16 +187,14 @@
 				item: "ae2:controller"
 				type: "item"
 			}]
+			title: "AE2"
 			x: 6.34d
 			y: -3.25d
-			rewards: [{ id: "664D13F351314EE0" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Check the controller recipe before crafting it. Have Sky Stone, Fluix, and both processor types ready so AE2 starts from a prepared work area."]
 		}
 		{
-			dependencies: ["86339E21F9017663"]
-			id: "552246EFD8BF3F2C"
-			title: "Raw"
+			description: ["Raw impossible casing is the unstable bridge between AE2 and the final machine frame. Expect it to ask for proof from several late systems at once."]
 			icon: "kubejs:raw_impossible_casing"
+			id: "552246EFD8BF3F2C"
 			shape: "diamond"
 			size: 1.05d
 			tasks: [{
@@ -203,45 +202,45 @@
 				item: "kubejs:raw_impossible_casing"
 				type: "item"
 			}]
+			title: "Raw"
 			x: 7.92d
 			y: -3.25d
-			description: ["Raw impossible casing is the unstable bridge between AE2 and the final machine frame. Expect it to ask for proof from several late systems at once."]
 		}
 		{
 			dependencies: ["552246EFD8BF3F2C"]
-			id: "2BBA260233DB42E2"
-			title: "Cell"
+			description: ["Make cell housings when one base has enough clutter to justify AE2 storage. Start local before trying to connect distant sites."]
 			icon: "ae2:item_cell_housing"
+			id: "2BBA260233DB42E2"
 			shape: "rsquare"
 			tasks: [{
-				id: "F61BF6A5C8BD728C"
+				id: "489F0F29923DB96E"
 				item: "ae2:item_cell_housing"
 				type: "item"
 			}]
+			title: "Cell"
 			x: 9.5d
 			y: -5.0d
-			description: ["Make cell housings when one base has enough clutter to justify AE2 storage. Start local before trying to connect distant sites."]
 		}
 		{
 			dependencies: ["2BBA260233DB42E2"]
-			id: "601091B3080FCF00"
-			title: "Drive"
+			description: ["Use drives to clean up one base at a time. AE2 is there to sharpen local work, not erase your trains, roads, and intersite planning."]
 			icon: "ae2:drive"
+			id: "601091B3080FCF00"
 			shape: "rsquare"
 			tasks: [{
-				id: "B6F4D3A365D5974E"
+				id: "2B569E95FF1F556B"
 				item: "ae2:drive"
 				type: "item"
 			}]
+			title: "Drive"
 			x: 11.09d
 			y: -5.0d
-			description: ["Use drives to clean up one base at a time. AE2 is there to sharpen local work, not erase your trains, roads, and intersite planning."]
 		}
 		{
 			dependencies: ["552246EFD8BF3F2C"]
-			id: "B9903B9513ACD50E"
-			title: "Final"
+			description: ["Save impossible casing for machines that depend on late AE2, space materials, or hybrid magic. Do not spend it on ordinary utility upgrades."]
 			icon: "kubejs:impossible_machine_casing"
+			id: "16F6CC7D92939E58"
 			shape: "octagon"
 			size: 1.2d
 			tasks: [{
@@ -249,60 +248,61 @@
 				item: "kubejs:impossible_machine_casing"
 				type: "item"
 			}]
+			title: "Final"
 			x: 9.5d
 			y: -2.0d
-			description: ["Save impossible casing for machines that depend on late AE2, space materials, or hybrid magic. Do not spend it on ordinary utility upgrades."]
 		}
 		{
-			dependencies: ["B9903B9513ACD50E"]
-			id: "E553185539A744D4"
-			title: "Depths"
+			description: ["Lava-depth materials are expedition ore, not branch-mining filler. Bring heat gear, combat answers, and a real extraction-and-return plan."]
 			icon: "minecraft:lava_bucket"
+			id: "1E2E86F7A315E28F"
 			shape: "rsquare"
 			tasks: [{
 				id: "3A39936C41782005"
 				item: "minecraft:lava_bucket"
 				type: "item"
 			}]
+			title: "Depths"
 			x: 11.09d
 			y: -2.0d
-			description: ["Lava-depth materials are expedition ore, not branch-mining filler. Bring heat gear, combat answers, and a real extraction-and-return plan."]
 		}
 		{
-			dependencies: ["E553185539A744D4"]
-			id: "76FB4905EE8E60D7"
-			title: "Uranium"
+			description: ["Treat uranium as late dangerous geology, not as another ore on the checklist. If the route feels routine, you are probably overgeared or underchallenged."]
 			icon: "chemlib:uranium_ingot"
+			id: "76FB4905EE8E60D7"
 			shape: "rsquare"
 			tasks: [{
 				id: "0BD877846A828551"
 				item: "chemlib:uranium_ingot"
 				type: "item"
 			}]
+			title: "Uranium"
 			x: 12.67d
 			y: -3.5d
-			description: ["Treat uranium as late dangerous geology, not as another ore on the checklist. If the route feels routine, you are probably overgeared or underchallenged."]
 		}
 		{
-			dependencies: ["E553185539A744D4"]
-			id: "60522A1EBE177440"
-			title: "Thorium"
+			description: ["Bring thorium home through the same dangerous route as the rest of the lava-depth set. Later chemistry needs a source with real cost."]
 			icon: "chemlib:thorium_ingot"
+			id: "60522A1EBE177440"
 			shape: "rsquare"
 			tasks: [{
 				id: "216F635C933EABCB"
 				item: "chemlib:thorium_ingot"
 				type: "item"
 			}]
+			title: "Thorium"
 			x: 12.67d
 			y: -2.0d
-			description: ["Bring thorium home through the same dangerous route as the rest of the lava-depth set. Later chemistry needs a source with real cost."]
 		}
 		{
-			dependencies: ["601091B3080FCF00" "76FB4905EE8E60D7" "60522A1EBE177440"]
-			id: "920AFBA12E4C0196"
-			title: "Return"
+			dependencies: [
+				"601091B3080FCF00"
+				"76FB4905EE8E60D7"
+				"60522A1EBE177440"
+			]
+			description: ["Finish the expedition by returning with uranium, thorium, storage parts, and your gear intact. A successful trip ends back at base, not at the ore vein."]
 			icon: "minecraft:ender_chest"
+			id: "1791A798AD937FFF"
 			shape: "hexagon"
 			size: 1.15d
 			tasks: [{
@@ -310,15 +310,14 @@
 				title: "Bring the expedition home"
 				type: "checkmark"
 			}]
+			title: "Return"
 			x: 14.7d
 			y: -2.35d
-			description: ["Finish the expedition by returning with uranium, thorium, storage parts, and your gear intact. A successful trip ends back at base, not at the ore vein."]
-		},
+		}
 		{
-			dependencies: ["DE4D524CF80272D1"]
-			id: "64FD58D857DC8BD8"
-			title: "Launch Checklist"
+			description: ["Run the checklist before you launch. Suit, fuel, oxygen, recovery items, and the item you are traveling for all need to be decided on the ground."]
 			icon: "minecraft:firework_rocket"
+			id: "64FD58D857DC8BD8"
 			shape: "diamond"
 			size: 0.9d
 			tasks: [{
@@ -326,16 +325,14 @@
 				title: "Check suit, fuel, oxygen, recovery, and target item"
 				type: "checkmark"
 			}]
+			title: "Launch Checklist"
 			x: 0.0d
 			y: -6.8d
-			description: ["Run the checklist before you launch. Suit, fuel, oxygen, recovery items, and the item you are traveling for all need to be decided on the ground."]
 		}
-,
 		{
-			dependencies: ["E38BFCA4E9BA3B4F"]
-			id: "600082A7634F6423"
-			title: "Dimension Drink Assay"
+			description: ["Keep dimension_drink salvage mentally separate from ordinary geology. That makes it easier to understand why AE2 begins in orbit instead of in a cave."]
 			icon: "minecraft:spyglass"
+			id: "600082A7634F6423"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
@@ -343,67 +340,61 @@
 				title: "Separate dimension_drink salvage from local geology"
 				type: "checkmark"
 			}]
+			title: "Dimension Drink Assay"
 			x: -4.75d
 			y: -1.0d
-			description: ["Keep dimension_drink salvage mentally separate from ordinary geology. That makes it easier to understand why AE2 begins in orbit instead of in a cave."]
 		}
-,
 		{
-			dependencies: ["990FBC2BE4DD42E2"]
-			id: "6C4920DF1E4C2273"
-			title: "Red Route"
+			description: ["Treat Mars as a longer expedition than the Moon. Bring extra fuel, oxygen, recovery supplies, and inventory space before committing to the trip."]
 			icon: "minecraft:red_sand"
+			id: "6C4920DF1E4C2273"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
-				id: "F99F3A3E9F89879E"
+				id: "02CEC270D66A8950"
 				title: "Treat Mars as a route with logistics costs"
 				type: "checkmark"
 			}]
+			title: "Red Route"
 			x: -0.95d
 			y: -5.15d
-			description: ["Treat Mars as a longer expedition than the Moon. Bring extra fuel, oxygen, recovery supplies, and inventory space before committing to the trip."]
 		}
-,
 		{
 			dependencies: ["12925948A84BF40B"]
-			id: "0759BB3400A16F7F"
-			title: "Presses"
+			description: ["Prepare processor presses and ingredients as a small factory, not as scattered chores. Keep silicon, printed circuits, and finished processors in one work area."]
 			icon: "ae2:inscriber"
+			id: "0759BB3400A16F7F"
 			shape: "diamond"
 			size: 0.9d
 			tasks: [{
-				id: "860ABFCD66778F07"
+				id: "5D32BE55D792D3DB"
 				title: "Prepare AE2 processors intentionally"
 				type: "checkmark"
 			}]
+			title: "Presses"
 			x: 1.3d
 			y: -5.45d
-			description: ["Prepare processor presses and ingredients as a small factory, not as scattered chores. Keep silicon, printed circuits, and finished processors in one work area."]
 		}
-,
 		{
 			dependencies: ["7A15771CDACE42EC"]
-			id: "E1F8E99601292B5E"
-			title: "Channel Plan"
+			description: ["Plan channels before the network sprawls. A local AE2 network is easier to debug and cheaper to expand when each base has clear storage boundaries."]
 			icon: "ae2:fluix_smart_cable"
+			id: "685618741B5970D5"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
-				id: "C0398464D2961ABE"
+				id: "33AAD5EC5EC56653"
 				title: "Plan local channels before scaling"
 				type: "checkmark"
 			}]
+			title: "Channel Plan"
 			x: 4.75d
 			y: -0.5d
-			description: ["Plan channels before the network sprawls. A local AE2 network is easier to debug and cheaper to expand when each base has clear storage boundaries."]
 		}
-,
 		{
-			dependencies: ["86339E21F9017663"]
-			id: "62598A31B1CF7BF1"
-			title: "Cell Budget"
+			description: ["Budget cells and drives per base instead of centralizing everything immediately. Storage is strongest when it solves local clutter without deleting route identity."]
 			icon: "ae2:item_cell_housing"
+			id: "62598A31B1CF7BF1"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
@@ -411,33 +402,36 @@
 				title: "Budget cells and drives per base"
 				type: "checkmark"
 			}]
+			title: "Cell Budget"
 			x: 6.34d
 			y: -5.25d
-			description: ["Budget cells and drives per base instead of centralizing everything immediately. Storage is strongest when it solves local clutter without deleting route identity."]
 		}
-,
 		{
-			dependencies: ["E553185539A744D4"]
-			id: "BE6DA4FE21E4B333"
-			title: "Heat Suit"
-			icon: "minecraft:netherite_chestplate"
+			description: ["Pack for heat, escape, and extraction before you dive for lava-depth materials. Those ores are meant to test preparation as much as gear."]
+			icon: {
+				Count: 1
+				id: "minecraft:netherite_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "258F9842F6AC1BD7"
 			shape: "diamond"
 			size: 0.9d
 			tasks: [{
-				id: "D94C3F7A219EF1AE"
+				id: "39104E4E04EBD44B"
 				title: "Prepare lava-depth equipment and exits"
 				type: "checkmark"
 			}]
+			title: "Heat Suit"
 			x: 11.09d
 			y: 0.0d
-			description: ["Pack for heat, escape, and extraction before you dive for lava-depth materials. Those ores are meant to test preparation as much as gear."]
 		}
-,
 		{
 			dependencies: ["76FB4905EE8E60D7"]
-			id: "78FC38567095BCE8"
-			title: "Alloy Proof"
+			description: ["Keep rare alloy work near the lava-depth metals that feed it. When osmium or similar metals run short, you should know which dangerous trip restocks them."]
 			icon: "chemlib:osmium_ingot"
+			id: "78FC38567095BCE8"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
@@ -445,16 +439,14 @@
 				title: "Tie rare metals to lava-depth source proof"
 				type: "checkmark"
 			}]
+			title: "Alloy Proof"
 			x: 12.67d
 			y: -5.5d
-			description: ["Keep rare alloy work near the lava-depth metals that feed it. When osmium or similar metals run short, you should know which dangerous trip restocks them."]
 		}
-,
 		{
-			dependencies: ["B9903B9513ACD50E"]
-			id: "85DD3799B2948E51"
-			title: "Remote Contract"
+			description: ["Use computers to coordinate distant sites after local AE2 is already solving base problems. OC2R is for intersite control, not item teleportation."]
 			icon: "oc2r:computer"
+			id: "3DC024213036540F"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
@@ -462,26 +454,24 @@
 				title: "Use computers for intersite control, not item teleport"
 				type: "checkmark"
 			}]
+			title: "Remote Contract"
 			x: 9.5d
 			y: 0.0d
-			description: ["Use computers to coordinate distant sites after local AE2 is already solving base problems. OC2R is for intersite control, not item teleportation."]
 		}
-,
 		{
-			dependencies: ["920AFBA12E4C0196"]
-			id: "38A520E741C6FE27"
-			title: "Endgame Map"
+			description: ["Check the late-game chain before expanding: rockets bring access, AE2 cleans up local storage, lava-depth ores feed rare materials, and OC2R coordinates distant sites."]
 			icon: "minecraft:filled_map"
+			id: "38A520E741C6FE27"
 			shape: "octagon"
 			size: 0.9d
 			tasks: [{
-				id: "DB2E49C62FF34258"
+				id: "1EF867D324778A01"
 				title: "Keep space, AE2, lava, and OC2R as linked routes"
 				type: "checkmark"
 			}]
+			title: "Endgame Map"
 			x: 14.7d
 			y: -4.65d
-			description: ["Check the late-game chain before expanding: rockets bring access, AE2 cleans up local storage, lava-depth ores feed rare materials, and OC2R coordinates distant sites."]
 		}
 	]
 	title: "Space, AE2, and Lava Depths"

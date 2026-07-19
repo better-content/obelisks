@@ -175,7 +175,7 @@ val knownBadFrameMarkers = listOf(
 
 fun usage(message: String? = null): Nothing {
     if (message != null) System.err.println(message)
-    System.err.println("Usage: tools/bc test scenario-headful worldgen_marketing_screenshots [--bootstrap-mode always|once|never] [--port N] [--run-root PATH] [--output-dir PATH] [--keep-runs] [--batch-mode bounded|session] [--start-shot N|SHOT_ID] [--end-shot N|SHOT_ID] [--dh-capture-radius CHUNKS] [--server-forceload-radius CHUNKS] [--dh-min-settle SECONDS] [--dh-quiet SECONDS] [--dh-timeout SECONDS] [--dh-low-tail-max CHUNKS] [--dh-low-tail-seconds SECONDS] [--allow-low-tail-dh] [--camera-search off|local-sweep] [--anchor-search off|locate-biome|locate-biome-sweep|locate-feature]")
+    System.err.println("Usage: tools/bc test scenario-headful worldgen_marketing_screenshots [--fixture worldgen|rain-collector|ore-gallery-normal|ore-gallery-shader] [--bootstrap-mode always|once|never] [--port N] [--run-root PATH] [--output-dir PATH] [--keep-runs] [--batch-mode bounded|session] [--start-shot N|SHOT_ID] [--end-shot N|SHOT_ID] [--dh-capture-radius CHUNKS] [--server-forceload-radius CHUNKS] [--dh-min-settle SECONDS] [--dh-quiet SECONDS] [--dh-timeout SECONDS] [--dh-low-tail-max CHUNKS] [--dh-low-tail-seconds SECONDS] [--allow-low-tail-dh] [--camera-search off|local-sweep] [--anchor-search off|locate-biome|locate-biome-sweep|locate-feature]")
     exitProcess(2)
 }
 
@@ -194,6 +194,7 @@ if ((forceXvfb || System.getenv("DISPLAY").isNullOrBlank() || GraphicsEnvironmen
 }
 
 var bootstrapMode = "always"
+var fixture = "worldgen"
 var keepRuns = false
 var port = System.getenv("BC_HARNESS_ACTUAL_PORT")?.takeIf { it.isNotBlank() }?.toIntOrNull() ?: 25569
 var runRoot = Paths.get(
@@ -216,6 +217,11 @@ var allowLowTailDh = false
 var index = 0
 while (index < args.size) {
     when (args[index]) {
+        "--fixture" -> {
+            fixture = args.getOrNull(index + 1) ?: usage("--fixture needs a fixture name")
+            if (fixture !in setOf("worldgen", "rain-collector", "ore-gallery-normal", "ore-gallery-shader")) usage("invalid fixture: $fixture")
+            index += 2
+        }
         "--bootstrap-mode" -> {
             bootstrapMode = args.getOrNull(index + 1) ?: usage("--bootstrap-mode needs always, once, or never")
             if (bootstrapMode !in setOf("always", "once", "never")) usage("invalid bootstrap mode: $bootstrapMode")
@@ -299,10 +305,28 @@ while (index < args.size) {
     }
 }
 
+if (fixture == "rain-collector" && outputDir == root.resolve("generated/cache/worldgen-marketing")) {
+    outputDir = root.resolve("generated/cache/rain-collector-visuals")
+    dhCaptureRadiusChunks = 8
+    serverForceloadRadiusChunks = 0
+    cameraSearchMode = "off"
+    anchorSearchMode = "off"
+}
+val oreGalleryFixture = fixture.startsWith("ore-gallery-")
+val authoredFixture = fixture == "rain-collector" || oreGalleryFixture
+val shadersEnabled = fixture == "worldgen" || fixture == "ore-gallery-shader"
+if (oreGalleryFixture && outputDir == root.resolve("generated/cache/worldgen-marketing")) {
+    outputDir = root.resolve("generated/evidence/ore-textures/in-game/${fixture.removePrefix("ore-gallery-")}")
+    dhCaptureRadiusChunks = 8
+    serverForceloadRadiusChunks = 0
+    cameraSearchMode = "off"
+    anchorSearchMode = "off"
+}
+
 // These marketing anchors remain deterministic, but the camera height stays
 // deliberately above the local terrain so spectator mode never captures from
 // inside hillsides or dense canopy.
-val shots = listOf(
+val worldgenShots = listOf(
     Shot("01-overworld-forest", "01-overworld-forest.png", "natures_spirit:redwood_forest", "redwood forest ridge", 0.5, 220.0, -49.5, 0.0, 10.0, listOf("dimensiondrink:dimensional_font", "minecraft:pillager_outpost", "minecraft:trail_ruins")),
     Shot("02-overworld-jungle", "02-overworld-jungle.png", "minecraft:jungle", "jungle river valley", 704.5, 186.0, 608.5, 45.0, 28.0, listOf("minecraft:jungle_pyramid", "minecraft:trail_ruins", "minecraft:ruined_portal")),
     Shot("03-overworld-desert", "03-overworld-desert.png", "minecraft:desert", "desert plateau at a jungle boundary", 1152.5, 176.0, 1600.5, 45.0, 24.0, listOf("minecraft:desert_pyramid", "minecraft:village_desert", "minecraft:ruined_portal_desert")),
@@ -310,6 +334,21 @@ val shots = listOf(
     Shot("05-overworld-snowy-plains", "05-overworld-snowy-plains.png", "minecraft:snowy_plains", "snowy plains and ice formations", 32.5, 172.0, -1535.5, 45.0, 24.0, listOf("minecraft:village_snowy", "minecraft:igloo", "minecraft:pillager_outpost")),
     Shot("06-overworld-cherry-grove", "06-overworld-cherry-grove.png", "minecraft:cherry_grove", "cherry grove in a mountain amphitheater", 4384.5, 320.0, -543.5, 45.0, 42.0, listOf("minecraft:ancient_city", "minecraft:trail_ruins", "minecraft:ruined_portal_mountain")),
 )
+val oreGalleryShots = listOf(
+    Shot("01-sedimentary-deposits", "01-sedimentary-deposits.png", "minecraft:plains", "coal measures, ironstone, bauxite laterite, and phosphate rock embedded as bedded seams and nodules", 0.5, 106.0, 20.0, 180.0, 8.0),
+    Shot("02-base-metal-sulfides", "02-base-metal-sulfides.png", "minecraft:plains", "copper sulfide, nickel sulfide, lead-zinc, and sulfur-bearing pyrite in clustered replacement bodies", 48.5, 106.0, 20.0, 180.0, 8.0),
+    Shot("03-hydrothermal-veins", "03-hydrothermal-veins.png", "minecraft:plains", "quartz, tin, tin-tungsten greisen, and zinc in cross-cutting fracture and vein systems", 96.5, 106.0, 20.0, 180.0, 8.0),
+    Shot("04-gem-systems", "04-gem-systems.png", "minecraft:plains", "corundum-beryl, emerald schist-beryl, lazurite, and kimberlite in crystal veins and a pipe", 144.5, 106.0, 20.0, 180.0, 8.0),
+    Shot("05-strategic-deep-ores", "05-strategic-deep-ores.png", "minecraft:plains", "cupriferous redbed, soul-bearing black shale, titanium-iron oxide, uranium, and thorium in deepslate structures", 192.5, 106.0, 20.0, 180.0, 8.0),
+    Shot("06-osmiridium-lava-depth", "06-osmiridium-lava-depth.png", "minecraft:plains", "osmiridium lava sulfide blebs exposed beside a contained lava-depth pocket", 240.5, 105.0, 18.0, 180.0, 12.0),
+)
+val shots = when {
+    fixture == "rain-collector" -> listOf(
+        Shot("rain-collector-levels", "rain-collector-levels.png", "minecraft:plains", "rain collector empty-to-full water-level lineup during rainfall", 0.5, 104.0, 7.0, 180.0, 30.0),
+    )
+    oreGalleryFixture -> oreGalleryShots
+    else -> worldgenShots
+}
 fun resolveShotIndex(arg: String?, flag: String, defaultIndex: Int): Int = when (arg) {
     null -> defaultIndex
     else -> {
@@ -558,21 +597,22 @@ fun configureClient(clientDir: Path) {
     deleteTree(clientDir.resolve("Distant_Horizons_server_data"))
     deleteTree(clientDir.resolve("saves/New World/data"))
     Files.copy(root.resolve("options.txt"), clientDir.resolve("options.txt"), StandardCopyOption.REPLACE_EXISTING)
+    val optionOverrides = mapOf(
+        "fullscreen" to "false",
+        "overrideWidth" to width.toString(),
+        "overrideHeight" to height.toString(),
+        "pauseOnLostFocus" to "false",
+        "lastServer" to "127.0.0.1:$port",
+        "tutorialStep" to "none",
+        "skipMultiplayerWarning" to "true",
+        "joinedFirstServer" to "true",
+        "onboardAccessibility" to "false",
+        "chatVisibility" to "2",
+        "fov" to captureFovOptionValue.toString(),
+    ) + if (authoredFixture) mapOf("hideGui" to "true") else emptyMap()
     patchColonFile(
         clientDir.resolve("options.txt"),
-        mapOf(
-            "fullscreen" to "false",
-            "overrideWidth" to width.toString(),
-            "overrideHeight" to height.toString(),
-            "pauseOnLostFocus" to "false",
-            "lastServer" to "127.0.0.1:$port",
-            "tutorialStep" to "none",
-            "skipMultiplayerWarning" to "true",
-            "joinedFirstServer" to "true",
-            "onboardAccessibility" to "false",
-            "chatVisibility" to "2",
-            "fov" to captureFovOptionValue.toString(),
-        ),
+        optionOverrides,
     )
     patchJsonBooleans(
         clientDir.resolve("config/no-more-popups.json"),
@@ -596,7 +636,7 @@ disableUpdateMessage=false
 enableDebugOptions=false
 maxShadowRenderDistance=16
 shaderPack=$shaderPack
-enableShaders=true
+enableShaders=$shadersEnabled
 """.trimIndent() + "\n",
     )
     val dh = clientDir.resolve("config/DistantHorizons.toml")
@@ -612,6 +652,11 @@ enableShaders=true
     patchTomlValue(dh, "lodChunkRenderDistanceRadius", dhCaptureRadiusChunks.toString())
     patchTomlValue(dh, "threadRunTimeRatio", "\"1.0\"")
     patchTomlValue(dh, "numberOfThreads", screenshotClientDhThreads.toString())
+    if (authoredFixture) {
+        patchTomlValue(dh, "enableDistantGeneration", "false")
+        patchTomlValue(dh, "rendererMode", "\"DISABLED\"")
+        patchTomlValue(dh, "showGenerationProgress", "\"DISABLED\"")
+    }
 }
 fun configureServer(serverDir: Path) {
     // Explosion Overhaul's scan-decision modal is initiated by the server, so
@@ -1027,23 +1072,23 @@ fun writeReview(path: Path, shot: Shot, camera: CameraPose, dh: DhGateResult?, t
   "schema": "bc.screenshot_review.v1",
   "image": ${q(path.fileName.toString())},
   "sha256": ${q(sha256(path))},
-  "style": "storefront",
+  "style": ${q(if (fixture == "rain-collector") "functional-inspection" else "storefront")},
   "crop": "16:9",
   "intendedSubject": ${q(shot.subject)},
   "capture": {
-    "determinismProfile": "worldgen-marketing-v1",
+    "determinismProfile": ${q(if (fixture == "rain-collector") "rain-collector-functional-v1" else "worldgen-marketing-v1")},
     "seed": ${q(seed)},
     "dimension": "minecraft:overworld",
     "biome": ${q(shot.biome)},
     "camera": {"x": ${camera.x}, "y": ${camera.y}, "z": ${camera.z}, "yaw": ${camera.yaw}, "pitch": ${camera.pitch}},
     "baseCamera": {"x": ${shot.x}, "y": ${shot.y}, "z": ${shot.z}, "yaw": ${shot.yaw}, "pitch": ${shot.pitch}},
     "fov": $captureFovDegrees,
-    "weather": "clear",
-    "time": "morning",
-    "terrainAltered": false,
+    "weather": ${q(if (fixture == "rain-collector") "rain" else "clear")},
+    "time": ${q(if (fixture == "rain-collector") "noon" else "morning")},
+    "terrainAltered": ${fixture == "rain-collector"},
     "resolution": "${width}x${height}",
-    "shaderPack": ${q(shaderPack)},
-    "shaderPreset": ${q("shaderpacks/$shaderPack.txt")},
+    "shaderPack": ${q(if (fixture == "worldgen") shaderPack else null)},
+    "shaderPreset": ${q(if (fixture == "worldgen") "shaderpacks/$shaderPack.txt" else null)},
     "optionsSource": "options.txt",
     "anchorMode": ${q(anchorMode)},
     "anchorDetail": ${q(anchorDetail)},
@@ -1129,7 +1174,23 @@ fun pressKey(key: Int) {
     robot.keyRelease(key)
 }
 fun teleportCamera(pose: CameraPose) {
-    send(server!!, "tp AgentShot ${pose.asCommandArgs()}", commands)
+    val prefix = if (fixture == "rain-collector") "execute in minecraft:overworld run " else ""
+    send(server!!, "${prefix}tp AgentShot ${pose.asCommandArgs()}", commands)
+}
+
+fun rainCollectorFixtureHasGround(image: BufferedImage): Boolean {
+    var sampled = 0
+    var nonSky = 0
+    for (y in (image.height * 2 / 3) until image.height step 8) for (x in 0 until image.width step 8) {
+        val rgb = image.getRGB(x, y)
+        val red = (rgb shr 16) and 255
+        val green = (rgb shr 8) and 255
+        val blue = rgb and 255
+        val skyLike = blue > 120 && blue >= red + 10 && blue >= green
+        if (!skyLike) nonSky++
+        sampled++
+    }
+    return sampled > 0 && nonSky.toDouble() / sampled >= 0.10
 }
 fun cameraJson(pose: CameraPose): String =
     "{\"x\":${pose.x},\"y\":${pose.y},\"z\":${pose.z},\"yaw\":${pose.yaw},\"pitch\":${pose.pitch}}"
@@ -1384,7 +1445,114 @@ fun verifyCaptureConfiguration() {
     check("fov:$captureFovOptionValue" in options) { "screenshot runtime did not retain fixed ${captureFovDegrees}-degree FOV" }
     check("chatVisibility:2" in options) { "screenshot runtime did not retain hidden chat" }
     val oculus = Files.readString(clientDir.resolve("config/oculus.properties"))
-    check("enableShaders=true" in oculus && "shaderPack=$shaderPack" in oculus) { "screenshot runtime shader configuration is not active" }
+    val expectedShaders = shadersEnabled
+    check("enableShaders=$expectedShaders" in oculus) { "screenshot runtime shader configuration does not match fixture=$fixture" }
+    if (expectedShaders) check("shaderPack=$shaderPack" in oculus) { "screenshot runtime shader pack is not active" }
+}
+
+fun prepareRainCollectorFixture() {
+    send(server!!, "execute in minecraft:overworld run fill -8 99 -4 8 99 5 minecraft:stone", commands)
+    send(server!!, "execute in minecraft:overworld run fill -8 100 -4 8 106 5 minecraft:air", commands)
+    for (level in 0..4) {
+        val x = (level - 2) * 2
+        send(server!!, "execute in minecraft:overworld run setblock $x 100 0 bcfixes:rain_collector[level=$level]", commands)
+        send(server!!, "execute in minecraft:overworld run setblock $x 100 2 minecraft:${listOf("white", "light_blue", "cyan", "blue", "purple")[level]}_wool", commands)
+    }
+    send(server!!, "weather rain", commands)
+    send(server!!, "time set 6000", commands)
+}
+data class GalleryDeposit(val block: String, val morphology: String)
+val galleryScenes = listOf(
+    listOf(
+        GalleryDeposit("realisticores:coal_measures", "seam"),
+        GalleryDeposit("realisticores:ironstone", "seam"),
+        GalleryDeposit("realisticores:bauxite_laterite", "nodules"),
+        GalleryDeposit("realisticores:phosphate_rock", "nodules"),
+    ),
+    listOf(
+        GalleryDeposit("realisticores:copper_sulfide_ore", "cluster"),
+        GalleryDeposit("realisticores:nickel_sulfide_ore", "cluster"),
+        GalleryDeposit("realisticores:lead_zinc_vein", "vein"),
+        GalleryDeposit("realisticores:sulfur_bearing_pyrite_ore", "cluster"),
+    ),
+    listOf(
+        GalleryDeposit("realisticores:quartz_vein", "thick-vein"),
+        GalleryDeposit("realisticores:tin_ore", "vein"),
+        GalleryDeposit("realisticores:tin_tungsten_greisen", "network"),
+        GalleryDeposit("realisticores:zinc_ore", "cluster"),
+    ),
+    listOf(
+        GalleryDeposit("realisticores:corundum_beryl_gem_vein", "vein"),
+        GalleryDeposit("realisticores:emerald_schist_beryl_vein", "network"),
+        GalleryDeposit("realisticores:lazurite_vein", "vein"),
+        GalleryDeposit("realisticores:kimberlite_pipe", "pipe"),
+    ),
+    listOf(
+        GalleryDeposit("realisticores:deepslate_cupriferous_redbed_redstone_vein", "fracture"),
+        GalleryDeposit("realisticores:deepslate_soul_bearing_black_shale_soulstone_vein", "seam"),
+        GalleryDeposit("realisticores:deepslate_titanium_iron_oxide_ore", "seam"),
+        GalleryDeposit("realisticores:deepslate_uranium_ore", "cluster"),
+        GalleryDeposit("realisticores:deepslate_thorium_ore", "splinters"),
+    ),
+    listOf(
+        GalleryDeposit("realisticores:deepslate_osmiridium_lava_sulfide_ore", "lava-blebs"),
+    ),
+)
+fun galleryPattern(morphology: String): List<Pair<Int, Int>> = when (morphology) {
+    "seam" -> listOf(-4 to 0, -3 to 0, -2 to 1, -1 to 1, 0 to 1, 1 to 0, 2 to 0, 3 to -1, 4 to -1)
+    "nodules" -> listOf(-3 to 2, -2 to 2, -2 to 1, 0 to -1, 1 to -1, 1 to 0, 3 to 2, 4 to 1)
+    "cluster" -> listOf(-2 to 1, -1 to 2, -1 to 1, 0 to 1, 0 to 0, 1 to 1, 1 to 0, 2 to 0, 2 to -1, 3 to -1)
+    "thick-vein" -> listOf(-4 to -3, -3 to -2, -3 to -1, -2 to -1, -1 to 0, -1 to 1, 0 to 1, 1 to 2, 1 to 3, 2 to 3, 3 to 4)
+    "network" -> listOf(-4 to -2, -3 to -1, -2 to 0, -1 to 1, 0 to 2, 1 to 3, -1 to 0, 0 to -1, 1 to -2, 2 to -3, 3 to -3)
+    "pipe" -> listOf(-2 to -4, -1 to -4, -2 to -3, -1 to -3, -1 to -2, 0 to -2, -1 to -1, 0 to -1, 0 to 0, 1 to 0, 0 to 1, 1 to 1, 1 to 2, 2 to 2, 1 to 3, 2 to 3, 2 to 4)
+    "fracture" -> listOf(-4 to 3, -3 to 2, -2 to 1, -1 to 0, 0 to -1, 1 to -2, 2 to -3, 0 to 0, 1 to 1, 2 to 2)
+    "splinters" -> listOf(-4 to 2, -3 to 1, -2 to 0, -1 to 3, 0 to 2, 1 to 1, 2 to -1, 3 to -2, 4 to -3)
+    "lava-blebs" -> listOf(-5 to 2, -4 to 2, -4 to 1, -2 to -1, -1 to -1, -1 to 0, 0 to 0, 2 to 2, 3 to 2, 3 to 1, 5 to -2, 6 to -2, 6 to -3)
+    else -> listOf(-4 to -3, -3 to -2, -2 to -1, -1 to 0, 0 to 1, 1 to 2, 2 to 3, 0 to 0, 1 to -1)
+}
+fun prepareOreGalleryFixture() {
+    galleryScenes.forEachIndexed { sceneIndex, deposits ->
+        val centerX = sceneIndex * 48
+        val deep = sceneIndex >= 4
+        val host = if (deep) "minecraft:deepslate" else "minecraft:stone"
+        send(server!!, "execute in minecraft:overworld run fill ${centerX - 20} 99 -2 ${centerX + 20} 99 22 $host", commands)
+        send(server!!, "execute in minecraft:overworld run fill ${centerX - 20} 100 0 ${centerX + 20} 114 2 $host", commands)
+        send(server!!, "execute in minecraft:overworld run fill ${centerX - 20} 100 3 ${centerX + 20} 113 24 minecraft:air", commands)
+        send(server!!, "execute in minecraft:overworld run fill ${centerX - 20} 114 0 ${centerX + 20} 114 22 $host", commands)
+        val offsets = if (deposits.size == 5) listOf(-15, -8, 0, 8, 15) else listOf(-14, -5, 5, 14)
+        deposits.forEachIndexed { depositIndex, deposit ->
+            val anchorX = centerX + offsets[depositIndex]
+            val anchorY = 106 + ((depositIndex % 2) * 2 - 1)
+            galleryPattern(deposit.morphology).forEachIndexed { pointIndex, (dx, dy) ->
+                val z = if (pointIndex % 4 == 0) 1 else 2
+                send(server!!, "execute in minecraft:overworld run setblock ${anchorX + dx} ${anchorY + dy} $z ${deposit.block}", commands)
+            }
+        }
+        for (lightX in listOf(centerX - 12, centerX, centerX + 12)) {
+            send(server!!, "execute in minecraft:overworld run setblock $lightX 108 8 minecraft:light[level=11]", commands)
+        }
+        if (sceneIndex == 5) {
+            send(server!!, "execute in minecraft:overworld run fill ${centerX - 9} 100 2 ${centerX + 9} 100 9 minecraft:polished_blackstone", commands)
+            send(server!!, "execute in minecraft:overworld run fill ${centerX - 7} 100 3 ${centerX + 7} 100 7 minecraft:lava", commands)
+            send(server!!, "execute in minecraft:overworld run fill ${centerX - 8} 101 2 ${centerX + 8} 101 8 minecraft:air", commands)
+        }
+    }
+    send(server!!, "weather clear", commands)
+    send(server!!, "time set 6000", commands)
+}
+fun deployGalleryRealisticOresJar() {
+    if (!oreGalleryFixture) return
+    val source = root.resolve("generated/custom-mod-sources/realistic-ores/build/libs/realisticores-0.1.0.jar")
+    check(source.exists()) { "verified Realistic Ores runtime jar is missing: $source" }
+    for (runtime in listOf(serverDir, clientDir)) {
+        val mods = runtime.resolve("mods")
+        mods.createDirectories()
+        Files.list(mods).use { paths ->
+            paths.filter { it.fileName.toString().startsWith("realisticores-") && it.fileName.toString().endsWith(".jar") }
+                .forEach(Files::deleteIfExists)
+        }
+        Files.copy(source, mods.resolve(source.fileName), StandardCopyOption.REPLACE_EXISTING)
+    }
 }
 fun prepareCleanFrame(stage: String): String {
     val log = clientDir.resolve("logs/latest.log")
@@ -1396,7 +1564,7 @@ fun prepareCleanFrame(stage: String): String {
     }
     // This disposable username begins in class-selector's spawn-only flow.
     // Pressing the bound key is idempotent after completion and clears the prompt before captures.
-    pressKey(KeyEvent.VK_K)
+    if (fixture == "worldgen") pressKey(KeyEvent.VK_K)
     send(server!!, "gamemode spectator AgentShot", commands)
     send(server!!, "effect clear AgentShot", commands)
     Thread.sleep(2_000)
@@ -1449,6 +1617,7 @@ try {
         }
         configureServer(serverDir)
         configureClient(clientDir)
+        deployGalleryRealisticOresJar()
         prepareArgfile(clientDir, "AgentShot", evidence.resolve("client.args"), evidence.resolve("client-argfile.log"))
     }
     phase("server_boot") {
@@ -1462,7 +1631,7 @@ try {
         send(server!!, "gamerule logAdminCommands false", commands)
         send(server!!, "gamerule doDaylightCycle false", commands)
         send(server!!, "gamerule doWeatherCycle false", commands)
-        send(server!!, "weather clear", commands)
+        send(server!!, if (fixture == "rain-collector") "weather rain" else "weather clear", commands)
         send(server!!, "time set 1000", commands)
     }
     phase("client_join") {
@@ -1470,13 +1639,23 @@ try {
         client = startClient(clientDir, evidence.resolve("client.args"), evidence.resolve("client-console.log"))
         waitFor(server!!.log, Regex("AgentShot joined the game"), 900, client, joins + 1)
         Thread.sleep(8_000)
-        pressKey(KeyEvent.VK_ESCAPE)
-        Thread.sleep(500)
+        if (fixture == "worldgen") {
+            pressKey(KeyEvent.VK_ESCAPE)
+            Thread.sleep(500)
+        }
         send(server!!, "gamemode spectator AgentShot", commands)
         send(server!!, "effect clear AgentShot", commands)
+        if (fixture == "rain-collector") {
+            prepareRainCollectorFixture()
+            teleportCamera(shots.first().basePose())
+        } else if (oreGalleryFixture) {
+            prepareOreGalleryFixture()
+            teleportCamera(shots.first().basePose())
+        }
         verifyCaptureConfiguration()
-        prepareCleanFrame("client_join")
-        if (!waitForPlayableFrame(robot, evidence.resolve("joined-playable.png"), 180)) error("client never produced a playable frame")
+        if (fixture == "worldgen") prepareCleanFrame("client_join")
+        val playable = waitForPlayableFrame(robot, evidence.resolve("joined-playable.png"), 180)
+        if (!playable) error("client never produced a playable frame")
     }
     phase("capture_shots") {
         val captured = mutableListOf<String>()
@@ -1484,9 +1663,15 @@ try {
         for (shot in selectedShots) {
             activeShot = shot
             appendProgress("shot_begin", shot)
-            send(server!!, "weather clear", commands)
-            send(server!!, "time set 1000", commands)
-            val locatedAnchor = resolveShotAnchor(shot)
+            if (fixture == "worldgen") {
+                send(server!!, "weather clear", commands)
+                send(server!!, "time set 1000", commands)
+            }
+            val locatedAnchor = if (authoredFixture) LocatedAnchor(
+                shot,
+                "authored-fixture",
+                if (oreGalleryFixture) "geology-shaped ore outcrop" else "fixed functional collector lineup",
+            ) else resolveShotAnchor(shot)
             val captureShot = locatedAnchor.shot
             appendProgress("anchor_selected", shot, "mode=${locatedAnchor.mode} ${locatedAnchor.detail}")
             teleportCamera(captureShot.basePose())
@@ -1498,18 +1683,18 @@ try {
             val toBlockZ = (chunkZ + serverForceloadRadiusChunks) * 16
             send(server!!, "forceload add $fromBlockX $fromBlockZ $toBlockX $toBlockZ", commands)
             appendProgress("server_forceload", shot, "radius=$serverForceloadRadiusChunks from=$fromBlockX,$fromBlockZ to=$toBlockX,$toBlockZ")
-            Thread.sleep(8_000)
-            appendProgress("shot_wait_dh", shot)
-            val dh = waitForDhStable(clientDir)
+            Thread.sleep(if (authoredFixture) 3_000 else 8_000)
+            if (fixture == "worldgen") appendProgress("shot_wait_dh", shot)
+            val dh = if (authoredFixture) DhGateResult("not-applicable", 0, 0, 0, 0, false, 0, 0, 0, null, 0) else waitForDhStable(clientDir)
             appendProgress("shot_dh_gate", shot, "status=${dh.status} elapsed=${dh.elapsedSeconds}s tail=${dh.tailChunksLeft ?: "none"} tailStable=${dh.tailStableSeconds}s")
-            val dhAccepted = dh.status == "stable" || (allowLowTailDh && dh.status == "low-tail-stable")
+            val dhAccepted = authoredFixture || dh.status == "stable" || (allowLowTailDh && dh.status == "low-tail-stable")
             if (!dhAccepted) {
                 val expectation = if (allowLowTailDh) "a stable quiet window or explicitly allowed bounded low-tail state" else "a stable quiet window"
                 error("DH did not reach $expectation for ${shot.id}; status=${dh.status} tail=${dh.tailChunksLeft ?: "none"} tailStable=${dh.tailStableSeconds}s")
             }
-            Thread.sleep(15_000)
-            val promptHandling = prepareCleanFrame("shot:${shot.id}")
-            val bestCandidate = chooseCameraCandidate(captureShot, outputDir.resolve("candidate-previews").resolve(shot.id))
+            Thread.sleep(if (authoredFixture) 8_000 else 15_000)
+            val promptHandling = if (authoredFixture) "passive-client-server-fixture" else prepareCleanFrame("shot:${shot.id}")
+            val bestCandidate = if (authoredFixture) CandidateFrame("authored-fixture", captureShot.basePose(), outputDir.resolve("candidate-previews").resolve(shot.id).resolve("authored-fixture.png"), FrameAssessment(true), 0.0, "fixed authored fixture") else chooseCameraCandidate(captureShot, outputDir.resolve("candidate-previews").resolve(shot.id))
             appendProgress("candidate_selected", shot, "${bestCandidate.label} score=${"%.2f".format(java.util.Locale.US, bestCandidate.score)} ${bestCandidate.detail}")
             teleportCamera(bestCandidate.pose)
             Thread.sleep(1_500)
@@ -1517,13 +1702,15 @@ try {
             val logOffset = if (log.exists()) Files.size(log) else 0L
             val rawPath = raw.resolve(shot.file)
             val finalPath = final.resolve(shot.file)
-            val image = screenshot(robot, rawPath)
+            var image = screenshot(robot, rawPath)
+            var initialFrame = assessFrame(image)
             val markers = badMarkersSince(clientDir, logOffset)
-            val frame = assessFrame(image)
+            val frame = initialFrame
             val failureReason = when {
                 !verifyPlayerInWorld() -> "client is no longer in-world at capture time"
                 markers.isNotEmpty() -> "known prompt/menu marker in capture evidence: ${markers.joinToString()}"
                 !frame.accepted -> frame.reason
+                fixture == "rain-collector" && !rainCollectorFixtureHasGround(image) -> "functional fixture has no visible ground or collector geometry"
                 dh.status == "low-tail-stable" && dh.lowTailSeconds <= 0 -> "low-tail DH gate was accepted with no stability dwell; keep as exploratory evidence only"
                 else -> null
             }
@@ -1563,11 +1750,12 @@ try {
 
 val manifest = buildString {
     appendLine("{")
-    appendLine("  \"schema\": \"bc.worldgen_marketing_screenshots.v1\",")
+    appendLine("  \"schema\": ${q(when { fixture == "rain-collector" -> "bc.rain_collector_visuals.v1"; oreGalleryFixture -> "bc.ore_texture_gallery.v1"; else -> "bc.worldgen_marketing_screenshots.v1" })},")
     appendLine("  \"status\": ${q(if (failure == null) "technical-pass-pending-ai-review" else "failed")},")
     appendLine("  \"error\": ${q(failure?.message)},")
     appendLine("  \"seed\": ${q(seed)},")
-    appendLine("  \"shaderPack\": ${q(shaderPack)},")
+    appendLine("  \"fixture\": ${q(fixture)},")
+    appendLine("  \"shaderPack\": ${q(if (shadersEnabled) shaderPack else null)},")
     appendLine("  \"fov\": $captureFovDegrees,")
     appendLine("  \"dhCaptureRadiusChunks\": $dhCaptureRadiusChunks,")
     appendLine("  \"serverForceloadRadiusChunks\": $serverForceloadRadiusChunks,")
@@ -1597,4 +1785,4 @@ if (failure != null) {
     System.err.println("worldgen marketing screenshot capture failed: ${failure!!.message}")
     exitProcess(1)
 }
-println("worldgen marketing screenshots captured: ${final}")
+println("${when { fixture == "rain-collector" -> "rain collector visuals"; oreGalleryFixture -> "ore texture gallery"; else -> "worldgen marketing screenshots" }} captured: ${final}")

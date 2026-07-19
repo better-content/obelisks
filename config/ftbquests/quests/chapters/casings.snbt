@@ -9,103 +9,113 @@
 	quest_links: [ ]
 	quests: [
 		{
-			id: "FF2CD75C29493AC2"
-			title: "Seared"
+			description: ["The seared casing is your first true machine body. Build it once your foundry can support repeated metalwork instead of one-off pours."]
 			icon: "kubejs:seared_machine_casing"
+			id: "7C9BE6B4AFABFD78"
+			rewards: [{
+				count: 4
+				id: "62FFE5840CE0E513"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.3d
 			tasks: [{
-				id: "AF497812E8C76BF0"
+				id: "26279D590D3D50C0"
 				item: "kubejs:seared_machine_casing"
 				type: "item"
 			}]
+			title: "Seared"
 			x: -7.13d
 			y: 0.0d
-			rewards: [{ id: "62FFE5840CE0E513" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["The seared casing is your first true machine body. Build it once your foundry can support repeated metalwork instead of one-off pours."]
 		}
 		{
-			dependencies: ["FF2CD75C29493AC2"]
-			id: "F869224DD9645047"
-			title: "Melter"
+			description: ["A melter proves you can control heat before you chase automation. If this step feels unstable, the later casing ladder will feel worse."]
 			icon: "tconstruct:seared_melter"
+			id: "34FBF2CD15E377E0"
 			shape: "rsquare"
 			tasks: [{
-				id: "D37A2AC4CDF7E428"
+				id: "30682CAD7A77CAE1"
 				item: "tconstruct:seared_melter"
 				type: "item"
 			}]
+			title: "Melter"
 			x: -5.54d
 			y: -3.5d
-			description: ["A melter proves you can control heat before you chase automation. If this step feels unstable, the later casing ladder will feel worse."]
 		}
 		{
-			dependencies: ["F869224DD9645047"]
-			id: "0BE569D61AC4897C"
-			title: "Casting"
+			description: ["Casting gear is what makes the seared tier practical. You need visible parts and repeatable pours before a casing tier means anything."]
 			icon: "tconstruct:seared_casting_tank"
+			id: "0BE569D61AC4897C"
 			shape: "rsquare"
 			tasks: [{
 				id: "6A24E1CFE018278B"
 				item: "tconstruct:seared_casting_tank"
 				type: "item"
 			}]
+			title: "Casting"
 			x: -3.96d
 			y: -3.5d
-			description: ["Casting gear is what makes the seared tier practical. You need visible parts and repeatable pours before a casing tier means anything."]
 		}
 		{
-			dependencies: ["FF2CD75C29493AC2"]
-			id: "F5F62E013FC2AC80"
-			title: "Andesite"
+			description: ["Andesite casing marks the first real automation tier. From here on, rotation is a language you are expected to speak fluently."]
 			icon: "kubejs:andesite_machine_casing"
+			id: "16D9C29F21B562B2"
+			rewards: [{
+				count: 4
+				id: "6CB7B3133567FBF1"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.25d
 			tasks: [{
-				id: "BF3D2010E14EAF00"
+				id: "6CC0D0823CF2357E"
 				item: "kubejs:andesite_machine_casing"
 				type: "item"
 			}]
+			title: "Andesite"
 			x: -5.54d
 			y: 0.0d
-			rewards: [{ id: "8AF3C5A2BAAE4A8C" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Andesite casing marks the first real automation tier. From here on, rotation is a language you are expected to speak fluently."]
 		}
 		{
-			dependencies: ["F5F62E013FC2AC80"]
-			id: "A0F2ED2051CC1F98"
-			title: "Create Case"
+			description: ["Check andesite casing uses in EMI. This tier matters because it leads to presses, mixers, fans, drills, saws, and deployers."]
 			icon: "create:andesite_casing"
+			id: "7248C225267C5EBB"
 			shape: "rsquare"
 			tasks: [{
-				id: "C65961A6A91692FB"
+				id: "2C87882D620D8844"
 				item: "create:andesite_casing"
 				type: "item"
 			}]
+			title: "Create Case"
 			x: -3.96d
 			y: 0.0d
-			description: ["Check andesite casing uses in EMI. This tier matters because it leads to presses, mixers, fans, drills, saws, and deployers."]
 		}
 		{
-			dependencies: ["A0F2ED2051CC1F98"]
-			id: "C341771CF4337951"
-			title: "Press"
+			description: ["Pressing is where parts start coming from a line instead of your hands. Use it to make the leap from survival crafting into repeatable manufacture."]
 			icon: "create:mechanical_press"
+			id: "20001A92DE3E7715"
 			shape: "rsquare"
 			tasks: [{
 				id: "094C78AF061A7D11"
 				item: "create:mechanical_press"
 				type: "item"
 			}]
+			title: "Press"
 			x: -2.38d
 			y: -1.5d
-			description: ["Pressing is where parts start coming from a line instead of your hands. Use it to make the leap from survival crafting into repeatable manufacture."]
 		}
 		{
-			dependencies: ["A0F2ED2051CC1F98"]
-			id: "A23D8E6A5823FD6E"
-			title: "Brass"
+			description: ["Build brass casing when you want selective movement and sensing. Arms, display links, stockpile switches, and railway casing all depend on this step."]
 			icon: "kubejs:brass_machine_casing"
+			id: "5A48AD53C61B1F8D"
+			rewards: [{
+				count: 4
+				id: "563663203400B0FC"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.25d
 			tasks: [{
@@ -113,93 +123,99 @@
 				item: "kubejs:brass_machine_casing"
 				type: "item"
 			}]
+			title: "Brass"
 			x: -2.38d
 			y: 1.5d
-			rewards: [{ id: "E3CF9AD4A78AF936" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Build brass casing when you want selective movement and sensing. Arms, display links, stockpile switches, and railway casing all depend on this step."]
 		}
 		{
-			dependencies: ["A23D8E6A5823FD6E"]
-			id: "8369DE2CC1CAF0B6"
-			title: "Brass Case"
+			description: ["Follow brass casing uses in EMI to see the real payoff. This is the tier that starts connecting machines to logistics and future launch work."]
 			icon: "create:brass_casing"
+			id: "659FE13621F36A7E"
 			shape: "rsquare"
 			tasks: [{
-				id: "934A9B94A6E6B3CD"
+				id: "713416B9E67F479D"
 				item: "create:brass_casing"
 				type: "item"
 			}]
+			title: "Brass Case"
 			x: -0.79d
 			y: 1.5d
-			description: ["Follow brass casing uses in EMI to see the real payoff. This is the tier that starts connecting machines to logistics and future launch work."]
 		}
 		{
-			dependencies: ["8369DE2CC1CAF0B6"]
-			id: "0ECB096D79FEF79D"
-			title: "Precision"
+			description: ["Precision mechanisms are the bridge from moving power to controlled assembly. Once these are stable, Create starts acting like industry instead of workshop tinkering."]
 			icon: "create:precision_mechanism"
+			id: "0ECB096D79FEF79D"
 			shape: "rsquare"
 			tasks: [{
-				id: "ADD4E6EBA6A0B986"
+				id: "5C12B965B369767B"
 				item: "create:precision_mechanism"
 				type: "item"
 			}]
+			title: "Precision"
 			x: 0.79d
 			y: 1.5d
-			description: ["Precision mechanisms are the bridge from moving power to controlled assembly. Once these are stable, Create starts acting like industry instead of workshop tinkering."]
 		}
 		{
-			dependencies: ["C341771CF4337951" "0ECB096D79FEF79D"]
-			id: "E767D2D9AD86FB78"
-			title: "Airtight"
+			dependencies: ["0ECB096D79FEF79D"]
+			description: ["Airtight casing marks the sealed pressure tier. This is where chemistry, gas work, and plastics move into dedicated machines."]
 			icon: "kubejs:airtight_machine_casing"
+			id: "04F7A3995E04A5B8"
+			rewards: [{
+				count: 4
+				id: "53473209A58C82B3"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.25d
 			tasks: [{
-				id: "9998F4084D486F66"
+				id: "1EA37D3A854EE3EB"
 				item: "kubejs:airtight_machine_casing"
 				type: "item"
 			}]
+			title: "Airtight"
 			x: 0.79d
 			y: -1.5d
-			rewards: [{ id: "BD5F1459FB2244AB" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Airtight casing marks the sealed pressure tier. This is where chemistry, gas work, and plastics move into dedicated machines."]
 		}
 		{
-			dependencies: ["E767D2D9AD86FB78"]
-			id: "E2755613741D999E"
-			title: "Chamber"
+			description: ["The pressure chamber is the heart of the airtight tier. Build it when open-vat tricks stop being enough for the materials you need."]
 			icon: "pneumaticcraft:pressure_chamber_valve"
+			id: "0E208606E009EB94"
 			shape: "rsquare"
 			tasks: [{
 				id: "13BCF4A1F4703D8B"
 				item: "pneumaticcraft:pressure_chamber_valve"
 				type: "item"
 			}]
+			title: "Chamber"
 			x: 2.38d
 			y: -2.5d
-			description: ["The pressure chamber is the heart of the airtight tier. Build it when open-vat tricks stop being enough for the materials you need."]
 		}
 		{
-			dependencies: ["E2755613741D999E"]
-			id: "4350E20F074AF6C8"
-			title: "PCB"
+			description: ["Printed boards unlock much of the control era. Once you can make them reliably, drones, assembly machines, and security hardware become realistic goals."]
 			icon: "pneumaticcraft:printed_circuit_board"
+			id: "4350E20F074AF6C8"
 			shape: "rsquare"
 			tasks: [{
-				id: "C78F454242423F96"
+				id: "61B9FADC1F40ABF7"
 				item: "pneumaticcraft:printed_circuit_board"
 				type: "item"
 			}]
+			title: "PCB"
 			x: 3.96d
 			y: -2.5d
-			description: ["Printed boards unlock much of the control era. Once you can make them reliably, drones, assembly machines, and security hardware become realistic goals."]
 		}
 		{
 			dependencies: ["4350E20F074AF6C8"]
-			id: "758F565471A67CA4"
-			title: "Electrical"
+			description: ["Electrical casing marks the control tier. Pressure, board work, Power Grid, and OC2R start merging into one readable electrical lane here."]
 			icon: "kubejs:electrical_machine_casing"
+			id: "758F565471A67CA4"
+			rewards: [{
+				count: 4
+				id: "51263BF43F447403"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.25d
 			tasks: [{
@@ -207,46 +223,50 @@
 				item: "kubejs:electrical_machine_casing"
 				type: "item"
 			}]
+			title: "Electrical"
 			x: 3.96d
 			y: 0.5d
-			rewards: [{ id: "51263BF43F447403" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Electrical casing marks the control tier. Pressure, board work, Power Grid, and OC2R start merging into one readable electrical lane here."]
 		}
 		{
 			dependencies: ["758F565471A67CA4"]
-			id: "7EE29CEBA05BCDB6"
-			title: "Battery"
+			description: ["A battery proves your pressure parts are feeding electrical control. Keep storage and logic parts near the machines that charge and use them."]
 			icon: "powergrid:battery"
+			id: "7EE29CEBA05BCDB6"
 			shape: "rsquare"
 			tasks: [{
 				id: "59CFD2D635A6CD81"
 				item: "powergrid:battery"
 				type: "item"
 			}]
+			title: "Battery"
 			x: 5.54d
 			y: 0.5d
-			description: ["A battery proves your pressure parts are feeding electrical control. Keep storage and logic parts near the machines that charge and use them."]
 		}
 		{
 			dependencies: ["7EE29CEBA05BCDB6"]
-			id: "ABE28E6F91BCE9AB"
-			title: "OC2R"
+			description: ["OC2R is for intersite information, not for skipping travel or item movement. Build it to coordinate bases, not to pretend distance stopped mattering."]
 			icon: "oc2r:computer"
+			id: "757146DCFE3F6752"
 			shape: "rsquare"
 			tasks: [{
-				id: "9AD19C91EAFE821B"
+				id: "5CE0C5A2F40CD29D"
 				item: "oc2r:computer"
 				type: "item"
 			}]
+			title: "OC2R"
 			x: 7.13d
 			y: 0.5d
-			description: ["OC2R is for intersite information, not for skipping travel or item movement. Build it to coordinate bases, not to pretend distance stopped mattering."]
 		}
 		{
-			dependencies: ["ABE28E6F91BCE9AB"]
-			id: "71781B17892A20AF"
-			title: "Space"
+			description: ["Space casing is the distance tier. Reaching it means launch hardware, oxygen, and route planning are now part of normal manufacturing expectations."]
 			icon: "kubejs:space_machine_casing"
+			id: "71781B17892A20AF"
+			rewards: [{
+				count: 4
+				id: "1A01B4E56ED62278"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.25d
 			tasks: [{
@@ -254,95 +274,104 @@
 				item: "kubejs:space_machine_casing"
 				type: "item"
 			}]
+			title: "Space"
 			x: 7.13d
 			y: -2.5d
-			rewards: [{ id: "1A01B4E56ED62278" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Space casing is the distance tier. Reaching it means launch hardware, oxygen, and route planning are now part of normal manufacturing expectations."]
 		}
 		{
 			dependencies: ["71781B17892A20AF"]
-			id: "4783965745122BF0"
-			title: "Rocket"
+			description: ["Treat rockets as route gates with upkeep and planning, not as a fast-travel button. A launch only pays off if the whole expedition plan holds together."]
 			icon: "minecraft:firework_rocket"
+			id: "4783965745122BF0"
 			shape: "rsquare"
 			tasks: [{
-				id: "DB5DDA5A16AC970C"
+				id: "496A11563D420F46"
 				item: "minecraft:firework_rocket"
 				type: "item"
 			}]
+			title: "Rocket"
 			x: 8.71d
 			y: -3.5d
-			description: ["Treat rockets as route gates with upkeep and planning, not as a fast-travel button. A launch only pays off if the whole expedition plan holds together."]
 		}
 		{
 			dependencies: ["71781B17892A20AF"]
-			id: "79111EEB3696ADBC"
-			title: "AE2"
+			description: ["AE2 belongs late because it assumes you already solved processors, pressure, and launch-scale logistics. Bring it in to sharpen a base, not to skip the ladder."]
 			icon: "ae2:controller"
+			id: "79111EEB3696ADBC"
 			shape: "rsquare"
 			tasks: [{
-				id: "EAD07213BBDBC435"
+				id: "23B313847313C17E"
 				item: "ae2:controller"
 				type: "item"
 			}]
+			title: "AE2"
 			x: 8.71d
 			y: 0.0d
-			description: ["AE2 belongs late because it assumes you already solved processors, pressure, and launch-scale logistics. Bring it in to sharpen a base, not to skip the ladder."]
 		}
 		{
 			dependencies: ["79111EEB3696ADBC"]
-			id: "28AB7A8097E6F946"
-			title: "Raw"
+			description: ["Raw impossible casing is the step before the final machine frame. Gather the late materials first so the finished casing is not a one-off surprise."]
 			icon: "kubejs:raw_impossible_casing"
+			id: "28AB7A8097E6F946"
+			rewards: [{
+				count: 4
+				id: "1B3F5F6EDE3882AF"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			shape: "diamond"
 			size: 1.1d
 			tasks: [{
-				id: "D7FCAC9E72B95C98"
+				id: "71F6867DD4F2EE21"
 				item: "kubejs:raw_impossible_casing"
 				type: "item"
 			}]
+			title: "Raw"
 			x: 10.3d
 			y: 0.0d
-			rewards: [{ id: "1B3F5F6EDE3882AF" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Raw impossible casing is the step before the final machine frame. Gather the late materials first so the finished casing is not a one-off surprise."]
 		}
 		{
 			dependencies: ["28AB7A8097E6F946"]
-			id: "75F5E8AAF6EEE1F1"
-			title: "Impossible"
+			description: ["Impossible casing is the final machine frame. Save it for systems that depend on late AE2, space materials, or hybrid magic."]
 			icon: "kubejs:impossible_machine_casing"
+			id: "75F5E8AAF6EEE1F1"
+			rewards: [{
+				count: 4
+				id: "637ACC905A9EB445"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			shape: "octagon"
 			size: 1.3d
 			tasks: [{
-				id: "D249F59E9F7BDB3F"
+				id: "6EC271D44436E5AE"
 				item: "kubejs:impossible_machine_casing"
 				type: "item"
 			}]
+			title: "Impossible"
 			x: 11.88d
 			y: 0.0d
-			rewards: [{ id: "637ACC905A9EB445" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Impossible casing is the final machine frame. Save it for systems that depend on late AE2, space materials, or hybrid magic."]
 		}
 		{
 			dependencies: ["75F5E8AAF6EEE1F1"]
-			id: "607B4349D7820175"
-			title: "Support"
+			description: ["Use support matrices for upgrades that belong beside impossible casing. If an upgrade asks for one, expect it to depend on late AE2, space, or hybrid magic work."]
 			icon: "kubejs:impossible_support_matrix"
+			id: "607B4349D7820175"
 			shape: "rsquare"
 			tasks: [{
-				id: "D9792ACC206644AB"
+				id: "44BE4EA7F00A49ED"
 				item: "kubejs:impossible_support_matrix"
 				type: "item"
 			}]
+			title: "Support"
 			x: 13.46d
 			y: -1.5d
-			description: ["Use support matrices for upgrades that belong beside impossible casing. If an upgrade asks for one, expect it to depend on late AE2, space, or hybrid magic work."]
 		}
 		{
 			dependencies: ["607B4349D7820175"]
-			id: "3CC0674AF719C010"
-			title: "Thesis"
+			description: ["Review each casing tier before moving on. You should still have a reason to use the foundry, Create machines, pressure rooms, circuit work, and launch prep."]
 			icon: "minecraft:nether_star"
+			id: "3CC0674AF719C010"
 			shape: "hexagon"
 			size: 1.15d
 			tasks: [{
@@ -350,15 +379,14 @@
 				title: "Read the casing rule"
 				type: "checkmark"
 			}]
+			title: "Thesis"
 			x: 15.05d
 			y: -1.5d
-			description: ["Review each casing tier before moving on. You should still have a reason to use the foundry, Create machines, pressure rooms, circuit work, and launch prep."]
-		},
+		}
 		{
-			dependencies: ["FF2CD75C29493AC2"]
-			id: "FB8064F72EEB6950"
-			title: "Heat Budget"
+			description: ["Build the seared tier as a small foundry cell, not as a lonely unlock. The room should already make repeated metalwork easy."]
 			icon: "minecraft:lava_bucket"
+			id: "017CF87955D3DC13"
 			shape: "diamond"
 			size: 0.9d
 			tasks: [{
@@ -366,67 +394,59 @@
 				title: "Prove fuel, drain, tank, and casting flow before chasing automation."
 				type: "checkmark"
 			}]
+			title: "Heat Budget"
 			x: -7.13d
 			y: -2.1d
-			description: ["Build the seared tier as a small foundry cell, not as a lonely unlock. The room should already make repeated metalwork easy."]
 		}
-,
 		{
-			dependencies: ["FF2CD75C29493AC2"]
-			id: "541BF8500E645538"
-			title: "Brick Supply"
+			description: ["Batch seared bricks and glass before you expand the foundry. The first machine bodies are much easier when the basic blocks are already stocked."]
 			icon: "tconstruct:seared_brick"
+			id: "541BF8500E645538"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
-				id: "B8B964F41F8F503C"
+				id: "4F1DD8D8C7BED2B6"
 				title: "Batch seared bricks and glass"
 				type: "checkmark"
 			}]
+			title: "Brick Supply"
 			x: -6.25d
 			y: 2.0d
-			description: ["Batch seared bricks and glass before you expand the foundry. The first machine bodies are much easier when the basic blocks are already stocked."]
 		}
-,
 		{
-			dependencies: ["F5F62E013FC2AC80"]
-			id: "F29F5BCA5DA3C87D"
-			title: "Rotation Cell"
+			description: ["Build a local rotation cell with water wheel power, shafts, cogs, and spare stress capacity before adding more Create machines."]
 			icon: "create:water_wheel"
+			id: "4B705350C1E88D09"
 			shape: "diamond"
 			size: 0.9d
 			tasks: [{
-				id: "CDE43300FD2C52B2"
+				id: "22D6538C0C6418F1"
 				title: "Build water wheel, shafts, cogs, and stress margin"
 				type: "checkmark"
 			}]
+			title: "Rotation Cell"
 			x: -5.54d
 			y: -2.3d
-			description: ["Build a local rotation cell with water wheel power, shafts, cogs, and spare stress capacity before adding more Create machines."]
 		}
-,
 		{
-			dependencies: ["A0F2ED2051CC1F98"]
-			id: "4A60DD8AEA0D2ABE"
-			title: "Machine Fanout"
+			description: ["Use andesite casing as the hub for a cluster of useful machines. The point is to see one casing tier unlock many practical jobs at once."]
 			icon: "create:mechanical_drill"
+			id: "4A60DD8AEA0D2ABE"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
-				id: "BFE61C7139D1B26C"
+				id: "3DA15A0A304B9C1C"
 				title: "Inspect press, mixer, fan, saw, drill, and deployer uses"
 				type: "checkmark"
 			}]
+			title: "Machine Fanout"
 			x: -3.85d
 			y: 2.3d
-			description: ["Use andesite casing as the hub for a cluster of useful machines. The point is to see one casing tier unlock many practical jobs at once."]
 		}
-,
 		{
-			dependencies: ["A23D8E6A5823FD6E"]
-			id: "551B3272B1D9481B"
-			title: "Precision Cell"
+			description: ["Use brass to move into controlled assembly and sensing, not just prettier machines. This tier earns its cost through better coordination."]
 			icon: "create:electron_tube"
+			id: "551B3272B1D9481B"
 			shape: "diamond"
 			size: 0.9d
 			tasks: [{
@@ -434,16 +454,14 @@
 				title: "Prepare tubes, sheets, deployer loops, and gold casts"
 				type: "checkmark"
 			}]
+			title: "Precision Cell"
 			x: -2.38d
 			y: 3.9d
-			description: ["Use brass to move into controlled assembly and sensing, not just prettier machines. This tier earns its cost through better coordination."]
 		}
-,
 		{
-			dependencies: ["8369DE2CC1CAF0B6"]
-			id: "8BBB01391C01C0BF"
-			title: "Logistics Fanout"
+			description: ["Brass casing opens the first serious local logistics tools: arms, display links, stockpile switches, and railway casing."]
 			icon: "create:mechanical_arm"
+			id: "033B35AC77F4A8A7"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
@@ -451,50 +469,45 @@
 				title: "Inspect arms, display links, stockpile switches, railway casing"
 				type: "checkmark"
 			}]
+			title: "Logistics Fanout"
 			x: -0.74d
 			y: -1.0d
-			description: ["Brass casing opens the first serious local logistics tools: arms, display links, stockpile switches, and railway casing."]
 		}
-,
 		{
-			dependencies: ["E767D2D9AD86FB78"]
-			id: "E5338050F5307A92"
-			title: "Seal Cell"
+			description: ["Treat airtight casing as the start of sealed pressure work. Group the chamber, tubes, compressor parts, and seals in one work area."]
 			icon: "pneumaticcraft:pressure_tube"
+			id: "48A1990394083D23"
 			shape: "diamond"
 			size: 0.9d
 			tasks: [{
-				id: "D6BC3ED311CA5666"
+				id: "1B9461F754731A64"
 				title: "Route pressure tube, seals, compressor core, and chamber parts"
 				type: "checkmark"
 			}]
+			title: "Seal Cell"
 			x: -0.03d
 			y: -3.8d
-			description: ["Treat airtight casing as the start of sealed pressure work. Group the chamber, tubes, compressor parts, and seals in one work area."]
 		}
-,
 		{
-			dependencies: ["E2755613741D999E"]
-			id: "0C870DD3781E7C46"
-			title: "Plastic Proof"
+			description: ["Make plastic and pressure chamber materials before starting boards. Those ingredients are the bridge from sealed pressure work into electronics."]
 			icon: "pneumaticcraft:plastic"
+			id: "0C870DD3781E7C46"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
-				id: "E9D498C09DFFB09B"
+				id: "63F9D488F4DDBDBA"
 				title: "Make plastic and pressure chamber materials before boards"
 				type: "checkmark"
 			}]
+			title: "Plastic Proof"
 			x: 2.38d
 			y: -0.3d
-			description: ["Make plastic and pressure chamber materials before starting boards. Those ingredients are the bridge from sealed pressure work into electronics."]
 		}
-,
 		{
 			dependencies: ["758F565471A67CA4"]
-			id: "041DA6829A191F13"
-			title: "Control Cell"
+			description: ["Use electrical casing to merge board work with storage and control planning. This is where separate machine lanes start sharing one logic stack."]
 			icon: "powergrid:circuit_design_table"
+			id: "041DA6829A191F13"
 			shape: "diamond"
 			size: 0.9d
 			tasks: [{
@@ -502,33 +515,31 @@
 				title: "Design circuits before treating electricity as solved"
 				type: "checkmark"
 			}]
+			title: "Control Cell"
 			x: 3.96d
 			y: 2.8d
-			description: ["Use electrical casing to merge board work with storage and control planning. This is where separate machine lanes start sharing one logic stack."]
 		}
-,
 		{
 			dependencies: ["4350E20F074AF6C8"]
-			id: "9A87AA8FEFDE0A57"
-			title: "Factory Cell"
+			description: ["Lay out assembly as a real machine cell with input, output, and movement planned. That makes the late board route much easier to maintain."]
 			icon: "pneumaticcraft:assembly_platform"
+			id: "734CA3E97AF380D7"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
-				id: "A635699F44F97CB1"
+				id: "318B26BEE0C92F05"
 				title: "Lay out controller, platform, laser, and drill"
 				type: "checkmark"
 			}]
+			title: "Factory Cell"
 			x: 3.96d
 			y: -4.8d
-			description: ["Lay out assembly as a real machine cell with input, output, and movement planned. That makes the late board route much easier to maintain."]
 		}
-,
 		{
 			dependencies: ["79111EEB3696ADBC"]
-			id: "A878C5383008D1C5"
-			title: "Local AE"
+			description: ["Use the networked tier to sharpen one base at a time. AE2 works best when each storage network has a clear local job."]
 			icon: "ae2:controller"
+			id: "77AEFD6DD471382F"
 			shape: "diamond"
 			size: 0.9d
 			tasks: [{
@@ -536,16 +547,15 @@
 				title: "Limit AE to local bases before intersite control"
 				type: "checkmark"
 			}]
+			title: "Local AE"
 			x: 8.71d
 			y: 2.3d
-			description: ["Use the networked tier to sharpen one base at a time. AE2 works best when each storage network has a clear local job."]
 		}
-,
 		{
 			dependencies: ["71781B17892A20AF"]
-			id: "2B0D44C517A6164A"
-			title: "Launch Cell"
+			description: ["Connect stellar casing to real launch prep: rocket parts, oxygen, recovery supplies, and the item you are traveling to bring back."]
 			icon: "minecraft:firework_rocket"
+			id: "2B0D44C517A6164A"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
@@ -553,9 +563,9 @@
 				title: "Tie space casing to launch prep"
 				type: "checkmark"
 			}]
+			title: "Launch Cell"
 			x: 7.13d
 			y: -4.7d
-			description: ["Connect stellar casing to real launch prep: rocket parts, oxygen, recovery supplies, and the item you are traveling to bring back."]
 		}
 	]
 	title: "Casings"

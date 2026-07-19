@@ -4,14 +4,20 @@
 	filename: "blood_and_slate_magic"
 	group: "5B6E48C1A9D207F3"
 	icon: "bloodmagic:weakbloodorb"
-	id: "F6892933A4710E38"
+	id: "6AB85E2C64BA20F6"
 	order_index: 3
 	quest_links: [ ]
 	quests: [
 		{
-			id: "5E8C58F53FE60C34"
-			title: "Life"
+			description: ["Start Blood Magic with a still-beating heart from a real run. That keeps the system tied to survival risk instead of making it feel free."]
 			icon: "rpgstats:still_beating_heart"
+			id: "5E8C58F53FE60C34"
+			rewards: [{
+				count: 4
+				id: "52A61DDCDA53ABB6"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			shape: "diamond"
 			size: 1.2d
 			tasks: [{
@@ -19,306 +25,305 @@
 				item: "rpgstats:still_beating_heart"
 				type: "item"
 			}]
+			title: "Life"
 			x: -6.34d
 			y: 0.0d
-			rewards: [{ id: "52A61DDCDA53ABB6" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Start Blood Magic with a still-beating heart from a real run. That keeps the system tied to survival risk instead of making it feel free."]
 		}
 		{
 			dependencies: ["5E8C58F53FE60C34"]
-			id: "58A2AE3B417830D2"
-			title: "Altar"
+			description: ["Build the altar as a workspace you will return to often. Leave room for storage, safe sacrifice, and later runes before you crowd it in."]
 			icon: "bloodmagic:altar"
+			id: "58A2AE3B417830D2"
 			shape: "rsquare"
 			tasks: [{
 				id: "699C640AB41619E5"
 				item: "bloodmagic:altar"
 				type: "item"
 			}]
+			title: "Altar"
 			x: -4.75d
 			y: 0.0d
-			description: ["Build the altar as a workspace you will return to often. Leave room for storage, safe sacrifice, and later runes before you crowd it in."]
 		}
 		{
 			dependencies: ["58A2AE3B417830D2"]
-			id: "D513EA0E9E295123"
-			title: "Orb"
+			description: ["Make the weak orb as soon as the altar is stable. It is the item that turns random blood cost into something you can control."]
 			icon: "bloodmagic:weakbloodorb"
+			id: "31E6FB9F5C95FDC3"
+			rewards: [{
+				count: 4
+				id: "5295F392881D61A8"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.1d
 			tasks: [{
-				id: "8728026E96715F0B"
+				id: "7CB4CFC4524F8B20"
 				item: "bloodmagic:weakbloodorb"
 				type: "item"
 			}]
+			title: "Orb"
 			x: -3.17d
 			y: 0.0d
-			rewards: [{ id: "5295F392881D61A8" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Make the weak orb as soon as the altar is stable. It is the item that turns random blood cost into something you can control."]
 		}
 		{
-			dependencies: ["D513EA0E9E295123"]
-			id: "60F64C34880C7515"
-			title: "Knife"
+			description: ["The sacrificial knife lets you pay health on purpose instead of waiting for accidents. Use it only when food, safety, and LP reading are already under control."]
 			icon: "bloodmagic:sacrificialdagger"
+			id: "60F64C34880C7515"
 			shape: "rsquare"
 			tasks: [{
-				id: "C41643613E27056D"
+				id: "26CD4855391549CF"
 				item: "bloodmagic:sacrificialdagger"
 				type: "item"
 			}]
+			title: "Knife"
 			x: -1.58d
 			y: -3.0d
-			description: ["The sacrificial knife lets you pay health on purpose instead of waiting for accidents. Use it only when food, safety, and LP reading are already under control."]
 		}
 		{
-			dependencies: ["D513EA0E9E295123"]
-			id: "830ECC6DF2B4B54E"
-			title: "Blank"
+			description: ["Blank slates are your first durable Blood Magic output. Once you can make them on purpose, the altar has become a real production surface."]
 			icon: "bloodmagic:blankslate"
+			id: "0613A919D876B4FA"
 			shape: "rsquare"
 			tasks: [{
-				id: "B9EEFA3C81651012"
+				id: "4F1DD0FBDC19A13A"
 				item: "bloodmagic:blankslate"
 				type: "item"
 			}]
+			title: "Blank"
 			x: -1.58d
 			y: 0.0d
-			description: ["Blank slates are your first durable Blood Magic output. Once you can make them on purpose, the altar has become a real production surface."]
 		}
 		{
-			dependencies: ["830ECC6DF2B4B54E"]
-			id: "6872D96759A68336"
-			title: "Rune"
+			description: ["Runes are how you tune the altar instead of simply owning it. Add them when you need better speed, capacity, or safer repeated work."]
 			icon: "bloodmagic:blankrune"
+			id: "6872D96759A68336"
 			shape: "rsquare"
 			tasks: [{
-				id: "C02845A11E862738"
+				id: "62F1918040A4BF64"
 				item: "bloodmagic:blankrune"
 				type: "item"
 			}]
+			title: "Rune"
 			x: 0.0d
 			y: 0.0d
-			description: ["Runes are how you tune the altar instead of simply owning it. Add them when you need better speed, capacity, or safer repeated work."]
 		}
 		{
-			dependencies: ["830ECC6DF2B4B54E"]
-			id: "40943AEFED5981B5"
-			title: "Divination"
+			description: ["Make the divination sigil early and actually use it. Blood Magic gets much less punishing once you stop guessing about LP."]
 			icon: "bloodmagic:divinationsigil"
+			id: "40943AEFED5981B5"
 			shape: "rsquare"
 			tasks: [{
 				id: "334E1EDC5E330D32"
 				item: "bloodmagic:divinationsigil"
 				type: "item"
 			}]
+			title: "Divination"
 			x: 0.0d
 			y: -3.0d
-			description: ["Make the divination sigil early and actually use it. Blood Magic gets much less punishing once you stop guessing about LP."]
 		}
 		{
 			dependencies: ["6872D96759A68336"]
-			id: "EDFF6FCCAC8EF9E5"
-			title: "Reinforce"
+			description: ["Reinforced slates prove you can hold a larger LP cost steady. They are the point where Blood Magic starts unlocking stronger cross-magic work."]
 			icon: "bloodmagic:reinforcedslate"
+			id: "0EEBB51DF53708AC"
+			rewards: [{
+				count: 4
+				id: "3CD8631CE871DD10"
+				item: "createdeco:copper_coin"
+				type: "item"
+			}]
 			shape: "rsquare"
 			tasks: [{
 				id: "73F4BA905253CC2B"
 				item: "bloodmagic:reinforcedslate"
 				type: "item"
 			}]
+			title: "Reinforce"
 			x: 1.58d
 			y: 0.0d
-			rewards: [{ id: "B68214BF84F45752" type: "ftbquests:item" item: "createdeco:copper_coin" count: 4 }]
-			description: ["Reinforced slates prove you can hold a larger LP cost steady. They are the point where Blood Magic starts unlocking stronger cross-magic work."]
 		}
 		{
-			dependencies: ["EDFF6FCCAC8EF9E5"]
-			id: "DD5360E63AA1F7A3"
-			title: "Alchemy"
+			description: ["Use Blood Alchemy when you want deliberate, high-yield manual batches. It is good for efficiency, not for skipping the rest of the production chain."]
 			icon: "bloodmagic:alchemytable"
+			id: "690653CCFA40BA34"
 			shape: "rsquare"
 			tasks: [{
-				id: "B02E4404DD13F0F1"
+				id: "40751042B2709B24"
 				item: "bloodmagic:alchemytable"
 				type: "item"
 			}]
+			title: "Alchemy"
 			x: 1.58d
 			y: -3.0d
-			description: ["Use Blood Alchemy when you want deliberate, high-yield manual batches. It is good for efficiency, not for skipping the rest of the production chain."]
 		}
 		{
-			dependencies: ["EDFF6FCCAC8EF9E5" "DD5360E63AA1F7A3"]
-			id: "11A8E946F5842F9D"
-			title: "Apprentice"
+			description: ["Treat the apprentice orb as a commitment check. If this upgrade feels expensive, that means the altar loop is still doing its job."]
 			icon: "bloodmagic:apprenticebloodorb"
+			id: "11A8E946F5842F9D"
 			shape: "rsquare"
 			tasks: [{
 				id: "19799AAE5BB0AF05"
 				item: "bloodmagic:apprenticebloodorb"
 				type: "item"
 			}]
+			title: "Apprentice"
 			x: 3.17d
 			y: -1.5d
-			description: ["Treat the apprentice orb as a commitment check. If this upgrade feels expensive, that means the altar loop is still doing its job."]
 		}
 		{
 			dependencies: ["11A8E946F5842F9D"]
-			id: "9A82772C59AEEF55"
-			title: "Infuse"
+			description: ["Infused slates are where Blood Magic starts feeding chemistry and hybrid magic routes. Make them once you can keep LP stable through repeated jobs."]
 			icon: "bloodmagic:infusedslate"
+			id: "5C0D4416A56CB7AD"
 			shape: "rsquare"
 			tasks: [{
-				id: "DC080287212B09EB"
+				id: "3D955D16302B1836"
 				item: "bloodmagic:infusedslate"
 				type: "item"
 			}]
+			title: "Infuse"
 			x: 4.75d
 			y: -1.5d
-			description: ["Infused slates are where Blood Magic starts feeding chemistry and hybrid magic routes. Make them once you can keep LP stable through repeated jobs."]
 		}
 		{
-			dependencies: ["9A82772C59AEEF55"]
-			id: "B0B81738655E1CBB"
-			title: "Ritual"
+			description: ["Leave room for rituals before you need them. They are construction projects with footprints and upkeep, not tiny upgrades you cram beside the altar."]
 			icon: "bloodmagic:masterritualstone"
+			id: "317BC9C380464AC5"
 			shape: "rsquare"
 			tasks: [{
 				id: "0ABB72296ADEC6AE"
 				item: "bloodmagic:masterritualstone"
 				type: "item"
 			}]
+			title: "Ritual"
 			x: 4.75d
 			y: -4.0d
-			description: ["Leave room for rituals before you need them. They are construction projects with footprints and upkeep, not tiny upgrades you cram beside the altar."]
 		}
 		{
-			dependencies: ["9A82772C59AEEF55"]
-			id: "804201B62AF34667"
-			title: "Magician"
+			description: ["The magician orb means your altar can handle larger LP jobs. Start checking how many slates, runes, or rituals your current LP supply can support."]
 			icon: "bloodmagic:magicianbloodorb"
+			id: "262B85BF882000B8"
 			shape: "rsquare"
 			tasks: [{
 				id: "50FD53E773FB9A99"
 				item: "bloodmagic:magicianbloodorb"
 				type: "item"
 			}]
+			title: "Magician"
 			x: 6.34d
 			y: -1.5d
-			description: ["The magician orb means your altar can handle larger LP jobs. Start checking how many slates, runes, or rituals your current LP supply can support."]
 		}
 		{
-			dependencies: ["804201B62AF34667"]
-			id: "64EE84D0DB9C887D"
-			title: "Demon"
+			description: ["Demon slates mark the dangerous side of the tree. Do not rush them until safety, supply, and containment are all stronger than the craft itself."]
 			icon: "bloodmagic:demonslate"
+			id: "64EE84D0DB9C887D"
 			shape: "hexagon"
 			size: 1.1d
 			tasks: [{
-				id: "CA53C5147952A94B"
+				id: "330574F6455665BC"
 				item: "bloodmagic:demonslate"
 				type: "item"
 			}]
+			title: "Demon"
 			x: 7.55d
 			y: -1.1d
-			description: ["Demon slates mark the dangerous side of the tree. Do not rush them until safety, supply, and containment are all stronger than the craft itself."]
 		}
 		{
 			dependencies: ["64EE84D0DB9C887D"]
-			id: "7537B1C6F801B0BA"
-			title: "Ethereal"
+			description: ["Ethereal slates are a late Blood Magic material. Expect to use them when high-tier Blood crafts start asking for networked storage, refined source work, or stronger altar support."]
 			icon: "bloodmagic:etherealslate"
+			id: "7537B1C6F801B0BA"
 			shape: "octagon"
 			size: 1.2d
 			tasks: [{
-				id: "CBAADCE38983691C"
+				id: "675F2484F1745C4F"
 				item: "bloodmagic:etherealslate"
 				type: "item"
 			}]
+			title: "Ethereal"
 			x: 9.25d
 			y: -1.7d
-			description: ["Ethereal slates are a late Blood Magic material. Expect to use them when high-tier Blood crafts start asking for networked storage, refined source work, or stronger altar support."]
 		}
 		{
 			dependencies: ["7537B1C6F801B0BA"]
-			id: "498AA8DA50E8CA57"
-			title: "Archmage"
+			description: ["Craft the archmage orb after your altar room, LP storage, runes, and ritual space can support repeated high-cost work."]
 			icon: "bloodmagic:archmagebloodorb"
+			id: "498AA8DA50E8CA57"
 			shape: "rsquare"
 			tasks: [{
 				id: "4E6EDAFDB7EF1CCE"
 				item: "bloodmagic:archmagebloodorb"
 				type: "item"
 			}]
+			title: "Archmage"
 			x: 11.05d
 			y: -1.2d
-			description: ["Craft the archmage orb after your altar room, LP storage, runes, and ritual space can support repeated high-cost work."]
 		}
 		{
 			dependencies: ["11A8E946F5842F9D"]
-			id: "8D256F0B203C6C80"
-			title: "Tome"
+			description: ["Tome of Blood is where Ars spellbooks start using Blood Magic costs and materials."]
 			icon: "tomeofblood:novice_tome_of_blood"
+			id: "5DC52A10A3234F87"
 			shape: "rsquare"
 			tasks: [{
 				id: "6487A795E31495B6"
 				item: "tomeofblood:novice_tome_of_blood"
 				type: "item"
 			}]
+			title: "Tome"
 			x: 6.34d
 			y: 2.0d
-			description: ["Tome of Blood is where Ars spellbooks start using Blood Magic costs and materials."]
 		}
 		{
-			dependencies: ["8D256F0B203C6C80"]
-			id: "79D168E33055BB18"
-			title: "Source"
+			description: ["Keep source work tied to Blood proof so it does not drift into a separate free magic lane."]
 			icon: "ars_nouveau:source_gem"
+			id: "79D168E33055BB18"
 			shape: "rsquare"
 			tasks: [{
-				id: "C889E18E86143C72"
+				id: "7476BD24BAC7BC87"
 				item: "ars_nouveau:source_gem"
 				type: "item"
 			}]
+			title: "Source"
 			x: 7.92d
 			y: 2.0d
-			description: ["Keep source work tied to Blood proof so it does not drift into a separate free magic lane."]
 		}
 		{
 			dependencies: ["79D168E33055BB18"]
-			id: "828C1B8953E26A0B"
-			title: "Binding"
+			description: ["Binding and snares make entity risk part of late magic, not just crafting tax."]
 			icon: "bloodmagic:soulsnare"
+			id: "003FF64190FF62B5"
 			shape: "rsquare"
 			tasks: [{
 				id: "164BC61C3EF282B4"
 				item: "bloodmagic:soulsnare"
 				type: "item"
 			}]
+			title: "Binding"
 			x: 9.5d
 			y: 2.0d
-			description: ["Binding and snares make entity risk part of late magic, not just crafting tax."]
 		}
 		{
-			dependencies: ["828C1B8953E26A0B" "498AA8DA50E8CA57"]
-			id: "AD63D83FF48B29EB"
-			title: "Sigil"
+			dependencies: ["498AA8DA50E8CA57"]
+			description: ["Use utility sigils after you can read LP costs and refill the network. They are tools to carry once you know what each use spends."]
 			icon: "bloodmagic:sigilofholding"
+			id: "27FD8BAD1CEBFEAF"
 			shape: "rsquare"
 			tasks: [{
-				id: "D4ADCE410A0B12AC"
+				id: "0352561B31275DF7"
 				item: "bloodmagic:sigilofholding"
 				type: "item"
 			}]
+			title: "Sigil"
 			x: 11.09d
 			y: 2.0d
-			description: ["Use utility sigils after you can read LP costs and refill the network. They are tools to carry once you know what each use spends."]
-		},
+		}
 		{
 			dependencies: ["5E8C58F53FE60C34"]
-			id: "85867C739412F546"
-			title: "Body Cost"
+			description: ["Prepare food, regeneration, storage, and a safe sacrifice spot before you push the altar. Blood Magic should have a room, not just one exposed block."]
 			icon: "minecraft:bone"
+			id: "1859866121F1BF1F"
 			shape: "diamond"
 			size: 0.9d
 			tasks: [{
@@ -326,16 +331,15 @@
 				title: "Prepare food, regen, and safe sacrifice space"
 				type: "checkmark"
 			}]
+			title: "Body Cost"
 			x: -6.34d
 			y: -2.1d
-			description: ["Prepare food, regeneration, storage, and a safe sacrifice spot before you push the altar. Blood Magic should have a room, not just one exposed block."]
 		}
-,
 		{
 			dependencies: ["58A2AE3B417830D2"]
-			id: "049790EBD178F0D0"
-			title: "Altar Room"
+			description: ["Build access, storage, and safety around the altar so Blood Magic becomes a real room instead of one dangerous block."]
 			icon: "minecraft:polished_blackstone"
+			id: "049790EBD178F0D0"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
@@ -343,16 +347,14 @@
 				title: "Build access, storage, and safety around the altar"
 				type: "checkmark"
 			}]
+			title: "Altar Room"
 			x: -4.75d
 			y: 2.1d
-			description: ["Build access, storage, and safety around the altar so Blood Magic becomes a real room instead of one dangerous block."]
 		}
-,
 		{
-			dependencies: ["D513EA0E9E295123"]
-			id: "7DB505F136234CC3"
-			title: "LP Ledger"
+			description: ["Read altar and network LP before every expensive craft. If you cannot see the numbers, stop and make the tools that show them."]
 			icon: "bloodmagic:divinationsigil"
+			id: "7DB505F136234CC3"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
@@ -360,16 +362,14 @@
 				title: "Read network and altar LP before crafting"
 				type: "checkmark"
 			}]
+			title: "LP Ledger"
 			x: -3.17d
 			y: -2.0d
-			description: ["Read altar and network LP before every expensive craft. If you cannot see the numbers, stop and make the tools that show them."]
 		}
-,
 		{
-			dependencies: ["830ECC6DF2B4B54E"]
-			id: "1BE39AE2584EF5CD"
-			title: "Slate Batch"
+			description: ["Batch extra stone and slates before upgrading tiers. Later crafts consume enough slates that one-at-a-time altar work will slow you down."]
 			icon: "minecraft:stone"
+			id: "1BE39AE2584EF5CD"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
@@ -377,50 +377,45 @@
 				title: "Batch slates deliberately"
 				type: "checkmark"
 			}]
+			title: "Slate Batch"
 			x: -1.58d
 			y: 2.0d
-			description: ["Batch extra stone and slates before upgrading tiers. Later crafts consume enough slates that one-at-a-time altar work will slow you down."]
 		}
-,
 		{
 			dependencies: ["6872D96759A68336"]
-			id: "36A92395D84B3358"
-			title: "Rune Plan"
+			description: ["Choose rune upgrades for the problem you actually have: speed for waiting, capacity for large crafts, or sacrifice support for safer LP supply."]
 			icon: "bloodmagic:speedrune"
+			id: "36A92395D84B3358"
 			shape: "diamond"
 			size: 0.9d
 			tasks: [{
-				id: "B0090500E56838FB"
+				id: "26463525BF948248"
 				title: "Choose speed, capacity, and sacrifice priorities"
 				type: "checkmark"
 			}]
+			title: "Rune Plan"
 			x: 0.0d
 			y: 2.1d
-			description: ["Choose rune upgrades for the problem you actually have: speed for waiting, capacity for large crafts, or sacrifice support for safer LP supply."]
 		}
-,
 		{
-			dependencies: ["DD5360E63AA1F7A3"]
-			id: "7E8A9F8119724306"
-			title: "Manual Yield"
+			description: ["Keep Blood Alchemy in its own visible corner of the room. Seeing those tools together makes batch work much easier to repeat."]
 			icon: "minecraft:glass_bottle"
+			id: "7E8A9F8119724306"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
-				id: "DCE372BA2C7FCFAA"
+				id: "29A201EA0D6A5163"
 				title: "Use alchemy for deliberate high-yield work"
 				type: "checkmark"
 			}]
+			title: "Manual Yield"
 			x: 1.58d
 			y: -5.1d
-			description: ["Keep Blood Alchemy in its own visible corner of the room. Seeing those tools together makes batch work much easier to repeat."]
 		}
-,
 		{
-			dependencies: ["B0B81738655E1CBB"]
-			id: "9CAA8CCE6C26D2BD"
-			title: "Ritual Space"
+			description: ["Leave room for rituals before you craft them. They work best when you treat them like construction projects with real footprints."]
 			icon: "bloodmagic:ritualstone"
+			id: "50F5AAEA357DFD52"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
@@ -428,33 +423,30 @@
 				title: "Leave room for ritual footprints"
 				type: "checkmark"
 			}]
+			title: "Ritual Space"
 			x: 4.75d
 			y: -6.0d
-			description: ["Leave room for rituals before you craft them. They work best when you treat them like construction projects with real footprints."]
 		}
-,
 		{
 			dependencies: ["64EE84D0DB9C887D"]
-			id: "AEEEF2B148661626"
-			title: "Danger Proof"
+			description: ["Set aside containment and escape space before demon-tier work. Soulsnares and late slates should happen where a mistake will not wreck your base."]
 			icon: "bloodmagic:soulsnare"
+			id: "5861192D7F728ADB"
 			shape: "diamond"
 			size: 0.9d
 			tasks: [{
-				id: "DA33FC4C3BA585FF"
+				id: "5B6CF2108DE6BD89"
 				title: "Bind risk into the late slate route"
 				type: "checkmark"
 			}]
+			title: "Danger Proof"
 			x: 7.7d
 			y: -3.85d
-			description: ["Set aside containment and escape space before demon-tier work. Soulsnares and late slates should happen where a mistake will not wreck your base."]
 		}
-,
 		{
-			dependencies: ["8D256F0B203C6C80"]
-			id: "BBBEDE855BE099F6"
-			title: "Spell Bridge"
+			description: ["Give the Ars-to-Blood bridge its own materials and storage. Keep the tome, source gems, snares, and orb work together so the connection is easy to repeat."]
 			icon: "ars_nouveau:worn_notebook"
+			id: "6BB41AF49257C028"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
@@ -462,26 +454,24 @@
 				title: "Bridge Ars knowledge through Blood Magic"
 				type: "checkmark"
 			}]
+			title: "Spell Bridge"
 			x: 6.34d
 			y: 4.0d
-			description: ["Give the Ars-to-Blood bridge its own materials and storage. Keep the tome, source gems, snares, and orb work together so the connection is easy to repeat."]
 		}
-,
 		{
-			dependencies: ["AD63D83FF48B29EB"]
-			id: "A60F5971239E5215"
-			title: "Utility Rack"
+			description: ["Late utility should come back through the main Blood room instead of splintering into disconnected gadgets. That keeps the route readable and easier to maintain."]
 			icon: "bloodmagic:sigilofholding"
+			id: "77D44C310C119803"
 			shape: "rsquare"
 			size: 0.9d
 			tasks: [{
-				id: "CF04CFCBB5841664"
+				id: "6AFE5A1C57BD3596"
 				title: "Organize sigils as earned tools"
 				type: "checkmark"
 			}]
+			title: "Utility Rack"
 			x: 11.09d
 			y: 0.0d
-			description: ["Late utility should come back through the main Blood room instead of splintering into disconnected gadgets. That keeps the route readable and easier to maintain."]
 		}
 	]
 	title: "Blood and Slate Magic"

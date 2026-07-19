@@ -3,1936 +3,3136 @@
 	default_quest_shape: ""
 	filename: "completionist_armour_sets"
 	group: "0D8C0A1E9F5B4C72"
-	icon: "minecraft:iron_chestplate"
-	id: "9F0B7C12DE45A368"
-	order_index: 15
+	icon: {
+		Count: 1
+		id: "minecraft:iron_chestplate"
+		tag: {
+			Damage: 0
+		}
+	}
+	id: "37C8B8F3AF06F3C6"
+	order_index: 5
 	quest_links: [ ]
 	quests: [
 		{
-			id: "E0273E7314039128"
-			title: "aether"
-			icon: "aether:gravitite_boots"
+			description: ["2 starter stubs."]
+			icon: {
+				Count: 1
+				id: "aether:gravitite_boots"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "77408B054C44BD25"
 			shape: "square"
 			size: 0.8d
+			tasks: [{
+				id: "160F93E629AB65C4"
+				title: "aether"
+				type: "checkmark"
+			}]
+			title: "aether"
 			x: 0.0d
 			y: 0.0d
-			tasks: [
-				{
-					id: "160F93E629AB65C4"
-					type: "checkmark"
-					title: "aether"
-				}
-			]
-			rewards: [ ]
-			description: ["2 starter stubs."]
 		}
 		{
+			icon: {
+				Count: 1
+				id: "aether:gravitite_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "42F9BEDC674154A9"
-			title: "All Armour Sets: Gravitite"
-			icon: "aether:gravitite_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 1.5d
-			y: 0.0d
 			tasks: [
 				{
 					id: "06C1FFEA68F9CAF3"
+					item: {
+						Count: 1
+						id: "aether:gravitite_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "aether:gravitite_boots"
-					count: 1
 				}
 				{
 					id: "196C46504CB5B80C"
+					item: {
+						Count: 1
+						id: "aether:gravitite_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "aether:gravitite_chestplate"
-					count: 1
 				}
 				{
-					id: "B01647C5E9CB44F3"
+					id: "615CEB5A59F98AD5"
+					item: {
+						Count: 1
+						id: "aether:gravitite_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "aether:gravitite_helmet"
-					count: 1
 				}
 				{
-					id: "8E67EA3452DE783F"
+					id: "7F3DC0E10689888E"
+					item: {
+						Count: 1
+						id: "aether:gravitite_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "aether:gravitite_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Gravitite"
+			x: 1.5d
+			y: 0.0d
 		}
 		{
-			id: "9D7CE3041E45F495"
-			title: "All Armour Sets: Zanite"
-			icon: "aether:zanite_chestplate"
+			icon: {
+				Count: 1
+				id: "aether:zanite_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "32C4671C84EB97A0"
 			shape: "rsquare"
 			size: 1.0d
-			x: 2.75d
-			y: 0.0d
 			tasks: [
 				{
-					id: "91CE4B9AF0DE2EB4"
+					id: "6C0F7225DC43F459"
+					item: {
+						Count: 1
+						id: "aether:zanite_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "aether:zanite_boots"
-					count: 1
 				}
 				{
 					id: "4042B11E9A4C75D5"
+					item: {
+						Count: 1
+						id: "aether:zanite_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "aether:zanite_chestplate"
-					count: 1
 				}
 				{
 					id: "416354286BB2DC59"
+					item: {
+						Count: 1
+						id: "aether:zanite_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "aether:zanite_helmet"
-					count: 1
 				}
 				{
-					id: "93B936EACF0AC977"
+					id: "6FAC278777C163AF"
+					item: {
+						Count: 1
+						id: "aether:zanite_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "aether:zanite_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Zanite"
+			x: 2.75d
+			y: 0.0d
 		}
 		{
+			description: ["3 starter stubs."]
+			icon: {
+				Count: 1
+				id: "ars_nouveau:arcanist_boots"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "4D4819F35D803960"
-			title: "ars_nouveau"
-			icon: "ars_nouveau:arcanist_boots"
 			shape: "square"
 			size: 0.8d
+			tasks: [{
+				id: "3A24CFF9F30FC022"
+				title: "ars_nouveau"
+				type: "checkmark"
+			}]
+			title: "ars_nouveau"
 			x: 0.0d
 			y: 3.25d
-			tasks: [
-				{
-					id: "8D1645AD5D8F1056"
-					type: "checkmark"
-					title: "ars_nouveau"
-				}
-			]
-			rewards: [ ]
-			description: ["3 starter stubs."]
 		}
 		{
-			id: "8F4728E4C13F52C3"
-			title: "All Armour Sets: Arcanist"
-			icon: "ars_nouveau:arcanist_robes"
+			icon: {
+				Count: 1
+				id: "ars_nouveau:arcanist_robes"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "7CA5D116E8A937AC"
 			shape: "rsquare"
 			size: 1.0d
-			x: 1.5d
-			y: 3.25d
 			tasks: [
 				{
-					id: "A09E086BCB10B6FB"
+					id: "425344CF1EE05A1A"
+					item: {
+						Count: 1
+						id: "ars_nouveau:arcanist_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "ars_nouveau:arcanist_boots"
-					count: 1
 				}
 				{
 					id: "5EB2098CC5197BF6"
+					item: {
+						Count: 1
+						id: "ars_nouveau:arcanist_hood"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "ars_nouveau:arcanist_hood"
-					count: 1
 				}
 				{
-					id: "9208A462EA805F9F"
+					id: "058670DE4A1EC285"
+					item: {
+						Count: 1
+						id: "ars_nouveau:arcanist_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "ars_nouveau:arcanist_leggings"
-					count: 1
 				}
 				{
-					id: "FD8F9E6E6B2C61FC"
+					id: "450B562951B1D540"
+					item: {
+						Count: 1
+						id: "ars_nouveau:arcanist_robes"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "ars_nouveau:arcanist_robes"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Arcanist"
+			x: 1.5d
+			y: 3.25d
 		}
 		{
+			icon: {
+				Count: 1
+				id: "ars_nouveau:battlemage_robes"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "3BA2A02DCD2E8CB7"
-			title: "All Armour Sets: Battlemage"
-			icon: "ars_nouveau:battlemage_robes"
 			shape: "rsquare"
 			size: 1.0d
-			x: 2.75d
-			y: 3.25d
 			tasks: [
 				{
-					id: "BD0F1A994C5C7021"
+					id: "611698A69E8EDB62"
+					item: {
+						Count: 1
+						id: "ars_nouveau:battlemage_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "ars_nouveau:battlemage_boots"
-					count: 1
 				}
 				{
-					id: "BD44BB4A9CF5D76D"
+					id: "57EE7F9060051981"
+					item: {
+						Count: 1
+						id: "ars_nouveau:battlemage_hood"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "ars_nouveau:battlemage_hood"
-					count: 1
 				}
 				{
 					id: "60AAEC82097B80D5"
+					item: {
+						Count: 1
+						id: "ars_nouveau:battlemage_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "ars_nouveau:battlemage_leggings"
-					count: 1
 				}
 				{
-					id: "C69CD15675FBC55B"
+					id: "7360E92B9188D5A3"
+					item: {
+						Count: 1
+						id: "ars_nouveau:battlemage_robes"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "ars_nouveau:battlemage_robes"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Battlemage"
+			x: 2.75d
+			y: 3.25d
 		}
 		{
-			id: "9A35179EF5A2F133"
-			title: "All Armour Sets: Sorcerer"
-			icon: "ars_nouveau:sorcerer_robes"
+			icon: {
+				Count: 1
+				id: "ars_nouveau:sorcerer_robes"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "6DC0193BBCDB3396"
 			shape: "rsquare"
 			size: 1.0d
-			x: 4.0d
-			y: 3.25d
 			tasks: [
 				{
-					id: "DCB942565ADB2B93"
+					id: "2C8D0653EE86FF41"
+					item: {
+						Count: 1
+						id: "ars_nouveau:sorcerer_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "ars_nouveau:sorcerer_boots"
-					count: 1
 				}
 				{
-					id: "C431F08789D7F72F"
+					id: "64307BBBA9116A57"
+					item: {
+						Count: 1
+						id: "ars_nouveau:sorcerer_hood"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "ars_nouveau:sorcerer_hood"
-					count: 1
 				}
 				{
 					id: "0E076E1A7CBD32EF"
+					item: {
+						Count: 1
+						id: "ars_nouveau:sorcerer_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "ars_nouveau:sorcerer_leggings"
-					count: 1
 				}
 				{
-					id: "E348C2A2C02514E7"
+					id: "37B2CEB68DCD7E39"
+					item: {
+						Count: 1
+						id: "ars_nouveau:sorcerer_robes"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "ars_nouveau:sorcerer_robes"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Sorcerer"
+			x: 4.0d
+			y: 3.25d
 		}
 		{
-			id: "FAF985F0CA67F395"
-			title: "cold_sweat"
-			icon: "cold_sweat:chameleon_boots"
+			description: ["3 starter stubs."]
+			icon: {
+				Count: 1
+				id: "cold_sweat:chameleon_boots"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "6CCE88753BA01B60"
 			shape: "square"
 			size: 0.8d
+			tasks: [{
+				id: "65AE361A6F59B333"
+				title: "cold_sweat"
+				type: "checkmark"
+			}]
+			title: "cold_sweat"
 			x: 0.0d
 			y: 6.5d
-			tasks: [
-				{
-					id: "A71E5ED299B36F9B"
-					type: "checkmark"
-					title: "cold_sweat"
-				}
-			]
-			rewards: [ ]
-			description: ["3 starter stubs."]
 		}
 		{
-			id: "D3A4D760ED4F3F59"
-			title: "All Armour Sets: Chameleon"
-			icon: "cold_sweat:chameleon_chestplate"
+			icon: {
+				Count: 1
+				id: "cold_sweat:chameleon_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "3DFCE30CDA4E02AB"
 			shape: "rsquare"
 			size: 1.0d
-			x: 1.5d
-			y: 6.5d
 			tasks: [
 				{
 					id: "0F8C2376D32520D0"
+					item: {
+						Count: 1
+						id: "cold_sweat:chameleon_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "cold_sweat:chameleon_boots"
-					count: 1
 				}
 				{
 					id: "6F292C0A56747398"
+					item: {
+						Count: 1
+						id: "cold_sweat:chameleon_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "cold_sweat:chameleon_chestplate"
-					count: 1
 				}
 				{
 					id: "699E789852A44F6F"
+					item: {
+						Count: 1
+						id: "cold_sweat:chameleon_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "cold_sweat:chameleon_helmet"
-					count: 1
 				}
 				{
-					id: "99DD282541D24130"
+					id: "7FDB1D7A4C6661F2"
+					item: {
+						Count: 1
+						id: "cold_sweat:chameleon_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "cold_sweat:chameleon_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Chameleon"
+			x: 1.5d
+			y: 6.5d
 		}
 		{
-			id: "D46279E4348CBF3B"
-			title: "All Armour Sets: Goat Fur"
-			icon: "cold_sweat:goat_fur_chestplate"
+			icon: {
+				Count: 1
+				id: "cold_sweat:goat_fur_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "7C14F410468681CF"
 			shape: "rsquare"
 			size: 1.0d
-			x: 2.75d
-			y: 6.5d
 			tasks: [
 				{
 					id: "64713C64EB7B3717"
+					item: {
+						Count: 1
+						id: "cold_sweat:goat_fur_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "cold_sweat:goat_fur_boots"
-					count: 1
 				}
 				{
-					id: "FFD7F0FB0E359DE7"
+					id: "6C2DDB63764B59DC"
+					item: {
+						Count: 1
+						id: "cold_sweat:goat_fur_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "cold_sweat:goat_fur_chestplate"
-					count: 1
 				}
 				{
-					id: "BAB19465965F654E"
+					id: "00FF398AF0A1BA6D"
+					item: {
+						Count: 1
+						id: "cold_sweat:goat_fur_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "cold_sweat:goat_fur_helmet"
-					count: 1
 				}
 				{
-					id: "EEB3182C74FAFB4C"
+					id: "73D32832136800B3"
+					item: {
+						Count: 1
+						id: "cold_sweat:goat_fur_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "cold_sweat:goat_fur_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Goat Fur"
+			x: 2.75d
+			y: 6.5d
 		}
 		{
-			id: "F741B55BF04104FA"
-			title: "All Armour Sets: Hoglin"
-			icon: "cold_sweat:hoglin_chestplate"
+			icon: {
+				Count: 1
+				id: "cold_sweat:hoglin_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "6C946F6158C1D006"
 			shape: "rsquare"
 			size: 1.0d
-			x: 4.0d
-			y: 6.5d
 			tasks: [
 				{
 					id: "4088A0E8DB82E1A3"
+					item: {
+						Count: 1
+						id: "cold_sweat:hoglin_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "cold_sweat:hoglin_boots"
-					count: 1
 				}
 				{
 					id: "236FE20DDF87B161"
+					item: {
+						Count: 1
+						id: "cold_sweat:hoglin_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "cold_sweat:hoglin_chestplate"
-					count: 1
 				}
 				{
-					id: "C68091D13A4883E1"
+					id: "2CD6FE36F605665B"
+					item: {
+						Count: 1
+						id: "cold_sweat:hoglin_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "cold_sweat:hoglin_helmet"
-					count: 1
 				}
 				{
-					id: "CE38F39B206BECB1"
+					id: "476EE6575ECFAA20"
+					item: {
+						Count: 1
+						id: "cold_sweat:hoglin_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "cold_sweat:hoglin_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Hoglin"
+			x: 4.0d
+			y: 6.5d
 		}
 		{
-			id: "BD4361358CDB9498"
-			title: "create"
-			icon: "create:cardboard_boots"
+			description: ["3 starter stubs."]
+			icon: {
+				Count: 1
+				id: "create:cardboard_boots"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "4FD6149A7B3C237C"
 			shape: "square"
 			size: 0.8d
+			tasks: [{
+				id: "3157F5A72FE1957B"
+				title: "create"
+				type: "checkmark"
+			}]
+			title: "create"
 			x: 0.0d
 			y: 9.75d
-			tasks: [
-				{
-					id: "3157F5A72FE1957B"
-					type: "checkmark"
-					title: "create"
-				}
-			]
-			rewards: [ ]
-			description: ["3 starter stubs."]
 		}
 		{
+			icon: {
+				Count: 1
+				id: "create:cardboard_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "7E70882AF95E83B8"
-			title: "All Armour Sets: Cardboard"
-			icon: "create:cardboard_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 1.5d
-			y: 9.75d
 			tasks: [
 				{
 					id: "5BD69C301E7B767E"
+					item: {
+						Count: 1
+						id: "create:cardboard_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "create:cardboard_boots"
-					count: 1
 				}
 				{
-					id: "B963320ECEEAFD4D"
+					id: "4654B8FF33EB7320"
+					item: {
+						Count: 1
+						id: "create:cardboard_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "create:cardboard_chestplate"
-					count: 1
 				}
 				{
 					id: "301537847DEE25B4"
+					item: {
+						Count: 1
+						id: "create:cardboard_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "create:cardboard_helmet"
-					count: 1
 				}
 				{
-					id: "D6FDA8C6B9D86AF1"
+					id: "7B7829DCABC756D0"
+					item: {
+						Count: 1
+						id: "create:cardboard_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "create:cardboard_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Cardboard"
+			x: 1.5d
+			y: 9.75d
 		}
 		{
-			id: "F116DA384F259D10"
-			title: "All Armour Sets: Copper Diving"
-			icon: "create:copper_diving_boots"
+			icon: {
+				Count: 1
+				id: "create:copper_diving_boots"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "4734AC8A478FEFC1"
 			shape: "rsquare"
 			size: 1.0d
-			x: 2.75d
-			y: 9.75d
 			tasks: [
 				{
-					id: "CB80863A02934B94"
+					id: "5E47067051516860"
+					item: {
+						Count: 1
+						id: "create:copper_diving_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "create:copper_diving_boots"
-					count: 1
 				}
 				{
 					id: "70866AC253A5134C"
+					item: {
+						Count: 1
+						id: "create:copper_diving_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "create:copper_diving_helmet"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Copper Diving"
+			x: 2.75d
+			y: 9.75d
 		}
 		{
-			id: "F10B0841399A6DD1"
-			title: "All Armour Sets: Netherite Diving"
-			icon: "create:netherite_diving_boots"
+			icon: {
+				Count: 1
+				id: "create:netherite_diving_boots"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "4A6CDF45277BE6A8"
 			shape: "rsquare"
 			size: 1.0d
-			x: 4.0d
-			y: 9.75d
 			tasks: [
 				{
 					id: "7DF5F00F9390F75C"
+					item: {
+						Count: 1
+						id: "create:netherite_diving_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "create:netherite_diving_boots"
-					count: 1
 				}
 				{
 					id: "44FC91F481CE29FF"
+					item: {
+						Count: 1
+						id: "create:netherite_diving_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "create:netherite_diving_helmet"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Netherite Diving"
+			x: 4.0d
+			y: 9.75d
 		}
 		{
+			description: ["2 starter stubs."]
+			icon: {
+				Count: 1
+				id: "creatingspace:advanced_spacesuit_boots"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "1EEA46410F318D18"
-			title: "creatingspace"
-			icon: "creatingspace:advanced_spacesuit_boots"
 			shape: "square"
 			size: 0.8d
+			tasks: [{
+				id: "576AE0FED937666D"
+				title: "creatingspace"
+				type: "checkmark"
+			}]
+			title: "creatingspace"
 			x: 0.0d
 			y: 13.0d
-			tasks: [
-				{
-					id: "FD1C5F28DFE51F43"
-					type: "checkmark"
-					title: "creatingspace"
-				}
-			]
-			rewards: [ ]
-			description: ["2 starter stubs."]
 		}
 		{
-			id: "FEB313931EFEE420"
-			title: "All Armour Sets: Advanced Spacesuit"
-			icon: "creatingspace:advanced_spacesuit_boots"
+			icon: {
+				Count: 1
+				id: "creatingspace:advanced_spacesuit_boots"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "1414B8C9CC825866"
 			shape: "rsquare"
 			size: 1.0d
-			x: 1.5d
-			y: 13.0d
 			tasks: [
 				{
-					id: "F3C1CDE10E86559B"
+					id: "4F225F966401E547"
+					item: {
+						Count: 1
+						id: "creatingspace:advanced_spacesuit_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "creatingspace:advanced_spacesuit_boots"
-					count: 1
 				}
 				{
 					id: "5A595C62A3F33FAC"
+					item: {
+						Count: 1
+						id: "creatingspace:advanced_spacesuit_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "creatingspace:advanced_spacesuit_helmet"
-					count: 1
 				}
 				{
-					id: "C33CA2DFEE238861"
+					id: "25340B2D869570E2"
+					item: {
+						Count: 1
+						id: "creatingspace:advanced_spacesuit_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "creatingspace:advanced_spacesuit_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Advanced Spacesuit"
+			x: 1.5d
+			y: 13.0d
 		}
 		{
+			icon: {
+				Count: 1
+				id: "creatingspace:basic_spacesuit_boots"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "43C8C68C5D0E6541"
-			title: "All Armour Sets: Basic Spacesuit"
-			icon: "creatingspace:basic_spacesuit_boots"
 			shape: "rsquare"
 			size: 1.0d
+			tasks: [
+				{
+					id: "070C4CAA1529897C"
+					item: {
+						Count: 1
+						id: "creatingspace:basic_spacesuit_boots"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "718FECE8BE63E9C0"
+					item: {
+						Count: 1
+						id: "creatingspace:basic_spacesuit_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "11FEAEAE498BAA13"
+					item: {
+						Count: 1
+						id: "creatingspace:basic_spacesuit_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "All Armour Sets: Basic Spacesuit"
 			x: 2.75d
 			y: 13.0d
-			tasks: [
-				{
-					id: "8CB847EDB8EA7E03"
-					type: "item"
-					item: "creatingspace:basic_spacesuit_boots"
-					count: 1
-				}
-				{
-					id: "EB51751A8933511C"
-					type: "item"
-					item: "creatingspace:basic_spacesuit_helmet"
-					count: 1
-				}
-				{
-					id: "B8B7D31693103F1B"
-					type: "item"
-					item: "creatingspace:basic_spacesuit_leggings"
-					count: 1
-				}
-			]
-			rewards: [ ]
 		}
 		{
-			id: "D076D21146024A60"
-			title: "deeperdarker"
-			icon: "deeperdarker:resonarium_boots"
+			description: ["2 starter stubs."]
+			icon: {
+				Count: 1
+				id: "deeperdarker:resonarium_boots"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "664C2AF6C0019B87"
 			shape: "square"
 			size: 0.8d
+			tasks: [{
+				id: "731B91F77A967E68"
+				title: "deeperdarker"
+				type: "checkmark"
+			}]
+			title: "deeperdarker"
 			x: 0.0d
 			y: 16.25d
-			tasks: [
-				{
-					id: "F0EE5C14F4A4DBF3"
-					type: "checkmark"
-					title: "deeperdarker"
-				}
-			]
-			rewards: [ ]
-			description: ["2 starter stubs."]
 		}
 		{
+			icon: {
+				Count: 1
+				id: "deeperdarker:resonarium_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "0E3204B417984C18"
-			title: "All Armour Sets: Resonarium"
-			icon: "deeperdarker:resonarium_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 1.5d
-			y: 16.25d
 			tasks: [
 				{
 					id: "345F6331E08E03FC"
+					item: {
+						Count: 1
+						id: "deeperdarker:resonarium_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "deeperdarker:resonarium_boots"
-					count: 1
 				}
 				{
 					id: "01D9291678F0A302"
+					item: {
+						Count: 1
+						id: "deeperdarker:resonarium_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "deeperdarker:resonarium_chestplate"
-					count: 1
 				}
 				{
-					id: "9BC5E4FB3D4844E4"
+					id: "786FC32EE31CF795"
+					item: {
+						Count: 1
+						id: "deeperdarker:resonarium_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "deeperdarker:resonarium_helmet"
-					count: 1
 				}
 				{
 					id: "5EDE643510CC469A"
+					item: {
+						Count: 1
+						id: "deeperdarker:resonarium_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "deeperdarker:resonarium_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Resonarium"
+			x: 1.5d
+			y: 16.25d
 		}
 		{
+			icon: {
+				Count: 1
+				id: "deeperdarker:warden_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "18026157DA903AFD"
-			title: "All Armour Sets: Warden"
-			icon: "deeperdarker:warden_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 2.75d
-			y: 16.25d
 			tasks: [
 				{
-					id: "8D40B7E935EBB325"
+					id: "01A5FC0E3FEF4AE1"
+					item: {
+						Count: 1
+						id: "deeperdarker:warden_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "deeperdarker:warden_boots"
-					count: 1
 				}
 				{
 					id: "67F726605FA033A5"
+					item: {
+						Count: 1
+						id: "deeperdarker:warden_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "deeperdarker:warden_chestplate"
-					count: 1
 				}
 				{
 					id: "139B179EC7CC5D6E"
+					item: {
+						Count: 1
+						id: "deeperdarker:warden_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "deeperdarker:warden_helmet"
-					count: 1
 				}
 				{
-					id: "B1D272E10AA403F2"
+					id: "60E8076DCBE69360"
+					item: {
+						Count: 1
+						id: "deeperdarker:warden_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "deeperdarker:warden_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Warden"
+			x: 2.75d
+			y: 16.25d
 		}
 		{
+			description: ["1 starter stubs."]
+			icon: {
+				Count: 1
+				id: "everythingcopper:copper_boots"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "49B7771C30830610"
-			title: "everythingcopper"
-			icon: "everythingcopper:copper_boots"
 			shape: "square"
 			size: 0.8d
+			tasks: [{
+				id: "788EEF5267DE27F6"
+				title: "everythingcopper"
+				type: "checkmark"
+			}]
+			title: "everythingcopper"
 			x: 0.0d
 			y: 19.5d
-			tasks: [
-				{
-					id: "788EEF5267DE27F6"
-					type: "checkmark"
-					title: "everythingcopper"
-				}
-			]
-			rewards: [ ]
-			description: ["1 starter stubs."]
 		}
 		{
+			icon: {
+				Count: 1
+				id: "everythingcopper:copper_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "5F6C8A0A31C80D21"
-			title: "All Armour Sets: Copper"
-			icon: "everythingcopper:copper_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 1.5d
-			y: 19.5d
 			tasks: [
 				{
 					id: "5764E56D6B1F3184"
+					item: {
+						Count: 1
+						id: "everythingcopper:copper_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "everythingcopper:copper_boots"
-					count: 1
 				}
 				{
 					id: "20FB4742709F32F5"
+					item: {
+						Count: 1
+						id: "everythingcopper:copper_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "everythingcopper:copper_chestplate"
-					count: 1
 				}
 				{
-					id: "BD3732BCB5F2884D"
+					id: "7B2652E7672D3D7B"
+					item: {
+						Count: 1
+						id: "everythingcopper:copper_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "everythingcopper:copper_helmet"
-					count: 1
 				}
 				{
 					id: "5A984A39987C87FA"
+					item: {
+						Count: 1
+						id: "everythingcopper:copper_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "everythingcopper:copper_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Copper"
+			x: 1.5d
+			y: 19.5d
 		}
 		{
+			description: ["7 starter stubs."]
+			icon: {
+				Count: 1
+				id: "fallout_wastelands_:antiradsuit_boots"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "695E15FA2B3BEF33"
-			title: "fallout_wastelands_"
-			icon: "fallout_wastelands_:antiradsuit_boots"
 			shape: "square"
 			size: 0.8d
+			tasks: [{
+				id: "0BA6BDA8AF6B5469"
+				title: "fallout_wastelands_"
+				type: "checkmark"
+			}]
+			title: "fallout_wastelands_"
 			x: 0.0d
 			y: 22.75d
-			tasks: [
-				{
-					id: "0BA6BDA8AF6B5469"
-					type: "checkmark"
-					title: "fallout_wastelands_"
-				}
-			]
-			rewards: [ ]
-			description: ["7 starter stubs."]
 		}
 		{
-			id: "D2383F8448146BA2"
-			title: "All Armour Sets: Antiradsuit"
-			icon: "fallout_wastelands_:antiradsuit_chestplate"
+			icon: {
+				Count: 1
+				id: "fallout_wastelands_:antiradsuit_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "4300420F74199945"
 			shape: "rsquare"
 			size: 1.0d
-			x: 1.5d
-			y: 22.75d
 			tasks: [
 				{
-					id: "8871D80A61AE460F"
+					id: "26E21FC7B0251C39"
+					item: {
+						Count: 1
+						id: "fallout_wastelands_:antiradsuit_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "fallout_wastelands_:antiradsuit_boots"
-					count: 1
 				}
 				{
 					id: "773F9B6C4A46807D"
+					item: {
+						Count: 1
+						id: "fallout_wastelands_:antiradsuit_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "fallout_wastelands_:antiradsuit_chestplate"
-					count: 1
 				}
 				{
-					id: "EA2C02331181EE15"
+					id: "765259D6E28905F0"
+					item: {
+						Count: 1
+						id: "fallout_wastelands_:antiradsuit_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "fallout_wastelands_:antiradsuit_helmet"
-					count: 1
 				}
 				{
 					id: "12263C6A8544B227"
+					item: {
+						Count: 1
+						id: "fallout_wastelands_:antiradsuit_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "fallout_wastelands_:antiradsuit_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Antiradsuit"
+			x: 1.5d
+			y: 22.75d
 		}
 		{
+			icon: {
+				Count: 1
+				id: "fallout_wastelands_:combatarmor_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "3CBA0CD7E98F7F9B"
-			title: "All Armour Sets: Combatarmor"
-			icon: "fallout_wastelands_:combatarmor_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 2.75d
-			y: 22.75d
 			tasks: [
 				{
-					id: "FD5D817374F1867D"
+					id: "55EAB8DF26B70398"
+					item: {
+						Count: 1
+						id: "fallout_wastelands_:combatarmor_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "fallout_wastelands_:combatarmor_boots"
-					count: 1
 				}
 				{
 					id: "06BD50D8AFDC0DB5"
+					item: {
+						Count: 1
+						id: "fallout_wastelands_:combatarmor_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "fallout_wastelands_:combatarmor_chestplate"
-					count: 1
 				}
 				{
-					id: "9BA21EBF9469CD84"
+					id: "09EF7875449954B5"
+					item: {
+						Count: 1
+						id: "fallout_wastelands_:combatarmor_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "fallout_wastelands_:combatarmor_helmet"
-					count: 1
 				}
 				{
-					id: "E0DC1EE00DBE49B7"
+					id: "024A6E1CFEB00AE9"
+					item: {
+						Count: 1
+						id: "fallout_wastelands_:combatarmor_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "fallout_wastelands_:combatarmor_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Combatarmor"
+			x: 2.75d
+			y: 22.75d
 		}
 		{
-			id: "F0D41AAE498CA9E7"
-			title: "All Armour Sets: Raiderblastmaster"
-			icon: "fallout_wastelands_:raiderblastmaster_chestplate"
+			icon: {
+				Count: 1
+				id: "fallout_wastelands_:raiderblastmaster_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "4D1F9677D5DAFE47"
 			shape: "rsquare"
 			size: 1.0d
-			x: 4.0d
-			y: 22.75d
 			tasks: [
 				{
 					id: "3363C3EB680BBDF0"
+					item: {
+						Count: 1
+						id: "fallout_wastelands_:raiderblastmaster_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "fallout_wastelands_:raiderblastmaster_boots"
-					count: 1
 				}
 				{
-					id: "F57C9C8DFB2628E5"
+					id: "1D48A63720D5414D"
+					item: {
+						Count: 1
+						id: "fallout_wastelands_:raiderblastmaster_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "fallout_wastelands_:raiderblastmaster_chestplate"
-					count: 1
 				}
 				{
-					id: "AA1F424B46E3D770"
+					id: "13819B2281C6DBEB"
+					item: {
+						Count: 1
+						id: "fallout_wastelands_:raiderblastmaster_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "fallout_wastelands_:raiderblastmaster_helmet"
-					count: 1
 				}
 				{
-					id: "EF589788B438A302"
+					id: "5AC2094540224E9B"
+					item: {
+						Count: 1
+						id: "fallout_wastelands_:raiderblastmaster_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "fallout_wastelands_:raiderblastmaster_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Raiderblastmaster"
+			x: 4.0d
+			y: 22.75d
 		}
 		{
+			icon: {
+				Count: 1
+				id: "fallout_wastelands_:raiderduster_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "7C3B92F7E9B265A0"
-			title: "All Armour Sets: Raiderduster"
-			icon: "fallout_wastelands_:raiderduster_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 5.25d
-			y: 22.75d
 			tasks: [
 				{
-					id: "A28F361C72E2C221"
+					id: "4F1A131723C78EC1"
+					item: {
+						Count: 1
+						id: "fallout_wastelands_:raiderduster_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "fallout_wastelands_:raiderduster_boots"
-					count: 1
 				}
 				{
-					id: "D5FF898CAE4E5C7D"
+					id: "7FFA9C57FA5F6140"
+					item: {
+						Count: 1
+						id: "fallout_wastelands_:raiderduster_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "fallout_wastelands_:raiderduster_chestplate"
-					count: 1
 				}
 				{
 					id: "177EFFC0014D5E73"
+					item: {
+						Count: 1
+						id: "fallout_wastelands_:raiderduster_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "fallout_wastelands_:raiderduster_helmet"
-					count: 1
 				}
 				{
 					id: "434517CF46DFCD13"
+					item: {
+						Count: 1
+						id: "fallout_wastelands_:raiderduster_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "fallout_wastelands_:raiderduster_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Raiderduster"
+			x: 5.25d
+			y: 22.75d
 		}
 		{
-			id: "A5D1CC08A25B0C06"
-			title: "All Armour Sets: T 45 Pa"
-			icon: "fallout_wastelands_:t_45_pa_chestplate"
+			icon: {
+				Count: 1
+				id: "fallout_wastelands_:t_45_pa_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "008C5EB026C96748"
 			shape: "rsquare"
 			size: 1.0d
-			x: 6.5d
-			y: 22.75d
 			tasks: [
 				{
-					id: "8ED68B76B71E3059"
+					id: "75EC7CC97E82AE0B"
+					item: {
+						Count: 1
+						id: "fallout_wastelands_:t_45_pa_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "fallout_wastelands_:t_45_pa_boots"
-					count: 1
 				}
 				{
-					id: "FB40016118D46003"
+					id: "4BEB2EC297980C41"
+					item: {
+						Count: 1
+						id: "fallout_wastelands_:t_45_pa_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "fallout_wastelands_:t_45_pa_chestplate"
-					count: 1
 				}
 				{
-					id: "B18CAA50E0E049C0"
+					id: "39A58B2AE6D21C09"
+					item: {
+						Count: 1
+						id: "fallout_wastelands_:t_45_pa_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "fallout_wastelands_:t_45_pa_helmet"
-					count: 1
 				}
 				{
-					id: "C9283E2E147BC9A4"
+					id: "2F95FF0AFBF02C0D"
+					item: {
+						Count: 1
+						id: "fallout_wastelands_:t_45_pa_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "fallout_wastelands_:t_45_pa_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: T 45 Pa"
+			x: 6.5d
+			y: 22.75d
 		}
 		{
+			icon: {
+				Count: 1
+				id: "fallout_wastelands_:taloncombatarmor_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "7D7A022721668D5E"
-			title: "All Armour Sets: Taloncombatarmor"
-			icon: "fallout_wastelands_:taloncombatarmor_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 7.75d
-			y: 22.75d
 			tasks: [
 				{
 					id: "375EEACECC45A7E0"
+					item: {
+						Count: 1
+						id: "fallout_wastelands_:taloncombatarmor_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "fallout_wastelands_:taloncombatarmor_boots"
-					count: 1
 				}
 				{
 					id: "4F4005707FB9777D"
+					item: {
+						Count: 1
+						id: "fallout_wastelands_:taloncombatarmor_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "fallout_wastelands_:taloncombatarmor_chestplate"
-					count: 1
 				}
 				{
 					id: "6028B6D966F0E7A1"
+					item: {
+						Count: 1
+						id: "fallout_wastelands_:taloncombatarmor_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "fallout_wastelands_:taloncombatarmor_helmet"
-					count: 1
 				}
 				{
-					id: "D42E972E0CA56B26"
+					id: "054C0E47EDF326EA"
+					item: {
+						Count: 1
+						id: "fallout_wastelands_:taloncombatarmor_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "fallout_wastelands_:taloncombatarmor_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Taloncombatarmor"
+			x: 7.75d
+			y: 22.75d
 		}
 		{
+			icon: {
+				Count: 1
+				id: "fallout_wastelands_:vault_security_suit_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "4EDCE5C5855E039C"
-			title: "All Armour Sets: Vault Security Suit"
-			icon: "fallout_wastelands_:vault_security_suit_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 9.0d
-			y: 22.75d
 			tasks: [
 				{
 					id: "074D302C37FAF609"
+					item: {
+						Count: 1
+						id: "fallout_wastelands_:vault_security_suit_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "fallout_wastelands_:vault_security_suit_boots"
-					count: 1
 				}
 				{
-					id: "9F69441EC1C5E742"
+					id: "3E24D27328E219E1"
+					item: {
+						Count: 1
+						id: "fallout_wastelands_:vault_security_suit_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "fallout_wastelands_:vault_security_suit_chestplate"
-					count: 1
 				}
 				{
-					id: "E908B5988607DA43"
+					id: "38BC0601170D509B"
+					item: {
+						Count: 1
+						id: "fallout_wastelands_:vault_security_suit_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "fallout_wastelands_:vault_security_suit_helmet"
-					count: 1
 				}
 				{
 					id: "7D9B0651EC715D60"
+					item: {
+						Count: 1
+						id: "fallout_wastelands_:vault_security_suit_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "fallout_wastelands_:vault_security_suit_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Vault Security Suit"
+			x: 9.0d
+			y: 22.75d
 		}
 		{
+			description: ["6 starter stubs."]
+			icon: {
+				Count: 1
+				id: "minecraft:chainmail_boots"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "2B7430243A384F8A"
-			title: "minecraft"
-			icon: "minecraft:chainmail_boots"
 			shape: "square"
 			size: 0.8d
+			tasks: [{
+				id: "08EEAE2B534A6BC8"
+				title: "minecraft"
+				type: "checkmark"
+			}]
+			title: "minecraft"
 			x: 0.0d
 			y: 26.0d
-			tasks: [
-				{
-					id: "08EEAE2B534A6BC8"
-					type: "checkmark"
-					title: "minecraft"
-				}
-			]
-			rewards: [ ]
-			description: ["6 starter stubs."]
 		}
 		{
+			icon: {
+				Count: 1
+				id: "minecraft:chainmail_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "041318F72132870C"
-			title: "All Armour Sets: Chainmail"
-			icon: "minecraft:chainmail_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 1.5d
-			y: 26.0d
 			tasks: [
 				{
-					id: "BD1D6F8A87B4DB42"
+					id: "53F792BAA239F56A"
+					item: {
+						Count: 1
+						id: "minecraft:chainmail_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "minecraft:chainmail_boots"
-					count: 1
 				}
 				{
 					id: "592D4E40F0D7429F"
+					item: {
+						Count: 1
+						id: "minecraft:chainmail_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "minecraft:chainmail_chestplate"
-					count: 1
 				}
 				{
-					id: "A822FBC2F9FF5C40"
+					id: "062D03959F139338"
+					item: {
+						Count: 1
+						id: "minecraft:chainmail_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "minecraft:chainmail_helmet"
-					count: 1
 				}
 				{
-					id: "9F127A070FD3CA56"
+					id: "4DAE2D79B234E747"
+					item: {
+						Count: 1
+						id: "minecraft:chainmail_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "minecraft:chainmail_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Chainmail"
+			x: 1.5d
+			y: 26.0d
 		}
 		{
+			icon: {
+				Count: 1
+				id: "minecraft:diamond_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "5BDB172E5D641F93"
-			title: "All Armour Sets: Diamond"
-			icon: "minecraft:diamond_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 2.75d
-			y: 26.0d
 			tasks: [
 				{
 					id: "421E5CB37ACB67C0"
+					item: {
+						Count: 1
+						id: "minecraft:diamond_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "minecraft:diamond_boots"
-					count: 1
 				}
 				{
 					id: "7871D68BE655B6D6"
+					item: {
+						Count: 1
+						id: "minecraft:diamond_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "minecraft:diamond_chestplate"
-					count: 1
 				}
 				{
 					id: "3F8422F458A65E48"
+					item: {
+						Count: 1
+						id: "minecraft:diamond_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "minecraft:diamond_helmet"
-					count: 1
 				}
 				{
-					id: "DEA7FC0A17F80D21"
+					id: "26A52780AEA95767"
+					item: {
+						Count: 1
+						id: "minecraft:diamond_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "minecraft:diamond_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Diamond"
+			x: 2.75d
+			y: 26.0d
 		}
 		{
+			icon: {
+				Count: 1
+				id: "minecraft:golden_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "0444D9235DDBD873"
-			title: "All Armour Sets: Golden"
-			icon: "minecraft:golden_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 4.0d
-			y: 26.0d
 			tasks: [
 				{
-					id: "9258DBF485153826"
+					id: "370503914D96AF39"
+					item: {
+						Count: 1
+						id: "minecraft:golden_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "minecraft:golden_boots"
-					count: 1
 				}
 				{
 					id: "07D1032896AF557F"
+					item: {
+						Count: 1
+						id: "minecraft:golden_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "minecraft:golden_chestplate"
-					count: 1
 				}
 				{
 					id: "0749E4B3469F5E46"
+					item: {
+						Count: 1
+						id: "minecraft:golden_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "minecraft:golden_helmet"
-					count: 1
 				}
 				{
 					id: "6B6B0A01DFF1BD9C"
+					item: {
+						Count: 1
+						id: "minecraft:golden_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "minecraft:golden_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Golden"
+			x: 4.0d
+			y: 26.0d
 		}
 		{
+			icon: {
+				Count: 1
+				id: "minecraft:iron_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "21F5F74F11152323"
-			title: "All Armour Sets: Iron"
-			icon: "minecraft:iron_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 5.25d
-			y: 26.0d
 			tasks: [
 				{
-					id: "8BEE558B667D2C1E"
+					id: "000191139BD6CB26"
+					item: {
+						Count: 1
+						id: "minecraft:iron_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "minecraft:iron_boots"
-					count: 1
 				}
 				{
 					id: "0CE221EEEFAA5E3A"
+					item: {
+						Count: 1
+						id: "minecraft:iron_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "minecraft:iron_chestplate"
-					count: 1
 				}
 				{
 					id: "5055451077611A04"
+					item: {
+						Count: 1
+						id: "minecraft:iron_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "minecraft:iron_helmet"
-					count: 1
 				}
 				{
-					id: "AFEE0D78C1B30762"
+					id: "783825D3C8416985"
+					item: {
+						Count: 1
+						id: "minecraft:iron_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "minecraft:iron_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Iron"
+			x: 5.25d
+			y: 26.0d
 		}
 		{
+			icon: {
+				Count: 1
+				id: "minecraft:leather_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "07C4205DB9E50B66"
-			title: "All Armour Sets: Leather"
-			icon: "minecraft:leather_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 6.5d
-			y: 26.0d
 			tasks: [
 				{
 					id: "49634A94B95677AD"
+					item: {
+						Count: 1
+						id: "minecraft:leather_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "minecraft:leather_boots"
-					count: 1
 				}
 				{
 					id: "49C23F9D3BDB5B36"
+					item: {
+						Count: 1
+						id: "minecraft:leather_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "minecraft:leather_chestplate"
-					count: 1
 				}
 				{
 					id: "10F577E47C6BE410"
+					item: {
+						Count: 1
+						id: "minecraft:leather_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "minecraft:leather_helmet"
-					count: 1
 				}
 				{
 					id: "2B0DE9B805D1759C"
+					item: {
+						Count: 1
+						id: "minecraft:leather_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "minecraft:leather_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Leather"
+			x: 6.5d
+			y: 26.0d
 		}
 		{
-			id: "A41A60C443E95BCB"
-			title: "All Armour Sets: Netherite"
-			icon: "minecraft:netherite_chestplate"
+			icon: {
+				Count: 1
+				id: "minecraft:netherite_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "3C4BD2AC4FC08438"
 			shape: "rsquare"
 			size: 1.0d
-			x: 7.75d
-			y: 26.0d
 			tasks: [
 				{
-					id: "DBF656138D5DB43A"
+					id: "77FB07F227F27061"
+					item: {
+						Count: 1
+						id: "minecraft:netherite_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "minecraft:netherite_boots"
-					count: 1
 				}
 				{
 					id: "34376DBEF9578AC3"
+					item: {
+						Count: 1
+						id: "minecraft:netherite_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "minecraft:netherite_chestplate"
-					count: 1
 				}
 				{
-					id: "DB727B871A0F0037"
+					id: "071F041E464FBE1F"
+					item: {
+						Count: 1
+						id: "minecraft:netherite_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "minecraft:netherite_helmet"
-					count: 1
 				}
 				{
 					id: "1B1A28B49B32BFCB"
+					item: {
+						Count: 1
+						id: "minecraft:netherite_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "minecraft:netherite_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Netherite"
+			x: 7.75d
+			y: 26.0d
 		}
 		{
+			description: ["2 starter stubs."]
+			icon: {
+				Count: 1
+				id: "pneumaticcraft:compressed_iron_boots"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "0E8CA102300D8599"
-			title: "pneumaticcraft"
-			icon: "pneumaticcraft:compressed_iron_boots"
 			shape: "square"
 			size: 0.8d
+			tasks: [{
+				id: "39F48047B854D025"
+				title: "pneumaticcraft"
+				type: "checkmark"
+			}]
+			title: "pneumaticcraft"
 			x: 0.0d
 			y: 29.25d
-			tasks: [
-				{
-					id: "D377BE399532CC26"
-					type: "checkmark"
-					title: "pneumaticcraft"
-				}
-			]
-			rewards: [ ]
-			description: ["2 starter stubs."]
 		}
 		{
+			icon: {
+				Count: 1
+				id: "pneumaticcraft:compressed_iron_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "16A7C4DCD6AADF55"
-			title: "All Armour Sets: Compressed Iron"
-			icon: "pneumaticcraft:compressed_iron_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 1.5d
-			y: 29.25d
 			tasks: [
 				{
 					id: "35258DE0E87B6A18"
+					item: {
+						Count: 1
+						id: "pneumaticcraft:compressed_iron_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "pneumaticcraft:compressed_iron_boots"
-					count: 1
 				}
 				{
-					id: "D0F7CBDCA72948D8"
+					id: "10D47174AE8AB8C2"
+					item: {
+						Count: 1
+						id: "pneumaticcraft:compressed_iron_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "pneumaticcraft:compressed_iron_chestplate"
-					count: 1
 				}
 				{
-					id: "F288A5029BA5EEEF"
+					id: "3F9B19B669C20DF2"
+					item: {
+						Count: 1
+						id: "pneumaticcraft:compressed_iron_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "pneumaticcraft:compressed_iron_helmet"
-					count: 1
 				}
 				{
-					id: "E76FCC4AD2C56046"
+					id: "1799C11832C241F6"
+					item: {
+						Count: 1
+						id: "pneumaticcraft:compressed_iron_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "pneumaticcraft:compressed_iron_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Compressed Iron"
+			x: 1.5d
+			y: 29.25d
 		}
 		{
-			id: "B2D51DF26D494761"
-			title: "All Armour Sets: Pneumatic"
-			icon: "pneumaticcraft:pneumatic_chestplate"
+			icon: {
+				Count: 1
+				id: "pneumaticcraft:pneumatic_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "63D3189DDBF8C8DD"
 			shape: "rsquare"
 			size: 1.0d
-			x: 2.75d
-			y: 29.25d
 			tasks: [
 				{
 					id: "14D4381AECCC549B"
+					item: {
+						Count: 1
+						id: "pneumaticcraft:pneumatic_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "pneumaticcraft:pneumatic_boots"
-					count: 1
 				}
 				{
 					id: "1AE4434A1064F32A"
+					item: {
+						Count: 1
+						id: "pneumaticcraft:pneumatic_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "pneumaticcraft:pneumatic_chestplate"
-					count: 1
 				}
 				{
-					id: "BE8CADED436F5CBE"
+					id: "327EE8D63A9360ED"
+					item: {
+						Count: 1
+						id: "pneumaticcraft:pneumatic_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "pneumaticcraft:pneumatic_helmet"
-					count: 1
 				}
 				{
 					id: "6A9CF071A76D4126"
+					item: {
+						Count: 1
+						id: "pneumaticcraft:pneumatic_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "pneumaticcraft:pneumatic_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Pneumatic"
+			x: 2.75d
+			y: 29.25d
 		}
 		{
+			description: ["1 starter stubs."]
+			icon: {
+				Count: 1
+				id: "protection_pixel:tosaki_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "5B5D7B008CF53315"
-			title: "protection_pixel"
-			icon: "protection_pixel:tosaki_chestplate"
 			shape: "square"
 			size: 0.8d
+			tasks: [{
+				id: "0866AA16D7B99FE4"
+				title: "protection_pixel"
+				type: "checkmark"
+			}]
+			title: "protection_pixel"
 			x: 0.0d
 			y: 32.5d
-			tasks: [
-				{
-					id: "0866AA16D7B99FE4"
-					type: "checkmark"
-					title: "protection_pixel"
-				}
-			]
-			rewards: [ ]
-			description: ["1 starter stubs."]
 		}
 		{
+			icon: {
+				Count: 1
+				id: "protection_pixel:tosaki_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "4EA77C17A851816D"
-			title: "All Armour Sets: Tosaki"
-			icon: "protection_pixel:tosaki_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 1.5d
-			y: 32.5d
 			tasks: [
 				{
 					id: "780E848D6B8389D8"
+					item: {
+						Count: 1
+						id: "protection_pixel:tosaki_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "protection_pixel:tosaki_chestplate"
-					count: 1
 				}
 				{
 					id: "5C9F3C311B138430"
+					item: {
+						Count: 1
+						id: "protection_pixel:tosaki_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "protection_pixel:tosaki_helmet"
-					count: 1
 				}
 				{
-					id: "98452F15F0DA912B"
+					id: "301C4262D36FF1AD"
+					item: {
+						Count: 1
+						id: "protection_pixel:tosaki_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "protection_pixel:tosaki_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Tosaki"
+			x: 1.5d
+			y: 32.5d
 		}
 		{
+			description: ["1 starter stubs."]
+			icon: {
+				Count: 1
+				id: "savage_and_ravage:griefer_boots"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "679AEFA39B534A43"
-			title: "savage_and_ravage"
-			icon: "savage_and_ravage:griefer_boots"
 			shape: "square"
 			size: 0.8d
+			tasks: [{
+				id: "5598B23D143AE0FB"
+				title: "savage_and_ravage"
+				type: "checkmark"
+			}]
+			title: "savage_and_ravage"
 			x: 0.0d
 			y: 35.75d
-			tasks: [
-				{
-					id: "5598B23D143AE0FB"
-					type: "checkmark"
-					title: "savage_and_ravage"
-				}
-			]
-			rewards: [ ]
-			description: ["1 starter stubs."]
 		}
 		{
+			icon: {
+				Count: 1
+				id: "savage_and_ravage:griefer_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "4F7495483016ADA1"
-			title: "All Armour Sets: Griefer"
-			icon: "savage_and_ravage:griefer_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 1.5d
-			y: 35.75d
 			tasks: [
 				{
-					id: "F9BF48F9B5E92F73"
+					id: "521A74CC9633043C"
+					item: {
+						Count: 1
+						id: "savage_and_ravage:griefer_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "savage_and_ravage:griefer_boots"
-					count: 1
 				}
 				{
 					id: "19D35C096C4EF7BE"
+					item: {
+						Count: 1
+						id: "savage_and_ravage:griefer_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "savage_and_ravage:griefer_chestplate"
-					count: 1
 				}
 				{
-					id: "D960E4FD04D171D9"
+					id: "5EB7A00FB3C6BE91"
+					item: {
+						Count: 1
+						id: "savage_and_ravage:griefer_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "savage_and_ravage:griefer_helmet"
-					count: 1
 				}
 				{
 					id: "4C1A3D82640C812E"
+					item: {
+						Count: 1
+						id: "savage_and_ravage:griefer_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "savage_and_ravage:griefer_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Griefer"
+			x: 1.5d
+			y: 35.75d
 		}
 		{
+			description: ["3 starter stubs."]
+			icon: {
+				Count: 1
+				id: "tconstruct:plate_boots"
+				tag: {
+					Damage: 0
+					tic_broken: 0b
+				}
+			}
 			id: "6AFCF5132017A338"
-			title: "tconstruct"
-			icon: "tconstruct:plate_boots"
 			shape: "square"
 			size: 0.8d
+			tasks: [{
+				id: "5F834C1B3F5FCD5C"
+				title: "tconstruct"
+				type: "checkmark"
+			}]
+			title: "tconstruct"
 			x: 0.0d
 			y: 39.0d
-			tasks: [
-				{
-					id: "5F834C1B3F5FCD5C"
-					type: "checkmark"
-					title: "tconstruct"
-				}
-			]
-			rewards: [ ]
-			description: ["3 starter stubs."]
 		}
 		{
-			id: "90ABFA116AFF602A"
-			title: "All Armour Sets: Plate"
-			icon: "tconstruct:plate_chestplate"
+			icon: {
+				Count: 1
+				id: "tconstruct:plate_chestplate"
+				tag: {
+					Damage: 0
+					tic_broken: 0b
+				}
+			}
+			id: "1B112C00BE5D8DE1"
 			shape: "rsquare"
 			size: 1.0d
-			x: 1.5d
-			y: 39.0d
 			tasks: [
 				{
-					id: "EB0D514AC9A5D8C6"
+					id: "49BB4506093ED42A"
+					item: {
+						Count: 1
+						id: "tconstruct:plate_boots"
+						tag: {
+							Damage: 0
+							tic_broken: 0b
+						}
+					}
 					type: "item"
-					item: "tconstruct:plate_boots"
-					count: 1
 				}
 				{
 					id: "0CCBACCE9D560F10"
+					item: {
+						Count: 1
+						id: "tconstruct:plate_chestplate"
+						tag: {
+							Damage: 0
+							tic_broken: 0b
+						}
+					}
 					type: "item"
-					item: "tconstruct:plate_chestplate"
-					count: 1
 				}
 				{
-					id: "F3AC7BB2D551E2AF"
+					id: "13494DC61936FFF5"
+					item: {
+						Count: 1
+						id: "tconstruct:plate_helmet"
+						tag: {
+							Damage: 0
+							tic_broken: 0b
+						}
+					}
 					type: "item"
-					item: "tconstruct:plate_helmet"
-					count: 1
 				}
 				{
 					id: "25197883B8B268A3"
+					item: {
+						Count: 1
+						id: "tconstruct:plate_leggings"
+						tag: {
+							Damage: 0
+							tic_broken: 0b
+						}
+					}
 					type: "item"
-					item: "tconstruct:plate_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Plate"
+			x: 1.5d
+			y: 39.0d
 		}
 		{
+			icon: {
+				Count: 1
+				id: "tconstruct:slime_chestplate"
+				tag: {
+					Damage: 0
+					tic_broken: 0b
+				}
+			}
 			id: "1616C7D5828C807A"
-			title: "All Armour Sets: Slime"
-			icon: "tconstruct:slime_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 2.75d
-			y: 39.0d
 			tasks: [
 				{
-					id: "B7FA5B7EAA79BDFA"
+					id: "14A53279ECC57C92"
+					item: {
+						Count: 1
+						id: "tconstruct:slime_boots"
+						tag: {
+							Damage: 0
+							tic_broken: 0b
+						}
+					}
 					type: "item"
-					item: "tconstruct:slime_boots"
-					count: 1
 				}
 				{
-					id: "8060575072E96954"
+					id: "61D5BE8C77D7FD6A"
+					item: {
+						Count: 1
+						id: "tconstruct:slime_chestplate"
+						tag: {
+							Damage: 0
+							tic_broken: 0b
+						}
+					}
 					type: "item"
-					item: "tconstruct:slime_chestplate"
-					count: 1
 				}
 				{
-					id: "9121D9C3912EBAA6"
+					id: "58CD85B2B7375298"
+					item: {
+						Count: 1
+						id: "tconstruct:slime_helmet"
+						tag: {
+							Damage: 0
+							tic_broken: 0b
+						}
+					}
 					type: "item"
-					item: "tconstruct:slime_helmet"
-					count: 1
 				}
 				{
 					id: "2543CD071CAC572A"
+					item: {
+						Count: 1
+						id: "tconstruct:slime_leggings"
+						tag: {
+							Damage: 0
+							tic_broken: 0b
+						}
+					}
 					type: "item"
-					item: "tconstruct:slime_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Slime"
+			x: 2.75d
+			y: 39.0d
 		}
 		{
+			icon: {
+				Count: 1
+				id: "tconstruct:travelers_chestplate"
+				tag: {
+					Damage: 0
+					tic_broken: 0b
+				}
+			}
 			id: "01FD7CDA7A79D500"
-			title: "All Armour Sets: Travelers"
-			icon: "tconstruct:travelers_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 4.0d
-			y: 39.0d
 			tasks: [
 				{
-					id: "CB93D20DFE5BC7C5"
+					id: "47667CC99946E8C7"
+					item: {
+						Count: 1
+						id: "tconstruct:travelers_boots"
+						tag: {
+							Damage: 0
+							tic_broken: 0b
+						}
+					}
 					type: "item"
-					item: "tconstruct:travelers_boots"
-					count: 1
 				}
 				{
 					id: "1C1940D7993B26CA"
+					item: {
+						Count: 1
+						id: "tconstruct:travelers_chestplate"
+						tag: {
+							Damage: 0
+							tic_broken: 0b
+						}
+					}
 					type: "item"
-					item: "tconstruct:travelers_chestplate"
-					count: 1
 				}
 				{
 					id: "42ACBCAAD4A2C8E2"
+					item: {
+						Count: 1
+						id: "tconstruct:travelers_helmet"
+						tag: {
+							Damage: 0
+							tic_broken: 0b
+						}
+					}
 					type: "item"
-					item: "tconstruct:travelers_helmet"
-					count: 1
 				}
 				{
 					id: "4FB22C4AFE07E643"
+					item: {
+						Count: 1
+						id: "tconstruct:travelers_leggings"
+						tag: {
+							Damage: 0
+							tic_broken: 0b
+						}
+					}
 					type: "item"
-					item: "tconstruct:travelers_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Travelers"
+			x: 4.0d
+			y: 39.0d
 		}
 		{
+			description: ["1 starter stubs."]
+			icon: {
+				Count: 1
+				id: "tomeofblood:living_mage_boots"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "164DB07CB3752271"
-			title: "tomeofblood"
-			icon: "tomeofblood:living_mage_boots"
 			shape: "square"
 			size: 0.8d
+			tasks: [{
+				id: "018F7904FB9D4286"
+				title: "tomeofblood"
+				type: "checkmark"
+			}]
+			title: "tomeofblood"
 			x: 0.0d
 			y: 42.25d
-			tasks: [
-				{
-					id: "9E0447435D3488FA"
-					type: "checkmark"
-					title: "tomeofblood"
-				}
-			]
-			rewards: [ ]
-			description: ["1 starter stubs."]
 		}
 		{
+			icon: {
+				Count: 1
+				id: "tomeofblood:living_mage_robes"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "779D7158F11D4DF5"
-			title: "All Armour Sets: Living Mage"
-			icon: "tomeofblood:living_mage_robes"
 			shape: "rsquare"
 			size: 1.0d
-			x: 1.5d
-			y: 42.25d
 			tasks: [
 				{
-					id: "804297B54CA6643B"
+					id: "442A23B191B56472"
+					item: {
+						Count: 1
+						id: "tomeofblood:living_mage_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "tomeofblood:living_mage_boots"
-					count: 1
 				}
 				{
-					id: "CBB52E60BCD65D0A"
+					id: "42644447F85D70CA"
+					item: {
+						Count: 1
+						id: "tomeofblood:living_mage_hood"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "tomeofblood:living_mage_hood"
-					count: 1
 				}
 				{
-					id: "B066100F5D654CB4"
+					id: "5DE3FAA10B89C332"
+					item: {
+						Count: 1
+						id: "tomeofblood:living_mage_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "tomeofblood:living_mage_leggings"
-					count: 1
 				}
 				{
 					id: "3C36FB1062FC3B27"
+					item: {
+						Count: 1
+						id: "tomeofblood:living_mage_robes"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "tomeofblood:living_mage_robes"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Living Mage"
+			x: 1.5d
+			y: 42.25d
 		}
 		{
-			id: "A13E6900335E5637"
-			title: "twilightforest"
-			icon: "twilightforest:arctic_boots"
+			description: ["7 starter stubs."]
+			icon: {
+				Count: 1
+				id: "twilightforest:arctic_boots"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "4BF80515915819A3"
 			shape: "square"
 			size: 0.8d
+			tasks: [{
+				id: "5F6EF4C155D69567"
+				title: "twilightforest"
+				type: "checkmark"
+			}]
+			title: "twilightforest"
 			x: 0.0d
 			y: 45.5d
-			tasks: [
-				{
-					id: "5F6EF4C155D69567"
-					type: "checkmark"
-					title: "twilightforest"
-				}
-			]
-			rewards: [ ]
-			description: ["7 starter stubs."]
 		}
 		{
-			id: "FBD79767F10D532F"
-			title: "All Armour Sets: Arctic"
-			icon: "twilightforest:arctic_chestplate"
+			icon: {
+				Count: 1
+				id: "twilightforest:arctic_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "5B3765DC6F437B47"
 			shape: "rsquare"
 			size: 1.0d
-			x: 1.5d
-			y: 45.5d
 			tasks: [
 				{
-					id: "DA2B888C532057C5"
+					id: "405639C929864B5B"
+					item: {
+						Count: 1
+						id: "twilightforest:arctic_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "twilightforest:arctic_boots"
-					count: 1
 				}
 				{
 					id: "6FDBE28F0FDC4313"
+					item: {
+						Count: 1
+						id: "twilightforest:arctic_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "twilightforest:arctic_chestplate"
-					count: 1
 				}
 				{
-					id: "FE27CBC250FEDA2D"
+					id: "185931BADD44DA8D"
+					item: {
+						Count: 1
+						id: "twilightforest:arctic_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "twilightforest:arctic_helmet"
-					count: 1
 				}
 				{
 					id: "23D2F945621584B4"
+					item: {
+						Count: 1
+						id: "twilightforest:arctic_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "twilightforest:arctic_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Arctic"
+			x: 1.5d
+			y: 45.5d
 		}
 		{
-			id: "855D91CE7EEE1E64"
-			title: "All Armour Sets: Fiery"
-			icon: "twilightforest:fiery_chestplate"
+			icon: {
+				Count: 1
+				id: "twilightforest:fiery_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "0E949BCDF904FA26"
 			shape: "rsquare"
 			size: 1.0d
-			x: 2.75d
-			y: 45.5d
 			tasks: [
 				{
 					id: "70D2F1F1CFD2AADA"
+					item: {
+						Count: 1
+						id: "twilightforest:fiery_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "twilightforest:fiery_boots"
-					count: 1
 				}
 				{
 					id: "23F5C393C12160BF"
+					item: {
+						Count: 1
+						id: "twilightforest:fiery_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "twilightforest:fiery_chestplate"
-					count: 1
 				}
 				{
-					id: "F31265DCC96CAC73"
+					id: "0498D4D1D9136D2C"
+					item: {
+						Count: 1
+						id: "twilightforest:fiery_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "twilightforest:fiery_helmet"
-					count: 1
 				}
 				{
-					id: "8B1CB27DF55BEA80"
+					id: "5AF7DADF591A4212"
+					item: {
+						Count: 1
+						id: "twilightforest:fiery_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "twilightforest:fiery_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Fiery"
+			x: 2.75d
+			y: 45.5d
 		}
 		{
-			id: "CD750A1C89F05E01"
-			title: "All Armour Sets: Ironwood"
-			icon: "twilightforest:ironwood_chestplate"
+			icon: {
+				Count: 1
+				id: "twilightforest:ironwood_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "2321C86456E27570"
 			shape: "rsquare"
 			size: 1.0d
-			x: 4.0d
-			y: 45.5d
 			tasks: [
 				{
-					id: "FD6A8E52622D0D13"
+					id: "76DC8E769675DF24"
+					item: {
+						Count: 1
+						id: "twilightforest:ironwood_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "twilightforest:ironwood_boots"
-					count: 1
 				}
 				{
-					id: "D5A1EDC0B1D341C9"
+					id: "57E37180F8BC73BD"
+					item: {
+						Count: 1
+						id: "twilightforest:ironwood_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "twilightforest:ironwood_chestplate"
-					count: 1
 				}
 				{
 					id: "3AAD2C3859CC66B4"
+					item: {
+						Count: 1
+						id: "twilightforest:ironwood_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "twilightforest:ironwood_helmet"
-					count: 1
 				}
 				{
-					id: "98DF91D398C73850"
+					id: "0DA07798A2E9CAA6"
+					item: {
+						Count: 1
+						id: "twilightforest:ironwood_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "twilightforest:ironwood_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Ironwood"
+			x: 4.0d
+			y: 45.5d
 		}
 		{
+			icon: {
+				Count: 1
+				id: "twilightforest:knightmetal_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "4E0F6BD3092E29AA"
-			title: "All Armour Sets: Knightmetal"
-			icon: "twilightforest:knightmetal_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 5.25d
-			y: 45.5d
 			tasks: [
 				{
 					id: "2CE78393AEC7EA48"
+					item: {
+						Count: 1
+						id: "twilightforest:knightmetal_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "twilightforest:knightmetal_boots"
-					count: 1
 				}
 				{
-					id: "8D0B92051F493FBB"
+					id: "3DC78F4451B3FF55"
+					item: {
+						Count: 1
+						id: "twilightforest:knightmetal_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "twilightforest:knightmetal_chestplate"
-					count: 1
 				}
 				{
 					id: "3DD11A9578FB52C2"
+					item: {
+						Count: 1
+						id: "twilightforest:knightmetal_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "twilightforest:knightmetal_helmet"
-					count: 1
 				}
 				{
-					id: "9565ADB9EAB94F38"
+					id: "563B5562105C949B"
+					item: {
+						Count: 1
+						id: "twilightforest:knightmetal_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "twilightforest:knightmetal_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Knightmetal"
+			x: 5.25d
+			y: 45.5d
 		}
 		{
+			icon: {
+				Count: 1
+				id: "twilightforest:naga_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "55D301BF3E7C01A2"
-			title: "All Armour Sets: Naga"
-			icon: "twilightforest:naga_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 6.5d
-			y: 45.5d
 			tasks: [
 				{
 					id: "01E99535BA2A15EE"
+					item: {
+						Count: 1
+						id: "twilightforest:naga_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "twilightforest:naga_chestplate"
-					count: 1
 				}
 				{
 					id: "55F9B140A0099F15"
+					item: {
+						Count: 1
+						id: "twilightforest:naga_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "twilightforest:naga_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Naga"
+			x: 6.5d
+			y: 45.5d
 		}
 		{
+			icon: {
+				Count: 1
+				id: "twilightforest:steeleaf_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "67577575B5D52A2D"
-			title: "All Armour Sets: Steeleaf"
-			icon: "twilightforest:steeleaf_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 7.75d
-			y: 45.5d
 			tasks: [
 				{
 					id: "304DF12F2A1E80AF"
+					item: {
+						Count: 1
+						id: "twilightforest:steeleaf_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "twilightforest:steeleaf_boots"
-					count: 1
 				}
 				{
 					id: "35DB0E7E403C3E5A"
+					item: {
+						Count: 1
+						id: "twilightforest:steeleaf_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "twilightforest:steeleaf_chestplate"
-					count: 1
 				}
 				{
-					id: "D22D32C275C009D1"
+					id: "2BE2863CB82F6056"
+					item: {
+						Count: 1
+						id: "twilightforest:steeleaf_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "twilightforest:steeleaf_helmet"
-					count: 1
 				}
 				{
-					id: "A0D27D3AE90ED7C2"
+					id: "7D63ACF7FA86526F"
+					item: {
+						Count: 1
+						id: "twilightforest:steeleaf_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "twilightforest:steeleaf_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Steeleaf"
+			x: 7.75d
+			y: 45.5d
 		}
 		{
-			id: "C938158461FEF2CC"
-			title: "All Armour Sets: Yeti"
-			icon: "twilightforest:yeti_chestplate"
+			icon: {
+				Count: 1
+				id: "twilightforest:yeti_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "0C68666B5424C3F9"
 			shape: "rsquare"
 			size: 1.0d
-			x: 9.0d
-			y: 45.5d
 			tasks: [
 				{
-					id: "A4D9E142C8A93A63"
+					id: "6FA5CCAB3A92DBC7"
+					item: {
+						Count: 1
+						id: "twilightforest:yeti_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "twilightforest:yeti_boots"
-					count: 1
 				}
 				{
 					id: "7CFAE2694A1168D0"
+					item: {
+						Count: 1
+						id: "twilightforest:yeti_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "twilightforest:yeti_chestplate"
-					count: 1
 				}
 				{
-					id: "B6C985550CBA9695"
+					id: "7F9AED89ACD4CD8D"
+					item: {
+						Count: 1
+						id: "twilightforest:yeti_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "twilightforest:yeti_helmet"
-					count: 1
 				}
 				{
 					id: "10038E61DBDD2A53"
+					item: {
+						Count: 1
+						id: "twilightforest:yeti_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "twilightforest:yeti_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Yeti"
+			x: 9.0d
+			y: 45.5d
 		}
 		{
+			description: ["3 starter stubs."]
+			icon: {
+				Count: 1
+				id: "undergarden:cloggrum_boots"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "5E93D10F3B9E6E5B"
-			title: "undergarden"
-			icon: "undergarden:cloggrum_boots"
 			shape: "square"
 			size: 0.8d
+			tasks: [{
+				id: "11FB3055370F963E"
+				title: "undergarden"
+				type: "checkmark"
+			}]
+			title: "undergarden"
 			x: 0.0d
 			y: 48.75d
-			tasks: [
-				{
-					id: "11FB3055370F963E"
-					type: "checkmark"
-					title: "undergarden"
-				}
-			]
-			rewards: [ ]
-			description: ["3 starter stubs."]
 		}
 		{
-			id: "CD95236BC5045FE7"
-			title: "All Armour Sets: Cloggrum"
-			icon: "undergarden:cloggrum_chestplate"
+			icon: {
+				Count: 1
+				id: "undergarden:cloggrum_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "51E49F0192CDA284"
 			shape: "rsquare"
 			size: 1.0d
-			x: 1.5d
-			y: 48.75d
 			tasks: [
 				{
-					id: "ABBF6AD4A9739866"
+					id: "7840F9A96CCE413C"
+					item: {
+						Count: 1
+						id: "undergarden:cloggrum_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "undergarden:cloggrum_boots"
-					count: 1
 				}
 				{
 					id: "2918F0F362F9052D"
+					item: {
+						Count: 1
+						id: "undergarden:cloggrum_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "undergarden:cloggrum_chestplate"
-					count: 1
 				}
 				{
-					id: "C6FF251FECE14001"
+					id: "2E911E77FA88E1D0"
+					item: {
+						Count: 1
+						id: "undergarden:cloggrum_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "undergarden:cloggrum_helmet"
-					count: 1
 				}
 				{
-					id: "F30A5EE5DE291E24"
+					id: "6ED547801185FFA8"
+					item: {
+						Count: 1
+						id: "undergarden:cloggrum_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "undergarden:cloggrum_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Cloggrum"
+			x: 1.5d
+			y: 48.75d
 		}
 		{
+			icon: {
+				Count: 1
+				id: "undergarden:froststeel_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "2FEC3EFD0877826A"
-			title: "All Armour Sets: Froststeel"
-			icon: "undergarden:froststeel_chestplate"
 			shape: "rsquare"
 			size: 1.0d
-			x: 2.75d
-			y: 48.75d
 			tasks: [
 				{
 					id: "17FAE45738C3B261"
+					item: {
+						Count: 1
+						id: "undergarden:froststeel_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "undergarden:froststeel_boots"
-					count: 1
 				}
 				{
 					id: "160BE809DA586A98"
+					item: {
+						Count: 1
+						id: "undergarden:froststeel_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "undergarden:froststeel_chestplate"
-					count: 1
 				}
 				{
 					id: "0F053DA62AA99456"
+					item: {
+						Count: 1
+						id: "undergarden:froststeel_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "undergarden:froststeel_helmet"
-					count: 1
 				}
 				{
-					id: "96CC6168A2B659A6"
+					id: "529BC8F61CFD31EA"
+					item: {
+						Count: 1
+						id: "undergarden:froststeel_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "undergarden:froststeel_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Froststeel"
+			x: 2.75d
+			y: 48.75d
 		}
 		{
-			id: "C6F93083842176E4"
-			title: "All Armour Sets: Utherium"
-			icon: "undergarden:utherium_chestplate"
+			icon: {
+				Count: 1
+				id: "undergarden:utherium_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "268B520AEDD2F801"
 			shape: "rsquare"
 			size: 1.0d
-			x: 4.0d
-			y: 48.75d
 			tasks: [
 				{
-					id: "8F9C253672A05D7A"
+					id: "6F57B0ED06F4F34F"
+					item: {
+						Count: 1
+						id: "undergarden:utherium_boots"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "undergarden:utherium_boots"
-					count: 1
 				}
 				{
 					id: "03B51667F70EF2FD"
+					item: {
+						Count: 1
+						id: "undergarden:utherium_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "undergarden:utherium_chestplate"
-					count: 1
 				}
 				{
-					id: "8CD036F725E4440F"
+					id: "6C709EED4255DDE7"
+					item: {
+						Count: 1
+						id: "undergarden:utherium_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "undergarden:utherium_helmet"
-					count: 1
 				}
 				{
 					id: "3EA53B7EC61A4912"
+					item: {
+						Count: 1
+						id: "undergarden:utherium_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
-					item: "undergarden:utherium_leggings"
-					count: 1
 				}
 			]
-			rewards: [ ]
+			title: "All Armour Sets: Utherium"
+			x: 4.0d
+			y: 48.75d
 		}
 	]
 }

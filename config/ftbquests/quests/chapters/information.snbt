@@ -8,8 +8,8 @@
 	quest_links: [ ]
 	quests: [
 		{
+			description: ["When a recipe looks strange, check EMI before guessing. This pack expects you to follow item uses, machine recipes, and hidden prerequisites through the recipe viewer."]
 			id: "688F6C1C9B295857"
-			title: "EMI and Recipe Lookup"
 			shape: "hexagon"
 			size: 1.2d
 			tasks: [{
@@ -17,54 +17,54 @@
 				title: "Use EMI to check recipes and uses"
 				type: "checkmark"
 			}]
+			title: "EMI and Recipe Lookup"
 			x: -4.0d
 			y: -1.5d
-			description: ["When a recipe looks strange, check EMI before guessing. This pack expects you to follow item uses, machine recipes, and hidden prerequisites through the recipe viewer."]
 		}
 		{
 			dependencies: ["688F6C1C9B295857"]
-			id: "75BAAA2A17F4E001"
-			title: "Read the Whole Recipe"
+			description: ["Do not stop at the first craft you see. Expert recipes often move through casting, mixing, pressing, pressure, or Blood Magic before the final item appears."]
 			icon: "minecraft:book"
+			id: "75BAAA2A17F4E001"
 			shape: "rsquare"
 			tasks: [{
 				id: "75BAAA2A17F4E101"
 				title: "Check machine type, byproducts, and ingredients"
 				type: "checkmark"
 			}]
+			title: "Read the Whole Recipe"
 			x: -2.4d
 			y: -3.0d
-			description: ["Do not stop at the first craft you see. Expert recipes often move through casting, mixing, pressing, pressure, or Blood Magic before the final item appears."]
 		}
 		{
 			dependencies: ["688F6C1C9B295857"]
-			id: "75BAAA2A17F4E002"
-			title: "Trace Item Uses"
+			description: ["When you craft a new part, immediately inspect its uses. That is the fastest way to see whether it is a dead end, a machine body, or the next real progression gate."]
 			icon: "minecraft:compass"
+			id: "75BAAA2A17F4E002"
 			shape: "rsquare"
 			tasks: [{
 				id: "75BAAA2A17F4E102"
 				title: "Follow what a new item unlocks"
 				type: "checkmark"
 			}]
+			title: "Trace Item Uses"
 			x: -2.4d
 			y: 0.0d
-			description: ["When you craft a new part, immediately inspect its uses. That is the fastest way to see whether it is a dead end, a machine body, or the next real progression gate."]
 		}
 		{
 			dependencies: ["75BAAA2A17F4E002"]
-			id: "75BAAA2A17F4E003"
-			title: "Proof, Not Hoarding"
+			description: ["Most quests ask you to make or collect one example item, not a permanent shopping list. Make it once, check what it unlocks, then move forward."]
 			icon: "createdeco:copper_coin"
+			id: "75BAAA2A17F4E003"
 			shape: "rsquare"
 			tasks: [{
 				id: "75BAAA2A17F4E103"
 				title: "Treat quest tasks as proof of progress"
 				type: "checkmark"
 			}]
+			title: "Proof, Not Hoarding"
 			x: -0.8d
 			y: 0.0d
-			description: ["Most quests ask you to make or collect one example item, not a permanent shopping list. Make it once, check what it unlocks, then move forward."]
 		}
 	]
 	title: "Information"

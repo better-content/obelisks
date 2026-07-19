@@ -696,36 +696,6 @@ test("opening progression rejects invalid bootstrap mode with usage error") {
     }
 }
 
-test("mod_ram_partition rejects invalid seed strategy with usage error") {
-    val harnessRoot = createTestTempDirectory("bc-kotlin-test-mod-ram-invalid-seed-harness")
-    val runRoot = createTestTempDirectory("bc-kotlin-test-mod-ram-invalid-seed-run")
-    try {
-        val (exit, output) = runCommand(
-            "tools/bc",
-            "test",
-            "scenario",
-            "mod_ram_partition",
-            "--seed-strategy",
-            "bad",
-            "--run-root",
-            runRoot.toString(),
-            extraEnv = mapOf("BC_HARNESS_ROOT" to harnessRoot.toString()),
-        )
-        assertTrue(exit == 2, "mod_ram_partition with invalid seed strategy should exit 2, got $exit")
-        assertContains(output, "invalid seed strategy: bad", "mod_ram_partition should reject invalid seed strategy")
-    } finally {
-        deleteTree(harnessRoot)
-        deleteTree(runRoot)
-    }
-}
-
-test("mod_ram_partition help advertises partition strategies and fixed exclusions") {
-    val (exit, output) = runCommand("kotlin", "tools/kotlin/mod_ram_partition.main.kts", "--help")
-    assertTrue(exit == 2, "mod_ram_partition --help should exit 2, got $exit")
-    assertContains(output, "--seed-strategy bisect|smallest_islands|balanced_halves", "mod_ram_partition help should advertise all partition strategies")
-    assertContains(output, "--exclude-mod-id MOD_ID", "mod_ram_partition help should advertise fixed mod exclusions")
-}
-
 test("fast duplicate invocation fails immediately with harness diagnostics") {
     val harnessRoot = createTestTempDirectory("bc-kotlin-test-harness-fast-dup")
     val process = startBackground(

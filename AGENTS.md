@@ -118,7 +118,6 @@ Use the portable harness layer for repeatable runtime tests instead of hand-buil
   - `tools/bc test scenario-headful NAME [scenario args]` for headful scenarios
 - Current public scenarios:
   - `lc_tfth_c2me_dh`
-  - `mod_ram_partition`
   - `dimension_worldgen`
   - `opening_progression`
   - `progression_milestones`
@@ -156,13 +155,6 @@ Current LC/DH scenario:
 - Short smoke: `tools/bc test scenario lc_tfth_c2me_dh --samples 4 --settle-seconds 30 --bootstrap-mode once`
 - Full validation expectation: a guarded Lost Cities-only control runtime passes, an otherwise identical unguarded runtime fails with a targeted Lost Cities/C2ME/DH classifier, and the scenario fails as inconclusive if the unguarded repro does not trigger within its fixed workload budget.
 This scenario is diagnostic-only. Do not treat it as part of the normal `tools/bc test full` coverage.
-
-Current server RAM partition scenario:
-- Run: `tools/bc test scenario mod_ram_partition --bootstrap-mode once`
-- Dependency-island A/B walk: `tools/bc test scenario mod_ram_partition --bootstrap-mode once --seed-strategy smallest_islands`
-- Bounded dry run: `tools/bc test scenario mod_ram_partition --bootstrap-mode once --max-depth 2 --settle-seconds 20 --sample-count 3 --keep-runs`
-- Run-root override: add `--run-root ~/.cache/bc/mod-ram-partition` when you need a dedicated disposable location for Forge bootstrap
-- Expectation: the lane prepares one disposable dedicated-server runtime, then either recursively removes dependency-closed halves of the current mod pool or walks the smallest removable dependency islands first when `--seed-strategy smallest_islands` is selected. It captures `/proc` RSS/HWM plus `jcmd` heap/native-memory evidence, persists resumable queue/results state under its run root, refreshes its baseline periodically, and switches to rescue-mode culprit search if the full-pack baseline cannot boot within the current heap envelope.
 
 Current VS ships diagnostic scenarios:
 - Headless stability: `tools/bc test scenario vs_ships_stability --profile quick --cycles 1 --bootstrap-mode once`

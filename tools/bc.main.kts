@@ -268,11 +268,6 @@ val scenarios = linkedMapOf(
         "Lost Cities/C2ME/Distant Horizons serialization-guard regression repro",
         "tools/kotlin/lc_tfth_c2me_dh_stability.main.kts",
     ),
-    "mod_ram_partition" to ScenarioDefinition(
-        "mod_ram_partition",
-        "Dedicated-server mod RAM partitioning and attribution lane",
-        "tools/kotlin/mod_ram_partition.main.kts",
-    ),
     "dimension_worldgen" to ScenarioDefinition(
         "dimension_worldgen",
         "All-dimension worldgen stress run",
@@ -4090,7 +4085,6 @@ fun runToolDocSurfaceValidation(): ProcessRun {
         "tools/bc test unearthed-replacement --instance /path/to/fresh/runtime",
         "tools/bc test scenario-headful dimension_worldgen --cycles 1 --radius 1 --samples 1 --bootstrap-mode once",
         "tools/bc test scenario lc_tfth_c2me_dh --samples 4 --settle-seconds 30 --bootstrap-mode once",
-        "tools/bc test scenario mod_ram_partition --bootstrap-mode once",
         "tools/bc test scenario opening_progression --cycles 1 --bootstrap-mode once",
         "tools/bc test scenario worldgen_sampling --profile local --bootstrap-mode once",
         "tools/bc test scenario worldgen_sampling --profile quick --bootstrap-mode once",
@@ -5214,7 +5208,6 @@ fun scenarioDefaultRunRoot(name: String, args: List<String>): Path {
         "opening_progression" -> cachePath("opening-progression")
         "progression_milestones" -> cachePath("progression-milestones")
         "lc_tfth_c2me_dh" -> cachePath("lc-c2me-dh-repro")
-        "mod_ram_partition" -> cachePath("mod-ram-partition")
         "dimension_worldgen", "worldgen_sampling" -> cachePath("dimension-worldgen")
         "pillager_campaigns" -> cachePath("pillager-campaigns")
         "vs_ships_stability" -> cachePath("vs-ships-stability")
@@ -5245,7 +5238,6 @@ fun scenarioRequestedPort(name: String, args: List<String>): Int? =
             "release" -> 25568
             else -> 25567
         }
-        "mod_ram_partition" -> 25572
         "rain_collector_visuals" -> 25573
         "ore_texture_gallery" -> 25574
         "vs_ships_client" -> when (argValue(args, "--profile") ?: "quick") {

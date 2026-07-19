@@ -40,7 +40,10 @@ while (index < args.size) {
 
 val selected = profile ?: usage("--profile is required")
 val mappedArgs = when (selected) {
-    "local" -> listOf("--cycles", "1", "--dimensions", "minecraft:overworld", "--radius", "1", "--samples", "1", "--server-only")
+    // ADLOD indicators are intentionally sparse. A 9- or 25-chunk census can
+    // legitimately contain none even on the deterministic validation seed;
+    // 81 chunks is the measured minimum that exercises the surface signal.
+    "local" -> listOf("--cycles", "1", "--dimensions", "minecraft:overworld", "--radius", "4", "--samples", "1", "--server-only")
     "quick" -> listOf("--cycles", "1", "--dimensions", "minecraft:overworld", "--radius", "2", "--samples", "1", "--server-only")
     "release" -> listOf("--cycles", "1", "--dimensions", "minecraft:overworld,lostcities:lostcity,creatingspace:earth_orbit", "--radius", "4", "--samples", "3", "--server-only")
     else -> usage("invalid profile: $selected")

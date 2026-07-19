@@ -42,6 +42,8 @@ if (!Files.isRegularFile(auditPath)) {
 val audit = Files.readString(auditPath)
 val bc = Files.readString(bcPath)
 val stress = Files.readString(stressPath)
+val launcherPath = root.resolve("tools/kotlin/worldgen_sampling.main.kts")
+val launcher = if (Files.isRegularFile(launcherPath)) Files.readString(launcherPath) else ""
 val requiredAuditNeedles = listOf(
     "bc.unearthed_replacement_audit.v1",
     "MAX_UNDERGROUND_ROCK_RATIO",
@@ -86,3 +88,9 @@ if (missingOreAudit.isNotEmpty() || !stress.contains("realistic_ore_blocks") || 
     exitProcess(1)
 }
 println("ore worldgen regression contract validates")
+
+if (!launcher.contains("\"local\" -> listOf(\"--cycles\", \"1\", \"--dimensions\", \"minecraft:overworld\", \"--radius\", \"4\"")) {
+    System.err.println("FAIL - local worldgen sampling must retain the 81-chunk ADLOD census floor")
+    exitProcess(1)
+}
+println("local ADLOD census floor validates")

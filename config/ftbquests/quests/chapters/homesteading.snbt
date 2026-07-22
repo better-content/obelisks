@@ -1,0 +1,1098 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "homesteading"
+	group: "3D1BF480E4BCDBA6"
+	id: "71DE08FE1C5AE391"
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			description: ["Goat fur provides cold insulation. Use it at the Sewing Table or wear goat-fur clothing when winter, altitude, or a frozen biome pushes body temperature down."]
+			id: "17415831C5853554"
+			tasks: [{
+				id: "7F15080359BD18F6"
+				item: "cold_sweat:goat_fur"
+				type: "item"
+			}]
+			x: -1.0d
+			y: -2.0d
+		}
+		{
+			description: ["Hoglin hide provides heat insulation. It is the material to reach for when deserts, furnaces, or other hot environments overwhelm ordinary clothing."]
+			id: "3C22313CCB65D488"
+			tasks: [{
+				id: "3F502189FEFF36D5"
+				item: "cold_sweat:hoglin_hide"
+				type: "item"
+			}]
+			x: -1.0d
+			y: -1.0d
+		}
+		{
+			description: ["Chameleon molt provides adaptive insulation, shifting between heat and cold protection as conditions change. Apply it when a route crosses several climates."]
+			id: "01CF77C871D2865F"
+			tasks: [{
+				id: "0732A50FFC352D24"
+				item: "cold_sweat:chameleon_molt"
+				type: "item"
+			}]
+			x: -1.0d
+			y: -4.0d
+		}
+		{
+			description: ["The Soulspring Lamp suppresses extreme Nether heat while it has fuel. In this pack it only functions in the Nether, so it is expedition equipment rather than universal climate immunity."]
+			id: "773C8C242A84D880"
+			tasks: [{
+				id: "73769B27C4EC5C32"
+				item: {
+					Count: 1
+					id: "cold_sweat:soulspring_lamp"
+					tag: {
+						Fuel: 64.0d
+					}
+				}
+				type: "item"
+			}]
+			x: -2.0d
+			y: -1.0d
+		}
+		{
+			description: ["Soul Sprouts are the pack-configured fuel for the Soulspring Lamp, and eating one provides a sustained cooling effect. Carry enough for the return journey instead of assuming one charge will cover an entire Nether expedition."]
+			id: "3E50A898CF936716"
+			tasks: [{
+				id: "419E9F1212524D39"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"fiahi:food": { }
+					}
+					id: "cold_sweat:soul_sprout"
+				}
+				type: "item"
+			}]
+			x: -2.0d
+			y: -2.0d
+		}
+		{
+			description: ["Measure the climate before committing to a route or settlement site. Temperature changes with biome, elevation, season, time, weather, nearby blocks, and dimension."]
+			id: "03A9C8A22386DD14"
+			tasks: [{
+				id: "6EB554D38C015A60"
+				item: "cold_sweat:thermometer"
+				type: "item"
+			}]
+			x: -2.0d
+			y: -3.0d
+		}
+		{
+			description: ["The Thermolith is a stationary climate instrument for monitoring conditions around the homestead. Use its readings when testing shelter and thermal equipment."]
+			id: "08D1715923FBD755"
+			tasks: [{
+				id: "772DFC16CB1AEABC"
+				item: "cold_sweat:thermolith"
+				type: "item"
+			}]
+			x: -1.0d
+			y: -3.0d
+		}
+		{
+			description: ["A Hearth conditions a large sheltered area and can send its effect through connected paths. It is substantial Nether-gated infrastructure, not the first answer to a cold night."]
+			id: "734FF52EDA7A1E85"
+			tasks: [{
+				id: "3CEB6097824B0E2E"
+				item: "cold_sweat:hearth"
+				type: "item"
+			}]
+			x: 0.0d
+			y: -2.0d
+		}
+		{
+			description: ["The Boiler warms a smaller nearby area. Fuel it deliberately and use it as household climate control when clothing alone is not enough."]
+			id: "679E40E1720C4BE5"
+			tasks: [{
+				id: "6E1D7A4032F8756B"
+				item: "cold_sweat:boiler"
+				type: "item"
+			}]
+			x: 0.0d
+			y: -3.0d
+		}
+		{
+			description: ["Cold Sweat thermal sources need a Smokestack to distribute conditioned air. Build this as functional climate ducting, separate from the chimneys that vent pollution."]
+			id: "3C57BC749410133B"
+			tasks: [{
+				id: "0EA922193244CDED"
+				item: "cold_sweat:smokestack"
+				type: "item"
+			}]
+			x: 0.0d
+			y: -1.0d
+		}
+		{
+			description: ["The Sewing Table installs insulating materials into wearable armour. Goat fur resists cold, hoglin hide resists heat, and chameleon molt adapts between them."]
+			id: "53D1ECB1B7C43941"
+			tasks: [{
+				id: "4658D59CBF0FEB06"
+				item: "cold_sweat:sewing_table"
+				type: "item"
+			}]
+			x: 0.0d
+			y: -4.0d
+		}
+		{
+			description: ["Use the calendar to plan planting, fishing, travel, and winter preparation. Overworld crops grow slowly outside their fertile seasons instead of simply breaking."]
+			id: "7FF7C82E11AAF3C1"
+			tasks: [{
+				id: "12D4B2B19DCE23A9"
+				item: "sereneseasons:calendar"
+				type: "item"
+			}]
+			x: -1.0d
+			y: -6.5d
+		}
+		{
+			description: ["A stone chimney gives smoke and machine emissions a route out of occupied spaces. Vent combustion instead of letting the homestead become its own environmental hazard."]
+			id: "2170CAE3C4D056CA"
+			tasks: [{
+				id: "288DB78A21D52B7C"
+				item: "adchimneys:stone_chimney"
+				type: "item"
+			}]
+			x: -2.5d
+			y: 2.0d
+		}
+		{
+			description: ["Cobblestone provides an accessible chimney body for early workshops and kitchens. Route it above the roofline and keep the exhaust path clear."]
+			id: "2330572303E1B157"
+			tasks: [{
+				id: "5632E7DC6303C226"
+				item: "adchimneys:cobblestone_chimney"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 2.0d
+		}
+		{
+			description: ["Small brick chimneys are a compact masonry option for venting working buildings. The material changes the build, but the important lesson is to control where emissions leave it."]
+			id: "690D649F22CB8168"
+			tasks: [{
+				id: "1144B7A202EC8BEE"
+				item: "adchimneys:small_brick_chimney"
+				type: "item"
+			}]
+			x: -0.5d
+			y: 2.0d
+		}
+		{
+			description: ["A large brick chimney makes the exhaust system an intentional part of a larger workshop. Use it where several combustion surfaces share the same industrial space."]
+			id: "518AFB9EF61AC906"
+			tasks: [{
+				id: "2A94287E68E9ABFE"
+				item: "adchimneys:large_brick_chimney"
+				type: "item"
+			}]
+			x: 0.5d
+			y: 2.0d
+		}
+		{
+			description: ["The Starcatcher Rod opens a location- and season-sensitive fishing minigame. Fishing is a renewable food route, but the same catch will not be available everywhere or all year."]
+			id: "35CD1117B47188CF"
+			tasks: [{
+				id: "6420A042E547AF11"
+				item: "starcatcher:starcatcher_rod"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 0.0d
+		}
+		{
+			description: ["The Starcatcher Guide records the fish your team has discovered. Entries stay hidden until a fish is caught, so use it as a field journal rather than a complete answer key."]
+			id: "310F6DC6A6BF0883"
+			tasks: [{
+				id: "6CF09234821726DA"
+				item: "starcatcher:starcatcher_guide"
+				type: "item"
+			}]
+			x: 5.5d
+			y: 0.0d
+		}
+		{
+			description: ["The Keg ferments drinks and preserves foods. Start with sufficiently clean liquid: poorly purified fermentation can grow bacteria and make the result dirtier."]
+			id: "535700C7748FB081"
+			tasks: [{
+				id: "524698E90B02597A"
+				item: "brewinandchewin:keg"
+				type: "item"
+			}]
+			x: -9.0d
+			y: 1.0d
+		}
+		{
+			description: ["The Stove is the permanent heat source for Farmer's Delight cookware. It also belongs to the pack's emissions surface, so plan kitchen ventilation with it."]
+			id: "23BED615533CD349"
+			tasks: [{
+				id: "1E83E0E3BDFA95E6"
+				item: "farmersdelight:stove"
+				type: "item"
+			}]
+			x: -8.0d
+			y: -3.5d
+		}
+		{
+			description: ["The Cooking Pot turns several ingredients into efficient meals, stews, and processed extracts. It is where a varied pantry starts becoming sustained working time."]
+			id: "0350BBF8A26EDE29"
+			tasks: [{
+				id: "68BDA367A4545DAE"
+				item: "farmersdelight:cooking_pot"
+				type: "item"
+			}]
+			x: -8.0d
+			y: -4.5d
+		}
+		{
+			description: ["The Skillet cooks individual foods directly over heat and remains useful away from the full kitchen. Use it for quick preparation while the pot handles larger recipes."]
+			id: "28053EF5D81A77BE"
+			tasks: [{
+				id: "66FDBA3DAFC546BB"
+				item: {
+					Count: 1
+					id: "farmersdelight:skillet"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -8.0d
+			y: -5.5d
+		}
+		{
+			description: ["Place ingredients on the Cutting Board and work them with a knife to obtain cuts, portions, and useful byproducts. Many pack-authored food reagents begin here."]
+			id: "16758DFB0A034701"
+			tasks: [{
+				id: "0BDA4931A4046F4B"
+				item: "farmersdelight:cutting_board"
+				type: "item"
+			}]
+			x: -8.0d
+			y: -2.5d
+		}
+		{
+			description: ["The Kama combines crop harvesting, tilling, shearing, and plant work in one TConstruct tool. Build it from materials you can repair instead of treating this wooden example as mandatory."]
+			id: "0A6CCFFDF6F2E7FF"
+			tasks: [{
+				id: "15C352100B4BD934"
+				item: {
+					Count: 1
+					id: "tconstruct:kama"
+					tag: {
+						Damage: 0
+						tic_broken: 0b
+						tic_materials: [
+							"tconstruct:wood"
+							"tconstruct:wood"
+							"tconstruct:string"
+						]
+						tic_modifiers: [
+							{
+								level: 2
+								name: "tconstruct:cultivated"
+							}
+							{
+								level: 1
+								name: "tconstruct:stringy"
+							}
+							{
+								level: 1
+								name: "tconstruct:tilling"
+							}
+							{
+								level: 1
+								name: "tconstruct:shears"
+							}
+							{
+								level: 1
+								name: "tconstruct:harvest"
+							}
+						]
+						tic_multipliers: {
+							"tconstruct:attack_damage": 0.5f
+						}
+						tic_persistent: { }
+						tic_stats: {
+							"tconstruct:attack_damage": 0.5f
+							"tconstruct:attack_speed": 1.6f
+							"tconstruct:durability": 60.0f
+							"tconstruct:mining_speed": 2.0f
+						}
+						tic_volatile_data: {
+							abilities: 1
+							upgrades: 3
+						}
+					}
+				}
+				type: "item"
+			}]
+			x: -2.0d
+			y: -7.5d
+		}
+		{
+			description: ["The Sand Filter is the Create-era continuous purification step. It improves water by one purity level and trades early manual boiling for fluid-handling infrastructure."]
+			id: "68EF41C24DDBEA5F"
+			tasks: [{
+				id: "7D4B980DD02A9BEB"
+				item: "thirst:sand_filter"
+				type: "item"
+			}]
+			x: 2.5d
+			y: -6.0d
+		}
+		{
+			description: ["Fire a clay bowl into a reusable terracotta vessel before filling it. It is the simple early container for collecting, carrying, and heating small amounts of water."]
+			id: "02FE7998B829DA0B"
+			tasks: [{
+				id: "18D5AAA11F4A073B"
+				item: "thirst:terracotta_bowl"
+				type: "item"
+			}]
+			x: 3.5d
+			y: -6.0d
+		}
+		{
+			description: ["A Campfire cooks food, boils supported water containers, and melts nearby snow blocks into water. It is the first dependable purification and cold-weather utility station."]
+			id: "5BC604835B2CDEDA"
+			tasks: [{
+				id: "27616B009D034F05"
+				item: "minecraft:campfire"
+				type: "item"
+			}]
+			x: 2.5d
+			y: -5.0d
+		}
+		{
+			description: ["A bottle of water is only a container, not proof that the water is safe. Source and treatment determine purity, and dirty water can inflict nausea or poison."]
+			id: "78BCBF9A4F3E0146"
+			tasks: [{
+				id: "334F3C1FA53F90CC"
+				item: {
+					Count: 1
+					id: "minecraft:potion"
+					tag: {
+						Potion: "minecraft:water"
+					}
+				}
+				type: "item"
+			}]
+			x: 3.5d
+			y: -5.0d
+		}
+		{
+			description: ["An exposed Rain Collector stores up to four charges during rainfall. Drink from it or fill a supported container to turn weather into a renewable early-water reserve."]
+			id: "E6A0291897193FB8"
+			tasks: [{
+				id: "876015D4D16F4251"
+				item: "bcfixes:rain_collector"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["The Waterskin is portable water and temperature support. Fill and purify it before travel, then use it for hydration or short-term thermal relief when conditions turn dangerous."]
+			id: "06909084470EB7E9"
+			tasks: [{
+				id: "6FB3C592A35B7673"
+				item: "cold_sweat:waterskin"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["The Icebox chills a nearby sheltered area and can distribute cold through thermal paths. It is the household counterpart to the Boiler for hot climates."]
+			id: "9C202A5FA69F0D77"
+			tasks: [{
+				id: "AEEC149BB119276A"
+				item: "cold_sweat:icebox"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["The Kettle brews Farmer's Respite teas and coffee while improving water purity through boiling. It connects hydration, crop variety, and useful food effects."]
+			id: "4E189F50D436EFAD"
+			tasks: [{
+				id: "0D1258A7847B5358"
+				item: "farmersrespite:kettle"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["The Food Book tracks which foods you have eaten and makes culinary variety visible. Use it to find neglected ingredients instead of grinding one easy meal forever."]
+			id: "010BF0BCB9DCD41A"
+			tasks: [{
+				id: "DDC04118117013A3"
+				item: "solcarrot:food_book"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["Combine dirt with biological waste, straw, and bone meal to start Organic Compost. Leave it to mature rather than expecting an instant finished soil block."]
+			id: "CCDD7D4835CEB5EF"
+			tasks: [{
+				id: "C35F461D48547C11"
+				item: "farmersdelight:organic_compost"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["Organic Compost eventually matures into Rich Soil. Use it to establish productive permanent plots and as the base for rich-soil farmland."]
+			id: "944D484E726EE5DE"
+			tasks: [{
+				id: "74F9A01D499138CB"
+				item: "farmersdelight:rich_soil"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["Tea bushes are specialty forage rather than ordinary Overworld groundcover. Find their starting stock through the Undergarden route, then cultivate a renewable supply at home."]
+			id: "73F0931A5529071A"
+			tasks: [{
+				id: "95E2262B680EE19F"
+				item: "farmersrespite:tea_seeds"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["Coffee bushes are another Undergarden forage prize. Bring berries home for cultivation, roast the beans, and use the Kettle to turn them into a repeatable drink crop."]
+			id: "D4AC62CFC37F4919"
+			tasks: [{
+				id: "885E68E880E3664D"
+				item: "farmersrespite:coffee_berries"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["Specialty crops are deliberately found through village farms, settlement trade, and Undergarden forage instead of ordinary Overworld wilderness."]
+			icon: "farmersdelight:cabbage"
+			id: "005DC6BB3C38C675"
+			tasks: [
+				{
+					id: "E7F3409C0E8DA04D"
+					item: "farmersdelight:cabbage"
+					type: "item"
+				}
+				{
+					id: "A6DCF6C41EA8E72E"
+					item: "farmersdelight:onion"
+					type: "item"
+				}
+				{
+					id: "F9F4F1988D7BF228"
+					item: "farmersdelight:tomato"
+					type: "item"
+				}
+				{
+					id: "914720C565A9AC47"
+					item: "farmersdelight:rice"
+					type: "item"
+				}
+			]
+			title: "Specialty Crops"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["Unearthed grassy regolith can be hoed directly into matching farmland when the space above is clear. It supports ordinary crop-type plants and returns to its matching regolith when it decays."]
+			icon: "bcfixes:stone_regolith_farmland"
+			id: "36E428FA17A94E0F"
+			tasks: [{
+				id: "C29B5250355B0C5C"
+				title: "Cultivate regolith farmland"
+				type: "checkmark"
+			}]
+			title: "Regolith Farming"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["Use the Diet screen and food book to spread meals across fruits, grains, proteins, sugars, and vegetables instead of relying on one food forever."]
+			icon: "farmersdelight:mixed_salad"
+			id: "3778EF4D086DCD6C"
+			tasks: [{
+				id: "FC0C47EE7C8B09C1"
+				title: "Build a balanced diet"
+				type: "checkmark"
+			}]
+			title: "Balanced Diet"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["Starcatcher fish vary with location and season. Catching one turns the rod and guide into a working food source rather than a collection shelf."]
+			icon: "starcatcher:starcatcher_rod"
+			id: "FDE9218EF8EEA207"
+			tasks: [{
+				id: "8A122E4EA2A6CB18"
+				title: "Catch a Starcatcher fish"
+				type: "checkmark"
+			}]
+			title: "Seasonal Fishing"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["Livestock provide renewable food, hide, bone, feathers, and other biological materials. Genetic Animals makes breeding and herd quality part of maintaining that supply."]
+			icon: "minecraft:lead"
+			id: "BDBF3C780B009CD9"
+			tasks: [{
+				id: "5B6197C755A6418C"
+				title: "Establish a breeding herd"
+				type: "checkmark"
+			}]
+			title: "Animal Husbandry"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["Begin with the Framed Cube, then learn the small toolset instead of hand-crafting every variant. The saw selects shapes, the hammer and wrench adjust them, the screwdriver changes supported camo states, the blueprint copies completed frames, and the key preserves a chosen shape against neighbour updates."]
+			icon: "framedblocks:framed_blueprint"
+			id: "9B6C167A50277704"
+			tasks: [
+				{
+					id: "47655D59AD3D2444"
+					item: "framedblocks:framed_cube"
+					type: "item"
+				}
+				{
+					id: "A2B7E94EC17B98E9"
+					item: "framedblocks:framing_saw"
+					type: "item"
+				}
+				{
+					id: "CFC44FB9B1E10BF3"
+					item: "framedblocks:framed_hammer"
+					type: "item"
+				}
+				{
+					id: "2DAAD77758F8213E"
+					item: "framedblocks:framed_wrench"
+					type: "item"
+				}
+				{
+					id: "CC591FB33543E343"
+					item: "framedblocks:framed_screwdriver"
+					type: "item"
+				}
+				{
+					id: "A699C612BB94CB38"
+					item: "framedblocks:framed_blueprint"
+					type: "item"
+				}
+				{
+					id: "DF68B447EBEEB555"
+					item: "framedblocks:framed_key"
+					type: "item"
+				}
+			]
+			title: "Framing Toolkit"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["These are the workhorse frame shapes for walls, floors, trim, openings, and boundaries. Apply a full block as camouflage, then use the framing tools when placement or texture orientation needs correction."]
+			icon: "framedblocks:framed_stairs"
+			id: "1AB0A666BB5F0BDC"
+			tasks: [
+				{
+					id: "EE141A138AD5AB80"
+					item: "framedblocks:framed_slab"
+					type: "item"
+				}
+				{
+					id: "12BD8004776386D5"
+					item: "framedblocks:framed_double_slab"
+					type: "item"
+				}
+				{
+					id: "CF00D1CAFC2B8337"
+					item: "framedblocks:framed_panel"
+					type: "item"
+				}
+				{
+					id: "028993756BC4A73D"
+					item: "framedblocks:framed_double_panel"
+					type: "item"
+				}
+				{
+					id: "146175CBB66D2D0B"
+					item: "framedblocks:framed_stairs"
+					type: "item"
+				}
+				{
+					id: "06D689DA4395E9AB"
+					item: "framedblocks:framed_vertical_stairs"
+					type: "item"
+				}
+				{
+					id: "25C4094160AE7157"
+					item: "framedblocks:framed_pillar"
+					type: "item"
+				}
+				{
+					id: "E13A8DDB9AACE900"
+					item: "framedblocks:framed_half_pillar"
+					type: "item"
+				}
+				{
+					id: "9F0AFA5084814FA7"
+					item: "framedblocks:framed_post"
+					type: "item"
+				}
+				{
+					id: "5EBE4DB1C3BEE2EF"
+					item: "framedblocks:framed_wall"
+					type: "item"
+				}
+				{
+					id: "87231B2E15CE3394"
+					item: "framedblocks:framed_fence"
+					type: "item"
+				}
+				{
+					id: "1718B25BD20DE716"
+					item: "framedblocks:framed_fence_gate"
+					type: "item"
+				}
+				{
+					id: "705062D62AE6B682"
+					item: "framedblocks:framed_pane"
+					type: "item"
+				}
+				{
+					id: "CA6C0FB065C356CF"
+					item: "framedblocks:framed_bars"
+					type: "item"
+				}
+				{
+					id: "B98FB04B3D681784"
+					item: "framedblocks:framed_floor_board"
+					type: "item"
+				}
+				{
+					id: "B6DB7F5F97BBAC08"
+					item: "framedblocks:framed_wall_board"
+					type: "item"
+				}
+				{
+					id: "BC71293F5C1ECA68"
+					item: "framedblocks:framed_lattice_block"
+					type: "item"
+				}
+				{
+					id: "EAA5BEE3E1009C73"
+					item: "framedblocks:framed_tube"
+					type: "item"
+				}
+			]
+			title: "Basic Framed Shapes"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["Slopes, prisms, corners, and split faces solve rooflines and transitions that ordinary stairs cannot. This representative set teaches the major shape families; use the Framing Saw and EMI to find the finer stacked, elevated, extended, and inverted variants."]
+			icon: "framedblocks:framed_slope"
+			id: "07E2954F4C96084C"
+			tasks: [
+				{
+					id: "E554A104E763EF16"
+					item: "framedblocks:framed_slope"
+					type: "item"
+				}
+				{
+					id: "A541E0FACC1948B3"
+					item: "framedblocks:framed_corner_slope"
+					type: "item"
+				}
+				{
+					id: "85E88AAE2254FC24"
+					item: "framedblocks:framed_inner_corner_slope"
+					type: "item"
+				}
+				{
+					id: "45322540FC006848"
+					item: "framedblocks:framed_half_slope"
+					type: "item"
+				}
+				{
+					id: "FF848AE6CBA435C6"
+					item: "framedblocks:framed_double_slope"
+					type: "item"
+				}
+				{
+					id: "E3C52DE37303A13C"
+					item: "framedblocks:framed_divided_slope"
+					type: "item"
+				}
+				{
+					id: "AEEC7762887A576B"
+					item: "framedblocks:framed_slope_slab"
+					type: "item"
+				}
+				{
+					id: "37895935BD47833A"
+					item: "framedblocks:framed_slope_panel"
+					type: "item"
+				}
+				{
+					id: "D2549436962E8155"
+					item: "framedblocks:framed_prism"
+					type: "item"
+				}
+				{
+					id: "47044DDCA61494AB"
+					item: "framedblocks:framed_inner_prism"
+					type: "item"
+				}
+				{
+					id: "8BA82D0F81FA80B9"
+					item: "framedblocks:framed_sloped_prism"
+					type: "item"
+				}
+				{
+					id: "376EFFBBE62996DF"
+					item: "framedblocks:framed_pyramid"
+					type: "item"
+				}
+				{
+					id: "40D77B578B91D8E1"
+					item: "framedblocks:framed_pyramid_slab"
+					type: "item"
+				}
+				{
+					id: "DE0634432B241D7F"
+					item: "framedblocks:framed_corner_pillar"
+					type: "item"
+				}
+				{
+					id: "4015655773DE2F5B"
+					item: "framedblocks:framed_threeway_corner"
+					type: "item"
+				}
+				{
+					id: "769633B23F5B27A3"
+					item: "framedblocks:framed_slab_edge"
+					type: "item"
+				}
+				{
+					id: "11B839CBA98BEB16"
+					item: "framedblocks:framed_slab_corner"
+					type: "item"
+				}
+				{
+					id: "EF09C3760587004C"
+					item: "framedblocks:framed_checkered_cube"
+					type: "item"
+				}
+			]
+			title: "Slopes, Corners, and Splits"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["Collapsible frames can form custom slopes beyond the preset catalogue. Use the Framed Hammer on individual face corners to move them inward or outward, and use the wrench when the triangle split needs to change."]
+			icon: "framedblocks:framed_collapsible_block"
+			id: "D088E669F454C4C1"
+			tasks: [
+				{
+					id: "D0EF7DE45D1803C7"
+					item: "framedblocks:framed_collapsible_block"
+					type: "item"
+				}
+				{
+					id: "D570F3CE3E20C3BA"
+					item: "framedblocks:framed_collapsible_copycat_block"
+					type: "item"
+				}
+			]
+			title: "Custom Surfaces"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["The One-Way Window accepts camouflage while keeping one face transparent from the chosen side. It is useful for observation rooms, guarded entrances, and concealed sightlines."]
+			icon: "framedblocks:framed_one_way_window"
+			id: "D7B7EB4B3DE64D01"
+			tasks: [{
+				id: "CE2A02021745A283"
+				item: "framedblocks:framed_one_way_window"
+				type: "item"
+			}]
+			title: "One-Way Window"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["The Framed Chest lets storage match the room around it. Secret Storage pushes the idea further by hiding a working inventory inside a camouflaged construction block."]
+			icon: "framedblocks:framed_secret_storage"
+			id: "15D3ECE597FBCD5B"
+			tasks: [
+				{
+					id: "11E78C9BCA9E9FB1"
+					item: "framedblocks:framed_chest"
+					type: "item"
+				}
+				{
+					id: "6956AA0A42D24021"
+					item: "framedblocks:framed_secret_storage"
+					type: "item"
+				}
+			]
+			title: "Hidden Storage"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["Some frames keep real behaviour beneath their camouflage: the Bouncy Cube launches entities, the Glowing Cube remains visible in darkness without lighting the room, the Redstone Block supplies power, and the Target reacts to projectiles."]
+			icon: "framedblocks:framed_bouncy_cube"
+			id: "8D65C51DB8D38A09"
+			tasks: [
+				{
+					id: "67AC2D72CC35F25A"
+					item: "framedblocks:framed_bouncy_cube"
+					type: "item"
+				}
+				{
+					id: "CF9D6AA4BD626F28"
+					item: "framedblocks:framed_glowing_cube"
+					type: "item"
+				}
+				{
+					id: "C133DC1D2B8E057C"
+					item: "framedblocks:framed_redstone_block"
+					type: "item"
+				}
+				{
+					id: "9054894EE068525A"
+					item: "framedblocks:framed_target"
+					type: "item"
+				}
+			]
+			title: "Frames With Behaviour"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["A filled Waterskin joins the hydration and temperature systems. Treat the water before travel, then warm or cool the skin so it can provide immediate and short-lived thermal relief as well as a drink."]
+			icon: "cold_sweat:filled_waterskin"
+			id: "9101F80C45766D9C"
+			tasks: [{
+				id: "D196BC070084CF59"
+				item: "cold_sweat:filled_waterskin"
+				type: "item"
+			}]
+			title: "Prepared Waterskin"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["Set the Season Sensor to a chosen season and it will output redstone while that season is active, rising from signal strength 1 at the beginning to 15 near the end. Use it to signal planting windows or drive seasonal farm controls."]
+			icon: "sereneseasons:season_sensor"
+			id: "AB9756671C0BBA7F"
+			tasks: [{
+				id: "DB0F8524C0B34C1E"
+				item: "sereneseasons:season_sensor"
+				type: "item"
+			}]
+			title: "Season Sensor"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["Out-of-season crops grow slowly on the surface, but the pack grants underground fertility below Y 48. A sheltered deep farm is the dependable alternative when the calendar does not match the crop."]
+			icon: "minecraft:wheat_seeds"
+			id: "7FB326F1F794CAC6"
+			tasks: [{
+				id: "3B591CF954AEDA6B"
+				title: "Establish an underground growing plot"
+				type: "checkmark"
+			}]
+			title: "Off-Season Growing"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["Advanced Chimneys can form ventilation networks instead of isolated vertical stacks. Combine chimney bodies with the mod's pumps, vents, pipes, or hoppers to collect smoke from several heat sources and release it outdoors."]
+			icon: "adchimneys:cobblestone_chimney"
+			id: "DCD0EB9AAA84BD96"
+			tasks: [{
+				id: "311BDBB1FB8E1225"
+				title: "Build a connected ventilation system"
+				type: "checkmark"
+			}]
+			title: "Ventilation Networks"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["Bonemeal farmland to bring worms to the surface. Bait and rod attachments matter when hunting fish with narrow biome, weather, time, elevation, or seasonal conditions."]
+			icon: "starcatcher:worm"
+			id: "2221019FC0A63019"
+			tasks: [{
+				id: "044963301AB528F6"
+				item: "starcatcher:worm"
+				type: "item"
+			}]
+			title: "Bait the Hook"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["Fermentation recipes do not all want the same environment. Place a Heating Cask or Ice Crate near the Keg when a recipe calls for a controlled hot or cold process instead of surrounding the room with improvised heat or ice."]
+			icon: "brewinandchewin:heating_cask"
+			id: "30B36A7A3C1AC1DE"
+			tasks: [
+				{
+					id: "F1FB12DC05510129"
+					item: "brewinandchewin:heating_cask"
+					type: "item"
+				}
+				{
+					id: "7C76BC4DCAF0C864"
+					item: "brewinandchewin:ice_crate"
+					type: "item"
+				}
+			]
+			title: "Fermentation Temperature"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["The Keg can turn milk and other ingredients into liquid cheese, which is poured into an unripe waxed wheel. Let the wheel age into finished flaxen cheese before cutting it into servings."]
+			icon: "brewinandchewin:flaxen_cheese_wheel"
+			id: "0B4392BCBAD44C78"
+			tasks: [
+				{
+					id: "FB304E29670C75B5"
+					item: "brewinandchewin:unripe_flaxen_cheese_wheel"
+					type: "item"
+				}
+				{
+					id: "DC514781C5DD540C"
+					item: "brewinandchewin:flaxen_cheese_wheel"
+					type: "item"
+				}
+			]
+			title: "Aged Cheese"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["Cabinets are compact kitchen storage that can sit beneath work surfaces without turning the pantry into a wall of generic chests. Keep staple ingredients close to the Cutting Board, Pot, and Kettle."]
+			icon: "farmersdelight:oak_cabinet"
+			id: "69337E236FC13EEF"
+			tasks: [{
+				id: "344A37B10BF17897"
+				item: "farmersdelight:oak_cabinet"
+				type: "item"
+			}]
+			title: "The Pantry"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["Farmer's Delight feasts are placed as shared dishes and served into bowls instead of eaten as one oversized item. They turn a broad harvest into several efficient meals for a household or expedition party."]
+			icon: "farmersdelight:roast_chicken_block"
+			id: "D254D08257E1838C"
+			tasks: [{
+				id: "AC05B87A081891E3"
+				item: "farmersdelight:roast_chicken_block"
+				type: "item"
+			}]
+			title: "Serve a Feast"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["The Scythe is the large TConstruct harvesting tool for mature fields and broad plant clearing. Build it when the Kama's careful single-plot work becomes the bottleneck, and choose repairable materials suited to repeated farm use."]
+			icon: "tconstruct:scythe"
+			id: "53C957328751BA80"
+			tasks: [{
+				id: "7039B6B8964C59A6"
+				item: "tconstruct:scythe"
+				type: "item"
+			}]
+			title: "Field Scythe"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["Shape raw clay into bowls, fire them into reusable terracotta vessels, and fill them with water. The filled bowl retains water purity, so boiling and clean sourcing still matter after choosing a container."]
+			icon: "thirst:terracotta_water_bowl"
+			id: "E56C2F1521364C19"
+			tasks: [
+				{
+					id: "C70FCA8203D0EE0B"
+					item: "thirst:clay_bowl"
+					type: "item"
+				}
+				{
+					id: "E2B712FA5BDC75D9"
+					item: "thirst:terracotta_water_bowl"
+					type: "item"
+				}
+			]
+			title: "Water Bowls"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["Use the Kettle to turn cultivated leaves and roasted beans into drinks with strong hydration and useful food effects. Green tea and coffee also become processed extracts in the pack's later food-reagent routes."]
+			icon: "farmersrespite:green_tea"
+			id: "B4C7E8CCB6A1DF43"
+			tasks: [
+				{
+					id: "E1FEB7249A8373D3"
+					item: "farmersrespite:green_tea"
+					type: "item"
+				}
+				{
+					id: "CDCA726389F1C66D"
+					item: "farmersrespite:coffee"
+					type: "item"
+				}
+			]
+			title: "Brewed Drinks"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["Till mature Rich Soil into Rich Soil Farmland for the permanent high-quality garden. This is a cultivated soil route distinct from the geology-matching regolith farmland used elsewhere."]
+			icon: "farmersdelight:rich_soil_farmland"
+			id: "5B3687AEFA829042"
+			tasks: [{
+				id: "BEBD2D9851B9BE3B"
+				title: "Till rich soil into farmland"
+				type: "checkmark"
+			}]
+			title: "Rich Soil Farmland"
+			x: 0.0d
+			y: 0.0d
+		}
+	]
+	title: "Homesteading and Survival"
+}

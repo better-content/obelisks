@@ -2297,6 +2297,28 @@
 				tag: {
 					Damage: 0
 					tic_broken: 0b
+					tic_modifiers: [
+						{
+							level: 1
+							name: "tconstruct:overslime_friend"
+						}
+						{
+							level: 1
+							name: "tconstruct:wings"
+						}
+					]
+					tic_multipliers: {
+						"tconstruct:attack_damage": 0.4f
+					}
+					tic_persistent: { }
+					tic_stats: {
+						"tconstruct:durability": 672.0f
+					}
+					tic_volatile_data: {
+						abilities: 1
+						"tconstruct:elyta": 1b
+						upgrades: 5
+					}
 				}
 			}
 			id: "1616C7D5828C807A"
@@ -2311,6 +2333,28 @@
 						tag: {
 							Damage: 0
 							tic_broken: 0b
+							tic_modifiers: [
+								{
+									level: 1
+									name: "tconstruct:overslime_friend"
+								}
+								{
+									level: 1
+									name: "tconstruct:bouncy"
+								}
+								{
+									level: 1
+									name: "tconstruct:leaping"
+								}
+							]
+							tic_persistent: { }
+							tic_stats: {
+								"tconstruct:durability": 546.0f
+							}
+							tic_volatile_data: {
+								abilities: 1
+								upgrades: 5
+							}
 						}
 					}
 					type: "item"
@@ -2323,6 +2367,28 @@
 						tag: {
 							Damage: 0
 							tic_broken: 0b
+							tic_modifiers: [
+								{
+									level: 1
+									name: "tconstruct:overslime_friend"
+								}
+								{
+									level: 1
+									name: "tconstruct:wings"
+								}
+							]
+							tic_multipliers: {
+								"tconstruct:attack_damage": 0.4f
+							}
+							tic_persistent: { }
+							tic_stats: {
+								"tconstruct:durability": 672.0f
+							}
+							tic_volatile_data: {
+								abilities: 1
+								"tconstruct:elyta": 1b
+								upgrades: 5
+							}
 						}
 					}
 					type: "item"
@@ -2347,6 +2413,29 @@
 						tag: {
 							Damage: 0
 							tic_broken: 0b
+							tic_modifiers: [
+								{
+									level: 1
+									name: "tconstruct:overslime_friend"
+								}
+								{
+									level: 1
+									name: "tconstruct:shulking"
+								}
+								{
+									level: 1
+									name: "tconstruct:pockets"
+								}
+							]
+							tic_persistent: { }
+							tic_stats: {
+								"tconstruct:durability": 630.0f
+							}
+							tic_volatile_data: {
+								abilities: 1
+								"tconstruct:total_item_slots": 18
+								upgrades: 5
+							}
 						}
 					}
 					type: "item"

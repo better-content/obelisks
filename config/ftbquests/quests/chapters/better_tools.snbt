@@ -92,8 +92,8 @@
 				type: "item"
 			}]
 			title: "Heater"
-			x: -3.0d
-			y: -3.0d
+			x: -4.0d
+			y: -2.5d
 		}
 		{
 			dependencies: ["0C10825F73EDBA68"]
@@ -157,8 +157,8 @@
 				type: "item"
 			}]
 			title: "Fuel Tank"
-			x: 0.0d
-			y: -4.5d
+			x: -2.5d
+			y: -2.5d
 		}
 		{
 			dependencies: ["1E7CD8C092AE1895"]
@@ -177,8 +177,8 @@
 				type: "item"
 			}]
 			title: "Fuel Gauge"
-			x: 0.0d
-			y: -3.0d
+			x: -2.5d
+			y: -4.0d
 		}
 		{
 			dependencies: ["28DDBFB5911AFA2D"]
@@ -401,8 +401,8 @@
 				type: "item"
 			}]
 			title: "Sand Cast"
-			x: 6.0d
-			y: -3.0d
+			x: 2.5d
+			y: -7.0d
 		}
 		{
 			dependencies: [
@@ -424,36 +424,8 @@
 				type: "item"
 			}]
 			title: "Ingot Cast"
-			x: 6.0d
-			y: -1.5d
-		}
-		{
-			dependencies: ["38C6C603300A0551"]
-			description: ["Run copper through the line to prove your first local metal can now be processed cleanly. This is the point where mining and casting truly connect."]
-			icon: "minecraft:raw_copper"
-			id: "4FB42BE946930752"
-			tasks: [{
-				id: "1FCCFBF717711866"
-				item: "minecraft:raw_copper"
-				type: "item"
-			}]
-			title: "Copper"
-			x: 9.0d
-			y: -4.5d
-		}
-		{
-			dependencies: ["38C6C603300A0551"]
-			description: ["Process iron once the casting line works. Iron is your first serious tool metal, so make sure it enters the part route instead of stopping at ingots."]
-			icon: "minecraft:raw_iron"
-			id: "0F5598CF14BBC847"
-			tasks: [{
-				id: "52282AD08700BD8E"
-				item: "minecraft:raw_iron"
-				type: "item"
-			}]
-			title: "Iron"
-			x: 9.0d
-			y: -3.0d
+			x: 5.5d
+			y: -5.0d
 		}
 		{
 			dependencies: ["38C6C603300A0551"]
@@ -496,148 +468,6 @@
 			title: "Handle Cast"
 			x: 9.0d
 			y: 1.5d
-		}
-		{
-			dependencies: ["0C10825F73EDBA68"]
-			description: ["Keep the Part Builder next to the foundry tools. Not every useful part is molten, and this bench keeps the whole route in one place."]
-			icon: "tconstruct:part_builder"
-			id: "26A0E06D0361D2A9"
-			tasks: [{
-				id: "69642743828B020B"
-				item: "tconstruct:part_builder"
-				type: "item"
-			}]
-			title: "Part Builder"
-			x: 9.0d
-			y: 3.0d
-		}
-		{
-			description: ["Use the Tinker Station to assemble, inspect, and repair tools. It is the bench that makes all the separate parts turn back into one usable item."]
-			icon: "tconstruct:tinker_station"
-			id: "29C15286CC9446CA"
-			shape: "hexagon"
-			tasks: [{
-				id: "23881D1B2DD0F516"
-				item: "tconstruct:tinker_station"
-				type: "item"
-			}]
-			title: "Tinker Station"
-			x: 12.0d
-			y: -3.0d
-		}
-		{
-			description: ["Make a metal pick head as soon as the line allows it. This is the clearest sign that your foundry now builds better tools, not just better materials."]
-			icon: "tconstruct:pick_head"
-			id: "37C306B851726F54"
-			tasks: [{
-				id: "07DBE0F7ED033A6C"
-				item: "tconstruct:pick_head"
-				type: "item"
-			}]
-			title: "Pick Head"
-			x: 12.0d
-			y: -1.5d
-		}
-		{
-			description: ["Treat bindings as part of the tool plan, not leftover junk. A good tool route cares about every part, not only the head."]
-			icon: "tconstruct:tool_binding"
-			id: "3D6786930A85E384"
-			tasks: [{
-				id: "2792E3922A4F423A"
-				item: "tconstruct:tool_binding"
-				type: "item"
-			}]
-			title: "Binding"
-			x: 12.0d
-			y: 0.0d
-		}
-		{
-			description: ["Choose handles intentionally because they change the finished tool. This is where Tinkers starts rewarding part planning instead of one best recipe."]
-			icon: "tconstruct:tool_handle"
-			id: "30BF794893BC7F09"
-			tasks: [{
-				id: "1EB4018DB753D832"
-				item: "tconstruct:tool_handle"
-				type: "item"
-			}]
-			title: "Handle"
-			x: 12.0d
-			y: 1.5d
-		}
-		{
-			description: ["Finish the line by making a true metal pickaxe. The tool should now feel earned through parts, heat, and casting instead of a simple recipe unlock."]
-			icon: {
-				Count: 1
-				id: "tconstruct:pickaxe"
-				tag: {
-					Damage: 0
-					tic_broken: 0b
-				}
-			}
-			id: "360D0EEC35715910"
-			rewards: [{
-				count: 4
-				id: "5DD560FCBF69F94C"
-				item: "createdeco:copper_coin"
-				type: "item"
-			}]
-			shape: "hexagon"
-			size: 1.2d
-			tasks: [{
-				id: "5DD06A24686DD98E"
-				item: {
-					Count: 1
-					id: "tconstruct:pickaxe"
-					tag: {
-						Damage: 0
-						tic_broken: 0b
-					}
-				}
-				type: "item"
-			}]
-			title: "Metal Pickaxe"
-			x: 15.0d
-			y: -1.5d
-		}
-		{
-			description: ["Make a repair kit early so your new tools stay in circulation. Repair is part of the economy here, not a side feature you learn later."]
-			icon: "tconstruct:repair_kit"
-			id: "3EE112B1B8E979C7"
-			tasks: [{
-				id: "5F0FCCF7693B1932"
-				item: "tconstruct:repair_kit"
-				type: "item"
-			}]
-			title: "Repair Kit"
-			x: 15.0d
-			y: 0.0d
-		}
-		{
-			description: ["Modifiers are how good tools improve without being thrown away. Learn them now so upgrading feels cheaper and safer than constant replacement."]
-			icon: "tconstruct:modifier_worktable"
-			id: "697CC81AA4A47FCB"
-			tasks: [{
-				id: "18E8F620B3211B61"
-				item: "tconstruct:modifier_worktable"
-				type: "item"
-			}]
-			title: "Modifiers"
-			x: 18.0d
-			y: -1.5d
-		}
-		{
-			description: ["The Tinker's Anvil is the later upgrade bench for serious tool work. It is a continuation of the foundry, not a separate system that replaces it."]
-			icon: "tconstruct:tinkers_anvil"
-			id: "30DD553AB2B2E852"
-			shape: "octagon"
-			tasks: [{
-				id: "1B29C7311542F8BE"
-				item: "tconstruct:tinkers_anvil"
-				type: "item"
-			}]
-			title: "Tinker's Anvil"
-			x: 18.0d
-			y: 0.0d
 		}
 	]
 	title: "Metals and Metal Tools"

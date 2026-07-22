@@ -234,6 +234,30 @@
 				tag: {
 					Damage: 0
 					tic_broken: 0b
+					tic_modifiers: [
+						{
+							level: 1
+							name: "tconstruct:overslime_friend"
+						}
+						{
+							level: 1
+							name: "tconstruct:reach"
+						}
+					]
+					tic_persistent: { }
+					tic_stats: {
+						"tconstruct:accuracy": 0.9f
+						"tconstruct:block_amount": 35.0f
+						"tconstruct:block_angle": 140.0f
+						"tconstruct:durability": 800.0f
+						"tconstruct:projectile_damage": 1.0f
+						"tconstruct:use_item_speed": 0.4f
+					}
+					tic_volatile_data: {
+						abilities: 2
+						defense: 3
+						upgrades: 2
+					}
 				}
 			}
 			id: "3893B0E7CD370006"
@@ -247,6 +271,30 @@
 					tag: {
 						Damage: 0
 						tic_broken: 0b
+						tic_modifiers: [
+							{
+								level: 1
+								name: "tconstruct:overslime_friend"
+							}
+							{
+								level: 1
+								name: "tconstruct:reach"
+							}
+						]
+						tic_persistent: { }
+						tic_stats: {
+							"tconstruct:accuracy": 0.9f
+							"tconstruct:block_amount": 35.0f
+							"tconstruct:block_angle": 140.0f
+							"tconstruct:durability": 800.0f
+							"tconstruct:projectile_damage": 1.0f
+							"tconstruct:use_item_speed": 0.4f
+						}
+						tic_volatile_data: {
+							abilities: 2
+							defense: 3
+							upgrades: 2
+						}
 					}
 				}
 				type: "item"
@@ -262,6 +310,29 @@
 				tag: {
 					Damage: 0
 					tic_broken: 0b
+					tic_modifiers: [
+						{
+							level: 1
+							name: "tconstruct:overslime_friend"
+						}
+						{
+							level: 2
+							name: "tconstruct:reach"
+						}
+					]
+					tic_persistent: { }
+					tic_stats: {
+						"tconstruct:accuracy": 0.5f
+						"tconstruct:block_amount": 15.0f
+						"tconstruct:durability": 1520.0f
+						"tconstruct:projectile_damage": 3.0f
+						"tconstruct:use_item_speed": 0.4f
+					}
+					tic_volatile_data: {
+						abilities: 2
+						defense: 1
+						upgrades: 3
+					}
 				}
 			}
 			id: "421D05A0E74E640D"
@@ -275,6 +346,29 @@
 					tag: {
 						Damage: 0
 						tic_broken: 0b
+						tic_modifiers: [
+							{
+								level: 1
+								name: "tconstruct:overslime_friend"
+							}
+							{
+								level: 2
+								name: "tconstruct:reach"
+							}
+						]
+						tic_persistent: { }
+						tic_stats: {
+							"tconstruct:accuracy": 0.5f
+							"tconstruct:block_amount": 15.0f
+							"tconstruct:durability": 1520.0f
+							"tconstruct:projectile_damage": 3.0f
+							"tconstruct:use_item_speed": 0.4f
+						}
+						tic_volatile_data: {
+							abilities: 2
+							defense: 1
+							upgrades: 3
+						}
 					}
 				}
 				type: "item"
@@ -290,6 +384,28 @@
 				tag: {
 					Damage: 0
 					tic_broken: 0b
+					tic_modifiers: [
+						{
+							level: 1
+							name: "tconstruct:overslime_friend"
+						}
+						{
+							level: 1
+							name: "tconstruct:reach"
+						}
+					]
+					tic_persistent: { }
+					tic_stats: {
+						"tconstruct:block_amount": 15.0f
+						"tconstruct:draw_speed": 0.75f
+						"tconstruct:durability": 1225.0f
+						"tconstruct:use_item_speed": 0.4f
+						"tconstruct:velocity": 1.2f
+					}
+					tic_volatile_data: {
+						abilities: 3
+						upgrades: 2
+					}
 				}
 			}
 			id: "3FE4120DC8903C42"
@@ -303,6 +419,28 @@
 					tag: {
 						Damage: 0
 						tic_broken: 0b
+						tic_modifiers: [
+							{
+								level: 1
+								name: "tconstruct:overslime_friend"
+							}
+							{
+								level: 1
+								name: "tconstruct:reach"
+							}
+						]
+						tic_persistent: { }
+						tic_stats: {
+							"tconstruct:block_amount": 15.0f
+							"tconstruct:draw_speed": 0.75f
+							"tconstruct:durability": 1225.0f
+							"tconstruct:use_item_speed": 0.4f
+							"tconstruct:velocity": 1.2f
+						}
+						tic_volatile_data: {
+							abilities: 3
+							upgrades: 2
+						}
 					}
 				}
 				type: "item"
@@ -360,6 +498,28 @@
 				tag: {
 					Damage: 0
 					tic_broken: 0b
+					tic_modifiers: [
+						{
+							level: 1
+							name: "tconstruct:overslime_friend"
+						}
+						{
+							level: 1
+							name: "tconstruct:reach"
+						}
+					]
+					tic_persistent: { }
+					tic_stats: {
+						"tconstruct:block_amount": 15.0f
+						"tconstruct:draw_speed": 1.25f
+						"tconstruct:durability": 500.0f
+						"tconstruct:use_item_speed": 0.4f
+						"tconstruct:velocity": 0.8f
+					}
+					tic_volatile_data: {
+						abilities: 2
+						upgrades: 5
+					}
 				}
 			}
 			id: "1498FE2FBEB8EDB2"
@@ -373,6 +533,28 @@
 					tag: {
 						Damage: 0
 						tic_broken: 0b
+						tic_modifiers: [
+							{
+								level: 1
+								name: "tconstruct:overslime_friend"
+							}
+							{
+								level: 1
+								name: "tconstruct:reach"
+							}
+						]
+						tic_persistent: { }
+						tic_stats: {
+							"tconstruct:block_amount": 15.0f
+							"tconstruct:draw_speed": 1.25f
+							"tconstruct:durability": 500.0f
+							"tconstruct:use_item_speed": 0.4f
+							"tconstruct:velocity": 0.8f
+						}
+						tic_volatile_data: {
+							abilities: 2
+							upgrades: 5
+						}
 					}
 				}
 				type: "item"

@@ -88,6 +88,8 @@ The 2026-07-16 post-integration reset-runtime smoke passed with zero soft findin
 
 Canonical custom mod sources live under `generated/custom-mod-sources`. Use `generated/custom-mod-sources/settlement-roads` for settlement roads unless explicitly told otherwise. `generated/custom-mod-sources/dynamic-trees-dimension-compat` is the canonical `bcdimtrees` source checkout for pack-owned dimension forest Dynamic Trees coverage.
 
+Advanced Chimneys is active on its pinned Forge 1.20.1 release, with ForgeEndertech already supplied as its dependency. The maintained `config/adchimneys/` emitter definitions cover the pack's active furnace, burner, smeltery, and generator surfaces.
+
 Set `BC_CUSTOM_MODS_DIR` to use a different custom-mod checkout when running validation in another environment.
 
 Prior repairs worth retaining as current expectations:

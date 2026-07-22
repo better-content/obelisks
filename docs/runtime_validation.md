@@ -19,4 +19,6 @@ tools/bc test kotlin
 tools/bc test fast
 ```
 
+Kotlin harness lifecycle tests synchronize on the per-run `lock.json`; incidental harness-root entries such as `port-reservations/` are not evidence that a run is ready to interrupt or inspect.
+
 The smoke proves lifecycle and client/server network compatibility only. Gameplay, worldgen distributions, progression routes, and visual quality require separately designed evidence.

@@ -283,12 +283,16 @@ fun firstHarnessRunDir(harnessRoot: Path): Path =
             .orElseThrow { IllegalStateException("missing harness run directory under $harnessRoot") }
     }
 
-fun harnessOwnerPid(harnessRoot: Path): Long =
-    jsonNumber(readJson(firstHarnessRunDir(harnessRoot).resolve("lock.json"))["pid"])?.toLong()
-        ?: error("missing harness owner pid under $harnessRoot")
+fun harnessOwnerPidForRun(runDir: Path): Long =
+    jsonNumber(readJson(runDir.resolve("lock.json"))["pid"])?.toLong()
+        ?: error("missing harness owner pid under $runDir")
 
 fun terminateHarnessOwner(harnessRoot: Path, force: Boolean) {
-    val pid = harnessOwnerPid(harnessRoot)
+    terminateHarnessRun(firstHarnessRunDir(harnessRoot), force)
+}
+
+fun terminateHarnessRun(runDir: Path, force: Boolean) {
+    val pid = harnessOwnerPidForRun(runDir)
     val handle = ProcessHandle.of(pid).orElse(null) ?: return
     if (force) handle.destroyForcibly() else handle.destroy()
     handle.onExit().get(10, TimeUnit.SECONDS)
@@ -940,14 +944,10 @@ test("interrupt clears lock ownership and leaves final aborted status") {
         ),
     )
     try {
-        val deadline = System.currentTimeMillis() + 10_000
-        while (System.currentTimeMillis() < deadline && Files.list(harnessRoot).use { !it.findAny().isPresent }) {
-            Thread.sleep(100)
-        }
-        terminateHarnessOwner(harnessRoot, force = false)
+        val runDir = waitForHarnessRunDir(harnessRoot)
+        terminateHarnessRun(runDir, force = false)
         process.destroy()
         process.waitFor(10, TimeUnit.SECONDS)
-        val runDir = firstHarnessRunDir(harnessRoot)
         val lockPath = runDir.resolve("lock.json")
         val lockDeadline = System.currentTimeMillis() + 10_000
         while (System.currentTimeMillis() < lockDeadline && lockPath.exists()) {
